@@ -3,12 +3,17 @@ var main = (function () {
 
 	var main = {};
 	
+	var splashScreen; // splash screen element
+	var searchScreen; // search screen element
 	var JSON; // loaded data
 
 	// initalize the application
 	main.init = function()
 	{
-		var path = "data/dbmock.json"; // load mock data
+		splashScreen = document.getElementById("splash-screen");
+		searchScreen = document.getElementById("search-screen");
+		
+		var path = "/boilerplate/data/dbmock.json"; // load mock data
 		$.getJSON(path, function(response){
 		   JSON = response;
 		})
@@ -22,6 +27,8 @@ var main = (function () {
 	function dataLoadedSuccess()
 	{
 		console.log("data loaded successful!");
+		$(splashScreen).fadeOut();
+		$(searchScreen).fadeIn();
 	}
 	
 	function dataLoadedError()

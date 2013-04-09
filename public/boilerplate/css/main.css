@@ -102,9 +102,23 @@ textarea {
     #00AD6D
 */
 
+html,body
+{
+    height: 100%;
+    font-family: 'Average', serif;
+}
+
 .hide
 {
    display:none; 
+}
+
+#logo
+{
+    font-size:1.4em;
+    color:#CC5438;
+    padding:10px;
+    padding-left:18px;
 }
 
 #splash-screen {
@@ -117,7 +131,6 @@ textarea {
 
     position: fixed;
     z-index:1;
-    overflow:hidden;
 }
 
 #splash-screen h1
@@ -127,11 +140,94 @@ textarea {
     height: 50px;
     top: 50%;
     left: 50%;
-    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-left: -100px;
     margin-top: -25px; 
-}​
+}
 
+#main-content
+{
+    background:#D9593C;
+    min-height:100%;
 
+background: rgb(255,178,120); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,178,120,1) 1%, rgba(217,89,60,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(255,178,120,1)), color-stop(100%,rgba(217,89,60,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,178,120,1) 1%,rgba(217,89,60,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,178,120,1) 1%,rgba(217,89,60,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,178,120,1) 1%,rgba(217,89,60,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(255,178,120,1) 1%,rgba(217,89,60,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb278', endColorstr='#d9593c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+#search-box
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -100px; 
+    display: table;
+}
+
+#search-box div
+{
+    display:table-row;
+    position: relative;
+}
+
+#search-box label
+{
+    display:table-cell;
+    font-size: 3em;
+    letter-spacing: 2px;
+    color:#993F2A;
+    text-align: right;
+}
+
+#search-box label span
+{
+    color:#CC5438;
+}
+
+#search-box input
+{
+    display:table-cell;
+    background:#FFB278;
+    padding:10px;
+    margin-left: 20px;
+    position: relative;
+    top: -10px;
+    border-color:#FF9545;
+    border-collapse: collapse;
+}
+
+#search-box input::-webkit-input-placeholder
+{
+    color:#FF9545;
+}
+
+#search-box button
+{
+    display:table-cell;
+    background:#CC5438;
+    margin:10px auto;
+    color:#FFB278;
+    border:1px solid #C20C33;
+    font-family: 'Average', serif;
+    font-size:1.2em;
+    letter-spacing: 1px;
+    width:100%;
+    position: absolute;
+}
+
+/* temp */
+footer
+{
+    position:fixed;
+    bottom:10px;
+    right:10px;
+}
 
 
 
