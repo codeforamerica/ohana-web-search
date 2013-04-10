@@ -33,7 +33,7 @@ var main = (function () {
 			.complete(function() { dataLoadedComplete(); });
 		}
 
-		// PRIVATE FUNCTIONS
+		// PRIVATE METHODS
 		// functions for JSON loading success
 		function dataLoadedSuccess()
 		{
@@ -52,7 +52,7 @@ var main = (function () {
 			console.log("completed JSON call! (Regardless of success or failure!)");
 		}
 
-		// PUBLIC FUNCTIONS
+		// PUBLIC METHODS
 		// return data based on query
 		main.getData = function(query)
 		{
@@ -82,13 +82,15 @@ var main = (function () {
 			message.init(); // initialize message box
 			
 			searchBtn.addEventListener( "mousedown" , searchBtnClicked );
+			searchTerm.addEventListener( "focus" , searchTermFocus );
+
 			$(mainContent).fadeIn();
 		}
 
+		// PRIVATE METHODS
 		// search button was clicked
 		function searchBtnClicked(evt)
 		{
-			message.display("successfully clicked!");
 			lookupData(main.getData(), searchTerm.value);
 		}
 
@@ -98,7 +100,16 @@ var main = (function () {
 			if ( entry == query )
 			{
 				console.log("Query Successful!");
-			}		
+			}
+			else
+			{
+				message.display("Nothing matched your search! <br />Try another search term!");
+			}
+		}
+
+		function searchTermFocus()
+		{
+			message.hide();
 		}
 		
 		return search;
@@ -123,14 +134,64 @@ var main = (function () {
 		message.display = function(msg)
 		{
 			messageText.innerHTML = msg;
-			console.log(messageArrow.style.top );
-			messageArrow.style.top = (Number(messageBox.style.height) - 7)*-1;
-			console.dir(messageArrow );
+			messageBox.style.opacity = 0;
+			this.show();
+			messageBox.style.top = ((messageBox.offsetHeight - 16)*-1)+"px";
+			messageArrow.style.top = (messageBox.offsetHeight - 7)+"px";
+			messageBox.style.opacity = 1;
+		}
+
+		message.show = function()
+		{
+			messageBox.classList.remove("hide");
+		}
+
+		message.hide = function()
+		{
+			messageBox.classList.add("hide");
 		}
 
 		return message;
 	})();
 
+	//=================================================================================
+	// Utility JS functions
+	var util = (function(){
+		var util = {};
+
+		// get computed style (from http://stackoverflow.com/questions/2664045/how-to-retrieve-a-styles-value-in-javascript)
+		util.getStyle = function(el, styleProp) {
+		  var value, defaultView = (el.ownerDocument || document).defaultView;
+		  // W3C standard way:
+		  if (defaultView && defaultView.getComputedStyle) {
+		    // sanitize property name to css notation
+		    // (hypen separated words eg. font-Size)
+		    styleProp = styleProp.replace(/([A-Z])/g, "-$1").toLowerCase();
+		    return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+		  } else if (el.currentStyle) { // IE
+		    // sanitize property name to camelCase
+		    styleProp = styleProp.replace(/\-(\w)/g, function(str, letter) {
+		      return letter.toUpperCase();
+		    });
+		    value = el.currentStyle[styleProp];
+		    // convert other units to pixels on IE
+		    if (/^\d+(em|pt|%|ex)?$/i.test(value)) { 
+		      return (function(value) {
+		        var oldLeft = el.style.left, oldRsLeft = el.runtimeStyle.left;
+		        el.runtimeStyle.left = el.currentStyle.left;
+		        el.style.left = value || 0;
+		        value = el.style.pixelLeft + "px";
+		        el.style.left = oldLeft;
+		        el.runtimeStyle.left = oldRsLeft;
+		        return value;
+		      })(value);
+		    }
+		    return value;
+		  }
+		}
+
+		return util;
+	})();
 
 // return internally scoped var as value of globally scoped object
 return main;

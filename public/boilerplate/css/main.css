@@ -80,7 +80,7 @@ html, body {
   font-family: 'Average', serif; }
 
 .hide {
-  display: none; }
+  display: none !important; }
 
 #logo {
   font-size: 1.4em;
@@ -177,6 +177,10 @@ html, body {
   width: 100%;
   position: absolute; }
 
+#search-box button:hover {
+  outline: 4px solid #03497e;
+  color: #03497e; }
+
 /*
 #search-box > div > div
 {
@@ -191,12 +195,11 @@ html, body {
   border-radius: 10px;
   background: #ffeb1b;
   border: 1px solid #83b41a;
-  color: #83b41a;
+  color: #000;
   position: absolute;
   top: -40px;
   left: 310px;
-  z-index: 1;
-  width: 340px; }
+  z-index: 1; }
 
 #message-box p {
   padding: 10px;

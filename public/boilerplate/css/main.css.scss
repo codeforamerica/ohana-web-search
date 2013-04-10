@@ -110,7 +110,7 @@ html,body
 
 .hide
 {
-   display:none; 
+   display:none !important; 
 }
 
 #logo
@@ -225,6 +225,12 @@ html,body
     position: absolute;
 }
 
+#search-box button:hover
+{
+    outline:4px solid $primary_dark;
+    color:$primary_dark;
+}
+
 /*
 #search-box > div > div
 {
@@ -241,12 +247,11 @@ html,body
     border-radius: 10px;
     background:$secondary_bright;
     border: 1px solid $secondary_midbright;
-    color:$secondary_midbright;
+    color:#000;
     position: absolute;
     top: -40px;
     left: 310px;
     z-index: 1;
-    width: 340px;
 }
 
 #message-box p
