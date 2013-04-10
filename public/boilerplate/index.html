@@ -29,16 +29,18 @@
         <section id="main-content">
             <header><div id="logo">Human Services Finder</div></header>
             <section id="search-screen">
-                <form>
+                <!--<form>-->
                     <datalist id="categories">
                         <option value="food" />
                         <option value="food pantry" />
                         <option value="food bank" />
+                        <option value="Samaritan House" />
                     </datalist>
                     <section id="search-box">
-                        <div><label for="keyword">I need <span>→</span></label><input id="keyword" type="text" placeholder="e.g. food" list="categories" /></div>
-                        <div><label for="near">I am near <span>→</span></label><input id="near" type="text" placeholder="e.g. san mateo, ca" /></div>
-                        <div><button>Find >>></button></div>
+                        <div><section id="message-box"><p>Message</p><div class="corner"></div></section></div>
+                        <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
+                        <div><label for="search-near">I am near <span>→</span></label><input id="search-near" type="text" placeholder="e.g. san mateo, ca" /></div>
+                        <div><button id="search-btn">Find >>></button></div>
                     </section>
 
                     <section class="hide">
@@ -84,7 +86,7 @@
                         </fieldset>
                         
                     </section>
-                </form>
+                <!--</form>-->
             </section>
 
             <section id="results-screen" class="hide">

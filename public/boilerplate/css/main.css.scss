@@ -136,12 +136,14 @@ html,body
 #splash-screen h1
 {
     position: absolute;
-    width: 200px;
-    height: 50px;
-    top: 50%;
-    left: 50%;
-    margin-left: -100px;
-    margin-top: -25px; 
+    top:0;
+    left:0;
+    background:$secondary_bright;
+    width:100%;
+    padding:20px;
+    margin:0px;
+    text-align:center;
+    font-size:1.4em;
 }
 
 #main-content
@@ -165,7 +167,7 @@ html,body
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -250px;
+    margin-left: -300px;
     margin-top: -100px; 
     display: table;
 }
@@ -183,6 +185,7 @@ html,body
     letter-spacing: 2px;
     color:$primary_dark;
     text-align: right;
+    width: 300px;
 }
 
 #search-box label span
@@ -200,6 +203,7 @@ html,body
     top: -10px;
     border-color:$primary_midtone;
     border-collapse: collapse;
+    width:300px;
 }
 
 #search-box input::-webkit-input-placeholder
@@ -219,6 +223,53 @@ html,body
     letter-spacing: 1px;
     width:100%;
     position: absolute;
+}
+
+/*
+#search-box > div > div
+{
+    height:$message_box_height;
+    position:relative;
+}
+*/
+
+#message-box
+{
+    display:table-cell;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background:$secondary_bright;
+    border: 1px solid $secondary_midbright;
+    color:$secondary_midbright;
+    position: absolute;
+    top: -40px;
+    left: 310px;
+    z-index: 1;
+    width: 340px;
+}
+
+#message-box p
+{
+    padding:10px;
+    margin:0;
+}
+
+#message-box .corner
+{
+    width:10px;
+    height:10px;
+    background:$secondary_bright;
+    border-right: 1px solid $secondary_midbright;
+    border-bottom: 1px solid $secondary_midbright;
+    transform: rotate(45deg) ;
+    -webkit-transform: rotate(45deg) ;
+    -moz-transform: rotate(45deg) ;
+    -o-transform: rotate(45deg) ;
+    -ms-transform: rotate(45deg) ;
+    position: absolute;
+    top: 45px;
+    left: 20px;
 }
 
 /* temp */
