@@ -81,8 +81,9 @@ var main = (function () {
 
 			message.init(); // initialize message box
 			
-			searchBtn.addEventListener( "mousedown" , searchBtnClicked );
-			searchTerm.addEventListener( "focus" , searchTermFocus );
+			searchBtn.addEventListener( "mousedown" , searchBtnClicked , false );
+			searchTerm.addEventListener( "focus" , searchTermFocus , false );
+			searchTerm.addEventListener( "keyup" , returnPressed , false )
 
 			$(mainContent).fadeIn();
 		}
@@ -92,6 +93,13 @@ var main = (function () {
 		function searchBtnClicked(evt)
 		{
 			lookupData(main.getData(), searchTerm.value);
+		}
+
+		function returnPressed(evt)
+		{
+			// if enter key was pressed, submit the form
+			if (evt.which == 13)
+				searchBtnClicked();
 		}
 
 		function lookupData(data,query)
