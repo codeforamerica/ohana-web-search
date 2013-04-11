@@ -26,7 +26,7 @@
         <section id="splash-screen">
             <h1>Loading...</h1>
         </section>
-        <section id="main-content" class="fullscreen">
+        <section id="main-content">
             <header><div id="logo">Human Services Finder</div></header>
             <section id="search-screen">
                 <!--<form>-->
@@ -36,8 +36,8 @@
                         <option value="food bank" />
                         <option value="Samaritan House" />
                     </datalist>
-                    <section id="search-box" class="large">
-                        <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
+                    <section id="search-box">
+                        <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div>
                         <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
                         <div><label for="search-near">I am near <span>→</span></label><input id="search-near" type="text" placeholder="e.g. san mateo, ca" /></div>
                         <div><button id="search-btn">Find >>></button></div>
@@ -89,18 +89,15 @@
                 <!--</form>-->
             </section>
 
-            <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
-        </section>
-        <section id="inside-content">
-
             <section id="results-screen" class="hide">
-
+                <h1>Results</h1>
             </section>
 
-            <section id="detail-screen" class="hide">
+            <section id="result-screen" class="hide">
                 <h1>Result</h1>
             </section>
 
+            <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>

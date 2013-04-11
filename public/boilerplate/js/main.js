@@ -69,8 +69,6 @@ var main = (function () {
 		var search = {};
 
 		var mainContent;
-		var resultsScreen;
-		var resultsEntry;
 		var searchBox;
 		var searchBtn;
 		var searchTerm;
@@ -79,8 +77,6 @@ var main = (function () {
 		search.init = function()
 		{
 			mainContent = document.querySelector("#main-content");
-			resultsScreen = document.querySelector("#results-screen");
-			resultsEntry = document.querySelector("#results-entry");
 			searchBox = document.querySelector("#search-box");
 			searchBtn = document.querySelector("#search-btn");
 			searchTerm = document.querySelector("#search-term");
@@ -105,7 +101,7 @@ var main = (function () {
 				searchBox.classList.add( "mini" );
 				mainContent.classList.add( "mini" );
 				mainContent.addEventListener("transitionend", mainMinified, true);
-				resultsScreen.classList.remove("hide");
+				results.init();
 			}
 			lookupData(main.getData(), searchTerm.value);
 		}
@@ -124,16 +120,16 @@ var main = (function () {
 
 		function lookupData(data,query)
 		{
+			results.reset();
 			var entry = data["000"]["name"];
 			if ( entry == query )
 			{
-				console.log("Query Successful!");
-				resultsEntry.innerHTML = "Samaritan House";
+				results.addEntry( {"title":"Samaritan House","type":ENTRY.PLACE});
 			}
 			else
 			{
-				resultsEntry.innerHTML = "Nothing Found!";
-				message.display("Nothing matched your search! <br />Try another search term!");
+				results.addEntry({"title":"Nothing Found","type":ENTRY.ERROR});
+				//message.display("Nothing matched your search! <br />Try another search term!");
 			}
 		}
 
@@ -144,6 +140,55 @@ var main = (function () {
 		
 		return search;
 	})();
+
+	//=================================================================================
+	// Results entry functionality
+	var results = (function(){
+		var results = {};
+
+		var resultsScreen;
+		var resultsEntry;
+		var detailScreen;
+
+		results.init = function()
+		{
+			resultsScreen = document.querySelector("#results-screen");		
+			detailScreen = document.querySelector("#detail-screen");	
+			resultsScreen.classList.remove("hide");
+		}
+
+		results.reset = function()
+		{
+			resultsScreen.innerHTML = "";
+		}
+
+		results.addEntry = function( data )
+		{
+			resultsScreen.innerHTML = "<div id='results-entry'>"+data['title']+"</div>";
+						resultsEntry = document.querySelector("#results-entry");
+
+			if (data['type'] != ENTRY.ERROR)
+			{
+				resultsEntry.addEventListener( "mousedown" , entryDetailsClicked , false );
+			}
+		}
+
+		// PRIVATE FUNCTIONS
+		function entryDetailsClicked(evt)
+		{
+			detailScreen.classList.remove("hide");
+		}
+
+		return results;
+	})();
+
+	//=================================================================================
+	// Entry types, used in results object when adding entrys 
+	var ENTRY = {
+		"ERROR":0,
+		"CATEGORY":1,
+		"PLACE":2
+	};
 
 	//=================================================================================
 	// Message dialog box - handles display and formatting of message box
