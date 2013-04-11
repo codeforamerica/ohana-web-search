@@ -252,7 +252,9 @@ var main = (function () {
 		details.show = function(entry)
 		{
 			detailScreen.classList.remove("hide");
+
 			detailScreen.innerHTML = '<h1 class="name">'+entry["name"]+'</h1>';
+            detailScreen.innerHTML += '<p class="streetview"><img src="http://maps.googleapis.com/maps/api/streetview?size=320x240&location='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&fov=80&heading='+entry["location"]["heading"]+'&pitch=10&sensor=false" /></p>';
             detailScreen.innerHTML += '<p class="address">';
             detailScreen.innerHTML += '<div class="street">'+entry["address"]["street"]+'</div>';
             detailScreen.innerHTML += '<div class="city">'+entry["address"]["city"]+'</div>';
