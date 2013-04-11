@@ -15,9 +15,8 @@ var main = (function () {
 	var dataloader = (function(){
 		var dataloader = {};
 
-		var JSON; // loaded data
-
-		var splashScreen;
+		var data; // loaded data
+		var splashScreen; // loading data screen
 
 		dataloader.init = function()
 		{
@@ -25,7 +24,7 @@ var main = (function () {
 			
 			var path = "/boilerplate/data/dbmock.json"; // load mock data
 			$.getJSON(path, function(response){
-			   JSON = response;
+			   data = response;
 			})
 			
 			.success(function() { dataLoadedSuccess(); })
@@ -54,10 +53,11 @@ var main = (function () {
 
 		// PUBLIC METHODS
 		// return data based on query
-		main.getData = function(query)
-		{
+		dataloader.getData = function(index)
+		{	
+			if (index) return data[index];
 			// currently the query does nothing, we just return the mock JSON object
-			return JSON;
+			return data;
 		}
 
 		return dataloader;
@@ -81,7 +81,7 @@ var main = (function () {
 			searchBtn = document.querySelector("#search-btn");
 			searchTerm = document.querySelector("#search-term");
 
-			message.init(); // initialize message box
+			//message.init(); // initialize message box
 			
 			searchBtn.addEventListener( "mousedown" , searchBtnClicked , false );
 			searchTerm.addEventListener( "focus" , searchTermFocus , false );
@@ -103,7 +103,7 @@ var main = (function () {
 				mainContent.addEventListener("transitionend", mainMinified, true);
 				results.init();
 			}
-			lookupData(main.getData(), searchTerm.value);
+			lookupData( dataloader.getData(), searchTerm.value );
 		}
 
 		function mainMinified(evt)
@@ -118,18 +118,31 @@ var main = (function () {
 				searchBtnClicked();
 		}
 
+		// looks up the query in the data source
+		// this function is mock code for the most part to fit the mock data source currently being used
 		function lookupData(data,query)
 		{
-			results.reset();
-			var entry = data["000"]["name"];
-			if ( entry == query )
+			results.reset(); // clear results list
+
+			// iterate through three items in dataset
+			for (var d=0; d<3; d++)
 			{
-				results.addEntry( {"title":"Samaritan House","type":ENTRY.PLACE});
-			}
-			else
-			{
-				results.addEntry({"title":"Nothing Found","type":ENTRY.ERROR});
-				//message.display("Nothing matched your search! <br />Try another search term!");
+				if (data[d]["name"] == query)
+				{
+					//console.log("place");
+					results.addEntry( data[d] , d );
+				}
+				else
+				{
+					for (var c=0; c< data[d]["category"].length; c++)
+					{
+						 if (data[d]["category"][c] == query)
+						 {
+						 	//console.log("category");
+						 	results.addEntry( data[d] , d );
+						 }
+					}
+				}
 			}
 		}
 
@@ -147,14 +160,14 @@ var main = (function () {
 		var results = {};
 
 		var resultsScreen;
-		var resultsEntry;
-		var detailScreen;
+		var selectedEntry = null; // the selected item in the results list
+		var entries = {};
 
 		results.init = function()
 		{
 			resultsScreen = document.querySelector("#results-screen");		
-			detailScreen = document.querySelector("#detail-screen");	
 			resultsScreen.classList.remove("hide");
+			details.init(); // initialize details object
 		}
 
 		results.reset = function()
@@ -162,24 +175,96 @@ var main = (function () {
 			resultsScreen.innerHTML = "";
 		}
 
-		results.addEntry = function( data )
+		results.addEntry = function( data , index )
 		{
-			resultsScreen.innerHTML = "<div id='results-entry'>"+data['title']+"</div>";
-						resultsEntry = document.querySelector("#results-entry");
+			var entry = document.createElement("div");
+			entry.classList.add('results-entry');
+			entry.setAttribute("data-internalid", index);
+			entry.innerHTML = data['name'];
+			resultsScreen.appendChild(entry);
+
+			entries[data['name']] = data;
+			console.log(entries);
 
 			if (data['type'] != ENTRY.ERROR)
 			{
-				resultsEntry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				entry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				entry.addEventListener( "mouseover" , entryDetailsOver , false );
+				entry.addEventListener( "mouseout" , entryDetailsOut , false );
 			}
 		}
 
 		// PRIVATE FUNCTIONS
 		function entryDetailsClicked(evt)
 		{
-			detailScreen.classList.remove("hide");
+			var target = evt.toElement;
+			if (selectedEntry != target)
+			{
+				if (selectedEntry) 
+				{
+						selectedEntry.classList.remove("results-entry-hover");
+						selectedEntry.classList.remove("results-entry-selected");
+						selectedEntry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				}
+				selectedEntry = target;
+				target.classList.add("results-entry-selected");
+				target.removeEventListener( "mousedown" , entryDetailsClicked , false );
+
+				details.show( dataloader.getData( target.getAttribute("data-internalid") ) );
+			}
+		}
+
+		function entryDetailsOver(evt)
+		{
+			var target = evt.toElement;
+			target.classList.add("results-entry-hover");
+		}
+
+		function entryDetailsOut(evt)
+		{
+			var target = evt.fromElement;
+			if (target != selectedEntry)
+			{
+				target.classList.remove("results-entry-hover");
+			}
 		}
 
 		return results;
+	})();
+
+	//=================================================================================
+	// Details entry functionality
+	var details = (function(){
+		var details = {};
+
+		var detailScreen;
+
+		details.init = function()
+		{
+			detailScreen = document.querySelector("#detail-screen");
+		}
+
+		details.hide = function()
+		{
+			detailScreen.classList.add("hide");			
+		}
+
+		details.show = function(entry)
+		{
+			detailScreen.classList.remove("hide");
+			detailScreen.innerHTML = '<h1 class="name">'+entry["name"]+'</h1>';
+            detailScreen.innerHTML += '<p class="address">';
+            detailScreen.innerHTML += '<div class="street">'+entry["address"]["street"]+'</div>';
+            detailScreen.innerHTML += '<div class="city">'+entry["address"]["city"]+'</div>';
+            detailScreen.innerHTML += '<div class="state">'+entry["address"]["state"]+'</div>';
+            detailScreen.innerHTML += '<div class="zip">'+entry["address"]["zip"]+'</div>';
+            detailScreen.innerHTML += '</p>';
+            detailScreen.innerHTML += '<p class="phone">'+entry["phone"]+'</p>';
+			console.log(entry);
+
+		}
+
+		return details;
 	})();
 
 	//=================================================================================

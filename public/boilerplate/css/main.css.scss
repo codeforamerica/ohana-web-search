@@ -132,6 +132,11 @@ fade-out
     -webkit-transition: opacity 0.25s; /* Safari */
 }
 
+.mini 
+#logo
+{
+    color:$primary_light;
+}
 
 #logo
 {
@@ -189,6 +194,7 @@ fade-out
     -webkit-transition: min-height 0.25s; /* Safari */
 
     min-height:100px;
+    background:$primary_midtone;
 }
 
 #search-box.mini
@@ -225,6 +231,7 @@ fade-out
     border-collapse: collapse;
     height:0px;
     margin-right:20px;
+    font-size: 0.8em;
 }
 
 #search-box.mini input::-webkit-input-placeholder
@@ -237,11 +244,14 @@ fade-out
     background:$secondary_midbright;
     margin:10px auto;
     color:$secondary_bright;
-    border:2px solid $secondary_bright;
+    border:1px solid $secondary_bright;
     font-family: 'Average', serif;
     font-size:1.2em;
     letter-spacing: 1px;
-    width:100px;
+    width:75px;
+    font-size: 0.8em;
+    position:relative;
+    top:-3px;
 }
 
 #search-box.mini button:hover
@@ -327,23 +337,67 @@ fade-out
 }
 */
 
-#results-entry
+.results-entry
 {
     border-bottom:1px dashed $primary_light;
-    padding:10px;
     border-left:10px solid $secondary_bright;
+    padding:10px;
+    background: #fff;
 }
 
-#results-entry:hover
+.results-entry-hover
 {
     background:$primary_light;
     cursor:pointer;
+}
+
+.results-entry-selected
+{
+    background:$secondary_bright;
 }
 
 #detail-screen
 {
     padding-left:20px;
 }
+
+// styling of individual items details
+#detail-screen .name
+{
+
+}
+
+#detail-screen .address
+{
+    
+}
+
+#detail-screen .street
+{
+    
+}
+
+#detail-screen .city
+{
+    
+}
+
+#detail-screen .state
+{
+    
+}
+
+#detail-screen .zip
+{
+    
+}
+
+#detail-screen .phone
+{
+    
+}
+
+
 
 #message-box
 {
