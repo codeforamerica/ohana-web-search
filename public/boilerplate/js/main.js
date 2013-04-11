@@ -69,6 +69,8 @@ var main = (function () {
 		var search = {};
 
 		var mainContent;
+		var resultsScreen;
+		var resultsEntry;
 		var searchBox;
 		var searchBtn;
 		var searchTerm;
@@ -76,8 +78,10 @@ var main = (function () {
 		// initalize the application
 		search.init = function()
 		{
-			mainContent = document.querySelector("#main-content")
-			searchBox = document.querySelector("#search-box")
+			mainContent = document.querySelector("#main-content");
+			resultsScreen = document.querySelector("#results-screen");
+			resultsEntry = document.querySelector("#results-entry");
+			searchBox = document.querySelector("#search-box");
 			searchBtn = document.querySelector("#search-btn");
 			searchTerm = document.querySelector("#search-term");
 
@@ -94,11 +98,15 @@ var main = (function () {
 		// search button was clicked
 		function searchBtnClicked(evt)
 		{
-			searchBox.classList.remove( "large" );
-			searchBox.classList.add( "hide" );
-			searchBox.classList.add( "mini" );
-			mainContent.classList.add( "mini" );
-			mainContent.addEventListener("transitionend", mainMinified, true);
+			if ( !searchBox.classList.contains("mini") )
+			{
+				searchBox.classList.remove( "large" );
+				searchBox.classList.add( "hide" );
+				searchBox.classList.add( "mini" );
+				mainContent.classList.add( "mini" );
+				mainContent.addEventListener("transitionend", mainMinified, true);
+				resultsScreen.classList.remove("hide");
+			}
 			lookupData(main.getData(), searchTerm.value);
 		}
 
@@ -120,9 +128,11 @@ var main = (function () {
 			if ( entry == query )
 			{
 				console.log("Query Successful!");
+				resultsEntry.innerHTML = "Samaritan House";
 			}
 			else
 			{
+				resultsEntry.innerHTML = "Nothing Found!";
 				message.display("Nothing matched your search! <br />Try another search term!");
 			}
 		}
