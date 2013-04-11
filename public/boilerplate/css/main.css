@@ -82,6 +82,21 @@ html, body {
 .hide {
   display: none !important; }
 
+.transparent {
+  opacity: 0; }
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  /* Safari */ }
+
+fade-out {
+  opacity: 0;
+  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  /* Safari */ }
+
 #logo {
   font-size: 1.4em;
   color: #0596d5;
@@ -108,9 +123,9 @@ html, body {
   text-align: center;
   font-size: 1.4em; }
 
-#main-content {
-  background: #0596d5;
+#main-content.fullscreen {
   min-height: 100%;
+  background: #0596d5;
   background: #0596d5;
   /* Old browsers */
   background: -moz-radial-gradient(center, ellipse cover, #0596d5 20%, #03497e 100%);
@@ -128,7 +143,56 @@ html, body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
 
-#search-box {
+#main-content.mini {
+  transition: min-height 0.25s;
+  -webkit-transition: min-height 0.25s;
+  /* Safari */
+  min-height: 100px; }
+
+#search-box.mini {
+  text-align: center; }
+
+#search-box.mini div {
+  display: inline; }
+
+#search-box.mini label {
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: right;
+  width: 300px; }
+
+#search-box.mini label span {
+  color: #9debfc; }
+
+#search-box.mini input {
+  background: #9debfc;
+  padding: 10px;
+  position: relative;
+  top: 6px;
+  border-color: #0596d5;
+  border-collapse: collapse;
+  height: 0px;
+  margin-right: 20px; }
+
+#search-box.mini input::-webkit-input-placeholder {
+  color: #999999; }
+
+#search-box.mini button {
+  background: #83b41a;
+  margin: 10px auto;
+  color: #ffeb1b;
+  border: 2px solid #ffeb1b;
+  font-family: 'Average', serif;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  width: 100px; }
+
+#search-box.mini button:hover {
+  outline: 4px solid #03497e;
+  color: #03497e; }
+
+#search-box.large {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -136,11 +200,11 @@ html, body {
   margin-top: -100px;
   display: table; }
 
-#search-box div {
+#search-box.large div {
   display: table-row;
   position: relative; }
 
-#search-box label {
+#search-box.large label {
   display: table-cell;
   font-size: 3em;
   letter-spacing: 2px;
@@ -148,10 +212,10 @@ html, body {
   text-align: right;
   width: 300px; }
 
-#search-box label span {
+#search-box.large label span {
   color: #9debfc; }
 
-#search-box input {
+#search-box.large input {
   display: table-cell;
   background: #9debfc;
   padding: 10px;
@@ -162,10 +226,10 @@ html, body {
   border-collapse: collapse;
   width: 300px; }
 
-#search-box input::-webkit-input-placeholder {
+#search-box.large input::-webkit-input-placeholder {
   color: #999999; }
 
-#search-box button {
+#search-box.large button {
   display: table-cell;
   background: #83b41a;
   margin: 10px auto;
@@ -177,7 +241,7 @@ html, body {
   width: 100%;
   position: absolute; }
 
-#search-box button:hover {
+#search-box.large button:hover {
   outline: 4px solid #03497e;
   color: #03497e; }
 

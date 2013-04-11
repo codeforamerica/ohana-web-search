@@ -68,15 +68,17 @@ var main = (function () {
 	var search = (function () {
 		var search = {};
 
-		var searchBtn;
 		var mainContent;
+		var searchBox;
+		var searchBtn;
 		var searchTerm;
 
 		// initalize the application
 		search.init = function()
 		{
-			searchBtn = document.querySelector("#search-btn");
 			mainContent = document.querySelector("#main-content")
+			searchBox = document.querySelector("#search-box")
+			searchBtn = document.querySelector("#search-btn");
 			searchTerm = document.querySelector("#search-term");
 
 			message.init(); // initialize message box
@@ -92,7 +94,17 @@ var main = (function () {
 		// search button was clicked
 		function searchBtnClicked(evt)
 		{
+			searchBox.classList.remove( "large" );
+			searchBox.classList.add( "hide" );
+			searchBox.classList.add( "mini" );
+			mainContent.classList.add( "mini" );
+			mainContent.addEventListener("transitionend", mainMinified, true);
 			lookupData(main.getData(), searchTerm.value);
+		}
+
+		function mainMinified(evt)
+		{
+			searchBox.classList.remove("hide");
 		}
 
 		function returnPressed(evt)
