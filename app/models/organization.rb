@@ -29,5 +29,5 @@ class Organization
 
   has_many :payment_methods, dependent: :destroy
   validates_presence_of :name, :street_address, :city, :state, :zipcode, :phone
-  validate :zipcode, :length { :minimum => 5, :maximum => 10 }
+  validates :zipcode, :length => { :minimum => 5, :maximum => 10 }
 end
