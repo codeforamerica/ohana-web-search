@@ -168,6 +168,7 @@ var main = (function () {
 			resultsScreen = document.querySelector("#results-screen");		
 			resultsScreen.classList.remove("hide");
 			details.init(); // initialize details object
+			results.init = null;
 		}
 
 		results.reset = function()
@@ -184,7 +185,6 @@ var main = (function () {
 			resultsScreen.appendChild(entry);
 
 			entries[data['name']] = data;
-			console.log(entries);
 
 			if (data['type'] != ENTRY.ERROR)
 			{
@@ -254,15 +254,21 @@ var main = (function () {
 			detailScreen.classList.remove("hide");
 
 			detailScreen.innerHTML = '<h1 class="name">'+entry["name"]+'</h1>';
-            detailScreen.innerHTML += '<p class="streetview"><img src="http://maps.googleapis.com/maps/api/streetview?size=320x240&location='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&fov=80&heading='+entry["location"]["heading"]+'&pitch=10&sensor=false" /></p>';
             detailScreen.innerHTML += '<p class="address">';
-            detailScreen.innerHTML += '<div class="street">'+entry["address"]["street"]+'</div>';
+            detailScreen.innerHTML += '<div class="street">✉ '+entry["address"]["street"]+'</div>';
             detailScreen.innerHTML += '<div class="city">'+entry["address"]["city"]+'</div>';
             detailScreen.innerHTML += '<div class="state">'+entry["address"]["state"]+'</div>';
             detailScreen.innerHTML += '<div class="zip">'+entry["address"]["zip"]+'</div>';
             detailScreen.innerHTML += '</p>';
-            detailScreen.innerHTML += '<p class="phone">'+entry["phone"]+'</p>';
-			console.log(entry);
+            detailScreen.innerHTML += '<p class="phone">☎ '+entry["phone"]+'</p>';
+            //detailScreen.innerHTML += '<p class="streetview"><img src="http://maps.googleapis.com/maps/api/streetview?size=320x240&location='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&fov=80&heading='+entry["location"]["heading"]+'&pitch=10&sensor=false" /></p>';
+            //detailScreen.innerHTML += '<p class="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C'+entry["location"]["lat"]+','+entry["location"]["lng"]+'&sensor=false" /></p>';
+		}
+
+		// returns opening hours
+		function formatOpeningHours()
+		{
+			var today = new Date();
 
 		}
 
