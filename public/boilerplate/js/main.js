@@ -101,6 +101,9 @@ var main = (function () {
 				searchBox.classList.add( "mini" );
 				mainContent.classList.add( "mini" );
 				mainContent.addEventListener("transitionend", mainMinified, true);
+				
+				// initialize the categories and service provider lists
+				categories.init();
 				results.init();
 			}
 			lookupData( dataloader.getData(), searchTerm.value );
@@ -154,6 +157,35 @@ var main = (function () {
 		}
 		
 		return search;
+	})();
+
+	//=================================================================================
+	// Categories entry functionality
+	var categories = (function(){
+		var categories = {};
+
+		var categoryScreen;
+		var categoryList;
+		var categories = {}; // object holding reference to all entry HTML
+
+		categories.init = function()
+		{
+			categoryScreen = document.querySelector("#category-screen");		
+			categoryScreen.classList.remove("hide");
+			categoryList = categoryScreen.lastElementChild;
+			categories.init = null;
+		}
+
+		categories.reset = function()
+		{
+			categoryList.innerHTML = "";
+		}
+
+
+		// PRIVATE FUNCTIONS
+		
+
+		return categories;
 	})();
 
 	//=================================================================================
