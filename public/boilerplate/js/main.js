@@ -162,6 +162,7 @@ var main = (function () {
 		var results = {};
 
 		var resultsScreen;
+		var resultsList;
 		var selectedEntry = null; // the selected item in the results list
 		var entries = {}; // object holding reference to all entry HTML
 		var hourBoxes = [];
@@ -171,13 +172,15 @@ var main = (function () {
 		{
 			resultsScreen = document.querySelector("#results-screen");		
 			resultsScreen.classList.remove("hide");
+			resultsList = resultsScreen.lastElementChild;
+			console.log(resultsList);
 			details.init(); // initialize details object
 			results.init = null;
 		}
 
 		results.reset = function()
 		{
-			resultsScreen.innerHTML = "";
+			resultsList.innerHTML = "";
 		}
 
 		results.addEntry = function( data , index )
@@ -187,7 +190,7 @@ var main = (function () {
 			entry.classList.add('results-entry');
 			entry.setAttribute("data-internalid", index);
 				entry.innerHTML = "<span class='entry-title'>"+data['name']+"</span>";
-			resultsScreen.appendChild(entry);
+			resultsList.appendChild(entry);
 
 			maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
 
@@ -293,10 +296,9 @@ var main = (function () {
 		// returns opening hours
 		function formatOpeningHours()
 		{
-			var today = new Date();
+			var today = new Date(); // temp, needs to pull from data
 			var openingTime = new Date(today);
 			var weekDay = today.getDay();
-
 
 
 			console.log( today , openingTime );
