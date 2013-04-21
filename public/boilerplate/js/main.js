@@ -144,11 +144,13 @@ var main = (function () {
 					}
 				}
 			}
+
+			results.layoutResultsDetails(); // layout entry results details
 		}
 
 		function searchTermFocus()
 		{
-			message.hide();
+			//message.hide();
 		}
 		
 		return search;
@@ -161,7 +163,9 @@ var main = (function () {
 
 		var resultsScreen;
 		var selectedEntry = null; // the selected item in the results list
-		var entries = {};
+		var entries = {}; // object holding reference to all entry HTML
+		var hourBoxes = [];
+		var maxWidthOfResult = 0; // aggregate width of result entries, used to layout details
 
 		results.init = function()
 		{
@@ -178,11 +182,20 @@ var main = (function () {
 
 		results.addEntry = function( data , index )
 		{
-			var entry = document.createElement("div");
+			var entry = document.createElement("section");
 			entry.classList.add('results-entry');
 			entry.setAttribute("data-internalid", index);
-			entry.innerHTML = data['name'];
+				entry.innerHTML = "<span class='entry-title'>"+data['name']+"</span>";
 			resultsScreen.appendChild(entry);
+
+			maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
+
+			var hourBox = document.createElement("span");
+//			hourBox.classList.add("hour-box");
+			hourBox.innerHTML = "<span class='hour-box'><span>OPEN</span> <span>till 5pm</span></span>";
+			hourBoxes.push({"hourBox":hourBox,"titleWidth":entry.firstElementChild.offsetWidth}); // add hour box to array
+			entry.appendChild(hourBox); // add hour box to entry
+			//$(".open-box").fadeIn();
 
 			entries[data['name']] = data;
 
@@ -193,6 +206,15 @@ var main = (function () {
 				entry.addEventListener( "mouseout" , entryDetailsOut , false );
 			}
 		}
+
+		results.layoutResultsDetails = function()
+		{
+			for (var h in hourBoxes)
+			{
+				hourBoxes[h]["hourBox"].style.marginLeft = (maxWidthOfResult-hourBoxes[h]["titleWidth"])+"px";
+			}
+		}
+
 
 		// PRIVATE FUNCTIONS
 		function entryDetailsClicked(evt)
@@ -216,6 +238,7 @@ var main = (function () {
 
 		function entryDetailsOver(evt)
 		{
+			console.log("over");
 			var target = evt.toElement;
 			target.classList.add("results-entry-hover");
 		}
@@ -263,13 +286,20 @@ var main = (function () {
             detailScreen.innerHTML += '<p class="phone">☎ '+entry["phone"]+'</p>';
             //detailScreen.innerHTML += '<p class="streetview"><img src="http://maps.googleapis.com/maps/api/streetview?size=320x240&location='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&fov=80&heading='+entry["location"]["heading"]+'&pitch=10&sensor=false" /></p>';
             //detailScreen.innerHTML += '<p class="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C'+entry["location"]["lat"]+','+entry["location"]["lng"]+'&sensor=false" /></p>';
+			
+			formatOpeningHours();
 		}
 
 		// returns opening hours
 		function formatOpeningHours()
 		{
 			var today = new Date();
+			var openingTime = new Date(today);
+			var weekDay = today.getDay();
 
+
+
+			console.log( today , openingTime );
 		}
 
 		return details;

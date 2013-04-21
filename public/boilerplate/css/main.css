@@ -265,11 +265,11 @@ fade-out {
     position:relative;
 }
 */
-.results-entry {
-  border-bottom: 1px dashed #9debfc;
-  border-left: 10px solid #ffeb1b;
-  padding: 10px;
+#results-screen {
   background: #fff; }
+
+.results-entry {
+  border-bottom: 1px dashed #9debfc; }
 
 .results-entry-hover {
   background: #9debfc;
@@ -277,6 +277,25 @@ fade-out {
 
 .results-entry-selected {
   background: #ffeb1b; }
+
+.results-entry > span {
+  pointer-events: none;
+  vertical-align: top;
+  padding: 10px;
+  display: inline-block; }
+
+.results-entry .entry-title {
+  border-left: 10px solid #ffeb1b; }
+
+.results-entry .hour-box {
+  background-color: #d1f994;
+  border: 1px solid #999999;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px; }
+
+.results-entry .hour-box span:last-child {
+  color: #999999; }
 
 #detail-screen {
   padding-left: 20px; }
