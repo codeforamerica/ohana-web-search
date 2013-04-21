@@ -182,6 +182,7 @@ var main = (function () {
 
 		results.addEntry = function( data , index )
 		{
+			// add entry section
 			var entry = document.createElement("section");
 			entry.classList.add('results-entry');
 			entry.setAttribute("data-internalid", index);
@@ -190,12 +191,11 @@ var main = (function () {
 
 			maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
 
+			// add opening times box to section
 			var hourBox = document.createElement("span");
-//			hourBox.classList.add("hour-box");
 			hourBox.innerHTML = "<span class='hour-box'><span>OPEN</span> <span>till 5pm</span></span>";
 			hourBoxes.push({"hourBox":hourBox,"titleWidth":entry.firstElementChild.offsetWidth}); // add hour box to array
 			entry.appendChild(hourBox); // add hour box to entry
-			//$(".open-box").fadeIn();
 
 			entries[data['name']] = data;
 
