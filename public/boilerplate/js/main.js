@@ -53,9 +53,9 @@ var main = (function () {
 
 		// PUBLIC METHODS
 		// return data based on query
-		dataloader.getData = function(index)
+		dataloader.getData = function(type,index)
 		{	
-			if (index) return data[index];
+			if (type && index) return data[type][index];
 			// currently the query does nothing, we just return the mock JSON object
 			return data;
 		}
@@ -106,6 +106,9 @@ var main = (function () {
 				categories.init();
 				results.init();
 			}
+			categories.reset();
+			results.reset();
+				
 			lookupData( dataloader.getData(), searchTerm.value );
 		}
 
@@ -127,23 +130,98 @@ var main = (function () {
 		{
 			results.reset(); // clear results list
 
-			// iterate through three items in dataset
-			for (var d=0; d<3; d++)
+
+			var categoryList = data["categories"]; // list of categories
+			var providerList = data["providers"]; // list of providers
+
+
+			// iterate through categories
+			// iterates one level deep from found category match
+			var queue = [],
+		    	next = categoryList,
+		    	current,
+		    	selectCategories = [],
+		    	count = 0;
+		    while (next) {
+		        if ("children" in next) {
+		            for(var i=0;i<next["children"].length;i++){
+		            	current = next["children"][i];
+		            	if (current["name"].toLowerCase() == query.toLowerCase())
+		    			{
+		    				selectCategories.push(current);
+		    				console.log(current);
+		    				if ("children" in current)
+		    				{
+			    				for (var e=0;e<current["children"].length;e++)
+			    				{
+			    					selectCategories.push(current["children"][e]);
+			            			categories.addEntry( current["children"][e] , count++ );
+			            		}
+		            		}
+		    			}
+		            	queue.push( current );
+		            }
+		        }
+		        next = queue.shift();
+		    }
+
+			/*
+			// iterates through full subtree, to the end -- NOT USED!
+			var queue = [],
+		    	next = categoryList,
+		    	current,
+		    	inSubtree = false,
+		    	count = 0;
+		    while (next) {
+		        if ("children" in next) {
+		            for(var i=0;i<next["children"].length;i++){
+		            	current = next["children"][i];
+		            	if (inSubtree) 
+		            		{
+		            			queue.push( current );
+		            			categories.addEntry( current , count++ );
+		            		}
+		            	if (current["name"].toLowerCase() == query.toLowerCase())
+		    			{console.log( "found category match!" );
+		    				inSubtree = true;
+		    				queue.push( current );
+		    				break;
+		    			}
+		            }
+		        }
+		        next = queue.shift();
+		        console.log(next);
+		    }
+		    */
+
+		    
+			// iterate through items in dataset
+			var addedId = {};
+			for (var d=0; d<4; d++)
 			{
-				if (data[d]["name"] == query)
+				if ("name" in data["providers"][d] && data["providers"][d]["name"].toLowerCase() == query.toLowerCase())
 				{
 					//console.log("place");
 					results.addEntry( data[d] , d );
 				}
 				else
 				{
-					for (var c=0; c< data[d]["category"].length; c++)
+					if ("category" in data["providers"][d]["entry"])
 					{
-						 if (data[d]["category"][c] == query)
-						 {
-						 	//console.log("category");
-						 	results.addEntry( data[d] , d );
-						 }
+						for (var c=0; c< data["providers"][d]["entry"]["category"].length; c++)
+						{
+							for (var e=0;e<selectCategories.length;e++)
+							{
+								 if (data["providers"][d]["entry"]["category"][c] == selectCategories[e]["id"])
+								 {
+								 	//console.log("category");
+								 	//console.log( data["providers"][d]["entry"] );
+								 	if (!addedId[d]) results.addEntry( data["providers"][d]["entry"] , d );
+								 	addedId[d] = true;
+								 	break;
+								 }
+							}
+						}
 					}
 				}
 			}
@@ -181,9 +259,61 @@ var main = (function () {
 			categoryList.innerHTML = "";
 		}
 
+		categories.addEntry = function( data , catid )
+		{
+			// add category section
+			var entry = document.createElement("section");
+			entry.classList.add('category-entry');
+			entry.setAttribute("data-internalid", catid);
+				entry.innerHTML = "<span class='category-title'>"+data['name']+"</span>";
+			categoryList.appendChild(entry);
+
+			//maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
+
+			categories[data['name']] = data;
+
+			if (data['type'] != ENTRY.ERROR)
+			{
+				//entry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				//entry.addEventListener( "mouseover" , entryDetailsOver , false );
+				//entry.addEventListener( "mouseout" , entryDetailsOut , false );
+			}
+		}
 
 		// PRIVATE FUNCTIONS
-		
+		function entryDetailsClicked(evt)
+		{
+			var target = evt.toElement;
+			if (selectedEntry != target)
+			{
+				if (selectedEntry) 
+				{
+						selectedEntry.classList.remove("category-entry-hover");
+						selectedEntry.classList.remove("category-entry-selected");
+						selectedEntry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				}
+				selectedEntry = target;
+				target.classList.add("category-entry-selected");
+				target.removeEventListener( "mousedown" , entryDetailsClicked , false );
+
+				details.show( dataloader.getData( "categories" , target.getAttribute("data-internalid") ) );
+			}
+		}
+
+		function entryDetailsOver(evt)
+		{
+			var target = evt.toElement;
+			target.classList.add("category-entry-hover");
+		}
+
+		function entryDetailsOut(evt)
+		{
+			var target = evt.fromElement;
+			if (target != selectedEntry)
+			{
+				target.classList.remove("category-entry-hover");
+			}
+		}
 
 		return categories;
 	})();
@@ -205,7 +335,7 @@ var main = (function () {
 			resultsScreen = document.querySelector("#results-screen");		
 			resultsScreen.classList.remove("hide");
 			resultsList = resultsScreen.lastElementChild;
-			console.log(resultsList);
+
 			details.init(); // initialize details object
 			results.init = null;
 		}
@@ -215,12 +345,12 @@ var main = (function () {
 			resultsList.innerHTML = "";
 		}
 
-		results.addEntry = function( data , index )
+		results.addEntry = function( data , id )
 		{
 			// add entry section
 			var entry = document.createElement("section");
 			entry.classList.add('results-entry');
-			entry.setAttribute("data-internalid", index);
+			entry.setAttribute("data-internalid", id);
 				entry.innerHTML = "<span class='entry-title'>"+data['name']+"</span>";
 			resultsList.appendChild(entry);
 
@@ -267,13 +397,12 @@ var main = (function () {
 				target.classList.add("results-entry-selected");
 				target.removeEventListener( "mousedown" , entryDetailsClicked , false );
 
-				details.show( dataloader.getData( target.getAttribute("data-internalid") ) );
+				details.show( dataloader.getData( "providers" , target.getAttribute("data-internalid") ) );
 			}
 		}
 
 		function entryDetailsOver(evt)
 		{
-			console.log("over");
 			var target = evt.toElement;
 			target.classList.add("results-entry-hover");
 		}
@@ -311,14 +440,14 @@ var main = (function () {
 		{
 			detailScreen.classList.remove("hide");
 
-			detailScreen.innerHTML = '<h1 class="name">'+entry["name"]+'</h1>';
+			detailScreen.innerHTML = '<h1 class="name">'+entry["entry"]["name"]+'</h1>';
             detailScreen.innerHTML += '<p class="address">';
-            detailScreen.innerHTML += '<div class="street">✉ '+entry["address"]["street"]+'</div>';
-            detailScreen.innerHTML += '<div class="city">'+entry["address"]["city"]+'</div>';
-            detailScreen.innerHTML += '<div class="state">'+entry["address"]["state"]+'</div>';
-            detailScreen.innerHTML += '<div class="zip">'+entry["address"]["zip"]+'</div>';
+            detailScreen.innerHTML += '<div class="street">✉ '+entry["entry"]["address"]["street"]+'</div>';
+            detailScreen.innerHTML += '<div class="city">'+entry["entry"]["address"]["city"]+'</div>';
+            detailScreen.innerHTML += '<div class="state">'+entry["entry"]["address"]["state"]+'</div>';
+            detailScreen.innerHTML += '<div class="zip">'+entry["entry"]["address"]["zip"]+'</div>';
             detailScreen.innerHTML += '</p>';
-            detailScreen.innerHTML += '<p class="phone">☎ '+entry["phone"]+'</p>';
+            detailScreen.innerHTML += '<p class="phone">☎ '+entry["entry"]["phone"]+'</p>';
             //detailScreen.innerHTML += '<p class="streetview"><img src="http://maps.googleapis.com/maps/api/streetview?size=320x240&location='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&fov=80&heading='+entry["location"]["heading"]+'&pitch=10&sensor=false" /></p>';
             //detailScreen.innerHTML += '<p class="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C'+entry["location"]["lat"]+','+entry["location"]["lng"]+'&sensor=false" /></p>';
 			
