@@ -149,13 +149,14 @@ var main = (function () {
 		            	if (current["name"].toLowerCase() == query.toLowerCase())
 		    			{
 		    				selectCategories.push(current);
-		    				console.log(current);
+		    				//console.log(current);
+		    				categories.addEntry( current , count++ );
 		    				if ("children" in current)
 		    				{
 			    				for (var e=0;e<current["children"].length;e++)
 			    				{
 			    					selectCategories.push(current["children"][e]);
-			            			categories.addEntry( current["children"][e] , count++ );
+			            			categories.addEntry( current["children"][e] , count++ , true );
 			            		}
 		            		}
 		    			}
@@ -259,13 +260,17 @@ var main = (function () {
 			categoryList.innerHTML = "";
 		}
 
-		categories.addEntry = function( data , catid )
+		categories.addEntry = function( data , catid , isSubCategory )
 		{
 			// add category section
 			var entry = document.createElement("section");
 			entry.classList.add('category-entry');
+			
 			entry.setAttribute("data-internalid", catid);
-				entry.innerHTML = "<span class='category-title'>"+data['name']+"</span>";
+				var htmlValue = "<span class='category-title "
+				if (isSubCategory) htmlValue += "category-sub";
+				htmlValue += "'>"+data['name']+"</span>";
+				entry.innerHTML = htmlValue;
 			categoryList.appendChild(entry);
 
 			//maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
