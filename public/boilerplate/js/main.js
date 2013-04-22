@@ -90,6 +90,12 @@ var main = (function () {
 			$(mainContent).fadeIn();
 		}
 
+		search.setSearch = function(term)
+		{
+			searchTerm.value = term;
+			searchBtnClicked();
+		}
+
 		// PRIVATE METHODS
 		// search button was clicked
 		function searchBtnClicked(evt)
@@ -265,8 +271,9 @@ var main = (function () {
 			// add category section
 			var entry = document.createElement("section");
 			entry.classList.add('category-entry');
-			
+			if (!isSubCategory) entry.classList.add('category-entry-header');
 			entry.setAttribute("data-internalid", catid);
+			entry.setAttribute("title", data['name']);
 				var htmlValue = "<span class='category-title "
 				if (isSubCategory) htmlValue += "category-sub";
 				htmlValue += "'>"+data['name']+"</span>";
@@ -279,9 +286,9 @@ var main = (function () {
 
 			if (data['type'] != ENTRY.ERROR)
 			{
-				//entry.addEventListener( "mousedown" , entryDetailsClicked , false );
-				//entry.addEventListener( "mouseover" , entryDetailsOver , false );
-				//entry.addEventListener( "mouseout" , entryDetailsOut , false );
+				entry.addEventListener( "mousedown" , entryDetailsClicked , false );
+				entry.addEventListener( "mouseover" , entryDetailsOver , false );
+				entry.addEventListener( "mouseout" , entryDetailsOut , false );
 			}
 		}
 
@@ -289,6 +296,9 @@ var main = (function () {
 		function entryDetailsClicked(evt)
 		{
 			var target = evt.toElement;
+			search.setSearch(target.title);
+
+			/*
 			if (selectedEntry != target)
 			{
 				if (selectedEntry) 
@@ -303,6 +313,7 @@ var main = (function () {
 
 				details.show( dataloader.getData( "categories" , target.getAttribute("data-internalid") ) );
 			}
+			*/
 		}
 
 		function entryDetailsOver(evt)
@@ -314,10 +325,8 @@ var main = (function () {
 		function entryDetailsOut(evt)
 		{
 			var target = evt.fromElement;
-			if (target != selectedEntry)
-			{
+			//if (target != selectedEntry)
 				target.classList.remove("category-entry-hover");
-			}
 		}
 
 		return categories;
