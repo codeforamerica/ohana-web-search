@@ -58,14 +58,16 @@ ALPHABET.each do |letter|
     libraries_data[name]['type'] = "Library"
 
     i = 6
+    @day_hash = {}
     DAYS.each do |day|
       cells = library.css("td")
       opens_at = [[cells.at(i), cells.at(i+1)].join(""), cells.at(i+2)].join(" ")
       closes_at = [[cells.at(i+3), cells.at(i+4)].join(""), cells.at(i+5)].join(" ")
-      libraries_data[name]["#{day}_opens_at"] = opens_at
-      libraries_data[name]["#{day}_closes_at"] = closes_at
+      libraries_data[name]['business_hours'] = {}
+      @day_hash["#{day}"] = [{ "opens_at" => opens_at, "closes_at" => closes_at }]
       i += 8
     end
+    libraries_data[name]['business_hours'] = @day_hash
   end
 end
 
