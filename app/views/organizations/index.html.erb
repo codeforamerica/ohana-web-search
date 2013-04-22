@@ -1,0 +1,25 @@
+<h3>organizations</h3>
+<div class="span8">
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @organizations.each do |org| %>
+    <tr>
+      <td><%= link_to org.name, org %></td>
+      <td><%= org.street_address %></td>
+      <% org.business_hours.each do |day, hours| %>
+        <% hours.each do |hour| %>
+          <td><%= "#{day}: #{hour["opens_at"]} - #{hour["closes_at"]} " %></td>
+        <% end %>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
