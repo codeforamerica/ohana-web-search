@@ -5,19 +5,13 @@
     <tr>
       <th>Name</th>
       <th>Address</th>
-      <th>Hours</th>
     </tr>
   </thead>
   <tbody>
   <% @organizations.each do |org| %>
     <tr>
       <td><%= link_to org.name, org %></td>
-      <td><%= org.street_address %></td>
-      <% org.business_hours.each do |day, hours| %>
-        <% hours.each do |hour| %>
-          <td><%= "#{day}: #{hour["opens_at"]} - #{hour["closes_at"]} " %></td>
-        <% end %>
-      <% end %>
+      <td><%= org.address %></td>
     </tr>
   <% end %>
   </tbody>
