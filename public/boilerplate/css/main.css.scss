@@ -359,13 +359,49 @@ fade-out
 #category-screen h1
 {
     font-variant: small-caps;
-    font-size:0.7em;
+    font-size: 0.9em;
+    color: $primary_dark;
+}
+
+#category-screen h1,
+#category-screen a
+{
     font-family: Sans-Serif;
     letter-spacing: 1px;
     margin: 0px;
-    margin-left:20px;
+    padding: 10px;
+    cursor:default;
+}
+
+#category-screen h1
+{
+    margin-left:4px;
+    display: inline-block;
+}
+
+#category-screen nav
+{
+    display: inline-block;
+}
+
+#category-screen a
+{
+    font-size:0.7em;
+    font-weight:bold;
+    color:$secondary_dull;
+    padding-left:10px;
+    border-left:2px solid $secondary_bright;
+}
+
+#category-screen a.current-breadcrumb
+{
     color:$primary_dark;
-    padding: 5px;
+}
+
+#category-screen a.breadcrumb:hover
+{
+    text-decoration: underline;
+    cursor:pointer;
 }
 
 .category-entry
@@ -386,25 +422,15 @@ fade-out
 
 .category-entry > span
 {
-    pointer-events:none;
+    pointer-events: none;
     vertical-align: top;
-    padding:10px;
-    display:inline-block;
-}
-
-.category-entry-header
-{
-    background:$primary_light;
+    padding: 20px;
+    display: inline-block;
 }
 
 .category-entry .category-title
 {
     border-left:10px solid $secondary_bright;
-}
-
-.category-entry .category-sub
-{
-    padding-left:30px;
 }
 
 //=================================================================================
@@ -424,13 +450,15 @@ fade-out
 #results-screen h1
 {
     font-variant: small-caps;
-    font-size:0.7em;
+    font-size: 0.8em;
     font-family: Sans-Serif;
     letter-spacing: 1px;
     margin: 0px;
-    margin-left:20px;
-    color:$primary_dark;
-    padding: 5px;
+    margin-left: 4px;
+    color: $primary_dark;
+    padding: 10px;
+    display: inline-block;
+    cursor:default;
 }
 
 .results-entry
@@ -453,7 +481,7 @@ fade-out
 {
     pointer-events:none;
     vertical-align: top;
-    padding:10px;
+    padding:20px;
     display:inline-block;
 }
 

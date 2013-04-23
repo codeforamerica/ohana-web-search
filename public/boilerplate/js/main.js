@@ -136,42 +136,56 @@ var main = (function () {
 		{
 			results.reset(); // clear results list
 
-
 			var categoryList = data["categories"]; // list of categories
 			var providerList = data["providers"]; // list of providers
 
 
 			// iterate through categories
 			// iterates one level deep from found category match
-			var queue = [],
+			/*var queue = [],
 		    	next = categoryList,
 		    	current,
 		    	selectCategories = [],
-		    	count = 0;
+		    	count = 0,
+		    	breadCrumbs = [];
 		    while (next) {
+    	
 		        if ("children" in next) {
 		            for(var i=0;i<next["children"].length;i++){
 		            	current = next["children"][i];
-		            	if (current["name"].toLowerCase() == query.toLowerCase())
+
+			            breadCrumbs.push( current );
+
+			            if (current["name"].toLowerCase() == query.toLowerCase())
 		    			{
 		    				selectCategories.push(current);
 		    				//console.log(current);
-		    				categories.addEntry( current , count++ );
+							
 		    				if ("children" in current)
 		    				{
 			    				for (var e=0;e<current["children"].length;e++)
 			    				{
 			    					selectCategories.push(current["children"][e]);
-			            			categories.addEntry( current["children"][e] , count++ , true );
+			            			categories.addEntry( current["children"][e] , count++ );
 			            		}
 		            		}
+		            		break;
+		    			}
+		    			else
+		    			{
+		    				breadCrumbs.pop();
 		    			}
 		            	queue.push( current );
 		            }
 		        }
+		        else
+		        {
+		        	//console.log(current,breadCrumbs.shift());
+		        }
 		        next = queue.shift();
 		    }
-
+		    categories.buildBreadCrumbs(breadCrumbs);
+		    */
 			/*
 			// iterates through full subtree, to the end -- NOT USED!
 			var queue = [],
@@ -200,6 +214,78 @@ var main = (function () {
 		        console.log(next);
 		    }
 		    */
+
+			// breadth-first search		    
+		    var queue = [],
+		    	next = categoryList,
+		    	current,
+		    	selectCategories = [],
+		    	count = 0;
+		    while (next) {
+    	
+		        if ("children" in next) {
+		            for(var i=0;i<next["children"].length;i++){
+		            	current = next["children"][i];
+
+			            if (current["name"].toLowerCase() == query.toLowerCase())
+		    			{
+		    				selectCategories.push(current);
+		    				
+		    				if ("children" in current)
+		    				{
+			    				for (var e=0;e<current["children"].length;e++)
+			    				{
+			    					selectCategories.push(current["children"][e]);
+			            			categories.addEntry( current["children"][e] , count++ );
+			            		}
+		            		}
+		            		break;
+		    			}
+		            	queue.push( current );
+		            }
+		        }
+		        next = queue.shift();
+		    }
+
+
+		    // perform a depth-first search to build the breadcrumb trail
+		    var visited = {};
+		    var crumbs = [];
+		    var checkNew = false;
+		    next = categoryList;
+		    crumbs.push(categoryList);
+		    while(crumbs.length != 0)
+		    {
+		    	checkNew = false;
+		    	var t = crumbs[crumbs.length-1];
+		    	if ("name" in t && t["name"].toLowerCase() == query.toLowerCase())
+		    	{
+		    		break;
+		    	}
+		    	
+		    	if ("children" in t)
+		    	{
+			    	for (var e = 0; e < t["children"].length; e++)
+			    	{
+			    		var w = t["children"][e];
+			    		if ("id" in w && !visited[w["id"]])
+			    		{
+			    			if ("id" in w) visited[w["id"]] = true;
+			    			crumbs.push(w);
+			    			checkNew = true;
+			    			break;
+			    		}
+			    	}
+		    	}
+		    	if (!checkNew)
+		    	{
+		    		if ("id" in t) visited[t["id"]] = true;
+		    		crumbs.pop();
+		    	}
+		    }
+		    crumbs.shift(); // remove the first item, as it doesn't contain terms
+
+		    categories.buildBreadCrumbs(crumbs);
 
 		    
 			// iterate through items in dataset
@@ -250,12 +336,14 @@ var main = (function () {
 		var categories = {};
 
 		var categoryScreen;
+		var categoryScreenNav;
 		var categoryList;
 		var categories = {}; // object holding reference to all entry HTML
 
 		categories.init = function()
 		{
-			categoryScreen = document.querySelector("#category-screen");		
+			categoryScreen = document.querySelector("#category-screen");
+			categoryScreenNav= categoryScreen.firstElementChild.lastElementChild;
 			categoryScreen.classList.remove("hide");
 			categoryList = categoryScreen.lastElementChild;
 			categories.init = null;
@@ -266,18 +354,49 @@ var main = (function () {
 			categoryList.innerHTML = "";
 		}
 
+		categories.buildBreadCrumbs = function(list)
+		{
+			categories.resetBreadCrumb();
+			var breadCrumb;
+			for (var i = 0; i < list.length; i++)
+			{
+				breadCrumb = document.createElement("a");
+				breadCrumb.setAttribute("title",list[i]["name"]);
+				breadCrumb.innerHTML = list[i]["name"];
+				if (i != (list.length-1)) 
+				{
+						breadCrumb.addEventListener( "mousedown" , entryDetailsClicked , false );
+						breadCrumb.classList.add("breadcrumb");
+				}
+				else{ breadCrumb.classList.add("current-breadcrumb"); };
+				categoryScreenNav.appendChild(breadCrumb);
+			}
+		}
+		/*
+		categories.addBreadCrumb = function(text)
+		{
+			var breadCrumb = document.createElement("a");
+			breadCrumb.setAttribute("title",text);
+			breadCrumb.innerHTML = text;
+			categoryScreenNav.appendChild(breadCrumb);
+			breadCrumb.addEventListener( "mousedown" , entryDetailsClicked , false );
+		}
+		*/
+
+		categories.resetBreadCrumb = function()
+		{
+			categoryScreenNav.innerHTML = "";
+		}
+
+		// add an entry to the category results list
 		categories.addEntry = function( data , catid , isSubCategory )
 		{
 			// add category section
 			var entry = document.createElement("section");
 			entry.classList.add('category-entry');
-			if (!isSubCategory) entry.classList.add('category-entry-header');
 			entry.setAttribute("data-internalid", catid);
 			entry.setAttribute("title", data['name']);
-				var htmlValue = "<span class='category-title "
-				if (isSubCategory) htmlValue += "category-sub";
-				htmlValue += "'>"+data['name']+"</span>";
-				entry.innerHTML = htmlValue;
+			entry.innerHTML = "<span class='category-title'>"+data['name']+"</span>";
 			categoryList.appendChild(entry);
 
 			//maxWidthOfResult = Math.max(entry.firstElementChild.offsetWidth,maxWidthOfResult); // increment maximum width
