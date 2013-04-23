@@ -114,6 +114,7 @@ var main = (function () {
 			}
 			categories.reset();
 			results.reset();
+			//details.reset();
 				
 			lookupData( dataloader.getData(), searchTerm.value );
 		}
@@ -139,53 +140,6 @@ var main = (function () {
 			var categoryList = data["categories"]; // list of categories
 			var providerList = data["providers"]; // list of providers
 
-
-			// iterate through categories
-			// iterates one level deep from found category match
-			/*var queue = [],
-		    	next = categoryList,
-		    	current,
-		    	selectCategories = [],
-		    	count = 0,
-		    	breadCrumbs = [];
-		    while (next) {
-    	
-		        if ("children" in next) {
-		            for(var i=0;i<next["children"].length;i++){
-		            	current = next["children"][i];
-
-			            breadCrumbs.push( current );
-
-			            if (current["name"].toLowerCase() == query.toLowerCase())
-		    			{
-		    				selectCategories.push(current);
-		    				//console.log(current);
-							
-		    				if ("children" in current)
-		    				{
-			    				for (var e=0;e<current["children"].length;e++)
-			    				{
-			    					selectCategories.push(current["children"][e]);
-			            			categories.addEntry( current["children"][e] , count++ );
-			            		}
-		            		}
-		            		break;
-		    			}
-		    			else
-		    			{
-		    				breadCrumbs.pop();
-		    			}
-		            	queue.push( current );
-		            }
-		        }
-		        else
-		        {
-		        	//console.log(current,breadCrumbs.shift());
-		        }
-		        next = queue.shift();
-		    }
-		    categories.buildBreadCrumbs(breadCrumbs);
-		    */
 			/*
 			// iterates through full subtree, to the end -- NOT USED!
 			var queue = [],
@@ -215,7 +169,7 @@ var main = (function () {
 		    }
 		    */
 
-			// breadth-first search		    
+			// breadth-first search	to show category results.	    
 		    var queue = [],
 		    	next = categoryList,
 		    	current,
@@ -292,10 +246,10 @@ var main = (function () {
 			var addedId = {};
 			for (var d=0; d<4; d++)
 			{
-				if ("name" in data["providers"][d] && data["providers"][d]["name"].toLowerCase() == query.toLowerCase())
+				if (data["providers"][d]["entry"]["name"].toLowerCase() == query.toLowerCase())
 				{
 					//console.log("place");
-					results.addEntry( data[d] , d );
+					results.addEntry( data["providers"][d]["entry"] , d );
 				}
 				else
 				{
@@ -585,6 +539,11 @@ var main = (function () {
             //detailScreen.innerHTML += '<p class="map"><img src="http://maps.googleapis.com/maps/api/staticmap?center='+entry["location"]["lat"]+','+entry["location"]["lng"]+'&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C'+entry["location"]["lat"]+','+entry["location"]["lng"]+'&sensor=false" /></p>';
 			
 			formatOpeningHours();
+		}
+
+		details.reset = function()
+		{
+			detailScreen.innerHTML = "";
 		}
 
 		// returns opening hours
