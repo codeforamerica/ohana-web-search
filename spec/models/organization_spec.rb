@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Organization do
-  pending "add some examples to (or delete) #{__FILE__}"
+	
+	subject { FactoryGirl.build(:organization) }
+
+	it { should respond_to(:address) }
+	
+	its(:address) { should == "#{subject.street_address}, #{subject.city}, #{subject.state} #{subject.zipcode}" }
+
 end
