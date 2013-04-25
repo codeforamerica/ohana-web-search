@@ -1,0 +1,11 @@
+%h3
+  %span{:id => 'results_count'}
+    == #{@results_count}
+  %br/
+%table.table
+  - @locations.each do |location|
+    %tr{:id=>"location_#{location.id}"}
+      %td
+        %h3
+          = link_to location.name, organization_path(location)
+        = location.address
