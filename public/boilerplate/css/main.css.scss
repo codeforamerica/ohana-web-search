@@ -93,14 +93,19 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-//color scheme: corporate trust from kuler.com;
-$primary_dark: rgb(3,73,126);       // #03497E
-$primary_midtone: rgb(5,150,213);   // #0596D5
-$primary_light: rgb(157,235,252);   // #9DEBFC
-$secondary_bright: rgb(255,235,27);  // #ffeb1b
-$secondary_midbright: rgb(131,180,26);  // #83B41A
-$secondary_dull: rgb(153,153,153);  // #999999
-$tertiary_dull: hsla(84,89%,68%,0.7); // #d1f994
+//color scheme
+$blue_dark: rgb(3,73,126);       // #03497E
+$blue_midtone: rgb(5,150,213);   // #0596D5
+$light_blue: rgb(157,235,252);   // #9DEBFC
+
+$yellow_dark: rgb(255,235,27);  // #ffeb1b
+$yellow_light: #e4e1a1;
+
+$green_dark: rgb(131,180,26);  // #83B41A
+$green_light: hsla(84,89%,68%,0.7); // #d1f994
+
+$greyscale_midtone: rgb(153,153,153);  // #999999
+
 
 
 html,body
@@ -136,7 +141,7 @@ fade-out
 .mini 
 #logo a
 {
-    color:$primary_light;
+    color:$light_blue;
     text-decoration:none;
     display:block;
 }
@@ -144,7 +149,7 @@ fade-out
 #logo a
 {
     font-size:1.4em;
-    color:$primary_midtone;
+    color:$blue_midtone;
     padding:10px;
     padding-left:18px;
     text-decoration:none;
@@ -152,7 +157,7 @@ fade-out
 }
 
 #splash-screen {
-    background:$primary_dark;
+    background:$blue_dark;
     
     top: 0;
     left: 0;
@@ -168,7 +173,7 @@ fade-out
     position: absolute;
     top:0;
     left:0;
-    background:$secondary_bright;
+    background:$yellow_dark;
     width:100%;
     padding:20px;
     margin:0px;
@@ -180,15 +185,15 @@ fade-out
 {
     min-height:100%;
 
-    background:$primary_midtone;
+    background:$blue_midtone;
 
-    background: $primary_midtone; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  $primary_midtone 20%, $primary_dark 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%,$primary_midtone), color-stop(100%,$primary_dark)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  $primary_midtone 20%,$primary_dark 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  $primary_midtone 20%,$primary_dark 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  $primary_midtone 20%,$primary_dark 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  $primary_midtone 20%,$primary_dark 100%); /* W3C */
+    background: $blue_midtone; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  $blue_midtone 20%, $blue_dark 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%,$blue_midtone), color-stop(100%,$blue_dark)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  $blue_midtone 20%,$blue_dark 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 }
@@ -199,7 +204,7 @@ fade-out
     -webkit-transition: min-height 0.25s; /* Safari */
 
     min-height:100px;
-    background:$primary_midtone;
+    background:$blue_midtone;
 }
 
 #search-box.mini
@@ -223,16 +228,16 @@ fade-out
 
 #search-box.mini label span
 {
-    color:$primary_light;
+    color:$light_blue;
 }
 
 #search-box.mini input
 {
-    background:$primary_light;
+    background:$light_blue;
     padding:10px;
     position: relative;
     top: 6px;
-    border-color:$primary_midtone;
+    border-color:$blue_midtone;
     border-collapse: collapse;
     height:0px;
     margin-right:20px;
@@ -241,15 +246,15 @@ fade-out
 
 #search-box.mini input::-webkit-input-placeholder
 {
-    color:$secondary_dull;
+    color:$greyscale_midtone;
 }
 
 #search-box.mini button
 {
-    background:$secondary_midbright;
+    background:$green_dark;
     margin:10px auto;
-    color:$secondary_bright;
-    border:1px solid $secondary_bright;
+    color:$yellow_dark;
+    border:1px solid $yellow_dark;
     font-family: 'Average', serif;
     font-size:1.2em;
     letter-spacing: 1px;
@@ -261,8 +266,8 @@ fade-out
 
 #search-box.mini button:hover
 {
-    outline:4px solid $primary_dark;
-    color:$primary_dark;
+    outline:4px solid $blue_dark;
+    color:$blue_dark;
 }
 
 #search-box.large 
@@ -286,41 +291,41 @@ fade-out
     display:table-cell;
     font-size: 3em;
     letter-spacing: 2px;
-    color:$primary_dark;
+    color:$blue_dark;
     text-align: right;
     width: 300px;
 }
 
 #search-box.large label span
 {
-    color:$primary_light;
+    color:$light_blue;
 }
 
 #search-box.large input
 {
     display:table-cell;
-    background:$primary_light;
+    background:$light_blue;
     padding:10px;
     margin-left: 20px;
     position: relative;
     top: -10px;
-    border-color:$primary_midtone;
+    border-color:$blue_midtone;
     border-collapse: collapse;
     width:300px;
 }
 
 #search-box.large input::-webkit-input-placeholder
 {
-    color:$secondary_dull;
+    color:$greyscale_midtone;
 }
 
 #search-box.large button
 {
     display:table-cell;
-    background:$secondary_midbright;
+    background:$green_dark;
     margin:10px auto;
-    color:$secondary_bright;
-    border:2px solid $secondary_bright;
+    color:$yellow_dark;
+    border:2px solid $yellow_dark;
     font-family: 'Average', serif;
     font-size:1.2em;
     letter-spacing: 1px;
@@ -330,8 +335,8 @@ fade-out
 
 #search-box.large button:hover
 {
-    outline:4px solid $primary_dark;
-    color:$primary_dark;
+    outline:4px solid $blue_dark;
+    color:$blue_dark;
 }
 
 /*
@@ -360,7 +365,7 @@ fade-out
 {
     font-variant: small-caps;
     font-size: 0.9em;
-    color: $primary_dark;
+    color: $blue_dark;
 }
 
 #category-screen h1,
@@ -388,14 +393,14 @@ fade-out
 {
     font-size:0.7em;
     font-weight:bold;
-    color:$secondary_dull;
+    color:$greyscale_midtone;
     padding-left:10px;
-    border-left:2px solid $secondary_bright;
+    border-left:2px solid $yellow_dark;
 }
 
 #category-screen a.current-breadcrumb
 {
-    color:$primary_dark;
+    color:$blue_dark;
 }
 
 #category-screen a.breadcrumb:hover
@@ -406,18 +411,18 @@ fade-out
 
 .category-entry
 {
-    border-bottom:1px dashed $primary_light;
+    border-bottom:1px dashed $light_blue;
 }
 
 .category-entry-hover
 {
-    background:$primary_light;
+    background:$light_blue;
     cursor:pointer;
 }
 
 .category-entry-selected
 {
-    background:$secondary_bright;
+    background:$yellow_dark;
 }
 
 .category-entry > span
@@ -430,7 +435,7 @@ fade-out
 
 .category-entry .category-title
 {
-    border-left:10px solid $secondary_bright;
+    border-left:10px solid $yellow_dark;
 }
 
 //=================================================================================
@@ -455,7 +460,7 @@ fade-out
     letter-spacing: 1px;
     margin: 0px;
     margin-left: 4px;
-    color: $primary_dark;
+    color: $blue_dark;
     padding: 10px;
     display: inline-block;
     cursor:default;
@@ -463,18 +468,18 @@ fade-out
 
 .results-entry
 {
-    border-bottom:1px dashed $primary_light;
+    border-bottom:1px dashed $light_blue;
 }
 
 .results-entry-hover
 {
-    background:$primary_light;
+    background:$light_blue;
     cursor:pointer;
 }
 
 .results-entry-selected
 {
-    background:$secondary_bright;
+    background:$yellow_dark;
 }
 
 .results-entry > span
@@ -487,13 +492,13 @@ fade-out
 
 .results-entry .entry-title
 {
-    border-left:10px solid $secondary_bright;
+    border-left:10px solid $yellow_dark;
 }
 
 .results-entry .hour-box
 {
     //opacity:0;
-    background-color:$tertiary_dull;
+    background-color:$green_light;
     border:1px solid hsla(0,0%,0%,0.1);
     font-size: 10px;
     padding: 5px;
@@ -509,7 +514,7 @@ fade-out
 
 .results-entry .hour-box span:last-child
 {
-    //color:$secondary_dull;
+    //color:$greyscale_midtone;
 }
 
 #detail-screen
@@ -525,14 +530,14 @@ fade-out
 
 #detail-screen .streetview
 {
-    border:1px solid $secondary_dull;
+    border:1px solid $greyscale_midtone;
     width:320px;
     height:240px;
 }
 
 #detail-screen .map
 {
-    border:1px solid $secondary_dull;
+    border:1px solid $greyscale_midtone;
     width:320px;
     height:240px;
 }
@@ -574,8 +579,8 @@ fade-out
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    background:$secondary_bright;
-    border: 1px solid $secondary_midbright;
+    background:$yellow_dark;
+    border: 1px solid $green_dark;
     color:#000;
     position: absolute;
     top: -40px;
@@ -593,9 +598,9 @@ fade-out
 {
     width:10px;
     height:10px;
-    background:$secondary_bright;
-    border-right: 1px solid $secondary_midbright;
-    border-bottom: 1px solid $secondary_midbright;
+    background:$yellow_dark;
+    border-right: 1px solid $green_dark;
+    border-bottom: 1px solid $green_dark;
     transform: rotate(45deg) ;
     -webkit-transform: rotate(45deg) ;
     -moz-transform: rotate(45deg) ;
