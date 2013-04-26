@@ -33,6 +33,10 @@ To load the [libraries data](https://github.com/codeforamerica/human_services_fi
 
     rake load_data
 
+Create the geospatial indices for the [geocoder](https://github.com/alexreisner/geocoder) gem:
+
+    rake db:mongoid:create_indexes
+
 To run locally:
 
     unicorn
