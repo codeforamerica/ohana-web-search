@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= content_for?(:title) ? yield(:title) : "Human Services Finder" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Human Services Finder" %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
+
+  <section id="splash-screen">
+    <h1>Loading...</h1>
+  </section>
+
+  <section id="main-content" class="fullscreen">
+  <header><div id="logo"><a href="/boilerplate/">Human Services Finder</a></div></header>
+  <section id="search-screen">
+      <!--<form>-->
+          <datalist id="categories">
+              <option value="food" />
+              <option value="food pantry" />
+              <option value="food bank" />
+              <option value="Samaritan House" />
+          </datalist>
+          <section id="search-box" class="large">
+              <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
+              <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
+              <div><label for="search-near">I am near <span>→</span></label><input id="search-near" type="text" placeholder="e.g. san mateo, ca" /></div>
+              <div><button id="search-btn">Find >>></button></div>
+          </section>
+      <!--</form>-->
+  </section>
+
+  <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
+</section>
+
+
     <div class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
