@@ -141,7 +141,7 @@ fade-out
 	border-radius: 3px;
 	padding: 10px 20px 20px 20px;
 	overflow: hidden;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+	box-shadow: 0 2px 5px $greyscale_dark_trans;
 
 	-webkit-transition: top $default_duration;
 	-moz-transition: top $default_duration;
@@ -348,6 +348,85 @@ fade-out
     color:$blue_dark;
 }
 
+
+//=================================================================================
+// Results list screen
+    
+#results-screen
+{
+    background: #fff;
+}
+
+#results-screen header
+{
+    border-bottom:1px solid hsl(0,0%,90%);
+    background:#f9f594;    
+}
+
+#results-screen h1
+{
+    font-variant: small-caps;
+    font-size: 0.8em;
+    font-family: Sans-Serif;
+    letter-spacing: 1px;
+    margin: 0px;
+    margin-left: 4px;
+    color: $blue_dark;
+    padding: 10px;
+    display: inline-block;
+    cursor:default;
+}
+
+.results-entry
+{
+    border-bottom:1px dashed $blue_light;
+}
+
+.results-entry-hover
+{
+    background:$blue_light;
+    cursor:pointer;
+}
+
+.results-entry-selected
+{
+    background:$yellow_dark;
+}
+
+.results-entry > span
+{
+    pointer-events:none;
+    vertical-align: top;
+    padding:20px;
+    display:inline-block;
+}
+
+.results-entry .entry-title
+{
+    border-left:10px solid $yellow_dark;
+}
+
+.results-entry .hour-box
+{
+    //opacity:0;
+    background-color:$green_light;
+    border:1px solid hsla(0,0%,0%,0.1);
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: Sans-Serif;
+    letter-spacing: 1px;
+}
+
+.results-entry .hour-box span:first-child
+{
+    font-weight: bold;
+}
+
+.results-entry .hour-box span:last-child
+{
+    //color:$greyscale_midtone;
+}
 
 //=================================================================================
 /* temporary styling */

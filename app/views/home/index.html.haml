@@ -1,14 +1,19 @@
-.hero-unit
-  %h1
-    Find resources near you
-  %p
-    %br/
-    This site will help you find local resources near you and gives detailed information on the services available at each location.  To get started, enter your address or ZIP code below and click "Search".
-  %p
-    %br/
-    = form_tag('/organizations', :method => :get)
-    Within
-    = select_tag :miles, options_for_select([['1 mile', 1],['2 miles', 2],['3 miles', 3],['4 miles', 4],['5 miles', 5],['10 miles', 10],['20 miles', 20],['30 miles', 30],['40 miles', 40],['50 miles', 50]], :selected => 2)
-    of 
-    = text_field_tag :address, nil, :placeholder => "Address, City, State or ZIP code"
-    = submit_tag "Search", :class => 'btn-primary'
+%section#search-screen
+  = form_tag('/organizations', :method => :get)         
+  %section#search-box.large
+    %div
+      %label{:for => "search-term"}
+        I need
+        %span
+          →
+        %input#search-term{:type => "text",:placeholder =>"e.g. food"}         
+
+    %div
+      %label{:for => "search-near"}
+        I am near
+        %span
+          →
+        = text_field_tag :address, nil, :placeholder => "e.g. san mateo, ca"
+        = select_tag :miles, options_for_select([['1 mile', 1],['2 miles', 2],['3 miles', 3],['4 miles', 4],['5 miles', 5],['10 miles', 10],['20 miles', 20],['30 miles', 30],['40 miles', 40],['50 miles', 50]], :selected => 2)
+    %div/
+    = button_tag "Find >>>"
