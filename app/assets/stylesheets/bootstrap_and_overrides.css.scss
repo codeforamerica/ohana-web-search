@@ -84,13 +84,13 @@ fade-out
 
 #help-screen
 {
+	cursor: pointer;
 	z-index: 999998;
 	position: fixed;
 	left: 0;
 	right: 0;
 	top: 0;
 	bottom: 0;
-	cursor: pointer;
 	background: hsla(0,100%,100%,0.8);
 	/*
 	-webkit-transition: opacity 200ms;
@@ -102,15 +102,19 @@ fade-out
 #help-screen.max
 {
 	left:0;
+	pointer-events:auto;
 }
 
 #help-screen.mini
 {
 	left:auto;
+	pointer-events:none;
 }
 
 #help-screen div
 {
+	pointer-events:auto;
+
 	top:-99999px;
 	background:$blue_light;
 	position: absolute;
