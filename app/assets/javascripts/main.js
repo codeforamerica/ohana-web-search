@@ -90,7 +90,7 @@ var main = (function () {
 		// PUBLIC METHODS
 		infoScreen.init = function()
 		{
-			console.log("initialized infoscreen");
+			//console.log("initialized infoscreen");
 			helpScreen = document.getElementById("help-screen");
 			infoBox = helpScreen.firstElementChild;
 
@@ -104,7 +104,6 @@ var main = (function () {
 		// PUBLIC METHODS
 		infoScreen.maximize = function()
 		{
-			console.log("maximize");
 			// setup minimize handlers
 			helpScreen.removeEventListener("mousedown",maximizeHandler,false);
 
@@ -122,8 +121,7 @@ var main = (function () {
 		
 		infoScreen.minimize = function()
 		{
-			console.log("minimize");
-
+			// style help screen, change content and set web storage
 			helpScreen.classList.add("mini");
 			helpScreen.classList.remove("max");
 			infoBox.innerHTML = minContent;
@@ -142,14 +140,12 @@ var main = (function () {
 		// minimize the info/help box
 		function minimizeHandler(evt)
 		{
-			console.log("mini clicked",evt.target);
 			infoScreen.minimize();
 		}
 
 		// expand the info/help box
 		function maximizeHandler(evt)
 		{
-			console.log("maxi clicked",evt.target);
 			infoScreen.maximize();
 		}
 

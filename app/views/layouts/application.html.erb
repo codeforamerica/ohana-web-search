@@ -32,50 +32,15 @@
   </section>
 
   <section id="main-content" class="fullscreen">
-  <header><div id="logo"><a href="/boilerplate/">Human Services Finder</a></div></header>
-  <section id="search-screen">
-      <!--<form>-->
-          <datalist id="categories">
-              <option value="food" />
-              <option value="food pantry" />
-              <option value="food bank" />
-              <option value="Samaritan House" />
-          </datalist>
-          <section id="search-box" class="large">
-              <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
-              <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
-              <div><label for="search-near">I am near <span>→</span></label><input id="search-near" type="text" placeholder="e.g. san mateo, ca" /></div>
-              <div><button id="search-btn">Find >>></button></div>
-          </section>
-      <!--</form>-->
-  </section>
+  <header><!--<div id="logo"><a href="/boilerplate/">Human Services Finder</a></div>-->
+  <%= render 'layouts/navigation' %>
+  </header>
+  
+  <%= render 'layouts/messages' %>
+              <%= yield %>
 
   <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
-</section>
+  </section>
 
-
-
-
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
-    </div>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
   </body>
 </html>
