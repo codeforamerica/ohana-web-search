@@ -1,3 +1,163 @@
 @import "bootstrap";
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+//color scheme
+$blue_dark: rgb(3,73,126);              // #03497E
+$blue_midtone: rgb(5,150,213);          // #0596D5
+$blue_light: rgb(157,235,252);          // #9DEBFC
+
+$yellow_dark: rgb(255,235,27);          // #ffeb1b
+$yellow_light: #e4e1a1;
+
+$green_dark: rgb(131,180,26);           // #83B41A
+$green_light: hsla(84,89%,68%,0.7);     // #d1f994
+
+$greyscale_midtone: rgb(153,153,153);   // #999999
+$greyscale_light: #fff;                 // #ffffff
+
+
+
+html,body
+{
+    height: 100%;
+    font-family: 'Average', serif;
+}
+
+
+// effects styles
+.hide
+{
+   display:none !important; 
+}
+
+.transparent
+{
+    opacity:0;
+}
+
+.fade-in
+{
+    opacity:1;
+    transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s; /* Safari */
+}
+
+fade-out
+{
+    opacity:0;
+    transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s; /* Safari */
+}
+
+
+// splashscreen styles
+#splash-screen {
+	z-index: 999999;
+    background:$blue_dark;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    position: fixed;
+}
+
+#splash-screen h1
+{
+    position: absolute;
+    top:0;
+    left:0;
+    background:$yellow_dark;
+    width:100%;
+    padding:20px;
+    margin:0px;
+    text-align:center;
+    font-size:1.4em;
+}
+
+#help-screen
+{
+	z-index: 999998;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	cursor: pointer;
+	background: hsla(0,100%,100%,0.8);
+	/*
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	transition: opacity 200ms;
+	*/
+}
+
+#help-screen.max
+{
+	left:0;
+}
+
+#help-screen.mini
+{
+	left:auto;
+}
+
+#help-screen div
+{
+	top:-99999px;
+	background:$blue_light;
+	position: absolute;
+	z-index: 999997;
+
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 13px;
+	line-height: 20px;
+	box-sizing: border-box;
+//	top: -99999px;
+	border-radius: 3px;
+	padding: 10px 20px 20px 20px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+	-webkit-transition: background 250ms;
+	-moz-transition: background 250ms;
+	transition: background 250ms;
+
+	-webkit-transition: top 250ms;
+	-moz-transition: top 250ms;
+	transition: top 250ms;
+}
+
+#help-screen.max div
+{
+	left:50%;	
+	margin-left:-250px;
+	width:500px;
+	
+	top:-10px;
+}
+
+#help-screen.mini div
+{
+	right:20px;
+	height: 70px;
+
+	top:-10px;
+}
+
+#help-screen.mini div h1
+{
+	font-size: 1.5em;
+}
+
+#help-screen div.mini:hover
+{
+	background:$blue_midtone;
+}
+
