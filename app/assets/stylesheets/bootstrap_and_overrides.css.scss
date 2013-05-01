@@ -125,9 +125,6 @@ fade-out
 	padding: 10px 20px 20px 20px;
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
-	-webkit-transition: background 250ms;
-	-moz-transition: background 250ms;
-	transition: background 250ms;
 
 	-webkit-transition: top 250ms;
 	-moz-transition: top 250ms;
@@ -156,8 +153,13 @@ fade-out
 	font-size: 1.5em;
 }
 
-#help-screen div.mini:hover
+#help-screen.mini div.over
 {
 	background:$blue_midtone;
+
+	-webkit-transition: background 150ms;
+	-moz-transition: background 150ms;
+	transition: background 150ms;
+
 }
 

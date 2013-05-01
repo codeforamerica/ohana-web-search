@@ -103,18 +103,38 @@ var main = (function () {
 			infoBox.innerHTML = minContent;
 		}
 		// PRIVATE METHODS
+		// minimize the info/help box
 		function minimizeHandler()
 		{
 			infoScreen.minimize();
 			helpScreen.removeEventListener("mousedown",minimizeHandler,false);
 			helpScreen.addEventListener("mousedown",maximizeHandler,false);
+
+			// rollover for the infobox
+			infoBox.addEventListener("mouseover",miniOverHandler,false);
+			infoBox.addEventListener("mouseout",miniOutHandler,false);
 		}
 
+		// expand the info/help box
 		function maximizeHandler()
 		{
+			infoBox.removeEventListener("mouseover",miniOverHandler,false);
+			infoBox.addEventListener("mouseout",miniOutHandler,false);
+
 			infoScreen.maximize();
 			helpScreen.removeEventListener("mousedown",maximizeHandler,false);
 			helpScreen.addEventListener("mousedown",minimizeHandler,false);
+		}
+
+		// rollover handlers for the minified info/help box
+		function miniOverHandler()
+		{
+			infoBox.classList.add("over");
+		}
+
+		function miniOutHandler()
+		{
+			infoBox.classList.remove("over");
 		}
 
 		return infoScreen;
