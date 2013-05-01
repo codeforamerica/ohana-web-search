@@ -25,6 +25,10 @@ $green_light: hsl(84,89%,68%);     				// #d1f994
 $greyscale_midtone: rgb(153,153,153);   		// #999999
 $greyscale_light: #fff;                 		// #ffffff
 
+
+//animation settings
+$default_duration: 150ms;
+
 //=================================================================================
 
 
@@ -139,9 +143,9 @@ fade-out
 	overflow: hidden;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 
-	-webkit-transition: top 250ms;
-	-moz-transition: top 250ms;
-	transition: top 250ms;
+	-webkit-transition: top $default_duration;
+	-moz-transition: top $default_duration;
+	transition: top $default_duration;
 }
 
 #help-screen.max div
@@ -159,6 +163,10 @@ fade-out
 	height: 70px;
 
 	top:-10px;
+
+	-webkit-transition: height $default_duration;
+	-moz-transition: height $default_duration;
+	transition: height $default_duration;
 }
 
 #help-screen.mini div h1
@@ -170,9 +178,9 @@ fade-out
 {
 	background:$blue_midtone;
 
-	-webkit-transition: background 150ms;
-	-moz-transition: background 150ms;
-	transition: background 150ms;
+	-webkit-transition: background $default_duration;
+	-moz-transition: background $default_duration;
+	transition: background $default_duration;
 
 }
 
