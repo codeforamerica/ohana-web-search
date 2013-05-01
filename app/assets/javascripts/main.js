@@ -11,6 +11,14 @@ var main = (function () {
 		busyManager.init(); // initialize splash screen manager
 		busyManager.hide();
 		infoScreen.init(); // initializae help screen
+		if (webStorageProxy.getItem(infoScreen.storageName))
+		{
+			infoScreen.minimize();
+		}
+		else
+		{
+			infoScreen.maximize();
+		}
 		//testSequence();
 	}
 
@@ -69,70 +77,89 @@ var main = (function () {
 		var infoScreen = (function(){
 		var infoScreen = {};
 
-		var helpScreen; // loading screen
-		var infoBox;
+		// PRIVATE PROPERTIES
+		var helpScreen; // help screen that covers content
+		var infoBox; // info box on help screen
 
-		var maxContent;
-		var minContent;
+		var maxContent; // content in maximized info box
+		var minContent; // content in minimized info box
+
+		// PUBLIC PROPERTIES
+		infoScreen.storageName = "hrl-infoscreen";
 
 		// PUBLIC METHODS
 		infoScreen.init = function()
 		{
+			console.log("initialized infoscreen");
 			helpScreen = document.getElementById("help-screen");
 			infoBox = helpScreen.firstElementChild;
 
 			maxContent = infoBox.innerHTML;
 			minContent = "<h1>?</h1>";
-			helpScreen.addEventListener("mousedown",minimizeHandler,false);
+
+			//helpScreen.addEventListener("mousedown",minimizeHandler,false);
+			//infoBox.addEventListener("mousedown",minimizeHandler,false);
 		}
 
 		// PUBLIC METHODS
 		infoScreen.maximize = function()
 		{
+			console.log("maximize");
+			// setup minimize handlers
+			helpScreen.removeEventListener("mousedown",maximizeHandler,false);
+
 			helpScreen.classList.remove("hide");
 			helpScreen.classList.remove("mini");
 			helpScreen.classList.add("max");
 			infoBox.innerHTML = maxContent;
+
+			// remove rollover for the infobox
+			infoBox.removeEventListener("mouseover",miniOverHandler,false);
+			infoBox.removeEventListener("mouseout",miniOutHandler,false);
+			
+			helpScreen.addEventListener("mousedown",minimizeHandler,false);
 		}
 		
 		infoScreen.minimize = function()
 		{
-			//helpScreen.classList.add("hide");
+			console.log("minimize");
+
 			helpScreen.classList.add("mini");
 			helpScreen.classList.remove("max");
 			infoBox.innerHTML = minContent;
+			webStorageProxy.setItem(infoScreen.storageName,true)
+
+			// add rollover for the infobox
+			infoBox.addEventListener("mouseover",miniOverHandler,false);
+			infoBox.addEventListener("mouseout",miniOutHandler,false);
+
+			// setup maximize handlers
+			helpScreen.addEventListener("mousedown",maximizeHandler,false);	
+
+			miniOutHandler();
 		}
 		// PRIVATE METHODS
 		// minimize the info/help box
-		function minimizeHandler()
+		function minimizeHandler(evt)
 		{
+			console.log("mini clicked",evt.target);
 			infoScreen.minimize();
-			helpScreen.removeEventListener("mousedown",minimizeHandler,false);
-			helpScreen.addEventListener("mousedown",maximizeHandler,false);
-
-			// rollover for the infobox
-			infoBox.addEventListener("mouseover",miniOverHandler,false);
-			infoBox.addEventListener("mouseout",miniOutHandler,false);
 		}
 
 		// expand the info/help box
-		function maximizeHandler()
+		function maximizeHandler(evt)
 		{
-			infoBox.removeEventListener("mouseover",miniOverHandler,false);
-			infoBox.addEventListener("mouseout",miniOutHandler,false);
-
+			console.log("maxi clicked",evt.target);
 			infoScreen.maximize();
-			helpScreen.removeEventListener("mousedown",maximizeHandler,false);
-			helpScreen.addEventListener("mousedown",minimizeHandler,false);
 		}
 
 		// rollover handlers for the minified info/help box
-		function miniOverHandler()
+		function miniOverHandler(evt)
 		{
 			infoBox.classList.add("over");
 		}
 
-		function miniOutHandler()
+		function miniOutHandler(evt)
 		{
 			infoBox.classList.remove("over");
 		}
