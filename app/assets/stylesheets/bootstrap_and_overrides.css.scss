@@ -1,5 +1,4 @@
 @import "bootstrap";
-body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
 
@@ -7,20 +6,26 @@ body { padding-top: 60px; }
    Author's custom styles
    ========================================================================== */
 
-//color scheme
-$blue_dark: rgb(3,73,126);              // #03497E
-$blue_midtone: rgb(5,150,213);          // #0596D5
-$blue_light: rgb(157,235,252);          // #9DEBFC
+//=================================================================================
+// CONSTANTS
 
-$yellow_dark: rgb(255,235,27);          // #ffeb1b
+//color scheme
+$blue_dark: rgb(3,73,126);              		// #03497E
+$blue_midtone: rgb(5,150,213);          		// #0596D5
+$blue_light: rgb(157,235,252);          		// #9DEBFC
+
+$yellow_dark: rgb(255,235,27);          		// #ffeb1b
 $yellow_light: #e4e1a1;
 
-$green_dark: rgb(131,180,26);           // #83B41A
-$green_light: hsla(84,89%,68%,0.7);     // #d1f994
+$green_dark: rgb(131,180,26);           		// #83B41A
+$green_light: hsl(84,89%,68%);     				// #d1f994
+	$green_light_trans: hsla(84,89%,68%,0.7);	// #d1f994
 
-$greyscale_midtone: rgb(153,153,153);   // #999999
-$greyscale_light: #fff;                 // #ffffff
+	$greyscale_dark_trans: hsla(0,0%,0%,0.4);	// #000000
+$greyscale_midtone: rgb(153,153,153);   		// #999999
+$greyscale_light: #fff;                 		// #ffffff
 
+//=================================================================================
 
 
 html,body
@@ -30,6 +35,7 @@ html,body
 }
 
 
+//=================================================================================
 // effects styles
 .hide
 {
@@ -56,6 +62,7 @@ fade-out
 }
 
 
+//=================================================================================
 // splashscreen styles
 #splash-screen {
 	z-index: 999999;
@@ -82,6 +89,8 @@ fade-out
     font-size:1.4em;
 }
 
+//=================================================================================
+// help/info box
 #help-screen
 {
 	cursor: pointer;
@@ -91,7 +100,7 @@ fade-out
 	right: 0;
 	top: 0;
 	bottom: 0;
-	background: hsla(0,100%,100%,0.8);
+	background: $greyscale_dark_trans;
 	/*
 	-webkit-transition: opacity 200ms;
 	-moz-transition: opacity 200ms;
@@ -167,3 +176,176 @@ fade-out
 
 }
 
+//=================================================================================
+// main content box
+#main-content.fullscreen
+{
+    min-height:100%;
+
+    background:$blue_midtone;
+
+    background: $blue_midtone; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  $blue_midtone 20%, $blue_dark 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%,$blue_midtone), color-stop(100%,$blue_dark)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  $blue_midtone 20%,$blue_dark 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+#main-content.mini
+{
+    transition: min-height 0.25s;
+    -webkit-transition: min-height 0.25s; /* Safari */
+
+    min-height:100px;
+    background:$blue_midtone;
+}
+
+
+//=================================================================================
+// search box styles
+#search-box.mini
+{
+    text-align:center;
+}
+
+#search-box.mini div
+{
+    display:inline;
+}
+
+#search-box.mini label
+{
+    font-size: 1em;
+    letter-spacing: 2px;
+    color:#fff;
+    text-align: right;
+    width: 300px;
+}
+
+#search-box.mini label span
+{
+    color:$blue_light;
+}
+
+#search-box.mini input
+{
+    background:$blue_light;
+    padding:10px;
+    position: relative;
+    top: 6px;
+    border-color:$blue_midtone;
+    border-collapse: collapse;
+    height:0px;
+    margin-right:20px;
+    font-size: 0.8em;
+}
+
+#search-box.mini input::-webkit-input-placeholder
+{
+    color:$greyscale_midtone;
+}
+
+#search-box.mini button
+{
+    background:$green_dark;
+    margin:10px auto;
+    color:$yellow_dark;
+    border:1px solid $yellow_dark;
+    font-family: 'Average', serif;
+    font-size:1.2em;
+    letter-spacing: 1px;
+    width:75px;
+    font-size: 0.8em;
+    position:relative;
+    top:-3px;
+}
+
+#search-box.mini button:hover
+{
+    outline:4px solid $blue_dark;
+    color:$blue_dark;
+}
+
+#search-box.large 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -100px; 
+    width: 600px;
+    display: table;
+}
+
+#search-box.large  div
+{
+    display:table-row;
+    position: relative;
+}
+
+#search-box.large label
+{
+    display:table-cell;
+    font-size: 3em;
+    letter-spacing: 2px;
+    color:$blue_dark;
+    text-align: right;
+    width: 300px;
+}
+
+#search-box.large label span
+{
+    color:$blue_light;
+}
+
+#search-box.large input
+{
+    display:table-cell;
+    background:$blue_light;
+    padding:10px;
+    margin-left: 20px;
+    position: relative;
+    top: -10px;
+    border-color:$blue_midtone;
+    border-collapse: collapse;
+    width:300px;
+}
+
+#search-box.large input::-webkit-input-placeholder
+{
+    color:$greyscale_midtone;
+}
+
+#search-box.large button
+{
+    display:table-cell;
+    background:$green_dark;
+    margin:10px auto;
+    color:$yellow_dark;
+    border:2px solid $yellow_dark;
+    font-family: 'Average', serif;
+    font-size:1.2em;
+    letter-spacing: 1px;
+    width:100%;
+    position: absolute;
+}
+
+#search-box.large button:hover
+{
+    outline:4px solid $blue_dark;
+    color:$blue_dark;
+}
+
+
+//=================================================================================
+/* temporary styling */
+footer
+{
+    position:fixed;
+    bottom:10px;
+    right:28px;
+}

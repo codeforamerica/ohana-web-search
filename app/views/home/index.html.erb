@@ -1,4 +1,5 @@
-<section id="search-screen">
+  <section id="search-screen">
+      <%= form_tag('/organizations', :method => :get) %>              
       <!--<form>-->
           <datalist id="categories">
               <option value="food" />
@@ -9,14 +10,10 @@
           <section id="search-box" class="large">
               <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
               <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
-              <div><label for="search-near">I am near <span>→</span></label><input id="search-near" type="text" placeholder="e.g. san mateo, ca" /></div>
-              <div><button id="search-btn">Find >>></button></div>
-
-              <%= form_tag('/organizations', :method => :get) %>
-              <%= text_field_tag :address, nil, :placeholder => "Address, City, State" %>
-              <%= submit_tag "Search" %>
-              
-              
+              <div><label for="search-near">I am near <span>→</span></label><%= text_field_tag :address, nil, :placeholder => "e.g. san mateo, ca" %>
+                <!--<input id="search-near" type="text" placeholder="e.g. san mateo, ca" />--></div>
+              <div><%= button_tag "Find >>>" %><!--<button id="search-btn">Find >>></button>--></div>
           </section>
       <!--</form>-->
+      
   </section>
