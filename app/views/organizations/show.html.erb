@@ -1,7 +1,8 @@
-<h3>Organization</h3>
-<p><%= @org.name %></p>
-<p>Address: <%= @org.address if @org.address %></p>
-<h3>Nearby:</h3>
-<% @nearby.each do |venue| %>
+<section id="detail-screen">
+	<h1 class="name"><%= @org.name %></h1>
+	<p>Address: <%= @org.address if @org.address %></p>
+	<h3>Nearby:</h3>
+	<% @nearby.each do |venue| %>
 	<p><%= venue.name %>: <%= venue.address %></p>
-<% end %>
+	<% end %>
+</section>

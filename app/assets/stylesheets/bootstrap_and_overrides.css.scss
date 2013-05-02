@@ -94,6 +94,26 @@ fade-out
 }
 
 //=================================================================================
+// logo/header area
+.mini 
+#logo a
+{
+    color:$blue_light;
+    text-decoration:none;
+    display:block;
+}
+
+#logo a
+{
+    font-size:1.4em;
+    color:$blue_midtone;
+    padding:10px;
+    padding-left:18px;
+    text-decoration:none;
+    display:block;
+}
+
+//=================================================================================
 // help/info box
 #help-screen
 {
@@ -354,7 +374,7 @@ fade-out
     
 #results-screen
 {
-    background: #fff;
+    background: $greyscale_light;
 }
 
 #results-screen header
@@ -363,7 +383,7 @@ fade-out
     background:#f9f594;    
 }
 
-#results-screen h1
+#results-screen header h1
 {
     font-variant: small-caps;
     font-size: 0.8em;
@@ -377,12 +397,20 @@ fade-out
     cursor:default;
 }
 
-.results-entry
+#results-screen nav
+{
+    font-variant: small-caps;
+    font-size: 0.8em;
+    font-family: Sans-Serif;
+	display: inline-block;
+}
+
+a .results-entry
 {
     border-bottom:1px dashed $blue_light;
 }
 
-.results-entry-hover
+a .results-entry:hover
 {
     background:$blue_light;
     cursor:pointer;
@@ -393,17 +421,19 @@ fade-out
     background:$yellow_dark;
 }
 
-.results-entry > span
+a .results-entry > h1
 {
     pointer-events:none;
     vertical-align: top;
-    padding:20px;
+    padding:10px;
     display:inline-block;
+    font-size: 1.2em;
 }
 
-.results-entry .entry-title
+a .results-entry .entry-title
 {
     border-left:10px solid $yellow_dark;
+    margin:0;
 }
 
 .results-entry .hour-box
@@ -427,6 +457,65 @@ fade-out
 {
     //color:$greyscale_midtone;
 }
+
+//=================================================================================
+// detail screen
+#detail-screen
+{
+    padding:20px;
+    background:$greyscale_light;
+}
+
+// styling of individual items details
+#detail-screen .name
+{
+
+}
+
+#detail-screen .streetview
+{
+    border:1px solid $greyscale_midtone;
+    width:320px;
+    height:240px;
+}
+
+#detail-screen .map
+{
+    border:1px solid $greyscale_midtone;
+    width:320px;
+    height:240px;
+}
+
+#detail-screen .address
+{
+    
+}
+
+#detail-screen .street
+{
+    
+}
+
+#detail-screen .city
+{
+    
+}
+
+#detail-screen .state
+{
+    
+}
+
+#detail-screen .zip
+{
+    
+}
+
+#detail-screen .phone
+{
+    
+}
+
 
 //=================================================================================
 /* temporary styling */
