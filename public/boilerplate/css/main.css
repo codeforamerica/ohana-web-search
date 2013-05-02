@@ -97,6 +97,26 @@ fade-out {
   -webkit-transition: opacity 0.25s;
   /* Safari */ }
 
+#splash-screen {
+  z-index: 999999;
+  background: #03497e;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed; }
+
+#splash-screen h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ffeb1b;
+  width: 100%;
+  padding: 20px;
+  margin: 0px;
+  text-align: center;
+  font-size: 1.4em; }
+
 .mini
 #logo a {
   color: #9debfc;
@@ -111,25 +131,69 @@ fade-out {
   text-decoration: none;
   display: block; }
 
-#splash-screen {
-  background: #03497e;
-  top: 0;
+#help-screen {
+  cursor: pointer;
+  z-index: 999998;
+  position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
-  position: fixed;
-  z-index: 1; }
-
-#splash-screen h1 {
-  position: absolute;
   top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /*
+  -webkit-transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+  transition: opacity 200ms;
+  */ }
+
+#help-screen.max {
   left: 0;
-  background: #ffeb1b;
-  width: 100%;
-  padding: 20px;
-  margin: 0px;
-  text-align: center;
-  font-size: 1.4em; }
+  pointer-events: auto; }
+
+#help-screen.mini {
+  left: auto;
+  pointer-events: none; }
+
+#help-screen div {
+  pointer-events: auto;
+  top: -99999px;
+  background: #9debfc;
+  position: absolute;
+  z-index: 999997;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 10px 20px 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  -webkit-transition: top 150ms;
+  -moz-transition: top 150ms;
+  transition: top 150ms; }
+
+#help-screen.max div {
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  top: -10px; }
+
+#help-screen.mini div {
+  right: 20px;
+  height: 70px;
+  top: -10px;
+  -webkit-transition: height 150ms;
+  -moz-transition: height 150ms;
+  transition: height 150ms; }
+
+#help-screen.mini div h1 {
+  font-size: 1.5em; }
+
+#help-screen.mini div.over {
+  background: #0596d5;
+  -webkit-transition: background 150ms;
+  -moz-transition: background 150ms;
+  transition: background 150ms; }
 
 #main-content.fullscreen {
   min-height: 100%;
@@ -209,9 +273,10 @@ fade-out {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -300px;
+  margin-left: -322px;
   margin-top: -100px;
-  display: table; }
+  display: table;
+  width: 644px; }
 
 #search-box.large div {
   display: table-row;
@@ -362,7 +427,7 @@ fade-out {
   border-left: 10px solid #ffeb1b; }
 
 .results-entry .hour-box {
-  background-color: rgba(188, 246, 101, 0.7);
+  background-color: #bcf665;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 10px;
   padding: 5px;

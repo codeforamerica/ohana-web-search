@@ -11,14 +11,7 @@ var main = (function () {
 		busyManager.init(); // initialize splash screen manager
 		busyManager.hide();
 		infoScreen.init(); // initializae help screen
-		if (webStorageProxy.getItem(infoScreen.storageName))
-		{
-			infoScreen.minimize();
-		}
-		else
-		{
-			infoScreen.maximize();
-		}
+		
 		//testSequence();
 	}
 
@@ -97,8 +90,14 @@ var main = (function () {
 			maxContent = infoBox.innerHTML;
 			minContent = "<h1>?</h1>";
 
-			//helpScreen.addEventListener("mousedown",minimizeHandler,false);
-			//infoBox.addEventListener("mousedown",minimizeHandler,false);
+			if (webStorageProxy.getItem(infoScreen.storageName))
+			{
+				infoScreen.minimize();
+			}
+			else
+			{
+				infoScreen.maximize();
+			}
 		}
 
 		// PUBLIC METHODS

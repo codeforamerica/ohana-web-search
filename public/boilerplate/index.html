@@ -29,6 +29,15 @@
         
         <section id="main-content" class="fullscreen">
             <header><div id="logo"><a href="/boilerplate/">Human Services Finder</a></div></header>
+
+            <section id="help-screen" class="max">
+              <div>
+                <h1>Find resources near you</h1>
+                <p>Retrieve detailed information on the services available in your area. To get started, enter your address below and click 'search'.</p>
+                <p><a href="#">[close]</a></p>
+              </div>
+            </section>
+
             <section id="search-screen">
                 <!--<form>-->
                     <datalist id="categories">
@@ -138,6 +147,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="/boilerplate/js/plugins.js"></script>
+        <script src="/boilerplate/js/webStorageProxy.js"></script>
         <script src="/boilerplate/js/main.js"></script>
         <script> document.addEventListener("DOMContentLoaded", function() {
                 main.init(); // main initialization of custom script happens here

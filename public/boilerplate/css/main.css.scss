@@ -89,24 +89,35 @@ textarea {
     padding: 0.2em 0;
 }
 
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-//color scheme
-$blue_dark: rgb(3,73,126);              // #03497E
-$blue_midtone: rgb(5,150,213);          // #0596D5
-$blue_light: rgb(157,235,252);          // #9DEBFC
+//=================================================================================
+// CONSTANTS
 
-$yellow_dark: rgb(255,235,27);          // #ffeb1b
+//color scheme
+$blue_dark: rgb(3,73,126);                      // #03497E
+$blue_midtone: rgb(5,150,213);                  // #0596D5
+$blue_light: rgb(157,235,252);                  // #9DEBFC
+
+$yellow_dark: rgb(255,235,27);                  // #ffeb1b
 $yellow_light: #e4e1a1;
 
-$green_dark: rgb(131,180,26);           // #83B41A
-$green_light: hsla(84,89%,68%,0.7);     // #d1f994
+$green_dark: rgb(131,180,26);                   // #83B41A
+$green_light: hsl(84,89%,68%);                  // #d1f994
+    $green_light_trans: hsla(84,89%,68%,0.7);   // #d1f994
 
-$greyscale_midtone: rgb(153,153,153);   // #999999
-$greyscale_light: #fff;                 // #ffffff
+    $greyscale_dark_trans: hsla(0,0%,0%,0.4);   // #000000
+$greyscale_midtone: rgb(153,153,153);           // #999999
+$greyscale_light: #fff;                         // #ffffff
 
+
+//animation settings
+$default_duration: 150ms;
+
+//=================================================================================
 
 
 html,body
@@ -115,6 +126,9 @@ html,body
     font-family: 'Average', serif;
 }
 
+
+//=================================================================================
+// effects styles
 .hide
 {
    display:none !important; 
@@ -139,6 +153,36 @@ fade-out
     -webkit-transition: opacity 0.25s; /* Safari */
 }
 
+
+//=================================================================================
+// splashscreen styles
+#splash-screen {
+    z-index: 999999;
+    background:$blue_dark;
+    
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    position: fixed;
+}
+
+#splash-screen h1
+{
+    position: absolute;
+    top:0;
+    left:0;
+    background:$yellow_dark;
+    width:100%;
+    padding:20px;
+    margin:0px;
+    text-align:center;
+    font-size:1.4em;
+}
+
+//=================================================================================
+// logo/header area
 .mini 
 #logo a
 {
@@ -157,31 +201,99 @@ fade-out
     display:block;
 }
 
-#splash-screen {
-    background:$blue_dark;
-    
-    top: 0;
+//=================================================================================
+// help/info box
+#help-screen
+{
+    cursor: pointer;
+    z-index: 999998;
+    position: fixed;
     left: 0;
     right: 0;
+    top: 0;
     bottom: 0;
-
-    position: fixed;
-    z-index:1;
+    background: $greyscale_dark_trans;
+    /*
+    -webkit-transition: opacity 200ms;
+    -moz-transition: opacity 200ms;
+    transition: opacity 200ms;
+    */
 }
 
-#splash-screen h1
+#help-screen.max
 {
-    position: absolute;
-    top:0;
     left:0;
-    background:$yellow_dark;
-    width:100%;
-    padding:20px;
-    margin:0px;
-    text-align:center;
-    font-size:1.4em;
+    pointer-events:auto;
 }
 
+#help-screen.mini
+{
+    left:auto;
+    pointer-events:none;
+}
+
+#help-screen div
+{
+    pointer-events:auto;
+
+    top:-99999px;
+    background:$blue_light;
+    position: absolute;
+    z-index: 999997;
+
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+    box-sizing: border-box;
+//  top: -99999px;
+    border-radius: 3px;
+    padding: 10px 20px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px $greyscale_dark_trans;
+
+    -webkit-transition: top $default_duration;
+    -moz-transition: top $default_duration;
+    transition: top $default_duration;
+}
+
+#help-screen.max div
+{
+    left:50%;   
+    margin-left:-250px;
+    width:500px;
+    
+    top:-10px;
+}
+
+#help-screen.mini div
+{
+    right:20px;
+    height: 70px;
+
+    top:-10px;
+
+    -webkit-transition: height $default_duration;
+    -moz-transition: height $default_duration;
+    transition: height $default_duration;
+}
+
+#help-screen.mini div h1
+{
+    font-size: 1.5em;
+}
+
+#help-screen.mini div.over
+{
+    background:$blue_midtone;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+
+}
+
+//=================================================================================
+// main content box
 #main-content.fullscreen
 {
     min-height:100%;
@@ -208,6 +320,9 @@ fade-out
     background:$blue_midtone;
 }
 
+
+//=================================================================================
+// search box styles
 #search-box.mini
 {
     text-align:center;
@@ -276,9 +391,10 @@ fade-out
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -300px;
+    margin-left: -322px;
     margin-top: -100px; 
     display: table;
+    width:644px;
 }
 
 #search-box.large  div
