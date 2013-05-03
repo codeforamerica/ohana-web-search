@@ -9,7 +9,7 @@ class OrganizationsController < ApplicationController
     if params[:address].present?
 			address = params[:address]
 		  @locations = Organization.near(address, params[:miles])
-	    @results_count = "#{@locations.size} results within #{params[:miles]} miles of #{address}"
+	    @results_count = "#{TextHelper.pluralize(@locations.size, 'result')} within #{TextHelper.pluralize(params[:miles], 'mile')} of #{address}"
 	  else
 	  	@locations = Organization.all.sort_by(&:name)
 	  	@results_count = "#{@locations.size} total results"
