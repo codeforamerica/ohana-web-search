@@ -35,4 +35,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
+  # rescue_from Moped::Errors::OperationFailure do |exception|
+  #   redirect_to root_path, :alert => exception.message
+  # end
+
 end
