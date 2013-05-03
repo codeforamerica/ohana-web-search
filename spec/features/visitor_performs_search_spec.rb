@@ -22,10 +22,6 @@ feature 'Visitor performs search' do
     find('#results-screen').should have_content('results within 2 miles of 94403')
   end
 
-  # I expect this test to fail based on the error 
-  # you get when you manually click the "Find" button on 
-  # the home page without entering anything in the text fields.
-  # However, the test is passing.
   scenario 'by clicking Find button directly, with no address or keyword specified' do
     search_for_nothing
     expect(page).to have_content('total results')
