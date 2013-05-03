@@ -43,18 +43,26 @@ To run locally:
 
 Then visit [http://localhost:8080](http://localhost:8080)
 
+To test locally:
+
+    rake db:mongoid:create_indexes RAILS_ENV=test
+    rspec
+
+For faster tests:
+
+    gem install zeus
+    zeus start #in a separate Terminal window or tab
+    zeus rspec spec 
+
+
 ## Development Details
 
 * Ruby version 2.0.0
 * Rails version 3.2.13
 * MongoDB with the Mongoid ORM
-* Template Engine: ERB
-* Testing Framework: RSpec and Factory Girl and Cucumber
-* Front-end Framework: Twitter Bootstrap (Sass)
-* Form Builder: SimpleForm
-* Authentication: OmniAuth
-* Authorization: CanCan
-* Email Sending: Mandrill
+* Template Engines: ERB and HAML
+* Testing Frameworks: RSpec, Factory Girl and Capybara
+
 
 ## Copyright
 Copyright (c) 2013 Code for America. See [LICENSE](https://github.com/codeforamerica/human_services_finder/blob/master/LICENSE.md) for details.
