@@ -43,9 +43,12 @@ To run locally:
 
 Then visit [http://localhost:8080](http://localhost:8080)
 
-To test locally:
+To test locally, you will need to run this once to set up the test DB:
 
     rake db:mongoid:create_indexes RAILS_ENV=test
+
+Then you can run tests with this simple command:
+
     rspec
 
 For faster tests:
