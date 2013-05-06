@@ -27,49 +27,16 @@
             <h1>Loading...</h1>
         </section>
         
-        <section id="main-content" class="fullscreen">
-            <header><div id="logo"><a href="/boilerplate/">Human Services Finder</a></div></header>
-
-            <section id="help-screen" class="max">
-              <div>
-                <h1>Find resources near you</h1>
-                <p>Retrieve detailed information on the services available in your area. To get started, enter your address below and click 'search'.</p>
-                <p><a href="#">[close]</a></p>
-              </div>
-            </section>
-
-            <section id="search-screen">
-                <!--<form>-->
-                    <datalist id="categories">
-                        <option value="food" />
-                        <option value="food pantry" />
-                        <option value="food bank" />
-                        <option value="Samaritan House" />
-                    </datalist>
-                    <section id="search-box" class="large">
-                        <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
-                        <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
-                        <div>
-                            <label for="search-near">I am near <span>→</span></label>
-                            <div><input id="search-near" type="text" placeholder="e.g. san mateo, ca" />
-                                <p>Within:</p>
-                                <select id="miles" name="miles"><option value="1">1 mile</option>
-                                <option value="2" selected="selected">2 miles</option>
-                                <option value="3">3 miles</option>
-                                <option value="4">4 miles</option>
-                                <option value="5">5 miles</option>
-                                <option value="10">10 miles</option>
-                                <option value="20">20 miles</option>
-                                <option value="30">30 miles</option>
-                                <option value="40">40 miles</option>
-                                <option value="50">50 miles</option></select>
-                            </div>
-                        </div>
-                        
-                        <div><button id="search-btn">Find >>></button></div>
-                    </section>
-
-                    <section class="hide">
+        <section id="main-header">
+            <header>
+                <aside id="utility-screens">
+                    <nav>
+                        <section id="search-options-screen-btn" class="hide"><h1>+</h1></section>
+                        <section id="info-screen-btn"><h1>?</h1></section>
+                        <a href="#"><section id="top-btn" class="disabled"><h1>^</h1></section></a>
+                    </nav>
+                    
+                    <section id="search-options-screen" class="hide">
                         <h1>Search Options</h1>
                         
                         <fieldset>
@@ -110,8 +77,56 @@
                             <div><label for="spanish-ck">Spanish</label><input id="spanish-ck" type="checkbox" checked /></div>
                             <div><label for="tagalog-ck">Tagalog</label><input id="tagalog-ck" type="checkbox" checked /></div>
                         </fieldset>
-                        
                     </section>
+
+                    <section id="info-screen" class="mini">
+                      <div>
+                        <h1>Find resources near you</h1>
+                        <p>Retrieve detailed information on the services available in your area. To get started, enter your address below and click 'search'.</p>
+                        <p><a href="#">[close]</a></p>
+                      </div>
+                    </section>
+                </aside>
+
+                <div id="logo">
+                    <a href="/boilerplate/">Human Services Finder</a>
+                </div>
+            </header>
+        </section>
+
+        <section id="main-content" class="fullscreen">
+
+            <section id="search-screen">
+                <!--<form>-->
+                    <datalist id="categories">
+                        <option value="food" />
+                        <option value="food pantry" />
+                        <option value="food bank" />
+                        <option value="Samaritan House" />
+                    </datalist>
+                    <section id="search-box" class="large">
+                        <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
+                        <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
+                        <div>
+                            <label for="search-near">I am near <span>→</span></label>
+                            <div><input id="search-near" type="text" placeholder="e.g. san mateo, ca" />
+                                <p>Within:</p>
+                                <select id="miles" name="miles"><option value="1">1 mile</option>
+                                <option value="2" selected="selected">2 miles</option>
+                                <option value="3">3 miles</option>
+                                <option value="4">4 miles</option>
+                                <option value="5">5 miles</option>
+                                <option value="10">10 miles</option>
+                                <option value="20">20 miles</option>
+                                <option value="30">30 miles</option>
+                                <option value="40">40 miles</option>
+                                <option value="50">50 miles</option></select>
+                            </div>
+                        </div>
+                        
+                        <div><button id="search-btn">Find >>></button></div>
+                    </section>
+
                 <!--</form>-->
             </section>
 

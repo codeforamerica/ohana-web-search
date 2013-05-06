@@ -8,7 +8,9 @@ var main = (function () {
 	main.init = function()
 	{
 		dataloader.init(); // initialize data load
-		infoScreen.init(); // initialize help/info screen
+		utilityBarManager.init(); // initalizes utility bar at top of screen
+			infoScreenManager.init(); // initialize help/info screen (in utility bar)
+			searchOpScreen.init(); // initialize search options screen (in utility bar)
 	}
 
 	//=================================================================================
@@ -65,96 +67,209 @@ var main = (function () {
 	})();
 
 	//=================================================================================
-	// manages show and hiding of info screen
-	var infoScreen = (function(){
-		var infoScreen = {};
+	// manages utility bar
+	var utilityBarManager = (function(){
+		var utilityBarManager = {};
 
 		// PRIVATE PROPERTIES
-		var helpScreen; // help screen that covers content
-		var infoBox; // info box on help screen
+		var topBtn; // help screen that covers content
 
-		var maxContent; // content in maximized info box
-		var minContent; // content in minimized info box
+		// PUBLIC METHODS
+		utilityBarManager.init = function()
+		{
+			topBtn = document.getElementById("top-btn");
+
+			topBtn.addEventListener("mouseover",btnOverHandler,false);
+			topBtn.addEventListener("mouseout",btnOutHandler,false);
+
+			window.addEventListener( "scroll" , scrollHandler , false);
+		}
+
+		// rollover handlers for the minified info/help box
+		function btnOverHandler(evt)
+		{
+			topBtn.classList.add("over");
+		}
+
+		function btnOutHandler(evt)
+		{
+			topBtn.classList.remove("over");
+		}
+
+		function scrollHandler(evt)
+		{
+			if (document.body.scrollTop <= 0)
+			{
+				topBtn.classList.add("disabled");
+			}
+			else
+			{
+				topBtn.classList.remove("disabled");
+			}
+		}
+
+		return utilityBarManager;
+	})();
+
+
+	//=================================================================================
+	// manages show and hiding of info screen
+	var infoScreenManager = (function(){
+		var infoScreenManager = {};
+
+		// PRIVATE PROPERTIES
+		var infoScreenBtn; // help screen that covers content
+		var infoScreen; // help screen that covers content
 
 		// PUBLIC PROPERTIES
-		infoScreen.storageName = "hrl-infoscreen";
+		infoScreenManager.storageName = "hrl-infoscreen";
 
 		// PUBLIC METHODS
-		infoScreen.init = function()
+		infoScreenManager.init = function()
 		{
 			//console.log("initialized infoscreen");
-			helpScreen = document.getElementById("help-screen");
-			infoBox = helpScreen.firstElementChild;
+			infoScreenBtn = document.getElementById("info-screen-btn");
+			infoScreen = document.getElementById("info-screen");
 
-			maxContent = infoBox.innerHTML;
-			minContent = "<h1>?</h1>";
+			infoScreenBtn.addEventListener("mouseover",btnOverHandler,false);
+			infoScreenBtn.addEventListener("mouseout",btnOutHandler,false);
+			infoScreenBtn.addEventListener("mousedown",maximizeHandler,false);
+
+			infoScreen.addEventListener("mousedown",minimizeHandler,false);
 
 			if (webStorageProxy.getItem(infoScreen.storageName))
-				infoScreen.minimize();
+				infoScreenManager.minimize();
 			else
-				infoScreen.maximize();
+				infoScreenManager.maximize();
 		}
 
 		// PUBLIC METHODS
-		infoScreen.maximize = function()
+		infoScreenManager.maximize = function()
 		{
-			// setup minimize handlers
-			helpScreen.removeEventListener("mousedown",maximizeHandler,false);
+			// prevent mouseout of infoscreenbtn
+			infoScreenBtn.removeEventListener("mouseout",btnOutHandler,false);
 
-			helpScreen.classList.remove("hide");
-			helpScreen.classList.remove("mini");
-			helpScreen.classList.add("max");
-			infoBox.innerHTML = maxContent;
-
-			// remove rollover for the infobox
-			infoBox.removeEventListener("mouseover",miniOverHandler,false);
-			infoBox.removeEventListener("mouseout",miniOutHandler,false);
-			
-			helpScreen.addEventListener("mousedown",minimizeHandler,false);
+			// show info screen
+			infoScreen.classList.remove("mini");
+			infoScreen.classList.add("max");
 		}
 		
-		infoScreen.minimize = function()
+		infoScreenManager.minimize = function()
 		{
-			// style help screen, change content and set web storage
-			helpScreen.classList.add("mini");
-			helpScreen.classList.remove("max");
-			infoBox.innerHTML = minContent;
-			webStorageProxy.setItem(infoScreen.storageName,true)
-
-			// add rollover for the infobox
-			infoBox.addEventListener("mouseover",miniOverHandler,false);
-			infoBox.addEventListener("mouseout",miniOutHandler,false);
-
-			// setup maximize handlers
-			helpScreen.addEventListener("mousedown",maximizeHandler,false);	
-
-			miniOutHandler();
+			// hide info screen
+			infoScreen.classList.add("mini");
+			infoScreen.classList.remove("max");
+			
+			// enable mouseout of infoscreenbtn
+			infoScreenBtn.addEventListener("mouseout",btnOutHandler,false);
+			
+			// record that the info screen has been seen
+			webStorageProxy.setItem(infoScreen.storageName,true);
 		}
+
+
 		// PRIVATE METHODS
 		// minimize the info/help box
 		function minimizeHandler(evt)
 		{
-			infoScreen.minimize();
+			infoScreenManager.minimize();
+			// mouseout of button is cursor is not over the button
+			if (infoScreenBtn != document.elementFromPoint(evt.clientX, evt.clientY) )
+			{
+				btnOutHandler();
+			}
 		}
 
 		// expand the info/help box
 		function maximizeHandler(evt)
 		{
-			infoScreen.maximize();
+			infoScreenManager.maximize();
+		}
+
+		// rollover handlers for the minified info/help box
+		function btnOverHandler(evt)
+		{
+			infoScreenBtn.classList.add("over");
+		}
+
+		function btnOutHandler(evt)
+		{
+			infoScreenBtn.classList.remove("over");
+		}
+
+		return infoScreenManager;
+	})();
+
+
+	//=================================================================================
+	// manages show and hiding of search options screen
+	var searchOpScreen = (function(){
+		var searchOpScreen = {};
+
+		// PRIVATE PROPERTIES
+		var minScreen; // minimized search options screen
+		var maxScreen; // maximized search options screen
+
+		// PUBLIC METHODS
+		searchOpScreen.init = function()
+		{
+			//console.log("initialized infoscreen");
+			minScreen = document.querySelector("#search-options-screen-btn");
+			maxScreen = document.querySelector("#search-options-screen");
+			
+			minScreen.addEventListener("mouseover",miniOverHandler,false);
+			minScreen.addEventListener("mouseout",miniOutHandler,false);
+
+			searchOpScreen.minimize();
+		}
+
+		// PUBLIC METHODS
+		searchOpScreen.maximize = function()
+		{
+			maxScreen.classList.remove("hide");
+
+			// change content
+			minScreen.innerHTML = "<h1>-</h1>";
+
+			minScreen.removeEventListener("mousedown",maximizeHandler,false);	
+			minScreen.addEventListener("mousedown",minimizeHandler,false);	
+		}
+		
+		searchOpScreen.minimize = function()
+		{
+			maxScreen.classList.add("hide");
+
+			// change content
+			minScreen.innerHTML = "<h1>+</h1>";	
+
+			// setup maximize handlers
+			minScreen.addEventListener("mousedown",maximizeHandler,false);
+		}
+		// PRIVATE METHODS
+		// minimize the info/help box
+		function minimizeHandler(evt)
+		{
+			searchOpScreen.minimize();
+		}
+
+		// expand the info/help box
+		function maximizeHandler(evt)
+		{
+			searchOpScreen.maximize();
 		}
 
 		// rollover handlers for the minified info/help box
 		function miniOverHandler(evt)
 		{
-			infoBox.classList.add("over");
+			minScreen.classList.add("over");
 		}
 
 		function miniOutHandler(evt)
 		{
-			infoBox.classList.remove("over");
+			minScreen.classList.remove("over");
 		}
 
-		return infoScreen;
+		return searchOpScreen;
 	})();
 
 	//=================================================================================
