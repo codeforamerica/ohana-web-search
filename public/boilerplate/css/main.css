@@ -139,24 +139,28 @@ fade-out {
 
 #utility-screens {
   position: relative;
-  width: 100%;
-  text-align: right; }
+  width: 100%; }
 
 #utility-screens section {
   display: inline-block;
   text-align: left; }
 
-#utility-screens nav {
+#utility-screens nav > * {
+  display: inline-block; }
+
+#utility-screens nav *.fixed {
   /*position:absolute;
   right:10px;
   z-index: 999999;*/
   position: fixed;
-  right: 10px; }
+  right: 10px;
+  top: 5px; }
 
-#utility-screens nav section {
+#utility-screens nav button {
+  margin-top: 5px;
   display: block;
   border-radius: 3px;
-  line-height: 25px;
+  line-height: 23px;
   height: 25px;
   min-width: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -164,24 +168,29 @@ fade-out {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 0.6em;
   cursor: pointer;
-  text-align: center; }
+  text-align: center;
+  border: 0px;
+  border-collapse: collapse; }
 
-#utility-screens nav section h1 {
+#utility-screens nav button h1 {
   pointer-events: none; }
 
-#utility-screens nav section.over {
+#utility-screens nav button.over {
   background: #0596d5;
   -webkit-transition: background 150ms;
   -moz-transition: background 150ms;
   transition: background 150ms; }
 
-#utility-screens nav section.disabled {
+#utility-screens nav button.disabled {
   background: #cccccc;
   color: rgba(0, 0, 0, 0.4);
   cursor: default; }
 
 #utility-screens a {
   text-decoration: none; }
+
+#utility-screens nav #logo button {
+  display: inline-block; }
 
 #info-screen {
   background: rgba(0, 0, 0, 0.4);
