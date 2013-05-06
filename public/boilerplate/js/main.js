@@ -229,7 +229,7 @@ var main = (function () {
 			maxScreen.classList.remove("hide");
 
 			// change content
-			minScreen.innerHTML = "<h1>-</h1>";
+			minScreen.innerHTML = "<h1>–</h1>";
 
 			minScreen.removeEventListener("mousedown",maximizeHandler,false);	
 			minScreen.addEventListener("mousedown",minimizeHandler,false);	

@@ -120,7 +120,7 @@ fade-out {
 #main-header {
   position: relative;
   z-index: 99998;
-  background: white;
+  background: #03497e;
   width: 100%; }
 
 #main-header .mini
@@ -147,18 +147,18 @@ fade-out {
   text-align: left; }
 
 #utility-screens nav {
-  position: absolute;
+  /*position:absolute;
+  right:10px;
+  z-index: 999999;*/
+  position: fixed;
   right: 10px; }
 
 #utility-screens nav section {
-  position: relative;
-  top: -10px;
-  right: 29px;
-  display: inline-block;
+  display: block;
   border-radius: 3px;
-  line-height: 54px;
-  height: 70px;
-  min-width: 55px;
+  line-height: 25px;
+  height: 25px;
+  min-width: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   background: #9debfc;
   font-family: "Open Sans", Arial, sans-serif;
@@ -180,14 +180,8 @@ fade-out {
   color: rgba(0, 0, 0, 0.4);
   cursor: default; }
 
-#utility-screens #top-btn {
-  position: fixed;
-  min-width: 25px;
-  right: 10px; }
-
-#utility-screens #top-btn h1 {
-  text-decoration: none;
-  color: white; }
+#utility-screens a {
+  text-decoration: none; }
 
 #info-screen {
   background: rgba(0, 0, 0, 0.4);
@@ -244,6 +238,17 @@ fade-out {
 #info-screen div h1 {
   font-size: 1.5em; }
 
+#search-options-screen {
+  background: white;
+  width: 220px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  vertical-align: top; }
+
+#search-options-screen h1 {
+  font-size: 1.4em;
+  margin: 0; }
+
 #search-options-screen section {
   display: block;
   background: #9debfc;
@@ -277,6 +282,17 @@ fade-out {
   -moz-transition: background 150ms;
   transition: background 150ms; }
 
+#main-content {
+  display: table;
+  width: 100%; }
+
+#main-content main {
+  display: table-row; }
+
+#main-content main > * {
+  display: table-cell;
+  height: 100%; }
+
 #main-content.fullscreen {
   position: relative;
   min-height: 100%;
@@ -304,6 +320,10 @@ fade-out {
   /* Safari */
   min-height: 100px;
   background: #0596d5; }
+
+#search-screen {
+  min-width: 664px;
+  position: relative; }
 
 #search-box.mini {
   text-align: center; }
@@ -361,7 +381,7 @@ fade-out {
   top: 50%;
   left: 50%;
   margin-left: -322px;
-  margin-top: -100px;
+  margin-top: 100px;
   display: table;
   width: 644px; }
 

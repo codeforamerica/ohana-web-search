@@ -31,53 +31,12 @@
             <header>
                 <aside id="utility-screens">
                     <nav>
-                        <section id="search-options-screen-btn" class="hide"><h1>+</h1></section>
-                        <section id="info-screen-btn"><h1>?</h1></section>
                         <a href="#"><section id="top-btn" class="disabled"><h1>^</h1></section></a>
+                        <section id="info-screen-btn"><h1>?</h1></section>
+                        <section id="search-options-screen-btn"><h1>+</h1></section>
                     </nav>
                     
-                    <section id="search-options-screen" class="hide">
-                        <h1>Search Options</h1>
-                        
-                        <fieldset>
-                            <legend>Hours</legend>
-                            <div><label for="monday-ck">Monday</label><input id="monday-ck" type="checkbox" checked /></div>
-                            <div><label for="tuesday-ck">Tuesday</label><input id="tuesday-ck" type="checkbox" checked /></div>
-                            <div><label for="wednesday-ck">Wednesday</label><input id="wednesday-ck" type="checkbox" checked /></div>
-                            <div><label for="thursday-ck">Thursday</label><input id="thursday-ck" type="checkbox" checked /></div>
-                            <div><label for="friday-ck">Friday</label><input id="friday-ck" type="checkbox" checked /></div>
-                            <div><label for="saturday-ck">Saturday</label><input id="saturday-ck" type="checkbox" checked /></div>
-                            <div><label for="sunday-ck">Sunday</label><input id="sunday-ck" type="checkbox" checked /></div>
-                        </fieldset>
 
-                        <fieldset>
-                            <legend>Income</legend>
-                            <div>
-                                <label for="income-amount">Income $</label>
-                                <input id="income-amount" type="number" value="0" min="0" />
-                                <label for="income-period">per</label>
-                                <select id="income-period">
-                                    <option value="weekly">Weekly</option>
-                                    <option value="bi-weekly">Bi-weekly</option>
-                                    <option value="monthly">Monthly</option>
-                                    <option value="yearly">Yearly</option>
-                                </select>
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Food</legend>
-                            <div><label for="hotmeal">Hot Meal</label>
-                            <input id="hotmeal" type="checkbox" /></div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Language Services</legend>
-                            <div><label for="english-ck">English</label><input id="english-ck" type="checkbox" checked /></div>
-                            <div><label for="spanish-ck">Spanish</label><input id="spanish-ck" type="checkbox" checked /></div>
-                            <div><label for="tagalog-ck">Tagalog</label><input id="tagalog-ck" type="checkbox" checked /></div>
-                        </fieldset>
-                    </section>
 
                     <section id="info-screen" class="mini">
                       <div>
@@ -96,68 +55,128 @@
 
         <section id="main-content" class="fullscreen">
 
-            <section id="search-screen">
-                <!--<form>-->
-                    <datalist id="categories">
-                        <option value="food" />
-                        <option value="food pantry" />
-                        <option value="food bank" />
-                        <option value="Samaritan House" />
-                    </datalist>
-                    <section id="search-box" class="large">
-                        <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
-                        <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
-                        <div>
-                            <label for="search-near">I am near <span>→</span></label>
-                            <div><input id="search-near" type="text" placeholder="e.g. san mateo, ca" />
-                                <p>Within:</p>
-                                <select id="miles" name="miles"><option value="1">1 mile</option>
-                                <option value="2" selected="selected">2 miles</option>
-                                <option value="3">3 miles</option>
-                                <option value="4">4 miles</option>
-                                <option value="5">5 miles</option>
-                                <option value="10">10 miles</option>
-                                <option value="20">20 miles</option>
-                                <option value="30">30 miles</option>
-                                <option value="40">40 miles</option>
-                                <option value="50">50 miles</option></select>
-                            </div>
-                        </div>
-                        
-                        <div><button id="search-btn">Find >>></button></div>
+            <main>
+                <section id="search-content">
+
+                    <section id="search-screen">
+                        <!--<form>-->
+                            <datalist id="categories">
+                                <option value="food" />
+                                <option value="food pantry" />
+                                <option value="food bank" />
+                                <option value="Samaritan House" />
+                            </datalist>
+                            <section id="search-box" class="large">
+                                <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
+                                <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
+                                <div>
+                                    <label for="search-near">I am near <span>→</span></label>
+                                    <div><input id="search-near" type="text" placeholder="e.g. san mateo, ca" />
+                                    </div>
+                                </div>
+                                
+                                <div><button id="search-btn">Find >>></button></div>
+                            </section>
+
+                        <!--</form>-->
                     </section>
 
-                <!--</form>-->
-            </section>
+                    <section id="inside-content">
+
+                        <section id="category-screen" class="hide">
+                            <header><h1>Service Categories</h1><nav></nav></header>
+                            <section id="category-list"></section>
+                        </section>
+
+                        <section id="results-screen" class="hide">
+                            <header><h1>Service Providers</h1></header>
+                            <section id="results-list"></section>
+                        </section>
+
+                        <section id="detail-screen" class="hide">
+                            <h1 class="name"></h1>
+                            <p class="streetview"></p>
+                            <p class="address">
+                                <div class="street"></div>
+                                <div class="city"></div>
+                                <div class="state"></div>
+                                <div class="zip"></div>
+                            </p>
+                            <p class="phone"></p>
+                        </section>
+
+                    </section>
+
+                </section>
+
+                <aside id="search-options-screen" class="hide">
+                    <h1>Search Options</h1>
+                    
+                    <fieldset>
+                        <legend>Location</legend>
+                        <label for="miles">Search radius: </label>
+                        <select id="miles" name="miles">
+                            <option value="1">1 mile</option>
+                            <option value="2" selected="selected">2 miles</option>
+                            <option value="3">3 miles</option>
+                            <option value="4">4 miles</option>
+                            <option value="5">5 miles</option>
+                            <option value="10">10 miles</option>
+                            <option value="20">20 miles</option>
+                            <option value="30">30 miles</option>
+                            <option value="40">40 miles</option>
+                            <option value="50">50 miles</option>
+                        </select>
+                    </fieldset>
+
+                    <!--
+                    <fieldset>
+                        <legend>Hours</legend>
+                        <div><label for="monday-ck">Monday</label><input id="monday-ck" type="checkbox" checked /></div>
+                        <div><label for="tuesday-ck">Tuesday</label><input id="tuesday-ck" type="checkbox" checked /></div>
+                        <div><label for="wednesday-ck">Wednesday</label><input id="wednesday-ck" type="checkbox" checked /></div>
+                        <div><label for="thursday-ck">Thursday</label><input id="thursday-ck" type="checkbox" checked /></div>
+                        <div><label for="friday-ck">Friday</label><input id="friday-ck" type="checkbox" checked /></div>
+                        <div><label for="saturday-ck">Saturday</label><input id="saturday-ck" type="checkbox" checked /></div>
+                        <div><label for="sunday-ck">Sunday</label><input id="sunday-ck" type="checkbox" checked /></div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Income</legend>
+                        <div>
+                            <label for="income-amount">Income $</label>
+                            <input id="income-amount" type="number" value="0" min="0" />
+                            <label for="income-period">per</label>
+                            <select id="income-period">
+                                <option value="weekly">Weekly</option>
+                                <option value="bi-weekly">Bi-weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Food</legend>
+                        <div><label for="hotmeal">Hot Meal</label>
+                        <input id="hotmeal" type="checkbox" /></div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Language Services</legend>
+                        <div><label for="english-ck">English</label><input id="english-ck" type="checkbox" checked /></div>
+                        <div><label for="spanish-ck">Spanish</label><input id="spanish-ck" type="checkbox" checked /></div>
+                        <div><label for="tagalog-ck">Tagalog</label><input id="tagalog-ck" type="checkbox" checked /></div>
+                    </fieldset>
+                    -->
+
+                </aside>
+
+            </main>
 
             <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
         </section>
 
-        <section id="inside-content">
-
-            <section id="category-screen" class="hide">
-                <header><h1>Service Categories</h1><nav></nav></header>
-                <section id="category-list"></section>
-            </section>
-
-            <section id="results-screen" class="hide">
-                <header><h1>Service Providers</h1></header>
-                <section id="results-list"></section>
-            </section>
-
-            <section id="detail-screen" class="hide">
-                <h1 class="name"></h1>
-                <p class="streetview"></p>
-                <p class="address">
-                    <div class="street"></div>
-                    <div class="city"></div>
-                    <div class="state"></div>
-                    <div class="zip"></div>
-                </p>
-                <p class="phone"></p>
-            </section>
-
-        </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>

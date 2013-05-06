@@ -189,7 +189,7 @@ fade-out
 {
     position:relative;
     z-index:99998;
-    background:$white;
+    background:$blue_dark;
     width: 100%;
 }
 
@@ -228,20 +228,20 @@ fade-out
 
 #utility-screens nav
 {
-    position:absolute;
+    /*position:absolute;
+    right:10px;
+    z-index: 999999;*/
+    position:fixed;
     right:10px;
 }
 
 #utility-screens nav section
 {
-    position:relative;
-    top:-10px;
-    right:29px;
-    display:inline-block;
+    display:block;
     border-radius: 3px;
-    line-height:54px;
-    height:70px;
-    min-width:55px;
+    line-height:25px;
+    height:25px;
+    min-width:25px;
     box-shadow: 0 2px 5px $black_alpha40;
     background: $blue_light;    
     font-family: $secondary_font;
@@ -271,17 +271,9 @@ fade-out
     cursor:default;
 }
 
-#utility-screens #top-btn
-{
-    position:fixed;
-    min-width:25px;
-    right:10px;
-}
-
-#utility-screens #top-btn h1
+#utility-screens a
 {
     text-decoration: none;
-    color:$white;
 }
 
 //=================================================================================
@@ -365,6 +357,20 @@ fade-out
 
 //=================================================================================
 // search options box
+#search-options-screen
+{
+    background: $white;
+    width: 220px;
+    padding:10px;
+    box-shadow: 0 2px 5px $black_alpha40;
+    vertical-align: top;
+}
+
+#search-options-screen h1
+{
+    font-size:1.4em;
+    margin:0;
+}
 
 #search-options-screen section
 {
@@ -418,6 +424,23 @@ fade-out
 
 //=================================================================================
 // main content box
+#main-content
+{
+    display: table;
+    width: 100%;
+}
+
+#main-content main
+{
+    display:table-row;
+}
+
+#main-content main > *
+{
+    display:table-cell;
+    height: 100%;
+}
+
 #main-content.fullscreen
 {
     position:relative;
@@ -443,6 +466,14 @@ fade-out
 
     min-height:100px;
     background:$blue_midtone;
+}
+
+//=================================================================================
+// search screen styles
+#search-screen
+{
+    min-width:664px;
+    position:relative;
 }
 
 
@@ -521,7 +552,7 @@ fade-out
     top: 50%;
     left: 50%;
     margin-left: -322px;
-    margin-top: -100px; 
+    margin-top: 100px; 
     display: table;
     width:644px;
 }
