@@ -1,21 +1,22 @@
 require 'json'
 
-task :load_data => [:libraries] do
-
-end
-
-task :libraries => :environment do
+task :load_data => :environment do
   puts "===================================================="
-  puts "Creating Organizations with Library Data and saving to DB"
+  puts "Creating Organizations with Library and Farmers' Markets Data and saving to DB"
   puts "===================================================="
 
-  data = JSON.parse(File.open('data/libraries_data.json','r').read).values
-  data.each do |json_library|
-    Organization.create! do |db_library|
-      json_library.keys.each do |field|
-        db_library[field] = json_library[field.to_s]
+  files = ['data/libraries_data.json', 'data/smc_farmers_markets.json']
+  files.each do |file|
+    puts "Processing #{file}"
+    data = JSON.parse(File.open(file,'r').read).values
+    data.each do |json|
+      Organization.create! do |db|
+        json.keys.each do |field|
+          db[field] = json[field.to_s]
+        end
       end
     end
+    puts "Done loading #{file} into DB"
   end
-  puts "DONE."
+  puts "Done loading all files into DB."
 end

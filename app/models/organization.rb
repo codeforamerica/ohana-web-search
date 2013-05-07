@@ -13,9 +13,13 @@ class Organization
   field :latitude, type: Float
   field :longitude, type: Float
   field :business_hours, type: Hash
-  field :type, type: String
+  field :market_match, type: Boolean
+  field :schedule, type: String
+  field :payments_accepted, type: Array
+  field :products_sold, type: Array
+  field :keywords, type: Array 
 
-  validates_presence_of :name, :street_address, :city, :state, :zipcode, :phone
+  validates_presence_of :name, :street_address, :city, :state, :zipcode
   validates :zipcode, :length => { :minimum => 5, :maximum => 10 }
 
   def address
