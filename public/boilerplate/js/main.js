@@ -259,7 +259,7 @@ var main = (function () {
 			maxScreen.classList.add("slide-out");
 
 			// change content
-			minScreen.innerHTML = "<h1>–</h1>";
+			minScreen.innerHTML = "<h1>>></h1>";
 
 			minScreen.removeEventListener("mousedown",maximizeHandler,false);	
 			minScreen.addEventListener("mousedown",minimizeHandler,false);
@@ -272,7 +272,7 @@ var main = (function () {
 			maxScreen.classList.add("slide-in");
 
 			// change content
-			minScreen.innerHTML = "<h1>+</h1>";	
+			minScreen.innerHTML = "<h1><<</h1>";	
 
 			// setup maximize handlers
 			minScreen.addEventListener("mousedown",maximizeHandler,false);
