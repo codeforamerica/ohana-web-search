@@ -428,7 +428,8 @@ fade-out
 #search-options-screen
 {
     background: $yellow_light;
-    padding:10px;
+    padding-top:5px;
+    padding-right:20px;
     vertical-align: top;
     border-left:1px dotted $black_alpha40;
 
@@ -437,7 +438,6 @@ fade-out
 
 #search-options-screen div
 {
-    margin-left: 30px;
 }
 
 #search-options-screen.slide-in div
@@ -450,7 +450,7 @@ fade-out
     display:block;
 }
 
-#search-options-screen-btn
+#search-options-screen > button
 {
     left: -25px;
     top: 0;
@@ -472,10 +472,45 @@ fade-out
     border-collapse:collapse;
 }
 
-#search-options-screen h1
+#search-options-screen button h1
 {
-    font-size:1.4em;
-    margin:0;
+    font-size:1.2em;
+}
+
+#search-options-screen div h1
+{
+    font-size: 0.8em;
+    margin: 0;
+    color: $black_alpha40;
+    padding-left: 10px;
+    font-style: italic;
+    padding-top: 5px;
+}
+
+
+#search-options-screen legend,
+#search-options-screen label,
+{
+    font-family:sans-serif;
+}
+
+
+#search-options-screen legend
+{
+    font-weight:bold;
+    color:$black;
+    border-top:1px dotted $white;
+    border-bottom:1px dotted $white;
+    width:100%;
+    padding:10px;
+    padding-left:0px;
+}
+
+#search-options-screen fieldset
+{
+    font-size:0.8em;
+    padding:10px;
+    margin-top:10px;
 }
 
 #search-options-screen section
