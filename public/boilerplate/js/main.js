@@ -7,6 +7,7 @@ var main = (function () {
 	// initalize the application
 	main.init = function()
 	{
+		busyManager.init();
 		dataloader.init(); // initialize data load
 		//popUpManager.init();
 		//utilityBarManager.init(); // initalizes utility bar at top of screen
@@ -15,17 +16,47 @@ var main = (function () {
 	}
 
 	//=================================================================================
+	// manages show and hiding of splash screen
+		var busyManager = (function(){
+		var busyManager = {};
+
+		var splashScreen; // loading screen
+
+		// PUBLIC METHODS
+		busyManager.init = function()
+		{
+			splashScreen = document.getElementById("splash-screen");
+			//.success(function() { dataLoadedSuccess(); })
+			//.error(function() { dataLoadedError(); })
+			//.complete(function() { dataLoadedComplete(); });
+		}
+
+		// PUBLIC METHODS
+		busyManager.show = function()
+		{
+			console.log("show splash screen");
+			splashScreen.classList.remove("hide");
+		}
+		
+		busyManager.hide = function()
+		{
+			console.log("hide splash screen");
+			splashScreen.classList.add("hide");
+		}
+	
+		return busyManager;
+	})();
+
+
+	//=================================================================================
 	// JSON data loader
 	var dataloader = (function(){
 		var dataloader = {};
 
 		var data; // loaded data
-		var splashScreen; // loading data screen
-
+		
 		dataloader.init = function()
-		{
-			splashScreen = document.getElementById("splash-screen");
-			
+		{			
 			var path = "/boilerplate/data/dbmock.json"; // load mock data
 			$.getJSON(path, function(response){
 			   data = response;
@@ -41,7 +72,7 @@ var main = (function () {
 		function dataLoadedSuccess()
 		{
 			console.log("data loaded successful!");
-			$(splashScreen).fadeOut();
+			busyManager.hide();
 			search.init(); //initialize search form
 		}
 		

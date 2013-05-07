@@ -114,7 +114,8 @@ $yellow_dark: rgb(255,235.000001192093,27.0000002905726);
 $yellow_light: rgb(228.000001609325,225.000001788139,161.000005602837);
 
 // fonts
-$secondary_font: "Open Sans", Arial, sans-serif;
+$serif_font: 'Average', serif;
+$san_serif_font: "Open Sans", Arial, sans-serif;
 
 //animation settings
 $default_duration: 150ms;
@@ -125,7 +126,7 @@ $default_duration: 150ms;
 html,body
 {
     height: 100%;
-    font-family: 'Average', serif;
+    font-family: $serif_font;
 }
 
 
@@ -305,7 +306,7 @@ fade-out
     min-width:25px;
     box-shadow: 0 2px 5px $black_alpha40;
     background: $blue_light;    
-    font-family: $secondary_font;
+    font-family: $san_serif_font;
     font-size:0.6em;
     cursor:pointer;
     text-align: center;
@@ -464,7 +465,7 @@ fade-out
     min-width:25px;
     
     background: $yellow_light;    
-    font-family: $secondary_font;
+    font-family: $san_serif_font;
     font-size:0.6em;
     cursor:pointer;
     text-align: center;

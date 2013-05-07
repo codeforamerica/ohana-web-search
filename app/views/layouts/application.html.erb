@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>        
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -23,15 +24,47 @@
     <h1>Loading...</h1>
   </section>
 
-  <section id="main-content" class="fullscreen">
-  
-  <%= render 'layouts/navigation' %>
-  
-  <%= render 'layouts/messages' %>
-              <%= yield %>
+  <section id="main-header">
+        <header id="utility-screens">
+            <nav>
+                <div id="logo">
+                    <a href="#">Human Services Finder</a>
+                    <button id="info-screen-btn"><h1>?</h1></button>
+                </div>
+            </nav>
+            
+            <section id="info-screen" class="mini">
+              <div>
+                <h1>Find resources near you</h1>
+                <p>Retrieve detailed information on the services available in your area. To get started, enter your address below and click 'search'.</p>
+                <p><a href="#">[close]</a></p>
+              </div>
+            </section>
+        </header>
+    </section>
 
-  <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
-  </section>
+    <section id="main-content" class="fullscreen">
+
+        <main>
+            <section id="search-content">
+
+                    <%= render 'layouts/messages' %>
+                    <%= yield %>
+
+            </section>
+
+            <aside id="search-options-screen">
+                <button id="search-options-screen-btn"></button>
+                <div>
+                <h1>Search Options</h1>
+                
+                <%= render 'layouts/search_options' %>
+
+                </div>
+            </aside>
+
+        </main>
+    </section>
 
   </body>
 </html>

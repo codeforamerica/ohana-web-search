@@ -14,7 +14,5 @@
         %span
           →
         = text_field_tag :address, nil, :placeholder => "e.g. san mateo, ca"
-        %p Within:
-        = select_tag :miles, options_for_select([['1 mile', 1],['2 miles', 2],['3 miles', 3],['4 miles', 4],['5 miles', 5],['10 miles', 10],['20 miles', 20],['30 miles', 30],['40 miles', 40],['50 miles', 50]], :selected => 2)
     %div/
     = button_tag "Find >>>"
