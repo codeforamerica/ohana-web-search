@@ -117,11 +117,50 @@ fade-out {
   text-align: center;
   font-size: 1.4em; }
 
+/*#message-box
+{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background:$yellow_dark;
+    border: 1px solid $green_dark;
+    box-shadow:0px 0px 10px $black_alpha40;
+    color:#000;
+    position: absolute;
+    top: 40px;
+    left: 310px;
+    z-index: 1;
+}
+
+#message-box p
+{
+    padding:10px;
+    margin:0;
+}
+
+#message-box .corner
+{
+    width:10px;
+    height:10px;
+    background:$yellow_dark;
+    border-right: 1px solid $green_dark;
+    border-bottom: 1px solid $green_dark;
+    transform: rotate(45deg) ;
+    -webkit-transform: rotate(45deg) ;
+    -moz-transform: rotate(45deg) ;
+    -o-transform: rotate(45deg) ;
+    -ms-transform: rotate(45deg) ;
+    position: absolute;
+    top: 38px;
+    left: 20px;
+    box-shadow:0px 0px 10px $black_alpha40;
+}*/
 #main-header {
   position: relative;
   z-index: 99998;
-  background: #03497e;
-  width: 100%; }
+  background: white;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); }
 
 #main-header .mini
 #logo a {
@@ -153,8 +192,19 @@ fade-out {
   right:10px;
   z-index: 999999;*/
   position: fixed;
-  right: 10px;
-  top: 5px; }
+  right: 0;
+  top: 0;
+  background: #03497e;
+  height: 100%;
+  padding: 10px;
+  padding-right: 20px;
+  border-left: 1px dotted black;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); }
+
+#utility-screens footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px; }
 
 #utility-screens nav button {
   margin-top: 5px;
@@ -248,11 +298,38 @@ fade-out {
   font-size: 1.5em; }
 
 #search-options-screen {
-  background: white;
-  width: 220px;
+  background: #e4e1a1;
   padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  vertical-align: top; }
+  vertical-align: top;
+  border-left: 1px dotted rgba(0, 0, 0, 0.4);
+  position: relative; }
+
+#search-options-screen div {
+  margin-left: 30px; }
+
+#search-options-screen.slide-in div {
+  display: none; }
+
+#search-options-screen.slide-out div {
+  display: block; }
+
+#search-options-screen-btn {
+  left: -25px;
+  top: 0;
+  position: absolute;
+  margin-top: 5px;
+  display: block;
+  border-radius: 3px 0px 0px 3px;
+  line-height: 23px;
+  height: 25px;
+  min-width: 25px;
+  background: #e4e1a1;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 0.6em;
+  cursor: pointer;
+  text-align: center;
+  border: 0px;
+  border-collapse: collapse; }
 
 #search-options-screen h1 {
   font-size: 1.4em;
@@ -293,7 +370,8 @@ fade-out {
 
 #main-content {
   display: table;
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
 
 #main-content main {
   display: table-row; }
@@ -304,7 +382,16 @@ fade-out {
 
 #main-content.fullscreen {
   position: relative;
-  min-height: 100%;
+  min-height: 100%; }
+
+#main-content.mini {
+  transition: min-height 0.25s;
+  -webkit-transition: min-height 0.25s;
+  /* Safari */
+  min-height: 100px;
+  background: #0596d5; }
+
+#search-content {
   background: #0596d5;
   background: #0596d5;
   /* Old browsers */
@@ -322,13 +409,6 @@ fade-out {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
-
-#main-content.mini {
-  transition: min-height 0.25s;
-  -webkit-transition: min-height 0.25s;
-  /* Safari */
-  min-height: 100px;
-  background: #0596d5; }
 
 #search-screen {
   min-width: 664px;
@@ -437,7 +517,8 @@ fade-out {
   font-size: 1.2em;
   letter-spacing: 1px;
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4); }
 
 #search-box.large button:hover {
   outline: 4px solid #03497e;
@@ -563,44 +644,6 @@ fade-out {
   border: 1px solid #999999;
   width: 320px;
   height: 240px; }
-
-#message-box {
-  display: table-cell;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  background: #ffeb1b;
-  border: 1px solid #83b41a;
-  color: #000;
-  position: absolute;
-  top: -40px;
-  left: 310px;
-  z-index: 1; }
-
-#message-box p {
-  padding: 10px;
-  margin: 0; }
-
-#message-box .corner {
-  width: 10px;
-  height: 10px;
-  background: #ffeb1b;
-  border-right: 1px solid #83b41a;
-  border-bottom: 1px solid #83b41a;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  position: absolute;
-  top: 45px;
-  left: 20px; }
-
-/* temp */
-footer {
-  position: fixed;
-  bottom: 10px;
-  right: 10px; }
 
 /* ==========================================================================
    Helper classes

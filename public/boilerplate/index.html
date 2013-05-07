@@ -26,7 +26,13 @@
         <section id="splash-screen">
             <h1>Loading...</h1>
         </section>
-        
+
+        <!--
+        <section id="message-box">
+            <p>Message</p><div class="corner"></div>
+        </section>
+        -->
+
         <section id="main-header">
             <header id="utility-screens">
                 <nav>
@@ -34,10 +40,13 @@
                         <a href="/boilerplate/">Human Services Finder</a>
                         <button id="info-screen-btn"><h1>?</h1></button>
                     </div>
+                    <!--
                     <div class="fixed">
                         <a href="#"><button id="top-btn" class="disabled"><h1>^</h1></button></a>
                         <button id="search-options-screen-btn"><h1>+</h1></button>
+                        <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
                     </div>
+                    -->
                 </nav>
                 
                 <section id="info-screen" class="mini">
@@ -64,7 +73,6 @@
                                 <option value="Samaritan House" />
                             </datalist>
                             <section id="search-box" class="large">
-                                <!-- <div><section id="message-box" class="hide"><p>Message</p><div class="corner"></div></section></div> -->
                                 <div><label for="search-term">I need <span>→</span></label><input id="search-term" type="text" placeholder="e.g. food" list="categories" /></div>
                                 <div>
                                     <label for="search-near">I am near <span>→</span></label>
@@ -106,7 +114,9 @@
 
                 </section>
 
-                <aside id="search-options-screen" class="hide">
+                <aside id="search-options-screen">
+                    <button id="search-options-screen-btn">[]</button>
+                    <div>
                     <h1>Search Options</h1>
                     
                     <fieldset>
@@ -166,12 +176,10 @@
                         <div><label for="tagalog-ck">Tagalog</label><input id="tagalog-ck" type="checkbox" checked /></div>
                     </fieldset>
                     -->
-
+                    </div>
                 </aside>
 
             </main>
-
-            <footer><address><a href="https://github.com/codeforamerica/human_services_finder"><img src="/boilerplate/img/cfa_flag.png" alt="Code for America flag"></a></address></footer>
         </section>
 
 

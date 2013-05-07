@@ -8,7 +8,8 @@ var main = (function () {
 	main.init = function()
 	{
 		dataloader.init(); // initialize data load
-		utilityBarManager.init(); // initalizes utility bar at top of screen
+		//popUpManager.init();
+		//utilityBarManager.init(); // initalizes utility bar at top of screen
 			infoScreenManager.init(); // initialize help/info screen (in utility bar)
 			searchOpScreen.init(); // initialize search options screen (in utility bar)
 	}
@@ -66,9 +67,32 @@ var main = (function () {
 		return dataloader;
 	})();
 
+
+	//=================================================================================
+	// manages popup
+	/*var popUpManager = (function(){
+		var popUpManager = {};
+
+		// PRIVATE PROPERTIES
+		var popUpBox; // absolute positioned popup
+
+		// PUBLIC METHODS
+		popUpManager.init = function()
+		{
+			popUpBox = document.createElement("section");
+			popUpBox.id = "message-box";
+			document.body.appendChild(popUpBox);
+
+			console.log(popUpBox);
+		}
+
+		return popUpManager;
+	})();*/
+
+
 	//=================================================================================
 	// manages utility bar
-	var utilityBarManager = (function(){
+	/*var utilityBarManager = (function(){
 		var utilityBarManager = {};
 
 		// PRIVATE PROPERTIES
@@ -110,7 +134,7 @@ var main = (function () {
 
 		return utilityBarManager;
 	})();
-
+	*/
 
 	//=================================================================================
 	// manages show and hiding of info screen
@@ -210,6 +234,8 @@ var main = (function () {
 		var minScreen; // minimized search options screen
 		var maxScreen; // maximized search options screen
 
+		var dragging = false;
+
 		// PUBLIC METHODS
 		searchOpScreen.init = function()
 		{
@@ -220,24 +246,30 @@ var main = (function () {
 			minScreen.addEventListener("mouseover",miniOverHandler,false);
 			minScreen.addEventListener("mouseout",miniOutHandler,false);
 
+			//searchOpScreen.maximize();
+
 			searchOpScreen.minimize();
 		}
 
 		// PUBLIC METHODS
 		searchOpScreen.maximize = function()
 		{
-			maxScreen.classList.remove("hide");
+			//maxScreen.classList.remove("hide");
+			maxScreen.classList.remove("slide-in");
+			maxScreen.classList.add("slide-out");
 
 			// change content
 			minScreen.innerHTML = "<h1>–</h1>";
 
 			minScreen.removeEventListener("mousedown",maximizeHandler,false);	
-			minScreen.addEventListener("mousedown",minimizeHandler,false);	
+			minScreen.addEventListener("mousedown",minimizeHandler,false);
 		}
 		
 		searchOpScreen.minimize = function()
 		{
-			maxScreen.classList.add("hide");
+			//maxScreen.classList.add("hide");
+			maxScreen.classList.remove("slide-out");
+			maxScreen.classList.add("slide-in");
 
 			// change content
 			minScreen.innerHTML = "<h1>+</h1>";	
@@ -245,10 +277,12 @@ var main = (function () {
 			// setup maximize handlers
 			minScreen.addEventListener("mousedown",maximizeHandler,false);
 		}
+
 		// PRIVATE METHODS
 		// minimize the info/help box
 		function minimizeHandler(evt)
 		{
+			console.log("here");
 			searchOpScreen.minimize();
 		}
 
