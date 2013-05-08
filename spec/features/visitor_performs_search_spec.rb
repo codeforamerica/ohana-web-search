@@ -17,9 +17,10 @@ feature 'Visitor performs search' do
     expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
   end
 
-  scenario 'for address only, with default distance' do
-    search_for_address '94403'
-    find('#results-screen').should have_content('results within 2 miles of 94403')
+  scenario 'for address only, with default distance, and 1 result expected' do
+    organization = FactoryGirl.create(:organization)
+    search_for_address '94010'
+    expect(page).to have_content('1 result within 2 miles of 94010')
   end
 
   scenario 'by clicking Find button directly, with no address or keyword specified' do

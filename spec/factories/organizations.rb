@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :organization do
-    name "EHP"
-    street_address "1415 Pulgas Avenue"
-    zipcode "94114"
-    city "East Palo Alto"
+    name "Burlingame, Easton Branch"
+    street_address "1800 Easton Drive"
+    zipcode "94010"
+    city "Burlingame"
     state "CA"
     phone "650-314-5678"
     coordinates [-122.371448, 37.583849]
