@@ -102,6 +102,7 @@ $black: rgb(0,0,0);
 $black_alpha40: rgba(0,0,0,0.40000000596046);
 $blue_dark: rgb(3.00000005867332,73.0000032484531,126.000000089407);
 $blue_light: rgb(157.000005841255,235.000001192093,252.000000178814);
+$blue_light_alpha40: rgba(157.000005841255,235.000001192093,252.000000178814,0.4);
 $blue_midtone: rgb(5.00000017695129,150.000006258488,213.000002503395);
 $green_dark: rgb(131.000007390976,180.000004470348,26.0000003501773);
 $green_light: rgb(209.000002741814,249.000000357628,148.000006377697);
@@ -130,6 +131,10 @@ html,body
     font-family: $serif_font;
 }
 
+h1
+{
+    margin:0;
+}
 
 //=================================================================================
 // effects styles
@@ -585,24 +590,23 @@ fade-out
     height: 100%;
 }
 
-#main-content.fullscreen
-{
-    position:relative;
-    min-height:100%;
-}
-
-#main-content.mini
+#main-content
 {
     transition: min-height 0.25s;
     -webkit-transition: min-height 0.25s; /* Safari */
 
     min-height:100px;
-    background:$blue_midtone;
+}
+
+.home #main-content
+{
+    position:relative;
+    min-height:100%;
 }
 
 //=================================================================================
 // search screen styles
-#search-content
+.home #search-content
 {
     background:$blue_midtone;
 
@@ -780,8 +784,7 @@ fade-out
 // Inside content
 #inside-content
 {
-    background:$white;
-    padding-left:15px;
+    background:$blue_light_alpha40;
 }
 
 //=================================================================================
@@ -884,35 +887,58 @@ fade-out
     background: #fff;
 }
 
-#results-list header
+#results-list > header
 {
     border-bottom:1px solid hsl(0,0%,90%);
     background:#f9f594;    
+    /*box-shadow: 0px 0px 10px $black_alpha40;*/
 }
 
-#results-list h1
+#results-list > header h1
 {
     font-variant: small-caps;
-    font-size: 10px;
+    font-size: 12px;
     font-family: Sans-Serif;
     letter-spacing: 1px;
     margin: 0px;
     margin-left: 4px;
-    color: $blue_dark;
+    color: $black_alpha40;
     padding: 10px;
     display: inline-block;
     cursor:default;
 }
 
+#results-list nav
+{
+    display:inline-block;
+    color:$greyscale_dark;
+    font-size:12px;
+}
+
+#results-list a
+{
+    text-decoration: none;
+}
+
+.results-entry > h1
+{
+    font-size: 14px;
+    color:$blue_dark;
+    padding: 10px;
+    padding-left:20px;
+}
+
 .results-entry
 {
     border-bottom:1px dashed $blue_light;
+    padding:5px;
 }
 
-.results-entry-hover
+.results-entry:hover
 {
-    background:$blue_light;
+    background:$yellow_light_alpha40;
     cursor:pointer;
+    padding-left:10px;
 }
 
 .results-entry-selected
@@ -930,7 +956,7 @@ fade-out
 
 .results-entry .entry-title
 {
-    border-left:10px solid $yellow_dark;
+    /*border-left:10px solid $yellow_dark;*/
 }
 
 .results-entry .hour-box
@@ -965,6 +991,10 @@ fade-out
 {
 
 }
+
+
+//=================================================================================
+// Detail list screen
 
 #detail-screen .streetview
 {
