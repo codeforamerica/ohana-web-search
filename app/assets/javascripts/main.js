@@ -70,7 +70,7 @@ var main = (function () {
 
 			infoScreen.addEventListener("mousedown",minimizeHandler,false);
 
-			if (webStorageProxy.getItem(infoScreen.storageName))
+			if (webStorageProxy.getItem(infoScreenManager.storageName))
 				infoScreenManager.minimize();
 			else
 				infoScreenManager.maximize();
@@ -143,6 +143,9 @@ var main = (function () {
 		var searchOpBtn; // minimized search options screen
 		var searchOpScreen; // maximized search options screen
 
+		// PUBLIC PROPERTIES
+		searchOpManager.storageName = "hrl-searchopscreen";
+
 		// PUBLIC METHODS
 		searchOpManager.init = function()
 		{
@@ -153,9 +156,10 @@ var main = (function () {
 			searchOpBtn.addEventListener("mouseover",miniOverHandler,false);
 			searchOpBtn.addEventListener("mouseout",miniOutHandler,false);
 
-			//searchOpManager.maximize();
-
-			searchOpManager.minimize();
+			if (webStorageProxy.getItem(searchOpManager.storageName))
+				searchOpManager.minimize();
+			else
+				searchOpManager.maximize();
 		}
 
 		// PUBLIC METHODS

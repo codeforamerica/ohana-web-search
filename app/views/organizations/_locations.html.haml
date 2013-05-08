@@ -1,13 +1,12 @@
-%section#inside-content
-	%header
-		%h1
-			Service Providers
-		%nav
-			== #{@results_count}
-	%section#results-list
-		- @locations.each do |location|
-			%a{:href=>"#{organization_path(location)}"}
-				%section{:class => "results-entry", :title=>"#{organization_path(location)}"}
-					%h1.entry-title
-						= location.name
-						/= location.address
+%header
+	%h1
+		Service Providers
+	%nav
+		== #{@results_count}
+%section#results-list
+	- @locations.each do |location|
+		%a{:href=>"#{organization_path(location)}"}
+			%section{:class => "results-entry", :title=>"#{organization_path(location)}"}
+				%h1.entry-title
+					= location.name
+					/= location.address
