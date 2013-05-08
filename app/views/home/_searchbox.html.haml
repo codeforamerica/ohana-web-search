@@ -1,0 +1,15 @@
+%div
+  %label{:for => "search-term"}
+    I need
+    %span
+      →
+    %input#search-term{:type => "text",:placeholder =>"e.g. food"}         
+
+%div
+  %label{:for => "search-near"}
+    I am near
+    %span
+      →
+    = text_field_tag :address, nil, :placeholder => "e.g. san mateo, ca"
+%div/
+= button_tag "Find >>>"
