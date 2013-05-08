@@ -628,7 +628,8 @@ fade-out
 // search box styles
 #search-box.mini
 {
-    text-align:center;
+    padding-left: 15px;
+    background:$blue_dark;
 }
 
 #search-box.mini div
@@ -647,49 +648,8 @@ fade-out
 
 #search-box.mini label span
 {
-    color:$blue_light;
-}
-
-#search-box.mini input
-{
-    background:$blue_light;
-    padding:10px;
-    position: relative;
-    top: 6px;
-    border-width:1px;
-    border-color:$blue_midtone;
-    border-collapse: collapse;
-    height:0px;
-    margin-right:20px;
-    font-size: 8px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-}
-
-#search-box.mini input::-webkit-input-placeholder
-{
-    color:$greyscale_midtone;
-}
-
-#search-box.mini button
-{
-    background:$green_dark;
-    margin:10px auto;
-    color:$yellow_dark;
-    border:1px solid $yellow_dark;
-    font-family: 'Average', serif;
-    letter-spacing: 1px;
-    width:75px;
-    font-size: 10px;
-    position:relative;
-    top:-3px;
-}
-
-#search-box.mini button:hover
-{
-    outline:4px solid $blue_dark;
-    color:$blue_dark;
+//    color:$blue_light;
+    display:none;
 }
 
 #search-box.large 
@@ -724,21 +684,29 @@ fade-out
     color:$blue_light;
 }
 
-#search-box.large input
+
+
+
+// search terms styles
+#search-box input
 {
-    display:table-cell;
     background:$blue_light;
     padding:10px;
-    margin-left: 20px;
-    position: relative;
-    top: -10px;
-    border-width:1px;
-    border-color:$blue_midtone;
-    border-collapse: collapse;
-    width:300px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    border-width:1px;
+    border-color:$blue_midtone;
+    border-collapse: collapse;
+    position: relative;
+}
+
+#search-box.large input
+{
+    display:table-cell;
+    margin-left: 20px;
+    top: -10px;
+    width:300px;
     font-size: 18px;    
 }
 
@@ -747,20 +715,31 @@ fade-out
     color:$greyscale_midtone;
 }
 
-#search-box.large button
+#search-box.mini input
 {
-    display:table-cell;
+    position: relative;
+    top: 6px;
+    height:0px;
+    margin-right:20px;
+    font-size: 12px;
+}
+
+#search-box.mini input::-webkit-input-placeholder
+{
+    color:$greyscale_midtone;
+}
+
+
+// find button styles
+#search-box button
+{
     background:$green_dark;
     margin:10px auto;
     color:$yellow_light;
     border:1px solid $yellow_light_alpha40;
     font-family: 'Average', serif;
-    font-size:20px;
+    box-shadow: 0px 0px 5px $black_alpha40;    
     letter-spacing: 2px;
-    width:100%;
-    position: absolute;
-    box-shadow: 0px 0px 5px $black_alpha40;
-
     border-radius:3px;
     padding:6px;
     background: rgb(131,180,26); /* Old browsers */
@@ -773,12 +752,15 @@ fade-out
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83b41a', endColorstr='#77a318',GradientType=0 ); /* IE6-9 */
 }
 
-#search-box.large button span:before
+#search-box.large button
 {
-    content:"/assets/magnifier.png"
+    display:table-cell;
+    font-size:20px;
+    width:100%;
+    position: absolute;
 }
 
-#search-box.large button:hover
+#search-box button:hover
 {
     border:1px solid $yellow_dark;
     color:$yellow_dark;
@@ -786,6 +768,20 @@ fade-out
     -webkit-transition: border $default_duration;
     -moz-transition: border $default_duration;
     transition: border $default_duration;
+}
+
+#search-box.mini button
+{
+    width:75px;
+    font-size: 10px;
+}
+
+//=================================================================================
+// Inside content
+#inside-content
+{
+    background:$white;
+    padding-left:15px;
 }
 
 //=================================================================================
@@ -883,18 +879,18 @@ fade-out
 //=================================================================================
 // Results list screen
     
-#results-screen
+#results-list
 {
     background: #fff;
 }
 
-#results-screen header
+#results-list header
 {
     border-bottom:1px solid hsl(0,0%,90%);
     background:#f9f594;    
 }
 
-#results-screen h1
+#results-list h1
 {
     font-variant: small-caps;
     font-size: 10px;
