@@ -112,6 +112,7 @@ $greyscale_midtone: rgb(153.000006079674,153.000006079674,153.000006079674);
 $white: rgb(255,255,255);
 $yellow_dark: rgb(255,235.000001192093,27.0000002905726);
 $yellow_light: rgb(228.000001609325,225.000001788139,161.000005602837);
+$yellow_light_alpha40: rgba(228.000001609325,225.000001788139,161.000005602837,0.4);
 
 // fonts
 $serif_font: 'Average', serif;
@@ -751,20 +752,31 @@ fade-out
     display:table-cell;
     background:$green_dark;
     margin:10px auto;
-    color:$yellow_dark;
-    border:2px solid $yellow_dark;
+    color:$yellow_light;
+    border:1px solid $yellow_light_alpha40;
     font-family: 'Average', serif;
     font-size:16px;
     letter-spacing: 1px;
     width:100%;
     position: absolute;
     box-shadow: 0px 0px 5px $black_alpha40;
+
+    border-radius:3px;
+    padding:4px;
+    background: rgb(131,180,26); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(131,180,26,1) 0%, rgba(119,163,24,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(131,180,26,1)), color-stop(100%,rgba(119,163,24,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(131,180,26,1) 0%,rgba(119,163,24,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(131,180,26,1) 0%,rgba(119,163,24,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(131,180,26,1) 0%,rgba(119,163,24,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(131,180,26,1) 0%,rgba(119,163,24,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83b41a', endColorstr='#77a318',GradientType=0 ); /* IE6-9 */
 }
 
 #search-box.large button:hover
 {
-    outline:4px solid $blue_dark;
-    color:$blue_dark;
+    border:1px solid $yellow_dark;
+    color:$yellow_dark;
 }
 
 //=================================================================================
