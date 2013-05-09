@@ -142,7 +142,6 @@ h1
 ul
 {
     list-style-type: none;
-    list-style-type: circle;
 }
 
 //=================================================================================
@@ -447,7 +446,8 @@ fade-out
 
 #info-screen div h1
 {
-    font-size: 1.5em;
+    font-size: 24px;
+    margin-top: 20px;
 }
 
 //=================================================================================
@@ -590,6 +590,11 @@ fade-out
     background: radial-gradient(ellipse at center,  $blue_midtone 20%,$blue_dark 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+}
+
+#search-content
+{
+    background:$blue_light_alpha40;
 }
 
 .home #search-screen
@@ -756,7 +761,6 @@ fade-out
 #inside-content
 {
     font-family: $san_serif_font;
-    background:$yellow_light_alpha20;
 }
 
 //=================================================================================
@@ -860,7 +864,7 @@ fade-out
 
 #results-list > header
 {
-    border-bottom:1px solid hsl(0,0%,90%);
+    border-bottom:1px solid greyscale_midtone;
     background:$blue_midtone; 
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
 }
@@ -876,6 +880,11 @@ fade-out
     display: inline-block;
     cursor:default;
     font-weight: bold;
+}
+
+#results-list ul
+{
+    padding:0;
 }
 
 #results-list nav
@@ -901,18 +910,44 @@ fade-out
 
 .results-entry
 {
-    border-bottom:1px dashed $blue_light;
+    border-bottom:2px solid $white;
     padding:5px;
     font-family:$san_serif_font;
     letter-spacing:1px;
     margin-left:15px;
     margin-right:15px;
+    background:$blue_light_alpha40;
 }
+
+#results-list li:first-child .results-entry
+{
+    border-radius:10px 10px 0px 0px;
+}
+
+#results-list li:last-child .results-entry
+{
+    border-radius:0px 0px 10px 10px;
+    border-bottom:0;
+}
+
+#results-list li:nth-child(2n-1) .results-entry
+{
+    background:$blue_midtone_alpha30;
+    box-shadow: inset 0px 0px 10px $blue_midtone_alpha30;
+}
+
+#results-list li:nth-child(2n) .results-entry
+{
+    background:$blue_light_alpha40;
+    box-shadow: inset 0px 0px 10px $blue_light;
+}
+
 
 .results-entry:hover
 {
     background:$blue_light;
     cursor:pointer;
+    border-radius:6px 0px 6px 0px;
 }
 
 .results-entry > span
