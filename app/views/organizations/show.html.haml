@@ -20,12 +20,28 @@
 						%a{:href=>"#{organization_path()}"}
 							↩ Return to results
 				%section#detail-info
-					%h1.name
-						= @org.name
+					
+					- if @org.name.present?
+						%h1.name
+							= @org.name
+					
 					- if @org.address.present?
-						%p
+						%p.address
 							= @org.address
-					%p
+					
+					- if @org.phone.present?
+						%p.phone
+							= @org.phone
+
+					- if @org.url.present?
+						%p.url
+							= link_to "Website", @org.url
+
+					- if @org.email.present?
+						%p.email
+							= @org.email
+
+					%p.map
 						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"};
 
 				%h2
