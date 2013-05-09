@@ -868,15 +868,15 @@ fade-out
 {
 }
 
-#results-list > header
+#results-list header
 {
     border-bottom:1px solid greyscale_midtone;
     background:$blue_midtone; 
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
 }
 
-#results-list > header h1,
-#results-list > h2
+#results-list header h1,
+#results-list h2 /* details list */
 {
     font-size: 12px;
     letter-spacing: 1px;
@@ -909,10 +909,22 @@ fade-out
 
 .results-entry > h1
 {
-    font-size: 14px;
+    font-size: 16px;
     color:$blue_dark;
     padding: 10px;
     padding-left:20px;
+}
+
+.results-entry p
+{
+    margin:0;
+}
+
+.results-entry p:last-child
+{
+    font-size:12px;
+    margin-left:20px;
+    color:$blue_midtone;
 }
 
 .results-entry
@@ -967,62 +979,59 @@ fade-out
 
 //=================================================================================
 // Detail list screen
+#results-list nav a
+{
+    color: $green_dark;
+    font-weight:bold;
+    background:$green_light;
+    padding:5px;
+    border-radius:5px;
+}
 
-#detail-screen
+#detail-info
 {
     padding:10px;
     margin:15px;
     border-radius:10px 10px;
     background:$blue_midtone_alpha30;
     box-shadow: inset 0px 0px 10px $blue_light;
+    color:$blue_dark;
+    padding-left: 25px;
 }
 
+#detail-info p
+{
+    margin:0;
+    font-size:12px;
+    margin-left:20px;
+    color:$blue_midtone;
+}
 
-#detail-screen .streetview
+#results-list #detail-screen ul
+{
+    margin-top: 0;
+}
+
+#detail-info .name
+{
+    font-weight:bold;
+    color:$black;
+    font-family: Average;
+}
+
+#detail-info .streetview
 {
     border:1px solid $greyscale_midtone;
     width:320px;
     height:240px;
 }
 
-#detail-screen .map
+#detail-info .map
 {
     border:1px solid $greyscale_midtone;
     width:320px;
     height:240px;
 }
-
-#detail-screen .address
-{
-    
-}
-
-#detail-screen .street
-{
-    
-}
-
-#detail-screen .city
-{
-    
-}
-
-#detail-screen .state
-{
-    
-}
-
-#detail-screen .zip
-{
-    
-}
-
-#detail-screen .phone
-{
-    
-}
-
-
 
 
 

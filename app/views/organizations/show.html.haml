@@ -12,27 +12,33 @@
 %seaction#search-content
 	%section#inside-content
 		%section#results-list
-			%header
-				%h1
-					Service Provider
-				%nav
-					%a{:href=>"#"}
-						Return to results
 			%section#detail-screen
-				%h1.name
-					= @org.name
-				%p
-					Address:
-					= @org.address if @org.address
+				%header
+					%h1
+						Service Provider
+					%nav
+						%a{:href=>"#{organization_path()}"}
+							↩ Return to results
+				%section#detail-info
+					%h1.name
+						= @org.name
+					- if @org.address.present?
+						%p
+							= @org.address
+					%p
+						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"};
 
-			%h2
-				Nearby:
+				%h2
+					Nearby (within 2 miles):
 				%ul
 					- @nearby.each do |venue| 
 						%li
 							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 								%section{:class => "results-entry"}
 									%h1.entry-title
-										= venue.name 
-							/: 
-							/= venue.address
+										%p
+											= venue.name 
+										%p
+											= venue.address
+										
+

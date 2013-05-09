@@ -23,6 +23,8 @@
 						%a{:href=>"#{organization_path(location)}", :title=>"#{location.name}"}
 							%section{:class => "results-entry"}
 								%h1.entry-title
-									= location.name
-									/= location.address
+									%p
+										= location.name
+									%p
+										= location.address
 

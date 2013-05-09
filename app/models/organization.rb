@@ -26,6 +26,10 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
 
+  def mapURL
+    "http://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{self.latitude},#{self.longitude}&sensor=false"
+  end
+
   include Geocoder::Model::Mongoid
   geocoded_by :address               # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
