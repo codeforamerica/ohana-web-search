@@ -1,3 +1,14 @@
+%aside#search-options-screen
+	%section#search-screen
+		= form_tag('/organizations', :method => :get)
+		%section#search-box.mini
+			= render :partial => 'home/searchbox'
+
+	%div
+		%h1
+			Search Options
+		= render 'layouts/search_options'
+
 %seaction#search-content
 	%section#inside-content
 		%section#results-list
@@ -15,15 +26,3 @@
 									= location.name
 									/= location.address
 
-%aside#search-options-screen
-	%button#search-options-screen-btn
-
-	%section#search-screen
-		= form_tag('/organizations', :method => :get)
-		%section#search-box.mini
-			= render :partial => 'home/searchbox'
-
-	%div
-		%h1
-			Search Options
-		= render 'layouts/search_options'
