@@ -1,8 +1,4 @@
-%section#search-screen
-	= form_tag('/organizations', :method => :get)         
-	%section#search-box.mini
-		= render :partial => 'home/searchbox'
-
+%seaction#search-content
 	%section#inside-content
 		%section#results-list
 			%header
@@ -10,9 +6,24 @@
 					Service Providers
 				%nav
 					== #{@results_count}
-			- @locations.each do |location|
-				%a{:href=>"#{organization_path(location)}"}
-					%section{:class => "results-entry", :title=>"#{organization_path(location)}"}
-						%h1.entry-title
-							= location.name
-							/= location.address
+			%ul
+				- @locations.each do |location|
+					%li
+						%a{:href=>"#{organization_path(location)}"}
+							%section{:class => "results-entry", :title=>"#{organization_path(location)}"}
+								%h1.entry-title
+									= location.name
+									/= location.address
+
+%aside#search-options-screen
+	%button#search-options-screen-btn
+
+	%section#search-screen
+		= form_tag('/organizations', :method => :get)
+		%section#search-box.mini
+			= render :partial => 'home/searchbox'
+
+	%div
+		%h1
+			Search Options
+		= render 'layouts/search_options'

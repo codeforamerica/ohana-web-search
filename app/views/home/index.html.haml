@@ -1,4 +1,5 @@
-%section#search-screen
-  = form_tag('/organizations', :method => :get)         
-  %section#search-box.large
-    = render :partial => 'searchbox'
+%seaction#search-content
+	%section#search-screen
+		= form_tag('/organizations', :method => :get)
+		%section#search-box.large
+			= render :partial => 'searchbox'
