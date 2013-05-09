@@ -10,7 +10,6 @@ var main = (function () {
 		busyManager.init();
 		busyManager.hide(); // temp - immediately hide
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
-		searchOpManager.init(); // initialize search options screen (in utility bar)
 	}
 
 	//=================================================================================
@@ -131,87 +130,6 @@ var main = (function () {
 		}
 
 		return infoScreenManager;
-	})();
-
-
-	//=================================================================================
-	// manages show and hiding of search options screen
-	var searchOpManager = (function(){
-		var searchOpManager = {};
-
-		// PRIVATE PROPERTIES
-		var searchOpBtn; // minimized search options screen
-		var searchOpScreen; // maximized search options screen
-
-		// PUBLIC PROPERTIES
-		searchOpManager.storageName = "hrl-searchopscreen";
-
-		// PUBLIC METHODS
-		searchOpManager.init = function()
-		{
-			//console.log("initialized infoscreen");
-			searchOpBtn = document.querySelector("#search-options-screen-btn");
-			searchOpScreen = document.querySelector("#search-options-screen");
-			
-			searchOpBtn.addEventListener("mouseover",miniOverHandler,false);
-			searchOpBtn.addEventListener("mouseout",miniOutHandler,false);
-
-			if (webStorageProxy.getItem(searchOpManager.storageName))
-				searchOpManager.minimize();
-			else
-				searchOpManager.maximize();
-		}
-
-		// PUBLIC METHODS
-		searchOpManager.maximize = function()
-		{
-			searchOpScreen.classList.remove("slide-in");
-			searchOpScreen.classList.add("slide-out");
-
-			// change content
-			searchOpBtn.innerHTML = "<h1>>></h1>";
-
-			searchOpBtn.removeEventListener("mousedown",maximizeHandler,false);	
-			searchOpBtn.addEventListener("mousedown",minimizeHandler,false);
-		}
-		
-		searchOpManager.minimize = function()
-		{
-			searchOpScreen.classList.remove("slide-out");
-			searchOpScreen.classList.add("slide-in");
-
-			// change content
-			searchOpBtn.innerHTML = "<h1><<</h1>";	
-
-			// setup maximize handlers
-			searchOpBtn.addEventListener("mousedown",maximizeHandler,false);
-		}
-
-		// PRIVATE METHODS
-		// minimize the info/help box
-		function minimizeHandler(evt)
-		{
-			searchOpManager.minimize();
-		}
-
-		// expand the info/help box
-		function maximizeHandler(evt)
-		{
-			searchOpManager.maximize();
-		}
-
-		// rollover handlers for the minified info/help box
-		function miniOverHandler(evt)
-		{
-			searchOpBtn.classList.add("over");
-		}
-
-		function miniOutHandler(evt)
-		{
-			searchOpBtn.classList.remove("over");
-		}
-
-		return searchOpManager;
 	})();
 
 	

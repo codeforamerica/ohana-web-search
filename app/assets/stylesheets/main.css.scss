@@ -119,6 +119,7 @@ $yellow_light_alpha40: rgba(255,246.000000536442,177.000004649162,0.4);
 $yellow_light_alpha20: rgba(255,246.000000536442,177.000004649162,0.2);
 
 // fonts
+$icon_font: 'OhanaIcons';
 $serif_font: 'Average', serif;
 $san_serif_font: "Open Sans", Arial, sans-serif;
 
@@ -239,6 +240,13 @@ fade-out
     left: 20px;
     box-shadow:0px 0px 10px $black_alpha40;
 }*/
+
+//=================================================================================
+// icons
+.ohana-icon:before {
+    content: attr(data-icon);
+    font-family:"OhanaIcons";
+}
 
 //=================================================================================
 // logo/header area
@@ -760,6 +768,21 @@ fade-out
     width:100%;
     font-size: 12px;
     margin:0;
+}
+
+#search-box.mini .ohana-icon
+{
+    font-size:11px;
+    position: relative;
+    top:1px;
+    left:2px;
+}
+
+#search-box.large .ohana-icon
+{
+    font-size: 16px;
+    position: relative;
+    top: 1px;
 }
 
 //=================================================================================
