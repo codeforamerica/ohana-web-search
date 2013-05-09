@@ -1,0 +1,38 @@
+%aside#search-options-screen
+	%section#search-screen
+		= form_tag('/organizations', :method => :get)
+		%section#search-box.mini
+			= render :partial => 'home/searchbox'
+
+	%div
+		%h1
+			Search Options
+		= render 'layouts/search_options'
+
+%seaction#search-content
+	%section#inside-content
+		%section#results-list
+			%header
+				%h1
+					Service Provider
+				%nav
+					%a{:href=>"#"}
+						Return to results
+			%section#detail-screen
+				%h1.name
+					= @org.name
+				%p
+					Address:
+					= @org.address if @org.address
+
+			%h2
+				Nearby:
+				%ul
+					- @nearby.each do |venue| 
+						%li
+							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
+								%section{:class => "results-entry"}
+									%h1.entry-title
+										= venue.name 
+							/: 
+							/= venue.address
