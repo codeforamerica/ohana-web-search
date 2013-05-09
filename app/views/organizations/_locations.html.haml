@@ -9,8 +9,8 @@
 			%ul
 				- @locations.each do |location|
 					%li
-						%a{:href=>"#{organization_path(location)}"}
-							%section{:class => "results-entry", :title=>"#{organization_path(location)}"}
+						%a{:href=>"#{organization_path(location)}", :title=>"#{location.name}"}
+							%section{:class => "results-entry"}
 								%h1.entry-title
 									= location.name
 									/= location.address
