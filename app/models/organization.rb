@@ -29,6 +29,10 @@ class Organization
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
+
+  def market_match?
+    self.market_match
+  end
   
   def self.find_by_keyword_and_location(keyword, location, radius)
     if keyword.blank? && location.blank?

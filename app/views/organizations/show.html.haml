@@ -41,6 +41,11 @@
 					- if @org.email.present?
 						%p.email
 							= @org.email
+					
+					- if @org.payments_accepted.present?
+						%p.payments_accepted
+							This market accepts 
+							= @org.payments_accepted.join(", ")
 
 					%p.map
 						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"};
