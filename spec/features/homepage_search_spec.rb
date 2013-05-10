@@ -1,18 +1,36 @@
-feature 'Visitor performs search' do
-  scenario 'with valid ZIP code and within 5 miles' do
-    search_for_both '94403', '5 miles'
+feature 'Visitor performs search on home page' do
+  # scenario 'with valid ZIP code and within 5 miles' do
+  #   search_for_both '94403', '5 miles'
 
-    expect(page).to have_content("organizations within 5 miles of '94403'")
+  #   expect(page).to have_content("organizations within 5 miles of '94403'")
+  # end
+
+  scenario 'with valid ZIP code' do
+    search_for_address '94403'
+
+    expect(page).to have_content("organizations within 2 miles of '94403'")
   end
 
+  # scenario 'with numerical-only address greater than 5 digits' do
+  #   search_for_both '123456', '10 miles'
+
+  #   expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  # end
+
+  # scenario 'with numerical-only address less than 5 digits' do
+  #   search_for_both '1236', '10 miles'
+
+  #   expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  # end
+
   scenario 'with numerical-only address greater than 5 digits' do
-    search_for_both '123456', '10 miles'
+    search_for_address '123456'
 
     expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
   end
 
   scenario 'with numerical-only address less than 5 digits' do
-    search_for_both '1236', '10 miles'
+    search_for_address '1236'
 
     expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
   end
@@ -43,32 +61,32 @@ feature 'Visitor performs search' do
 
   def search_for_both(address, distance)
     visit ('/')
-    fill_in('address_search', :with => address)
+    fill_in('location', :with => address)
     select(distance, :from => 'miles')
-    click_button 'Find >>>'
+    click_button 'Find'
   end
 
   def search_for_address(address)
     visit ('/')
-    fill_in('address_search', :with => address)
-    click_button 'Find >>>'
+    fill_in('location', :with => address)
+    click_button 'Find'
   end
 
   def search_for_keyword(keyword)
     visit ('/')
-    fill_in('keyword_search', :with => keyword)
-    click_button 'Find >>>'
+    fill_in('search-term', :with => keyword)
+    click_button 'Find'
   end
 
   def search_for_keyword_and_location(keyword, address)
     visit ('/')
-    fill_in('keyword_search', :with => keyword)
-    fill_in('address_search', :with => address)
-    click_button 'Find >>>'
+    fill_in('search-term', :with => keyword)
+    fill_in('location', :with => address)
+    click_button 'Find'
   end
 
   def search_for_nothing
     visit ('/')
-    click_button 'Find >>>'
+    click_button 'Find'
   end
 end

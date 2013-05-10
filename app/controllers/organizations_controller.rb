@@ -1,14 +1,14 @@
 class OrganizationsController < ApplicationController
 
 	def index
-		params[:miles] = 5 if params[:miles].blank?
+		params[:miles] = 2 if params[:miles].blank?
     
-    keyword, address, radius = params[:keyword_search], params[:address_search], params[:miles]
+    keyword, location, radius = params["search-term"], params[:location], params[:miles]
 
-		if Organization.query_invalid?(address)
+		if Organization.query_invalid?(location)
 			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
 		else
-			@locations, @results_text = Organization.find_by_keyword_and_location(keyword, address, radius)
+			@locations, @results_text = Organization.find_by_keyword_and_location(keyword, location, radius)
 		end
 	end
 
