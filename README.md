@@ -6,8 +6,6 @@ This repo is in the early stages of development. There is not much to see yet. W
 
 Some of the data we're using is available in JSON format in the [data folder](https://github.com/codeforamerica/human_services_finder/tree/master/data).
 
-Some front-end work is being done independently of the Rails app on the [html5boilerplate branch](https://github.com/codeforamerica/human_services_finder/tree/html5boilerplate/public/boilerplate).
-
 
 ## Installation
 [Set up a dev environment with Homebrew, Git, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
