@@ -100,6 +100,7 @@ textarea {
 //color scheme
 $black: rgb(0,0,0);
 $black_alpha40: rgba(0,0,0,0.40000000596046);
+$black_alpha60: rgba(0,0,0,0.6);
 $blue_dark: rgb(3.00000005867332,73.0000032484531,126.000000089407);
 $blue_light: rgb(157.000005841255,235.000001192093,252.000000178814);
 $blue_light_alpha40: rgba(157.000005841255,235.000001192093,252.000000178814,0.4);
@@ -117,7 +118,7 @@ $yellow_dark: rgb(255,235.000001192093,27.0000002905726);
 $yellow_light: rgb(255,246.000000536442,177.000004649162);
 $yellow_light_alpha40: rgba(255,246.000000536442,177.000004649162,0.4);
 $yellow_light_alpha20: rgba(255,246.000000536442,177.000004649162,0.2);
-
+$red: rgb(255,10,50);
 // fonts
 $icon_font: 'OhanaIcons';
 $serif_font: 'Average', serif;
@@ -341,7 +342,7 @@ fade-out
     line-height:23px;
     height:25px;
     min-width:25px;
-    box-shadow: 0 2px 5px $black_alpha40;
+    box-shadow: 0 1px 4px $black_alpha40;
     background: $blue_light;    
     font-family: $san_serif_font;
     font-size:0.6em;
@@ -358,7 +359,12 @@ fade-out
 
 #utility-screens nav button.over
 {
+    color:$white;
     background: $blue_midtone;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
 
     -webkit-transition: background $default_duration;
     -moz-transition: background $default_duration;
@@ -380,6 +386,64 @@ fade-out
 #utility-screens nav #logo button
 {
     display:inline-block;
+}
+
+#messages
+{
+    width:500px;
+    margin-left:-250px;
+    left:50%;
+    position:absolute;
+}
+
+#messages .alert
+{
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow:0px 2px 20px $black_alpha40;
+    text-align: right;
+}
+
+#messages .alert div
+{
+    text-align: left;
+    padding: 10px;
+}
+
+#messages .alert-error
+{
+    color: $white;
+    background:$red;
+}
+
+#messages .alert-success
+{
+    color: $black;
+    background:$green_light;
+}
+
+#messages .close
+{
+    color: $white;
+    font-weight:bold;
+    background:$black_alpha40;
+    padding:5px;
+    border-radius:5px;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    line-height: 10px;
+    cursor:pointer;
+}
+
+#messages .close:hover
+{
+    background:$black_alpha60;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
 }
 
 //=================================================================================
