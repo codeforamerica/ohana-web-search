@@ -3,14 +3,14 @@
     I need
     %span
       →
-  %input#search-term{:type => "text",:placeholder =>"e.g. food"}         
+  %input#search-term{:type => "search",:placeholder =>"e.g. food"}         
 
 %div
   %label{:for => "search-near"}
     I am near
     %span
       →
-  = text_field_tag :address, nil, :placeholder => "e.g. san mateo, ca"
+  = search_field_tag :address, nil, :placeholder => "e.g. san mateo, ca"
 %div/
 /= button_tag 
 %button
