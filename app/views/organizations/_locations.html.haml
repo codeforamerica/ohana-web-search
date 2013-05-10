@@ -18,12 +18,13 @@
 				%nav
 					== #{@results_text}
 			%ul
-				- @locations.each do |location|
+				- @organizations.each do |org|
 					%li
-						%a{:href=>"#{organization_path(location)}", :title=>"#{location.name}"}
+						%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
 							%section{:class => "results-entry"}
 								%h1.entry-title
 									%p
-										= location.name
+										= org.name
 									%p
-										= location.address
+										= org.address
+										== (#{org.distance_to(@location).round(2)} miles)
