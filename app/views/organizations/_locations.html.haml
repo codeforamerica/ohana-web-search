@@ -9,14 +9,14 @@
 			Search Options
 		= render 'layouts/search_options'
 
-%seaction#search-content
+%section#search-content
 	%section#inside-content
 		%section#results-list
 			%header
 				%h1
 					Service Providers
 				%nav
-					== #{@results_count}
+					== #{@results_text}
 			%ul
 				- @locations.each do |location|
 					%li
@@ -27,4 +27,3 @@
 										= location.name
 									%p
 										= location.address
-

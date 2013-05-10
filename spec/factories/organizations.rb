@@ -9,5 +9,6 @@ FactoryGirl.define do
     state "CA"
     phone "650-314-5678"
     coordinates [-122.371448, 37.583849]
+    keywords ["library"]
   end
 end
