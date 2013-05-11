@@ -21,15 +21,15 @@
 				%p
 					NO RESULTS
 			- else	
-			%ul
-				- @organizations.each do |org|
-					%li
-						%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
-							%section{:class => "results-entry"}
-								%h1.entry-title
-									%p
-										= org.name
-									%p
-										= org.address
-									- unless @location.blank?
-										== (#{org.distance_to(@location).round(2)} miles)
+				%ul
+					- @organizations.each do |org|
+						%li
+							%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
+								%section{:class => "results-entry"}
+									%h1.entry-title
+										%p
+											= org.name
+										%p
+											= org.address
+										- unless @location.blank?
+											== (#{org.distance_to(@location).round(2)} miles)
