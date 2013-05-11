@@ -32,8 +32,10 @@ class Organization
 
   # Format phone number as (XXX) XXX-XXXX
   def phone_format
-    result = self.phone.gsub(/[^\d]/, '')
-    return "("+result[0..2]+") "+result[3..5]+"-"+result[6..10]
+    if (self.phone != nil)
+      result = self.phone.gsub(/[^\d]/, '')
+      return "("+result[0..2]+") "+result[3..5]+"-"+result[6..10]
+    end
   end
 
   def market_match?
