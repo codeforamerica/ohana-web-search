@@ -42,8 +42,9 @@ feature 'Visitor performs search on home page' do
   end
 
   scenario 'by clicking Find button directly, with no address or keyword specified' do
+    organization = FactoryGirl.create(:organization)
     search_for_nothing
-    expect(page).to have_content('Browse all 0 organizations')
+    expect(page).to have_content('Browse all 1 organizations')
   end
 
   scenario 'for keyword only, with default distance, and 1 result expected' do

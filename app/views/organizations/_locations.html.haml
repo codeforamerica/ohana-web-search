@@ -27,4 +27,5 @@
 										= org.name
 									%p
 										= org.address
+									- unless @location.blank?
 										== (#{org.distance_to(@location).round(2)} miles)
