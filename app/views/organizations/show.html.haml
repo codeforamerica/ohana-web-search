@@ -30,9 +30,9 @@
 							%span{"data-icon"=>"l" , :class=>"ohana-icon"}
 							= @org.address
 					
-					- if @org.phone.present?
+					- if @org.phone_format.present?
 						%p.phone
-							= @org.phone
+							= @org.phone_format
 
 					- if @org.url.present?
 						%p.url
@@ -47,8 +47,14 @@
 							This market accepts 
 							= @org.payments_accepted.join(", ")
 
+					- if @org.description.present?
+						%p.description
+						{
+						= @org.description
+						}
+						
 					%p.map
-						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"};
+						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
 				%h2
 					Nearby (within 2 miles):

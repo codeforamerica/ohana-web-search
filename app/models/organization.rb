@@ -30,6 +30,12 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
 
+  # Format phone number as (XXX) XXX-XXXX
+  def phone_format
+    result = self.phone.gsub(/[^\d]/, '')
+    return "("+result[0..2]+") "+result[3..5]+"-"+result[6..10]
+  end
+
   def market_match?
     self.market_match
   end
@@ -50,6 +56,7 @@ class Organization
     end  
   end
 
+  # URL to static map for map image on org details.
   def mapURL
     "http://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{self.latitude},#{self.longitude}&sensor=false"
   end
