@@ -1118,6 +1118,7 @@ fade-out
 
 }
 
+#results-list nav a,
 #detail-info .url a,
 #detail-info .directions a
 {
@@ -1126,6 +1127,23 @@ fade-out
     background:$green_light;
     padding:5px;
     border-radius:5px;
+    box-shadow:0 0 3px $black_alpha40;
+}
+
+#results-list nav a:hover,
+#detail-info .url a:hover,
+#detail-info .directions a:hover
+{
+    background:$green_dark;
+    color: $green_light;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
 }
 
 #detail-info .email
