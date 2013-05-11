@@ -17,6 +17,10 @@
 					Service Providers
 				%nav
 					== #{@results_text}
+			- if @organizations.blank?
+				%p
+					NO RESULTS
+			- else	
 			%ul
 				- @organizations.each do |org|
 					%li
