@@ -10,7 +10,7 @@ var main = (function () {
 		busyManager.init();
 		busyManager.hide(); // temp - immediately hide
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
-		alertManager.init();
+		alertManager.init(); // intialize alert box manager
 	}
 
 	//=================================================================================
@@ -140,13 +140,11 @@ var main = (function () {
 		var alertManager = {};
 
 		// PRIVATE PROPERTIES
-		var messagesBox;
-		var closeBtn;
+		var messagesBox; // alert message box
 
 		// PUBLIC METHODS
 		alertManager.init = function()
 		{
-			//console.log("initialized infoscreen");
 			messagesBox = document.getElementById("messages");
 
 			messagesBox.addEventListener("mousedown", closeHandler, false)
@@ -155,6 +153,7 @@ var main = (function () {
 		// PRIVATE METHODS
 		function closeHandler(evt)
 		{
+			// if clicked element has a close class, remove alert box content
 			if (evt.target.classList.contains("close")) messagesBox.innerHTML = "";
 		}
 
