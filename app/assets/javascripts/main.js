@@ -10,6 +10,7 @@ var main = (function () {
 		busyManager.init();
 		busyManager.hide(); // temp - immediately hide
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
+		alertManager.init();
 	}
 
 	//=================================================================================
@@ -130,6 +131,34 @@ var main = (function () {
 		}
 
 		return infoScreenManager;
+	})();
+
+
+	//=================================================================================
+	// manages closing of alert box
+	var alertManager = (function(){
+		var alertManager = {};
+
+		// PRIVATE PROPERTIES
+		var messagesBox;
+		var closeBtn;
+
+		// PUBLIC METHODS
+		alertManager.init = function()
+		{
+			//console.log("initialized infoscreen");
+			messagesBox = document.getElementById("messages");
+
+			messagesBox.addEventListener("mousedown", closeHandler, false)
+		}
+
+		// PRIVATE METHODS
+		function closeHandler(evt)
+		{
+			if (evt.target.classList.contains("close")) messagesBox.innerHTML = "";
+		}
+
+		return alertManager;
 	})();
 
 	
