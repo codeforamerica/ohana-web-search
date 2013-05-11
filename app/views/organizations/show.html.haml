@@ -59,6 +59,9 @@
 					%p.map
 						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
+					%p.directions
+						= link_to "Directions", "https://maps.google.com/maps?saddr=current+location&daddr="+@org.address
+
 				%h2
 					Nearby (within 2 miles):
 				%ul
