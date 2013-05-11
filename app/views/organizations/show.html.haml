@@ -49,12 +49,7 @@
 
 					- if @org.description.present?
 						%p.description
-						{
 						= @org.description
-						}
-					- if @org.business_hours.present?
-						%p.business-hours
-						= @org.products_sold
 
 					%p.map
 						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
