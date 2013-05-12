@@ -15,24 +15,31 @@ module Features
 
     def search_for_keyword(keyword)
       visit ('/')
-      fill_in('search-term', :with => keyword)
+      fill_in('search_term', :with => keyword)
       click_button 'Find'
     end
 
     def search_for_keyword_without_visit(keyword)
-      fill_in('search-term', :with => keyword)
+      fill_in('search_term', :with => keyword)
       click_button 'Find'
     end
 
     def search_for_keyword_and_location(keyword, address)
       visit ('/')
-      fill_in('search-term', :with => keyword)
+      fill_in('search_term', :with => keyword)
       fill_in('location', :with => address)
       click_button 'Find'
     end
 
     def search_for_keyword_and_distance(keyword, distance)
-      fill_in('search-term', :with => keyword)
+      fill_in('search_term', :with => keyword)
+      select(distance, :from => 'miles')
+      click_button 'Find'
+    end
+
+    def search_all(keyword, location, distance)
+      fill_in('search_term', :with => keyword)
+      fill_in('location', :with => location)
       select(distance, :from => 'miles')
       click_button 'Find'
     end

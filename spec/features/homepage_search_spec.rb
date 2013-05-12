@@ -9,6 +9,7 @@ feature 'Visitor performs search on home page' do
     search_for_address '94403'
 
     expect(page).to have_content("organizations within 2 miles of '94403'")
+    find_field("location").value.should == "94403"
   end
 
   # scenario 'with numerical-only address greater than 5 digits' do
@@ -57,6 +58,8 @@ feature 'Visitor performs search on home page' do
     organization = FactoryGirl.create(:organization)
     search_for_keyword_and_location('library', '94010')
     expect(page).to have_content("1 organization matching 'library' within 2 miles of '94010'")
+    find_field("location").value.should == "94010"
+    find_field("search_term").value.should == "library"
   end
 
   scenario 'for a keyword that should return no results' do
