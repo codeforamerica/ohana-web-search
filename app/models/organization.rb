@@ -22,7 +22,7 @@ class Organization
   validates_presence_of :name, :street_address, :city, :state, :zipcode
   validates :zipcode, :length => { :minimum => 5, :maximum => 10 }
 
-  scope :find_by_keyword,  lambda { |keyword| any_of({name: /#{keyword}\b/i}, {keywords: /#{keyword}\b/i}) } 
+  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}) } 
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
   default_scope order_by(:name => :asc)
 

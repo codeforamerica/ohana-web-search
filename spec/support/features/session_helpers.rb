@@ -31,6 +31,12 @@ module Features
       click_button 'Find'
     end
 
+    def search_for_keyword_and_distance(keyword, distance)
+      fill_in('search-term', :with => keyword)
+      select(distance, :from => 'miles')
+      click_button 'Find'
+    end
+
     def search_for_nothing
       visit ('/')
       click_button 'Find'

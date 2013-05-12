@@ -11,10 +11,12 @@ class OrganizationsController < ApplicationController
 			@organizations, @results_text = Organization.find_by_keyword_and_location(keyword, @location, radius)
 		end
 		session[:search_results] = request.url
+		session[:selected_radius] = params[:miles]
 	end
 
 	def show
 		@org = Organization.find(params[:id])
+		params[:miles] = session[:selected_radius]
 		@nearby = @org.nearbys(2)
 	end
 end
