@@ -17,8 +17,7 @@
 					%h1
 						Service Provider
 					%nav
-						%a{:href=>request.referrer}
-							↩ Return to results
+						= link_to "↩ Return to results", session[:search_results]
 				%section#detail-info
 					
 					- if @org.name.present?

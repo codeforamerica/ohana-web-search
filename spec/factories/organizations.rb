@@ -11,4 +11,15 @@ FactoryGirl.define do
     coordinates [-122.371448, 37.583849]
     keywords ["library"]
   end
+
+  factory :nearby_org, class: Organization do
+    name "Burlingame Main"
+    street_address "480 Primrose Road"
+    zipcode "94010"
+    city "Burlingame"
+    state "CA"
+    coordinates [-122.348862, 37.579221]
+    keywords ["library"]
+  end  
+
 end

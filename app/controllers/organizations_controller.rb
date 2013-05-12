@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
 		else
 			@organizations, @results_text = Organization.find_by_keyword_and_location(keyword, @location, radius)
 		end
+		session[:search_results] = request.url
 	end
 
 	def show

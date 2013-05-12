@@ -59,35 +59,11 @@ feature 'Visitor performs search on home page' do
     expect(page).to have_content("1 organization matching 'library' within 2 miles of '94010'")
   end
 
-
-  def search_for_both(address, distance)
-    visit ('/')
-    fill_in('location', :with => address)
-    select(distance, :from => 'miles')
-    click_button 'Find'
+  scenario 'for a keyword that should return no results' do
+    organization = FactoryGirl.create(:organization)
+    search_for_keyword_and_location('asdad', '94010')
+    expect(page).to have_content("0 organizations matching 'asdad' within 2 miles of '94010'")
+    expect(page).to have_content("NO RESULTS")
   end
 
-  def search_for_address(address)
-    visit ('/')
-    fill_in('location', :with => address)
-    click_button 'Find'
-  end
-
-  def search_for_keyword(keyword)
-    visit ('/')
-    fill_in('search-term', :with => keyword)
-    click_button 'Find'
-  end
-
-  def search_for_keyword_and_location(keyword, address)
-    visit ('/')
-    fill_in('search-term', :with => keyword)
-    fill_in('location', :with => address)
-    click_button 'Find'
-  end
-
-  def search_for_nothing
-    visit ('/')
-    click_button 'Find'
-  end
 end
