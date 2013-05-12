@@ -16,7 +16,7 @@ feature 'Visitor performs search on a page other than home' do
     expect(page).to have_content("1 organization matching 'library'")
   end
 
-  scenario 'and selects a radius of 10 miles' do
+  scenario 'and searches for keyword, location and radius' do
     organization = FactoryGirl.create(:organization)
     visit ('/organizations')
     search_all 'library', '94010', '10 miles'
