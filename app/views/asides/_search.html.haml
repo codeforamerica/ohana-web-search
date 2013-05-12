@@ -1,0 +1,10 @@
+%aside#search-options-screen
+	%section#search-screen
+		= form_tag('/organizations', :method => :get)
+		%section#search-box.mini
+			= render :partial => 'home/searchbox'
+
+	%div
+		%h1
+			Search Options
+		= render 'layouts/search_options'

@@ -19,6 +19,11 @@ module Features
       click_button 'Find'
     end
 
+    def search_for_keyword_without_visit(keyword)
+      fill_in('search-term', :with => keyword)
+      click_button 'Find'
+    end
+
     def search_for_keyword_and_location(keyword, address)
       visit ('/')
       fill_in('search-term', :with => keyword)

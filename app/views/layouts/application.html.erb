@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><%= content_for?(:title) ? yield(:title) : "Human Services Finder" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "OhanaSMC" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Human Services Finder" %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -34,11 +34,7 @@
             </nav>
             
             <section id="info-screen" class="mini">
-              <div>
-                <h1>Find resources near you</h1>
-                <p>Retrieve detailed information on the services available in your area. To get started, enter your address below and click 'search'.</p>
-                <p><a href="#">[close]</a></p>
-              </div>
+              <%= render 'layouts/site_info' %>
             </section>
         </header>
     </section>
