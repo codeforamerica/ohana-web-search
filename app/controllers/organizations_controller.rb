@@ -6,15 +6,15 @@ class OrganizationsController < ApplicationController
     
     keyword, @location, radius = params["search_term"], params[:location], params[:miles]
 
-		if Organization.query_invalid?(@location)
-			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
-		else
+		if Organization.query_valid?(@location)
 			@organizations, @results_text = Organization.find_by_keyword_and_location(keyword, @location, radius)
 			session[:search_results] = request.url
 			session[:selected_radius] = params[:miles]
 			session[:search_term] = params[:search_term]
 			session[:location] = params[:location]
 			respond_with(@organizations)
+		else
+			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
 		end
 		
 	end

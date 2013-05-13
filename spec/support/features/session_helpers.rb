@@ -50,7 +50,7 @@ module Features
     end
 
     def visit_details
-      click_link("Burlingame, Easton Branch")
+      find_link("Burlingame, Easton Branch").click
     end
 
     def visit_nearby_details

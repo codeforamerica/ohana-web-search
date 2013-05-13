@@ -21,6 +21,28 @@ describe Organization do
 	  its(:market_match?) { should be_false }
 	end
 
+	# describe "zip code validations" do
+	# 	context "address entry with more than 4 zeros" do
+	# 		Organization.query_valid?("0000f").should == false
+	# 	end
+
+	# 	context "address entry with less than 5 digits" do
+	# 		Organization.query_valid?("123").should == false
+	# 	end
+
+	# 	context "address entry with more than 5 digits" do
+	# 		Organization.query_valid?("123456").should == false
+	# 	end
+
+	# 	context "address entry with 5 digits but not a real zip code" do
+	# 		Organization.query_valid?("11111").should == false
+	# 	end
+
+	# 	# context "address entry with valid 5-digit zip code" do
+	# 	# 	Organization.query_valid?("94403").should == true
+	# 	# end
+	# end
+
 	describe "invalidations" do
 		context "without a name" do
 	  	subject { build(:organization, name: nil)} 

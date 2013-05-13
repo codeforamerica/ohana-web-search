@@ -1,28 +1,10 @@
 feature 'Visitor performs search on home page' do
-  # scenario 'with valid ZIP code and within 5 miles' do
-  #   search_for_both '94403', '5 miles'
-
-  #   expect(page).to have_content("organizations within 5 miles of '94403'")
-  # end
-
   scenario 'with valid ZIP code' do
-    search_for_address '94403'
+    search_for_address "94403"
 
     expect(page).to have_content("organizations within 2 miles of '94403'")
     find_field("location").value.should == "94403"
   end
-
-  # scenario 'with numerical-only address greater than 5 digits' do
-  #   search_for_both '123456', '10 miles'
-
-  #   expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
-  # end
-
-  # scenario 'with numerical-only address less than 5 digits' do
-  #   search_for_both '1236', '10 miles'
-
-  #   expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
-  # end
 
   scenario 'with numerical-only address greater than 5 digits' do
     search_for_address '123456'
@@ -32,6 +14,30 @@ feature 'Visitor performs search on home page' do
 
   scenario 'with numerical-only address less than 5 digits' do
     search_for_address '1236'
+
+    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  end
+
+  scenario 'with numerical-only address that starts with 4 zeros or more' do
+    search_for_address '00000'
+
+    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  end
+
+  scenario 'with only 1 word that contains numbers and letters' do
+    search_for_address '0000f'
+
+    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  end
+
+  scenario 'with a 5-digit zip code that does not exist' do
+    search_for_address '11111'
+
+    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+  end
+
+  scenario 'with a zip code containing dash' do
+    search_for_address '11111-1'
 
     expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
   end

@@ -63,8 +63,23 @@ class Organization
     "http://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{self.latitude},#{self.longitude}&sensor=false"
   end
 
-  def self.query_invalid?(address)
-    (address =~ /^\d+$/) == 0 && address.length != 5
+  def self.query_valid?(address)
+    if address =~ /(^\d{5}-+)/
+      return false
+    elsif address =~ /^\d+$/
+      if address.length != 5
+        return false
+      else
+        result = address.to_region
+        if result.nil? 
+          return false
+        else
+          return true
+        end
+      end
+    else
+      return true
+    end
   end
   
   include Geocoder::Model::Mongoid
