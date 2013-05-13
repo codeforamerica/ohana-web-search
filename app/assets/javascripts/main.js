@@ -97,7 +97,7 @@ var main = (function () {
 			infoScreenBtn.addEventListener("mouseout",btnOutHandler,false);
 			
 			// record that the info screen has been seen
-			webStorageProxy.setItem(infoScreen.storageName,true);
+			webStorageProxy.setItem(infoScreenManager.storageName,true);
 		}
 
 
