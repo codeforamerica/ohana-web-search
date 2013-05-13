@@ -8,7 +8,9 @@
 					%h1
 						Service Provider
 					%nav
-						= link_to "↩ Return to results", session[:search_results]
+						%a{:href=>session[:search_results]}
+							%span{"data-icon"=>"r" , :class=>"ohana-icon"}
+							Return to results
 				%section#detail-info
 					
 					- if @org.name.present?
@@ -26,7 +28,9 @@
 
 					- if @org.url.present?
 						%p.url
-							= link_to "Website", @org.url
+							%a{:href=>@org.url}
+								%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
+								Visit Website 
 
 					- if @org.email.present?
 						%p.email
@@ -54,7 +58,9 @@
 						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
 					%p.directions
-						= link_to "Directions", "https://maps.google.com/maps?saddr=current+location&daddr="+@org.address
+						%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address}
+							%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
+							Get Directions 
 			- if @nearby.present?
 				%h2
 					Nearby (within 2 miles):

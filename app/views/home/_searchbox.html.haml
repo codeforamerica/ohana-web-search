@@ -1,18 +1,16 @@
 %div
   %label{:for => "search_term"}
     I need
-    %span
-      →
+    %span{"data-icon"=>"a" , :class=>"ohana-icon"}
   = search_field_tag "search_term", params[:search_term], :placeholder => "e.g. food"         
 
 %div
   %label{:for => "location"}
     I am near
-    %span
-      →
+    %span{"data-icon"=>"a" , :class=>"ohana-icon"}
   = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca"
 %div/
 /= button_tag 
 %button
-  %span{"data-icon"=>"m" , :class=>"ohana-icon"}
+  %span{"data-icon"=>"m" , :class=>"search-button ohana-icon"}
   Find
