@@ -24,6 +24,7 @@
 					
 					- if @org.phone_format.present?
 						%p.phone
+							%span{"data-icon"=>"p" , :class=>"ohana-icon"}
 							= @org.phone_format
 
 					- if @org.url.present?
