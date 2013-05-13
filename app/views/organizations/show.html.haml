@@ -70,10 +70,9 @@
 						%li
 							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 								%section{:class => "results-entry"}
-									%h1.entry-title
-										%p
-											= venue.name 
-										%p
-											= venue.address
+									%h1.name
+										= venue.name 
+									%p.address
+										= venue.address
 										
 
