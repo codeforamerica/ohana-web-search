@@ -105,11 +105,14 @@ var main = (function () {
 		// minimize the info/help box
 		function minimizeHandler(evt)
 		{
-			infoScreenManager.minimize();
-			// mouseout of button is cursor is not over the button
-			if (infoScreenBtn != document.elementFromPoint(evt.clientX, evt.clientY) )
+			if (evt.target.attributes["href"] == undefined)
 			{
-				btnOutHandler();
+				infoScreenManager.minimize();
+				// mouseout of button is cursor is not over the button
+				if (infoScreenBtn != document.elementFromPoint(evt.clientX, evt.clientY) )
+				{
+					btnOutHandler();
+				}
 			}
 		}
 
