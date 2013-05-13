@@ -22,4 +22,17 @@ FactoryGirl.define do
     keywords ["library"]
   end  
 
+  factory :la_honda, class: Organization do
+    name "Pescadero Grown"
+    street_address "8875 La Honda Road"
+    zipcode "94020"
+    city "La Honda"
+    state "CA"
+    coordinates [-122.274369, 37.317983]
+    keywords ["market"]
+    schedule "May - November Tuesday 3:00 PM to 7:00 PM"
+    url "http://Www.pescaderogrown.org"
+    payments_accepted ["Credit", "WIC", "SFMNP", "SNAP"]
+    products_sold ["Cheese", "Flowers", "Eggs", "Seafood", "Herbs", "Vegetables", "Jams", "Meat", "Nursery", "Plants", "Poultry"]
+  end
 end

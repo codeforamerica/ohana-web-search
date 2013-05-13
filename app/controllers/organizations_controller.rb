@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+	respond_to :html, :json, :xml
 
 	def index
 		params[:miles] = 2 if params[:miles].blank?
@@ -9,11 +10,13 @@ class OrganizationsController < ApplicationController
 			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
 		else
 			@organizations, @results_text = Organization.find_by_keyword_and_location(keyword, @location, radius)
+			session[:search_results] = request.url
+			session[:selected_radius] = params[:miles]
+			session[:search_term] = params[:search_term]
+			session[:location] = params[:location]
+			respond_with(@organizations)
 		end
-		session[:search_results] = request.url
-		session[:selected_radius] = params[:miles]
-		session[:search_term] = params[:search_term]
-		session[:location] = params[:location]
+		
 	end
 
 	def show
@@ -22,5 +25,6 @@ class OrganizationsController < ApplicationController
 		params[:search_term] = session[:search_term]
 		params[:location] = session[:location]
 		@nearby = @org.nearbys(2)
+		respond_with(@org)
 	end
 end

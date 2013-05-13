@@ -31,11 +31,20 @@
 					- if @org.email.present?
 						%p.email
 							= @org.email
-					
+
+					- if @org.schedule.present?
+						%p.schedule
+							= @org.schedule
+
 					- if @org.payments_accepted.present?
 						%p.payments-accepted
 							This market accepts 
 							= @org.payments_accepted.join(", ")
+
+					- if @org.products_sold.present?
+						%p.products-sold
+							Products sold: 
+							= @org.products_sold.join(", ")
 
 					- if @org.description.present?
 						%p.description
@@ -46,7 +55,7 @@
 
 					%p.directions
 						= link_to "Directions", "https://maps.google.com/maps?saddr=current+location&daddr="+@org.address
-
+			- if @nearby.present?
 				%h2
 					Nearby (within 2 miles):
 				%ul
