@@ -1,7 +1,7 @@
 feature 'Visitor views the details page of a farmers market' do
 
   scenario 'market accepts SNAP and sells cheese' do
-    organization = FactoryGirl.create(:la_honda)
+    organization = FactoryGirl.create(:farmers_market)
     search_for_keyword_and_location('pescadero', 'la honda, ca')
     click_link("Pescadero Grown")
     expect(page).to have_content("8875 La Honda Road, La Honda, CA 94020")

@@ -20,7 +20,7 @@ class Organization
   field :keywords, type: Array 
 
   validates_presence_of :name, :street_address, :city, :state, :zipcode
-  validates :zipcode, :length => { :minimum => 5, :maximum => 10 }
+  validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a valid ZIP code"
 
   scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}) } 
   scope :find_by_location, lambda {|location, radius| near(location, radius) }

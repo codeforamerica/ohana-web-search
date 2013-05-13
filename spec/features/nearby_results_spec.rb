@@ -9,7 +9,7 @@ feature 'Display organizations that are within 2 miles of the one being visited'
   end
 
   scenario 'there are no nearby locations' do
-    organization = FactoryGirl.create(:la_honda)
+    organization = FactoryGirl.create(:farmers_market)
     search_for_keyword_and_location('pescadero', 'la honda, ca')
     expect(page).to have_content("1 organization matching 'pescadero' within 2 miles of 'la honda, ca'")
     click_link("Pescadero Grown")
