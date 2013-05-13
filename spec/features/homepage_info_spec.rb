@@ -15,7 +15,10 @@ describe "Static pages" do
     it "should have the info popup" do
       visit "/"
       find("#logo").find("h1").click
-      page.should have_content('Find resources near you')
+      page.should have_content('Contribute')
+      page.should have_content('Credits')
+      page.should have_content('Code for America')
+      page.should have_link("View source code", :href => "https://github.com/codeforamerica/human_services_finder")
     end
   end
 
