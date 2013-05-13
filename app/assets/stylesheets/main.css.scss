@@ -335,7 +335,7 @@ fade-out
     right:10px;
 }
 
-#utility-screens nav button
+#utility-screens button
 {
     margin-top:5px;
     display:block;
@@ -344,13 +344,21 @@ fade-out
     height:25px;
     min-width:25px;
     box-shadow: 0 1px 4px $black_alpha40;
-    background: $blue_light;    
     font-family: $san_serif_font;
-    font-size:0.6em;
+    font-size:14px;
+    background: $blue_dark;
+    color:$white;
     cursor:pointer;
     text-align: center;
     border:0px;
     border-collapse:collapse;
+}
+
+#utility-screens nav button
+{
+    font-size:10px;
+    background: $blue_light;
+    color:$black;
 }
 
 #utility-screens nav button h1
@@ -358,7 +366,7 @@ fade-out
     pointer-events:none;
 }
 
-#utility-screens nav button.over
+#utility-screens button.over
 {
     color:$white;
     background: $blue_midtone;
@@ -389,6 +397,8 @@ fade-out
     display:inline-block;
 }
 
+//=================================================================================
+// alert messages
 #messages
 {
     width:500px;
@@ -460,7 +470,6 @@ fade-out
     height: 100%;
 }
 
-
 #info-screen.mini
 {
     opacity:0;
@@ -483,7 +492,7 @@ fade-out
     transition: opacity $default_duration;
 }
 
-#info-screen div
+#info-screen .content
 {
     background:$blue_light;
     position: absolute;
@@ -500,10 +509,9 @@ fade-out
     padding: 10px 20px 20px 20px;
     overflow: hidden;
     box-shadow: 0 2px 5px $black_alpha40;
-
 }
 
-#info-screen.min div
+#info-screen.min .content
 {
     top:-99999px;
     
@@ -512,7 +520,7 @@ fade-out
     transition: top $default_duration;
 }
 
-#info-screen.max div
+#info-screen.max .content
 {
     top:-10px;
 
@@ -521,10 +529,45 @@ fade-out
     transition: top $default_duration;
 }
 
-#info-screen div h1
+#info-screen .content h1
 {
     font-size: 24px;
     margin-top: 20px;
+    font-family: $serif_font;
+}
+
+#info-screen .close
+{
+    color: $white;
+    font-weight:bold;
+    font-size:16px;
+    background:$black_alpha40;
+    padding:5px;
+    border-radius:5px;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    line-height: 10px;
+    cursor:pointer;
+    margin-top:20px;
+    float:right;
+    text-align:center;
+    font-family:$serif_font;
+}
+
+#info-screen .close:hover
+{
+    background:$black_alpha60;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+}
+
+#info-screen hr
+{
+    border-color:$black_alpha40;
+    border-style:dotted;
 }
 
 //=================================================================================
