@@ -301,6 +301,8 @@ fade-out
     width:100%;
 }
 
+/* not currently used */
+/*
 #utility-screens section
 {
     display:inline-block;
@@ -314,9 +316,9 @@ fade-out
 
 #utility-screens nav *.fixed
 {
-    /*position:absolute;
+    position:absolute;
     right:10px;
-    z-index: 999999;*/
+    z-index: 999999;
     position: fixed;
     right: 0;
     top: 0;
@@ -334,10 +336,12 @@ fade-out
     bottom:10px;
     right:10px;
 }
+*/
 
 #utility-screens button
 {
-    margin-top:5px;
+    position: relative;
+    top:-3px;
     display:block;
     border-radius: 3px;
     line-height:23px;
@@ -352,10 +356,7 @@ fade-out
     text-align: center;
     border:0px;
     border-collapse:collapse;
-}
 
-#utility-screens nav button
-{
     font-size:10px;
     background: $blue_light;
     color:$black;
@@ -376,7 +377,7 @@ fade-out
     transition: background $default_duration;
 }
 
-#utility-screens nav button.disabled
+#utility-screens button.disabled
 {
     background: $greyscale_light;
     color: $black_alpha40;
@@ -388,9 +389,14 @@ fade-out
     text-decoration: none;
 }
 
-#utility-screens nav #logo button
+#utility-screens nav > *
 {
     display:inline-block;
+}
+
+#utility-screens nav > h1
+{
+    font-size:18px;
 }
 
 //=================================================================================
