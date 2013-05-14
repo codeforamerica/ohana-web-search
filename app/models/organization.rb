@@ -20,7 +20,15 @@ class Organization
   field :keywords, type: Array 
 
   validates_presence_of :name, :street_address, :city, :state, :zipcode
-  validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a valid ZIP code"
+  extend ValidatesFormattingOf::ModelAdditions
+  validates_formatting_of :zipcode, using: :us_zip, message: "Please enter a valid ZIP code"
+  validates_formatting_of :phone, using: :us_phone, allow_blank: true, message: "Please enter a valid US phone number"
+  validates_formatting_of :url, allow_blank: true
+  validates_formatting_of :email, allow_blank: true
+
+  include Geocoder::Model::Mongoid
+  geocoded_by :address               # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
 
   scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}) } 
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
@@ -81,8 +89,4 @@ class Organization
       return true
     end
   end
-  
-  include Geocoder::Model::Mongoid
-  geocoded_by :address               # can also be an IP address
-  after_validation :geocode          # auto-fetch coordinates
 end

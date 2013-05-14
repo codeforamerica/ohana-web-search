@@ -88,5 +88,45 @@ describe Organization do
 	  	subject { build(:organization, zipcode: "90210-90210") }
 	  	it { should_not be_valid }
 		end
+
+		context "with a non-US phone" do
+	  	subject { build(:organization, phone: "90210-90210") }
+	  	it { should_not be_valid }
+		end
+
+		context "with US phone containing dots" do
+	  	subject { build(:organization, phone: "123.456.7890") }
+	  	it { should be_valid }
+		end
+
+		context "with URL containing 3 slashes" do
+	  	subject { build(:organization, url: "http:///codeforamerica.org") }
+	  	it { should_not be_valid }
+		end
+
+		context "with URL missing a period" do
+	  	subject { build(:organization, url: "http://codeforamericaorg") }
+	  	it { should_not be_valid }
+		end
+
+		context "URL with wwww" do
+	  	subject { build(:organization, url: "http://wwww.codeforamerica.org") }
+	  	it { should be_valid }
+		end
+
+		context "non-US URL" do
+	  	subject { build(:organization, url: "http://www.colouredlines.com.au") }
+	  	it { should be_valid }
+		end
+
+		context "email without period" do
+	  	subject { build(:organization, email: "moncef@blahcom") }
+	  	it { should_not be_valid }
+		end
+
+		context "email without @" do
+	  	subject { build(:organization, email: "moncef.blahcom") }
+	  	it { should_not be_valid }
+		end
 	end
 end
