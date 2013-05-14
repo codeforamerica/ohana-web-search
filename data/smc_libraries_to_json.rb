@@ -45,7 +45,7 @@ ALPHABET.each do |letter|
     libraries_data[name]['city']            = city
     libraries_data[name]['state']           = state
     libraries_data[name]['zipcode']         = zipcode
-    libraries_data[name]['phone']           = phone
+    libraries_data[name]['phone']           = phone.gsub(" ","")
     address = "#{street_address}, #{city}, #{state} #{zipcode}"
 
     get_lat_long(address)
