@@ -40,12 +40,12 @@ ALPHABET.each do |letter|
     phone           = library.css(".country-name")[1].text.split(":")[1]
 
     libraries_data[name]                    = Hash.new
-    libraries_data[name]['name']            = name
-    libraries_data[name]['street_address']  = street_address
-    libraries_data[name]['city']            = city
-    libraries_data[name]['state']           = state
-    libraries_data[name]['zipcode']         = zipcode
-    libraries_data[name]['phone']           = phone
+    libraries_data[name]['name']            = name.strip
+    libraries_data[name]['street_address']  = street_address.strip
+    libraries_data[name]['city']            = city.strip
+    libraries_data[name]['state']           = state.strip
+    libraries_data[name]['zipcode']         = zipcode.strip
+    libraries_data[name]['phone']           = phone.strip
     address = "#{street_address}, #{city}, #{state} #{zipcode}"
 
     get_lat_long(address)

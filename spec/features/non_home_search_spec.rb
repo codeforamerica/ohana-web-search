@@ -4,7 +4,7 @@ feature 'Visitor performs search on a page other than home' do
     organization = FactoryGirl.create(:organization)
     visit ('/organizations')
     search_for_keyword_without_visit 'library'
-    expect(page).to have_content("1 organization matching 'library'")
+    expect(page).to have_content("1 result matching 'library'")
     find_field("search_term").value.should == "library"
   end
 
@@ -13,7 +13,7 @@ feature 'Visitor performs search on a page other than home' do
     visit ('/organizations')
     visit_details
     search_for_keyword_without_visit 'library'
-    expect(page).to have_content("1 organization matching 'library'")
+    expect(page).to have_content("1 result matching 'library'")
   end
 
   scenario 'and searches for keyword, location and radius' do

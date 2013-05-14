@@ -20,7 +20,15 @@ class Organization
   field :keywords, type: Array 
 
   validates_presence_of :name, :street_address, :city, :state, :zipcode
-  validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a valid ZIP code"
+  extend ValidatesFormattingOf::ModelAdditions
+  validates_formatting_of :zipcode, using: :us_zip, message: "Please enter a valid ZIP code"
+  validates_formatting_of :phone, using: :us_phone, allow_blank: true, message: "Please enter a valid US phone number"
+  validates_formatting_of :url, allow_blank: true
+  validates_formatting_of :email, allow_blank: true
+
+  include Geocoder::Model::Mongoid
+  geocoded_by :address               # can also be an IP address
+  after_validation :geocode          # auto-fetch coordinates
 
   scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}) } 
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
@@ -45,16 +53,16 @@ class Organization
   def self.find_by_keyword_and_location(keyword, location, radius)
     if keyword.blank? && location.blank?
       result = self.all
-      return result, "Browse all #{result.size} organizations"
+      return result, "Browse all #{result.size} entries"
     elsif keyword.blank? && location.present?
       result = self.near(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
     elsif keyword.present? && location.present?
       result = self.find_by_keyword(keyword).find_by_location(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} matching '#{keyword}' within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}' within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
     else
       result = self.find_by_keyword(keyword)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} matching '#{keyword}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}'"
     end  
   end
 
@@ -81,8 +89,4 @@ class Organization
       return true
     end
   end
-  
-  include Geocoder::Model::Mongoid
-  geocoded_by :address               # can also be an IP address
-  after_validation :geocode          # auto-fetch coordinates
 end
