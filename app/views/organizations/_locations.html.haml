@@ -17,10 +17,12 @@
 						%li
 							%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
 								%section{:class => "results-entry"}
+									- unless @location.blank?
+										%p.distance{:title=> "#{org.distance_to(@location).round(2)} miles","data-distance"=>org.distance_to(@location).round(2)}
+											%span
+												== #{org.distance_to(@location).round(2)} mi
 									%h1.name
 										= org.name
 									%p.address
 										= org.address
-									- unless @location.blank?
-										%p.distance{:title=>org.distance_to(@location).round(2)}
-											== (#{org.distance_to(@location).round(2)} miles)
+									
