@@ -53,16 +53,16 @@ class Organization
   def self.find_by_keyword_and_location(keyword, location, radius)
     if keyword.blank? && location.blank?
       result = self.all
-      return result, "Browse all #{result.size} organizations"
+      return result, "Browse all #{result.size} entries"
     elsif keyword.blank? && location.present?
       result = self.near(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
     elsif keyword.present? && location.present?
       result = self.find_by_keyword(keyword).find_by_location(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} matching '#{keyword}' within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}' within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
     else
       result = self.find_by_keyword(keyword)
-      return result, "#{TextHelper.pluralize(result.size, 'organization')} matching '#{keyword}'"
+      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}'"
     end  
   end
 
