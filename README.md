@@ -16,6 +16,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
 
+
 #### MongoDB
 **OS X**
 On OS X, the easiest way to install MongoDB (or almost any development tool) is with Homebrew:
@@ -32,8 +33,10 @@ Launch mongodb in a separate Terminal tab or window:
 **Other**
 See the Downloads page on mongodb.org for steps to install on other systems: [http://www.mongodb.org/downloads](http://www.mongodb.org/downloads)
 
+
 #### Redis
 **OS X**
+
 On OS X, the easiest way to install Redis is with Homebrew:
 
     brew install redis
@@ -43,6 +46,7 @@ Follow the Homebrew instructions if you want Redis to start automatically every 
     redis-server
 
 **Other**
+
 See the Download page on Redis.io for steps to install on other systems: [http://redis.io/download](http://redis.io/download)
 
 ### Clone the app on your local machine:
@@ -85,6 +89,7 @@ For faster tests:
     zeus start #in a separate Terminal window or tab
     zeus rspec spec 
 
+To see the actual tests, browse through the [spec](https://github.com/codeforamerica/human_services_finder/tree/master/spec) directory.
 
 ## Development Details
 
