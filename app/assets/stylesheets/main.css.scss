@@ -1194,10 +1194,14 @@ fade-out
     font-size:16px;
     margin-left:20px;
     color:$greyscale_dark;
-    margin-bottom: 10px;
 }
 
-#detail-info section > h1 span
+#detail-info > section > h1
+{
+    font-size:1px;
+}
+
+#detail-info > section > h1 span
 {
     font-size: 10px;
     color: $greyscale_midtone;
@@ -1208,6 +1212,18 @@ fade-out
     border-bottom:2px solid $black_alpha10;
     font-style: italic;
     letter-spacing: 1px;
+}
+
+// add padding between sections
+#detail-info > section
+{
+    padding-bottom:10px;
+}
+
+// add additional padding for last entry
+#detail-info > section:last-child
+{
+    padding-bottom:20px;
 }
 
 // arrange contact details in a line
@@ -1274,6 +1290,7 @@ fade-out
     border:1px solid $greyscale_midtone;
     width:320px;
     height:240px;
+    margin-bottom:10px;
 }
 
 
