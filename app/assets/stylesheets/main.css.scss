@@ -301,6 +301,8 @@ fade-out
     width:100%;
 }
 
+/* not currently used */
+/*
 #utility-screens section
 {
     display:inline-block;
@@ -314,9 +316,9 @@ fade-out
 
 #utility-screens nav *.fixed
 {
-    /*position:absolute;
+    position:absolute;
     right:10px;
-    z-index: 999999;*/
+    z-index: 999999;
     position: fixed;
     right: 0;
     top: 0;
@@ -334,10 +336,12 @@ fade-out
     bottom:10px;
     right:10px;
 }
+*/
 
 #utility-screens button
 {
-    margin-top:5px;
+    position: relative;
+    top:-3px;
     display:block;
     border-radius: 3px;
     line-height:23px;
@@ -352,18 +356,11 @@ fade-out
     text-align: center;
     border:0px;
     border-collapse:collapse;
-}
 
-#utility-screens nav button
-{
     font-size:10px;
     background: $blue_light;
     color:$black;
-}
-
-#utility-screens nav button h1
-{
-    pointer-events:none;
+    font-size:16px;
 }
 
 #utility-screens button.over
@@ -380,7 +377,7 @@ fade-out
     transition: background $default_duration;
 }
 
-#utility-screens nav button.disabled
+#utility-screens button.disabled
 {
     background: $greyscale_light;
     color: $black_alpha40;
@@ -392,9 +389,14 @@ fade-out
     text-decoration: none;
 }
 
-#utility-screens nav #logo button
+#utility-screens nav > *
 {
     display:inline-block;
+}
+
+#utility-screens nav > h1
+{
+    font-size:18px;
 }
 
 //=================================================================================
@@ -476,10 +478,13 @@ fade-out
     opacity:0;
     cursor: auto;
     pointer-events:none;
+    margin-top: -9999px;
     
-    -webkit-transition: opacity $default_duration;
-    -moz-transition: opacity $default_duration;
-    transition: opacity $default_duration;
+    -webkit-transition: opacity $default_duration, margin-top 1ms;
+    -moz-transition: opacity $default_duration, margin-top 1ms;
+    transition: opacity $default_duration, margin-top 1ms;
+
+    transition-delay: 0, $default_duration;
 }
 
 #info-screen.max
@@ -1138,13 +1143,13 @@ fade-out
     cursor:pointer;
 }
 
-.results-entry > span
+/*.results-entry > span
 {
     pointer-events:none;
     vertical-align: top;
     padding:20px;
     display:inline-block;
-}
+}*/
 
 // no results styling
 #results-list p.no-results
