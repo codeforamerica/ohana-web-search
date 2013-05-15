@@ -3,11 +3,7 @@
 %section#search-content
 	%section#inside-content
 		%section#results-list
-			%header
-				%h1
-					Service Providers
-				%nav
-					== #{@results_text}
+			= render 'layouts/results_header'
 			- if @organizations.blank?
 				%p.no-results
 					NO RESULTS
