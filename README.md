@@ -19,6 +19,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 #### MongoDB
 **OS X**
+
 On OS X, the easiest way to install MongoDB (or almost any development tool) is with Homebrew:
 
     brew update
@@ -31,6 +32,7 @@ Launch mongodb in a separate Terminal tab or window:
     mongod
 
 **Other**
+
 See the Downloads page on mongodb.org for steps to install on other systems: [http://www.mongodb.org/downloads](http://www.mongodb.org/downloads)
 
 
