@@ -115,11 +115,14 @@ $greyscale_light: rgb(204.000003039837,204.000003039837,204.000003039837);
 $greyscale_midtone: rgb(153.000006079674,153.000006079674,153.000006079674);
 $white: rgb(255,255,255);
 $white_alpha40: rgba(255,255,255,0.4);
+$white_alpha70: rgba(255,255,255,0.7);
 $yellow_dark: rgb(255,235.000001192093,27.0000002905726);
 $yellow_light: rgb(255,246.000000536442,177.000004649162);
 $yellow_light_alpha40: rgba(255,246.000000536442,177.000004649162,0.4);
 $yellow_light_alpha20: rgba(255,246.000000536442,177.000004649162,0.2);
 $red: rgb(255,10,50);
+
+
 // fonts
 $icon_font: 'OhanaIcons';
 $serif_font: 'Average', serif;
@@ -1180,9 +1183,9 @@ fade-out
     padding:10px;
     margin:15px;
     border-radius:10px 10px;
-    background:$blue_midtone_alpha30;
-    box-shadow: inset 0px 0px 10px $blue_light;
-    color:$blue_dark;
+    background:$white_alpha70;
+    color:$black;
+    border:1px solid $black_alpha10;
     padding-left: 25px;
 }
 
@@ -1213,16 +1216,25 @@ fade-out
     font-family: Average;
 }
 
-#detail-info .address .ohana-icon 
+#detail-info .address .ohana-icon,
+#detail-info .phone .ohana-icon 
 {
     position:relative;
     top:2px;
+    color:$greyscale_midtone;
 }
 
-#detail-info .phone .ohana-icon
+#detail-info .address:hover,
+#detail-info .phone:hover
 {
-    position: relative;
-    top: 2px;
+    cursor:pointer;
+}
+
+#detail-info .address:hover .ohana-icon,
+#detail-info .phone:hover .ohana-icon
+{
+    color:$black;
+    cursor:pointer;
 }
 
 #results-list nav a,
