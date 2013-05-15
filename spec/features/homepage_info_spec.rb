@@ -14,7 +14,7 @@ describe "Static pages" do
 
     it "should have the info popup" do
       visit "/"
-      find("#utility-screens").find("button").click
+      page.has_css?("#info-screen-btn").should == true
       page.should have_content('Contribute')
       page.should have_content('Credits')
       page.should have_content('Code for America')
