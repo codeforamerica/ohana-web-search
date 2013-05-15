@@ -4,13 +4,7 @@
 	%section#inside-content
 		%section#results-list
 			%section#detail-screen
-				%header
-					%h1
-						Service Provider
-					%nav
-						%a{:href=>session[:search_results]}
-							%span{"data-icon"=>"r" , :class=>"ohana-icon"}
-							Return to results
+				= render 'layouts/results_header'
 				%section#detail-info
 					
 					- if @org.name.present?
