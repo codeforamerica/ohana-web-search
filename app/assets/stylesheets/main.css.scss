@@ -904,6 +904,9 @@ fade-out
     margin:0;
 }
 
+//=================================================================================
+// webfont icons
+
 // search box arrows 
 #search-box.large .ohana-icon
 {
@@ -932,6 +935,12 @@ fade-out
     position:relative;
     left:2px;
     top:1px;
+}
+
+.browse.ohana-icon
+{
+    position:relative;
+    top:2px;
 }
 
 
@@ -1046,6 +1055,11 @@ fade-out
     border-bottom:1px solid greyscale_midtone;
     background:$blue_midtone; 
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
+}
+
+#results-list nav span
+{
+    min-height: 30px;
 }
 
 #results-list header h1,
@@ -1171,13 +1185,13 @@ fade-out
 
 //=================================================================================
 // Detail list screen
-#results-list nav a
+/*#results-list nav a
 {
     color: $green_dark;
     background:$green_light;
     padding:5px;
     border-radius:5px;
-}
+}*/
 
 #detail-info
 {
@@ -1261,8 +1275,8 @@ fade-out
 #detail-info .url a,
 #detail-info .directions a
 {
-    color: $green_dark;
-    background:$green_light;
+    color: $black;
+    background:$blue_light;
     padding:5px;
     border-radius:5px;
     box-shadow:0 0 3px $black_alpha40;
@@ -1273,8 +1287,8 @@ fade-out
 #detail-info .url a:hover,
 #detail-info .directions a:hover
 {
-    background:$green_dark;
-    color: $green_light;
+    background:$blue_midtone;
+    color: $white;
 
     -webkit-transition: color $default_duration;
     -moz-transition: color $default_duration;

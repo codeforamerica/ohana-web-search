@@ -43,22 +43,36 @@
 									= @org.email
 
 					- if @org.schedule.present?
-						%p.schedule
-							= @org.schedule
+						%section.payment-box
+							%h1
+								%span Business Hours
 
-					- if @org.payments_accepted.present?
-						%p.payments-accepted
-							This market accepts 
-							= @org.payments_accepted.join(", ")
+								%p.schedule
+									= @org.schedule
 
-					- if @org.products_sold.present?
-						%p.products-sold
-							Products sold: 
-							= @org.products_sold.join(", ")
+					- if @org.payments_accepted.present? || @org.products_sold.present?
+						%section.payment-box
+							%h1
+								%span Payment & Products
 
-					- if @org.description.present?
-						%p.description
-						= @org.description
+							- if @org.payments_accepted.present?
+								%p.payments-accepted
+									This market accepts 
+									= @org.payments_accepted.join(", ")
+
+							- if @org.products_sold.present?
+								%p.products-sold
+									Products sold: 
+									= @org.products_sold.join(", ")
+
+					- if @org.payments_accepted.present? || @org.products_sold.present?
+						%section.overview-box
+							%h1
+								%span Service Overview
+							
+							- if @org.description.present?
+								%p.description
+								= @org.description
 
 					- if @org.mapURL.present?
 						%section.map-box
