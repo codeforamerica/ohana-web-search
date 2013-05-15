@@ -17,26 +17,30 @@
 						%h1.name
 							= @org.name
 					
-					%div.contact
-						- if @org.address.present?
-							%p.address
-								%span{"data-icon"=>"l" , :class=>"ohana-icon"}
-								= @org.address
-						
-						- if @org.phone_format.present?
-							%p.phone
-								%span{"data-icon"=>"p" , :class=>"ohana-icon"}
-								= @org.phone_format
+					- if @org.address.present? || @org.phone_format.present? || @org.url.present?
+						%section.contact-box
+							%h1 
+								%span Contact
 
-						- if @org.url.present?
-							%p.url
-								%a{:href=>@org.url,:target=>"_blank"}
-									%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
-									Visit Website 
+							- if @org.address.present?
+								%p.address
+									%span{"data-icon"=>"l" , :class=>"ohana-icon"}
+									= @org.address
+							
+							- if @org.phone_format.present?
+								%p.phone
+									%span{"data-icon"=>"p" , :class=>"ohana-icon"}
+									= @org.phone_format
 
-						- if @org.email.present?
-							%p.email
-								= @org.email
+							- if @org.url.present?
+								%p.url
+									%a{:href=>@org.url,:target=>"_blank"}
+										%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
+										Visit Website 
+
+							- if @org.email.present?
+								%p.email
+									= @org.email
 
 					- if @org.schedule.present?
 						%p.schedule
@@ -56,13 +60,19 @@
 						%p.description
 						= @org.description
 
-					%p.map
-						%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+					- if @org.mapURL.present?
+						%section.map-box
+							%h1 
+								%span Map & Directions
 
-					%p.directions
-						%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
-							%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
-							Get Directions 
+							%p.map
+								%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+
+							%p.directions
+								%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
+									%span{"data-icon"=>"e" , :class=>"external-link ohana-icon"}
+									Get Directions
+
 			- if @nearby.present?
 				%h2
 					Nearby (within 2 miles):

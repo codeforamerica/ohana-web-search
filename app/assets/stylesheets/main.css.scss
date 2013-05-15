@@ -143,6 +143,7 @@ html,body
 h1
 {
     margin:0;
+    padding:0;
     font-weight: normal;
 }
 
@@ -1196,8 +1197,20 @@ fade-out
     margin-bottom: 10px;
 }
 
+#detail-info section > h1 span
+{
+    font-size: 10px;
+    color: $greyscale_midtone;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 5px;
+    display:inline-block;
+    border-bottom:2px solid $black_alpha10;
+    font-style: italic;
+}
+
 // arrange contact details in a line
-#detail-info .contact p
+#detail-info .contact-box p
 {
     display:inline-block
 }
@@ -1253,11 +1266,6 @@ fade-out
     -webkit-transition: background $default_duration;
     -moz-transition: background $default_duration;
     transition: background $default_duration;
-}
-
-#detail-info .email
-{
-    
 }
 
 #detail-info .map img
