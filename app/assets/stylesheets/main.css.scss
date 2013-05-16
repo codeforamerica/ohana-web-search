@@ -108,6 +108,7 @@ $blue_light_alpha40: rgba(157.000005841255,235.000001192093,252.000000178814,0.4
 $blue_midtone: rgb(5.00000017695129,150.000006258488,213.000002503395);
 $blue_midtone_alpha30: rgba(5.00000017695129,150.000006258488,213.000002503395,0.3);
 $green_dark: rgb(131.000007390976,180.000004470348,26.0000003501773);
+$green_dark_alpha50: rgba(131.000007390976,180.000004470348,26.0000003501773,0.5);
 $green_light: rgb(209.000002741814,249.000000357628,148.000006377697);
 $green_light_alpha70: rgba(209.000002741814,249.000000357628,148.000006377697,0.69999998807907);
 $greyscale_dark: rgb(102.000001519918,102.000001519918,102.000001519918);
@@ -120,7 +121,8 @@ $yellow_dark: rgb(255,235.000001192093,27.0000002905726);
 $yellow_light: rgb(255,246.000000536442,177.000004649162);
 $yellow_light_alpha40: rgba(255,246.000000536442,177.000004649162,0.4);
 $yellow_light_alpha20: rgba(255,246.000000536442,177.000004649162,0.2);
-$red: rgb(255,10,50);
+$red_dark: rgb(255,10,50);
+$red_dark_alpha50: rgba(255,10,50,0.5);
 
 
 // fonts
@@ -432,7 +434,7 @@ fade-out
 #messages .alert-error
 {
     color: $white;
-    background:$red;
+    background:$red_dark;
 }
 
 #messages .alert-success
@@ -1116,6 +1118,35 @@ fade-out
     font-size:14px;
     margin-left:20px;
     color:$blue_midtone;
+}
+
+.results-entry p.distance
+{
+    font-size:12px;
+    margin:10px;
+    color:$black;
+    float:right;
+}
+
+.results-entry p.distance .distance-bar-box
+{
+    border: 1px solid $blue_dark;
+    background: $white;
+    width: 30px;
+    height: 10px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    top: 2px;
+    opacity: 0.5;
+}
+
+.results-entry p.distance .distance-bar
+{
+    background: $blue_dark;
+    margin-bottom: 10px;
+    height: 100%;
 }
 
 .results-entry
