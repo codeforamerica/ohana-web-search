@@ -9,6 +9,10 @@ class Organization
   field :url, type: String
   field :email, type: String
   field :phone, type: String
+  field :fax, type: String
+  field :tty, type: String
+  field :service_hours, type: Hash
+  field :phones, type: Array
   field :coordinates, type: Array
   field :latitude, type: Float
   field :longitude, type: Float
@@ -17,7 +21,16 @@ class Organization
   field :schedule, type: String
   field :payments_accepted, type: Array
   field :products_sold, type: Array
+  field :languages_spoken, type: Array
   field :keywords, type: Array 
+  field :target_group, type: String
+  field :eligibility_requirements, type: String
+  field :fees, type: String
+  field :how_to_apply, type: String
+  field :service_wait, type: String
+  field :transportation_availability, type: String
+  field :accessibility, type: String
+  field :services_provided, type: String
 
   validates_presence_of :name, :street_address, :city, :state, :zipcode
   extend ValidatesFormattingOf::ModelAdditions

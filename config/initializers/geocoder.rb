@@ -1,0 +1,1 @@
+Geocoder.configure(:lookup => :mapquest, :cache => Redis.new, :always_raise => [Geocoder::OverQueryLimitError, Geocoder::RequestDenied, Geocoder::InvalidRequest, Geocoder::InvalidApiKey])
