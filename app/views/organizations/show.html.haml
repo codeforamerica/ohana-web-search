@@ -19,12 +19,19 @@
 							- if @org.address.present?
 								%p.address
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-									= @org.address
+									%span
+										= @org.street_address 
+										%br 
+										= @org.city+","
+										= @org.state
+										%br
+										= @org.zipcode
 							
 							- if @org.phone_format.present?
 								%p.phone
 									%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-									= @org.phone_format
+									%span
+										= @org.phone_format
 
 							- if @org.url.present?
 								%p.url
@@ -59,7 +66,7 @@
 									Products sold: 
 									= @org.products_sold.join(", ")
 
-					- if @org.payments_accepted.present? || @org.products_sold.present?
+					- if @org.description.present?
 						%section.overview-box
 							%h1
 								%span Service Overview
