@@ -59,7 +59,7 @@
 									Products sold: 
 									= @org.products_sold.join(", ")
 
-					- if @org.payments_accepted.present? || @org.products_sold.present?
+					- if @org.description.present?
 						%section.overview-box
 							%h1
 								%span Service Overview
