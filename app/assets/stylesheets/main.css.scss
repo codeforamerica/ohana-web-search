@@ -1138,9 +1138,9 @@ fade-out
     display: inline-block;
     overflow: hidden;
     position: relative;
-    border-radius: 10px;
     top: 2px;
     opacity: 0.5;
+    position:relative;
 }
 
 .results-entry p.distance .distance-bar
@@ -1148,6 +1148,15 @@ fade-out
     background: $blue_dark;
     margin-bottom: 10px;
     height: 100%;
+}
+
+.results-entry p.distance .distance-line
+{
+    position:absolute;
+    top:50%;
+    height:0px;
+    left:0;
+    border-top:1px dotted $white;
 }
 
 .results-entry
