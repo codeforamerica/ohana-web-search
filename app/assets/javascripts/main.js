@@ -11,7 +11,7 @@ var main = (function () {
 		busyManager.hide(); // temp - immediately hide
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
 		alertManager.init(); // intialize alert box manager
-		searchOpManager.init(); // intialize display of distances
+		searchOpManager.init(); // search options functionality
 		distanceManager.init(); // intialize display of distances
 	}
 
@@ -176,6 +176,9 @@ var main = (function () {
 
 		// PRIVATE PROPERTIES
 		var searchRadius; // search radius drop-down
+		var insideContent; // #inside-content section
+		var resultsList; // #results-list section
+		var updateAlertBox; // #update-alert
 
 		// PUBLIC METHODS
 		searchOpManager.init = function()
@@ -190,7 +193,21 @@ var main = (function () {
 
 		function changeHandler(evt)
 		{
-			webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
+			//webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
+			insideContent = document.getElementById("inside-content");
+			resultsList = document.getElementById("results-list");
+			updateAlertBox = document.getElementById("update-alert");
+			if (!updateAlertBox)
+			{
+				updateAlertBox = document.createElement("section");
+				updateAlertBox.id = "update-alert";
+				updateAlertBox.innerHTML = "<button type='submit' form='search-form'>Update results!</button>";
+				if (insideContent)
+				{
+					insideContent.appendChild(updateAlertBox);
+					resultsList.style.opacity = 0.25;
+				}
+			}
 		}
 
 		return searchOpManager;
@@ -229,7 +246,7 @@ var main = (function () {
 					if (!totalHeight) totalHeight = distanceBarBox.offsetHeight;
 					
 
-					console.log( totalWidth , distances[d].getAttribute("data-distance") , totalDistance );
+					//console.log( totalWidth , distances[d].getAttribute("data-distance") , totalDistance );
 					distanceBar.style.width = (totalWidth*distances[d].getAttribute("data-distance"))/totalDistance+"px";
 				}
 			}
