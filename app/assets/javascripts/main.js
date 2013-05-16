@@ -214,7 +214,7 @@ var main = (function () {
 	})();
 
 
-	//=================================================================================
+//=================================================================================
 	// manages appearance of distance in search results
 	var distanceManager = (function(){
 		var distanceManager = {};
@@ -238,16 +238,21 @@ var main = (function () {
 						distanceBarBox.classList.add("distance-bar-box");
 					var distanceBar = document.createElement("div");
 						distanceBar.classList.add("distance-bar");
-
+					var distanceLine = document.createElement("div");
+						distanceLine.classList.add("distance-line");
+					
 					distances[d].appendChild(distanceBarBox);
 					distanceBarBox.appendChild(distanceBar);
+					distanceBarBox.appendChild(distanceLine);
+
 
 					if (!totalWidth) totalWidth = distanceBarBox.offsetWidth;
 					if (!totalHeight) totalHeight = distanceBarBox.offsetHeight;
-					
 
 					//console.log( totalWidth , distances[d].getAttribute("data-distance") , totalDistance );
-					distanceBar.style.width = (totalWidth*distances[d].getAttribute("data-distance"))/totalDistance+"px";
+					var travelDistance = (totalWidth*distances[d].getAttribute("data-distance"))/totalDistance;
+					distanceBar.style.width = travelDistance+"px";
+					distanceLine.style.width = travelDistance+"px";
 				}
 			}
 		}
