@@ -48,3 +48,4 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "geocoder", :git => 'git://github.com/alexreisner/geocoder.git'
 gem "area"
 gem "validates_formatting_of"
+gem "redis"
