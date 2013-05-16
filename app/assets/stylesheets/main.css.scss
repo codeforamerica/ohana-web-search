@@ -1213,16 +1213,54 @@ fade-out
     margin:80px;
 }
 
+#results-list nav a
+{
+    color: $black;
+    background:$blue_light;
+    padding:5px;
+    border-radius:5px;
+    box-shadow:0 0 3px $black_alpha40;
+    letter-spacing: 1px;
+}
+
+#results-list nav a:hover
+{
+    background:$blue_midtone;
+    color: $white;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+}
+
 
 //=================================================================================
 // Detail list screen
-/*#results-list nav a
+#results-list nav a
 {
-    color: $green_dark;
-    background:$green_light;
+    color: $black;
+    background:$blue_light;
     padding:5px;
     border-radius:5px;
-}*/
+}
+
+#results-list nav a:hover
+{
+    background:$black_alpha10;
+    color: $white;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+}
 
 #detail-info
 {
@@ -1274,7 +1312,20 @@ fade-out
 // arrange contact details in a line
 #detail-info .contact-box p
 {
-    display:inline-block
+    display:inline-block;
+    margin-bottom: 10px;
+}
+
+#detail-info .contact-box span
+{
+  display:inline-block;
+  vertical-align: top;
+}
+
+#detail-info .address .ohana-icon,
+#detail-info .phone .ohana-icon 
+{
+    color:$black_alpha40;
 }
 
 #results-list #detail-screen ul
@@ -1294,40 +1345,18 @@ fade-out
     padding-left:20px;
 }
 
-#detail-info .address .ohana-icon,
-#detail-info .phone .ohana-icon 
-{
-    position:relative;
-    top:2px;
-    color:$black;
-}
-
-#results-list nav a,
 #detail-info .url a,
 #detail-info .directions a
 {
-    color: $black;
-    background:$blue_light;
-    padding:5px;
-    border-radius:5px;
-    box-shadow:0 0 3px $black_alpha40;
-    letter-spacing: 1px;
+  color: $black_alpha60;
+  border-bottom:1px solid $green_dark;
 }
 
-#results-list nav a:hover,
 #detail-info .url a:hover,
 #detail-info .directions a:hover
 {
-    background:$blue_midtone;
-    color: $white;
-
-    -webkit-transition: color $default_duration;
-    -moz-transition: color $default_duration;
-    transition: color $default_duration;
-
-    -webkit-transition: background $default_duration;
-    -moz-transition: background $default_duration;
-    transition: background $default_duration;
+  color: $black;
+  border-bottom:1px solid $green_light;
 }
 
 #detail-info .map img
