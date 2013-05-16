@@ -11,6 +11,8 @@ var main = (function () {
 		busyManager.hide(); // temp - immediately hide
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
 		alertManager.init(); // intialize alert box manager
+		searchOpManager.init(); // intialize display of distances
+		distanceManager.init(); // intialize display of distances
 	}
 
 	//=================================================================================
@@ -161,6 +163,79 @@ var main = (function () {
 		}
 
 		return alertManager;
+	})();
+
+
+	//=================================================================================
+	// manages search options
+	var searchOpManager = (function(){
+		var searchOpManager = {};
+
+		// PUBLIC PROPERTIES
+		searchOpManager.storageName = "hrl-searchop";
+
+		// PRIVATE PROPERTIES
+		var searchRadius; // search radius drop-down
+
+		// PUBLIC METHODS
+		searchOpManager.init = function()
+		{
+			searchRadius = document.getElementById("miles");
+			if (searchRadius)
+			{
+				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
+				searchRadius.addEventListener("change",changeHandler,false);
+			}
+		}
+
+		function changeHandler(evt)
+		{
+			webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
+		}
+
+		return searchOpManager;
+	})();
+
+
+	//=================================================================================
+	// manages appearance of distance in search results
+	var distanceManager = (function(){
+		var distanceManager = {};
+
+		// PRIVATE PROPERTIES
+		var distances; // array of distance
+
+		// PUBLIC METHODS
+		distanceManager.init = function()
+		{
+			distances = document.querySelectorAll("#results-list .distance");
+
+			if (distances.length >0)
+			{
+				var totalDistance = webStorageProxy.getItem(searchOpManager.storageName);
+				var totalWidth;
+				var totalHeight;
+				for(var d = 0;d<distances.length;d++)
+				{
+					var distanceBarBox = document.createElement("div");
+						distanceBarBox.classList.add("distance-bar-box");
+					var distanceBar = document.createElement("div");
+						distanceBar.classList.add("distance-bar");
+
+					distances[d].appendChild(distanceBarBox);
+					distanceBarBox.appendChild(distanceBar);
+
+					if (!totalWidth) totalWidth = distanceBarBox.offsetWidth;
+					if (!totalHeight) totalHeight = distanceBarBox.offsetHeight;
+					
+
+					console.log( totalWidth , distances[d].getAttribute("data-distance") , totalDistance );
+					distanceBar.style.width = (totalWidth*distances[d].getAttribute("data-distance"))/totalDistance+"px";
+				}
+			}
+		}
+
+		return distanceManager;
 	})();
 
 	
