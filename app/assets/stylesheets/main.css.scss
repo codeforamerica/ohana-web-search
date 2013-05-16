@@ -951,6 +951,7 @@ fade-out
 #inside-content
 {
     font-family: $san_serif_font;
+    position:relative;
 }
 
 //=================================================================================
@@ -1237,6 +1238,37 @@ fade-out
     transition: background $default_duration;
 }
 
+#update-alert
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+}
+
+#update-alert button
+{
+  position:absolute;
+  left:50%;
+  margin-left:-100px;
+
+  font-size:36px;
+  width:200px;
+  box-shadow: 0px 0px 5px $black_alpha40;
+  border-radius:10px;
+  border:1px solid $black_alpha10;
+  background:$greyscale_dark;
+  color:$white;
+  font-family: $serif_font;
+
+}
+
+#update-alert button:hover
+{
+  background:$greyscale_midtone;
+}
 
 //=================================================================================
 // Detail list screen
