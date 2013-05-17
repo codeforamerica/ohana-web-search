@@ -186,23 +186,33 @@ var main = (function () {
 		searchOpManager.init = function()
 		{
 			searchInput = document.getElementById("location");
+			searchInput.addEventListener("focus", focusSearchOptionsHandler,false);
+			searchInput.addEventListener("blur", blurSearchOptionsHandler,false);
 
-			searchOptions = document.getElementById("");
-
-			searchInput.addEventListener("focus", showSearchOptions)
-
-			searchRadius = document.getElementById("miles");
-			if (searchRadius)
+			searchOptions = document.getElementById("search-options-screen");
+			if (searchOptions)
 			{
-				searchRadius.classList.add("hide");
+				searchRadius = document.getElementById("miles");		
+				if (!searchInput.value && searchRadius) searchRadius.disabled = true;
 				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
 				searchRadius.addEventListener("change",changeHandler,false);
 			}
 		}
 
-		function showSearchOptions(evt)
+		function focusSearchOptionsHandler(evt)
 		{
+			if (searchOptions)
+			{
+				searchRadius.disabled = false;
+			}
+		}
 
+		function blurSearchOptionsHandler(evt)
+		{
+			if (!searchInput.value && searchOptions)
+			{
+				searchRadius.disabled = true;
+			}
 		}
 
 		// handles change of search options
