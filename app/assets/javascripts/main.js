@@ -175,6 +175,8 @@ var main = (function () {
 		searchOpManager.storageName = "hrl-searchop";
 
 		// PRIVATE PROPERTIES
+		var searchInput; // search input element
+		var searchOptions; // search options area
 		var searchRadius; // search radius drop-down
 		var insideContent; // #inside-content section
 		var resultsList; // #results-list section
@@ -183,14 +185,27 @@ var main = (function () {
 		// PUBLIC METHODS
 		searchOpManager.init = function()
 		{
+			searchInput = document.getElementById("location");
+
+			searchOptions = document.getElementById("");
+
+			searchInput.addEventListener("focus", showSearchOptions)
+
 			searchRadius = document.getElementById("miles");
 			if (searchRadius)
 			{
+				searchRadius.classList.add("hide");
 				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
 				searchRadius.addEventListener("change",changeHandler,false);
 			}
 		}
 
+		function showSearchOptions(evt)
+		{
+
+		}
+
+		// handles change of search options
 		function changeHandler(evt)
 		{
 			//webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
