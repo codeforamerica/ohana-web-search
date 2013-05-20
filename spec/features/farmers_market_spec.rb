@@ -8,7 +8,7 @@ feature 'Visitor views the details page of a farmers market' do
     expect(page).to have_content("This market accepts Credit, WIC, SFMNP, SNAP")
     expect(page).to have_content("Products sold: Cheese")
     expect(page).to have_content("May - November Tuesday 3:00 PM to 7:00 PM")
-    page.should have_link("Website", :href => "http://Www.pescaderogrown.org") 
+    page.should have_link("http://Www.pescaderogrown.org", :href => "http://Www.pescaderogrown.org") 
   end
 
   @javascript

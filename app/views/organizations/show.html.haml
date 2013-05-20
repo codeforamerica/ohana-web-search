@@ -11,37 +11,38 @@
 						%h1.name
 							= @org.name
 					
-					- if @org.address.present? || @org.phone_format.present? || @org.url.present?
+					- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
 						%section.contact-box
 							%h1 
 								%span Contact
 
-							- if @org.address.present?
+							- if @org.street_address.present?
 								%p.address
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 									%span
 										= @org.street_address 
 										%br 
-										= @org.city+","
-										= @org.state
-										%br
-										= @org.zipcode
+										= "#{@org.city}, #{@org.state} #{@org.zipcode}"
 							
-							- if @org.phone_format.present?
+							- if @org.phones.present?
 								%p.phone
 									%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
 									%span
-										= @org.phone_format
+									- @org.phones.each do |hash|
+										= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
+										%br							
 
-							- if @org.url.present?
+							- if @org.urls.present?
 								%p.url
-									%a{:href=>@org.url,:target=>"_blank"}
+								- @org.urls.each do |url|
+									%a{:href=>url,:target=>"_blank"}
 										%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-										Visit Website 
+										= url
+										%br
 
-							- if @org.email.present?
+							- if @org.emails.present?
 								%p.email
-									= @org.email
+									= @org.emails.join(", ")
 
 					- if @org.schedule.present?
 						%section.payment-box

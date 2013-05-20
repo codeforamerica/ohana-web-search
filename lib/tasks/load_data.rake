@@ -8,7 +8,7 @@ task :load_data => :environment do
   files = ['data/libraries_data.json', 'data/smc_farmers_markets.json']
   files.each do |file|
     puts "Processing #{file}"
-    data = JSON.parse(File.open(file,'r').read).values
+    data = JSON.parse(File.read(file)).values
     data.each do |json|
       Organization.create! do |db|
         json.keys.each do |field|
