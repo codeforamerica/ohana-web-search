@@ -49,25 +49,25 @@ describe Organization do
 	  	it { should_not be_valid }
 		end
 
-		context "without a street address" do
-	  	subject { build(:organization, street_address: nil) }
-	  	it { should_not be_valid }
-		end
+		# context "without a street address" do
+	 #  	subject { build(:organization, street_address: nil) }
+	 #  	it { should_not be_valid }
+		# end
 
-		context "without a city" do
-	  	subject { build(:organization, city: nil) }
-	  	it { should_not be_valid }
-		end
+		# context "without a city" do
+	 #  	subject { build(:organization, city: nil) }
+	 #  	it { should_not be_valid }
+		# end
 
-		context "without a state" do
-	  	subject { build(:organization, state: nil) }
-	  	it { should_not be_valid }
-		end
+		# context "without a state" do
+	 #  	subject { build(:organization, state: nil) }
+	 #  	it { should_not be_valid }
+		# end
 
-		context "without a zipcode" do
-	  	subject { build(:organization, zipcode: nil) }
-	  	it { should_not be_valid }
-		end
+		# context "without a zipcode" do
+	 #  	subject { build(:organization, zipcode: nil) }
+	 #  	it { should_not be_valid }
+		# end
 
 		context "with a zipcode less than 5 characters" do
 	  	subject { build(:organization, zipcode: "1234") }
@@ -100,32 +100,32 @@ describe Organization do
 		end
 
 		context "with URL containing 3 slashes" do
-	  	subject { build(:organization, url: "http:///codeforamerica.org") }
+	  	subject { build(:organization, urls: ["http:///codeforamerica.org"]) }
 	  	it { should_not be_valid }
 		end
 
 		context "with URL missing a period" do
-	  	subject { build(:organization, url: "http://codeforamericaorg") }
+	  	subject { build(:organization, urls: ["http://codeforamericaorg"]) }
 	  	it { should_not be_valid }
 		end
 
 		context "URL with wwww" do
-	  	subject { build(:organization, url: "http://wwww.codeforamerica.org") }
+	  	subject { build(:organization, urls: ["http://wwww.codeforamerica.org"]) }
 	  	it { should be_valid }
 		end
 
 		context "non-US URL" do
-	  	subject { build(:organization, url: "http://www.colouredlines.com.au") }
+	  	subject { build(:organization, urls: ["http://www.colouredlines.com.au"]) }
 	  	it { should be_valid }
 		end
 
 		context "email without period" do
-	  	subject { build(:organization, email: "moncef@blahcom") }
+	  	subject { build(:organization, emails: ["moncef@blahcom"]) }
 	  	it { should_not be_valid }
 		end
 
 		context "email without @" do
-	  	subject { build(:organization, email: "moncef.blahcom") }
+	  	subject { build(:organization, emails: ["moncef.blahcom"]) }
 	  	it { should_not be_valid }
 		end
 	end
