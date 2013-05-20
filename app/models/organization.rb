@@ -6,12 +6,12 @@ class Organization
   field :zipcode, type: String
   field :city, type: String
   field :state, type: String
-  field :url, type: String
-  field :email, type: String
+  field :urls, type: Array
+  field :emails, type: Array
   field :phone, type: String
-  field :fax, type: String
-  field :tty, type: String
-  field :service_hours, type: Hash
+  field :faxes, type: Array
+  field :ttys, type: Array
+  field :service_hours, type: String
   field :phones, type: Array
   field :coordinates, type: Array
   field :latitude, type: Float
@@ -32,12 +32,14 @@ class Organization
   field :accessibility, type: String
   field :services_provided, type: String
 
-  validates_presence_of :name, :street_address, :city, :state, :zipcode
+  validates_presence_of :name
+  
   extend ValidatesFormattingOf::ModelAdditions
-  validates_formatting_of :zipcode, using: :us_zip, message: "Please enter a valid ZIP code"
+  validates_formatting_of :zipcode, using: :us_zip, allow_blank: true, message: "Please enter a valid ZIP code"
   validates_formatting_of :phone, using: :us_phone, allow_blank: true, message: "Please enter a valid US phone number"
-  validates_formatting_of :url, allow_blank: true
-  validates_formatting_of :email, allow_blank: true
+  
+  validate :validate_emails
+  validate :validate_urls
 
   include Geocoder::Model::Mongoid
   geocoded_by :address               # can also be an IP address
@@ -51,11 +53,23 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
 
-  # Format phone number as (XXX) XXX-XXXX
-  def phone_format
-    if (self.phone != nil)
-      result = self.phone.gsub(/[^\d]/, '')
-      return "("+result[0..2]+") "+result[3..5]+"-"+result[6..10]
+  def validate_emails
+    if emails.present?
+      emails.each do |email|
+        unless email.match(/\A([^@\s]+)@((?:(?!-)[-a-z0-9]+(?<!-)\.)+[a-z]{2,})\z/i)
+          errors.add(:emails, "#{email} is not a valid email address.")
+        end
+      end
+    end
+  end
+
+  def validate_urls
+    if urls.present?
+      urls.each do |url|
+        unless url.match(/\Ahttps?:\/\/([^\s:@]+:[^\s:@]*@)?[A-Za-z\d\-]+(\.[A-Za-z\d\-]+)+\.?(:\d{1,5})?([\/?]\S*)?\z/i)
+          errors.add(:urls, "#{url} is not a valid URL.")
+        end
+      end
     end
   end
 

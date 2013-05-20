@@ -31,7 +31,7 @@ FactoryGirl.define do
     coordinates [-122.274369, 37.317983]
     keywords ["market"]
     schedule "May - November Tuesday 3:00 PM to 7:00 PM"
-    url "http://Www.pescaderogrown.org"
+    urls ["http://Www.pescaderogrown.org"]
     payments_accepted ["Credit", "WIC", "SFMNP", "SNAP"]
     products_sold ["Cheese", "Flowers", "Eggs", "Seafood", "Herbs", "Vegetables", "Jams", "Meat", "Nursery", "Plants", "Poultry"]
   end
