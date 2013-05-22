@@ -37,7 +37,8 @@
 									- @org.urls.each do |url|
 										%a{:href=>url,:target=>"_blank"}
 											%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-											= url
+											%span
+												= url
 											%br
 
 							- if @org.emails.present?
@@ -93,7 +94,7 @@
 							%div.directions
 								%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
 									%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-									Get Directions
+									%span Get Directions
 
 			- if @nearby.present?
 				%h2

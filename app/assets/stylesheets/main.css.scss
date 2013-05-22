@@ -1371,7 +1371,9 @@ fade-out
 }
 
 #detail-info .address .ohana-icon,
-#detail-info .phone .ohana-icon 
+#detail-info .url .ohana-icon ,
+#detail-info .phone .ohana-icon ,
+#detail-info .directions .ohana-icon ,
 {
     color:$black_alpha40;
     margin-right:5px;
@@ -1410,15 +1412,15 @@ fade-out
   display:inline-block;
 }
 
-#detail-info .url a,
-#detail-info .directions a
+#detail-info .url a span:last-of-type,
+#detail-info .directions a span:last-of-type
 {
   color: $black_alpha60;
   border-bottom:1px solid $green_dark;
 }
 
-#detail-info .url a:hover,
-#detail-info .directions a:hover
+#detail-info .url a:hover span:last-of-type,
+#detail-info .directions a:hover span:last-of-type
 {
   color: $black;
   border-bottom:1px solid $green_light;
