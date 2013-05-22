@@ -17,7 +17,7 @@
 								%span Contact
 
 							- if @org.street_address.present?
-								%p.address
+								%div.address
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 									%span
 										= @org.street_address 
@@ -25,31 +25,32 @@
 										= "#{@org.city}, #{@org.state} #{@org.zipcode}"
 							
 							- if @org.phones.present?
-								%p.phone
-									%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-									%span
+								%div.phone
 									- @org.phones.each do |hash|
-										= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
+										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+										%span
+											= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
 										%br							
 
 							- if @org.urls.present?
-								%p.url
-								- @org.urls.each do |url|
-									%a{:href=>url,:target=>"_blank"}
-										%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-										= url
-										%br
+								%div.url
+									- @org.urls.each do |url|
+										%a{:href=>url,:target=>"_blank"}
+											%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+											%span
+												= url
+											%br
 
 							- if @org.emails.present?
-								%p.email
+								%div.email
 									= @org.emails.join(", ")
 
 					- if @org.schedule.present?
-						%section.payment-box
+						%section.hours-box
 							%h1
 								%span Business Hours
 
-								%p.schedule
+								%div.schedule
 									= @org.schedule
 
 					- if @org.payments_accepted.present? || @org.products_sold.present?
@@ -58,14 +59,20 @@
 								%span Payment & Products
 
 							- if @org.payments_accepted.present?
-								%p.payments-accepted
-									This market accepts 
-									= @org.payments_accepted.join(", ")
+								%div.payments-accepted
+									Payment methods accepted:
+									%ul
+										-@org.payments_accepted.each do |payment|
+											%li
+												= payment
 
 							- if @org.products_sold.present?
-								%p.products-sold
+								%div.products-sold
 									Products sold: 
-									= @org.products_sold.join(", ")
+									%ul
+										- @org.products_sold.each do |product|
+											%li 
+												= product
 
 					- if @org.description.present?
 						%section.overview-box
@@ -73,21 +80,21 @@
 								%span Service Overview
 							
 							- if @org.description.present?
-								%p.description
-								= @org.description
+								%div.description
+									= @org.description
 
 					- if @org.mapURL.present?
 						%section.map-box
 							%h1 
 								%span Map & Directions
 
-							%p.map
+							%div.map
 								%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
-							%p.directions
+							%div.directions
 								%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
 									%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-									Get Directions
+									%span Get Directions
 
 			- if @nearby.present?
 				%h2
