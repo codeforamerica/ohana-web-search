@@ -1313,12 +1313,18 @@ fade-out
     border:1px solid $black_alpha10;
 }
 
-#detail-info p
+#detail-info div
 {
     margin:0;
     font-size:16px;
     margin-left:20px;
     color:$greyscale_dark;
+    padding-bottom:10px;
+}
+
+#detail-info div:only-of-type
+{
+    padding-bottom:0;
 }
 
 #detail-info > section > h1
@@ -1352,20 +1358,22 @@ fade-out
 }
 
 // arrange contact details in a line
-#detail-info .contact-box p
+#detail-info .contact-box div
 {
     display:inline-block;
     margin-bottom: 10px;
 }
 
-#detail-info .contact-box p span
+#detail-info .contact-box div span
 {
   display:inline-block;
   vertical-align: top;
 }
 
 #detail-info .address .ohana-icon,
-#detail-info .phone .ohana-icon 
+#detail-info .url .ohana-icon ,
+#detail-info .phone .ohana-icon ,
+#detail-info .directions .ohana-icon ,
 {
     color:$black_alpha40;
     margin-right:5px;
@@ -1388,15 +1396,31 @@ fade-out
     padding-left:20px;
 }
 
-#detail-info .url a,
-#detail-info .directions a
+
+#detail-info .payment-box ul
+{
+  margin-bottom:0;
+}
+
+#detail-info .payment-box li
+{
+  font-size:12px;
+  padding-left:10px;
+  margin:5px;
+  border-left:2px solid $black_alpha10;
+  border-bottom:1px solid $black_alpha10;
+  display:inline-block;
+}
+
+#detail-info .url a span:last-of-type,
+#detail-info .directions a span:last-of-type
 {
   color: $black_alpha60;
   border-bottom:1px solid $green_dark;
 }
 
-#detail-info .url a:hover,
-#detail-info .directions a:hover
+#detail-info .url a:hover span:last-of-type,
+#detail-info .directions a:hover span:last-of-type
 {
   color: $black;
   border-bottom:1px solid $green_light;
