@@ -34,11 +34,11 @@
 
 							- if @org.urls.present?
 								%div.url
-								- @org.urls.each do |url|
-									%a{:href=>url,:target=>"_blank"}
-										%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-										= url
-										%br
+									- @org.urls.each do |url|
+										%a{:href=>url,:target=>"_blank"}
+											%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+											= url
+											%br
 
 							- if @org.emails.present?
 								%div.email
