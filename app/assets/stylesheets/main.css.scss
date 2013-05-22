@@ -1313,12 +1313,18 @@ fade-out
     border:1px solid $black_alpha10;
 }
 
-#detail-info p
+#detail-info div
 {
     margin:0;
     font-size:16px;
     margin-left:20px;
     color:$greyscale_dark;
+    padding-bottom:10px;
+}
+
+#detail-info div:only-of-type
+{
+    padding-bottom:0;
 }
 
 #detail-info > section > h1
@@ -1352,13 +1358,13 @@ fade-out
 }
 
 // arrange contact details in a line
-#detail-info .contact-box p
+#detail-info .contact-box div
 {
     display:inline-block;
     margin-bottom: 10px;
 }
 
-#detail-info .contact-box p span
+#detail-info .contact-box div span
 {
   display:inline-block;
   vertical-align: top;
@@ -1386,6 +1392,22 @@ fade-out
     border-radius:10px 10px 0px 0px;
     padding: 10px;
     padding-left:20px;
+}
+
+
+#detail-info .payment-box ul
+{
+  margin-bottom:0;
+}
+
+#detail-info .payment-box li
+{
+  font-size:12px;
+  padding-left:10px;
+  margin:5px;
+  border-left:2px solid $black_alpha10;
+  border-bottom:1px solid $black_alpha10;
+  display:inline-block;
 }
 
 #detail-info .url a,
