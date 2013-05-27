@@ -61,6 +61,13 @@ class Organization
     end
   end
 
+  #sorts payment accepted alphabetically
+  def sorted_payments_accepted
+    if payments_accepted.present?
+      payments_accepted.sort!
+    end
+  end
+
   def validate_emails
     if emails.present?
       emails.each do |email|
