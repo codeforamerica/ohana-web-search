@@ -21,8 +21,7 @@
 										%h1.name
 											- org.formatted_name.each do |fragment|
 												- if fragment == "th"
-													%sup 
-														#{fragment}
+													%sup>=fragment
 												- else
 													= fragment
 									%p.address
