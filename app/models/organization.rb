@@ -49,8 +49,16 @@ class Organization
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
   default_scope order_by(:name => :asc)
 
+  #combines address fields together into one string
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
+  end
+
+  #sorts products list alphabetically
+  def sorted_products_sold
+    if products_sold.present?
+      products_sold.sort!
+    end
   end
 
   def validate_emails
