@@ -55,7 +55,7 @@ class Organization
 
   def formatted_name
     if name.present?
-      fname = name.split(/(^.*\d)(th)(\s.*)/)
+      fname = name.split(/(^.*\d)(th)(\b.*)/)
       return fname
     end
   end 
