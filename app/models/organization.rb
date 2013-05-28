@@ -54,20 +54,6 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
 
-  #sorts products list alphabetically
-  def sorted_products_sold
-    if products_sold.present?
-      products_sold.sort!
-    end
-  end
-
-  #sorts payment accepted alphabetically
-  def sorted_payments_accepted
-    if payments_accepted.present?
-      payments_accepted.sort!
-    end
-  end
-
   def validate_emails
     if emails.present?
       emails.each do |email|

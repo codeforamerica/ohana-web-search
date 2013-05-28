@@ -62,7 +62,7 @@
 								%div.payments-accepted
 									Payment methods accepted:
 									%ul
-										-@org.sorted_payments_accepted.each do |payment|
+										-@org.payments_accepted.sort.each do |payment|
 											%li
 												= payment
 
@@ -70,7 +70,7 @@
 								%div.products-sold
 									Products sold: 
 									%ul
-										- @org.sorted_products_sold.each do |product|
+										- @org.products_sold.sort.each do |product|
 											%li 
 												= product
 
