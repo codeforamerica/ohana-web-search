@@ -12,7 +12,8 @@ var main = (function () {
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
 		alertManager.init(); // intialize alert box manager
 		searchOpManager.init(); // search options functionality
-		distanceManager.init(); // intialize display of distances
+		distanceManager.init(); // initialize display of distances
+		popupManager.init(); // initialize popup behavior
 	}
 
 	//=================================================================================
@@ -283,6 +284,38 @@ var main = (function () {
 		}
 
 		return distanceManager;
+	})();
+
+
+	//=================================================================================
+	// manages behavior of popups
+	var popupManager = (function(){
+		var popupManager = {};
+
+		// PRIVATE PROPERTIES
+		var popups; // array of popups on the page
+
+		// PUBLIC METHODS
+		popupManager.init = function()
+		{
+			popups = document.querySelectorAll(".popup-container");
+
+			for (var p=0; p < popups.length; p++)
+			{
+				var popup = popups[p].firstElementChild;
+				popup.classList.add("hide");
+				popup.addEventListener("mousedown", closeHandler, false)
+			}
+		}
+
+		// PRIVATE METHODS
+		function closeHandler(evt)
+		{
+			// if clicked element has a close class, remove alert box content
+			if (evt.target.classList.contains("close")) alertBox.innerHTML = "";
+		}
+
+		return popupManager;
 	})();
 
 	

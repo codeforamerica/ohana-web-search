@@ -68,7 +68,7 @@
 												%span.popup-container
 													- dynamic_partial = 'popup/'+payment.downcase
 													= render :partial => "#{dynamic_partial}" rescue nil
-												= payment
+													= payment
 
 							- if @org.products_sold.present?
 								%div.products-sold
