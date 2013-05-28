@@ -313,8 +313,9 @@ var main = (function () {
 		// PRIVATE METHODS
 		function popupHandler(evt)
 		{
-			if (lastPopup) lastPopup.classList.add("hide");
-			lastPopup = (evt.target).parentElement.firstElementChild;
+			var thisPopup = (evt.target).parentElement.firstElementChild;
+			if (lastPopup && lastPopup != thisPopup) lastPopup.classList.add("hide");
+			lastPopup = thisPopup;
 			lastPopup.classList.toggle("hide");
 			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
 			document.addEventListener("mousedown", closeHandler, true);
@@ -324,6 +325,7 @@ var main = (function () {
 		{
 			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
 			{	
+				console.log("here")
 				lastPopup.classList.add("hide");
 				document.removeEventListener("mousedown", closeHandler, true);
 			}
