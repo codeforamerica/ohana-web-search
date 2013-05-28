@@ -53,12 +53,12 @@
 								%div.schedule
 									= @org.schedule
 
-					- if @org.sorted_payments_accepted.present? || @org.sorted_products_sold.present?
+					- if @org.payments_accepted.present? || @org.products_sold.present?
 						%section.payment-box
 							%h1
 								%span Payment & Products
 
-							- if @org.sorted_payments_accepted.present?
+							- if @org.payments_accepted.present?
 								%div.payments-accepted
 									Payment methods accepted:
 									%ul
@@ -66,7 +66,7 @@
 											%li
 												= payment
 
-							- if @org.sorted_products_sold.present?
+							- if @org.products_sold.present?
 								%div.products-sold
 									Products sold: 
 									%ul
