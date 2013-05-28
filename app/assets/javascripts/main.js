@@ -294,6 +294,7 @@ var main = (function () {
 
 		// PRIVATE PROPERTIES
 		var popups; // array of popups on the page
+		var lastPopup; // the last popup to be shown
 
 		// PUBLIC METHODS
 		popupManager.init = function()
@@ -303,16 +304,29 @@ var main = (function () {
 			for (var p=0; p < popups.length; p++)
 			{
 				var popup = popups[p].firstElementChild;
+				var term = popups[p].lastElementChild;
 				popup.classList.add("hide");
-				popup.addEventListener("mousedown", closeHandler, false)
+				term.addEventListener("mousedown", popupHandler, false);
 			}
 		}
 
 		// PRIVATE METHODS
+		function popupHandler(evt)
+		{
+			if (lastPopup) lastPopup.classList.add("hide");
+			lastPopup = (evt.target).parentElement.firstElementChild;
+			lastPopup.classList.toggle("hide");
+			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
+			document.addEventListener("mousedown", closeHandler, true);
+		}
+
 		function closeHandler(evt)
 		{
-			// if clicked element has a close class, remove alert box content
-			if (evt.target.classList.contains("close")) alertBox.innerHTML = "";
+			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
+			{	
+				lastPopup.classList.add("hide");
+				document.removeEventListener("mousedown", closeHandler, true);
+			}
 		}
 
 		return popupManager;
