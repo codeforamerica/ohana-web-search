@@ -65,6 +65,9 @@
 									%ul
 										-@org.payments_accepted.each do |payment|
 											%li
+												%span 
+													- dynamic_partial = 'messages/'+payment.downcase
+													= render :partial => "#{dynamic_partial}" rescue nil
 												= payment
 
 							- if @org.products_sold.present?
