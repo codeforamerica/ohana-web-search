@@ -53,13 +53,6 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
 
-  def formatted_name
-    if name.present?
-      fname = name.split(/(^.*\d)(th)(\b.*)/)
-      return fname
-    end
-  end 
-
   def validate_emails
     if emails.present?
       emails.each do |email|
