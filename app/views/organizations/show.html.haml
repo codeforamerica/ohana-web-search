@@ -49,8 +49,8 @@
 						%section.hours-box
 							%h1
 								%span Business Hours
-
 							%div.schedule
+								%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
 								= @org.schedule
 
 					- if @org.payments_accepted.present? || @org.products_sold.present?
@@ -60,6 +60,7 @@
 
 							- if @org.payments_accepted.present?
 								%div.payments-accepted
+									%span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
 									Payment methods accepted:
 									%ul
 										-@org.payments_accepted.each do |payment|
@@ -68,6 +69,7 @@
 
 							- if @org.products_sold.present?
 								%div.products-sold
+									%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
 									Products sold: 
 									%ul
 										- @org.products_sold.each do |product|
