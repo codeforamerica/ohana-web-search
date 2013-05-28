@@ -19,11 +19,8 @@
 												== #{org.distance_to(@location).round(2)} mi
 									- if org.name.present?
 										%h1.name
-											- org.formatted_name.each do |fragment|
-												- if fragment == "th"
-													%sup>=fragment
-												- else
-													= fragment
+											= org.name
+											
 									%p.address
 										= org.address
 									

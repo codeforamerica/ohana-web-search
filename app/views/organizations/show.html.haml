@@ -9,11 +9,7 @@
 					
 					- if @org.name.present?
 						%h1.name
-							- @org.formatted_name.each do |fragment|
-								- if fragment == "th"
-									%sup>=fragment
-								- else
-									= fragment
+							= @org.name
 					
 					- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
 						%section.contact-box
