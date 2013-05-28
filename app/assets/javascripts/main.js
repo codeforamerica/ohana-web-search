@@ -145,21 +145,21 @@ var main = (function () {
 		var alertManager = {};
 
 		// PRIVATE PROPERTIES
-		var messagesBox; // alert message box
+		var alertBox; // alert message box
 
 		// PUBLIC METHODS
 		alertManager.init = function()
 		{
-			messagesBox = document.getElementById("messages");
+			alertBox = document.getElementById("alert-box");
 
-			messagesBox.addEventListener("mousedown", closeHandler, false)
+			alertBox.addEventListener("mousedown", closeHandler, false)
 		}
 
 		// PRIVATE METHODS
 		function closeHandler(evt)
 		{
 			// if clicked element has a close class, remove alert box content
-			if (evt.target.classList.contains("close")) messagesBox.innerHTML = "";
+			if (evt.target.classList.contains("close")) alertBox.innerHTML = "";
 		}
 
 		return alertManager;
