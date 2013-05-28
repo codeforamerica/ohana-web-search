@@ -65,7 +65,12 @@
 									%ul
 										-@org.payments_accepted.each do |payment|
 											%li
-												= payment
+												%span.popup-container
+													%span.popup
+														- dynamic_partial = 'popup/'+payment.downcase
+														= render :partial => "#{dynamic_partial}" rescue nil
+													%span.popup-term
+														= payment
 
 							- if @org.products_sold.present?
 								%div.products-sold

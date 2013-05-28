@@ -12,7 +12,8 @@ var main = (function () {
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
 		alertManager.init(); // intialize alert box manager
 		searchOpManager.init(); // search options functionality
-		distanceManager.init(); // intialize display of distances
+		distanceManager.init(); // initialize display of distances
+		popupManager.init(); // initialize popup behavior
 	}
 
 	//=================================================================================
@@ -145,21 +146,21 @@ var main = (function () {
 		var alertManager = {};
 
 		// PRIVATE PROPERTIES
-		var messagesBox; // alert message box
+		var alertBox; // alert message box
 
 		// PUBLIC METHODS
 		alertManager.init = function()
 		{
-			messagesBox = document.getElementById("messages");
+			alertBox = document.getElementById("alert-box");
 
-			messagesBox.addEventListener("mousedown", closeHandler, false)
+			alertBox.addEventListener("mousedown", closeHandler, false)
 		}
 
 		// PRIVATE METHODS
 		function closeHandler(evt)
 		{
 			// if clicked element has a close class, remove alert box content
-			if (evt.target.classList.contains("close")) messagesBox.innerHTML = "";
+			if (evt.target.classList.contains("close")) alertBox.innerHTML = "";
 		}
 
 		return alertManager;
@@ -283,6 +284,54 @@ var main = (function () {
 		}
 
 		return distanceManager;
+	})();
+
+
+	//=================================================================================
+	// manages behavior of popups
+	var popupManager = (function(){
+		var popupManager = {};
+
+		// PRIVATE PROPERTIES
+		var popups; // array of popups on the page
+		var lastPopup; // the last popup to be shown
+
+		// PUBLIC METHODS
+		popupManager.init = function()
+		{
+			popups = document.querySelectorAll(".popup-container");
+
+			for (var p=0; p < popups.length; p++)
+			{
+				var popup = popups[p].firstElementChild;
+				var term = popups[p].lastElementChild;
+				popup.classList.add("hide");
+				term.addEventListener("mousedown", popupHandler, false);
+			}
+		}
+
+		// PRIVATE METHODS
+		function popupHandler(evt)
+		{
+			var thisPopup = (evt.target).parentElement.firstElementChild;
+			if (lastPopup && lastPopup != thisPopup) lastPopup.classList.add("hide");
+			lastPopup = thisPopup;
+			lastPopup.classList.toggle("hide");
+			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
+			document.addEventListener("mousedown", closeHandler, true);
+		}
+
+		function closeHandler(evt)
+		{
+			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
+			{	
+				console.log("here")
+				lastPopup.classList.add("hide");
+				document.removeEventListener("mousedown", closeHandler, true);
+			}
+		}
+
+		return popupManager;
 	})();
 
 	
