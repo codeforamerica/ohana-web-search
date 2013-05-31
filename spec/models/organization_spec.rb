@@ -101,7 +101,7 @@ describe Organization do
 
 		context "with URL containing 3 slashes" do
 	  	subject { build(:organization, urls: ["http:///codeforamerica.org"]) }
-	  	it { should_not be_valid }
+	  	it { should be_valid }
 		end
 
 		context "with URL missing a period" do
@@ -119,6 +119,11 @@ describe Organization do
 	  	it { should be_valid }
 		end
 
+		context "URL without http://" do
+	  	subject { build(:organization, urls: ["www.monfresh.com"]) }
+	  	it { should be_valid }
+		end
+
 		context "email without period" do
 	  	subject { build(:organization, emails: ["moncef@blahcom"]) }
 	  	it { should_not be_valid }
@@ -127,6 +132,11 @@ describe Organization do
 		context "email without @" do
 	  	subject { build(:organization, emails: ["moncef.blahcom"]) }
 	  	it { should_not be_valid }
+		end
+
+		context "email with 3 characters before the @" do
+	  	subject { build(:organization, emails: ["abc@foo.com", "def@abc.com"]) }
+	  	it { should be_valid }
 		end
 	end
 end

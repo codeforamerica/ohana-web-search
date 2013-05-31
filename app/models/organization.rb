@@ -37,9 +37,8 @@ class Organization
   extend ValidatesFormattingOf::ModelAdditions
   validates_formatting_of :zipcode, using: :us_zip, allow_blank: true, message: "Please enter a valid ZIP code"
   validates_formatting_of :phone, using: :us_phone, allow_blank: true, message: "Please enter a valid US phone number"
-  
-  validate :validate_emails
-  validate :validate_urls
+  validates :emails, array: { format: { with: /\A([^@\s]+)@((?:(?!-)[-a-z0-9]+(?<!-)\.)+[a-z]{2,})\z/i } }
+  validates :urls,   array: { format: { with: /(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)?/i } }
 
   include Geocoder::Model::Mongoid
   geocoded_by :address               # can also be an IP address
@@ -51,26 +50,6 @@ class Organization
 
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
-  end
-
-  def validate_emails
-    if emails.present?
-      emails.each do |email|
-        unless email.match(/\A([^@\s]+)@((?:(?!-)[-a-z0-9]+(?<!-)\.)+[a-z]{2,})\z/i)
-          errors.add(:emails, "#{email} is not a valid email address.")
-        end
-      end
-    end
-  end
-
-  def validate_urls
-    if urls.present?
-      urls.each do |url|
-        unless url.match(/\Ahttps?:\/\/([^\s:@]+:[^\s:@]*@)?[A-Za-z\d\-]+(\.[A-Za-z\d\-]+)+\.?(:\d{1,5})?([\/?]\S*)?\z/i)
-          errors.add(:urls, "#{url} is not a valid URL.")
-        end
-      end
-    end
   end
 
   def market_match?

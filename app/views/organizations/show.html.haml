@@ -26,11 +26,12 @@
 							
 							- if @org.phones.present?
 								%div.phone
-									- @org.phones.each do |hash|
-										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-										%span
-											= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
-										%br							
+									- @org.phones.each do |array|
+										-	array.each do |hash|
+											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+											%span
+												= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
+											%br							
 
 							- if @org.urls.present?
 								%div.url
