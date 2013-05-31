@@ -14,8 +14,7 @@ class ArrayValidator < ActiveModel::EachValidator
           end
 
           validator = validator_class.new(validator_options)
-          result = validator.validate_each(record, attribute, value)
-          record.errors[attribute] << "#{value} is invalid" unless result.blank?
+          validator.validate_each(record, attribute, value)
         end
       end
     end
