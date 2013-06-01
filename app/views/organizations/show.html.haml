@@ -19,18 +19,26 @@
 							- if @org.street_address.present?
 								%div.address
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-									%span
-										= @org.street_address 
+									%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+										%span{:itemprop=>"streetAddress"}
+											= @org.street_address 
 										%br 
-										= "#{@org.city}, #{@org.state} #{@org.zipcode}"
+										%span{:itemprop=>"addressLocality"}
+											= @org.city+","
+										%span{:itemprop=>"addressRegion"}
+											= @org.state
+										%span{:itemprop=>"postalCode"}
+											= @org.zipcode
 							
 							- if @org.phones.present?
 								%div.phone
 									- @org.phones.each do |array|
 										-	array.each do |hash|
 											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+											%span{:itemprop=>"telephone"}
+												= "#{format_phone(hash["number"])}" 
 											%span
-												= "#{format_phone(hash["number"])} #{hash["phone_hours"]}"	
+												= " #{hash["phone_hours"]}"	
 											%br							
 
 							- if @org.urls.present?
@@ -38,12 +46,12 @@
 									- @org.urls.each do |url|
 										%a{:href=>url,:target=>"_blank"}
 											%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-											%span
+											%span{:itemprop=>"url"}
 												= url
 											%br
 
 							- if @org.emails.present?
-								%div.email
+								%div.email{:itemprop=>"email"}
 									= @org.emails.join(", ")
 
 					- if @org.schedule.present?
