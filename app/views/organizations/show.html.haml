@@ -52,6 +52,7 @@
 
 							- if @org.emails.present?
 								%div.email{:itemprop=>"email"}
+									%span{"data-icon"=>"@" , :class=>"ohana-icon"}
 									= @org.emails.join(", ")
 
 					- if @org.schedule.present?
