@@ -14,6 +14,7 @@ var main = (function () {
 		searchOpManager.init(); // search options functionality
 		distanceManager.init(); // initialize display of distances
 		popupManager.init(); // initialize popup behavior
+		resultViewManager.init(); // initialize result list behavior for selecting map or list
 	}
 
 	//=================================================================================
@@ -334,6 +335,70 @@ var main = (function () {
 		return popupManager;
 	})();
 
+
+	//=================================================================================
+	// manages behavior of popups
+	var resultViewManager = (function(){
+		var resultViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var listViewButton; 
+		var mapViewButton;
+		var listView; 
+		var mapView;
+		var selected;
+
+		resultViewManager.storageName = "resultviewpref";
+
+		// PUBLIC METHODS
+		resultViewManager.init = function()
+		{
+			listViewButton = document.getElementById("list-view-btn");
+			mapViewButton = document.getElementById("map-view-btn");
+			
+			listView = document.getElementById("list-view");
+			mapView = document.getElementById("map-view");
+			
+
+			listViewButton.addEventListener( "mousedown" , listClickHandler , false);
+			mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+
+			if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
+				selected = listViewButton;
+				mapViewButton.disabled = "";
+			}else{
+				selected = mapViewButton;
+				listViewButton.disabled = "";
+			}
+
+			selected.disabled = "disabled";
+			if (selected == listViewButton) 
+			{
+				mapView.classList.add("hide");
+				listView.classList.remove("hide");
+			}
+			else if (selected == mapViewButton)
+			{
+				listView.classList.add("hide");
+				mapView.classList.remove("hide");
+			}
+		}
+
+		// PRIVATE METHODS
+		function listClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "list");
+			resultViewManager.init();
+		}
+
+		function mapClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "map");
+			resultViewManager.init();
+		}
+
+		return resultViewManager;
+	})();
 	
 	//=================================================================================
 	// Utility JS functions
