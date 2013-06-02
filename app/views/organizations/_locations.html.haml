@@ -8,6 +8,13 @@
 				%p.no-results
 					NO RESULTS
 			- else	
+				%nav#results-view-options
+					%span
+						View: 
+					%button.disabled>
+						List
+					%button
+						Map
 				%ul
 					- @organizations.each do |org|
 						%li
