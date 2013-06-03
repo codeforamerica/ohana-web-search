@@ -14,6 +14,9 @@ var main = (function () {
 		searchOpManager.init(); // search options functionality
 		distanceManager.init(); // initialize display of distances
 		popupManager.init(); // initialize popup behavior
+		resultViewManager.init(); // initialize result list behavior for selecting map or list
+		resultSortManager.init(); // initialize result list sorting behavior
+		mapViewManager.init(); // initialize map result view
 	}
 
 	//=================================================================================
@@ -334,7 +337,222 @@ var main = (function () {
 		return popupManager;
 	})();
 
+
+	//=================================================================================
+	// manages behavior of popups
+	var resultSortManager = (function(){
+		var resultSortManager = {};
+
+		// PRIVATE PROPERTIES
+		var nameSortButton; 
+		var distanceSortButton;
+		var selected;
+
+		var nameDescending = false;
+		var distanceDescending = false;
+
+		resultSortManager.storageName = "resultsortpref";
+
+		// PUBLIC METHODS
+		resultSortManager.init = function()
+		{
+			nameSortButton = document.getElementById("name-sort-btn");
+			distanceSortButton = document.getElementById("distance-sort-btn");
+			
+			// checks that required elements exist on the page.
+			if ( nameSortButton && distanceSortButton )
+			{
+				nameSortButton.addEventListener( "mousedown" , nameClickHandler , false);
+				distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
+
+				var settings = webStorageProxy.getItem(resultSortManager.storageName);
+				if (settings["field"] == "name"){
+					selected = nameSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Name ▼";
+					else selected.innerHTML = "Name ▲";
+				}else{
+					selected = distanceSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
+					else selected.innerHTML = "Distance ▲";
+				}
+			}
+		}
+
+		// PRIVATE METHODS
+		function nameClickHandler(evt)
+		{
+			nameDescending = !nameDescending;
+			if (nameDescending){
+				nameSortButton.innerHTML = "Name ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":true});
+			}else{
+				nameSortButton.innerHTML = "Name ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":false});
+			}
+		}
+
+		function distanceClickHandler(evt)
+		{
+			distanceDescending = !distanceDescending;
+			if (distanceDescending){
+				distanceSortButton.innerHTML = "Distance ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":true});
+			}else{
+				distanceSortButton.innerHTML = "Distance ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":false});
+			}
+		}
+
+		return resultSortManager;
+	})();
 	
+
+	//=================================================================================
+	// manages behavior of results view list vs maps setting
+	var resultViewManager = (function(){
+		var resultViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var listViewButton; 
+		var mapViewButton;
+		var listView; 
+		var mapView;
+		var selected;
+
+		resultViewManager.storageName = "resultviewpref";
+
+		// PUBLIC METHODS
+		resultViewManager.init = function()
+		{
+			listViewButton = document.getElementById("list-view-btn");
+			mapViewButton = document.getElementById("map-view-btn");
+			
+			listView = document.getElementById("list-view");
+			mapView = document.getElementById("map-view");
+			
+			// checks that required elements exist on the page.
+			if ( listViewButton && mapViewButton && listView  && mapView )
+			{
+				listViewButton.addEventListener( "mousedown" , listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+
+				if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
+					selected = listViewButton;
+					mapViewButton.disabled = "";
+				}else{
+					selected = mapViewButton;
+					listViewButton.disabled = "";
+				}
+
+				selected.disabled = "disabled";
+				if (selected == listViewButton) 
+				{
+					mapView.classList.add("hide");
+					listView.classList.remove("hide");
+				}
+				else if (selected == mapViewButton)
+				{
+					listView.classList.add("hide");
+					mapView.classList.remove("hide");
+				}
+			}
+		}
+
+		// PRIVATE METHODS
+		function listClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "list");
+			resultViewManager.init();
+		}
+
+		function mapClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "map");
+			resultViewManager.init();
+		}
+
+		return resultViewManager;
+	})();
+	
+
+	//=================================================================================
+	// manages results maps view
+	var mapViewManager = (function(){
+		var mapViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var map; // the created map
+
+		// PUBLIC METHODS
+		mapViewManager.init = function()
+		{
+			// if map exists on the page
+			if (document.getElementById("map"))
+			{
+					map = L.mapbox.map('map', 'examples.map-vyofok3q');
+			    var locations = document.getElementById("map-locations");
+			    var obj = JSON.parse(locations.innerHTML);
+
+				    var geoJson = {
+						    type: 'FeatureCollection',
+						    features: []
+						};
+
+						for (var m in obj)
+			    	{
+			    		// if the coordinates actually exist for an entry
+			    		if (obj[m]["coordinates"] != null)
+							{							
+				    		var url = '/organizations/'+obj[m]["_id"];
+				    		var marker = {
+							        type: 'Feature',
+							        properties: {
+							            title: obj[m]["name"],
+							            'marker-color': '#f00',
+							            'marker-size': 'small',
+							            url: url
+							        },
+							        geometry: {
+							            type: 'Point',
+							            coordinates: obj[m]["coordinates"]
+							        }
+							    };
+
+				    		geoJson["features"].push(marker);			    		
+				    	}
+			    	}
+
+						// Pass features and a custom factory function to the map
+						map.markerLayer.setGeoJSON(geoJson);
+						
+						mapViewManager.zoomToMarkers();
+
+						map.markerLayer.on('mouseover', function(e) {
+						    e.layer.openPopup();
+						});
+
+						map.markerLayer.on('mouseout', function(e) {
+						    e.layer.closePopup();
+						});
+
+						map.markerLayer.on('click', function(e) {
+						    e.layer.unbindPopup();
+						    window.open(e.layer.feature.properties.url,"_self");
+						});
+
+			}
+		}
+
+		mapViewManager.zoomToMarkers = function()
+		{
+			map.fitBounds( map.markerLayer.getBounds() );
+		}
+
+		return mapViewManager;
+	})();
+		
+
+
 	//=================================================================================
 	// Utility JS functions
 	var util = (function(){
