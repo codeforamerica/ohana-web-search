@@ -15,6 +15,8 @@ var main = (function () {
 		distanceManager.init(); // initialize display of distances
 		popupManager.init(); // initialize popup behavior
 		resultViewManager.init(); // initialize result list behavior for selecting map or list
+		resultSortManager.init(); // initialize result list sorting behavior
+		mapViewManager.init(); // initialize map result view
 	}
 
 	//=================================================================================
@@ -338,6 +340,71 @@ var main = (function () {
 
 	//=================================================================================
 	// manages behavior of popups
+	var resultSortManager = (function(){
+		var resultSortManager = {};
+
+		// PRIVATE PROPERTIES
+		var nameSortButton; 
+		var distanceSortButton;
+		var selected;
+
+		var nameDescending = false;
+		var distanceDescending = false;
+
+		resultSortManager.storageName = "resultsortpref";
+
+		// PUBLIC METHODS
+		resultSortManager.init = function()
+		{
+			nameSortButton = document.getElementById("name-sort-btn");
+			distanceSortButton = document.getElementById("distance-sort-btn");
+			
+			nameSortButton.addEventListener( "mousedown" , nameClickHandler , false);
+			distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
+
+			var settings = webStorageProxy.getItem(resultSortManager.storageName);
+			if (settings["field"] == "name"){
+				selected = nameSortButton;
+				if (settings["descending"] == true) selected.innerHTML = "Name ▼";
+				else selected.innerHTML = "Name ▲";
+			}else{
+				selected = distanceSortButton;
+				if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
+				else selected.innerHTML = "Distance ▲";
+			}
+		}
+
+		// PRIVATE METHODS
+		function nameClickHandler(evt)
+		{
+			nameDescending = !nameDescending;
+			if (nameDescending){
+				nameSortButton.innerHTML = "Name ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":true});
+			}else{
+				nameSortButton.innerHTML = "Name ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":false});
+			}
+		}
+
+		function distanceClickHandler(evt)
+		{
+			distanceDescending = !distanceDescending;
+			if (distanceDescending){
+				distanceSortButton.innerHTML = "Distance ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":true});
+			}else{
+				distanceSortButton.innerHTML = "Distance ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":false});
+			}
+		}
+
+		return resultSortManager;
+	})();
+	
+
+	//=================================================================================
+	// manages behavior of results view list vs maps setting
 	var resultViewManager = (function(){
 		var resultViewManager = {};
 
@@ -400,6 +467,82 @@ var main = (function () {
 		return resultViewManager;
 	})();
 	
+
+	//=================================================================================
+	// manages results maps view
+	var mapViewManager = (function(){
+		var mapViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var mapElm; // the map element
+
+		// PUBLIC METHODS
+		mapViewManager.init = function()
+		{
+			mapElm = document.getElementById("map");
+			if (mapElm)
+			{
+					var map = L.mapbox.map('map', 'examples.map-vyofok3q');
+
+
+			    var locations = document.getElementById("map-locations");
+			    var obj = JSON.parse(locations.innerHTML);
+
+				    var geoJson = {
+						    type: 'FeatureCollection',
+						    features: []
+						};
+
+						for (var m in obj)
+			    	{
+			    		var marker = {
+						        type: 'Feature',
+						        properties: {
+						            title: obj[m]["name"],
+						            'marker-color': '#f00',
+						            'marker-size': 'small',
+						            url: 'http://en.wikipedia.org/wiki/Washington,_D.C.'
+						        },
+						        geometry: {
+						            type: 'Point',
+						            coordinates: obj[m]["coordinates"]
+						        }
+						    };
+
+						   	//marker["geometry"]["coordinates"] = ;
+
+			    		geoJson["features"].push(marker);
+			    		
+			    	}
+
+						// Pass features and a custom factory function to the map
+						map.markerLayer.setGeoJSON(geoJson);
+						
+						console.dir(map.markerLayer);
+
+						map.fitBounds( map.markerLayer.getBounds() );
+
+						map.markerLayer.on('mouseover', function(e) {
+						    e.layer.openPopup();
+						});
+
+						map.markerLayer.on('mouseout', function(e) {
+						    e.layer.closePopup();
+						});
+
+						map.markerLayer.on('click', function(e) {
+						    e.layer.unbindPopup();
+						    window.open(e.layer.feature.properties.url,"_self");
+						});
+
+			}
+		}
+
+		return mapViewManager;
+	})();
+		
+
+
 	//=================================================================================
 	// Utility JS functions
 	var util = (function(){

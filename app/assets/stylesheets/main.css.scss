@@ -1141,12 +1141,17 @@ fade-out
     margin-top: 0;
 }
 
-#map-view div
+#map-view > div
 {
     width: 100%;
     min-height: 400px;
-    background: red; // temporary  
     border-radius:10px;
+}
+
+#map
+{
+    width: 100%;
+    height: 400px;
 }
 
 #results-list header > nav
@@ -1163,59 +1168,7 @@ fade-out
     text-decoration: none;
 }
 
-#results-view-options
-{
-    margin: 15px;
-    font-size:12px;
-}
 
-#results-view-options button
-{
-    border:0;
-    padding:6px;
-    padding-top:3px;
-    padding-bottom:3px;
-    margin:0;
-
-    font-family: $san_serif_font;
-    background: $blue_midtone;
-    color:$white;
-    text-align: center;
-    border:0px;
-    border-collapse:collapse;
-    border-radius:4px;
-}
-
-#results-view-options button:hover
-{
-    cursor:pointer;
-    background: $blue_dark;
-
-    -webkit-transition: color $default_duration;
-    -moz-transition: color $default_duration;
-    transition: color $default_duration;
-
-    -webkit-transition: background $default_duration;
-    -moz-transition: background $default_duration;
-    transition: background $default_duration;
-}
-
-#results-view-options button:first-of-type
-{
-    border-radius:4px 0px 0px 4px;
-}
-
-#results-view-options button:last-of-type
-{
-    border-radius:0px 4px 4px 0px;
-}
-
-#results-view-options button:disabled
-{
-    background: $greyscale_light;
-    color: $black_alpha40;
-    cursor:default;
-}
 
 .results-entry > h1
 {
@@ -1364,6 +1317,62 @@ fade-out
     -webkit-transition: background $default_duration;
     -moz-transition: background $default_duration;
     transition: background $default_duration;
+}
+
+// results list options
+#results-list nav section
+{
+    display:inline-block;
+    margin: 15px;
+    font-size:12px;
+}
+
+#results-list nav section button
+{
+    border:0;
+    padding:6px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin:0;
+
+    font-family: $san_serif_font;
+    background: $blue_midtone;
+    color:$white;
+    text-align: center;
+    border:0px;
+    border-collapse:collapse;
+    border-radius:4px;
+}
+
+#results-list nav section button:hover
+{
+    cursor:pointer;
+    background: $blue_dark;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+}
+
+#results-list nav section button:first-of-type
+{
+    border-radius:4px 0px 0px 4px;
+}
+
+#results-list nav section button:last-of-type
+{
+    border-radius:0px 4px 4px 0px;
+}
+
+#results-list nav section button:disabled
+{
+    background: $greyscale_light;
+    color: $black_alpha40;
+    cursor:default;
 }
 
 #update-alert
