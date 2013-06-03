@@ -492,22 +492,26 @@ var main = (function () {
 
 						for (var m in obj)
 			    	{
-			    		var url = '/organizations/'+obj[m]["_id"];
-			    		var marker = {
-						        type: 'Feature',
-						        properties: {
-						            title: obj[m]["name"],
-						            'marker-color': '#f00',
-						            'marker-size': 'small',
-						            url: url
-						        },
-						        geometry: {
-						            type: 'Point',
-						            coordinates: obj[m]["coordinates"]
-						        }
-						    };
+			    		// if the coordinates actually exist for an entry
+			    		if (obj[m]["coordinates"] != null)
+							{							
+				    		var url = '/organizations/'+obj[m]["_id"];
+				    		var marker = {
+							        type: 'Feature',
+							        properties: {
+							            title: obj[m]["name"],
+							            'marker-color': '#f00',
+							            'marker-size': 'small',
+							            url: url
+							        },
+							        geometry: {
+							            type: 'Point',
+							            coordinates: obj[m]["coordinates"]
+							        }
+							    };
 
-			    		geoJson["features"].push(marker);			    		
+				    		geoJson["features"].push(marker);			    		
+				    	}
 			    	}
 
 						// Pass features and a custom factory function to the map
