@@ -359,18 +359,22 @@ var main = (function () {
 			nameSortButton = document.getElementById("name-sort-btn");
 			distanceSortButton = document.getElementById("distance-sort-btn");
 			
-			nameSortButton.addEventListener( "mousedown" , nameClickHandler , false);
-			distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
+			// checks that required elements exist on the page.
+			if ( nameSortButton && distanceSortButton )
+			{
+				nameSortButton.addEventListener( "mousedown" , nameClickHandler , false);
+				distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
 
-			var settings = webStorageProxy.getItem(resultSortManager.storageName);
-			if (settings["field"] == "name"){
-				selected = nameSortButton;
-				if (settings["descending"] == true) selected.innerHTML = "Name ▼";
-				else selected.innerHTML = "Name ▲";
-			}else{
-				selected = distanceSortButton;
-				if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
-				else selected.innerHTML = "Distance ▲";
+				var settings = webStorageProxy.getItem(resultSortManager.storageName);
+				if (settings["field"] == "name"){
+					selected = nameSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Name ▼";
+					else selected.innerHTML = "Name ▲";
+				}else{
+					selected = distanceSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
+					else selected.innerHTML = "Distance ▲";
+				}
 			}
 		}
 
@@ -426,28 +430,31 @@ var main = (function () {
 			listView = document.getElementById("list-view");
 			mapView = document.getElementById("map-view");
 			
-
-			listViewButton.addEventListener( "mousedown" , listClickHandler , false);
-			mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
-
-			if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
-				selected = listViewButton;
-				mapViewButton.disabled = "";
-			}else{
-				selected = mapViewButton;
-				listViewButton.disabled = "";
-			}
-
-			selected.disabled = "disabled";
-			if (selected == listViewButton) 
+			// checks that required elements exist on the page.
+			if ( listViewButton && mapViewButton && listView  && mapView )
 			{
-				mapView.classList.add("hide");
-				listView.classList.remove("hide");
-			}
-			else if (selected == mapViewButton)
-			{
-				listView.classList.add("hide");
-				mapView.classList.remove("hide");
+				listViewButton.addEventListener( "mousedown" , listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+
+				if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
+					selected = listViewButton;
+					mapViewButton.disabled = "";
+				}else{
+					selected = mapViewButton;
+					listViewButton.disabled = "";
+				}
+
+				selected.disabled = "disabled";
+				if (selected == listViewButton) 
+				{
+					mapView.classList.add("hide");
+					listView.classList.remove("hide");
+				}
+				else if (selected == mapViewButton)
+				{
+					listView.classList.add("hide");
+					mapView.classList.remove("hide");
+				}
 			}
 		}
 
@@ -479,9 +486,10 @@ var main = (function () {
 		// PUBLIC METHODS
 		mapViewManager.init = function()
 		{
-			map = L.mapbox.map('map', 'examples.map-vyofok3q');
-			if (map)
+			// if map exists on the page
+			if (document.getElementById("map"))
 			{
+					map = L.mapbox.map('map', 'examples.map-vyofok3q');
 			    var locations = document.getElementById("map-locations");
 			    var obj = JSON.parse(locations.innerHTML);
 
