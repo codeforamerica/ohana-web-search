@@ -14,9 +14,9 @@ var main = (function () {
 		searchOpManager.init(); // search options functionality
 		distanceManager.init(); // initialize display of distances
 		popupManager.init(); // initialize popup behavior
+		mapViewManager.init(); // initialize map result view
 		resultViewManager.init(); // initialize result list behavior for selecting map or list
 		resultSortManager.init(); // initialize result list sorting behavior
-		mapViewManager.init(); // initialize map result view
 	}
 
 	//=================================================================================
@@ -38,13 +38,13 @@ var main = (function () {
 		// PUBLIC METHODS
 		busyManager.show = function()
 		{
-			console.log("show splash screen");
+			//console.log("show splash screen");
 			splashScreen.classList.remove("hide");
 		}
 		
 		busyManager.hide = function()
 		{
-			console.log("hide splash screen");
+			//console.log("hide splash screen");
 			splashScreen.classList.add("hide");
 		}
 	
@@ -328,7 +328,6 @@ var main = (function () {
 		{
 			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
 			{	
-				console.log("here")
 				lastPopup.classList.add("hide");
 				document.removeEventListener("mousedown", closeHandler, true);
 			}
@@ -525,7 +524,7 @@ var main = (function () {
 						// Pass features and a custom factory function to the map
 						map.markerLayer.setGeoJSON(geoJson);
 						
-						mapViewManager.zoomToMarkers();
+						map.fitBounds( map.markerLayer.getBounds() );
 
 						map.markerLayer.on('mouseover', function(e) {
 						    e.layer.openPopup();
@@ -541,11 +540,6 @@ var main = (function () {
 						});
 
 			}
-		}
-
-		mapViewManager.zoomToMarkers = function()
-		{
-			map.fitBounds( map.markerLayer.getBounds() );
 		}
 
 		return mapViewManager;
