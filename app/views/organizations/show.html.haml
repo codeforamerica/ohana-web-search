@@ -81,6 +81,14 @@
 														= render :partial => "#{dynamic_partial}" rescue nil
 													%span.popup-term
 														= payment
+							- if @org.market_match?
+								%div.market-match
+									This market participates in 
+									%span.popup-container
+										%span.popup
+											= render :partial => 'popup/marketmatch' rescue nil
+										%span.popup-term
+											Market Match!
 
 							- if @org.products_sold.present?
 								%div.products-sold
