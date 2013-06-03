@@ -474,17 +474,14 @@ var main = (function () {
 		var mapViewManager = {};
 
 		// PRIVATE PROPERTIES
-		var mapElm; // the map element
+		var map; // the created map
 
 		// PUBLIC METHODS
 		mapViewManager.init = function()
 		{
-			mapElm = document.getElementById("map");
-			if (mapElm)
+			map = L.mapbox.map('map', 'examples.map-vyofok3q');
+			if (map)
 			{
-					var map = L.mapbox.map('map', 'examples.map-vyofok3q');
-
-
 			    var locations = document.getElementById("map-locations");
 			    var obj = JSON.parse(locations.innerHTML);
 
@@ -495,13 +492,14 @@ var main = (function () {
 
 						for (var m in obj)
 			    	{
+			    		var url = '/organizations/'+obj[m]["_id"];
 			    		var marker = {
 						        type: 'Feature',
 						        properties: {
 						            title: obj[m]["name"],
 						            'marker-color': '#f00',
 						            'marker-size': 'small',
-						            url: 'http://en.wikipedia.org/wiki/Washington,_D.C.'
+						            url: url
 						        },
 						        geometry: {
 						            type: 'Point',
@@ -509,18 +507,13 @@ var main = (function () {
 						        }
 						    };
 
-						   	//marker["geometry"]["coordinates"] = ;
-
-			    		geoJson["features"].push(marker);
-			    		
+			    		geoJson["features"].push(marker);			    		
 			    	}
 
 						// Pass features and a custom factory function to the map
 						map.markerLayer.setGeoJSON(geoJson);
 						
-						console.dir(map.markerLayer);
-
-						map.fitBounds( map.markerLayer.getBounds() );
+						mapViewManager.zoomToMarkers();
 
 						map.markerLayer.on('mouseover', function(e) {
 						    e.layer.openPopup();
@@ -536,6 +529,11 @@ var main = (function () {
 						});
 
 			}
+		}
+
+		mapViewManager.zoomToMarkers = function()
+		{
+			map.fitBounds( map.markerLayer.getBounds() );
 		}
 
 		return mapViewManager;
