@@ -16,17 +16,17 @@
 							List
 						%button#map-view-btn{:type=>"button"}
 							Map
-					%section#results-sort-options
-						%span
-							Sort by: 
-						%button#name-sort-btn{:type=>"button"}>
-							Name
-						- if @location.blank?
-							%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
-								Distance
-						- elsif
-							%button#distance-sort-btn{:type=>"button"}
-								Distance
+					-#%section#results-sort-options
+						-#%span
+							-#Sort by: 
+						-#%button#name-sort-btn{:type=>"button"}>
+							-#Name
+						-#- if @location.blank?
+							-#%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
+								-#Distance
+						-#- elsif
+							-#%button#distance-sort-btn{:type=>"button"}
+								-#Distance
 				%section#list-view
 					%ul
 						- @organizations.each do |org|
