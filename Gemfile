@@ -9,9 +9,9 @@ group :assets do
 end
 
 # front end
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'haml-rails'
-gem "bootstrap-sass", ">= 2.3.0.0"
+#gem "bootstrap-sass", ">= 2.3.0.0"
 gem "simple_form", ">= 2.1.0"
 
 # server
