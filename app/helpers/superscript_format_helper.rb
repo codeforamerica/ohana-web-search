@@ -1,13 +1,18 @@
 module SuperscriptFormatHelper
 
-	# Adds <sup>XX</sup> around ordinals
-	def superscript_ordinals(ordinal)
-		parse(ordinal)
+	# Adds <sup>XX</sup> around ordinals in string
+	def superscript_ordinals(string)
+		val = parse(string,'st')
+		val = parse(val,'nd')
+		val = parse(val,'rd')
+		val = parse(val,'th')
+		val.html_safe
 	end
 
 	private 
-	def parse(ordinal)
-		regex = '/(^.*\d)('+ordinal+')(\b.*)/'
+	def parse(string, ordinal)
+		exp = '(^.*\d)('+ordinal+')(\b.*)'
+		regex = Regexp.new exp
 		fname = string.split(regex)
 
 		parsed = ''

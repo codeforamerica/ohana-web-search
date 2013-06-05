@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
   helper_method :correct_user?
   helper :format_phone
+  helper :superscript_format
 
   private
     def current_user
