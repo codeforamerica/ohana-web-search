@@ -21,10 +21,19 @@ describe Ohanakapa::Wrapper do
 			wrapper.should respond_to(:organizations)
 		end
 
+		it "must have a 200 code response to the request" do
+			wrapper.organizations.response.code.should == '200'
+		end
+
+		it "must have a 200 code response to the request" do
+			#wrapper.organizations.response.body['response'].first['state'].should == 'CA'
+			wrapper.organizations['response'].should be_a Array
+		end
+
 		it "must parse the API response from JSON to Hash" do
 			wrapper.organizations.should be_an_instance_of(Hash)
 		end
-
+		
  	end
 
 	describe "GET search" do
