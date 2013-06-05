@@ -1,14 +1,20 @@
 module SuperscriptFormatHelper
 
 	# Adds <sup>XX</sup> around ordinals
-	def superscript_ordinals(string)
-		fname = string.split(/(^.*\d)(th)(\b.*)/)
+	def superscript_ordinals(ordinal)
+		parse(ordinal)
+	end
+
+	private 
+	def parse(ordinal)
+		regex = '/(^.*\d)('+ordinal+')(\b.*)/'
+		fname = string.split(regex)
 
 		parsed = ''
 		fname.each do |snippet|
 						
-			if snippet == 'th'
-				snippet = '<>th</sup>'
+			if snippet == ordinal
+				snippet = '<sup>'+ordinal+'</sup>'
 			end
 
 			parsed += snippet
@@ -17,4 +23,5 @@ module SuperscriptFormatHelper
 
 		parsed
 	end
+
 end
