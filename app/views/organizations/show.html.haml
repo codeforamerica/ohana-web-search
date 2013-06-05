@@ -20,7 +20,7 @@
 								%div.address
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 									%span
-										= @org.street_address 
+										= superscript_ordinals(@org.street_address) 
 										%br 
 										= "#{@org.city}, #{@org.state} #{@org.zipcode}"
 							
