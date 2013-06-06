@@ -73,7 +73,7 @@
 									%span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
 									Payment methods accepted:
 									%ul
-										-@org.payments_accepted.each do |payment|
+										-@org.payments_accepted.sort.each do |payment|
 											%li
 												%span.popup-container
 													%span.popup
@@ -95,7 +95,7 @@
 									%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
 									Products sold: 
 									%ul
-										- @org.products_sold.each do |product|
+										- @org.products_sold.sort.each do |product|
 											%li 
 												= product
 
