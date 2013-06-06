@@ -19,7 +19,15 @@ describe SuperscriptFormatHelper do
 	
 	it 'check for string containing a single "st", "nd", "rd", "th" ordinal'  do 
 		superscript_ordinals("1st, 2nd, 3rd, and 4th year").should == "1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, and 4<sup>th</sup> year"
-	end	
+	end
+
+	it 'check for string containing a "st" as an abbreviation for street'  do 
+		superscript_ordinals("One St Congregation").should == "One St Congregation"
+	end
+
+	it 'check for string containing a "rd" as an abbreviation for road'  do 
+		superscript_ordinals("3rd Broad Rd").should == "3<sup>rd</sup> Broad Rd"
+	end
 
 	it 'check for string containing a two of each of "st", "nd", "rd", "th" ordinal'
 	
