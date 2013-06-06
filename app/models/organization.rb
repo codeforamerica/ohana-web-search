@@ -50,6 +50,7 @@ class Organization
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
   default_scope order_by(:name => :asc)
 
+  #combines address fields together into one string
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
