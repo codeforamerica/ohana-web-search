@@ -7,8 +7,28 @@
 			- if @organizations.blank?
 				%p.no-results
 					NO RESULTS
-			- else	
-				%ul
+			- else
+				%nav
+					%section#results-view-options
+						%span
+							View as: 
+						%button#list-view-btn{:type=>"button"}>
+							List
+						%button#map-view-btn{:type=>"button"}
+							Map
+					-#%section#results-sort-options
+						-#%span
+							-#Sort by: 
+						-#%button#name-sort-btn{:type=>"button"}>
+							-#Name
+						-#- if @location.blank?
+							-#%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
+								-#Distance
+						-#- elsif
+							-#%button#distance-sort-btn{:type=>"button"}
+								-#Distance
+				%section#list-view
+					%ul
 					- @organizations.each do |org|
 						%li
 							%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
@@ -23,3 +43,14 @@
 											
 									%p.address
 										= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
+				%section#map-view
+					%div
+						%div#map
+						%script{:id=>"map-locations",:type=>"text/json"}
+							[
+							- #two loops on one page ain't great, but will leave it till we have ajax working.
+							- @organizations.each_with_index do |org,index|
+								= raw org.to_json
+								- if index != @organizations.count-1
+									,
+							]

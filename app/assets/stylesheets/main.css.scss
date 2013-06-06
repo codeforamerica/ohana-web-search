@@ -210,28 +210,73 @@ fade-out
 
 //=================================================================================
 // popup styles - not currently used
-/*#message-box
+
+.popup-container
 {
+  position:relative;
+}
+
+.popup
+{
+  min-width:150px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    border-radius: 10px;
+    border-radius: 5px 5px 5px 0px;
     background:$yellow_dark;
-    border: 1px solid $green_dark;
+    border: 1px solid $black_alpha40;
     box-shadow:0px 0px 10px $black_alpha40;
     color:#000;
     position: absolute;
-    top: 40px;
-    left: 310px;
-    z-index: 1;
+    top: 0px;
+    left: 0px;
+    z-index: 999999;
+    cursor:default; 
+    font-size:11px;
+    font-style: normal;
 }
 
-#message-box p
+.popup div
 {
     padding:10px;
     margin:0;
 }
 
-#message-box .corner
+.popup dl
+{
+  margin:0;
+}
+
+.popup dt
+{
+  font-weight:bold;
+  color:$black_alpha40;
+}
+
+.popup dd
+{
+  margin:0;
+}
+
+.popup .corner
+{
+    border-radius: 0px 10px 0px 0px;
+    width:10px;
+    height:10px;
+    padding:0;
+    margin:0;
+    background:$black_alpha40;
+    position: absolute;
+    left:0;
+    bottom:0;
+}
+
+.popup-term
+{
+  cursor:pointer;
+}
+
+/*
+.popup .corner
 {
     width:10px;
     height:10px;
@@ -247,7 +292,8 @@ fade-out
     top: 38px;
     left: 20px;
     box-shadow:0px 0px 10px $black_alpha40;
-}*/
+}
+*/
 
 //=================================================================================
 // icons
@@ -851,8 +897,9 @@ fade-out
     height:16px;
     font-size: 14px;
     background:$white;
-    margin-bottom:5px;
+    margin-bottom:10px;
     width:170px;
+    display:block;
 }
 
 #search-box.mini input::-webkit-input-placeholder
@@ -941,12 +988,13 @@ fade-out
     top:1px;
 }
 
-.browse.ohana-icon
+.browse.ohana-icon,
+.time.ohana-icon,
+.payment.ohana-icon
 {
     position:relative;
     top:2px;
 }
-
 
 //=================================================================================
 // Inside content
@@ -1084,9 +1132,30 @@ fade-out
 #results-list ul
 {
     padding:0;
+    margin-top: 0;
 }
 
-#results-list nav
+#map-view
+{
+    margin: 15px;
+    margin-top: 0;
+}
+
+#map-view > div
+{
+    width: 100%;
+    min-height: 400px;
+    //border-radius:10px;
+    border:1px solid $black_alpha40;
+}
+
+#map
+{
+    width: 100%;
+    height: 400px;
+}
+
+#results-list header > nav
 {
     display:inline-block;
     color: $white;
@@ -1099,6 +1168,8 @@ fade-out
 {
     text-decoration: none;
 }
+
+
 
 .results-entry > h1
 {
@@ -1249,6 +1320,62 @@ fade-out
     transition: background $default_duration;
 }
 
+// results list options
+#results-list nav section
+{
+    display:inline-block;
+    margin: 15px;
+    font-size:12px;
+}
+
+#results-list nav section button
+{
+    border:0;
+    padding:6px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin:0;
+
+    font-family: $san_serif_font;
+    background: $blue_midtone;
+    color:$white;
+    text-align: center;
+    border:0px;
+    border-collapse:collapse;
+    border-radius:4px;
+}
+
+#results-list nav section button:hover
+{
+    cursor:pointer;
+    background: $blue_dark;
+
+    -webkit-transition: color $default_duration;
+    -moz-transition: color $default_duration;
+    transition: color $default_duration;
+
+    -webkit-transition: background $default_duration;
+    -moz-transition: background $default_duration;
+    transition: background $default_duration;
+}
+
+#results-list nav section button:first-of-type
+{
+    border-radius:4px 0px 0px 4px;
+}
+
+#results-list nav section button:last-of-type
+{
+    border-radius:0px 4px 4px 0px;
+}
+
+#results-list nav section button:disabled
+{
+    background: $greyscale_light;
+    color: $black_alpha40;
+    cursor:default;
+}
+
 #update-alert
 {
   position: absolute;
@@ -1314,7 +1441,7 @@ fade-out
     border:1px solid $black_alpha10;
 }
 
-#detail-info div
+#detail-info > section > div
 {
     margin:0;
     font-size:16px;
@@ -1323,7 +1450,7 @@ fade-out
     padding-bottom:10px;
 }
 
-#detail-info div:only-of-type
+#detail-info > section > div:only-of-type
 {
     padding-bottom:0;
 }
@@ -1371,10 +1498,7 @@ fade-out
   vertical-align: top;
 }
 
-#detail-info .address .ohana-icon,
-#detail-info .url .ohana-icon ,
-#detail-info .phone .ohana-icon ,
-#detail-info .directions .ohana-icon ,
+#detail-info .ohana-icon
 {
     color:$black_alpha40;
     margin-right:5px;
@@ -1413,6 +1537,12 @@ fade-out
   display:inline-block;
 }
 
+#detail-info .market-match
+{
+    font-size:11px;
+    font-style: italic;
+}
+
 #detail-info .url a span:last-of-type,
 #detail-info .directions a span:last-of-type
 {
@@ -1437,6 +1567,118 @@ fade-out
 
 
 
+
+/* #Media Queries
+================================================== */
+
+  /* Smaller than standard 960 (devices and browsers) */
+  @media only screen and (max-width: 959px) {
+
+  }
+
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+
+  }
+
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) 
+  {
+
+    // set width to width of screen
+    .home #search-screen {
+      min-width: 100%;
+    }
+
+    // move search box and results on top of each other
+    #main-content main > *
+    {
+      display: block;
+      width: 100%;
+    }
+
+
+    .home #main-content 
+    {
+      position:static;
+    }
+
+    // the following are (almost) the same as the .mini styles from the fullsite size
+    #search-box.large
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+
+        box-shadow: 0 0 5px $black_alpha40;
+        padding: 10px;
+        border: 1px solid $white_alpha40;
+        background: $blue_light_alpha40;
+    }
+
+    #search-box.large div
+    {
+        display:block;
+        text-align:center;
+    }
+
+    #search-box.large label
+    {
+        font-size: 20px;
+        letter-spacing: 2px;
+        color:$white;
+        text-align: center;
+        font-family: $serif_font;
+        display:block;
+        width:auto;
+    }
+
+    #search-box.large label span
+    {
+    //    color:$blue_light;
+        display:none;
+    }
+
+
+    #search-box.large input
+    {
+        height:16px;
+        font-size: 14px;
+        background:$white;
+        margin-bottom:10px;
+        margin-left:auto;
+        margin-right:auto;
+        width:170px;
+        display:block;
+        position:static;
+    }
+
+    #search-box.large input::-webkit-input-placeholder
+    {
+        color:$greyscale_midtone;
+    }
+
+    #search-box.large button
+    {
+        width:100%;
+        font-size: 16px;
+        margin:0;
+        position:static;
+    }
+
+
+  }
+
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  }
+
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+  }
 
 
 

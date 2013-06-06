@@ -12,7 +12,11 @@ var main = (function () {
 		infoScreenManager.init(); // initialize help/info screen (in utility bar)
 		alertManager.init(); // intialize alert box manager
 		searchOpManager.init(); // search options functionality
-		distanceManager.init(); // intialize display of distances
+		distanceManager.init(); // initialize display of distances
+		popupManager.init(); // initialize popup behavior
+		mapViewManager.init(); // initialize map result view
+		resultViewManager.init(); // initialize result list behavior for selecting map or list
+		resultSortManager.init(); // initialize result list sorting behavior
 	}
 
 	//=================================================================================
@@ -34,13 +38,13 @@ var main = (function () {
 		// PUBLIC METHODS
 		busyManager.show = function()
 		{
-			console.log("show splash screen");
+			//console.log("show splash screen");
 			splashScreen.classList.remove("hide");
 		}
 		
 		busyManager.hide = function()
 		{
-			console.log("hide splash screen");
+			//console.log("hide splash screen");
 			splashScreen.classList.add("hide");
 		}
 	
@@ -145,21 +149,21 @@ var main = (function () {
 		var alertManager = {};
 
 		// PRIVATE PROPERTIES
-		var messagesBox; // alert message box
+		var alertBox; // alert message box
 
 		// PUBLIC METHODS
 		alertManager.init = function()
 		{
-			messagesBox = document.getElementById("messages");
+			alertBox = document.getElementById("alert-box");
 
-			messagesBox.addEventListener("mousedown", closeHandler, false)
+			alertBox.addEventListener("mousedown", closeHandler, false)
 		}
 
 		// PRIVATE METHODS
 		function closeHandler(evt)
 		{
 			// if clicked element has a close class, remove alert box content
-			if (evt.target.classList.contains("close")) messagesBox.innerHTML = "";
+			if (evt.target.classList.contains("close")) alertBox.innerHTML = "";
 		}
 
 		return alertManager;
@@ -285,7 +289,264 @@ var main = (function () {
 		return distanceManager;
 	})();
 
+
+	//=================================================================================
+	// manages behavior of popups
+	var popupManager = (function(){
+		var popupManager = {};
+
+		// PRIVATE PROPERTIES
+		var popups; // array of popups on the page
+		var lastPopup; // the last popup to be shown
+
+		// PUBLIC METHODS
+		popupManager.init = function()
+		{
+			popups = document.querySelectorAll(".popup-container");
+
+			for (var p=0; p < popups.length; p++)
+			{
+				var popup = popups[p].firstElementChild;
+				var term = popups[p].lastElementChild;
+				popup.classList.add("hide");
+				term.addEventListener("mousedown", popupHandler, false);
+			}
+		}
+
+		// PRIVATE METHODS
+		function popupHandler(evt)
+		{
+			var thisPopup = (evt.target).parentElement.firstElementChild;
+			if (lastPopup && lastPopup != thisPopup) lastPopup.classList.add("hide");
+			lastPopup = thisPopup;
+			lastPopup.classList.toggle("hide");
+			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
+			document.addEventListener("mousedown", closeHandler, true);
+		}
+
+		function closeHandler(evt)
+		{
+			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
+			{	
+				lastPopup.classList.add("hide");
+				document.removeEventListener("mousedown", closeHandler, true);
+			}
+		}
+
+		return popupManager;
+	})();
+
+
+	//=================================================================================
+	// manages behavior of popups
+	var resultSortManager = (function(){
+		var resultSortManager = {};
+
+		// PRIVATE PROPERTIES
+		var nameSortButton; 
+		var distanceSortButton;
+		var selected;
+
+		var nameDescending = false;
+		var distanceDescending = false;
+
+		resultSortManager.storageName = "resultsortpref";
+
+		// PUBLIC METHODS
+		resultSortManager.init = function()
+		{
+			nameSortButton = document.getElementById("name-sort-btn");
+			distanceSortButton = document.getElementById("distance-sort-btn");
+			
+			// checks that required elements exist on the page.
+			if ( nameSortButton && distanceSortButton )
+			{
+				nameSortButton.addEventListener( "mousedown" , nameClickHandler , false);
+				distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
+
+				var settings = webStorageProxy.getItem(resultSortManager.storageName);
+				if (settings["field"] == "name"){
+					selected = nameSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Name ▼";
+					else selected.innerHTML = "Name ▲";
+				}else{
+					selected = distanceSortButton;
+					if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
+					else selected.innerHTML = "Distance ▲";
+				}
+			}
+		}
+
+		// PRIVATE METHODS
+		function nameClickHandler(evt)
+		{
+			nameDescending = !nameDescending;
+			if (nameDescending){
+				nameSortButton.innerHTML = "Name ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":true});
+			}else{
+				nameSortButton.innerHTML = "Name ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"name","descending":false});
+			}
+		}
+
+		function distanceClickHandler(evt)
+		{
+			distanceDescending = !distanceDescending;
+			if (distanceDescending){
+				distanceSortButton.innerHTML = "Distance ▼";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":true});
+			}else{
+				distanceSortButton.innerHTML = "Distance ▲";
+				webStorageProxy.setItem(resultSortManager.storageName,{"field":"distance","descending":false});
+			}
+		}
+
+		return resultSortManager;
+	})();
 	
+
+	//=================================================================================
+	// manages behavior of results view list vs maps setting
+	var resultViewManager = (function(){
+		var resultViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var listViewButton; 
+		var mapViewButton;
+		var listView; 
+		var mapView;
+		var selected;
+
+		resultViewManager.storageName = "resultviewpref";
+
+		// PUBLIC METHODS
+		resultViewManager.init = function()
+		{
+			listViewButton = document.getElementById("list-view-btn");
+			mapViewButton = document.getElementById("map-view-btn");
+			
+			listView = document.getElementById("list-view");
+			mapView = document.getElementById("map-view");
+			
+			// checks that required elements exist on the page.
+			if ( listViewButton && mapViewButton && listView  && mapView )
+			{
+				listViewButton.addEventListener( "mousedown" , listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+
+				if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
+					selected = listViewButton;
+					mapViewButton.disabled = "";
+				}else{
+					selected = mapViewButton;
+					listViewButton.disabled = "";
+				}
+
+				selected.disabled = "disabled";
+				if (selected == listViewButton) 
+				{
+					mapView.classList.add("hide");
+					listView.classList.remove("hide");
+				}
+				else if (selected == mapViewButton)
+				{
+					listView.classList.add("hide");
+					mapView.classList.remove("hide");
+				}
+			}
+		}
+
+		// PRIVATE METHODS
+		function listClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "list");
+			resultViewManager.init();
+		}
+
+		function mapClickHandler(evt)
+		{
+			webStorageProxy.setItem(resultViewManager.storageName , "map");
+			resultViewManager.init();
+		}
+
+		return resultViewManager;
+	})();
+	
+
+	//=================================================================================
+	// manages results maps view
+	var mapViewManager = (function(){
+		var mapViewManager = {};
+
+		// PRIVATE PROPERTIES
+		var map; // the created map
+
+		// PUBLIC METHODS
+		mapViewManager.init = function()
+		{
+			// if map exists on the page
+			if (document.getElementById("map"))
+			{
+					map = L.mapbox.map('map', 'examples.map-vyofok3q');
+			    var locations = document.getElementById("map-locations");
+			    var obj = JSON.parse(locations.innerHTML);
+
+				    var geoJson = {
+						    type: 'FeatureCollection',
+						    features: []
+						};
+
+						for (var m in obj)
+			    	{
+			    		// if the coordinates actually exist for an entry
+			    		if (obj[m]["coordinates"] != null)
+							{							
+				    		var url = '/organizations/'+obj[m]["_id"];
+				    		var marker = {
+							        type: 'Feature',
+							        properties: {
+							            title: obj[m]["name"],
+							            'marker-color': '#f00',
+							            'marker-size': 'small',
+							            url: url
+							        },
+							        geometry: {
+							            type: 'Point',
+							            coordinates: obj[m]["coordinates"]
+							        }
+							    };
+
+				    		geoJson["features"].push(marker);			    		
+				    	}
+			    	}
+
+						// Pass features and a custom factory function to the map
+						map.markerLayer.setGeoJSON(geoJson);
+						
+						map.fitBounds( map.markerLayer.getBounds() );
+
+						map.markerLayer.on('mouseover', function(e) {
+						    e.layer.openPopup();
+						});
+
+						map.markerLayer.on('mouseout', function(e) {
+						    e.layer.closePopup();
+						});
+
+						map.markerLayer.on('click', function(e) {
+						    e.layer.unbindPopup();
+						    window.open(e.layer.feature.properties.url,"_self");
+						});
+
+			}
+		}
+
+		return mapViewManager;
+	})();
+		
+
+
 	//=================================================================================
 	// Utility JS functions
 	var util = (function(){

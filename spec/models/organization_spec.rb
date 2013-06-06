@@ -21,53 +21,11 @@ describe Organization do
 	  its(:market_match?) { should be_false }
 	end
 
-	# describe "zip code validations" do
-	# 	context "address entry with more than 4 zeros" do
-	# 		Organization.query_valid?("0000f").should == false
-	# 	end
-
-	# 	context "address entry with less than 5 digits" do
-	# 		Organization.query_valid?("123").should == false
-	# 	end
-
-	# 	context "address entry with more than 5 digits" do
-	# 		Organization.query_valid?("123456").should == false
-	# 	end
-
-	# 	context "address entry with 5 digits but not a real zip code" do
-	# 		Organization.query_valid?("11111").should == false
-	# 	end
-
-	# 	# context "address entry with valid 5-digit zip code" do
-	# 	# 	Organization.query_valid?("94403").should == true
-	# 	# end
-	# end
-
 	describe "invalidations" do
 		context "without a name" do
 	  	subject { build(:organization, name: nil)} 
 	  	it { should_not be_valid }
 		end
-
-		# context "without a street address" do
-	 #  	subject { build(:organization, street_address: nil) }
-	 #  	it { should_not be_valid }
-		# end
-
-		# context "without a city" do
-	 #  	subject { build(:organization, city: nil) }
-	 #  	it { should_not be_valid }
-		# end
-
-		# context "without a state" do
-	 #  	subject { build(:organization, state: nil) }
-	 #  	it { should_not be_valid }
-		# end
-
-		# context "without a zipcode" do
-	 #  	subject { build(:organization, zipcode: nil) }
-	 #  	it { should_not be_valid }
-		# end
 
 		context "with a zipcode less than 5 characters" do
 	  	subject { build(:organization, zipcode: "1234") }
@@ -89,6 +47,11 @@ describe Organization do
 	  	it { should_not be_valid }
 		end
 
+		context "with a 5 + 4 zipcode" do
+	  	subject { build(:organization, zipcode: "90210-1234") }
+	  	it { should be_valid }
+		end
+
 		context "with a non-US phone" do
 	  	subject { build(:organization, phone: "90210-90210") }
 	  	it { should_not be_valid }
@@ -101,7 +64,7 @@ describe Organization do
 
 		context "with URL containing 3 slashes" do
 	  	subject { build(:organization, urls: ["http:///codeforamerica.org"]) }
-	  	it { should_not be_valid }
+	  	it { should be_valid }
 		end
 
 		context "with URL missing a period" do
@@ -119,6 +82,11 @@ describe Organization do
 	  	it { should be_valid }
 		end
 
+		context "URL without http://" do
+	  	subject { build(:organization, urls: ["www.monfresh.com"]) }
+	  	it { should be_valid }
+		end
+
 		context "email without period" do
 	  	subject { build(:organization, emails: ["moncef@blahcom"]) }
 	  	it { should_not be_valid }
@@ -127,6 +95,11 @@ describe Organization do
 		context "email without @" do
 	  	subject { build(:organization, emails: ["moncef.blahcom"]) }
 	  	it { should_not be_valid }
+		end
+
+		context "email with 3 characters before the @" do
+	  	subject { build(:organization, emails: ["abc@foo.com", "def@abc.com"]) }
+	  	it { should be_valid }
 		end
 	end
 end
