@@ -52,7 +52,7 @@ class Organization
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
-
+  
   def validate_emails
     if emails.present?
       emails.each do |email|

@@ -6,8 +6,8 @@ describe Organization do
 
 	it { should be_valid }
 
-	it { should respond_to(:address) }
-	its(:address) { should == "#{subject.street_address}, #{subject.city}, #{subject.state} #{subject.zipcode}" }
+	it { should respond_to(:formatted_address) }
+	its(:formatted_address) { should == "#{superscript_ordinals(subject.street_address)}, #{subject.city}, #{subject.state} #{subject.zipcode}" }
 
 	it { should respond_to(:market_match?) }
   its(:market_match?) { should be_true }
