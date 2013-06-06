@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby '2.0.0'
 gem 'rails', '3.2.13'
 
@@ -17,7 +18,7 @@ gem "simple_form", ">= 2.1.0"
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem 'ohanakapa-ruby' #for API wrapper
+gem 'ohanakapa', :path => "./ohanakapa-ruby/" #for API wrapper
 
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
