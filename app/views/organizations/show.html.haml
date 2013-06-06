@@ -9,7 +9,7 @@
 					
 					- if @org.name.present?
 						%h1.name
-							= @org.name
+							= superscript_ordinals(@org.name)
 					
 					- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
 						%section.contact-box
@@ -21,7 +21,7 @@
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 									%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
 										%span{:itemprop=>"streetAddress"}
-											= @org.street_address 
+											= superscript_ordinals(@org.street_address) 
 										%br 
 										%span{:itemprop=>"addressLocality"}
 											= @org.city+","
@@ -130,8 +130,8 @@
 							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 								%section{:class => "results-entry"}
 									%h1.name
-										= venue.name 
+										= superscript_ordinals(venue.name)
 									%p.address
-										= venue.address
+										= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"
 										
 
