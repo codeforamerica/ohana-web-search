@@ -55,26 +55,6 @@ class Organization
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
   
-  def validate_emails
-    if emails.present?
-      emails.each do |email|
-        unless email.match(/\A([^@\s]+)@((?:(?!-)[-a-z0-9]+(?<!-)\.)+[a-z]{2,})\z/i)
-          errors.add(:emails, "#{email} is not a valid email address.")
-        end
-      end
-    end
-  end
-
-  def validate_urls
-    if urls.present?
-      urls.each do |url|
-        unless url.match(/\Ahttps?:\/\/([^\s:@]+:[^\s:@]*@)?[A-Za-z\d\-]+(\.[A-Za-z\d\-]+)+\.?(:\d{1,5})?([\/?]\S*)?\z/i)
-          errors.add(:urls, "#{url} is not a valid URL.")
-        end
-      end
-    end
-  end
-
   def market_match?
     self.market_match
   end

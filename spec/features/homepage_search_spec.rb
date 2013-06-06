@@ -75,4 +75,11 @@ feature 'Visitor performs search on home page' do
     expect(page).to have_content("NO RESULTS")
   end
 
+  scenario 'for a keyword that should return a result with no address' do
+    organization = FactoryGirl.create(:org_without_address)
+    search_for_keyword 'parks'
+    expect(page).to have_content("1 result matching 'parks'")
+    expect(page).to have_content("Huddart Park")
+  end
+
 end
