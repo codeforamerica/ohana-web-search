@@ -97,4 +97,12 @@ class Organization
       return true
     end
   end
+
+
+  def self.get(id)
+    @client = Ohanakapa.new
+    response = @client.organization(id)
+    response.response
+  end
+
 end

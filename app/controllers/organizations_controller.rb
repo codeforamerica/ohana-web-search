@@ -20,11 +20,18 @@ class OrganizationsController < ApplicationController
 	end
 
 	def show
+=begin
 		@org = Organization.find(params[:id])
 		params[:miles] = session[:selected_radius]
 		params[:search_term] = session[:search_term]
 		params[:location] = session[:location]
 		@nearby = @org.nearbys(2)
 		respond_with(@org)
+=end
+
+		@org = Organization.get(params[:id])
+		
+		respond_with(@org)
+
 	end
 end
