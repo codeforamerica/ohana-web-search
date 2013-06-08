@@ -118,7 +118,8 @@ class Organization
   # @param params [Object] parameter object.
   # @return [Hashie::Mash] Hash representing a organization's details.
   def self.query(params)
-
+    @client = Ohanakapa.new
+    response = @client.query(params)
   end
 
 end

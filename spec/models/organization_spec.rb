@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe Organization do
 
 	subject { build(:full_org) }
@@ -22,10 +23,30 @@ describe Organization do
 	end
 
 	context "communicates with Ohana API" do
-		it "returns organization details based on an id"
-		it "returns all organizations"
-	end
 
+		it "returns organization details based on an id" do
+      response = Organization::get("51a9fd0328217f89770001b2")
+      expect(response["_id"]).to eq("51a9fd0328217f89770001b2")
+    end
+
+		it "returns all organizations" do
+      response = Organization::getAll
+      expect(response.first["_id"]).to eq("51a9fd0028217f8977000002")
+    end
+
+		it "searches for keyword 'market'" do
+      response = Organization::query({:keyword=>"market"})
+      expect(response.length).to eq(22)
+      expect(response.first["_id"]).to eq("51a9fd0028217f8977000023")
+    end
+
+    it "searches for keyword 'park'" do
+      response = Organization::query({:keyword=>"park"})
+      expect(response.length).to eq(30)
+      expect(response.first["_id"]).to eq("51a9fd0028217f8977000014")
+    end
+
+	end
 
 	describe "invalidations" do
 		context "without a name" do

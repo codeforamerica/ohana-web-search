@@ -18,15 +18,15 @@ class OrganizationsController < ApplicationController
 			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
 		end
 =end
+		
+		keyword =  params["search_term"]
 
-
-		if Organization.query_valid?(@location)
-			@results_text = Organization.search({:keyword=>keyword, :location=>@location, :radius=>radius})
-			@orgs = Organization.getAll
-			respond_with(@orgs)
+		if keyword.present?
+			@orgs = Organization.query({:keyword=>keyword})
 		else
-			redirect_to root_url, :alert => 'Please enter a full address or a valid 5-digit ZIP code.'
+			@orgs = Organization.getAll
 		end
+		respond_with(@orgs)
 
 	end
 
