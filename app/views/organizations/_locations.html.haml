@@ -4,7 +4,7 @@
 	%section#inside-content
 		%section#results-list
 			= render 'layouts/results_header'
-			- if @organizations.blank?
+			- if @orgs.blank?
 				%p.no-results
 					NO RESULTS
 			- else
@@ -29,9 +29,9 @@
 								-#Distance
 				%section#list-view
 					%ul
-						- @organizations.each do |org|
+						- @orgs.each do |org|
 							%li
-								%a{:href=>"#{organization_path(org)}", :title=>"#{org.name}"}
+								%a{:href=>"#{organization_path(org._id)}", :title=>"#{org.name}"}
 									%section{:class => "results-entry"}
 										- unless @location.blank?
 											%p.distance{:title=> "#{org.distance_to(@location).round(2)} miles","data-distance"=>org.distance_to(@location).round(2)}
@@ -49,8 +49,8 @@
 						%script{:id=>"map-locations",:type=>"text/json"}
 							[
 							- #two loops on one page ain't great, but will leave it till we have ajax working.
-							- @organizations.each_with_index do |org,index|
+							- @orgs.each_with_index do |org,index|
 								= raw org.to_json
-								- if index != @organizations.count-1
+								- if index != @orgs.count-1
 									,
 							]

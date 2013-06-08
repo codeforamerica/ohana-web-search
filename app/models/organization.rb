@@ -99,11 +99,14 @@ class Organization
     end
   end
 
+  def self.getAll
+    @client = Ohanakapa.new
+    response = @client.organizations
+  end
 
   def self.get(id)
     @client = Ohanakapa.new
     response = @client.organization(id)
-    response.response
   end
 
 end

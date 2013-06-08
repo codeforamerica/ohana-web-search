@@ -12,14 +12,20 @@ describe Organization do
 	it { should respond_to(:market_match?) }
   its(:market_match?) { should be_true }
 
-  it { should respond_to(:mapURL) }
- 	its(:mapURL) { should == "http://maps.googleapis.com/maps/api/staticmap?center=#{subject.latitude},#{subject.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{subject.latitude},#{subject.longitude}&sensor=false"
- }
+	it { should respond_to(:mapURL) }
+	its(:mapURL) { should == "http://maps.googleapis.com/maps/api/staticmap?center=#{subject.latitude},#{subject.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{subject.latitude},#{subject.longitude}&sensor=false"
+	}
 
   context "does not participate in market match" do
 	  subject { build(:org_without_market_match) }
 	  its(:market_match?) { should be_false }
 	end
+
+	context "communicates with Ohana API" do
+		it "returns organization details based on an id"
+		it "returns all organizations"
+	end
+
 
 	describe "invalidations" do
 		context "without a name" do
