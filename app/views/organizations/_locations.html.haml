@@ -7,7 +7,7 @@
 			- if @organizations.blank?
 				%p.no-results
 					NO RESULTS
-			- else	
+			- else
 				%nav
 					%section#results-view-options
 						%span
@@ -37,10 +37,12 @@
 											%p.distance{:title=> "#{org.distance_to(@location).round(2)} miles","data-distance"=>org.distance_to(@location).round(2)}
 												%span
 													== #{org.distance_to(@location).round(2)} mi
-										%h1.name
-											= org.name
-										%p.address
-											= org.address
+										- if org.name.present?
+											%h1.name
+												= superscript_ordinals(org.name)
+										- if org.street_address.present?			
+											%p.address
+												= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
 				%section#map-view
 					%div
 						%div#map

@@ -54,4 +54,11 @@ FactoryGirl.define do
     market_match 0
   end
 
+  factory :org_without_address, class: Organization do
+    name "Huddart Park"
+    phone "650-314-5678"
+    coordinates [-122.371448, 37.583849]
+    keywords ["parks"]
+  end
+
 end
