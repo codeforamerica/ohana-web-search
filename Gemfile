@@ -5,14 +5,12 @@ gem 'rails', '3.2.13'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
 # front end
 #gem 'jquery-rails'
 gem 'haml-rails'
-#gem "bootstrap-sass", ">= 2.3.0.0"
 gem "simple_form", ">= 2.1.0"
 
 # server
@@ -27,6 +25,7 @@ gem "figaro", ">= 0.6.3"
 gem "mongoid", ">= 3.1.2"
 
 # testing
+gem 'yard' #for code documentation
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem 'coveralls', require: false
