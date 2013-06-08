@@ -500,7 +500,7 @@ var main = (function () {
 						for (var m in obj)
 			    	{
 			    		// if the coordinates actually exist for an entry
-			    		if (obj[m]["coordinates"] != null)
+			    		if (obj[m]["coordinates"] != null && (obj[m]["coordinates"][0] != null || obj[m]["coordinates"][1] != null))
 							{							
 				    		var url = '/organizations/'+obj[m]["_id"];
 				    		var marker = {
