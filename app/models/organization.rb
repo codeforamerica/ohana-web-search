@@ -99,14 +99,26 @@ class Organization
     end
   end
 
+  # Returns all the organizations
+  # @return [Hashie::Mash] Hash representing all organization details.
   def self.getAll
     @client = Ohanakapa.new
     response = @client.organizations
   end
 
+  # Gets a single organization details
+  # @param id [String] Organization ID.
+  # @return [Hashie::Mash] Hash representing a organization's details.
   def self.get(id)
     @client = Ohanakapa.new
     response = @client.organization(id)
+  end
+
+  # Performs a query of the API
+  # @param params [Object] parameter object.
+  # @return [Hashie::Mash] Hash representing a organization's details.
+  def self.query(params)
+
   end
 
 end
