@@ -33,10 +33,10 @@
 							%li
 								%a{:href=>"#{organization_path(org._id)}", :title=>"#{org.name}"}
 									%section{:class => "results-entry"}
-										- unless @location.blank?
-											%p.distance{:title=> "#{org.distance_to(@location).round(2)} miles","data-distance"=>org.distance_to(@location).round(2)}
+										- unless org.distance.blank?
+											%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
 												%span
-													== #{org.distance_to(@location).round(2)} mi
+													== #{org.distance} mi
 										- if org.name.present?
 											%h1.name
 												= superscript_ordinals(org.name)

@@ -119,6 +119,12 @@ class Organization
   # @return [Hashie::Mash] Hash representing a organization's details.
   def self.query(params)
     @client = Ohanakapa.new
+
+    # return all results in keyword and location are blank
+    if params[:keyword].blank? && params[:location].blank?
+      return Organization.getAll
+    end
+
     response = @client.query(params)
   end
 

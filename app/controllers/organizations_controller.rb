@@ -1,6 +1,7 @@
 class OrganizationsController < ApplicationController
 	respond_to :html, :json, :xml
 
+	# search results view
 	def index
 =begin
 		params[:miles] = 2 if params[:miles].blank?
@@ -19,17 +20,22 @@ class OrganizationsController < ApplicationController
 		end
 =end
 		
-		keyword =  params["search_term"]
+		keyword, location, radius = params["search_term"], params[:location], params[:miles]
 
-		if keyword.present?
-			@orgs = Organization.query({:keyword=>keyword})
-		else
-			@orgs = Organization.getAll
-		end
+		query = Organization.query({:keyword=>keyword,:location=>location})
+		@orgs = query.response
+		@result_summary = ResultSummaryHelper.format({:count=>query[:pagination][:count],:keyword=>keyword,:location=>location,:radius=>radius})
+
+		session[:search_results] = request.url
+		session[:selected_radius] = params[:miles]
+		session[:search_term] = params[:search_term]
+		session[:location] = params[:location]
+
 		respond_with(@orgs)
 
 	end
 
+	# organization details view
 	def show
 =begin
 		@org = Organization.find(params[:id])
