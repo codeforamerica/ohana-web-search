@@ -25,25 +25,25 @@ describe Organization do
 	context "communicates with Ohana API" do
 
 		it "returns organization details based on an id" do
-      response = Organization::get("51a9fd0328217f89770001b2")
-      expect(response["_id"]).to eq("51a9fd0328217f89770001b2")
+      query = Organization::get("51a9fd0328217f89770001b2")
+      query[:response]["_id"].should eq("51a9fd0328217f89770001b2")
     end
 
 		it "returns all organizations" do
-      response = Organization::getAll
-      expect(response.first["_id"]).to eq("51a9fd0028217f8977000002")
+      query = Organization::getAll
+      query[:response].first["_id"].should eq("51a9fd0028217f8977000002")
     end
 
 		it "searches for keyword 'market'" do
-      response = Organization::query({:keyword=>"market"})
-      expect(response.length).to eq(22)
-      expect(response.first["_id"]).to eq("51a9fd0028217f8977000023")
+      query = Organization::query({:keyword=>"market"})
+      query[:response].length.should eq(22)
+      query[:response].first["_id"].should eq("51a9fd0028217f8977000023")
     end
 
     it "searches for keyword 'park'" do
-      response = Organization::query({:keyword=>"park"})
-      expect(response.length).to eq(30)
-      expect(response.first["_id"]).to eq("51a9fd0028217f8977000014")
+      query = Organization::query({:keyword=>"park"})
+      query[:response].length.should eq(30)
+      query[:response].first["_id"].should eq("51a9fd0028217f8977000014")
     end
 
 	end
