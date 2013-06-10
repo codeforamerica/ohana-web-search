@@ -46,7 +46,7 @@ class Organization
   geocoded_by :address               # can also be an IP address
   #after_validation :geocode          # auto-fetch coordinates. disable only when using the load_data rake task
 
-  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}) } 
+  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}, {agency: /\b#{keyword}\b/i}) } 
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
   default_scope order_by(:name => :asc)
 
