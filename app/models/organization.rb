@@ -99,6 +99,7 @@ class Organization
     end
   end
 
+
   # Gets a single organization details
   # @param id [String] Organization ID.
   # @return [Hashie::Mash] Hash representing a organization's details.

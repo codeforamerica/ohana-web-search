@@ -13,5 +13,7 @@
 		%nav
 			%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 			== #{@result_summary}
-			|
-			== #{@pagination}
+			| 
+			= link_to "<","#"
+			= "#{@pagination.current} of #{@pagination.pages_total}"
+			= link_to ">","#"

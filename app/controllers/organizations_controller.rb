@@ -24,9 +24,8 @@ class OrganizationsController < ApplicationController
 
 		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page})
 		@orgs = query.content
-		pagination = query.pagination
-		@result_summary = ResultSummaryHelper.format_summary({:count=>pagination.items_current,:total_count=>pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
-		@pagination = ResultSummaryHelper.format_pagination(pagination)
+		@pagination = query.pagination
+		@result_summary = ResultSummaryHelper.format_summary({:count=>@pagination.items_current,:total_count=>@pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
 
 		session[:search_results] = request.url
 		session[:selected_radius] = params[:miles]

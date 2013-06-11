@@ -44,7 +44,7 @@ module ResultSummaryHelper
 		items_per_page = pagination.items_per_page		#total items per page
 		pages_total = pagination.pages_total					#total pages
 
-		returnVal = "page #{pagination.current} of #{pages_total}"
+		returnVal = "#{pagination.current} of #{pages_total}"
 	end
 
 end
