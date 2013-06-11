@@ -20,11 +20,13 @@ class OrganizationsController < ApplicationController
 		end
 =end
 		
-		keyword, location, radius = params["search_term"], params[:location], params[:miles]
+		keyword, location, radius, page = params["search_term"], params[:location], params[:miles], params[:page]
 
-		query = Organization.query({:keyword=>keyword,:location=>location})
-		@orgs = query.response
-		@result_summary = ResultSummaryHelper.format({:count=>query[:pagination][:count],:keyword=>keyword,:location=>location,:radius=>radius})
+		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page})
+		@orgs = query.content
+		pagination = query.pagination
+		@result_summary = ResultSummaryHelper.format_summary({:count=>pagination.items_current,:total_count=>pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
+		@pagination = ResultSummaryHelper.format_pagination(pagination)
 
 		session[:search_results] = request.url
 		session[:selected_radius] = params[:miles]

@@ -30,7 +30,7 @@ describe Organization do
     end
 
 		it "returns all organizations" do
-      query = Organization::getAll
+      query = Organization::query
       query[:response].first["_id"].should eq("51a9fd0028217f8977000002")
     end
 

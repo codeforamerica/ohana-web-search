@@ -99,13 +99,6 @@ class Organization
     end
   end
 
-  # Returns all the organizations
-  # @return [Hashie::Mash] Hash representing all organization details.
-  def self.getAll
-    @client = Ohanakapa.new
-    response = @client.organizations
-  end
-
   # Gets a single organization details
   # @param id [String] Organization ID.
   # @return [Hashie::Mash] Hash representing a organization's details.
@@ -120,9 +113,9 @@ class Organization
   def self.query(params)
     @client = Ohanakapa.new
 
-    # return all results in keyword and location are blank
+    # return all results if keyword and location are blank
     if params[:keyword].blank? && params[:location].blank?
-      return Organization.getAll
+      return @client.organizations(params)
     end
 
     response = @client.query(params)
