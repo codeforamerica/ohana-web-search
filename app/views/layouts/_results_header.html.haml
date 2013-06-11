@@ -13,7 +13,7 @@
 		%nav
 			%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 			== #{@result_summary}
-			| 
-			= link_to "<","#"
+			|
+			= link_to '<', @pagination.prev, :method => :prev, :remote=>true
 			= "#{@pagination.current} of #{@pagination.pages_total}"
-			= link_to ">","#"
+			= link_to '>', @pagination.next, :method => :next, :remote=>true
