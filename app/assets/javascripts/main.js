@@ -521,23 +521,27 @@ var main = (function () {
 				    	}
 			    	}
 
-						// Pass features and a custom factory function to the map
-						map.markerLayer.setGeoJSON(geoJson);
-						
-						map.fitBounds( map.markerLayer.getBounds() );
+			    	// if there are features to show
+			    	if (geoJson.features.length > 0)
+			    	{
+							// Pass features and a custom factory function to the map
+							map.markerLayer.setGeoJSON(geoJson);
+							
+							map.fitBounds( map.markerLayer.getBounds() );
 
-						map.markerLayer.on('mouseover', function(e) {
-						    e.layer.openPopup();
-						});
+							map.markerLayer.on('mouseover', function(e) {
+							    e.layer.openPopup();
+							});
 
-						map.markerLayer.on('mouseout', function(e) {
-						    e.layer.closePopup();
-						});
+							map.markerLayer.on('mouseout', function(e) {
+							    e.layer.closePopup();
+							});
 
-						map.markerLayer.on('click', function(e) {
-						    e.layer.unbindPopup();
-						    window.open(e.layer.feature.properties.url,"_self");
-						});
+							map.markerLayer.on('click', function(e) {
+							    e.layer.unbindPopup();
+							    window.open(e.layer.feature.properties.url,"_self");
+							});
+						}
 
 			}
 		}
