@@ -14,6 +14,8 @@
 			%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 			== #{@result_summary}
 			|
-			= link_to '<', @pagination.prev, :method => :prev, :remote=>true
+			- page_prev = '?page='+@pagination.prev.to_s
+			- page_next = '?page='+@pagination.next.to_s
+			= link_to '<', page_prev, :method => :prev, :remote=>true
 			= "#{@pagination.current} of #{@pagination.pages_total}"
-			= link_to '>', @pagination.next, :method => :next, :remote=>true
+			= link_to '>', page_next, :method => :next, :remote=>true
