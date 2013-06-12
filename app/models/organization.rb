@@ -1,5 +1,6 @@
 class Organization
   include Mongoid::Document
+  field :agency, type: String
   field :name, type: String
   field :description, type: String
   field :street_address, type: String
