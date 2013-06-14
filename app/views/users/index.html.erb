@@ -16,14 +16,14 @@
     <tr>
       <td><%= link_to user.name, user %></td>
       <td><%= user.email %></td>
-      
+
       <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
-      
+
       <td>
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
         <%= render user %>
       </td>
-      
+
       <% if can? :manage, @user %>
       <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
       <% end -%>

@@ -6,14 +6,14 @@
 			%section#detail-screen
 				= render 'layouts/results_header'
 				%section#detail-info
-					
+
 					- if @org.name.present?
 						%h1.name
 							= superscript_ordinals(@org.name)
-					
+
 					- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
 						%section.contact-box
-							%h1 
+							%h1
 								%span Contact
 
 							- if @org.street_address.present?
@@ -21,25 +21,25 @@
 									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 									%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
 										%span{:itemprop=>"streetAddress"}
-											= superscript_ordinals(@org.street_address) 
-										%br 
+											= superscript_ordinals(@org.street_address)
+										%br
 										%span{:itemprop=>"addressLocality"}
 											= @org.city+","
 										%span{:itemprop=>"addressRegion"}
 											= @org.state
 										%span{:itemprop=>"postalCode"}
 											= @org.zipcode
-							
+
 							- if @org.phones.present?
 								%div.phone
 									- @org.phones.each do |array|
 										-	array.each do |hash|
 											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
 											%span{:itemprop=>"telephone"}
-												= "#{format_phone(hash["number"])}" 
+												= "#{format_phone(hash["number"])}"
 											%span
-												= " #{hash["phone_hours"]}"	
-											%br							
+												= " #{hash["phone_hours"]}"
+											%br
 
 							- if @org.urls.present?
 								%div.url
@@ -83,7 +83,7 @@
 														= payment
 							- if @org.market_match?
 								%div.market-match
-									This market participates in 
+									This market participates in
 									%span.popup-container
 										%span.popup
 											= render :partial => 'popup/marketmatch' rescue nil
@@ -93,24 +93,24 @@
 							- if @org.products_sold.present?
 								%div.products-sold
 									%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
-									Products sold: 
+									Products sold:
 									%ul
 										- @org.products_sold.sort.each do |product|
-											%li 
+											%li
 												= product
 
 					- if @org.description.present?
 						%section.overview-box
 							%h1
 								%span Service Overview
-							
+
 							- if @org.description.present?
 								%div.description
 									= @org.description
 
 					- if @org.mapURL.present?
 						%section.map-box
-							%h1 
+							%h1
 								%span Map & Directions
 
 							%div.map
@@ -125,7 +125,7 @@
 				%h2
 					Nearby (within 2 miles):
 				%ul
-					- @nearby.each do |venue| 
+					- @nearby.each do |venue|
 						%li
 							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 								%section{:class => "results-entry"}
@@ -133,5 +133,5 @@
 										= superscript_ordinals(venue.name)
 									%p.address
 										= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"
-										
+
 

@@ -23,7 +23,7 @@ class Organization
   field :payments_accepted, type: Array
   field :products_sold, type: Array
   field :languages_spoken, type: Array
-  field :keywords, type: Array 
+  field :keywords, type: Array
   field :target_group, type: String
   field :eligibility_requirements, type: String
   field :fees, type: String
@@ -34,20 +34,20 @@ class Organization
   field :services_provided, type: String
 
   validates_presence_of :name
-  
+
   extend ValidatesFormattingOf::ModelAdditions
   validates_formatting_of :zipcode, using: :us_zip, allow_blank: true, message: "Please enter a valid ZIP code"
   validates_formatting_of :phone, using: :us_phone, allow_blank: true, message: "Please enter a valid US phone number"
   validates :emails, array: { format: { with: /.+@.+\..+/i, message: "Please enter a valid email" } }
-  validates :urls,   array: { format: 
-                            { with: /(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)?/i, 
+  validates :urls,   array: { format:
+                            { with: /(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)?/i,
                               message: "Please enter a valid URL" } }
 
   include Geocoder::Model::Mongoid
   geocoded_by :address               # can also be an IP address
   #after_validation :geocode          # auto-fetch coordinates. disable only when using the load_data rake task
 
-  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}, {agency: /\b#{keyword}\b/i}) } 
+  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}, {agency: /\b#{keyword}\b/i}) }
   scope :find_by_location, lambda {|location, radius| near(location, radius) }
   default_scope order_by(:name => :asc)
 
@@ -55,11 +55,11 @@ class Organization
   def address
     "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
   end
-  
+
   def market_match?
     self.market_match
   end
-  
+
   def self.find_by_keyword_and_location(keyword, location, radius)
     if keyword.blank? && location.blank?
       result = self.all
@@ -73,7 +73,7 @@ class Organization
     else
       result = self.find_by_keyword(keyword)
       return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}'"
-    end  
+    end
   end
 
   # URL to static map for map image on org details.
@@ -89,7 +89,7 @@ class Organization
         return false
       else
         result = address.to_region
-        if result.nil? 
+        if result.nil?
           return false
         else
           return true

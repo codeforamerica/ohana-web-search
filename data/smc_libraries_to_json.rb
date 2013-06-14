@@ -18,7 +18,7 @@ end
 # with URLs that look like "http://plsinfo.org/library-hours/byletter/a"
 # The only part of the URL that will be changing is the letter at the end.
 # Therefore, we will create a constant for the part of the URL that comes before the letter.
-# The letters in the alphabet and the days of the week are also constant, 
+# The letters in the alphabet and the days of the week are also constant,
 # and we'll store them in an array.
 ENDPOINT = "http://plsinfo.org/library-hours/byletter".freeze
 ALPHABET = ("a".."z").to_a.freeze
@@ -30,7 +30,7 @@ libraries_data = Hash.new
 ALPHABET.each do |letter|
   html      = Nokogiri::HTML open("#{ENDPOINT.dup}/#{letter}")
   libraries = html.css(".views-row")
- 
+
   libraries.each do |library|
     name            = library.at_css(".views-field-title .field-content").text
     street_address  = library.at_css(".street-address").text

@@ -1,3 +1,3 @@
-module TextHelper                       
-	extend ActionView::Helpers::TextHelper
+module TextHelper
+  extend ActionView::Helpers::TextHelper
 end

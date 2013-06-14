@@ -11,14 +11,14 @@
 				%nav
 					%section#results-view-options
 						%span
-							View as: 
+							View as:
 						%button#list-view-btn{:type=>"button"}>
 							List
 						%button#map-view-btn{:type=>"button"}
 							Map
 					-#%section#results-sort-options
 						-#%span
-							-#Sort by: 
+							-#Sort by:
 						-#%button#name-sort-btn{:type=>"button"}>
 							-#Name
 						-#- if @location.blank?
@@ -40,7 +40,7 @@
 										- if org.name.present?
 											%h1.name
 												= superscript_ordinals(org.name)
-										- if org.street_address.present?			
+										- if org.street_address.present?
 											%p.address
 												= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
 				%section#map-view
