@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-	respond_to :html, :json, :xml
+	respond_to :html, :json, :xml, :js
 
 	# search results view
 	def index
@@ -32,8 +32,21 @@ class OrganizationsController < ApplicationController
 		session[:search_term] = params[:search_term]
 		session[:location] = params[:location]
 
-		respond_with(@orgs)
+		if request.xhr?
+			#results_list = render :partial => 'ajax/organizations/results_list'
+			#results_header = render :partial => 'ajax/organizations/results_header'
+			
+			#returnVal = {'header'=>results_header,'list'=>results_header}
 
+			#respond_with(returnVal)
+
+			render json: {
+					'results_header' => render_to_string(partial: 'ajax/organizations/results_header'),
+			    'results_list' => render_to_string(partial: 'ajax/organizations/results_list')
+			}
+
+		end
+		
 	end
 
 	# organization details view
@@ -52,4 +65,5 @@ class OrganizationsController < ApplicationController
 		respond_with(@org)
 
 	end
+
 end

@@ -16,6 +16,6 @@
 			|
 			- page_prev = '?page='+@pagination.prev.to_s
 			- page_next = '?page='+@pagination.next.to_s
-			= link_to '<', page_prev, :class => 'pagination prev', :method=>@pagination.prev.to_s, :remote=>true
+			= link_to '<', page_prev, :class => 'pagination prev', :remote=>true
 			= "#{@pagination.current} of #{@pagination.pages_total}"
-			= link_to '>', page_next, :class => 'pagination next', :method=>@pagination.next.to_s, :remote=>true
+			= link_to '>', page_next, :class => 'pagination next', :remote=>true

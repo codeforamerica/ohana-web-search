@@ -3,7 +3,8 @@
 %section#search-content
 	%section#inside-content
 		%section#results-list
-			= render 'layouts/results_header'
+			%div#results-header
+				= render 'layouts/results_header'
 			- if @orgs.blank?
 				%p.no-results
 					NO RESULTS
