@@ -78,7 +78,7 @@ class Organization
 
   # URL to static map for map image on org details.
   def mapURL
-    "http://maps.googleapis.com/maps/api/staticmap?center=#{self.latitude},#{self.longitude}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{self.latitude},#{self.longitude}&sensor=false"
+    "http://maps.googleapis.com/maps/api/staticmap?center=#{self.coordinates[1]},#{self.coordinates[0]}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{self.coordinates[1]},#{self.coordinates[0]}&sensor=false"
   end
 
   def self.query_valid?(address)
