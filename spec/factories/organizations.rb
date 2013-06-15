@@ -7,7 +7,7 @@ FactoryGirl.define do
     zipcode "94010"
     city "Burlingame"
     state "CA"
-    phone "650-314-5678"
+    phones [[{ "number" => "650-314-5678" }]]
     coordinates [-122.371448, 37.583849]
     keywords ["library"]
   end
@@ -42,10 +42,8 @@ FactoryGirl.define do
     zipcode "94010"
     city "Burlingame"
     state "CA"
-    phone "650-314-5678"
+    phones [[{ "number" => "650-314-5678" }]]
     coordinates [-122.371448, 37.583849]
-    latitude -122.274369
-    longitude 37.317983
     keywords ["library"]
     market_match 1
   end
@@ -56,7 +54,7 @@ FactoryGirl.define do
 
   factory :org_without_address, class: Organization do
     name "Huddart Park"
-    phone "650-314-5678"
+    phones [[{ "number" => "650-314-5678" }]]
     coordinates [-122.371448, 37.583849]
     keywords ["parks"]
   end

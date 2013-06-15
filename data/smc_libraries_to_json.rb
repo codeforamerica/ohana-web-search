@@ -45,7 +45,7 @@ ALPHABET.each do |letter|
     libraries_data[name]['city']            = city.strip
     libraries_data[name]['state']           = state.strip
     libraries_data[name]['zipcode']         = zipcode.strip
-    libraries_data[name]['phone']           = phone.strip
+    libraries_data[name]['phones']          = [[{ "number" => phone.strip }]]
     address = "#{street_address}, #{city}, #{state} #{zipcode}"
 
     get_lat_long(address)
@@ -53,8 +53,7 @@ ALPHABET.each do |letter|
     # Therefore, we'll pause for half a second in between address lookups
     sleep(0.5)
 
-    libraries_data[name]['longitude'] = @longitude
-    libraries_data[name]['latitude'] = @latitude
+    libraries_data[name]['coordinates'] = [@longitude, @latitude]
     libraries_data[name]['type'] = "Library"
 
     i = 6
