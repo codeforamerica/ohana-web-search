@@ -1,6 +1,6 @@
 feature 'Visitor performs search on a page other than home' do
 
-  scenario 'on the organizations index page' do
+  xscenario 'on the organizations index page' do
     organization = FactoryGirl.create(:organization)
     visit ('/organizations')
     search_for_keyword_without_visit 'library'
@@ -8,7 +8,7 @@ feature 'Visitor performs search on a page other than home' do
     find_field("search_term").value.should == "library"
   end
 
-  scenario 'on a details page' do
+  xscenario 'on a details page' do
     organization = FactoryGirl.create(:organization)
     visit ('/organizations')
     visit_details
@@ -16,7 +16,7 @@ feature 'Visitor performs search on a page other than home' do
     expect(page).to have_content("1 result matching 'library'")
   end
 
-  scenario 'and searches for keyword, location and radius' do
+  xscenario 'and searches for keyword, location and radius' do
     organization = FactoryGirl.create(:organization)
     visit ('/organizations')
     search_all 'library', '94010', '10 miles'

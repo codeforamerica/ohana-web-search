@@ -20,7 +20,7 @@
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", (controller_name+'/'+ action_name) %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
@@ -37,11 +37,11 @@
                     <a href="/">OhanaSMC</a>
                 </h1>
                 <button id="info-screen-btn">?</button>
-            </nav>
-            <%= render 'layouts/site_info' %>
+            </nav>            
+            <%= render 'component/site_info' %>
         </header>
     </section>
-        <%= render 'layouts/alerts' %>
+        <%= render 'component/alert' %>
 
     <section id="main-content">
         <main>

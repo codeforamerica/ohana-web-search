@@ -4,6 +4,17 @@ GIT
   specs:
     geocoder (1.1.8)
 
+GIT
+  remote: https://github.com/codeforamerica/ohanakapa-ruby.git
+  revision: 3ce7a1f1b097519905a64d92c5e5651d8dbde315
+  branch: master
+  specs:
+    ohanakapa (0.0.1)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9)
+      hashie (~> 2.0)
+      multi_json (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,7 +54,7 @@ GEM
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.7.1)
+    binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bluff (0.1.0)
     bootstrap-sass (2.3.1.3)
@@ -69,13 +80,6 @@ GEM
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.2)
     colored (1.2)
     colorize (0.5.8)
     coveralls (0.6.7)
@@ -110,6 +114,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     fastercsv (1.5.5)
     fattr (2.2.1)
     figaro (0.6.4)
@@ -137,7 +143,7 @@ GEM
     i18n (0.6.1)
     japgolly-Saikuro (1.1.1.0)
     journey (1.0.4)
-    jquery-rails (3.0.0)
+    jquery-rails (3.0.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.0)
@@ -179,6 +185,7 @@ GEM
     metric_fu-roodi (2.2.1)
       ruby_parser
     mime-types (1.23)
+    mini_portile (0.5.0)
     mongoid (3.1.4)
       activemodel (~> 3.2)
       moped (~> 1.4)
@@ -189,10 +196,11 @@ GEM
       rake
       rspec (>= 2.9)
     moped (1.5.0)
-    multi_json (1.7.6)
+    multi_json (1.7.7)
     multipart-post (1.2.0)
-    newrelic_rpm (3.6.3.106)
-    nokogiri (1.5.9)
+    newrelic_rpm (3.6.3.111)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -312,6 +320,7 @@ GEM
       activemodel (~> 3.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yard (0.8.6.1)
 
 PLATFORMS
   ruby
@@ -320,10 +329,8 @@ DEPENDENCIES
   area
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
-  bootstrap-sass (>= 2.3.0.0)
   cancan (>= 1.6.9)
   capybara (>= 2.0.3)
-  coffee-rails (~> 3.2.1)
   coveralls
   cucumber-rails (>= 1.3.1)
   database_cleaner (>= 1.0.0.RC1)
@@ -338,6 +345,7 @@ DEPENDENCIES
   mongoid (>= 3.1.2)
   mongoid-rspec (>= 1.7.0)
   newrelic_rpm
+  ohanakapa!
   omniauth (>= 1.1.3)
   omniauth-google-oauth2
   quiet_assets (>= 1.0.2)
@@ -350,3 +358,4 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn (>= 4.3.1)
   validates_formatting_of
+  yard

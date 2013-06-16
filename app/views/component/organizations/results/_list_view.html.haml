@@ -1,0 +1,16 @@
+%section#list-view
+	%ul
+		- @orgs.each do |org|
+			%li
+				%a{:href=>"#{organization_path(org._id)}", :title=>"#{org.name}"}
+					%section{:class => "results-entry"}
+						- unless org.distance.blank?
+							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
+								%span
+									== #{org.distance} mi
+						- if org.name.present?
+							%h1.name
+								= superscript_ordinals(org.name)
+						- if org.street_address.present?			
+							%p.address
+								= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
