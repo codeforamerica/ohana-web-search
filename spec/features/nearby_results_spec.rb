@@ -1,6 +1,6 @@
 feature 'Display organizations that are within 2 miles of the one being visited' do
 
-  scenario 'there are nearby locations' do
+  xscenario 'there are nearby locations' do
     organization = FactoryGirl.create(:organization)
     nearby_org = FactoryGirl.create(:nearby_org)
     search_and_visit_details
@@ -8,7 +8,7 @@ feature 'Display organizations that are within 2 miles of the one being visited'
     expect(page).to have_content("Burlingame Main")
   end
 
-  scenario 'there are no nearby locations' do
+  xscenario 'there are no nearby locations' do
     organization = FactoryGirl.create(:farmers_market)
     search_for_keyword_and_location('pescadero', 'la honda, ca')
     expect(page).to have_content("1 result matching 'pescadero' within 2 miles of 'la honda, ca'")

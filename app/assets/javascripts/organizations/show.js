@@ -10,9 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require web-storage-proxy
-//= require ./module/ajax
-//= require ./module/busy-manager
-//= require ./module/alert-manager
-//= require module/util
+//= require ../module/busy-manager
+//= require ../module/info-screen-manager
+//= require ../module/alert-manager
+//= require ../module/search-op-manager
+//= require ../module/popup-manager
+//= require ../module/ajax-search
+//= require ../config/organizations/detail/initializer
