@@ -1,10 +1,10 @@
-= render 'asides/search'
+= render 'component/search/aside'
 
 %section#search-content
 	%section#inside-content
 		%section#results-list
 			%div#results-header
-				= render 'ajax/organizations/results_header'
+				= render 'component/ajax/organizations/results_header'
 			- if @orgs.blank?
 				%p.no-results
 					NO RESULTS
@@ -28,5 +28,5 @@
 						-#- elsif
 							-#%button#distance-sort-btn{:type=>"button"}
 								-#Distance
-				= render 'ajax/organizations/results_list'
-				= render 'ajax/organizations/results_map'
+				= render 'component/ajax/organizations/results_list'
+				= render 'component/ajax/organizations/results_map'

@@ -11,5 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require webStorageProxy
-//= require modules/util
+//= require web-storage-proxy
+//= require module/util

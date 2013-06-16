@@ -11,4 +11,4 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require ./module/busy-manager
-//= require_tree ./module/organizations/.
+//= require_tree ./module/home/.

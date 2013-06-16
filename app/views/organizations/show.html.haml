@@ -1,10 +1,10 @@
-= render 'asides/search'
+= render 'component/search/aside'
 
 %section#search-content
 	%section#inside-content
 		%section#results-list
 			%section#detail-screen
-				= render 'layouts/results_header'
+				= render 'component/ajax/organizations/results_header'
 				%section#detail-info
 					- if @org.name.present?
 						%h1.name
@@ -76,7 +76,7 @@
 											%li
 												%span.popup-container
 													%span.popup
-														- dynamic_partial = 'popup/'+payment.downcase
+														- dynamic_partial = 'components/popup/'+payment.downcase
 														= render :partial => "#{dynamic_partial}" rescue nil
 													%span.popup-term
 														= payment
@@ -85,7 +85,7 @@
 									This market participates in 
 									%span.popup-container
 										%span.popup
-											= render :partial => 'popup/marketmatch' rescue nil
+											= render :partial => 'components/popup/marketmatch' rescue nil
 										%span.popup-term
 											Market Match!
 
