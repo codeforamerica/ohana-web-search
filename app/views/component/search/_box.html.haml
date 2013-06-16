@@ -1,14 +1,15 @@
 %div
-  %label{:for => "search_term"}
+  %label{:for => "keyword"}
     I need
     %span{"data-icon"=>"→" , :class=>"ohana-icon"}
-  = search_field_tag "search_term", params[:search_term], :placeholder => "e.g. food"         
+  = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food"         
 
 %div
   %label{:for => "location"}
     I am near
     %span{"data-icon"=>"→" , :class=>"ohana-icon"}
   = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca"
+  = hidden_field_tag 'page-number', @pagination.current
 %div/
 /= button_tag 
 %button

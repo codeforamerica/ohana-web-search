@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require web-storage-proxy
+//= require ./module/busy-manager
+//= require ./module/ajax
 //= require module/util

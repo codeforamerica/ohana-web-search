@@ -24,7 +24,7 @@ var module = (function (module) {
 			searchOptions = document.getElementById("search-options-screen");
 			if (searchOptions)
 			{
-				searchRadius = document.getElementById("miles");		
+				searchRadius = document.getElementById("radius");		
 				if (!searchInput.value && searchRadius) searchRadius.disabled = true;
 				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
 				searchRadius.addEventListener("change",changeHandler,false);

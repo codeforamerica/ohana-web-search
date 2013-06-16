@@ -15,7 +15,7 @@ var module = (function (module,window,document,undefined) {
 			module.mapViewManager.init(); // initialize map result view
 			module.resultViewManager.init(); // initialize result list behavior for selecting map or list
 			module.resultSortManager.init(); // initialize result list sorting behavior
-			module.ajax.init(); // initialize ajax	
+			module.ajaxSearch.init(); // initialize ajax search
 	});
 
 return module;
