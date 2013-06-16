@@ -10,4 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require_tree ./module/home/.
+//= require ../module/busy-manager
+//= require ../module/alert-manager
+//= require ../config/home/initializer

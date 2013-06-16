@@ -25,12 +25,14 @@ class OrganizationsController < ApplicationController
 		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page})
 		@orgs = query.content
 		@pagination = query.pagination
+
 		@result_summary = ResultSummaryHelper.format_summary({:count=>@pagination.items_current,:total_count=>@pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
 
-		session[:search_results] = request.url
+		session[:search_results] 	= request.url
 		session[:selected_radius] = params[:radius]
-		session[:keyword] = params[:keyword]
-		session[:location] = params[:location]
+		session[:keyword] 				= params[:keyword]
+		session[:location] 				= params[:location]
+		session[:page]						= @pagination.current
 
 		if request.xhr?
 			render json: {
@@ -54,9 +56,8 @@ class OrganizationsController < ApplicationController
 
 		query = Organization.get(params[:id])
 		@org = query.content
-		
+				
 		respond_with(@org)
-
 	end
 
 end

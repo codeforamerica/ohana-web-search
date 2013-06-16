@@ -4,6 +4,8 @@ var module = (function (module) {
 	module.ajaxSearch = (function (ajaxSearch) {
 
 		var busyScreen;
+		var nextBtn;
+		var prevBtn;
 
 		var searchScreen;
 
@@ -13,6 +15,9 @@ var module = (function (module) {
 		ajaxSearch.init = function()
 		{
 			searchScreen = document.getElementById('search-content');
+
+			nextBtn = document.querySelector('.pagination.next');
+			prevBtn = document.querySelector('.pagination.prev');
 
 			initPagination();
 
@@ -47,12 +52,16 @@ var module = (function (module) {
 			}
 
 			module.ajax.request(query, callback);
+			window.history.pushState({},"", query);
 		}
 
 		function initPagination()
 		{
-			document.querySelector('.pagination.next').addEventListener("click",nextPageHandler,false);
-			document.querySelector('.pagination.prev').addEventListener("click",prevPageHandler,false);
+			if (nextBtn && prevBtn)
+			{
+				nextBtn.addEventListener("click",nextPageHandler,false);
+				prevBtn.addEventListener("click",prevPageHandler,false);
+			}
 		}
 
 		function nextPageHandler(evt)
