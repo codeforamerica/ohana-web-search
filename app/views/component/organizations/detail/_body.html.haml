@@ -1,0 +1,136 @@
+= render 'component/search/aside'
+
+%section#search-content
+	%section#inside-content
+		%section#results-list
+			%section#detail-screen
+				= render 'component/organizations/detail/header'
+				%section#detail-info
+					- if @org.name.present?
+						%h1.name
+							= superscript_ordinals(@org.name)
+					
+					- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
+						%section.contact-box
+							%h1 
+								%span Contact
+
+							- if @org.street_address.present?
+								%div.address
+									%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+									%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+										%span{:itemprop=>"streetAddress"}
+											= superscript_ordinals(@org.street_address) 
+										%br 
+										%span{:itemprop=>"addressLocality"}
+											= @org.city+","
+										%span{:itemprop=>"addressRegion"}
+											= @org.state
+										%span{:itemprop=>"postalCode"}
+											= @org.zipcode
+							
+							- if @org.phones.present?
+								%div.phone
+									- @org.phones.each do |array|
+										-	array.each do |hash|
+											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+											%span{:itemprop=>"telephone"}
+												= "#{format_phone(hash["number"])}" 
+											%span
+												= " #{hash["phone_hours"]}"	
+											%br							
+
+							- if @org.urls.present?
+								%div.url
+									- @org.urls.each do |url|
+										%a{:href=>url,:target=>"_blank"}
+											%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+											%span{:itemprop=>"url"}
+												= url
+											%br
+
+							- if @org.emails.present?
+								%div.email{:itemprop=>"email"}
+									%span{"data-icon"=>"@" , :class=>"ohana-icon"}
+									= @org.emails.join(", ")
+
+					- if @org.schedule.present?
+						%section.hours-box
+							%h1
+								%span Business Hours
+							%div.schedule
+								%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
+								= @org.schedule
+
+					- if @org.payments_accepted.present? || @org.products_sold.present?
+						%section.payment-box
+							%h1
+								%span Payment & Products
+
+							- if @org.payments_accepted.present?
+								%div.payments-accepted
+									%span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
+									Payment methods accepted:
+									%ul
+										-@org.payments_accepted.sort.each do |payment|
+											%li
+												%span.popup-container
+													%span.popup
+														- dynamic_partial = 'components/popup/'+payment.downcase
+														= render :partial => "#{dynamic_partial}" rescue nil
+													%span.popup-term
+														= payment
+							- if @org.market_match?
+								%div.market-match
+									This market participates in 
+									%span.popup-container
+										%span.popup
+											= render :partial => 'components/popup/marketmatch' rescue nil
+										%span.popup-term
+											Market Match!
+
+							- if @org.products_sold.present?
+								%div.products-sold
+									%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
+									Products sold: 
+									%ul
+										- @org.products_sold.sort.each do |product|
+											%li 
+												= product
+
+					- if @org.description.present?
+						%section.overview-box
+							%h1
+								%span Service Overview
+							
+							- if @org.description.present?
+								%div.description
+									= @org.description
+
+					- if @org.mapURL.present?
+						%section.map-box
+							%h1 
+								%span Map & Directions
+
+							%div.map
+								%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+
+							%div.directions
+								%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
+									%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+									%span Get Directions
+
+			- if @nearby.present?
+				%h2
+					Nearby (within 2 miles):
+				%ul
+					- @nearby.each do |venue| 
+						%li
+							%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
+								%section{:class => "results-entry"}
+									%h1.name
+										= superscript_ordinals(venue.name)
+									%p.address
+										= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"
+										
+
