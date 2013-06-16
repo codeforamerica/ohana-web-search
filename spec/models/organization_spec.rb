@@ -26,24 +26,24 @@ describe Organization do
 
 		it "returns organization details based on an id" do
       query = Organization::get("51a9fd0328217f89770001b2")
-      query[:response]["_id"].should eq("51a9fd0328217f89770001b2")
+      query.content["_id"].should eq("51a9fd0328217f89770001b2")
     end
 
 		it "returns all organizations" do
       query = Organization::query
-      query[:response].first["_id"].should eq("51a9fd0028217f8977000002")
+      query.content.first["_id"].should eq("51a9fd0028217f8977000002")
     end
 
 		it "searches for keyword 'market'" do
       query = Organization::query({:keyword=>"market"})
-      query[:response].length.should eq(22)
-      query[:response].first["_id"].should eq("51a9fd0028217f8977000023")
+      query.content.length.should eq(22)
+      query.content.first["_id"].should eq("51a9fd0028217f8977000023")
     end
 
     it "searches for keyword 'park'" do
       query = Organization::query({:keyword=>"park"})
-      query[:response].length.should eq(30)
-      query[:response].first["_id"].should eq("51a9fd0028217f8977000014")
+      query.content.length.should eq(30)
+      query.content.first["_id"].should eq("51a9fd0028217f8977000014")
     end
 
 	end

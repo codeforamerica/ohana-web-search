@@ -111,7 +111,7 @@ class Organization
   # Performs a query of the API
   # @param params [Object] parameter object.
   # @return [Hashie::Mash] Hash representing a organization's details.
-  def self.query(params)
+  def self.query(params = {})
     @client = Ohanakapa.new
 
     # return all results if keyword and location are blank
