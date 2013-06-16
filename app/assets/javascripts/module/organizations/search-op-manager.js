@@ -12,7 +12,7 @@ var module = (function (module) {
 		var searchRadius; // search radius drop-down
 		var insideContent; // #inside-content section
 		var resultsList; // #results-list section
-		var updateAlertBox; // #update-alert
+		//var updateAlertBox; // #update-alert
 
 		// PUBLIC METHODS
 		searchOpManager.init = function()
@@ -27,7 +27,7 @@ var module = (function (module) {
 				searchRadius = document.getElementById("radius");		
 				if (!searchInput.value && searchRadius) searchRadius.disabled = true;
 				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
-				searchRadius.addEventListener("change",changeHandler,false);
+				//searchRadius.addEventListener("change",changeHandler,false);
 			}
 		}
 
@@ -48,7 +48,7 @@ var module = (function (module) {
 		}
 
 		// handles change of search options
-		function changeHandler(evt)
+		/*function changeHandler(evt)
 		{
 			//webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
 			insideContent = document.getElementById("inside-content");
@@ -65,7 +65,7 @@ var module = (function (module) {
 					resultsList.style.opacity = 0.25;
 				}
 			}
-		}
+		}*/
 
 		return searchOpManager;
 	})({});

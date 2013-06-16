@@ -20,7 +20,7 @@ class OrganizationsController < ApplicationController
 		end
 =end
 		
-		keyword, location, radius, page = params["search_term"], params[:location], params[:miles], params[:page]
+		keyword, location, radius, page = params[:keyword], params[:location], params[:radius], params[:page]
 
 		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page})
 		@orgs = query.content
@@ -28,14 +28,13 @@ class OrganizationsController < ApplicationController
 		@result_summary = ResultSummaryHelper.format_summary({:count=>@pagination.items_current,:total_count=>@pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
 
 		session[:search_results] = request.url
-		session[:selected_radius] = params[:miles]
-		session[:search_term] = params[:search_term]
+		session[:selected_radius] = params[:radius]
+		session[:keyword] = params[:keyword]
 		session[:location] = params[:location]
 
 		if request.xhr?
 			render json: {
-					'results_header' => render_to_string(partial: 'ajax/organizations/results_header'),
-			    'results_list' => render_to_string(partial: 'ajax/organizations/results_list')
+					'content' => render_to_string(partial: 'component/organizations/results/body')
 			}
 
 		end

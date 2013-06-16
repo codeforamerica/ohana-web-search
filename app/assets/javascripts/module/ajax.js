@@ -8,11 +8,16 @@ var module = (function (module) {
 			
 		}
 
-		ajax.request = function(query)
+		ajax.request = function(query,callback)
 		{
-			$.ajax(query).done(success).fail(failure);
+			console.log("ajax request",query)
+			if (callback)
+				$.ajax(query).done(callback.done).fail(callback.fail)
+			else
+				$.ajax(query).done(success).fail(failure);
 		}
 
+		// default callbacks
 		function success(evt)
 		{
 			console.log('success',evt);

@@ -205,7 +205,34 @@ fade-out
     padding:20px;
     margin:0px;
     text-align:center;
-    font-size:1.4em;
+    font-size:24px;
+}
+
+#busy-screen
+{
+    position:absolute;
+    z-index: 999999;
+    top:0;
+    right:0;
+    bottom:0;
+    background:$black_alpha40;
+    width:100%;
+}
+
+#busy-screen h1
+{
+    position: absolute;
+    top:10px;
+    left:50%;
+    background:$green_dark;
+    color:$white;
+    width:100px;
+    margin-left:-50px;
+    border-radius:10px;
+    padding:20px;
+    text-align:center;
+    font-size:24px;
+    box-shadow:0px 0px 30px $black_alpha60;
 }
 
 //=================================================================================
@@ -785,6 +812,7 @@ fade-out
 #search-content
 {
     background:$blue_light_alpha40;
+    position:relative;
 }
 
 .home #search-screen

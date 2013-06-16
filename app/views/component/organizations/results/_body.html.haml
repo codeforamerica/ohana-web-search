@@ -1,32 +1,29 @@
-= render 'component/search/aside'
-
-%section#search-content
-	%section#inside-content
-		%section#results-list
-			%div#results-header
-				= render 'component/organizations/results/header'
-			- if @orgs.blank?
-				%p.no-results
-					NO RESULTS
-			- else
-				%nav
-					%section#results-view-options
-						%span
-							View as: 
-						%button#list-view-btn{:type=>"button"}>
-							List
-						%button#map-view-btn{:type=>"button"}
-							Map
-					-#%section#results-sort-options
-						-#%span
-							-#Sort by: 
-						-#%button#name-sort-btn{:type=>"button"}>
-							-#Name
-						-#- if @location.blank?
-							-#%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
-								-#Distance
-						-#- elsif
-							-#%button#distance-sort-btn{:type=>"button"}
-								-#Distance
-				= render 'component/organizations/results/list_view'
-				= render 'component/organizations/results/map_view'
+%section#inside-content
+	%section#results-list
+		%div#results-header
+			= render 'component/organizations/results/header'
+		- if @orgs.blank?
+			%p.no-results
+				NO RESULTS
+		- else
+			%nav
+				%section#results-view-options
+					%span
+						View as: 
+					%button#list-view-btn{:type=>"button"}>
+						List
+					%button#map-view-btn{:type=>"button"}
+						Map
+				-#%section#results-sort-options
+					-#%span
+						-#Sort by: 
+					-#%button#name-sort-btn{:type=>"button"}>
+						-#Name
+					-#- if @location.blank?
+						-#%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
+							-#Distance
+					-#- elsif
+						-#%button#distance-sort-btn{:type=>"button"}
+							-#Distance
+			= render 'component/organizations/results/list_view'
+			= render 'component/organizations/results/map_view'

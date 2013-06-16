@@ -7,6 +7,7 @@ var module = (function (module,window,document,undefined) {
 	// run scripts when DOM has fully loaded
 	document.addEventListener("DOMContentLoaded", function() {
 			module.busyManager.init(); // initialize help/info screen (in utility bar)
+			module.alertManager.init(); // initialize help/info screen (in utility bar)
 	});
 
 return module;
