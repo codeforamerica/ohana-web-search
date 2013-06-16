@@ -33,13 +33,6 @@ class OrganizationsController < ApplicationController
 		session[:location] = params[:location]
 
 		if request.xhr?
-			#results_list = render :partial => 'ajax/organizations/results_list'
-			#results_header = render :partial => 'ajax/organizations/results_header'
-			
-			#returnVal = {'header'=>results_header,'list'=>results_header}
-
-			#respond_with(returnVal)
-
 			render json: {
 					'results_header' => render_to_string(partial: 'ajax/organizations/results_header'),
 			    'results_list' => render_to_string(partial: 'ajax/organizations/results_list')
@@ -60,7 +53,8 @@ class OrganizationsController < ApplicationController
 		respond_with(@org)
 =end
 
-		@org = Organization.get(params[:id])
+		query = Organization.get(params[:id])
+		@org = query.content
 		
 		respond_with(@org)
 
