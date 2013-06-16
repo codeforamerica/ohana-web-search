@@ -91,6 +91,7 @@ var module = (function (module) {
 		function failure(evt)
 		{
 			console.log('ajaxsearch failure',evt);
+			searchScreen.removeChild(busyScreen);
 		}
 
 		return ajaxSearch;
