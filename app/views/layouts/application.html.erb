@@ -20,7 +20,7 @@
     <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", controller_name %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>

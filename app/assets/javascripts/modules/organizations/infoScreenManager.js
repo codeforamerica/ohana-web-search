@@ -2,8 +2,7 @@
 var module = (function (module) {
 
 	module.infoScreenManager = (function (infoScreenManager) {
-		var infoScreenManager = {};
-
+		
 		// PRIVATE PROPERTIES
 		var infoScreenBtn; // help screen that covers content
 		var infoScreen; // help screen that covers content
@@ -88,7 +87,7 @@ var module = (function (module) {
 		}
 
 		return infoScreenManager;
-	})();
+	})({});
 
 	return module;
 })(module || {})

@@ -9,7 +9,7 @@ group :assets do
 end
 
 # front end
-#gem 'jquery-rails'
+gem 'jquery-rails'
 gem 'haml-rails'
 gem "simple_form", ">= 2.1.0"
 

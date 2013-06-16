@@ -34,6 +34,51 @@ var module = (function (module) {
 		  }
 		}
 
+		// insert parameters in the URL
+		// @param params [Object] (optional)
+		// @return [String] the appended URL query string
+		util.queryString = function(params)
+		{
+			if (params)
+			{
+				var url = document.location.search.substr(1).split('&');
+				var urlobj = {};
+				var param,key,val;
+
+				for (var p in url)
+			  {
+			  	param = url[p].split('=');
+			  	key = param[0];
+			  	val = param[1];
+			  	urlobj[key] = val;
+			  }
+
+				for (var key in params) 
+				{
+					urlobj[key] = params[key];
+				}
+
+				str = '';
+				var val = '';
+				for (var k in urlobj)
+			  {
+			  	if (k != '' && urlobj[k] != '')
+			  	{
+			  		val = escape(unescape(k))+'='+escape(unescape(urlobj[k]));
+			  		str += val+'&';
+			  	}
+			  }
+
+			  str = '?'+str.substring(0, str.length-1);
+
+			  return str;
+			}
+			else
+			{
+				return document.location.search;
+			}
+		}
+
 		return util;
 	})({});
 
