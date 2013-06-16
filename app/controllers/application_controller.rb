@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
-  rescue_from Moped::Errors::OperationFailure do 
+  rescue_from Moped::Errors::OperationFailure do
     redirect_to root_path, :alert => "Please enter a full address or a valid 5-digit ZIP code."
   end
 

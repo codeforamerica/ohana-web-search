@@ -59,5 +59,4 @@ class OrganizationsController < ApplicationController
 				
 		respond_with(@org)
 	end
-
 end

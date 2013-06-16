@@ -18,7 +18,7 @@ end
 # with URLs that look like "http://plsinfo.org/library-hours/byletter/a"
 # The only part of the URL that will be changing is the letter at the end.
 # Therefore, we will create a constant for the part of the URL that comes before the letter.
-# The letters in the alphabet and the days of the week are also constant, 
+# The letters in the alphabet and the days of the week are also constant,
 # and we'll store them in an array.
 ENDPOINT = "http://plsinfo.org/library-hours/byletter".freeze
 ALPHABET = ("a".."z").to_a.freeze
@@ -30,7 +30,7 @@ libraries_data = Hash.new
 ALPHABET.each do |letter|
   html      = Nokogiri::HTML open("#{ENDPOINT.dup}/#{letter}")
   libraries = html.css(".views-row")
- 
+
   libraries.each do |library|
     name            = library.at_css(".views-field-title .field-content").text
     street_address  = library.at_css(".street-address").text
@@ -45,7 +45,7 @@ ALPHABET.each do |letter|
     libraries_data[name]['city']            = city.strip
     libraries_data[name]['state']           = state.strip
     libraries_data[name]['zipcode']         = zipcode.strip
-    libraries_data[name]['phone']           = phone.strip
+    libraries_data[name]['phones']          = [[{ "number" => phone.strip }]]
     address = "#{street_address}, #{city}, #{state} #{zipcode}"
 
     get_lat_long(address)
@@ -53,8 +53,7 @@ ALPHABET.each do |letter|
     # Therefore, we'll pause for half a second in between address lookups
     sleep(0.5)
 
-    libraries_data[name]['longitude'] = @longitude
-    libraries_data[name]['latitude'] = @latitude
+    libraries_data[name]['coordinates'] = [@longitude, @latitude]
     libraries_data[name]['type'] = "Library"
 
     i = 6

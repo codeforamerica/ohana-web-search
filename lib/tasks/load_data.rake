@@ -1,10 +1,6 @@
 require 'json'
 
-task :load_data => [:libfarm, :latlon2coord, :coord2latlon] do
-
-end
-
-task :libfarm => :environment do
+task :load_data => :environment do
   puts "================================================================================"
   puts "Creating Organizations with Library and Farmers' Markets Data and saving to DB"
   puts "================================================================================"
@@ -20,7 +16,7 @@ task :libfarm => :environment do
       unless org.save
         name = org["name"]
         invalid_records[name] = {}
-        invalid_records[name]["errors"] = org.errors  
+        invalid_records[name]["errors"] = org.errors
         File.open("data/#{invalid_filename_prefix}_invalid_records.json","w") do |f|
           f.write(invalid_records.to_json)
         end
@@ -29,21 +25,4 @@ task :libfarm => :environment do
     puts "Done loading #{file} into DB"
   end
   puts "Done loading libraries and farmers' markets into DB."
-end
-
-task :latlon2coord => :environment do
-  orgs = Organization.all
-  orgs.each do |org|
-    org.update_attribute(:coordinates, [org.longitude, org.latitude]) if org.coordinates.blank?
-  end
-end
-
-task :coord2latlon => :environment do
-  orgs = Organization.all
-  orgs.each do |org|
-    if org.coordinates.present? && (org.latitude.blank? && org.longitude.blank?)
-      org.update_attribute(:latitude, org.coordinates[1])
-      org.update_attribute(:longitude, org.coordinates[0])
-    end
-  end
 end
