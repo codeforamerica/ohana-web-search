@@ -16,9 +16,6 @@ var module = (function (module) {
 		{
 			searchScreen = document.getElementById('search-content');
 
-			nextBtn = document.querySelector('.pagination.next');
-			prevBtn = document.querySelector('.pagination.prev');
-
 			initPagination();
 
 			document.getElementById('find-btn').addEventListener("click",ajaxClickHandler,false);
@@ -57,6 +54,9 @@ var module = (function (module) {
 
 		function initPagination()
 		{
+			nextBtn = document.querySelector('.pagination.next');
+			prevBtn = document.querySelector('.pagination.prev');
+
 			if (nextBtn && prevBtn)
 			{
 				nextBtn.addEventListener("click",nextPageHandler,false);
