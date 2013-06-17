@@ -15,5 +15,9 @@
 //= require ../module/alert-manager
 //= require ../module/search-op-manager
 //= require ../module/popup-manager
+//= require ../module/map-view-manager
+//= require ../module/result-view-manager
+//= require ../module/result-sort-manager
+//= require ../module/distance-manager
 //= require ../module/ajax-search
 //= require ../config/organizations/detail/initializer

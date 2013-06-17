@@ -42,7 +42,7 @@ var module = (function (module) {
 										'page':page
 										}
 			
-			var query = module.util.queryString(values);
+			var query = '/organizations/'+module.util.queryString(values);
 			var callback = {
 				'done' : success,
 				'fail' : failure
