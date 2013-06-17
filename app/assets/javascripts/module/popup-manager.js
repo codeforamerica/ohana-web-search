@@ -16,8 +16,14 @@ var module = (function (module) {
 			{
 				var popup = popups[p].firstElementChild;
 				var term = popups[p].lastElementChild;
-				popup.classList.add("hide");
-				term.addEventListener("mousedown", popupHandler, false);
+				if ((/\S/.test(popup.textContent)))
+				{
+					term.addEventListener("mousedown", popupHandler, false);
+				}
+				else
+				{
+					term.style.cursor = 'default';
+				}
 			}
 		}
 
