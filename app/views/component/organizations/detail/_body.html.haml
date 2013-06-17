@@ -104,16 +104,16 @@
 							%div.description
 								= @org.description
 
-				- if @org.mapURL.present?
+				- if @map_url.present?
 					%section.map-box
 						%h1 
 							%span Map & Directions
 
 						%div.map
-							%img{:src=>"#{@org.mapURL}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+							%img{:src=>"#{@map_url}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
 						%div.directions
-							%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr="+@org.address,:target=>"_blank"}
+							%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{@org.address}",:target=>"_blank"}
 								%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
 								%span Get Directions
 
