@@ -51,6 +51,18 @@
 								%span{"data-icon"=>"@" , :class=>"ohana-icon"}
 								= @org.emails.join(", ")
 
+				- if @org.contact_people.present?
+					%section.contacts-box
+						%h1
+							- if @org.contact_people.length == 0
+								%span Primary Contact
+							- else
+								%span Primary Contacts
+						%div.schedule
+							- @org.contact_people.each do |contact|
+								%span
+									= contact
+
 				- if @org.schedule.present?
 					%section.hours-box
 						%h1
