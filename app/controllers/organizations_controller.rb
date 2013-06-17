@@ -56,8 +56,10 @@ class OrganizationsController < ApplicationController
 
 		query = Organization.get(params[:id])
 		@org = query.content
-		@map_url = "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s(#{@org.coordinates[0]},#{@org.coordinates[1]})/#{@org.coordinates[0]},#{@org.coordinates[1]},15/400x300.png"
-
+		
+		if @org.coordinates.present?
+			@map_url = "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s(#{@org.coordinates[0]},#{@org.coordinates[1]})/#{@org.coordinates[0]},#{@org.coordinates[1]},15/400x300.png"
+		end
 				
 		respond_with(@org)
 	end
