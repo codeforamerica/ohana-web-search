@@ -13,10 +13,6 @@ describe Organization do
   it { should respond_to(:market_match?) }
   its(:market_match?) { should be_true }
 
-	it { should respond_to(:mapURL) }
-	its(:mapURL) { should == "http://maps.googleapis.com/maps/api/staticmap?center=#{subject.coordinates[1]},#{subject.coordinates[0]}&zoom=15&size=320x240&maptype=roadmap&markers=color:blue%7C#{subject.coordinates[1]},#{subject.coordinates[0]}&sensor=false"
-	}
-
   context "does not participate in market match" do
 	  subject { build(:org_without_market_match) }
 	  its(:market_match?) { should be_false }
