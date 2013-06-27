@@ -21,9 +21,6 @@ gem 'ohanakapa', :git => "https://github.com/codeforamerica/ohanakapa-ruby.git",
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
 
-# MongoDB
-gem "mongoid", ">= 3.1.2"
-
 # testing
 gem 'yard' #for code documentation
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]

@@ -15,30 +15,30 @@ module Features
 
     def search_for_keyword(keyword)
       visit ('/')
-      fill_in('search_term', :with => keyword)
+      fill_in('keyword', :with => keyword)
       click_button 'Find'
     end
 
     def search_for_keyword_without_visit(keyword)
-      fill_in('search_term', :with => keyword)
+      fill_in('keyword', :with => keyword)
       click_button 'Find'
     end
 
     def search_for_keyword_and_location(keyword, address)
       visit ('/')
-      fill_in('search_term', :with => keyword)
+      fill_in('keyword', :with => keyword)
       fill_in('location', :with => address)
       click_button 'Find'
     end
 
     def search_for_keyword_and_distance(keyword, distance)
-      fill_in('search_term', :with => keyword)
+      fill_in('keyword', :with => keyword)
       select(distance, :from => 'miles')
       click_button 'Find'
     end
 
     def search_all(keyword, location, distance)
-      fill_in('search_term', :with => keyword)
+      fill_in('keyword', :with => keyword)
       fill_in('location', :with => location)
       select(distance, :from => 'miles')
       click_button 'Find'
@@ -50,12 +50,14 @@ module Features
     end
 
     def visit_details
-      find_link("Burlingame, Easton Branch").click
+      page.find(:css, '#list-view li:first-child a').click
     end
 
+=begin
     def visit_nearby_details
       click_link("Burlingame Main")
     end
+=end
 
     def search_and_visit_details
       search_for_keyword_and_location('library', '94010')
