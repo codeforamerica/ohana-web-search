@@ -106,7 +106,11 @@ class Organization
       return @client.organizations(params)
     end
 
-    response = @client.query(params)
+    begin
+      response = @client.query(params)
+    rescue
+      response = @client.empty_set
+    end
   end
 
 end

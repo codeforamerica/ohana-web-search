@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe SuperscriptFormatHelper do
 
   it 'check for string beginning with a single "st" ordinal'  do

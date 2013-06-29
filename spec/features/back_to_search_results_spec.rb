@@ -1,8 +1,6 @@
 feature 'Visitor goes back to search results' do
 
   scenario 'from the details page of one of the original results' do
-    #organization = FactoryGirl.create(:organization)
-    #query = Organization::get("51a9fd0328217f89770001b2")
     search_and_visit_details
     find("#detail-screen").find("nav").find("a").click
     expect(page).to have_content("Showing 2 of 2 results matching 'library' within 2 miles of '94010'")

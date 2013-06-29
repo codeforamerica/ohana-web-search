@@ -4,46 +4,41 @@ feature 'Visitor performs search on home page' do
   scenario 'with valid ZIP code' do
     search_for_address "94403"
 
-    expect(page).to have_content("Showing 30 of 62 results within 1 mile of '94403'")
+    expect(page).to have_content("Showing 30 of 62 results within 2 miles of '94403'")
     find_field("location").value.should == "94403"
   end
 
-# TODO - implement the following tests when the Ohana API returns a bad request for these searches
-
-  xscenario 'with numerical-only address greater than 5 digits' do
+  scenario 'with numerical-only address greater than 5 digits' do
     search_for_address '123456'
-
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '123456'")
   end
 
-  xscenario 'with numerical-only address less than 5 digits' do
+  scenario 'with numerical-only address less than 5 digits' do
     search_for_address '1236'
-
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '1236'")
   end
 
-  xscenario 'with numerical-only address that starts with 4 zeros or more' do
+  scenario 'with numerical-only address that starts with 4 zeros or more' do
     search_for_address '00000'
-
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '00000'")
   end
 
-  xscenario 'with only 1 word that contains numbers and letters' do
+  scenario 'with only 1 word that contains numbers and letters' do
     search_for_address '0000f'
 
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '0000f'")
   end
 
-  xscenario 'with a 5-digit zip code that does not exist' do
+  scenario 'with a 5-digit zip code that does not exist' do
     search_for_address '11111'
 
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '11111'")
   end
 
-  xscenario 'with a zip code containing dash' do
+  scenario 'with a zip code containing dash' do
     search_for_address '11111-1'
 
-    expect(page).to have_content('Please enter a full address or a valid 5-digit ZIP code.')
+    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '11111-1'")
   end
 
 =begin
