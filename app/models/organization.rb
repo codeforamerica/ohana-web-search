@@ -1,46 +1,4 @@
 class Organization
-  include Mongoid::Document
-  field :accessibility_options, type: Array
-  field :agency, type: String
-  field :ask_for, type: Array
-  field :city, type: String
-  field :coordinates, type: Array
-  field :description, type: String
-  field :eligibility_requirements, type: String
-  field :emails, type: Array
-  field :faxes, type: Array
-  field :fees, type: String
-  field :funding_sources, type: Array
-  field :how_to_apply, type: String
-  field :keywords, type: Array
-  field :languages_spoken, type: Array
-  field :leaders, type: Array
-  field :market_match, type: Boolean
-  field :name, type: String
-  field :payments_accepted, type: Array
-  field :phones, type: Array
-  field :products_sold, type: Array
-  field :schedule, type: String
-  field :service_areas, type: Array
-  field :service_hours, type: String
-  field :service_wait, type: String
-  field :services_provided, type: String
-  field :state, type: String
-  field :street_address, type: String
-  field :target_group, type: String
-  field :transportation_availability, type: String
-  field :ttys, type: Array
-  field :urls, type: Array
-  field :zipcode, type: String
-
-  validates_presence_of :name
-
-  include Geocoder::Model::Mongoid
-  geocoded_by :address               # can also be an IP address
-
-  scope :find_by_keyword,  lambda { |keyword| any_of({name: /\b#{keyword}\b/i}, {keywords: /\b#{keyword}\b/i}, {agency: /\b#{keyword}\b/i}) }
-  scope :find_by_location, lambda {|location, radius| near(location, radius) }
-  default_scope order_by(:name => :asc)
 
   #combines address fields together into one string
   def address

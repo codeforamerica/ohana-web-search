@@ -21,26 +21,11 @@ gem 'ohanakapa', :git => "https://github.com/codeforamerica/ohanakapa-ruby.git",
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
 
-# testing
-gem 'yard' #for code documentation
-gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem 'coveralls', require: false
-
-group :test do
-	gem "database_cleaner", ">= 1.0.0.RC1"
-	gem "mongoid-rspec", ">= 1.7.0"
-	gem "email_spec", ">= 1.4.0"
-	gem "cucumber-rails", ">= 1.3.1", :require => false
-	gem "launchy", ">= 2.2.0"
-	gem "capybara", ">= 2.0.3"
+group :development, :test do
+	gem 'coveralls', require: false
+	gem "rspec-rails", ">= 2.12.2"
+	gem 'yard' #for code documentation
 end
-
-# authentication
-gem "omniauth", ">= 1.1.3"
-gem "omniauth-google-oauth2"
-gem "cancan", ">= 1.6.9"
-gem "rolify", ">= 3.2.0"
 
 # dev and debugging tools
 group :development do
@@ -50,7 +35,8 @@ group :development do
 	gem "metric_fu"
 end
 
-gem "geocoder", :git => 'git://github.com/alexreisner/geocoder.git'
-gem "area"
-gem "validates_formatting_of"
-gem "redis"
+group :test do
+	gem "cucumber-rails", ">= 1.3.1", :require => false
+	gem "launchy", ">= 2.2.0"
+	gem "capybara", ">= 2.0.3"
+end

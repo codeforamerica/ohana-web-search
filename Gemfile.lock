@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/alexreisner/geocoder.git
-  revision: 80777e93aaa1accb18cdc323eb2798d4f242c90f
-  specs:
-    geocoder (1.1.8)
-
-GIT
   remote: https://github.com/codeforamerica/ohanakapa-ruby.git
   revision: e94a9bbfb9e77dd5d332853d189466b8bb4ef3e5
   branch: master
@@ -46,8 +40,6 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     addressable (2.3.5)
-    area (0.10.0)
-      fastercsv (~> 1.5)
     arel (3.0.2)
     arrayfields (4.7.4)
     awesome_print (1.1.0)
@@ -58,7 +50,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bluff (0.1.0)
     builder (3.0.4)
-    cancan (1.6.10)
     cane (2.5.2)
       parallel
     capybara (2.1.0)
@@ -96,25 +87,15 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (~> 3.0)
-    database_cleaner (1.0.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
-    email_spec (1.4.0)
-      launchy (~> 2.1)
-      mail (~> 2.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.2.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.2.1)
-      factory_girl (~> 4.2.0)
-      railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
-    fastercsv (1.5.5)
     fattr (2.2.1)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -137,7 +118,6 @@ GEM
     hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
-    httpauth (0.2.0)
     i18n (0.6.1)
     japgolly-Saikuro (1.1.1.0)
     journey (1.0.4)
@@ -146,8 +126,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.0)
     json_pure (1.8.0)
-    jwt (0.1.8)
-      multi_json (>= 1.5)
     kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
@@ -184,37 +162,11 @@ GEM
       ruby_parser
     mime-types (1.23)
     mini_portile (0.5.0)
-    mongoid (3.1.4)
-      activemodel (~> 3.2)
-      moped (~> 1.4)
-      origin (~> 1.0)
-      tzinfo (~> 0.3.22)
-    mongoid-rspec (1.8.2)
-      mongoid (>= 3.0.1)
-      rake
-      rspec (>= 2.9)
-    moped (1.5.0)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     newrelic_rpm (3.6.5.130)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    oauth2 (0.8.1)
-      faraday (~> 0.8)
-      httpauth (~> 0.1)
-      jwt (~> 0.1.4)
-      multi_json (~> 1.0)
-      rack (~> 1.2)
-    omniauth (1.1.4)
-      hashie (>= 1.2, < 3)
-      rack
-    omniauth-google-oauth2 (0.2.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2
-    omniauth-oauth2 (1.1.1)
-      oauth2 (~> 0.8.0)
-      omniauth (~> 1.0)
-    origin (1.1.0)
     parallel (0.6.2)
     polyglot (0.3.3)
     progressbar (0.20.0)
@@ -255,18 +207,12 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redcard (1.1.0)
-    redis (3.0.4)
     reek (1.3.1)
       ruby2ruby (~> 2.0.2)
       ruby_parser (~> 3.1.1)
       sexp_processor
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rolify (3.2.0)
-    rspec (2.13.0)
-      rspec-core (~> 2.13.0)
-      rspec-expectations (~> 2.13.0)
-      rspec-mocks (~> 2.13.0)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -314,8 +260,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    validates_formatting_of (0.8.0)
-      activemodel (~> 3.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.8.6.2)
@@ -324,35 +268,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  area
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
-  cancan (>= 1.6.9)
   capybara (>= 2.0.3)
   coveralls
   cucumber-rails (>= 1.3.1)
-  database_cleaner (>= 1.0.0.RC1)
-  email_spec (>= 1.4.0)
-  factory_girl_rails (>= 4.2.0)
   figaro (>= 0.6.3)
-  geocoder!
   haml-rails
   jquery-rails
   launchy (>= 2.2.0)
   metric_fu
-  mongoid-rspec (>= 1.7.0)
   newrelic_rpm
   ohanakapa!
-  omniauth (>= 1.1.3)
-  omniauth-google-oauth2
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
-  redis
-  rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   simple_form (>= 2.1.0)
   uglifier (>= 1.0.3)
   unicorn (>= 4.3.1)
-  validates_formatting_of
   yard
