@@ -1,10 +1,13 @@
 class ApplicationController < ActionController::Base
+  helper :format_phone
+  helper :superscript_format
+
+# not currently supporting users
+=begin
   protect_from_forgery
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
-  helper :format_phone
-  helper :superscript_format
 
   private
     def current_user
@@ -36,9 +39,6 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
   end
-
-  rescue_from Moped::Errors::OperationFailure do
-    redirect_to root_path, :alert => "Please enter a full address or a valid 5-digit ZIP code."
-  end
+=end
 
 end
