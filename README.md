@@ -17,38 +17,6 @@ Please note that the instructions below have only been tested on OS X. If you ar
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
 
 
-#### MongoDB
-**OS X**
-
-On OS X, the easiest way to install MongoDB (or almost any development tool) is with Homebrew:
-
-    brew update
-    brew install mongodb
-
-Follow the Homebrew instructions for configuring MongoDB and starting it automatically every time you restart your computer. Otherwise, you can launch MongoDB manually in a separate Terminal tab or window with this command:
-
-    mongod
-
-**Other**
-
-See the Downloads page on mongodb.org for steps to install on other systems: [http://www.mongodb.org/downloads](http://www.mongodb.org/downloads)
-
-
-#### Redis
-**OS X**
-
-On OS X, the easiest way to install Redis is with Homebrew:
-
-    brew install redis
-
-Follow the Homebrew instructions if you want Redis to start automatically every time you restart your computer. Otherwise launch Redis manually in a separate Terminal tab or window:
-
-    redis-server
-
-**Other**
-
-See the Download page on Redis.io for steps to install on other systems: [http://redis.io/download](http://redis.io/download)
-
 ### Clone the app on your local machine:
 
     git clone https://github.com/codeforamerica/human_services_finder.git
@@ -58,15 +26,6 @@ See the Download page on Redis.io for steps to install on other systems: [http:/
 
     bundle
 
-### Load the data
-You can load two datasets — farmers' markets and libraries in San Mateo County — in your local db with this command:
-
-    rake load_data
-
-Create the geospatial indices for the [geocoder](https://github.com/alexreisner/geocoder) gem:
-
-    rake db:mongoid:create_indexes
-
 ### Run the app
 Start the app locally using Unicorn:
 
@@ -75,11 +34,7 @@ Start the app locally using Unicorn:
 Ohana SMC should now be running at [http://localhost:8080](http://localhost:8080)
 
 ### Test the app
-To test locally, you will need to run this once to set up the test DB:
-
-    rake db:mongoid:create_indexes RAILS_ENV=test
-
-Then you can run tests with this simple command:
+To test locally, you can run tests with this simple command:
 
     rspec
 
@@ -95,10 +50,8 @@ To see the actual tests, browse through the [spec](https://github.com/codeforame
 
 * Ruby version 2.0.0
 * Rails version 3.2.13
-* MongoDB with the Mongoid ORM
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Factory Girl and Capybara
-* Redis
+* Testing Frameworks: RSpec and Capybara
 
 ## Contributing
 In the spirit of open source software, **everyone** is encouraged to help improve this project.
