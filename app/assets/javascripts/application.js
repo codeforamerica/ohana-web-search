@@ -10,10 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require require
-//= require jquery
-//= require web-storage-proxy
-//= require ./module/ajax
-//= require ./module/busy-manager
-//= require ./module/alert-manager
-//= require module/util
+//= require lib/require/require.min
+
+require.config({
+	baseUrl: "assets/module",
+	paths: {
+  	'jquery':'../lib/jquery.min',
+  	'domReady':'../lib/require/domReady'
+	}
+});
