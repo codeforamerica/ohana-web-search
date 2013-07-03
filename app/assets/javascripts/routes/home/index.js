@@ -3,5 +3,5 @@ require(['busy-manager','domReady!'], function(bm) {
 
   // javascript goes here!
     console.log("home screen loaded", bm);
-  
+  	bm.init();
 });

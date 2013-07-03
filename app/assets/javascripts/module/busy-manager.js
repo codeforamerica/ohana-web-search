@@ -5,6 +5,13 @@ define(function() {
 	var busyManager = {}
 	var splashScreen;
 
+	// init
+	busyManager.init = function()
+	{
+		splashScreen = document.getElementById("splash-screen");
+		busyManager.hide();
+	}
+
 	busyManager.show = function()
 	{
 		//console.log("show splash screen");
@@ -17,9 +24,5 @@ define(function() {
 		splashScreen.classList.add("hide");
 	}
 
-	// init
-	splashScreen = document.getElementById("splash-screen");
-	busyManager.hide();
-		
 	return busyManager;
 });

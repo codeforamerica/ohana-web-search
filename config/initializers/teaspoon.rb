@@ -53,6 +53,9 @@ Teaspoon.setup do |config|
     suite.no_coverage = [%r{/lib/ruby/gems/}, %r{/vendor/assets/}, %r{/support/}, %r{/(.+)_helper.}]
     # suite.no_coverage << "jquery.min.js" # excludes jquery from coverage reports
 
+    # use requirejs
+    suite.use_require = true
+
   end
 
   # Example suite. Since we're just filtering to files already within the root spec/javascripts, these files will also
