@@ -1511,22 +1511,21 @@ main
   @media only screen and (max-width: 767px) 
   {
 
-    // set width to width of screen
-    .home #search-screen {
-      min-width: 100%;
-    }
-
     // move search box and results on top of each other
-    #main-content main > *
+    .home main 
+    {
+      position:static;
+    }
+    
+    main > *
     {
       display: block;
       width: 100%;
     }
 
-
-    .home #main-content 
-    {
-      position:static;
+    // set width to width of screen
+    .home #search-screen {
+      min-width: 100%;
     }
 
     // the following are (almost) the same as the .mini styles from the fullsite size
@@ -1593,8 +1592,7 @@ main
         margin:0;
         position:static;
     }
-
-
+    
   }
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -1604,11 +1602,7 @@ main
 
   /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
   @media only screen and (max-width: 479px) {
-    #info-screen .content {
-        left: 0;
-        max-width: 100%;
-        margin: 0 auto;
-    }
+    
   }
 
 
