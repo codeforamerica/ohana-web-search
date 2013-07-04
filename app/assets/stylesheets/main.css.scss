@@ -193,7 +193,7 @@ ul
 {
     @include opacity(1);
 
-    z-index:999999 !important;
+    z-index:9998 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -203,7 +203,7 @@ ul
 {
     @include opacity(0);
 
-    z-index:-999999 !important;
+    z-index:-9998 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -214,7 +214,7 @@ ul
 {
     @include opacity(1);
 
-    z-index:999999 !important;
+    z-index:9998 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -225,7 +225,7 @@ ul
 {
     @include opacity(0);
 
-    z-index:-999999 !important;
+    z-index:-9998 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -262,7 +262,7 @@ ul
 // splashscreen styles
 #busy-screen
 {
-    z-index: 999999;
+    z-index: 9999;
     
     top: 0;
     left: 0;
@@ -333,7 +333,7 @@ ul
 /*#busy-screen
 {
     position:absolute;
-    z-index: 999999;
+    z-index: 9999;
     top:0;
     right:0;
     bottom:0;
@@ -378,7 +378,7 @@ ul
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 999999;
+    z-index: 9999;
     cursor:default; 
     font-size:11px;
     font-style: normal;
@@ -456,7 +456,7 @@ ul
 header
 {
     position:relative;
-    z-index:99998;
+    z-index:9999;
 
     width: 100%;
     background:$white;
@@ -509,6 +509,8 @@ header *
 // main content box
 main
 {
+    position:relative;
+    z-index:9998;
     display: table;
     width: 100%;
     height: 100%;
@@ -569,7 +571,7 @@ main
     margin-left:-250px;
     left:50%;
     position:absolute;
-    z-index: 99997;
+    z-index: 9997;
 }
 
 #alert-box .alert
@@ -1516,7 +1518,7 @@ main
     {
       position:static;
     }
-    
+
     main > *
     {
       display: block;

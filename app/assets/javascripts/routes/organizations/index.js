@@ -1,18 +1,23 @@
-require(['module/busy-manager',
-				 'module/info-screen-manager',
-				 'module/alert-manager',
-				 'module/search-op-manager',
-				 'module/popup-manager',
-				 'module/map-view-manager',
-				 'module/result-view-manager',
-				 'module/result-sort-manager',
-				 'module/distance-manager',
-				 'module/ajax-search',
+require(['busy-manager',
+				 'ajax-search',
+				 'result-view-manager',
 				 'domReady!'], 
-	function(bm,ism,am,som,pm,mvm,rvm,rsm,dm,as) {
+	function(bm,as,rvm) {
   'use strict';
 
   // javascript goes here!
-    console.log("results screen loaded", bm,ism,am,som,pm,mvm,rvm,rsm,dm,as);
-  
+  bm.init();
+  //  console.log("results screen loaded", bm,ism,am,som,pm,mvm,rvm,rsm,dm,as);
+  console.log("results screen loaded", bm,as,rvm)
 });
+
+/*
+				 'info-screen-manager',
+				 'alert-manager',
+				 'search-op-manager',
+				 'popup-manager',
+				 'map-view-manager',
+				 'result-sort-manager',
+				 'distance-manager',
+				 'ajax-search',
+*/

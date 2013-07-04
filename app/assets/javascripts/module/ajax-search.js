@@ -1,8 +1,8 @@
-// handles ajax functionality
-var module = (function (module) {
-
-	module.ajaxSearch = (function (ajaxSearch) {
-
+// handles ajax search functionality
+define(['ajax','util','map-view-manager','result-view-manager'],
+	function(ajax,mapViewManager,resultViewManager) {
+  'use strict';
+	
 		var busyScreen;
 		var nextBtn;
 		var prevBtn;
@@ -12,17 +12,17 @@ var module = (function (module) {
 		// search parameter values
 		var keyword,location,radius,page;
 
-		ajaxSearch.init = function()
+		function init()
 		{
 			searchScreen = document.getElementById('search-content');
 
-			initPagination();
+			_initPagination();
 
-			document.getElementById('find-btn').addEventListener("click",ajaxClickHandler,false);
-			document.getElementById('radius').addEventListener("change",ajaxClickHandler,false);
+			document.getElementById('find-btn').addEventListener("click",_ajaxClickHandler,false);
+			document.getElementById('radius').addEventListener("change",_ajaxClickHandler,false);
 		}
 
-		function ajaxClickHandler(evt)
+		function _ajaxClickHandler(evt)
 		{
 			busyScreen = document.createElement('div');
 			busyScreen.id = 'busy-screen';
@@ -42,60 +42,59 @@ var module = (function (module) {
 										'page':page
 										}
 			
-			var query = '/organizations/'+module.util.queryString(values);
+			var query = '/organizations/'+util.queryString(values);
 			var callback = {
 				'done' : success,
 				'fail' : failure
 			}
 
-			module.ajax.request(query, callback);
+			ajax.request(query, callback);
 			window.history.pushState({},"", query);
 		}
 
-		function initPagination()
+		function _initPagination()
 		{
 			nextBtn = document.querySelector('.pagination.next');
 			prevBtn = document.querySelector('.pagination.prev');
 
 			if (nextBtn && prevBtn)
 			{
-				nextBtn.addEventListener("click",nextPageHandler,false);
-				prevBtn.addEventListener("click",prevPageHandler,false);
+				nextBtn.addEventListener("click",_nextPageHandler,false);
+				prevBtn.addEventListener("click",_prevPageHandler,false);
 			}
 		}
 
-		function nextPageHandler(evt)
+		function _nextPageHandler(evt)
 		{
 			evt.preventDefault();
 			var page = document.getElementById("page-number").value;
 			document.getElementById("page-number").value = Number(page)+1;
-			ajaxClickHandler(evt);
+			_ajaxClickHandler(evt);
 		}
 
-		function prevPageHandler(evt)
+		function _prevPageHandler(evt)
 		{
 			evt.preventDefault();
 			var page = document.getElementById("page-number").value;
 			document.getElementById("page-number").value = Number(page)-1;
-			ajaxClickHandler(evt);
+			_ajaxClickHandler(evt);
 		}
 
-		function success(evt)
+		function _success(evt)
 		{
 			searchScreen.innerHTML = evt.content;
-			module.mapViewManager.init(); // re-initialize map view
-			module.resultViewManager.init();
-			initPagination();
+			mapViewManager.init(); // re-initialize map view
+			resultViewManager.init();
+			_initPagination();
 		}
 
-		function failure(evt)
+		function _failure(evt)
 		{
 			console.log('ajaxsearch failure',evt);
 			searchScreen.removeChild(busyScreen);
 		}
 
-		return ajaxSearch;
-	})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});

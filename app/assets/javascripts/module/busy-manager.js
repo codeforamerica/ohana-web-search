@@ -1,7 +1,7 @@
+// manages showing and hiding of busy screen
 define(function() {
   'use strict';
 	
-	// manages showing and hiding of busy screen
 	var view;
 	var main;
 

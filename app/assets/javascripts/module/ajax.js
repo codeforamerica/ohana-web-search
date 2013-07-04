@@ -1,35 +1,28 @@
 // handles ajax functionality
-var module = (function (module) {
+define(['jquery'],function($) {
+  'use strict';
 
-	module.ajax = (function (ajax) {
-
-		ajax.init = function()
-		{
-			
-		}
-
-		ajax.request = function(query,callback)
+		function request(query,callback)
 		{
 			console.log("ajax request",query)
 			if (callback)
 				$.ajax(query).done(callback.done).fail(callback.fail)
 			else
-				$.ajax(query).done(success).fail(failure);
+				$.ajax(query).done(_success).fail(_failure);
 		}
 
 		// default callbacks
-		function success(evt)
+		function _success(evt)
 		{
 			console.log('success',evt);
 		}
 
-		function failure(evt)
+		function _failure(evt)
 		{
 			console.log('error',evt);
 		}
 
-		return ajax;
-	})({});
-
-	return module;
-})(module || {})
+	return {
+		request:request
+	};
+});

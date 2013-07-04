@@ -1,8 +1,7 @@
 // manages behavior of results view list vs maps setting
-var module = (function (module) {
-
-	module.resultViewManager = (function (resultViewManager) {
-
+define(['web-storage-proxy'],function(webStorageProxy) {
+  'use strict';
+	
 		// PRIVATE PROPERTIES
 		var listViewButton; 
 		var mapViewButton;
@@ -10,10 +9,10 @@ var module = (function (module) {
 		var mapView;
 		var selected;
 
-		resultViewManager.storageName = "resultviewpref";
+		var storageName = "resultviewpref";
 
 		// PUBLIC METHODS
-		resultViewManager.init = function()
+		function init()
 		{
 			listViewButton = document.getElementById("list-view-btn");
 			mapViewButton = document.getElementById("map-view-btn");
@@ -24,10 +23,10 @@ var module = (function (module) {
 			// checks that required elements exist on the page.
 			if ( listViewButton && mapViewButton && listView  && mapView )
 			{
-				listViewButton.addEventListener( "mousedown" , listClickHandler , false);
-				mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+				listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
 
-				if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
+				if (webStorageProxy.getItem(storageName) == "list"){
 					selected = listViewButton;
 					mapViewButton.disabled = "";
 				}else{
@@ -50,20 +49,19 @@ var module = (function (module) {
 		}
 
 		// PRIVATE METHODS
-		function listClickHandler(evt)
+		function _listClickHandler(evt)
 		{
-			webStorageProxy.setItem(resultViewManager.storageName , "list");
-			resultViewManager.init();
+			webStorageProxy.setItem(storageName , "list");
+			init();
 		}
 
-		function mapClickHandler(evt)
+		function _mapClickHandler(evt)
 		{
-			webStorageProxy.setItem(resultViewManager.storageName , "map");
-			resultViewManager.init();
+			webStorageProxy.setItem(storageName , "map");
+			init();
 		}
 
-		return resultViewManager;
-		})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});

@@ -6,25 +6,25 @@
 // 'true' value).
 // Note that values stored in local storage are not accessible from session storage and 
 // vice versa. They both work on different objects within the browser.
-var webStorageProxy = (function(){
-  var webStorageProxy = {};
-
+define(function() {
+  'use strict';
+	
 	// set an item value specified by the key. Returns the value.
-	webStorageProxy.setItem = function(key, value, sessionOnly) {
+	function setItem(key, value, sessionOnly) {
 		var storage = _sessionOrLocal(sessionOnly);
 		storage.setItem(key,value);
 		return value;
 	}
 	
 	// get an item specified by the key. Returns null if the item has no value.
-	webStorageProxy.getItem = function(key, sessionOnly) {
+	function getItem(key, sessionOnly) {
 		var storage = _sessionOrLocal(sessionOnly);
 		return storage.getItem(key);
 	}
 	
 	// remove an item specified by the key. Returns true if the item existed and it was
 	// removed. Returns false if the item didn't exist to begin with.
-	webStorageProxy.removeItem = function(key, sessionOnly) {
+	function removeItem(key, sessionOnly) {
 		var storage = _sessionOrLocal(sessionOnly);
 		var returnVal = true;
 		if (!storage.getItem(key)) returnVal = false;		
@@ -41,5 +41,10 @@ var webStorageProxy = (function(){
 		return storage;
 	}
 	
-  return webStorageProxy;
-})();
+
+	return {
+		setItem:setItem,
+		getItem:getItem,
+		removeItem:removeItem
+	};
+});
