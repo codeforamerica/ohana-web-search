@@ -2,27 +2,29 @@ define(function() {
   'use strict';
 	
 	// manages showing and hiding of splash screen
-	var busyManager = {}
-	var splashScreen;
+	var view;
 
 	// init
-	busyManager.init = function()
+	function init()
 	{
-		splashScreen = document.getElementById("splash-screen");
-		busyManager.hide();
+		//console.log(fragment);
+		view = document.getElementById("splash-screen");
+		hide();
 	}
 
-	busyManager.show = function()
+	function show(message)
 	{
-		//console.log("show splash screen");
-		splashScreen.classList.remove("hide");
+		view.classList.remove('hide');
 	}
 	
-	busyManager.hide = function()
+	function hide()
 	{
-		//console.log("hide splash screen");
-		splashScreen.classList.add("hide");
+		view.classList.add('hide');
 	}
 
-	return busyManager;
+	return {
+		init:init,
+		show:show,
+		hide:hide
+	};
 });

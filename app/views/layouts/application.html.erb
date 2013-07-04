@@ -25,10 +25,8 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-
-  <section id="splash-screen">
-    <h1>Loading...</h1>
-  </section>
+    
+  <%= render 'component/splash' %>
 
   <section id="main-header">
         <header id="utility-screens">
