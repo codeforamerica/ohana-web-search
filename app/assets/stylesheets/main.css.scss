@@ -4,6 +4,9 @@
 @import "compass/css3/images";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
+@import "compass/css3/filter";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
 
 
 /*
@@ -138,7 +141,7 @@ $serif_font: 'Average', serif;
 $san_serif_font: "Open Sans", Arial, sans-serif;
 
 //animation settings
-$default_duration: 250ms;
+$default_duration: 500ms;
 
 //=================================================================================
 
@@ -180,9 +183,7 @@ ul
     z-index:999999 !important;
     position:relative;
     
-    -webkit-transition: opacity $default_duration, z-index $default_duration;
-    -moz-transition: opacity $default_duration, z-index $default_duration;
-    transition: opacity $default_duration, z-index $default_duration;
+    @include transition(opacity $default_duration, z-index $default_duration);
 }
 
 .fade-out
@@ -192,9 +193,21 @@ ul
     z-index:-999999 !important;
     position:relative;
     
-    -webkit-transition: opacity $default_duration, z-index $default_duration;
-    -moz-transition: opacity $default_duration, z-index $default_duration;
-    transition: opacity $default_duration, z-index $default_duration;
+    @include transition(opacity $default_duration, z-index $default_duration);
+}
+
+.blur
+{
+    @include filter(blur(4px));
+
+    @include transition(filter $default_duration);
+}
+
+.unblur
+{
+    @include filter(blur(0px));
+
+    @include transition(filter $default_duration);
 }
 
 .slide-up
@@ -211,11 +224,7 @@ ul
 
 //=================================================================================
 // splashscreen styles
-#splash-screen {
-    @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
-}
-
-#splash-screen.fullscreen
+#busy-screen
 {
     z-index: 999999;
     
@@ -224,30 +233,59 @@ ul
     right: 0;
     bottom: 0;
 
-    position: fixed;
+    position: absolute;
+
+    background:$blue_dark;
 }
 
-#splash-screen h1
+#busy-screen > div
 {
-    background:$white_alpha70;
+    background:$white;
     padding:20px;
-    width:120px;
+    padding-top:10px;
+    width:80px;
     height:30px;
 
     position: absolute;
     top:50%;
     left:50%;
-    margin-left:-60px;
+    margin-left:-40px;
     margin-top:-15px;
-    font-size:24px;
-
-    letter-spacing:2px;
 
     @include single-box-shadow();
     @include border-radius();
+    @include background( linear-gradient(top, $white 50%, $greyscale_midtone) );
 }
 
-#busy-screen
+#busy-screen h1
+{
+    font-size:18px;
+    text-align:center;
+    color:$black_alpha60;
+}
+
+#busy-screen .status 
+{
+    border: 3px solid $black_alpha60;
+    opacity: .9;
+    border-top: 3px solid $black_alpha10;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    -moz-animation: spin 1s infinite linear;
+    -webkit-animation: spin 1s infinite linear;
+}
+
+@-webkit-keyframes spin
+{
+    from { @include rotate(0deg) }
+    to { @include rotate(360deg) }
+}
+
+//=================================================================================
+// busy-screen styles - ajax
+/*#busy-screen
 {
     position:absolute;
     z-index: 999999;
@@ -272,7 +310,7 @@ ul
     text-align:center;
     font-size:24px;
     box-shadow:0px 0px 30px $black_alpha60;
-}
+}*/
 
 //=================================================================================
 // popup styles - not currently used
@@ -835,17 +873,7 @@ ul
 // search screen styles
 .home main
 {
-    background:$blue_midtone;
-
-    background: $blue_midtone; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  $blue_midtone 20%, $blue_dark 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%,$blue_midtone), color-stop(100%,$blue_dark)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  $blue_midtone 20%,$blue_dark 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  $blue_midtone 20%,$blue_dark 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0596d5', endColorstr='#03497e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
 }
 
 main
