@@ -25,7 +25,7 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    
+
   <%= render 'component/splash' %>
 
   <section id="main-header">
@@ -35,8 +35,8 @@
                     <a href="/">OhanaSMC</a>
                 </h1>
                 <button id="info-screen-btn">?</button>
+                <a href="/about" id="about-screen-btn">About</a>
             </nav>            
-            <%= render 'component/site_info' %>
         </header>
     </section>
         <%= render 'component/alert' %>
