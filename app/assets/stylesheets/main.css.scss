@@ -8,6 +8,7 @@
 @import "compass/css3/transform";
 @import "compass/css3/transition";
 @import "compass/css3/box-sizing";
+@import "compass/css3/opacity";
 
 
 /*
@@ -182,13 +183,13 @@ ul
 
 .transparent
 {
-    opacity:0;
+    @include opacity(0);
 }
 
 // fading styles
 .fade-in
 {
-    opacity:1;
+    @include opacity(1);
 
     z-index:999999 !important;
     position:relative;
@@ -198,7 +199,7 @@ ul
 
 .fade-out
 {
-    opacity:0;
+    @include opacity(0);
 
     z-index:-999999 !important;
     position:relative;
@@ -209,7 +210,7 @@ ul
 // delayed fading styles that trigger at a delay equal to 1/2 the duration of the fading styles
 .fade-in-delay
 {
-    opacity:1;
+    @include opacity(1);
 
     z-index:999999 !important;
     position:relative;
@@ -220,7 +221,7 @@ ul
 
 .fade-out-delay
 {
-    opacity:0;
+    @include opacity(0);
 
     z-index:-999999 !important;
     position:relative;
@@ -301,7 +302,7 @@ ul
 #busy-screen .status 
 {
     border: 3px solid $black_alpha60;
-    opacity: .9;
+    @include opacity(0.9);
     border-top: 3px solid $black_alpha10;
     border-radius: 50px;
     width: 10px;
@@ -1121,7 +1122,7 @@ main
     overflow: hidden;
     position: relative;
     top: 2px;
-    opacity: 0.5;
+    @include opacity(0.5);
     position:relative;
 }
 
