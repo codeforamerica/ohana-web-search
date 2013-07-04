@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # front end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'haml-rails'
   gem "simple_form", ">= 2.1.0"
