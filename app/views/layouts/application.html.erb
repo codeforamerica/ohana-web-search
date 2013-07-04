@@ -30,6 +30,8 @@
   
   <section id="content">
     <script>
+      // dynamically add transparent class so content shows up
+      // when JavaScript is disabled
       document.getElementById('content').classList.add('transparent');
     </script>    
 
@@ -39,18 +41,18 @@
         <ul>
           <li><a title="Help" href="/about" id="about-screen-btn">About</a>
           <li><a title="Contribute" href="#">Contribute</a>
-          <li><a title="Help" href="#">Help</a>
+          <li><a title="Help" href="#">Feedback</a>
         </ul>      
       </nav>
     </header>
 
     <%= render 'component/alert' %>
 
-    <section id="main-content">
     <main>
+      <div>
             <%= yield %>
+      </div>      
     </main>
-    </section>
 
   </section>
 

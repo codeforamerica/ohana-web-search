@@ -7,6 +7,7 @@
 @import "compass/css3/filter";
 @import "compass/css3/transform";
 @import "compass/css3/transition";
+@import "compass/css3/box-sizing";
 
 
 /*
@@ -306,8 +307,16 @@ ul
     width: 10px;
     height: 10px;
     margin: 0 auto;
+
+    animation: spin 1s infinite linear;
     -moz-animation: spin 1s infinite linear;
     -webkit-animation: spin 1s infinite linear;
+}
+
+@keyframes spin
+{
+    from { @include rotate(0deg) }
+    to { @include rotate(360deg) }
 }
 
 @-webkit-keyframes spin
@@ -433,6 +442,13 @@ ul
 */
 
 //=================================================================================
+// content area
+#content
+{
+    height:100%;
+}
+
+//=================================================================================
 // logo/header area
 header
 {
@@ -444,6 +460,7 @@ header
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
     border-bottom:1px solid $blue_midtone_alpha30;
     padding:10px;
+    @include box-sizing(border-box);
 
     font-size:10px;
 }
@@ -465,7 +482,7 @@ header a:hover
 header nav
 {
     position:absolute;
-    right:40px;
+    right:10px;
     top:0px;
     font-size:14px;
 }
@@ -480,134 +497,62 @@ header *
     display:inline-block;
 }
 
-/*
-header .mini 
-#logo a
-{
-    color:$blue_light;
-    text-decoration:none;
-    display:block;
-}
-
-
-header #logo a
-{
-    font-size:1.4em;
-    color:$black_alpha40;
-    padding:10px;
-    padding-left:13px;
-    text-decoration:none;
-    display:inline-block;
-}
-*/
-
-
 
 //=================================================================================
-// utility area
-#utility-screens
+// main content box
+main
 {
-    position:relative;
-    width:100%;
-}
-
-/* not currently used */
-/*
-#utility-screens section
-{
-    display:inline-block;
-    text-align:left;
-}
-
-#utility-screens nav > *
-{
-    display: inline-block;
-}
-
-#utility-screens nav *.fixed
-{
-    position:absolute;
-    right:10px;
-    z-index: 999999;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background: $blue_dark;
+    display: table;
+    width: 100%;
     height: 100%;
-    padding: 10px;
-    padding-right: 20px;
-    border-left:1px dotted $black;
-    box-shadow: 0px 0px 20px $black_alpha40;
 }
 
-#utility-screens footer
+.home main
 {
-    position:fixed;
-    bottom:10px;
-    right:10px;
+    min-height:100%;
+    position:absolute;
+    right:0;
+    left:0;
+    top:0;
+    bottom:0;
+    @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
 }
-*/
 
-#utility-screens button
+main > div
 {
-    position: relative;
-    top:-3px;
-    display:block;
-    border-radius: 3px;
-    line-height:23px;
-    height:25px;
-    min-width:25px;
-    box-shadow: 0 1px 4px $black_alpha40;
-    font-family: $san_serif_font;
-    font-size:14px;
-    background: $blue_dark;
-    color:$white;
-    cursor:pointer;
-    text-align: center;
-    border:0px;
-    border-collapse:collapse;
-
-    font-size:10px;
-    background: $blue_light;
-    color:$black;
-    font-size:16px;
+    display:table-row;
 }
 
-#utility-screens button.over
+main > div > *
 {
-    color:$white;
-    background: $blue_midtone;
-
-    -webkit-transition: color $default_duration;
-    -moz-transition: color $default_duration;
-    transition: color $default_duration;
-
-    -webkit-transition: background $default_duration;
-    -moz-transition: background $default_duration;
-    transition: background $default_duration;
+    display:table-cell;
+    height: 100%;
 }
 
-#utility-screens button.disabled
+//=================================================================================
+// search screen styles
+.home main
 {
-    background: $greyscale_light;
-    color: $black_alpha40;
-    cursor:default;
+    
 }
 
-#utility-screens a
+main
 {
-    text-decoration: none;
+    background:$blue_light_alpha40;
+    position:relative;
 }
 
-#utility-screens nav > *
+.home #search-screen
 {
-    display:inline-block;
+    min-width:664px;
+    position:relative;
+    height:100%;
 }
 
-#utility-screens nav > h1
-{
-    font-size:18px;
-}
+
+
+
+
 
 //=================================================================================
 // alert messages
@@ -669,132 +614,6 @@ header #logo a
     -webkit-transition: background $default_duration;
     -moz-transition: background $default_duration;
     transition: background $default_duration;
-}
-
-//=================================================================================
-// help/info box
-#info-screen
-{
-    background: $black_alpha40;
-    position:fixed;
-    z-index: 999998;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-}
-
-#info-screen.mini
-{
-    opacity:0;
-    cursor: auto;
-    pointer-events:none;
-    margin-top: -9999px;
-    
-    -webkit-transition: opacity $default_duration, margin-top 1ms;
-    -moz-transition: opacity $default_duration, margin-top 1ms;
-    transition: opacity $default_duration, margin-top 1ms;
-
-    transition-delay: 0, $default_duration;
-}
-
-#info-screen.max
-{
-    opacity:1;
-    pointer-events:auto;
-    cursor: pointer;
-    
-    -webkit-transition: opacity $default_duration;
-    -moz-transition: opacity $default_duration;
-    transition: opacity $default_duration;
-}
-
-#info-screen .content
-{
-    background:$blue_light;
-    position: absolute;
-    left:50%;
-    margin-left:-275px;
-    width:550px;
-    
-    font-family: "Open Sans", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    box-sizing: border-box;
-
-    border-radius: 3px;
-    padding: 10px 20px 20px 20px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px $black_alpha40;
-}
-
-#info-screen.min .content
-{
-    top:-99999px;
-    
-    -webkit-transition: top $default_duration;
-    -moz-transition: top $default_duration;
-    transition: top $default_duration;
-}
-
-#info-screen.max .content
-{
-    top:-10px;
-
-    -webkit-transition: top $default_duration;
-    -moz-transition: top $default_duration;
-    transition: top $default_duration;
-}
-
-#info-screen .content h1
-{
-    font-size: 20px;
-    margin-top: 20px;
-    font-family: $serif_font;
-}
-
-#info-screen .content a:hover
-{
-    text-decoration: underline;
-}    
-
-#info-screen .close
-{
-    color: $white;
-    font-weight:bold;
-    font-size:16px;
-    background:$black_alpha40;
-    padding:5px;
-    border-radius:5px;
-    height: 10px;
-    width: 10px;
-    display: inline-block;
-    line-height: 10px;
-    cursor:pointer;
-    margin-top:20px;
-    float:right;
-    text-align:center;
-    font-family:$serif_font;
-}
-
-#info-screen a.close:hover
-{
-    text-decoration: none;
-}
-
-#info-screen .close:hover
-{
-    background:$black_alpha60;
-
-    -webkit-transition: background $default_duration;
-    -moz-transition: background $default_duration;
-    transition: background $default_duration;
-}
-
-#info-screen hr
-{
-    border-color:$black_alpha40;
-    border-style:dotted;
 }
 
 //=================================================================================
@@ -882,65 +701,6 @@ header #logo a
     padding:10px;
     border: 1px solid $black_alpha40;
     margin: 10px;
-}
-
-
-//=================================================================================
-// main content box
-#main-content
-{
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-
-#main-content main
-{
-    display:table-row;
-}
-
-#main-content main > *
-{
-    display:table-cell;
-    height: 100%;
-}
-
-#main-content
-{
-    transition: min-height 0.25s;
-    -webkit-transition: min-height 0.25s; /* Safari */
-
-    min-height:100px;
-}
-
-.home #main-content
-{
-    min-height:100%;
-    position:absolute;
-    right:0;
-    left:0;
-    top:0;
-    bottom:0;
-}
-
-//=================================================================================
-// search screen styles
-.home main
-{
-    @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
-}
-
-main
-{
-    background:$blue_light_alpha40;
-    position:relative;
-}
-
-.home #search-screen
-{
-    min-width:664px;
-    position:relative;
-    height:100%;
 }
 
 
