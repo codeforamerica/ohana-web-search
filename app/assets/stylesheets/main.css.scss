@@ -142,6 +142,7 @@ $san_serif_font: "Open Sans", Arial, sans-serif;
 
 //animation settings
 $default_duration: 500ms;
+$short_duration: 250ms;
 
 //=================================================================================
 
@@ -194,6 +195,28 @@ ul
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
+}
+
+.fade-in-delay
+{
+    opacity:1;
+
+    z-index:999999 !important;
+    position:relative;
+    
+    @include transition(opacity $default_duration, z-index $default_duration);
+    @include transition-delay($short_duration);
+}
+
+.fade-out-delay
+{
+    opacity:0;
+
+    z-index:-999999 !important;
+    position:relative;
+    
+    @include transition(opacity $default_duration, z-index $default_duration);
+    @include transition-delay($short_duration);
 }
 
 .blur
@@ -254,7 +277,7 @@ ul
 
     @include single-box-shadow();
     @include border-radius();
-    @include background( linear-gradient(top, $white 50%, $greyscale_midtone) );
+    @include background( radial-gradient($white 30%, $greyscale_light 100%) );
 }
 
 #busy-screen h1
