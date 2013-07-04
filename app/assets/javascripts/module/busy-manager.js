@@ -10,7 +10,7 @@ define(function() {
 	{
 		//console.log(fragment);
 		view = document.getElementById("busy-screen");
-		main = document.getElementById("search-content");
+		main = document.getElementById("content");
 		hide();
 	}
 

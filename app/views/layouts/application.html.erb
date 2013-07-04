@@ -25,22 +25,33 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-
-  <header>
-    <h1 id="logo"><a href="/">OhanaSMC</a></h1>
-    <nav>
-      <button id="info-screen-btn">?</button>
-      <a href="/about" id="about-screen-btn">About</a>
-    </nav>
-  </header>
-
+  
   <%= render 'component/busy' %>
-  <%= render 'component/alert' %>
+  
+  <section id="content">
+    <script>
+      document.getElementById('content').classList.add('transparent');
+    </script>    
 
-  <section id="main-content">
-  <main>
-          <%= yield %>
-  </main>
+    <header>
+      <h1 id="logo"><a href="/">OhanaSMC</a></h1>
+      <nav>
+        <ul>
+          <li><a title="Help" href="/about" id="about-screen-btn">About</a>
+          <li><a title="Contribute" href="#">Contribute</a>
+          <li><a title="Help" href="#">Help</a>
+        </ul>      
+      </nav>
+    </header>
+
+    <%= render 'component/alert' %>
+
+    <section id="main-content">
+    <main>
+            <%= yield %>
+    </main>
+    </section>
+
   </section>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -166,6 +166,13 @@ ul
 }
 
 //=================================================================================
+// icons
+.ohana-icon:before {
+    content: attr(data-icon);
+    font-family:"OhanaIcons";
+}
+
+//=================================================================================
 // effects styles
 .hide
 {
@@ -177,6 +184,7 @@ ul
     opacity:0;
 }
 
+// fading styles
 .fade-in
 {
     opacity:1;
@@ -197,6 +205,7 @@ ul
     @include transition(opacity $default_duration, z-index $default_duration);
 }
 
+// delayed fading styles that trigger at a delay equal to 1/2 the duration of the fading styles
 .fade-in-delay
 {
     opacity:1;
@@ -287,6 +296,7 @@ ul
     color:$black_alpha60;
 }
 
+// the spinning wheeel
 #busy-screen .status 
 {
     border: 3px solid $black_alpha60;
@@ -423,38 +433,55 @@ ul
 */
 
 //=================================================================================
-// icons
-.ohana-icon:before {
-    content: attr(data-icon);
-    font-family:"OhanaIcons";
-}
-
-//=================================================================================
 // logo/header area
-#main-header
+header
 {
     position:relative;
     z-index:99998;
-    background:$white;
+
     width: 100%;
-    box-shadow: 0px 0px 10px $black_alpha40;
-
-
-    /*
-    background: rgb(3,60,102);
-    background: -moz-linear-gradient(top,  rgba(3,60,102,1) 0%, rgba(3,73,126,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(3,60,102,1)), color-stop(100%,rgba(3,73,126,1)));
-    background: -webkit-linear-gradient(top,  rgba(3,60,102,1) 0%,rgba(3,73,126,1) 100%);
-    background: -o-linear-gradient(top,  rgba(3,60,102,1) 0%,rgba(3,73,126,1) 100%); 
-    background: -ms-linear-gradient(top,  rgba(3,60,102,1) 0%,rgba(3,73,126,1) 100%); 
-    background: linear-gradient(to bottom,  rgba(3,60,102,1) 0%,rgba(3,73,126,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#033c66', endColorstr='#03497e',GradientType=0 );
-    */
-
+    background:$white;
+    @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
     border-bottom:1px solid $blue_midtone_alpha30;
+    padding:10px;
+
+    font-size:10px;
 }
 
-#main-header .mini 
+header a
+{
+    text-decoration: none;
+    color:$black_alpha40;
+    cursor:pointer;
+    border-bottom:1px solid $white;
+}
+
+header a:hover
+{
+    color:$blue_dark;
+    border-bottom:1px solid $black_alpha40;
+}
+
+header nav
+{
+    position:absolute;
+    right:40px;
+    top:0px;
+    font-size:14px;
+}
+
+header nav li
+{
+    padding-right:10px;
+}
+
+header *
+{
+    display:inline-block;
+}
+
+/*
+header .mini 
 #logo a
 {
     color:$blue_light;
@@ -462,7 +489,8 @@ ul
     display:block;
 }
 
-#main-header #logo a
+
+header #logo a
 {
     font-size:1.4em;
     color:$black_alpha40;
@@ -471,6 +499,9 @@ ul
     text-decoration:none;
     display:inline-block;
 }
+*/
+
+
 
 //=================================================================================
 // utility area
