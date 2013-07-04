@@ -1,4 +1,6 @@
-%section#search-content.transparent
+%section#search-content
+	:javascript
+		document.getElementById('search-content').classList.add('transparent');
 	%section#search-screen
 		= form_tag('/organizations', :method => :get)
 		%section#search-box.large
