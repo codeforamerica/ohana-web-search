@@ -1,10 +1,19 @@
-// loads base object
-var module = (function (module) {
+define(function() {
+  'use strict';
+	
+		// @return [Object] browser-appropriate requestanimationframe implementation
+		// @example util.requestAnimationFrame()(_animate_callback);
+		function requestAnimationFrame()
+		{
+					return window.webkitRequestAnimationFrame ||
+					window.mozRequestAnimationFrame ||
+					window.oRequestAnimationFrame ||
+					window.msRequestAnimationFrame 
+		}
 
-	module.util = (function (util) {
 
 		// get computed style (from http://stackoverflow.com/questions/2664045/how-to-retrieve-a-styles-value-in-javascript)
-		util.getStyle = function(el, styleProp) {
+		function getStyle(el, styleProp) {
 		  var value, defaultView = (el.ownerDocument || document).defaultView;
 		  // W3C standard way:
 		  if (defaultView && defaultView.getComputedStyle) {
@@ -37,7 +46,7 @@ var module = (function (module) {
 		// insert parameters in the URL
 		// @param params [Object] (optional)
 		// @return [String] the appended URL query string
-		util.queryString = function(params)
+		function queryString(params)
 		{
 			if (params)
 			{
@@ -79,8 +88,9 @@ var module = (function (module) {
 			}
 		}
 
-		return util;
-	})({});
-
-	return module;
-})(module || {})
+return {
+		requestAnimationFrame:requestAnimationFrame,
+		getStyle:getStyle,
+		queryString:queryString
+	};
+});

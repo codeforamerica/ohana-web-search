@@ -1,3 +1,11 @@
+/* ==========================================================================
+   Compass imports
+   ========================================================================== */
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+
+
 /*
  * HTML5 Boilerplate
  *
@@ -9,7 +17,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
 html,
 button,
 input,
@@ -131,7 +138,7 @@ $serif_font: 'Average', serif;
 $san_serif_font: "Open Sans", Arial, sans-serif;
 
 //animation settings
-$default_duration: 150ms;
+$default_duration: 250ms;
 
 //=================================================================================
 
@@ -169,23 +176,48 @@ ul
 .fade-in
 {
     opacity:1;
-    transition: opacity 0.25s;
-    -webkit-transition: opacity 0.25s; /* Safari */
+
+    z-index:999999 !important;
+    position:relative;
+    
+    -webkit-transition: opacity $default_duration, z-index $default_duration;
+    -moz-transition: opacity $default_duration, z-index $default_duration;
+    transition: opacity $default_duration, z-index $default_duration;
 }
 
-fade-out
+.fade-out
 {
     opacity:0;
-    transition: opacity 0.25s;
-    -webkit-transition: opacity 0.25s; /* Safari */
+
+    z-index:-999999 !important;
+    position:relative;
+    
+    -webkit-transition: opacity $default_duration, z-index $default_duration;
+    -moz-transition: opacity $default_duration, z-index $default_duration;
+    transition: opacity $default_duration, z-index $default_duration;
+}
+
+.slide-up
+{
+    z-index:-1 !important;
+    margin-top: -9999px;
+    position:absolute !important;
+    
+    -webkit-transition: margin-top $default_duration, z-index $default_duration;
+    -moz-transition: margin-top $default_duration, z-index $default_duration;
+    transition: margin-top $default_duration, z-index $default_duration;
 }
 
 
 //=================================================================================
 // splashscreen styles
 #splash-screen {
+    @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
+}
+
+#splash-screen.fullscreen
+{
     z-index: 999999;
-    background:$blue_dark;
     
     top: 0;
     left: 0;
@@ -197,15 +229,22 @@ fade-out
 
 #splash-screen h1
 {
-    position: absolute;
-    top:0;
-    left:0;
-    background:$yellow_dark;
-    width:100%;
+    background:$white_alpha70;
     padding:20px;
-    margin:0px;
-    text-align:center;
+    width:120px;
+    height:30px;
+
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-60px;
+    margin-top:-15px;
     font-size:24px;
+
+    letter-spacing:2px;
+
+    @include single-box-shadow();
+    @include border-radius();
 }
 
 #busy-screen
