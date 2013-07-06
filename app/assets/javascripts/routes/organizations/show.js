@@ -1,10 +1,13 @@
 require(['busy-manager',
+					'popup-manager',
 				 'domReady!'], 
-	function(bm) {
+	function(bm,pum) {
   'use strict';
 
-  // javascript goes here!
+  // initialize required modules
   bm.init();
+  pum.init();
+
     console.log("Show screen loaded", bm);
   
 });

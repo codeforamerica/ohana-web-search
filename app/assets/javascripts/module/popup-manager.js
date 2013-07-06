@@ -1,14 +1,13 @@
 // manages behavior of popups
-var module = (function (module) {
-
-	module.popupManager = (function (popupManager) {
+define(function() {
+  'use strict';
 
 		// PRIVATE PROPERTIES
 		var popups; // array of popups on the page
 		var lastPopup; // the last popup to be shown
 
 		// PUBLIC METHODS
-		popupManager.init = function()
+		function init()
 		{
 			popups = document.querySelectorAll(".popup-container");
 
@@ -18,37 +17,33 @@ var module = (function (module) {
 				var term = popups[p].lastElementChild;
 				if ((/\S/.test(popup.textContent)))
 				{
-					term.addEventListener("mousedown", popupHandler, false);
-				}
-				else
-				{
-					term.style.cursor = 'default';
+					term.addEventListener("mousedown", _popupHandler, false);
+					term.classList.add('active');
 				}
 			}
 		}
 
 		// PRIVATE METHODS
-		function popupHandler(evt)
+		function _popupHandler(evt)
 		{
 			var thisPopup = (evt.target).parentElement.firstElementChild;
 			if (lastPopup && lastPopup != thisPopup) lastPopup.classList.add("hide");
 			lastPopup = thisPopup;
 			lastPopup.classList.toggle("hide");
 			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
-			document.addEventListener("mousedown", closeHandler, true);
+			document.addEventListener("mousedown", _closeHandler, true);
 		}
 
-		function closeHandler(evt)
+		function _closeHandler(evt)
 		{
 			if (evt.target.attributes["href"] == undefined && !evt.target.classList.contains("popup-term"))
 			{	
 				lastPopup.classList.add("hide");
-				document.removeEventListener("mousedown", closeHandler, true);
+				document.removeEventListener("mousedown", _closeHandler, true);
 			}
 		}
 
-		return popupManager;
-	})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});
