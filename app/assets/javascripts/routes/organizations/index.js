@@ -2,11 +2,12 @@ require(['busy-manager',
 				 'ajax-search',
 				 'result-view-manager',
 				 'domReady!'], 
-	function(bm,as,rvm) {
+	function(bm,as,rvm,mvm) {
   'use strict';
 
   // javascript goes here!
   bm.init();
+  rvm.init();
   //  console.log("results screen loaded", bm,ism,am,som,pm,mvm,rvm,rsm,dm,as);
   console.log("results screen loaded", bm,as,rvm)
 });

@@ -1,5 +1,5 @@
 // manages behavior of results view list vs maps setting
-define(['web-storage-proxy'],function(webStorageProxy) {
+define(['web-storage-proxy','map-view-manager'],function(webStorageProxy,mapViewManager) {
   'use strict';
 	
 		// PRIVATE PROPERTIES
@@ -20,31 +20,33 @@ define(['web-storage-proxy'],function(webStorageProxy) {
 			listView = document.getElementById("list-view");
 			mapView = document.getElementById("map-view");
 			
-			// checks that required elements exist on the page.
-			if ( listViewButton && mapViewButton && listView  && mapView )
+			listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
+			mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
+
+			_updateButtonStates();
+		}
+
+		function _updateButtonStates()
+		{
+			if (webStorageProxy.getItem(storageName) == "map"){
+				selected = mapViewButton;
+				mapViewManager.init();
+				listViewButton.disabled = "";
+			}else{
+				selected = listViewButton;
+				mapViewButton.disabled = "";
+			}
+
+			selected.disabled = "disabled";
+			if (selected == listViewButton) 
 			{
-				listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
-				mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
-
-				if (webStorageProxy.getItem(storageName) == "list"){
-					selected = listViewButton;
-					mapViewButton.disabled = "";
-				}else{
-					selected = mapViewButton;
-					listViewButton.disabled = "";
-				}
-
-				selected.disabled = "disabled";
-				if (selected == listViewButton) 
-				{
-					mapView.classList.add("hide");
-					listView.classList.remove("hide");
-				}
-				else if (selected == mapViewButton)
-				{
-					listView.classList.add("hide");
-					mapView.classList.remove("hide");
-				}
+				mapView.classList.add("hide");
+				listView.classList.remove("hide");
+			}
+			else if (selected == mapViewButton)
+			{
+				listView.classList.add("hide");
+				mapView.classList.remove("hide");
 			}
 		}
 
@@ -52,13 +54,13 @@ define(['web-storage-proxy'],function(webStorageProxy) {
 		function _listClickHandler(evt)
 		{
 			webStorageProxy.setItem(storageName , "list");
-			init();
+			_updateButtonStates();
 		}
 
 		function _mapClickHandler(evt)
 		{
 			webStorageProxy.setItem(storageName , "map");
-			init();
+			_updateButtonStates();
 		}
 
 	return {

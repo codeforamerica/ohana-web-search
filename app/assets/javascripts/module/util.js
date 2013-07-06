@@ -88,7 +88,7 @@ define(function() {
 			}
 		}
 
-return {
+	return {
 		requestAnimationFrame:requestAnimationFrame,
 		getStyle:getStyle,
 		queryString:queryString

@@ -1,17 +1,17 @@
 // manages results maps view
-var module = (function (module) {
-
-	module.mapViewManager = (function (mapViewManager) {
-
+define(function() {
+  'use strict';
+	
 		// PRIVATE PROPERTIES
 		var map; // the created map
 
 		// PUBLIC METHODS
-		mapViewManager.init = function()
+		function init()
 		{
-			map = L.mapbox.map('map', 'examples.map-vyofok3q');
-	    var locations = document.getElementById("map-locations");
-	    var obj = JSON.parse(locations.innerHTML);
+			if (!map) map = L.mapbox.map('map', 'examples.map-vyofok3q');
+				
+		    var locations = document.getElementById("map-locations");
+		    var obj = JSON.parse(locations.innerHTML);
 
 		    var geoJson = {
 				    type: 'FeatureCollection',
@@ -21,7 +21,8 @@ var module = (function (module) {
 				for (var m in obj)
 	    	{
 	    		// if the coordinates actually exist for an entry
-	    		if (obj[m]["coordinates"] != null && (obj[m]["coordinates"][0] != null || obj[m]["coordinates"][1] != null))
+	    		if (obj[m]["coordinates"] != null && 
+	    				(obj[m]["coordinates"][0] != null || obj[m]["coordinates"][1] != null))
 					{							
 		    		var url = '/organizations/'+obj[m]["_id"];
 		    		var marker = {
@@ -65,8 +66,7 @@ var module = (function (module) {
 				}
 		}
 
-		return mapViewManager;
-	})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});
