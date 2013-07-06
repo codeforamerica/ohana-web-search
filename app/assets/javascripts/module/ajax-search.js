@@ -1,6 +1,6 @@
 // handles ajax search functionality
 define(['ajax','util','map-view-manager','result-view-manager'],
-	function(ajax,mapViewManager,resultViewManager) {
+	function(ajax,util,mapViewManager,resultViewManager) {
   'use strict';
 	
 		var busyScreen;
@@ -44,8 +44,8 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 			
 			var query = '/organizations/'+util.queryString(values);
 			var callback = {
-				'done' : success,
-				'fail' : failure
+				'done' : _success,
+				'fail' : _failure
 			}
 
 			ajax.request(query, callback);

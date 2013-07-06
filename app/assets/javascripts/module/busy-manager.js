@@ -14,7 +14,7 @@ define(function() {
 		hide();
 	}
 
-	function show(message)
+	function show()
 	{
 		view.classList.remove('fade-out');
 		view.classList.add('fade-in');

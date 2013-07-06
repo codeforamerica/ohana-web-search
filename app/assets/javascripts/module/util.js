@@ -67,7 +67,7 @@ define(function() {
 					urlobj[key] = params[key];
 				}
 
-				str = '';
+				var str = '';
 				var val = '';
 				for (var k in urlobj)
 			  {
