@@ -18,11 +18,11 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 
 			_initPagination();
 
-			document.getElementById('find-btn').addEventListener("click",_ajaxClickHandler,false);
-			document.getElementById('radius').addEventListener("change",_ajaxClickHandler,false);
+			document.getElementById('find-btn').addEventListener("click",_ajaxSearchHandler,false);
+			document.getElementById('radius').addEventListener("change",_ajaxSearchHandler,false);
 		}
 
-		function _ajaxClickHandler(evt)
+		function _ajaxSearchHandler(evt)
 		{
 			busyScreen = document.createElement('div');
 			busyScreen.id = 'busy-screen';
@@ -69,7 +69,7 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 			evt.preventDefault();
 			var page = document.getElementById("page-number").value;
 			document.getElementById("page-number").value = Number(page)+1;
-			_ajaxClickHandler(evt);
+			_ajaxSearchHandler(evt);
 		}
 
 		function _prevPageHandler(evt)
@@ -77,7 +77,7 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 			evt.preventDefault();
 			var page = document.getElementById("page-number").value;
 			document.getElementById("page-number").value = Number(page)-1;
-			_ajaxClickHandler(evt);
+			_ajaxSearchHandler(evt);
 		}
 
 		function _success(evt)
