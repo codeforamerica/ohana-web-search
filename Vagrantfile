@@ -11,12 +11,11 @@ Vagrant.configure("2") do |config|
   # this is the default shared directory.
   code_path = "/vagrant"
 
-  # update apt, pull down security updates for the luls, get rails ready.
+  # update apt, get necessary packages, get rails ready.
   config.vm.provision :shell, inline: <<SCRIPT
     set -e
     echo "updating apt, installing curl..."
     apt-get update > /dev/null
-    apt-get upgrade -y
     apt-get install curl git nodejs -y > /dev/null
     echo "installing rvm..."
     curl -sL https://get.rvm.io | sudo -iu vagrant bash
