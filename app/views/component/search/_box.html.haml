@@ -1,21 +1,23 @@
-%div
-  %label{:for => "keyword"}
-    I need
-    %span{"data-icon"=>"→" , :class=>"ohana-icon"}
-  = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food"         
+%section#search-box
+  = form_tag('/organizations', :method => :get, :id=>"search-form")
+  %div
+    %label{:for => "keyword"}
+      I need
+      %span{"data-icon"=>"→" , :class=>"ohana-icon"}
+    = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food"         
 
-%div
-  %label{:for => "location"}
-    I am near
-    %span{"data-icon"=>"→" , :class=>"ohana-icon"}
-  = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca"
+  %div
+    %label{:for => "location"}
+      I am near
+      %span{"data-icon"=>"→" , :class=>"ohana-icon"}
+    = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca"
 
-%div/
-/= button_tag 
-%button#find-btn
-  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-  Find
-- if @pagination.blank?
-  = hidden_field_tag 'page-number', 1
-- else
-  = hidden_field_tag 'page-number', @pagination.current
+  %div/
+  /= button_tag 
+  %button#find-btn
+    %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+    Find
+  - if @pagination.blank?
+    = hidden_field_tag 'page-number', 1
+  - else
+    = hidden_field_tag 'page-number', @pagination.current
