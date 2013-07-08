@@ -26,6 +26,9 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
     bundle
 
+### Get a Javascript runtime:
+    The list of ones that work is [here](https://github.com/sstephenson/execjs)).
+
 ### Run the app
 Start the app locally using Unicorn:
 
