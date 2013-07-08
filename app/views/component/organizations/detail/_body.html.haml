@@ -1,9 +1,12 @@
 = render 'component/organizations/detail/header'
 %section#detail-info
-	- if @org.name.present?
+	%header
 		%h1.name
 			= superscript_ordinals(@org.name)
-	
+		- if @org.agency.present?
+			%h2.agency
+				= @org.agency
+
 	- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
 		%section.contact-box
 			%h1 

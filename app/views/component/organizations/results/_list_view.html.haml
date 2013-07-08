@@ -8,9 +8,12 @@
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
 								%span
 									== #{org.distance} mi
-						- if org.name.present?
+						%header
 							%h1.name
 								= superscript_ordinals(org.name)
+							- if org.agency.present?
+								%h2.agency
+									= org.agency
 						- if org.street_address.present?			
 							%p.address
 								= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
