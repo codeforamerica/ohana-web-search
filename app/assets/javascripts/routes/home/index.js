@@ -1,4 +1,4 @@
-require(['busy-manager','domReady!'], function(bm) {
+require(['loading-manager','domReady!'], function(bm) {
   'use strict';
 
   // javascript goes here!

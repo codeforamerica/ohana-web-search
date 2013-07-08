@@ -1,4 +1,4 @@
-require(['busy-manager',
+require(['loading-manager',
 					'popup-manager',
 				 'domReady!'], 
 	function(bm,pum) {

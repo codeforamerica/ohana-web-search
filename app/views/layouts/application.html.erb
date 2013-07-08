@@ -24,9 +24,9 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name == 'home' ? 'home' : 'inside' %>">
   
-  <%= render 'component/busy' %>
+  <%= render 'component/loading' %>
   
   <section id="content">
     <script>

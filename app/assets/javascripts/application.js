@@ -13,9 +13,12 @@
 //= require lib/require/require.min
 
 require.config({
-	baseUrl: "assets/module",
+	baseUrl: "/assets/module",
+
+	// setup alias to js libraries
 	paths: {
   	'jquery':'../lib/jquery.min',
   	'domReady':'../lib/require/domReady'
 	}
 });
+

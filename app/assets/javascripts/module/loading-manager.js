@@ -9,7 +9,7 @@ define(function() {
 	function init()
 	{
 		//console.log(fragment);
-		view = document.getElementById("busy-screen");
+		view = document.getElementById("loading-screen");
 		main = document.getElementById("content");
 		hide();
 	}

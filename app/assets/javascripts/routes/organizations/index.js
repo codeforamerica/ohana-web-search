@@ -1,4 +1,4 @@
-require(['busy-manager',
+require(['loading-manager',
 				 'ajax-search',
 				 'result-view-manager',
 				 'domReady!'], 
