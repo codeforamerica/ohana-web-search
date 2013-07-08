@@ -493,12 +493,10 @@ ul
 #content
 {
     background:$white;
-}
 
-//=================================================================================
-// logo/header area
-header
-{
+  // logo/header area
+  > header
+  {
     position:relative;
     z-index:9999;
 
@@ -510,44 +508,45 @@ header
     @include box-sizing(border-box);
 
     font-size:16px;
-}
 
-header h1
-{
-    font-size:20px;
-}
 
-header a
-{
-    text-decoration: none;
-    color:$black_alpha40;
-    cursor:pointer;
-    border-bottom:1px solid $white;
-}
+    h1
+    {
+        font-size:20px;
+    }
 
-header a:hover
-{
-    color:$blue_dark;
-    border-bottom:1px solid $black_alpha40;
-}
+    a
+    {
+        text-decoration: none;
+        color:$black_alpha40;
+        cursor:pointer;
+        border-bottom:1px solid $white;
+    }
 
-header nav
-{
-    position:absolute;
-    right:10px;
-    top:17px;
-}
+    a:hover
+    {
+        color:$blue_dark;
+        border-bottom:1px solid $black_alpha40;
+    }
 
-header nav li
-{
-    padding-right:10px;
-}
+    nav
+    {
+        position:absolute;
+        right:10px;
+        top:17px;
+    }
 
-header *
-{
-    @include inline-block();
-}
+    nav li
+    {
+        padding-right:10px;
+    }
 
+    *
+    {
+        @include inline-block();
+    }
+  }
+}
 
 //=================================================================================
 // main content box - everything below the header area
@@ -822,63 +821,65 @@ main > * > *
     background:$blue_midtone; 
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
     font-family: $san_serif_font;
+
+    > nav
+    {
+      @include inline-block();
+      color: $white;
+      font-size:14px;
+      letter-spacing: 1px;
+    }
+
+    h1
+    {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin: 0px;
+      margin-left: 4px;
+      color: $black_alpha40;
+      padding: 10px;
+      @include inline-block();
+      cursor:default;
+      font-weight: bold;
+    }
   }
 
-  header > nav
+  nav 
   {
-    @include inline-block();
-    color: $white;
-    font-size:14px;
-    margin-top:10px;
-    letter-spacing: 1px;
+    span
+    {
+      min-height: 30px;
+    }
+
+    a
+    {
+      color: $black;
+      background:$blue_light;
+      padding:5px;
+      border-radius:5px;
+      box-shadow:0 0 3px $black_alpha40;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    a:hover
+    {
+      background:$blue_midtone;
+      color: $white;
+
+      @include transition(color $default_duration);
+      @include transition(background $default_duration);
+    }
+
+    a.disabled
+    {
+      background: $greyscale_light;
+      color: $black_alpha40;
+      cursor:default;
+      pointer-events:none; // not supported in IE<11!
+    }
   }
-
-  header h1,
-  h2 /* details list */
-  {
-    font-size: 14px;
-    letter-spacing: 1px;
-    margin: 0px;
-    margin-left: 4px;
-    color: $black_alpha40;
-    padding: 10px;
-    @include inline-block();
-    cursor:default;
-    font-weight: bold;
-  }
-
-  nav span
-  {
-    min-height: 30px;
-  }
-
-  nav a
-  {
-    color: $black;
-    background:$blue_light;
-    padding:5px;
-    border-radius:5px;
-    box-shadow:0 0 3px $black_alpha40;
-    letter-spacing: 1px;
-  }
-
-  nav a:hover
-  {
-    background:$blue_midtone;
-    color: $white;
-
-    @include transition(color $default_duration);
-    @include transition(background $default_duration);
-  }
-
-  nav a.disabled
-  {
-    background: $greyscale_light;
-    color: $black_alpha40;
-    cursor:default;
-    pointer-events:none; // not supported in IE<11!
-  }
-
+  
 }
 
 #results-entries
@@ -1004,7 +1005,7 @@ main > * > *
 
     > h1.name
     {
-     
+      /*
       // old styles
       font-size: 18px;
       color:$blue_dark;
@@ -1012,7 +1013,17 @@ main > * > *
       padding-left:10px;
       padding-right:20px;
       margin:0;
-      
+      */
+
+      font-size:24px;
+      font-weight:bold;
+      color:$black;
+      font-family: $serif_font;
+      border-bottom: 1px solid $black_alpha10;
+      background:$white;
+      border-radius:10px 10px 0px 0px;
+      padding: 10px;
+      padding-left:20px;
     }
 
     p
