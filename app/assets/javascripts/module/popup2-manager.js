@@ -91,11 +91,13 @@ define(['util'],function(util) {
 			lastPopup = popup;
 			lastPopup.parentNode.classList.toggle("hide");
 
-			document.addEventListener("mousedown", _closeHandler, true);
+			// attach to content element, as document directly doesn't work correctly on Mobile Safari
+			document.getElementById("content").addEventListener("mousedown", _closeHandler, true);
 		}
 
 		function _closeHandler(evt)
 		{
+			console.log("press closed");
 			if (evt.target.attributes["href"] == undefined && 
 				!evt.target.classList.contains("popup-trigger") && 
 				!evt.target.parentNode.classList.contains("popup-container"))
@@ -108,7 +110,7 @@ define(['util'],function(util) {
 		function _closeAllHandler(evt)
 		{
 			lastPopup.parentNode.classList.add("hide");
-			document.removeEventListener("mousedown", _closeHandler, true);
+			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
 		}
 		
 
