@@ -1,7 +1,7 @@
-require(['loading-manager', 'utility-manager','domReady!'], function(lm,um) {
+require(['loading-manager', 'popup2-manager','domReady!'], function(lm,pm) {
   'use strict';
 
   // javascript goes here!
   	lm.init();
-  	um.init();
+  	pm.init();
 });

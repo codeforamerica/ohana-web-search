@@ -172,6 +172,20 @@ ul
     list-style-type: none;
 }
 
+a
+{
+    text-decoration: none;
+    color:$black_alpha40;
+    cursor:pointer;
+    border-bottom:1px solid $white;
+}
+
+a:hover
+{
+    color:$blue_dark;
+    border-bottom:1px solid $black_alpha40;
+}
+
 //=================================================================================
 // icons
 .ohana-icon:before {
@@ -392,39 +406,46 @@ ul
   bottom:0;
   right:0;
 
-  .utility-container
+  .popup-container
   {
     width:100%;
     height:100%;
   }
 
-  .utility-container > article
+  .popup-container > article
   {
     position:absolute;
     right:0;
     bottom:0;
     top:0;
 
-    width: 400px;
+    width: 300px;
     background: $white;
-    padding: 20px;
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
-    height:300px;
+    min-height:200px;
     overflow-y:scroll;
-    @include box-sizing(border-box);
     @include border-radius(10px);
   }
 
-  .utility-container > article::-webkit-scrollbar {
-      width: 12px;
+  .popup-container > article > div
+  {
+    padding: 20px;    
+    height:100%;
+    @include box-sizing(border-box);
+  }
+
+  .popup-container > article::-webkit-scrollbar {
+    width: 12px;
   }
    
-  .utility-container > article::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 10px $black_alpha20; 
+  .popup-container > article::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px $black_alpha20;
+    -webkit-border-radius: 0px 10px 10px 0px;
   }
    
-  .utility-container > article::-webkit-scrollbar-thumb {
-    background:$black_alpha20;
+  .popup-container > article::-webkit-scrollbar-thumb {
+    background: $black_alpha20;
+    -webkit-border-radius: 0px 10px 10px 0px;
   }
 
   .arrow
@@ -432,7 +453,7 @@ ul
     background: none repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px solid #CCCCCC;
     border-right: 1px solid #CCCCCC;
-    @include single-box-shadow($black_alpha40, 1px, 1px, 1px);
+    @include single-box-shadow($black_alpha20, 1px, 1px, 1px);
     height: 18px;
     left: 945px;
     position: absolute;
@@ -444,8 +465,25 @@ ul
 }
 
 //=================================================================================
-// popup styles - not currently used
+// popup content styling
 
+.popup-container
+{ 
+  h1
+  {
+    font-weight: bold;
+    font-size: 21px;
+  }
+  p
+  {
+    font-size:14px;
+    margin-bottom:5px;
+  }
+}
+
+//=================================================================================
+// popup styles - not currently used
+/*
 .popup-container
 {
   position:relative;
@@ -510,6 +548,7 @@ ul
   color:$blue_dark;
   border-bottom:1px solid $black_alpha40;
 }
+*/
 
 /*
 .popup-term

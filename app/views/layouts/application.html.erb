@@ -40,16 +40,18 @@
       <nav>
         <ul>
           <li>
-            <a title="Help" href="/about#about-box" id="about-btn">About</a>
+            <a title="Help" href="/about#about-box" id="about-btn" class="popup-trigger">About</a>
           </li>
-          <li><a title="Contribute" href="/about#contribute-box" id="contribute-btn">Contribute</a></li>
-          <li><a title="Feedback" href="/about#feedback-box" id="feedback-btn">Feedback</a></li>
+          <li><a title="Contribute" href="/about#contribute-box" id="contribute-btn" class="popup-trigger">Contribute</a></li>
+          <li><a title="Feedback" href="/about#feedback-box" id="feedback-btn" class="popup-trigger">Feedback</a></li>
         </ul>      
       </nav>
     </header>
 
     <aside id="popups">
-      <div class="utility-container hide"><div class="arrow"></div><%= render 'component/about/about' %></div>
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/about' %></div>
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/contribute' %></div>
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/feedback' %></div>
     </aside>
   
     <%= render 'component/alert' %>
@@ -61,7 +63,6 @@
     </main>
 
     <footer>
-      <%= render 'component/about/credits' %>
     </footer>
 
   </section>
