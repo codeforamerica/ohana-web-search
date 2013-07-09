@@ -102,7 +102,7 @@
 					%ul
 						-@org.payments_accepted.sort.each do |payment|
 							%li
-								%span.popup-container
+								%span.term-popup-container
 									%span.popup.hide
 										- dynamic_partial = 'component/popup/'+payment.downcase
 										= render :partial => "#{dynamic_partial}" rescue nil
@@ -112,7 +112,7 @@
 			- if @org.market_match?
 				%div.market-match
 					This market participates in 
-					%span.popup-container
+					%span.term-popup-container
 						%span.popup.hide
 							= render :partial => 'component/popup/marketmatch' rescue nil
 						%span.popup-term

@@ -1,13 +1,11 @@
-require(['loading-manager',
-					'popup-manager',
+require(['loading-manager', 'popup-manager',
+					'term-popup-manager',
 				 'domReady!'], 
-	function(bm,pum) {
+	function(bm,pm,tpm) {
   'use strict';
 
   // initialize required modules
   bm.init();
-  pum.init();
-
-    console.log("Show screen loaded", bm);
-  
+  pm.init();
+  tpm.init();
 });

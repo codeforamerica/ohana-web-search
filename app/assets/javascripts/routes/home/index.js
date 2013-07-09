@@ -1,4 +1,4 @@
-require(['loading-manager', 'popup2-manager','domReady!'], function(lm,pm) {
+require(['loading-manager', 'popup-manager','domReady!'], function(lm,pm) {
   'use strict';
 
   // javascript goes here!

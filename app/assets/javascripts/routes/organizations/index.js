@@ -1,17 +1,15 @@
-require(['loading-manager',
+require(['loading-manager', 'popup-manager',
 				 'ajax-search',
 				 'result-view-manager',
 				 'domReady!'], 
-	function(bm,as,rvm,mvm) {
+	function(bm,pm,as,rvm,mvm) {
   'use strict';
 
   // initialize required scripts
   bm.init();
+  pm.init();
   as.init();
   rvm.init();
-
-  //  console.log("results screen loaded", bm,ism,am,som,pm,mvm,rvm,rsm,dm,as);
-  console.log("results screen loaded", bm,as,rvm)
 });
 
 /*
