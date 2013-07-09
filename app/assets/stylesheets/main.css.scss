@@ -115,7 +115,8 @@ textarea {
 //color scheme
 $black: rgb(0,0,0);
 $black_alpha10: rgba(0,0,0,0.1);
-$black_alpha40: rgba(0,0,0,0.40000000596046);
+$black_alpha20: rgba(0,0,0,0.2);
+$black_alpha40: rgba(0,0,0,0.4);
 $black_alpha60: rgba(0,0,0,0.6);
 $blue_dark: rgb(3.00000005867332,73.0000032484531,126.000000089407);
 $blue_light: rgb(157.000005841255,235.000001192093,252.000000178814);
@@ -156,7 +157,7 @@ html,body
 {
     height: 100%;
     font-family: $serif_font;
-    background:$blue_dark;
+    background:$blue_light_alpha40;
 }
 
 h1
@@ -220,12 +221,13 @@ ul
 // effects styles
 .hide
 {
-   display:none !important; 
+  display: none !important;
+  visibility: hidden;
 }
 
 .transparent
 {
-    @include opacity(0);
+  @include opacity(0);
 }
 
 // fading styles
@@ -326,7 +328,8 @@ ul
 
       @include single-box-shadow();
       @include border-radius();
-      @include background( radial-gradient($white 30%, $greyscale_light 100%) );
+      //@include background( radial-gradient($white 30%, $greyscale_light 100%) );
+      background:$white;
   }
 
   h1
@@ -492,7 +495,7 @@ ul
 // content area is everything aside from the loading screen
 #content
 {
-    background:$white;
+  background:$white;
 
   // logo/header area
   > header
@@ -546,6 +549,11 @@ ul
         @include inline-block();
     }
   }
+}
+
+.home #content
+{
+  height: 100%;
 }
 
 //=================================================================================
@@ -653,31 +661,31 @@ main > * > *
 {
   input::input-placeholder
   {
-    color:$greyscale_midtone;
+    color:$black_alpha20;
     font-style: italic;
   }
 
   input::-webkit-input-placeholder
   {
-    color:$greyscale_midtone;
+    color:$black_alpha20;
     font-style: italic;
   }
 
   input:-moz-placeholder
   {
-    color:$greyscale_midtone;
+    color:$black_alpha20;
     font-style: italic;
   }
 
   input::-moz-placeholder
   {
-    color:$greyscale_midtone;
+    color:$black_alpha20;
     font-style: italic;
   }
 
   input:-ms-input-placeholder
   {
-    color:$greyscale_midtone;
+    color:$black_alpha20;
     font-style: italic;
   }
 
@@ -1085,9 +1093,8 @@ main > * > *
   li
   {
     margin-bottom:10px;
-    outline:1px solid $greyscale_light;
     background:$white;
-    @include single-box-shadow($black_alpha10, 0px, 0px, 10px);
+    @include box-shadow($black_alpha10 0px 0px 10px, $greyscale_light 0px 0px 0px 1px);
     border-left:10px solid $green_light;
   }
 
@@ -1168,11 +1175,6 @@ main > * > *
   > section
   {
     padding-bottom:10px; // add padding between sections
-
-    :last-child
-    {
-      padding-bottom:20px; // add additional padding for last entry
-    }
 
     > div
     {
@@ -1255,12 +1257,12 @@ main > * > *
   }
 
 
-  .payment-box ul
+  ul
   {
     margin-bottom:0;
   }
 
-  .payment-box li
+  li
   {
     font-size:12px;
     padding-left:10px;
@@ -1367,10 +1369,7 @@ main > * > *
     transition: background $default_duration;
 }
 
-//=================================================================================
-
-
-
+/*
 #update-alert
 {
   position: absolute;
@@ -1402,7 +1401,7 @@ main > * > *
 {
   background:$greyscale_midtone;
 }
-
+*/
 
 
 
