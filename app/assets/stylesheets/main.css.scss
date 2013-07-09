@@ -202,21 +202,6 @@ ul
     top: 1px;
 }
 
-.external-link.ohana-icon
-{
-    position:relative;
-    left:2px;
-    top:1px;
-}
-
-.browse.ohana-icon,
-.time.ohana-icon,
-.payment.ohana-icon
-{
-    position:relative;
-    top:2px;
-}
-
 //=================================================================================
 // effects styles
 .hide
@@ -1235,6 +1220,11 @@ main > * > *
     }
   }
 
+  .ohana-icon
+  {
+      color:$black_alpha40;
+      margin-right:5px;
+  }
 
   // arrange contact details in a line
   .contact-box div
@@ -1249,13 +1239,6 @@ main > * > *
       @include inline-block();
       vertical-align: top;
   }
-
-  .ohana-icon
-  {
-      color:$black_alpha40;
-      margin-right:5px;
-  }
-
 
   ul
   {
@@ -1302,6 +1285,27 @@ main > * > *
 
 }
 
+// icon adjustments
+.external-link.ohana-icon
+{
+  position:relative;
+  left:2px;
+  top:1px;
+}
+
+.browse.ohana-icon,
+.time.ohana-icon,
+.payment.ohana-icon
+{
+  position:relative;
+  top:2px;
+}
+
+.email .ohana-icon
+{
+  position:relative;
+  top:2px;
+}
 
 
 
@@ -1428,10 +1432,14 @@ main > * > *
       position:static;
     }
 
-    main > *
+    .inside #results-container 
     {
-      display: block;
-      width: 100%;
+      display:table-header-group;
+    }
+
+    .inside #search-container 
+    {
+      display:table-footer-group;
     }
 
     // set width to width of screen
@@ -1463,10 +1471,10 @@ main > * > *
     .home #search-box label
     {
         font-size: 20px;
-        letter-spacing: 2px;
         color:$white;
         text-align: center;
         font-family: $serif_font;
+        letter-spacing: 2px;
         display:block;
         width:auto;
     }

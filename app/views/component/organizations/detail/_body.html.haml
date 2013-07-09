@@ -55,15 +55,7 @@
 								= url
 							%br
 
-			- if @org.emails.present?
-				%div.email{:itemprop=>"email"}
-					- @org.emails.each do |email|
-						%span{"data-icon"=>"@" , :class=>"ohana-icon"}
-						%span{:itemprop=>"email"}
-							= email
-						%br
-
-	- if @org.contact_people.present? || @org.ask_for.present?
+	- if @org.contact_people.present? || @org.ask_for.present? || @org.emails.present?
 		%section.contacts-box
 			%h1
 				- if @org.contact_people.present? && @org.contact_people.length > 0
@@ -73,13 +65,21 @@
 			
 			- if @org.contact_people.present?
 				%div.contacts
-					- @org.contact_people.each do |contact|
+					- @org.contact_people.each_with_index do |contact|
 						%span
 							= contact
 
 			- if @org.ask_for.present?
 				%div.ask-for
 					= @org.ask_for
+
+			- if @org.emails.present?
+				%div.email{:itemprop=>"email"}
+					- @org.emails.each do |email|
+						%span{"data-icon"=>"@" , :class=>"ohana-icon"}
+						%span{:itemprop=>"email"}
+							= email
+						%br
 
 
 	- if @org.schedule.present?
