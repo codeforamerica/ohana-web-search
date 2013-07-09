@@ -5,6 +5,7 @@ define(['util'],function(util) {
 		// PRIVATE PROPERTIES
 		var popups; // array of popups on the page
 		var lastPopup; // the last popup to be shown
+		var lastTrigger;
 
 		// PUBLIC METHODS
 		function init()
@@ -17,16 +18,6 @@ define(['util'],function(util) {
 				curr = popups[p];
 				curr.addEventListener("click", _popupHandler, false);
 				curr.classList.add('active');
-
-				/*
-				var popup = popups[p].firstElementChild;
-				var term = popups[p].lastElementChild;
-				if ((/\S/.test(popup.textContent)))
-				{
-					term.addEventListener("mousedown", _popupHandler, false);
-					term.classList.add('active');
-				}
-				*/
 			}
 		}
 
@@ -41,22 +32,20 @@ define(['util'],function(util) {
 
 			_show(thisPopup,trigger);
 
-			window.addEventListener("resize", _closeAllHandler, true);
+			window.addEventListener("resize", _resizeHandler, true);
 
 			return false;
+		}
 
-			/*
-			var thisPopup = (evt.target).parentElement.firstElementChild;
-			if (lastPopup && lastPopup != thisPopup) lastPopup.classList.add("hide");
-			lastPopup = thisPopup;
-			lastPopup.classList.toggle("hide");
-			lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
-			document.addEventListener("mousedown", _closeHandler, true);
-			*/
+		function _resizeHandler(evt)
+		{
+			_show(lastPopup,lastTrigger);
 		}
 
 		function _show(popup,trigger)
 		{
+			lastTrigger = trigger;
+
 			var container = popup.parentNode;
 			var arrow = container.children[0];
 
@@ -83,13 +72,21 @@ define(['util'],function(util) {
 				popup.style.left = (offsetX)+"px";
 			}
 
-			//container.style.zIndex = "10000";
-			popup.style.zIndex = "9999";
-			arrow.style.zIndex = "10000";
-
 			if (lastPopup && lastPopup != popup) lastPopup.parentNode.classList.add("hide");
 			lastPopup = popup;
 			lastPopup.parentNode.classList.toggle("hide");
+
+			if (offsetY+popup.offsetHeight > winDim.height)
+			{
+				popup.style.height = (winDim.height-offsetY-20)+"px";
+			}
+			else
+			{
+				popup.style.height = "auto";
+			}
+
+			popup.style.zIndex = "9999";
+			arrow.style.zIndex = "10000";
 
 			// attach to content element, as document directly doesn't work correctly on Mobile Safari
 			document.getElementById("content").addEventListener("mousedown", _closeHandler, true);
@@ -97,22 +94,14 @@ define(['util'],function(util) {
 
 		function _closeHandler(evt)
 		{
-			console.log("press closed");
 			if (evt.target.attributes["href"] == undefined && 
 				!evt.target.classList.contains("popup-trigger") && 
 				!evt.target.parentNode.classList.contains("popup-container"))
 			{
-				_closeAllHandler(null);
+				lastPopup.parentNode.classList.add("hide");
+				document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
 			}
 		}
-
-		// close all popups
-		function _closeAllHandler(evt)
-		{
-			lastPopup.parentNode.classList.add("hide");
-			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
-		}
-		
 
 	return {
 		init:init

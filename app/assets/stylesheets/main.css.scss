@@ -406,30 +406,20 @@ a:hover
   bottom:0;
   right:0;
 
-  .popup-container
-  {
-    width:100%;
-    height:100%;
-  }
-
   .popup-container > article
   {
     position:absolute;
-    right:0;
-    bottom:0;
-    top:0;
 
     width: 300px;
     background: $white;
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
-    min-height:200px;
     overflow-y:scroll;
     @include border-radius(10px);
   }
 
   .popup-container > article > div
   {
-    padding: 20px;    
+    padding: 20px;
     height:100%;
     @include box-sizing(border-box);
   }
