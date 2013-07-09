@@ -1,6 +1,43 @@
 define(function() {
   'use strict';
 	
+		// return the client window dimensions.
+		// (from http://stackoverflow.com/questions/3333329/javascript-get-browser-height)
+		function getWindowRect()
+		{
+  		var myWidth = 0, myHeight = 0;
+		  if( typeof( window.innerWidth ) == 'number' ) 
+		  {
+		    //Non-IE
+		    myWidth = window.innerWidth;
+		    myHeight = window.innerHeight;
+		  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		    //IE 6+ in 'standards compliant mode'
+		    myWidth = document.documentElement.clientWidth;
+		    myHeight = document.documentElement.clientHeight;
+		  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		    //IE 4 compatible
+		    myWidth = document.body.clientWidth;
+		    myHeight = document.body.clientHeight;
+		  }
+
+		  return {"width":myWidth,"height":myHeight}
+		}
+
+		// get left and top offset of an element
+		// (from http://stackoverflow.com/questions/442404/dynamically-retrieve-the-position-x-y-of-an-html-element)
+		function getOffset( el ) 
+		{
+		    var _x = 0;
+		    var _y = 0;
+		    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+		        _x += el.offsetLeft - el.scrollLeft;
+		        _y += el.offsetTop - el.scrollTop;
+		        el = el.offsetParent;
+		    }
+		    return { top: _y, left: _x };
+		}
+
 		// @return [Object] browser-appropriate requestanimationframe implementation
 		// @example util.requestAnimationFrame()(_animate_callback);
 		function requestAnimationFrame()
@@ -12,7 +49,8 @@ define(function() {
 		}
 
 
-		// get computed style (from http://stackoverflow.com/questions/2664045/how-to-retrieve-a-styles-value-in-javascript)
+		// get computed style 
+		// (from http://stackoverflow.com/questions/2664045/how-to-retrieve-a-styles-value-in-javascript)
 		function getStyle(el, styleProp) {
 		  var value, defaultView = (el.ownerDocument || document).defaultView;
 		  // W3C standard way:
@@ -89,6 +127,8 @@ define(function() {
 		}
 
 	return {
+		getWindowRect:getWindowRect,
+		getOffset:getOffset,
 		requestAnimationFrame:requestAnimationFrame,
 		getStyle:getStyle,
 		queryString:queryString

@@ -383,6 +383,67 @@ ul
 }*/
 
 //=================================================================================
+// popup styles
+#popups
+{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  right:0;
+
+  .utility-container
+  {
+    width:100%;
+    height:100%;
+  }
+
+  .utility-container > article
+  {
+    position:absolute;
+    right:0;
+    bottom:0;
+    top:0;
+
+    width: 400px;
+    background: $white;
+    padding: 20px;
+    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
+    height:300px;
+    overflow-y:scroll;
+    @include box-sizing(border-box);
+    @include border-radius(10px);
+  }
+
+  .utility-container > article::-webkit-scrollbar {
+      width: 12px;
+  }
+   
+  .utility-container > article::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 10px $black_alpha20; 
+  }
+   
+  .utility-container > article::-webkit-scrollbar-thumb {
+    background:$black_alpha20;
+  }
+
+  .arrow
+  {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    @include single-box-shadow($black_alpha40, 1px, 1px, 1px);
+    height: 18px;
+    left: 945px;
+    position: absolute;
+    top: 26px;
+    @include rotate(-135deg);
+    width: 18px;
+    z-index: 9999;
+  }
+}
+
+//=================================================================================
 // popup styles - not currently used
 
 .popup-container
@@ -521,16 +582,12 @@ ul
     {
         position:absolute;
         right:10px;
-        top:17px;
+        top:15px;
     }
 
     nav li
     {
         padding-right:10px;
-    }
-
-    *
-    {
         @include inline-block();
     }
   }

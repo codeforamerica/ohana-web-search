@@ -1,7 +1,7 @@
-require(['loading-manager','domReady!'], function(bm) {
+require(['loading-manager', 'utility-manager','domReady!'], function(lm,um) {
   'use strict';
 
   // javascript goes here!
-    console.log("home screen loaded", bm);
-  	bm.init();
+  	lm.init();
+  	um.init();
 });
