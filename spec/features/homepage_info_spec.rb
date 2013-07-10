@@ -12,13 +12,10 @@ describe "Static pages" do
       page.should have_title('OhanaSMC')
     end
 
-    it "should have the info popup" do
+    it "should have the about popup" do
       visit "/"
-      page.has_css?("#info-screen-btn").should == true
-      page.should have_content('Contribute')
-      page.should have_content('Credits')
-      page.should have_content('Code for America')
-      page.should have_link("View source code", :href => "https://github.com/codeforamerica/human_services_finder")
+      page.has_css?("#about-box").should == true
+      page.should have_content('About')
     end
   end
 
