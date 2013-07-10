@@ -234,7 +234,7 @@ a:hover
 {
     @include opacity(1);
 
-    z-index:9998 !important;
+    z-index:9999 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -244,7 +244,7 @@ a:hover
 {
     @include opacity(0);
 
-    z-index:-9998 !important;
+    z-index:-9999 !important;
     position:relative;
     
     @include transition(opacity $default_duration, z-index $default_duration);
@@ -301,15 +301,19 @@ a:hover
 
 //=================================================================================
 // splashscreen styles
-#loading-screen
+
+#loading-box.fullscreen
 {
-  z-index: 9999;
+  bottom: 0;
+}
+
+#loading-box
+{
   position: absolute;
 
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
 
   > div
   {

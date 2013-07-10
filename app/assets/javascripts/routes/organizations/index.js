@@ -1,12 +1,13 @@
-require(['loading-manager', 'popup-manager',
+require(['loading-manager', 
+				 'popup-manager',
 				 'ajax-search',
 				 'result-view-manager',
 				 'domReady!'], 
-	function(bm,pm,as,rvm,mvm) {
+	function(lm,pm,as,rvm,mvm) {
   'use strict';
 
   // initialize required scripts
-  bm.init();
+  lm.hide();
   pm.init();
   as.init();
   rvm.init();

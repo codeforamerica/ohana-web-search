@@ -77,7 +77,7 @@ define(['util'],function(util) {
 
 			// set height to default in order to check against window height effectively
 			popup.style.height = "auto";
-			var padding = 20;
+			var padding = 20; // padding set on article > div
 			if ( (offsetY+popup.offsetHeight+padding) > winDim.height)
 			{
 				popup.style.height = (winDim.height-offsetY-padding)+"px";

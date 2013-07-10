@@ -2,38 +2,50 @@
 define(function() {
   'use strict';
 	
-	var view;
-	var main;
+	console.log("loaded!");
+	var _view = document.getElementById("loading-box");
+	var _main = document.getElementById("content");
+	var _fullscreen = true;
 
-	// init
-	function init()
+	function show(params)
 	{
-		//console.log(fragment);
-		view = document.getElementById("loading-screen");
-		main = document.getElementById("content");
-		hide();
-	}
+		_view.classList.remove('fade-out');
+		_view.classList.add('fade-in');
 
-	function show()
-	{
-		view.classList.remove('fade-out');
-		view.classList.add('fade-in');
+		if (params && params.hasOwnProperty('fullscreen')) _fullscreen = params.fullscreen;
 
-		main.classList.remove('fade-in-delay');
-		main.classList.add('fade-out-delay');
+		if (_fullscreen) 
+		{
+			_view.classList.add('fullscreen');
+			_main.classList.remove('fade-in-delay');
+			_main.classList.add('fade-out-delay');
+		}
+		else
+		{
+			_view.classList.remove('fullscreen');
+		}
 	}
 	
 	function hide()
 	{
-		view.classList.remove('fade-in');
-		view.classList.add('fade-out');
+		_view.classList.remove('fade-in');
+		_view.classList.add('fade-out');
 
-		main.classList.remove('fade-out-delay');
-		main.classList.add('fade-in-delay');
+		if (_fullscreen)
+		{
+			_main.classList.remove('fade-out-delay');
+			_main.classList.add('fade-in-delay');
+		}
+	}
+
+	function isFullscreen( fullscreen )
+	{
+		if (fullscreen === true || fullscreen === false)
+			_fullscreen = fullscreen;
+		return _fullscreen;
 	}
 
 	return {
-		init:init,
 		show:show,
 		hide:hide
 	};

@@ -26,7 +26,7 @@
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside' %> <%= controller_name %> <%= action_name %>">
   
-  <%= render 'component/loading' %>
+  <%= render 'component/status/loading' %>
 
   <section id="content">
     <script>
@@ -54,7 +54,7 @@
       <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/feedback' %></div>
     </aside>
   
-    <%= render 'component/alert' %>
+    <%= render 'component/status/alert' %>
 
     <main>
       <div>

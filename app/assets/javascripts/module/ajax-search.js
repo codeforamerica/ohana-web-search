@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(['ajax','util','map-view-manager','result-view-manager'],
-	function(ajax,util,mapViewManager,resultViewManager) {
+define(['loading-manager','ajax','util','map-view-manager','result-view-manager'],
+	function(lm,ajax,util,mapViewManager,resultViewManager) {
   'use strict';
 	
 		var busyScreen;
@@ -14,7 +14,7 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 
 		function init()
 		{
-			searchScreen = document.getElementById('search-content');
+			searchScreen = document.getElementById('results-container');
 
 			_initPagination();
 
@@ -24,12 +24,8 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 
 		function _ajaxSearchHandler(evt)
 		{
+			lm.show({"fullscreen":false});
 			evt.preventDefault();
-
-			busyScreen = document.createElement('div');
-			busyScreen.id = 'busy-screen';
-			busyScreen.innerHTML = '<h1>updating...</h1>';
-			searchScreen.appendChild(busyScreen);
 			
 			keyword = document.getElementById("keyword").value;
 			location = document.getElementById("location").value;
@@ -88,6 +84,7 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 			mapViewManager.init(); // re-initialize map view
 			resultViewManager.init();
 			_initPagination();
+			lm.hide();			
 		}
 
 		function _failure(evt)
