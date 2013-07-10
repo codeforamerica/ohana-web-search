@@ -9,7 +9,6 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'haml-rails'
-  gem "simple_form", ">= 2.1.0"
 end
 
 # server
@@ -20,12 +19,7 @@ gem 'ohanakapa', :git => "https://github.com/codeforamerica/ohanakapa-ruby.git",
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
 
-group :development, :test do
-  gem "teaspoon"
-  gem 'coveralls', require: false
-  gem "rspec-rails", ">= 2.12.2"
-  gem 'yard' #for code documentation
-end
+gem 'coveralls', require: false
 
 # dev and debugging tools
 group :development do
@@ -39,4 +33,10 @@ group :test do
   gem "cucumber-rails", ">= 1.3.1", :require => false
   gem "launchy", ">= 2.2.0"
   gem "capybara", ">= 2.0.3"
+end
+
+group :development, :test do
+  gem "teaspoon"
+  gem "rspec-rails", ">= 2.12.2"
+  gem 'yard' #for code documentation
 end
