@@ -76,10 +76,11 @@ define(['util'],function(util) {
 			lastPopup.parentNode.classList.toggle("hide");
 
 			// set height to default in order to check against window height effectively
-			popup.style.height = "auto"; 
-			if (offsetY+popup.offsetHeight > winDim.height)
+			popup.style.height = "auto";
+			var padding = 20;
+			if ( (offsetY+popup.offsetHeight+padding) > winDim.height)
 			{
-				popup.style.height = (winDim.height-offsetY-20)+"px";
+				popup.style.height = (winDim.height-offsetY-padding)+"px";
 			}
 			else
 			{
