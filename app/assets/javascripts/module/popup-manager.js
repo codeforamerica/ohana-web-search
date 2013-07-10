@@ -56,7 +56,6 @@ define(['util'],function(util) {
 			var offsetY = (offset.top+trigger.offsetHeight);
 			var offsetX = (offset.left);
 
-
 			arrow.style.top = (offsetY)+"px";
 			arrow.style.left = (offsetX-10+(trigger.offsetWidth/2))+"px";
 
@@ -76,6 +75,8 @@ define(['util'],function(util) {
 			lastPopup = popup;
 			lastPopup.parentNode.classList.toggle("hide");
 
+			// set height to default in order to check against window height effectively
+			popup.style.height = "auto"; 
 			if (offsetY+popup.offsetHeight > winDim.height)
 			{
 				popup.style.height = (winDim.height-offsetY-20)+"px";

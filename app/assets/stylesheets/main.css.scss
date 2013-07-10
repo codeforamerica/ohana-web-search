@@ -415,13 +415,21 @@ a:hover
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     overflow-y:scroll;
     @include border-radius(10px);
-  }
+    
+    > div
+    {
+      padding: 20px;
+      height:100%;
+      @include box-sizing(border-box);
 
-  .popup-container > article > div
-  {
-    padding: 20px;
-    height:100%;
-    @include box-sizing(border-box);
+      // adds footer horizontal rule
+      > footer
+      {
+        border-top:1px solid $black_alpha10;
+        margin-top:10px;
+        padding-top:10px;
+      }
+    }
   }
 
   .popup-container > article::-webkit-scrollbar {
@@ -463,11 +471,24 @@ a:hover
   {
     font-weight: bold;
     font-size: 21px;
+    border-bottom:6px solid $green_light;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    text-align: center;
+    //@include border-radius(10px);
   }
   p
   {
     font-size:14px;
     margin-bottom:5px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+  footer > p
+  {
+    font-size:12px;
+    font-family: $san_serif_font;
   }
 }
 
@@ -668,6 +689,32 @@ main > * > *
   height: 100%;
 }
 
+// only used on /about route when JS is disabled.
+.about main > * > *
+{
+  display:block;
+  padding: 40px;
+  border-bottom:1px solid $black_alpha10;
+  
+  h1
+  {
+    font-size:24px;
+    font-weight:bold;
+  }
+
+  p
+  {
+    margin-bottom:5px;
+  }
+
+  footer
+  {
+    border-top:1px solid $black_alpha10;
+    margin-top:10px;
+    padding-top:10px;
+    font-size:14px;
+  }
+}
 
 //=================================================================================
 // search container
