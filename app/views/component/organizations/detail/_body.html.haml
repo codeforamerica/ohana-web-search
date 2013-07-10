@@ -81,14 +81,20 @@
 							= email
 						%br
 
-
-	- if @org.schedule.present?
+	- if @org.service_hours.present? 
 		%section.hours-box
 			%h1
-				%span Business Hours
-			%div.schedule
-				%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
-				= @org.schedule
+				%span Service Hours
+
+			- if @org.service_hours.present?
+				%div.service-hours
+					= @org.service_hours
+
+			- if @org.service_wait.present?
+				%div.service-wait
+					%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
+					Wait time:
+					= @org.service_wait
 
 	- if @org.payments_accepted.present? || @org.products_sold.present?
 		%section.payment-box
@@ -126,21 +132,6 @@
 						- @org.products_sold.sort.each do |product|
 							%li 
 								= product
-
-	- if @org.service_hours.present? 
-		%section.hours-box
-			%h1
-				%span Service Hours
-
-			- if @org.service_hours.present?
-				%div.service-hours
-					= @org.service_hours
-
-			- if @org.service_wait.present?
-				%div.service-wait
-					%span{"data-icon"=>"⧗" , :class=>"ohana-icon"}
-					Wait time:
-					= @org.service_wait
 
 
 	- if @org.description.present? || @org.accessibility_options.present? || @org.how_to_apply.present? ||@org.fees.present? || @org.languages_spoken.present?

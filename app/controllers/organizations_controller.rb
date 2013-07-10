@@ -29,7 +29,7 @@ class OrganizationsController < ApplicationController
 		@result_summary = ResultSummaryHelper.format_summary({:count=>@pagination.items_current,:total_count=>@pagination.items_total,:keyword=>keyword,:location=>location,:radius=>radius})
 
 		session[:search_results] 	= request.url
-		session[:selected_radius] = params[:radius]
+		session[:radius] 					= params[:radius]
 		session[:keyword] 				= params[:keyword]
 		session[:location] 				= params[:location]
 		session[:page]						= @pagination.current
@@ -45,14 +45,10 @@ class OrganizationsController < ApplicationController
 
 	# organization details view
 	def show
-=begin
-		@org = Organization.find(params[:id])
-		params[:miles] = session[:selected_radius]
-		params[:search_term] = session[:search_term]
+
+		params[:radius] = session[:radius]
+		params[:keyword] = session[:keyword]
 		params[:location] = session[:location]
-		@nearby = @org.nearbys(2)
-		respond_with(@org)
-=end
 
 		query = Organization.get(params[:id])
 		@org = query.content

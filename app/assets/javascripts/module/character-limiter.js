@@ -16,11 +16,15 @@ define(function() {
 		function init()
 		{
 			desc = document.querySelector("#detail-info .description");
-			fulltext = desc.innerHTML;
+			
+			// if description exists
+			if (desc) {
+				fulltext = desc.innerHTML;
 				
 				if(fulltext.length > showChar) {
  					_showLess(null);
         }
+			}
 		}
 
 		// show more text

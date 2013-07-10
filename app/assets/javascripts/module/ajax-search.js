@@ -24,12 +24,12 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 
 		function _ajaxSearchHandler(evt)
 		{
+			evt.preventDefault();
+
 			busyScreen = document.createElement('div');
 			busyScreen.id = 'busy-screen';
 			busyScreen.innerHTML = '<h1>updating...</h1>';
 			searchScreen.appendChild(busyScreen);
-
-			evt.preventDefault();
 			
 			keyword = document.getElementById("keyword").value;
 			location = document.getElementById("location").value;
@@ -50,6 +50,8 @@ define(['ajax','util','map-view-manager','result-view-manager'],
 
 			ajax.request(query, callback);
 			window.history.pushState({},"", query);
+
+			return false;
 		}
 
 		function _initPagination()
