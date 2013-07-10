@@ -2,7 +2,6 @@
 define(function() {
   'use strict';
 	
-	console.log("loaded!");
 	var _view = document.getElementById("loading-box");
 	var _main = document.getElementById("content");
 	var _fullscreen = true;

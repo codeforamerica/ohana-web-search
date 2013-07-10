@@ -14,16 +14,20 @@ define(['web-storage-proxy','map-view-manager'],function(webStorageProxy,mapView
 		// PUBLIC METHODS
 		function init()
 		{
-			listViewButton = document.getElementById("list-view-btn");
-			mapViewButton = document.getElementById("map-view-btn");
-			
 			listView = document.getElementById("list-view");
 			mapView = document.getElementById("map-view");
-			
-			listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
-			mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
 
-			_updateButtonStates();
+			// check that required views are present on the page
+			if (listView && mapView)
+			{
+				listViewButton = document.getElementById("list-view-btn");
+				mapViewButton = document.getElementById("map-view-btn");
+			
+				listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
+
+				_updateButtonStates();
+			}
 		}
 
 		function _updateButtonStates()

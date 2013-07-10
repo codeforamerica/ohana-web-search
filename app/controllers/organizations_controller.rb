@@ -22,7 +22,7 @@ class OrganizationsController < ApplicationController
 		
 		keyword, location, radius, page = params[:keyword], params[:location], params[:radius], params[:page]
 
-		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page})
+		query = Organization.query({:keyword=>keyword,:location=>location,:page=>page,:radius=>radius})
 		@orgs = query.content
 		@pagination = query.pagination
 

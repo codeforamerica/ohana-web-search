@@ -7,14 +7,14 @@ define(['loading-manager','ajax','util','map-view-manager','result-view-manager'
 		var nextBtn;
 		var prevBtn;
 
-		var searchScreen;
+		var resultsContainer;
 
 		// search parameter values
 		var keyword,location,radius,page;
 
 		function init()
 		{
-			searchScreen = document.getElementById('results-container');
+			resultsContainer = document.getElementById('results-container');
 
 			_initPagination();
 
@@ -39,6 +39,7 @@ define(['loading-manager','ajax','util','map-view-manager','result-view-manager'
 										}
 			
 			var query = '/organizations/'+util.queryString(values);
+			
 			var callback = {
 				'done' : _success,
 				'fail' : _failure
@@ -80,17 +81,15 @@ define(['loading-manager','ajax','util','map-view-manager','result-view-manager'
 
 		function _success(evt)
 		{
-			searchScreen.innerHTML = evt.content;
-			mapViewManager.init(); // re-initialize map view
+			resultsContainer.innerHTML = evt.content;
 			resultViewManager.init();
 			_initPagination();
-			lm.hide();			
+			lm.hide(); // hide loading manager
 		}
 
 		function _failure(evt)
 		{
 			console.log('ajaxsearch failure',evt);
-			searchScreen.removeChild(busyScreen);
 		}
 
 	return {
