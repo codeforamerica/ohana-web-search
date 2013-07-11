@@ -1,10 +1,9 @@
 // manages search options
-var module = (function (module) {
-
-	module.searchOpManager = (function (searchOpManager) {
+define(['util/web-storage-proxy'],function(webStorageProxy) {
+  'use strict';
 
 		// PUBLIC PROPERTIES
-		searchOpManager.storageName = "hrl-searchop";
+		var storageName = "hrl-searchop";
 
 		// PRIVATE PROPERTIES
 		var searchInput; // search input element
@@ -15,23 +14,23 @@ var module = (function (module) {
 		//var updateAlertBox; // #update-alert
 
 		// PUBLIC METHODS
-		searchOpManager.init = function()
+		function init()
 		{
 			searchInput = document.getElementById("location");
-			searchInput.addEventListener("focus", focusSearchOptionsHandler,false);
-			searchInput.addEventListener("blur", blurSearchOptionsHandler,false);
+			searchInput.addEventListener("focus", _focusSearchOptionsHandler,false);
+			searchInput.addEventListener("blur", _blurSearchOptionsHandler,false);
 
 			searchOptions = document.getElementById("search-options-screen");
 			if (searchOptions)
 			{
 				searchRadius = document.getElementById("radius");		
 				if (!searchInput.value && searchRadius) searchRadius.disabled = true;
-				webStorageProxy.setItem(searchOpManager.storageName,searchRadius.value);
+				webStorageProxy.setItem(storageName,searchRadius.value);
 				//searchRadius.addEventListener("change",changeHandler,false);
 			}
 		}
 
-		function focusSearchOptionsHandler(evt)
+		function _focusSearchOptionsHandler(evt)
 		{
 			if (searchOptions)
 			{
@@ -39,7 +38,7 @@ var module = (function (module) {
 			}
 		}
 
-		function blurSearchOptionsHandler(evt)
+		function _blurSearchOptionsHandler(evt)
 		{
 			if (!searchInput.value && searchOptions)
 			{
@@ -67,8 +66,7 @@ var module = (function (module) {
 			}
 		}*/
 
-		return searchOpManager;
-	})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});

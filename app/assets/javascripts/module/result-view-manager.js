@@ -1,5 +1,5 @@
 // manages behavior of results view list vs maps setting
-define(['web-storage-proxy','map-view-manager'],function(webStorageProxy,mapViewManager) {
+define(['util/web-storage-proxy','map-view-manager'],function(webStorageProxy,mapViewManager) {
   'use strict';
 	
 		// PRIVATE PROPERTIES

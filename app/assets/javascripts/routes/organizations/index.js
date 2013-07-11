@@ -1,15 +1,11 @@
-require(['loading-manager', 
-				 'popup-manager',
-				 'ajax-search',
+require(['app/app-init',
+				 'search/search-init',
 				 'result-view-manager',
 				 'domReady!'], 
-	function(lm,pm,as,rvm,mvm) {
+	function(app,search,rvm) {
   'use strict';
 
   // initialize required scripts
-  lm.hide();
-  pm.init();
-  as.init();
   rvm.init();
 });
 

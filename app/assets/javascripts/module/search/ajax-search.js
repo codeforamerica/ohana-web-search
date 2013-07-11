@@ -1,5 +1,5 @@
 // handles ajax search functionality
-define(['loading-manager','ajax','util','map-view-manager','result-view-manager'],
+define(['app/loading-manager','util/ajax','util/util','map-view-manager','result-view-manager'],
 	function(lm,ajax,util,mapViewManager,resultViewManager) {
   'use strict';
 	

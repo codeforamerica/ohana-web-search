@@ -70,8 +70,6 @@ define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'],function(mapbo
 				    window.open(e.layer.feature.properties.url,"_self");
 				});
 			}
-
-    	console.log("init map", map);
 		}
 
 	return {

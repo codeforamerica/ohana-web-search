@@ -1,17 +1,8 @@
-require(['loading-manager', 
-				 'popup-manager',
-				 'ajax-search',
-				 'term-popup-manager',
-				 'character-limiter',
+require(['app/app-init',
+				 'search/search-init',
+				 'details/details-init',
 				 'domReady!'], 
-	function(lm,as,pm,tpm,cl) {
+	function(app,search,details) {
   'use strict';
-
-  // initialize required modules
-  lm.hide();
-  as.init();
-  pm.init();
-  tpm.init();
-  cl.init();
 
 });

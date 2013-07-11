@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util'],function(util) {
+define(['util/util'],function(util) {
   'use strict';
 
 		// PRIVATE PROPERTIES

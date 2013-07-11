@@ -1,9 +1,5 @@
-require(['loading-manager', 
-				 'popup-manager',
-				 'domReady!'], function(lm,pm) {
+require(['app/app-init',
+				 'domReady!'], function(app) {
   'use strict';
 
-  // javascript goes here!
-  	lm.hide();
-  	pm.init();
 });
