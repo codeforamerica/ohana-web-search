@@ -7,7 +7,6 @@ define(['util/web-storage-proxy'],function(webStorageProxy) {
 
 		// PRIVATE PROPERTIES
 		var searchInput; // search input element
-		var searchOptions; // search options area
 		var searchRadius; // search radius drop-down
 		var insideContent; // #inside-content section
 		var resultsList; // #results-list section
@@ -20,27 +19,20 @@ define(['util/web-storage-proxy'],function(webStorageProxy) {
 			searchInput.addEventListener("focus", _focusSearchOptionsHandler,false);
 			searchInput.addEventListener("blur", _blurSearchOptionsHandler,false);
 
-			searchOptions = document.getElementById("search-options-screen");
-			if (searchOptions)
-			{
-				searchRadius = document.getElementById("radius");		
-				if (!searchInput.value && searchRadius) searchRadius.disabled = true;
-				webStorageProxy.setItem(storageName,searchRadius.value);
-				//searchRadius.addEventListener("change",changeHandler,false);
-			}
+			searchRadius = document.getElementById("radius");		
+			if (!searchInput.value && searchRadius) searchRadius.disabled = true;
+			webStorageProxy.setItem(storageName,searchRadius.value);
+			//searchRadius.addEventListener("change",changeHandler,false);
 		}
 
 		function _focusSearchOptionsHandler(evt)
 		{
-			if (searchOptions)
-			{
 				searchRadius.disabled = false;
-			}
 		}
 
 		function _blurSearchOptionsHandler(evt)
 		{
-			if (!searchInput.value && searchOptions)
+			if (!searchInput.value)
 			{
 				searchRadius.disabled = true;
 			}
