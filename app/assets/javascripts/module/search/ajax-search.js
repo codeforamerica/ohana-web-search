@@ -88,25 +88,9 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 
 			if (nextBtn && prevBtn)
 			{
-				nextBtn.addEventListener("click",_nextPageHandler,false);
-				prevBtn.addEventListener("click",_prevPageHandler,false);
+				nextBtn.addEventListener("click",_ajaxSearchHandler,false);
+				prevBtn.addEventListener("click",_ajaxSearchHandler,false);
 			}
-		}
-
-		function _nextPageHandler(evt)
-		{
-			evt.preventDefault();
-			var page = document.getElementById("page").value;
-			document.getElementById("page").value = Number(page)+1;
-			_ajaxSearchHandler(evt);
-		}
-
-		function _prevPageHandler(evt)
-		{
-			evt.preventDefault();
-			var page = document.getElementById("page").value;
-			document.getElementById("page").value = Number(page)-1;
-			_ajaxSearchHandler(evt);
 		}
 
 		function _success(evt)
