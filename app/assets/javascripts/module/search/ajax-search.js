@@ -57,7 +57,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 				keyword = document.getElementById("keyword").value;
 				location = document.getElementById("location").value;
 				radius = document.getElementById("radius").value;
-				page = document.getElementById("page").value;
+				page = 1;/*document.getElementById("page").value;*/
 
 				var values = {'keyword':keyword,
 											'location':location,
