@@ -32,10 +32,15 @@
 					- @org.phones.each do |array|
 						-	array.each do |hash|
 							%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-							%span{:itemprop=>"telephone"}
-								= "#{format_phone(hash["number"])}" 
-							%span
-								= " #{hash["phone_hours"]}"	
+							- if hash["department"]
+								%span 
+									= "#{hash["department"]}" 
+							- if hash["number"]
+								%span{:itemprop=>"telephone"}
+									= "#{format_phone(hash["number"])}" 
+							- if hash["phone_hours"]		
+								%span
+									= " #{hash["phone_hours"]}"	
 							%br
 
 			- if @org.faxes.present?
