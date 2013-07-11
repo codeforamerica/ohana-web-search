@@ -2,30 +2,34 @@
 %section#detail-info
 	%header
 		%h1.name
-			= superscript_ordinals(@org.name)
+			= @org.name
 		- if @org.agency.present?
 			%h2.agency
 				= @org.agency
 
-	- if 	@org.street_address.present? || @org.phones.present? || @org.urls.present?
+	- if has_address(@org) || @org.phones.present? || @org.urls.present?
 
 		%section.contact-box
 			%h1 
 				%span Contact
 
-			- if @org.street_address.present?
+			- if has_address(@org)
 				%div.address
 					%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 					%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
-						%span{:itemprop=>"streetAddress"}
-							= superscript_ordinals(@org.street_address) 
-						%br 
-						%span{:itemprop=>"addressLocality"}
-							= @org.city+","
-						%span{:itemprop=>"addressRegion"}
-							= @org.state
-						%span{:itemprop=>"postalCode"}
-							= @org.zipcode
+						- if @org.street_address.present?
+							%span{:itemprop=>"streetAddress"}
+								= @org.street_address
+							%br 
+						- if @org.city.present?
+							%span{:itemprop=>"addressLocality"}
+								= @org.city+","
+						- if @org.state.present?
+							%span{:itemprop=>"addressRegion"}
+								= @org.state
+						- if @org.zipcode.present?
+							%span{:itemprop=>"postalCode"}
+								= @org.zipcode
 
 			- if @org.phones.present?
 				%div.phone

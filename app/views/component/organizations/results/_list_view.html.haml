@@ -14,6 +14,6 @@
 							- if org.agency.present?
 								%h2.agency
 									= org.agency
-						- if org.street_address.present?			
+						- if has_address(org)		
 							%p.address
-								= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
+								= format_address(org)

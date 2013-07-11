@@ -1,4 +1,5 @@
 class OrganizationsController < ApplicationController
+  helper :detail_format
 	respond_to :html, :json, :xml, :js
 
 	# search results view
@@ -63,4 +64,5 @@ class OrganizationsController < ApplicationController
 		end
 
 	end
+
 end

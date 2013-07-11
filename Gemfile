@@ -33,6 +33,7 @@ group :test do
   gem "cucumber-rails", ">= 1.3.1", :require => false
   gem "launchy", ">= 2.2.0"
   gem "capybara", ">= 2.0.3"
+  gem 'json'
 end
 
 group :development, :test do
