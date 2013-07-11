@@ -30,7 +30,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 			keyword = document.getElementById("keyword").value;
 			location = document.getElementById("location").value;
 			radius = document.getElementById("radius").value;
-			page = document.getElementById("page-number").value;
+			page = document.getElementById("page").value;
 
 			var values = {'keyword':keyword,
 										'location':location,
@@ -38,7 +38,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 										'page':page
 										}
 			
-			var query = '/organizations/'+util.queryString(values);
+			var query = '/organizations'+util.queryString(values);
 			
 			var callback = {
 				'done' : _success,
@@ -66,16 +66,16 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 		function _nextPageHandler(evt)
 		{
 			evt.preventDefault();
-			var page = document.getElementById("page-number").value;
-			document.getElementById("page-number").value = Number(page)+1;
+			var page = document.getElementById("page").value;
+			document.getElementById("page").value = Number(page)+1;
 			_ajaxSearchHandler(evt);
 		}
 
 		function _prevPageHandler(evt)
 		{
 			evt.preventDefault();
-			var page = document.getElementById("page-number").value;
-			document.getElementById("page-number").value = Number(page)-1;
+			var page = document.getElementById("page").value;
+			document.getElementById("page").value = Number(page)-1;
 			_ajaxSearchHandler(evt);
 		}
 

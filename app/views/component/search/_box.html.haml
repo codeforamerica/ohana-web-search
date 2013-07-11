@@ -18,6 +18,6 @@
     %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
     Find
   - if @pagination.blank?
-    = hidden_field_tag 'page-number', 1
+    = hidden_field_tag 'page', 1
   - else
-    = hidden_field_tag 'page-number', @pagination.current
+    = hidden_field_tag 'page', @pagination.current
