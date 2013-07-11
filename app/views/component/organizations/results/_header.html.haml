@@ -6,13 +6,18 @@
 		== #{@result_summary}
 		|
 		- path = request.fullpath
-		- if (path =~ /page=\d*&?/).nil?
-			- page_prev = '?page='+@pagination.prev.to_s
-			- page_next = '?page='+@pagination.next.to_s
-		- else
+
+		- if (path =~ /page=\d*&?/).present?
 			- page_prev = path.gsub(/page=\d*&?/, ('page='+@pagination.prev.to_s)+'&' )
 			- page_next = path.gsub(/page=\d*&?/, ('page='+@pagination.next.to_s)+'&' )
+		- elsif (path =~ /\?/).nil?
+			- page_prev = '?page='+@pagination.prev.to_s
+			- page_next = '?page='+@pagination.prev.to_s
+		- else
+			- page_prev = path+'&page='+@pagination.prev.to_s
+			- page_next = path+'&page='+@pagination.next.to_s
 		
+
 		- if @pagination.prev.nil?
 			= link_to '<', page_prev, :class => 'pagination prev disabled'
 		- else

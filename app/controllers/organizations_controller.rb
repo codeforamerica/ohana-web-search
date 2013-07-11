@@ -35,6 +35,7 @@ class OrganizationsController < ApplicationController
 		session[:location] 				= params[:location]
 		session[:page]						= @pagination.current
 
+		# request is from ajax
 		if request.xhr?
 			render json: {
 					'content' => render_to_string(partial: 'component/organizations/results/body')
@@ -57,6 +58,7 @@ class OrganizationsController < ApplicationController
 			@map_url = "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s(#{@org.coordinates[0]},#{@org.coordinates[1]})/#{@org.coordinates[0]},#{@org.coordinates[1]},15/400x300.png"
 		end
 				
+		# request is from ajax
 		if request.xhr?
 			render json: {
 					'content' => render_to_string(partial: 'component/organizations/detail/body')
