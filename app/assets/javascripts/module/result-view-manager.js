@@ -34,7 +34,6 @@ define(['util/web-storage-proxy','map-view-manager'],function(webStorageProxy,ma
 		{
 			if (webStorageProxy.getItem(storageName) == "map"){
 				selected = mapViewButton;
-				mapViewManager.init();
 				listViewButton.disabled = "";
 			}else{
 				selected = listViewButton;
@@ -51,6 +50,7 @@ define(['util/web-storage-proxy','map-view-manager'],function(webStorageProxy,ma
 			{
 				listView.classList.add("hide");
 				mapView.classList.remove("hide");
+				mapViewManager.init();
 			}
 		}
 
