@@ -19,6 +19,13 @@ require.config({
 	paths: {
   	'jquery':'../lib/jquery.min',
   	'domReady':'../lib/require/domReady'
+	},
+
+	// see example here for mapbox shim: https://gist.github.com/rjmackay/5762195
+	shim: {
+    'http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js' : {
+        exports: 'L'
+    }
 	}
 });
 

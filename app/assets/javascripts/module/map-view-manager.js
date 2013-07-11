@@ -1,15 +1,20 @@
 // manages results maps view
-define(function() {
+define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'],function(mapbox) {
   'use strict';
 	
 		// PRIVATE PROPERTIES
-		var map; // the created map
+		var map;
 
 		// PUBLIC METHODS
 		function init()
 		{
-			if (!map) map = L.mapbox.map('map', 'examples.map-vyofok3q');
-				
+			// hackity hack to fix ajax issue where map variable was already
+			// defined but was referring to a DOM node that had been removed
+			// resulting in a blank map, but no errors.
+			try{
+				map = L.mapbox.map('map', 'examples.map-vyofok3q');
+			}catch(e){}
+
 	    var locations = document.getElementById("map-locations");
 	    var obj = JSON.parse(locations.innerHTML);
 
@@ -23,7 +28,8 @@ define(function() {
     		// if the coordinates actually exist for an entry
     		if (obj[m]["coordinates"] != null && 
     				(obj[m]["coordinates"][0] != null || obj[m]["coordinates"][1] != null))
-				{							
+				{
+
 	    		var url = '/organizations/'+obj[m]["_id"];
 	    		var marker = {
 				        type: 'Feature',
@@ -50,7 +56,7 @@ define(function() {
 				map.markerLayer.setGeoJSON(geoJson);
 				
 				map.fitBounds( map.markerLayer.getBounds() );
-
+			
 				map.markerLayer.on('mouseover', function(e) {
 				    e.layer.openPopup();
 				});
@@ -64,6 +70,8 @@ define(function() {
 				    window.open(e.layer.feature.properties.url,"_self");
 				});
 			}
+
+    	console.log("init map", map);
 		}
 
 	return {
