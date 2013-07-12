@@ -16,23 +16,25 @@ module DetailFormatHelper
 
 
   def format_address(org)
-    address = ""
+    array = Array.new
+
     if org["street_address"].present?
-      address += org.street_address
+      array.push org['street_address']
     end
 
     if org["city"].present?
-      address += ", #{org.city}"
+      array.push org['city']
     end
 
     if org["state"].present?
-      address += ", #{org.state}"
+      array.push org['state']
     end
 
     if org["zipcode"].present?
-      address += ", #{org.zipcode}"
+      array.push org['zipcode']
     end
 
+    address = array.join(", ")
     superscript_ordinals(address)
   end
 

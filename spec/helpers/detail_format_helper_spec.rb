@@ -6,34 +6,67 @@ describe DetailFormatHelper do
 
   before(:each) do
     @org = JSON.parse(File.read("spec/fixtures/organization.json"))
-
-    @org_empty_address = JSON.parse('{"street_address":"","city":"","state":"","zipcode":""}')
-    @org_street_only = JSON.parse('{"street_address":"Angel Island State Park","city":"","state":"","zipcode":""}')
-    @org_city_only = JSON.parse('{"street_address":"","city":"San Mateo","state":"","zipcode":""}')
-    @org_state_only = JSON.parse('{"street_address":"","city":"","state":"CA","zipcode":""}')
-    @org_zipcode_only = JSON.parse('{"street_address":"","city":"","state":"","zipcode":"00000"}')
   end
 
   context '#has_address' do
     
     it 'should be false when no address fields are present' do
-      helper.has_address?(@org_empty_address).should == false
+      @org["street_address"] = ""
+      @org["city"] = ""
+      @org["state"] = ""
+      @org["zipcode"] = ""
+      helper.has_address?(@org).should == false
     end
 
     it 'should be true when any address fields are present' do
       helper.has_address?(@org).should == true
-      helper.has_address?(@org_street_only).should == true
-      helper.has_address?(@org_city_only).should == true
-      helper.has_address?(@org_state_only).should == true
-      helper.has_address?(@org_zipcode_only).should == true
+
+      @org["street_address"] = ""
+      helper.has_address?(@org).should == true
+      @org["city"] = ""
+      helper.has_address?(@org).should == true
+      @org["state"] = ""
+      helper.has_address?(@org).should == true
     end
 
   end
 
   context '#format_address' do
 
-    it 'should be false when no address fields are present' do
-      helper.has_address?(@org_empty_address).should == false
+    it 'should be blank address when no address fields are present' do
+      @org["street_address"] = ""
+      @org["city"] = ""
+      @org["state"] = ""
+      @org["zipcode"] = ""
+      helper.format_address(@org).should == ""
+    end
+
+    it 'formats an address with only a street address' do
+      @org["city"] = ""
+      @org["state"] = ""
+      @org["zipcode"] = ""
+      helper.format_address(@org).should == "2013 Avenue of the fellows, Suite 100"
+    end
+
+    it 'formats an address with only a city' do
+      @org["street_address"] = ""
+      @org["state"] = ""
+      @org["zipcode"] = ""
+      helper.format_address(@org).should == "San Maceo"
+    end
+
+    it 'formats an address with only a state' do
+      @org["street_address"] = ""
+      @org["city"] = ""
+      @org["zipcode"] = ""
+      helper.format_address(@org).should == "CA"
+    end
+
+    it 'formats an address with only a zipcode' do
+      @org["street_address"] = ""
+      @org["city"] = ""
+      @org["state"] = ""
+      helper.format_address(@org).should == "99999"
     end
 
   end
