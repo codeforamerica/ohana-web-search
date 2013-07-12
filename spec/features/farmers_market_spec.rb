@@ -10,9 +10,4 @@ feature 'Visitor views the details page of a farmers market' do
     page.should have_link("http://Www.pescaderogrown.org", :href => "http://Www.pescaderogrown.org")
   end
 
-  @javascript
-  xscenario 'reading the page' do
-    page.evaluate_script("$('#info-screen .content').css('font-size')").should == '14px'
-  end
-
 end
