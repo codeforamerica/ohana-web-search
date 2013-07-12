@@ -1,0 +1,51 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#about-screen
+{
+    background: $black_alpha40;
+    position:fixed;
+    z-index: 999998;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    padding:20px;
+}
+
+#about-screen .content
+{
+    background:$blue_light;
+    position: absolute;
+    left:50%;
+    margin-left:-275px;
+    width:550px;
+    
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    padding: 10px 20px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px $black_alpha40;
+}
+
+#about-screen .content h1
+{
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: $serif_font;
+}
+
+#about-screen .content a:hover
+{
+    text-decoration: underline;
+}
+
+#about-screen hr
+{
+    border-color:$black_alpha40;
+    border-style:dotted;
+}

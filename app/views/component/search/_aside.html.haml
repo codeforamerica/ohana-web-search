@@ -1,9 +1,3 @@
 %aside#search-container
-	%section#search-screen
-		= form_tag('/organizations', :method => :get, :id=>"search-form")
-		%section#search-box.mini
-			= render :partial => 'component/search/box'
-		%section#search-options-screen
-			%h1
-				Search Options
-			= render 'component/search/options'
+	= render :partial => 'component/search/box'
+	= render 'component/search/options'

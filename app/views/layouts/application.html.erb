@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,46 +11,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
-
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
     <!--[if lte IE 8]>
     <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.ie.css' rel='stylesheet' />
     <![endif]-->
-    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>
+    <!--<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application", (controller_name+'/'+ action_name) %>
+    <%= javascript_include_tag "application", ('routes/'+controller_name+'/'+ action_name) %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name == 'home' ? '' : 'inside' %> <%= controller_name %> <%= action_name %>">
+  
+  <%= render 'component/status/loading' %>
 
-  <section id="splash-screen">
-    <h1>Loading...</h1>
+  <section id="content">
+    <script>
+      // dynamically add transparent class so content shows up
+      // when JavaScript is disabled
+      document.getElementById('content').classList.add('transparent');
+    </script>    
+
+    <header>
+      <h1 id="logo"><a href="/">OhanaSMC</a></h1>
+      <nav>
+        <ul>
+          <li>
+            <a title="Help" href="/about#about-box" id="about-btn" class="popup-trigger">About</a>
+          </li>
+          <li><a title="Contribute" href="/about#contribute-box" id="contribute-btn" class="popup-trigger">Contribute</a></li>
+          <li><a title="Feedback" href="/about#feedback-box" id="feedback-btn" class="popup-trigger">Feedback</a></li>
+        </ul>      
+      </nav>
+    </header>
+
+    <aside id="popups">
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/about' %></div>
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/contribute' %></div>
+      <div class="popup-container hide"><div class="arrow"></div><%= render 'component/about/feedback' %></div>
+    </aside>
+  
+    <%= render 'component/status/alert' %>
+
+    <main>
+      <div>
+            <%= yield %>
+      </div>      
+    </main>
+
+    <footer>
+    </footer>
+
   </section>
 
-  <section id="main-header">
-        <header id="utility-screens">
-            <nav>
-                <h1 id="logo">
-                    <a href="/">OhanaSMC</a>
-                </h1>
-                <button id="info-screen-btn">?</button>
-            </nav>            
-            <%= render 'component/site_info' %>
-        </header>
-    </section>
-        <%= render 'component/alert' %>
 
-    <section id="main-content">
-        <main>
-                <%= yield %>
-        </main>
-    </section>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
