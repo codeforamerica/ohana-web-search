@@ -1,5 +1,5 @@
 // manages results maps view
-define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'],function(mapbox) {
+define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],function(mapbox,util) {
   'use strict';
 	
 		// PRIVATE PROPERTIES
@@ -67,7 +67,7 @@ define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'],function(mapbo
 
 				map.markerLayer.on('click', function(e) {
 				    e.layer.unbindPopup();
-				    window.open(e.layer.feature.properties.url,"_self");
+				    window.open(e.layer.feature.properties.url+util.queryString(),"_self");
 				});
 			}
 		}
