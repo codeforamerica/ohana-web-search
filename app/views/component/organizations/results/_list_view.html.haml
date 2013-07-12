@@ -17,6 +17,6 @@
 							- if org.agency.present?
 								%h2.agency
 									= org.agency
-						- if has_address(org)		
+						- if has_address?(org)		
 							%p.address
 								= format_address(org)

@@ -7,14 +7,14 @@
 			%h2.agency
 				= @org.agency
 
-	- if has_address(@org) || @org.phones.present? || @org.urls.present?
+	- if has_address?(@org) || @org.phones.present? || @org.urls.present?
 
 		%section.contact-box
 			%h1 Contact
 
 			%div
 
-				- if has_address(@org)
+				- if has_address?(@org)
 					%section.address
 						%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
 						%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
