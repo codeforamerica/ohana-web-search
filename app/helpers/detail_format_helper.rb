@@ -58,7 +58,7 @@ module DetailFormatHelper
     val = ordinal_parse(val,'nd')
     val = ordinal_parse(val,'rd')
     val = ordinal_parse(val,'th')
-    val
+    val.html_safe
   end
 
   private
@@ -72,7 +72,7 @@ module DetailFormatHelper
     fname.each do |snippet|
 
       if snippet == ordinal
-        snippet = "<sup>#{ordinal}</sup>".html_safe
+        snippet = "<sup>#{ordinal}</sup>"
       end
 
       parsed += snippet
