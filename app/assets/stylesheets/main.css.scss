@@ -1352,10 +1352,10 @@ main > * > *
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 5px;
-      @include inline-block();
       border-bottom:2px solid $black_alpha10;
       letter-spacing: 1px;
       font-family: $san_serif_font;
+      @include inline-block();
     }
 
     > div
@@ -1373,6 +1373,7 @@ main > * > *
         {
           font-weight:bold;
           @include inline-block();
+          vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
         }
       }
     }
@@ -1399,6 +1400,32 @@ main > * > *
   {
       @include inline-block();
       vertical-align: top;
+  }
+
+  .description a:last-child
+  {
+    display: block;
+    font-family: $san_serif_font;
+    text-align: center;
+    margin-top: 5px;
+    border-bottom: 1px solid $blue_midtone_alpha30;
+  }
+
+  .description a:last-child:after
+  {
+    content:">";
+    color:$black_alpha40;
+  }
+
+  .description a:last-child:before
+  {
+    content:"<";
+    color:$black_alpha40;
+  }
+
+  .description a:last-child:hover
+  {
+    border-bottom: 1px solid $black_alpha40;
   }
 
   // stylize services summary 
