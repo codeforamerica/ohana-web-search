@@ -26,6 +26,10 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 				'fail' : _failure
 			}
 
+			keyword = document.getElementById("keyword");
+			location = document.getElementById("location");
+			radius = document.getElementById("radius");
+			
 			document.getElementById('find-btn').addEventListener("click",_ajaxSearchHandler,false);
 			document.getElementById('radius').addEventListener("change",_ajaxSearchHandler,false);
 		  window.addEventListener("popstate", _updateURL);
@@ -47,21 +51,16 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 
 		function _ajaxSearchHandler(evt)
 		{			
-			evt.preventDefault();
-
 			lm.show({"fullscreen":false});
 			
 			var query = this.pathname+this.search;
 			if (!query)
-			{			
-				keyword = document.getElementById("keyword").value;
-				location = document.getElementById("location").value;
-				radius = document.getElementById("radius").value;
+			{
 				page = 1;/*document.getElementById("page").value;*/
 
-				var values = {'keyword':keyword,
-											'location':location,
-											'radius':radius,
+				var values = {'keyword':keyword.value,
+											'location':location.value,
+											'radius':radius.value,
 											'page':page
 											}
 				
@@ -70,15 +69,20 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true},null, query);
 
+			evt.preventDefault();
 			return false;
 		}
 
-		function _updateURL(evt) {
-			//ajax.request(window.location.pathname, _callback);
-			if (evt.state && evt.state.ajax)
-			{
-				window.location.href = window.location.href;
-			}
+		function _updateURL(evt) 
+		{
+			var params = util.getQueryParams(document.location.search);
+			
+			keyword.value = params.keyword || "";
+			location.value = params.location || "";
+			if (params.radius) radius.value = params.radius;
+			if (location.value != "") radius.disabled = false;
+			
+			ajax.request(window.location.href, _callback);
 		}
 
 		function _initPagination()

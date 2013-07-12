@@ -26,6 +26,7 @@ define(function() {
 
 		// get left and top offset of an element
 		// (from http://stackoverflow.com/questions/442404/dynamically-retrieve-the-position-x-y-of-an-html-element)
+		// @return [Object] with top and left properties
 		function getOffset( el ) 
 		{
 		    var _x = 0;
@@ -126,11 +127,30 @@ define(function() {
 			}
 		}
 
+		// parse query string into object
+		// (from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter)
+		// @param [String] the query string parameter
+		// @return [Object] query string to parse
+		function getQueryParams(qs) {
+	    qs = qs.split("+").join(" ");
+
+	    var params = {}, tokens,
+	        re = /[?&]?([^=]+)=([^&]*)/g;
+
+	    while (tokens = re.exec(qs)) {
+	        params[decodeURIComponent(tokens[1])]
+	            = decodeURIComponent(tokens[2]);
+	    }
+
+	    return params;
+		}
+
 	return {
 		getWindowRect:getWindowRect,
 		getOffset:getOffset,
 		requestAnimationFrame:requestAnimationFrame,
 		getStyle:getStyle,
-		queryString:queryString
+		queryString:queryString,
+		getQueryParams:getQueryParams
 	};
 });
