@@ -10,9 +10,22 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require web-storage-proxy
-//= require ./module/ajax
-//= require ./module/busy-manager
-//= require ./module/alert-manager
-//= require module/util
+//= require lib/require/require.min
+
+require.config({
+	baseUrl: "/assets/module",
+
+	// setup alias to js libraries
+	paths: {
+  	'jquery':'../lib/jquery.min',
+  	'domReady':'../lib/require/domReady'
+	},
+
+	// see example here for mapbox shim: https://gist.github.com/rjmackay/5762195
+	shim: {
+    'http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js' : {
+        exports: 'L'
+    }
+	}
+});
+

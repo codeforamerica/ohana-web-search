@@ -33,14 +33,14 @@ module Features
 
     def search_for_keyword_and_distance(keyword, distance)
       fill_in('keyword', :with => keyword)
-      select(distance, :from => 'miles')
+      select(distance, :from => 'radius')
       click_button 'Find'
     end
 
     def search_all(keyword, location, distance)
       fill_in('keyword', :with => keyword)
       fill_in('location', :with => location)
-      select(distance, :from => 'miles')
+      select(distance, :from => 'radius')
       click_button 'Find'
     end
 

@@ -2,15 +2,21 @@
 	%ul
 		- @orgs.each do |org|
 			%li
-				%a{:href=>"#{organization_path(org._id)}", :title=>"#{org.name}"}
+				- query = "?"
+				- request.query_parameters.each do |key, value|
+					- query += "#{key}=#{CGI::escape(value)}&"
+				%a{:href=>"#{organization_path(org._id)+query}", :title=>"#{org.name}"}
 					%section{:class => "results-entry"}
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
 								%span
 									== #{org.distance} mi
-						- if org.name.present?
+						%header
 							%h1.name
 								= superscript_ordinals(org.name)
-						- if org.street_address.present?			
+							- if org.agency.present?
+								%h2.agency
+									= org.agency
+						- if has_address?(org)		
 							%p.address
-								= superscript_ordinals(org.street_address)+", #{org.city}, #{org.state} #{org.zipcode}"
+								= format_address(org)

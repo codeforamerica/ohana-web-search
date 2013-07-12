@@ -4,7 +4,7 @@ feature 'Visitor performs search on home page' do
   scenario 'with valid ZIP code' do
     search_for_address "94403"
 
-    expect(page).to have_content("Showing 30 of 62 results within 2 miles of '94403'")
+    expect(page).to have_content("Showing 30 of 100 results within 2 miles of '94403'")
     find_field("location").value.should == "94403"
   end
 

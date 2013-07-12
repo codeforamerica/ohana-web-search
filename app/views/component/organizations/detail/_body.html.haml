@@ -1,143 +1,280 @@
-%section#inside-content
-	%section#results-list
-		%section#detail-screen
-			= render 'component/organizations/detail/header'
-			%section#detail-info
-				- if @org.name.present?
-					%h1.name
-						= superscript_ordinals(@org.name)
-				
-				- if @org.street_address.present? || @org.phones.present? || @org.urls.present?
-					%section.contact-box
-						%h1 
-							%span Contact
+= render 'component/organizations/detail/header'
+%section#detail-info
+	%header
+		%h1.name
+			= @org.name
+		- if @org.agency.present?
+			%h2.agency
+				= @org.agency
 
-						- if @org.street_address.present?
-							%div.address
-								%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-								%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
-									%span{:itemprop=>"streetAddress"}
-										= superscript_ordinals(@org.street_address) 
-									%br 
-									%span{:itemprop=>"addressLocality"}
-										= @org.city+","
-									%span{:itemprop=>"addressRegion"}
-										= @org.state
-									%span{:itemprop=>"postalCode"}
-										= @org.zipcode
-						
-						- if @org.phones.present?
-							%div.phone
-								- @org.phones.each do |array|
-									-	array.each do |hash|
-										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-										%span{:itemprop=>"telephone"}
-											= "#{format_phone(hash["number"])}" 
-										%span
-											= " #{hash["phone_hours"]}"	
-										%br							
+	- if has_address?(@org) || @org.phones.present? || @org.urls.present?
 
-						- if @org.urls.present?
-							%div.url
-								- @org.urls.each do |url|
-									%a{:href=>url,:target=>"_blank"}
-										%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-										%span{:itemprop=>"url"}
-											= url
-										%br
+		%section.contact-box
+			%h1 Contact
 
-						- if @org.emails.present?
-							%div.email{:itemprop=>"email"}
-								%span{"data-icon"=>"@" , :class=>"ohana-icon"}
-								= @org.emails.join(", ")
+			%div
 
-				- if @org.contact_people.present?
-					%section.contacts-box
-						%h1
-							- if @org.contact_people.length == 0
-								%span Primary Contact
-							- else
-								%span Primary Contacts
-						%div.schedule
-							- @org.contact_people.each do |contact|
-								%span
-									= contact
+				- if has_address?(@org)
+					%section.address
+						%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+						%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+							- if @org.street_address.present?
+								%span{:itemprop=>"streetAddress"}
+									= @org.street_address
+								%br 
+							- if @org.city.present?
+								%span{:itemprop=>"addressLocality"}
+									= @org.city+","
+							- if @org.state.present?
+								%span{:itemprop=>"addressRegion"}
+									= @org.state
+							- if @org.zipcode.present?
+								%span{:itemprop=>"postalCode"}
+									= @org.zipcode
 
-				- if @org.schedule.present?
-					%section.hours-box
-						%h1
-							%span Business Hours
-						%div.schedule
-							%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
-							= @org.schedule
+				- if @org.phones.present?
+					%section.phone
+						- @org.phones.each_with_index do |array,index|
+							-	array.each do |hash|
+								%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+								- if hash["department"]
+									%span 
+										= "#{hash["department"]}" 
+								- if hash["number"]
+									%span{:itemprop=>"telephone"}
+										= "#{format_phone(hash["number"])}" 
+								- if hash["phone_hours"]		
+									%span
+										= " #{hash["phone_hours"]}"	
+								- if index != @org.phones.length
+									%br
 
-				- if @org.payments_accepted.present? || @org.products_sold.present?
-					%section.payment-box
-						%h1
-							%span Payment & Products
+				- if @org.faxes.present?
+					%section.fax
+						- @org.faxes.each_with_index do |fax,index|
+							%span{"data-icon"=>"℻" , :class=>"ohana-icon"}
+							%span{:itemprop=>"faxNumber"}
+								= "#{format_phone(fax)}"
+							- if index != @org.faxes.length
+								%br
 
-						- if @org.payments_accepted.present?
-							%div.payments-accepted
-								%span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
-								Payment methods accepted:
-								%ul
-									-@org.payments_accepted.sort.each do |payment|
-										%li
-											%span.popup-container
-												%span.popup.hide
-													- dynamic_partial = 'component/popup/'+payment.downcase
-													= render :partial => "#{dynamic_partial}" rescue nil
-												%span.popup-term
-													= payment
-						- if @org.market_match?
-							%div.market-match
-								This market participates in 
-								%span.popup-container
-									%span.popup.hide
-										= render :partial => 'component/popup/marketmatch' rescue nil
-									%span.popup-term
-										Market Match!
+				- if @org.urls.present?
+					%section.url
+						- @org.urls.each_with_index do |url,index|
+							%a{:href=>url,:target=>"_blank"}
+								%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+								%span{:itemprop=>"url"}
+									= url
+								- if index != @org.urls.length
+									%br
 
-						- if @org.products_sold.present?
-							%div.products-sold
-								%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
-								Products sold: 
-								%ul
-									- @org.products_sold.sort.each do |product|
-										%li 
-											= product
+	- if @org.ask_for.present? || @org.emails.present?
+		%section.contacts-box
+			%h1
+				- if @org.ask_for.present? && @org.ask_for.length > 0
+					%span Primary Contacts
+				- else
+					%span Primary Contact
+
+			%div
+
+				- if @org.ask_for.present?
+					%section.ask-for
+						%span
+							= @org.ask_for
+
+				- if @org.emails.present?
+					%section.email{:itemprop=>"email"}
+						- @org.emails.each_with_index do |email, index|
+							%span{"data-icon"=>"@" , :class=>"ohana-icon"}
+							%span{:itemprop=>"email"}
+								= email
+							- if index != @org.emails.length
+								%br
+
+	- if @org.service_hours.present? 
+		%section.hours-box
+			%h1 Service Hours
+			%div
+				- if @org.service_hours.present?
+					%section.service-hours
+						%span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
+						%span
+							= @org.service_hours
+
+	- if @org.payments_accepted.present? || @org.products_sold.present?
+		%section.payment-box
+			%h1 Payment & Products
+
+			%div
+
+				- if @org.payments_accepted.present?
+					%section.payments-accepted
+						%span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
+						%h1 Payment methods accepted:
+						%ul
+							-@org.payments_accepted.sort.each do |payment|
+								%li
+									%span.term-popup-container
+										%span.popup.hide
+											- dynamic_partial = 'component/popup/'+payment.downcase
+											= render :partial => "#{dynamic_partial}" rescue nil
+										%span.popup-term
+											= payment
+
+				- if @org.market_match?
+					%section.market-match
+						This market participates in 
+						%span.term-popup-container
+							%span.popup.hide
+								= render :partial => 'component/popup/marketmatch' rescue nil
+							%span.popup-term
+								Market Match!
+
+				- if @org.products_sold.present?
+					%section.products-sold
+						%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
+						%h1 Products sold: 
+						%ul
+							- @org.products_sold.sort.each do |product|
+								%li 
+									= product
+
+
+	- if @org.description.present? || @org.accessibility_options.present? || @org.how_to_apply.present? ||@org.fees.present? || @org.languages_spoken.present?
+		%section.overview-box
+			%h1 Service Overview
+
+			%div
+
+				- if @org.services_provided.present?
+					%section.services-provided
+						= @org.services_provided
 
 				- if @org.description.present?
-					%section.overview-box
-						%h1
-							%span Service Overview
-						
-						- if @org.description.present?
-							%div.description
-								= @org.description
+					%section.description
+						%h1 Description: 
+						%span
+						= @org.description
+
+				- if @org.target_group.present?
+					%section.target-group
+						%span{"data-icon"=>"T" , :class=>"ohana-icon"}
+						%h1 Target group: 
+						%span
+							= @org.target_group
+
+				- if @org.service_areas.present?
+					%section.service-areas
+						%span{"data-icon"=>"S" , :class=>"ohana-icon"}
+						- if @org.service_areas.length > 0
+							%h1 Service Areas: 
+						- else 
+							%h1 Service Area:
+						%ul
+							- @org.service_areas.sort.each do |area|
+								%li 
+									= area
+
+				- if @org.how_to_apply.present?
+					%section.how-to-apply
+						%span{"data-icon"=>"?" , :class=>"ohana-icon"}
+						%h1 How to Apply: 
+						%span
+							= @org.how_to_apply
+
+				- if @org.fees.present?
+					%section.fees
+						%span{"data-icon"=>"$" , :class=>"ohana-icon"}
+						%h1 Fees: 
+						%span
+							= @org.fees
+
+				- if @org.eligibility_requirements.present?
+					%section.eligibility-requirements
+						%span{"data-icon"=>"E" , :class=>"ohana-icon"}
+						%h1 Eligibility Requirements: 
+						%span
+							= @org.eligibility_requirements
+
+				- if @org.languages_spoken.present?
+					%section.languages-spoken
+						%span{"data-icon"=>"L" , :class=>"ohana-icon"}
+						%h1 Languages Spoken: 
+						%ul
+							- @org.languages_spoken.sort.each do |lang|
+								%li 
+									= lang
+
+				- if @org.accessibility_options.present?
+					%section.accessibility-options
+						%span{"data-icon"=>"♿" , :class=>"ohana-icon"}
+						%span Accessibility Options: 
+						%ul
+							- @org.accessibility_options.sort.each do |access|
+								%li
+									= access
+							- if @org.ttys.present?
+								%li
+									- @org.ttys.each_with_index do |tty,index|
+										%span
+											TDD/TTY:
+											= "#{format_phone(tty)}"
+										- if index != @org.ttys.length
+											%br
+
+				
+
+	- if @map_url.present? || @org.transportation_availability.present?
+		%section.map-box
+			%h1 Map & Directions
+
+			%div
+
+				- if @org.transportation_availability.present?
+					%section.transportation
+						%span 
+							= @org.transportation_availability
 
 				- if @map_url.present?
-					%section.map-box
-						%h1 
-							%span Map & Directions
+					%section.directions
+						%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{@org.address}",:target=>"_blank"}
+							%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+							%span Get Directions
 
-						%div.map
-							%img{:src=>"#{@map_url}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+					%section.map
+						%img{:src=>"#{@map_url}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
-						%div.directions
-							%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{@org.address}",:target=>"_blank"}
-								%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-								%span Get Directions
+	- if @org.created_at.present? || @org.updated_at.present?
+		%section.metadata
+			%div
+				%section.updated-at
+					%h1
+						Last updated: 
+					- if @org.updated_at.present?
+						%span
+							= @org.updated_at
+					- else
+						%span
+							= @org.created_at
 
-		- if @nearby.present?
-			%h2
-				Nearby (within 2 miles):
-			%ul
-				- @nearby.each do |venue| 
-					%li
-						%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
-							%section{:class => "results-entry"}
-								%h1.name
-									= superscript_ordinals(venue.name)
-								%p.address
-									= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"
+-#
+	// field dump
+	- @org.each do |field|
+		%section
+			%h1
+			= field
+			
+
+- if @nearby.present?
+	%h2
+		Nearby (within 2 miles):
+	%ul
+		- @nearby.each do |venue| 
+			%li
+				%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
+					%section{:class => "results-entry"}
+						%h1.name
+							= superscript_ordinals(venue.name)
+						%p.address
+							= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"

@@ -1,8 +1,7 @@
 // manages behavior of results view list vs maps setting
-var module = (function (module) {
-
-	module.resultViewManager = (function (resultViewManager) {
-
+define(['util/web-storage-proxy','map-view-manager'],function(webStorageProxy,mapViewManager) {
+  'use strict';
+	
 		// PRIVATE PROPERTIES
 		var listViewButton; 
 		var mapViewButton;
@@ -10,60 +9,65 @@ var module = (function (module) {
 		var mapView;
 		var selected;
 
-		resultViewManager.storageName = "resultviewpref";
+		var storageName = "resultviewpref";
 
 		// PUBLIC METHODS
-		resultViewManager.init = function()
+		function init()
 		{
-			listViewButton = document.getElementById("list-view-btn");
-			mapViewButton = document.getElementById("map-view-btn");
-			
 			listView = document.getElementById("list-view");
 			mapView = document.getElementById("map-view");
-			
-			// checks that required elements exist on the page.
-			if ( listViewButton && mapViewButton && listView  && mapView )
+
+			// check that required views are present on the page
+			if (listView && mapView)
 			{
-				listViewButton.addEventListener( "mousedown" , listClickHandler , false);
-				mapViewButton.addEventListener( "mousedown" , mapClickHandler , false);
+				listViewButton = document.getElementById("list-view-btn");
+				mapViewButton = document.getElementById("map-view-btn");
+			
+				listViewButton.addEventListener( "mousedown" , _listClickHandler , false);
+				mapViewButton.addEventListener( "mousedown" , _mapClickHandler , false);
 
-				if (webStorageProxy.getItem(resultViewManager.storageName) == "list"){
-					selected = listViewButton;
-					mapViewButton.disabled = "";
-				}else{
-					selected = mapViewButton;
-					listViewButton.disabled = "";
-				}
+				_updateButtonStates();
+			}
+		}
 
-				selected.disabled = "disabled";
-				if (selected == listViewButton) 
-				{
-					mapView.classList.add("hide");
-					listView.classList.remove("hide");
-				}
-				else if (selected == mapViewButton)
-				{
-					listView.classList.add("hide");
-					mapView.classList.remove("hide");
-				}
+		function _updateButtonStates()
+		{
+			if (webStorageProxy.getItem(storageName) == "map"){
+				selected = mapViewButton;
+				listViewButton.disabled = "";
+			}else{
+				selected = listViewButton;
+				mapViewButton.disabled = "";
+			}
+
+			selected.disabled = "disabled";
+			if (selected == listViewButton) 
+			{
+				mapView.classList.add("hide");
+				listView.classList.remove("hide");
+			}
+			else if (selected == mapViewButton)
+			{
+				listView.classList.add("hide");
+				mapView.classList.remove("hide");
+				mapViewManager.init();
 			}
 		}
 
 		// PRIVATE METHODS
-		function listClickHandler(evt)
+		function _listClickHandler(evt)
 		{
-			webStorageProxy.setItem(resultViewManager.storageName , "list");
-			resultViewManager.init();
+			webStorageProxy.setItem(storageName , "list");
+			_updateButtonStates();
 		}
 
-		function mapClickHandler(evt)
+		function _mapClickHandler(evt)
 		{
-			webStorageProxy.setItem(resultViewManager.storageName , "map");
-			resultViewManager.init();
+			webStorageProxy.setItem(storageName , "map");
+			_updateButtonStates();
 		}
 
-		return resultViewManager;
-		})({});
-
-	return module;
-})(module || {})
+	return {
+		init:init
+	};
+});
