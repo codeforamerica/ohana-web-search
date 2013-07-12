@@ -72,7 +72,7 @@ module DetailFormatHelper
     fname.each do |snippet|
 
       if snippet == ordinal
-        snippet = '<sup>#{h ordinal}</sup>'.html_safe
+        snippet = "<sup>#{ordinal}</sup>".html_safe
       end
 
       parsed += snippet
