@@ -1,6 +1,6 @@
 module DetailFormatHelper
   
-  def has_address(org)
+  def has_address?(org)
     if org.street_address.present? || 
       org.city.present? ||
       org.state.present? ||
@@ -37,17 +37,18 @@ module DetailFormatHelper
   def format_phone(number)
 
     # return without formatting if number is not present
-    if !number.present?
-      return
-    end
+    result = number
+    if result.present?
+      
+      result = number.gsub(/[^\d]/, '')
 
-    result = number.gsub(/[^\d]/, '')
+      # return without formatting if number is of the wrong length
+      if result.length < 10 || result.length > 10
+        return number
+      end
 
-    # return without formatting if number is of the wrong length
-    if result.length > 10 || result.length < 10
-      return number
-    end
-
-    "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
+      result = "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
+    end 
+    result
   end
 end
