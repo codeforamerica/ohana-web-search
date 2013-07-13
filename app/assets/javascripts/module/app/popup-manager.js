@@ -130,7 +130,7 @@ define(['util/util','enquire'],function(util,enquire) {
 
 		function _closeLastPopup()
 		{
-			_lastPopup.parentNode.classList.add("hide");
+			if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
 			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
 			window.removeEventListener("resize", _resizeHandler, true);
 		}
