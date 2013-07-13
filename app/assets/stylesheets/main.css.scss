@@ -977,6 +977,7 @@ main > * > *
     > nav 
     {
       @include inline-block();
+      vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       color: $white;
       font-size:14px;
       letter-spacing: 1px;
