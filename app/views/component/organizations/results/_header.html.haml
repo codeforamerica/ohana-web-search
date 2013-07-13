@@ -4,7 +4,7 @@
 	%nav
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 		== #{@result_summary}
-		|
+		
 		- path = request.fullpath
 
 		- if (path =~ /page=\d*&?/).present?
@@ -17,15 +17,15 @@
 			- page_prev = path+'&page='+@pagination.prev.to_s
 			- page_next = path+'&page='+@pagination.next.to_s
 		
+		%span#pagination
+			- if @pagination.prev.nil?
+				= link_to '<', page_prev, :class => 'pagination prev disabled'
+			- else
+				= link_to '<', page_prev, :class => 'pagination prev ajax-link'
 
-		- if @pagination.prev.nil?
-			= link_to '<', page_prev, :class => 'pagination prev disabled'
-		- else
-			= link_to '<', page_prev, :class => 'pagination prev ajax-link'
+			= "#{@pagination.current} of #{@pagination.pages_total}"
 
-		= "#{@pagination.current} of #{@pagination.pages_total}"
-
-		- if @pagination.next.nil?
-			= link_to '>', page_next, :class => 'pagination next disabled'
-		- else
-			= link_to '>', page_next, :class => 'pagination next ajax-link'
+			- if @pagination.next.nil?
+				= link_to '>', page_next, :class => 'pagination next disabled'
+			- else
+				= link_to '>', page_next, :class => 'pagination next ajax-link'

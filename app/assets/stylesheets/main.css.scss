@@ -981,6 +981,12 @@ main > * > *
       font-size:14px;
       letter-spacing: 1px;
       border-bottom:0;
+
+      > span
+      {
+        @include inline-block();
+        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
+      }
     }
 
     h1
@@ -1661,6 +1667,8 @@ main > * > *
         padding: 10px;
         border: 1px solid $white_alpha40;
         background: $blue_light_alpha40;
+
+        input[type='text'] {font-size:16px;}
       
         div
         {
@@ -1751,8 +1759,16 @@ main > * > *
 
         .map img
         {
-            width:100%;
-            height:auto;
+          width:100%;
+          height:auto;
+        }
+      }
+
+      #list-view
+      {
+        li:last-child
+        {
+          margin-bottom:0px;
         }
       }
     }
