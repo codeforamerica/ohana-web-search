@@ -1021,8 +1021,8 @@ main > * > *
       background:$blue_midtone;
       color: $white;
 
-      @include transition(color $default_duration);
-      @include transition(background $default_duration);
+      //@include transition(color $default_duration);
+      //@include transition(background $default_duration);
     }
 
     a.disabled
@@ -1713,11 +1713,28 @@ main > * > *
       #results-container 
       {
         display:table-header-group;
+
+        > header > nav
+        {
+          display:block;
+          padding:10px;
+          padding-top:0px;
+        }
       }
 
       #search-container 
       {
         display:table-footer-group;
+      }
+
+      #results-entries {
+        margin:0px;
+
+        nav{
+          margin-top:15px;
+          margin-left:15px;
+          margin-right:15px;
+        }
       }
 
       #detail-info
