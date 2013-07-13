@@ -17,8 +17,9 @@ require.config({
 
 	// setup alias to js libraries
 	paths: {
+  	'domReady':'../lib/require/domReady',
   	'jquery':'../lib/jquery.min',
-  	'domReady':'../lib/require/domReady'
+  	'enquire':'../lib/enquire.min'
 	},
 
 	// see example here for mapbox shim: https://gist.github.com/rjmackay/5762195

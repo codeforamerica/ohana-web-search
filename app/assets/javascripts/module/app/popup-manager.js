@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util/util'],function(util) {
+define(['util/util','enquire'],function(util,enquire) {
   'use strict';
 
 		// PRIVATE PROPERTIES
@@ -9,6 +9,17 @@ define(['util/util'],function(util) {
 
 		// PUBLIC METHODS
 		function init()
+		{
+			_addPopups();
+			window.enquire.register("screen and (max-width: 767px)", {
+			    match 	: _removePopups,  
+			    unmatch : _addPopups
+			});
+		}
+
+		
+		// PRIVATE METHODS
+		function _addPopups()
 		{
 			popups = document.querySelectorAll(".popup-trigger");
 
@@ -21,8 +32,19 @@ define(['util/util'],function(util) {
 			}
 		}
 
-		
-		// PRIVATE METHODS
+		function _removePopups()
+		{
+			popups = document.querySelectorAll(".popup-trigger");
+
+			var curr;
+			for (var p=0; p < popups.length; p++)
+			{
+				curr = popups[p];
+				curr.removeEventListener("click", _popupHandler, false);
+				curr.classList.remove('active');
+			}
+		}
+
 		function _popupHandler(evt)
 		{
 			evt.preventDefault();

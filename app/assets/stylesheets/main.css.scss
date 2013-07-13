@@ -1621,88 +1621,102 @@ main > * > *
   /* All Mobile Sizes (devices and browser) */
   @media only screen and (max-width: 767px) 
   {
-
-    // move search box and results on top of each other
-    .home main 
+    #content > header
     {
-      position:static;
-    }
+      font-size:14px;
 
-    .inside #results-container 
+      nav 
+      {
+        position:static;
+      }
+    }
+    
+
+    // home screen styles
+    .home 
     {
-      display:table-header-group;
-    }
+      main 
+      {
+        position:static;
+      }
+      
+      #search-container {
+        min-width: 100%;
+      }
 
-    .inside #search-container 
-    {
-      display:table-footer-group;
-    }
-
-    // set width to width of screen
-    .home #search-screen {
-      min-width: 100%;
-    }
-
-    // the following are (almost) the same as the  styles from the fullsite size
-    .home #search-box
-    {
-      position:static;
-      margin-left:0;
-      margin-top:0;
-      display:block;
-      width:auto;
+      #search-box
+      {
+        position:static;
+        margin-left:0;
+        margin-top:0;
+        display:block;
+        width:auto;
 
         box-shadow: 0 0 5px $black_alpha40;
         padding: 10px;
         border: 1px solid $white_alpha40;
         background: $blue_light_alpha40;
+      
+        div
+        {
+            display:block;
+            text-align:center;
+        }
+
+        label
+        {
+            font-size: 20px;
+            color:$white;
+            text-align: center;
+            font-family: $serif_font;
+            letter-spacing: 2px;
+            display:block;
+            width:auto;
+        }
+
+        label span
+        {
+        //    color:$blue_light;
+            display:none;
+        }
+
+        input
+        {
+            height:16px;
+            font-size: 14px;
+            background:$white;
+            margin-bottom:10px;
+            margin-left:auto;
+            margin-right:auto;
+            width:170px;
+            display:block;
+            position:static;
+        }
+
+        button
+        {
+            width:100%;
+            font-size: 16px;
+            margin:0;
+            position:static;
+        }
+      }
     }
 
-    .home #search-box div
+    .inside
     {
-        display:block;
-        text-align:center;
-    }
+      #results-container 
+      {
+        display:table-header-group;
+      }
 
-    .home #search-box label
-    {
-        font-size: 20px;
-        color:$white;
-        text-align: center;
-        font-family: $serif_font;
-        letter-spacing: 2px;
-        display:block;
-        width:auto;
-    }
-
-    .home #search-box label span
-    {
-    //    color:$blue_light;
-        display:none;
-    }
-
-
-    .home #search-box input
-    {
-        height:16px;
-        font-size: 14px;
-        background:$white;
-        margin-bottom:10px;
-        margin-left:auto;
-        margin-right:auto;
-        width:170px;
-        display:block;
-        position:static;
-    }
-
-    .home #search-box button
-    {
-        width:100%;
-        font-size: 16px;
-        margin:0;
-        position:static;
+      #search-container 
+      {
+        display:table-footer-group;
+      }
     }
     
+
   }
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
