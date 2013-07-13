@@ -188,7 +188,8 @@ a:hover
 
 #content > header:hover,
 #popups article:hover,
-#detail-info section:hover
+#detail-info section:hover,
+.about article:hover
 {
   a
   {
@@ -431,8 +432,8 @@ sup
 
     width: 300px;
     background: $white;
-    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     overflow-y:scroll;
+    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     @include border-radius(10px);
     
     > div
@@ -714,8 +715,12 @@ main > * > *
 .about main > * > *
 {
   display:block;
-  padding: 40px;
+  margin: 10px;
+  padding: 30px;
   border-bottom:1px solid $black_alpha10;
+  background:$white;
+  @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
+  @include border-radius(10px);
   
   h1
   {
@@ -725,7 +730,7 @@ main > * > *
 
   p
   {
-    margin-bottom:5px;
+    margin-bottom:10px;
   }
 
   footer
@@ -1713,6 +1718,25 @@ main > * > *
       #search-container 
       {
         display:table-footer-group;
+      }
+
+      #detail-info
+      {
+        width:100%;
+        margin:0px;
+        @include border-radius(0px);
+        @include single-box-shadow($white,0,0,0px);
+        -ms-word-break: break-all;
+        word-break: break-all;
+        // Non standard for webkit
+        word-break: break-word;
+
+
+        .map img
+        {
+            width:100%;
+            height:auto;
+        }
       }
     }
     
