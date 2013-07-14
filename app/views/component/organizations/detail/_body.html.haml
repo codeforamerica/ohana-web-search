@@ -253,7 +253,7 @@
 						Last updated:
 					- if @org.updated_at.present?
 						%span
-							= @org.updated_at
+							= "#{format_timestamp(@org.updated_at)}"
 
 -#
 	// field dump
