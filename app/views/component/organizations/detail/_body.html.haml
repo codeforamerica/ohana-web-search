@@ -81,16 +81,6 @@
   / main detail content
   %section
 
-    - if @org.service_hours.present?
-      %section.hours-box
-        %h1 Service Hours
-        %section
-
-          %section.service-hours
-            %span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
-            %span
-              = @org.service_hours
-
     - if [ @org.description, @org.target_group, @org.service_areas, @org.how_to_apply, @org.fees, @org.eligibility_requirements, @org.languages_spoken, @org.accessibility_options, @org.ttys ].any?
       %section.overview-box
         %h1 Service Overview
@@ -158,7 +148,7 @@
           - if @org.accessibility_options.present? || @org.ttys.present?
             %section.accessibility-options
               %span{"data-icon"=>"♿" , :class=>"ohana-icon"}
-              %span Accessibility Options:
+              %h1 Accessibility Options:
               %ul
                 - @org.accessibility_options.sort.each do |access|
                   %li
@@ -171,6 +161,16 @@
                         = "#{format_phone(tty)}"
                       - unless index == @org.ttys.length
                         %br
+
+    - if @org.service_hours.present?
+      %section.hours-box
+        %h1 Service Hours
+        %section
+
+          %section.service-hours
+            %span{"data-icon"=>"⧗" , :class=>"time ohana-icon"}
+            %span
+              = @org.service_hours
 
     - if @org.payments_accepted.present? || @org.products_sold.present?
       %section.payment-box

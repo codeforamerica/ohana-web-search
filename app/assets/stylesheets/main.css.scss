@@ -1384,6 +1384,7 @@ main > * > *
       padding-bottom:10px;
       > h1
       {
+        font-family: $san_serif_font;
         font-weight:bold;
         @include inline-block();
         vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
@@ -1424,32 +1425,37 @@ main > * > *
 
   // section specific styles
 
-  
-
-  .description a:last-child
+  .description
   {
-    display: block;
-    font-family: $san_serif_font;
-    text-align: center;
-    margin-top: 5px;
+    padding: 20px;
+    line-height: 30px;
+    font-size:14px;
     border-bottom: 1px solid $blue_midtone_alpha30;
-  }
+    margin-bottom:20px;
 
-  .description a:last-child:after
-  {
-    content:">";
-    color:$black_alpha40;
-  }
+    a:last-child
+    {
+      @include inline-block();
+      vertical-align: baseline; // fix for compass polyfill
+      font-family: $san_serif_font;
+    }
 
-  .description a:last-child:before
-  {
-    content:"<";
-    color:$black_alpha40;
-  }
+    a:last-child:after
+    {
+      content:">";
+      color:$black_alpha40;
+    }
 
-  .description a:last-child:hover
-  {
-    border-bottom: 1px solid $black_alpha40;
+    a:last-child:before
+    {
+      content:"<";
+      color:$black_alpha40;
+    }
+
+    a:last-child:hover
+    {
+      border-bottom: 1px solid $black_alpha40;
+    }
   }
 
   // stylize services summary 
