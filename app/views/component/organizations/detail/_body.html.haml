@@ -245,7 +245,7 @@
 					%section.map
 						%img{:src=>"#{@map_url}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
 
-	- if @org.created_at.present? || @org.updated_at.present?
+	- if @org.updated_at.present?
 		%section.metadata
 			%div
 				%section.updated-at
@@ -254,9 +254,6 @@
 					- if @org.updated_at.present?
 						%span
 							= @org.updated_at
-					- else
-						%span
-							= @org.created_at
 
 -#
 	// field dump
