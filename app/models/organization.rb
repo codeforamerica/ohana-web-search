@@ -1,14 +1,4 @@
 class Organization
-
-  #combines address fields together into one string
-  def address
-    "#{self.street_address}, #{self.city}, #{self.state} #{self.zipcode}"
-  end
-
-  def market_match?
-    self.market_match
-  end
-
   # Gets a single organization details
   # @param id [String] Organization ID.
   # @return [Hashie::Mash] Hash representing a organization's details.
@@ -34,5 +24,4 @@ class Organization
       response = @client.empty_set
     end
   end
-
 end

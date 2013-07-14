@@ -17,16 +17,26 @@ describe "address formatting" do
 
   context "when all address elements are present" do
     has_address = JSON.parse(File.read("spec/fixtures/organization.json"))
-    it "adds an address section" do
+
+    before(:each) do
       assign(:org, stub_model(Organization,
         has_address.merge(:name=>"with address")))
-
       render :partial => "component/organizations/detail/body"
+    end
+
+    it "adds an address section" do
       expect(rendered).to match /<section class='address'>/
       expect(rendered).to match /<span itemprop='streetAddress'>/
       expect(rendered).to match /<span itemprop='addressLocality'>/
       expect(rendered).to match /<span itemprop='addressRegion'>/
       expect(rendered).to match /<span itemprop='postalCode'>/
+    end
+
+    it "includes a Google Maps directions link to the address" do
+      string = 'https:\/\/maps.google.com\/maps\?saddr=current\+location'
+      string << '&amp;daddr=2013th Avenue of the fellows, Suite 100,'
+      string << ' San Maceo, CA 99999'
+      expect(rendered).to match /#{string}/
     end
   end
 
@@ -83,5 +93,4 @@ describe "phone number formatting" do
       expect(rendered).to match /703-555-12123/
     end
   end
-
 end

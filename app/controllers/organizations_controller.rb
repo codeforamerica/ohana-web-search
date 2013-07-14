@@ -33,19 +33,12 @@ class OrganizationsController < ApplicationController
 
   # organization details view
   def show
-
     params[:radius] = session[:radius]
     params[:keyword] = session[:keyword]
     params[:location] = session[:location]
 
     query = Organization.get(params[:id])
     @org = query.content
-
-    if @org.coordinates.present?
-      @map_url = "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
-        "#{@org.coordinates[0]},#{@org.coordinates[1]})/#{@org.coordinates[0]}"+
-        ",#{@org.coordinates[1]},15/400x300.png"
-    end
 
     # request is from ajax
     if request.xhr?

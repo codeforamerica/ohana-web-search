@@ -9,9 +9,16 @@ module DetailFormatHelper
     array.any?
   end
 
-  def format_address(org)
-    address = "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
-    superscript_ordinals(address)
+  def address(org)
+    "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
+  end
+
+  def map_url(org)
+    if org.coordinates.present?
+      "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
+        "#{org.coordinates[0]},#{org.coordinates[1]})/#{org.coordinates[0]}"+
+        ",#{org.coordinates[1]},15/400x300.png"
+    end
   end
 
   # Format phone number as (XXX) XXX-XXXX
