@@ -1350,7 +1350,7 @@ main > * > *
   }
 
   // format detail sections
-  > section
+  > * > section
   {
     padding-bottom:10px; // add padding between sections
 
@@ -1372,26 +1372,43 @@ main > * > *
       @include inline-block();
     }
 
-    > div
+    * > section
     {
-      > section
-      {
-        margin:0;
-        font-size:16px;
-        margin-left:20px;
-        margin-right:20px;
-        color:$greyscale_dark;
-        padding-bottom:10px;
+      margin:0;
+      font-size:16px;
+      margin-left:20px;
+      margin-right:20px;
+      color:$greyscale_dark;
+      padding-bottom:10px;
 
-        > h1
-        {
-          font-weight:bold;
-          @include inline-block();
-          vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
-        }
+      > h1
+      {
+        font-weight:bold;
+        @include inline-block();
+        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       }
     }
+  }
 
+  // sidebar
+  > aside
+  {
+    float:right;
+    width:300px;
+    margin-left:20px;
+    @include single-box-shadow($black_alpha10, -2px,0,4px);
+    background:$white;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    // Non standard for webkit
+    word-break: break-word;
+  }
+
+  // adjust margin of main content to fit aside
+  > section
+  {
+    margin-right:300px;
   }
 
   .ohana-icon
@@ -1403,7 +1420,7 @@ main > * > *
   // section specific styles
 
   // arrange contact details in a line
-  .contact-box > div > section
+  /*.contact-box > div > section
   {
       @include inline-block();
       margin-bottom: 10px;
@@ -1415,6 +1432,7 @@ main > * > *
       @include inline-block();
       vertical-align: top;
   }
+  */
 
   .description a:last-child
   {
@@ -1454,14 +1472,6 @@ main > * > *
     text-align:center;
   }
 
-  // stylize timestamp
-  .updated-at
-  {
-    text-align: right;
-    font-size: 12px;
-    font-family: $san_serif_font;
-  }
-
   ul
   {
     margin-bottom:0;
@@ -1489,6 +1499,19 @@ main > * > *
       width:400px;
       height:300px;
       margin-bottom:10px;
+  }
+
+  .metadata
+  {
+    clear:both; // clear any floats to prevent overlap into footer
+
+    // stylize timestamp
+    .updated-at
+    {
+      text-align: right;
+      font-size: 12px;
+      font-family: $san_serif_font;
+    }
   }
 
 }
