@@ -1,14 +1,16 @@
-# This file allows you to override various Teaspoon configuration directives when running from the command line. It is not
-# required from within the Rails environment, so overriding directives that have been defined within the initializer
-# is not possible.
-#
+# This file allows you to override various Teaspoon configuration directives
+# when running from the command line. It is not required from within the Rails
+# environment, so overriding directives that have been defined within the
+# initializer is not possible.
+
 # Set RAILS_ROOT and load the environment.
 ENV["RAILS_ROOT"] = File.expand_path("../../", __FILE__)
 require File.expand_path("../../config/environment", __FILE__)
 
 # Provide default configuration.
 #
-# You can override various configuration directives defined here by using arguments with the teaspoon command.
+# You can override various configuration directives defined here by using
+# arguments with the teaspoon command.
 #
 # teaspoon --driver=selenium --suppress-log
 # rake teaspoon DRIVER=selenium SUPPRESS_LOG=false

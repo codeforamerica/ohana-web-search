@@ -4,8 +4,8 @@
 			%li
 				- query = "?"
 				- request.query_parameters.each do |key, value|
-					- query += "#{key}=#{CGI::escape(value)}&"
-				%a{:href=>"#{organization_path(org._id)+query}", :title=>"#{org.name}"}
+					- query << "#{key}=#{CGI::escape(value)}&"
+				%a{:href=>"#{organization_path(org._id)}#{query}", :title=>"#{org.name}"}
 					%section{:class => "results-entry"}
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
@@ -16,7 +16,7 @@
 								= superscript_ordinals(org.name)
 							- if org.agency.present?
 								%h2.agency
-									= org.agency
-						- if has_address?(org)		
+									= superscript_ordinals(org.agency)
+						- if has_address?(org)
 							%p.address
-								= format_address(org)
+								= superscript_ordinals(address(org))
