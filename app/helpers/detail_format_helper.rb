@@ -9,11 +9,6 @@ module DetailFormatHelper
     array.any?
   end
 
-  def format_address(org)
-    address = "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
-    superscript_ordinals(address)
-  end
-
   # Format phone number as (XXX) XXX-XXXX
   # @param number [String] a phone number
   # @return [String] phone number formatted as (XXX) XXX-XXXX or

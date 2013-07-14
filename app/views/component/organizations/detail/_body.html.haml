@@ -17,20 +17,7 @@
 				- if has_address?(@org)
 					%section.address
 						%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-						%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
-							- if @org.street_address.present?
-								%span{:itemprop=>"streetAddress"}
-									= superscript_ordinals(@org.street_address)
-								%br
-							- if @org.city.present?
-								%span{:itemprop=>"addressLocality"}
-									= "#{@org.city},"
-							- if @org.state.present?
-								%span{:itemprop=>"addressRegion"}
-									= @org.state
-							- if @org.zipcode.present?
-								%span{:itemprop=>"postalCode"}
-									= @org.zipcode
+						= render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
 				- if @org.phones.present?
 					%section.phone
@@ -271,7 +258,4 @@
 			%li
 				%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 					%section{:class => "results-entry"}
-						%h1.name
-							= superscript_ordinals(venue.name)
-						%p.address
-							= "#{superscript_ordinals(venue.street_address)}, #{venue.city}, #{venue.state} #{venue.zipcode}"
+						= render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>1}

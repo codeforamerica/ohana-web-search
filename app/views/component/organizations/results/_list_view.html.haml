@@ -19,4 +19,4 @@
 									= superscript_ordinals(org.agency)
 						- if has_address?(org)
 							%p.address
-								= format_address(org)
+								= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
