@@ -9,42 +9,6 @@ class Organization
     self.market_match
   end
 
-  def self.find_by_keyword_and_location(keyword, location, radius)
-    if keyword.blank? && location.blank?
-      result = self.all
-      return result, "Browse all #{result.size} entries"
-    elsif keyword.blank? && location.present?
-      result = self.near(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'result')} within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
-    elsif keyword.present? && location.present?
-      result = self.find_by_keyword(keyword).find_by_location(location, radius)
-      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}' within #{TextHelper.pluralize(radius, 'mile')} of '#{location}'"
-    else
-      result = self.find_by_keyword(keyword)
-      return result, "#{TextHelper.pluralize(result.size, 'result')} matching '#{keyword}'"
-    end
-  end
-
-  def self.query_valid?(address)
-    if address =~ /(^\d{5}-+)/
-      return false
-    elsif address =~ /^\d+$/
-      if address.length != 5
-        return false
-      else
-        result = address.to_region
-        if result.nil?
-          return false
-        else
-          return true
-        end
-      end
-    else
-      return true
-    end
-  end
-
-
   # Gets a single organization details
   # @param id [String] Organization ID.
   # @return [Hashie::Mash] Hash representing a organization's details.

@@ -3,7 +3,7 @@
 		Service Providers
 	%nav
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
-		== #{@result_summary}
+		= format_summary(@params)
 		|
 		- path = request.fullpath
 
@@ -16,7 +16,7 @@
 		- else
 			- page_prev = path+'&page='+@pagination.prev.to_s
 			- page_next = path+'&page='+@pagination.next.to_s
-		
+
 
 		- if @pagination.prev.nil?
 			= link_to '<', page_prev, :class => 'pagination prev disabled'
