@@ -114,6 +114,7 @@ textarea {
 
 //color scheme
 $black: rgb(0,0,0);
+$black_alpha05: rgba(0,0,0,0.05);
 $black_alpha10: rgba(0,0,0,0.1);
 $black_alpha20: rgba(0,0,0,0.2);
 $black_alpha40: rgba(0,0,0,0.4);
@@ -1381,7 +1382,6 @@ main > * > *
       margin-right:20px;
       color:$greyscale_dark;
       padding-bottom:10px;
-
       > h1
       {
         font-weight:bold;
@@ -1468,13 +1468,39 @@ main > * > *
   // stylize services summary 
   .services-provided
   {
-    padding:5px;
     color:$blue_dark;
-    background:$blue_light;
-    @include border-radius(5px 5px 0px 0px);
+    background:$black_alpha05;
+    @include border-radius(5px);
     margin-bottom:10px;
     margin-top:10px;
     text-align:center;
+    font-family:$san_serif_font;
+    padding:20px;
+    padding-left:30px;
+    padding-right:30px;
+    position:relative;
+  }
+
+  .services-provided:before
+  {
+    position:absolute;
+    left:10px;
+    top:50%;
+    margin-top: -32px;
+    color:$blue_midtone;
+    font-size:48px;
+    content:"{"
+  }
+
+  .services-provided:after
+  {
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top: -32px;
+    color:$blue_midtone;
+    font-size:48px;
+    content:"}"
   }
 
   ul
