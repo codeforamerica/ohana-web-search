@@ -1,28 +1,53 @@
 // manages behavior of popups
-define(['util/util'],function(util) {
+define(['util/util','enquire'],function(util,enquire) {
   'use strict';
 
 		// PRIVATE PROPERTIES
-		var popups; // array of popups on the page
-		var lastPopup; // the last popup to be shown
-		var lastTrigger;
+		var _popups; // array of popups on the page
+		var _lastPopup; // the last popup to be shown
+		var _lastTrigger;
 
 		// PUBLIC METHODS
 		function init()
 		{
-			popups = document.querySelectorAll(".popup-trigger");
+			_addPopups();
+			window.enquire.register("screen and (max-width: 767px)", {
+			    match 	: _removePopups,  
+			    unmatch : _addPopups
+			});
+		}
+
+		
+		// PRIVATE METHODS
+		function _addPopups()
+		{
+			_popups = document.querySelectorAll(".popup-trigger");
 
 			var curr;
-			for (var p=0; p < popups.length; p++)
+			for (var p=0; p < _popups.length; p++)
 			{
-				curr = popups[p];
+				curr = _popups[p];
 				curr.addEventListener("click", _popupHandler, false);
 				curr.classList.add('active');
 			}
 		}
 
-		
-		// PRIVATE METHODS
+		function _removePopups()
+		{
+			_closeLastPopup();
+			_lastPopup = null;
+			_lastTrigger = null;
+			_popups = document.querySelectorAll(".popup-trigger");
+
+			var curr;
+			for (var p=0; p < _popups.length; p++)
+			{
+				curr = _popups[p];
+				curr.removeEventListener("click", _popupHandler, false);
+				curr.classList.remove('active');
+			}
+		}
+
 		function _popupHandler(evt)
 		{
 			evt.preventDefault();
@@ -31,7 +56,6 @@ define(['util/util'],function(util) {
 			var thisPopup = document.querySelector( trigger.hash );
 
 			_show(thisPopup,trigger);
-
 			window.addEventListener("resize", _resizeHandler, true);
 
 			return false;
@@ -39,12 +63,12 @@ define(['util/util'],function(util) {
 
 		function _resizeHandler(evt)
 		{
-			_show(lastPopup,lastTrigger);
+			_show(_lastPopup,_lastTrigger);
 		}
 
 		function _show(popup,trigger)
 		{
-			lastTrigger = trigger;
+			_lastTrigger = trigger;
 
 			var container = popup.parentNode;
 			var arrow = container.children[0];
@@ -71,9 +95,9 @@ define(['util/util'],function(util) {
 				popup.style.left = (offsetX)+"px";
 			}
 
-			if (lastPopup && lastPopup != popup) lastPopup.parentNode.classList.add("hide");
-			lastPopup = popup;
-			lastPopup.parentNode.classList.toggle("hide");
+			if (_lastPopup && _lastPopup != popup) _lastPopup.parentNode.classList.add("hide");
+			_lastPopup = popup;
+			_lastPopup.parentNode.classList.toggle("hide");
 
 			// set height to default in order to check against window height effectively
 			popup.style.height = "auto";
@@ -100,9 +124,15 @@ define(['util/util'],function(util) {
 				!evt.target.classList.contains("popup-trigger") && 
 				!evt.target.parentNode.classList.contains("popup-container"))
 			{
-				lastPopup.parentNode.classList.add("hide");
-				document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
+				_closeLastPopup();
 			}
+		}
+
+		function _closeLastPopup()
+		{
+			if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
+			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
+			window.removeEventListener("resize", _resizeHandler, true);
 		}
 
 	return {

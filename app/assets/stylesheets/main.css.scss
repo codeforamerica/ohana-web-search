@@ -188,7 +188,8 @@ a:hover
 
 #content > header:hover,
 #popups article:hover,
-#detail-info section:hover
+#detail-info section:hover,
+.about article:hover
 {
   a
   {
@@ -431,8 +432,8 @@ sup
 
     width: 300px;
     background: $white;
-    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     overflow-y:scroll;
+    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     @include border-radius(10px);
     
     > div
@@ -714,8 +715,12 @@ main > * > *
 .about main > * > *
 {
   display:block;
-  padding: 40px;
+  margin: 10px;
+  padding: 30px;
   border-bottom:1px solid $black_alpha10;
+  background:$white;
+  @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
+  @include border-radius(10px);
   
   h1
   {
@@ -725,7 +730,7 @@ main > * > *
 
   p
   {
-    margin-bottom:5px;
+    margin-bottom:10px;
   }
 
   footer
@@ -972,10 +977,17 @@ main > * > *
     > nav 
     {
       @include inline-block();
+      vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       color: $white;
       font-size:14px;
       letter-spacing: 1px;
       border-bottom:0;
+
+      > span
+      {
+        @include inline-block();
+        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
+      }
     }
 
     h1
@@ -1016,8 +1028,8 @@ main > * > *
       background:$blue_midtone;
       color: $white;
 
-      @include transition(color $default_duration);
-      @include transition(background $default_duration);
+      //@include transition(color $default_duration);
+      //@include transition(background $default_duration);
     }
 
     a.disabled
@@ -1621,88 +1633,147 @@ main > * > *
   /* All Mobile Sizes (devices and browser) */
   @media only screen and (max-width: 767px) 
   {
-
-    // move search box and results on top of each other
-    .home main 
+    #content > header
     {
-      position:static;
-    }
+      font-size:14px;
 
-    .inside #results-container 
+      nav 
+      {
+        position:static;
+      }
+    }
+    
+
+    // home screen styles
+    .home 
     {
-      display:table-header-group;
-    }
+      main 
+      {
+        position:static;
+      }
+      
+      #search-container {
+        min-width: 100%;
+      }
 
-    .inside #search-container 
-    {
-      display:table-footer-group;
-    }
-
-    // set width to width of screen
-    .home #search-screen {
-      min-width: 100%;
-    }
-
-    // the following are (almost) the same as the  styles from the fullsite size
-    .home #search-box
-    {
-      position:static;
-      margin-left:0;
-      margin-top:0;
-      display:block;
-      width:auto;
+      #search-box
+      {
+        position:static;
+        margin-left:0;
+        margin-top:0;
+        display:block;
+        width:auto;
 
         box-shadow: 0 0 5px $black_alpha40;
         padding: 10px;
         border: 1px solid $white_alpha40;
         background: $blue_light_alpha40;
+
+        input[type='text'] {font-size:16px;}
+      
+        div
+        {
+            display:block;
+            text-align:center;
+        }
+
+        label
+        {
+            font-size: 20px;
+            color:$white;
+            text-align: center;
+            font-family: $serif_font;
+            letter-spacing: 2px;
+            display:block;
+            width:auto;
+        }
+
+        label span
+        {
+        //    color:$blue_light;
+            display:none;
+        }
+
+        input
+        {
+            height:16px;
+            font-size: 14px;
+            background:$white;
+            margin-bottom:10px;
+            margin-left:auto;
+            margin-right:auto;
+            width:170px;
+            display:block;
+            position:static;
+        }
+
+        button
+        {
+            width:100%;
+            font-size: 16px;
+            margin:0;
+            position:static;
+        }
+      }
     }
 
-    .home #search-box div
+    .inside
     {
-        display:block;
-        text-align:center;
-    }
+      #results-container 
+      {
+        display:table-header-group;
 
-    .home #search-box label
-    {
-        font-size: 20px;
-        color:$white;
-        text-align: center;
-        font-family: $serif_font;
-        letter-spacing: 2px;
-        display:block;
-        width:auto;
-    }
+        > header > nav
+        {
+          display:block;
+          padding:10px;
+          padding-top:0px;
+        }
+      }
 
-    .home #search-box label span
-    {
-    //    color:$blue_light;
-        display:none;
-    }
+      #search-container 
+      {
+        display:table-footer-group;
+      }
+
+      #results-entries {
+        margin:0px;
+
+        nav{
+          margin-top:15px;
+          margin-left:15px;
+          margin-right:15px;
+        }
+      }
+
+      #detail-info
+      {
+        margin:0px;
+        @include border-radius(0px);
+        @include single-box-shadow($white,0,0,0px);
+        -ms-word-break: break-all;
+        word-break: break-all;
+        // Non standard for webkit
+        word-break: break-word;
 
 
-    .home #search-box input
-    {
-        height:16px;
-        font-size: 14px;
-        background:$white;
-        margin-bottom:10px;
-        margin-left:auto;
-        margin-right:auto;
-        width:170px;
-        display:block;
-        position:static;
-    }
+        .map img
+        {
+          width:100%;
+          height:auto;
+        }
+      }
 
-    .home #search-box button
-    {
-        width:100%;
-        font-size: 16px;
-        margin:0;
-        position:static;
+      #list-view
+      {
+        li:last-child
+        {
+          margin-bottom:0px;
+        }
+      }
     }
     
+
   }
 
   /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
