@@ -5,7 +5,7 @@
 				- query = "?"
 				- request.query_parameters.each do |key, value|
 					- query += "#{key}=#{CGI::escape(value)}&"
-				%a{:href=>"#{organization_path(org._id)+query}", :title=>"#{org.name}"}
+				%a{:href=>"/organizations/#{org._id+query}", :title=>"#{org.name}"}
 					%section{:class => "results-entry"}
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
