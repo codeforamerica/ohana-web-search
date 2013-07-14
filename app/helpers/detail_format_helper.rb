@@ -9,6 +9,10 @@ module DetailFormatHelper
     array.any?
   end
 
+  def address(org)
+    "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
+  end
+
   def map_url(org)
     if org.coordinates.present?
       "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
