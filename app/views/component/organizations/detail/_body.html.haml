@@ -2,10 +2,10 @@
 %section#detail-info
 	%header
 		%h1.name
-			= @org.name
+			= superscript_ordinals(@org.name)
 		- if @org.agency.present?
 			%h2.agency
-				= @org.agency
+				= superscript_ordinals(@org.agency)
 
 	- if has_address?(@org) || @org.phones.present? || @org.urls.present?
 
@@ -20,11 +20,11 @@
 						%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
 							- if @org.street_address.present?
 								%span{:itemprop=>"streetAddress"}
-									= @org.street_address
-								%br 
+									= superscript_ordinals(@org.street_address)
+								%br
 							- if @org.city.present?
 								%span{:itemprop=>"addressLocality"}
-									= @org.city+","
+									= "#{@org.city},"
 							- if @org.state.present?
 								%span{:itemprop=>"addressRegion"}
 									= @org.state
@@ -38,15 +38,15 @@
 							-	array.each do |hash|
 								%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
 								- if hash["department"]
-									%span 
-										= "#{hash["department"]}" 
+									%span
+										= "#{hash["department"]}"
 								- if hash["number"]
 									%span{:itemprop=>"telephone"}
-										= "#{format_phone(hash["number"])}" 
-								- if hash["phone_hours"]		
+										= "#{format_phone(hash["number"])}"
+								- if hash["phone_hours"]
 									%span
-										= " #{hash["phone_hours"]}"	
-								- if index != @org.phones.length
+										= " #{hash["phone_hours"]}"
+								- unless index == @org.phones.length
 									%br
 
 				- if @org.faxes.present?
@@ -55,7 +55,7 @@
 							%span{"data-icon"=>"℻" , :class=>"ohana-icon"}
 							%span{:itemprop=>"faxNumber"}
 								= "#{format_phone(fax)}"
-							- if index != @org.faxes.length
+							- unless index == @org.faxes.length
 								%br
 
 				- if @org.urls.present?
@@ -65,7 +65,7 @@
 								%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
 								%span{:itemprop=>"url"}
 									= url
-								- if index != @org.urls.length
+								- unless index == @org.urls.length
 									%br
 
 	- if @org.ask_for.present? || @org.emails.present?
@@ -89,10 +89,10 @@
 							%span{"data-icon"=>"@" , :class=>"ohana-icon"}
 							%span{:itemprop=>"email"}
 								= email
-							- if index != @org.emails.length
+							- unless index == @org.emails.length
 								%br
 
-	- if @org.service_hours.present? 
+	- if @org.service_hours.present?
 		%section.hours-box
 			%h1 Service Hours
 			%div
@@ -117,14 +117,14 @@
 								%li
 									%span.term-popup-container
 										%span.popup.hide
-											- dynamic_partial = 'component/popup/'+payment.downcase
+											- dynamic_partial = "component/popup/#{payment.downcase}"
 											= render :partial => "#{dynamic_partial}" rescue nil
 										%span.popup-term
 											= payment
 
 				- if @org.market_match?
 					%section.market-match
-						This market participates in 
+						This market participates in
 						%span.term-popup-container
 							%span.popup.hide
 								= render :partial => 'component/popup/marketmatch' rescue nil
@@ -134,10 +134,10 @@
 				- if @org.products_sold.present?
 					%section.products-sold
 						%span{"data-icon"=>"␣" , :class=>"ohana-icon"}
-						%h1 Products sold: 
+						%h1 Products sold:
 						%ul
 							- @org.products_sold.sort.each do |product|
-								%li 
+								%li
 									= product
 
 
@@ -153,14 +153,14 @@
 
 				- if @org.description.present?
 					%section.description
-						%h1 Description: 
+						%h1 Description:
 						%span
 						= @org.description
 
 				- if @org.target_group.present?
 					%section.target-group
 						%span{"data-icon"=>"T" , :class=>"ohana-icon"}
-						%h1 Target group: 
+						%h1 Target group:
 						%span
 							= @org.target_group
 
@@ -168,48 +168,48 @@
 					%section.service-areas
 						%span{"data-icon"=>"S" , :class=>"ohana-icon"}
 						- if @org.service_areas.length > 0
-							%h1 Service Areas: 
-						- else 
+							%h1 Service Areas:
+						- else
 							%h1 Service Area:
 						%ul
 							- @org.service_areas.sort.each do |area|
-								%li 
+								%li
 									= area
 
 				- if @org.how_to_apply.present?
 					%section.how-to-apply
 						%span{"data-icon"=>"?" , :class=>"ohana-icon"}
-						%h1 How to Apply: 
+						%h1 How to Apply:
 						%span
 							= @org.how_to_apply
 
 				- if @org.fees.present?
 					%section.fees
 						%span{"data-icon"=>"$" , :class=>"ohana-icon"}
-						%h1 Fees: 
+						%h1 Fees:
 						%span
 							= @org.fees
 
 				- if @org.eligibility_requirements.present?
 					%section.eligibility-requirements
 						%span{"data-icon"=>"E" , :class=>"ohana-icon"}
-						%h1 Eligibility Requirements: 
+						%h1 Eligibility Requirements:
 						%span
 							= @org.eligibility_requirements
 
 				- if @org.languages_spoken.present?
 					%section.languages-spoken
 						%span{"data-icon"=>"L" , :class=>"ohana-icon"}
-						%h1 Languages Spoken: 
+						%h1 Languages Spoken:
 						%ul
 							- @org.languages_spoken.sort.each do |lang|
-								%li 
+								%li
 									= lang
 
 				- if @org.accessibility_options.present?
 					%section.accessibility-options
 						%span{"data-icon"=>"♿" , :class=>"ohana-icon"}
-						%span Accessibility Options: 
+						%span Accessibility Options:
 						%ul
 							- @org.accessibility_options.sort.each do |access|
 								%li
@@ -220,10 +220,10 @@
 										%span
 											TDD/TTY:
 											= "#{format_phone(tty)}"
-										- if index != @org.ttys.length
+										- unless index == @org.ttys.length
 											%br
 
-				
+
 
 	- if @map_url.present? || @org.transportation_availability.present?
 		%section.map-box
@@ -233,7 +233,7 @@
 
 				- if @org.transportation_availability.present?
 					%section.transportation
-						%span 
+						%span
 							= @org.transportation_availability
 
 				- if @map_url.present?
@@ -250,7 +250,7 @@
 			%div
 				%section.updated-at
 					%h1
-						Last updated: 
+						Last updated:
 					- if @org.updated_at.present?
 						%span
 							= @org.updated_at
@@ -264,17 +264,17 @@
 		%section
 			%h1
 			= field
-			
+
 
 - if @nearby.present?
 	%h2
 		Nearby (within 2 miles):
 	%ul
-		- @nearby.each do |venue| 
+		- @nearby.each do |venue|
 			%li
 				%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 					%section{:class => "results-entry"}
 						%h1.name
 							= superscript_ordinals(venue.name)
 						%p.address
-							= superscript_ordinals(venue.street_address)+", #{venue.city}, #{venue.state} #{venue.zipcode}"
+							= "#{superscript_ordinals(venue.street_address)}, #{venue.city}, #{venue.state} #{venue.zipcode}"

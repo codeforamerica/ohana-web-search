@@ -1,47 +1,24 @@
 module DetailFormatHelper
-  
-  # Checks for presence of any of the address fields
-  # @param org [Object] the format type, `:text` or `:html`
-  # @return [Boolean] return true if any address field is present, otherwise return false.
-  def has_address?(org)
-    if org["street_address"].present? || 
-      org["city"].present? ||
-      org["state"].present? ||
-      org["zipcode"].present?
 
-      return true
-    end
-    return false
+  # Checks for presence of any of the address fields
+  # @param org [Object] a JSON object
+  # @return [Boolean] return true if any address field is present,
+  # otherwise return false.
+  def has_address?(org)
+    array = [org.street_address, org.city, org.state, org.zipcode]
+    array.any?
   end
 
-
   def format_address(org)
-    array = Array.new
-
-    if org["street_address"].present?
-      array.push org['street_address']
-    end
-
-    if org["city"].present?
-      array.push org['city']
-    end
-
-    if org["state"].present?
-      array.push org['state']
-    end
-
-    if org["zipcode"].present?
-      array.push org['zipcode']
-    end
-
-    address = array.join(", ")
+    address = "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
     superscript_ordinals(address)
   end
 
   # Format phone number as (XXX) XXX-XXXX
+  # @param number [String] a phone number
+  # @return [String] phone number formatted as (XXX) XXX-XXXX
+  # return without formatting if number is not 10 digits long
   def format_phone(number)
-
-    # return without formatting if number is not 9 digits long
     result = number.gsub(/[^\d]/, '')
     if result.length == 10
       result = "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
@@ -52,34 +29,26 @@ module DetailFormatHelper
 
   # Adds <sup>XX</sup> around ordinals in string
   # @param [String] string to parse for ordinals
-  # @return [String] HTML-safe string possibly containing <sup> elements
+  # @return [String] HTML-safe string containing <sup> elements
+
+  # The regex finds all occurrences of ordinal numbers, matching
+  # only the "st", "nd", "rd", and "th" portion. The gsub method
+  # accepts a block, in which we pass the replacement text using
+  # the global regex variable "$&", which represents the matched text.
+  # In plain english, we are looking for all occurrences of
+  # "st", "nd", "rd", and "th" that are preceded by a number, and then
+  # we replace them with "<sup>#{the text that was matched}</sup>".
+  # "content_tag(:sup, $&)" is Rails shorthand for "<sup>#{$&}</sup>".
+
+  # For security purposes, in case the original string contains malicious
+  # content, such as a <script>, we first apply the Rails html_escape method,
+  # which converts "<" and ">" to "&lt;" and "&gt;", hence preventing any
+  # scripts from actually running. Then, once we add the <sup> tags to our
+  # safe string, we can declare this new string to be html_safe, since the
+  # only html we are not escaping are the <sup> tags, and what's in between
+  # the tags is controlled by us.
   def superscript_ordinals(string)
-    val = ordinal_parse(string,'st')
-    val = ordinal_parse(val,'nd')
-    val = ordinal_parse(val,'rd')
-    val = ordinal_parse(val,'th')
-    val.html_safe
+    string = html_escape(string).to_str
+    string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/){ content_tag(:sup, $&) }.html_safe
   end
-
-  private
-  # parse ordinals and add <sup> element
-  def ordinal_parse(string, ordinal)
-    exp = '(^.*\d)('+ordinal+')(\b.*)'
-    regex = Regexp.new exp
-    fname = string.split(regex)
-
-    parsed = ''
-    fname.each do |snippet|
-
-      if snippet == ordinal
-        snippet = "<sup>#{ordinal}</sup>"
-      end
-
-      parsed += snippet
-
-    end
-
-    parsed
-  end
-
 end
