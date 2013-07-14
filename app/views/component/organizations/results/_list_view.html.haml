@@ -16,7 +16,7 @@
 								= superscript_ordinals(org.name)
 							- if org.agency.present?
 								%h2.agency
-									= org.agency
-						- if has_address?(org)		
+									= superscript_ordinals(org.agency)
+						- if has_address?(org)
 							%p.address
 								= format_address(org)
