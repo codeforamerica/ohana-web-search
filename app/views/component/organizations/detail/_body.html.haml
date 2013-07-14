@@ -109,7 +109,7 @@
 										%span.popup-term
 											= payment
 
-				- if @org.market_match?
+				- if @org.market_match
 					%section.market-match
 						This market participates in
 						%span.term-popup-container
@@ -212,7 +212,7 @@
 
 
 
-	- if @map_url.present? || @org.transportation_availability.present?
+	- if map_url(@org).present? || @org.transportation_availability.present?
 		%section.map-box
 			%h1 Map & Directions
 
@@ -223,14 +223,14 @@
 						%span
 							= @org.transportation_availability
 
-				- if @map_url.present?
+				- if map_url(@org).present?
 					%section.directions
-						%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{@org.address}",:target=>"_blank"}
+						%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
 							%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
 							%span Get Directions
 
 					%section.map
-						%img{:src=>"#{@map_url}", :alt => "Location map", :width => 320, :height => 240, :title => "#{@org.address}"}
+						%img{:src=>"#{map_url(@org)}", :alt => "Location map", :width => 320, :height => 240, :title => "#{address(@org)}"}
 
 	- if @org.updated_at.present?
 		%section.metadata

@@ -3,8 +3,8 @@
 		Service Providers
 	%nav
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
-		== #{@result_summary}
-		
+		= format_summary(@params)
+
 		- path = request.fullpath
 
 		- if (path =~ /page=\d*&?/).present?

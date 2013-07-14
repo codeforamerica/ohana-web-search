@@ -1,44 +1,50 @@
 feature 'Visitor performs search on home page' do
 
- 
   scenario 'with valid ZIP code' do
     search_for_address "94403"
 
-    expect(page).to have_content("Showing 30 of 100 results within 2 miles of '94403'")
+    expect(page)
+      .to have_content("Showing 30 of 100 results within 2 miles of '94403'")
     find_field("location").value.should == "94403"
   end
 
   scenario 'with numerical-only address greater than 5 digits' do
     search_for_address '123456'
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '123456'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '123456'")
   end
 
   scenario 'with numerical-only address less than 5 digits' do
     search_for_address '1236'
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '1236'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '1236'")
   end
 
   scenario 'with numerical-only address that starts with 4 zeros or more' do
     search_for_address '00000'
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '00000'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '00000'")
   end
 
   scenario 'with only 1 word that contains numbers and letters' do
     search_for_address '0000f'
 
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '0000f'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '0000f'")
   end
 
   scenario 'with a 5-digit zip code that does not exist' do
     search_for_address '11111'
 
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '11111'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '11111'")
   end
 
   scenario 'with a zip code containing dash' do
     search_for_address '11111-1'
 
-    expect(page).to have_content("Showing 0 of 0 results within 2 miles of '11111-1'")
+    expect(page)
+      .to have_content("Showing 0 of 0 results within 2 miles of '11111-1'")
   end
 
 =begin

@@ -9,6 +9,14 @@ module DetailFormatHelper
     array.any?
   end
 
+  def map_url(org)
+    if org.coordinates.present?
+      "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
+        "#{org.coordinates[0]},#{org.coordinates[1]})/#{org.coordinates[0]}"+
+        ",#{org.coordinates[1]},15/400x300.png"
+    end
+  end
+
   # Format phone number as (XXX) XXX-XXXX
   # @param number [String] a phone number
   # @return [String] phone number formatted as (XXX) XXX-XXXX or
