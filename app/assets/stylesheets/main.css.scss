@@ -932,7 +932,7 @@ main > * > *
 .inside #search-box
 {
     padding-left: 15px;
-    box-shadow: 0 0 5px $black_alpha40;
+    @include single-box-shadow($black_alpha40,0,0,5px);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
@@ -1017,7 +1017,7 @@ main > * > *
       background:$blue_light;
       padding:5px;
       border-radius:5px;
-      box-shadow:0 0 3px $black_alpha40;
+      @include single-box-shadow($black_alpha40,0,0,3px);
       letter-spacing: 1px;
       text-decoration: none;
       border-bottom:0;
@@ -1330,7 +1330,7 @@ main > * > *
     font-family: $serif_font;
     border-bottom: 1px solid $black_alpha10;
     background:$white;
-    border-radius:10px 10px 0px 0px;
+    @include border-radius(10px 10px 0px 0px);
     padding: 10px;
     padding-left:20px;
 
@@ -1366,10 +1366,11 @@ main > * > *
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 5px;
-      border-bottom:2px solid $black_alpha10;
+      border-bottom:1px solid $black_alpha10;
       letter-spacing: 1px;
       font-family: $san_serif_font;
       @include inline-block();
+      vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
     }
 
     * > section
@@ -1396,13 +1397,17 @@ main > * > *
     float:right;
     width:300px;
     margin-left:20px;
-    @include single-box-shadow($black_alpha10, -2px,0,4px);
+    border-left:1px solid $black_alpha10;
+    border-bottom:1px solid $black_alpha10;
+    //@include single-box-shadow($black_alpha10, -1px,1px,4px);
     background:$white;
 
     -ms-word-break: break-all;
     word-break: break-all;
     // Non standard for webkit
     word-break: break-word;
+
+    @include border-radius(0px 0px 0px 10px);
   }
 
   // adjust margin of main content to fit aside
