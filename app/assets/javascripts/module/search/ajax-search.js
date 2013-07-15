@@ -82,7 +82,11 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 			if (params.radius) radius.value = params.radius;
 			if (location.value != "") radius.disabled = false;
 			
-			ajax.request(window.location.href, _callback);
+			if (window.location.pathname == "/organizations")
+			{
+				lm.show({"fullscreen":false});
+				ajax.request(window.location.href, _callback);
+			}
 		}
 
 		function _initPagination()
