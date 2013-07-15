@@ -45,17 +45,21 @@ define(function() {
 		// show less text
 		function _showLess(evt)
 		{
+			fulltext = fulltext.trim();
       var c = fulltext.substr(0, showChar);
       var h = fulltext.substr(showChar-1, fulltext.length - showChar);
 			
-			var lnk = document.createElement("a");
-			lnk.innerHTML = moretext;
+			if (h.length > 0)
+			{
+				var lnk = document.createElement("a");
+				lnk.innerHTML = moretext;
 
-      var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span><span class="hide">' + h + '</span></span>';
+	      var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span><span class="hide">' + h + '</span></span>';
 
-      desc.innerHTML = html;
-      desc.appendChild(lnk);
-      lnk.addEventListener("click", _showMore, false);
+	      desc.innerHTML = html;
+	      desc.appendChild(lnk);
+	      lnk.addEventListener("click", _showMore, false);
+      }
 		}
 
 	return {

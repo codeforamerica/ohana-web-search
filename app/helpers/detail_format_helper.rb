@@ -5,14 +5,19 @@ module DetailFormatHelper
   # @return [Boolean] return true if any address field is present,
   # otherwise return false.
   def has_address?(org)
-    array = [org.street_address, org.city, org.state, org.zipcode]
-    array.any?
+    [org.street_address, org.city, org.state, org.zipcode].any?
   end
 
+  # Formats address for use in map URLs, image title attributes, etc.
+  # @param org [Object] a JSON object
+  # @return [String] return comma separated address.
   def address(org)
     "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
   end
 
+  # Generate static map URL
+  # @param org [Object] a JSON object
+  # @return [String] return static map URL if coordinates are present.
   def map_url(org)
     if org.coordinates.present?
       "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
