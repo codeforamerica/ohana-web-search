@@ -23,8 +23,8 @@ module DetailFormatHelper
 
   # Format phone number as (XXX) XXX-XXXX
   # @param number [String] a phone number
-  # @return [String] phone number formatted as (XXX) XXX-XXXX
-  # return without formatting if number is not 10 digits long
+  # @return [String] phone number formatted as (XXX) XXX-XXXX or
+  # returned without formatting if number is not 10 digits long
   def format_phone(number)
     result = number.gsub(/[^\d]/, '')
     if result.length == 10
@@ -32,6 +32,16 @@ module DetailFormatHelper
     else
       number
     end
+  end
+
+  # Format a timestamp, such as "2013-07-04T04:27:19Z", in a reader friendly fashion,
+  # for example "Thursday, 4 July 2013 at 4:27:19 AM"
+  # Note that it doesn't include the timezone offset in the output.
+  # @param timestamp [Sting] a timestamp string
+  # @return [String] formatted timestamp
+  def format_timestamp(timestamp)
+    timeobj = DateTime.parse(timestamp)
+    timeobj.strftime("%A, %e %B %Y at %l:%M:%S %p")
   end
 
   # Adds <sup>XX</sup> around ordinals in string

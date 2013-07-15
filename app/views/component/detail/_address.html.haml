@@ -1,0 +1,24 @@
+%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+	
+	- if org.street_address.present?
+		- if lines == 2
+			%span{:itemprop=>"streetAddress"}
+				= superscript_ordinals(org.street_address)
+			%br
+		- elsif org.city.present? || org.state.present? || org.zipcode.present?
+			<span itemprop"streetAddress">#{superscript_ordinals(org.street_address)}</span>,  
+		- else
+			%span{:itemprop=>"streetAddress"}
+				= superscript_ordinals(org.street_address)
+
+	- if org.city.present?
+		%span{:itemprop=>"addressLocality"}
+			= org.city + ((org.state.present? || org.zipcode.present?) ? ", " : "")
+	
+	- if org.state.present?
+		%span{:itemprop=>"addressRegion"}
+			= org.state
+	
+	- if org.zipcode.present?
+		%span{:itemprop=>"postalCode"}
+			= org.zipcode

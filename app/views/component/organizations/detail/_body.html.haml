@@ -17,20 +17,7 @@
 				- if has_address?(@org)
 					%section.address
 						%span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-						%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
-							- if @org.street_address.present?
-								%span{:itemprop=>"streetAddress"}
-									= superscript_ordinals(@org.street_address)
-								%br
-							- if @org.city.present?
-								%span{:itemprop=>"addressLocality"}
-									= "#{@org.city},"
-							- if @org.state.present?
-								%span{:itemprop=>"addressRegion"}
-									= @org.state
-							- if @org.zipcode.present?
-								%span{:itemprop=>"postalCode"}
-									= @org.zipcode
+						= render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
 				- if @org.phones.present?
 					%section.phone
@@ -245,7 +232,7 @@
 					%section.map
 						%img{:src=>"#{map_url(@org)}", :alt => "Location map", :width => 320, :height => 240, :title => "#{address(@org)}"}
 
-	- if @org.created_at.present? || @org.updated_at.present?
+	- if @org.updated_at.present?
 		%section.metadata
 			%div
 				%section.updated-at
@@ -253,10 +240,7 @@
 						Last updated:
 					- if @org.updated_at.present?
 						%span
-							= @org.updated_at
-					- else
-						%span
-							= @org.created_at
+							= "#{format_timestamp(@org.updated_at)}"
 
 -#
 	// field dump
@@ -274,7 +258,4 @@
 			%li
 				%a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
 					%section{:class => "results-entry"}
-						%h1.name
-							= superscript_ordinals(venue.name)
-						%p.address
-							= "#{superscript_ordinals(venue.street_address)}, #{venue.city}, #{venue.state} #{venue.zipcode}"
+						= render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>1}
