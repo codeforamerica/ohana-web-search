@@ -9,53 +9,54 @@
 
 
   / detail sidebar content
-  %aside
+  - if [ @org.ask_for, @org.phones, @org.faxes, @org.emails, @org.urls ].any? || has_address?(@org)
+    %aside
 
-    - if [ @org.ask_for, @org.phones, @org.faxes, @org.emails ].any?
-      %section.contact-box
-        %h1 Contact
-        %section
+      - if [ @org.ask_for, @org.phones, @org.faxes, @org.emails ].any?
+        %section.contact-box
+          %h1 Contact
+          %section
 
-          - if @org.ask_for.present?
-            %section.ask-for
-              %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
-              %span
-                = @org.ask_for
-          
-          - if @org.emails.present?
-            %section.email{:itemprop=>"email"}
-              - @org.emails.each_with_index do |email, index|
-                %span{"data-icon"=>"@" , :class=>"ohana-icon"}
-                %span{:itemprop=>"email"}
-                  = email
-                - unless index == @org.emails.length
-                  %br
-
-          - if @org.phones.present?
-            %section.phone
-              - @org.phones.each_with_index do |array,index|
-                - array.each do |hash|
-                  %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-                  - if hash["department"]
-                    %span
-                      = "#{hash["department"]}"
-                  - if hash["number"]
-                    %span{:itemprop=>"telephone"}
-                      = "#{format_phone(hash["number"])}"
-                  - if hash["phone_hours"]
-                    %span
-                      = " #{hash["phone_hours"]}"
-                  - unless index == @org.phones.length
+            - if @org.ask_for.present?
+              %section.ask-for
+                %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
+                %span
+                  = @org.ask_for
+            
+            - if @org.emails.present?
+              %section.email{:itemprop=>"email"}
+                - @org.emails.each_with_index do |email, index|
+                  %span{"data-icon"=>"@" , :class=>"ohana-icon"}
+                  %span{:itemprop=>"email"}
+                    = email
+                  - unless index == @org.emails.length
                     %br
 
-          - if @org.faxes.present?
-            %section.fax
-              - @org.faxes.each_with_index do |fax,index|
-                %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
-                %span{:itemprop=>"faxNumber"}
-                  = "#{format_phone(fax)}"
-                - unless index == @org.faxes.length
-                  %br
+            - if @org.phones.present?
+              %section.phone
+                - @org.phones.each_with_index do |array,index|
+                  - array.each do |hash|
+                    %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+                    - if hash["department"]
+                      %span
+                        = "#{hash["department"]}"
+                    - if hash["number"]
+                      %span{:itemprop=>"telephone"}
+                        = "#{format_phone(hash["number"])}"
+                    - if hash["phone_hours"]
+                      %span
+                        = " #{hash["phone_hours"]}"
+                    - unless index == @org.phones.length
+                      %br
+
+            - if @org.faxes.present?
+              %section.fax
+                - @org.faxes.each_with_index do |fax,index|
+                  %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
+                  %span{:itemprop=>"faxNumber"}
+                    = "#{format_phone(fax)}"
+                  - unless index == @org.faxes.length
+                    %br
 
       - if has_address?(@org) || @org.urls.present?
         %section.address-box
