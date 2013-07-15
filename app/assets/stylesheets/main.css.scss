@@ -1377,15 +1377,21 @@ main > * > *
     * > section
     {
       margin:0;
-      font-size:16px;
+      font-size:14px;
       margin-left:20px;
       margin-right:20px;
       color:$greyscale_dark;
       padding-bottom:10px;
+
       > h1
       {
+        font-size:16px;
         font-family: $san_serif_font;
         font-weight:bold;
+        background:$black_alpha05;
+        padding-left:5px;
+        padding-right:5px;
+        @include border-radius(5px);
         @include inline-block();
         vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       }
@@ -1401,7 +1407,7 @@ main > * > *
     border-left:1px solid $black_alpha10;
     border-bottom:1px solid $black_alpha10;
     //@include single-box-shadow($black_alpha10, -1px,1px,4px);
-    background:$white;
+    background:$black_alpha05;
 
     -ms-word-break: break-all;
     word-break: break-all;
@@ -1429,7 +1435,6 @@ main > * > *
   {
     padding: 20px;
     line-height: 30px;
-    font-size:14px;
     border-bottom: 1px solid $blue_midtone_alpha30;
     margin-bottom:20px;
 
@@ -1438,6 +1443,8 @@ main > * > *
       @include inline-block();
       vertical-align: baseline; // fix for compass polyfill
       font-family: $san_serif_font;
+      margin-left:5px;
+      line-height: normal;
     }
 
     a:last-child:after
@@ -1468,6 +1475,7 @@ main > * > *
     margin-top:10px;
     text-align:center;
     font-family:$san_serif_font;
+    font-size:16px;
     padding:20px;
     padding-left:30px;
     padding-right:30px;
