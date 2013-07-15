@@ -1404,9 +1404,9 @@ main > * > *
     float:right;
     width:300px;
     margin-left:20px;
-    border-left:1px solid $black_alpha10;
-    border-bottom:1px solid $black_alpha10;
-    //@include single-box-shadow($black_alpha10, -1px,1px,4px);
+    border-left:1px solid $white;
+    border-bottom:1px solid $white;
+    @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
     background:$black_alpha05;
 
     -ms-word-break: break-all;
@@ -1543,6 +1543,13 @@ main > * > *
       text-align: right;
       font-size: 12px;
       font-family: $san_serif_font;
+
+      > h1
+      {
+        padding:0;
+        background:transparent;
+        font-size:12px;
+      }
     }
   }
 
@@ -1811,6 +1818,16 @@ main > * > *
         // Non standard for webkit
         word-break: break-word;
 
+        > aside
+        {
+          float:clear;
+          width:100%;
+        }
+
+        > section
+        {
+          margin-right:auto;
+        }
 
         .map img
         {
