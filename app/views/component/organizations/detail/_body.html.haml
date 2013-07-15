@@ -72,7 +72,7 @@
               %section.url
                 - @org.urls.each_with_index do |url,index|
                   %a{:href=>url,:target=>"_blank"}
-                    %span{"data-icon"=>"" , :class=>"external-link ohana-icon"}
+                    %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                     %span{:itemprop=>"url"}
                       = url
                     - unless index == @org.urls.length
