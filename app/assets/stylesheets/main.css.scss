@@ -114,6 +114,7 @@ textarea {
 
 //color scheme
 $black: rgb(0,0,0);
+$black_alpha05: rgba(0,0,0,0.05);
 $black_alpha10: rgba(0,0,0,0.1);
 $black_alpha20: rgba(0,0,0,0.2);
 $black_alpha40: rgba(0,0,0,0.4);
@@ -207,6 +208,12 @@ sup
 .ohana-icon:before {
     content: attr(data-icon);
     font-family:"OhanaIcons";
+}
+
+.ohana-icon
+{
+    font-size: 16px;
+    vertical-align: middle;
 }
 
 // find button mini magnifying glass 
@@ -932,7 +939,7 @@ main > * > *
 .inside #search-box
 {
     padding-left: 15px;
-    box-shadow: 0 0 5px $black_alpha40;
+    @include single-box-shadow($black_alpha40,0,0,5px);
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
@@ -1017,7 +1024,7 @@ main > * > *
       background:$blue_light;
       padding:5px;
       border-radius:5px;
-      box-shadow:0 0 3px $black_alpha40;
+      @include single-box-shadow($black_alpha40,0,0,3px);
       letter-spacing: 1px;
       text-decoration: none;
       border-bottom:0;
@@ -1330,7 +1337,7 @@ main > * > *
     font-family: $serif_font;
     border-bottom: 1px solid $black_alpha10;
     background:$white;
-    border-radius:10px 10px 0px 0px;
+    @include border-radius(10px 10px 0px 0px);
     padding: 10px;
     padding-left:20px;
 
@@ -1350,7 +1357,7 @@ main > * > *
   }
 
   // format detail sections
-  > section
+  > * > section
   {
     padding-bottom:10px; // add padding between sections
 
@@ -1366,32 +1373,60 @@ main > * > *
       margin-top: 0px;
       margin-bottom: 10px;
       padding: 5px;
-      border-bottom:2px solid $black_alpha10;
+      border-bottom:1px solid $black_alpha10;
       letter-spacing: 1px;
       font-family: $san_serif_font;
       @include inline-block();
+      vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
     }
 
-    > div
+    * > section
     {
-      > section
-      {
-        margin:0;
-        font-size:16px;
-        margin-left:20px;
-        margin-right:20px;
-        color:$greyscale_dark;
-        padding-bottom:10px;
+      margin:0;
+      font-size:14px;
+      margin-left:20px;
+      margin-right:20px;
+      color:$greyscale_dark;
+      padding-bottom:10px;
 
-        > h1
-        {
-          font-weight:bold;
-          @include inline-block();
-          vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
-        }
+      > h1
+      {
+        font-size:16px;
+        font-family: $san_serif_font;
+        font-weight:bold;
+        background:$black_alpha05;
+        padding-left:5px;
+        padding-right:5px;
+        @include border-radius(5px);
+        @include inline-block();
+        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       }
     }
+  }
 
+  // sidebar
+  > aside
+  {
+    float:right;
+    width:300px;
+    margin-left:20px;
+    border-left:1px solid $white;
+    border-bottom:1px solid $white;
+    @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
+    background:$black_alpha05;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    // Non standard for webkit
+    word-break: break-word;
+
+    @include border-radius(0px 0px 0px 10px);
+  }
+
+  // adjust margin of main content to fit aside
+  > section
+  {
+    margin-right:300px;
   }
 
   .ohana-icon
@@ -1402,64 +1437,77 @@ main > * > *
 
   // section specific styles
 
-  // arrange contact details in a line
-  .contact-box > div > section
+  .description
   {
-      @include inline-block();
-      margin-bottom: 10px;
-      vertical-align: top;
-  }
-
-  .contact-box > div > section span
-  {
-      @include inline-block();
-      vertical-align: top;
-  }
-
-  .description a:last-child
-  {
-    display: block;
-    font-family: $san_serif_font;
-    text-align: center;
-    margin-top: 5px;
+    padding: 20px;
+    line-height: 30px;
     border-bottom: 1px solid $blue_midtone_alpha30;
-  }
+    margin-bottom:20px;
 
-  .description a:last-child:after
-  {
-    content:">";
-    color:$black_alpha40;
-  }
+    a:last-child
+    {
+      @include inline-block();
+      vertical-align: baseline; // fix for compass polyfill
+      font-family: $san_serif_font;
+      margin-left:5px;
+      line-height: normal;
+    }
 
-  .description a:last-child:before
-  {
-    content:"<";
-    color:$black_alpha40;
-  }
+    a:last-child:after
+    {
+      content:">";
+      color:$black_alpha40;
+    }
 
-  .description a:last-child:hover
-  {
-    border-bottom: 1px solid $black_alpha40;
+    a:last-child:before
+    {
+      content:"<";
+      color:$black_alpha40;
+    }
+
+    a:last-child:hover
+    {
+      border-bottom: 1px solid $black_alpha40;
+    }
   }
 
   // stylize services summary 
   .services-provided
   {
-    padding:5px;
     color:$blue_dark;
-    background:$blue_light;
-    @include border-radius(5px 5px 0px 0px);
+    background:$black_alpha05;
+    @include border-radius(5px);
     margin-bottom:10px;
     margin-top:10px;
     text-align:center;
+    font-family:$san_serif_font;
+    font-size:16px;
+    padding:20px;
+    padding-left:30px;
+    padding-right:30px;
+    position:relative;
   }
 
-  // stylize timestamp
-  .updated-at
+  .services-provided:before
   {
-    text-align: right;
-    font-size: 12px;
-    font-family: $san_serif_font;
+    position:absolute;
+    left:10px;
+    top:50%;
+    margin-top: -32px;
+    color:$blue_midtone;
+    font-size:48px;
+    content:"{"
+  }
+
+  .services-provided:after
+  {
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top: -32px;
+    color:$blue_midtone;
+    font-size:48px;
+    content:"}"
   }
 
   ul
@@ -1489,6 +1537,26 @@ main > * > *
       width:400px;
       height:300px;
       margin-bottom:10px;
+  }
+
+  .metadata
+  {
+    clear:both; // clear any floats to prevent overlap into footer
+
+    // stylize timestamp
+    .updated-at
+    {
+      text-align: right;
+      font-size: 12px;
+      font-family: $san_serif_font;
+
+      > h1
+      {
+        padding:0;
+        background:transparent;
+        font-size:12px;
+      }
+    }
   }
 
 }
@@ -1756,6 +1824,16 @@ main > * > *
         // Non standard for webkit
         word-break: break-word;
 
+        > aside
+        {
+          float:clear;
+          width:100%;
+        }
+
+        > section
+        {
+          margin-right:auto;
+        }
 
         .map img
         {
