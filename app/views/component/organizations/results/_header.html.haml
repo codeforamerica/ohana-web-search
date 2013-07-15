@@ -4,7 +4,7 @@
 	%nav
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 		= format_summary(@params)
-
+		
 		- path = request.fullpath
 
 		- if (path =~ /page=\d*&?/).present?
@@ -16,7 +16,7 @@
 		- else
 			- page_prev = path+'&page='+@pagination.prev.to_s
 			- page_next = path+'&page='+@pagination.next.to_s
-		
+
 		%span#pagination
 			- if @pagination.prev.nil?
 				= link_to '<', page_prev, :class => 'pagination prev disabled'
