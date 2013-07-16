@@ -151,9 +151,10 @@
               %span{"data-icon"=>"♿" , :class=>"ohana-icon"}
               %h1 Accessibility Options:
               %ul
-                - @org.accessibility_options.sort.each do |access|
-                  %li
-                    = access
+                - if @org.accessibility_options.present?
+                  - @org.accessibility_options.sort.each do |access|
+                    %li
+                      = access
                 - if @org.ttys.present?
                   %li
                     - @org.ttys.each_with_index do |tty,index|
