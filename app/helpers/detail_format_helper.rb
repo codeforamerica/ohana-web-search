@@ -20,7 +20,7 @@ module DetailFormatHelper
   # @return [String] return static map URL if coordinates are present.
   def map_url(org)
     if org.coordinates.present?
-      "http://api.tiles.mapbox.com/v3/examples.map-4l7djmvo/pin-s("+
+      "http://api.tiles.mapbox.com/v3/examples.map-rlxntei0/pin-s("+
         "#{org.coordinates[0]},#{org.coordinates[1]})/#{org.coordinates[0]}"+
         ",#{org.coordinates[1]},15/400x300.png"
     end
