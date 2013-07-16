@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(['app/loading-manager','util/ajax','util/util','map-view-manager','result-view-manager'],
-	function(lm,ajax,util,mapViewManager,resultViewManager) {
+define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
+	function(lm,ajax,util,resultViewManager) {
   'use strict';
 	
 		var busyScreen;
@@ -9,7 +9,9 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 
 		var resultsContainer;
 
-		var _callback;
+		var _callback; // callback object for handling ajax success/failure
+
+		var _ajaxCalled = false; // boolean for when the ajax has been call the first time 
 
 		// search parameter values
 		var keyword,location,radius,page;
@@ -67,7 +69,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 				query = '/organizations'+util.queryString(values);
 			}
 			ajax.request(query, _callback);
-			window.history.pushState(null, null, query);
+			window.history.pushState({'ajax':true}, null, query);
 
 			evt.preventDefault();
 			return false;
@@ -75,6 +77,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 
 		function _updateURL(evt) 
 		{
+			console.log("popstate",evt.state);
 			var params = util.getQueryParams(document.location.search);
 			
 			keyword.value = params.keyword || "";
@@ -82,11 +85,10 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 			if (params.radius) radius.value = params.radius;
 			if (location.value != "") radius.disabled = false;
 			
-			//if (window.location.pathname == "/organizations")
-			//{
+			if ( _ajaxCalled || (evt.state && evt.state.ajax) ){
 				lm.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
-			//}
+			}
 		}
 
 		function _initPagination()
@@ -103,6 +105,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 
 		function _success(evt)
 		{
+			_ajaxCalled = true;
 			resultsContainer.innerHTML = evt.content;
 			resultViewManager.init();
 			_initPagination();
