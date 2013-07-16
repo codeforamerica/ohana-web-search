@@ -1,16 +1,23 @@
+---
 language: ruby
-
 rvm:
-  - 2.0.0
-
-services: 
-
+- 2.0.0
+services:
 before_script:
-  
-
 notifications:
   campfire:
     rooms:
-      - secure: "eEuzoYFXLPeIMt+zHGzZp6XCvbfxRDe8FA3kVwrNRB0zoOktPRZXD9O8ng2z\nx2Yg8C7i1unstuW0bjPvwphpdxJOTFSxliw6P4Xk1Y9HnTYQqqUbDat/zL9c\nAyjYezuRQgYFSBP2BgNZ2RL9RiLSyLQBWhcHGB0yBS6rsheKWbk="
+    - secure: |-
+        eEuzoYFXLPeIMt+zHGzZp6XCvbfxRDe8FA3kVwrNRB0zoOktPRZXD9O8ng2z
+        x2Yg8C7i1unstuW0bjPvwphpdxJOTFSxliw6P4Xk1Y9HnTYQqqUbDat/zL9c
+        AyjYezuRQgYFSBP2BgNZ2RL9RiLSyLQBWhcHGB0yBS6rsheKWbk=
     on_success: never
     on_failure: always
+deploy:
+  provider: heroku
+  app: ohana-staging
+  api_key:
+  - secure: |-
+      snkEoAaiMCqlk2KtkNDRQ8dEWSmbhY3bYQgraO70LXDtiey1+iusC0hfuHe2
+      dlmMwWjB7LCCBWGReY7nf6WzZf0oAznyYwIhSDG9pb5mtAr8xINvacfPY8Fg
+      B/sYeZYnHQ1YB4wDl6ef6x3ugYU+WG/eoaN2uYcLFL23l9J99IQ=
