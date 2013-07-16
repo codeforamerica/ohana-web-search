@@ -3,6 +3,7 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
+
     query = Organization.query(params)
     @orgs = query.content
     @pagination = query.pagination
@@ -21,14 +22,18 @@ class OrganizationsController < ApplicationController
     session[:location]        = params[:location]
     session[:page]            = @pagination.current
 
-    # request is from ajax
-    if request.xhr?
-      render json: {
-        'content' => render_to_string(
-          partial: 'component/organizations/results/body'
-        )
+
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json {
+
+        with_format :html do
+          @html_content = render_to_string partial: 'component/organizations/results/body'
+        end
+        render :json => { :content => @html_content }
       }
     end
+    
   end
 
   # organization details view
@@ -40,13 +45,28 @@ class OrganizationsController < ApplicationController
     query = Organization.get(params[:id])
     @org = query.content
 
-    # request is from ajax
-    if request.xhr?
-      render json: {
-        'content' => render_to_string(
-          partial: 'component/organizations/detail/body'
-        )
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json {
+
+        with_format :html do
+          @html_content = render_to_string partial: 'component/organizations/detail/body'
+        end
+        render :json => { :content => @html_content }
       }
     end
+
+  end
+
+  private
+
+  # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
+  # execute a block with a different format (ex: an html partial while in an ajax request)
+  def with_format(format, &block)
+    old_formats = formats
+    self.formats = [format]
+    block.call
+    self.formats = old_formats
+    nil
   end
 end

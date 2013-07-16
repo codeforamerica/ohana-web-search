@@ -4,11 +4,29 @@ define(['jquery'],function($) {
 
 		function request(query,callback)
 		{
-			console.log("ajax request",query)
+			console.log("ajax request",query);
 			if (callback)
-				$.ajax(query).done(callback.done).fail(callback.fail)
+			{
+				$.ajax({
+          beforeSend: function (request)
+          {
+          	request.setRequestHeader("Accept", "application/json");
+          },
+          cache: false,
+          url: query
+  			}).done(callback.done).fail(callback.fail);
+			}
 			else
-				$.ajax(query).done(_success).fail(_failure);
+			{
+				$.ajax({
+          beforeSend: function (request)
+          {
+          	request.setRequestHeader("Accept", "application/json");
+          },
+          cache: false,
+          url: query
+  			}).done(_success).fail(_failure);
+			}
 		}
 
 		// default callbacks
