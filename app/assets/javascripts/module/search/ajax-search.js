@@ -67,7 +67,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 				query = '/organizations'+util.queryString(values);
 			}
 			ajax.request(query, _callback);
-			window.history.pushState({'ajax':true},null, query);
+			window.history.pushState(null, null, query);
 
 			evt.preventDefault();
 			return false;
@@ -82,11 +82,11 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 			if (params.radius) radius.value = params.radius;
 			if (location.value != "") radius.disabled = false;
 			
-			if (window.location.pathname == "/organizations")
-			{
+			//if (window.location.pathname == "/organizations")
+			//{
 				lm.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
-			}
+			//}
 		}
 
 		function _initPagination()
