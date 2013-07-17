@@ -8,7 +8,7 @@ describe "address formatting" do
   context "when no address elements are present" do
     no_address = JSON.parse(File.read("spec/fixtures/no_address_org.json"))
     it "does not add an address section" do
-      assign(:orgs, [stub_model(Organization, no_address)])
+      assign(:orgs, [stub_model(Hashie::Mash, no_address)])
 
       render :partial => "component/organizations/results/list_view"
       expect(rendered).to_not match /<p class='address'>/
@@ -18,7 +18,7 @@ describe "address formatting" do
   context "when all address elements are present" do
     has_address = JSON.parse(File.read("spec/fixtures/organization.json"))
     it "adds an address section" do
-      assign(:orgs, [stub_model(Organization,
+      assign(:orgs, [stub_model(Hashie::Mash,
         has_address.merge(:name=>"with address"))])
 
       render :partial => "component/organizations/results/list_view"

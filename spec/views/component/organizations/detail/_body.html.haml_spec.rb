@@ -5,11 +5,12 @@ describe "component/organizations/detail/_body" do
 end
 
 
+
 describe "address formatting" do
   context "when no address elements are present" do
     no_address = JSON.parse(File.read("spec/fixtures/no_address_org.json"))
     it "does not add an address section" do
-      assign(:org, stub_model(Organization, no_address))
+      assign(:org, stub_model(Hashie::Mash, no_address))
 
       render :partial => "component/organizations/detail/body"
       expect(rendered).to_not match /<section class='address'>/
@@ -20,7 +21,7 @@ describe "address formatting" do
     has_address = JSON.parse(File.read("spec/fixtures/organization.json"))
 
     before(:each) do
-      assign(:org, stub_model(Organization,
+      assign(:org, stub_model(Hashie::Mash,
         has_address.merge(:name=>"with address")))
       render :partial => "component/organizations/detail/body"
     end
@@ -44,7 +45,7 @@ describe "address formatting" do
   context "when only one address element is present" do
     has_address = JSON.parse(File.read("spec/fixtures/street_only_org.json"))
     it "adds an address section" do
-      assign(:org, stub_model(Organization,
+      assign(:org, stub_model(Hashie::Mash,
         has_address.merge(:name=>"with address")))
 
       render :partial => "component/organizations/detail/body"
@@ -76,7 +77,7 @@ describe "phone number formatting" do
     phone = [[{ "number" => "703-555-121" }]]
 
     it "doesn't format the number" do
-      assign(:org, stub_model(Organization, attrs.merge(:phones => phone)))
+      assign(:org, stub_model(Hashie::Mash, attrs.merge(:phones => phone)))
       render :partial => "component/organizations/detail/body"
       expect(rendered).to match /<span itemprop='telephone'>/
       expect(rendered).to match /703-555-121/
@@ -88,7 +89,7 @@ describe "phone number formatting" do
     phone = [[{ "number" => "703-555-12123" }]]
 
     it "doesn't format the number" do
-      assign(:org, stub_model(Organization, attrs.merge(:phones => phone)))
+      assign(:org, stub_model(Hashie::Mash, attrs.merge(:phones => phone)))
       render :partial => "component/organizations/detail/body"
       expect(rendered).to match /<span itemprop='telephone'>/
       expect(rendered).to match /703-555-12123/

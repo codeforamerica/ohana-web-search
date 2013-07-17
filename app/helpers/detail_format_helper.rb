@@ -29,25 +29,9 @@ module DetailFormatHelper
   # @return [Boolean] return true if any field in array is present in org,
   # otherwise return false.
   def has_field?(obj, array)
-    array.each do |field| 
-      if obj[field].present?
-        return true
-      else
-        return false
-      end
-    end
-  end
-
-  #has_field(@org, ['name'])
-  def has_field(obj, array)
-    #array.each { |field| field }
-    array.each do |field| 
-      if obj[field].present?
-        return obj[field]
-      else
-        return "no"
-      end
-    end
+    val = false
+    array.each { |field| obj.fetch(field).present? ? val = true : nil }
+    val
   end
 
   # Groups all address fields into an array
