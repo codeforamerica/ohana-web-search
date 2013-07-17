@@ -1,0 +1,24 @@
+- if has_field?(org,[field])
+  %section{:class=>css_class_format(field)}
+    - if icon.present?
+      %span{"data-icon"=>icon , :class=>"ohana-icon"}
+    - plural = org[field].kind_of?(Array) ? true : false
+    - if title.present?
+      - if plural
+        %h1 #{title}s:
+      - else
+        %h1 #{title}:
+    - if plural
+      %ul
+      - org[field].sort.each do |f|
+        %li
+          - if f.kind_of?(Array)
+            %ul
+              - org[field].sort.each do |sf|
+                %li 
+                  = sf
+          - else 
+            = f
+    - else 
+      %span
+        = org[field]

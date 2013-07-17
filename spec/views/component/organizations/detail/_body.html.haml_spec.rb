@@ -4,6 +4,7 @@ describe "component/organizations/detail/_body" do
   it_behaves_like "superscript formatting"
 end
 
+
 describe "address formatting" do
   context "when no address elements are present" do
     no_address = JSON.parse(File.read("spec/fixtures/no_address_org.json"))

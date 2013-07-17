@@ -17,6 +17,6 @@
 							- if org.agency.present?
 								%h2.agency
 									= superscript_ordinals(org.agency)
-						- if has_address?(org)
+						- if has_field?(org, address_fields)
 							%p.address
 								= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
