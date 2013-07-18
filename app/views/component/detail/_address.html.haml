@@ -2,23 +2,23 @@
 	
 	- if org.street_address.present?
 		- if lines == 2
-			%span{:itemprop=>"streetAddress",:class=>"street-address"}
+			%span.street-address{:itemprop=>"streetAddress"}
 				= superscript_ordinals(org.street_address)
 			%br
 		- elsif org.city.present? || org.state.present? || org.zipcode.present?
-			<span itemprop"streetAddress" class="street-address">#{superscript_ordinals(org.street_address)}</span>,  
+			<span class="street-address" itemprop="streetAddress">#{superscript_ordinals(org.street_address)}</span>,  
 		- else
-			%span{:itemprop=>"streetAddress",:class=>"street-address"}
+			%span.street-address{:itemprop=>"streetAddress"}
 				= superscript_ordinals(org.street_address)
 
 	- if org.city.present?
-		%span{:itemprop=>"addressLocality",:class=>"city"}
+		%span.city{:itemprop=>"addressLocality"}
 			= org.city + ((org.state.present? || org.zipcode.present?) ? ", " : "")
 	
 	- if org.state.present?
-		%span{:itemprop=>"addressRegion",:class=>"state"}
+		%span.state{:itemprop=>"addressRegion"}
 			= org.state
 	
 	- if org.zipcode.present?
-		%span{:itemprop=>"postalCode",:class=>"zipcode"}
+		%span.zipcode{:itemprop=>"postalCode"}
 			= org.zipcode

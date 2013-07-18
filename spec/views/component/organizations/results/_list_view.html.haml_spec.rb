@@ -11,7 +11,7 @@ describe "address formatting" do
       assign(:orgs, [stub_model(Hashie::Mash, no_address)])
 
       render :partial => "component/organizations/results/list_view"
-      expect(rendered).to_not match /<p class='address'>/
+      expect(rendered).to_not match /class='address/
     end
   end
 
@@ -22,13 +22,12 @@ describe "address formatting" do
         has_address.merge(:name=>"with address"))])
 
       render :partial => "component/organizations/results/list_view"
-      expect(rendered).to match /<p class='address'>/
+      expect(rendered).to match /class='address/
+      expect(rendered).to match /<span class=\"street-address\" itemprop=\"streetAddress\">/
+      expect(rendered).to match /<span class='city' itemprop='addressLocality'>/
+      expect(rendered).to match /<span class='state' itemprop='addressRegion'>/
+      expect(rendered).to match /<span class='zipcode' itemprop='postalCode'>/
 
-      regex = Regexp.new (["<span class='street-address' itemprop=\"streetAddress\">2013<sup>th<\/sup> Avenue of the fellows, ",
-        "Suite 100<\/span>,\n<span class='city' itemprop='addressLocality'>\nSan Maceo, ",
-        "\n<\/span>\n<span class='state' itemprop='addressRegion'>\nCA\n<\/span>\n",
-        "<span class='zipcode' itemprop='postalCode'>\n99999\n<\/span>"].join(""))
-      expect(rendered).to match regex
     end
   end
 end
