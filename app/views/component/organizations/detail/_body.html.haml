@@ -87,11 +87,12 @@
         %h1 Service Overview
         %section
 
-          / insert template, params are: organization hash, field, title, icon character
+          / insert template, params are: 
+          / use_template,org,field,title,icon
           = insert_template(true,@org,'services_provided',nil,nil)
           = insert_template(true,@org,'description',"Description",nil)
-          = insert_template(true,@org,'target_group',"Target group","T")
-          = insert_template(true,@org,'service_areas',"Service area","S")
+          = insert_template(true,@org,'target_group',"Target Groups","T")
+          = insert_template(true,@org,'service_areas',"Service Areas","S")
           = insert_template(true,@org,'how_to_apply',"How to Apply","?")
           = insert_template(true,@org,'fees',"Fees","$")
           = insert_template(true,@org,'eligibility_requirements',"Eligibility Requirements","E")
@@ -103,7 +104,7 @@
       %section.hours-box
         %h1 Service Hours
         %section
-
+          
           = insert_template(true,@org,'service_hours',nil,"⧗")
 
     - if has_field?(@org,['payments_accepted','market_match','products_sold'])

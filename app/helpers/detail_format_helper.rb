@@ -12,16 +12,16 @@ module DetailFormatHelper
   # @param use_template [Boolean] whether to use the template or a custom partial
   # @param org [Object] a JSON object
   # @param field [String] a field name in org
-  # @param title [String] a title for name, can be nil
+  # @param title_singular [String] a singular title for name, can be nil
+  # @param title_plural [String] a plural title for name, can be nil
   # @param icon [String] a utf-8 icon character for field, can be nil
   # @return rendered partial.
   def insert_template(use_template,org,field,title,icon)
     if use_template
-      render :partial => "component/detail/template", :locals => {:org=>org, :field=>field, :title=>title,:icon=>icon}
+      render :partial => "component/detail/template", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
     else
-      render :partial => "component/detail/#{field}", :locals => {:org=>org, :field=>field, :title=>title,:icon=>icon}
+      render :partial => "component/detail/#{field}", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
     end
-
   end
 
   # Checks for presence of any fields on an object
