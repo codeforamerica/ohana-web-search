@@ -25,7 +25,7 @@ describe "content exists" do
         render :partial => "component/organizations/detail/body"
 
         # check for CSS class name
-        css_class = css_class_format(key[0])
+        css_class = key[0].sub "_","-"
         expect(rendered).to_not match /class='#{css_class}/
       else
         assign(:org, stub_model(Hashie::Mash,
@@ -54,9 +54,14 @@ describe "content exists" do
             end
           end
 
-        elsif key[0] == "ttys" || key[0] == "faxes"
+        elsif key[0] == "ttys"
           check_value.each do |item|
-              expect(rendered).to match /#{Regexp.escape(format_phone(item))}/
+              expect(rendered).to match /TDD\/TTY:\n\(650\) 348-7687/
+          end
+
+        elsif key[0] == "faxes"
+          check_value.each do |item|
+              expect(rendered).to match /\(650\) 627-8244/
           end
 
         elsif key[0] == "market_match"
