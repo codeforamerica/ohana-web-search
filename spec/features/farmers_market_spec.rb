@@ -17,6 +17,6 @@ feature 'Visitor views the details page of a farmers market' do
   scenario 'market participates in Market match' do
     search_for_keyword('san mateo farmers')
     click_link("San Mateo Farmers' Market")
-    expect(page).to have_content("This market participates in Market Match")
+    expect(page).to have_content("Market Match")
   end
 end

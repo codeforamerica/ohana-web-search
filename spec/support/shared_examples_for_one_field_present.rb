@@ -3,7 +3,7 @@ shared_examples "one field present" do |org,values|
     ignoreFields = ["_id","leaders","distance","created_at","coordinates","keywords","service_wait","funding_sources"]
     it "only has #{key[0]}" do
       if ignoreFields.include? key[0]
-        puts "not tested, as it is not used in the view"
+        puts "#{key[0]} skipped, as it is not used in the view"
       else
         assign(:org, stub_model(Hashie::Mash,
           org.merge(key[0]=>values[index])))
