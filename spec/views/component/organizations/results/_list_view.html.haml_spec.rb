@@ -24,10 +24,10 @@ describe "address formatting" do
       render :partial => "component/organizations/results/list_view"
       expect(rendered).to match /<p class='address'>/
 
-      regex = Regexp.new (["<span itemprop\"streetAddress\">2013<sup>th<\/sup> Avenue of the fellows, ",
-        "Suite 100<\/span>,\n<span itemprop='addressLocality'>\nSan Maceo, ",
-        "\n<\/span>\n<span itemprop='addressRegion'>\nCA\n<\/span>\n",
-        "<span itemprop='postalCode'>\n99999\n<\/span>"].join(""))
+      regex = Regexp.new (["<span class='street-address' itemprop=\"streetAddress\">2013<sup>th<\/sup> Avenue of the fellows, ",
+        "Suite 100<\/span>,\n<span class='city' itemprop='addressLocality'>\nSan Maceo, ",
+        "\n<\/span>\n<span class='state' itemprop='addressRegion'>\nCA\n<\/span>\n",
+        "<span class='zipcode' itemprop='postalCode'>\n99999\n<\/span>"].join(""))
       expect(rendered).to match regex
     end
   end

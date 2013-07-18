@@ -24,7 +24,7 @@
                   = @org.ask_for
             
             - if has_field?(@org,['emails'])
-              %section.email{:itemprop=>"email"}
+              %section.emails{:itemprop=>"email"}
                 - @org.emails.each_with_index do |email, index|
                   %span{"data-icon"=>"@" , :class=>"ohana-icon"}
                   %span{:itemprop=>"email"}
@@ -33,7 +33,7 @@
                     %br
 
             - if @org.phones.present?
-              %section.phone
+              %section.phones
                 - @org.phones.each_with_index do |array,index|
                   - array.each do |hash|
                     %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
@@ -50,7 +50,7 @@
                       %br
 
             - if has_field?(@org,['faxes'])
-              %section.fax
+              %section.faxes
                 - @org.faxes.each_with_index do |fax,index|
                   %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
                   %span{:itemprop=>"faxNumber"}
@@ -69,7 +69,7 @@
                 = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
             - if has_field?(@org, ['urls'])
-              %section.url
+              %section.urls
                 - @org.urls.each_with_index do |url,index|
                   %a{:href=>url,:target=>"_blank"}
                     %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
@@ -82,7 +82,7 @@
   / main detail content
   %section
 
-    - if has_field?(@org, ['description','target_group','service_areas','how_to_apply','fees','eligibility_requirements','languages_spoken','accessibility_options','ttys'])
+    - if has_field?(@org, ['services_provided','description','target_group','service_areas','how_to_apply','fees','eligibility_requirements','languages_spoken','accessibility_options','ttys'])
       %section.overview-box
         %h1 Service Overview
         %section
@@ -106,34 +106,34 @@
 
           = insert_template(true,@org,'service_hours',nil,"⧗")
 
-    - if @org.payments_accepted.present? || @org.products_sold.present?
+    - if has_field?(@org,['payments_accepted','market_match','products_sold'])
       %section.payment-box
         %h1 Payment & Products
 
         %div
 
-          - if @org.payments_accepted.present?
+          - if has_field?(@org,['payments_accepted','market_match'])
             %section.payments-accepted
               %span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
               %h1 Payment methods accepted:
               %ul
-                -@org.payments_accepted.sort.each do |payment|
+                -if has_field?(@org,['payments_accepted'])
+                  -@org.payments_accepted.sort.each do |payment|
+                    %li
+                      %span.term-popup-container
+                        %span.popup.hide
+                          - dynamic_partial = "component/popup/#{payment.downcase}"
+                          = render :partial => "#{dynamic_partial}" rescue nil
+                        %span.popup-term
+                          = payment
+                - if has_field?(@org,['market_match'])
                   %li
                     %span.term-popup-container
                       %span.popup.hide
-                        - dynamic_partial = "component/popup/#{payment.downcase}"
-                        = render :partial => "#{dynamic_partial}" rescue nil
-                      %span.popup-term
-                        = payment
-
-          - if @org.market_match
-            %section.market-match
-              This market participates in
-              %span.term-popup-container
-                %span.popup.hide
-                  = render :partial => 'component/popup/marketmatch' rescue nil
-                %span.popup-term
-                  Market Match!
+                        = render :partial => 'component/popup/marketmatch' rescue nil
+                      %span.market-match.popup-term
+                        Market Match
+          
 
           - if @org.products_sold.present?
             %section.products-sold
@@ -152,7 +152,7 @@
         %div
 
           - if @org.transportation_availability.present?
-            %section.transportation
+            %section.transportation-availability
               %span
                 = @org.transportation_availability
 

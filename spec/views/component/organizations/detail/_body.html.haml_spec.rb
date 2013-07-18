@@ -4,7 +4,19 @@ describe "component/organizations/detail/_body" do
   it_behaves_like "superscript formatting"
 end
 
+describe "content exists" do
+  
+  org = JSON.parse(File.read("spec/fixtures/organization.json"))
+  values = Array.new
 
+  org.each do |key, value|
+    #stores values and clears them from the source
+    values.push value
+    org[key] = nil
+  end
+
+  it_behaves_like "one field present", org, values
+end
 
 describe "address formatting" do
   context "when no address elements are present" do
@@ -28,10 +40,10 @@ describe "address formatting" do
 
     it "adds an address section" do
       expect(rendered).to match /<section class='address'>/
-      expect(rendered).to match /<span itemprop='streetAddress'>/
-      expect(rendered).to match /<span itemprop='addressLocality'>/
-      expect(rendered).to match /<span itemprop='addressRegion'>/
-      expect(rendered).to match /<span itemprop='postalCode'>/
+      expect(rendered).to match /<span class='street-address' itemprop='streetAddress'>/
+      expect(rendered).to match /<span class='city' itemprop='addressLocality'>/
+      expect(rendered).to match /<span class='state' itemprop='addressRegion'>/
+      expect(rendered).to match /<span class='zipcode' itemprop='postalCode'>/
     end
 
     it "includes a Google Maps directions link to the address" do
@@ -50,7 +62,7 @@ describe "address formatting" do
 
       render :partial => "component/organizations/detail/body"
       expect(rendered).to match /<section class='address'>/
-      expect(rendered).to match /<span itemprop='streetAddress'>/
+      expect(rendered).to match /<span class='street-address' itemprop='streetAddress'>/
     end
   end
 end
@@ -79,7 +91,7 @@ describe "phone number formatting" do
     it "doesn't format the number" do
       assign(:org, stub_model(Hashie::Mash, attrs.merge(:phones => phone)))
       render :partial => "component/organizations/detail/body"
-      expect(rendered).to match /<span itemprop='telephone'>/
+      expect(rendered).to match /class='phones'/
       expect(rendered).to match /703-555-121/
     end
   end
@@ -91,7 +103,7 @@ describe "phone number formatting" do
     it "doesn't format the number" do
       assign(:org, stub_model(Hashie::Mash, attrs.merge(:phones => phone)))
       render :partial => "component/organizations/detail/body"
-      expect(rendered).to match /<span itemprop='telephone'>/
+      expect(rendered).to match /class='phones'/
       expect(rendered).to match /703-555-12123/
     end
   end

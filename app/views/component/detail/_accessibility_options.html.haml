@@ -11,6 +11,6 @@
       - if has_field?(org,['ttys'])
         %li
           - org['ttys'].each_with_index do |tty,index|
-            %span
+            %span{:class=>"ttys"}
               TDD/TTY:
               = "#{format_phone(tty)}"
