@@ -10,6 +10,10 @@ require 'rspec/rails'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# configure Capybara to use poltergeist
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
   # ## Mock Framework
