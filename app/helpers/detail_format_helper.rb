@@ -9,6 +9,7 @@ module DetailFormatHelper
   end
 
   # Renders template partial for detail view
+  # @param use_template [Boolean] whether to use the template or a custom partial
   # @param org [Object] a JSON object
   # @param field [String] a field name in org
   # @param title [String] a title for name, can be nil
