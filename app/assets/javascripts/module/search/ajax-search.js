@@ -3,22 +3,21 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 	function(lm,ajax,util,resultViewManager) {
   'use strict';
 	
-		var busyScreen;
-		var nextBtn;
-		var prevBtn;
+		var _nextBtn;
+		var _prevBtn;
 
-		var resultsContainer;
+		var _resultsContainer;
 
 		var _callback; // callback object for handling ajax success/failure
 
 		var _ajaxCalled = false; // boolean for when the ajax has been call the first time 
 
 		// search parameter values
-		var keyword,location,radius,page;
+		var _keyword,_location,_radius,_page;
 
 		function init()
 		{
-			resultsContainer = document.getElementById('results-container');
+			_resultsContainer = document.getElementById('results-container');
 
 			_initPagination();
 
@@ -28,9 +27,9 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 				'fail' : _failure
 			}
 
-			keyword = document.getElementById("keyword");
-			location = document.getElementById("location");
-			radius = document.getElementById("radius");
+			_keyword = document.getElementById("keyword");
+			_location = document.getElementById("location");
+			_radius = document.getElementById("radius");
 			
 			document.getElementById('find-btn').addEventListener("click",_ajaxSearchHandler,false);
 			document.getElementById('radius').addEventListener("change",_ajaxSearchHandler,false);
@@ -58,12 +57,12 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 			var query = this.pathname+this.search;
 			if (!query)
 			{
-				page = 1;/*document.getElementById("page").value;*/
+				_page = 1;/*document.getElementById("page").value;*/
 
-				var values = {'keyword':keyword.value,
-											'location':location.value,
-											'radius':radius.value,
-											'page':page
+				var values = {'keyword':_keyword.value,
+											'location':_location.value,
+											'radius':_radius.value,
+											'page':_page
 											}
 				
 				query = '/organizations'+util.queryString(values);
@@ -77,13 +76,12 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 
 		function _updateURL(evt) 
 		{
-			console.log("popstate",evt.state);
 			var params = util.getQueryParams(document.location.search);
 			
-			keyword.value = params.keyword || "";
-			location.value = params.location || "";
-			if (params.radius) radius.value = params.radius;
-			if (location.value != "") radius.disabled = false;
+			_keyword.value = params.keyword || "";
+			_location.value = params.location || "";
+			if (params.radius) _radius.value = params.radius;
+			if (location.value != "") _radius.disabled = false;
 			
 			if ( _ajaxCalled || (evt.state && evt.state.ajax) ){
 				lm.show({"fullscreen":false});
@@ -93,23 +91,35 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 
 		function _initPagination()
 		{
-			nextBtn = document.querySelector('.pagination.next');
-			prevBtn = document.querySelector('.pagination.prev');
+			_nextBtn = document.querySelector('.pagination.next');
+			_prevBtn = document.querySelector('.pagination.prev');
 
-			if (nextBtn && prevBtn)
+			if (_nextBtn && _prevBtn)
 			{
-				nextBtn.addEventListener("click",_ajaxSearchHandler,false);
-				prevBtn.addEventListener("click",_ajaxSearchHandler,false);
+				_nextBtn.addEventListener("click",_ajaxSearchHandler,false);
+				_prevBtn.addEventListener("click",_ajaxSearchHandler,false);
 			}
+		}
+
+		function _updateTitle()
+		{
+			var suffix = document.title.substring(document.title.lastIndexOf("|"),document.title.length);
+			var summary = document.getElementById("search-summary");
+			if (!summary) summary = document.querySelector("#detail-info h1.name");
+			summary = summary.getAttribute("title")+" "+suffix;
+			document.title = summary;
 		}
 
 		function _success(evt)
 		{
 			_ajaxCalled = true;
-			resultsContainer.innerHTML = evt.content;
+			_resultsContainer.innerHTML = evt.content;
 			resultViewManager.init();
+
 			_initPagination();
 			_registerAjaxHooks();
+			 _updateTitle();
+
 			lm.hide(); // hide loading manager
 		}
 

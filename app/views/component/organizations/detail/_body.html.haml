@@ -1,7 +1,7 @@
 = render 'component/organizations/detail/header'
 %section#detail-info
   %header
-    %h1.name
+    %h1.name{:title=>@org.name}
       = superscript_ordinals(@org.name)
     - if @org.agency.present?
       %h2.agency
