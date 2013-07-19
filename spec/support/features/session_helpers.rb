@@ -63,5 +63,40 @@ module Features
       search_for_keyword_and_location('library', '94010')
       visit_details
     end
+
+
+    # webbrowser navigation using requirejs
+    def back_button_pressed
+      page.execute_script("require(['domReady!'], function() { window.history.back(); });")
+    end
+
+    def forward_button_pressed
+      page.execute_script("require(['domReady!'], function() { window.history.forward(); });")
+    end
+
+
+    # check for distinctive features of pages
+    def looks_like_homepage
+      expect(page).to have_title "OhanaSMC"
+    end
+
+    def looks_like_results_list
+      expect(page).to have_css("#list-view")
+      expect(page).to_not have_css("#map-view")
+    end
+
+    def looks_like_results_map
+      expect(page).to_not have_css("#list-view")
+      expect(page).to have_css("#map-view")
+    end
+
+    def looks_like_details
+      expect(page).to have_css("#detail-info")
+    end
+
+    def looks_like_about
+      expect(page).to have_title "About | OhanaSMC"
+    end
+
   end
 end
