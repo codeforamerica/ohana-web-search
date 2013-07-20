@@ -78,23 +78,31 @@ module Features
     # check for distinctive features of pages
     def looks_like_homepage
       expect(page).to have_title "OhanaSMC"
+      expect(page).to have_css("#search-container")
+      expect(page).to_not have_css("#results-container")
     end
 
     def looks_like_results_list
+      expect(page).to have_css("#search-container")
       expect(page).to have_css("#list-view")
       expect(page).to_not have_css("#map-view")
     end
 
     def looks_like_results_map
+      expect(page).to have_css("#search-container")
       expect(page).to_not have_css("#list-view")
       expect(page).to have_css("#map-view")
     end
 
     def looks_like_details
+      expect(page).to have_css("#search-container")
       expect(page).to have_css("#detail-info")
     end
 
     def looks_like_about
+      expect(page).to have_css("#about-box")
+      expect(page).to have_css("#contribute-box")
+      expect(page).to have_css("#feedback-box")
       expect(page).to have_title "About | OhanaSMC"
     end
 
