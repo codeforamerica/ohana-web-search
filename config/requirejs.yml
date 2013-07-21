@@ -1,0 +1,13 @@
+paths:
+  enquire: 'enquire.min'
+  domReady: 'requirejs/domReady'
+
+shim:
+  'http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js' :
+    exports: 'L'
+
+modules:
+  - name: 'routes/home/index'
+  - name: 'routes/about/index'
+  - name: 'routes/organizations/index'
+  - name: 'routes/organizations/show'

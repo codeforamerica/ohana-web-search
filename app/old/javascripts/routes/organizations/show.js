@@ -1,8 +1,8 @@
 require(['app/app-init',
 				 'search/search-init',
 				 'detail/detail-init',
-				 'domReady!'],
-	function(app,search,detail) {
+				 'domReady!'], 
+	function(app,search,details) {
   'use strict';
 
 });
