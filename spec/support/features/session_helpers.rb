@@ -115,10 +115,10 @@ module Features
     end
 
     def looks_like_about
+      expect(page).to have_title "About | OhanaSMC"
       expect(page).to have_css("#about-box")
       expect(page).to have_css("#contribute-box")
       expect(page).to have_css("#feedback-box")
-      expect(page).to have_title "About | OhanaSMC"
     end
 
   end

@@ -4,7 +4,6 @@ define(['jquery'],function($) {
 
 		function request(query,callback)
 		{
-			console.log("ajax request",query);
 			if (callback)
 			{
 				$.ajax({
