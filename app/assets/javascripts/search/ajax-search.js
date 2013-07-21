@@ -113,7 +113,7 @@ define(['app/loading-manager','util/ajax','util/util','detail/detail-init','resu
 		function _success(evt)
 		{
 			_ajaxCalled = true;
-			resultsContainer.innerHTML = evt.content;
+			_resultsContainer.innerHTML = evt.content;
 			
 			result.init();
 			detail.init();

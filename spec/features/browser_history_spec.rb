@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-feature 'Visitor uses the back or forward button', :js => true do
+feature 'Visitor uses the back or forward button', 
+:js => true do
 
   scenario 'to homepage' do
     search_for_address "94403"
