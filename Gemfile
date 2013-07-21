@@ -9,6 +9,9 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'jquery-rails', '>= 1.0.17'
+gem 'requirejs-rails', git: 'git://github.com/jwhitley/requirejs-rails.git'
 gem 'haml-rails'
 
 # server

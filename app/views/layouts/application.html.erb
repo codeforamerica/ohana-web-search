@@ -21,7 +21,7 @@
     <!--<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>-->
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application", ('routes/'+controller_name+'/'+ action_name) %>
+    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>

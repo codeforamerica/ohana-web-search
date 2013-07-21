@@ -12,10 +12,11 @@ describe "Static pages" do
       page.should have_title('OhanaSMC')
     end
 
-    it "should have the about popup" do
+    it "should have the about popup",
+    :js => true do
       visit "/"
-      page.has_css?("#about-box").should == true
-      page.should have_content('About')
+      #find("#about-btn").click
+      page.has_css?("#about-btn").should == true
     end
   end
 

@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
-	function(lm,ajax,util,resultViewManager) {
+define(['app/loading-manager','util/ajax','util/util','detail/detail-init','result/result-init'],
+	function(lm,ajax,util,detail,result) {
   'use strict';
 	
 		var _nextBtn;
@@ -113,8 +113,10 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 		function _success(evt)
 		{
 			_ajaxCalled = true;
-			_resultsContainer.innerHTML = evt.content;
-			resultViewManager.init();
+			resultsContainer.innerHTML = evt.content;
+			
+			result.init();
+			detail.init();
 
 			_initPagination();
 			_registerAjaxHooks();

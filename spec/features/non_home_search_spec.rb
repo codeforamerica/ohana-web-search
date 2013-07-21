@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Visitor performs search on a page other than home' do
 
   scenario 'on the organizations index page' do

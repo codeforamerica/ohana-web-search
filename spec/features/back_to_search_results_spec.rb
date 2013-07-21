@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 feature 'Visitor goes back to search results' do
 

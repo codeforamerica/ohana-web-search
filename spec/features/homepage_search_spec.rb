@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Visitor performs search on home page' do
 
   scenario 'with valid ZIP code' do
