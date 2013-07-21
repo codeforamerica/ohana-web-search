@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Visitor goes back to search results' do
 
   scenario 'from the details page of one of the original results' do

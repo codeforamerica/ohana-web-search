@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Display organizations that are within 2 miles of the one being visited' do
 
   xscenario 'there are nearby locations' do

@@ -1,0 +1,35 @@
+require 'spec_helper'
+
+feature 'Visitor views a page that is loaded via ajax' do
+
+  @javascript
+  scenario 'details page is displayed via ajax', 
+  :js=>true do
+    search_for_keyword('Service League of San Mateo County')
+    page.find(:css, 'body.ajax-search')
+    page.find(:css, '#list-view li:first-child a').click
+    #visit ("http://localhost:8080/organizations/51d5b18ba4a4d8b01b3e3f6d")
+    #expect(page).to have_xpath("//a", text:"more")
+    #page.execute_script("require(['character-limiter','domReady!'], function(cl) { cl.init(); });")
+    #expect(page).to have_css("#search-box")
+    find(:css, "#detail-info .description a").should have_content("more")
+    find(:css, "#detail-info .description a").click
+  end
+
+=begin
+  xscenario 'search results list is updated via ajax' do
+
+  end
+
+  scenario 'details page is displayed via ajax' do
+    search_for_keyword('Service League of San Mateo County')
+    visit_details
+    within("#detail-info") do
+      within(".description")
+        expect(page).to have_xpath("//a", text:"more")
+      end
+    end
+  end
+=end
+
+end

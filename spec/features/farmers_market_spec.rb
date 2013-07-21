@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Visitor views the details page of a farmers market' do
 
   scenario 'market accepts SNAP and sells cheese' do
