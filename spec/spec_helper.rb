@@ -13,13 +13,13 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 # configure Capybara to use poltergeist
 require 'capybara/poltergeist'
 
-Capybara.register_driver :poltergeist_debug do |app|
-  Capybara::Poltergeist::Driver.new(app, :inspector => true)
-end
+# uncomment the following lines to enable the remote debugger
+#Capybara.register_driver :poltergeist_debug do |app|
+#  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+#end
+#Capybara.javascript_driver = :poltergeist_debug
 
-# Capybara.javascript_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist_debug
-Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 Capybara.automatic_reload = false
 Capybara.default_wait_time = 5
 Capybara.ignore_hidden_elements = true
