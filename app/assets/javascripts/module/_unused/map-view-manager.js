@@ -1,5 +1,5 @@
 // manages results maps view
-define(['util/util'],function(util) {
+define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],function(mapbox,util) {
   'use strict';
 	
 		// PRIVATE PROPERTIES
@@ -8,16 +8,6 @@ define(['util/util'],function(util) {
 		// PUBLIC METHODS
 		function init()
 		{
-
-			var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-
-       /*
 			// hackity hack to fix ajax issue where map variable was already
 			// defined but was referring to a DOM node that had been removed
 			// resulting in a blank map, but no errors.
@@ -80,7 +70,6 @@ define(['util/util'],function(util) {
 				    window.open(e.layer.feature.properties.url+util.queryString(),"_self");
 				});
 			}
-			*/
 		}
 
 	return {

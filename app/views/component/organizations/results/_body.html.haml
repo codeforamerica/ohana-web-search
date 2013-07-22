@@ -5,12 +5,7 @@
 			NO RESULTS
 	- else
 		%nav#results-view-options
-			%span
-				View as:
-			%button#list-view-btn{:type=>"button"}>
-				List
-			%button#map-view-btn{:type=>"button"}
-				Map
+			
 		-#%section#results-sort-options
 			-#%span
 				-#Sort by:
@@ -23,4 +18,3 @@
 				-#%button#distance-sort-btn{:type=>"button"}
 					-#Distance
 		= render 'component/organizations/results/list_view'
-		= render 'component/organizations/results/map_view'

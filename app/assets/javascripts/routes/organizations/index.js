@@ -1,6 +1,6 @@
 require(['app/app-init',
 				 'search/search-init',
-				 'result-view-manager',
+				 'map-view-manager',
 				 'domReady!'], 
 	function(app,search,rvm) {
   'use strict';

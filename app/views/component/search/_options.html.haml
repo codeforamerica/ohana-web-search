@@ -1,8 +1,19 @@
 %section#search-options
-	%h1
-		Search Options
-	%fieldset
-		%legend Location
-		%label{:for=>"radius"}
-			Search radius:
-		= select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
+  %section#map-view
+    %div
+      %input{:type=>"checkbox"}
+      Redo search on map
+    %div#map-canvas
+      %script{:id=>"map-locations",:type=>"text/json"}
+        [
+        - #two loops on one page ain't great, but will leave it till we have ajax working.
+        - @orgs.each_with_index do |org,index|
+          = raw org.to_json
+          - if index != @orgs.count-1
+            ,
+        ]
+  %fieldset
+    %legend Location
+    %label{:for=>"radius"}
+      Search radius:
+    = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
