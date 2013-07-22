@@ -16,9 +16,9 @@ describe "content exists" do
   end
 
   org.each_with_index do |key,index|
-    ignore_fields = ["_id","leaders","distance","created_at","coordinates","keywords","service_wait","funding_sources"]
+    ignored_fields = %w(_id leaders distance created_at coordinates keywords service_wait funding_sources)
     it "only has #{key[0]}" do
-      if ignore_fields.include? key[0]
+      if ignored_fields.include? key[0]
         
         assign(:org, stub_model(Hashie::Mash,
           org.merge(key[0]=>values[index])))
