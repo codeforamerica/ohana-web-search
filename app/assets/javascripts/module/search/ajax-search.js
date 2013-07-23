@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
-	function(lm,ajax,util,resultViewManager) {
+define(['app/loading-manager','util/ajax','util/util'],
+	function(lm,ajax,util) {
   'use strict';
 	
 		var busyScreen;
@@ -107,7 +107,7 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 		{
 			_ajaxCalled = true;
 			resultsContainer.innerHTML = evt.content;
-			resultViewManager.init();
+			
 			_initPagination();
 			_registerAjaxHooks();
 			lm.hide(); // hide loading manager
