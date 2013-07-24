@@ -6,11 +6,11 @@ shared_examples_for "superscript formatting" do
   context "when the string is safe" do
     it "only superscripts the ordinals" do
       assign(:orgs, [
-        stub_model(Organization, attrs.merge(:name => safe_name))
+        stub_model(Hashie::Mash, attrs.merge(:name => safe_name))
       ])
 
       assign(:org,
-        stub_model(Organization, attrs.merge(:name => safe_name)))
+        stub_model(Hashie::Mash, attrs.merge(:name => safe_name)))
 
       render
       regex = Regexp.new (["The 1<sup>st<\/sup>, 2<sup>nd<\/sup>, ",
@@ -23,11 +23,11 @@ shared_examples_for "superscript formatting" do
   context "when the string is unsafe" do
     it "escapes the script tag" do
       assign(:orgs, [
-        stub_model(Organization, attrs.merge(:name => unsafe_name))
+        stub_model(Hashie::Mash, attrs.merge(:name => unsafe_name))
       ])
 
       assign(:org,
-        stub_model(Organization, attrs.merge(:name => unsafe_name)))
+        stub_model(Hashie::Mash, attrs.merge(:name => unsafe_name)))
 
       render
       expect(rendered).to_not match /<script>/
