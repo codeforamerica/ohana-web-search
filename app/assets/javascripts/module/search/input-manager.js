@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(
-	function() {
+define(['util/util'],
+	function(util) {
   'use strict';
 
 		// search parameter values
@@ -56,8 +56,19 @@ define(
 			for (var l=0; l < lnks.length; l++)
 			{
 				curr = lnks[l];
-				curr.addEventListener("click", _callback, false);
+				curr.addEventListener("click", _linkClickedHandler, false);
 			}
+		}
+
+		function _linkClickedHandler(evt)
+		{
+			var params = util.getQueryParams(this.search);
+			params.id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
+			
+			_callback.performSearch(params);
+			
+			evt.preventDefault();
+			return false;
 		}
 
 	return {

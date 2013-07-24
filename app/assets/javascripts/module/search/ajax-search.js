@@ -1,6 +1,6 @@
 // handles ajax search functionality
 define(['app/loading-manager','util/ajax','util/util','search/input-manager','search/pagination-manager','search/map-view-manager'],
-	function(lm,ajax,util,inputs,pagination,map) {
+	function(splash,ajax,util,inputs,pagination,map) {
   'use strict';
 		
 		var _resultsContainer; // area of HTML to refresh with ajax
@@ -13,9 +13,9 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 		{
 			_resultsContainer = document.getElementById('results-container');
 
-			inputs.init(_ajaxSearchHandler); // initialize search form and ajax links
-			pagination.init(_ajaxSearchHandler); // initialize pagination
-			map.init(_ajaxSearchHandler); // initalize map
+			inputs.init(this); // initialize search form and ajax links
+			pagination.init(this); // initialize pagination
+			map.init(this); // initalize map
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -30,62 +30,54 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 		{
 			var params = util.getQueryParams(document.location.search);
 			
+			// set search field values
 			var keyword = params.keyword || "";
 			var location = params.location || "";
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
 
-			if ( _ajaxCalled || (evt.state && evt.state.ajax) ){
-				lm.show({"fullscreen":false});
+			if ( _ajaxCalled || (evt.state && evt.state.ajax) )
+			{
+				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
 			}
 		}
 
-
-		// @return [Object] keyword, location, radius, and page search paramter values
-		function _retrieveSearchValues(page,keyword,location,radius)
+		function performSearch(params)
 		{
-			var values = {};
-			values.page = page || pagination.getPage();
-			values.keyword = keyword || inputs.getKeyword();
-			values.location = location || inputs.getLocation();
-			values.radius = radius || map.getRadius();
+			console.log("READY...",params);
 
-			return values;
-		}
+			splash.show({"fullscreen":false}); 
 
-		function _ajaxSearchHandler(evt)
-		{			
-			lm.show({"fullscreen":false});
-			
-			var query;
+			var page = params.page || 1;
+			var keyword = params.keyword || null;
+			var location = params.location || null;
+			var radius = params.radius || null;
+			var id = params.id || null;
 
-			if (this)
-				query = this.pathname+this.search;
-	
-			if (!query)
-				query = '/organizations'+util.queryString(_retrieveSearchValues(1));
+			var query = '';
+			if (id) query += '/'+id;
+			if (page) query += "?page="+page;
+			if (keyword) query += "&keyword="+keyword;
+			if (location) query += "&location="+location;
+			if (radius) query += "&radius="+radius;
+
 
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true}, null, query);
-
-			if (evt)
-				evt.preventDefault();
-			return false;
 		}
-
 		
 		function _success(evt)
 		{
-			_ajaxCalled = true;
-			_resultsContainer.innerHTML = evt.content;
+			_ajaxCalled = true; // set ajax first-run flag
+			_resultsContainer.innerHTML = evt.content; // update search results list
 			
 			pagination.refresh(); // refresh pagination
-			input.refresh("#results-container"); // refresh search inputs
+			inputs.refresh("#results-container"); // refresh search inputs
 			map.refresh(); // refresh map
 
-			lm.hide(); // hide loading manager
+			splash.hide(); // hide loading manager
 		}
 
 		function _failure(evt)
@@ -94,6 +86,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 		}
 
 	return {
-		init:init
+		init:init,
+		performSearch:performSearch
 	};
 });

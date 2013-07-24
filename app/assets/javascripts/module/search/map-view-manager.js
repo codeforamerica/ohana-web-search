@@ -10,6 +10,8 @@ define(['util/util'],function(util) {
 		var _markerBounds;
 		var _markerInfo; // info window that shows when markers are rolled over
 		var _callback; // callback function for passing updates
+		var _tilesLoadedListener; // listener for when the tiles have loaded
+		var _zoomChangedListener; // listener for when the map is zoomed
 
 		// PUBLIC METHODS
 		function init(callback)
@@ -24,25 +26,20 @@ define(['util/util'],function(util) {
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 		  _markerInfo = document.getElementById("marker-info");
 
-		  google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 		  refresh();
 		}
 
 		// register events on the map
 		function _mapLoaded(evt)
 		{
-			google.maps.event.addListener(_map,"zoom_changed",_mapZoomed);
+			google.maps.event.removeListener(_tilesLoadedListener);
+			_zoomChangedListener = google.maps.event.addListener(_map,"zoom_changed",_mapZoomed);
 		}
 
 		function _mapZoomed(evt)
 		{
-			_updateRadius(map.getRadius());
-		}
-
-		function _updateRadius(val)
-		{
-			_radius = val;
-			_callback();
+			var params = {'radius':getRadius()}
+			_callback.performSearch(params);
 		}
 
 		// loads marker data
@@ -50,9 +47,14 @@ define(['util/util'],function(util) {
 		{
 			var locations = document.getElementById("map-locations");
 			if (locations)
+			{
 		    _markerData = JSON.parse(locations.innerHTML);
+		    locations.parentNode.removeChild(locations); // remove script element
+		  }
 		  else
+		  {
 		  	_hideMap();
+			}
 		}
 
 		// hide the map if there's no data to populate it
@@ -61,7 +63,7 @@ define(['util/util'],function(util) {
 			_mapContainer.classList.add("hide");
 		}
 
-		// hide the map if there's no data to populate it
+		// show the map if it's hidden
 		function _showMap()
 		{
 			_mapContainer.classList.remove("hide");
@@ -160,8 +162,11 @@ define(['util/util'],function(util) {
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
 		function refresh(coordinates)
 		{
+			if (_zoomChangedListener) google.maps.event.removeListener(_zoomChangedListener);
+			if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
 			_loadData();
 			_loadMarkers();
+			_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 		}
 
 	return {

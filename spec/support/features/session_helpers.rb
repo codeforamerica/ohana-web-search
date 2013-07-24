@@ -37,12 +37,15 @@ module Features
       click_button 'Find'
     end
 
+=begin
+    # radius is now part of map
     def search_all(keyword, location, distance)
       fill_in('keyword', :with => keyword)
       fill_in('location', :with => location)
       select(distance, :from => 'radius')
       click_button 'Find'
     end
+=end
 
     def search_for_nothing
       visit ('/')

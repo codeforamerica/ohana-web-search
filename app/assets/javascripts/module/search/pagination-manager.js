@@ -1,6 +1,6 @@
 // handles ajax search functionality
-define(
-	function() {
+define(['util/util'],
+	function(util) {
   'use strict';
 
   	var _callback; // target function to run when pagination buttons are clicked
@@ -19,9 +19,19 @@ define(
 
 			if (nextBtn && prevBtn)
 			{
-				nextBtn.addEventListener("click", _callback, false);
-				prevBtn.addEventListener("click", _callback, false);
+				nextBtn.addEventListener("click", _linkClickedHandler, false);
+				prevBtn.addEventListener("click", _linkClickedHandler, false);
 			}			
+		}
+
+		function _linkClickedHandler(evt)
+		{
+			var params = util.getQueryParams(this.search);
+			
+			_callback.performSearch(params);
+
+			evt.preventDefault();
+			return false;
 		}
 
 	return {
