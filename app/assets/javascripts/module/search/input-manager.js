@@ -15,7 +15,7 @@ define(['util/util'],
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
 			
-			document.getElementById('find-btn').addEventListener("click",callback,false);
+			document.getElementById('find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
 			_registerAjaxHooks();
 		}
 
@@ -58,6 +58,17 @@ define(['util/util'],
 				curr = lnks[l];
 				curr.addEventListener("click", _linkClickedHandler, false);
 			}
+		}
+
+		function _searchFormSubmittedHandler(evt)
+		{
+			var params = util.getQueryParams(window.location.search);
+			params.keyword = getKeyword();
+			params.location = getLocation();	
+			_callback.performSearch(params);
+
+			evt.preventDefault();
+			return false;
 		}
 
 		function _linkClickedHandler(evt)
