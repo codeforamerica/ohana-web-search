@@ -1,3 +1,11 @@
+%script{:id=>"map-locations",:type=>"text/json"}
+	[
+	- #two loops on one page ain't great, but will leave it till we have ajax working.
+	- @orgs.each_with_index do |org,index|
+		= raw org.to_json
+		- if index != @orgs.count-1
+			,
+	]
 %section#list-view
 	%ul
 		- @orgs.each do |org|

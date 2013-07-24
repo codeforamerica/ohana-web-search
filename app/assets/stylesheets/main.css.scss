@@ -1079,6 +1079,8 @@ main > * > *
   }
 }
 
+/*
+// view options - not currently used.
 #results-view-options
 {
   @include inline-block();
@@ -1128,6 +1130,7 @@ main > * > *
     cursor:default;
   }
 }
+*/
 
 //=================================================================================
 // Results - list view
@@ -1305,18 +1308,58 @@ main > * > *
 {
     margin:10px;
     margin-top: 0;
+    font-size: 14px;
+    font-family: $san_serif_font;
+
+  > div
+  {
+    background:$white_alpha70;
+    padding:5px;
+  }
 
   > div:first-child
   {
-    width: 100%;
-    //border-radius:10px;
-    //border:1px solid $black_alpha40;
+    @include border-radius(5px 5px 0px 0px);
+  }
+
+  > div:last-child
+  {
+    @include border-radius(0px 0px 5px 5px);
+
   }
 
   #map-canvas
   {
     width: 100%;
     height: 200px;
+    padding:0;
+    text-align:center;
+
+    // error message text if map doesn't load
+    > span
+    {
+      padding:10px;
+      margin:5px;
+      margin-top:20px;
+      font-size:14px;
+      background:$red_dark;
+      @include border-radius(5px);
+      @include inline-block();
+      @include single-box-shadow();
+      color:$white;
+      vertical-align:middle;
+    }
+  }
+
+  #marker-info
+  {
+    font-weight:bold;
+
+    > span
+    {
+      font-style:italic;
+      font-weight:normal;
+    }
   }
 }
 
