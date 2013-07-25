@@ -47,8 +47,23 @@ define(['util/util'],function(util) {
 
 		function _mapZoomed(evt)
 		{
-			var params = {'radius':getRadius()}
-			_callback.performSearch(params);
+			var params = {};
+					params.radius = Math.round(getRadius());
+					params.location = _map.getCenter().lat()+","+_map.getCenter().lng();
+
+					var geocoder = new google.maps.Geocoder();
+					geocoder.geocode({'latLng': _map.getCenter()}, function(results, status) {
+			    if (status == google.maps.GeocoderStatus.OK) {
+			      if (results[1]) {
+			        params.location = results[1].formatted_address;
+							_callback.performSearch(params);
+			      } else {
+			        console.log('No results found');
+			      }
+			    } else {
+			      console.log('Geocoder failed due to: ' + status);
+			    }
+			  });
 		}
 
 		// loads markers 
@@ -110,7 +125,6 @@ define(['util/util'],function(util) {
 				_markersArray.push(marker);
 
 				google.maps.event.addListener(marker, 'mouseover', function() {
-				    
 				    _markerInfo.innerHTML = this.title;
 				    this.setZIndex(google.maps.Marker.MAX_ZINDEX);
 				});

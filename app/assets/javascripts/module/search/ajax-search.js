@@ -49,10 +49,13 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			splash.show({"fullscreen":false}); 
 
 			var page = params.page || 1;
-			var keyword = params.keyword || null;
-			var location = params.location || null;
+			var keyword = params.keyword || "";
+			var location = params.location || "";
 			var radius = params.radius || null;
 			var id = params.id || null;
+
+			inputs.setKeyword(keyword);
+			inputs.setLocation(location);
 
 			var query = '/organizations';
 			if (id) query += '/'+id;
