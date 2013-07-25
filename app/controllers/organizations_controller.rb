@@ -28,20 +28,21 @@ class OrganizationsController < ApplicationController
     # @map_data parses the @org hash and retrieves all entries
     # that have coordinates, and returns that as json, otherwise @map_data 
     # ends up being nil and can be checked in the view with @map_data.present?
-    @map_data = @orgs.reduce([]) do |result, o| 
-      if o.coordinates.present?
-        result << {
-          'id' => o._id, 
-          'name' => o.name, 
-          'coordinates' => o.coordinates
-        }
+    if @orgs.present?
+      @map_data = @orgs.reduce([]) do |result, o| 
+        if o.coordinates.present?
+          result << {
+            'id' => o._id, 
+            'name' => o.name, 
+            'coordinates' => o.coordinates
+          }
+        end
+        result
       end
-      result
+
+      @map_data.push({'count'=>@map_data.length,'total'=>@orgs.length})
+      @map_data = @map_data.to_json.html_safe unless @map_data.nil?
     end
-
-    @map_data.push({'count'=>@map_data.length,'total'=>@orgs.length})
-    @map_data = @map_data.to_json.html_safe unless @map_data.nil?
-
 
     respond_to do |format|
       format.html # index.html.haml

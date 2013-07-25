@@ -132,6 +132,7 @@ define(['util/util'],function(util) {
 			else
 			{
 				// no entries found
+				console.log("no map results found!");
 			}
 		}
 
