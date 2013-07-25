@@ -26,17 +26,19 @@ class OrganizationsController < ApplicationController
     # this will be injected into a <script> element in the view
     # and then consumed by the map-manager javascript.
     # @map_data parses the @org hash and retrieves all entries
-    # that have coordinates, and returns that as json, otherwise
-    # @map_data ends up being nil and can be checked in the view with @map_data.present?
-    @map_data = @orgs.map do |o|
-      next if o.coordinates.nil?
-      {
+    # that have coordinates, and returns that as json, otherwise @map_data 
+    # ends up being nil and can be checked in the view with @map_data.present?
+    @map_data = @orgs.reduce([]) do |result, o| 
+      if o.coordinates.present?
+        result << {
           'id' => o._id, 
           'name' => o.name, 
           'coordinates' => o.coordinates
-      }
+        }
+      end
+      result
     end
-    @map_data.reject! { |d| d.nil? }
+
     @map_data.push({'count'=>@map_data.length,'total'=>@orgs.length})
     @map_data = @map_data.to_json.html_safe unless @map_data.nil?
 
