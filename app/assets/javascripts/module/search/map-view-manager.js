@@ -15,7 +15,8 @@ define(['util/util'],function(util) {
 
 		var _callback; // callback function for passing updates
 		var _tilesLoadedListener; // listener for when the tiles have loaded
-		var _zoomChangedListener; // listener for when the map is zoomed
+		var _zoomListener; // listener for when the map is zoomed
+		var _panListener; // listener for when the map view is dragged
 
 		// PUBLIC METHODS
 		function init(callback)
@@ -33,16 +34,51 @@ define(['util/util'],function(util) {
 		  _markerInfo = document.getElementById("marker-info");
 
 		  refresh();
+		  _map.fitBounds(_markerBounds);
 		}
-
-		// hide the map
-		
 
 		// register events on the map
 		function _mapLoaded(evt)
 		{
 			google.maps.event.removeListener(_tilesLoadedListener);
-			_zoomChangedListener = google.maps.event.addListener(_map,"zoom_changed",_mapZoomed);
+			//_zoomListener = google.maps.event.addListener(_map,"zoom_changed",_mapZoomed);
+			_panListener = google.maps.event.addListener(_map,"dragend",_mapDragged);
+		}
+
+		/*
+		// from http://stackoverflow.com/questions/6048975/google-maps-v3-how-to-calculate-the-zoom-level-for-a-given-bounds
+		function _zoomToRadius(radius)
+		{
+			var pixelWidth = _map.offsetWidth;
+			var GLOBE_WIDTH = 256; // a constant in Google's map projection
+			var west = sw.lng();
+			var east = ne.lng();
+			var angle = east - west;
+			if (angle < 0) {
+			  angle += 360;
+			}
+			var zoom = Math.round(Math.log(pixelWidth * 360 / angle / GLOBE_WIDTH) / Math.LN2);
+		}
+		*/
+
+		function _mapDragged(evt)
+		{
+			var params = {};
+					params.location = _map.getCenter().lat()+","+_map.getCenter().lng();
+
+					var geocoder = new google.maps.Geocoder();
+					geocoder.geocode({'latLng': _map.getCenter()}, function(results, status) {
+			    if (status == google.maps.GeocoderStatus.OK) {
+			      if (results[1]) {
+			        params.location = results[1].formatted_address;
+							_callback.performSearch(params);
+			      } else {
+			        console.log('No results found');
+			      }
+			    } else {
+			      console.log('Geocoder failed due to: ' + status);
+			    }
+			  });
 		}
 
 		function _mapZoomed(evt)
@@ -136,7 +172,7 @@ define(['util/util'],function(util) {
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 				
 				_markerBounds.extend(myLatlng);
-				_map.fitBounds(_markerBounds);
+				
 			}
 		}
 
@@ -155,7 +191,7 @@ define(['util/util'],function(util) {
 			var ne = bounds.getNorthEast();
 
 			// r = radius of the earth in statute miles
-			var r = 3963.0;  
+			var r = 3963.0;
 
 			// Convert lat or lng from decimal degrees into radians (divide by 57.2958)
 			var lat1 = center.lat() / 57.2958; 
@@ -174,7 +210,7 @@ define(['util/util'],function(util) {
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
 		function refresh()
 		{
-			if (_zoomChangedListener) google.maps.event.removeListener(_zoomChangedListener);
+			if (_zoomListener) google.maps.event.removeListener(_zoomListener);
 			if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
 			_loadMarkers();
 			_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);

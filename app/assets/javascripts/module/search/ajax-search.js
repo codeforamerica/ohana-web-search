@@ -60,10 +60,9 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			var query = '/organizations';
 			if (id) query += '/'+id;
 			if (page) query += "?page="+page;
-			if (keyword) query += "&keyword="+keyword;
-			if (location) query += "&location="+location;
+			if (keyword) query += "&keyword="+encodeURIComponent(keyword);
+			if (location) query += "&location="+encodeURIComponent(location);
 			if (radius) query += "&radius="+radius;
-
 
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true}, null, query);
