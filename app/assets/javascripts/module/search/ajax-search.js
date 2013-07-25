@@ -15,7 +15,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 
 			inputs.init(this); // initialize search form and ajax links
 			pagination.init(this); // initialize pagination
-			map.init(this); // initalize map
+			map.init(this); // initialize the map
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -46,8 +46,6 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 
 		function performSearch(params)
 		{
-			console.log("READY...",params);
-
 			splash.show({"fullscreen":false}); 
 
 			var page = params.page || 1;
@@ -56,7 +54,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			var radius = params.radius || null;
 			var id = params.id || null;
 
-			var query = '';
+			var query = '/organizations';
 			if (id) query += '/'+id;
 			if (page) query += "?page="+page;
 			if (keyword) query += "&keyword="+keyword;
@@ -75,7 +73,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			
 			pagination.refresh(); // refresh pagination
 			inputs.refresh("#results-container"); // refresh search inputs
-			map.refresh(); // refresh map
+			map.refresh(); // refresh the map
 
 			splash.hide(); // hide loading manager
 		}

@@ -4,11 +4,15 @@ define(['util/util'],function(util) {
 	
 		// PRIVATE PROPERTIES
 		var _mapContainer;
+		var _markerInfo; // info window that shows when markers are rolled over
+		var _header; // map header content
+		var _defaultHeaderContent;
+
 		var _map;
 		var _markerData; // markers on the map
 		var _markersArray = []; // array for storing markers
 		var _markerBounds;
-		var _markerInfo; // info window that shows when markers are rolled over
+
 		var _callback; // callback function for passing updates
 		var _tilesLoadedListener; // listener for when the tiles have loaded
 		var _zoomChangedListener; // listener for when the map is zoomed
@@ -18,6 +22,8 @@ define(['util/util'],function(util) {
 		{
 			_callback = callback;
 			_mapContainer = document.getElementById("map-view");
+			_header = document.getElementById("map-search-results");
+		  _defaultHeaderContent = _header.innerHTML;
 
 		  var mapOptions = {
 		    zoom: 4,
@@ -28,6 +34,9 @@ define(['util/util'],function(util) {
 
 		  refresh();
 		}
+
+		// hide the map
+		
 
 		// register events on the map
 		function _mapLoaded(evt)
@@ -42,43 +51,30 @@ define(['util/util'],function(util) {
 			_callback.performSearch(params);
 		}
 
-		// loads marker data
-		function _loadData()
+		// loads markers 
+		function _loadMarkers()
 		{
 			var locations = document.getElementById("map-locations");
 			if (locations)
 			{
-		    _markerData = JSON.parse(locations.innerHTML);
-		    locations.parentNode.removeChild(locations); // remove script element
-		  }
-		  else
-		  {
-		  	_hideMap();
+				_markerData = JSON.parse(locations.innerHTML);
+		  	locations.parentNode.removeChild(locations); // remove script element
+			  _markerBounds = new google.maps.LatLngBounds();
+				_clearMarkers();
+
+				var dataLength = _markerData.length;
+		    for(var m = 0; m<dataLength-1; m++)
+		    {
+		    	_loadMarker( _markerData[m] );
+		    }
+		    var metadata = _markerData[dataLength-1];
+		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
+				_header.innerHTML = _defaultHeaderContent+" "+summaryText;
 			}
-		}
-
-		// hide the map if there's no data to populate it
-		function _hideMap()
-		{
-			_mapContainer.classList.add("hide");
-		}
-
-		// show the map if it's hidden
-		function _showMap()
-		{
-			_mapContainer.classList.remove("hide");
-		}
-
-		// loads markers 
-		function _loadMarkers()
-		{
-		  _markerBounds = new google.maps.LatLngBounds();
-			_clearMarkers();
-
-	    for(var m in _markerData)
-	    {
-	    	_loadMarker( _markerData[m] );
-	    }	    
+			else
+			{
+				// no entries found
+			}
 		}
 
 		// clears all markers
@@ -160,11 +156,10 @@ define(['util/util'],function(util) {
 
 		// refresh the data
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
-		function refresh(coordinates)
+		function refresh()
 		{
 			if (_zoomChangedListener) google.maps.event.removeListener(_zoomChangedListener);
 			if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
-			_loadData();
 			_loadMarkers();
 			_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 		}

@@ -1,5 +1,7 @@
 %section#search-options
   %section#map-view
+    %header#map-search-results
+      %span{"data-icon"=>"⊕" , :class=>"ohana-icon"}
     %div
       %input{:type=>"checkbox"}
       Redo search on map
@@ -7,9 +9,9 @@
       %span Error loading map!
     %div#marker-info
       %span Mouse over markers for details
--#  
-  %fieldset
-    %legend Location
-    %label{:for=>"radius"}
-      Search radius:
-    = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
+  -#  
+    %fieldset
+      %legend Location
+      %label{:for=>"radius"}
+        Search radius:
+      = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])

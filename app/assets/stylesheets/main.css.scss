@@ -1311,18 +1311,37 @@ main > * > *
     font-size: 14px;
     font-family: $san_serif_font;
 
+  > header
+  {
+    background: $green_light;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+
+    span
+    {
+      vertical-align: baseline;
+    }
+
+    .ohana-icon
+    {
+      color:$blue_dark;
+    }
+  }
+
   > div
   {
     background:$white_alpha70;
     padding:5px;
   }
 
-  > div:first-child
+  > *:first-child
   {
     @include border-radius(5px 5px 0px 0px);
   }
 
-  > div:last-child
+  > *:last-child
   {
     @include border-radius(0px 0px 5px 5px);
 
