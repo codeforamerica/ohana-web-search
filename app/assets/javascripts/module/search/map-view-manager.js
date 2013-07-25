@@ -18,6 +18,10 @@ define(['util/util'],function(util) {
 		var _zoomListener; // listener for when the map is zoomed
 		var _panListener; // listener for when the map view is dragged
 
+		var _locationMarker;
+		var _locationName;
+		var _locationCoords;
+
 		// PUBLIC METHODS
 		function init(callback)
 		{
@@ -72,6 +76,9 @@ define(['util/util'],function(util) {
 			      if (results[1]) {
 			        params.location = results[1].formatted_address;
 							_callback.performSearch(params);
+							_locationName = results[1].formatted_address;
+							_locationCoords = _map.getCenter();
+							_addLocationMarker();
 			      } else {
 			        console.log('No results found');
 			      }
@@ -137,6 +144,29 @@ define(['util/util'],function(util) {
 		  _markersArray = [];
 		}
 
+		function _addLocationMarker()
+		{
+			if (_locationMarker)
+			{
+				_locationMarker.setPosition(_locationCoords);
+			}
+			else
+			{
+				_locationMarker = new google.maps.Marker({
+					map: _map,
+					title: _locationName,
+					position: _locationCoords,
+					icon: {
+				    path: google.maps.SymbolPath.CIRCLE,
+				    scale: 3,
+				    fillColor: "red",
+				    fillOpacity: 0.7,
+				    strokeWeight: 0
+				  }
+				});
+			}
+		}
+
 		// load a single marker
 		function _loadMarker(markerData)
 		{
@@ -154,7 +184,8 @@ define(['util/util'],function(util) {
 				    scale: 5,
 				    fillColor: "rgb(3,73,126)",
 				    fillOpacity: 0.7,
-				    strokeWeight: 1
+				    strokeWeight: 1,
+				    strokeOpacity: 0.3
 				  }
 				});
 
