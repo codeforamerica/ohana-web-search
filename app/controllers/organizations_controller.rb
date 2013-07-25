@@ -31,7 +31,7 @@ class OrganizationsController < ApplicationController
     @map_data = @orgs.map do |o|
       next if o.coordinates.nil?
       {
-          '_id' => o._id, 
+          'id' => o._id, 
           'name' => o.name, 
           'coordinates' => o.coordinates
       }

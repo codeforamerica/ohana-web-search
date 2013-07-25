@@ -93,13 +93,11 @@ define(['util/util'],function(util) {
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 				
-				var url = '/organizations/'+markerData["_id"];
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
 					map: _map,
 					title: markerData['name'],
 					position: myLatlng,
-					url:url,
 					icon: {
 				    path: google.maps.SymbolPath.CIRCLE,
 				    scale: 5,
@@ -121,13 +119,17 @@ define(['util/util'],function(util) {
 				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
 				});
 
-				google.maps.event.addListener(marker, 'click', function() {
-				    window.location.href = this.url;
-				});
+				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 				
 				_markerBounds.extend(myLatlng);
 				_map.fitBounds(_markerBounds);
 			}
+		}
+
+		function _markerClickedHandler(evt)
+		{
+			var params = {'id':this.id}
+			_callback.performSearch(params);
 		}
 
 		// returns the diameter of the map in miles
