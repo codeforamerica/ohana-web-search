@@ -3,10 +3,10 @@ require 'spec_helper'
 feature 'Visitor performs search on home page' do
 
   scenario 'with valid ZIP code' do
-    search(:path=>'/',:location=>'94403')
+    search(:path=>'/',:location=>'94404')
     expect(page)
-      .to have_content("Showing 30 of 100 results within 2 miles of '94403'")
-    find_field("location").value.should == "94403"
+      .to have_content("Showing 30 of 49 results within 2 miles of '94404'")
+    find_field("location").value.should == "94404"
   end
 
   scenario 'with numerical-only address greater than 5 digits' do

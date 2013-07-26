@@ -59,36 +59,41 @@ module Features
     # check for distinctive features of pages
     def looks_like_homepage
       expect(page).to have_title "OhanaSMC"
-      expect(page).to have_css("#search-container")
-      expect(page).to_not have_css("#results-container")
+      within ( ".home main" ) do
+        expect(page).to have_css("#search-container")
+        expect(page).to_not have_css("#results-container")
+      end
     end
 
     def looks_like_results
-      expect(page).to have_css("#search-container")
-      expect(page).to have_css("#results-entries")
+      within ( ".inside main" ) do
+        expect(page).to have_css("#search-container")
+        expect(page).to have_css("#results-entries")
+      end
     end
 
     def looks_like_results_list
-      expect(page).to have_css("#search-container")
-      expect(page).to have_css("#list-view")
-    end
-
-    def looks_like_results_map
-      expect(page).to have_css("#search-container")
-      expect(page).to have_css("#map-view")
+      within ( ".inside main" ) do
+        expect(page).to have_css("#search-container")
+        expect(page).to have_css("#list-view")
+      end
     end
 
     def looks_like_details(title)
-      expect(page).to have_title "#{title} | OhanaSMC"
-      expect(page).to have_css("#search-container")
-      expect(page).to have_css("#detail-info")
+      within ( ".inside main" ) do
+        expect(page).to have_title "#{title} | OhanaSMC"
+        expect(page).to have_css("#search-container")
+        expect(page).to have_css("#detail-info")
+      end
     end
 
     def looks_like_about
-      expect(page).to have_title "About | OhanaSMC"
-      expect(page).to have_css("#about-box")
-      expect(page).to have_css("#contribute-box")
-      expect(page).to have_css("#feedback-box")
+      within ( ".inside main" ) do
+        expect(page).to have_title "About | OhanaSMC"
+        expect(page).to have_css("#about-box")
+        expect(page).to have_css("#contribute-box")
+        expect(page).to have_css("#feedback-box")
+      end
     end
 
   end

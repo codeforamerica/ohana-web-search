@@ -7,7 +7,6 @@ feature "visits results page" do
     context "via homepage" do
       background do
         search( :path=>'/', :keyword=>'maceo' )
-        looks_like_results_list
       end
 
       scenario 'performs search' do
@@ -20,7 +19,6 @@ feature "visits results page" do
     context "direct" do
       background do
         search( :path=>'/organizations', :keyword=>'maceo' )
-        looks_like_results_list
       end
 
       scenario 'performs search' do
