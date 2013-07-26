@@ -35,10 +35,6 @@ module Features
       find_field("location").value.should == "#{location}" if location.present?
     end
 
-    def valid_search(options = {})
-      
-    end
-
     # navigation helpers
     def visit_details
       looks_like_results_list
@@ -80,8 +76,8 @@ module Features
     end
 
     def looks_like_details(title)
+      expect(page).to have_title "#{title} | OhanaSMC"
       within ( ".inside main" ) do
-        expect(page).to have_title "#{title} | OhanaSMC"
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#detail-info")
       end
