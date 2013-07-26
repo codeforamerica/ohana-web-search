@@ -19,6 +19,8 @@ define(['app/loading-manager','util/ajax','util/util','detail/detail-init','resu
 		{
 			_resultsContainer = document.getElementById('results-container');
 
+			console.log('ajaxsearch init', _resultsContainer);
+
 			_initPagination();
 
 			// init callback hooks for ajax search
@@ -112,6 +114,7 @@ define(['app/loading-manager','util/ajax','util/util','detail/detail-init','resu
 
 		function _success(evt)
 		{
+			console.log(evt);
 			_ajaxCalled = true;
 			_resultsContainer.innerHTML = evt.content;
 			

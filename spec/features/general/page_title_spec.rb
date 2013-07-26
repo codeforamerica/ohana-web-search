@@ -6,7 +6,7 @@ feature 'Checks page title' do
   # visiting pages directly 
 
   scenario 'when visiting homepage directly' do
-    visit_homepage_direct
+    visit ('/')
     expect(page).to have_title "OhanaSMC"
   end
 
@@ -21,36 +21,36 @@ feature 'Checks page title' do
   end
 
   scenario 'when visiting about page directly' do
-    visit_about_page_direct
+    visit ('/about')
     expect(page).to have_title "About | OhanaSMC"
   end
 
   # visiting pages via links
 
   scenario 'when performing a search and visiting results page' do
-    search_for_keyword_and_location("food","san mateo")
+    search(:path=>'/',:keyword=>'food',:location=>'san mateo')
     expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 
   scenario 'when performing a search and visiting details page' do
-    search_for_keyword_and_location("food","san mateo")
+    search(:path=>'/',:keyword=>'food',:location=>'san mateo')
     visit_details
-    expect(page).to have_title "Urban Table Certified Farmer's Market | OhanaSMC"
+    looks_like_details("Urban Table Certified Farmer's Market")
   end
 
   # visiting pages via ajax
   scenario 'when performing a search and visiting results page via ajax',
   :js=>true do
-    search_for_nothing
-    search_for_keyword_and_location("food","san mateo")
+    search(:path=>'/')
+    search(:keyword=>'food',:location=>'san mateo')
     expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 
   scenario 'when performing a search and visiting details page via ajax',
   :js=>true do
-    search_for_keyword_and_location("food","san mateo")
+    search(:path=>'/',:keyword=>'food',:location=>'san mateo')
     visit_details
-    expect(page).to have_title "Urban Table Certified Farmer's Market | OhanaSMC"
+    looks_like_details("Urban Table Certified Farmer's Market")
   end
 
 end
