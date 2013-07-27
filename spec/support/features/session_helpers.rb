@@ -45,11 +45,13 @@ module Features
     def back_button_pressed
       wait_for_requirejs
       page.execute_script("window.history.back();")
+      wait_for_requirejs
     end
 
     def forward_button_pressed
       wait_for_requirejs
       page.execute_script("window.history.forward();")
+      wait_for_requirejs
     end
 
     # helper to wait for requirejs to load before proceeding
