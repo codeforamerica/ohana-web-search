@@ -44,18 +44,18 @@ module Features
 
     # webbrowser navigation using requirejs
     def back_button_pressed
-      page.execute_script("require(['domReady!'], function() { window.history.back(); });")
+      page.execute_script("console.log('back');window.history.back();")
     end
 
     def forward_button_pressed
-      page.execute_script("require(['domReady!'], function() { window.history.forward(); });")
+      page.execute_script("console.log('forward');window.history.forward();")
     end
 
 
     # check for distinctive features of pages
     def looks_like_homepage
-      expect(page).to have_title "OhanaSMC"
       within ( ".home main" ) do
+        expect(page).to have_title "OhanaSMC"
         expect(page).to have_css("#search-container")
         expect(page).to_not have_css("#results-container")
       end
@@ -76,8 +76,8 @@ module Features
     end
 
     def looks_like_details(title)
-      expect(page).to have_title "#{title} | OhanaSMC"
       within ( ".inside main" ) do
+        expect(page).to have_title "#{title} | OhanaSMC"
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#detail-info")
       end

@@ -25,7 +25,7 @@ require 'capybara/poltergeist'
 
 Capybara.javascript_driver = :poltergeist
 Capybara.automatic_reload = false
-Capybara.default_wait_time = 5
+Capybara.default_wait_time = 7
 Capybara.ignore_hidden_elements = true
 
 RSpec.configure do |config|

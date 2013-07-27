@@ -25,7 +25,7 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name == 'home' ? '' : 'inside' %> <%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
   
   <%= render 'component/status/loading' %>
 
