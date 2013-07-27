@@ -41,16 +41,21 @@ module Features
       page.find(:css, '#list-view li:first-child a').click
     end
 
-
     # webbrowser navigation using requirejs
     def back_button_pressed
+      wait_for_requirejs
       page.execute_script("window.history.back();")
     end
 
     def forward_button_pressed
+      wait_for_requirejs
       page.execute_script("window.history.forward();")
     end
 
+    # helper to wait for requirejs to load before proceeding
+    def wait_for_requirejs
+      page.find(:css, ".require-loaded")
+    end
 
     # check for distinctive features of pages
     def looks_like_homepage
