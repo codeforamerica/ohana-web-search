@@ -1,11 +1,44 @@
 module DetailFormatHelper
 
-  # Checks for presence of any of the address fields
+  # Formats ruby field names in CSS convention format 
+  # by converting underscore delimiting to dash delimiting
+  # @param name [String] string to format as 
+  # @return [String] formatted CSS class name
+  def css_class_format(name)
+    name.sub '_','-'
+  end
+
+  # Renders template partial for detail view
+  # @param use_template [Boolean] whether to use the template or a custom partial
   # @param org [Object] a JSON object
-  # @return [Boolean] return true if any address field is present,
+  # @param field [String] a field name in org
+  # @param title_singular [String] a singular title for name, can be nil
+  # @param title_plural [String] a plural title for name, can be nil
+  # @param icon [String] a utf-8 icon character for field, can be nil
+  # @return rendered partial.
+  def insert_template(use_template,org,field,title,icon)
+    if use_template
+      render :partial => "component/detail/template", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
+    else
+      render :partial => "component/detail/#{field}", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
+    end
+  end
+
+  # Checks for presence of any fields on an object
+  # @param org [Object] a JSON object
+  # @param array [Array] an array of strings
+  # @return [Boolean] return true if any field in array is present in org,
   # otherwise return false.
-  def has_address?(org)
-    [org.street_address, org.city, org.state, org.zipcode].any?
+  def has_field?(obj, array)
+    val = false
+    array.each { |field| obj.fetch(field).present? ? val = true : nil }
+    val
+  end
+
+  # Groups all address fields into an array
+  # @return [Array] list of address field names as strings.
+  def address_fields
+    ["street_address", "city", "state", "zipcode"]
   end
 
   # Formats address for use in map URLs, image title attributes, etc.
