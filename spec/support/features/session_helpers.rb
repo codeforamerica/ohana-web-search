@@ -44,11 +44,11 @@ module Features
 
     # webbrowser navigation using requirejs
     def back_button_pressed
-      page.execute_script("console.log('back');window.history.back();")
+      page.execute_script("window.history.back();")
     end
 
     def forward_button_pressed
-      page.execute_script("console.log('forward');window.history.forward();")
+      page.execute_script("window.history.forward();")
     end
 
 
