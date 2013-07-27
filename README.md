@@ -53,7 +53,7 @@ To see the actual tests, browse through the [spec](https://github.com/codeforame
 * Ruby version 2.0.0
 * Rails version 3.2.13
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS (via Teaspoon gem)
+* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
 ## Contributing
 In the spirit of open source software, **everyone** is encouraged to help improve this project.
