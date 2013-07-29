@@ -22,6 +22,8 @@ define(['util/util'],function(util) {
 		var _locationName;
 		var _locationCoords;
 
+		//var _radiusCircle;
+
 		// PUBLIC METHODS
 		function init(callback)
 		{
@@ -75,6 +77,7 @@ define(['util/util'],function(util) {
 			    if (status == google.maps.GeocoderStatus.OK) {
 			      if (results[1]) {
 			        params.location = results[1].formatted_address;
+			        params.radius = getRadius()/2;
 							_callback.performSearch(params);
 							_locationName = results[1].formatted_address;
 							_locationCoords = _map.getCenter();
@@ -145,6 +148,28 @@ define(['util/util'],function(util) {
 		  _markersArray = [];
 		}
 
+		/*
+		// used for debug purposes
+		function _addRadiusCircle()
+		{
+			if (_radiusCircle)
+			{
+				_radiusCircle.setPosition(_locationCoords);
+			}
+			else
+			{
+				_radiusCircle = new google.maps.Circle({
+				  map: _map,
+				  radius: (getRadius()*1609.34)/2,    // convert radius to meters
+				  fillOpacity: 0,
+				  strokeColor: '#AA0000',
+				  strokeWeight: 1
+				});
+				_radiusCircle.bindTo('center', _locationMarker, 'position');
+			}
+		}
+		*/
+
 		function _addLocationMarker()
 		{
 			if (_locationMarker)
@@ -214,6 +239,10 @@ define(['util/util'],function(util) {
 			_callback.performSearch(params);
 		}
 
+		function _radiusToZoom(radius){
+			return Math.round(14-Math.log(radius)/Math.LN2);
+		}
+
 		// returns the diameter of the map in miles
 		function getRadius()
 		{
@@ -238,6 +267,11 @@ define(['util/util'],function(util) {
 			return radius;
 		}
 
+		function setZoom(radius)
+		{
+			_map.setZoom(_radiusToZoom(radius));
+		}
+
 		// refresh the data
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
 		function refresh()
@@ -251,6 +285,7 @@ define(['util/util'],function(util) {
 	return {
 		init:init,
 		getRadius:getRadius,
+		setZoom:setZoom,
 		refresh:refresh
 	};
 });

@@ -33,9 +33,12 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			// set search field values
 			var keyword = params.keyword || "";
 			var location = params.location || "";
+			var radius = params.radius || null;
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
+
+			if (radius) map.setZoom(radius);
 
 			if ( _ajaxCalled || (evt.state && evt.state.ajax) )
 			{
