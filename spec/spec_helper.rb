@@ -23,6 +23,10 @@ require 'capybara/poltergeist'
 #end
 #Capybara.javascript_driver = :poltergeist_debug
 
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.net(app,js_errors: false)
+end
+
 Capybara.javascript_driver = :poltergeist
 Capybara.automatic_reload = false
 Capybara.default_wait_time = 10
