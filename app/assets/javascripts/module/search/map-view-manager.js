@@ -77,7 +77,13 @@ define(['util/util'],function(util) {
 		{
 			var params = {};
 					params.location = _map.getCenter().lat()+","+_map.getCenter().lng();
+					params.radius = getRadius()/2;
+							_callback.performSearch(params);
+							_locationName = results[1].formatted_address;
+							_locationCoords = _map.getCenter();
+							_addLocationMarker();
 
+					/*
 					var geocoder = new google.maps.Geocoder();
 					geocoder.geocode({'latLng': _map.getCenter()}, function(results, status) {
 			    if (status == google.maps.GeocoderStatus.OK) {
@@ -94,6 +100,7 @@ define(['util/util'],function(util) {
 			    } else {
 			      console.log('Geocoder failed due to: ' + status);
 			    }
+			    */
 			  });
 		}
 
