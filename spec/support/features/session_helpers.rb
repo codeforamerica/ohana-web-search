@@ -14,27 +14,6 @@ module Features
       looks_like_results
     end
 
-    def invalid_search(options = {})
-      search(options)
-      
-      keyword = options[:keyword] || ''
-      location = options[:location] || ''
-
-      within ("#results-container header") do
-        expect(page).
-          to have_content("Showing 0 of 0 results matching '#{keyword}'") if keyword.present?
-
-        expect(page).
-          to have_content("Showing 0 of 0 results within 2 miles of '#{location}'") if location.present?
-
-        expect(page).
-          to have_content("Showing 0 of 0 results matching '#{keyword}' within 2 miles of '#{location}'") if keyword.present? && location.present?
-      end
-
-      find_field("keyword").value.should == "#{keyword}" if keyword.present?
-      find_field("location").value.should == "#{location}" if location.present?
-    end
-
     # navigation helpers
     def visit_details
       looks_like_results_list
@@ -97,6 +76,25 @@ module Features
         expect(page).to have_css("#contribute-box")
         expect(page).to have_css("#feedback-box")
       end
+    end
+
+    def looks_like_invalid_search(options = {})      
+      keyword = options[:keyword] || ''
+      location = options[:location] || ''
+
+      within ("#results-container header") do
+        expect(page).
+          to have_content("Showing 0 of 0 results matching '#{keyword}'") if keyword.present?
+
+        expect(page).
+          to have_content("Showing 0 of 0 results within 2 miles of '#{location}'") if location.present?
+
+        expect(page).
+          to have_content("Showing 0 of 0 results matching '#{keyword}' within 2 miles of '#{location}'") if keyword.present? && location.present?
+      end
+
+      find_field("keyword").value.should == "#{keyword}" if keyword.present?
+      find_field("location").value.should == "#{location}" if location.present?
     end
 
   end

@@ -10,27 +10,33 @@ feature 'Visitor performs search on home page' do
   end
 
   scenario 'with numerical-only address greater than 5 digits' do
-    invalid_search(:path=>'/',:location=>'123456')
+    search(:path=>'/',:location=>'123456')
+    looks_like_invalid_search(:location=>'123456')
   end
 
   scenario 'with numerical-only address less than 5 digits' do
-    invalid_search(:path=>'/',:location=>'1236')
+    search(:path=>'/',:location=>'1236')
+    looks_like_invalid_search(:location=>'1236')
   end
 
   scenario 'with numerical-only address that starts with 4 zeros or more' do
-    invalid_search(:path=>'/',:location=>'00000')
+    search(:path=>'/',:location=>'00000')
+    looks_like_invalid_search(:location=>'00000')
   end
 
   scenario 'with only 1 word that contains numbers and letters' do
-    invalid_search(:path=>'/',:location=>'0000f')
+    search(:path=>'/',:location=>'0000f')
+    looks_like_invalid_search(:location=>'0000f')
   end
 
   scenario 'with a 5-digit zip code that does not exist' do
-    invalid_search(:path=>'/',:location=>'11111')
+    search(:path=>'/',:location=>'11111')
+    looks_like_invalid_search(:location=>'11111')
   end
 
   scenario 'with a zip code containing dash' do
-    invalid_search(:path=>'/',:location=>'11111-1')
+    search(:path=>'/',:location=>'11111-1')
+    looks_like_invalid_search(:location=>'11111-1')
   end
 
 end
