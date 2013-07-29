@@ -34,6 +34,12 @@ define(['util/util'],function(util) {
 
 		  var mapOptions = {
 		    zoom: 4,
+		    scaleControl: true,
+		    scaleControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
+    },
+
+		    mapTypeControl: false,
 		    mapTypeId: google.maps.MapTypeId.ROADMAP
 		  }
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
