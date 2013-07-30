@@ -74,8 +74,10 @@ define(['util/util'],
 		function _linkClickedHandler(evt)
 		{
 			var params = util.getQueryParams(this.search);
-			params.id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
-			
+			var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
+			if (id != 'organizations')
+				params.id = id;
+
 			_callback.performSearch(params);
 			
 			evt.preventDefault();
