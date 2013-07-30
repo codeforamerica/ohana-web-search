@@ -41,14 +41,7 @@ define(['util/util'],function(util) {
 			  var locationMarker = new google.maps.Marker({
 						map: _map,
 						title: title,
-						position: latlng,
-						icon: {
-					    path: google.maps.SymbolPath.CIRCLE,
-					    scale: 3,
-					    fillColor: "red",
-					    fillOpacity: 0.7,
-					    strokeWeight: 0
-					  }
+						position: latlng
 					});
 
 			}
