@@ -100,8 +100,7 @@ define(['util/util'],function(util) {
 			    } else {
 			      console.log('Geocoder failed due to: ' + status);
 			    }
-			    */
-			  });
+			  });*/
 		}
 
 		function _mapZoomed(evt)
