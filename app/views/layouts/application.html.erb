@@ -14,11 +14,9 @@
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
     
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.css' rel='stylesheet' />
-    <!--[if lte IE 8]>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.ie.css' rel='stylesheet' />
-    <![endif]-->
-    <!--<script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.0/mapbox.js'></script>-->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&sensor=false">
+    </script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application", ('routes/'+controller_name+'/'+ action_name) %>
@@ -78,6 +76,7 @@
 
         ga('create', 'UA-40905652-1', 'ohana.herokuapp.com');
         ga('send', 'pageview');
-    </script>
+  </script>
+
   </body>
 </html>
