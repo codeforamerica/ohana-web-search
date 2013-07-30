@@ -48,7 +48,7 @@ define(['util/util'],function(util) {
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 		  _markerInfo = document.getElementById("marker-info");
 
-		  refresh();		  
+		  refresh();  
 		}
 
 		// register events on the map

@@ -164,7 +164,14 @@
                 %span Get Directions
 
             %section.map
-              %img{:src=>"#{map_url(@org)}", :alt => "Location map", :width => 320, :height => 240, :title => "#{address(@org)}"}
+              %div#detail-map-canvas
+                %span.hide#detail-map-canvas-title
+                  = address(@org)
+                %span.hide#detail-map-canvas-lat
+                  = @org.coordinates[1]
+                %span.hide#detail-map-canvas-lng
+                  = @org.coordinates[0]
+                %span Error loading map!
 
 
   / detail footer content

@@ -1,8 +1,15 @@
 // manages search initialization
-require(['detail/character-limiter','detail/term-popup-manager'],function(cl,tpm) {
+define(['detail/detail-map-manager','detail/character-limiter','detail/term-popup-manager'],function(map,cl,tpm) {
   'use strict';
 
-  cl.init();
-  tpm.init();
+  function init()
+  {
+		map.init();
+  	cl.init();
+  	tpm.init();
+  }
 
+  init();
+
+return {init:init}
 });
