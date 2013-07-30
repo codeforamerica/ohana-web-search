@@ -22,7 +22,7 @@ define(['util/util'],function(util) {
 		var _locationName;
 		var _locationCoords;
 
-		//var _radiusCircle;
+		//var _radiusCircle; // debugging aid to see radius of search area
 
 		// PUBLIC METHODS
 		function init(callback)
@@ -34,6 +34,9 @@ define(['util/util'],function(util) {
 
 		  var mapOptions = {
 		    zoom: 4,
+		    zoomControl: false,
+		    panControl: false,
+		    streetViewControl: false,
 		    scaleControl: true,
 		    scaleControlOptions: {
         position: google.maps.ControlPosition.RIGHT_BOTTOM
@@ -45,8 +48,7 @@ define(['util/util'],function(util) {
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 		  _markerInfo = document.getElementById("marker-info");
 
-		  refresh();
-		  _map.fitBounds(_markerBounds);
+		  refresh();		  
 		}
 
 		// register events on the map
@@ -54,7 +56,7 @@ define(['util/util'],function(util) {
 		{
 			google.maps.event.removeListener(_tilesLoadedListener);
 			//_zoomListener = google.maps.event.addListener(_map,"zoom_changed",_mapZoomed);
-			_panListener = google.maps.event.addListener(_map,"dragend",_mapDragged);
+			//_panListener = google.maps.event.addListener(_map,"dragend",_mapDragged);
 		}
 
 		/*
@@ -73,6 +75,7 @@ define(['util/util'],function(util) {
 		}
 		*/
 
+		// handler for performing a search and reverse geolocation after dragging the map
 		function _mapDragged(evt)
 		{
 			var params = {};
@@ -83,7 +86,6 @@ define(['util/util'],function(util) {
 							_locationCoords = _map.getCenter();
 							_addLocationMarker();
 
-					/*
 					var geocoder = new google.maps.Geocoder();
 					geocoder.geocode({'latLng': _map.getCenter()}, function(results, status) {
 			    if (status == google.maps.GeocoderStatus.OK) {
@@ -100,9 +102,10 @@ define(['util/util'],function(util) {
 			    } else {
 			      console.log('Geocoder failed due to: ' + status);
 			    }
-			  });*/
+			  });
 		}
 
+		// handler for performing a search after zooming the map
 		function _mapZoomed(evt)
 		{
 			var params = {};
@@ -122,6 +125,52 @@ define(['util/util'],function(util) {
 			      console.log('Geocoder failed due to: ' + status);
 			    }
 			  });
+		}
+
+		/*
+		// used for debug purposes
+		function _addRadiusCircle()
+		{
+			if (_radiusCircle)
+			{
+				_radiusCircle.setPosition(_locationCoords);
+			}
+			else
+			{
+				_radiusCircle = new google.maps.Circle({
+				  map: _map,
+				  radius: (getRadius()*1609.34)/2,    // convert radius to meters
+				  fillOpacity: 0,
+				  strokeColor: '#AA0000',
+				  strokeWeight: 1
+				});
+				_radiusCircle.bindTo('center', _locationMarker, 'position');
+			}
+		}
+		*/
+
+		// add a marker for the center search location
+		function _addLocationMarker()
+		{
+			if (_locationMarker)
+			{
+				_locationMarker.setPosition(_locationCoords);
+			}
+			else
+			{
+				_locationMarker = new google.maps.Marker({
+					map: _map,
+					title: _locationName,
+					position: _locationCoords,
+					icon: {
+				    path: google.maps.SymbolPath.CIRCLE,
+				    scale: 3,
+				    fillColor: "red",
+				    fillOpacity: 0.7,
+				    strokeWeight: 0
+				  }
+				});
+			}
 		}
 
 		// loads markers 
@@ -158,51 +207,6 @@ define(['util/util'],function(util) {
 		    _markersArray[i].setMap(null);
 		  }
 		  _markersArray = [];
-		}
-
-		/*
-		// used for debug purposes
-		function _addRadiusCircle()
-		{
-			if (_radiusCircle)
-			{
-				_radiusCircle.setPosition(_locationCoords);
-			}
-			else
-			{
-				_radiusCircle = new google.maps.Circle({
-				  map: _map,
-				  radius: (getRadius()*1609.34)/2,    // convert radius to meters
-				  fillOpacity: 0,
-				  strokeColor: '#AA0000',
-				  strokeWeight: 1
-				});
-				_radiusCircle.bindTo('center', _locationMarker, 'position');
-			}
-		}
-		*/
-
-		function _addLocationMarker()
-		{
-			if (_locationMarker)
-			{
-				_locationMarker.setPosition(_locationCoords);
-			}
-			else
-			{
-				_locationMarker = new google.maps.Marker({
-					map: _map,
-					title: _locationName,
-					position: _locationCoords,
-					icon: {
-				    path: google.maps.SymbolPath.CIRCLE,
-				    scale: 3,
-				    fillColor: "red",
-				    fillOpacity: 0.7,
-				    strokeWeight: 0
-				  }
-				});
-			}
 		}
 
 		// load a single marker
@@ -245,18 +249,15 @@ define(['util/util'],function(util) {
 			}
 		}
 
+		// a location marker was clicked, perform a search for the organization details
 		function _markerClickedHandler(evt)
 		{
 			var params = {'id':this.id}
 			_callback.performSearch(params);
 		}
 
-		function _radiusToZoom(radius){
-			return Math.round(14-Math.log(radius)/Math.LN2);
-		}
-
 		// returns the diameter of the map in miles
-		function getRadius()
+		function _getRadius()
 		{
 			var bounds = _map.getBounds();
 
@@ -279,8 +280,10 @@ define(['util/util'],function(util) {
 			return radius;
 		}
 
-		function setZoom(radius)
+		// set the map zoom level to a particular radius (in miles)
+		function _setZoom(radius)
 		{
+			var radiusToZoom = Math.round(14-Math.log(radius)/Math.LN2);
 			_map.setZoom(_radiusToZoom(radius));
 		}
 
@@ -292,12 +295,11 @@ define(['util/util'],function(util) {
 			if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
 			_loadMarkers();
 			_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
+			_map.fitBounds(_markerBounds);
 		}
 
 	return {
 		init:init,
-		getRadius:getRadius,
-		setZoom:setZoom,
 		refresh:refresh
 	};
 });

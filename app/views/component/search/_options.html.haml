@@ -2,14 +2,15 @@
   %section#map-view
     %header#map-search-results
       %span{"data-icon"=>"⊕" , :class=>"ohana-icon"}
-    %div
-      %input{:type=>"checkbox"}
-      Redo search on map
+    -#
+      %div
+        %input{:type=>"checkbox"}
+        Redo search on map
     %div#map-canvas
       %span Error loading map!
     %div#marker-info
       %span Mouse over markers for details
-  -#  
+  -#
     %fieldset
       %legend Location
       %label{:for=>"radius"}
