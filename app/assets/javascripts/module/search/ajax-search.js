@@ -72,6 +72,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 		
 		function _success(evt)
 		{
+			window.scrollTo(0,0); // scrolls page to the top of the page when ajax finishes
 			_ajaxCalled = true; // set ajax first-run flag
 			_resultsContainer.innerHTML = evt.content; // update search results list
 			
