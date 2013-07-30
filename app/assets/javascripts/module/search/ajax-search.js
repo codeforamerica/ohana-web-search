@@ -105,6 +105,7 @@ define(['app/loading-manager','util/ajax','util/util','result-view-manager'],
 
 		function _success(evt)
 		{
+			window.scrollTo(0,0); // scrolls page to the top of the page when ajax finishes
 			_ajaxCalled = true;
 			resultsContainer.innerHTML = evt.content;
 			resultViewManager.init();
