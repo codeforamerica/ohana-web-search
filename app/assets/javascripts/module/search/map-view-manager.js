@@ -253,6 +253,8 @@ define(['util/util'],function(util) {
 		function _markerClickedHandler(evt)
 		{
 			var params = {'id':this.id}
+			params.keyword = document.getElementById('keyword').value;
+			params.location = document.getElementById('location').value;
 			_callback.performSearch(params);
 		}
 

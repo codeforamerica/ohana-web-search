@@ -64,7 +64,8 @@ define(['util/util'],
 		{
 			var params = util.getQueryParams(window.location.search);
 			params.keyword = getKeyword();
-			params.location = getLocation();	
+			params.location = getLocation();
+			params.page = 1;
 			_callback.performSearch(params);
 
 			evt.preventDefault();

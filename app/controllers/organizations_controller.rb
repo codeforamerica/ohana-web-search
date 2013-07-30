@@ -4,6 +4,57 @@ class OrganizationsController < ApplicationController
   # search results view
   def index
 
+    perform_search_query(params)
+
+    respond_to do |format|
+
+      # visit directly
+      format.html # index.html.haml
+
+      # visit via ajax
+      format.json {
+
+        with_format :html do
+          @html_content = render_to_string partial: 'component/organizations/results/body', :locals => { :map_present => @map_present }
+        end
+        render :json => { :content => @html_content }
+      }
+    end
+    
+  end
+
+  # organization details view
+  def show
+    #params[:radius] = session[:radius]
+    #params[:keyword] = session[:keyword]
+    #params[:location] = session[:location]
+
+    query = Organization.get(params[:id])
+    @org = query.content
+
+    respond_to do |format|
+
+      # visit directly
+      # perform search to refresh search results map and return to results button 
+      format.html {
+        perform_search_query(params)
+      }
+
+      # visit via ajax
+      format.json {
+
+        with_format :html do
+          @html_content = render_to_string partial: 'component/organizations/detail/body'
+        end
+        render :json => { :content => @html_content }
+      }
+    end
+
+  end
+
+  private
+
+  def perform_search_query(params)
     query = Organization.query(params)
     @orgs = query.content
     @pagination = query.pagination
@@ -16,11 +67,17 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
-    session[:search_results]  = request.url
-    session[:radius]          = params[:radius]
-    session[:keyword]         = params[:keyword]
-    session[:location]        = params[:location]
-    session[:page]            = @pagination.current
+    keyword         = params[:keyword] || ''
+    location        = params[:location] || ''
+    radius          = params[:radius] || ''
+    page            = @pagination.current.to_s || ''
+
+    search_results_url = '/organizations?keyword='+URI.escape(keyword)+
+                          '&location='+URI.escape(location)+
+                          '&radius='+radius+
+                          '&page='+page
+
+    session['search_results_url'] = search_results_url
 
     # generate json for the maps in the view
     # this will be injected into a <script> element in the view
@@ -44,42 +101,7 @@ class OrganizationsController < ApplicationController
       @map_data = @map_data.to_json.html_safe unless @map_data.nil?
     end
 
-    respond_to do |format|
-      format.html # index.html.haml
-      format.json {
-
-        with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/results/body', :locals => { :map_present => @map_present }
-        end
-        render :json => { :content => @html_content }
-      }
-    end
-    
   end
-
-  # organization details view
-  def show
-    params[:radius] = session[:radius]
-    params[:keyword] = session[:keyword]
-    params[:location] = session[:location]
-
-    query = Organization.get(params[:id])
-    @org = query.content
-
-    respond_to do |format|
-      format.html # index.html.haml
-      format.json {
-
-        with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/detail/body'
-        end
-        render :json => { :content => @html_content }
-      }
-    end
-
-  end
-
-  private
 
   # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
   # execute a block with a different format (ex: an html partial while in an ajax request)
