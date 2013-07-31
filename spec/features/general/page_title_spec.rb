@@ -7,28 +7,30 @@ feature 'Checks page title' do
 
   scenario 'when visiting homepage directly' do
     visit ('/')
-    expect(page).to have_title "OhanaSMC"
+    looks_like_homepage
   end
 
   scenario 'when visiting results page directly' do
     visit ('/organizations?utf8=%E2%9C%93&keyword=market&location=redwood+city')
+    looks_like_results
     expect(page).to have_title "Showing 7 of 7 results matching 'market' within 2 miles of 'redwood city' | OhanaSMC"
   end
 
   scenario 'when visiting details page directly' do
     visit ('/organizations/51d5b18ca4a4d8b01b3e4591?utf8=%E2%9C%93&keyword=food&location=san+mateo&')
-    expect(page).to have_title "25th Avenue Farmers' Market | OhanaSMC"
+    looks_like_details("25th Avenue Farmers' Market")
   end
 
   scenario 'when visiting about page directly' do
     visit ('/about')
-    expect(page).to have_title "About | OhanaSMC"
+    looks_like_about
   end
 
   # visiting pages via links
 
   scenario 'when performing a search and visiting results page' do
     search(:path=>'/',:keyword=>'food',:location=>'san mateo')
+    looks_like_results
     expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 
@@ -43,6 +45,7 @@ feature 'Checks page title' do
   :js=>true do
     search(:path=>'/')
     search(:keyword=>'food',:location=>'san mateo')
+    looks_like_results
     expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 

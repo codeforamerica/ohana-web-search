@@ -69,6 +69,15 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true}, null, query);
 		}
+
+		function _updateTitle()
+		{
+			var suffix = document.title.substring(document.title.lastIndexOf("|"),document.title.length);
+			var summary = document.getElementById("search-summary");
+			if (!summary) summary = document.querySelector("#detail-info h1.name");
+			summary = summary.getAttribute("title")+" "+suffix;
+			document.title = summary;
+		}
 		
 		function _success(evt)
 		{
@@ -80,6 +89,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			inputs.refresh("#results-container"); // refresh search inputs
 			map.refresh(); // refresh the map
 
+			_updateTitle(); // update page title
 			splash.hide(); // hide loading manager
 		}
 

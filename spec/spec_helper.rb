@@ -24,7 +24,7 @@ require 'capybara/poltergeist'
 #Capybara.javascript_driver = :poltergeist_debug
 
 Capybara.javascript_driver = :poltergeist
-Capybara.automatic_reload = false
+#Capybara.automatic_reload = false
 Capybara.default_wait_time = 15
 Capybara.ignore_hidden_elements = true
 

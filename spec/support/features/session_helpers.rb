@@ -24,22 +24,22 @@ module Features
     def back_button_pressed
       wait_for_requirejs
       page.execute_script("window.history.back();")
-      wait_for_requirejs
     end
 
     def forward_button_pressed
       wait_for_requirejs
       page.execute_script("window.history.forward();")
-      wait_for_requirejs
     end
 
     # helper to wait for requirejs to load before proceeding
     def wait_for_requirejs
+      sleep(1)
       page.find(:css, ".require-loaded")
     end
 
     # check for distinctive features of pages
     def looks_like_homepage
+      wait_for_requirejs
       within ( ".home main" ) do
         expect(page).to have_title "OhanaSMC"
         expect(page).to have_css("#search-container")
@@ -48,6 +48,7 @@ module Features
     end
 
     def looks_like_results
+      wait_for_requirejs
       within ( ".inside main" ) do
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
@@ -55,6 +56,7 @@ module Features
     end
 
     def looks_like_results_list
+      wait_for_requirejs
       within ( ".inside main" ) do
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#list-view")
@@ -62,6 +64,7 @@ module Features
     end
 
     def looks_like_details(title)
+      wait_for_requirejs
       within ( ".inside main" ) do
         expect(page).to have_title "#{title} | OhanaSMC"
         expect(page).to have_css("#search-container")
@@ -70,6 +73,7 @@ module Features
     end
 
     def looks_like_about
+      wait_for_requirejs
       within ( ".inside main" ) do
         expect(page).to have_title "About | OhanaSMC"
         expect(page).to have_css("#about-box")
