@@ -2,6 +2,7 @@
   %section{:class=>css_class_format(field)}
     - if icon.present?
       %span{"data-icon"=>icon , :class=>"ohana-icon"}
+    - if (title.present?)
       %h1 #{title}:
     - if org[field].kind_of?(Array)
       %ul

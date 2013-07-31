@@ -2,6 +2,7 @@
 	%h1
 		Service Provider
 	%nav
-		%a{:href=>session[:search_results], :class=>"ajax-link"}
+		= render 'component/search/map_data'
+		%a{:href=>session['search_results_url'],:class=>"ajax-link"}
 			%span{"data-icon"=>"↵" , :class=>"ohana-icon"}
 			Return to results

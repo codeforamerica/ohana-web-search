@@ -2,6 +2,7 @@
 	%h1
 		Service Providers
 	%nav
+		= render 'component/search/map_data'
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 		%span#search-summary{:title=>format_summary(@params)}
 			= format_summary(@params)
