@@ -1,24 +1,20 @@
 // handles ajax search functionality
-define(['app/loading-manager','util/ajax','util/util','map-view-manager','result-view-manager'],
-	function(lm,ajax,util,mapViewManager,resultViewManager) {
+define(['app/loading-manager','util/ajax','util/util','search/input-manager','search/map-view-manager','detail/detail-init'],
+	function(splash,ajax,util,inputs,map,detail) {
   'use strict';
-	
-		var busyScreen;
-		var nextBtn;
-		var prevBtn;
+		
+		var _resultsContainer; // area of HTML to refresh with ajax
 
-		var resultsContainer;
+		var _callback; // callback object for handling ajax success/failure
 
-		var _callback;
-
-		// search parameter values
-		var keyword,location,radius,page;
+		var _ajaxCalled = false; // boolean for when the ajax has been call the first time 
 
 		function init()
 		{
-			resultsContainer = document.getElementById('results-container');
+			_resultsContainer = document.getElementById('results-container');
 
-			_initPagination();
+			inputs.init(this); // initialize search form and ajax links
+			map.init(this); // initialize the map
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -26,88 +22,65 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 				'fail' : _failure
 			}
 
-			keyword = document.getElementById("keyword");
-			location = document.getElementById("location");
-			radius = document.getElementById("radius");
-			
-			document.getElementById('find-btn').addEventListener("click",_ajaxSearchHandler,false);
-			document.getElementById('radius').addEventListener("change",_ajaxSearchHandler,false);
-		  window.addEventListener("popstate", _updateURL);
-			_registerAjaxHooks();
-		}
-
-		// register all links to organizations as ajax-enabled links
-		function _registerAjaxHooks()
-		{
-			var lnks = document.querySelectorAll(".ajax-link");
-
-			var curr;
-			for (var l=0; l < lnks.length; l++)
-			{
-				curr = lnks[l];
-				curr.addEventListener("click", _ajaxSearchHandler, false);
-			}
-		}
-
-		function _ajaxSearchHandler(evt)
-		{			
-			lm.show({"fullscreen":false});
-			
-			var query = this.pathname+this.search;
-			if (!query)
-			{
-				page = 1;/*document.getElementById("page").value;*/
-
-				var values = {'keyword':keyword.value,
-											'location':location.value,
-											'radius':radius.value,
-											'page':page
-											}
-				
-				query = '/organizations'+util.queryString(values);
-			}
-			ajax.request(query, _callback);
-			window.history.pushState({'ajax':true},null, query);
-
-			evt.preventDefault();
-			return false;
+		  window.addEventListener("popstate", _updateURL);			
 		}
 
 		function _updateURL(evt) 
 		{
 			var params = util.getQueryParams(document.location.search);
 			
-			keyword.value = params.keyword || "";
-			location.value = params.location || "";
-			if (params.radius) radius.value = params.radius;
-			if (location.value != "") radius.disabled = false;
-			
-			if (window.location.pathname == "/organizations")
+			// set search field values
+			var keyword = params.keyword || "";
+			var location = params.location || "";
+			var radius = params.radius || null;
+
+			inputs.setKeyword(keyword);
+			inputs.setLocation(location);
+
+			if (radius) map.setZoom(radius);
+
+			if ( _ajaxCalled || (evt.state && evt.state.ajax) )
 			{
-				lm.show({"fullscreen":false});
+				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
 			}
 		}
 
-		function _initPagination()
+		function performSearch(params)
 		{
-			nextBtn = document.querySelector('.pagination.next');
-			prevBtn = document.querySelector('.pagination.prev');
+			splash.show({"fullscreen":false}); 
 
-			if (nextBtn && prevBtn)
-			{
-				nextBtn.addEventListener("click",_ajaxSearchHandler,false);
-				prevBtn.addEventListener("click",_ajaxSearchHandler,false);
-			}
+			var page = params.page || 1;
+			var keyword = params.keyword || "";
+			var location = params.location || "";
+			var radius = params.radius || null;
+			var id = params.id || null;
+
+			inputs.setKeyword(keyword);
+			inputs.setLocation(location);
+
+			var query = '/organizations';
+			if (id) query += '/'+id;
+			if (page) query += "?page="+page;
+			if (keyword) query += "&keyword="+encodeURIComponent(keyword);
+			if (location) query += "&location="+encodeURIComponent(location);
+			if (radius) query += "&radius="+radius;
+
+			ajax.request(query, _callback);
+			window.history.pushState({'ajax':true}, null, query);
 		}
-
+		
 		function _success(evt)
 		{
-			resultsContainer.innerHTML = evt.content;
-			resultViewManager.init();
-			_initPagination();
-			_registerAjaxHooks();
-			lm.hide(); // hide loading manager
+			window.scrollTo(0,0); // scrolls page to the top of the page when ajax finishes
+			_ajaxCalled = true; // set ajax first-run flag
+			_resultsContainer.innerHTML = evt.content; // update search results list
+			
+			detail.init();
+			inputs.refresh("#results-container"); // refresh search inputs
+			map.refresh(); // refresh the map
+
+			splash.hide(); // hide loading manager
 		}
 
 		function _failure(evt)
@@ -116,6 +89,7 @@ define(['app/loading-manager','util/ajax','util/util','map-view-manager','result
 		}
 
 	return {
-		init:init
+		init:init,
+		performSearch:performSearch
 	};
 });

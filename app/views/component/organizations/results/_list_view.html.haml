@@ -5,7 +5,7 @@
 				- query = "?"
 				- request.query_parameters.each do |key, value|
 					- query += "#{key}=#{CGI::escape(value)}&"
-				%a{:href=>"/organizations/#{org._id+query}", :title=>"#{org.name}"}
+				%a{:href=>"/organizations/#{org._id+query}", :title=>"#{org.name}", :class=>"ajax-link"}
 					%section{:class => "results-entry"}
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
@@ -17,6 +17,6 @@
 							- if org.agency.present?
 								%h2.agency
 									= superscript_ordinals(org.agency)
-						- if has_address?(org)
+						- if has_field?(org, address_fields)
 							%p.address
 								= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}

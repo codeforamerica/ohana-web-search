@@ -130,7 +130,7 @@ define(function() {
 		// parse query string into object
 		// (from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter)
 		// @param [String] the query string parameter
-		// @return [Object] query string to parse
+		// @return [Object] query string as object
 		function getQueryParams(qs) {
 	    qs = qs.split("+").join(" ");
 

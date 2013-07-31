@@ -1081,6 +1081,8 @@ main > * > *
   }
 }
 
+/*
+// view options - not currently used.
 #results-view-options
 {
   @include inline-block();
@@ -1130,6 +1132,7 @@ main > * > *
     cursor:default;
   }
 }
+*/
 
 //=================================================================================
 // Results - list view
@@ -1305,23 +1308,81 @@ main > * > *
 // Results - map view
 #map-view
 {
+    margin:10px;
     margin-top: 0;
+    font-size: 14px;
+    font-family: $san_serif_font;
+
+  > header
+  {
+    background: $green_light;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+
+    span
+    {
+      vertical-align: baseline;
+    }
+
+    .ohana-icon
+    {
+      color:$blue_dark;
+    }
+  }
 
   > div
   {
-    width: 100%;
-    min-height: 400px;
-    //border-radius:10px;
-    border:1px solid $black_alpha40;
+    background:$white_alpha70;
+    padding:5px;
   }
 
-  #map
+  > *:first-child
+  {
+    @include border-radius(5px 5px 0px 0px);
+  }
+
+  > *:last-child
+  {
+    @include border-radius(0px 0px 5px 5px);
+
+  }
+
+  #map-canvas
   {
     width: 100%;
-    height: 400px;
+    height: 200px;
+    padding:0;
+    text-align:center;
+
+    // error message text if map doesn't load
+    > span
+    {
+      padding:10px;
+      margin:5px;
+      margin-top:20px;
+      font-size:14px;
+      background:$red_dark;
+      @include border-radius(5px);
+      @include inline-block();
+      @include single-box-shadow();
+      color:$white;
+      vertical-align:middle;
+    }
+  }
+
+  #marker-info
+  {
+    font-weight:bold;
+
+    > span
+    {
+      font-style:italic;
+      font-weight:normal;
+    }
   }
 }
-
 
 //=================================================================================
 // Detail list screen
@@ -1533,12 +1594,10 @@ main > * > *
       font-style: italic;
   }
 
-  .map img
+  .map #detail-map-canvas
   {
-      border:1px solid $greyscale_midtone;
-      width:400px;
-      height:300px;
-      margin-bottom:10px;
+    height: 400px;
+    width: 100%;
   }
 
   .metadata
@@ -1579,7 +1638,7 @@ main > * > *
   top:2px;
 }
 
-.email .ohana-icon
+.emails .ohana-icon
 {
   position:relative;
   top:2px;
