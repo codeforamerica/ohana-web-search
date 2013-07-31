@@ -8,6 +8,7 @@ module Features
       location = options[:location] || ''
 
       visit(path) if path.present?
+      delay
       fill_in('keyword', :with => keyword) if keyword.present?
       fill_in('location', :with => location) if location.present?
       click_button 'Find'
