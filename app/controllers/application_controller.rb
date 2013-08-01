@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	protect_from_forgery
 
 	# make datalist initializer available to all controllers
 	before_filter :datalist_initializer
