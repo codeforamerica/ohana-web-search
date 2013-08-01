@@ -6,6 +6,10 @@ class OrganizationsController < ApplicationController
 
     perform_search_query(params)
 
+    if (@orgs.nil?)
+      @services = Organization.services
+    end
+
     respond_to do |format|
 
       # visit directly
