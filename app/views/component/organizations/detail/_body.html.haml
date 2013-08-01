@@ -19,44 +19,45 @@
 
             - if has_field?(@org,['ask_for'])
               %section.ask-for
-                %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
-                %span
-                  = @org.ask_for
+                %div
+                  %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
+                  %span
+                    = @org.ask_for
             
             - if has_field?(@org,['emails'])
               %section.emails{:itemprop=>"email"}
                 - @org.emails.each_with_index do |email, index|
-                  %span{"data-icon"=>"@" , :class=>"ohana-icon"}
-                  %span{:itemprop=>"email"}
-                    = email
-                  - unless index == @org.emails.length
-                    %br
+                  %div
+                    %span{"data-icon"=>"@" , :class=>"ohana-icon"}
+                    %span{:itemprop=>"email"}
+                      = email
+                  
 
             - if @org.phones.present?
               %section.phones
                 - @org.phones.each_with_index do |array,index|
                   - array.each do |hash|
-                    %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-                    - if hash["department"]
+                    %div
+                      %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
                       %span
-                        = "#{hash["department"]}"
-                    - if hash["number"]
-                      %span{:itemprop=>"telephone"}
-                        = "#{format_phone(hash["number"])}"
-                    - if hash["phone_hours"]
-                      %span
-                        = " #{hash["phone_hours"]}"
-                    - unless index == @org.phones.length
-                      %br
+                        - if hash["department"]
+                          %span
+                            = "#{hash["department"]}"
+                        - if hash["number"]
+                          %span{:itemprop=>"telephone"}
+                            = "#{format_phone(hash["number"])}"
+                        - if hash["phone_hours"]
+                          %span
+                            = " #{hash["phone_hours"]}"
+                    
 
             - if has_field?(@org,['faxes'])
               %section.faxes
                 - @org.faxes.each_with_index do |fax,index|
-                  %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
-                  %span{:itemprop=>"faxNumber"}
-                    = "#{format_phone(fax)}"
-                  - unless index == @org.faxes.length
-                    %br
+                  %div
+                    %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
+                    %span{:itemprop=>"faxNumber"}
+                      = "#{format_phone(fax)}"
 
       - if has_field?(@org, address_fields | ['urls'])
         %section.address-box
@@ -65,18 +66,18 @@
 
             - if has_field?(@org, address_fields)
               %section.address
-                %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-                = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
+                %div
+                  %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                  = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
             - if has_field?(@org, ['urls'])
               %section.urls
                 - @org.urls.each_with_index do |url,index|
-                  %a{:href=>url,:target=>"_blank"}
-                    %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-                    %span{:itemprop=>"url"}
-                      = url
-                    - unless index == @org.urls.length
-                      %br
+                  %div
+                    %a{:href=>url,:target=>"_blank"}
+                      %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+                      %span{:itemprop=>"url"}
+                        = url
 
 
   / main detail content
@@ -159,7 +160,7 @@
           - if map_url(@org).present?
             %section.directions
               %a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
-                %span{"data-icon"=>"" , :class=>"external-link ohana-icon"}
+                %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                 %span Get Directions
 
             %section.map

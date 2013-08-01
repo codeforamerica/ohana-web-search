@@ -951,6 +951,11 @@ main > * > *
     display:block;
   }
 
+  div:nth-child(2)
+  {
+    margin-bottom:10px;
+  }
+
   label // the form labels
   {
     font-size: 20px;
@@ -963,7 +968,13 @@ main > * > *
   label span // hide the form arrows
   {
     display:none;
-  }  
+  }
+
+  button
+  {
+    margin-top:20px;
+    margin-bottom:0px;
+  }
 }
 
 
@@ -976,6 +987,8 @@ main > * > *
 
   > header
   {
+    position:relative;
+    z-index: 9999;
     border-bottom:1px solid greyscale_midtone;
     background:$blue_midtone; 
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
@@ -1009,6 +1022,14 @@ main > * > *
       cursor:default;
       font-weight: bold;
     }
+  }
+
+  > header.floating
+  {
+    position:fixed;
+    top:0;
+    -webkit-backface-visibility:hidden;
+    width:100%;
   }
 
   nav 
@@ -1287,7 +1308,6 @@ main > * > *
       {
         font-size:14px;
         color:$greyscale_dark;
-        font-style: italic;
       }
     }
 
@@ -1413,7 +1433,6 @@ main > * > *
     {
       font-size:16px;
       color:$greyscale_dark;
-      font-style:italic;
     }
   }
 
@@ -1482,6 +1501,28 @@ main > * > *
     word-break: break-word;
 
     @include border-radius(0px 0px 0px 10px);
+
+    > section > section > section
+    {
+      display:table;
+
+      > div
+      {
+        display:table-row;
+
+        > span
+        {
+          vertical-align:top;
+          display:table-cell;
+        }
+
+        > span:first-child
+        {
+          text-align: middle;
+          width:25px;
+        }
+      }
+    }
   }
 
   // adjust margin of main content to fit aside
