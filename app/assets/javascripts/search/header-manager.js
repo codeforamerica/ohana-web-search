@@ -10,13 +10,13 @@ define(['util/util'],
 		function init()
 		{
 			_header = document.getElementById("results-header");
-			_offsetY = util.getOffset(_header);
+			_offsetY = document.getElementById('content-header').offsetHeight;
 			window.addEventListener("scroll",_onScroll,false);
 		}
 
 		function _onScroll(evt)
 		{
-			if (window.scrollY >= _offsetY.top)
+			if (window.scrollY >= _offsetY)
 			{
 				// fix header
 				if (!_floating)
