@@ -68,6 +68,7 @@ module Features
         expect(page).to have_css("#results-entries")
       end
       results_map_absent
+      service_hints_present
     end
 
     def looks_like_details(title)
@@ -106,6 +107,13 @@ module Features
 
       find_field("keyword").value.should == "#{keyword}" if keyword.present?
       find_field("location").value.should == "#{location}" if location.present?
+    end
+
+    # service terms displayed on the 'no results' search results page
+    def service_hints_present
+      within("#results-entries") do
+        page.should have_selector('.no-results', :text=>"Care Education Emergency Food Goods Health Housing Legal Money Transit Work")
+      end
     end
 
     # helper methods for determining presence or absence of results map in search aside
