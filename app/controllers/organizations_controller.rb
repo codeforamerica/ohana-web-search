@@ -25,23 +25,25 @@ class OrganizationsController < ApplicationController
 
   # organization details view
   def show
-    #params[:radius] = session[:radius]
-    #params[:keyword] = session[:keyword]
-    #params[:location] = session[:location]
-
-    query = Organization.get(params[:id])
-    @org = query.content
-
+  
     respond_to do |format|
 
       # visit directly
       # perform search to refresh search results map and return to results button 
       format.html {
+
         perform_search_query(params)
+
+        # pick out particular detail being viewed
+        @org = @orgs.find { |o| o['_id'] == params[:id] }
       }
 
       # visit via ajax
       format.json {
+
+        # retrieve specific organization's details
+        query = Organization.get(params[:id])
+        @org = query.content
 
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/detail/body'
