@@ -34,6 +34,7 @@ module Features
 
     # helper to wait for requirejs to load before proceeding
     def wait_for_requirejs
+      delay
       page.find(:css, ".require-loaded")
     end
 
