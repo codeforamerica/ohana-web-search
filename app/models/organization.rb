@@ -40,7 +40,7 @@ class Organization
   end
 
   # top level services for when no search results are found
-  def self.services
+  def self.service_terms
     %w[Care Education Emergency Food Goods Health Housing Legal Money Transit Work]
   end
   

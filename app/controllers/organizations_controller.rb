@@ -7,7 +7,7 @@ class OrganizationsController < ApplicationController
     perform_search_query(params)
 
     if (@orgs.nil?)
-      @services = Organization.services
+      @service_terms = Organization.service_terms
     end
 
     respond_to do |format|
