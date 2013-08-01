@@ -5,6 +5,7 @@ define(['util/util'],
 		
 		var _header;
 		var _offsetY;
+		var _floating = false;
 
 		function init()
 		{
@@ -18,10 +19,20 @@ define(['util/util'],
 			if (window.scrollY >= _offsetY.top)
 			{
 				// fix header
+				if (!_floating)
+				{
+					_header.classList.add("floating");
+					_floating = true;
+				}
 			}
 			else
 			{
 				// reset header
+				if (_floating)
+				{
+					_header.classList.remove("floating");
+					_floating = false;
+				}
 			}
 		}
 
