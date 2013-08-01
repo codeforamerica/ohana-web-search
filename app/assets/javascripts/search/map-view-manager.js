@@ -302,7 +302,8 @@ define(['util/util'],function(util) {
 			if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
 			_loadMarkers();
 			_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
-			_map.fitBounds(_markerBounds);
+			if (_markersArray.length > 0)
+				_map.fitBounds(_markerBounds);
 		}
 
 	return {
