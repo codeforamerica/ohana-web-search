@@ -9,6 +9,9 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'jquery-rails', '>= 1.0.17'
+gem 'requirejs-rails', git: 'git://github.com/jwhitley/requirejs-rails.git'
 gem 'haml-rails'
 
 # server
@@ -30,10 +33,11 @@ group :development do
 end
 
 group :test do
-  gem "cucumber-rails", ">= 1.3.1", :require => false
-  gem "launchy", ">= 2.2.0"
+  #gem "cucumber-rails", ">= 1.3.1", :require => false
+  #gem "launchy", ">= 2.2.0"
   gem "capybara", ">= 2.0.3"
   gem 'json'
+  gem 'poltergeist'
 end
 
 group :development, :test do

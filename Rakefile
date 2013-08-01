@@ -6,5 +6,6 @@ require File.expand_path('../config/application', __FILE__)
 
 HumanServicesFinder::Application.load_tasks
 
-task :tests => [:spec, :teaspoon]
-task :default => [:tests]
+# enables default running of teaspoon
+#task :tests => [:spec, :teaspoon]
+#task :default => [:tests]
