@@ -17,7 +17,7 @@ class OrganizationsController < ApplicationController
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/results/body', :locals => { :map_present => @map_present }
         end
-        render :json => { :content => @html_content }
+        render :json => { :content => @html_content , :action => action_name }
       }
     end
     
@@ -48,7 +48,7 @@ class OrganizationsController < ApplicationController
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/detail/body'
         end
-        render :json => { :content => @html_content }
+        render :json => { :content => @html_content , :action => action_name }
       }
     end
 

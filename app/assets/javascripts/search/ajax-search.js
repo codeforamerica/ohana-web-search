@@ -9,6 +9,8 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 
 		var _ajaxCalled = false; // boolean for when the ajax has been call the first time 
 
+		var _requestType = {'RESULT':'index','DETAIL':'show'}
+
 		function init()
 		{
 			_resultsContainer = document.getElementById('results-container');
@@ -85,9 +87,13 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			_ajaxCalled = true; // set ajax first-run flag
 			_resultsContainer.innerHTML = evt.content; // update search results list
 			
-			detail.init(); // re-initializes details scripts
+			if (evt.action == _requestType.DETAIL)
+				detail.init(); // re-initializes details scripts
+			
+			if (evt.action == _requestType.RESULT)
+				map.refresh(); // refresh the map
+
 			inputs.refresh("#results-container"); // refresh search inputs
-			map.refresh(); // refresh the map
 
 			_updateTitle(); // update page title
 			splash.hide(); // hide loading manager
