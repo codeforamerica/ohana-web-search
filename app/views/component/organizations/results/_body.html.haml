@@ -8,8 +8,8 @@
 
 			%ul
 				- @service_terms.each do |service|
-					%li
-						%span
+					%a{:href=>"/organizations?keyword=#{service}"}
+						%li
 							= service
 	- else
 		-#%nav#results-view-options

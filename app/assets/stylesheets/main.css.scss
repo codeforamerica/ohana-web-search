@@ -1093,6 +1093,7 @@ main > * > *
     
     > p
     {
+      margin:10px;
       > strong
       {
         font-size:18px;
@@ -1108,34 +1109,35 @@ main > * > *
 
     > ul
     {
-      > li
+      li
       {
         cursor:pointer;
         display:inline-block;
         min-width:100px;
         min-height:60px;
-        @include single-box-shadow();
         @include border-radius(3px);
         margin:5px;
-        background-color:$green_dark;
+        background-color:$white;
         font-size:16px;
-        color:$yellow_light;
+        color:$blue_dark;
         position:relative;
         text-align: center;
         line-height:100px;
         padding:10px;
-        border:1px solid $yellow_light_alpha40;
+        border:1px solid $blue_midtone_alpha30;
         letter-spacing:1px;
-
-        // TODO move colors into variables
-        @include background( linear-gradient( rgba(131,180,26,1) 0%, rgba(119,163,24,1) 100%) );
       }
 
-      > li:hover
+      li:hover
       {
         border:1px solid $yellow_dark;
-        color:$yellow_dark;
+        color:$black;
         @include transition(border $default_duration);
+      }
+
+      a
+      {
+        border-bottom:0;
       }
 
     }
