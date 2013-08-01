@@ -36,7 +36,7 @@ class Organization
 
   # location search autocomplete data (all cities of SMC)
   def self.locations
-    ['Atherton','Belmont','Brisbane','Burlingame','Colma','Daly City','East Palo Alto','Foster City','Half Moon Bay','Hillsborough','Menlo Park','Millbrae','Pacifica','Portola Valley','Redwood City','San Bruno','San Carlos','San Mateo','South San Francisco','Woodside','Broadmoor','Burlingame Hills','Devonshire','El Granada','Emerald Lake Hills','Highlands-Baywood Park','Kings Mountain','Ladera','La Honda','Loma Mar','Menlo Oaks','Montara','Moss Beach','North Fair Oaks','Palomar Park','Pescadero','Princeton-by-the-Sea','San Gregorio','Sky Londa','West Menlo Park']
+    ['Atherton, CA','Belmont, CA','Brisbane, CA','Burlingame, CA','Colma, CA','Daly City, CA','East Palo Alto, CA','Foster City, CA','Half Moon Bay, CA','Hillsborough, CA','Menlo Park, CA','Millbrae, CA','Pacifica, CA','Portola Valley, CA','Redwood City, CA','San Bruno, CA','San Carlos, CA','San Mateo, CA','South San Francisco, CA','Woodside, CA','Broadmoor, CA','Burlingame Hills, CA','Devonshire, CA','El Granada, CA','Emerald Lake Hills, CA','Highlands-Baywood Park, CA','Kings Mountain, CA','Ladera, CA','La Honda, CA','Loma Mar, CA','Menlo Oaks, CA','Montara, CA','Moss Beach, CA','North Fair Oaks, CA','Palomar Park, CA','Pescadero, CA','Princeton-by-the-Sea, CA','San Gregorio, CA','Sky Londa, CA','West Menlo Park, CA']
   end
 
   # top level services for when no search results are found
