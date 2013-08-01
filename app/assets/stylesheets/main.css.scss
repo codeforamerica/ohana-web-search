@@ -704,7 +704,7 @@ main
   top:0;
   bottom:0;
 
-  @include background( radial-gradient($blue_midtone, $blue_dark 100%) );
+  @include background( radial-gradient($blue_midtone, $blue_dark) );
 }
 
 main > *
@@ -1598,6 +1598,20 @@ main > * > *
   {
     height: 400px;
     width: 100%;
+
+    // error message text if map doesn't load
+    > span
+    {
+      padding:10px;
+      margin:5px;
+      margin-top:20px;
+      font-size:14px;
+      background:$red_dark;
+      @include border-radius(5px);
+      @include inline-block();
+      color:$white;
+      vertical-align:middle;
+    }
   }
 
   .metadata

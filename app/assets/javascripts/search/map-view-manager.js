@@ -192,11 +192,12 @@ define(['util/util'],function(util) {
 		    var metadata = _markerData[dataLength-1];
 		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
 				_header.innerHTML = _defaultHeaderContent+" "+summaryText;
+				_mapContainer.classList.remove('hide');
 			}
 			else
 			{
 				// no entries found
-				console.log("no map results found!");
+				_mapContainer.classList.add('hide');
 			}
 		}
 

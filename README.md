@@ -13,7 +13,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ###Prerequisites
 
-#### Git, Ruby 2.0.0+, Rails 3.2.13+ (+ Homebrew on OS X)
+#### Git, Ruby 2.0.0+, Rails 3.2.13+ (+ Homebrew on OS X), Polteirgeist ([installation instructions](https://github.com/jonleighton/poltergeist#installing-phantomjs)
 **OS X**: [Set up a dev environment on OS X with Homebrew, Git, RVM, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
@@ -58,7 +58,7 @@ To see the actual tests, browse through the [spec](https://github.com/codeforame
 * Ruby version 2.0.0
 * Rails version 3.2.13
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec and Capybara
+* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
 ## Contributing
 In the spirit of open source software, **everyone** is encouraged to help improve this project.

@@ -37,13 +37,6 @@ define(function() {
 		}
 	}
 
-	function isFullscreen( fullscreen )
-	{
-		if (fullscreen === true || fullscreen === false)
-			_fullscreen = fullscreen;
-		return _fullscreen;
-	}
-
 	return {
 		show:show,
 		hide:hide

@@ -1,7 +1,7 @@
 = render 'component/organizations/detail/header'
 %section#detail-info
   %header
-    %h1.name
+    %h1.name{:title=>@org.name}
       = superscript_ordinals(@org.name)
     - if has_field?(@org,["agency"])
       %h2.agency
@@ -98,7 +98,6 @@
           = insert_template(true,@org,'eligibility_requirements',"Eligibility Requirements","E")
           = insert_template(true,@org,'languages_spoken',"Languages Spoken","L")
           = insert_template(false,@org,'accessibility_options',"Accessibility Options","♿")
-
 
     - if @org.service_hours.present?
       %section.hours-box

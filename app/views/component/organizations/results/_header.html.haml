@@ -4,7 +4,8 @@
 	%nav
 		= render 'component/search/map_data'
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
-		= format_summary(@params)
+		%span#search-summary{:title=>format_summary(@params)}
+			= format_summary(@params)
 		
 		- path = request.fullpath
 
