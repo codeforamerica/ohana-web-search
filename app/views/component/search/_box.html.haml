@@ -4,21 +4,23 @@
     %label{:for => "keyword"}
       I need
       %span{"data-icon"=>"→" , :class=>"ohana-icon"}
-    = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food"         
+    = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"        
 
   %div
     %label{:for => "location"}
       I am near
       %span{"data-icon"=>"→" , :class=>"ohana-icon"}
-    = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca"
+    = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
 
-  %div/
-  /= button_tag 
-  %button#find-btn
-    %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-    Find
--#
-  - if @pagination.blank?
-    = hidden_field_tag 'page', 1
-  - else
-    = hidden_field_tag 'page', @pagination.current
+  %div
+    %button#find-btn
+      %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+      Find
+
+  %datalist#search-keywords
+    - @keywords.each do |keyword|
+      %option{:value=>keyword}
+
+  %datalist#search-locations
+    - @locations.each do |location|
+      %option{:value=>location}
