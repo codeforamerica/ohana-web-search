@@ -22,9 +22,9 @@ feature "visits details page" do
     	# tests detail/term-popup-manager
       scenario 'has functional popup for terms' do
       	within ("#detail-info .payments-accepted") do
-  	    	expect(page).to_not have_content("Women, Infants, and Children")
-  	    	find(:css, ".popup-term", :text=>"WIC").click
-  	    	expect(page).to have_content("Women, Infants, and Children")
+  	    	page.should_not have_content("Women, Infants, and Children")
+  	    	find(:css, ".popup-term", :text=>"WIC").trigger(:mousedown)
+  	    	page.should have_content("Women, Infants, and Children")
     		end
       end
 
