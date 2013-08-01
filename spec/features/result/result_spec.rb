@@ -15,7 +15,7 @@ feature "visits results page" do
       end
 
       scenario 'performs invalid search' do
-        search(:keyword=>'asdfg')
+        search(:path=>'/',:keyword=>'asdfg')
         looks_like_no_results
       end
 

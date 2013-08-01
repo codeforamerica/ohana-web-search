@@ -58,7 +58,7 @@ module Features
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
       end
-      results_map_present
+      map_has_results
     end
 
     def looks_like_no_results
@@ -67,7 +67,8 @@ module Features
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
       end
-      results_map_absent
+      map_has_no_results
+      has_service_hints
     end
 
     def looks_like_details(title)
@@ -108,14 +109,21 @@ module Features
       find_field("location").value.should == "#{location}" if location.present?
     end
 
+    # service terms displayed on the 'no results' search results page
+    def has_service_hints
+      within("#results-entries") do
+        page.should have_selector('.no-results', :text=>"Care Education Emergency Food Goods Health Housing Legal Money Transit Work")
+      end
+    end
+
     # helper methods for determining presence or absence of results map in search aside
-    def results_map_present
+    def map_has_results
       within("#map-view") do
         expect(page).to_not have_content("No results located!")
       end
     end
 
-    def results_map_absent
+    def map_has_no_results
       within("#map-view") do
         expect(page).to have_content("No results located!")
       end
