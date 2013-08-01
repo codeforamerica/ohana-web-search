@@ -85,7 +85,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			_ajaxCalled = true; // set ajax first-run flag
 			_resultsContainer.innerHTML = evt.content; // update search results list
 			
-			detail.init();
+			detail.init(); // re-initializes details scripts
 			inputs.refresh("#results-container"); // refresh search inputs
 			map.refresh(); // refresh the map
 

@@ -28,6 +28,13 @@ feature "visits details page" do
     		end
       end
 
+      # tests detail/term-popup-manager
+      scenario 'has detail map' do
+        within ("#detail-info .map") do
+          expect(page).to have_content("Google")
+        end
+      end
+
       scenario 'performs search' do
   	    search
   	    looks_like_results_list
