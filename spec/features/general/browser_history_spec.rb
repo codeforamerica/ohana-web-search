@@ -13,13 +13,13 @@ feature 'Visitor uses the back or forward button',
     search(:path=>'/',:keyword=>'home')
     back_button_pressed
     forward_button_pressed
-    looks_like_results_list
+    looks_like_results
   end
 
   scenario 'to results page' do
     search(:path=>'/',:keyword=>'results')
     search(:keyword=>'food')
-    looks_like_results_list
+    looks_like_results
   end
 
   scenario 'from results page' do
@@ -42,7 +42,7 @@ feature 'Visitor uses the back or forward button',
     search(:path=>'/',:keyword=>'detail')
     visit_details
     back_button_pressed
-    looks_like_results_list
+    looks_like_results
   end
 
 end

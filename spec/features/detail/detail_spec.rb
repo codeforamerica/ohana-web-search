@@ -37,7 +37,7 @@ feature "visits details page" do
 
       scenario 'performs search' do
   	    search
-  	    looks_like_results_list
+  	    looks_like_results
   	  end
 
       scenario 'returns to original results' do
@@ -53,7 +53,7 @@ feature "visits details page" do
 
       scenario 'performs search' do
         search
-        looks_like_results_list
+        looks_like_results
       end
 
     end

@@ -12,12 +12,11 @@ module Features
       fill_in('keyword', :with => keyword) if keyword.present?
       fill_in('location', :with => location) if location.present?
       click_button 'Find'
-      looks_like_results
     end
 
     # navigation helpers
     def visit_details
-      looks_like_results_list
+      looks_like_results
       page.find(:css, '#list-view li:first-child a').click
     end
 
@@ -59,14 +58,16 @@ module Features
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
       end
+      results_map_present
     end
 
-    def looks_like_results_list
+    def looks_like_no_results
       delay
       within ( ".inside main" ) do
         expect(page).to have_css("#search-container")
-        expect(page).to have_css("#list-view")
+        expect(page).to have_css("#results-entries")
       end
+      results_map_absent
     end
 
     def looks_like_details(title)
@@ -106,6 +107,20 @@ module Features
       find_field("keyword").value.should == "#{keyword}" if keyword.present?
       find_field("location").value.should == "#{location}" if location.present?
     end
+
+    # helper methods for determining presence or absence of results map in search aside
+    def results_map_present
+      within("#map-view") do
+        expect(page).to_not have_content("No results located!")
+      end
+    end
+
+    def results_map_absent
+      within("#map-view") do
+        expect(page).to have_content("No results located!")
+      end
+    end
+
 
   end
 end
