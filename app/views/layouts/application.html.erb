@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><%= content_for?(:title) ? yield(:title) : "OhanaSMC" %></title>
+    <title><%= yield(:title) %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Human Services Finder" %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
@@ -19,11 +19,12 @@
     </script>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application", ('routes/'+controller_name+'/'+ action_name) %>
+    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
-  <body class="<%= controller_name == 'home' ? '' : 'inside' %> <%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
   
   <%= render 'component/status/loading' %>
 

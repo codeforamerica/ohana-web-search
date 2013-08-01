@@ -69,6 +69,15 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true}, null, query);
 		}
+
+		function _updateTitle()
+		{
+			var suffix = document.title.substring(document.title.lastIndexOf("|"),document.title.length);
+			var summary = document.getElementById("search-summary");
+			if (!summary) summary = document.querySelector("#detail-info h1.name");
+			summary = summary.getAttribute("title")+" "+suffix;
+			document.title = summary;
+		}
 		
 		function _success(evt)
 		{
@@ -76,16 +85,17 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 			_ajaxCalled = true; // set ajax first-run flag
 			_resultsContainer.innerHTML = evt.content; // update search results list
 			
-			detail.init();
+			detail.init(); // re-initializes details scripts
 			inputs.refresh("#results-container"); // refresh search inputs
 			map.refresh(); // refresh the map
 
+			_updateTitle(); // update page title
 			splash.hide(); // hide loading manager
 		}
 
 		function _failure(evt)
 		{
-			console.log('ajaxsearch failure',evt);
+			console.log('ajaxsearch failure',location.href,evt);
 		}
 
 	return {

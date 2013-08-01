@@ -13,9 +13,25 @@ require 'hashie'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# configure Capybara to use poltergeist
+require 'capybara/poltergeist'
+
+# uncomment the following lines to enable the remote debugger
+# place page.driver.debug in a test to stop its execution for debugging
+#Capybara.register_driver :poltergeist_debug do |app|
+#  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+#end
+#Capybara.javascript_driver = :poltergeist_debug
+
+Capybara.javascript_driver = :poltergeist
+Capybara.automatic_reload = false
+Capybara.default_wait_time = 15
+Capybara.ignore_hidden_elements = true
+
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
   config.include DetailFormatHelper
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
