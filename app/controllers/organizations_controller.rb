@@ -6,7 +6,8 @@ class OrganizationsController < ApplicationController
 
     perform_search_query(params)
 
-    if (@orgs.nil?)
+    # if no results were returned, set the service terms shown on the no results page
+    if @orgs.empty?
       @service_terms = Organization.service_terms
     end
 
