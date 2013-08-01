@@ -111,10 +111,12 @@ module Features
 
     # helper methods for determining presence or absence of results map in search aside
     def results_map_present
+      delay
       page.should have_selector('#marker-info', text: "Mouse over markers for details")
     end
 
     def results_map_absent
+      delay
       page.should have_selector('#marker-info', text: "")
     end
 
