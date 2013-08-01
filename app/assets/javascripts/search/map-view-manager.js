@@ -31,19 +31,20 @@ define(['util/util'],function(util) {
 			_mapContainer = document.getElementById("map-view");
 			_header = document.getElementById("map-search-results");
 		  _defaultHeaderContent = _header.innerHTML;
-
+			document.getElementById("map-canvas").classList.remove("hide");
+				
 		  var mapOptions = {
 		    zoom: 4,
 		    zoomControl: false,
 		    panControl: false,
 		    streetViewControl: false,
+		    mapTypeControl: false,
 		    scaleControl: true,
 		    scaleControlOptions: {
         position: google.maps.ControlPosition.RIGHT_BOTTOM
-    },
-
-		    mapTypeControl: false,
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
+    		},
+		    mapTypeId: google.maps.MapTypeId.ROADMAP,
+		    center: new google.maps.LatLng(37.485215,-122.236355)
 		  }
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 		  _markerInfo = document.getElementById("marker-info");
@@ -192,12 +193,15 @@ define(['util/util'],function(util) {
 		    var metadata = _markerData[dataLength-1];
 		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
 				_header.innerHTML = _defaultHeaderContent+" "+summaryText;
-				_mapContainer.classList.remove('hide');
+				_markerInfo.innerHTML = "Mouse over markers for details";
 			}
 			else
 			{
 				// no entries found
-				_mapContainer.classList.add('hide');
+				_clearMarkers();
+				//document.getElementById("map-canvas").classList.add("hide");
+				_header.innerHTML = "No results located!";
+				_markerInfo.innerHTML = "";
 			}
 		}
 

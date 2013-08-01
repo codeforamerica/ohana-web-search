@@ -9,9 +9,14 @@ feature "visits results page" do
         search( :path=>'/', :keyword=>'maceo' )
       end
 
-      scenario 'performs search' do
+      scenario 'performs valid search' do
         search
-        looks_like_results_list
+        looks_like_results
+      end
+
+      scenario 'performs invalid search' do
+        search(:keyword=>'asdfg')
+        looks_like_no_results
       end
 
     end
@@ -23,7 +28,7 @@ feature "visits results page" do
 
       scenario 'performs search' do
         search
-        looks_like_results_list
+        looks_like_results
       end
     end
 
