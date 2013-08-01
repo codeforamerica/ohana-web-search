@@ -34,8 +34,11 @@ class OrganizationsController < ApplicationController
 
         perform_search_query(params)
 
-        # pick out particular detail being viewed
         @org = @orgs.find { |o| o['_id'] == params[:id] }
+
+        if @org.nil?
+          @org = Organization.get(params[:id]).content
+        end
       }
 
       # visit via ajax
