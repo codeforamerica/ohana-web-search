@@ -1,6 +1,11 @@
 // handles ajax search functionality
-define(['app/loading-manager','util/ajax','util/util','search/input-manager','search/map-view-manager','detail/detail-init'],
-	function(splash,ajax,util,inputs,map,detail) {
+define(['app/loading-manager',
+				'util/ajax','util/util',
+				'search/input-manager',
+				'search/map-view-manager',
+				'detail/detail-init',
+				'search/header-manager'],
+	function(splash,ajax,util,inputs,map,detail,header) {
   'use strict';
 		
 		var _resultsContainer; // area of HTML to refresh with ajax
@@ -17,6 +22,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 
 			inputs.init(this); // initialize search form and ajax links
 			map.init(this); // initialize the map
+			header.init(); // initialize the header manager
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -94,6 +100,7 @@ define(['app/loading-manager','util/ajax','util/util','search/input-manager','se
 				map.refresh(); // refresh the map
 
 			inputs.refresh("#results-container"); // refresh search inputs
+			header.init(); // re-initialize header manager
 
 			_updateTitle(); // update page title
 			splash.hide(); // hide loading manager
