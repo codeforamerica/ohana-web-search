@@ -19,6 +19,8 @@ define(['util/util','enquire'],function(util,enquire) {
 
 		
 		// PRIVATE METHODS
+
+		// adds hooks for triggering popups present on the page
 		function _addPopups()
 		{
 			_popups = document.querySelectorAll(".popup-trigger");
@@ -32,6 +34,7 @@ define(['util/util','enquire'],function(util,enquire) {
 			}
 		}
 
+		// removes popups and hooks
 		function _removePopups()
 		{
 			_closeLastPopup();
@@ -48,6 +51,7 @@ define(['util/util','enquire'],function(util,enquire) {
 			}
 		}
 
+		// handler for when a popup link triggers a popup
 		function _popupHandler(evt)
 		{
 			evt.preventDefault();
@@ -61,11 +65,15 @@ define(['util/util','enquire'],function(util,enquire) {
 			return false;
 		}
 
+		// handler for when the page is resized
 		function _resizeHandler(evt)
 		{
 			_show(_lastPopup,_lastTrigger);
 		}
 
+		// show a popup
+		// @param popup Reference to the popup HTML to show
+		// @param trigger Reference to the link trigger HTML
 		function _show(popup,trigger)
 		{
 			_lastTrigger = trigger;
@@ -76,14 +84,23 @@ define(['util/util','enquire'],function(util,enquire) {
 			// get the window dimensions
 			var winDim = util.getWindowRect();
 			
+			// find the position offset values of the link that triggered the popup
 			var offset = util.getOffset(trigger);
 			var offsetY = (offset.top+trigger.offsetHeight);
 			var offsetX = (offset.left);
 
-			arrow.style.top = (offsetY)+"px";
-			arrow.style.left = (offsetX-10+(trigger.offsetWidth/2))+"px";
+			// offset needed for CSS adjustments of rotating arrow inside a masking box
+			// to move popup up/down, adjust the arrowOffset.top value, which will 
+			// cascade down to the popupOffset
+			var arrowOffset = {'top':-6,'left':-14};
+			var popupOffset = {'top':15+arrowOffset.top}
 
-			popup.style.top = (offsetY+10)+"px";
+			// position the arrow relative to the triggering link
+			arrow.style.top = (offsetY+arrowOffset.top)+"px";
+			arrow.style.left = (offsetX+arrowOffset.left+(trigger.offsetWidth/2))+"px";
+
+			// position the popup relative to the window
+			popup.style.top = (offsetY+popupOffset.top)+"px";
 
 			var cssWidth = util.getStyle(popup,"width");
 			if ( (offsetX+Number(cssWidth.substring(0,cssWidth.length-2))) > winDim.width)
@@ -118,6 +135,7 @@ define(['util/util','enquire'],function(util,enquire) {
 			document.getElementById("content").addEventListener("mousedown", _closeHandler, true);
 		}
 
+		// handler for closing the popup
 		function _closeHandler(evt)
 		{
 			if (evt.target.attributes["href"] == undefined && 
@@ -128,6 +146,7 @@ define(['util/util','enquire'],function(util,enquire) {
 			}
 		}
 
+		// close the last opened popup
 		function _closeLastPopup()
 		{
 			if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
