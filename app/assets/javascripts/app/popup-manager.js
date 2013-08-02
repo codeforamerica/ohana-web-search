@@ -81,12 +81,15 @@ define(['util/util','enquire'],function(util,enquire) {
 			var offsetX = (offset.left);
 
 			// offset needed for CSS adjustments of rotating arrow inside a masking box
-			var arrowOffset = {'top':-5,'left':-14};
+			// to move popup up/down, adjust the arrowOffset.top value, which will 
+			// cascade down to the popupOffset
+			var arrowOffset = {'top':-6,'left':-14};
+			var popupOffset = {'top':15+arrowOffset.top}
 
 			arrow.style.top = (offsetY+arrowOffset.top)+"px";
 			arrow.style.left = (offsetX+arrowOffset.left+(trigger.offsetWidth/2))+"px";
 
-			popup.style.top = (offsetY+10)+"px";
+			popup.style.top = (offsetY+popupOffset.top)+"px";
 
 			var cssWidth = util.getStyle(popup,"width");
 			if ( (offsetX+Number(cssWidth.substring(0,cssWidth.length-2))) > winDim.width)
