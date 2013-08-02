@@ -475,17 +475,28 @@ sup
 
   .arrow
   {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom: 1px solid #CCCCCC;
-    border-right: 1px solid #CCCCCC;
-    @include single-box-shadow($black_alpha20, 1px, 1px, 1px);
-    height: 18px;
+    width: 28px;
+    height: 15px;
     left: 945px;
     position: absolute;
-    top: 26px;
-    @include rotate(-135deg);
-    width: 18px;
+    top: 34px;
     z-index: 9999;
+    overflow: hidden;
+
+    span
+    {
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      width: 18px;
+      height: 18px;
+      @include rotate(-135deg);
+      border-bottom: 1px solid #CCCCCC;
+      border-right: 1px solid #CCCCCC;
+      background: none repeat scroll 0 0 #FFFFFF;
+      display:block;
+      @include single-box-shadow($black_alpha20, 1px, 1px, 1px);
+    }
   }
 }
 
