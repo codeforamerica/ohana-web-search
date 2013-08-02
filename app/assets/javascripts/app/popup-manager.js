@@ -80,8 +80,11 @@ define(['util/util','enquire'],function(util,enquire) {
 			var offsetY = (offset.top+trigger.offsetHeight);
 			var offsetX = (offset.left);
 
-			arrow.style.top = (offsetY)+"px";
-			arrow.style.left = (offsetX-10+(trigger.offsetWidth/2))+"px";
+			// offset needed for CSS adjustments of rotating arrow inside a masking box
+			var arrowOffset = {'top':-5,'left':-14};
+
+			arrow.style.top = (offsetY+arrowOffset.top)+"px";
+			arrow.style.left = (offsetX+arrowOffset.left+(trigger.offsetWidth/2))+"px";
 
 			popup.style.top = (offsetY+10)+"px";
 
