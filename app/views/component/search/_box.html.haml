@@ -1,6 +1,6 @@
 %section#search-box
-  %nav#category-search
-    %span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
+  %nav
+    %span#category-search{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
   = form_tag('/organizations', :method => :get, :id=>"search-form")
   %div
     %label{:for => "keyword"}

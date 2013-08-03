@@ -12,6 +12,7 @@ define(function() {
 		{
 			var searchBox = document.getElementById('search-box');
 			var categoryBox = document.getElementById('category-box');
+
 			var catSearch = document.getElementById('category-search');
 			var keywordSearch = document.getElementById('keyword-search');
 

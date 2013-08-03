@@ -903,7 +903,6 @@ main > * > *
   font-family:$san_serif_font;
   font-size:24px;
   color:$white_alpha40;
-  text-align:right;
   padding-right:3px;
 }
 
@@ -920,6 +919,14 @@ main > * > *
   display:none;
 }
 
+.home #search-box,
+.home #category-box
+{
+  > nav
+  {
+    text-align:right;
+  }
+}
 
 .home #category-box
 {
@@ -929,14 +936,16 @@ main > * > *
   margin-left: -322px;
   margin-top: -100px; 
   display: table;
-  width:644px;
+  width: 644px;
 
   > header
   {
-    float:left;
-    color:$white_alpha70;
-    margin-bottom:10px;
-    margin-left:10px;
+    float: left;
+    color: $white_alpha70;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    font-size: 20px;
+    letter-spacing: 1px;
   }
 
   > ul
@@ -983,7 +992,6 @@ main > * > *
   margin-top: -100px; 
   display: table;
   width:644px;
-
 
   // search box arrows 
   .arrow.ohana-icon
