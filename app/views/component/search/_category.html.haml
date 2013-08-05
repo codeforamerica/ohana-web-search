@@ -1,0 +1,10 @@
+%section#category-box.flip
+  %header
+    I'm looking for help with...
+  %nav
+    %span#keyword-search{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+  %ul
+    - @service_terms.each do |service|
+      %a{:href=>"/organizations?keyword=#{service}"}
+        %li
+          = service

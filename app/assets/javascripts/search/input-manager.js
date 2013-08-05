@@ -3,20 +3,29 @@ define(['util/util'],
 	function(util) {
   'use strict';
 
+  	// PRIVATE PROPERTIES
 		// search parameter values
 		var _keyword,
 				_location;
 
 		var _callback; // function to execute when items are clicked
 
+		// PUBLIC METHODS
 		function init(callback)
 		{
 			_callback = callback;
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
 			
-			document.getElementById('find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
-			_registerAjaxHooks();
+			_keyword.addEventListener('focus',_inputClicked,true);
+			_location.addEventListener('focus',_inputClicked,true);
+			
+			// if no ajax callback is given, don't register ajax calls
+			if (callback)
+			{
+				document.getElementById('find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
+				_registerAjaxHooks();
+			}
 		}
 
 		function refresh(scope)
@@ -43,6 +52,13 @@ define(['util/util'],
 		function setLocation(value)
 		{
 			_location.value = value;
+		}
+
+		// PRIVATE METHODS
+		// clear input fields when fields are clicked
+		function _inputClicked(evt)
+		{
+			evt.target.value = ''; // clear input when user clicked on the field
 		}
 
 		// register all links with "ajax-link" class added as ajax-enabled links

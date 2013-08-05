@@ -156,35 +156,35 @@ $short_duration: 250ms;
 
 html,body
 {
-    height: 100%;
-    font-family: $serif_font;
-    background: $blue_light_alpha40;
+  height: 100%;
+  font-family: $serif_font;
+  background: $blue_light_alpha40;
 }
 
 h1
 {
-    margin:0;
-    padding:0;
-    font-weight: normal;
+  margin:0;
+  padding:0;
+  font-weight: normal;
 }
 
 ul
 {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a
 {
-    text-decoration: none;
-    color:$black_alpha60;
-    cursor:pointer;
-    border-bottom:1px solid $white;
+  text-decoration: none;
+  color:$black_alpha60;
+  cursor:pointer;
+  border-bottom:1px solid $white;
 }
 
 a:hover
 {
-    color:$blue_dark;
-    border-bottom:1px solid $black_alpha40;
+  color:$blue_dark;
+  border-bottom:1px solid $black_alpha40;
 }
 
 #content > header:hover,
@@ -200,7 +200,7 @@ a:hover
 
 sup
 {
-  font-size:80%;
+    font-size:80%;
 }
 
 //=================================================================================
@@ -216,40 +216,17 @@ sup
     vertical-align: middle;
 }
 
-// find button mini magnifying glass 
-#search-box .search-button.ohana-icon
-{
-    font-size:13px;
-    position: relative;
-    top:1px;
-    left:2px;
-}
-
-// search box arrows 
-.home #search-box .ohana-icon
-{
-    font-size:36px;
-}
-
-// find button large magnifying glass 
-.home #search-box .search-button.ohana-icon
-{
-    font-size: 16px;
-    position: relative;
-    top: 1px;
-}
-
 //=================================================================================
 // effects styles
 .hide
 {
-  display: none !important;
-  visibility: hidden;
+    display: none !important;
+    visibility: hidden;
 }
 
 .transparent
 {
-  @include opacity(0);
+    @include opacity(0);
 }
 
 // fading styles
@@ -296,17 +273,29 @@ sup
     @include transition-delay($short_duration);
 }
 
+.flip
+{
+    @include rotateY(180deg);
+    @include transition(transform $default_duration);
+    @include backface-visibility( hidden );
+}
+
+.unflip
+{
+    @include rotateY(0deg);
+    @include transition(transform $default_duration);
+    @include backface-visibility( hidden );
+}
+
 .blur
 {
     @include filter(blur(4px));
-
     @include transition(filter $default_duration);
 }
 
 .unblur
 {
     @include filter(blur(0px));
-
     @include transition(filter $default_duration);
 }
 
@@ -821,6 +810,16 @@ main > * > *
 // search box styles
 #search-box
 {
+
+  // find button mini magnifying glass 
+  .search-button.ohana-icon
+  {
+      font-size:13px;
+      position: relative;
+      top:1px;
+      left:2px;
+  }
+
   input::input-placeholder
   {
     color:$black_alpha20;
@@ -896,16 +895,119 @@ main > * > *
   }
 }
 
+.home #category-search,
+.home #keyword-search
+{
+  font-family:$san_serif_font;
+  font-size:24px;
+  color:$white_alpha40;
+  padding-right:3px;
+}
+
+.home #category-search:hover,
+.home #keyword-search:hover
+{
+  cursor:pointer;
+  color:$white;
+}
+
+.inside #category-search,
+.inside #keyword-search
+{
+  display:none;
+}
+
+.home #search-box,
+.home #category-box
+{
+  > nav
+  {
+    text-align:right;
+  }
+}
+
+.home #category-box
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -322px;
+  margin-top: -100px; 
+  display: table;
+  width: 644px;
+
+  > header
+  {
+    float: left;
+    color: $blue_dark;
+    margin-left: 5px;
+    font-size: 30px;
+    letter-spacing: 1px;
+    position: relative;
+    top:-3px;
+  }
+
+  > ul
+  {
+    clear:both;
+
+    li
+    {
+      cursor:pointer;
+      display:inline-block;
+      min-width:125px;
+      min-height:40px;
+      @include border-radius(3px);
+      margin:5px;
+      background-color:$white;
+      font-size:16px;
+      color:$blue_dark;
+      position:relative;
+      text-align: center;
+      line-height:40px;
+      padding:10px;
+      border:1px solid $blue_midtone_alpha30;
+      letter-spacing:1px;
+    }
+
+    li:hover
+    {
+      border:1px solid $green_light_alpha70;
+      background-color:$white_alpha40;
+      color:$black;
+      @include transition(border $default_duration);
+    }
+
+    a
+    {
+      border-bottom:0;
+    }
+  }
+}
 
 .home #search-box
 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -322px;
-    margin-top: -100px; 
-    display: table;
-    width:644px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -322px;
+  margin-top: -100px; 
+  display: table;
+  width:644px;
+
+  // search box arrows 
+  .arrow.ohana-icon
+  {
+      font-size:36px;
+  }
+
+  // find button large magnifying glass 
+  .search-button.ohana-icon
+  {
+      font-size: 16px;
+      position: relative;
+      top: 1px;
+  }
 
   div // form rows
   {
@@ -1124,8 +1226,8 @@ main > * > *
       {
         cursor:pointer;
         display:inline-block;
-        min-width:100px;
-        min-height:60px;
+        min-width:125px;
+        min-height:40px;
         @include border-radius(3px);
         margin:5px;
         background-color:$white;
@@ -1133,7 +1235,7 @@ main > * > *
         color:$blue_dark;
         position:relative;
         text-align: center;
-        line-height:100px;
+        line-height:40px;
         padding:10px;
         border:1px solid $blue_midtone_alpha30;
         letter-spacing:1px;
@@ -1141,7 +1243,8 @@ main > * > *
 
       li:hover
       {
-        border:1px solid $yellow_dark;
+        border:1px solid $green_light_alpha70;
+        background-color:$white_alpha40;
         color:$black;
         @include transition(border $default_duration);
       }
@@ -1891,6 +1994,35 @@ main > * > *
       
       #search-container {
         min-width: 100%;
+      }
+
+      #category-box
+      {
+        position:static;
+        margin-left:0;
+        margin-top:0;
+        display:block;
+        width:auto;
+        margin-top:8px;
+
+        > header
+        {
+          margin-top:10px;
+          margin-left:10px;
+          color:$white_alpha70;
+          font-size:14px;
+        }
+
+        > nav
+        {
+          margin-right:10px;
+        }
+      }
+
+      #category-box.flip,
+      #search-box.flip
+      {
+        display:none;
       }
 
       #search-box
