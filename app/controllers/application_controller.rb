@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 	# retrieve data for datalists used in the search form autocomplete 
 	# from the Organization controller
 	def datalist_initializer
+		@service_terms = Organization.service_terms
 		@keywords = Organization.keywords
   	@locations = Organization.locations
   end

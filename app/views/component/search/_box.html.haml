@@ -1,15 +1,17 @@
 %section#search-box
+  %nav
+    %span#category-search{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
   = form_tag('/organizations', :method => :get, :id=>"search-form")
   %div
     %label{:for => "keyword"}
       I need
-      %span{"data-icon"=>"→" , :class=>"ohana-icon"}
+      %span{"data-icon"=>"→" , :class=>"arrow ohana-icon"}
     = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"        
 
   %div
     %label{:for => "location"}
       I am near
-      %span{"data-icon"=>"→" , :class=>"ohana-icon"}
+      %span{"data-icon"=>"→" , :class=>"arrow ohana-icon"}
     = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
 
   %div
