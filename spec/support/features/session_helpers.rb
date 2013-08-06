@@ -17,7 +17,7 @@ module Features
     # navigation helpers
     def visit_details
       looks_like_results
-      page.find(:css, '#list-view li:first-child a').click
+      find(:css, '#list-view li:first-child a').click
     end
 
     # webbrowser navigation using requirejs
