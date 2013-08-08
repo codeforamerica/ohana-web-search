@@ -22,13 +22,13 @@ define(['util/web-storage-proxy'],function(storage) {
 			catSearch.addEventListener('click', _categoryClicked, false);
 			keywordSearch.addEventListener('click', _keywordClicked, false);
 
-			if (storage.getItem(_storageID) == 'KEYWORD')
+			if (storage.getItem(_storageID) != 'KEYWORD')
 			{
-				_showKeywordSearch();
+				//_showKeywordSearch();
 			}
 			else
 			{
-				_showCategorySearch();
+				//_showCategorySearch();
 			}
 		}
 
@@ -45,22 +45,18 @@ define(['util/web-storage-proxy'],function(storage) {
 
 		function _showKeywordSearch()
 		{
-			_searchBox.classList.add('fade-in');
-			_searchBox.classList.remove('fade-out');
+			_searchBox.classList.remove('hide');
 
-			_categoryBox.classList.add('fade-out');
-			_categoryBox.classList.remove('fade-in');
+			_categoryBox.classList.add('hide');
 
 			storage.setItem(_storageID, 'KEYWORD');
 		}
 
 		function _showCategorySearch()
 		{
-			_searchBox.classList.add('fade-out');
-			_searchBox.classList.remove('fade-in');
+			_searchBox.classList.add('hide');
 
-			_categoryBox.classList.add('fade-in');
-			_categoryBox.classList.remove('fade-out');
+			_categoryBox.classList.remove('hide');
 
 			storage.setItem(_storageID, 'CATEGORY');
 		}
