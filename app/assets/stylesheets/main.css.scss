@@ -302,7 +302,18 @@ sup
 .slide-up
 {
     z-index:-1 !important;
-    margin-top: -9999px;
+    margin-top: -9999px !important;
+    position:absolute !important;
+    
+    -webkit-transition: margin-top $default_duration, z-index $default_duration;
+    -moz-transition: margin-top $default_duration, z-index $default_duration;
+    transition: margin-top $default_duration, z-index $default_duration;
+}
+
+.slide-down
+{
+    z-index:-1 !important;
+    margin-top: 0px !important;
     position:absolute !important;
     
     -webkit-transition: margin-top $default_duration, z-index $default_duration;
@@ -2019,8 +2030,8 @@ main > * > *
         }
       }
 
-      #category-box.flip,
-      #search-box.flip
+      #category-box.slide-up,
+      #search-box.slide-up
       {
         display:none;
       }

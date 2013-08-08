@@ -13,7 +13,7 @@ feature 'Checks page title' do
   scenario 'when visiting results page directly' do
     visit ('/organizations?utf8=%E2%9C%93&keyword=market&location=redwood+city')
     looks_like_results
-    expect(page).to have_title "Showing 7 of 7 results matching 'market' within 2 miles of 'redwood city' | OhanaSMC"
+    expect(page).to have_title "Showing 15 of 15 results matching 'market' within 2 miles of 'redwood city' | OhanaSMC"
   end
 
   scenario 'when visiting details page directly' do
@@ -31,7 +31,7 @@ feature 'Checks page title' do
   scenario 'when performing a search and visiting results page' do
     search(:path=>'/',:keyword=>'food',:location=>'san mateo')
     looks_like_results
-    expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
+    expect(page).to have_title "Showing 14 of 14 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 
   scenario 'when performing a search and visiting details page' do
@@ -46,7 +46,7 @@ feature 'Checks page title' do
     search(:path=>'/')
     search(:keyword=>'food',:location=>'san mateo')
     looks_like_results
-    expect(page).to have_title "Showing 9 of 9 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
+    expect(page).to have_title "Showing 14 of 14 results matching 'food' within 2 miles of 'san mateo' | OhanaSMC"
   end
 
   scenario 'when performing a search and visiting details page via ajax',
