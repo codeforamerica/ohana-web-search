@@ -6,7 +6,7 @@
     %label{:for => "keyword"}
       I need
       %span{"data-icon"=>"→" , :class=>"arrow ohana-icon"}
-    = search_field_tag "keyword", params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"        
+    = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"        
 
   %div
     %label{:for => "location"}
