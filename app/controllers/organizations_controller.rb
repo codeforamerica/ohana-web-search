@@ -68,7 +68,6 @@ class OrganizationsController < ApplicationController
     query = Organization.query(params)
     @orgs = query.content
     @pagination = query.pagination
-
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,
