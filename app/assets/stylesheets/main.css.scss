@@ -1779,10 +1779,35 @@ main > * > *
       font-style: italic;
   }
 
+  .map
+  {
+    position:relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .map #detail-map-cover
+  {
+    height: 400px;
+    width: 100%;
+    background-color: $black_alpha40;
+    color:$white;
+    text-align:center;
+    line-height:400px;
+    font-size:34px;
+    font-family:$san_serif_font;
+    cursor:pointer;
+
+    position: absolute;
+    z-index:9998;
+  }
+
   .map #detail-map-canvas
   {
     height: 400px;
     width: 100%;
+    position: absolute;
+    z-index:9997;
 
     // error message text if map doesn't load
     > span

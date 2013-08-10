@@ -3,12 +3,13 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
   'use strict';
 	
 		// PRIVATE PROPERTIES
-		var _mapContainer;
 		var _map;
+		var _cover; // cover for map
 
 		// PUBLIC METHODS
 		function init()
 		{
+			_cover = document.getElementById("detail-map-cover");
 			var title = document.getElementById("detail-map-canvas-title");
 			var lat = document.getElementById("detail-map-canvas-lat");
 			var lng = document.getElementById("detail-map-canvas-lng");
@@ -44,7 +45,19 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 						position: latlng
 					});
 
+				_cover.addEventListener('click',_mapCoverClicked,false);
+				google.maps.event.addListener(_map,'mouseout',_mapCoverOut);
 			}
+		}
+
+		function _mapCoverClicked(evt)
+		{
+			_cover.classList.add('hide');
+		}
+
+		function _mapCoverOut(evt)
+		{
+			_cover.classList.remove('hide');
 		}
 
 	return {
