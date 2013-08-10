@@ -47,6 +47,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 
 				_cover.addEventListener('click',_mapCoverClicked,false);
 				google.maps.event.addListener(_map,'mouseout',_mapCoverOut);
+				_cover.classList.remove('hide');
 			}
 		}
 

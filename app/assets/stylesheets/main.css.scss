@@ -1790,16 +1790,22 @@ main > * > *
   {
     height: 400px;
     width: 100%;
-    background-color: $black_alpha40;
+    background-color: $black_alpha10;
     color:$white;
     text-align:center;
-    line-height:400px;
-    font-size:34px;
+    font-size:18px;
     font-family:$san_serif_font;
     cursor:pointer;
 
     position: absolute;
     z-index:9998;
+
+    > span
+    {
+      padding:5px;
+      background: $black_alpha40;
+      display:block;
+    }
   }
 
   .map #detail-map-canvas
