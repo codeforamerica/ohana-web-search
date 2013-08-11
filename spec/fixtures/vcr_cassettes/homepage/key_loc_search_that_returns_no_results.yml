@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=1910c8e2ebed910622ac67e578a2e559&controller=organizations&keyword=sdaff&location=94403&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.1
+      Accept:
+      - application/vnd.ohanapi+json; version=1
+      X-Api-Token:
+      - 1910c8e2ebed910622ac67e578a2e559
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 09 Aug 2013 09:05:13 GMT
+      Etag:
+      - '"d10514c48396749fc54baea6c66c2695"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - 5400bb85314b9a8dd7ed141b383d135962d5daf5
+      X-Rack-Cache:
+      - stale, valid, store
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Request-Id:
+      - 0f00102f6bfadd388cf63db71a856a04
+      X-Runtime:
+      - '0.303063'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '111'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[],"count":0,"pagination":{"current":1,"previous":null,"next":2,"per_page":30,"pages":0,"count":0}}'
+    http_version: 
+  recorded_at: Fri, 09 Aug 2013 09:05:06 GMT
+recorded_with: VCR 2.5.0

@@ -1,9 +1,9 @@
 class OrganizationsController < ApplicationController
+  #before_filter :previous_page
   respond_to :html, :json, :xml, :js
 
   # search results view
   def index
-
     perform_search_query(params)
 
     # if no results were returned, set the service terms shown on the no results page
@@ -12,38 +12,28 @@ class OrganizationsController < ApplicationController
     end
 
     respond_to do |format|
-
       # visit directly
       format.html # index.html.haml
 
       # visit via ajax
       format.json {
-
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/results/body', :locals => { :map_present => @map_present }
         end
         render :json => { :content => @html_content , :action => action_name }
       }
     end
-    
+
   end
 
   # organization details view
   def show
-  
     respond_to do |format|
 
       # visit directly
-      # perform search to refresh search results map and return to results button 
+      # perform search to refresh search results map and return to results button
       format.html {
-
-        perform_search_query(params)
-
-        @org = @orgs.find { |o| o['_id'] == params[:id] }
-
-        if @org.nil?
-          @org = Organization.get(params[:id]).content
-        end
+        @org = Organization.get(params[:id]).content
       }
 
       # visit via ajax
@@ -64,6 +54,10 @@ class OrganizationsController < ApplicationController
 
   private
 
+  # def previous_page
+  #   session[:previous_page] = request.env['HTTP_REFERER']
+  # end
+
   def perform_search_query(params)
     query = Organization.query(params)
     @orgs = query.content
@@ -72,6 +66,12 @@ class OrganizationsController < ApplicationController
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,
+      :keyword => params[:keyword],
+      :location => params[:location],
+      :radius => params[:radius]
+    }
+
+    @query_params = {
       :keyword => params[:keyword],
       :location => params[:location],
       :radius => params[:radius]
@@ -93,14 +93,14 @@ class OrganizationsController < ApplicationController
     # this will be injected into a <script> element in the view
     # and then consumed by the map-manager javascript.
     # @map_data parses the @org hash and retrieves all entries
-    # that have coordinates, and returns that as json, otherwise @map_data 
+    # that have coordinates, and returns that as json, otherwise @map_data
     # ends up being nil and can be checked in the view with @map_data.present?
     if @orgs.present?
-      @map_data = @orgs.reduce([]) do |result, o| 
+      @map_data = @orgs.reduce([]) do |result, o|
         if o.coordinates.present?
           result << {
-            'id' => o._id, 
-            'name' => o.name, 
+            'id' => o._id,
+            'name' => o.name,
             'coordinates' => o.coordinates
           }
         end

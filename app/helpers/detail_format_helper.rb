@@ -1,8 +1,8 @@
 module DetailFormatHelper
 
-  # Formats ruby field names in CSS convention format 
+  # Formats ruby field names in CSS convention format
   # by converting underscore delimiting to dash delimiting
-  # @param name [String] string to format as 
+  # @param name [String] string to format as
   # @return [String] formatted CSS class name
   def css_class_format(name)
     name.sub '_','-'
@@ -46,17 +46,6 @@ module DetailFormatHelper
   # @return [String] return comma separated address.
   def address(org)
     "#{org.street_address}, #{org.city}, #{org.state} #{org.zipcode}"
-  end
-
-  # Generate static map URL
-  # @param org [Object] a JSON object
-  # @return [String] return static map URL if coordinates are present.
-  def map_url(org)
-    if org.coordinates.present?
-      "http://api.tiles.mapbox.com/v3/examples.map-rlxntei0/pin-s("+
-        "#{org.coordinates[0]},#{org.coordinates[1]})/#{org.coordinates[0]}"+
-        ",#{org.coordinates[1]},15/400x300.png"
-    end
   end
 
   # Format phone number as (XXX) XXX-XXXX

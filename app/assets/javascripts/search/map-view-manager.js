@@ -1,7 +1,7 @@
 // manages results maps view
 define(['util/util'],function(util) {
   'use strict';
-	
+
 		// PRIVATE PROPERTIES
 		var _mapContainer;
 		var _markerInfo; // info window that shows when markers are rolled over
@@ -32,7 +32,7 @@ define(['util/util'],function(util) {
 			_header = document.getElementById("map-search-results");
 		  _defaultHeaderContent = _header.innerHTML;
 			document.getElementById("map-canvas").classList.remove("hide");
-				
+
 		  var mapOptions = {
 		    zoom: 4,
 		    zoomControl: false,
@@ -49,7 +49,7 @@ define(['util/util'],function(util) {
 		  _map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 		  _markerInfo = document.getElementById("marker-info");
 
-		  refresh();  
+		  refresh();
 		}
 
 		// register events on the map
@@ -174,7 +174,7 @@ define(['util/util'],function(util) {
 			}
 		}
 
-		// loads markers 
+		// loads markers
 		function _loadMarkers()
 		{
 			var locations = document.getElementById("map-locations");
@@ -191,7 +191,14 @@ define(['util/util'],function(util) {
 		    	_loadMarker( _markerData[m] );
 		    }
 		    var metadata = _markerData[dataLength-1];
-		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
+		    if (metadata.count == 1)
+		    {
+		    	var summaryText = "<span>1 result located!</span>";
+		    }
+		    else
+		    {
+		    	var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
+				}
 				_header.innerHTML = _defaultHeaderContent+" "+summaryText;
 				_markerInfo.innerHTML = "Mouse over markers for details";
 			}
@@ -206,7 +213,7 @@ define(['util/util'],function(util) {
 		}
 
 		// clears all markers
-		function _clearMarkers() 
+		function _clearMarkers()
 		{
 		  for (var i = 0; i < _markersArray.length; i++ ) {
 		    _markersArray[i].setMap(null);
@@ -220,7 +227,7 @@ define(['util/util'],function(util) {
 			if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
-				
+
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
 					map: _map,
@@ -248,9 +255,9 @@ define(['util/util'],function(util) {
 				});
 
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
-				
+
 				_markerBounds.extend(myLatlng);
-				
+
 			}
 		}
 
@@ -275,13 +282,13 @@ define(['util/util'],function(util) {
 			var r = 3963.0;
 
 			// Convert lat or lng from decimal degrees into radians (divide by 57.2958)
-			var lat1 = center.lat() / 57.2958; 
+			var lat1 = center.lat() / 57.2958;
 			var lon1 = center.lng() / 57.2958;
 			var lat2 = ne.lat() / 57.2958;
 			var lon2 = ne.lng() / 57.2958;
 
 			// radius = circle radius from center to Northeast corner of bounds
-			var radius = ( r * Math.acos(Math.sin(lat1) * Math.sin(lat2) + 
+			var radius = ( r * Math.acos(Math.sin(lat1) * Math.sin(lat2) +
 			  				Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2 - lon1)) );
 
 			return radius;
@@ -295,7 +302,7 @@ define(['util/util'],function(util) {
 		}
 
 		// refresh the data
-		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
+		// @param coordinates [Object] object with 'lat'/'lng' attributes on
 		function refresh()
 		{
 			if (_zoomListener) google.maps.event.removeListener(_zoomListener);

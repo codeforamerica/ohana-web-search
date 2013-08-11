@@ -38,6 +38,8 @@ group :test do
   gem "capybara", ">= 2.0.3"
   gem 'json'
   gem 'poltergeist'
+  gem "vcr"
+  gem 'webmock'
 end
 
 group :development, :test do

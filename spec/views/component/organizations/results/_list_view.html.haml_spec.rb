@@ -9,7 +9,7 @@ describe "address formatting" do
     no_address = JSON.parse(File.read("spec/fixtures/no_address_org.json"))
     it "does not add an address section" do
       assign(:orgs, [stub_model(Hashie::Mash, no_address)])
-
+      assign(:query_params, {})
       render :partial => "component/organizations/results/list_view"
       expect(rendered).to_not match /class='address/
     end
@@ -20,7 +20,7 @@ describe "address formatting" do
     it "adds an address section" do
       assign(:orgs, [stub_model(Hashie::Mash,
         has_address.merge(:name=>"with address"))])
-
+      assign(:query_params, {})
       render :partial => "component/organizations/results/list_view"
       expect(rendered).to match /class='address/
       expect(rendered).to match /<span class=\"street-address\" itemprop=\"streetAddress\">/

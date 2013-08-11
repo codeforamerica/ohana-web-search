@@ -5,28 +5,18 @@ Coveralls.wear!('rails')
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-
+require 'capybara/poltergeist'
 require 'hashie'
-
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-# configure Capybara to use poltergeist
-require 'capybara/poltergeist'
-
-# uncomment the following lines to enable the remote debugger
-# place page.driver.debug in a test to stop its execution for debugging
-#Capybara.register_driver :poltergeist_debug do |app|
-#  Capybara::Poltergeist::Driver.new(app, :inspector => true)
-#end
-#Capybara.javascript_driver = :poltergeist_debug
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :js_errors => false)
+end
 
 Capybara.javascript_driver = :poltergeist
-Capybara.automatic_reload = false
-Capybara.default_wait_time = 15
-Capybara.ignore_hidden_elements = true
 
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
