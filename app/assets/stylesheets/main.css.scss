@@ -1536,29 +1536,6 @@ main > * > *
 
   }
 
-  #map-canvas
-  {
-    width: 100%;
-    height: 200px;
-    padding:0;
-    text-align:center;
-
-    // error message text if map doesn't load
-    > span
-    {
-      padding:10px;
-      margin:5px;
-      margin-top:20px;
-      font-size:14px;
-      background:$red_dark;
-      @include border-radius(5px);
-      @include inline-block();
-      @include single-box-shadow();
-      color:$white;
-      vertical-align:middle;
-    }
-  }
-
   #marker-info
   {
     font-weight:bold;
@@ -1802,10 +1779,41 @@ main > * > *
       font-style: italic;
   }
 
+  .map
+  {
+    position:relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .map #detail-map-cover
+  {
+    height: 400px;
+    width: 100%;
+    background-color: $black_alpha10;
+    color:$white;
+    text-align:center;
+    font-size:18px;
+    font-family:$san_serif_font;
+    cursor:pointer;
+
+    position: absolute;
+    z-index:9998;
+
+    > span
+    {
+      padding:5px;
+      background: $black_alpha40;
+      display:block;
+    }
+  }
+
   .map #detail-map-canvas
   {
     height: 400px;
     width: 100%;
+    position: absolute;
+    z-index:9997;
 
     // error message text if map doesn't load
     > span
