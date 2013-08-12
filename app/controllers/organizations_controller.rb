@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-  #before_filter :previous_page
   respond_to :html, :json, :xml, :js
 
   # search results view
@@ -11,6 +10,12 @@ class OrganizationsController < ApplicationController
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,
+      :keyword => params[:keyword],
+      :location => params[:location],
+      :radius => params[:radius]
+    }
+
+     @query_params = {
       :keyword => params[:keyword],
       :location => params[:location],
       :radius => params[:radius]
@@ -46,12 +51,10 @@ class OrganizationsController < ApplicationController
     radius          = params[:radius] || ''
     page            = params[:page] || ''
 
-    search_results_url = '/organizations?keyword='+URI.escape(keyword)+
+    @search_results_url = '/organizations?keyword='+URI.escape(keyword)+
                           '&location='+URI.escape(location)+
                           '&radius='+radius+
                           '&page='+page
-
-    session['search_results_url'] = search_results_url
 
     respond_to do |format|
       # visit directly
