@@ -2,10 +2,9 @@
 define(['app/loading-manager',
 				'util/ajax','util/util',
 				'search/input-manager',
-				'search/map-view-manager',
 				'detail/detail-init',
 				'search/header-manager'],
-	function(splash,ajax,util,inputs,map,detail,header) {
+	function(splash,ajax,util,inputs,detail,header) {
   'use strict';
 		
 		var _resultsContainer; // area of HTML to refresh with ajax
@@ -21,7 +20,6 @@ define(['app/loading-manager',
 			_resultsContainer = document.getElementById('results-container');
 
 			inputs.init(this); // initialize search form and ajax links
-			map.init(this); // initialize the map
 			header.init(); // initialize the header manager
 
 			// init callback hooks for ajax search
@@ -96,9 +94,6 @@ define(['app/loading-manager',
 			if (evt.action == _requestType.DETAIL)
 				detail.init(); // re-initializes details scripts
 			
-			if (evt.action == _requestType.RESULT)
-				map.refresh(); // refresh the map
-
 			inputs.refresh("#results-container"); // refresh search inputs
 			header.init(); // re-initialize header manager
 
