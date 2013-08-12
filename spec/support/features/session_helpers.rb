@@ -27,6 +27,12 @@ module Features
       expect(page).to have_title "Showing 1 of 1 result"
     end
 
+    def looks_like_puente
+      expect(page).to have_content("Puente Resource Center")
+      expect(page).to have_content("Showing 1 of 1 result")
+      expect(page).to have_title "Showing 1 of 1 result"
+    end
+
     def looks_like_no_results
       expect(page).to have_content("Education")
       expect(page).to have_content("your search returned no results.")

@@ -25,13 +25,12 @@ feature "results page search" do
   end
 
   scenario 'with location-only search that returns results' do
-    VCR.use_cassette('homepage/location_search_that_returns_results',
-      :erb => { :name => "SanMaceo Example Agency" }) do
+    VCR.use_cassette('homepage/location_search_that_returns_results') do
       # The search from the background action leaves the keyword field
       # populated, so to do a location-only search, we have to clear it first.
       search(:keyword => "", :location => '94060')
       find_field("location").value.should == "94060"
-      looks_like_results
+      looks_like_puente
     end
   end
 
@@ -45,10 +44,9 @@ feature "results page search" do
   end
 
   scenario 'with keyword-location search that returns results' do
-    VCR.use_cassette('homepage/key_loc_search_that_returns_results',
-      :erb => { :name => "SanMaceo Example Agency" }) do
+    VCR.use_cassette('homepage/key_loc_search_that_returns_results') do
       search(:keyword => "puente", :location => '94060')
-      looks_like_results
+      looks_like_puente
     end
   end
 

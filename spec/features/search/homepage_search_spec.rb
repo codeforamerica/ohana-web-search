@@ -20,10 +20,9 @@ feature "homepage search", :js => true do
   end
 
   scenario 'with location-only search that returns results' do
-    VCR.use_cassette('homepage/location_search_that_returns_results',
-      :erb => { :name => "SanMaceo Example Agency" }) do
+    VCR.use_cassette('homepage/location_search_that_returns_results') do
       search_from_home(:location => '94060')
-      looks_like_results
+      looks_like_puente
       find_field("location").value.should == "94060"
       expect(page).to_not have_content("1 result located!")
     end
@@ -38,10 +37,9 @@ feature "homepage search", :js => true do
   end
 
   scenario 'with keyword-location search that returns results' do
-    VCR.use_cassette('homepage/key_loc_search_that_returns_results',
-      :erb => { :name => "SanMaceo Example Agency" }) do
+    VCR.use_cassette('homepage/key_loc_search_that_returns_results') do
       search_from_home(:keyword => "puente", :location => '94060')
-      looks_like_results
+      looks_like_puente
       find_field("location").value.should == "94060"
       expect(page).to_not have_content("1 result located!")
     end
