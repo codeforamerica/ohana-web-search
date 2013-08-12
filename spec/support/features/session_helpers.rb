@@ -58,7 +58,6 @@ module Features
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
       end
-      map_has_results
     end
 
     def looks_like_no_results
@@ -67,7 +66,6 @@ module Features
         expect(page).to have_css("#search-container")
         expect(page).to have_css("#results-entries")
       end
-      map_has_no_results
       has_service_hints
     end
 
@@ -113,19 +111,6 @@ module Features
     def has_service_hints
       within("#results-entries") do
         page.should have_selector('.no-results', :text=>"Care Education Emergency Food Goods Health Housing Legal Money Transit Work")
-      end
-    end
-
-    # helper methods for determining presence or absence of results map in search aside
-    def map_has_results
-      within("#map-view") do
-        expect(page).to_not have_content("No results located!")
-      end
-    end
-
-    def map_has_no_results
-      within("#map-view") do
-        expect(page).to have_content("No results located!")
       end
     end
 
