@@ -1993,7 +1993,6 @@ main > * > *
         position:static;
       }
     }
-    
 
     // home screen styles
     .home 
@@ -2322,10 +2321,14 @@ main > * > *
 
     a[href]:after {
         content: " (" attr(href) ")";
+        color:$black_alpha60;
+        font-size:12px;
     }
 
     abbr[title]:after {
         content: " (" attr(title) ")";
+        color:$black_alpha60;
+        font-size:12px;
     }
 
     /*
@@ -2371,5 +2374,46 @@ main > * > *
     h2,
     h3 {
         page-break-after: avoid;
+    }
+
+
+     // header area of all pages
+    #content > header
+    {
+      font-size:14px !important;
+
+      nav 
+      {
+        position:static !important;
+      }
+    }
+    
+    .inside
+    {
+      // hide search sidebar when printing
+      #search-container
+      {
+        display:none !important;
+      }
+
+      #results-header > nav a
+      {
+        display:none !important;
+      }
+
+      #results-entries 
+      {
+        li
+        {
+          border:1px solid $black_alpha40 !important;          
+        }
+        
+        a:after
+        {
+          margin-left:20px !important;
+          padding-bottom:10px !important;
+          display:inline-block !important;
+        }
+      }
     }
 }
