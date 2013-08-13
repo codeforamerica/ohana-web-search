@@ -16,8 +16,25 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, :js_errors => true)
 end
 
+# To debug failures of javascript-enabled tests, you can add ":debug => true"
+# as an additional option on line 16. For example:
+# Capybara::Poltergeist::Driver.new(app, :js_errors => true, :debug => true)
+# This will result in verbose output in the Terminal when running tests.
+
+# You can also use Poltergeist's experimental remote debugging feature by
+# adding ":inspector => true" as an additional option on line 16. Then, in the
+# failing test, add "page.driver.debug" at a spot where you want to pause the
+# test. When you run the test, it will pause at that spot, and will launch a
+# browser window where you can inspect the page contents.
+# Remember to remove "page.driver.debug" when you're done debugging!
+# https://github.com/jonleighton/poltergeist#remote-debugging-experimental
+
+# Sometimes, debugging is as simple as using Ruby's "puts" to output whatever
+# you want to the Terminal. For example, if you want to see the URLs for
+# all the visible links on the page at any point during a test, you can add
+# this line: all('a').each { |a| puts a[:href] }
+
 Capybara.javascript_driver = :poltergeist
-Capybara.ignore_hidden_elements = true
 
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
