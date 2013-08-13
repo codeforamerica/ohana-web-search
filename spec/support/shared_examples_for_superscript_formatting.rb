@@ -8,6 +8,7 @@ shared_examples_for "superscript formatting" do
       assign(:orgs, [
         stub_model(Hashie::Mash, attrs.merge(:name => safe_name))
       ])
+      assign(:query_params, {})
 
       assign(:org,
         stub_model(Hashie::Mash, attrs.merge(:name => safe_name)))
@@ -25,6 +26,7 @@ shared_examples_for "superscript formatting" do
       assign(:orgs, [
         stub_model(Hashie::Mash, attrs.merge(:name => unsafe_name))
       ])
+      assign(:query_params, {})
 
       assign(:org,
         stub_model(Hashie::Mash, attrs.merge(:name => unsafe_name)))

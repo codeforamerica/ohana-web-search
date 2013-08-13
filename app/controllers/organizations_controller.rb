@@ -3,7 +3,6 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
-
     query = Organization.query(params)
     @orgs = query.content
     @pagination = query.pagination
@@ -16,52 +15,51 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
-    # if no results were returned, set the service terms shown on the no results page
-    if @orgs.blank?
-      @service_terms = Organization.service_terms
-    end
+     @query_params = {
+      :keyword => params[:keyword],
+      :location => params[:location],
+      :radius => params[:radius]
+    }
+
+    # if no results were returned, set the service terms shown on the
+    # no results page
+    @service_terms = Organization.service_terms if @orgs.blank?
 
     respond_to do |format|
-
       # visit directly
       format.html # index.html.haml
 
       # visit via ajax
       format.json {
-
         with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/results/body', :locals => { :map_present => @map_present }
+          @html_content = render_to_string partial: 'component/organizations/results/body',
+           :locals => { :map_present => @map_present }
         end
         render :json => { :content => @html_content , :action => action_name }
       }
     end
-    
+
   end
 
   # organization details view
   def show
-
     # retrieve specific organization's details
-    query = Organization.get(params[:id])
-    @org = query.content
+    @org = Organization.get(params[:id]).content
 
     keyword         = params[:keyword] || ''
     location        = params[:location] || ''
     radius          = params[:radius] || ''
     page            = params[:page] || ''
 
-    search_results_url = '/organizations?keyword='+URI.escape(keyword)+
+    @search_results_url = '/organizations?keyword='+URI.escape(keyword)+
                           '&location='+URI.escape(location)+
                           '&radius='+radius+
                           '&page='+page
 
-    session['search_results_url'] = search_results_url
-  
     respond_to do |format|
-
       # visit directly
       format.html #show.html.haml
-      
+
       # visit via ajax
       format.json {
 
