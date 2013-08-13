@@ -5,6 +5,6 @@
     %span#keyword-search{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
   %ul
     - @service_terms.each do |service|
-      %a{:href=>"/organizations?keyword=#{service}"}
+      %a{ :href => "/organizations?keyword=#{service}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service}']);" }
         %li
           = service
