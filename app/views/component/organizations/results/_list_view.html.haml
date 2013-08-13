@@ -3,9 +3,9 @@
 		- @orgs.each do |org|
 			%li
 				- query = "?"
-				- request.query_parameters.each do |key, value|
-					- query += "#{key}=#{CGI::escape(value)}&"
-				%a{:href=>"/organizations/#{org._id+query}", :title=>"#{org.name}", :class=>"ajax-link"}
+				- @query_params.each do |key, value|
+					- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
+				%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 					%section{:class => "results-entry"}
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}

@@ -23,7 +23,7 @@
                   %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
                   %span
                     = @org.ask_for
-            
+
             - if has_field?(@org,['emails'])
               %section.emails{:itemprop=>"email"}
                 - @org.emails.each_with_index do |email, index|
@@ -31,7 +31,7 @@
                     %span{"data-icon"=>"@" , :class=>"ohana-icon"}
                     %span{:itemprop=>"email"}
                       = email
-                  
+
 
             - if @org.phones.present?
               %section.phones
@@ -49,7 +49,7 @@
                         - if hash["phone_hours"]
                           %span
                             = " #{hash["phone_hours"]}"
-                    
+
 
             - if has_field?(@org,['faxes'])
               %section.faxes
@@ -88,7 +88,7 @@
         %h1 Service Overview
         %section
 
-          / insert template, params are: 
+          / insert template, params are:
           / use_template,org,field,title,icon
           = insert_template(true,@org,'services_provided',nil,nil)
           = insert_template(true,@org,'description',"Description",nil)
@@ -104,7 +104,7 @@
       %section.hours-box
         %h1 Service Hours
         %section
-          
+
           = insert_template(true,@org,'service_hours',nil,"⧗")
 
     - if has_field?(@org,['payments_accepted','market_match','products_sold'])
@@ -134,7 +134,7 @@
                         = render :partial => 'component/popup/marketmatch' rescue nil
                       %span.market-match.popup-term
                         Market Match
-          
+
 
           - if @org.products_sold.present?
             %section.products-sold
@@ -146,7 +146,7 @@
                     = product
 
 
-    - if map_url(@org).present? || @org.transportation_availability.present?
+    - if @org.coordinates.present? || @org.transportation_availability.present?
       %section.map-box
         %h1 Map & Directions
 
@@ -157,7 +157,7 @@
               %span
                 = @org.transportation_availability
 
-          - if map_url(@org).present?
+          - if @org.coordinates.present?
             %section.directions
               %a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
                 %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
@@ -166,7 +166,7 @@
             %section.map
               %div#detail-map-cover.hide
                 %span
-                  Click to Interact
+                  Click to interact
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
                   = address(@org)
