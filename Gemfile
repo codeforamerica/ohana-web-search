@@ -39,7 +39,7 @@ group :test do
   gem 'json'
   gem 'poltergeist'
   gem "vcr"
-  gem 'webmock'
+  gem 'webmock', "< 1.12.0"
 end
 
 group :development, :test do

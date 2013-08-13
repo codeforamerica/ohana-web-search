@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=1910c8e2ebed910622ac67e578a2e559&controller=organizations
+    uri: http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi+json; version=1
       X-Api-Token:
-      - 1910c8e2ebed910622ac67e578a2e559
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -27,12 +27,12 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 09 Aug 2013 10:47:41 GMT
+      - Tue, 13 Aug 2013 02:44:32 GMT
       Etag:
       - '"68d259f2fa312c9f73e4211bedfdbe0a"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=1910c8e2ebed910622ac67e578a2e559&controller=organizations&page=57>;
-        rel="last", <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=1910c8e2ebed910622ac67e578a2e559&controller=organizations&page=2>;
+      - <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations&page=57>;
+        rel="last", <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations&page=2>;
         rel="next"
       Status:
       - 200 OK
@@ -43,11 +43,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4993'
+      - '4999'
       X-Request-Id:
-      - 93842f19e02e82acea1b21c434db06a6
+      - 01a57a9318cf888360276ec64766b5fb
       X-Runtime:
-      - '0.291284'
+      - '0.683349'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -572,5 +572,5 @@ http_interactions:
         Way","target_group":null,"transportation_availability":"Not necessary for
         service","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.tymkids.org"],"zipcode":"95035"}],"count":1705,"pagination":{"current":1,"previous":null,"next":2,"per_page":30,"pages":57,"count":1705}}'
     http_version: 
-  recorded_at: Fri, 09 Aug 2013 10:47:32 GMT
+  recorded_at: Tue, 13 Aug 2013 02:44:31 GMT
 recorded_with: VCR 2.5.0
