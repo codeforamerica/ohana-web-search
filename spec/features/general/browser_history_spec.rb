@@ -19,7 +19,8 @@ feature 'Visitor uses the back or forward button', :js => true do
     page.find("#search-container")
     VCR.use_cassette('homepage/go_to_results') do
       go_forward
-      page.find("#search-summary")
+      page.find("#search-summary").
+        should have_content("Showing 1 of 1 result matching 'maceo'")
       looks_like_results
     end
   end
@@ -39,7 +40,8 @@ feature 'Visitor uses the back or forward button', :js => true do
       visit_details
       find_link("http://www.smchealth.org")
       go_back
-      page.find("#search-summary")
+      page.find("#search-summary").
+        should have_content("Showing 1 of 1 result matching 'maceo'")
       go_forward
       find_link("http://www.smchealth.org")
       looks_like_details
