@@ -19,7 +19,7 @@ class Organization
     end
 
     begin
-      response = @client.query(params)
+      response = @client.search(params)
     rescue
       response = @client.empty_set
     end

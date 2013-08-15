@@ -17,7 +17,7 @@ gem 'haml-rails'
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem 'ohanakapa', :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => 'master' #for API wrapper
+gem 'ohanakapa', :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => 'add-nearby-endpoint' #for API wrapper
 
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
