@@ -1,48 +1,50 @@
 require 'spec_helper'
 
-feature 'Visitor uses the back or forward button', 
-:js => true do
+feature 'Visitor uses the back or forward button', :js => true do
 
-  scenario 'to homepage' do
-    search(:path=>'/',:keyword=>'homepage')
-    back_button_pressed
-    looks_like_homepage
+  background do
+    VCR.use_cassette('homepage/keyword_search_that_returns_results') do
+      search_from_home(:keyword => 'maceo')
+      page.find("#search-summary")
+    end
   end
 
-  scenario 'from homepage' do
-    search(:path=>'/',:keyword=>'home')
-    back_button_pressed
-    forward_button_pressed
-    looks_like_results
+  scenario 'back button from search results to homepage' do
+    go_back
+    looks_like_homepage_as_user_sees_it
   end
 
-  scenario 'to results page' do
-    search(:path=>'/',:keyword=>'results')
-    search(:keyword=>'food')
-    looks_like_results
+  scenario 'forward button from homepage to results' do
+    go_back
+    page.find("#search-container")
+    VCR.use_cassette('homepage/go_to_results') do
+      go_forward
+      page.find("#search-summary").
+        should have_content("Showing 1 of 1 result matching 'maceo'")
+      looks_like_results
+    end
   end
 
-  scenario 'from results page' do
-    search(:path=>'/',:keyword=>'result')
-    search(:keyword=>'food')
-    back_button_pressed
-    back_button_pressed
-    looks_like_homepage
+  scenario 'back to homepage after 2 queries' do
+    VCR.use_cassette('homepage/keyword_search_that_returns_results') do
+      search(:keyword => 'maceo')
+    end
+    go_back
+    go_back
+    page.find("#search-container")
+    looks_like_homepage_as_user_sees_it
   end
 
-  scenario 'to details page' do
-    search(:path=>'/',:keyword=>'Hillsdale Community Library')
-    visit_details
-    back_button_pressed
-    forward_button_pressed
-    looks_like_details("Hillsdale Community Library")
+  scenario 'back to results from details, then forward to details' do
+    VCR.use_cassette('details/visit_location') do
+      visit_details
+      find_link("http://www.smchealth.org")
+      go_back
+      page.find("#search-summary").
+        should have_content("Showing 1 of 1 result matching 'maceo'")
+      go_forward
+      find_link("http://www.smchealth.org")
+      looks_like_details
+    end
   end
-
-  scenario 'from details page' do
-    search(:path=>'/',:keyword=>'detail')
-    visit_details
-    back_button_pressed
-    looks_like_results
-  end
-
 end

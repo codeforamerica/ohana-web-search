@@ -2,18 +2,18 @@
 %section#results-entries
 	- if @orgs.blank?
 		%section.no-results
-			%p 
-				%strong Unfortunately, your search returned no results. 
+			%p
+				%strong Unfortunately, your search returned no results.
 				%em Try a category from below if you have trouble finding what you're looking for:
 
 			%ul
 				- @service_terms.each do |service|
-					%a{:href=>"/organizations?keyword=#{service}"}
+					%a{ :href => "/organizations?keyword=#{service}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{service}']);" }
 						%li
 							= service
 	- else
 		-#%nav#results-view-options
-			
+
 		-#%section#results-sort-options
 			-#%span
 				-#Sort by:
