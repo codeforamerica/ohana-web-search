@@ -4,12 +4,13 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 	
 		// PRIVATE PROPERTIES
 		var _map;
-		var _cover; // cover for map
+		var _markerData; // markers on the map
+		var _markersArray = []; // array for storing markers
+		var _markerBounds;
 
 		// PUBLIC METHODS
 		function init()
 		{
-			_cover = document.getElementById("detail-map-cover");
 			var title = document.getElementById("detail-map-canvas-title");
 			var lat = document.getElementById("detail-map-canvas-lat");
 			var lng = document.getElementById("detail-map-canvas-lng");
@@ -25,6 +26,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			  var mapOptions = {
 			    zoom: 16,
 			    center: latlng,
+			    scrollwheel: false,
 			    zoomControl: true,
 			    panControl: false,
 			    streetViewControl: false,
@@ -44,21 +46,104 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 						title: title,
 						position: latlng
 					});
-
-				_cover.addEventListener('click',_mapCoverClicked,false);
-				google.maps.event.addListener(_map,'mouseout',_mapCoverOut);
-				_cover.classList.remove('hide');
+			  
+			  refresh();
 			}
 		}
 
-		function _mapCoverClicked(evt)
+
+		// loads markers 
+		function _loadMarkers()
 		{
-			_cover.classList.add('hide');
+			var locations = document.getElementById("map-locations");
+			if (locations)
+			{
+				_markerData = JSON.parse(locations.innerHTML);
+		  	locations.parentNode.removeChild(locations); // remove script element
+			  _markerBounds = new google.maps.LatLngBounds();
+				_clearMarkers();
+
+				var dataLength = _markerData.length;
+		    for(var m = 0; m<dataLength-1; m++)
+		    {
+		    	_loadMarker( _markerData[m] );
+		    }
+		    var metadata = _markerData[dataLength-1];
+		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
+				//_header.innerHTML = _defaultHeaderContent+" "+summaryText;
+				//_markerInfo.innerHTML = "Mouse over markers for details";
+			}
+			else
+			{
+				// no entries found
+				_clearMarkers();
+				//document.getElementById("map-canvas").classList.add("hide");
+				//_header.innerHTML = "No results located!";
+				//_markerInfo.innerHTML = "";
+			}
 		}
 
-		function _mapCoverOut(evt)
+		// clears all markers
+		function _clearMarkers() 
 		{
-			_cover.classList.remove('hide');
+		  for (var i = 0; i < _markersArray.length; i++ ) {
+		    _markersArray[i].setMap(null);
+		  }
+		  _markersArray = [];
+		}
+
+		// load a single marker
+		function _loadMarker(markerData)
+		{
+			if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+			{
+				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+				
+				var marker = new google.maps.Marker({
+					id: markerData['id'],
+					map: _map,
+					title: markerData['name'],
+					position: myLatlng,
+					icon: {
+				    path: google.maps.SymbolPath.CIRCLE,
+				    scale: 5,
+				    fillColor: "rgb(3,73,126)",
+				    fillOpacity: 0.7,
+				    strokeWeight: 1,
+				    strokeOpacity: 0.3
+				  }
+				});
+
+				_markersArray.push(marker);
+
+				/*
+				google.maps.event.addListener(marker, 'mouseover', function() {
+				    _markerInfo.innerHTML = this.title;
+				    this.setZIndex(google.maps.Marker.MAX_ZINDEX);
+				});
+
+				google.maps.event.addListener(marker, 'mouseout', function() {
+				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
+				});
+
+				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
+				*/
+
+				_markerBounds.extend(myLatlng);
+				
+			}
+		}
+
+		// refresh the data
+		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
+		function refresh()
+		{
+			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);
+			//if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
+			_loadMarkers();
+			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
+			if (_markersArray.length > 0)
+				_map.fitBounds(_markerBounds);
 		}
 
 	return {
