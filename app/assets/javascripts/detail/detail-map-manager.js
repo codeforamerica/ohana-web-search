@@ -46,7 +46,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 						title: title,
 						position: latlng
 					});
-			  
+
 			  refresh();
 			}
 		}
@@ -70,16 +70,11 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		    }
 		    var metadata = _markerData[dataLength-1];
 		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
-				//_header.innerHTML = _defaultHeaderContent+" "+summaryText;
-				//_markerInfo.innerHTML = "Mouse over markers for details";
 			}
 			else
 			{
 				// no entries found
 				_clearMarkers();
-				//document.getElementById("map-canvas").classList.add("hide");
-				//_header.innerHTML = "No results located!";
-				//_markerInfo.innerHTML = "";
 			}
 		}
 
@@ -98,20 +93,16 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+
+				
+				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
 				
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
 					map: _map,
 					title: markerData['name'],
 					position: myLatlng,
-					icon: {
-				    path: google.maps.SymbolPath.CIRCLE,
-				    scale: 5,
-				    fillColor: "rgb(3,73,126)",
-				    fillOpacity: 0.7,
-				    strokeWeight: 1,
-				    strokeOpacity: 0.3
-				  }
+					icon: markerIcon
 				});
 
 				_markersArray.push(marker);
@@ -125,14 +116,24 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 				google.maps.event.addListener(marker, 'mouseout', function() {
 				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
 				});
-
-				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
-				*/
-
+*/
+				//google.maps.event.addListener(marker, 'click', _markerClickedHandler);
+				
 				_markerBounds.extend(myLatlng);
 				
 			}
 		}
+
+		/*
+		// a location marker was clicked, perform a search for the organization details
+		function _markerClickedHandler(evt)
+		{
+			var params = {'id':this.id}
+			params.keyword = document.getElementById('keyword').value;
+			params.location = document.getElementById('location').value;
+			_callback.performSearch(params);
+		}
+		*/
 
 		// refresh the data
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
