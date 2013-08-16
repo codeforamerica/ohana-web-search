@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations
+    uri: http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
       Accept:
-      - application/vnd.ohanapi+json; version=1
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -27,36 +27,36 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 13 Aug 2013 02:44:32 GMT
+      - Fri, 16 Aug 2013 17:33:19 GMT
       Etag:
-      - '"68d259f2fa312c9f73e4211bedfdbe0a"'
+      - '"71312f3bb96f7b6849c65287def0e224"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations&page=57>;
-        rel="last", <http://ohanapi.herokuapp.com/api/organizations?action=index&api_token=<API_TOKEN>&controller=organizations&page=2>;
+      - <http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations&page=57>;
+        rel="last", <http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations&page=2>;
         rel="next"
       Status:
       - 200 OK
       X-Content-Digest:
-      - 709fd7ecec53e7c941780c366191b53c1d0665db
+      - c00ec494031ec47a7e1b98ce9b8daade188864c2
       X-Rack-Cache:
-      - miss, store
+      - stale, valid, store
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
       - '4999'
       X-Request-Id:
-      - 01a57a9318cf888360276ec64766b5fb
+      - ea983cc21bf8576f5c04a914bacd222b
       X-Runtime:
-      - '0.683349'
+      - '0.152072'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '64510'
+      - '52703'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e4477","_keywords":["also","and","appears","art","assists","augmenting","auxiliaries","belmont","book","children","community","concerts","conducts","during","every","faire","festival","financial","fourth","friday","friends","funds","government","has","holiday","hours","inside","libraries","library","month","nook","open","park","pines","primarily","programs","provided","provides","providing","public","sale","saturday","second","services","speaker","store","summer","sunday","support","the","throughout","twin","used","wine","year"],"accessibility_options":["Wheelchair
+      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e4477","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Joan Peceimer","city":"Belmont","coordinates":[-122.2926158,37.5088656],"created_at":"2013-07-03T20:54:42-07:00","description":"Assists
         the library in providing services to the community, primarily by augmenting
         the financial support provided by government. Conducts a used book sale on
@@ -73,7 +73,7 @@ http_interactions:
         Carlos","San Mateo"],"service_areas":null,"service_hours":null,"service_wait":"None","services_provided":"Assists
         the library by augmenting its resources through book sales.","state":"CA","street_address":"1110
         Alameda de las Pulgas","target_group":"Residents of Belmont and neighboring
-        areas","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.friendsofthebelmontlibrary.org"],"zipcode":"94002"},{"_id":"51d5b18ba4a4d8b01b3e3f6d","_keywords":["alcohol","alcoholics","all","also","and","anonymous","appropriate","assistance","both","clean","clothes","clothing","coordination","correctional","counseling","county","court","criminal","crisis","defendants","dependency","described","drug","educational","emergency","employment","facility","families","family","food","for","groups","hope","house","housing","include","including","inmate","inmates","institutions","jail","jails","jury","justice","league","leaving","legal","living","mateo","men","message","motivational","narcotics","offered","offers","outreach","persons","pre","program","provides","receive","release","released","religious","request","residential","san","separately","service","services","shared","sober","structured","support","the","transitional","transportation","treatment","trials","variety","various","wear","well","who","wish","with","women"],"accessibility_options":["Wheelchair
+        areas","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.friendsofthebelmontlibrary.org"],"zipcode":"94002"},{"_id":"51d5b18ba4a4d8b01b3e3f6d","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Mike Nevin (In-Jail Service, Family
         or Released Inmate Assistance), Karen Francone (Hope Houses), Denise Salas
         (In-Custody Services), Michael Murray (Religious Services Coordinator)","city":"Redwood
@@ -101,7 +101,7 @@ http_interactions:
         wait","services_provided":"Provides a variety of services to inmates of the
         county jail, persons released from jail and their families.","state":"CA","street_address":"727
         Middlefield Road","target_group":"Jail inmates, former inmates and their families","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.serviceleague.org"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e442a","_keywords":["1163","205","2060","343","650","accepted","accessories","and","another","appropriate","are","career","charge","chess","city","clara","closet","clothing","county","disadvantaged","donation","donations","drive","economically","employment","first","for","foster","friday","goods","interview","jose","location","mateo","monday","programs","provides","san","santa","second","site","south","suite","suits","tailoring","the","week","women","work"],"accessibility_options":["Ramp","Wheelchair
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.serviceleague.org"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e442a","accessibility_options":["Ramp","Wheelchair
         accessible"],"agency":null,"ask_for":"Jean Cecil","city":"San Jose","coordinates":[-121.9089697,37.3622357],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
         interview suits and appropriate clothing and accessories for the first week
         of work at no charge to economically disadvantaged women. A second location
@@ -121,7 +121,7 @@ http_interactions:
         week","services_provided":"Provides interview appropriate clothing to women
         who have completed a job training program.","state":"CA","street_address":"43
         East Gish Road, Suite 100","target_group":"Women","transportation_availability":"VTA
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.careercloset.org"],"zipcode":"95112"},{"_id":"51d5b18ca4a4d8b01b3e442d","_keywords":["affordable","all","alliance","alto","and","budget","buyer","can","community","counseling","creating","credit","current","default","development","east","economic","educational","enhance","epa","financial","first","for","foreclosure","home","homebuyer","homebuyers","homeowners","housing","improvement","intervention","lending","life","literacy","loans","maintaining","management","money","neighborhood","org","palo","promoting","provides","purchase","quality","services","the","time","works","workshop","workshops"],"accessibility_options":["Elevator","Wheelchair
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.careercloset.org"],"zipcode":"95112"},{"_id":"51d5b18ca4a4d8b01b3e442d","accessibility_options":["Elevator","Wheelchair
         accessible"],"agency":"EPA CAN DO","ask_for":"Maribel Quispe","city":"East
         Palo Alto","coordinates":[-122.1405574,37.4703766],"created_at":"2013-07-03T20:54:42-07:00","description":"Works
         to enhance the quality of life for all East Palo Alto by creating and maintaining
@@ -140,7 +140,7 @@ http_interactions:
         9-5","service_wait":"No wait","services_provided":"Works to enhance the quality
         of life in East Palo Alto.","state":"CA","street_address":"2369 University
         Avenue","target_group":"Low-income persons","transportation_availability":"SAMTRANS
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.epacando.org"],"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e4440","_keywords":["access","advocacy","agencies","and","canto","care","communities","community","concilio","described","education","employment","for","health","hispanic","improve","improvement","improving","increasing","latino","latinos","leadership","life","mateo","member","nuestro","opportunities","other","promoting","quality","salud","san","separately","services","sponsors","the","through","underserved","with","works"],"accessibility_options":["Wheelchair
+        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.epacando.org"],"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e4440","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Gloria Flores-Garcia (Associate Executive
         Director) Carol D. Hatten (Executive Assistant)","city":"Burlingame","coordinates":[-122.3485056,37.5774471],"created_at":"2013-07-03T20:54:42-07:00","description":"Works
         to improve the quality of life for Latinos and other underserved communities
@@ -156,7 +156,7 @@ http_interactions:
         wait","services_provided":"A coalition of individuals, groups and organization
         leaders working to increase the number of Latino elected officials and professionals.","state":"CA","street_address":"1419
         Burlingame Avenue, Suite N","target_group":"Latino community, low-income persons","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.el-concilio.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e4445","_keywords":["after","afternoons","aged","also","and","are","artistic","atmosphere","auditions","camps","children","class","classes","community","conservatory","each","eight","for","full","fun","growth","held","musical","offered","offers","one","performances","portola","preschool","presents","produced","production","professional","promotes","quality","scale","school","sessions","spirit","summer","ten","that","theater","theatre","theatrical","three","times","valley","weekday","weeks","works","year"],"accessibility_options":["Wheelchair
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.el-concilio.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e4445","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Noelle Gibbs","city":"Portola Valley","coordinates":[-122.234913,37.383699],"created_at":"2013-07-03T20:54:42-07:00","description":"Presents
         theatrical works of professional quality in an atmosphere that promotes fun,
         artistic growth and community spirit. Auditions are held for each production.   Children''s
@@ -174,7 +174,7 @@ http_interactions:
         Monday-Thursday, 2-6:30; performances usually 8pm on weekends","service_wait":null,"services_provided":"Community
         theater and drama classes for children.","state":"CA","street_address":"945
         Portola Road","target_group":"Actors, children","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.pvtc-ca.org"],"zipcode":"94028"},{"_id":"51d5b18ca4a4d8b01b3e444b","_keywords":["adult","and","available","belle","community","education","general","haven","libraries","library","literacy","menlo","park","programs","provides","public","reading","reference","school","services","the","well"],"accessibility_options":["Wheelchair
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.pvtc-ca.org"],"zipcode":"94028"},{"_id":"51d5b18ca4a4d8b01b3e444b","accessibility_options":["Wheelchair
         accessible"],"agency":"Menlo Park Public Library","ask_for":"Whoever answers
         the phone","city":"Menlo Park","coordinates":[-122.161236,37.476923],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
         general reading and reference services to the public as well as school library
@@ -194,7 +194,7 @@ http_interactions:
         general reading and reference as well as school library services.","state":"CA","street_address":"413
         Ivy Drive","target_group":"Residents of the Belle Haven neighborhood, Spanish
         speakers, English learners","transportation_availability":"SAMTRANS, Menlo
-        Park Midday Shuttle stop within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":null,"zipcode":"94025"},{"_id":"51d5b18ca4a4d8b01b3e445a","_keywords":["age","and","care","center","child","children","coastside","day","development","education","for","formerly","infant","infants","known","months","protection","providers","provides","services","toddler","toddlers","years","youth"],"accessibility_options":["Ramp","Restroom","Wheelchair
+        Park Midday Shuttle stop within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":null,"zipcode":"94025"},{"_id":"51d5b18ca4a4d8b01b3e445a","accessibility_options":["Ramp","Restroom","Wheelchair
         accessible"],"agency":null,"ask_for":"Karen Corzine","city":"Half Moon Bay","coordinates":[-122.4292925,37.4411943],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
         child care and education for children age 2 months to 5 years. Formerly known
         as Coastside Infant/Toddler Center.","eligibility_requirements":"Eligibility
@@ -211,7 +211,7 @@ http_interactions:
         enrollment","services_provided":"Provides day care for infants and toddlers
         age 2 months to 3 years.","state":"CA","street_address":"565 Redondo Beach
         Road","target_group":"Children age 2 months to 5 years","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.coastsidecdc.org"],"zipcode":"94019"},{"_id":"51d5b18ca4a4d8b01b3e445c","_keywords":["adults","advocacy","after","and","assumed","care","caregivers","case","center","children","edgewood","families","family","for","groups","have","helps","kinship","management","members","network","non","other","programming","programs","provides","raising","related","relatives","respite","role","saturday","school","sponsorship","support","the","through","who","youth"],"accessibility_options":["Restroom","Special
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.coastsidecdc.org"],"zipcode":"94019"},{"_id":"51d5b18ca4a4d8b01b3e445c","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":"Edgewood Center for Children and
         Families","ask_for":"Kinship Program Director or Program Manager","city":"San
         Carlos","coordinates":[-122.250326,37.5059909],"created_at":"2013-07-03T20:54:42-07:00","description":"Helps
@@ -230,7 +230,7 @@ http_interactions:
         wait","services_provided":"Helps relatives who have assumed the role of raising
         other family members'' children.","state":"CA","street_address":"957 Industrial
         Road, Suite B","target_group":"Adults who are responsible for raising a relative''s
-        child","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.edgewood.org","http://www.cakinship.org"],"zipcode":"94070"},{"_id":"51d5b18ca4a4d8b01b3e4461","_keywords":["according","activities","adult","adults","and","assistance","assisted","availability","care","daily","dementia","disability","disabled","facility","for","full","gordon","has","hospice","housing","living","manor","meal","offering","offers","older","plan","related","respite","room","secured","senior","seniors","services","supportive","waivers"],"accessibility_options":["Restroom","Special
+        child","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.edgewood.org","http://www.cakinship.org"],"zipcode":"94070"},{"_id":"51d5b18ca4a4d8b01b3e4461","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":null,"ask_for":"Portia or Zeni","city":"Redwood
         City","coordinates":[-122.225499,37.466412],"created_at":"2013-07-03T20:54:42-07:00","description":"A
         secured, assisted-living facility for seniors offering a full meal plan, activities
@@ -248,7 +248,7 @@ http_interactions:
         care","service_wait":null,"services_provided":"An assisted living facility
         for seniors offering a full meal plan, activities and daily living assistance.
         ","state":"CA","street_address":"1616 Gordon Street","target_group":null,"transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.justlikefamily.com"],"zipcode":"94061"},{"_id":"51d5b18ca4a4d8b01b3e4471","_keywords":["about","adults","advocacy","and","appeals","arranged","assists","billing","can","care","case","clients","complaints","counseling","counselors","county","enrollment","for","health","hicap","home","homebound","imminent","individuals","information","insurance","long","mateo","medicare","meet","older","program","provides","questions","receiving","recipients","san","seniors","sites","supplemental","term","the","those","various","visits","with"],"accessibility_options":["Restroom","Special
+        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.justlikefamily.com"],"zipcode":"94061"},{"_id":"51d5b18ca4a4d8b01b3e4471","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":null,"ask_for":"Whoever answers
         the phone","city":"San Mateo","coordinates":[-122.302251,37.559267],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
         health insurance counseling for Medicare recipients or those imminent of receiving
@@ -268,7 +268,7 @@ http_interactions:
         for Medicare recipients.","state":"CA","street_address":"1710 South Amphlett
         Blvd., Suite 302","target_group":"Medicare recipients, adult children of Medicare
         recipients and those imminent of receiving Medicare","transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.selfhelpelderly.org","http://www.hicapsanmateocounty.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4472","_keywords":["activities","and","animals","center","classes","day","deer","docent","education","educational","every","farm","for","free","friends","funds","groups","hollow","including","led","life","march","may","month","months","nature","october","offers","ohlone","public","raises","saturday","school","support","the","third","through","tour","tours","wilderness"],"accessibility_options":null,"agency":null,"ask_for":"Carla
+        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.selfhelpelderly.org","http://www.hicapsanmateocounty.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4472","accessibility_options":null,"agency":null,"ask_for":"Carla
         Dorow","city":"Mountain View","coordinates":[-122.086585,37.3785351],"created_at":"2013-07-03T20:54:42-07:00","description":"Raises
         funds to support educational activities at Deer Hollow Farm including classes
         in farm life, farm animals and wilderness education for school groups. Offers
@@ -283,7 +283,7 @@ http_interactions:
         Third Saturday of March, April, May, 10-1; Ohlone Day: Third Saturday in October,
         1-4","service_wait":"No wait","services_provided":"Supports educational activities
         at Deer Hollow Farm.","state":"CA","street_address":"Rancho San Antonio Open
-        Space Preserve","target_group":"Everyone, primarily children age 5-12","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.fodhf.org"],"zipcode":"94040"},{"_id":"51d5b18ca4a4d8b01b3e4473","_keywords":["about","advocate","all","and","any","are","association","caregivers","center","centers","community","concerns","current","disability","disease","education","family","for","further","given","going","group","groups","health","hospital","include","inform","information","issues","learn","lectures","medical","more","org","peninsula","post","practices","prevention","program","psastroke","public","rehabilitation","relating","resource","serves","services","signs","speakers","stroke","support","surrounding","survivors","that","the","their","visit","visitation","warning","which","wishes","www"],"accessibility_options":["Restroom","Special
+        Space Preserve","target_group":"Everyone, primarily children age 5-12","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.fodhf.org"],"zipcode":"94040"},{"_id":"51d5b18ca4a4d8b01b3e4473","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":null,"ask_for":"Alissa Shaw (Director)","city":"Palo
         Alto","coordinates":[-122.141981,37.403559],"created_at":"2013-07-03T20:54:42-07:00","description":"Serves
         as an advocate for stroke survivors and a resource center for stroke community
@@ -304,7 +304,7 @@ http_interactions:
         stroke survivors and a resource center on stroke for the community.","state":"CA","street_address":"3801
         Miranda Avenue, Building 6, Room A162","target_group":"Stroke survivors and
         their families, and the general community","transportation_availability":"SAMTRANS
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.psastroke.org"],"zipcode":"94304"},{"_id":"51d5b18ca4a4d8b01b3e4474","_keywords":["able","abused","advocate","advocated","advocates","and","appointed","are","becomes","been","best","casa","child","children","community","county","court","courtroom","decisions","for","formerly","friend","guardians","have","information","informed","judges","justice","juvenile","known","litem","make","matches","mateo","needs","neglected","opportunities","other","procedure","provide","san","services","settings","social","special","system","that","the","trained","voice","volunteer","volunteers","what","who","with","youth"],"accessibility_options":["Elevator","Ramp","Restroom","Special
+        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.psastroke.org"],"zipcode":"94304"},{"_id":"51d5b18ca4a4d8b01b3e4474","accessibility_options":["Elevator","Ramp","Restroom","Special
         parking","Wheelchair accessible"],"agency":null,"ask_for":"Whoever answers
         the phone","city":"San Mateo","coordinates":[-122.3151228,37.552936],"created_at":"2013-07-03T20:54:42-07:00","description":"CASA
         of San Mateo County matches community volunteers with children who have been
@@ -326,7 +326,7 @@ http_interactions:
         community volunteers with child who have been abused and neglected. The volunteer
         becomes an advocate for the child in judicial proceedings.","state":"CA","street_address":"1700
         South El Camino Real, Suite 112","target_group":"Dependent and delinquent
-        children","transportation_availability":"Not necessary for service","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.casaofsanmateo.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4481","_keywords":["archers","archery","charge","clubs","county","huddart","interest","king","maintains","mountain","open","park","public","range","special","the"],"accessibility_options":["Not
+        children","transportation_availability":"Not necessary for service","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.casaofsanmateo.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4481","accessibility_options":["Not
         wheelchair accessible at this time"],"agency":null,"ask_for":"Steve Russell
         (Publicity Chair)","city":null,"coordinates":null,"created_at":"2013-07-03T20:54:43-07:00","description":"Maintains
         the county''s archery range at Huddart County Park. The range is open to the
@@ -341,7 +341,7 @@ http_interactions:
         Clara County"],"service_areas":null,"service_hours":"Sunday-Saturday, 8am-sunset","service_wait":"1
         week","services_provided":"Maintains the county''s archery range at Huddart
         County Park.","state":null,"street_address":null,"target_group":"Anyone interested
-        in archery","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.kingsmountainarchers.org"],"zipcode":null},{"_id":"51d5b18ca4a4d8b01b3e4483","_keywords":["adults","can","center","clubs","community","competition","covenant","for","group","interest","international","masters","members","organized","participate","pca","peninsula","program","programs","recreational","special","swimming","swims","the","variety","ways"],"accessibility_options":["Wheelchair
+        in archery","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.kingsmountainarchers.org"],"zipcode":null},{"_id":"51d5b18ca4a4d8b01b3e4483","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Mike Lynch","city":"Redwood City","coordinates":[-122.2363548,37.48521520000001],"created_at":"2013-07-03T20:54:43-07:00","description":"An
         organized swimming program for adults. Members can participate in a variety
         of ways from recreational swimming programs to international competition.
@@ -355,7 +355,7 @@ http_interactions:
         schedule","service_wait":"No wait","services_provided":null,"state":"CA","street_address":"3623
         Jefferson Avenue. Peninsula Covenant Community Center","target_group":"Adult
         fitness swimmers","transportation_availability":"SAMTRANS stops within 1/4
-        mile","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.pcamasters.com"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e4489","_keywords":["accredited","age","and","care","center","child","children","classes","day","early","education","for","gymnastics","hot","included","infants","lunch","months","music","naeyc","offers","preschool","protection","providers","sequoia","services","through","toddlers","weekly","years"],"accessibility_options":["Wheelchair
+        mile","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.pcamasters.com"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e4489","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Karen Peterson","city":"Redwood City","coordinates":[-122.2378103,37.4857914],"created_at":"2013-07-03T20:54:43-07:00","description":"Offers
         child care and early education for infants through preschool, age 2 months
         - 6 years. Weekly music and gymnastics classes included (age 2-5). Hot lunch
@@ -372,7 +372,7 @@ http_interactions:
         upon availability","services_provided":null,"state":"CA","street_address":"1234
         Brewster Avenue","target_group":"San Mateo County families with children age
         2 months-6 years","transportation_availability":"SAMTRANS stops within two
-        blocks. CALTRAIN within four blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sequoiachildren.org"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e448f","_keywords":["1864","and","association","blacksmith","buildings","cemetary","colma","consists","depot","early","four","freight","heritage","historical","history","holds","kitchen","library","meetings","museum","museums","newsletter","office","open","preserve","produces","protect","quarterly","reference","room","shop","societies","sunday","that","the","train","tuesday","waiting","works","year"],"accessibility_options":["Wheelchair
+        blocks. CALTRAIN within four blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sequoiachildren.org"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e448f","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Pat Hatfield","city":"Colma","coordinates":[-122.456447,37.682344],"created_at":"2013-07-03T20:54:43-07:00","description":"Historical
         association that works to preserve and protect the heritage of Colma. Holds
         four meetings a year and produces a quarterly newsletter. The museum consists
@@ -390,7 +390,7 @@ http_interactions:
         City"],"service_areas":null,"service_hours":"Tuesday-Sunday, 10-3","service_wait":"1
         week","services_provided":null,"state":"CA","street_address":"1500 Hillside
         Blvd.","target_group":"Schools, out-of-town visitors, residents","transportation_availability":"BART
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.colmahistory.org"],"zipcode":"94014"},{"_id":"51d5b18ca4a4d8b01b3e449a","_keywords":["and","are","beyond","books","budget","care","child","college","colleges","community","county","district","for","foundation","funding","grants","income","library","local","low","makes","mateo","normal","program","programs","projects","provides","remodeling","requirements","san","scholarships","selected","some","start","students","the","three","typical"],"accessibility_options":["Wheelchair
+        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.colmahistory.org"],"zipcode":"94014"},{"_id":"51d5b18ca4a4d8b01b3e449a","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Roxanne Brewer (Administrative Assistant
         and Development Associate)","city":"San Mateo","coordinates":[-122.338608,37.5301855],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
         scholarships to local students at the three colleges in the San Mateo County
@@ -407,7 +407,7 @@ http_interactions:
         Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8:30-4:30","service_wait":null,"services_provided":null,"state":"CA","street_address":"3401
         CSM Drive","target_group":"Low-income students needing scholarships; college
         programs and services needing funding","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smcccfoundation.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44a7","_keywords":["access","adults","age","and","appointment","assists","basic","care","children","city","cleaning","clients","clinic","clinics","community","dental","exam","exams","for","free","health","house","hygiene","individual","instruction","medical","need","offers","only","oral","other","outpatient","project","provides","redwood","samaritan","screening","services","smile","the","those","tuberculosis"],"accessibility_options":["Restroom","Wheelchair
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smcccfoundation.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44a7","accessibility_options":["Restroom","Wheelchair
         accessible"],"agency":"Samaritan House","ask_for":null,"city":"Redwood City","coordinates":[-122.207057,37.468678],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
         free medical care to those in need. Offers basic medical exams for adults
         and tuberculosis screening. Assists the individual to access other services
@@ -423,7 +423,7 @@ http_interactions:
         Palo Alto","Menlo Park","Redwood City","San Carlos"],"service_areas":null,"service_hours":"Monday-Friday,
         9-12, 2-5","service_wait":"Varies","services_provided":"Provides free medical
         care to those in need.","state":"CA","street_address":"114 Fifth Avenue","target_group":null,"transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.samaritanhouse.com"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e44b6","_keywords":["1914","and","are","arts","chamber","concerts","cultural","dedicated","education","enhancing","fabric","historic","instruction","kohl","landmark","listed","local","mansion","music","national","nonprofit","organization","peninsula","performances","performed","places","providing","quality","register","schools","the"],"accessibility_options":["Wheelchair
+        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.samaritanhouse.com"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e44b6","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Patricia Kristof Moy","city":"Burlingame","coordinates":[-122.3836066,37.5814138],"created_at":"2013-07-03T20:54:43-07:00","description":"A
         nonprofit arts organization dedicated to enhancing the cultural fabric of
         the Peninsula by providing quality chamber music and music education in local
@@ -437,7 +437,7 @@ http_interactions:
         County","Santa Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Program
         offerings include eight-concert Chamber Music Services, three evening Family
         Concerts, four daytime Children''s Concerts and the Music in the Schools Program.","state":"CA","street_address":"2750
-        Adeline Drive","target_group":null,"transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.musicatkohl.org"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e44bf","_keywords":["adults","affected","ages","all","also","and","camp","camping","camps","cancer","childhood","eight","families","family","for","health","holds","leisure","members","offers","okizu","operates","patients","peer","per","programs","provides","recreation","recreational","respite","services","siblings","summer","support","teens","their","through","times","tnt","twenties","weekends","year","young"],"accessibility_options":["Wheelchair
+        Adeline Drive","target_group":null,"transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.musicatkohl.org"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e44bf","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":null,"city":"Novato","coordinates":[-122.5338311,38.0702879],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
         recreational, respite and peer support programs to all members of families
         affected by childhood cancer. Operates summer camps through Camp Okizu for
@@ -452,7 +452,7 @@ http_interactions:
         County","Santa Clara County","northern California"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Provides
         recreational, respite and peer support programs to all members of families
         affected by childhood cancer.","state":"CA","street_address":"16 Digital Drive","target_group":"Children
-        with cancer","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.okizu.org"],"zipcode":"94949"},{"_id":"51d5b18ca4a4d8b01b3e44c1","_keywords":["aid","also","and","areas","assistanc","assistance","certificates","civil","clients","clinic","community","courts","criminal","expungement","family","forms","general","gives","hours","housing","income","justice","landlord","law","legal","low","matters","mediation","presentations","record","represents","rights","services","stanford","support","tenant","those","three","wage","workers"],"accessibility_options":["Ramp","Restroom","Special
+        with cancer","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.okizu.org"],"zipcode":"94949"},{"_id":"51d5b18ca4a4d8b01b3e44c1","accessibility_options":["Ramp","Restroom","Special
         parking","Wheelchair accessible"],"agency":null,"ask_for":"Whoever answers
         the phone","city":"East Palo Alto","coordinates":[-122.1419835,37.4633965],"created_at":"2013-07-03T20:54:43-07:00","description":"Represents
         low-income clients in three areas of civil law: housing matters, wage and
@@ -467,7 +467,7 @@ http_interactions:
         County"],"service_areas":null,"service_hours":"Monday-Friday, 9-5","service_wait":null,"services_provided":"Represents
         clients in a variety of areas of civil law.","state":"CA","street_address":"2117
         University Avenue, Suite A","target_group":"Low-income people in the mid-Peninsula","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":null,"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e44d2","_keywords":["affairs","and","bruno","care","clinic","clinics","francisco","full","government","health","mental","offers","outpatient","primary","range","san","services","states","system","united","veteran","veterans"],"accessibility_options":["Elevator"],"agency":"United
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":null,"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e44d2","accessibility_options":["Elevator"],"agency":"United
         States Government","ask_for":"Member Services Representative","city":"San
         Bruno","coordinates":[-122.425371,37.634019],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
         a full range of primary care and mental health services.","eligibility_requirements":"Veteran
@@ -481,7 +481,7 @@ http_interactions:
         days","services_provided":"Offers a full range of primary care, mental health,
         social work and member services.","state":"CA","street_address":"1001 Sneath
         Lane, Suite 300","target_group":"Veterans of the U.S. Armed Forces","transportation_availability":"BART
-        - San Bruno Station; SAMTRANS stops within 4 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sanfrancisco.va.gov/cboc/sanbruno.asp"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44df","_keywords":["and","classes","clubs","cross","cultural","dialogue","discussion","dvds","educational","facilitated","focusing","gatherings","generational","group","guidelines","interest","international","issues","jewish","living","materials","palestinian","provides","racial","relations","room","special","well"],"accessibility_options":null,"agency":null,"ask_for":"Libby
+        - San Bruno Station; SAMTRANS stops within 4 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sanfrancisco.va.gov/cboc/sanbruno.asp"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44df","accessibility_options":null,"agency":null,"ask_for":"Libby
         Traubman","city":"San Mateo","coordinates":[-122.3278108,37.5273617],"created_at":"2013-07-03T20:54:44-07:00","description":"A
         cross-cultural and cross-generational discussion group focusing on Jewish-Palestinian
         relations. Provides educational materials, discussion guidelines, DVDs, as
@@ -494,7 +494,7 @@ http_interactions:
         County","Santa Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"A
         cross-cultural and cross-generational discussion group focusing on Jewish-Palestinian
         relations.","state":"CA","street_address":"1448 Cedarwood Drive","target_group":"Diverse
-        youth and adults seeking communication opportunities","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://traubman.igc.org/dg-prog.htm"],"zipcode":"94403"},{"_id":"51d5b18ca4a4d8b01b3e44e2","_keywords":["and","care","children","community","end","for","george","house","ill","life","mark","offers","palliative","respite","seriously","services","speakers","transitional"],"accessibility_options":["Wheelchair
+        youth and adults seeking communication opportunities","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://traubman.igc.org/dg-prog.htm"],"zipcode":"94403"},{"_id":"51d5b18ca4a4d8b01b3e44e2","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Kathy Lee or Claire Vesely","city":"San
         Leandro","coordinates":[-122.1163175,37.70859360000001],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
         respite, transitional, and end of life palliative care for seriously ill children.","eligibility_requirements":"Eligibility","emails":["info@georgemark.org"],"faxes":["510
@@ -507,7 +507,7 @@ http_interactions:
         Costa County","Marin County","San Francisco County","San Mateo County","Santa
         Clara County","northern California"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Offers
         respite, transitional, and end of life palliative care for seriously ill children.","state":"CA","street_address":"2121
-        George Mark Lane","target_group":"Seriously ill children and their families","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.georgemark.org"],"zipcode":"94578"},{"_id":"51d5b18ca4a4d8b01b3e44e6","_keywords":["academic","administration","aid","among","and","assistance","care","child","classes","college","colleges","community","comprehensive","counseling","county","csm","district","education","employment","financial","health","include","many","mateo","offers","others","pupil","resources","san","scholarships","selection","services","smcccd","support","transfer","tutoring"],"accessibility_options":["Restroom","Wheelchair
+        George Mark Lane","target_group":"Seriously ill children and their families","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.georgemark.org"],"zipcode":"94578"},{"_id":"51d5b18ca4a4d8b01b3e44e6","accessibility_options":["Restroom","Wheelchair
         accessible"],"agency":"San Mateo County Community College District (SMCCCD)","ask_for":null,"city":"San
         Mateo","coordinates":[-122.335123,37.5350511],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
         a comprehensive selection of academic classes and support services. Resources
@@ -522,7 +522,7 @@ http_interactions:
         Costa County","Marin County","San Francisco County","San Mateo County"],"service_areas":null,"service_hours":"Monday-Thursday,
         8-4:30; Friday, 8-12 noon","service_wait":"No wait","services_provided":null,"state":"CA","street_address":"1700
         W Hillsdale Blvd.","target_group":null,"transportation_availability":"SAMTRANS
-        stops on campus","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://collegeofsanmateo.edu"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44e8","_keywords":["academic","administration","aid","among","and","assistance","care","child","classes","college","colleges","community","comprehensive","counseling","county","district","education","employment","financial","handicap","health","include","many","mateo","offers","others","pupil","resources","san","scholarships","selection","services","skyline","smcccd","support","transfer","tutoring"],"accessibility_options":["Elevator","Ramp","Restroom","Special
+        stops on campus","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://collegeofsanmateo.edu"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44e8","accessibility_options":["Elevator","Ramp","Restroom","Special
         parking","Wheelchair accessible"],"agency":"San Mateo County Community College
         District (SMCCCD)","ask_for":null,"city":"San Bruno","coordinates":[-122.4672096,37.6309074],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
         a comprehensive selection of academic classes and support services. Resources
@@ -538,7 +538,7 @@ http_interactions:
         Clara County"],"service_areas":null,"service_hours":null,"service_wait":"No
         wait","services_provided":null,"state":"CA","street_address":"3300 College
         Drive","target_group":null,"transportation_availability":"SAMTRANS stops at
-        the college","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccd.net/accounts/skyline/sts/able.html"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44f5","_keywords":["about","and","assistance","assists","attractions","booking","brochures","bureau","cities","community","convention","county","groups","individuals","information","maps","mateo","meetings","offers","rooms","san","services","silicon","sleeping","the","tourist","travelers","valley","visitors"],"accessibility_options":["Wheelchair
+        the college","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccd.net/accounts/skyline/sts/able.html"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44f5","accessibility_options":["Wheelchair
         accessible"],"agency":null,"ask_for":"Receptionist","city":"Burlingame","coordinates":[-122.3486066,37.5909749],"created_at":"2013-07-03T20:54:29-07:00","description":"Offers
         information about the county''s attractions and brochures and maps of cities
         in the county. Assists groups and individuals in booking sleeping rooms and
@@ -553,7 +553,7 @@ http_interactions:
         information about the county''s attractions and brochures and maps of cities
         in the county.","state":"CA","street_address":"111 Anza Blvd., Suite 410","target_group":"Visitors,
         conventions, meetings, events","transportation_availability":"SAMTRANS stops
-        within 6 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccvb.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e445e","_keywords":["activities","age","all","also","and","are","backpacking","begin","camping","charge","children","climbing","continue","entertainment","events","for","free","fun","including","involvement","leisure","matter","mentoring","more","offered","offers","often","outdoor","outreach","program","programs","provides","rafting","recreation","rock","round","services","setting","special","summer","the","their","then","today","tutoring","water","white","with","year","youth"],"accessibility_options":["Varies
+        within 6 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccvb.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e445e","accessibility_options":["Varies
         according to location of service"],"agency":null,"ask_for":"Whoever answers
         the phone","city":"Milpitas","coordinates":[-121.915219,37.42786],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
         fun activities, often in an outdoor setting, for children age 8-18, including
@@ -572,5 +572,5 @@ http_interactions:
         Way","target_group":null,"transportation_availability":"Not necessary for
         service","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.tymkids.org"],"zipcode":"95035"}],"count":1705,"pagination":{"current":1,"previous":null,"next":2,"per_page":30,"pages":57,"count":1705}}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2013 02:44:31 GMT
+  recorded_at: Fri, 16 Aug 2013 17:33:19 GMT
 recorded_with: VCR 2.5.0

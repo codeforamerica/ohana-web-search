@@ -31,7 +31,7 @@ module DetailFormatHelper
   # otherwise return false.
   def has_field?(obj, array)
     val = false
-    array.each { |field| obj.fetch(field).present? ? val = true : nil }
+    array.each { |field| obj[field].present? ? val = true : nil }
     val
   end
 
@@ -67,8 +67,8 @@ module DetailFormatHelper
   # @param timestamp [Sting] a timestamp string
   # @return [String] formatted timestamp
   def format_timestamp(timestamp)
-    timeobj = DateTime.parse(timestamp)
-    timeobj.strftime("%A, %e %B %Y at %l:%M:%S %p")
+    timeobj = DateTime.parse(timestamp.to_s)
+    timeobj.strftime("%A, %e %B %Y at %l:%M %p")
   end
 
   # Adds <sup>XX</sup> around ordinals in string

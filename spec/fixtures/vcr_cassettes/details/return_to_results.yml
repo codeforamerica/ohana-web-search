@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo
+    uri: http://ohanapi.herokuapp.com/api/search?_=1376674392910&action=index&controller=organizations&keyword=maceo&page=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
       Accept:
-      - application/vnd.ohanapi+json; version=1
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -27,127 +27,45 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 13 Aug 2013 02:44:30 GMT
+      - Fri, 16 Aug 2013 17:33:13 GMT
       Etag:
-      - '"9c1075c057bfd384866f2411ea46b136"'
+      - '"7d835113d2e2c1340369c7ba8e14e0db"'
       Status:
       - 200 OK
       X-Content-Digest:
-      - 42e736112b1ba41b808bb3f42296939f0742b09c
-      X-Rack-Cache:
-      - stale, valid, store
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4994'
-      X-Request-Id:
-      - 9b509592894a284dbe99f2d52ee112e1
-      X-Runtime:
-      - '0.902914'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '3597'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
-        Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
-        627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
-        and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"languages_spoken":["Chinese (Cantonese)","Chinese (Taiwanese)","Filipino
-        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":true,"name":"Gimme
-        1 2 3","payments_accepted":["WIC","SFMNP","SNAP"],"phones":[[{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Information"},{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Reservations"}]],"products_sold":["Baked
-        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"service_areas":["San
-        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
-        County","Santa Clara County"],"service_hours":"Monday-Friday, 8-5; Saturday,
-        10-6; Sunday 11-5","service_wait":"No wait to 2 weeks","services_provided":"Works
-        to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
-        Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
-        the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
-    http_version: 
-  recorded_at: Tue, 13 Aug 2013 02:44:29 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?_=1376419773734&action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&page=1
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
-      Accept:
-      - application/vnd.ohanapi+json; version=1
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Cache-Control:
-      - max-age=300, public
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 13 Aug 2013 18:49:38 GMT
-      Etag:
-      - '"9c1075c057bfd384866f2411ea46b136"'
-      Status:
-      - 200 OK
-      X-Content-Digest:
-      - 42e736112b1ba41b808bb3f42296939f0742b09c
+      - e590d1aeda8e46ef15e5746a24cbd10f88dba8bb
       X-Rack-Cache:
       - miss, store
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4994'
+      - '4980'
       X-Request-Id:
-      - 9b9d69bca928d941a2f1b77a234dccca
+      - 8b239e30f6cedc691a2d6f50f2d7398a
       X-Runtime:
-      - '0.974798'
+      - '0.344803'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '3597'
+      - '2975'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
+      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
         Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
+        THIS MACEO IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS
+        ALPHA APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+        suscipit metus eu orci lobortis dictum. In hac habitasse platea dictumst.
+        Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra ligula, ac
+        cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel augue in justo
+        rhoncus viverra. Nam ac felis a purus lobortis porttitor sit amet quis est.
+        Suspendisse vulputate nisl quis nisi fermentum aliquet euismod at augue. Sed
+        ultricies, purus dapibus tristique dictum, tortor mauris porttitor nulla,
+        at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis orci,
+        eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
         627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
         and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
         in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
@@ -163,173 +81,7 @@ http_interactions:
         to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
         Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
         the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
+        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-16T09:35:54-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999","id":"51de0b9fa4a4d8b01b3e459d","_score":0.7264462,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":1,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":1,"pages":1}}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2013 18:49:34 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?_=1376419993507&action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&page=1
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
-      Accept:
-      - application/vnd.ohanapi+json; version=1
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Cache-Control:
-      - max-age=300, public
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 13 Aug 2013 18:53:19 GMT
-      Etag:
-      - '"9c1075c057bfd384866f2411ea46b136"'
-      Status:
-      - 200 OK
-      X-Content-Digest:
-      - 42e736112b1ba41b808bb3f42296939f0742b09c
-      X-Rack-Cache:
-      - miss, store
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4993'
-      X-Request-Id:
-      - e03af82c02face818943ca8764bbb25b
-      X-Runtime:
-      - '0.958529'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '3597'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
-        Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
-        627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
-        and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"languages_spoken":["Chinese (Cantonese)","Chinese (Taiwanese)","Filipino
-        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":true,"name":"Gimme
-        1 2 3","payments_accepted":["WIC","SFMNP","SNAP"],"phones":[[{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Information"},{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Reservations"}]],"products_sold":["Baked
-        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"service_areas":["San
-        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
-        County","Santa Clara County"],"service_hours":"Monday-Friday, 8-5; Saturday,
-        10-6; Sunday 11-5","service_wait":"No wait to 2 weeks","services_provided":"Works
-        to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
-        Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
-        the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
-    http_version: 
-  recorded_at: Tue, 13 Aug 2013 18:53:15 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?_=1376420093461&action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&page=1
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
-      Accept:
-      - application/vnd.ohanapi+json; version=1
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Age:
-      - '0'
-      Cache-Control:
-      - max-age=300, public
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 13 Aug 2013 18:54:59 GMT
-      Etag:
-      - '"9c1075c057bfd384866f2411ea46b136"'
-      Status:
-      - 200 OK
-      X-Content-Digest:
-      - 42e736112b1ba41b808bb3f42296939f0742b09c
-      X-Rack-Cache:
-      - miss, store
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4992'
-      X-Request-Id:
-      - fb3d5a22901ef7e922adf2d7566d2b52
-      X-Runtime:
-      - '0.914780'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '3597'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
-        Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
-        627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
-        and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"languages_spoken":["Chinese (Cantonese)","Chinese (Taiwanese)","Filipino
-        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":true,"name":"Gimme
-        1 2 3","payments_accepted":["WIC","SFMNP","SNAP"],"phones":[[{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Information"},{"number":"650
-        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Reservations"}]],"products_sold":["Baked
-        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"service_areas":["San
-        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
-        County","Santa Clara County"],"service_hours":"Monday-Friday, 8-5; Saturday,
-        10-6; Sunday 11-5","service_wait":"No wait to 2 weeks","services_provided":"Works
-        to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
-        Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
-        the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
-    http_version: 
-  recorded_at: Tue, 13 Aug 2013 18:54:55 GMT
+  recorded_at: Fri, 16 Aug 2013 17:33:13 GMT
 recorded_with: VCR 2.5.0

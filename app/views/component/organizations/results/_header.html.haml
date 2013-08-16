@@ -5,7 +5,7 @@
 		%span{"data-icon"=>"𝍢" , :class=>"browse ohana-icon"}
 		%span#search-summary{:title=>format_summary(@params)}
 			= format_summary(@params)
-		
+
 		- path = request.fullpath
 
 		- if (path =~ /page=\d*&?/).present?

@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d?api_token=<API_TOKEN>
+    uri: http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
       Accept:
-      - application/vnd.ohanapi+json; version=1
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -27,32 +27,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 13 Aug 2013 02:44:25 GMT
+      - Fri, 16 Aug 2013 17:33:09 GMT
       Etag:
       - '"49084df39a0f547e6680e39eb5ecaf76:313c0df8ab0cc23babc1880223e2b66e"'
       Status:
       - 200 OK
       X-Content-Digest:
-      - 75ae1ba8195475514310b315b7e580e9a595a45d
+      - 4cd7fed9b25311b9004685a5eb28536e88204ff8
       X-Rack-Cache:
       - stale, valid, store
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4998'
+      - '4986'
       X-Request-Id:
-      - 5fb8a1ec346c41bb6dd268836434effd
+      - 8d76c8f5531961edf2f844db095143c2
       X-Runtime:
-      - '0.010199'
+      - '0.015589'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '3496'
+      - '2697'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
+      string: '{"response":{"_id":"51de0b9fa4a4d8b01b3e459d","accessibility_options":["Restroom","Special
         parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
         Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
         THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
@@ -82,5 +82,60 @@ http_interactions:
         the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
         stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2013 02:44:24 GMT
+  recorded_at: Fri, 16 Aug 2013 17:33:09 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 17:33:09 GMT
+      Etag:
+      - '"da3474dc5b1a89c3d03c0ac67e6aee7a"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby?page=0>;
+        rel="last", <http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby?page=2>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4982'
+      X-Request-Id:
+      - 37d440535caba6e9596ae3c092446e71
+      X-Runtime:
+      - '0.358961'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '114'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[],"count":0,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":0,"pages":0}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 17:33:10 GMT
 recorded_with: VCR 2.5.0

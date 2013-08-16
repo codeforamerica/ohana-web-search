@@ -3,7 +3,7 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
-    query = Organization.query(params)
+    query = Organization.search(params)
     @orgs = query.content
     @pagination = query.pagination
 
@@ -45,6 +45,7 @@ class OrganizationsController < ApplicationController
   def show
     # retrieve specific organization's details
     @org = Organization.get(params[:id]).content
+    @map_data = generate_map_data(Organization.nearby(params[:id]).content)
 
     keyword         = params[:keyword] || ''
     location        = params[:location] || ''
@@ -73,6 +74,30 @@ class OrganizationsController < ApplicationController
   end
 
   private
+
+  # will be used for mapping nearby locations on details map view
+  def generate_map_data(data)
+
+    # generate json for the maps in the view
+    # this will be injected into a <script> element in the view
+    # and then consumed by the map-manager javascript.
+    # map_data parses the @org hash and retrieves all entries
+    # that have coordinates, and returns that as json, otherwise map_data 
+    # ends up being nil and can be checked in the view with map_data.present?
+    map_data = data.reduce([]) do |result, o| 
+      if o.coordinates.present?
+        result << {
+          'id' => o._id, 
+          'name' => o.name, 
+          'coordinates' => o.coordinates
+        }
+      end
+      result
+    end
+
+    map_data.push({'count'=>map_data.length,'total'=>data.length})
+    map_data = map_data.to_json.html_safe unless map_data.nil?
+  end
 
   # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
   # execute a block with a different format (ex: an html partial while in an ajax request)

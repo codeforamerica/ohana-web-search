@@ -7,10 +7,11 @@
 					- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
 				%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 					%section{:class => "results-entry"}
-						- unless org.distance.blank?
-							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
-								%span
-									== #{org.distance} mi
+						-#
+							- unless org.distance.blank?
+								%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
+									%span
+										== #{org.distance} mi
 						%header
 							%h1.name
 								= superscript_ordinals(org.name)

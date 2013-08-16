@@ -40,7 +40,7 @@ describe "content exists" do
         check_value = values[index]
         
         if key[0] == "updated_at"
-          expect(rendered).to match /Wednesday, 10 July 2013 at  6:36:42 AM/
+          expect(rendered).to match /Wednesday, 10 July 2013 at  6:36 AM/
 
         elsif key[0] == "street_address"
           expect(rendered).to match /#{Regexp.escape("2013<sup>th</sup> Avenue of the fellows, Suite 100")}/

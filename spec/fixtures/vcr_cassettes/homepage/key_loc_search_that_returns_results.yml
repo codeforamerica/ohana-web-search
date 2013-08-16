@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=puente&location=94060&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=puente&location=94060&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - Ohanakapa Ruby Gem 0.0.1
       Accept:
-      - application/vnd.ohanapi+json; version=1
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -27,32 +27,32 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 13 Aug 2013 02:44:44 GMT
+      - Fri, 16 Aug 2013 17:32:55 GMT
       Etag:
-      - '"7d16690dbaa7a3d6e80da8ed91a2f95e"'
+      - '"5924f25a93f2f7465d6d1777189fd1a7"'
       Status:
       - 200 OK
       X-Content-Digest:
-      - c056d28474d728fd4dce5bfdce9b728e623db98e
+      - f52e3f7b04167c9fadaf185e0e5cc47ea08db4dd
       X-Rack-Cache:
-      - stale, valid, store
+      - miss, store
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4999'
+      - '4986'
       X-Request-Id:
-      - f8886f86d3be3cdeb72f62d3c4efac74
+      - dac53f85b79ead595368d3d8aa925eae
       X-Runtime:
-      - '0.122395'
+      - '0.328841'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '4525'
+      - '3318'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e44d4","_keywords":["access","action","address","adult","agencies","agricultural","also","and","appointment","assistance","availability","bank","california","call","calworks","center","children","citizenship","classes","coast","community","complete","comprehensive","core","costa","county","created","days","delivery","deposit","depression","development","distribution","each","economy","education","elementary","employment","engagement","english","enrollment","entry","esl","expense","farmers","food","for","funds","ged","gregorio","grocery","harvest","have","health","high","honda","housing","include","individual","infants","information","instruction","insurance","language","leadership","learn","literacy","living","loma","mar","mateo","maternal","men","merger","mexican","middle","mobile","net","network","north","northern","notary","nursery","offers","owners","pantries","pantry","part","periodically","permanent","pescadero","point","preparation","program","programs","promote","provides","puente","ranchers","read","referral","rental","resource","room","safety","sala","san","school","second","service","services","serving","single","site","south","spanish","speakers","specific","stamps","story","street","students","subject","sur","sustainable","system","tax","the","their","these","times","tutoring","wellness","which","wic","with","within","women","works","write","youth"],"accessibility_options":["Ramp"],"agency":"Puente
+      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e44d4","accessibility_options":["Ramp"],"agency":"Puente
         de la Costa Sur","ask_for":null,"city":"Pescadero","coordinates":[-122.378084,37.2565669],"created_at":"2013-07-03T20:54:44-07:00","description":"A
         community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
         Puente provides a single point of entry for men, women and children to have
@@ -86,7 +86,7 @@ http_interactions:
         access to safety net services, health and wellness services, leadership development,
         and community engegement and action.","state":"CA","street_address":"620 North
         Street","target_group":"Residents of La Honda, Loma Mar, Pescadero, and San
-        Gregorio","transportation_availability":"Contact SamCoast for information","ttys":null,"updated_at":"2013-08-07T15:55:40-07:00","urls":["http://www.mypuente.org"],"zipcode":"94060"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
+        Gregorio","transportation_availability":"Contact SamCoast for information","ttys":null,"updated_at":"2013-08-07T15:55:40-07:00","urls":["http://www.mypuente.org"],"zipcode":"94060","id":"51d5b18ca4a4d8b01b3e44d4","_score":2.5255845,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":1,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":1,"pages":1}}'
     http_version: 
-  recorded_at: Tue, 13 Aug 2013 02:44:43 GMT
+  recorded_at: Fri, 16 Aug 2013 17:32:55 GMT
 recorded_with: VCR 2.5.0
