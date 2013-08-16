@@ -58,7 +58,6 @@ module Features
       expect(page).to have_content("permits and photocopying")
       expect(page).to have_content("Russian")
       expect(page).to have_content("Special parking")
-      expect(page).to have_content("Click to interact")
     end
 
     def looks_like_homepage

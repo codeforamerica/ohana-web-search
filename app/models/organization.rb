@@ -1,17 +1,25 @@
 class Organization
   # Gets a single organization details
   # @param id [String] Organization ID.
-  # @return [Hashie::Mash] Hash representing a organization's details.
+  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
   def self.get(id)
-    @client = Ohanakapa.new(:api_token => ENV["OHANA_API_TOKEN"])
+    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
     response = @client.organization(id)
+  end
+
+  # Gets organizations nearby to a single organization
+  # @param id [String] Organization ID.
+  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
+  def self.nearby(id)
+    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
+    response = @client.nearby(id)
   end
 
   # Performs a query of the API
   # @param params [Object] parameter object.
-  # @return [Hashie::Mash] Hash representing a organization's details.
-  def self.query(params = {})
-    @client = Ohanakapa.new(:api_token => ENV["OHANA_API_TOKEN"])
+  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
+  def self.search(params = {})
+    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
 
     # return all results if keyword and location are blank
     if params[:keyword].blank? && params[:location].blank?

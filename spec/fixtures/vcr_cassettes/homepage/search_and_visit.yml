@@ -166,4 +166,1431 @@ http_interactions:
         stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}}'
     http_version: 
   recorded_at: Tue, 13 Aug 2013 02:44:28 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo&location=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '17'
+      Cache-Control:
+      - max-age=300, public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Aug 2013 20:45:13 GMT
+      Etag:
+      - '"9c1075c057bfd384866f2411ea46b136"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - 42e736112b1ba41b808bb3f42296939f0742b09c
+      X-Rack-Cache:
+      - fresh
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Request-Id:
+      - 64446330868b4e83cd30f97eab2ea755
+      X-Runtime:
+      - '1.032736'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '3597'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"_id":"51de0b9fa4a4d8b01b3e459d","_keywords":["adipiscing","agency","aliquet","alpha","amet","app","augue","consectetur","cup","cursus","dapibus","dictum","dictumst","dolor","duis","egestas","elit","erat","est","euismod","example","felis","fermentum","fifa","for","gimme","gravida","habitasse","hac","hendrerit","iaculis","ipsum","justo","ligula","lobortis","lorem","magna","mauris","metus","mongodb","nam","nec","neque","nisi","nisl","not","note","nulla","nunc","orci","organization","pharetra","phasellus","platea","porta","porttitor","praesent","proin","purposes","purus","quam","quis","rails","real","redis","rhoncus","ruby","sanmaceo","sapien","sed","sem","sit","sodales","suscipit","suspendisse","testting","this","tortor","tristique","ultricies","vel","vestibulum","vitae","vivamus","viverra","volutpat","vulputate","world"],"accessibility_options":["Restroom","Special
+        parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
+        Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
+        627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
+        and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"languages_spoken":["Chinese (Cantonese)","Chinese (Taiwanese)","Filipino
+        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":true,"name":"Gimme
+        1 2 3","payments_accepted":["WIC","SFMNP","SNAP"],"phones":[[{"number":"650
+        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Information"},{"number":"650
+        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Reservations"}]],"products_sold":["Baked
+        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"service_hours":"Monday-Friday, 8-5; Saturday,
+        10-6; Sunday 11-5","service_wait":"No wait to 2 weeks","services_provided":"Works
+        to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
+        Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
+        the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
+    http_version: 
+  recorded_at: Thu, 15 Aug 2013 20:45:14 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:22:54 GMT
+      Etag:
+      - '"49084df39a0f547e6680e39eb5ecaf76:313c0df8ab0cc23babc1880223e2b66e"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - 4cd7fed9b25311b9004685a5eb28536e88204ff8
+      X-Rack-Cache:
+      - miss, store
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4986'
+      X-Request-Id:
+      - 8d76c8f5531961edf2f844db095143c2
+      X-Runtime:
+      - '0.015589'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2697'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":{"_id":"51de0b9fa4a4d8b01b3e459d","accessibility_options":["Restroom","Special
+        parking","Wheelchair accessible"],"agency":"SanMaceo Example Agency.","ask_for":"James
+        Brown","city":"San Maceo","coordinates":[-8.774383,52.738598],"created_at":"2013-07-09T21:36:42-07:00","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility_requirements":"None","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
+        627-8244"],"fees":"None, except for permits and photocopying. Cash, checks
+        and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"languages_spoken":["Chinese (Cantonese)","Chinese (Taiwanese)","Filipino
+        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":true,"name":"Gimme
+        1 2 3","payments_accepted":["WIC","SFMNP","SNAP"],"phones":[[{"number":"650
+        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Information"},{"number":"650
+        372-6200","phone_hours":"(Monday-Friday, 8-5)","department":"Reservations"}]],"products_sold":["Baked
+        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"service_hours":"Monday-Friday, 8-5; Saturday,
+        10-6; Sunday 11-5","service_wait":"No wait to 2 weeks","services_provided":"Works
+        to control environmental hazards and pollutants that are harmful to health.","state":"CA","street_address":"2013th
+        Avenue of the fellows, Suite 100","target_group":"Profit and nonprofit businesses,
+        the public, military facilities, schools and government entities","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:22:53 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:22:54 GMT
+      Etag:
+      - '"da3474dc5b1a89c3d03c0ac67e6aee7a"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby?page=0>;
+        rel="last", <http://ohanapi.herokuapp.com/api/organizations/51de0b9fa4a4d8b01b3e459d/nearby?page=2>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4985'
+      X-Request-Id:
+      - 78eb4e5dda60c2932b568c0fc7b6cace
+      X-Runtime:
+      - '0.353593'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '114'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[],"count":0,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":0,"pages":0}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:22:54 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=hsa&location=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:42:51 GMT
+      Etag:
+      - '"2d6759ed3f828cb108e0a163d73e76d1"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - d0d73d77f6cacf31636fcb351abed81b8a96b18b
+      X-Rack-Cache:
+      - miss, store
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4973'
+      X-Request-Id:
+      - 9e15b3f02ecbf2ce2de9d548c6cc7c6b
+      X-Runtime:
+      - '0.329573'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '6583'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"_id":"51d5b18ba4a4d8b01b3e3f59","accessibility_options":["Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Human Services
+        Agency","ask_for":"Marsha Beaman (Court Investigations), Matt Radisch (Licensing),
+        Pravin Patel (Shelter Care), Marie Morris (Adoptions)","city":"Belmont","coordinates":[-122.308362,37.511806],"created_at":"2013-07-03T20:54:30-07:00","description":"Takes
+        reports of situations in which children age 17 or under may be in jeopardy
+        because of abuse, abandonment, sexual molestation, exploitation or neglect.
+        When the home situation is such that the child needs to be placed under the
+        protection of the juvenile court, this unit initiates court action, conducts
+        an investigation and supervises children who have been removed from parental
+        custody. Can make immediate placements in emergency shelter care when children
+        are endangered. May also aid children by providing casework and related services
+        to their families, and making referrals to appropriate agencies.                  A
+        report may be made in person, by phone or letter and may be anonymous, though
+        all names are held confidential. Anyone initiating a referral in good faith
+        is immune from liability. Provides information and refers within the agency
+        for all specialized children''s services. Counseling, support groups and in-home
+        services can be provided to families receiving protective services supervision
+        from this agency. Provides shelter care for children, age 18 or under, who
+        need to be removed from their own homes because they are in danger due to
+        neglect, abuse, abandonment, exploitation or other family crisis. Young children
+        are placed in temporary foster homes. Adolescents are placed in the central
+        receiving home. All requests for emergency care or removal of a child from
+        a home in crisis must be made through the Hotline or the local police department.
+        The county is a state-licensed adoption and foster home licensing agency providing
+        services to birth parents, pre-adoptive children, adoptive and foster parent
+        applicants. Provides information about adoption procedures to birth parents.
+        Children are generally of school age, of minority or mixed background or have
+        special problems. Written application, office and home interviews are necessary.
+        Provides post-adoption services to assist adoptees, birth parents or adoptive
+        parents. Provides relinquishment adoption services. Does not provide intercountry
+        adoption services. Helps to arrange for out-of-home placement of children,
+        age 17 or under, in group homes or institutions. Families must meet certain
+        criteria in order for the children to be considered for placement. This unit
+        cannot handle the placement of delinquents or children beyond parental control.
+        This office also licenses foster family homes throughout the county as required
+        by law for care on a regular basis of a non-related child age 17 or under.
+        Homes are licensed for one year and renewed annually. Will investigate complaints
+        or reports of persons caring for non-related children without a license or
+        of licensed persons giving improper care. The Foster Care Eligibility line
+        handles questions related to payments to foster parents, non-related guardians,
+        and relatives. Speakers are available for clubs or groups who wish to know
+        more about foster care, \"fostadopt\" and adoptions. For matters other than
+        court investigations, licensing, shelter care or adoptions, please contact
+        the appropriate regional office. For East Palo Alto, Menlo Park, or Redwood
+        City residents, contact the South County office at 650-363-4218. For San Carlos,
+        Belmont, San Mateo, Foster City, Hillsborough, Burlingame, Millbrae, Half
+        Moon Bay, El Granada, La Honda, Loma Mar, Montara, Moss Beach, Pescadero,
+        or San Gregorio residents, contact the Central County office at 650-802-5018.
+        For Pacifica, Daly City, South San Francisco, Colma, Brisbane or San Bruno
+        residents, contact the North County office at 650-877-5608. Family Resource
+        Center provides counseling, support and education services for youth and adults,
+        home visiting, parent involvement in leadership, financial assistance and
+        case management at specific school locations with Spanish speaking staff.   Translators
+        available with prior notice. HSA, San Mateo County has been COA accredited
+        since 2008.","eligibility_requirements":"Child must reside in San Mateo County","emails":null,"faxes":["650
+        802-5001"],"fees":"Placement costs are a parental responsibility and are assessed
+        on basis of ability to pay","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["CHILD PROTECTION AND CARE SERVICES","Adoption","Crisis/Abuse
+        Intervention/Hot","Guardianship/Conservatorship","Investigation/Intervention","Out-Of-Home
+        Care","Out-Of-Home Care Placement","Respite/Emergency Caretaker","Adoption
+        Services","Foster Homes for Dependent Children","Children''s Protective Services","Speakers/Speakers
+        Bureaus","Youth","Adolescents","Children"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Children
+        and Family Services","payments_accepted":null,"phones":[[{"number":"800 632-4615","department":"Hotline","phone_hours":"(24
+        hours daily)"}],[{"number":"650 802-7615","department":"Adoptions","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650-802-7637","department":"Homefinding Unit","phone_hours":"(Monday-
+        Friday, 8-5)"}],[{"number":"650 802-7922","department":"Intake","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-5103","department":"Foster Care Eligibility","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-6583","department":"Family Resouce Centers"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5","service_wait":"Priority
+        given to reports of physical abuse, sexual abuse or life-threatening neglect","services_provided":"Accepts
+        referrals about situations in which children age 17 or under are in jeopardy
+        because of abuse, abandonment or exploitation.","state":"CA","street_address":"1
+        Davis Drive","target_group":"Children, age 17 or under","transportation_availability":"SAMTRANS
+        stops within 3 blocks","ttys":null,"updated_at":"2013-08-07T15:54:57-07:00","urls":["http://www.smchsa.org"],"zipcode":"94002","id":"51d5b18ba4a4d8b01b3e3f59","_score":0.36319563,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":1,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":1,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:42:50 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/organizations/51d5b18ba4a4d8b01b3e3f59
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:42:51 GMT
+      Etag:
+      - '"f311d24845c1ce20fb2fd467f516e136:422ebb3109ad040a702957905c5f4e7a"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - 4e2898ea3772760aa69461c466d5adf0a941901c
+      X-Rack-Cache:
+      - stale, valid, store
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4976'
+      X-Request-Id:
+      - 9c45b2d831d604d0499df8ac8d76bedf
+      X-Runtime:
+      - '0.012014'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '6310'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":{"_id":"51d5b18ba4a4d8b01b3e3f59","accessibility_options":["Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Human Services
+        Agency","ask_for":"Marsha Beaman (Court Investigations), Matt Radisch (Licensing),
+        Pravin Patel (Shelter Care), Marie Morris (Adoptions)","city":"Belmont","coordinates":[-122.308362,37.511806],"created_at":"2013-07-03T20:54:30-07:00","description":"Takes
+        reports of situations in which children age 17 or under may be in jeopardy
+        because of abuse, abandonment, sexual molestation, exploitation or neglect.
+        When the home situation is such that the child needs to be placed under the
+        protection of the juvenile court, this unit initiates court action, conducts
+        an investigation and supervises children who have been removed from parental
+        custody. Can make immediate placements in emergency shelter care when children
+        are endangered. May also aid children by providing casework and related services
+        to their families, and making referrals to appropriate agencies.                  A
+        report may be made in person, by phone or letter and may be anonymous, though
+        all names are held confidential. Anyone initiating a referral in good faith
+        is immune from liability. Provides information and refers within the agency
+        for all specialized children''s services. Counseling, support groups and in-home
+        services can be provided to families receiving protective services supervision
+        from this agency. Provides shelter care for children, age 18 or under, who
+        need to be removed from their own homes because they are in danger due to
+        neglect, abuse, abandonment, exploitation or other family crisis. Young children
+        are placed in temporary foster homes. Adolescents are placed in the central
+        receiving home. All requests for emergency care or removal of a child from
+        a home in crisis must be made through the Hotline or the local police department.
+        The county is a state-licensed adoption and foster home licensing agency providing
+        services to birth parents, pre-adoptive children, adoptive and foster parent
+        applicants. Provides information about adoption procedures to birth parents.
+        Children are generally of school age, of minority or mixed background or have
+        special problems. Written application, office and home interviews are necessary.
+        Provides post-adoption services to assist adoptees, birth parents or adoptive
+        parents. Provides relinquishment adoption services. Does not provide intercountry
+        adoption services. Helps to arrange for out-of-home placement of children,
+        age 17 or under, in group homes or institutions. Families must meet certain
+        criteria in order for the children to be considered for placement. This unit
+        cannot handle the placement of delinquents or children beyond parental control.
+        This office also licenses foster family homes throughout the county as required
+        by law for care on a regular basis of a non-related child age 17 or under.
+        Homes are licensed for one year and renewed annually. Will investigate complaints
+        or reports of persons caring for non-related children without a license or
+        of licensed persons giving improper care. The Foster Care Eligibility line
+        handles questions related to payments to foster parents, non-related guardians,
+        and relatives. Speakers are available for clubs or groups who wish to know
+        more about foster care, \"fostadopt\" and adoptions. For matters other than
+        court investigations, licensing, shelter care or adoptions, please contact
+        the appropriate regional office. For East Palo Alto, Menlo Park, or Redwood
+        City residents, contact the South County office at 650-363-4218. For San Carlos,
+        Belmont, San Mateo, Foster City, Hillsborough, Burlingame, Millbrae, Half
+        Moon Bay, El Granada, La Honda, Loma Mar, Montara, Moss Beach, Pescadero,
+        or San Gregorio residents, contact the Central County office at 650-802-5018.
+        For Pacifica, Daly City, South San Francisco, Colma, Brisbane or San Bruno
+        residents, contact the North County office at 650-877-5608. Family Resource
+        Center provides counseling, support and education services for youth and adults,
+        home visiting, parent involvement in leadership, financial assistance and
+        case management at specific school locations with Spanish speaking staff.   Translators
+        available with prior notice. HSA, San Mateo County has been COA accredited
+        since 2008.","eligibility_requirements":"Child must reside in San Mateo County","emails":null,"faxes":["650
+        802-5001"],"fees":"Placement costs are a parental responsibility and are assessed
+        on basis of ability to pay","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["CHILD PROTECTION AND CARE SERVICES","Adoption","Crisis/Abuse
+        Intervention/Hot","Guardianship/Conservatorship","Investigation/Intervention","Out-Of-Home
+        Care","Out-Of-Home Care Placement","Respite/Emergency Caretaker","Adoption
+        Services","Foster Homes for Dependent Children","Children''s Protective Services","Speakers/Speakers
+        Bureaus","Youth","Adolescents","Children"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Children
+        and Family Services","payments_accepted":null,"phones":[[{"number":"800 632-4615","department":"Hotline","phone_hours":"(24
+        hours daily)"}],[{"number":"650 802-7615","department":"Adoptions","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650-802-7637","department":"Homefinding Unit","phone_hours":"(Monday-
+        Friday, 8-5)"}],[{"number":"650 802-7922","department":"Intake","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-5103","department":"Foster Care Eligibility","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-6583","department":"Family Resouce Centers"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5","service_wait":"Priority
+        given to reports of physical abuse, sexual abuse or life-threatening neglect","services_provided":"Accepts
+        referrals about situations in which children age 17 or under are in jeopardy
+        because of abuse, abandonment or exploitation.","state":"CA","street_address":"1
+        Davis Drive","target_group":"Children, age 17 or under","transportation_availability":"SAMTRANS
+        stops within 3 blocks","ttys":null,"updated_at":"2013-08-07T15:54:57-07:00","urls":["http://www.smchsa.org"],"zipcode":"94002"}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:42:51 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/organizations/51d5b18ba4a4d8b01b3e3f59/nearby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:42:52 GMT
+      Etag:
+      - '"75f9b40cd2ef18a04faf50a8c5fb9948"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/organizations/51d5b18ba4a4d8b01b3e3f59/nearby?page=13>;
+        rel="last", <http://ohanapi.herokuapp.com/api/organizations/51d5b18ba4a4d8b01b3e3f59/nearby?page=2>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4972'
+      X-Request-Id:
+      - e35583250bdfa07b098b5385309f03a9
+      X-Runtime:
+      - '0.777459'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '78856'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e42b9","accessibility_options":["Interpreter
+        for the deaf available","Restroom","Special parking","Wheelchair accessible"],"agency":"San
+        Mateo County Human Services Agency","ask_for":"Receptionist","city":"Belmont","coordinates":[-122.308362,37.511806],"created_at":"2013-07-03T20:54:33-07:00","description":"This
+        is the administrative office for the Human Services Agency. Divisions include
+        the Northern, Central and Southern Region offices which are described separately.","eligibility_requirements":"None","emails":null,"faxes":["650
+        631-5771"],"fees":"None","funding_sources":["County","Federal","State"],"how_to_apply":"Apply
+        by phone or mail","keywords":["ADMINISTRATION AND PLANNING SERVICES","Administration
+        and Planning","Human/Social Services Issues"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Administration","payments_accepted":null,"phones":[[{"number":"650
+        802-7500","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":"No
+        wait","services_provided":"The administrative office of the county''s Human
+        Services Agency.","state":"CA","street_address":"1 Davis Drive","target_group":null,"transportation_availability":"SAMTRANS
+        stops within 3 blocks","ttys":null,"updated_at":"2013-08-07T15:55:11-07:00","urls":["http://www.smchsa.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e42b9","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.0],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e44a9","accessibility_options":["Wheelchair
+        accessible"],"agency":null,"ask_for":"Project Coordinator","city":"Belmont","coordinates":[-122.308362,37.511806],"created_at":"2013-07-03T20:54:43-07:00","description":"Acts
+        as a policy and advocacy group to provide a forum to address and support the
+        importance of men and fathers, regardless of family composition or legal status,
+        taking an active role in the well-being of children and families. Over fifty
+        county agencies, community-based organizations and individuals are members
+        of the collaborative. Regular programs supported by the Fatherhood Collaborative
+        include: Dad and Me @ the Library: In collaboration with  Peninsula Library
+        System member libraries, offers an opportunity for fathers, or other adults,
+        to bring their children to the libraries for an entertaining, age-appropriate
+        literacy experience. The program includes an hour of singing, games, story-telling
+        and book give-away. Dad and Me @ the Park: Celebrates Fatherhood Awareness
+        Week with a day of activities at a local county park for fathers, other significant
+        male caregivers and their children. Fatherhood conference: Organizes an annual
+        informational or educational conference on a subject of importance to fathers
+        or those who work with fathers. Mini-Grants: Awards annually a limited number
+        of grants to local agencies for projects that further the mission of the Fatherhood
+        Collaborative.","eligibility_requirements":"None","emails":["info@fatherhoodcollaborative.org"],"faxes":["650
+        592-3056"],"fees":"None","funding_sources":null,"how_to_apply":"Call for information
+        on meetings","keywords":["CHILD PROTECTION AND CARE SERVICES","Community Information","COMMUNITY
+        SERVICES","Group Support","Planning/Coordinating/Advisory Groups","Youth","Fathers","Men"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
+        Mateo County Human Services Agency. Children and Family Services. Fatherhood
+        Collaborative of San Mateo County","payments_accepted":null,"phones":[[{"number":"650
+        802-5090"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Works
+        to engage parents, service providers, employers and the broader community
+        to better understand the importance of men and fathers in children''s lives.","state":"CA","street_address":"1
+        Davis Drive","target_group":null,"transportation_availability":"SAMTRANS stops
+        within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:39-07:00","urls":["http://www.fatherhoodcollaborative.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e44a9","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.0],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4339","accessibility_options":["Wheelchair
+        accessible"],"agency":null,"ask_for":"Janice Gunderson","city":"Belmont","coordinates":[-122.301989,37.515402],"created_at":"2013-07-03T20:54:39-07:00","description":"Performs
+        classical choral repertoire from the Renaissance to the 21st century. The
+        chorus rehearses every Tuesday at 7:15 pm. Membership is by audition.","eligibility_requirements":"Membership
+        by audition, ability to demonstrate vocal and music reading skills","emails":["peninsulacantare@yahoo.com","gundersonjp@yahoo.com"],"faxes":null,"fees":"Tuition
+        and music fees","funding_sources":["Donations","Fees","Sales"],"how_to_apply":"Register
+        for class at Canada College","keywords":["Music Performances"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Peninsula
+        Cantare","payments_accepted":null,"phones":[[{"number":"650 593-4287","department":"(Leave
+        message)"}]],"products_sold":null,"service_area":["San Mateo County","Santa
+        Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"A
+        community chorus.","state":"CA","street_address":"2524 Read Avenue","target_group":"Experienced
+        adult choral singers","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:55:12-07:00","urls":["http://www.peninsulacantare.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e4339","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.4291119482932736],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e451e","accessibility_options":["Wheelchair
+        accessible"],"agency":null,"ask_for":"Jean Burch (President)","city":"Belmont","coordinates":[-122.2999556,37.5093318],"created_at":"2013-07-03T20:54:40-07:00","description":"Activities
+        include birthday dinners, entertainment, bingo, cards, movies, parties, tours,
+        a monthly newsletter, and weekly Bible study. A business meeting is held on
+        the second Wednesday of each month at 1 pm. Activity days vary. Formerly known
+        as Bonnie Brae Residents'' Association.","eligibility_requirements":"Resident
+        of Lesley Terrace","emails":["walkthissway@comcast.com"],"faxes":null,"fees":"$5
+        a year membership dues. Checks accepted","funding_sources":["Donations","Fundraising","Membership
+        dues"],"how_to_apply":"Fill out application at the administration office (2400
+        Carlmont Drive)","keywords":["Special Interest Clubs","Older Adults"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Lesley
+        Terrace Residents Association","payments_accepted":null,"phones":[[{"number":"650
+        207-9400"}]],"products_sold":null,"service_area":"Belmont","service_areas":null,"service_hours":"Monday-Friday,
+        8-4","service_wait":"Varies; call office at 650-593-1818 for more information","services_provided":"An
+        association of residents of Lesley Terrace open to all seniors in the area.","state":"CA","street_address":"2400
+        Carlmont Drive. Apartment 203C","target_group":null,"transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:15-07:00","urls":null,"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e451e","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.491978014140766],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3fdb","accessibility_options":["Elevator","Wheelchair
+        accessible"],"agency":null,"ask_for":"Pamela Bulaong (Assistant Administrator)","city":"Belmont","coordinates":[-122.2999556,37.5093318],"created_at":"2013-07-03T20:54:31-07:00","description":"Affordable
+        housing for adults age 62 or over and age 61 or under with a long-term verifiable
+        disability. This is a housing-only facility and is not licensed to provide
+        care. There are 164 units, unfurnished, all utilities included. A mandatory
+        meal program provides two meals a day, seven days a week. Garaged parking
+        is available for $10 per month. Small pets allowed. A residents'' association
+        plans activities and entertainment. A social services coordinator is available
+        to assist with linkages to community services. Also available are laundry
+        facilities, several lounges, a large outdoor terrace, a convenience store,
+        a library and exercise equipment. Activities Coordinator plans activities
+        and entertainment. Formerly known as Bonnie Brae Terrace.","eligibility_requirements":"Age
+        62 or over, or age 61 or under with a long-term verifiable disability. Income
+        requirements are $62,000 per year maximum income for single person and $68,000
+        for a couple","emails":["aespinoza@lesleysc.org"],"faxes":["650 592-3026"],"fees":"Studio
+        $484-$582, studio-alcove $713, 1 bedroom $808. Breakfast and dinner 7 days
+        a week, $282 per month. Refundable deposit equal to 1 month''s rent. Cash
+        and checks accepted","funding_sources":["Federal"],"how_to_apply":"Phone for
+        an appointment necessary to view units and receive an application. An interview
+        with administrator and social worker determines eligibility","keywords":["HOUSING
+        SERVICES","Senior and Disabled Housing","Older Adult/Disability Related Supportive
+        Housing","Older Adults"],"languages_spoken":["Filipino (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"Lesley
+        Terrace","payments_accepted":null,"phones":[[{"number":"650 593-1818","phone_hours":"(Monday-Friday,
+        8-4:30)"}]],"products_sold":null,"service_area":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County"],"service_areas":null,"service_hours":null,"service_wait":"6
+        months for a studio, 4 years for a 1-bedroom. Section 8 waiting list open","services_provided":"Low-cost
+        housing for people age 62 or over.","state":"CA","street_address":"2400 Carlmont
+        Drive","target_group":"Adults age 62 or over","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:16-07:00","urls":["http://www.lesleyseniorcommunities.org"],"zipcode":"94002","id":"51d5b18ba4a4d8b01b3e3fdb","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.491978014140766],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4490","accessibility_options":null,"agency":null,"ask_for":null,"city":"Belmont","coordinates":[-122.3007413,37.5172903],"created_at":"2013-07-03T20:54:43-07:00","description":"A
+        re-creation of the radio station or network house orchestra of the radio age.
+        The 19-piece orchestra plays music ranging from the 1890s to the Big Band
+        era.  Performances include free concerts in the park to concerts at various
+        venues for a reasonable admission price. See Web site for performance schedule.","eligibility_requirements":"None","emails":["radioorchestra@yahoo.com"],"faxes":null,"fees":null,"funding_sources":null,"how_to_apply":null,"keywords":["Music
+        Performances"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Golden
+        Gate Radio Orchestra","payments_accepted":null,"phones":[[{"number":"650 400-0742"}]],"products_sold":null,"service_area":["San
+        Francisco County","San Mateo County","Santa Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":null,"state":"CA","street_address":"2506
+        Carmelita Avenue","target_group":null,"transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:55:14-07:00","urls":["http://www.radiorch.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e4490","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.5645632311166602],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e42fd","accessibility_options":["Wheelchair
+        accessible"],"agency":null,"ask_for":null,"city":"Belmont","coordinates":[-122.2938639,37.5111296],"created_at":"2013-07-03T20:54:37-07:00","description":"Promotes
+        the interests of businesses in Belmont. Board meetings are held monthly on
+        the fourth Thursday of each month, 4 pm.","eligibility_requirements":"None","emails":["execdirector@belmontchamber.org"],"faxes":null,"fees":"Based
+        on size of business and type of membership ($65-$670). Checks accepted","funding_sources":["Fundraising","Membership
+        dues"],"how_to_apply":"Email or visit Web site","keywords":["Chambers of Commerce"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Belmont
+        Chamber of Commerce","payments_accepted":null,"phones":[[{"number":"650 595-8696"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":null,"services_provided":null,"state":"CA","street_address":"1059A
+        Alameda de las Pulgas","target_group":"Businesses and community organizations","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:11-07:00","urls":["http://www.belmontchamber.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e42fd","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.7968622119925787],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3f4d","accessibility_options":["Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Library","ask_for":"Whoever
+        answers the phone","city":"Belmont","coordinates":[-122.2933613,37.5099045],"created_at":"2013-07-03T20:54:30-07:00","description":"Offers
+        general library services and resources providing information assistance to
+        children and adults. The collection includes fiction and nonfiction books,
+        CDs, cassettes, circulating CD-ROMs, videos, DVDs, books on tape and CD, large-print
+        books and magazines and newspapers. Utilizing gift funds, the library sponsors
+        a \"no holds\" collection of high-demand new books. The library features regular
+        children''s programs and story hours as well as reading encouragement programs
+        and a book discussion group for adults. Seven Internet workstations, computerized
+        catalog, periodical database and two CD-ROM workstations are available for
+        public use. The county library serves residents of unincorporated areas and
+        those cities without city libraries which are taxed by the county for library
+        services. The county library branches participate in the Peninsula Library
+        System. San Mateo County Library now offers the virtual library via smcl.org,
+        including email reference help on the Belmont library web page.","eligibility_requirements":"Resident
+        of California to obtain a library card","emails":["belmont@plsinfo.org"],"faxes":["650
+        591-1195"],"fees":"$1 for replacement of lost library card, $.75 for item
+        reserves, $5 for interlibrary loan of materials outside of county. Cash, checks
+        and credit cards accepted","funding_sources":["County"],"how_to_apply":"To
+        receive a library card present photo ID and proof of name and address to verify
+        residency requirement. Teacher Priviledge Cards also available to those who
+        live or work in San Mateo County Branch Library communities","keywords":["EDUCATION
+        SERVICES","Library","Libraries","Public Libraries","Youth"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Belmont
+        Library","payments_accepted":null,"phones":[[{"number":"650 591-8286","phone_hours":"(Monday-Wednesday,
+        10-9; Thursday, Friday, 10-6; Saturday, 10-5; Sunday, 1-5)"}]],"products_sold":null,"service_area":["San
+        Mateo County","Belmont"],"service_areas":null,"service_hours":"Monday-Wednesday,
+        10-9; Thursday, Friday, 10-6; Saturday, 10-5; Sunday, 1-5","service_wait":"No
+        wait","services_provided":"General reference and reading materials.","state":"CA","street_address":"1110
+        Alameda","target_group":null,"transportation_availability":"SAMTRANS stops
+        in front","ttys":null,"updated_at":"2013-08-07T15:54:56-07:00","urls":["http://www.smcl.org"],"zipcode":"94002-3583","id":"51d5b18ba4a4d8b01b3e3f4d","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.8335140653272075],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4477","accessibility_options":["Wheelchair
+        accessible"],"agency":null,"ask_for":"Joan Peceimer","city":"Belmont","coordinates":[-122.2926158,37.5088656],"created_at":"2013-07-03T20:54:42-07:00","description":"Assists
+        the library in providing services to the community, primarily by augmenting
+        the financial support provided by government. Conducts a used book sale on
+        the second Saturday and Sunday, fourth Friday and Saturday of every month.
+        Also appears at the Art and Wine Festival, Holiday Faire, the Book Nook in
+        Twin Pines Park, and at summer concerts at Twin Pines Park. Also provides
+        speaker programs, and funds children''s programs throughout the year. Has
+        a Friends Book Store inside the library open during library hours.","eligibility_requirements":"None","emails":["jpeceimer@yahoo.com"],"faxes":["650
+        591-2763 (Library)"],"fees":"$15-friend, $25-good friend. Checks accepted","funding_sources":["Donations","Fundraising","Membership
+        dues"],"how_to_apply":"Walk in for brochure and application","keywords":["Auxiliaries","Public
+        Libraries"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Friends
+        of the Belmont Library","payments_accepted":null,"phones":[[{"number":"650
+        593-9514"}],[{"number":"650 591-8286","department":"Library"}]],"products_sold":null,"service_area":["Belmont","San
+        Carlos","San Mateo"],"service_areas":null,"service_hours":null,"service_wait":"None","services_provided":"Assists
+        the library by augmenting its resources through book sales.","state":"CA","street_address":"1110
+        Alameda de las Pulgas","target_group":"Residents of Belmont and neighboring
+        areas","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.friendsofthebelmontlibrary.org"],"zipcode":"94002","id":"51d5b18ca4a4d8b01b3e4477","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[0.8875989849064304],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e44f7","accessibility_options":["Ramp","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Assessor-County
+        Clerk-Recorder","ask_for":"Narda Barrientos","city":"San Mateo","coordinates":[-122.3331597,37.5127795],"created_at":"2013-07-03T20:54:29-07:00","description":"Responsible
+        for voter registration and all public elections within the county and maintenance
+        of all related official records. Typical responsibilities include the candidate
+        nomination process, initiative and referendum petitions, arguments and rebuttals
+        for ballot measures, candidates'' campaign statements and financial disclosure
+        statements, voter registration and vote by mail ballots, management of polling
+        places, and computation and certification of voting results.","eligibility_requirements":"Voter
+        Registration requirements","emails":["registrar@smcare.org"],"faxes":["650
+        312-5348"],"fees":"Candidate fees and ballot measure fees vary. Cash and checks
+        accepted","funding_sources":["County"],"how_to_apply":"Walk in or apply by
+        mail","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistance","County Elections Director Offices","Voter Registration Offices"],"languages_spoken":["Chinese","Spanish"],"leaders":null,"market_match":null,"name":"Elections
+        Division","payments_accepted":null,"phones":[[{"number":"650 312-5222","phone_hours":"(Monday-Friday,
+        8-5)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Monday-Friday,
+        8-5","service_wait":"No wait","services_provided":"Conducts registration of
+        voters and conducts elections.","state":"CA","street_address":"40 Tower Road","target_group":null,"transportation_availability":"SAMTRANS
+        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:55:40-07:00","urls":["http://www.shapethefuture.org"],"zipcode":"94402","id":"51d5b18ca4a4d8b01b3e44f7","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.3622602877216008],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3ef8","accessibility_options":["Ramp","Special
+        parking","Wheelchair accessible"],"agency":null,"ask_for":"Robert J. Foucrault","city":"San
+        Mateo","coordinates":[-122.3332335,37.5129904],"created_at":"2013-07-03T20:54:29-07:00","description":"The
+        coroner is required by law to investigate accidental, traumatic and certain
+        other types of deaths. In these cases, the office takes charge of the body,
+        determines the cause of death and establishes the identity of the dead person
+        if necessary. Accepts and considers requests for cremation for indigent county
+        residents.","eligibility_requirements":"None","emails":["rfoucrault@co.sanmateo.ca.us"],"faxes":["650
+        571-6258"],"fees":"Vary according to service: coroner fee per case, toxicology
+        report, investigation report, autopsy report, per day storage. Cash, checks
+        and money orders accepted","funding_sources":["County","Fees"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistance","Pathologists"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
+        Mateo County Coroner","payments_accepted":null,"phones":[[{"number":"650 312-5562","phone_hours":"(24
+        hours daily)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Investigations:
+        24 hours daily; Administration: Monday-Friday, 8-5","service_wait":"No wait","services_provided":"Investigates
+        certain types of deaths, handles requests for county burials for people without
+        funds.","state":"CA","street_address":"50 Tower Road","target_group":"Deceased
+        and their families","transportation_availability":"SAMTRANS stops within 2
+        blocks","ttys":null,"updated_at":"2013-08-07T15:54:54-07:00","urls":["http://www.co.sanmateo.ca.us"],"zipcode":"94402","id":"51d5b18ba4a4d8b01b3e3ef8","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.3670992866560319],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3f4f","accessibility_options":["Elevator","Interpreter
+        for the deaf available","Ramp","Restroom","Special parking","Wheelchair accessible"],"agency":"San
+        Mateo County Health System","ask_for":"Receptionist","city":"San Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:30-07:00","description":"San
+        Mateo Medical Center has a full roster of primary care and specialty clinics.
+        The Dermatology clinic treats hair and skin problems and performs office procedures
+        such as wart removal. The Ear, Nose, and Throat clinic gives hearing tests
+        and prescribes hearing aids. The Eye clinic gives complete eye examinations,
+        prescribes eyeglasses and treats diseases of the eye. The Urology clinic treats
+        genito-urinary problems and performs vasectomies. There are special Surgical
+        Clinics for General Surgery, Neurosurgery, Plastic Surgery and Podiatry. The
+        Orthopedic clinic handles broken and fractured bones, back problems and foot
+        ailments. The Internal Medicine clinic serves adults with chronic medical
+        problems such as diabetes, cardiovascular diseases and neurological disorders.
+        The Infectious Diseases clinic treats infectious diseases. The Edison Clinic
+        treats patients with HIV/AIDS. The Family Health Center consists of three
+        major areas of care: primary care, OB/GYN, and pediatrics. The Primary Care
+        clinic can perform general, pre-employment, school, amnesty and Department
+        of Motor Vehicles physicals. The Obstetrics and Gynecology clinic offers a
+        variety of services including family planning, abortion, pap tests, pregnancy
+        testing and pre-natal and post-natal care. The Pediatric clinic serves children
+        from birth to age 18 with general medical care and treatment, physical examinations,
+        vaccinations, etc. Also available are Pediatric Cardiology Consultations,
+        medical diagnostic consultations for child abuse cases and pediatric nurse
+        practitioner services for well child care. The Dental clinic handles emergency
+        extractions, fillings and gum treatment. The Ron Robinson Senior Care Center
+        provides comprehensive care and case management to the frail elderly.","eligibility_requirements":"None","emails":null,"faxes":null,"fees":"Vary
+        according to service. Cash, Medi-Cal, Medicare, private insurance, WELL Program
+        accepted","funding_sources":["County","Fees","State"],"how_to_apply":"Apply
+        by phone for appointment. Eligibility determined on first visit for reduced
+        fee payment","keywords":["HEALTH SERVICES","Outpatient Care","Community Clinics"],"languages_spoken":["Filipino
+        (Tagalog)","Russian","Spanish"],"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Main Campus Clinics.","payments_accepted":null,"phones":[[{"number":"650
+        573-2222","phone_hours":"(Monday-Friday, 8:30-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-6","service_wait":"Varies
+        according to clinic and urgency of need","services_provided":"Provides a range
+        of care and treatment via specialty outpatient clinics.","state":"CA","street_address":"222
+        - 39th Avenue","target_group":"San Mateo County residents","transportation_availability":"SAMTRANS
+        stops within 1 block. Shuttle service available for patients unable to ride
+        public transportation","ttys":["650 573-3753"],"updated_at":"2013-08-07T15:54:57-07:00","urls":["http://www.sanmateomedicalcenter.org"],"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e3f4f","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3ff0","accessibility_options":["Elevator","Interpreter
+        for the deaf available","Restroom","Special parking","Wheelchair accessible"],"agency":"San
+        Mateo County Health System","ask_for":"Administrator","city":"San Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:31-07:00","description":"Provides
+        general short-term acute care, including psychiatric care, to persons of all
+        ages. The Emergency Department is open 24 hours every day. Provides basic
+        and emergency medical care for indigent adults ineligible for Medi-Cal. The
+        hospital also operates a variety of specialty clinics and services.  Uninsured
+        county residents whose income is within 200% of the Federal Poverty Guidelines
+        are eligible to enroll in the WELL Program. Participants in the program pay
+        an annual fee and are responsible for co-payments charged at the time of service
+        ($5 for outpatient services, $25 for emergency services, $5 for prescriptions
+        and $550 for inpatient hospital stays). Patients are billed monthly for any
+        unpaid annual fees and co-payments.","eligibility_requirements":"None","emails":null,"faxes":null,"fees":"Vary
+        according to service. WELL Program annual enrollment fees: $200 individual,
+        $300 family of 3, $50 each additional family member. Credit cards, Medi-Cal,
+        Medicare, WELL Program, private insurance, military insurance accepted","funding_sources":["County","Fees"],"how_to_apply":"Apply
+        by phone for an appointment","keywords":["HEALTH SERVICES","Inpatient Care","Outpatient
+        Care","MENTAL HEALTH SERVICES","Acute or Sub-acute Treatment","Hospitals","Administrative
+        Entities"],"languages_spoken":["Interpreter"],"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Administration","payments_accepted":null,"phones":[[{"number":"650
+        573-3939","department":"Administration","phone_hours":"(Monday-Friday, 8-5)"}],[{"number":"650
+        573-2222","department":"Switchboard","phone_hours":"(24 hours daily)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":"No
+        wait","services_provided":"Provides general short-term acute care, including
+        psychiatric care, to persons of all ages.","state":"CA","street_address":"222
+        - 39th Avenue","target_group":null,"transportation_availability":"SAMTRANS
+        stops at the door. Shuttle service available for patients unable to ride public
+        transportation","ttys":["650 573-3882"],"updated_at":"2013-08-07T15:55:17-07:00","urls":null,"zipcode":"94403-4364","id":"51d5b18ba4a4d8b01b3e3ff0","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e401a","accessibility_options":["Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Team
+        member on duty","city":"San Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:32-07:00","description":"Offers
+        24-hour emergency psychiatric services to people in emotional crisis. Contact
+        may be by phone or visit to the emergency room at San Mateo Medical Center.
+        The staff offers crisis intervention in immediate problems so that long-term
+        solutions may be pursued. Provides information about and referral to a wide
+        range of services including adolescent treatment programs, drug programs,
+        abused women''s and children''s programs and alcohol programs. The staff does
+        an evaluation on every person who may need psychiatric hospitalization at
+        San Mateo Medical Center. This emergency psychiatric service supplements crisis
+        teams available weekdays in the four mental health division regions.","eligibility_requirements":"None","emails":null,"faxes":["650
+        573-2489"],"fees":"Vary according to income. Cash, Medi-Cal, Medicare, private
+        insurance and military insurance accepted","funding_sources":["County","Fees","State"],"how_to_apply":"Walk
+        in or apply by phone","keywords":["MENTAL HEALTH SERVICES","Crisis Intervention/Hotlines","Observation/Diagnosis","Hospitals","Crisis
+        Intervention"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Psychiatric Emergency Services","payments_accepted":null,"phones":[[{"number":"650
+        573-2662","phone_hours":"(24 hours daily)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"24 hours daily","service_wait":"Varies
+        according to number of patients","services_provided":"Offers 24-hour emergency
+        psychiatric services to people in emotional crisis.","state":"CA","street_address":"222
+        - 39th Avenue","target_group":"Patients in psychological crisis","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:18-07:00","urls":["http://www.sanmateomedicalcenter.org"],"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e401a","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e40b8","accessibility_options":["Elevator","Interpreter
+        for the deaf available","Ramp","Restroom","Special parking","Wheelchair accessible"],"agency":"San
+        Mateo County Health System","ask_for":"Triage nurse in emergency room","city":"San
+        Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:34-07:00","description":"The
+        Emergency Department of San Mateo Medical Center is a Level II Emergency Medical
+        Service Department. Has a 14-bed Emergency Department with 24 hour daily care.
+        Emergency Medicine physicians staff the department 24 hours daily. The Keller
+        Center for Family Violence Intervention (described separately; formerly known
+        as the Sexual Assault Trauma Center) located in the hospital near the Emergency
+        Department offers a 24 hour daily service for adult and child victims of sexual
+        assault and domestic violence.","eligibility_requirements":"None","emails":null,"faxes":["650
+        573-2696"],"fees":"Vary according to income and service. Medi-Cal, Medicare,
+        private insurance accepted","funding_sources":["County","State"],"how_to_apply":"Walk
+        in or apply by phone","keywords":["Emergency Room Care","Sexual Assault Treatment","Women"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Emergency Services","payments_accepted":null,"phones":[[{"number":"650
+        573-2671","department":"Medical emergency","phone_hours":"(24 hours daily)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"24 hours daily","service_wait":"Varies
+        according to number of patients","services_provided":"Provides examination,
+        medical treatment and psychiatric crisis counseling for victims of sexual
+        assault.","state":"CA","street_address":"222 - 39th Avenue","target_group":"Persons
+        requiring emergency care","transportation_availability":"SAMTRANS stops within
+        1 block","ttys":null,"updated_at":"2013-08-07T15:55:24-07:00","urls":["http://www.sanmateomedicalcenter.org"],"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e40b8","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e42b2","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Receptionist","city":"San
+        Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:32-07:00","description":"Provides
+        physical, occupational, audiology and speech therapy to adults with a chronic
+        and/or acute condition with resulting physical and/or cognitive disabilities.
+        Physical therapy includes treatment of mobility deficits resulting from hip
+        and knee replacements or injuries, strokes, cardio-pulmonary disease, fractures,
+        and neck, shoulder and back pain. Specialized treatment is offered in the
+        treatment of back pain and wound/burn care. Occupational therapy includes
+        treatment of functional loss disabilities due to stroke, nerve damage, surgery,
+        fracture, burns/wounds, etc. Specialized expertise offered in hand therapy.
+        Emphasis on returning/ maximizing independence. Speech and language services
+        include motor speech and swallowing disorders, language and cognitive-linguistic
+        disorders, aphasia, dysarthria, stuttering, laryngectomy and voice disorders.
+        Following evaluation, therapy is provided. Audiology hearing assessments are
+        offered Tuesdays and Thursdays.","eligibility_requirements":"Referral from
+        M.D.","emails":["dchiu@co.sanmateo.ca.us"],"faxes":["650 573-3491"],"fees":"Vary.
+        Cash, Medicare, Medi-Cal, WELL Program, private insurance accepted","funding_sources":["County","Federal","Fees","State"],"how_to_apply":"Call
+        for appointment following physician referral","keywords":["DEVELOPMENTAL DISABILITIES
+        SERVICES","Physical Therapy","Rehabilitation/Occupational","Speech Therapy","HANDICAP
+        SERVICES","Rehabilitation/Occupational Therapy","Disabilities Issues"],"languages_spoken":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Samoan","Spanish","Tongan"],"leaders":null,"market_match":null,"name":"Hospital
+        and Clinics Division., San Mateo County Health Center., Rehabilitation Services","payments_accepted":null,"phones":[[{"number":"650
+        573-2472","phone_hours":"(Monday-Friday, 8-4:30)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-4:30","service_wait":"Up
+        to 6 weeks","services_provided":"Provides therapy for speech and language
+        disorders, dysphagia or cognitive deficits.","state":"CA","street_address":"222
+        - 39th Avenue","target_group":"Adults with acute or chronic conditions with
+        resulting physical and/or cognitive disabilities, decreased functions; probability
+        of improvement","transportation_availability":"SAMTRANS stops within 1 block.
+        Shuttle service available for patients unable to ride public transportation","ttys":null,"updated_at":"2013-08-07T15:55:34-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e42b2","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e44c8","accessibility_options":["Wheelchair
+        accessible"],"agency":"San Mateo County Health System","ask_for":null,"city":"San
+        Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
+        an outpatient health center located on the first floor of the San Mateo Medical
+        Center and designed for older adults in San Mateo County. The Center includes
+        both primary care and geriatric assessment.  The primary care clinic is for
+        adults age 60 or over who either do not have a primary care provider or whose
+        chronic or complex health issues would benefit from the time and resources
+        clinic staff can offer. Physicians and nurse practitioners provide primary
+        care. The multidisciplinary team, which includes nurses, a psychiatrist, psychologist,
+        licensed clinical social worker and rehabilitation therapist, provide counseling
+        and ongoing care management. The geriatric assessment program is a consultative
+        service provided by a team of healthcare professionals. Patients are evaluated
+        for physical health, mental health, social needs, and functional status. Older
+        adults experiencing memory loss, confusion, recent falls, and frequent hospitalizations
+        may benefit from this service. Staff will coordinate referrals to Aging and
+        Adult Services and/or home and community based services.","eligibility_requirements":"Persons
+        age 60 or over","emails":null,"faxes":null,"fees":"Medicare, Medi-Cal, and
+        WELL Program accepted","funding_sources":null,"how_to_apply":"Call for appointment","keywords":["HEALTH
+        SERVICES","Outpatient Care","Community Clinics","Older Adults"],"languages_spoken":["Chinese
+        (Cantonese)","Filipino (Tagalog)","French","Russian","Spanish"],"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Ron Robinson Senior Care Center","payments_accepted":null,"phones":[[{"number":"650
+        573-2426","phone_hours":"(Monday-Friday, 8:30-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5","service_wait":null,"services_provided":"Offers
+        an outpatient health center located on the first floor of the San Mateo Medical
+        Center and designed for older adults in San Mateo County.","state":"CA","street_address":"222
+        West 39th Avenue","target_group":null,"transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:39-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e44c8","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4571","accessibility_options":["Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":null,"city":"San
+        Mateo","coordinates":[-122.300209,37.530902],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
+        forensic medical evaluations, coordination of social services for victims
+        of domestic violence, sexual assault, child abuse and elder/dependent adult
+        abuse in a private setting 24 hours daily. The Center''s after-hours response
+        team is accessed via the San Mateo Medical Center''s Emergency Department
+        and works in collaboration with Children and Family Services, Aging and Adult
+        Services, mental health, social services, law enforcement, the courts, and
+        community-based organizations to help end the cycle of violence.","eligibility_requirements":"None","emails":null,"faxes":null,"fees":null,"funding_sources":["County","Grants"],"how_to_apply":"Call,
+        walk in or by referral","keywords":["ADULT PROTECTION AND CARE SERVICES","Crisis/Abuse
+        Intervention/Hot","CHILD PROTECTION AND CARE SERVICES","EMERGENCY SERVICES","Medical
+        Assistance","HEALTH SERVICES","Outpatient Care","MENTAL HEALTH SERVICES","Crisis
+        Intervention/Hotlines","Emergency Room Care","Sexual Assault Treatment","Youth","Child
+        Abuse Issues","Domestic Violence Issues","Elder Abuse Issues"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
+        Mateo Medical Center., Keller Center for Family Violence Intervention","payments_accepted":null,"phones":[[{"number":"650
+        573-2623","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5","service_wait":"No
+        wait","services_provided":"Provides comprehensive medical and social services
+        for victims of family violence.","state":"CA","street_address":"222 - West
+        39th Avenue","target_group":"Victims of family violence, child abuse, sexual
+        assault and elderly/dependent adult abuse","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:43-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e4571","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.394559728735958],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e415b","accessibility_options":["Restroom","Wheelchair
+        accessible"],"agency":"San Mateo County Office of Education","ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3337509,37.5144213],"created_at":"2013-07-03T20:54:35-07:00","description":"Provides
+        vocational education, training and work experience to severely disabled students.
+        May include assessment, evaluation, training, tryout employment, work experience,
+        job counseling, job clubs, career planning, follow-up, mobility training and
+        transition services. The Workability Network also includes the Regional Occupational
+        Program, the adult service agencies (Community Gatepath, Goodwill Career Services,
+        Kainos, Center for the Independence of the Disabled, the Department of Rehabilitation,
+        Golden Gate Regional Center) and community employers.","eligibility_requirements":"Resident
+        of San Mateo County, eligible for special education within the public school
+        system, age 14-22","emails":null,"faxes":["650 873-7961"],"fees":"None","funding_sources":["State"],"how_to_apply":"Must
+        be referred by school district","keywords":["Work","Youth Employment","HANDICAP
+        SERVICES","Education","Vocational Rehabilitation","Youth Job Development","Youth","Adolescents","Disabilities
+        Issues","employment"],"languages_spoken":["Filipino (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"Student
+        Services Division., Special Education Services., Project Workability","payments_accepted":null,"phones":[[{"number":"650
+        573-4010","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Provides
+        vocational education, training and work experience to severely disabled students.","state":"CA","street_address":"65
+        Tower Road","target_group":"Public school students age 14-22 in special education
+        programs","transportation_availability":"SAMTRANS stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:55:28-07:00","urls":["http://www.smcoe.k12.ca.us"],"zipcode":"94402","id":"51d5b18ca4a4d8b01b3e415b","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4047146945233877],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4403","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":null,"ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:41-07:00","description":"Assists
+        In-Home Supportive Services (IHSS) consumers by referring potential homecare
+        workers that match the consumer''s needs. A registry of qualified individuals
+        with completed background checks is maintained, and training is offered to
+        providers and consumers. Support assistance is also available to the consumer
+        in hiring and supervising workers. Provides personnel services for IHSS providers
+        which includes the processing of payroll and employment verification. The
+        Public Authority is a separate agency from the County and is governed by the
+        Board of Supervisors with input from an advisory committee.","eligibility_requirements":"None","emails":null,"faxes":["650
+        573-2310"],"fees":"None","funding_sources":["County","Federal","State"],"how_to_apply":"Home
+        care provider applicants should call for appointment to complete application
+        and interview","keywords":["ADULT PROTECTION AND CARE SERVICES","In-Home Supportive","Older
+        Adults"],"languages_spoken":["Arabic","Chinese (Cantonese)","Chinese (Mandarin)","Filipino
+        (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"San Mateo
+        County Public Authority for In-Home Supportive Services","payments_accepted":null,"phones":[[{"number":"650
+        573-3900","department":"General number"}],[{"number":"650 573-2051","department":"Registry"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":"None","services_provided":"Recruits
+        and refers personnel to serve as in-home workers for persons served under
+        the In-Home Supportive Services (IHSS) program.","state":"CA","street_address":"225
+        - 37th Avenue","target_group":null,"transportation_availability":"SAMTRANS,
+        CALTRAIN stop within 4 blocks","ttys":["650 573-2413"],"updated_at":"2013-08-07T15:54:52-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e4403","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3f06","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"See
+        description for contact person for each program","city":"San Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:29-07:00","description":"Works
+        with coalitions in the community to develop prevention programs. Available
+        to consult or assist in facilitating health-related programs.                   Smoke-Free
+        Start for Families helps pregnant women and household smokers living with
+        children age birth - five-years-old in San Mateo County stop smoking. Provides
+        assistance through phone or group counseling and increases awareness of secondhand
+        smoke on pregnant women and children. Contact Cristina Ugaitafa at 650-573-3989.
+        The Active Aging Program increases public awareness about the benefits of
+        physical activity for seniors and implements physical activity programs, which
+        include strength-training exercises aimed at maintaining functional fitness
+        and reducing the risk of chronic disease and falling in seniors. Contact Doris
+        Rohleder at 650-573-2003. Senior Medication Management Project increases awareness
+        regarding safe and proper medication use. Contact Jaslin Yu at 650-573-2977.
+        Family Violence Implementation Project (FVIP) works in collaboration with
+        existing programs in the community to train and educate Health Services Agency
+        staff about family violence issues and collaborates on community programs
+        that address both primary prevention and the needs of victims of family violence
+        and their families. Contact Jaslin Yu at 650-573-2977. Childhood Lead Poisoning
+        Prevention Program (CLPPP) provides outreach and education to families and
+        those that work with children under the age 5 or under about the dangers of
+        lead poisoning. Includes presentations about lead hazards and how to prevent
+        them, dissemination of educational materials, and participation in community
+        events. Contact Martha Milk at 650-573-3474. STD Community Intervention Program
+        (SCIP) promotes, facilitates, develops, and enhances local capacity of STD/HIV
+        and family planning providers in the community by providing STD awareness
+        and primary prevention education through collaboration and partnership with
+        organizations serving the population at risk (age 15-24) . Contact Nabil Ahmed
+        at 650-573-2033. This program was formerly known as the Chlamydia Awareness
+        and Prevention Program (CAPP). Youth Development promotes the Search Institute''s
+        40 Developmental Assets framework, works with schools and communities to create
+        stronger ties between youth and the community, and encourages the inclusion
+        of youth in leadership positions in community organizations. Contact Edith
+        Cabuslay at 650-573-2227. Community Oriented Health Systems (COHS) is an effort
+        by the Health Services Agency to actively engage community members in community
+        health issues. Works to determine health priorities, factors that contribute
+        to health issues, and options for community interventions. Contact Edith Cabuslay
+        at 650-573-2227. Bioterrorism Preparedness (BT), in conjunction with other
+        county departments, is creating a community preparedness plan for bioterrorism.
+        Contact Doris Rohleder at 650-573-2208. Chronic Disease Prevention Program
+        has a comprehensive campaign to lessen the impact of chronic disease. The
+        effort includes prevention education, promotion of screening options, and
+        disease management. Also looks at how environmental factors (such as pollution,
+        open space, etc.) contribute to chronic disease. Contact Kerry Barba at 650-573-2304.
+        Faith and Health Initiative works with interfaith and community groups to
+        create a dialogue between faith and health colleagues. Includes participating
+        in training programs, informing groups about ways to develop health programs,
+        and assisting faith-based groups in coordinating health events for the entire
+        community. Contact Martha Milk at 650-573-3474. Male Involvement Program (MIP)
+        is a teen pregnancy program targeting at-risk young men. Offers clinic access
+        and a young Dads support group. Contact Nabil Ahmed at 650-573-2033.","eligibility_requirements":"None","emails":null,"faxes":null,"fees":"None","funding_sources":["County","Federal","Grants","State"],"how_to_apply":"Apply
+        by phone, mail, or fax","keywords":["Lead Information","Physical Activity
+        and Fitness Education/Promotion","Safer Sex Education","Teen Pregnancy Prevention","Smoking
+        Cessation","Support Groups","Terrorism Preparedness Information","Older Adults","Infants/Toddlers","Youth","Family
+        Violence Issues"],"languages_spoken":["Filipino (Tagalog)","Portuguese","Spanish"],"leaders":null,"market_match":null,"name":"Community
+        Health., Health Education and Chronic Disease Prevention","payments_accepted":null,"phones":[[{"number":"650
+        573-2227","phone_hours":"(Monday-Friday, 9-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5, and
+        by appointment","service_wait":"Varies","services_provided":"Provides information
+        about health promotion and disease prevention.","state":"CA","street_address":"225
+        - 37th Avenue","target_group":"San Mateo County residents","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:55-07:00","urls":null,"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e3f06","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3f07","accessibility_options":["Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:29-07:00","description":"Issues
+        certified or informational only copies of records of birth or death which
+        took place in San Mateo County from 1966 to current year. (Copies of birth
+        and death records prior to 1966 must be obtained from the County Clerk - Recorder''s
+        office.) Issues permits for disposition of human remains, to disinter a body
+        to change the burial location or to dispose of cremated remains by the scattering
+        of ashes. To transport human remains across state lines, an authorized individual
+        will need to request a letter of non-contagious disease. Contact this office
+        for information and advice on how to obtain copies of records of births and
+        deaths which occurred in other counties, states or countries, how to correct
+        or change a birth or death record and how to file a delayed certificate of
+        birth for someone whose birth was not registered. Administers state-issued
+        medical marijuana cards and program.","eligibility_requirements":"None","emails":null,"faxes":["650
+        573-2576"],"fees":"Fees: $25 for each certified or informational only copy
+        of birth certificate, $18 for each certified or informational only copy of
+        death certificate. $11 for each burial permit. Cash and checks accepted","funding_sources":["County"],"how_to_apply":"Walk
+        in or apply by mail with fee enclosed","keywords":["LEGAL AND CRIMINAL JUSTICE
+        SERVICES","Certificates/Forms Assistance","Birth Certificates","Death Related
+        Records/Permits"],"languages_spoken":["Filipino (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"Community
+        Health., Vital Statistics Section","payments_accepted":null,"phones":[[{"number":"650
+        573-2395","phone_hours":"(Monday-Wednesday, Friday, 8-5; Thursday, 8-4)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday, Tuesday, Wednesday,
+        Friday, 8-5; Thursday, 8-4","service_wait":"No wait for walk in; 5 day wait
+        by mail","services_provided":"Maintains recent birth and death records for
+        the county and issues copies of birth and death records.","state":"CA","street_address":"225
+        West 37th Avenue, Room 11","target_group":null,"transportation_availability":"SAMTRANS
+        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:55-07:00","urls":["http://www.smchealth.org"],"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e3f07","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3f90","accessibility_options":["Ramp","Restroom","Special
+        parking","TTY","Wheelchair accessible"],"agency":"San Mateo County Health
+        System","ask_for":"For emergencies dial 911. For questions call 650-573-2564","city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:31-07:00","description":"The
+        three-digit number, 911, rings an emergency dispatcher for police, fire and
+        ambulance services throughout the county. Callers will be requested to give
+        an address and nearest cross street and call-back phone number. A brief description
+        of the problem will be requested and first-aid instructions will be given
+        if that is the nature of the problem. No coins are necessary to call this
+        number from a pay phone. Call the business number to discuss any problems
+        regarding any services of the Emergency Medical Services (EMS) office . Also
+        monitors the care provided by private, non-emergency ambulance providers.
+        May also provide speakers about Emergency Medical Services.","eligibility_requirements":"None","emails":["sbarnett@smcgov.org"],"faxes":["650
+        573-2029"],"fees":"Vary according to service as established by ambulance companies
+        and the level of service requested. Cash, Medi-Cal, Medicare, military insurance
+        and private insurance accepted","funding_sources":["County"],"how_to_apply":"Apply
+        by phone","keywords":["911 Services","Speakers/Speakers Bureaus"],"languages_spoken":["Interpreter"],"leaders":null,"market_match":null,"name":"Emergency
+        Medical Services","payments_accepted":null,"phones":[[{"number":"650 573-2564","department":"Office","phone_hours":"(Monday-Friday,
+        8-5)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":null,"service_wait":"No
+        wait","services_provided":"Administers the 911 emergency number and establishes
+        policies and procedures for all emergency service providers in the county.","state":"CA","street_address":"225
+        - 37th Avenue","target_group":"Ill or injured persons needing emergency care
+        and/or ambulance transportation","transportation_availability":null,"ttys":["650
+        365-4357","650 365-HELP"],"updated_at":"2013-08-07T15:54:59-07:00","urls":["http://www.smchealth.org/ems"],"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e3f90","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ba4a4d8b01b3e3feb","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":null,"ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:32-07:00","description":"The
+        16 members are appointed by the Board of Supervisors. The board reviews and
+        evaluates the community''s mental health needs, services and facilities, approves
+        county mental health planning processes, reviews the county mental health
+        plan and acts in an advisory capacity to the Director of Mental Health and
+        the Board of Supervisors.  The board meets the first Wednesday of every month,
+        3-5 pm, 225 - 37th Avenue, San Mateo. These meetings are open to the public.
+        Subcommittees meet at least once a month.  There is a total of 19 members
+        which includes two Youth Commissioners.","eligibility_requirements":"None","emails":["lrogers@co.sanmateo.ca.us"],"faxes":["650
+        573-2841"],"fees":"None","funding_sources":["County"],"how_to_apply":null,"keywords":["ADMINISTRATION
+        AND PLANNING SERVICES","Advisory Boards","Planning/Coordinating/Advisory Groups","Mental
+        Health Issues"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Mental
+        Health Board of San Mateo County","payments_accepted":null,"phones":[[{"number":"650
+        573-2544","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":null,"services_provided":null,"state":"CA","street_address":"225
+        - 37th Avenue, Room 320","target_group":null,"transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:55:02-07:00","urls":null,"zipcode":"94403","id":"51d5b18ba4a4d8b01b3e3feb","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4033","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":null,"ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:32-07:00","description":"The
+        19 committee members are appointed by the Board of Supervisors from various
+        related agencies and the general public.     The committee annually reviews
+        all phases of emergency medical services including 9-1-1 medical dispatch,
+        fire service first response, ambulance transportation and hospital emergency
+        departments. A disaster subcommittee works with the Area Disaster Office to
+        develop appropriate response protocols. Prepares and submits specific reports
+        requested by the San Mateo County Board of Supervisors and presents recommendations
+        to the Board of Supervisors to improve emergency care. This committee also
+        responds to complaints regarding emergency medical care in this county and
+        can initiate remedial action. Meetings are open to the public, held on the
+        fourth Wednesday of every other month, 12 noon, at San Mateo County Health
+        Services Agency, Room 101, 225 - 37th Avenue, San Mateo.","eligibility_requirements":"None","emails":["sbarnett@co.sanmateo.ca.us"],"faxes":["650
+        573-2029"],"fees":"None","funding_sources":["County"],"how_to_apply":"Contact
+        the County Emergency Medical Service office or the County Board of Supervisors","keywords":["ADMINISTRATION
+        AND PLANNING SERVICES","Commissions, Councils, or Boards","Emergency Medical
+        Care","Planning/Coordinating/Advisory Groups"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Emergency
+        Medical Care Committee","payments_accepted":null,"phones":[[{"number":"650
+        573-2579","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":null,"services_provided":null,"state":"CA","street_address":"225
+        - 37th Avenue","target_group":null,"transportation_availability":"SAMTRANS
+        stops within 4 blocks","ttys":null,"updated_at":"2013-08-07T15:55:03-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e4033","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e403e","accessibility_options":["Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Secretary","city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:32-07:00","description":"Administers
+        the AIDS Program, Community Health Services, and Disease Prevention and Control
+        (all described separately). Provides preventive health services in the areas
+        of TB, HIV/AIDS and STD testing, chronic disease prevention, communicable
+        disease control, and public health nutrition. Programs in Family Health include
+        Public Health and Injury Prevention, Prenatal to Three Initiative, vital statistics,
+        public health education, maternal and child health (Family Planning, Child
+        Health Clinics, Child Health and Disability Prevention Program), public health
+        nursing and California Children Services (diagnosis, treatment and therapy).
+        A mobile clinic delivers health care to the more remote areas of the county.
+        Also, oversees Emergency Medical Services (ambulance first response, EMT and
+        Paramedic certification and registration), Environmental Health (Environmental
+        regulation over consumer protection and hazardous materials/waste), University
+        of Californa Conservative Extension, and Agriculture Commissioner Sealer of
+        Weights and Measures.","eligibility_requirements":"Vary according to program","emails":null,"faxes":null,"fees":"Vary
+        according to income. Medi-Cal and private insurance accepted","funding_sources":["County","Federal","Fees","State"],"how_to_apply":"Apply
+        by phone to appropriate clinic or office","keywords":["Public Health"],"languages_spoken":["Chinese
+        (Mandarin)","Filipino (Tagalog)","French","Spanish"],"leaders":null,"market_match":null,"name":"Community
+        Health., Administration","payments_accepted":null,"phones":[[{"number":"650
+        573-2757","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 7:30-5:30","service_wait":"No
+        wait to 1 week","services_provided":"Administers the programs of the Public
+        Health Division.","state":"CA","street_address":"225 - 37th Avenue","target_group":"High
+        risk children and adults, including those with special health problems who
+        have difficulty accessing and paying for health services. Communities with
+        public health needs","transportation_availability":"SAMTRANS stops within
+        1 block, CALTRAIN within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:55:19-07:00","urls":["http://www.smchealth.org"],"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e403e","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4068","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Claudia
+        Salada (Executive Assistant)","city":"San Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:33-07:00","description":"Administers
+        five regional mental health clinics for adults and decentralized children''s
+        services, and a residential treatment facility including mental health services
+        to youth involved in the child welfare and juvenile justice systems. Contracts
+        for other specialized services administered by private nonprofit agencies.
+        Services administered include crisis services, inpatient and outpatient clinical
+        services for adults, adolescents and children, and community support services.
+        For Medi-Cal clients, county mental health administers the mental health managed
+        care plan. The plan authorizes all Medi-Cal mental health services in the
+        county.","eligibility_requirements":"San Mateo County resident","emails":null,"faxes":["650
+        573-2841"],"fees":"Vary according to income and service. Cash, checks, Medicare,
+        Medi-Cal and private insurance accepted","funding_sources":["County","Federal","Fees","State"],"how_to_apply":"Call
+        the Access Team at 800-686-0101 for mental health services","keywords":["ADMINISTRATION
+        AND PLANNING SERVICES","Administration and Planning","Administrative Entities","Mental
+        Health Issues"],"languages_spoken":["Chinese (Mandarin)","Filipino (Tagalog)","French","Italian","Spanish"],"leaders":null,"market_match":null,"name":"Behavioral
+        Health and Recovery Services., Mental Health Services Division., Administration","payments_accepted":null,"phones":[[{"number":"650
+        573-2451","phone_hours":"(Monday-Friday, 8-5)"}],[{"number":"650 573-2403","department":"Executive
+        Assistant"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Monday-Friday,
+        8-5","service_wait":"Same day for phone contact; appointment for assessment
+        if appropriate within 5-7 days","services_provided":"Administers the mental
+        health services provided by the county to San Mateo County residents.","state":"CA","street_address":"225
+        - 37th Avenue","target_group":"Adults, older adults and children with mental
+        health needs","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:20-07:00","urls":null,"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e4068","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4069","accessibility_options":["Elevator","Ramp","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Lynn
+        Hanlon","city":"San Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:33-07:00","description":"This
+        is the administrative office for the Health System. The Chief is responsible
+        for administering Aging and Adult Services, Agriculture and Weights and Measures,
+        Animal Control and Licensing, Community Health, Correctional Services, Emergency
+        Medical Services, Environmental Health, Familly Health Services, Health Policy,
+        Planning and Promotion, Mental Health Services, and University of California
+        Cooperative Extension. Animal Control is operated under contract by the Peninsula
+        Humane Society & SPCA (PHS), a private, nonprofit organization, to enforce
+        all animal control and anti-cruelty laws and to provide sheltering for homeless
+        animals and other services. The Peninsula Humane Society & SPCA (PHS) may
+        be reached at (650) 340-8200 and is located at 12 Airport Boulevard, San Mateo,
+        CA 94401. Animal Licensing is operated under contract PetData, Inc., a Texas-based
+        company, to administer licensing for animals that reside within the County.
+        All dogs that reside within the County must have annual rabies vaccinations
+        and be licensed. While vaccinations and licensing is suggested for all cats
+        residing in the County, it is required in the City of Belmont, City of San
+        Mateo, and all unincorporated areas of the County.  Proper licensing is essential
+        to ensure compliance with rabies vaccination, reduce the potential for a rabies
+        outbreak in San Mateo County, increase the likelihood of finding an aggressive
+        animal or an animal that has bitten, and reduce the number of people who must
+        receive post-exposure rabies vaccine after a bite. To find out if your pet
+        is licensed or to update your pet''s information, please contact PetData,
+        Inc. P.O. Box 141929, Irving, TX 75014. Call toll-free 1 (866) 925-5906 or
+        visit the Web site www.petdata.com Formerly known as San Mateo County Health
+        Services Agency, Administration.","eligibility_requirements":"None","emails":null,"faxes":["650
+        573-2116"],"fees":"Vary according to service. Some services are free","funding_sources":["County","Donations","Federal","Fees","State"],"how_to_apply":"Apply
+        by phone","keywords":["ADMINISTRATION AND PLANNING SERVICES","Administration
+        and Planning","Administrative Entities","Health Issues"],"languages_spoken":["Filipino
+        (Tagalog)","Spanish","Interpreter"],"leaders":null,"market_match":null,"name":"Administration","payments_accepted":null,"phones":[[{"number":"650
+        372-8572","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5; Monday-Thursday,
+        7-6 (Environmental Health)","service_wait":"Varies according to service","services_provided":"Administers
+        the divisions and programs of the Health System.","state":"CA","street_address":"225
+        - 37th Avenue","target_group":"San Mateo County residents","transportation_availability":"SAMTRANS
+        stops within 1 block","ttys":["711 (California Relay Service)"],"updated_at":"2013-08-07T15:55:20-07:00","urls":["http://www.smchealth.org"],"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e4069","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e408a","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":null,"city":"San
+        Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:33-07:00","description":"Provides
+        a continuum of services for older adults and adults with disabilities. Centralized
+        Intake serves as the single point of entry to adult services within Aging
+        and Adult Services and provides referrals to community-based social support
+        programs.   Adult Protective Services is a function of Centralized Intake.
+        The TIES Line, a 24-hour toll-free telephone line, receives reports of suspected
+        dependent adult and older adult abuse and neglect. The Centralized Intake
+        Unit, which consists of a multi-disciplinary staff of social workers, public
+        health nurses and deputy public guardians, conducts comprehensive assessments
+        of the client and the allegations, provides information and referral, access
+        and advocacy to county-operated and/or community-based programs as part of
+        the service plan that is developed. Centralized Intake has a 24-Hour Response
+        Program. A social worker receives telephone calls from the community, assesses
+        the client-related matter over the telephone, makes a home visit if appropriate,
+        and may provide short-term emergency protection such as shelter, food, or
+        protective supervision until a long-term plan is developed by an assigned
+        case manager. The Centralized Intake''s Representative Payee Program serves
+        individuals who are not conserved, but who need assistance in managing their
+        public benefits. In-Home Supportive Services provides assistance with personal
+        and domestic services for financially-eligible older adults, individuals who
+        are blind and disabled, and children who, without these services, would be
+        unable to remain safely in their homes. Public Guardianship/Conservatorship,
+        appointed by and under the authority and direction of the Superior Court,
+        assists frail elderly individuals and persons with substantial physical and/or
+        mental disabilities who are unable to provide for their own personal needs,
+        manage their financial resources, or resist fraud and undue influence. Multipurpose
+        Senior Services Program (MSSP) is a comprehensive case management program
+        that serves persons age 65 or over who need nursing home level care and are
+        currently eligible for Medi-Cal with no share of cost. The goal of the program
+        is to arrange for and monitor the use of community services to prevent premature
+        placement. The AIDS Case Management Program provides comprehensive home and
+        community-based services to persons with AIDS or symptomatic HIV. The program
+        uses an interdisciplinary core case management team consisting of a nurse
+        case manager and a social work case manager working with the client to determine
+        needed services. The Area Agency on Aging (650-573-2700) administers funding
+        for a variety of programs, advocates on behalf of older persons and provides
+        long-range planning, coordination, and program development for programs and
+        services for older adults. The New Beginning Coalition (650-573-3527) is a
+        broad-based group of providers and consumers that works in partnership with
+        Aging and Adult Services and other organizations to improve the quality of
+        life of older persons and adults with disabilities. Other programs include
+        the Commission on Aging and the Commission on Disabilities (described separately).","eligibility_requirements":"Resident
+        of San Mateo County","emails":["lmancini@smcgov.org"],"faxes":["650 573-2310"],"fees":"Vary
+        according to income for fee-based services. No charge for information. Medi-Cal
+        accepted","funding_sources":["County","Donations","Federal","Fees","Grants","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["ADULT PROTECTION AND CARE SERVICES","Case
+        Management","Community Information","Crisis/Abuse Intervention/Hot","Guardianship/Conservatorship","Individual/Group
+        Counseling","In-Home Supportive","Investigation/Intervention","Senior Out-Of-Home
+        Care Place","DEVELOPMENTAL DISABILITIES SERVICES","Out-Of-Home Care Placement","HANDICAP
+        SERVICES","MENTAL HEALTH SERVICES","Out-of-Home Care Placement","Older Adults","Disabilities
+        Issues"],"languages_spoken":["Aramaic","Arabic","Chinese (Cantonese)","Chinese
+        (Mandarin)","Chinese (Taiwanese)","Filipino (Tagalog)","Polish","Russian","Spanish","Vietnamese"],"leaders":null,"market_match":null,"name":"Aging
+        and Adult Services","payments_accepted":null,"phones":[[{"number":"800 675-8437","phone_hours":"(24
+        hours daily for emergencies and reports of abuse)"}],[{"department":"800 675-TIES","phone_hours":"(24
+        hours daily for emergencies and reports of abuse)"}],[{"number":"650 573-3900","phone_hours":"(Monday-Friday,
+        8-5 for information)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Person
+        on-call at all times","service_wait":"Varies according to service","services_provided":"Provides
+        a continuum of services for frail, older adults or adults with chronically
+        disabling illnesses.","state":"CA","street_address":"225 - 37th Avenue","target_group":"Adults
+        with disabilities age 18 or over and older adults age 60 or over","transportation_availability":"SAMTRANS
+        stops within 1 block, CALTRAIN within 6 blocks","ttys":["711 (California Relay
+        Service)"],"updated_at":"2013-08-07T15:55:22-07:00","urls":["http://www.smchealth.org"],"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e408a","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e40d3","accessibility_options":["Elevator","Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Craig
+        McCulloh ","city":"San Mateo","coordinates":[-122.3006094,37.5314294],"created_at":"2013-07-03T20:54:34-07:00","description":"The
+        commission is a 21-member group of professionals, people with disabilities,
+        family members and others that advises the San Mateo County Board of Supervisors.
+        The commission advocates on behalf of children and adults with disabilities
+        by identifying unmet needs, strengthening existing services, coordinating
+        the development and implementation of new services and promoting community
+        education about the needs of persons with disabilities.   Members of the community-at-large
+        and representatives from human service organizations are invited to participate
+        on the Commission on Disabilities'' standing committees. The Americans with
+        Disabilities Act (ADA) Compliance Committee develops, prioritizes and monitors
+        the county-wide ADA Plan, as well as advocates for improved access for people
+        with disabilities. The Legislation and Advocacy Committee reviews and responds
+        to proposed legislation and proposes legislation and policies which impact
+        people with disabilities. The committee gathers information that assists the
+        commission in its advocacy and community education functions. The Youth and
+        Family Committee advocates for children and young adults, age 25 or under,
+        with disabilities and their families in San Mateo County. The commission also
+        promotes public awareness of the needs, concerns and abilities of people with
+        disabilities through educational forums, written material, and the Commission''s
+        Web site, www.co.sanmateo.ca.us/portal/site/cod/ In addition to its standing
+        committees, the Commission on Disabilities may establish ad hoc committees
+        or task forces to address emergent issues not covered by its standing committees
+        including a Joint Housing Committee that promotes the availability of affordable
+        and accessible housing in San Mateo County.","eligibility_requirements":"Commissioners
+        are appointed by the San Mateo County Board of Supervisors","emails":["cmcculloh@smcgov.org"],"faxes":["650
+        372-0729"],"fees":"None. Donations accepted","funding_sources":["County"],"how_to_apply":"Call
+        for an application","keywords":["ADMINISTRATION AND PLANNING SERVICES","Advisory
+        Boards","DEVELOPMENTAL DISABILITIES SERVICES","Community Information","HANDICAP
+        SERVICES","Planning/Coordinating/Advisory Groups","Disabilities Issues"],"languages_spoken":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Spanish","Filipino (Tagalog)","Vietnamese"],"leaders":null,"market_match":null,"name":"Aging
+        and Adult Services., Commission on Disabilities","payments_accepted":null,"phones":[[{"number":"650
+        573-2580","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":null,"service_wait":"Can
+        submit application any time. Vacancies on the commission are intermittent","services_provided":"Staffs
+        the Commission on Disabilities. Maintains information about current legislation
+        and services.","state":"CA","street_address":"225 - 37th Avenue","target_group":"People
+        with disabilities","transportation_availability":"SAMTRANS stops within 1
+        block, CALTRAIN stops within 6 blocks","ttys":null,"updated_at":"2013-08-07T15:55:25-07:00","urls":["http://www.co.sanmateo.ca.us/portal/site/cod/"],"zipcode":"94403","id":"51d5b18ca4a4d8b01b3e40d3","_score":null,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":[1.4224387301495216],"highlight":null,"_explanation":null}],"count":30,"pagination":{"previous":null,"next":2,"current":1,"per_page":30,"count":363,"pages":13}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:42:52 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?_=1376638972903&action=index&controller=organizations&keyword=hsa&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=300, public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:42:56 GMT
+      Etag:
+      - '"2d6759ed3f828cb108e0a163d73e76d1"'
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - d0d73d77f6cacf31636fcb351abed81b8a96b18b
+      X-Rack-Cache:
+      - miss, store
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4971'
+      X-Request-Id:
+      - aac8e682ca2cb14c53640833d06cd4b2
+      X-Runtime:
+      - '0.369296'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '6583'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"_id":"51d5b18ba4a4d8b01b3e3f59","accessibility_options":["Ramp","Restroom","Special
+        parking","Wheelchair accessible"],"agency":"San Mateo County Human Services
+        Agency","ask_for":"Marsha Beaman (Court Investigations), Matt Radisch (Licensing),
+        Pravin Patel (Shelter Care), Marie Morris (Adoptions)","city":"Belmont","coordinates":[-122.308362,37.511806],"created_at":"2013-07-03T20:54:30-07:00","description":"Takes
+        reports of situations in which children age 17 or under may be in jeopardy
+        because of abuse, abandonment, sexual molestation, exploitation or neglect.
+        When the home situation is such that the child needs to be placed under the
+        protection of the juvenile court, this unit initiates court action, conducts
+        an investigation and supervises children who have been removed from parental
+        custody. Can make immediate placements in emergency shelter care when children
+        are endangered. May also aid children by providing casework and related services
+        to their families, and making referrals to appropriate agencies.                  A
+        report may be made in person, by phone or letter and may be anonymous, though
+        all names are held confidential. Anyone initiating a referral in good faith
+        is immune from liability. Provides information and refers within the agency
+        for all specialized children''s services. Counseling, support groups and in-home
+        services can be provided to families receiving protective services supervision
+        from this agency. Provides shelter care for children, age 18 or under, who
+        need to be removed from their own homes because they are in danger due to
+        neglect, abuse, abandonment, exploitation or other family crisis. Young children
+        are placed in temporary foster homes. Adolescents are placed in the central
+        receiving home. All requests for emergency care or removal of a child from
+        a home in crisis must be made through the Hotline or the local police department.
+        The county is a state-licensed adoption and foster home licensing agency providing
+        services to birth parents, pre-adoptive children, adoptive and foster parent
+        applicants. Provides information about adoption procedures to birth parents.
+        Children are generally of school age, of minority or mixed background or have
+        special problems. Written application, office and home interviews are necessary.
+        Provides post-adoption services to assist adoptees, birth parents or adoptive
+        parents. Provides relinquishment adoption services. Does not provide intercountry
+        adoption services. Helps to arrange for out-of-home placement of children,
+        age 17 or under, in group homes or institutions. Families must meet certain
+        criteria in order for the children to be considered for placement. This unit
+        cannot handle the placement of delinquents or children beyond parental control.
+        This office also licenses foster family homes throughout the county as required
+        by law for care on a regular basis of a non-related child age 17 or under.
+        Homes are licensed for one year and renewed annually. Will investigate complaints
+        or reports of persons caring for non-related children without a license or
+        of licensed persons giving improper care. The Foster Care Eligibility line
+        handles questions related to payments to foster parents, non-related guardians,
+        and relatives. Speakers are available for clubs or groups who wish to know
+        more about foster care, \"fostadopt\" and adoptions. For matters other than
+        court investigations, licensing, shelter care or adoptions, please contact
+        the appropriate regional office. For East Palo Alto, Menlo Park, or Redwood
+        City residents, contact the South County office at 650-363-4218. For San Carlos,
+        Belmont, San Mateo, Foster City, Hillsborough, Burlingame, Millbrae, Half
+        Moon Bay, El Granada, La Honda, Loma Mar, Montara, Moss Beach, Pescadero,
+        or San Gregorio residents, contact the Central County office at 650-802-5018.
+        For Pacifica, Daly City, South San Francisco, Colma, Brisbane or San Bruno
+        residents, contact the North County office at 650-877-5608. Family Resource
+        Center provides counseling, support and education services for youth and adults,
+        home visiting, parent involvement in leadership, financial assistance and
+        case management at specific school locations with Spanish speaking staff.   Translators
+        available with prior notice. HSA, San Mateo County has been COA accredited
+        since 2008.","eligibility_requirements":"Child must reside in San Mateo County","emails":null,"faxes":["650
+        802-5001"],"fees":"Placement costs are a parental responsibility and are assessed
+        on basis of ability to pay","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["CHILD PROTECTION AND CARE SERVICES","Adoption","Crisis/Abuse
+        Intervention/Hot","Guardianship/Conservatorship","Investigation/Intervention","Out-Of-Home
+        Care","Out-Of-Home Care Placement","Respite/Emergency Caretaker","Adoption
+        Services","Foster Homes for Dependent Children","Children''s Protective Services","Speakers/Speakers
+        Bureaus","Youth","Adolescents","Children"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Children
+        and Family Services","payments_accepted":null,"phones":[[{"number":"800 632-4615","department":"Hotline","phone_hours":"(24
+        hours daily)"}],[{"number":"650 802-7615","department":"Adoptions","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650-802-7637","department":"Homefinding Unit","phone_hours":"(Monday-
+        Friday, 8-5)"}],[{"number":"650 802-7922","department":"Intake","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-5103","department":"Foster Care Eligibility","phone_hours":"(Monday-Friday,
+        8-5)"}],[{"number":"650 802-6583","department":"Family Resouce Centers"}]],"products_sold":null,"service_area":"San
+        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8-5","service_wait":"Priority
+        given to reports of physical abuse, sexual abuse or life-threatening neglect","services_provided":"Accepts
+        referrals about situations in which children age 17 or under are in jeopardy
+        because of abuse, abandonment or exploitation.","state":"CA","street_address":"1
+        Davis Drive","target_group":"Children, age 17 or under","transportation_availability":"SAMTRANS
+        stops within 3 blocks","ttys":null,"updated_at":"2013-08-07T15:54:57-07:00","urls":["http://www.smchsa.org"],"zipcode":"94002","id":"51d5b18ba4a4d8b01b3e3f59","_score":0.36319563,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":1,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":1,"pages":1}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:42:55 GMT
 recorded_with: VCR 2.5.0

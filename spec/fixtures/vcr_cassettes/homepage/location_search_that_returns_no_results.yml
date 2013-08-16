@@ -51,4 +51,55 @@ http_interactions:
         address"}'
     http_version: 
   recorded_at: Tue, 13 Aug 2013 02:44:42 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=asdfg&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Aug 2013 20:45:34 GMT
+      Status:
+      - 400 Bad Request
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Request-Id:
+      - 9e6e2d799915ca8bf5cf5d6851921301
+      X-Runtime:
+      - '0.374982'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '151'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"bad_request","error_description":"The data given to this
+        server does not meet our criteria.","specific_reason":"Invalid ZIP code or
+        address"}'
+    http_version: 
+  recorded_at: Thu, 15 Aug 2013 20:45:34 GMT
 recorded_with: VCR 2.5.0

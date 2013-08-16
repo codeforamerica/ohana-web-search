@@ -83,4 +83,63 @@ http_interactions:
         stops within 1 block","ttys":["650 348-7687"],"updated_at":"2013-08-07T15:55:44-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"zipcode":"99999"}],"count":1,"pagination":{"current":1,"previous":null,"next":null,"per_page":30,"pages":1,"count":1}}'
     http_version: 
   recorded_at: Tue, 13 Aug 2013 03:22:34 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo&location=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanakapa.alpha
+      User-Agent:
+      - Ohanakapa Ruby Gem 0.0.2
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Age:
+      - '4'
+      Cache-Control:
+      - max-age=300, public
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Aug 2013 07:28:30 GMT
+      Etag:
+      - '"da3474dc5b1a89c3d03c0ac67e6aee7a"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo&location=&page=0&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo&location=&page=2&utf8=%E2%9C%93>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Content-Digest:
+      - 63ca9bc787241a57936f9df71709d7b99d29747f
+      X-Rack-Cache:
+      - fresh
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4983'
+      X-Request-Id:
+      - 39cce2b31c1685132b581ab53ebf48f1
+      X-Runtime:
+      - '0.461285'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '114'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"response":[],"count":0,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":0,"pages":0}}'
+    http_version: 
+  recorded_at: Fri, 16 Aug 2013 07:28:29 GMT
 recorded_with: VCR 2.5.0

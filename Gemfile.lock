@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/codeforamerica/ohanakapa-ruby.git
-  revision: a120bc7f29ab3e2463add8893ab534118fffd6e4
+  revision: 32ded682db8a72a7b6c1670631424ce910c9d753
   branch: add-nearby-endpoint
   specs:
     ohanakapa (0.0.2)
@@ -75,6 +75,7 @@ GEM
       sexp_processor (~> 4.1)
     code_analyzer (0.4.0)
       sexp_processor
+    code_metrics (0.1.0)
     coderay (1.0.9)
     colored (1.2)
     colorize (0.5.8)
@@ -109,7 +110,7 @@ GEM
     flay (2.0.1)
       ruby_parser (~> 3.0)
       sexp_processor (~> 4.0)
-    flog (3.2.3)
+    flog (4.1.1)
       ruby_parser (~> 3.1, > 3.1.0)
       sexp_processor (~> 4.0)
     fssm (0.2.10)
@@ -141,17 +142,18 @@ GEM
       fattr (>= 2.2.0)
       map (>= 5.1.0)
     map (6.5.1)
-    metric_fu (4.3.1)
+    metric_fu (4.4.0)
       bluff
       cane (~> 2.5.2)
       churn (~> 0.0.28)
+      code_metrics (~> 0.1)
       coderay
       flay (~> 2.0.1)
-      flog (~> 3.2.2)
+      flog (~> 4.1.1)
       metric_fu-Saikuro (>= 1.1.1.0)
       metric_fu-roodi (>= 2.2.1)
       multi_json
-      rails_best_practices (~> 1.13.2)
+      rails_best_practices (~> 1.14, >= 1.14.1)
       redcard
       reek (~> 1.3.1)
     metric_fu-Saikuro (1.1.1.0)
@@ -189,13 +191,14 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
-    rails_best_practices (1.13.8)
+    rails_best_practices (1.14.1)
       activesupport
       awesome_print
-      code_analyzer
+      code_analyzer (>= 0.4.0)
       colored
       erubis
       i18n
+      require_all
       ruby-progressbar
     railties (3.2.13)
       actionpack (= 3.2.13)
@@ -213,6 +216,7 @@ GEM
       ruby2ruby (~> 2.0.2)
       ruby_parser (~> 3.1.1)
       sexp_processor
+    require_all (1.2.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (2.14.5)
