@@ -3,10 +3,10 @@
   %ul
     - @service_terms.each do |service|
       %li
-        %a{ :href => "/organizations?keyword=#{service[:name]}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
+        %a{ :href => "/organizations?keyword=#{u(service[:name])}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
           = service[:name]
         %ul
           - service[:sub].each do |sub|
             %li
-              %a{ :href => "/organizations?keyword=#{sub}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+              %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
                 = sub

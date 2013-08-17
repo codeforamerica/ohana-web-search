@@ -61,7 +61,7 @@ class Organization
       {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','adoption and foster care','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
-      {:name=>'work',:sub=>['find work','job skills training'].sort}, \
+      {:name=>'work',:sub=>['finding work','job skills training'].sort}, \
       {:name=>'Programs',:sub=>['CalFresh','Market Match','Affordable Care Act'].sort}, \
     ]
 
