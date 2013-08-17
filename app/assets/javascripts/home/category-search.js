@@ -19,8 +19,8 @@ define(['util/web-storage-proxy'],function(storage) {
 			var catSearch = document.getElementById('category-search');
 			var keywordSearch = document.getElementById('keyword-search');
 
-			catSearch.addEventListener('click', _categoryClicked, false);
-			keywordSearch.addEventListener('click', _keywordClicked, false);
+			//catSearch.addEventListener('click', _categoryClicked, false);
+			//keywordSearch.addEventListener('click', _keywordClicked, false);
 
 			if (storage.getItem(_storageID) != 'KEYWORD')
 			{

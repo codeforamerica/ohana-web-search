@@ -1,3 +1,5 @@
+require 'json'
+
 class Organization
   # Gets a single organization details
   # @param id [String] Organization ID.
@@ -49,7 +51,22 @@ class Organization
 
   # top level services for when no search results are found
   def self.service_terms
-    %w[Care Education Emergency Food Goods Health Housing Legal Money Transit Work]
+    terms = [{:name=>'care',:sub=>['animal welfare','residential caregiving','daytime caregiving','adoption & foster care','building support networks','end-of-life care','help navigating the system'].sort}, \
+      {:name=>'education',:sub=>['preschool','after-school','special education','help finding school','help paying for school','alternative education','tutoring'].sort}, \
+      {:name=>'emergency',:sub=>['psychiatric emergencies','emergency financial assistance','immediate safety needs','disaster preparedness','disaster response'].sort}, \
+      {:name=>'food',:sub=>['free meals','food pantries','help paying for food','food delivery','food benefits','nutrition support'].sort}, \
+      {:name=>'goods',:sub=>['clothing','furniture','baby supplies','toys and gifts'].sort}, \
+      {:name=>'health',:sub=>['medical care','dental care','health education','addiction and recovery','help finding services','help paying for healthcare'].sort}, \
+      {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
+      {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','adoption and foster care','guardianship','civil rights'].sort}, \
+      {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
+      {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
+      {:name=>'work',:sub=>['find work','job skills training'].sort}, \
+      {:name=>'Programs',:sub=>['CalFresh','Market Match','Affordable Care Act'].sort}, \
+    ]
+
+
+
   end
   
 end

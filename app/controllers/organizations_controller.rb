@@ -21,10 +21,6 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
-    # if no results were returned, set the service terms shown on the
-    # no results page
-    @service_terms = Organization.service_terms if @orgs.blank?
-
     respond_to do |format|
       # visit directly
       format.html # index.html.haml
