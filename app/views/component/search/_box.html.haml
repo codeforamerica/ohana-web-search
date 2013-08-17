@@ -1,30 +1,39 @@
 %section#search-box
   = form_tag('/organizations', :method => :get, :id=>"search-form")
-  %div
-    %label{:for => "keyword"}
-      I need...
-      -#
-        %span{"data-icon"=>"→" , :class=>"arrow ohana-icon"}
-    = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"   
-  -#
+  %section#keyword-search-box
+    %div
+      %label{:for => "keyword"}
+        I need...
+      = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"   
+    
+    %div
+      %button#keyword-find-btn
+        %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
+
+    %div#location-search-btn
+      %a.hide
+        Search by location
+
+    %datalist#search-keywords
+      - @keywords.each do |keyword|
+        %option{:value=>keyword}
+
+  -# location search box input field appears below  
+  %section#location-search-box
+    %script
+      document.getElementById('location-search-box').classList.add('hide');
     %div
       %label{:for => "location"}
-        I am near
-        %span{"data-icon"=>"→" , :class=>"arrow ohana-icon"}
+        I am near...
       = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
+    %div
+      %button#location-find-btn
+        %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
 
-  %div
-    %button#find-btn
-      %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
+    %div#keyword-search-btn
+      %a.hide
+        Search by keyword
 
-  %div#location-search-btn
-    %a
-      Search by location
-
-  %datalist#search-keywords
-    - @keywords.each do |keyword|
-      %option{:value=>keyword}
--#
-  %datalist#search-locations
-    - @locations.each do |location|
-      %option{:value=>location}
+    %datalist#search-locations
+      - @locations.each do |location|
+        %option{:value=>location}

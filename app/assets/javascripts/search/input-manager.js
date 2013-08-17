@@ -16,14 +16,12 @@ define(['util/util'],
 			_callback = callback;
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
-			
-			_keyword.addEventListener('focus',_inputClicked,true);
-			_location.addEventListener('focus',_inputClicked,true);
-			
+						
 			// if no ajax callback is given, don't register ajax calls
 			if (callback)
 			{
-				document.getElementById('find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
+				document.getElementById('keyword-find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
+				document.getElementById('location-find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
 				_registerAjaxHooks();
 			}
 		}
@@ -55,11 +53,6 @@ define(['util/util'],
 		}
 
 		// PRIVATE METHODS
-		// clear input fields when fields are clicked
-		function _inputClicked(evt)
-		{
-			evt.target.value = ''; // clear input when user clicked on the field
-		}
 
 		// register all links with "ajax-link" class added as ajax-enabled links
 		function _registerAjaxHooks(scope)
