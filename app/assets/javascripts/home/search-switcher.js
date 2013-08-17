@@ -32,7 +32,7 @@ define(['util/web-storage-proxy'],function(storage) {
 			}
 			else
 			{
-				_showCategorySearch();
+				_showLocationSearch();
 			}
 		}
 
