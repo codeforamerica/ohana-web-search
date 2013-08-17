@@ -58,7 +58,7 @@ class Organization
       {:name=>'goods',:sub=>['clothing','furniture','baby supplies','toys and gifts'].sort}, \
       {:name=>'health',:sub=>['medical care','dental care','health education','addiction and recovery','help finding services','help paying for healthcare'].sort}, \
       {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
-      {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','adoption and foster care','guardianship','civil rights'].sort}, \
+      {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
       {:name=>'work',:sub=>['finding work','job skills training'].sort}, \
