@@ -1197,36 +1197,37 @@ main > * > *
     @include border-radius(4px 0px 0px 4px);
     border-color:$blue_midtone;
     border-collapse: collapse;
-    border:1px solid $black_alpha40;
+    border:2px solid $black_alpha40;
     border-right:0px;
   }
 
   button
   {
-    width:38px;
-    height:38px;
+    width:40px;
+    height:40px;
     font-size: 16px;
     margin:0;
     vertical-align:bottom;
 
     position: relative;
-    top: -2px;
+    top: -1px;
     left: -5px;
 
-    color:$black;
-    border:1px solid $black_alpha40;
+    color:$white;
+    border:2px solid $black_alpha40;
     border-left:0px;
     padding:10px;
     @include border-radius(0px 4px 4px 0px);
 
-    background:$green_dark;
+    background:$blue_darkest;
     // TODO move colors into variables
-    @include background( linear-gradient( rgba(131,180,26,1) 0%, rgba(119,163,24,1) 100%) );
+    @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
   }
 
   button:hover
   {
     color:$yellow_light;
+    @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
   }
 }
 
@@ -1300,7 +1301,7 @@ main > * > *
         }
         > li:nth-child(odd)
         {
-          border-left:6px solid $green_light_alpha70;
+          border-left:6px solid $yellow_midtone;
         }
       }
 
@@ -1369,6 +1370,7 @@ main > * > *
     display: inline-block;
     width:100%;
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
+    @include background( linear-gradient( $green_light 0%, $yellow_midtone 100%) );
   }
 
   #keyword-search-box input
