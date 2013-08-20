@@ -1361,16 +1361,18 @@ main > * > *
   padding:80px;
   padding-left:0px;
   padding-top:0px;
-  background: $blue_midtone_alpha30;
+  //background: $blue_midtone_alpha30;
+  background: $green_lightest_alpha50;
+  text-align:center;
 
   > form
   {
-    background: $green_light;
-    padding: 40px;
+    background: $green_midtone;
+    padding: 50px;
+    width: 100%;
     display: inline-block;
-    width:100%;
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-    @include background( linear-gradient( $green_light 0%, $yellow_midtone 100%) );
+    //@include background( linear-gradient( $green_midtone 0%, $yellow_midtone 100%) );
   }
 
   #keyword-search-box input
