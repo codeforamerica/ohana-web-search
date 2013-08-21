@@ -51,7 +51,8 @@ class Organization
 
   # top level services for when no search results are found
   def self.service_terms
-    terms = [{:name=>'care',:sub=>['animal welfare','residential caregiving','daytime caregiving','adoption & foster care','building support networks','end-of-life care','help navigating the system'].sort}, \
+    terms = [
+      {:name=>'care',:sub=>['animal welfare','residential caregiving','daytime caregiving','adoption & foster care','building support networks','end-of-life care','help navigating the system'].sort}, \
       {:name=>'education',:sub=>['preschool','after-school','special education','help finding school','help paying for school','alternative education','tutoring'].sort}, \
       {:name=>'emergency',:sub=>['psychiatric emergencies','emergency financial assistance','immediate safety needs','disaster preparedness','disaster response'].sort}, \
       {:name=>'food',:sub=>['free meals','food pantries','help paying for food','food delivery','food benefits','nutrition support'].sort}, \
@@ -60,9 +61,9 @@ class Organization
       {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
       {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
+      {:name=>'programs',:sub=>['CalFresh','Market Match','Affordable Care Act'].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
       {:name=>'work',:sub=>['finding work','job skills training'].sort}, \
-      {:name=>'Programs',:sub=>['CalFresh','Market Match','Affordable Care Act'].sort}, \
     ]
 
 
