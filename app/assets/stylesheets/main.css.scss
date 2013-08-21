@@ -1003,6 +1003,7 @@ main
     line-height:6px;
     @include border-radius(4px);
 
+    background:$green_dark;
     @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
 
     > span
@@ -1017,6 +1018,7 @@ main
   select
   {
     width:100%;
+    background:$green_midtone;
     @include background( linear-gradient( $green_midtone 0%, $yellow_dark 100%) );
   }
 
@@ -1028,6 +1030,7 @@ main
 
   button:hover
   {
+    background:$blue_dark;
     @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
   }
 }
@@ -1098,12 +1101,14 @@ main
     border:2px solid $black_alpha40;
     padding:10px;
     @include border-radius(4px);
+    background:$green_dark;
     @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
   }
 
   button:hover
   {
     color:$yellow_light;
+    background:$blue_dark;
     @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
   }
 }
@@ -1411,12 +1416,14 @@ main
       border-bottom:0;
 
       border:2px solid $black_alpha40;
+      background:$green_light;
       @include background( linear-gradient( $green_light 0%, $green_midtone 100%) );
     }
 
     a:hover
     {
       color: $yellow_light;
+      background:$blue_dark;
       @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
     }
 
