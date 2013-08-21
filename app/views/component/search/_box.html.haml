@@ -1,18 +1,12 @@
 %section#search-box
-  = form_tag('/organizations', :method => :get, :id=>"search-form")
   %section#keyword-search-box
     %div
       %label{:for => "keyword"}
         I need...
       = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"   
-    
     %div
-      %button#keyword-find-btn
+      %button{:type=>'submit',:id=>'keyword-find-btn'}
         %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
-
-    %div#location-search-btn
-      %a.hide
-        Search by location
 
     %datalist#search-keywords
       - @keywords.each do |keyword|
@@ -20,19 +14,13 @@
 
   -# location search box input field appears below  
   %section#location-search-box
-    %script
-      document.getElementById('location-search-box').classList.add('hide');
     %div
       %label{:for => "location"}
         I am near...
       = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
     %div
-      %button#location-find-btn
+      %button{:type=>'submit',:id=>'location-find-btn'}
         %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
-
-    %div#keyword-search-btn
-      %a.hide
-        Search by keyword
 
     %datalist#search-locations
       - @locations.each do |location|

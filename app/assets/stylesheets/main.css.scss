@@ -117,6 +117,7 @@ textarea {
 
 // greyscale
 $black: rgb(0,0,0);
+$black_alpha00: rgba(0,0,0,0.0);
 $black_alpha10: rgba(0,0,0,0.1);
 $black_alpha20: rgba(0,0,0,0.2);
 $black_alpha30: rgba(0,0,0,0.3);
@@ -667,35 +668,6 @@ sup
 }
 
 //=================================================================================
-// busy-screen styles - ajax
-/*#busy-screen
-{
-    position:absolute;
-    z-index: 9999;
-    top:0;
-    right:0;
-    bottom:0;
-    background:$black_alpha40;
-    width:100%;
-}
-
-#busy-screen h1
-{
-    position: absolute;
-    top:10px;
-    left:50%;
-    background:$green_dark;
-    color:$white;
-    width:100px;
-    margin-left:-50px;
-    border-radius:10px;
-    padding:20px;
-    text-align:center;
-    font-size:24px;
-    box-shadow:0px 0px 30px $black_alpha60;
-}*/
-
-//=================================================================================
 // popup styles
 #popups
 {
@@ -871,34 +843,9 @@ sup
 
 }
 
-/*
-.popup-term
-{
-  cursor:pointer;
-}
-
-
-.popup .corner
-{
-    width:10px;
-    height:10px;
-    background:$yellow_dark;
-    border-right: 1px solid $green_dark;
-    border-bottom: 1px solid $green_dark;
-    transform: rotate(45deg) ;
-    -webkit-transform: rotate(45deg) ;
-    -moz-transform: rotate(45deg) ;
-    -o-transform: rotate(45deg) ;
-    -ms-transform: rotate(45deg) ;
-    position: absolute;
-    top: 38px;
-    left: 20px;
-    box-shadow:0px 0px 10px $black_alpha40;
-}
-*/
-
 //=================================================================================
 // content area is everything aside from the loading screen
+// this section sets up the header and footer, but not the main content area
 #content
 {
   // logo/header area
@@ -929,22 +876,6 @@ sup
         display:inline-block;
         margin-left:20px;
     }
-
-    /*
-    a
-    {
-        text-decoration: none;
-        color:$black_alpha60;
-        cursor:pointer;
-        border-bottom:1px solid $white;
-    }
-
-    a:hover
-    {
-        color:$blue_dark;
-        border-bottom:1px solid $black_alpha40;
-    }
-    */
 
     nav
     {
@@ -988,6 +919,7 @@ sup
       width: 40px;
       height: 10px;
       display: inline-block;
+      // the CfA flag appears below
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
       background-repeat: no-repeat;
       padding-right:10px;
@@ -995,12 +927,8 @@ sup
 
   }
 }
-/*
-.home #content
-{
-  height: 100%;
-}
-*/
+
+
 //=================================================================================
 // main content box - everything below the header area
 // the main content area sets up the table display styling for positioning
@@ -1013,43 +941,8 @@ main
   {
     position:relative; // prevent popup overlap
   }
-
-  /*width: 100%;
-  height: 100%;
-  position:relative;
-  z-index:9998;
-
-  display: table;
-  
-  background:$blue_light_alpha40;
-  */
 }
 
-/*
-.home main
-{
-  min-height:100%;
-  position:absolute;
-  right:0;
-  left:0;
-  top:0;
-  bottom:0;
-
-  @include background( radial-gradient($blue_midtone, $blue_dark) );
-  
-}
-
-main > *
-{
-  display:table-row;
-}
-
-main > * > *
-{
-  display:table-cell;
-  height: 100%;
-}
-*/
 
 // only used on /about route when JS is disabled.
 .about main > * > *
@@ -1082,62 +975,73 @@ main > * > *
   }
 }
 
-//=================================================================================
-// search container
-
-.home #search-container
+.inside main
 {
-    /*min-width:664px;
-    position:relative;
-    height:100%;*/
+  background: $white;
+  display: table-row;
 }
-/*
+
+//=================================================================================
+// search options
 .inside #search-container
 {
-  background: $blue_midtone;
-  padding-top:5px;
+  display:table-cell;
   vertical-align: top;
-  width:100px;
-  position:relative;
-  z-index:9999;
+  background: $green_midtone;
+  padding: 20px;
+  text-align:center;
 
-  button h1
+  section
   {
-    font-size:18px;
+    text-align:left;
   }
 
-  legend,label
+  button,
+  select
   {
-    font-family:sans-serif;
-  }
-
-  legend
-  {
-    font-weight:bold;
-    color:$black;
-    padding:0px;
-  }
-
-  fieldset
-  {
-    font-size:14px;
+    height:32px;
+    font-size: 16px;
+    margin:0;
+    color:$white;
+    border:2px solid $black_alpha40;
     padding:10px;
-    border: 1px solid $black_alpha40;
-    margin: 10px;
+    margin-top:10px;
+    letter-spacing:1px;
+    line-height:6px;
+    @include border-radius(4px);
+
+    @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
+
+    > span
+    {
+      top:2px;
+    }
+  }
+
+  select
+  {
+    width:100%;
+    @include background( linear-gradient( $green_midtone 0%, $yellow_dark 100%) );
+  }
+
+  button
+  {
+    height:40px;
+  }
+
+  button:hover
+  {
+    @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
   }
 }
-*/
 
-//=================================================================================
-// search options box - appears on inside pages
-#search-options h1
+#search-options
 {
-    font-size: 14px;
-    margin: 0;
-    color: $black_alpha40;
-    padding-left: 10px;
-    font-style: italic;
-    padding-top: 5px;
+  border-top:1px dotted $black_alpha40;
+  border-bottom:1px dotted $black_alpha40;
+  padding:20px;
+  margin-bottom:10px;
+  font-family: $san_serif_font;
 }
 
 //=================================================================================
@@ -1189,16 +1093,13 @@ main > * > *
     font-size: 14px;
     background:$white;
     margin-bottom:0px;
-    width:170px;
-    display:block;
 
     background:$white;
     padding:10px;
-    @include border-radius(4px 0px 0px 4px);
     border-color:$blue_midtone;
     border-collapse: collapse;
     border:2px solid $black_alpha40;
-    border-right:0px;
+    @include border-radius(4px);
   }
 
   button
@@ -1207,20 +1108,11 @@ main > * > *
     height:40px;
     font-size: 16px;
     margin:0;
-    vertical-align:bottom;
-
-    position: relative;
-    top: -1px;
-    left: -5px;
-
     color:$white;
     border:2px solid $black_alpha40;
-    border-left:0px;
     padding:10px;
-    @include border-radius(0px 4px 4px 0px);
+    @include border-radius(4px);
 
-    background:$blue_darkest;
-    // TODO move colors into variables
     @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
   }
 
@@ -1231,51 +1123,156 @@ main > * > *
   }
 }
 
-.home #category-search,
-.home #keyword-search
+.home #search-box
 {
-  font-family:$san_serif_font;
-  font-size:24px;
-  color:$white_alpha40;
-  padding-right:3px;
+  padding:0px;
+  text-align:center;
+
+  > form
+  {
+    padding: 50px;
+    @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
+    background: $green_midtone;
+    //@include background( linear-gradient( $green_midtone 0%, $yellow_midtone 100%) );
+
+    > section > div
+    {
+      @include inline-block();
+      vertical-align: middle;
+    }
+
+    #keyword-search-box input
+    {
+      width: 383px;
+    }
+  }
+
+  form > section
+  {
+    @include inline-block();
+  }
+
+  form > section:before
+  {
+    color:$black_alpha10;
+    content:"“";
+    font-size:64px;
+    position:absolute;
+    left:-40px;
+    top:-7px;
+  }
+
+  form > section:after
+  {
+    color:$black_alpha10;
+    content:"”";
+    font-size:64px;
+    position:absolute;
+    right:-40px;
+    top:-7px;
+  }
+
+  label // form input field labels
+  {
+    @include inline-block();
+    font-size: 46px;
+    letter-spacing: 2px;
+    color:$black;
+    text-align: right;
+  }
+
+  input // search keyword/location
+  {
+    @include inline-block();
+    vertical-align: bottom;
+    margin-left: 20px;
+    top: -10px;
+    width:300px;
+    font-size: 18px;
+    border-right:0px;
+    @include border-radius(4px 0px 0px 4px);
+  }
+
+  button // find button styles
+  {
+    @include inline-block();
+    font-size:24px;
+    position:relative;
+    border-left:0px;
+    @include border-radius(0px 4px 4px 0px);
+    position: relative;
+    top: 2px;
+    left: -5px;
+
+    // find button large magnifying glass 
+    .search-button.ohana-icon
+    {
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left:-12px;
+        margin-top:-12px;
+    }
+  }
 }
 
-.home #category-search:hover,
-.home #keyword-search:hover
+.inside #search-box
 {
-  cursor:pointer;
-  color:$white;
+  padding:20px;
+  padding-top:0px;
+  padding-bottom: 30px;
+
+  >form
+  {
+    padding-bottom:10px;
+  }
+
+  form > section
+  {
+    margin-left:10px;
+  }
+
+  form > section:before
+  {
+    color:$black_alpha10;
+    content:"“";
+    font-size:64px;
+    position:absolute;
+    left:-40px;
+    top:-7px;
+  }
+
+
+  #location-search-box
+  {
+    margin-top:20px;
+  }
+
+  label // form input field labels
+  {
+    font-size:24px;   
+  }
+
+  input
+  {
+    height:10px;
+    top:5px;
+    margin-left:0px;
+    width:150px;
+  }
+
+  button // hide button on inside pages
+  {
+    display:none;
+  }
 }
 
 .home #category-box
 {
   background:$white;
   @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-
-  /*
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -322px;
-  margin-top: -100px; 
-  display: table;
-  width: 644px;
-  */
   padding:80px;
-
-  /*
-  > header
-  {
-    //float: left;
-    color: $blue_dark;
-    margin-left: 5px;
-    font-size: 30px;
-    letter-spacing: 1px;
-    position: relative;
-    top:-3px;
-  }
-  */
-
   text-align:center;
 
   > ul
@@ -1305,184 +1302,6 @@ main > * > *
         }
       }
 
-    }
-  }
-  /*
-  > ul
-  {
-    clear:both;
-
-    li
-    {
-      cursor:pointer;
-      display:inline-block;
-      min-width:125px;
-      min-height:40px;
-      @include border-radius(3px);
-      margin:5px;
-      background-color:$white;
-      font-size:16px;
-      color:$blue_dark;
-      position:relative;
-      text-align: center;
-      line-height:40px;
-      padding:10px;
-      border:1px solid $blue_midtone_alpha30;
-      letter-spacing:1px;
-    }
-
-    li:hover
-    {
-      border:1px solid $green_light_alpha70;
-      background-color:$white_alpha40;
-      color:$black;
-      @include transition(border $default_duration);
-    }
-
-    a
-    {
-      border-bottom:0;
-    }
-
-  }*/
-}
-
-#search-box
-{
-  /*
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -322px;
-  margin-top: -100px; 
-  display: table;
-  width:644px;
-  */
-  padding:80px;
-  padding-left:0px;
-  padding-top:0px;
-  //background: $blue_midtone_alpha30;
-  background: $green_lightest_alpha50;
-  text-align:center;
-
-  > form
-  {
-    background: $green_midtone;
-    padding: 50px;
-    width: 100%;
-    display: inline-block;
-    @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-    //@include background( linear-gradient( $green_midtone 0%, $yellow_midtone 100%) );
-  }
-
-  #keyword-search-box input
-  {
-    width: 383px;
-  }
-
-  div // form rows
-  {
-    //display:table-row;
-    //position: relative;
-    display:inline-block;
-  }
-
-  #location-search-btn,
-  #keyword-search-btn
-  {
-    font-family:$san_serif_font;
-    color:$black_alpha40;
-    margin-left:20px;
-    padding-left:20px;
-    border-left:1px dotted $black_alpha40;
-    position: relative;
-    top: -9px;
-    line-height: 38px;
-  }
-
-  label // form input field labels
-  {
-    //display:table-cell;
-    display:inline-block;
-    font-size: 46px;
-    letter-spacing: 2px;
-    color:$black;
-    text-align: right;
-    //width: 300px;
-  }
-
-  label span // the form arrows
-  {
-    color:$blue_light;
-  }
-
-  input // search keyword/location
-  {
-    //display:table-cell;
-    display:inline-block;
-    margin-left: 20px;
-    top: -10px;
-    width:300px;
-    font-size: 18px;    
-  }
-
-  button // find button styles
-  {
-    //margin-left:20px;
-    //display:table-cell;
-    display:inline-block;
-    font-size:24px;
-    position:relative;
-    //width:100%;
-    //position: absolute;
-    //@include single-box-shadow($black_alpha40, 0px, 0px, 5px);
-
-
-    // find button large magnifying glass 
-    .search-button.ohana-icon
-    {
-        font-size: 24px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left:-12px;
-        margin-top:-12px;
-    }
-  }
-}
-
-.inside #search-box
-{
-  padding:0px;
-
-  >form
-  {
-    padding:10px;
-  }
-
-  label // form input field labels
-  {
-    font-size:24px;   
-  }
-
-  input
-  {
-    height:10px;
-    top:5px;
-    margin-left:0px;
-  }
-
-  button
-  {
-    height:32px;
-    top:0;
-    font-size:16px;
-
-    .search-button.ohana-icon
-    {
-      font-size: 18px;
-      margin-left:-9px;
-      margin-top:-9px;
     }
   }
 }
@@ -1532,22 +1351,27 @@ main > * > *
 
 //=================================================================================
 // search results container
+// displays search results in inside page.
 #results-container
 {
-  position:relative;
+  position: relative;
   z-index: 9998;
-  background:$blue_light;
-  padding-bottom:15px;
-
+  padding-bottom: 15px;
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+  padding-top:55px;
+  
   > header
   {
-    position:relative;
+    position:absolute;
+    top:0;
     z-index: 9999;
     border-bottom:1px solid greyscale_midtone;
     /*box-shadow: 0px 0px 10px $black_alpha40;*/
     font-family: $san_serif_font;
     background:$white;
-    padding:10px;
+    padding:20px;
 
     > nav 
     {
@@ -1585,6 +1409,7 @@ main > * > *
     top:0;
     -webkit-backface-visibility:hidden;
     width:100%;
+    @include single-box-shadow( $black_alpha40, 3px, 1px, 6px );
   }
 
   nav 

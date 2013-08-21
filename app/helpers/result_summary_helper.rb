@@ -17,7 +17,7 @@ module ResultSummaryHelper
     #set radius default
     radius = 2 if radius.blank?
 
-    summary = "Showing #{result_count} of "
+    summary = "#{result_count} of "
     summary << self.pluralize(total_count, 'result')
 
     summary << " matching '#{keyword}'" if keyword.present?

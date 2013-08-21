@@ -1,3 +1,4 @@
 %aside#search-container
+	= form_tag('/organizations', :method => :get, :id=>"search-form")
 	= render :partial => 'component/search/box'
-	= render 'component/search/options'
+	= render :partial => 'component/search/options'
