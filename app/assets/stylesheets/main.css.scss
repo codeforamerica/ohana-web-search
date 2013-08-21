@@ -977,23 +977,22 @@ main
 
 .inside main
 {
-  background: $white;
-  display: table-row;
+  background: $green_midtone;
 }
 
 //=================================================================================
 // search options
 .inside #search-container
 {
-  display:table-cell;
+  float:left;
   vertical-align: top;
-  background: $green_midtone;
   padding: 20px;
+  width:200px;
 
   button,
   select
   {
-    height:32px;
+    height:42px;
     font-size: 16px;
     margin:0;
     color:$black;
@@ -1023,7 +1022,6 @@ main
 
   button
   {
-    height:40px;
     color:$green_lightest;   
     font-size:18px; 
   }
@@ -1095,7 +1093,6 @@ main
 
   button
   {
-    height:40px;
     font-size: 16px;
     margin:0;
     border:2px solid $black_alpha40;
@@ -1192,6 +1189,7 @@ main
 
   button // find button styles
   {
+    height:40px;
     color:$green_lightest;
     width:40px;
     @include inline-block();
@@ -1240,7 +1238,6 @@ main
 
   input
   {
-    height:10px;
     top:5px;
     margin-left:0px;
     width:150px;
@@ -1341,10 +1338,10 @@ main
   position: relative;
   z-index: 9998;
   padding-bottom: 15px;
-  display: table-cell;
   vertical-align: top;
-  width: 100%;
   padding-top:55px;
+  margin-left:245px;
+  background:$white;
   
   > header
   {
@@ -1438,6 +1435,7 @@ main
 {
   margin:15px;
   margin-bottom:0px;
+  padding-left:15px;
 
   ul
   {
