@@ -1,4 +1,5 @@
 %section#search-box
+  = form_tag('/organizations', :method => :get, :id=>"search-form")
   %section#keyword-search-box
     %div
       %label{:for => "keyword"}
@@ -25,3 +26,6 @@
     %datalist#search-locations
       - @locations.each do |location|
         %option{:value=>location}
+
+
+  = render :partial => 'component/search/options' unless controller_name == 'home'
