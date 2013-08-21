@@ -1454,38 +1454,35 @@ main
 
     > ul
     {
-      li
+      font-family: $serif_font;
+      padding:20px;
+
+      > li
       {
-        cursor:pointer;
+        text-align:left;
+        text-transform:capitalize;
+        font-size:36px;
         display:inline-block;
-        min-width:125px;
-        min-height:40px;
-        @include border-radius(3px);
-        margin:5px;
-        background-color:$white;
-        font-size:16px;
-        color:$blue_dark;
-        position:relative;
-        text-align: center;
-        line-height:40px;
-        padding:10px;
-        border:1px solid $blue_midtone_alpha30;
-        letter-spacing:1px;
-      }
+        vertical-align: top;
+        min-width:300px;
+        margin-bottom:40px;
+        > ul
+        {
+          > li
+          {
+            margin:5px;
+            margin-left:20px;
+            padding-left:10px;
+            font-size:16px;
+            border-left:6px solid $green_light;
+          }
+          > li:nth-child(odd)
+          {
+            border-left:6px solid $yellow_midtone;
+          }
+        }
 
-      li:hover
-      {
-        border:1px solid $green_light_alpha70;
-        background-color:$white_alpha40;
-        color:$black;
-        @include transition(border $default_duration);
       }
-
-      a
-      {
-        border-bottom:0;
-      }
-
     }
   }
 }
