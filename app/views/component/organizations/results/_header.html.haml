@@ -1,5 +1,5 @@
-%header#results-header
-	%nav
+%header#results-header	
+	%div
 		%span#search-summary{:title=>format_summary(@params)}
 			= format_summary(@params)
 
@@ -27,3 +27,8 @@
 				= link_to '>', page_next, :class => 'pagination next disabled'
 			- else
 				= link_to '>', page_next, :class => 'pagination next ajax-link'
+	
+	%div.floating-content.hide
+		%a{ :href => '#'}
+			%span{ "data-icon" => "▲", :class => "ohana-icon" }
+			New Search

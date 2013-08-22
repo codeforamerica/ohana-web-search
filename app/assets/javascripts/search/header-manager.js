@@ -6,11 +6,16 @@ define(['util/util'],
 		var _header;
 		var _offsetY;
 		var _floating = false;
+		//var _fixedContent;
+		var _floatingContent;
 
 		function init()
 		{
 			_header = document.getElementById("results-header");
 			_offsetY = document.getElementById('content-header').offsetHeight;
+			_floatingContent = document.querySelector('#results-header .floating-content');
+			//_fixedContent = document.querySelector('#results-header .fixed-content');
+			
 			window.addEventListener("scroll",_onScroll,false);
 		}
 
@@ -22,6 +27,8 @@ define(['util/util'],
 				if (!_floating)
 				{
 					_header.classList.add("floating");
+					_floatingContent.classList.remove('hide');
+					//_fixedContent.classList.add('hide');
 					_floating = true;
 				}
 			}
@@ -31,6 +38,8 @@ define(['util/util'],
 				if (_floating)
 				{
 					_header.classList.remove("floating");
+					_floatingContent.classList.add('hide');
+					//_fixedContent.classList.remove('hide');
 					_floating = false;
 				}
 			}

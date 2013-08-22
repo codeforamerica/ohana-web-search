@@ -1319,95 +1319,98 @@ main
   padding-top:55px;
   margin-left:245px;
   background:$white;
-  
-  > header
+}
+
+#results-header
+{
+  position:absolute;
+  top:0;
+  z-index: 9999;
+  font-family: $san_serif_font;
+  background:$white;
+  padding:20px;
+
+  >div
   {
-    position:absolute;
-    top:0;
-    z-index: 9999;
-    border-bottom:1px solid greyscale_midtone;
-    /*box-shadow: 0px 0px 10px $black_alpha40;*/
-    font-family: $san_serif_font;
-    background:$white;
-    padding:20px;
-
-    > nav 
-    {
-      @include inline-block();
-      vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
-      color: $greyscale_midtone;
-      font-size:18px;
-      letter-spacing: 1px;
-      border-bottom:0;
-
-      > span
-      {
-        @include inline-block();
-        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
-      }
-    }
-
-    h1
-    {
-      font-size: 14px;
-      letter-spacing: 1px;
-      margin: 0px;
-      margin-left: 4px;
-      color: $black_alpha40;
-      padding: 10px;
-      @include inline-block();
-      cursor:default;
-      font-weight: bold;
-    }
+    @include inline-block();
+    vertical-align: baseline;
   }
 
-  > header.floating
+  >div.floating-content
   {
-    position:fixed;
-    top:0;
-    -webkit-backface-visibility:hidden;
-    width:100%;
-    @include single-box-shadow( $black_alpha40, 3px, 1px, 6px );
+    margin-left: 5px;
+    padding-left: 10px;
+    border-left: 1px dotted $black_alpha10;    
   }
 
-  nav 
+  h1
   {
-    span
-    {
-      min-height: 20px;
-    }
-
-    a
-    {
-      color: $black;
-      background:$blue_light;
-      padding:5px;
-      border-radius:5px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border-bottom:0;
-
-      border:2px solid $black_alpha40;
-      background:$green_light;
-      @include background( linear-gradient( $green_light 0%, $green_midtone 100%) );
-    }
-
-    a:hover
-    {
-      color: $yellow_light;
-      background:$blue_dark;
-      @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
-    }
-
-    a.disabled
-    {
-      background: $greyscale_light;
-      color: $black_alpha40;
-      cursor:default;
-      pointer-events:none; // not supported in IE<11!
-    }
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 0px;
+    margin-left: 10px;
+    color: $black;
+    @include inline-block();
+    vertical-align: baseline;
+    font-family: $serif_font;
   }
 
+  a
+  {
+    color: $black;
+    background:$blue_light;
+    padding:5px;
+    border-radius:5px;
+    text-decoration: none;
+    border-bottom:0;
+    margin-right:10px;
+
+    border:2px solid $black_alpha40;
+    background:$green_light;
+    @include background( linear-gradient( $green_light 0%, $green_midtone 100%) );
+  }
+
+  a:last-child
+  {
+    margin-right:0px;
+  }
+
+  a:hover
+  {
+    color: $yellow_light;
+    background:$blue_dark;
+    @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
+  }
+
+  a.disabled
+  {
+    background: $greyscale_light;
+    color: $black_alpha40;
+    cursor:default;
+    pointer-events:none; // not supported in IE<11!
+  }
+
+  .ohana-icon.print
+  {
+    position: relative;
+    top:-1px;
+    left:1px;
+    font-size:18px;
+  }
+
+  #pagination a
+  {
+    margin-right:0px;
+  }
+}
+
+#results-header.floating
+{
+  position:fixed;
+  top:0;
+  -webkit-backface-visibility:hidden;
+  width:100%;
+  @include single-box-shadow( $black_alpha40, 3px, 1px, 6px );
 }
 
 #results-entries

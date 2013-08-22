@@ -1,8 +1,20 @@
 %header#results-header
-	%h1
-		Service Provider
-	%nav
-		= render 'component/search/map_data'
+	%div
 		%a{ :href => @search_results_url, :class => "ajax-link" }
-			%span{ "data-icon" => "↵", :class => "ohana-icon" }
-			Return to results
+			%span{ "data-icon" => "◀", :class => "ohana-icon" }
+			Result list
+		%a{ :href => '#', :onclick=>"window.print();return false;" }
+			-# %span{ "data-icon" => "⎙", :class => "ohana-icon print" }
+			Print
+
+		- if @org.coordinates.present?
+			%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
+				%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+				%span Directions
+
+	%div.floating-content.hide
+		%a{ :href => '#'}
+			%span{ "data-icon" => "▲", :class => "ohana-icon" }
+			New Search
+		%h1
+			= @org.name

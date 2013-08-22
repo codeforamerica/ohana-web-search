@@ -148,6 +148,7 @@
 
     - if @org.coordinates.present? || @org.transportation_availability.present?
       %section.map-box
+        = render 'component/search/map_data'
         %h1 Map & Directions
 
         %div
@@ -156,12 +157,6 @@
             %section.transportation-availability
               %span
                 = @org.transportation_availability
-
-          - if @org.coordinates.present?
-            %section.directions
-              %a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
-                %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-                %span Get Directions
 
             %section.map
               %div#detail-map-canvas
