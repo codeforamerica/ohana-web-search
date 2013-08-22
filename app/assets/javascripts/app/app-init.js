@@ -1,5 +1,8 @@
 // manages search initialization
-require(['classList','app/loading-manager','app/popup-manager'],function(polyfill,lm,pm) {
+require(['app/loading-manager',
+	'app/popup-manager',
+	'classList',
+	'addEventListener'],function(lm,pm,pfClassList,pfAddEventListener) {
   'use strict';
 	 
 	document.body.classList.add("require-loaded");
