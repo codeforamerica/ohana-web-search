@@ -8,6 +8,9 @@ define(['util/util'],
 		var _keyword,
 				_location;
 
+		var _findBtn; // find button on homepage
+		var _updateBtn; // update button on inside page
+
 		var _callback; // function to execute when items are clicked
 
 		// PUBLIC METHODS
@@ -16,12 +19,15 @@ define(['util/util'],
 			_callback = callback;
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
+
+			_findBtn = document.getElementById('find-btn');
+			_updateBtn = document.getElementById('update-btn');
 						
 			// if no ajax callback is given, don't register ajax calls
 			if (callback)
 			{
-				document.getElementById('keyword-find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
-				document.getElementById('location-find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
+				_updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+				_findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
 				_registerAjaxHooks();
 			}
 		}

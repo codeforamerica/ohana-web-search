@@ -4,7 +4,7 @@
       Services provided in...
     = select_tag :language, options_for_select([['English', ''],['Spanish', 'spanish']], :selected => params[:language])
 
-%button#update-search-btn
+%button{:type=>'submit', :id=>'update-btn'}
   Update
   %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
 

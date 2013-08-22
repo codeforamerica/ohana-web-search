@@ -19,7 +19,7 @@
       - @locations.each do |location|
         %option{:value=>location}
 
-  %button{:type=>'submit',:id=>'location-find-btn'}
+  %button{:type=>'submit',:id=>'find-btn'}
     %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
 
   = render :partial => 'component/search/options' unless controller_name == 'home'
