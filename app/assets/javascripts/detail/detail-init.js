@@ -11,7 +11,5 @@ define(['detail/detail-map-manager','detail/character-limiter','detail/term-popu
   	tpm.init();
   }
   
-  init();
-
 return {init:init}
 });
