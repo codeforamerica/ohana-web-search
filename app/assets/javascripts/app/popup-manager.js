@@ -11,10 +11,13 @@ define(['util/util','enquire'],function(util,enquire) {
 		function init()
 		{
 			_addPopups();
+			// try/catch added to ignore IE errors
+			try{
 			window.enquire.register("screen and (max-width: 767px)", {
 			    match 	: _removePopups,  
 			    unmatch : _addPopups
 			});
+			}catch(e){}
 		}
 
 		
