@@ -1,12 +1,8 @@
 // manages search initialization
-require(['app/loading-manager','app/popup-manager'],function(lm,pm) {
+require(['classList','app/loading-manager','app/popup-manager'],function(polyfill,lm,pm) {
   'use strict';
-	
-	// try/catch wrap for IE error suppression
-	try
-	{  
-	  document.body.classList.add("require-loaded");
-  }catch(e){}
+	 
+	document.body.classList.add("require-loaded");
 
   lm.hide();
   pm.init();
