@@ -1,31 +1,25 @@
 %section#search-box
   = form_tag('/organizations', :method => :get, :id=>"search-form")
   %section#keyword-search-box
-    %div
-      %label{:for => "keyword"}
-        I need...
-      = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"   
-    %div
-      %button{:type=>'submit',:id=>'keyword-find-btn'}
-        %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
-
+    %label{:for => "keyword"}
+      I need...
+    = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food", :list => "search-keywords"   
+   
     %datalist#search-keywords
       - @keywords.each do |keyword|
         %option{:value=>keyword}
 
   -# location search box input field appears below  
   %section#location-search-box
-    %div
-      %label{:for => "location"}
-        I am near...
-      = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
-    %div
-      %button{:type=>'submit',:id=>'location-find-btn'}
-        %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
+    %label{:for => "location"}
+      I am near...
+    = search_field_tag :location, params[:location], :placeholder => "e.g. san mateo, ca", :list => "search-locations"
 
     %datalist#search-locations
       - @locations.each do |location|
         %option{:value=>location}
 
+  %button{:type=>'submit',:id=>'location-find-btn'}
+    %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
 
   = render :partial => 'component/search/options' unless controller_name == 'home'
