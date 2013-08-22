@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util/util','enquire'],function(util,enquire) {
+define(['util/util'/*,'enquire'*/],function(util,enquire) {
   'use strict';
 
 		// PRIVATE PROPERTIES
@@ -12,12 +12,12 @@ define(['util/util','enquire'],function(util,enquire) {
 		{
 			_addPopups();
 			// try/catch added to ignore IE errors
-			try{
+			/*
 			window.enquire.register("screen and (max-width: 767px)", {
 			    match 	: _removePopups,  
 			    unmatch : _addPopups
 			});
-			}catch(e){}
+			*/
 		}
 
 		
