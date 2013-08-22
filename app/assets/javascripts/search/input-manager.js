@@ -26,8 +26,8 @@ define(['util/util'],
 			// if no ajax callback is given, don't register ajax calls
 			if (callback)
 			{
-				_updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
-				_findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+				if (_updateBtn) _updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+				if (_findBtn) _findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
 				_registerAjaxHooks();
 			}
 		}
