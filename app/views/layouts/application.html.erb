@@ -45,7 +45,9 @@
     <script>
       // dynamically add transparent class so content shows up
       // when JavaScript is disabled
-      document.getElementById('content').classList.add('transparent');
+      try{
+        document.getElementById('content').classList.add('transparent');
+      }catch(e){}
     </script>
 
     <header id="content-header">
