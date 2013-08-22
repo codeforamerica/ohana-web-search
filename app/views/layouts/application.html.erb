@@ -18,8 +18,7 @@
 
     <script language="javascript">
       // patch to handle errors in IE
-      function stoperror(){return true;}
-      window.onerror=stoperror;
+      window.onerror=function(){return true;};
     </script>
 
     <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
