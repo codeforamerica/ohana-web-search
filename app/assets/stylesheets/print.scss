@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        color:$black_alpha60;
+        font-size:12px;
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+        color:$black_alpha60;
+        font-size:12px;
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+        // needed to prevent overlap with header and footer that browser adds
+        margin-top: 1cm;
+        margin-bottom: 2cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+
+     // header area of all pages
+    #content > header
+    {
+      font-size:14px !important;
+
+      nav 
+      {
+        position:static !important;
+      }
+    }
+    
+    .inside
+    {
+      // hide search sidebar when printing
+      #search-container
+      {
+        display:none !important;
+      }
+
+      #results-header > nav a
+      {
+        display:none !important;
+      }
+
+      #results-entries 
+      {
+        li
+        {
+          border:1px solid $black_alpha40 !important;          
+        
+          // needed for FF to display result list item links
+          a
+          {
+            display:block !important;
+          }
+        }
+        
+        a:after
+        {
+          margin-left:20px !important;
+          padding-bottom:10px !important;
+          display:inline-block !important;
+        }
+      }
+    }
+}

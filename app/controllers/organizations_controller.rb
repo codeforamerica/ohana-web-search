@@ -7,6 +7,22 @@ class OrganizationsController < ApplicationController
     @orgs = query.content
     @pagination = query.pagination
 
+    # adds top-level category information to orgs for display on results list
+    # this will likely be refactored to use the top-level keywords when those 
+    # are organized in the data source.
+    top_level_service_terms = []
+    Organization.service_terms.each do |term|
+      top_level_service_terms.push(term[:name]);
+    end
+
+    @orgs.each do |org|
+      org.category = []
+      org.keywords.each do |keyword|
+        org.category.push( keyword ) if top_level_service_terms.include? keyword.downcase
+      end
+      org.category = org.category.uniq
+    end
+
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,

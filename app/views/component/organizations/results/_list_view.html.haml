@@ -13,6 +13,11 @@
 									%span
 										== #{org.distance} mi
 						%header
+							- if has_field?(org, ['category'])
+								%ul.category
+									- org.category.each do |category|
+										%li
+											= category
 							%h1.name
 								= superscript_ordinals(org.name)
 							- if org.agency.present?
@@ -21,3 +26,5 @@
 						- if has_field?(org, address_fields)
 							%p.address
 								= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
+
+						

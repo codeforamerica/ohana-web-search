@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   ========================================================================== */
+
+// Smaller than standard 960 (devices and browsers)
+@media only screen and (max-width: 959px) {
+
+}
+
+// Tablet Portrait size to standard 960 (devices and browsers)
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+// All Mobile Sizes (devices and browser)
+@media only screen and (max-width: 767px) 
+{
+  #content > header
+  {
+    font-size:14px;
+
+    nav 
+    {
+      position:static;
+    }
+  }
+
+  // home screen styles
+  .home 
+  {
+    main 
+    {
+      position:static;
+    }
+    
+    #search-container {
+      min-width: 100%;
+    }
+
+    #category-box
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+      margin-top:8px;
+
+      > header
+      {
+        margin-top:10px;
+        margin-left:10px;
+        color:$white_alpha70;
+        font-size:14px;
+      }
+
+      > nav
+      {
+        margin-right:10px;
+      }
+    }
+
+    #category-box.slide-up,
+    #search-box.slide-up
+    {
+      display:none;
+    }
+
+    #search-box
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+
+      box-shadow: 0 0 5px $black_alpha40;
+      padding: 10px;
+      border: 1px solid $white_alpha40;
+      background: $blue_light_alpha40;
+
+      input[type='text'] {font-size:16px;}
+    
+      div
+      {
+          display:block;
+          text-align:center;
+      }
+
+      label
+      {
+          font-size: 20px;
+          color:$white;
+          text-align: center;
+          font-family: $serif_font;
+          letter-spacing: 2px;
+          display:block;
+          width:auto;
+      }
+
+      label span
+      {
+      //    color:$blue_light;
+          display:none;
+      }
+
+      input
+      {
+          height:16px;
+          font-size: 14px;
+          background:$white;
+          margin-bottom:10px;
+          margin-left:auto;
+          margin-right:auto;
+          width:170px;
+          display:block;
+          position:static;
+      }
+
+      button
+      {
+          width:100%;
+          font-size: 16px;
+          margin:0;
+          position:static;
+      }
+    }
+  }
+
+
+  .inside
+  {
+    #results-container 
+    {
+      display:table-header-group;
+
+      > header > nav
+      {
+        display:block;
+        padding:10px;
+        padding-top:0px;
+      }
+    }
+
+    #search-container 
+    {
+      display:table-footer-group;
+    }
+
+    #results-entries {
+      margin:0px;
+
+      nav{
+        margin-top:15px;
+        margin-left:15px;
+        margin-right:15px;
+      }
+    }
+
+    #detail-info
+    {
+      margin:0px;
+      @include border-radius(0px);
+      @include single-box-shadow($white,0,0,0px);
+      -ms-word-break: break-all;
+      word-break: break-all;
+      // Non standard for webkit
+      word-break: break-word;
+
+      > aside
+      {
+        float:clear;
+        width:100%;
+      }
+
+      > section
+      {
+        margin-right:auto;
+      }
+
+      .map img
+      {
+        width:100%;
+        height:auto;
+      }
+    }
+
+    #list-view
+    {
+      li:last-child
+      {
+        margin-bottom:0px;
+      }
+    }
+  }
+}
+
+// Mobile Landscape Size to Tablet Portrait (devices and browsers)
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+// Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+@media only screen and (max-width: 479px) {
+  
+}
