@@ -24,7 +24,7 @@ HumanServicesFinder::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
-  config.assets.precompile += %w( .svg .eot .woff .ttf ) # fonts
+  config.assets.precompile += %w( *.svg *.eot *.woff *.ttf ) # fonts
   config.assets.precompile += %w( html5shiv.js html5shiv-printshiv.js ) #polyfill
 
   # Defaults to nil and saved in location specified by config.assets.prefix
