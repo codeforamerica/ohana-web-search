@@ -10,6 +10,8 @@ define(['detail/detail-map-manager','detail/character-limiter','detail/term-popu
 		cl.init();
   	tpm.init();
   }
+
+  init(); // needed for direct access of details page
   
 return {init:init}
 });
