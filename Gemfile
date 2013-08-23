@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 
 # front end
 group :assets do
+  gem 'html5shiv-rails' # needed for IE polyfill of sectioning content
   gem 'sass-rails',   '~> 3.2.3'
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
