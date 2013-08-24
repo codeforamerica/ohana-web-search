@@ -32,10 +32,11 @@
 						%ul.phones
 							- org.phones.each do |array|
 								- array.each do |hash|
-									%li
-										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-										%span{:itemprop=>"telephone"}
-											= "#{format_phone(hash["number"])}"
+									- if hash["number"].present?
+										%li
+											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+											%span{:itemprop=>"telephone"}
+												= "#{format_phone(hash["number"])}"
 
 					- if has_field?(org, address_fields)
 						%p.address
