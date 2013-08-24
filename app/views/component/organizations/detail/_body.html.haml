@@ -74,8 +74,8 @@
               %section.urls
                 - @org.urls.each_with_index do |url,index|
                   %div
+                    %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                     %a{:href=>url,:target=>"_blank"}
-                      %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                       %span{:itemprop=>"url"}
                         = url
 
