@@ -49,6 +49,38 @@ class Organization
     ['Atherton, CA','Belmont, CA','Brisbane, CA','Burlingame, CA','Colma, CA','Daly City, CA','East Palo Alto, CA','Foster City, CA','Half Moon Bay, CA','Hillsborough, CA','Menlo Park, CA','Millbrae, CA','Pacifica, CA','Portola Valley, CA','Redwood City, CA','San Bruno, CA','San Carlos, CA','San Mateo, CA','South San Francisco, CA','Woodside, CA','Broadmoor, CA','Burlingame Hills, CA','Devonshire, CA','El Granada, CA','Emerald Lake Hills, CA','Highlands-Baywood Park, CA','Kings Mountain, CA','Ladera, CA','La Honda, CA','Loma Mar, CA','Menlo Oaks, CA','Montara, CA','Moss Beach, CA','North Fair Oaks, CA','Palomar Park, CA','Pescadero, CA','Princeton-by-the-Sea, CA','San Gregorio, CA','Sky Londa, CA','West Menlo Park, CA']
   end
 
+  # Looks up whether keyword search term is a terminology term or not.
+  # Terminology terms include a definition box with further info on the search results page.
+  # @param keyword [String] keyword.
+  # @return [String] the search term
+  def self.terminology(keyword)
+    if keyword.present?
+
+      terms = [
+        {:name=>'wic',:aka=>['women, infants, and children']}, \
+        {:name=>'sfmnp',:aka=>["senior farmers' market nutrition program","senior farmers market nutrition program"]}, \
+        {:name=>'market match',:aka=>[]}, \
+        {:name=>'calfresh',:aka=>['food stamps','snap']}, \
+        {:name=>'health care reform',:aka=>['affordable care act','health insurance','aca health insurance']} \
+      ]
+      
+      keyword = keyword.downcase # set keyword to lowercase
+
+      terms.each do |term|
+        if keyword == term[:name]
+          return term[:name].tr(" ", "_")
+        else
+          term[:aka].each do |aka|
+            if keyword == aka
+              return term[:name].tr(" ", "_")
+            end
+          end
+        end
+      end
+
+    end
+  end
+
   # top level services for when no search results are found
   def self.service_terms
     terms = [
@@ -63,7 +95,7 @@ class Organization
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
       {:name=>'programs',:sub=>['CalFresh','Market Match','ACA Health Insurance'].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
-      {:name=>'work',:sub=>['finding work','job skills training'].sort}, \
+      {:name=>'work',:sub=>['finding work','job skills training'].sort} \
     ]
   end
   

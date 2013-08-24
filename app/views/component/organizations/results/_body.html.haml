@@ -1,9 +1,14 @@
 = render 'component/organizations/results/header'
 %section#results-entries
+  - if @terminology.present?
+    %section#terminology
+      - dynamic_partial = 'component/terminology/'+@terminology
+      = render :partial => "#{dynamic_partial}"
+
   - if @orgs.blank?
     %section.no-results
       %p
-        %strong Unfortunately, your search returned no results.
+        %strong Unfortunately, your search returned no service results.
         %em If you have trouble finding what you're looking for try searching for a category of service:
 
       %ul

@@ -25,6 +25,8 @@ class OrganizationsController < ApplicationController
         org.category = org.category.sort
       end
     end
+    
+    @terminology = Organization.terminology(params[:keyword])
 
     @params = {
       :count => @pagination.items_current,

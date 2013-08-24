@@ -1429,6 +1429,7 @@ main
   margin:13px;
   margin-bottom:0px;
   padding-left:15px;
+  padding-right:15px;
 
   > ul
   {
@@ -1448,7 +1449,8 @@ main
     
     > p
     {
-      margin:10px;
+      margin:80px;
+      text-align:center;
       > strong
       {
         font-size:18px;
@@ -1464,6 +1466,7 @@ main
 
     > ul
     {
+      text-align:center;
       font-family: $serif_font;
       padding:20px;
 
@@ -1551,6 +1554,58 @@ main
 */
 
 //=================================================================================
+// Results - terminology view
+#terminology
+{
+  background:$greyscale_lightest;
+  border:1px solid $purple_darkest;
+  padding:30px;
+  margin-top:20px;
+  margin-bottom:20px;
+  @include border-radius(4px);
+  font-family:$san_serif_font;
+
+  dt
+  {
+    font-weight:bold;
+    font-size:18px;
+  }
+
+  table
+  {
+    margin-top:30px;
+
+    tr
+    {
+      border-bottom:1px solid $greyscale_light;
+    }
+
+    tr:last-child
+    {
+      border-bottom:0px;
+    }
+
+    th
+    {
+      font-weight:bold;
+      font-size:18px;
+    }
+
+    th,td
+    {
+      padding:10px;
+    }
+
+    p:first-child
+    {
+      padding-bottom:10px;
+    }
+
+  }
+}
+
+
+//=================================================================================
 // Results - list view
 #list-view
 {
@@ -1565,6 +1620,7 @@ main
       @include border-radius(4px);
       border:1px solid $blue_lightest; // fallback for IE
       border:1px solid $black_alpha10;
+      border-top:1px solid $greyscale_light;
       background:$greyscale_lightest;
 
       //border-left:15px solid $blue_lightest;
