@@ -13,12 +13,13 @@
 								%span
 									== #{org.distance} mi
 					%header
-						- if has_field?(org, ['category'])
-							%ul.category
-								- org.category.each do |category|
-									%li
-										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"#{org.agency}", :class=>"ajax-link"}
-											-#= category
+						-#
+							- if has_field?(org, ['category'])
+								%ul.category
+									- org.category.each do |category|
+										%li
+											%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"#{org.agency}", :class=>"ajax-link"}
+												= category
 						%h1.name
 							%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 								= superscript_ordinals(org.name)
