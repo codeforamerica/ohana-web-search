@@ -1703,7 +1703,8 @@ main
 #detail-info
 {
   margin:30px;
-  margin-top:15px;
+  margin-top:13px;
+  margin-left:28px;
   @include border-radius(4px);
   background:$greyscale_lightest;
   color:$black;
@@ -1717,8 +1718,8 @@ main
     border-bottom: 1px solid $black_alpha10;
     background:$blue_lightest_alpha10;
     @include border-radius(4px 4px 0px 0px);
-    padding: 10px;
-    padding-left:20px;
+    padding: 20px;
+    padding-left: 30px;
 
     h1 // name
     {
@@ -1768,13 +1769,15 @@ main
       padding:20px;
       padding-top:0px;
       line-height: 30px;
+      font-family: $san_serif_font;
+
       > h1
       {
         color:$black;
         font-size:16px;
-        font-family: $san_serif_font;
         font-weight:bold;
-        background:$blue_lightest;
+        background:$white; // fallback for IE
+        background:$purple_lightest_alpha20;
         padding-left:5px;
         padding-right:5px;
         margin-right:5px;
@@ -1794,7 +1797,7 @@ main
     border-left:1px solid $white;
     border-bottom:1px solid $white;
     @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
-    background:$green_lightest;
+    background:$white;
 
     -ms-word-break: break-all;
     word-break: break-all;
@@ -1808,6 +1811,7 @@ main
       display:table;
       font-size:18px;
       font-family: $san_serif_font;
+      color:$purple_dark;
 
       > div
       {
