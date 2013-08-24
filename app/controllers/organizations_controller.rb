@@ -17,10 +17,13 @@ class OrganizationsController < ApplicationController
 
     @orgs.each do |org|
       org.category = []
-      org.keywords.each do |keyword|
-        org.category.push( keyword ) if top_level_service_terms.include? keyword.downcase
+      if org.keywords.present?
+        org.keywords.each do |keyword|
+          org.category.push( keyword ) if top_level_service_terms.include? keyword.downcase
+        end
+        org.category = org.category.uniq
+        org.category = org.category.sort
       end
-      org.category = org.category.uniq
     end
 
     @params = {

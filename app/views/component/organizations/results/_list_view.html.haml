@@ -5,26 +5,38 @@
 				- query = "?"
 				- @query_params.each do |key, value|
 					- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
-				%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
-					%section{:class => "results-entry"}
-						-#
-							- unless org.distance.blank?
-								%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
-									%span
-										== #{org.distance} mi
-						%header
-							- if has_field?(org, ['category'])
-								%ul.category
-									- org.category.each do |category|
-										%li
-											= category
-							%h1.name
+			
+				%section{:class => "results-entry"}
+					-#
+						- unless org.distance.blank?
+							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
+								%span
+									== #{org.distance} mi
+					%header
+						- if has_field?(org, ['category'])
+							%ul.category
+								- org.category.each do |category|
+									%li
+										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"#{org.agency}", :class=>"ajax-link"}
+											-#= category
+						%h1.name
+							%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 								= superscript_ordinals(org.name)
-							- if org.agency.present?
-								%h2.agency
-									= superscript_ordinals(org.agency)
-						- if has_field?(org, address_fields)
-							%p.address
-								= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
+						- if org.agency.present?
+							%h2.agency
+								%a{:href=>"/organizations?keyword=#{CGI::escape(org.agency)}", :title=>"#{org.agency}", :class=>"ajax-link"}
+									%span
+										= superscript_ordinals(org.agency)
+					- if has_field?(org, ['phones'])
+						%ul.phones
+							- org.phones.each do |array|
+								- array.each do |hash|
+									%li
+										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+										%span{:itemprop=>"telephone"}
+											= "#{format_phone(hash["number"])}"
 
-						
+					- if has_field?(org, address_fields)
+						%p.address
+							= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
+					
