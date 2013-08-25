@@ -6,7 +6,8 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		var _map;
 		var _markerData; // markers on the map
 		var _markersArray = []; // array for storing markers
-		var _markerBounds;
+		var _markerBounds; // the bounds of the markers
+		var _locationMarker; // the location of the current org
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -44,7 +45,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			  _map = new google.maps.Map(document.getElementById("detail-map-canvas"), mapOptions);
 
 			  
-			  var locationMarker = new google.maps.Marker({
+			  _locationMarker = new google.maps.Marker({
 						map: _map,
 						title: title,
 						position: latlng
@@ -64,6 +65,8 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 				_markerData = JSON.parse(locations.innerHTML);
 		  	locations.parentNode.removeChild(locations); // remove script element
 			  _markerBounds = new google.maps.LatLngBounds();
+			  _markerBounds.extend(_locationMarker.position);
+
 				_clearMarkers();
 
 				var dataLength = _markerData.length;
@@ -119,7 +122,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 				google.maps.event.addListener(marker, 'mouseout', function() {
 				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
 				});
-*/
+				*/
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 				
 				_markerBounds.extend(myLatlng);
