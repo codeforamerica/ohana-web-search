@@ -8,9 +8,12 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		var _markersArray = []; // array for storing markers
 		var _markerBounds;
 
+		var _callback; // callback to handoff search to when nearby location is clicked
+
 		// PUBLIC METHODS
-		function init()
+		function init(callback)
 		{
+			_callback = callback;
 			var title = document.getElementById("detail-map-canvas-title");
 			var lat = document.getElementById("detail-map-canvas-lat");
 			var lng = document.getElementById("detail-map-canvas-lng");
@@ -117,14 +120,13 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
 				});
 */
-				//google.maps.event.addListener(marker, 'click', _markerClickedHandler);
+				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 				
 				_markerBounds.extend(myLatlng);
 				
 			}
 		}
 
-		/*
 		// a location marker was clicked, perform a search for the organization details
 		function _markerClickedHandler(evt)
 		{
@@ -133,7 +135,6 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			params.location = document.getElementById('location').value;
 			_callback.performSearch(params);
 		}
-		*/
 
 		// refresh the data
 		// @param coordinates [Object] object with 'lat'/'lng' attributes on 

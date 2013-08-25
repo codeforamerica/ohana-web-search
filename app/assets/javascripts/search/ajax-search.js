@@ -21,6 +21,7 @@ define(['app/loading-manager',
 
 			inputs.init(this); // initialize search form and ajax links
 			header.init(); // initialize the header manager
+			detail.init(this); // initializes detail scripts
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -92,7 +93,7 @@ define(['app/loading-manager',
 			_resultsContainer.innerHTML = evt.content; // update search results list
 			
 			if (evt.action == _requestType.DETAIL)
-				detail.init(); // re-initializes details scripts
+				detail.refresh(); // re-initializes details scripts
 			
 			inputs.refresh("#results-container"); // refresh search inputs
 			header.init(); // re-initialize header manager

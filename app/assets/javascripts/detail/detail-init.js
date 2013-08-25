@@ -4,14 +4,20 @@
 define(['detail/detail-map-manager','detail/character-limiter','detail/term-popup-manager'],function(map,cl,tpm) {
   'use strict';
 
-  function init()
+  var _callback; // store callback used to hand to map for searches
+
+  function init(callback)
   {
-  	map.init();
-		cl.init();
-  	tpm.init();
+  	_callback = callback;
+  	refresh();
   }
 
-  init(); // needed for direct access of details page
-  
-return {init:init}
+  function refresh()
+  {
+  	map.init(_callback);
+  	cl.init();
+  	tpm.init();
+  }
+ 
+return {init:init,refresh:refresh}
 });
