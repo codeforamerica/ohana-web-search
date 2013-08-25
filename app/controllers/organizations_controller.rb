@@ -20,7 +20,7 @@ class OrganizationsController < ApplicationController
       new_params = params.dup
       
       if keyword == 'animal welfare'
-        new_params[:keyword] = 'Animal Council'
+        new_params[:keyword] = 'Animal Switchboard'
       elsif keyword == 'building support networks'
         new_params[:keyword] = 'Peninsula Clergy Network'
       elsif keyword == 'daytime caregiving'
