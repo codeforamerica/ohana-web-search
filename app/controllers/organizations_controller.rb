@@ -44,6 +44,8 @@ class OrganizationsController < ApplicationController
         new_params[:keyword] = 'Community Solutions for Children, Families and Individuals'
       elsif keyword == 'baby supplies'
         new_params[:keyword] = "UCSF Women's Health Resource Center"
+      elsif keyword == 'diapers'
+        new_params[:keyword] = "UCSF Women's Health Resource Center"
       elsif keyword == 'toys and gifts'
         new_params[:keyword] = 'Community Services Agency of Mountain View'
       elsif keyword == 'addiction & recovery'
