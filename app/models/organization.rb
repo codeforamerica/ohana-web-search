@@ -108,7 +108,7 @@ class Organization
       {:name=>'emergency',:sub=>['psychiatric emergencies','emergency financial assistance','immediate safety needs','disaster preparedness','disaster response'].sort}, \
       {:name=>'food',:sub=>['free meals','food pantries','help paying for food','food delivery','food benefits','nutrition support'].sort}, \
       {:name=>'goods',:sub=>['clothing','furniture','baby supplies','toys and gifts'].sort}, \
-      {:name=>'health',:sub=>['medical care','dental care','health education','addiction and recovery','help finding services','help paying for healthcare'].sort}, \
+      {:name=>'health',:sub=>['medical care','dental care','health education','addiction & recovery','help finding services','help paying for healthcare'].sort}, \
       {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
       {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
