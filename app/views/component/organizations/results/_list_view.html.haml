@@ -20,7 +20,7 @@
 										%li
 											%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"#{org.agency}", :class=>"ajax-link"}
 												= category
-						%h1.name
+						%h1{:id=>'#{org._id}',:class=>'name'}
 							%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 								= superscript_ordinals(org.name)
 						- if org.agency.present?

@@ -33,20 +33,20 @@ define(['app/loading-manager',
 
 		function _updateURL(evt) 
 		{
-			var params = util.getQueryParams(document.location.search);
-			
-			// set search field values
-			var keyword = params.keyword || "";
-			var location = params.location || "";
-			var radius = params.radius || null;
-
-			inputs.setKeyword(keyword);
-			inputs.setLocation(location);
-
-			if (radius) map.setZoom(radius);
+			// TODO prevent ajax request when user follows 
+			// a named anchor link to the same page they are currently on.
 
 			if ( _ajaxCalled || (evt.state && evt.state.ajax) )
 			{
+				var params = util.getQueryParams(document.location.search);
+				
+				// set search field values
+				var keyword = params.keyword || "";
+				var location = params.location || "";
+
+				inputs.setKeyword(keyword);
+				inputs.setLocation(location);
+			
 				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
 			}

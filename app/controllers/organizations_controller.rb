@@ -3,11 +3,18 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
+
+    # initialize terminology box if the keyword is a term 
+    # that has a matching partial as defined in Organization.terminology
+    # and app/views/component/terminology
     @terminology = Organization.terminology(params[:keyword])
 
+    # initialize query. Content may be blank if no results were found.
     query = Organization.search(params)
     
-    # provides temporary custom CIP > OE mapping of search terms that don't return results
+    # Provides temporary custom CIP > OE mapping of search terms that don't return results
+    # If the response content is blank (no results found) check that the keyword isn't 
+    # one of the homepage terms, and if so, map to a new search that returns at least one result
     if query.content.blank?
       keyword = params[:keyword].downcase
       new_params = params.dup
@@ -89,12 +96,13 @@ class OrganizationsController < ApplicationController
       query = Organization.search(new_params)
     end
 
+    # Initialize @orgs and @pagination properties that are used in the views
     @orgs = query.content
     @pagination = query.pagination
 
-    # adds top-level category information to orgs for display on results list
-    # this will likely be refactored to use the top-level keywords when those 
-    # are organized in the data source.
+    # Adds top-level category terms to @orgs for display on results list.
+    # This will likely be refactored to use the top-level keywords when those 
+    # are organized in the database using OE or equivalent.
     if @orgs.present?
       top_level_service_terms = []
       Organization.service_terms.each do |term|
@@ -112,7 +120,8 @@ class OrganizationsController < ApplicationController
         end
       end
     end
-    
+
+    # Used in the format_summary method in the result_summary_helper
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,
@@ -121,9 +130,12 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
-     @query_params = {
+    # Used for appending query parameters to result entry link in list_view
+    # so that the search field retains its state when visiting a detail page.
+    @query_params = {
       :keyword => params[:keyword],
       :location => params[:location],
+      :page => params[:page],
       :radius => params[:radius]
     }
 
@@ -134,8 +146,7 @@ class OrganizationsController < ApplicationController
       # visit via ajax
       format.json {
         with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/results/body',
-           :locals => { :map_present => @map_present }
+          @html_content = render_to_string partial: 'component/organizations/results/body'
         end
         render :json => { :content => @html_content , :action => action_name }
       }
@@ -159,10 +170,11 @@ class OrganizationsController < ApplicationController
     radius          = params[:radius] || ''
     page            = params[:page] || ''
 
-    @search_results_url = '/organizations?keyword='+URI.escape(keyword)+
-                          '&location='+URI.escape(location)+
-                          '&radius='+radius+
-                          '&page='+page
+    @search_results_url = '/organizations?page='+page
+    @search_results_url += '&keyword='+URI.escape(keyword) if keyword.present?
+    @search_results_url += '&location='+URI.escape(location) if location.present?
+    @search_results_url += '&radius='+radius if radius.present?
+    @search_results_url += '#'+params[:id]
 
     respond_to do |format|
       # visit directly
