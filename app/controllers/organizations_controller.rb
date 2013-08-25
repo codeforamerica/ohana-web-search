@@ -3,8 +3,92 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
+    @terminology = Organization.terminology(params[:keyword])
+
     query = Organization.search(params)
+    
+    # provides temporary custom CIP > OE mapping of search terms that don't return results
+    if query.content.blank?
+      keyword = params[:keyword].downcase
+      new_params = params.dup
+      
+      if keyword == 'animal welfare'
+        new_params[:keyword] = 'Animal Council'
+      elsif keyword == 'building support networks'
+        new_params[:keyword] = 'Peninsula Clergy Network'
+      elsif keyword == 'daytime caregiving'
+        new_params[:keyword] = 'Bay Area Caregiver Resource Center'
+      elsif keyword == 'help navigating the system'
+        new_params[:keyword] = 'Each One Reach One'
+      elsif keyword == 'residential caregiving'
+        new_params[:keyword] = 'Adult Rehabilitation Center'
+      elsif keyword == 'help finding school'
+        new_params[:keyword] = 'Children and Family Services'
+      elsif keyword == 'help paying for school'
+        new_params[:keyword] = 'Consumer Credit Counseling Service'
+      elsif keyword == 'disaster response'
+        new_params[:keyword] = "San Mateo County Sheriff's Office"
+      elsif keyword == 'immediate safety needs'
+        new_params[:keyword] = 'EMQ Children and Family Services'
+      elsif keyword == 'psychiatric emergencies'
+        new_params[:keyword] = 'Behavioral Health and Recovery Services'
+      elsif keyword == 'food benefits'
+        new_params[:keyword] = 'Project Homeless Connect'
+      elsif keyword == 'food delivery'
+        new_params[:keyword] = "Jewish Family and Children's Services"
+      elsif keyword == 'free meals'
+        new_params[:keyword] = 'Vincent de Paul'
+      elsif keyword == 'help paying for food'
+        new_params[:keyword] = 'united way'
+      elsif keyword == 'nutrition support'
+        new_params[:keyword] = 'Community Solutions for Children, Families and Individuals'
+      elsif keyword == 'baby supplies'
+        new_params[:keyword] = "UCSF Women's Health Resource Center"
+      elsif keyword == 'toys and gifts'
+        new_params[:keyword] = 'Community Services Agency of Mountain View'
+      elsif keyword == 'addiction & recovery'
+        new_params[:keyword] = 'ARH Recovery Homes'
+      elsif keyword == 'help finding services'
+        new_params[:keyword] = 'united way'
+      elsif keyword == 'help paying for healthcare'
+        new_params[:keyword] = 'Ravenswood Family Health Center'
+      elsif keyword == 'help finding housing'
+        new_params[:keyword] = 'Menlo Park Housing and Redevelopment'
+      elsif keyword == 'housing advice'
+        new_params[:keyword] = 'Project Homeless Connect'
+      elsif keyword == 'paying for housing'
+        new_params[:keyword] = 'Consumer Credit Counseling'
+      elsif keyword == 'pay for childcare'
+        new_params[:keyword] = 'Go Kids'
+      elsif keyword == 'pay for food'
+        new_params[:keyword] = 'Consumer Credit Counseling'
+      elsif keyword == 'pay for housing'
+        new_params[:keyword] = 'ARH Recovery Homes'
+      elsif keyword == 'pay for school'
+        new_params[:keyword] = 'Corporation for National and Community Service'
+      elsif keyword == 'health care reform'
+        new_params[:keyword] = 'Human Services Agency'
+      elsif keyword == 'market match'
+        new_params[:keyword] = "Belmont Farmers' Market"
+      elsif keyword == "senior farmers' market nutrition program"
+        new_params[:keyword] = "Belmont Farmers' Market"
+      elsif keyword == "sfmnp"
+        new_params[:keyword] = "Belmont Farmers' Market"
+      elsif keyword == "bus passes"
+        new_params[:keyword] = 'coastside hope'
+      elsif keyword == "transportation to appointments"
+        new_params[:keyword] = 'Senior Companion Program of San Mateo County'
+      elsif keyword == "transportation to healthcare"
+        new_params[:keyword] = 'Senior Companion Program of San Mateo County'
+      elsif keyword == "transportation to school"
+        new_params[:keyword] = 'The Special Need Transportation Program'
+      end
+
+      query = Organization.search(new_params)
+    end
+
     @orgs = query.content
+
     @pagination = query.pagination
 
     # adds top-level category information to orgs for display on results list
@@ -26,8 +110,6 @@ class OrganizationsController < ApplicationController
       end
     end
     
-    @terminology = Organization.terminology(params[:keyword])
-
     @params = {
       :count => @pagination.items_current,
       :total_count => @pagination.items_total,
@@ -62,7 +144,12 @@ class OrganizationsController < ApplicationController
   def show
     # retrieve specific organization's details
     @org = Organization.get(params[:id]).content
-    @map_data = generate_map_data(Organization.nearby(params[:id]).content)
+
+    # sometimes nearby returns a 500 error, 
+    # this checks to make sure nearby has a value before initializing map data
+    if @org.coordinates.present?
+      @map_data = generate_map_data(Organization.nearby(params[:id]).content)
+    end
 
     keyword         = params[:keyword] || ''
     location        = params[:location] || ''
