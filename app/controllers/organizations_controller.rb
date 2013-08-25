@@ -91,6 +91,8 @@ class OrganizationsController < ApplicationController
         new_params[:keyword] = 'Senior Companion Program of San Mateo County'
       elsif keyword == "transportation to school"
         new_params[:keyword] = 'The Special Need Transportation Program'
+      elsif keyword == "citizenship & immigration"
+        new_params[:keyword] = 'citizenship and immigration'
       end
 
       query = Organization.search(new_params)
