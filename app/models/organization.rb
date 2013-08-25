@@ -53,6 +53,7 @@ class Organization
         terms.push(aka)
       end
     end
+    terms.map!{|t| t.downcase}
 
     #retrieve the service_terms
     sterms_raw = self.service_terms
@@ -63,6 +64,7 @@ class Organization
         sterms.push(sub)
       end
     end
+    sterms.map!{|s| s.downcase}
 
     aggregate = cip_keywords.zip(terms).zip(sterms).flatten.compact.uniq
   end
