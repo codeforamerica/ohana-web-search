@@ -158,6 +158,7 @@
               %span
                 = @org.transportation_availability
 
+          - if @org.coordinates.present?
             %section.map
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
