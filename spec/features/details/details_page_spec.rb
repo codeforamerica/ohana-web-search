@@ -17,9 +17,9 @@ feature "details page", :js => true do
 
     scenario 'return to search results via details page' do
       VCR.use_cassette('details/return_to_results') do
-        find_link("Return to results").click
+        find_link("Result list").click
         page.find("#search-summary").
-          should have_content("Showing 1 of 1 result matching 'maceo'")
+          should have_content("1 of 1 result matching 'maceo'")
       end
     end
   end
