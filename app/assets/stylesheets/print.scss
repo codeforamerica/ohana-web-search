@@ -13,30 +13,31 @@
 
     a,
     a:visited {
-        text-decoration: underline;
+        //text-decoration: underline;
+        border-bottom:1px solid $greyscale_light !important;
     }
 
-    a[href]:after {
+    // show links href values
+    #app-footer a[href]:after {
         content: " (" attr(href) ")";
         color:$black_alpha60;
         font-size:12px;
     }
 
+    /*
     abbr[title]:after {
         content: " (" attr(title) ")";
         color:$black_alpha60;
         font-size:12px;
     }
-
-    /*
-     * Don't show links for images, or javascript/internal links
-     */
+    // Don't show links for images, or javascript/internal links
 
     .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
         content: "";
     }
+    */
 
     pre,
     blockquote {
@@ -90,6 +91,15 @@
     
     .inside
     {
+      // hide utility buttons
+      #content-header
+      {
+        nav
+        {
+          display:none !important;
+        }
+      }
+
       // hide search sidebar when printing
       #search-container
       {
@@ -99,6 +109,93 @@
       #results-header > nav a
       {
         display:none !important;
+      }
+
+      #results-container
+      {
+        margin-left:0 !important;
+        border-left:0 !important;
+        padding-top:0 !important;
+
+        #results-header
+        {
+          display:none !important;
+        }
+      }
+
+      #detail-info
+      {
+        border:0 !important;
+        margin:0;
+
+        > aside
+        {
+          float:none;
+          width:100%;
+          margin:0;
+        }
+
+        .contact-box,
+        .address-box
+        {
+          float:left !important;
+        }
+
+        .overview-box
+        {
+          clear:both;
+        }
+
+        > section 
+        {
+          margin-right:0;
+        }
+
+        .map-box
+        {
+          page-break-before: always;
+        }
+
+        .map
+        {
+          margin:0;
+          padding:0;
+        }
+      }
+
+      // stack content sections in rows
+      #detail-info > * > section * > section {
+        @include inline-block();
+      }
+
+      #detail-info .metadata
+      {
+        padding-bottom:0;
+
+        .updated-at
+        {
+          float:right;
+          margin:0;
+          padding:0;
+          padding-right:20px;
+        }
+      }
+
+      #content #app-footer
+      {
+        padding:0 !important;
+        margin:0 !important;
+
+        p
+        {
+          padding:0;
+          padding-right:20px;
+        }
+
+        p span:last-child
+        {
+          display:none;
+        }
       }
 
       #results-entries 
