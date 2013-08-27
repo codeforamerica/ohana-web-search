@@ -139,6 +139,8 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
+
+    # respond to direct and ajax requests
     respond_to do |format|
       # visit directly
       format.html # index.html.haml
@@ -159,12 +161,10 @@ class OrganizationsController < ApplicationController
     # retrieve specific organization's details
     @org = Organization.get(params[:id]).content
 
-    # sometimes nearby returns a 500 error, 
-    # this checks to make sure nearby has a value before initializing map data
-    if @org.coordinates.present?
-      @map_data = generate_map_data(Organization.nearby(params[:id]).content)
-    end
-
+    # initializes map data
+    @map_data = generate_map_data(Organization.nearby(params[:id]).content)
+    
+    # set up the search results URL
     keyword         = params[:keyword] || ''
     location        = params[:location] || ''
     radius          = params[:radius] || ''
@@ -176,6 +176,7 @@ class OrganizationsController < ApplicationController
     @search_results_url += '&radius='+radius if radius.present?
     @search_results_url += '#'+params[:id]
 
+    # respond to direct and ajax requests
     respond_to do |format|
       # visit directly
       format.html #show.html.haml
@@ -194,12 +195,13 @@ class OrganizationsController < ApplicationController
 
   private
 
-  # will be used for mapping nearby locations on details map view
+  # Used for mapping nearby locations on details map view
+  # @param data [Object] nearby API response
   def generate_map_data(data)
 
     # generate json for the maps in the view
     # this will be injected into a <script> element in the view
-    # and then consumed by the map-manager javascript.
+    # and then consumed by the detail-map-manager javascript.
     # map_data parses the @org hash and retrieves all entries
     # that have coordinates, and returns that as json, otherwise map_data 
     # ends up being nil and can be checked in the view with map_data.present?
@@ -215,6 +217,9 @@ class OrganizationsController < ApplicationController
     end
 
     map_data.push({'count'=>map_data.length,'total'=>data.length})
+
+    # set map_data to nil if there are no entries
+    map_data = nil if (map_data.count == 0)
     map_data = map_data.to_json.html_safe unless map_data.nil?
   end
 
