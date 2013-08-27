@@ -197,6 +197,8 @@ class OrganizationsController < ApplicationController
 
   # Used for mapping nearby locations on details map view
   # @param data [Object] nearby API response
+  # @return [Object] JSON object containing id, name, and coordinates.
+  # Or nil if there are no nearby map entries.
   def generate_map_data(data)
 
     # generate json for the maps in the view
@@ -216,6 +218,8 @@ class OrganizationsController < ApplicationController
       result
     end
 
+    # set a count and total value that will show how many (count) 
+    # of the data (total) were able to be located because they had coordinates.
     map_data.push({'count'=>map_data.length,'total'=>data.length})
 
     # set map_data to nil if there are no entries
