@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,feedback/*enquire*/) {
+define(['util/util','app/feedback-form-manager','inputEvent'/*,'enquire'*/],function(util,feedback,inputEvent/*enquire*/) {
   'use strict';
 
 		// PRIVATE PROPERTIES
