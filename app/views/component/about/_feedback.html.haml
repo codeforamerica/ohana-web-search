@@ -8,8 +8,12 @@
 		%p#feedback-status.hide
 			Submit feedback!
 		%p
+			%label{:for=>'comment'}
+				Comment:
 			%textarea{:name=>"comment", :id=>"comment", :placeholder=>"enter your comment, question, etc.", :rows=>"4", :required=>""}
 		%p
+			%label{:for=>'email'}
+				Email:
 			%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)"}
 
 		%p
