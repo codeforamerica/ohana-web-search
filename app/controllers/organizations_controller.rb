@@ -12,88 +12,9 @@ class OrganizationsController < ApplicationController
     # initialize query. Content may be blank if no results were found.
     query = Organization.search(params)
     
-    # Provides temporary custom CIP > OE mapping of search terms that don't return results
-    # If the response content is blank (no results found) check that the keyword isn't 
-    # one of the homepage terms, and if so, map to a new search that returns at least one result
+    # check for results against keyword mapping if content is blank.
     if query.content.blank?
-      keyword = params[:keyword].downcase
-      new_params = params.dup
-      
-      if keyword == 'animal welfare'
-        new_params[:keyword] = 'protective services for animals'
-      elsif keyword == 'building support networks'
-        new_params[:keyword] = 'support groups'
-      elsif keyword == 'daytime caregiving'
-        new_params[:keyword] = 'day care'
-      elsif keyword == 'help navigating the system'
-        new_params[:keyword] = '211'
-      elsif keyword == 'residential caregiving'
-        new_params[:keyword] = 'palliative care'
-      elsif keyword == 'help finding school'
-        new_params[:keyword] = 'school enrollment and curriculum'
-      elsif keyword == 'help paying for school'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'disaster response'
-        new_params[:keyword] = "disaster preparedness"
-      elsif keyword == 'immediate safety needs'
-        new_params[:keyword] = 'shelter/refuge'
-      elsif keyword == 'psychiatric emergencies'
-        new_params[:keyword] = 'psychiatric emergency room care'
-      elsif keyword == 'food benefits'
-        new_params[:keyword] = 'human/social services issues'
-      elsif keyword == 'food delivery'
-        new_params[:keyword] = "meal sites/home-delivered meals"
-      elsif keyword == 'free meals'
-        new_params[:keyword] = 'food pantries'
-      elsif keyword == 'help paying for food'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'nutrition support'
-        new_params[:keyword] = 'nutrition'
-      elsif keyword == 'baby supplies'
-        new_params[:keyword] = "UCSF Women's Health Resource Center"
-      elsif keyword == 'toys and gifts'
-        new_params[:keyword] = 'Community Services Agency of Mountain View'
-      elsif keyword == 'addiction & recovery'
-        new_params[:keyword] = 'addictions/dependencies support groups'
-      elsif keyword == 'help finding services'
-        new_params[:keyword] = '211'
-      elsif keyword == 'help paying for healthcare'
-        new_params[:keyword] = 'health screening/diagnostic services'
-      elsif keyword == 'help finding housing'
-        new_params[:keyword] = 'housing counseling'
-      elsif keyword == 'housing advice'
-        new_params[:keyword] = 'housing counseling'
-      elsif keyword == 'paying for housing'
-        new_params[:keyword] = 'housing expense assistance'
-      elsif keyword == 'pay for childcare'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'pay for food'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'pay for housing'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'pay for school'
-        new_params[:keyword] = 'money management'
-      elsif keyword == 'health care reform'
-        new_params[:keyword] = 'health insurance information/counseling'
-      elsif keyword == 'market match'
-        new_params[:keyword] = "market"
-      elsif keyword == "senior farmers' market nutrition program"
-        new_params[:keyword] = "market"
-      elsif keyword == "sfmnp"
-        new_params[:keyword] = "market"
-      elsif keyword == "bus passes"
-        new_params[:keyword] = 'transportation passes'
-      elsif keyword == "transportation to appointments"
-        new_params[:keyword] = 'transportation services'
-      elsif keyword == "transportation to healthcare"
-        new_params[:keyword] = 'transportation services'
-      elsif keyword == "transportation to school"
-        new_params[:keyword] = 'transportation services'
-      elsif keyword == "citizenship & immigration"
-        new_params[:keyword] = 'citizenship and immigration'
-      end
-
-      query = Organization.search(new_params)
+      query = Organization.keyword_mapping(query, params)
     end
 
     # Initialize @orgs and @pagination properties that are used in the views
