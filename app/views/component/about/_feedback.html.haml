@@ -14,7 +14,7 @@
 		%p
 			%label{:for=>'email'}
 				Email:
-			%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)"}
+			%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)", :pattern=>"/.+@.+\..+/i"}
 
 		%p
 			%button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
