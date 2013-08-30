@@ -25,6 +25,10 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 				_commentInput.addEventListener('input', _onFeedbackFormInput);
 				_emailInput.addEventListener('input', _onFeedbackFormInput);
 			}
+			else
+			{
+				_sendBtn.disabled = '';
+			}
 		}
 
 		// the form is being hidden, hide the feedback status
