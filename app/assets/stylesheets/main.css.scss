@@ -771,18 +771,68 @@ sup
   }
   p
   {
+    font-family:$san_serif_font;
     font-size:14px;
     margin-bottom:5px;
     margin-left:10px;
     margin-right:10px;
   }
 
+  input,textarea,button
+  {
+    padding:5px;
+    width:228px;
+    display: block;
+    border:1px solid $green_darkest;
+  }
+
+  button
+  {
+    width:100%;
+    background-color: $green_darkest;
+    color:$green_light;
+    cursor:pointer;
+  }
+
+  button:hover
+  {
+    background-color: $blue_darkest;
+  }
+
+  button[disabled]
+  {
+    background-color: $greyscale_light;
+    color:$greyscale_dark;
+    cursor:default;
+  }
+
+  #feedback-status
+  {
+    border:1px solid $black;
+    color:$black;
+    background:$purple_lightest;
+    font-family:$san_serif_font;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:5px;
+    @include border-radius(5px);
+
+  }
   footer > p
   {
     font-size:12px;
     font-family: $san_serif_font;
   }
 }
+
+#popups article:hover #feedback-status,
+{
+  a
+  {
+    color:$black_alpha60;
+  }
+}
+
 
 //=================================================================================
 // popup styles - not currently used

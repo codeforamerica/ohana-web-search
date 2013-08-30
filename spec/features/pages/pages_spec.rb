@@ -17,7 +17,7 @@ feature 'Site Pages' do
     expect(page).to have_content "Sophia Parafina"
     expect(page).to have_content "contribute"
     expect(page).to have_content "Feedback"
-    expect(page).to have_link "Submit comments"
+    expect(page).to have_button "Send!"
   end
 
   scenario 'when visiting results page directly', :js => true do

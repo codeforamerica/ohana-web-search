@@ -27,8 +27,6 @@ feature 'Visitor uses the back or forward button', :js => true do
 
   scenario 'back to homepage after 2 queries' do
     VCR.use_cassette('homepage/keyword_search_that_returns_results') do
-      delay
-      save_screenshot('spec/screenshots/file.png', :full => true)
       search(:keyword => 'maceo')
     end
     go_back

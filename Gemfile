@@ -13,13 +13,13 @@ group :assets do
 end
 
 gem 'jquery-rails', '>= 1.0.17'
-gem 'requirejs-rails', git: 'git://github.com/jwhitley/requirejs-rails.git'
+gem 'requirejs-rails'
 gem 'haml-rails'
 
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem 'ohanakapa', :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => 'add-nearby-endpoint' #for API wrapper
+gem "ohanakapa", :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => "add-nearby-endpoint", :ref => "32ded682db"
 
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
@@ -32,6 +32,7 @@ group :development do
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
+  gem "letter_opener" # for mocking emails for sending
 end
 
 group :test do

@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util/util'/*,'enquire'*/],function(util,enquire) {
+define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,feedback/*enquire*/) {
   'use strict';
 
 		// PRIVATE PROPERTIES
@@ -11,6 +11,7 @@ define(['util/util'/*,'enquire'*/],function(util,enquire) {
 		function init()
 		{
 			_addPopups();
+			feedback.init();
 			// try/catch added to ignore IE errors
 			/*
 			window.enquire.register("screen and (max-width: 767px)", {
@@ -141,9 +142,14 @@ define(['util/util'/*,'enquire'*/],function(util,enquire) {
 		// handler for closing the popup
 		function _closeHandler(evt)
 		{
-			if (evt.target.attributes["href"] == undefined && 
-				!evt.target.classList.contains("popup-trigger") && 
-				!evt.target.parentNode.classList.contains("popup-container"))
+			var el = evt.target;
+			if (el.attributes["href"] == undefined && 
+				!el.classList.contains("popup-trigger") && 
+				!el.parentNode.classList.contains("popup-container") &&
+				el.nodeName != 'TEXTAREA' &&
+				el.nodeName != 'INPUT' &&
+				el.nodeName != 'BUTTON'
+				)
 			{
 				_closeLastPopup();
 			}
@@ -155,6 +161,7 @@ define(['util/util'/*,'enquire'*/],function(util,enquire) {
 			if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
 			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
 			window.removeEventListener("resize", _resizeHandler, true);
+			feedback.hide();
 		}
 
 	return {

@@ -30,6 +30,7 @@ HumanServicesFinder::Application.configure do
   #    :user_name => ENV["MANDRILL_USERNAME"],
   #    :password  => ENV["MANDRILL_API_KEY"]
   #  }
+  config.action_mailer.delivery_method = :letter_opener # use gem for mocking mail
 
 
 

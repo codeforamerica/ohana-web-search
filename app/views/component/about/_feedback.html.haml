@@ -3,5 +3,15 @@
 		%h1
 			Want to get in touch?
 		%p
-			= link_to "Submit comments","http://ohanapi.org/#contribute",:target=>"_blank"
-			to the development team.
+			Submit comments to the development team:
+
+		%p#feedback-status.hide
+			Submit feedback!
+		%p
+			%textarea{:name=>"comment", :id=>"comment", :placeholder=>"enter your comment, question, etc.", :rows=>"4", :required=>""}
+		%p
+			%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)"}
+
+		%p
+			%button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
+				Send!

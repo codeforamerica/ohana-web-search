@@ -1,19 +1,13 @@
 GIT
   remote: git://github.com/codeforamerica/ohanakapa-ruby.git
   revision: 32ded682db8a72a7b6c1670631424ce910c9d753
+  ref: 32ded682db
   branch: add-nearby-endpoint
   specs:
     ohanakapa (0.0.2)
       hashie (~> 2.0)
       multi_json (~> 1.3)
       sawyer (~> 0.3.0)
-
-GIT
-  remote: git://github.com/jwhitley/requirejs-rails.git
-  revision: f2330104aeca4d193fd5680a22ae7eee85d814b5
-  specs:
-    requirejs-rails (0.9.1)
-      railties (>= 3.1.1, < 4.1)
 
 GEM
   remote: https://rubygems.org/
@@ -135,6 +129,10 @@ GEM
     json (1.8.0)
     json_pure (1.8.0)
     kgio (2.8.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -219,6 +217,8 @@ GEM
       ruby_parser (~> 3.1.1)
       sexp_processor
     require_all (1.2.1)
+    requirejs-rails (0.9.1)
+      railties (>= 3.1.1, < 3.3)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (2.14.5)
@@ -297,13 +297,14 @@ DEPENDENCIES
   html5shiv-rails
   jquery-rails (>= 1.0.17)
   json
+  letter_opener
   metric_fu
   newrelic_rpm
   ohanakapa!
   poltergeist
   quiet_assets (>= 1.0.2)
   rails (= 3.2.13)
-  requirejs-rails!
+  requirejs-rails
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   selectivizr-rails
