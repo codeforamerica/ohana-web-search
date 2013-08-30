@@ -68,7 +68,7 @@ HumanServicesFinder::Application.configure do
   #config.action_mailer.default_url_options = { :host => 'example.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  config.action_mailer.default_url_options = { :host => 'ohanapi.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'ohana-staging.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   # Disable delivery errors, bad email addresses will be ignored
