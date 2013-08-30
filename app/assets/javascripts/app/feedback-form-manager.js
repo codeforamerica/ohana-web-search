@@ -55,7 +55,14 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 			var message = _commentInput.value;
 			message = message.trim();
 
-			return message.length > 0;
+			if (util.isEventSupported('input'))
+			{
+				return message.length > 0;
+			}
+			else
+			{
+				return true;
+			}
 		}
 
 		function _updateFeedbackForm() {

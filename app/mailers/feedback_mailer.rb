@@ -2,7 +2,7 @@ class FeedbackMailer < ActionMailer::Base
 
   def send_feedback(params={})
   	message = params[:message] || '[no message entered]'
-  	from = params[:from].present? ? params[:from] : '[anonymous]'
+  	from = params[:from].blank? ? '[anonymous] <example@example.com>' : params[:from]
   	user_agent = params[:agent] || '[no user agent recorded]'
 
   	subject = '[ohanapi] '+from
