@@ -24,8 +24,8 @@ HumanServicesFinder::Application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
   # Precompile additional assets
-  config.assets.precompile += %w( *.svg *.eot *.woff *.ttf ) # fonts
-  config.assets.precompile += %w( html5shiv.js html5shiv-printshiv.js ) #polyfill
+  config.assets.precompile << %w( *.svg *.eot *.woff *.ttf ) # fonts
+  config.assets.precompile << %w( html5shiv.js html5shiv-printshiv.js ) #polyfill
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -68,7 +68,7 @@ HumanServicesFinder::Application.configure do
   #config.action_mailer.default_url_options = { :host => 'example.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  config.action_mailer.default_url_options = { :host => 'ohana-staging.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'ohana.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   # Disable delivery errors, bad email addresses will be ignored

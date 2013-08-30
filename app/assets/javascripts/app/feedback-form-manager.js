@@ -73,10 +73,10 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 			}
 		}
 
-		function _feedbackFormSend() 
+		function _feedbackFormSend()
 		{
 			var agent = '\nUser agent: ' + navigator.userAgent;
- 
+
 			var transmission = {
 				message: _commentInput.value,
 				from: _emailInput.value,
@@ -91,8 +91,8 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 					contentType: 'application/json',
 					success : _onSuccess,
 					error   : _onError
-			});  
-			
+			});
+
 		}
 
 		// on submitting success, clear out values and post success message.

@@ -5,6 +5,7 @@ Coveralls.wear!('rails')
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'email_spec'
 require 'capybara/poltergeist'
 require 'hashie'
 
@@ -39,6 +40,8 @@ Capybara.javascript_driver = :poltergeist
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
   config.include DetailFormatHelper
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 
   # ## Mock Framework
   #

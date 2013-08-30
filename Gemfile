@@ -43,6 +43,7 @@ group :test do
   gem 'poltergeist'
   gem "vcr"
   gem 'webmock', "< 1.12.0"
+  gem "email_spec"
 end
 
 group :development, :test do
