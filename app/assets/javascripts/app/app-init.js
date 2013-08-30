@@ -6,7 +6,6 @@ require(['app/loading-manager',
   'use strict';
 	
 	document.body.classList.add("require-loaded");
-
   lm.hide();
   pm.init();
 

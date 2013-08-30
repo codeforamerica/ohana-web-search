@@ -1,6 +1,6 @@
-// manages behavior of popups
-define(['trim','jquery'],function(trim,$) {
-  'use strict';
+// manages behavior of feedback form
+define(['util/util','trim','jquery'],function(util,trim,$) {
+	'use strict';
 
 		// PRIVATE PROPERTIES
 		var _sendBtn;
@@ -18,18 +18,21 @@ define(['trim','jquery'],function(trim,$) {
 			_feedbackStatus = document.getElementById('feedback-status');
 
 			_commentInput = document.querySelector('#feedback-box #comment');
-			_commentInput.addEventListener('input', _onFeedbackFormInput);
-
 			_emailInput = document.querySelector('#feedback-box #email');
-    	_emailInput.addEventListener('input', _onFeedbackFormInput);
+
+			if (util.isEventSupported('input'))
+			{
+				_commentInput.addEventListener('input', _onFeedbackFormInput);
+				_emailInput.addEventListener('input', _onFeedbackFormInput);
+			}
 		}
 
 		// the form is being hidden, hide the feedback status
-	  function hide()
-	  {
-	  	_feedbackStatus.classList.add('hide');
-	  	_updateFeedbackForm();
-	  }
+		function hide()
+		{
+			_feedbackStatus.classList.add('hide');
+			_updateFeedbackForm();
+		}
 
 		// PRIVATE PROPERTIES
 		function _sendBtnClicked(evt)
@@ -45,60 +48,60 @@ define(['trim','jquery'],function(trim,$) {
 		}
 
 		function _isFeedbackFormMessagePresent() {
-	    var message = _commentInput.value;
-	    message = message.trim();
+			var message = _commentInput.value;
+			message = message.trim();
 
-	    return message.length > 0;
-	  }
+			return message.length > 0;
+		}
 
-	  function _updateFeedbackForm() {
-	    if (_isFeedbackFormMessagePresent()) {
-	      _sendBtn.disabled = false;
-	    } else {
-	      _sendBtn.disabled = true;
-	    }
-	  }
+		function _updateFeedbackForm() {
+			if (_isFeedbackFormMessagePresent()) {
+				_sendBtn.disabled = false;
+			} else {
+				_sendBtn.disabled = true;
+			}
+		}
 
 		function _feedbackFormSend() 
 		{
 			var agent = '\nUser agent: ' + navigator.userAgent;
  
-      var transmission = {
-        message: _commentInput.value,
-        from: _emailInput.value,
-        agent: agent
-      };
+			var transmission = {
+				message: _commentInput.value,
+				from: _emailInput.value,
+				agent: agent
+			};
 
 			$.ajax({
-          url     : '/feedback',
-          type    : 'POST',
-          dataType: 'json',
-          data    : JSON.stringify(transmission),
-          contentType: 'application/json',
-          success : _onSuccess,
-          error   : _onError
-      });  
-      
-	  }
+					url     : '/feedback',
+					type    : 'POST',
+					dataType: 'json',
+					data    : JSON.stringify(transmission),
+					contentType: 'application/json',
+					success : _onSuccess,
+					error   : _onError
+			});  
+			
+		}
 
-	  // on submitting success, clear out values and post success message.
-	  function _onSuccess(data)
-	  {
-	  	_feedbackStatus.innerHTML = "Thanks for the feedback!";
-      _feedbackStatus.classList.remove('hide');
-      _commentInput.value = '';
-      _updateFeedbackForm();
-	  }
+		// on submitting success, clear out values and post success message.
+		function _onSuccess(data)
+		{
+			_feedbackStatus.innerHTML = "Thanks for the feedback!";
+			_feedbackStatus.classList.remove('hide');
+			_commentInput.value = '';
+			_updateFeedbackForm();
+		}
 
-	  // on submitting error, clear out values and post failure message.
-	  function _onError(xhr, err)
-	  {
-	  	_feedbackStatus.innerHTML = "Error sending feedback, please <a href='/'>reload</a> and try again!";
-      _feedbackStatus.classList.remove('hide');
-      _commentInput.value = '';
-      _emailInput.value = '';
-      _updateFeedbackForm();
-	  }
+		// on submitting error, clear out values and post failure message.
+		function _onError(xhr, err)
+		{
+			_feedbackStatus.innerHTML = "Error sending feedback, please <a href='/'>reload</a> and try again!";
+			_feedbackStatus.classList.remove('hide');
+			_commentInput.value = '';
+			_emailInput.value = '';
+			_updateFeedbackForm();
+		}
 
 	return {
 		init:init,

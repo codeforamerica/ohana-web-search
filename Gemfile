@@ -13,7 +13,7 @@ group :assets do
 end
 
 gem 'jquery-rails', '>= 1.0.17'
-gem 'requirejs-rails'
+gem 'requirejs-rails', git: 'git://github.com/jwhitley/requirejs-rails.git'
 gem 'haml-rails'
 
 # server
