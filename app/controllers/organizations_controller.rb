@@ -1,17 +1,20 @@
 class OrganizationsController < ApplicationController
   respond_to :html, :json, :xml, :js
 
+  TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
+    legal money transit work).freeze
+
   # search results view
   def index
 
-    # initialize terminology box if the keyword is a term 
+    # initialize terminology box if the keyword is a term
     # that has a matching partial as defined in Organization.terminology
     # and app/views/component/terminology
     @terminology = Organization.terminology(params[:keyword])
 
     # initialize query. Content may be blank if no results were found.
     query = Organization.search(params)
-    
+
     # check for results against keyword mapping if content is blank.
     if query.content.blank?
       query = Organization.keyword_mapping(query, params)
@@ -21,26 +24,20 @@ class OrganizationsController < ApplicationController
     @orgs = query.content
     @pagination = query.pagination
 
-    # Adds top-level category terms to @orgs for display on results list.
-    # This will likely be refactored to use the top-level keywords when those 
-    # are organized in the database using OE or equivalent.
-    if @orgs.present?
-      top_level_service_terms = []
-      Organization.service_terms.each do |term|
-        top_level_service_terms.push(term[:name]);
-      end
-
-      @orgs.each do |org|
-        org.category = []
-        if org.keywords.present?
-          org.keywords.each do |keyword|
-            org.category.push( keyword ) if top_level_service_terms.include? keyword.downcase
-          end
-          org.category = org.category.uniq
-          org.category = org.category.sort
-        end
-      end
-    end
+    ## Adds top-level category terms to @orgs for display on results list.
+    ## This will likely be refactored to use the top-level keywords when those
+    ## are organized in the database using OE or equivalent.
+    # if @orgs.present?
+    #   @orgs.each do |org|
+    #     org.category = []
+    #     if org.keywords.present?
+    #       org.keywords.each do |k|
+    #         org.category.push(k) if TOP_LEVEL_CATEGORIES.include? k.downcase
+    #       end
+    #     end
+    #     org.category = org.category.uniq.sort
+    #   end
+    # end
 
     # Used in the format_summary method in the result_summary_helper
     @params = {
@@ -84,7 +81,7 @@ class OrganizationsController < ApplicationController
 
     # initializes map data
     @map_data = generate_map_data(Organization.nearby(params[:id]).content)
-    
+
     # set up the search results URL
     keyword         = params[:keyword] || ''
     location        = params[:location] || ''
@@ -126,20 +123,20 @@ class OrganizationsController < ApplicationController
     # this will be injected into a <script> element in the view
     # and then consumed by the detail-map-manager javascript.
     # map_data parses the @org hash and retrieves all entries
-    # that have coordinates, and returns that as json, otherwise map_data 
+    # that have coordinates, and returns that as json, otherwise map_data
     # ends up being nil and can be checked in the view with map_data.present?
-    map_data = data.reduce([]) do |result, o| 
+    map_data = data.reduce([]) do |result, o|
       if o.coordinates.present?
         result << {
-          'id' => o._id, 
-          'name' => o.name, 
+          'id' => o._id,
+          'name' => o.name,
           'coordinates' => o.coordinates
         }
       end
       result
     end
 
-    # set a count and total value that will show how many (count) 
+    # set a count and total value that will show how many (count)
     # of the data (total) were able to be located because they had coordinates.
     map_data.push({'count'=>map_data.length,'total'=>data.length})
 

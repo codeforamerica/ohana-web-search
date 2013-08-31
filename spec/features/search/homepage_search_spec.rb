@@ -72,4 +72,10 @@ feature "homepage search" do
     expect(page).to have_content("Coastside Farmers' Market of Pacifica")
   end
 
+  xscenario "when result has keyword matching top-level category", :vcr do
+    visit("/")
+    click_link("Market Match")
+    expect(page).to have_link("Food")
+  end
+
 end
