@@ -122,7 +122,7 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 		// incorrect email address. Show error message.
 		function _incorrectEmailAddress()
 		{
-			_feedbackStatus.innerHTML = "The email address appears to be formatted incorrectly, please try another!";
+			_feedbackStatus.innerHTML = "Your email address appears to be formatted incorrectly, please try again!";
 			_feedbackStatus.classList.remove('hide');
 			_emailInput.value = '';
 		}
