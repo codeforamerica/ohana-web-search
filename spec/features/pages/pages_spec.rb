@@ -19,11 +19,10 @@ feature 'Site Pages' do
     expect(page).to have_selector "#feedback-form-btn"
   end
 
-  scenario 'when visiting results page directly', :js => true do
-    VCR.use_cassette('results/visit_directly') do
-      visit ('/organizations?utf8=%E2%9C%93&keyword=maceo&location=')
-      looks_like_results
-    end
+  @javascript
+  scenario 'when visiting results page directly', :vcr do
+    visit ('/organizations?utf8=%E2%9C%93&keyword=maceo&location=')
+    looks_like_results
   end
 
 end

@@ -42,6 +42,20 @@ RSpec.configure do |config|
   config.include DetailFormatHelper
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+
+  require 'vcr'
+  VCR.configure do |c|
+    c.configure_rspec_metadata!
+    c.ignore_hosts '127.0.0.1', 'localhost'
+    c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once }
+    c.cassette_library_dir  = "spec/cassettes"
+    c.hook_into :webmock
+    c.filter_sensitive_data("<API_TOKEN>") do
+      ENV['OHANA_API_TOKEN']
+  end
+end
+
 
   # ## Mock Framework
   #

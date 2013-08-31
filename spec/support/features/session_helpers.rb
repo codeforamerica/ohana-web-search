@@ -14,6 +14,12 @@ module Features
       end
     end
 
+    def search_by_language(lang)
+      fill_in('keyword', :with => "maceo")
+      select(lang, :from => 'language', :exact => true)
+      find(:css, '#update-btn').click
+    end
+
     def search_from_home(options = {})
       visit ("/")
       options[:on_home] = true
@@ -41,6 +47,7 @@ module Features
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no service results.")
       expect(page).to have_content("0 of 0 results")
+      expect(page).to have_content("CalFresh")
     end
 
     def looks_like_details
@@ -62,6 +69,8 @@ module Features
       expect(page).to have_content("permits and photocopying")
       expect(page).to have_content("Russian")
       expect(page).to have_content("Special parking")
+      expect(page).to have_link("Print")
+      expect(page).to have_link("Directions")
     end
 
     def looks_like_homepage

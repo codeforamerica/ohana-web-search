@@ -4,7 +4,7 @@ describe OrganizationsController do
 
   describe "GET 'index'" do
     it "returns 200 status code" do
-      VCR.use_cassette('results/all_results') do
+      VCR.use_cassette('all_results') do
         get :index
         response.code.should eq("200")
       end
