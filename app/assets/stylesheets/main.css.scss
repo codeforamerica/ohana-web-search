@@ -518,7 +518,7 @@ sup
 
     z-index:9999 !important;
     position:relative;
-    
+
     @include transition(opacity $default_duration, z-index $default_duration);
 }
 
@@ -528,7 +528,7 @@ sup
 
     z-index:0 !important;
     position:relative;
-    
+
     @include transition(opacity $default_duration, z-index $default_duration);
 }
 
@@ -539,7 +539,7 @@ sup
 
     z-index:9998 !important;
     position:relative;
-    
+
     @include transition(opacity $default_duration, z-index $default_duration);
     @include transition-delay($short_duration);
 }
@@ -550,7 +550,7 @@ sup
 
     z-index:-9998 !important;
     position:relative;
-    
+
     @include transition(opacity $default_duration, z-index $default_duration);
     @include transition-delay($short_duration);
 }
@@ -586,7 +586,7 @@ sup
     z-index:-1 !important;
     margin-top: -9999px !important;
     position:absolute !important;
-    
+
     -webkit-transition: margin-top $default_duration, z-index $default_duration;
     -moz-transition: margin-top $default_duration, z-index $default_duration;
     transition: margin-top $default_duration, z-index $default_duration;
@@ -597,7 +597,7 @@ sup
     z-index:-1 !important;
     margin-top: 0px !important;
     position:absolute !important;
-    
+
     -webkit-transition: margin-top $default_duration, z-index $default_duration;
     -moz-transition: margin-top $default_duration, z-index $default_duration;
     transition: margin-top $default_duration, z-index $default_duration;
@@ -648,7 +648,7 @@ sup
   }
 
   // the spinning wheeel
-  .status 
+  .status
   {
       border: 3px solid $black_alpha60;
       @include opacity(0.9);
@@ -695,7 +695,7 @@ sup
     overflow-y:auto;
     @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
     @include border-radius(10px);
-    
+
     > div
     {
       padding: 20px;
@@ -716,12 +716,12 @@ sup
   .popup-container > article::-webkit-scrollbar {
     width: 12px;
   }
-   
+
   .popup-container > article::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 10px $black_alpha20;
     -webkit-border-radius: 0px 10px 10px 0px;
   }
-   
+
   .popup-container > article::-webkit-scrollbar-thumb {
     background: $black_alpha20;
     -webkit-border-radius: 0px 10px 10px 0px;
@@ -758,7 +758,7 @@ sup
 // popup content styling
 
 .popup-container
-{ 
+{
   h1
   {
     font-weight: bold;
@@ -778,6 +778,13 @@ sup
     margin-right:10px;
   }
 
+  footer > p
+  {
+    font-size:12px;
+    font-family: $san_serif_font;
+  }
+
+  // feedback form styles
   input,textarea,button
   {
     padding:5px;
@@ -816,12 +823,6 @@ sup
     margin-top:10px;
     margin-bottom:5px;
     @include border-radius(5px);
-
-  }
-  footer > p
-  {
-    font-size:12px;
-    font-family: $san_serif_font;
   }
 }
 
@@ -844,7 +845,7 @@ sup
   .popup
   {
     min-width:150px;
-      
+
       @include border-radius(5px 5px 5px 0px);
       background:$yellow_dark;
       border: 1px solid $black_alpha40;
@@ -854,10 +855,10 @@ sup
       top: 0px;
       left: 0px;
       z-index: 9999;
-      cursor:default; 
+      cursor:default;
       font-size:11px;
       font-style: normal;
-  
+
     div
     {
         padding:10px;
@@ -993,7 +994,7 @@ sup
 //=================================================================================
 // main content box - everything below the header area
 // the main content area sets up the table display styling for positioning
-// the search box in the middle of the screen and laying out the search box and 
+// the search box in the middle of the screen and laying out the search box and
 // content as a two column layout on inside pages
 
 main
@@ -1009,13 +1010,10 @@ main
 .about main > * > *
 {
   display:block;
-  margin: 10px;
   padding: 30px;
   border-bottom:1px solid $black_alpha10;
   background:$white;
-  @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
-  @include border-radius(10px);
-  
+
   h1
   {
     font-size:24px;
@@ -1033,6 +1031,48 @@ main
     margin-top:10px;
     padding-top:10px;
     font-size:14px;
+  }
+
+  // feedback form styles
+  input,textarea,button
+  {
+    padding:5px;
+    width:228px;
+    display: block;
+    border:1px solid $green_darkest;
+  }
+
+  button
+  {
+    width:240px;
+    background-color: $green_darkest;
+    color:$green_light;
+    cursor:pointer;
+  }
+
+  button:hover
+  {
+    background-color: $blue_darkest;
+  }
+
+  button[disabled]
+  {
+    background-color: $greyscale_light;
+    color:$greyscale_dark;
+    cursor:default;
+  }
+
+  #feedback-status
+  {
+    width:218px;
+    border:1px solid $black;
+    color:$black;
+    background:$purple_lightest;
+    font-family:$san_serif_font;
+    padding:10px;
+    margin-top:10px;
+    margin-bottom:5px;
+    @include border-radius(5px);
   }
 }
 
@@ -1088,8 +1128,8 @@ main
 
   button
   {
-    color:$green_lightest;   
-    font-size:18px; 
+    color:$green_lightest;
+    font-size:18px;
   }
 
   button:hover
@@ -1181,7 +1221,7 @@ main
 {
   padding:0px;
 
-  // find button mini magnifying glass 
+  // find button mini magnifying glass
   .search-button.ohana-icon
   {
       font-size:13px;
@@ -1239,7 +1279,7 @@ main
     top: 33px;
     left: -5px;
 
-    // find button large magnifying glass 
+    // find button large magnifying glass
     .search-button.ohana-icon
     {
         font-size: 24px;
@@ -1277,7 +1317,7 @@ main
 
   label // form input field labels
   {
-    font-size:24px;   
+    font-size:24px;
   }
 
   input
@@ -1403,7 +1443,7 @@ main
   {
     margin-left: 5px;
     padding-left: 10px;
-    border-left: 1px dotted $black_alpha10;    
+    border-left: 1px dotted $black_alpha10;
   }
 
   h1
@@ -1498,7 +1538,7 @@ main
   section.no-results
   {
     font-family:$san_serif_font;
-    
+
     > p
     {
       margin:80px;
@@ -1666,7 +1706,7 @@ main
 // Results - list view
 #list-view
 {
-  >ul 
+  >ul
   {
     >li
     {
@@ -1753,7 +1793,7 @@ main
       {
         color:$black;
         border-right:0;
-        border-top:0;     
+        border-top:0;
       }
 
 
@@ -1777,7 +1817,7 @@ main
     ul.category
     {
       float:right;
-      
+
       li
       {
         margin-bottom:0px;
@@ -1787,7 +1827,7 @@ main
         padding:5px;
         @include inline-block();
         font-family:$san_serif_font;
-      }      
+      }
     }
 
     ul.phones
@@ -1799,7 +1839,7 @@ main
         padding:10px;
         @include inline-block();
         font-family:$san_serif_font;
-      }      
+      }
     }
 
     p.address
@@ -1996,7 +2036,7 @@ main
     }
   }
 
-  // stylize services summary 
+  // stylize services summary
   .services-provided
   {
     color:$purple_darkest;

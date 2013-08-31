@@ -5,17 +5,28 @@
 		%p
 			Submit comments to the development team:
 
-		%p#feedback-status.hide
-			Submit feedback!
-		%p
-			%label{:for=>'comment'}
-				Comment:
-			%textarea{:name=>"comment", :id=>"comment", :placeholder=>"enter your comment, question, etc.", :rows=>"4", :required=>""}
-		%p
-			%label{:for=>'email'}
-				Email:
-			%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)", :pattern=>"/.+@.+\..+/i"}
+		%div#feedback-form.hide
+			%p#feedback-status.hide
+				Submit feedback!
+			%p
+				%label{:for=>'comment'}
+					Comment:
+				%textarea{:name=>"comment", :id=>"comment", :placeholder=>"enter your comment, question, etc.", :rows=>"4", :required=>""}
+			%p
+				%label{:for=>'email'}
+					Email:
+				%input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)", :pattern=>"/.+@.+\..+/i"}
 
-		%p
-			%button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
-				Send!
+			%p
+				%button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
+					Send!
+		%div#feedback-form-nojs
+			= link_to "Visit this form","http://ohanapi.org/#contribute",:target=>"_blank"
+			to submit comments.
+		:javascript
+			//dynamically remove hide class so form doesn't show up when JavaScript is disabled
+			//try/catch is for ignoring potential IE errors.
+			try{
+				document.getElementById('feedback-form-nojs').classList.add('hide');
+				document.getElementById('feedback-form').classList.remove('hide');
+			}catch(e){}

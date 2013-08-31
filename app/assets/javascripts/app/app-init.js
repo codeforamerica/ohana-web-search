@@ -4,7 +4,7 @@ require(['app/loading-manager',
 	'classList',
 	'addEventListener'],function(lm,pm,pfClassList,pfAddEventListener) {
   'use strict';
-	
+
 	document.body.classList.add("require-loaded");
   lm.hide();
   pm.init();
