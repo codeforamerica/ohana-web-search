@@ -24,7 +24,7 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <script language="javascript">
+    <script type="text/javascript">
       // patch to handle errors in IE
       window.onerror=function(){return true;};
     </script>
@@ -49,9 +49,9 @@
   <%= render 'component/status/loading' %>
 
   <section id="content">
-    <script>
-      // dynamically add transparent class so content shows up
-      // when JavaScript is disabled
+    <script type="text/javascript">
+      // dynamically add transparent class so content shows up when JavaScript is disabled
+      // try/catch is for ignoring IE errors.
       try{
         document.getElementById('content').classList.add('transparent');
       }catch(e){}
@@ -71,11 +71,13 @@
       </nav>
     </header>
 
+    <% if controller_name != "about" %>
     <aside id="popups">
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/about' %></div>
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/contribute' %></div>
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/feedback' %></div>
     </aside>
+    <% end %>
 
     <%= render 'component/status/alert' %>
 

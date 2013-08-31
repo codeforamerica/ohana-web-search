@@ -42,7 +42,12 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 		function _sendBtnClicked(evt)
 		{
 			evt.preventDefault(); // stop the form from submitting
-			_feedbackFormSend();
+			var emailCheck = new RegExp('.+@.+\..+','i');
+			var match = emailCheck.exec(_emailInput.value);
+			if (match || _emailInput.value == '')
+				_feedbackFormSend();
+			else
+				_incorrectEmailAddress();
 			return false;
 		}
 
@@ -112,6 +117,14 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
 			_commentInput.value = '';
 			_emailInput.value = '';
 			_updateFeedbackForm();
+		}
+
+		// incorrect email address. Show error message.
+		function _incorrectEmailAddress()
+		{
+			_feedbackStatus.innerHTML = "The email address appears to be formatted incorrectly, please try another!";
+			_feedbackStatus.classList.remove('hide');
+			_emailInput.value = '';
 		}
 
 	return {
