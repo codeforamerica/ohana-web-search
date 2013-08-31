@@ -45,7 +45,7 @@ module Features
 
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
-      expect(page).to have_content("your search returned no service results.")
+      expect(page).to have_content("your search returned no results.")
       expect(page).to have_content("0 of 0 results")
       expect(page).to have_content("CalFresh")
     end
