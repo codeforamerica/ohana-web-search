@@ -1,6 +1,6 @@
 require(['app/loading-manager',
 				 'app/feedback-form-manager',
-				 'classList'
+				 'classList',
 				 'domReady!'],
 	function(lm,feedback,classList) {
   'use strict';
