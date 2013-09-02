@@ -1,7 +1,7 @@
 // manages results maps view
 define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function(util) {
   'use strict';
-	
+
 		// PRIVATE PROPERTIES
 		var _map;
 		var _markerData; // markers on the map
@@ -44,7 +44,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			  }
 			  _map = new google.maps.Map(document.getElementById("detail-map-canvas"), mapOptions);
 
-			  
+
 			  _locationMarker = new google.maps.Marker({
 						map: _map,
 						title: title,
@@ -56,7 +56,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		}
 
 
-		// loads markers 
+		// loads markers
 		function _loadMarkers()
 		{
 			var locations = document.getElementById("map-locations");
@@ -85,7 +85,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		}
 
 		// clears all markers
-		function _clearMarkers() 
+		function _clearMarkers()
 		{
 		  for (var i = 0; i < _markersArray.length; i++ ) {
 		    _markersArray[i].setMap(null);
@@ -100,9 +100,9 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-				
+
 				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
-				
+
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
 					map: _map,
@@ -124,9 +124,9 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 				});
 				*/
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
-				
+
 				_markerBounds.extend(myLatlng);
-				
+
 			}
 		}
 
@@ -140,7 +140,7 @@ define(['util/util','async!https://maps.googleapis.com/maps/api/js?v=3.exp&senso
 		}
 
 		// refresh the data
-		// @param coordinates [Object] object with 'lat'/'lng' attributes on 
+		// @param coordinates [Object] object with 'lat'/'lng' attributes on
 		function refresh()
 		{
 			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);

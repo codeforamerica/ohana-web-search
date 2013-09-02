@@ -22,7 +22,7 @@ define(['util/util'],
 
 			_findBtn = document.getElementById('find-btn');
 			_updateBtn = document.getElementById('update-btn');
-						
+
 			// if no ajax callback is given, don't register ajax calls
 			if (callback)
 			{
@@ -95,7 +95,7 @@ define(['util/util'],
 				params.id = id;
 
 			_callback.performSearch(params);
-			
+
 			evt.preventDefault();
 			return false;
 		}

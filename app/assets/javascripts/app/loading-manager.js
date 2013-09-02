@@ -1,7 +1,7 @@
 // manages showing and hiding of busy screen
 define(function() {
   'use strict';
-	
+
 	var _view = document.getElementById("loading-box");
 	var _main = document.getElementById("content");
 	var _fullscreen = true;
@@ -13,7 +13,7 @@ define(function() {
 
 		if (params && params.hasOwnProperty('fullscreen')) _fullscreen = params.fullscreen;
 
-		if (_fullscreen) 
+		if (_fullscreen)
 		{
 			_view.classList.add('fullscreen');
 			_main.classList.remove('fade-in-delay');
@@ -24,7 +24,7 @@ define(function() {
 			_view.classList.remove('fullscreen');
 		}
 	}
-	
+
 	function hide()
 	{
 		_view.classList.remove('fade-in');

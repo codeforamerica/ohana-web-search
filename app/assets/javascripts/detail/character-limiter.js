@@ -1,5 +1,5 @@
 // manages limiting the characters of the description
-// on the details page and providing a more/less link to 
+// on the details page and providing a more/less link to
 // toggle showing or hiding excess text
 define(['trim'],function(trim) {
   'use strict';
@@ -16,11 +16,11 @@ define(['trim'],function(trim) {
 		function init()
 		{
 			desc = document.querySelector("#detail-info .description");
-			
+
 			// if description exists
 			if (desc) {
 				fulltext = desc.innerHTML;
-				
+
 				if(fulltext.length > showChar) {
  					_showLess(null);
         }
@@ -35,20 +35,20 @@ define(['trim'],function(trim) {
 
 			var lnk = document.createElement("a");
 			lnk.innerHTML = lesstext;
-       
+
       desc.appendChild(lnk);
       lnk.addEventListener("click", _showLess, false);
 
       return false;
 		}
-		
+
 		// show less text
 		function _showLess(evt)
 		{
 			fulltext = fulltext.trim();
       var c = fulltext.substr(0, showChar);
       var h = fulltext.substr(showChar-1, fulltext.length - showChar);
-			
+
 			if (h.length > 0)
 			{
 				var lnk = document.createElement("a");
