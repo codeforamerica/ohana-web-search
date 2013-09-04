@@ -909,6 +909,18 @@ sup
 // this section sets up the header and footer, but not the main content area
 #content
 {
+  background:$white;
+
+  #logo span
+  {
+    color:$white_alpha40;
+    font-size:12px;
+    margin-left:5px;
+    position: relative;
+    top:-10px;
+    font-family: $san_serif_font;
+  }
+
   // logo/header area
   > header
   {
@@ -958,17 +970,17 @@ sup
     position:relative;
     text-align:right;
     padding:20px;
-    background: $blue_midtone_alpha30;
+    background:$white;
     clear:both;
+    border-top:2px solid $blue_midtone;
 
     p
     {
-      background:$white;
-      padding:10px;
-      display:inline-block;
+      padding:20px;
+      @include inline-block();
     }
 
-    p span:first-child
+    p span
     {
       font-size:14px;
       font-family:$san_serif_font;
@@ -976,9 +988,9 @@ sup
       display:inline-block;
     }
 
-    p span:last-child
+    p span.cfaflag
     {
-      width: 40px;
+      width: 30px;
       height: 10px;
       display: inline-block;
       // the CfA flag appears below
@@ -1519,7 +1531,7 @@ main
 #results-entries
 {
   margin:13px;
-  margin-bottom:0px;
+  margin-bottom:15px;
   padding-left:15px;
   padding-right:15px;
 
