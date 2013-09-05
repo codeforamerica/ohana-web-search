@@ -17,7 +17,7 @@ class OrganizationsController < ApplicationController
 
     # check for results against keyword mapping if content is blank.
     if query.content.blank?
-      query = Organization.keyword_mapping(query, params)
+      query = Organization.keyword_mapping(query, params) if params[:keyword].present?
     end
 
     # Initialize @orgs and @pagination properties that are used in the views
@@ -121,6 +121,8 @@ class OrganizationsController < ApplicationController
   # Or nil if there are no nearby map entries.
   def generate_map_data(data)
 
+    return nil if data.blank?
+
     # generate json for the maps in the view
     # this will be injected into a <script> element in the view
     # and then consumed by the detail-map-manager javascript.
@@ -143,7 +145,7 @@ class OrganizationsController < ApplicationController
     map_data.push({'count'=>map_data.length,'total'=>data.length})
 
     # set map_data to nil if there are no entries
-    map_data = nil if (map_data.count == 0)
+    map_data = nil if (map_data[0]['count'] == 0)
     map_data = map_data.to_json.html_safe unless map_data.nil?
   end
 

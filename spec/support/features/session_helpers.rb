@@ -28,6 +28,7 @@ module Features
 
     # navigation helpers
     def visit_details
+      find('#list-view')
       page.find("#list-view").first(:css, 'a').click
     end
 
@@ -47,7 +48,7 @@ module Features
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
       expect(page).to have_content("0 of 0 results")
-      expect(page).to have_content("CalFresh")
+      expect(page).to_not have_selector('#map-canvas')
     end
 
     def looks_like_details
@@ -79,7 +80,6 @@ module Features
       expect(page).to have_content "Contribute"
       expect(page).to have_content "Feedback"
       expect(page).to have_content "emergency"
-      expect(page).to have_content "food"
       expect(page).to have_content "I need"
       expect(page).to have_content "I am near"
     end
