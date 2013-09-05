@@ -13,26 +13,27 @@
 }
 
 // All Mobile Sizes (devices and browser)
-@media only screen and (max-width: 767px) 
+@media only screen and (max-width: 767px)
 {
   #content > header
   {
     font-size:14px;
 
-    nav 
+    nav
     {
-      position:static;
+      float:none;
+      margin-left:25px;
     }
   }
 
   // home screen styles
-  .home 
+  .home
   {
-    main 
+    main
     {
       position:static;
     }
-    
+
     #search-container {
       min-width: 100%;
     }
@@ -79,8 +80,18 @@
       border: 1px solid $white_alpha40;
       background: $blue_light_alpha40;
 
+      > form
+      {
+        padding:20px;
+        > section
+        {
+          display:block;
+          margin:0;
+        }
+      }
+
       input[type='text'] {font-size:16px;}
-    
+
       div
       {
           display:block;
@@ -90,31 +101,27 @@
       label
       {
           font-size: 20px;
-          color:$white;
-          text-align: center;
           font-family: $serif_font;
           letter-spacing: 2px;
           display:block;
           width:auto;
-      }
-
-      label span
-      {
-      //    color:$blue_light;
-          display:none;
+          margin-left:auto;
+          margin-right:auto;
       }
 
       input
       {
-          height:16px;
+          height:40px;
           font-size: 14px;
           background:$white;
           margin-bottom:10px;
           margin-left:auto;
           margin-right:auto;
-          width:170px;
+          width:100%;
+          @include box-sizing(border-box);
           display:block;
           position:static;
+          @include border-radius(0px);
       }
 
       button
@@ -122,7 +129,9 @@
           width:100%;
           font-size: 16px;
           margin:0;
-          position:static;
+          margin-top:10px;
+          top:0;
+          left:0;
       }
     }
   }
@@ -130,7 +139,7 @@
 
   .inside
   {
-    #results-container 
+    #results-container
     {
       display:table-header-group;
 
@@ -142,7 +151,7 @@
       }
     }
 
-    #search-container 
+    #search-container
     {
       display:table-footer-group;
     }
@@ -202,5 +211,5 @@
 
 // Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
 @media only screen and (max-width: 479px) {
-  
+
 }
