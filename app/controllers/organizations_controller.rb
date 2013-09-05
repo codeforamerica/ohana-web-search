@@ -57,6 +57,8 @@ class OrganizationsController < ApplicationController
       :radius => params[:radius]
     }
 
+    # initializes map data
+    @map_data = generate_map_data(@orgs)
 
     # respond to direct and ajax requests
     respond_to do |format|

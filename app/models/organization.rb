@@ -37,14 +37,14 @@ class Organization
 
 
   # Provides temporary custom CIP > OE mapping of search terms that don't return results
-  # If the response content is blank (no results found) check that the keyword isn't 
+  # If the response content is blank (no results found) check that the keyword isn't
   # one of the homepage terms, and if so, map to a new search that returns at least one result
   # @param query [Object] The original query.
   # @param keyword [String] A keyword entered by the user.
   def self.keyword_mapping(query, params)
     keyword = params[:keyword].downcase
     new_params = params.dup
-    
+
     if keyword == 'animal welfare'
       new_params[:keyword] = 'protective services for animals'
     elsif keyword == 'building support networks'
@@ -126,8 +126,8 @@ class Organization
   end
 
 
-  
-  # placeholder methods for returning content for autocomplete functionality. 
+
+  # placeholder methods for returning content for autocomplete functionality.
   # data is hardcoded here till it can be returned from the API or otherwise delivered, if applicable.
 
   # keyword search autocomplete data
@@ -173,7 +173,7 @@ class Organization
     if keyword.present?
 
       terms = self.terms
-      
+
       keyword = keyword.downcase # set keyword to lowercase
 
       terms.each do |term|
@@ -205,10 +205,14 @@ class Organization
       {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
       {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship & immigration','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
-      {:name=>'programs',:sub=>['CalFresh','Market Match','Health Insurance','Women, Infants, and Children',"Senior Farmers' Market Nutrition Program"].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
       {:name=>'work',:sub=>['finding work','job skills training'].sort} \
     ]
+  end
+
+  # government programs for display on the homepage
+  def self.program_terms
+    ['CalFresh/Food Stamps','Market Match','Health Insurance','Women, Infants, and Children',"Senior Farmers' Market Nutrition Program",'Medi-Cal','Medicare'].sort
   end
 
   private
@@ -223,5 +227,5 @@ class Organization
         {:name=>'health care reform',:aka=>['affordable care act','health insurance']} \
       ]
   end
-  
+
 end

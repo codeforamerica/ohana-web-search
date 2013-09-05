@@ -1,11 +1,10 @@
 %section#list-view
 	%ul
 		- @orgs.each do |org|
-			%li
-				- query = "?"
-				- @query_params.each do |key, value|
-					- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
-
+			- query = "?"
+			- @query_params.each do |key, value|
+				- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
+			%li{"data-href"=>"/organizations/#{org._id}#{query}"}
 				%section{:class => "results-entry"}
 					-#
 						- unless org.distance.blank?
@@ -13,12 +12,13 @@
 								%span
 									== #{org.distance} mi
 					%header
-						- if has_field?(org, ['category'])
-							%ul.category
-								- org.category.each do |category|
-									%li
-										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}", :class=>"ajax-link"}
-											= category.capitalize
+						-#
+							- if has_field?(org, ['category'])
+								%ul.category
+									- org.category.each do |category|
+										%li
+											%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"#{org.agency}", :class=>"ajax-link"}
+												= category
 						%h1{:id=>'#{org._id}',:class=>'name'}
 							%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
 								= superscript_ordinals(org.name)

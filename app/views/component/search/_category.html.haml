@@ -1,5 +1,14 @@
 %section#category-box
   -# Category search terms that are displayed on the homepage
+  %section#programs
+    %h1
+      Human Services Programs
+    %ul
+      - @program_terms.each do |program|
+        %li
+          %a{ :href => "/organizations?keyword=#{u(program)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{program}']);" }
+            = program
+
   %ul
     - @service_terms.each do |service|
       %li
