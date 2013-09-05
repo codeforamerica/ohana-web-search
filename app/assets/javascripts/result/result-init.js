@@ -15,7 +15,7 @@ define(['result/result-list-manager','result/result-map-manager'], function (res
   function refresh()
   {
   	map.init(_callback);
-  	results.init();
+  	results.init(_callback);
   }
 
 return {init:init,refresh:refresh}

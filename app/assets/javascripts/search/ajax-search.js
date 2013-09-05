@@ -55,6 +55,7 @@ define(['app/loading-manager',
 			}
 		}
 
+		// performs an ajax search with passed parameters
 		function performSearch(params)
 		{
 			splash.show({"fullscreen":false});
@@ -75,8 +76,14 @@ define(['app/loading-manager',
 			if (location) query += "&location="+encodeURIComponent(location);
 			if (radius) query += "&radius="+radius;
 
-			ajax.request(query, _callback);
-			window.history.pushState({'ajax':true}, null, query);
+			performSearchWithURL(query);
+		}
+
+		// performs an ajax search with a passed URL
+		function performSearchWithURL(url)
+		{
+			ajax.request(url, _callback);
+			window.history.pushState({'ajax':true}, null, url);
 		}
 
 		function _updateTitle()
@@ -113,6 +120,7 @@ define(['app/loading-manager',
 
 	return {
 		init:init,
-		performSearch:performSearch
+		performSearch:performSearch,
+		performSearchWithURL:performSearchWithURL
 	};
 });

@@ -117,7 +117,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=1.0';
+				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.7';
 				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
 
 				var marker = new google.maps.Marker({

@@ -2,9 +2,12 @@
 define(function () {
   'use strict';
 
+  	var _callback;
+
 		// PUBLIC METHODS
-		function init()
+		function init(callback)
 		{
+			_callback = callback;
 			var lnks = document.querySelectorAll('#list-view li');
 			var curr;
 			for (var l=0; l < lnks.length; l++)
@@ -16,13 +19,18 @@ define(function () {
 
 		function _linkClickedHandler(evt)
 		{
-			evt.stopPropagation();
 			var el = evt.target;
 			if (el.attributes["href"] === undefined)
 			{
-				//console.log(el);
-				window.location = evt.currentTarget.getAttribute('data-href');
+				_callback.performSearchWithURL(evt.currentTarget.getAttribute('data-href'));
 			}
+			else if (el.attributes["href"])
+			{
+				_callback.performSearchWithURL(el.href);
+			}
+
+			evt.preventDefault();
+			return false;
 		}
 
 	return {

@@ -75,25 +75,20 @@ define(['util/util'],
 			}
 		}
 
+		function _linkClickedHandler(evt)
+		{
+			_callback.performSearchWithURL(evt.target.href);
+
+			evt.preventDefault();
+			return false;
+		}
+
 		function _searchFormSubmittedHandler(evt)
 		{
 			var params = util.getQueryParams(window.location.search);
 			params.keyword = getKeyword();
 			params.location = getLocation();
 			params.page = 1;
-			_callback.performSearch(params);
-
-			evt.preventDefault();
-			return false;
-		}
-
-		function _linkClickedHandler(evt)
-		{
-			var params = util.getQueryParams(this.search);
-			var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
-			if (id != 'organizations')
-				params.id = id;
-
 			_callback.performSearch(params);
 
 			evt.preventDefault();

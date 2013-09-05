@@ -9,7 +9,7 @@ define(function() {
       var el = document.createElement(TAGNAMES[eventName] || 'div');
       eventName = 'on' + eventName;
       var isSupported = (eventName in el);
-      if (!isSupported) 
+      if (!isSupported)
       {
         el.setAttribute(eventName, 'return;');
         isSupported = typeof el[eventName] == 'function';
@@ -23,7 +23,7 @@ define(function() {
     function getWindowRect()
     {
       var myWidth = 0, myHeight = 0;
-      if( typeof( window.innerWidth ) == 'number' ) 
+      if( typeof( window.innerWidth ) == 'number' )
       {
         //Non-IE
         myWidth = window.innerWidth;
@@ -44,7 +44,7 @@ define(function() {
     // get left and top offset of an element
     // (from http://stackoverflow.com/questions/442404/dynamically-retrieve-the-position-x-y-of-an-html-element)
     // @return [Object] with top and left properties
-    function getOffset( el ) 
+    function getOffset( el )
     {
         var _x = 0;
         var _y = 0;
@@ -63,11 +63,11 @@ define(function() {
           return window.webkitRequestAnimationFrame ||
           window.mozRequestAnimationFrame ||
           window.oRequestAnimationFrame ||
-          window.msRequestAnimationFrame 
+          window.msRequestAnimationFrame
     }
 
 
-    // get computed style 
+    // get computed style
     // (from http://stackoverflow.com/questions/2664045/how-to-retrieve-a-styles-value-in-javascript)
     function getStyle(el, styleProp) {
       var value, defaultView = (el.ownerDocument || document).defaultView;
@@ -84,7 +84,7 @@ define(function() {
         });
         value = el.currentStyle[styleProp];
         // convert other units to pixels on IE
-        if (/^\d+(em|pt|%|ex)?$/i.test(value)) { 
+        if (/^\d+(em|pt|%|ex)?$/i.test(value)) {
           return (function(value) {
             var oldLeft = el.style.left, oldRsLeft = el.runtimeStyle.left;
             el.runtimeStyle.left = el.currentStyle.left;
@@ -118,7 +118,7 @@ define(function() {
           urlobj[key] = val;
         }
 
-        for (var key in params) 
+        for (var key in params)
         {
           urlobj[key] = params[key];
         }
@@ -149,6 +149,7 @@ define(function() {
     // @param [String] the query string parameter
     // @return [Object] query string as object
     function getQueryParams(qs) {
+      if (!qs) qs = document.location.search;
       qs = qs.split("+").join(" ");
 
       var params = {}, tokens,
