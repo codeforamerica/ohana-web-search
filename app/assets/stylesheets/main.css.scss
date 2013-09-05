@@ -456,7 +456,8 @@ a:hover
 #content > header:hover,
 #popups article:hover,
 #detail-info section:hover,
-.about article:hover
+.about article:hover,
+#app-footer:hover
 {
   a
   {
@@ -968,20 +969,25 @@ sup
   #app-footer
   {
     position:relative;
-    text-align:right;
     padding:20px;
+    text-align:center;
     background:$white;
     clear:both;
     border-top:2px solid $blue_midtone;
 
+    p#call-211
+    {
+      font-size:16px;
+      strong
+      {
+        font-weight:bold;
+        color:$red_dark;
+      }
+    }
+
     p
     {
       padding:20px;
-      @include inline-block();
-    }
-
-    p span
-    {
       font-size:14px;
       font-family:$san_serif_font;
       color:$greyscale_midtone;
