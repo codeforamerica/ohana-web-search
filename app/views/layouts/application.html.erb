@@ -24,10 +24,12 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
+    <!--[if lt IE 9]>
     <script type="text/javascript">
-      // patch to handle errors in IE
+      // patch to handle suppression of JS errors in IE
       window.onerror=function(){return true;};
     </script>
+    <![endif]-->
 
     <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
     <%= csrf_meta_tags %>
