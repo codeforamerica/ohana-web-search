@@ -5,6 +5,9 @@
       - dynamic_partial = 'component/terminology/'+@terminology
       = render :partial => "#{dynamic_partial}"
 
+  - if @map_data.present?
+    = render 'component/organizations/results/map_view'
+
   - if @orgs.blank?
     %section.no-results
       %p

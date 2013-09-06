@@ -15,13 +15,13 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 			// try/catch added to ignore IE errors
 			/*
 			window.enquire.register("screen and (max-width: 767px)", {
-			    match 	: _removePopups,  
+			    match 	: _removePopups,
 			    unmatch : _addPopups
 			});
 			*/
 		}
 
-		
+
 		// PRIVATE METHODS
 
 		// adds hooks for triggering popups present on the page
@@ -87,14 +87,14 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 
 			// get the window dimensions
 			var winDim = util.getWindowRect();
-			
+
 			// find the position offset values of the link that triggered the popup
 			var offset = util.getOffset(trigger);
 			var offsetY = (offset.top+trigger.offsetHeight);
 			var offsetX = (offset.left);
 
 			// offset needed for CSS adjustments of rotating arrow inside a masking box
-			// to move popup up/down, adjust the arrowOffset.top value, which will 
+			// to move popup up/down, adjust the arrowOffset.top value, which will
 			// cascade down to the popupOffset
 			var arrowOffset = {'top':-6,'left':-14};
 			var popupOffset = {'top':15+arrowOffset.top}
@@ -143,12 +143,12 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		function _closeHandler(evt)
 		{
 			var el = evt.target;
-			if (el.attributes["href"] == undefined && 
-				!el.classList.contains("popup-trigger") && 
+			if (el.attributes["href"] === undefined &&
+				!el.classList.contains("popup-trigger") &&
 				!el.parentNode.classList.contains("popup-container") &&
-				el.nodeName != 'TEXTAREA' &&
-				el.nodeName != 'INPUT' &&
-				el.nodeName != 'BUTTON'
+				el.nodeName !== 'TEXTAREA' &&
+				el.nodeName !== 'INPUT' &&
+				el.nodeName !== 'BUTTON'
 				)
 			{
 				_closeLastPopup();

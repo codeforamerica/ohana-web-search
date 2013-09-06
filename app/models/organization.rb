@@ -213,10 +213,14 @@ class Organization
       {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
       {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship & immigration','guardianship','civil rights'].sort}, \
       {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
-      {:name=>'programs',:sub=>['CalFresh','Market Match','Health Insurance','Women, Infants, and Children',"Senior Farmers' Market Nutrition Program"].sort}, \
       {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
       {:name=>'work',:sub=>['finding work','job skills training'].sort} \
     ]
+  end
+
+  # government programs for display on the homepage
+  def self.program_terms
+    ['CalFresh/Food Stamps','Market Match','Health Insurance','Women, Infants, and Children',"Senior Farmers' Market Nutrition Program",'Medi-Cal','Medicare'].sort
   end
 
   private

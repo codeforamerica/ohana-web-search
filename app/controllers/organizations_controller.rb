@@ -49,6 +49,9 @@ class OrganizationsController < ApplicationController
     #   end
     # end
 
+    # initializes map data
+    @map_data = generate_map_data(@orgs)
+
     # respond to direct and ajax requests
     respond_to do |format|
       # visit directly

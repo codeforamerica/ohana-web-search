@@ -1,13 +1,20 @@
 // manages results maps view
-define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function() {
+define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function (map) {
   'use strict';
 
 		// PRIVATE PROPERTIES
-		var _map;
+		var _map; // the map div that the Google map loads into
+		var _mapCanvas; // the parent element of _map
+		var _mapViewControl; // the element that controls the expanding/contracting of the map
+		var _atMaxSize = false; // whether the map is at its max size or not
+
 		var _markerData; // markers on the map
 		var _markersArray = []; // array for storing markers
 		var _markerBounds; // the bounds of the markers
-		var _locationMarker; // the location of the current org
+
+		// constants for map button text content
+		var LARGER_MAP_TEXT = "Smaller Map";
+		var SMALLER_MAP_TEXT = "Larger Map";
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -15,46 +22,57 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		function init(callback)
 		{
 			_callback = callback;
-			var title = document.getElementById("detail-map-canvas-title");
-			var lat = document.getElementById("detail-map-canvas-lat");
-			var lng = document.getElementById("detail-map-canvas-lng");
 
-			if (title && lat && lng)
+			var mapContainer = document.getElementById('map-view');
+
+			if (mapContainer)
 			{
-				title = title.innerHTML;
-				lat = lat.innerHTML;
-				lng = lng.innerHTML;
-
-			  var latlng = new google.maps.LatLng(lat,lng);
+				_mapCanvas = document.getElementById("map-canvas");
+				_mapViewControl = document.getElementById('map-view-control');
+				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
 			  var mapOptions = {
 			    zoom: 16,
-			    center: latlng,
 			    scrollwheel: false,
 			    zoomControl: true,
 			    panControl: false,
 			    streetViewControl: false,
 			    scaleControl: true,
 			    scaleControlOptions: {
-	        position: google.maps.ControlPosition.RIGHT_BOTTOM
-	    	},
-
+	        	position: google.maps.ControlPosition.RIGHT_BOTTOM
+	    		},
 			    mapTypeControl: false,
 			    mapTypeId: google.maps.MapTypeId.ROADMAP
 			  }
-			  _map = new google.maps.Map(document.getElementById("detail-map-canvas"), mapOptions);
 
+			  _map = new google.maps.Map(_mapCanvas, mapOptions);
 
-			  _locationMarker = new google.maps.Marker({
-						map: _map,
-						title: title,
-						position: latlng
-					});
+			  _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
 			  refresh();
 			}
 		}
 
+		// map view control clicked
+		function _mapViewControlClicked(evt)
+		{
+			evt.preventDefault();
+			if (_atMaxSize)
+			{
+				_mapCanvas.classList.remove('max');
+				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
+				_atMaxSize = false;
+			}
+			else
+			{
+				_mapCanvas.classList.add('max');
+				_mapViewControl.innerHTML = LARGER_MAP_TEXT;
+				_atMaxSize = true;
+			}
+			google.maps.event.trigger(_map, "resize");
+			if (_markersArray.length > 0)
+				_map.fitBounds(_markerBounds);
+		}
 
 		// loads markers
 		function _loadMarkers()
@@ -65,7 +83,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_markerData = JSON.parse(locations.innerHTML);
 		  	locations.parentNode.removeChild(locations); // remove script element
 			  _markerBounds = new google.maps.LatLngBounds();
-			  _markerBounds.extend(_locationMarker.position);
 
 				_clearMarkers();
 
@@ -100,8 +117,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
+				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=1.0';
 				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
-				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=1';
 
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
@@ -149,6 +166,13 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 			if (_markersArray.length > 0)
 				_map.fitBounds(_markerBounds);
+
+			//(optional) restore the zoom level after the map is done scaling
+			//var listener = google.maps.event.addListener(_map, "idle", function () {
+			//    _map.setZoom(10);
+			//    google.maps.event.removeListener(listener);
+			//});
+
 		}
 
 	return {

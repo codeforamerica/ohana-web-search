@@ -2,7 +2,7 @@
 define(['util/util'],
 	function(util) {
   'use strict';
-		
+
 		var _header;
 		var _offsetY;
 		var _floating = false;
@@ -13,7 +13,7 @@ define(['util/util'],
 			_header = document.getElementById("results-header");
 			_offsetY = document.getElementById('content-header').offsetHeight;
 			_floatingContent = document.querySelector('#results-header .floating-content');
-			
+
 			window.addEventListener("scroll",_onScroll,false);
 		}
 

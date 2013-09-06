@@ -4,5 +4,4 @@ require(['app/app-init',
 				 'domReady!'],
 	function(app,search,detail) {
   'use strict';
-
 });

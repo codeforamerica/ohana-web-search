@@ -909,6 +909,18 @@ sup
 // this section sets up the header and footer, but not the main content area
 #content
 {
+  background:$white;
+
+  #logo span
+  {
+    color:$white_alpha40;
+    font-size:12px;
+    margin-left:5px;
+    position: relative;
+    top:-10px;
+    font-family: $san_serif_font;
+  }
+
   // logo/header area
   > header
   {
@@ -958,17 +970,17 @@ sup
     position:relative;
     text-align:right;
     padding:20px;
-    background: $blue_midtone_alpha30;
+    background:$white;
     clear:both;
+    border-top:2px solid $blue_midtone;
 
     p
     {
-      background:$white;
-      padding:10px;
-      display:inline-block;
+      padding:20px;
+      @include inline-block();
     }
 
-    p span:first-child
+    p span
     {
       font-size:14px;
       font-family:$san_serif_font;
@@ -976,17 +988,18 @@ sup
       display:inline-block;
     }
 
-    p span:last-child
+    p span.cfaflag
     {
-      width: 40px;
+      width: 30px;
       height: 10px;
       display: inline-block;
       // the CfA flag appears below
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
       background-repeat: no-repeat;
       padding-right:10px;
+      position: relative;
+      top:2px;
     }
-
   }
 }
 
@@ -1079,7 +1092,7 @@ main
 .inside main
 {
   background-color: $blue_lightest;
-  @include background( linear-gradient( $blue_lightest 0%, $blue_midtone 100%) );
+  //@include background( linear-gradient( $blue_lightest 0%, $blue_midtone 100%) );
 }
 
 //=================================================================================
@@ -1333,13 +1346,24 @@ main
   background:$white;
   //@include single-box-shadow($black_alpha40, 0px, 0px, 10px );
   padding:80px;
-  text-align:center;
+  text-align:left;
+
+  > section
+  {
+    h1
+    {
+      font-size:30px;
+    }
+
+    padding-bottom:60px;
+    @include inline-block;
+  }
 
   > ul
   {
     > li
     {
-    text-align:left;
+      text-align:left;
       text-transform:capitalize;
       font-size:36px;
       display:inline-block;
@@ -1519,7 +1543,7 @@ main
 #results-entries
 {
   margin:13px;
-  margin-bottom:0px;
+  margin-bottom:15px;
   padding-left:15px;
   padding-right:15px;
 
@@ -1851,6 +1875,44 @@ main
       color:$purple_darkest;
     }
   }
+}
+
+#map-view
+{
+  margin-bottom:20px;
+}
+
+#map-canvas
+{
+  height:100px;
+  border:2px solid $blue_dark;
+  border-bottom:1px solid $blue_dark;
+  @include border-radius(4px 4px 0px 0px);
+}
+#map-canvas.max
+{
+  height:400px !important;
+}
+
+#map-view-control
+{
+  display:block;
+  width:100%;
+  background:$blue_lightest;
+  padding:5px;
+  font-size:12px;
+  font-family:$san_serif_font;
+  border:2px solid $blue_dark;
+  border-top:0;
+  text-align:center;
+  @include border-radius(0px 0px 4px 4px);
+  cursor:pointer;
+}
+
+#map-view-control:hover
+{
+  background:$blue_dark;
+  color:$yellow_lightest;
 }
 
 //=================================================================================

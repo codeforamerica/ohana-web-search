@@ -2,9 +2,10 @@
 define(['app/loading-manager',
 				'util/ajax','util/util',
 				'search/input-manager',
+				'result/result-init',
 				'detail/detail-init',
 				'search/header-manager'],
-	function(splash,ajax,util,inputs,detail,header) {
+	function(splash,ajax,util,inputs,result,detail,header) {
   'use strict';
 
 		var _resultsContainer; // area of HTML to refresh with ajax
@@ -22,6 +23,7 @@ define(['app/loading-manager',
 			inputs.init(this); // initialize search form and ajax links
 			header.init(); // initialize the header manager
 			detail.init(this); // initializes detail scripts
+			result.init(this); // initializes results scripts
 
 			// init callback hooks for ajax search
 			_callback = {
@@ -99,6 +101,8 @@ define(['app/loading-manager',
 
 			if (evt.action == _requestType.DETAIL)
 				detail.refresh(); // re-initializes details scripts
+			else if (evt.action == _requestType.RESULT)
+				result.refresh(); // re-initializes results scripts
 
 			inputs.refresh("#results-container"); // refresh search inputs
 			header.init(); // re-initialize header manager
