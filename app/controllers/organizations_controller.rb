@@ -114,7 +114,7 @@ class OrganizationsController < ApplicationController
     # that have coordinates, and returns that as json, otherwise map_data
     # ends up being nil and can be checked in the view with map_data.present?
     map_data = data.reduce([]) do |result, o|
-      if o.coordinates.present?
+      if o.key?(:coordinates)
         result << {
           'id' => o.id,
           'name' => o.name,

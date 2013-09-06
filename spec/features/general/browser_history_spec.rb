@@ -23,7 +23,7 @@ feature 'Visitor uses the back or forward button', :js => true do
     looks_like_results
   end
 
-  scenario 'back to homepage after 2 queries', :vcr do
+  scenario 'back to homepage after 2 queries', :vcr => { :record => :new_episodes } do
     search(:keyword => 'maceo')
     go_back
     go_back
