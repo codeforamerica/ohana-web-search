@@ -1,7 +1,7 @@
 // manages results maps view
 define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],function(mapbox,util) {
   'use strict';
-	
+
 		// PRIVATE PROPERTIES
 		var map;
 
@@ -26,11 +26,11 @@ define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],fu
 			for (var m in obj)
     	{
     		// if the coordinates actually exist for an entry
-    		if (obj[m]["coordinates"] != null && 
+    		if (obj[m]["coordinates"] != null &&
     				(obj[m]["coordinates"][0] != null || obj[m]["coordinates"][1] != null))
 				{
 
-	    		var url = '/organizations/'+obj[m]["_id"];
+	    		var url = '/organizations/'+obj[m]["id"];
 	    		var marker = {
 				        type: 'Feature',
 				        properties: {
@@ -45,7 +45,7 @@ define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],fu
 				        }
 				    };
 
-	    		geoJson["features"].push(marker);			    		
+	    		geoJson["features"].push(marker);
 	    	}
     	}
 
@@ -54,9 +54,9 @@ define(['http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js','util/util'],fu
     	{
 				// Pass features and a custom factory function to the map
 				map.markerLayer.setGeoJSON(geoJson);
-				
+
 				map.fitBounds( map.markerLayer.getBounds() );
-			
+
 				map.markerLayer.on('mouseover', function(e) {
 				    e.layer.openPopup();
 				});

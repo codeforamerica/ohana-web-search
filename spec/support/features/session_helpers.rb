@@ -3,8 +3,8 @@ module Features
 
     # search helpers
     def search(options = {})
-      keyword = options[:keyword] || ''
-      location = options[:location] || ''
+      keyword = options[:keyword]
+      location = options[:location]
       fill_in('keyword', :with => keyword)
       fill_in('location', :with => location)
       if options[:on_home].present?
@@ -15,7 +15,7 @@ module Features
     end
 
     def search_by_language(lang)
-      fill_in('keyword', :with => "maceo")
+      fill_in('keyword', :with => "museums")
       select(lang, :from => 'language', :exact => true)
       find(:css, '#update-btn').click
     end
@@ -50,12 +50,30 @@ module Features
       expect(page).to have_content("CalFresh")
     end
 
-    def looks_like_details
+    def looks_like_location
       find(:css, "#detail-info .description a").should have_content("more")
       find(:css, "#detail-info .description a").click
       find(:css, "#detail-info .description a").should have_content("less")
 
-      expect(page).to have_title "Gimme 1 2 3 | OhanaSMC"
+      expect(page).to have_title "San Maceo Agency | SMC-Connect"
+
+      expect(page).to have_content("Works to control")
+      expect(page).to have_content("Profit and nonprofit")
+      expect(page).to have_content("Marin County")
+      expect(page).to have_content("Walk in")
+      expect(page).to have_content("permits and photocopying")
+      expect(page).to have_content("Russian")
+      expect(page).to have_content("Special parking")
+      expect(page).to have_link("Print")
+      expect(page).to have_link("Directions")
+    end
+
+    def looks_like_market
+      find(:css, "#detail-info .description a").should have_content("more")
+      find(:css, "#detail-info .description a").click
+      find(:css, "#detail-info .description a").should have_content("less")
+
+      expect(page).to have_title "San Maceo Agency | SMC-Connect"
 
       within ("#detail-info .payments-accepted") do
         page.should_not have_content("Women, Infants, and Children")
@@ -74,7 +92,7 @@ module Features
     end
 
     def looks_like_homepage
-      expect(page).to have_title "OhanaSMC"
+      expect(page).to have_title "SMC-Connect"
       expect(page).to have_content "About"
       expect(page).to have_content "Contribute"
       expect(page).to have_content "Feedback"
@@ -85,7 +103,7 @@ module Features
     end
 
     def looks_like_homepage_as_user_sees_it
-      expect(page).to have_title "OhanaSMC"
+      expect(page).to have_title "SMC-Connect"
       expect(page).to have_content "I need"
       expect(page).to have_selector('#find-btn')
       expect(page).to_not have_title "1 of 1 result"

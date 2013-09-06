@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=puente&language=&location=94060&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=puente&language=&location=94060&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.ohanakapa.alpha
+      - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 0.0.2
+      - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -20,40 +20,43 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '73'
       Cache-Control:
-      - max-age=300, public
+      - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Sat, 31 Aug 2013 00:39:31 GMT
+      - Tue, 03 Sep 2013 00:15:33 GMT
       Etag:
-      - '"5924f25a93f2f7465d6d1777189fd1a7"'
+      - '"2eba9ac0bfd94926fd111c220ca6162a"'
       Status:
       - 200 OK
-      X-Content-Digest:
-      - f52e3f7b04167c9fadaf185e0e5cc47ea08db4dd
+      X-Current-Page:
+      - '1'
       X-Rack-Cache:
-      - fresh
+      - miss
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4987'
+      - '4985'
       X-Request-Id:
-      - fdc3e0209f40cb29847d71537bcd7583
+      - f8bbb9d33f6fd21ee03672fe60a1fe3d
       X-Runtime:
-      - '0.354764'
+      - '0.022784'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '3318'
+      - '3390'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e44d4","accessibility_options":["Ramp"],"agency":"Puente
-        de la Costa Sur","ask_for":null,"city":"Pescadero","coordinates":[-122.378084,37.2565669],"created_at":"2013-07-03T20:54:44-07:00","description":"A
+      string: '[{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
+        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
+        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
         community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
         Puente provides a single point of entry for men, women and children to have
         access to safety net services, health and wellness services, youth leadership
@@ -72,21 +75,22 @@ http_interactions:
         and notary services. Deposit and rental assistance subject to availability
         of funds. The site is part of the core network of community service agencies
         of San Mateo County. Created from the merger of North Street Community Resource
-        Center and Puente de la Costa.","eligibility_requirements":"Some programs
-        require income eligibility. All are welcome.","emails":["info@mypuente.org"],"faxes":["650
-        879-0973"],"fees":"None","funding_sources":["County","Donations","Grants"],"how_to_apply":null,"keywords":["Food
+        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
+        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","languages":["Spanish"],"mail_address":{"attention":"Puente
+        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
+        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
+        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, leadership development,
+        and community engegement and action.","transportation":"Contact SamCoast for
+        information.","updated_at":"2013-08-27T16:28:37-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
+        of La Honda, Loma Mar, Pescadero, and San Gregorio","eligibility":"Some programs
+        require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
         Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
         Instruction","English as a Second Language","Comprehensive Information and
-        Referral","Youth"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Puente
-        Resource Center","payments_accepted":null,"phones":[[{"number":"650 879-1691"}]],"products_sold":null,"service_area":["La
-        Honda","Loma Mar","Pescadero","San Gregorio"],"service_areas":null,"service_hours":"Monday-Friday,
-        9-6; ESL Monday, Wednesday, 7-9","service_wait":null,"services_provided":"A
-        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
-        Puente provides a single point of entry for men, women and children to have
-        access to safety net services, health and wellness services, leadership development,
-        and community engegement and action.","state":"CA","street_address":"620 North
-        Street","target_group":"Residents of La Honda, Loma Mar, Pescadero, and San
-        Gregorio","transportation_availability":"Contact SamCoast for information","ttys":null,"updated_at":"2013-08-07T15:55:40-07:00","urls":["http://www.mypuente.org"],"zipcode":"94060","id":"51d5b18ca4a4d8b01b3e44d4","_score":2.5255845,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":1,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":1,"pages":1}}'
+        Referral","Youth"],"service_areas":["La Honda","Loma Mar","Pescadero","San
+        Gregorio"],"updated_at":"2013-08-27T16:15:48-07:00"}],"organization":{"name":"Puente
+        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":3.6672316,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Sat, 31 Aug 2013 00:39:28 GMT
+  recorded_at: Tue, 03 Sep 2013 00:15:32 GMT
 recorded_with: VCR 2.5.0

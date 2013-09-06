@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/locations/1234?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -17,44 +17,37 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       Content-Type:
       - application/json
       Date:
-      - Tue, 03 Sep 2013 01:09:45 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Tue, 03 Sep 2013 01:19:44 GMT
       Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
+      - 404 Not Found
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4989'
+      - '4972'
       X-Request-Id:
-      - 250377dadb282f5229cb79b650cac1fc
+      - 542b5c2f673f02d5a526cfde5792ad38
       X-Runtime:
-      - '0.017127'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
+      - '0.005807'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '2'
+      - '76'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: '{"error":"Not Found","message":"The requested resource could not be
+        found."}'
     http_version: 
-  recorded_at: Tue, 03 Sep 2013 01:09:42 GMT
+  recorded_at: Tue, 03 Sep 2013 01:19:41 GMT
 recorded_with: VCR 2.5.0

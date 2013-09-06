@@ -1,6 +1,8 @@
 class OrganizationsController < ApplicationController
   respond_to :html, :json, :xml, :js
 
+  before_filter :check_location_id, only: :show
+
   TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
     legal money transit work).freeze
 
@@ -13,16 +15,24 @@ class OrganizationsController < ApplicationController
     @terminology = Organization.terminology(params[:keyword])
 
     # initialize query. Content may be blank if no results were found.
-    query = Organization.search(params)
+    @orgs = Organization.search(params)
 
-    # check for results against keyword mapping if content is blank.
-    if query.content.blank?
-      query = Organization.keyword_mapping(query, params)
-    end
+    ## check for results against keyword mapping if content is blank.
+    # if @orgs.blank?
+    #   @orgs = Organization.keyword_mapping(params)
+    # end
 
-    # Initialize @orgs and @pagination properties that are used in the views
-    @orgs = query.content
-    @pagination = query.pagination
+    headers = Ohanakapa.last_response.headers
+
+    @prev_page     = headers["X-Previous-Page"]
+    @next_page     = headers["X-Next-Page"]
+    @current_page  = headers["X-Current-Page"]
+    @total_pages   = headers["X-Total-Pages"]
+    @total_count   = headers["X-Total-Count"]
+    @current_count = @orgs.blank? ? 0 : @orgs.count
+
+    # The parameters to use to provide a link to the location
+    @search_params = request.params.except(:action, :id, :_, :controller)
 
     ## Adds top-level category terms to @orgs for display on results list.
     ## This will likely be refactored to use the top-level keywords when those
@@ -38,25 +48,6 @@ class OrganizationsController < ApplicationController
     #     org.category = org.category.uniq.sort
     #   end
     # end
-
-    # Used in the format_summary method in the result_summary_helper
-    @params = {
-      :count => @pagination.items_current,
-      :total_count => @pagination.items_total,
-      :keyword => params[:keyword],
-      :location => params[:location],
-      :radius => params[:radius]
-    }
-
-    # Used for appending query parameters to result entry link in list_view
-    # so that the search field retains its state when visiting a detail page.
-    @query_params = {
-      :keyword => params[:keyword],
-      :location => params[:location],
-      :page => params[:page],
-      :radius => params[:radius]
-    }
-
 
     # respond to direct and ajax requests
     respond_to do |format|
@@ -77,22 +68,16 @@ class OrganizationsController < ApplicationController
   # organization details view
   def show
     # retrieve specific organization's details
-    @org = Organization.get(params[:id]).content
+    @org = Organization.get(params[:id])
 
     # initializes map data
-    @map_data = generate_map_data(Organization.nearby(params[:id]).content)
+    @map_data = generate_map_data(Ohanakapa.nearby(params[:id]))
 
-    # set up the search results URL
-    keyword         = params[:keyword] || ''
-    location        = params[:location] || ''
-    radius          = params[:radius] || ''
-    page            = params[:page] || ''
-
-    @search_results_url = '/organizations?page='+page
-    @search_results_url += '&keyword='+URI.escape(keyword) if keyword.present?
-    @search_results_url += '&location='+URI.escape(location) if location.present?
-    @search_results_url += '&radius='+radius if radius.present?
-    @search_results_url += '#'+params[:id]
+    # The parameters to use to provide a link back to search results
+    @search_params = request.params.except(:action, :id, :_, :controller)
+    # To disable or remove the Result list button on details page
+    # when visiting location directly
+    @referer = request.env['HTTP_REFERER']
 
     # respond to direct and ajax requests
     respond_to do |format|
@@ -128,7 +113,7 @@ class OrganizationsController < ApplicationController
     map_data = data.reduce([]) do |result, o|
       if o.coordinates.present?
         result << {
-          'id' => o._id,
+          'id' => o.id,
           'name' => o.name,
           'coordinates' => o.coordinates
         }
@@ -153,5 +138,11 @@ class OrganizationsController < ApplicationController
     block.call
     self.formats = old_formats
     nil
+  end
+
+  # If the location id is invalid, redirect to home page
+  # and display an alert (TODO), or do something else.
+  def check_location_id
+    redirect_to root_path unless Organization.get(params[:id])
   end
 end

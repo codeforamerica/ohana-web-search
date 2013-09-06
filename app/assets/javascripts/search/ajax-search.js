@@ -6,12 +6,12 @@ define(['app/loading-manager',
 				'search/header-manager'],
 	function(splash,ajax,util,inputs,detail,header) {
   'use strict';
-		
+
 		var _resultsContainer; // area of HTML to refresh with ajax
 
 		var _callback; // callback object for handling ajax success/failure
 
-		var _ajaxCalled = false; // boolean for when the ajax has been call the first time 
+		var _ajaxCalled = false; // boolean for when the ajax has been call the first time
 
 		var _requestType = {'RESULT':'index','DETAIL':'show'}
 
@@ -29,25 +29,27 @@ define(['app/loading-manager',
 				'fail' : _failure
 			}
 
-		  window.addEventListener("popstate", _updateURL);			
+		  window.addEventListener("popstate", _updateURL);
 		}
 
-		function _updateURL(evt) 
+		function _updateURL(evt)
 		{
-			// TODO prevent ajax request when user follows 
+			// TODO prevent ajax request when user follows
 			// a named anchor link to the same page they are currently on.
 
 			if ( _ajaxCalled || (evt.state && evt.state.ajax) )
 			{
 				var params = util.getQueryParams(document.location.search);
-				
+
 				// set search field values
 				var keyword = params.keyword || "";
 				var location = params.location || "";
+				var language = params.language || "";
 
 				inputs.setKeyword(keyword);
 				inputs.setLocation(location);
-			
+				inputs.setLanguage(language);
+
 				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
 			}
@@ -55,23 +57,26 @@ define(['app/loading-manager',
 
 		function performSearch(params)
 		{
-			splash.show({"fullscreen":false}); 
+			splash.show({"fullscreen":false});
 
-			var page = params.page || 1;
+			var page = params.page || null;
 			var keyword = params.keyword || "";
 			var location = params.location || "";
 			var radius = params.radius || null;
+			var language = params.language;
 			var id = params.id || null;
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
+			inputs.setLanguage(language);
 
 			var query = '/organizations';
 			if (id) query += '/'+id;
-			if (page) query += "?page="+page;
-			if (keyword) query += "&keyword="+encodeURIComponent(keyword);
+			if (keyword) query += "?keyword="+encodeURIComponent(keyword);
 			if (location) query += "&location="+encodeURIComponent(location);
 			if (radius) query += "&radius="+radius;
+			if (language) query += "&language="+language;
+			if (page) query += "&page="+page;
 
 			ajax.request(query, _callback);
 			window.history.pushState({'ajax':true}, null, query);
@@ -85,16 +90,16 @@ define(['app/loading-manager',
 			summary = summary.getAttribute("title")+" "+suffix;
 			document.title = summary;
 		}
-		
+
 		function _success(evt)
 		{
 			window.scrollTo(0,0); // scrolls page to the top of the page when ajax finishes
 			_ajaxCalled = true; // set ajax first-run flag
 			_resultsContainer.innerHTML = evt.content; // update search results list
-			
+
 			if (evt.action == _requestType.DETAIL)
 				detail.refresh(); // re-initializes details scripts
-			
+
 			inputs.refresh("#results-container"); // refresh search inputs
 			header.init(); // re-initialize header manager
 

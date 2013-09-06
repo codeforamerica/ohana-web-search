@@ -39,6 +39,6 @@ feature 'Visitor uses the back or forward button', :js => true do
       should have_content("1 of 1 result matching 'maceo'")
     go_forward
     find_link("http://www.smchealth.org")
-    looks_like_details
+    expect(page).to have_content "San Maceo"
   end
 end

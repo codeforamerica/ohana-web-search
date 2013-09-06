@@ -2,10 +2,6 @@
 	%ul
 		- @orgs.each do |org|
 			%li
-				- query = "?"
-				- @query_params.each do |key, value|
-					- query << "#{key}=#{CGI::escape(value)}&" unless value.nil?
-
 				%section{:class => "results-entry"}
 					-#
 						- unless org.distance.blank?
@@ -13,31 +9,30 @@
 								%span
 									== #{org.distance} mi
 					%header
-						- if has_field?(org, ['category'])
+						- if org.key?(:category)
 							%ul.category
 								- org.category.each do |category|
 									%li
 										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}", :class=>"ajax-link"}
 											= category.capitalize
-						%h1{:id=>'#{org._id}',:class=>'name'}
-							%a{:href=>"/organizations/#{org._id}#{query}", :title=>"#{org.name}", :class=>"ajax-link"}
+						%h1{:class=>'name'}
+							%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :class=>"ajax-link", :name=>"#{org.id}"}
 								= superscript_ordinals(org.name)
-						- if org.agency.present?
+						- if (org.organization.name) && (org.organization.name != org.name)
 							%h2.agency
-								%a{:href=>"/organizations?keyword=#{CGI::escape(org.agency)}", :title=>"#{org.agency}", :class=>"ajax-link"}
+								%a{:href=>"/organizations?keyword=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}", :class=>"ajax-link"}
 									%span
-										= superscript_ordinals(org.agency)
-					- if has_field?(org, ['phones'])
+										= superscript_ordinals(org.organization.name)
+					- if org.key?(:phones)
 						%ul.phones
-							- org.phones.each do |array|
-								- array.each do |hash|
-									- if hash["number"].present?
-										%li
-											%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-											%span{:itemprop=>"telephone"}
-												= "#{format_phone(hash["number"])}"
+							- org.phones.each do |hash|
+								- if hash["number"].present?
+									%li
+										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+										%span{:itemprop=>"telephone"}
+											= "#{format_phone(hash["number"])}"
 
-					- if has_field?(org, address_fields)
+					- if org.key?(:address)
 						%p.address
 							= render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
 

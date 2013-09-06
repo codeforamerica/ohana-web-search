@@ -1,13 +1,13 @@
 %header#results-header
 	%div
-		%a{ :href => @search_results_url, :class => "ajax-link",:target=>"_self" }
+		%a{ :href => "#{organizations_url(@search_params)}##{@org.id}", :class => "ajax-link",:target=>"_self" }
 			%span{ "data-icon" => "◀", :class => "ohana-icon" }
 			Result list
 		%a{ :href => '#', :onclick=>"window.print();return false;" }
 			-# %span{ "data-icon" => "⎙", :class => "ohana-icon print" }
 			Print
 
-		- if @org.coordinates.present?
+		- if @org.key?(:coordinates)
 			%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
 				%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
 				%span Directions

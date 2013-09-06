@@ -66,7 +66,7 @@ feature "homepage search" do
     expect(page).to have_content("provides assistance for low-income")
   end
 
-  scenario "when clicking a category", :vcr do
+  xscenario "when clicking a category", :vcr do
     visit("/")
     click_link("Market Match")
     expect(page).to have_content("Coastside Farmers' Market of Pacifica")

@@ -1,50 +1,58 @@
 require 'json'
 
 class Organization
-  # Gets a single organization details
-  # @param id [String] Organization ID.
-  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
-  def self.get(id)
-    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
-    response = @client.organization(id)
-  end
 
-  # Gets organizations nearby to a single organization
-  # @param id [String] Organization ID.
-  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
-  def self.nearby(id)
-    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
-    response = @client.nearby(id)
-  end
-
-  # Performs a query of the API
-  # @param params [Object] parameter object.
-  # @return [Ohanakapa::Response::Wrapper] Object representing a organization's details.
+  # Calls the search endpoint of the Ohana API
+  #
+  # If params doesn't include at least one of keyword, location,
+  # or language, the wrapper will return a BadRequest error,
+  # which we can rescue and inspect. If the error message includes
+  # "missing", that means one of the required params is missing,
+  # and we can choose to display all locations in that case.
+  # Otherwise, it's either because the location or radius is invalid,
+  # in which case we return an empty result.
+  #
+  # @param params [Hash] Search options.
+  # @return [Array] Array of locations.
   def self.search(params = {})
-    @client = Ohanakapa::Client.new(:api_token => ENV["OHANA_API_TOKEN"])
-
-    # return all results if keyword and location are blank
-    if params[:keyword].blank? && params[:location].blank?
-      return @client.organizations(params)
-    end
-
     begin
-      response = @client.search(params)
-    rescue
-      response = @client.empty_set
+      Ohanakapa.search("search", params)
+    rescue Ohanakapa::BadRequest => e
+      if e.to_s.include?("missing")
+        Ohanakapa.locations(params)
+      else
+        Ohanakapa.search("search", keyword: "asdfasg")
+      end
     end
   end
 
+  # Calls the locations/{id} endpoint of the Ohana API
+  # Fetches a single location by id
+  #
+  # If the id doesn't correspond to an existing location the wrapper
+  # will return a NotFound error, which we need to rescue and deal with
+  # appropriately by redirecting to a custom 404 page or to the home page
+  # with an alert.
+  #
+  # @param id [String] Location id.
+  # @return [Sawyer::Resource] Hash of location details.
+  def self.get(id)
+    begin
+      Ohanakapa.location(id)
+    rescue Ohanakapa::NotFound
+      return false
+    end
+  end
 
   # Provides temporary custom CIP > OE mapping of search terms that don't return results
-  # If the response content is blank (no results found) check that the keyword isn't 
+  # If the response content is blank (no results found) check that the keyword isn't
   # one of the homepage terms, and if so, map to a new search that returns at least one result
   # @param query [Object] The original query.
   # @param keyword [String] A keyword entered by the user.
-  def self.keyword_mapping(query, params)
+  def self.keyword_mapping(params)
     keyword = params[:keyword].downcase
     new_params = params.dup
-    
+
     if keyword == 'animal welfare'
       new_params[:keyword] = 'protective services for animals'
     elsif keyword == 'building support networks'
@@ -120,14 +128,14 @@ class Organization
     end
 
     if (params[:keyword] != new_params[:keyword])
-      query = Organization.search(new_params)
+      query = search(new_params)
     end
     query
   end
 
 
-  
-  # placeholder methods for returning content for autocomplete functionality. 
+
+  # placeholder methods for returning content for autocomplete functionality.
   # data is hardcoded here till it can be returned from the API or otherwise delivered, if applicable.
 
   # keyword search autocomplete data
@@ -173,7 +181,7 @@ class Organization
     if keyword.present?
 
       terms = self.terms
-      
+
       keyword = keyword.downcase # set keyword to lowercase
 
       terms.each do |term|
@@ -223,5 +231,5 @@ class Organization
         {:name=>'health care reform',:aka=>['affordable care act','health insurance']} \
       ]
   end
-  
+
 end

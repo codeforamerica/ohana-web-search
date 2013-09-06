@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=asdfg&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=asdfg&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.ohanakapa.alpha
+      - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 0.0.2
+      - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -23,9 +23,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Sat, 31 Aug 2013 00:24:42 GMT
+      - Tue, 03 Sep 2013 01:09:37 GMT
       Status:
       - 400 Bad Request
       X-Rack-Cache:
@@ -33,22 +33,77 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4995'
+      - '4994'
       X-Request-Id:
-      - a583dd9833c6a2945f156428c8bc3c97
+      - 6dea408bb767fcb314561bf6785beec8
       X-Runtime:
-      - '1.989995'
+      - '0.024628'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '152'
+      - '68'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"error":"bad_request","error_description":"The data given to this
-        server does not meet our criteria.","specific_reason":"Invalid ZIP code or
-        address."}'
+      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
     http_version: 
-  recorded_at: Sat, 31 Aug 2013 00:24:40 GMT
+  recorded_at: Tue, 03 Sep 2013 01:09:35 GMT
+- request:
+    method: get
+    uri: http://ohanapi-staging.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 03 Sep 2013 01:09:38 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4993'
+      X-Request-Id:
+      - 5c71dc748b63279c3d007dd5f89ffa6a
+      X-Runtime:
+      - '0.016424'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Tue, 03 Sep 2013 01:09:35 GMT
 recorded_with: VCR 2.5.0

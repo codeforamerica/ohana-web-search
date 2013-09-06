@@ -1,24 +1,24 @@
 %span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
-	
-	- if org.street_address.present?
+
+	- if org.key?(:address)
 		- if lines == 2
 			%span.street-address{:itemprop=>"streetAddress"}
-				= superscript_ordinals(org.street_address)
+				= superscript_ordinals(org.address["street"])
 			%br
-		- elsif org.city.present? || org.state.present? || org.zipcode.present?
-			<span class="street-address" itemprop="streetAddress">#{superscript_ordinals(org.street_address)}</span>,  
+		- elsif org.address["city"].present? || org.address["state"].present? || org.address["zip"].present?
+			<span class="street-address" itemprop="streetAddress">#{superscript_ordinals(org.address["street"])}</span>,
 		- else
 			%span.street-address{:itemprop=>"streetAddress"}
-				= superscript_ordinals(org.street_address)
+				= superscript_ordinals(org.address["street"])
 
-	- if org.city.present?
+	- if org.address["city"].present?
 		%span.city{:itemprop=>"addressLocality"}
-			= org.city + ((org.state.present? || org.zipcode.present?) ? ", " : "")
-	
-	- if org.state.present?
+			= org.address["city"] + ((org.address["state"].present? || org.address["zip"].present?) ? ", " : "")
+
+	- if org.address["state"].present?
 		%span.state{:itemprop=>"addressRegion"}
-			= org.state
-	
-	- if org.zipcode.present?
+			= org.address["state"]
+
+	- if org.address["zip"].present?
 		%span.zipcode{:itemprop=>"postalCode"}
-			= org.zipcode
+			= org.address["zip"]

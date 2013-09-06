@@ -1,6 +1,6 @@
 require(['app/app-init',
 				 'search/search-init',
-				 'domReady!'], 
+				 'domReady!'],
 	function(app,search) {
   'use strict';
 });

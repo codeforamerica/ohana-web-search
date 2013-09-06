@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=wic&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.ohanakapa.alpha
+      - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 0.0.2
+      - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
       - <API_TOKEN>
       Accept-Encoding:
@@ -20,41 +20,44 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Cache-Control:
-      - max-age=300, public
+      - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Sat, 31 Aug 2013 00:29:56 GMT
+      - Tue, 03 Sep 2013 01:09:35 GMT
       Etag:
-      - '"82aaf96368c5a68f18845f285eb63c7b"'
+      - '"cc54063780eb568bb2995716b865cc36"'
       Status:
       - 200 OK
-      X-Content-Digest:
-      - 1c836cd72f9885f12cbd9b02c7e392bd655ccc64
+      X-Current-Page:
+      - '1'
       X-Rack-Cache:
-      - miss, store
+      - miss
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4989'
+      - '4996'
       X-Request-Id:
-      - 2a1e70a9a1a5d9db8c171aa3fc8a133b
+      - 36d978838a1aaead501a7e05850825a7
       X-Runtime:
-      - '0.599667'
+      - '0.032505'
+      X-Total-Count:
+      - '7'
+      X-Total-Pages:
+      - '1'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '18049'
+      - '18997'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51d5b18ba4a4d8b01b3e3fb1","accessibility_options":["Elevator","Wheelchair
-        accessible"],"agency":"San Mateo County Health System","ask_for":"Call the
-        main office","city":"San Mateo","coordinates":[-122.3171637,37.5624546],"created_at":"2013-07-03T20:54:31-07:00","description":"Offers
+      string: '[{"_id":"521d334f1974fcdb2b0021b7","accessibility":["elevator","wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"477 9th Avenue, Suite 110","zip":"94402"},"ask_for":["Call
+        the main office"],"contacts":[{"name":"Eliana C. Schultz, RD","title":"WIC
+        Director"}],"coordinates":[-122.3171637,37.5624546],"created_at":"2013-08-27T16:16:31-07:00","description":"Offers
         nutrition education and supplemental foods to women who are pregnant, post-partum
         or breastfeeding, and children age 5 or under. Families may be low- or medium-income
         and working families may also qualify. There are six WIC clinic sites in the
@@ -65,57 +68,61 @@ http_interactions:
         for food stamps or other public assistance programs. Also assists in finding
         health care and other community services. Formerly known as San Mateo County
         Health Department, Public Health Division. Nutrition Programs. Women, Infants
-        and Children (WIC) Program.","eligibility_requirements":"Woman who is pregnant,
-        post-partum (within the first 6 months) or breastfeeding, child age 5 or under
-        who is at nutritional risk","emails":null,"faxes":null,"fees":"None","funding_sources":["Federal"],"how_to_apply":"Apply
-        by phone. Appointment necessary for application","keywords":["Nutrition Education","WIC","Youth","Infants/Toddlers","Women"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Family
-        Health Services., Public Health Nutrition., Women, Infants and Children (WIC)
-        Program","payments_accepted":null,"phones":[[{"number":"650 573-2168","phone_hours":"(Monday-Friday,
-        8-12, 1-5)"}],[{"number":"800 205-0333","department":"Breastfeeding Helpline"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Thursday, 8:30-12,
-        12:30-5:30 (San Mateo site)","service_wait":"2 week wait for new enrollees","services_provided":"Offers
-        nutrition education and supplemental foods to low-income women who are pregnant,
-        post-partum or breastfeeding","state":"CA","street_address":"477 9th Avenue,
-        Suite 110","target_group":"Pregnant women, new mothers and children age 5
-        or under","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:01-07:00","urls":["http://www.smchealth.org/wic"],"zipcode":"94402","id":"51d5b18ba4a4d8b01b3e3fb1","_score":6080.6675,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e447c","accessibility_options":["Ramp","Restroom","Special
-        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Receptionist
-        or charge nurse at 650-877-7073","city":"South San Francisco","coordinates":[-122.415633,37.656645],"created_at":"2013-07-03T20:54:43-07:00","description":"Offers
+        and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
+        (San Mateo site)","languages":["Spanish"],"mail_address":{"attention":"SMCHS
+        WIC Program","city":"San Mateo","state":"CA","street":"2000 Alameda de las
+        Pulgas, Suite 200","zip":"94403"},"name":"Family Health Services., Public
+        Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"number":"650
+        573-2168","hours":"(Monday-Friday, 8-12, 1-5)"}],"short_desc":"Offers nutrition
+        education and supplemental foods to low-income women who are pregnant, post-partum
+        or breastfeeding.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-08-27T16:30:15-07:00","urls":["http://www.smchealth.org/wic"],"url":"http://ohanapi.herokuapp.com/api/locations/521d334f1974fcdb2b0021b7","services":[{"audience":"Pregnant
+        women, new mothers and children age 5 or under","eligibility":"Woman who is
+        pregnant, post-partum (within the first 6 months) or breastfeeding, child
+        age 5 or under who is at nutritional risk","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Apply
+        by phone. Appointment necessary for application.","keywords":["Nutrition Education","WIC","Youth","Infants/Toddlers","Women"],"service_areas":"San
+        Mateo County","updated_at":"2013-08-27T16:16:49-07:00","wait":"2 week wait
+        for new enrollees."}],"organization":{"name":"San Mateo County Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d334f1974fcdb2b0021b7","_score":6074.289,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33571974fcdb2b002236","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"South
+        San Francisco","state":"CA","street":"306 Spruce Avenue","zip":"94080"},"ask_for":["Receptionist","charge
+        nurse at 650-877-7073"],"contacts":[{"name":"Cathy Lehmkuhl","title":"Clinic
+        Manager"},{"name":"Jonathan Lee","title":"Medical Director"}],"coordinates":[-122.415633,37.656645],"created_at":"2013-08-27T16:16:39-07:00","description":"Offers
         adult primary care and pediatric care, immunizations, HIV testing and counseling,
         family planning and mental health services. Also provides nutrition counseling,
         WIC services (Women, Infants and Children Program) and optometry and podiatry
-        services.","eligibility_requirements":"San Mateo County resident","emails":null,"faxes":["650
-        616-0015"],"fees":"Vary according to income. ACE Program, cash, Medi-Cal,
-        Medicare, some private insurance, as well as Healthy Kids accepted","funding_sources":["County","State"],"how_to_apply":"Call
-        for an appointment","keywords":["HEALTH SERVICES","Outpatient Care","Community
-        Clinics","Youth"],"languages_spoken":["Chinese","Filipino (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"San
-        Mateo Medical Center., South San Francisco Clinic","payments_accepted":null,"phones":[[{"number":"650
-        877-7070","department":"Adults","phone_hours":"(Monday-Friday, 8-5)"}],[{"number":"650
-        877-7027","department":"Pediatrics"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Adults: Monday-Friday,
-        8-5; Pediatrics: Monday, 8 am-8:30 pm; Tuesday, Wednesday, 8 am-9 pm; Thursday,
-        Friday, 8-5","service_wait":"Varies. Same day appointment if appropriate","services_provided":"Offers
-        adult and pediatric care.","state":"CA","street_address":"306 Spruce Avenue","target_group":null,"transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:55:38-07:00","urls":null,"zipcode":"94080","id":"51d5b18ca4a4d8b01b3e447c","_score":0.78249174,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e4336","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Elaine Fong","city":"San Francisco","coordinates":[-122.497668,37.7432421],"created_at":"2013-07-03T20:54:39-07:00","description":"Produces
+        services.","faxes":["650 616-0015"],"hours":"Adults: Monday-Friday, 8-5; Pediatrics:
+        Monday, 8 am-8:30 pm; Tuesday, Wednesday, 8 am-9 pm; Thursday, Friday, 8-5","languages":["Chinese","Filipino
+        (Tagalog)","Spanish"],"mail_address":{"attention":"SMMC SSF Clinic","city":"South
+        San Francisco","state":"CA","street":"306 Spruce Avenue","zip":"94080"},"name":"San
+        Mateo Medical Center., South San Francisco Clinic","phones":[{"number":"650
+        877-7070","department":"Adults","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Offers
+        adult and pediatric care.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-08-27T16:30:25-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33571974fcdb2b002236","services":[{"eligibility":"San
+        Mateo County resident","fees":"Vary according to income. ACE Program, cash,
+        Medi-Cal, Medicare, some private insurance, as well as Healthy Kids accepted.","funding_sources":["County","State"],"how_to_apply":"Call
+        for an appointment.","keywords":["HEALTH SERVICES","Outpatient Care","Community
+        Clinics","Youth"],"service_areas":"San Mateo County","updated_at":"2013-08-27T16:17:04-07:00","wait":"Varies.
+        Same day appointment if appropriate."}],"organization":{"name":"San Mateo
+        County Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33571974fcdb2b002236","_score":0.78132695,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f21974fcdb2b000ecb","accessibility":["wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"Sigmund Stern Grove. 19th Avenue at Wawona","zip":"94116"},"ask_for":["Elaine
+        Fong"],"contacts":[{"name":"Elaine Fong","title":"Chief Financial Officer"}],"coordinates":[-122.497668,37.7432421],"created_at":"2013-08-27T16:14:58-07:00","description":"Produces
         croquet programs year-round for club members and the public at the municipal
         croquet lawns at Stern Grove, 19th Avenue and Wawona, San Francisco.    Produces
         croquet events for groups, such as corporate employees, service organizations
         and charities and tailors the programs to the sponsoring organization''s requirements.
         The cost is $15 per person for a three-hour program and is tax-deductible.
         Free instruction in 6-wicket croquet is given by advance reservation. Flat-soled
-        shoes are required for all programs.","eligibility_requirements":"None","emails":["SFCroquetClub@aol.com"],"faxes":null,"fees":"Membership
-        dues range from $50 to $180 annually","funding_sources":["Fees","Membership
-        dues"],"how_to_apply":"Apply by email (sfcroquetclub@aol.com)","keywords":["Special
-        Interest Clubs"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
-        Francisco Croquet Club","payments_accepted":null,"phones":[[{"number":"415
-        928-5525"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Produces
-        croquet programs year-round for club members and the public at the municipal
-        croquet lawns at Stern Grove, 19th Avenue and Wawona, San Francisco.","state":"CA","street_address":"Sigmund
-        Stern Grove. 19th Avenue at Wawona","target_group":null,"transportation_availability":"MUNI
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.croquetamerica.com"],"zipcode":"94116","id":"51d5b18ca4a4d8b01b3e4336","_score":0.742269,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e422c","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Central Registration","city":"San Jose","coordinates":[-121.914281,37.301772],"created_at":"2013-07-03T20:54:38-07:00","description":"Provides
+        shoes are required for all programs.","emails":["SFCroquetClub@aol.com"],"mail_address":{"attention":"San
+        Francisco Croquet Club","city":"San Francisco","state":"CA","street":"2200
+        15th Avenue","zip":"94116"},"name":"San Francisco Croquet Club","phones":[{"number":"415
+        928-5525"}],"short_desc":"Produces croquet programs year-round for club members
+        and the public at the municipal croquet lawns at Stern Grove, 19th Avenue
+        and Wawona, San Francisco.","transportation":"MUNI stops within 2 blocks.","updated_at":"2013-08-27T16:25:48-07:00","urls":["http://www.croquetamerica.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32f21974fcdb2b000ecb","services":[{"eligibility":"None","fees":"Membership
+        dues range from $50 to $180 annually.","funding_sources":["Fees","Membership
+        dues"],"how_to_apply":"Apply by email (sfcroquetclub@aol.com).","keywords":["Special
+        Interest Clubs"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-08-27T16:14:58-07:00"}],"organization":{"name":"San
+        Francisco Croquet Club","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000eca"},"id":"521d32f21974fcdb2b000ecb","_score":0.74149036,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ed1974fcdb2b000d4e","accessibility":["wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"1333 Meridian Avenue","zip":"95125"},"ask_for":["Central
+        Registration"],"contacts":[{"name":"Liz Hunt, MSW, MPA","title":"Chief Executive
+        Officer"}],"coordinates":[-121.914281,37.301772],"created_at":"2013-08-27T16:14:53-07:00","description":"Provides
         primary health care. Also provides services in substance abuse, mental health
         counseling, health education, nutrition, WIC and general dentistry. Provides
         outreach and advocacy services to locate and assist the American Indian community
@@ -125,21 +132,23 @@ http_interactions:
         dentures and emergency treatment.  The Women, Infants and Children Supplemental
         Food Program (WIC) provides special supplemental foods for low-income women,
         infants and children with special nutritional needs. Nutrition education and
-        counseling are provided in addition to monthly food vouchers.","eligibility_requirements":"None","emails":null,"faxes":["408
-        448-1727"],"fees":"Vary according to income. Cash, checks, Medi-Cal, Medicare
-        and private insurance accepted","funding_sources":["County","Donations","Federal","Fees","Grants","State"],"how_to_apply":"Walk
-        in or apply by phone. Appointment with financial counselor required for services","keywords":["ALCOHOLISM
-        SERVICES","Day Treatment","DRUG ABUSE SERVICES","HEALTH SERVICES","Dental","Education/Information","Nutrition"],"languages_spoken":["Spanish","Vietnamese"],"leaders":null,"market_match":null,"name":"Indian
-        Health Center of Santa Clara Valley, Inc.","payments_accepted":null,"phones":[[{"department":"Administration","phone_hours":"(Monday-Wednesday,
-        Friday, 8-5; Thursday, 8-7)"}],[{"department":"Medical"}],[{"department":"Dental"}],[{"department":"WIC"}],[{"department":"Community
-        Health Services"}]],"products_sold":null,"service_area":"Santa Clara County","service_areas":null,"service_hours":null,"service_wait":"Varies","services_provided":"Provides
-        primary health care. Also provides services in substance abuse, mental health
-        counseling, nutrition, WIC, health education and general dentistry.","state":"CA","street_address":"1333
-        Meridian Avenue","target_group":"American Indians and their families, and
-        low-income members of the local community","transportation_availability":"VTA
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:55:32-07:00","urls":["http://www.indianhealthcenter.org"],"zipcode":"95125","id":"51d5b18ca4a4d8b01b3e422c","_score":0.6455227,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e421c","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Receptionist will direct calls","city":"San
-        Jose","coordinates":[-121.8780525,37.3256075],"created_at":"2013-07-03T20:54:38-07:00","description":"A
+        counseling are provided in addition to monthly food vouchers.","faxes":["408
+        448-1727"],"languages":["Spanish","Vietnamese"],"mail_address":{"attention":"Indian
+        Health Center","city":"San Jose","state":"CA","street":"1333 Meridian Avenue","zip":"95125"},"name":"Indian
+        Health Center of Santa Clara Valley, Inc.","phones":[{"number":"408 445-3400","extensions":["374"],"department":"Administration","hours":"(Monday-Wednesday,
+        Friday, 8-5; Thursday, 8-7)"}],"short_desc":"Provides primary health care.
+        Also provides services in substance abuse, mental health counseling, nutrition,
+        WIC, health education and general dentistry.","transportation":"VTA stops
+        in front.","updated_at":"2013-08-27T16:25:30-07:00","urls":["http://www.indianhealthcenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ed1974fcdb2b000d4e","services":[{"audience":"American
+        Indians and their families, and low-income members of the local community","eligibility":"None","fees":"Vary
+        according to income. Cash, checks, Medi-Cal, Medicare and private insurance
+        accepted.","funding_sources":["County","Donations","Federal","Fees","Grants","State"],"how_to_apply":"Walk
+        in or apply by phone. Appointment with financial counselor required for services.","keywords":["ALCOHOLISM
+        SERVICES","Day Treatment","DRUG ABUSE SERVICES","HEALTH SERVICES","Dental","Education/Information","Nutrition"],"service_areas":"Santa
+        Clara County","updated_at":"2013-08-27T16:14:53-07:00","wait":"Varies."}],"organization":{"name":"Indian
+        Health Center of Santa Clara Valley, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d4d"},"id":"521d32ed1974fcdb2b000d4e","_score":0.6445619,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32eb1974fcdb2b000ce9","accessibility":["wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"160 East Virginia Street, Suite 100","zip":"95112"},"ask_for":["Receptionist
+        will direct calls"],"coordinates":[-121.8780525,37.3256075],"created_at":"2013-08-27T16:14:51-07:00","description":"A
         full-service clinic offering mental health services, prenatal and well baby
         care, care for frail seniors and counseling.     The In-home Psychogeriatric
         Program provides counseling and case management services to homebound seniors
@@ -149,25 +158,25 @@ http_interactions:
         care, nutrition and health, pregnant teen child abuse prevention, women and
         infant care, maternal and child health and tobacco prevention. Provides individual,
         family and group counseling. Also offers counseling to the victims of physical,
-        sexual or emotional abuse and their families.","eligibility_requirements":"None","emails":null,"faxes":["408
-        998-0950"],"fees":"Vary according to income. Medicare, Medi-Cal, private insurance
-        accepted. Cash, checks, Medicare, Medi-Cal and private insurance accepted","funding_sources":["County","Donations","Federal","Fees","Grants","State","United
-        Way Silicon Valley"],"how_to_apply":"Apply by phone. Appointment required","keywords":["FAMILY
+        sexual or emotional abuse and their families.","faxes":["408 998-0950"],"languages":["Russian","Spanish","Filipino
+        (Tagalog)","Vietnamese"],"mail_address":{"attention":"Gardner Family Care
+        Corp","city":"San Jose","state":"CA","street":"160 East Virginia Street, Suite
+        100","zip":"95112"},"name":"Gardner Family Care Corporation, Inc.","phones":[{"number":"408
+        938-2172","hours":"(Monday-Friday, 8:30-5)"}],"short_desc":"Mental health
+        services, prenatal and perinatal services, care for frail seniors and counseling.","transportation":"VTA
+        stops within 4 blocks.","updated_at":"2013-08-27T16:25:25-07:00","urls":["http://www.gardnerhealth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32eb1974fcdb2b000ce9","services":[{"audience":"Court-referred
+        parents, expectant parents, parents of infants, toddlers, schoolage children
+        and teenagers, youth involved in juvenile hall","eligibility":"None","fees":"Vary
+        according to income. Medicare, Medi-Cal, private insurance accepted. Cash,
+        checks, Medicare, Medi-Cal and private insurance accepted.","funding_sources":["County","Donations","Federal","Fees","Grants","State","United
+        Way Silicon Valley"],"how_to_apply":"Apply by phone. Appointment required.","keywords":["FAMILY
         PLANNING SERVICES","Expectant/New Parent Assistance","INDIVIDUAL AND FAMILY
         DEVELOPMENT SERVICES","Growth and Adjustment","MENTAL HEALTH SERVICES","Individual/Group
-        Counseling"],"languages_spoken":["Russian","Spanish","Filipino (Tagalog)","Vietnamese"],"leaders":null,"market_match":null,"name":"Gardner
-        Family Care Corporation, Inc.","payments_accepted":null,"phones":[[{"number":"408
-        938-2172","phone_hours":"(Monday-Friday, 8:30-5)"}],[{"number":"408 287-6200","department":"Centro
-        De Bienestar"}],[{"number":"408 977-1591","department":"Proyecto Primavera"}],[{"number":"408
-        294-1323","department":"Virginia Street WIC"}],[{"number":"408 254-5197","department":"CompreCare
-        WIC"}]],"products_sold":null,"service_area":"Santa Clara County","service_areas":null,"service_hours":null,"service_wait":"Varies","services_provided":"Mental
-        health services, prenatal and perinatal services, care for frail seniors and
-        counseling.","state":"CA","street_address":"160 East Virginia Street, Suite
-        100","target_group":"Court-referred parents, expectant parents, parents of
-        infants, toddlers, schoolage children and teenagers, youth involved in juvenile
-        hall","transportation_availability":"VTA stops within 4 blocks","ttys":null,"updated_at":"2013-08-07T15:55:31-07:00","urls":["http://www.gardnerhealth.org"],"zipcode":"95112","id":"51d5b18ca4a4d8b01b3e421c","_score":0.4564535,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e41a0","accessibility_options":["Ramp","Restroom","Special
-        parking","Wheelchair accessible"],"agency":"San Mateo County Health System","ask_for":"Receptionist","city":"Daly
-        City","coordinates":[-122.4740805,37.6911172],"created_at":"2013-07-03T20:54:36-07:00","description":"Offers
+        Counseling"],"service_areas":"Santa Clara County","updated_at":"2013-08-27T16:14:51-07:00","wait":"Varies."}],"organization":{"name":"Gardner
+        Family Care Corporation, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32eb1974fcdb2b000ce8"},"id":"521d32eb1974fcdb2b000ce9","_score":0.45577407,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33531974fcdb2b002204","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"Daly
+        City","state":"CA","street":"380 - 90th Street","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"name":"Cathy
+        Lehmkuhl","title":"Clinic Manager"},{"name":"Jonathan Lee, Dr.","title":"Medical
+        Director"}],"coordinates":[-122.4740805,37.6911172],"created_at":"2013-08-27T16:16:35-07:00","description":"Offers
         general family medical services for San Mateo County residents including non-emergency
         urgent care. Located in the Mike Nevin Health Center Building at 380 - 90th
         Street, Daly City. Services include well baby clinic, immunization, HIV testing
@@ -177,20 +186,22 @@ http_interactions:
         are also located at this site. Dental services, including both prevention
         and treatment, are available for children age 18 or under Monday through Friday,
         8:30 to 5. Adult dental care is provided on an emergency basis only.  Formerly
-        known as the North County Community Health Center.","eligibility_requirements":"San
-        Mateo County resident","emails":null,"faxes":["650 301-8626"],"fees":"Vary
+        known as the North County Community Health Center.","faxes":["650 301-8626"],"languages":["Hindi","Spanish","Filipino
+        (Tagalog)"],"mail_address":{"attention":"Daly City Clinic","city":"Daly City","state":"CA","street":"380
+        - 90th Street","zip":"94015"},"name":"San Mateo Medical Center., Daly City
+        Clinic","phones":[{"number":"650 301-8600","hours":"(Monday-Friday, 8 am-5
+        pm)"}],"short_desc":"Outpatient clinic offering general family medical services
+        in the northern part of the county.","transportation":"SAMTRANS stops in front.","updated_at":"2013-08-27T16:30:21-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33531974fcdb2b002204","services":[{"audience":"Residents
+        of northern San Mateo County","eligibility":"San Mateo County resident","fees":"Vary
         according to income. Cash, Healthy Family, Healthy Kids, Medi-Cal, Medicare,
-        private insurance, WELL Program accepted","funding_sources":["County","State"],"how_to_apply":"Apply
-        by phone for appointment","keywords":["HEALTH SERVICES","Dental","Outpatient
-        Care","HIV Testing","Community Clinics","Dental Care","Youth"],"languages_spoken":["Hindi","Spanish","Filipino
-        (Tagalog)"],"leaders":null,"market_match":null,"name":"San Mateo Medical Center.,
-        Daly City Clinic","payments_accepted":null,"phones":[[{"number":"650 301-8600","phone_hours":"(Monday-Friday,
-        8 am-5 pm)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":null,"service_wait":"Varies.
-        Same day service if appropriate","services_provided":"Outpatient clinic offering
-        general family medical services in the northern part of the county.","state":"CA","street_address":"380
-        - 90th Street","target_group":"Residents of northern San Mateo County","transportation_availability":"SAMTRANS
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:55:08-07:00","urls":null,"zipcode":"94015","id":"51d5b18ca4a4d8b01b3e41a0","_score":0.39124587,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"51d5b18ca4a4d8b01b3e44d4","accessibility_options":["Ramp"],"agency":"Puente
-        de la Costa Sur","ask_for":null,"city":"Pescadero","coordinates":[-122.378084,37.2565669],"created_at":"2013-07-03T20:54:44-07:00","description":"A
+        private insurance, WELL Program accepted.","funding_sources":["County","State"],"how_to_apply":"Apply
+        by phone for appointment.","keywords":["HEALTH SERVICES","Dental","Outpatient
+        Care","HIV Testing","Community Clinics","Dental Care","Youth"],"service_areas":"San
+        Mateo County","updated_at":"2013-08-27T16:16:57-07:00","wait":"Varies. Same
+        day service if appropriate."}],"organization":{"name":"San Mateo County Health
+        System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33531974fcdb2b002204","_score":0.39066347,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
+        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
+        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
         community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
         Puente provides a single point of entry for men, women and children to have
         access to safety net services, health and wellness services, youth leadership
@@ -209,21 +220,22 @@ http_interactions:
         and notary services. Deposit and rental assistance subject to availability
         of funds. The site is part of the core network of community service agencies
         of San Mateo County. Created from the merger of North Street Community Resource
-        Center and Puente de la Costa.","eligibility_requirements":"Some programs
-        require income eligibility. All are welcome.","emails":["info@mypuente.org"],"faxes":["650
-        879-0973"],"fees":"None","funding_sources":["County","Donations","Grants"],"how_to_apply":null,"keywords":["Food
+        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
+        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","languages":["Spanish"],"mail_address":{"attention":"Puente
+        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
+        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
+        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, leadership development,
+        and community engegement and action.","transportation":"Contact SamCoast for
+        information.","updated_at":"2013-08-27T16:28:37-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
+        of La Honda, Loma Mar, Pescadero, and San Gregorio","eligibility":"Some programs
+        require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
         Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
         Instruction","English as a Second Language","Comprehensive Information and
-        Referral","Youth"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Puente
-        Resource Center","payments_accepted":null,"phones":[[{"number":"650 879-1691"}]],"products_sold":null,"service_area":["La
-        Honda","Loma Mar","Pescadero","San Gregorio"],"service_areas":null,"service_hours":"Monday-Friday,
-        9-6; ESL Monday, Wednesday, 7-9","service_wait":null,"services_provided":"A
-        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
-        Puente provides a single point of entry for men, women and children to have
-        access to safety net services, health and wellness services, leadership development,
-        and community engegement and action.","state":"CA","street_address":"620 North
-        Street","target_group":"Residents of La Honda, Loma Mar, Pescadero, and San
-        Gregorio","transportation_availability":"Contact SamCoast for information","ttys":null,"updated_at":"2013-08-07T15:55:40-07:00","urls":["http://www.mypuente.org"],"zipcode":"94060","id":"51d5b18ca4a4d8b01b3e44d4","_score":0.32603824,"_type":"organization","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}],"count":7,"pagination":{"previous":null,"next":null,"current":1,"per_page":30,"count":7,"pages":1}}'
+        Referral","Youth"],"service_areas":["La Honda","Loma Mar","Pescadero","San
+        Gregorio"],"updated_at":"2013-08-27T16:15:48-07:00"}],"organization":{"name":"Puente
+        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":0.32555288,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Sat, 31 Aug 2013 00:29:54 GMT
+  recorded_at: Tue, 03 Sep 2013 01:09:32 GMT
 recorded_with: VCR 2.5.0
