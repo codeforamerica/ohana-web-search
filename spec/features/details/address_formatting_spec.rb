@@ -16,20 +16,23 @@ feature 'address formatting' do
 
   context 'when no nearby locations are not present', :vcr do
     before(:each) { visit('/organizations/521d32b91974fcdb2b000002') }
-
-    it "does not include nearby locations on map" do
-      within('#show-nearby-control') do
-        expect(page).to have_content("NOTE: No nearby services at this location")
-      end
-    end
+    # need to find and use a location that doesn't have nearby locations
+    xit "does not include nearby locations control"
   end
 
   context 'when nearby locations are present', :vcr do
     before(:each) { visit('/organizations/521d32b91974fcdb2b000002') }
 
-    it "does not include nearby locations on map" do
+    it "does include nearby locations control" do
       within('#show-nearby-control') do
-        expect(page).to have_content("NOTE: No nearby services at this location")
+        expect(page).to have_content("Show nearby services")
+      end
+    end
+
+    it "does show nearby locations control was clicked" do
+      find(:css, '#show-nearby-control').click
+      within('#show-nearby-control') do
+        expect(page).to have_content("30 nearby services located • Hide nearby services")
       end
     end
   end
