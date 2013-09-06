@@ -74,7 +74,7 @@ class OrganizationsController < ApplicationController
     @org = Organization.get(params[:id])
 
     # initializes map data
-    @map_data = generate_map_data(Ohanakapa.nearby(params[:id]))
+    @map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
