@@ -1757,6 +1757,15 @@ main
     >li:hover
     {
       background:$blue_lightest;
+      h1
+      {
+        padding-bottom:5px;
+        border-bottom:1px solid $greyscale_lightest;
+        a
+        {
+          color:$black;
+        }
+      }
     }
 
     >li:last-child
@@ -1767,6 +1776,8 @@ main
 
   .results-entry
   {
+    cursor:pointer;
+
     a
     {
       text-decoration: none;
@@ -1792,8 +1803,6 @@ main
         font-size:24px;
         letter-spacing: 1px;
         display:inline;
-        background:$white_alpha80;
-        padding:10px;
         @include border-radius(4px);
 
         a
@@ -1805,6 +1814,11 @@ main
         {
           border-bottom:0px solid $blue_light;
         }
+      }
+
+      h1:hover
+      {
+        border-bottom:1px solid $greyscale_lightest;
       }
 
       h1 > a:after
@@ -2065,6 +2079,11 @@ main
   }
 
   // section specific styles
+  .short-desc,
+  .description
+  {
+    margin-right: 420px;
+  }
 
   .description
   {

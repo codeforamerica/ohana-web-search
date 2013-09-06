@@ -3,7 +3,7 @@
   %header
     %h1.name{:title=>@org.name}
       = superscript_ordinals(@org.name)
-    - if @org.key?(:organization)
+    - if (@org.organization.name) && (@org.organization.name != @org.name)
       %h2.agency
         = superscript_ordinals(@org.organization.name)
 
@@ -61,7 +61,7 @@
 
       - if @org.key?(:address || :urls)
         %section.address-box
-          %h1 Address
+          %h1 Physical Address
           %section
 
             - if @org.key?(:address)
