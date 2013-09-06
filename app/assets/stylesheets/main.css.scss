@@ -1891,8 +1891,8 @@ main
 {
   height:100px;
   border:2px solid $blue_dark;
-  border-bottom:1px solid $blue_dark;
-  @include border-radius(4px 4px 0px 0px);
+  border-top:1px solid $blue_dark;
+  @include border-radius(0px 0px 4px 4px);
 }
 #map-canvas.max
 {
@@ -1905,12 +1905,13 @@ main
   width:100%;
   background:$blue_lightest;
   padding:5px;
-  font-size:12px;
+  font-size:14px;
   font-family:$san_serif_font;
   border:2px solid $blue_dark;
-  border-top:0;
+  border-bottom:0;
   text-align:center;
-  @include border-radius(0px 0px 4px 4px);
+  @include border-radius(4px 4px 0px 0px);
+  @include box-sizing(border-box);
   cursor:pointer;
 }
 
@@ -2056,10 +2057,6 @@ main
   }
 
   // adjust margin of main content to fit aside
-  > section
-  {
-    margin-right:400px;
-  }
 
   .ohana-icon
   {
@@ -2072,7 +2069,7 @@ main
   .description
   {
     padding: 20px;
-    line-height: 30px;
+    line-height: 24px;
     border-bottom: 1px solid $blue_midtone_alpha30;
     margin-bottom:20px;
 
@@ -2104,7 +2101,7 @@ main
   }
 
   // stylize services summary
-  .services-provided
+  .short-desc
   {
     color:$purple_darkest;
     //background:$green_lightest;
@@ -2119,30 +2116,6 @@ main
     padding-right:30px;
     position:relative;
   }
-
-  /*
-  .services-provided:before
-  {
-    position:absolute;
-    left:10px;
-    top:50%;
-    margin-top: -32px;
-    color:$blue_midtone;
-    font-size:48px;
-    content:"{"
-  }
-
-  .services-provided:after
-  {
-    position:absolute;
-    right:10px;
-    top:50%;
-    margin-top: -32px;
-    color:$blue_midtone;
-    font-size:48px;
-    content:"}"
-  }
-  */
 
   ul
   {
@@ -2165,17 +2138,42 @@ main
       font-style: italic;
   }
 
+  // map settings
+  #show-nearby-control
+  {
+    display:block;
+    width:100%;
+    background:$blue_lightest;
+    padding:5px;
+    font-size:14px;
+    font-family:$san_serif_font;
+    border:2px solid $blue_dark;
+    border-bottom:0;
+    text-align:center;
+    @include border-radius(4px 4px 0px 0px);
+    @include box-sizing(border-box);
+    cursor:default;
+
+    img
+    {
+      margin-right:10px;
+    }
+  }
+
+  #show-nearby-control.hover:hover
+  {
+    background:$blue_dark;
+    color:$yellow_lightest;
+    cursor:pointer;
+  }
+
   .map
   {
     position:relative;
-    height: 400px;
-    width: 100%;
   }
 
   .map #detail-map-cover
   {
-    height: 400px;
-    width: 100%;
     background-color: $black_alpha10;
     color:$white;
     text-align:center;
@@ -2198,6 +2196,9 @@ main
   {
     height: 400px;
     width: 100%;
+    @include box-sizing(border-box);
+    border:2px solid $blue_dark;
+    border-top:1px solid $blue_dark;
 
     // error message text if map doesn't load
     > span

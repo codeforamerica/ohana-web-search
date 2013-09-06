@@ -1,5 +1,5 @@
-- if has_field?(org,[field])
-  %section{:class=>css_class_format(field)}
+- if org.key?(field)
+  %section{:class=>css_class_format(field.to_s)}
     - if icon.present?
       %span{"data-icon"=>icon , :class=>"ohana-icon"}
     - if (title.present?)
@@ -11,10 +11,10 @@
           - if f.kind_of?(Array)
             %ul
               - org[field].sort.each do |sf|
-                %li 
+                %li
                   = sf
-          - else 
+          - else
             = f
-    - else 
+    - else
       %span
         = org[field]

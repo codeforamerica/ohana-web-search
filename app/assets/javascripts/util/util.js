@@ -1,8 +1,19 @@
 define(function() {
   'use strict';
 
+    // check if any object is empty of parameters
+    // (from http://stackoverflow.com/questions/3426979/javascript-checking-if-an-object-has-no-properties-or-if-a-map-associative-arra)
+    function isEmpty(map) {
+      for(var key in map) {
+        if (map.hasOwnProperty(key)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
     // detects whether a particular event is supported
-    // http://stackoverflow.com/questions/2877393/detecting-support-for-a-given-javascript-event
+    // (from http://stackoverflow.com/questions/2877393/detecting-support-for-a-given-javascript-event)
     function isEventSupported(eventName)
     {
       var TAGNAMES = {'select':'input','change':'input','submit':'form','reset':'form','error':'img','load':'img','abort':'img'}
@@ -164,6 +175,7 @@ define(function() {
     }
 
   return {
+    isEmpty:isEmpty,
     isEventSupported:isEventSupported,
     getWindowRect:getWindowRect,
     getOffset:getOffset,

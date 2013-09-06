@@ -1,33 +1,34 @@
-%header#results-header	
+%header#results-header
 	%div
-		%span#search-summary{:title=>format_summary(@params)}
-			= format_summary(@params)
+		%span#search-summary{:title=>format_summary(request.params)}
+			= format_summary(request.params)
 
 		- path = request.fullpath
 
 		- if (path =~ /page=\d*&?/).present?
-			- page_prev = path.gsub(/page=\d*&?/, ('page='+@pagination.prev.to_s)+'&' )
-			- page_next = path.gsub(/page=\d*&?/, ('page='+@pagination.next.to_s)+'&' )
+			- prev_url = path.gsub(/page=\d*&?/, "page=#{@prev_page}")
+			- next_url = path.gsub(/page=\d*&?/, "page=#{@next_page}")
 		- elsif (path =~ /\?/).nil?
-			- page_prev = '?page='+@pagination.prev.to_s
-			- page_next = '?page='+@pagination.prev.to_s
+			- prev_url = "?page=#{@prev_page}"
+			- next_url = "?page=#{@next_page}"
 		- else
-			- page_prev = path+'&page='+@pagination.prev.to_s
-			- page_next = path+'&page='+@pagination.next.to_s
+			- prev_url = "#{path}&page=#{@prev_page}"
+			- next_url = "#{path}&page=#{@next_page}"
 
 		%span#pagination
-			- if @pagination.prev.nil?
-				= link_to '<', page_prev, :class => 'pagination prev disabled',:target=>"_self"
-			- else
-				= link_to '<', page_prev, :class => 'pagination prev ajax-link',:target=>"_self"
+			- unless @total_pages == "0"
+				- if @prev_page.nil?
+					= link_to '<', prev_url, :class => 'pagination prev disabled',:target=>"_self"
+				- else
+					= link_to '<', prev_url, :class => 'pagination prev ajax-link',:target=>"_self"
 
-			= "#{@pagination.current} of #{@pagination.pages_total}"
+				= "#{@current_page} of #{@total_pages}"
 
-			- if @pagination.next.nil?
-				= link_to '>', page_next, :class => 'pagination next disabled',:target=>"_self"
-			- else
-				= link_to '>', page_next, :class => 'pagination next ajax-link',:target=>"_self"
-	
+				- if @next_page.nil?
+					= link_to '>', next_url, :class => 'pagination next disabled',:target=>"_self"
+				- else
+					= link_to '>', next_url, :class => 'pagination next ajax-link',:target=>"_self"
+
 	%div.floating-content.hide
 		%a{ :href => '#'}
 			%span{ "data-icon" => "▲", :class => "ohana-icon" }

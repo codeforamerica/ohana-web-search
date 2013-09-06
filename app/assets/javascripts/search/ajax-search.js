@@ -46,9 +46,11 @@ define(['app/loading-manager',
 				// set search field values
 				var keyword = params.keyword || "";
 				var location = params.location || "";
+				var language = params.language || "";
 
 				inputs.setKeyword(keyword);
 				inputs.setLocation(location);
+				inputs.setLanguage(language);
 
 				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
@@ -60,27 +62,39 @@ define(['app/loading-manager',
 		{
 			splash.show({"fullscreen":false});
 
-			var page = params.page || 1;
+			var id = params.id || null;
 			var keyword = params.keyword || "";
 			var location = params.location || "";
 			var radius = params.radius || null;
-			var id = params.id || null;
+			var language = params.language;
+			var page = params.page || null;
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
+			inputs.setLanguage(language);
 
 			var query = '/organizations';
 			if (id) query += '/'+id;
-			if (page) query += "?page="+page;
+			// if parameters are present add them
+			if (!util.isEmpty(params)) query += "?"
 			if (keyword) query += "&keyword="+encodeURIComponent(keyword);
 			if (location) query += "&location="+encodeURIComponent(location);
 			if (radius) query += "&radius="+radius;
+			if (language) query += "&language="+language;
+			if (page) query += "&page="+page;
+			query = query.replace('?&','?'); // only runs on first occurance, which is what we want
 
-			performSearchWithURL(query);
+			_makeAjaxRequest(query);
 		}
 
 		// performs an ajax search with a passed URL
 		function performSearchWithURL(url)
+		{
+			splash.show({"fullscreen":false});
+			_makeAjaxRequest(url);
+		}
+
+		function _makeAjaxRequest(url)
 		{
 			ajax.request(url, _callback);
 			window.history.pushState({'ajax':true}, null, url);
@@ -115,6 +129,7 @@ define(['app/loading-manager',
 
 		function _failure(evt)
 		{
+			// TODO - Show error alert HTML
 			console.log('ajaxsearch failure',location.href,evt);
 		}
 

@@ -2,17 +2,63 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations
     body:
       encoding: US-ASCII
       string: ''
     headers:
       Accept:
-      - application/vnd.ohanakapa.alpha+json
+      - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 0.0.2
-      X-Api-Token:
-      - <API_TOKEN>
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 06 Sep 2013 04:26:07 GMT
+      Status:
+      - 400 Bad Request
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Request-Id:
+      - f2ef4f0812c65b3abfd25108d8e26a99
+      X-Runtime:
+      - '0.003559'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '89'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"bad request","description":"Either keyword, location, or
+        language is missing."}'
+    http_version: 
+  recorded_at: Fri, 06 Sep 2013 04:26:07 GMT
+- request:
+    method: get
+    uri: http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,554 +66,941 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Age:
-      - '0'
       Cache-Control:
-      - max-age=300, public
+      - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Thu, 05 Sep 2013 19:56:02 GMT
+      - Fri, 06 Sep 2013 04:26:09 GMT
       Etag:
-      - '"a542dcad59d864dedaca9596cd18c5e0"'
+      - '"5de76a4c7798477c12f97b8597664001"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations&page=57>;
-        rel="last", <http://ohanapi.herokuapp.com/api/organizations?action=index&controller=organizations&page=2>;
+      - <http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations&page=57>;
+        rel="last", <http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations&page=2>;
         rel="next"
       Status:
       - 200 OK
-      X-Content-Digest:
-      - 336d0ccb778e9aeb9c390fed45cafa208a4ecaaf
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
       X-Rack-Cache:
-      - stale, valid, store
+      - miss
       X-Ratelimit-Limit:
-      - '5000'
+      - '60'
       X-Ratelimit-Remaining:
-      - '4994'
+      - '38'
       X-Request-Id:
-      - 7273cb87c43a9cea4160869225441c3b
+      - 5f8120e6db018e0f6488368c25a816c3
       X-Runtime:
-      - '0.268434'
+      - '1.892667'
+      X-Total-Count:
+      - '1691'
+      X-Total-Pages:
+      - '57'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '52570'
+      - '92902'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"_id":"51d5b18ca4a4d8b01b3e4477","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Joan Peceimer","city":"Belmont","coordinates":[-122.2926158,37.5088656],"created_at":"2013-07-03T20:54:42-07:00","description":"Assists
-        the library in providing services to the community, primarily by augmenting
-        the financial support provided by government. Conducts a used book sale on
-        the second Saturday and Sunday, fourth Friday and Saturday of every month.
-        Also appears at the Art and Wine Festival, Holiday Faire, the Book Nook in
-        Twin Pines Park, and at summer concerts at Twin Pines Park. Also provides
-        speaker programs, and funds children''s programs throughout the year. Has
-        a Friends Book Store inside the library open during library hours.","eligibility_requirements":"None","emails":["jpeceimer@yahoo.com"],"faxes":["650
-        591-2763 (Library)"],"fees":"$15-friend, $25-good friend. Checks accepted","funding_sources":["Donations","Fundraising","Membership
-        dues"],"how_to_apply":"Walk in for brochure and application","keywords":["Auxiliaries","Public
-        Libraries"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Friends
-        of the Belmont Library","payments_accepted":null,"phones":[[{"number":"650
-        593-9514"}],[{"number":"650 591-8286","department":"Library"}]],"products_sold":null,"service_area":["Belmont","San
-        Carlos","San Mateo"],"service_areas":null,"service_hours":null,"service_wait":"None","services_provided":"Assists
-        the library by augmenting its resources through book sales.","state":"CA","street_address":"1110
-        Alameda de las Pulgas","target_group":"Residents of Belmont and neighboring
-        areas","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.friendsofthebelmontlibrary.org"],"zipcode":"94002"},{"_id":"51d5b18ba4a4d8b01b3e3f6d","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Mike Nevin (In-Jail Service, Family
-        or Released Inmate Assistance), Karen Francone (Hope Houses), Denise Salas
-        (In-Custody Services), Michael Murray (Religious Services Coordinator)","city":"Redwood
-        City","coordinates":[-122.228859,37.486946],"created_at":"2013-07-03T20:54:30-07:00","description":"Provides
-        a variety of services to inmates of the county jail including coordination
-        of all religious services in the jails, as well as outreach services for inmate
-        families. Provides pre-release counseling services and a request/message program
-        for inmates, Alcoholics Anonymous and Narcotics Anonymous groups and various
-        educational and motivational groups. Provides defendants in jury trials with
-        appropriate clothes to wear to court.   Services offered for persons released
-        from jail include crisis counseling and emergency assistance with housing,
-        employment, food, clothing and transportation. Hope House for Women is a residential
-        facility for women leaving women''s correctional institutions who wish to
-        receive treatment for alcohol and drug dependency. Also offers transitional
-        housing. Hope House for Men is a clean and sober shared living facility and
-        structured program for men released from jail. (both described separately)","eligibility_requirements":"Recent
-        jail involvement","emails":["info@serviceleague.org"],"faxes":["650 365-6817"],"fees":"None,
-        except for Hope House (portion of welfare grant). Donations welcome","funding_sources":["City","County","Donations","Grants","State","United
-        Way"],"how_to_apply":"Walk in or apply by phone or through contact in jail","keywords":["LEGAL
-        AND CRIMINAL JUSTICE SERVICES","Family Support","Inmate Support","Inmate Support
-        Services"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Service
-        League of San Mateo County","payments_accepted":null,"phones":[[{"number":"650
-        364-4664","phone_hours":"(Monday-Friday, 8-5)"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":null,"service_wait":"No
-        wait","services_provided":"Provides a variety of services to inmates of the
-        county jail, persons released from jail and their families.","state":"CA","street_address":"727
-        Middlefield Road","target_group":"Jail inmates, former inmates and their families","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.serviceleague.org"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e442a","accessibility_options":["Ramp","Wheelchair
-        accessible"],"agency":null,"ask_for":"Jean Cecil","city":"San Jose","coordinates":[-121.9089697,37.3622357],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
-        interview suits and appropriate clothing and accessories for the first week
-        of work at no charge to economically disadvantaged women. A second location
-        is at 1163 Chess Drive, Suite A, Foster City. Donations are accepted at the
-        San Jose site Monday-Friday, 10 am-5 pm and the Foster City site, Monday-Friday,
-        10-2. Another donation location is J''s Tailoring, 205 South San Mateo Drive,
-        San Mateo, 650-343-2060.","eligibility_requirements":"Low- to very low-income
-        woman referred by a participating social service agency","emails":["jean@careercloset.org"],"faxes":["408
-        451-9367"],"fees":"None","funding_sources":["Donations","Fundraising","Grants"],"how_to_apply":"Referral
-        necessary from an agency contracted with Career Closet","keywords":["Goods","Work
-        Clothing","Work Clothing Donation Programs","Women","employment","clothing"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Career
-        Closet of Santa Clara County","payments_accepted":null,"phones":[[{"number":"408
-        451-1200","phone_hours":"(Monday-Friday, 10-5)"}],[{"number":"650 572-1368","department":"Foster
-        City","phone_hours":"(Monday-Thursday, 10-2)"}]],"products_sold":null,"service_area":["San
-        Mateo County","Santa Clara County"],"service_areas":null,"service_hours":"San
-        Jose: Monday-Friday, 10-5; Foster City: Monday-Thursday, 10-2","service_wait":"1
-        week","services_provided":"Provides interview appropriate clothing to women
-        who have completed a job training program.","state":"CA","street_address":"43
-        East Gish Road, Suite 100","target_group":"Women","transportation_availability":"VTA
-        stops within 1 block","ttys":null,"updated_at":"2013-08-25T12:28:21-07:00","urls":["http://www.careercloset.org"],"zipcode":"95112"},{"_id":"51d5b18ca4a4d8b01b3e442d","accessibility_options":["Elevator","Wheelchair
-        accessible"],"agency":"EPA CAN DO","ask_for":"Maribel Quispe","city":"East
-        Palo Alto","coordinates":[-122.1405574,37.4703766],"created_at":"2013-07-03T20:54:42-07:00","description":"Works
-        to enhance the quality of life for all East Palo Alto by creating and maintaining
-        affordable housing and promoting economic and community development.   Provides
-        homebuyer educational workshops, credit/budget workshop, financial literacy
-        workshops, credit, default counseling, foreclosure intervention counseling
-        and community lending for first-time homebuyers and current homeowners.","eligibility_requirements":"None","emails":["epacando@epacando.org"],"faxes":["650
-        473-0913"],"fees":"Services are free of charge except Housing Assistance Center
-        credit report ($20). Cash, checks and money orders accepted","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Walk
-        in or call for an appointment","keywords":["COMMUNITY SERVICES","Community
-        Improvement","First Time Buyer Home Loans","Homebuyer/Home Purchase Counseling","Money
-        Management"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"East
-        Palo Alto Community Alliance and Neighborhood Development Org","payments_accepted":null,"phones":[[{"number":"650
-        473-9838","phone_hours":"(Monday-Friday, 9-12, 1-5)"}]],"products_sold":null,"service_area":["East
-        Palo Alto","Menlo Park","Redwood City"],"service_areas":null,"service_hours":"Monday-Thursday,
-        9-5","service_wait":"No wait","services_provided":"Works to enhance the quality
-        of life in East Palo Alto.","state":"CA","street_address":"2369 University
-        Avenue","target_group":"Low-income persons","transportation_availability":"SAMTRANS
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.epacando.org"],"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e4440","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Gloria Flores-Garcia (Associate Executive
-        Director) Carol D. Hatten (Executive Assistant)","city":"Burlingame","coordinates":[-122.3485056,37.5774471],"created_at":"2013-07-03T20:54:42-07:00","description":"Works
-        to improve the quality of life for Latinos and other underserved communities
-        by promoting leadership, increasing education and employment opportunities,
-        and improving access to health care through and with member agencies. Sponsors
-        Nuestro Canto de Salud (described separately).","eligibility_requirements":"Resident
-        of area served","emails":null,"faxes":["650 373-1090"],"fees":"None","funding_sources":["Donations","Grants"],"how_to_apply":"Call
-        for information","keywords":["COMMUNITY SERVICES","Community Improvement","Advocacy","Hispanic/Latino
-        Community"],"languages_spoken":["Spanish","Tongan"],"leaders":null,"market_match":null,"name":"El
-        Concilio of San Mateo","payments_accepted":null,"phones":[[{"number":"650
-        373-1080","phone_hours":"(Monday-Friday, 8:30-5)"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8:30-5","service_wait":"No
-        wait","services_provided":"A coalition of individuals, groups and organization
-        leaders working to increase the number of Latino elected officials and professionals.","state":"CA","street_address":"1419
-        Burlingame Avenue, Suite N","target_group":"Latino community, low-income persons","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.el-concilio.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e4445","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Noelle Gibbs","city":"Portola Valley","coordinates":[-122.234913,37.383699],"created_at":"2013-07-03T20:54:42-07:00","description":"Presents
-        theatrical works of professional quality in an atmosphere that promotes fun,
-        artistic growth and community spirit. Auditions are held for each production.   Children''s
-        Conservatory offers class sessions three times a year for eight-ten weeks
-        each. Classes are weekday afternoons after school. One full-scale children''s
-        musical is produced each summer. Summer camps for preschool-aged children
-        are also offered.","eligibility_requirements":"None","emails":["info@pvtc.org"],"faxes":["650
-        851-9661"],"fees":"Ticket prices range from $10 to $20. Children''s Conservatory:
-        $150-$250 for 9-week class session. Cash and checks accepted","funding_sources":null,"how_to_apply":"Call
-        or email office for information","keywords":["Theater Performances"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Portola
-        Valley Theatre Conservatory","payments_accepted":null,"phones":[[{"department":"650
-        851-8282. Ext.105","phone_hours":"(Monday-Thursday, 9-3)"}]],"products_sold":null,"service_area":["Alameda
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County","Santa Cruz County"],"service_areas":null,"service_hours":"Classes:
-        Monday-Thursday, 2-6:30; performances usually 8pm on weekends","service_wait":null,"services_provided":"Community
-        theater and drama classes for children.","state":"CA","street_address":"945
-        Portola Road","target_group":"Actors, children","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.pvtc-ca.org"],"zipcode":"94028"},{"_id":"51d5b18ca4a4d8b01b3e444b","accessibility_options":["Wheelchair
-        accessible"],"agency":"Menlo Park Public Library","ask_for":[],"city":"Menlo
-        Park","coordinates":[-122.161236,37.476923],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
-        general reading and reference services to the public as well as school library
-        services. Adult literacy programs available.","eligibility_requirements":"Proof
-        of residence in state of California","emails":["fagerholm@plsinfo.org"],"faxes":["650
-        566-8369"],"fees":"None to check out books. There are small fees for photocopying,
-        placing holds, visitor pass for Internet use, etc. Cash and checks accepted.
-        Credit cards accepted for online payment only","funding_sources":["City"],"how_to_apply":"Walk
-        in. Written proof of California residency and photo identification required
-        to receive a free library card","keywords":["EDUCATION SERVICES","Library","Libraries","Public
-        Libraries"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Belle
-        Haven Community Library","payments_accepted":null,"phones":[[{"number":"650
-        330-2540","phone_hours":"(Tuesday, Wednesday, 11:30-7; Thursday, Friday, 12-6;
-        Saturday, 12-5)"}]],"products_sold":null,"service_area":["San Mateo County","Palo
-        Alto"],"service_areas":null,"service_hours":"Tuesday, Wednesday, 11:30-7;
-        Thursday, Friday, 12-6; Saturday, 12-5","service_wait":"No wait","services_provided":"Provides
-        general reading and reference as well as school library services.","state":"CA","street_address":"413
-        Ivy Drive","target_group":"Residents of the Belle Haven neighborhood, Spanish
-        speakers, English learners","transportation_availability":"SAMTRANS, Menlo
-        Park Midday Shuttle stop within 1 block","ttys":null,"updated_at":"2013-08-25T14:52:36-07:00","urls":null,"zipcode":"94025"},{"_id":"51d5b18ca4a4d8b01b3e445a","accessibility_options":["Ramp","Restroom","Wheelchair
-        accessible"],"agency":null,"ask_for":"Karen Corzine","city":"Half Moon Bay","coordinates":[-122.4292925,37.4411943],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
-        child care and education for children age 2 months to 5 years. Formerly known
-        as Coastside Infant/Toddler Center.","eligibility_requirements":"Eligibility
-        for subsidized child care: gross family income must be at or below 75% or
-        state median income","emails":["karen@coastsidecdc.org"],"faxes":["650 726-1356"],"fees":"$1,170-$1,695/month
-        for full-time, part-time rates vary. Fees vary according to income for eligible
-        families. Cash accepted","funding_sources":["City","County","Fees","Fundraising","Grants","State"],"how_to_apply":"Call
-        for information","keywords":["CHILD PROTECTION AND CARE SERVICES","Day Care","Child
-        Care Providers","Youth","Infants/Toddlers"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Coastside
-        Child Development Center","payments_accepted":null,"phones":[[{"number":"650
-        726-7416","phone_hours":"(Monday-Friday, 7-6)"}]],"products_sold":null,"service_area":["El
-        Granada","Half Moon Bay","Montara","Moss Beach","Pescadero"],"service_areas":null,"service_hours":"Monday-Friday,
-        7-6","service_wait":"Varies depending on child''s age and time of year for
-        enrollment","services_provided":"Provides day care for infants and toddlers
-        age 2 months to 3 years.","state":"CA","street_address":"565 Redondo Beach
-        Road","target_group":"Children age 2 months to 5 years","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.coastsidecdc.org"],"zipcode":"94019"},{"_id":"51d5b18ca4a4d8b01b3e445c","accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":"Edgewood Center for Children and
-        Families","ask_for":"Kinship Program Director or Program Manager","city":"San
-        Carlos","coordinates":[-122.250326,37.5059909],"created_at":"2013-07-03T20:54:42-07:00","description":"Helps
-        relatives or non-related adults who have assumed the role of raising other
-        family members'' children through the sponsorship of support groups, respite
-        programs and advocacy, after-school programming and case management. Provides
-        Saturday respite for caregivers.","eligibility_requirements":"Must be raising
-        the child of a relative","emails":["jamilam@edgewood.org"],"faxes":["650 620-9549
-        (San Carlos and South San Francisco Offices)"],"fees":"None","funding_sources":["County","Grants","State"],"how_to_apply":"Call
-        for information and an appointment","keywords":["Respite Care","Support Groups","Youth","Kinship
-        Caregivers"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Kinship
-        Support Network","payments_accepted":null,"phones":[[{"number":"800 546-0047","department":"Toll-free","phone_hours":"(Monday-Friday,
-        8:30-5)"}],[{"number":"800 546-0047","department":"Toll-free information for
-        adults seeking kinship support"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 9-5:30","service_wait":"No
-        wait","services_provided":"Helps relatives who have assumed the role of raising
-        other family members'' children.","state":"CA","street_address":"957 Industrial
-        Road, Suite B","target_group":"Adults who are responsible for raising a relative''s
-        child","transportation_availability":"SAMTRANS stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.edgewood.org","http://www.cakinship.org"],"zipcode":"94070"},{"_id":"51d5b18ca4a4d8b01b3e4461","accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":null,"ask_for":"Portia or Zeni","city":"Redwood
-        City","coordinates":[-122.225499,37.466412],"created_at":"2013-07-03T20:54:42-07:00","description":"A
-        secured, assisted-living facility for seniors offering a full meal plan, activities
-        and daily living assistance. Has dementia and hospice waivers. Offers respite
-        care (according to room availability).","eligibility_requirements":"Age 60
-        or over","emails":["gordon@justlikefamily.com"],"faxes":["650 562-0557"],"fees":"Semi-private
-        rooms $4,500, private $5,500-$6,000 per month. Checks accepted","funding_sources":["Fees"],"how_to_apply":"Call
-        or visit Web site for information","keywords":["HOUSING SERVICES","Senior
-        and Disabled Housing","Older Adult/Disability Related Supportive Housing","Older
-        Adults"],"languages_spoken":["Filipino (Tagalog)","Japanese","Spanish"],"leaders":null,"market_match":null,"name":"Gordon
-        Manor","payments_accepted":null,"phones":[[{"number":"650 562-0555","phone_hours":"(24
-        hours daily)"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"service_areas":null,"service_hours":"24 hours daily for non-medical
-        care","service_wait":null,"services_provided":"An assisted living facility
-        for seniors offering a full meal plan, activities and daily living assistance.
-        ","state":"CA","street_address":"1616 Gordon Street","target_group":null,"transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:48-07:00","urls":["http://www.justlikefamily.com"],"zipcode":"94061"},{"_id":"51d5b18ca4a4d8b01b3e4471","accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":null,"ask_for":[],"city":"San Mateo","coordinates":[-122.302251,37.559267],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
-        health insurance counseling for Medicare recipients or those imminent of receiving
-        Medicare. Assists individuals with Medicare billing, appeals and questions
-        about supplemental and long-term care insurance. Counselors meet with clients
-        at various sites in the county, or home visits can be arranged in the case
-        of homebound seniors.","eligibility_requirements":"Medicare recipient in San
-        Mateo County or imminent of receiving Medicare or family member","emails":["jennifert@selfhelpelderly.org"],"faxes":["650
-        627-9359"],"fees":"None","funding_sources":["County","Federal","State"],"how_to_apply":"Call
-        for appointment","keywords":["Health Insurance Information/Counseling","Medicare","Medicare
-        Appeals/Complaints","Medicare Enrollment","Older Adults"],"languages_spoken":["Chinese
-        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Greek","Spanish"],"leaders":null,"market_match":null,"name":"Health
-        Insurance Counseling and Advocacy Program of San Mateo County (HICAP)","payments_accepted":null,"phones":[[{"number":"800
-        434-0222","phone_hours":"(Monday-Friday, 9-5)"}],[{"number":"650 627-9350"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 10-3","service_wait":"Varies,
-        usually within one week","services_provided":"Provides health insurance counseling
-        for Medicare recipients.","state":"CA","street_address":"1710 South Amphlett
-        Blvd., Suite 302","target_group":"Medicare recipients, adult children of Medicare
-        recipients and those imminent of receiving Medicare","transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-25T14:52:36-07:00","urls":["http://www.selfhelpelderly.org","http://www.hicapsanmateocounty.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4472","accessibility_options":null,"agency":null,"ask_for":"Carla
-        Dorow","city":"Mountain View","coordinates":[-122.086585,37.3785351],"created_at":"2013-07-03T20:54:42-07:00","description":"Raises
-        funds to support educational activities at Deer Hollow Farm including classes
-        in farm life, farm animals and wilderness education for school groups. Offers
-        docent-led farm tours for the public on the third Saturday in the months of
-        March through May and Ohlone Day the third Saturday in October. Free tour
-        of Nature Center every third Saturday of the month.","eligibility_requirements":"None","emails":["info@fodhf.org"],"faxes":null,"fees":"$5.
-        Cash and checks accepted","funding_sources":["Donations"],"how_to_apply":"Visit
-        the Farm, visit Web site or email","keywords":null,"languages_spoken":null,"leaders":null,"market_match":null,"name":"Friends
-        of Deer Hollow Farm","payments_accepted":null,"phones":[],"products_sold":null,"service_area":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County"],"service_areas":null,"service_hours":"Farm tours:
-        Third Saturday of March, April, May, 10-1; Ohlone Day: Third Saturday in October,
-        1-4","service_wait":"No wait","services_provided":"Supports educational activities
-        at Deer Hollow Farm.","state":"CA","street_address":"Rancho San Antonio Open
-        Space Preserve","target_group":"Everyone, primarily children age 5-12","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.fodhf.org"],"zipcode":"94040"},{"_id":"51d5b18ca4a4d8b01b3e4473","accessibility_options":["Restroom","Special
-        parking","Wheelchair accessible"],"agency":null,"ask_for":"Alissa Shaw (Director)","city":"Palo
-        Alto","coordinates":[-122.141981,37.403559],"created_at":"2013-07-03T20:54:42-07:00","description":"Serves
-        as an advocate for stroke survivors and a resource center for stroke community
-        education. Services include on-going support groups for stroke survivors and
-        their caregivers, a Visitation Program in which post-stroke survivors visit
-        hospital rehabilitation centers and a stroke education program to inform the
-        public on all issues surrounding stroke. Public lectures are given to any
-        community group that wishes to learn more about the warning signs of stroke,
-        current medical practices and concerns relating to stroke. For further information
-        visit www.psastroke.org.","eligibility_requirements":"None","emails":["support@psastroke.org"],"faxes":["650
-        565-8482"],"fees":"None","funding_sources":["Donations","Grants"],"how_to_apply":"Call,
-        write or check Web site for information","keywords":["COMMUNITY SERVICES","Speakers","HEALTH
-        SERVICES","Prevention","Family Support","Disease/Disability Information","Stroke"],"languages_spoken":["Dutch","Persian
-        (Farsi)"],"leaders":null,"market_match":null,"name":"Peninsula Stroke Association","payments_accepted":null,"phones":[[{"number":"650
-        565-8485","phone_hours":"(Monday-Friday, 9-6)"}]],"products_sold":null,"service_area":["San
-        Mateo County","Santa Clara County"],"service_areas":null,"service_hours":"Monday-Friday,
-        9-6","service_wait":"No wait","services_provided":"Serves as an advocate for
-        stroke survivors and a resource center on stroke for the community.","state":"CA","street_address":"3801
-        Miranda Avenue, Building 6, Room A162","target_group":"Stroke survivors and
-        their families, and the general community","transportation_availability":"SAMTRANS
-        stops in front","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.psastroke.org"],"zipcode":"94304"},{"_id":"51d5b18ca4a4d8b01b3e4474","accessibility_options":["Elevator","Ramp","Restroom","Special
-        parking","Wheelchair accessible"],"agency":null,"ask_for":[],"city":"San Mateo","coordinates":[-122.3151228,37.552936],"created_at":"2013-07-03T20:54:42-07:00","description":"CASA
-        of San Mateo County matches community volunteers with children who have been
-        abused and neglected. The volunteer becomes a friend, advocate and voice in
-        court for the child. Advocates are trained in courtroom procedure, social
-        services, the juvenile justice system and the special needs of abused and
-        neglected children. With the information that volunteers provide, judges are
-        able to make informed decisions as to what is best for the child. Volunteers
-        advocate for children in other settings. Formerly known as Advocates for Children-CASA
-        (Court Appointed Special Advocated) of San Mateo County.","eligibility_requirements":"Any
-        child, age 18 or under, who is in the dependency or delinquency system","emails":["info@casaofsanmateo.org"],"faxes":["650
-        212-4422"],"fees":"None for recipients of services or for volunteers","funding_sources":["Donations","Grants"],"how_to_apply":"Call
-        for information. Referral is made by court, social worker, probation officer,
-        teacher, therapist or other youth worker","keywords":["Guardians ad Litem
-        Volunteer Opportunities","Youth"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"CASA
-        (Court Appointed Special Advocates) of San Mateo County","payments_accepted":null,"phones":[[{"number":"650
-        212-4423","phone_hours":"(Monday-Friday, 9-5)"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 9-5","service_wait":"Varies","services_provided":"Matches
-        community volunteers with child who have been abused and neglected. The volunteer
-        becomes an advocate for the child in judicial proceedings.","state":"CA","street_address":"1700
-        South El Camino Real, Suite 112","target_group":"Dependent and delinquent
-        children","transportation_availability":"Not necessary for service","ttys":null,"updated_at":"2013-08-25T14:52:37-07:00","urls":["http://www.casaofsanmateo.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e4481","accessibility_options":["Not
-        wheelchair accessible at this time"],"agency":null,"ask_for":"Steve Russell
-        (Publicity Chair)","city":null,"coordinates":null,"created_at":"2013-07-03T20:54:43-07:00","description":"Maintains
-        the county''s archery range at Huddart County Park. The range is open to the
-        public at no charge.  ","eligibility_requirements":"Age 18 or over","emails":["info@kingsmountainarchers.org"],"faxes":null,"fees":"$60
-        a year, $10 first-year registration fee, visitors free. Cash, checks and money
-        orders accepted","funding_sources":["Membership dues"],"how_to_apply":"Visit
-        the Web site or visit range for application","keywords":["Special Interest
-        Clubs"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"King''s
-        Mountain Archers","payments_accepted":null,"phones":[[{"number":"650 851-4546","department":"Message
-        machine"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"service_areas":null,"service_hours":"Sunday-Saturday, 8am-sunset","service_wait":"1
-        week","services_provided":"Maintains the county''s archery range at Huddart
-        County Park.","state":null,"street_address":null,"target_group":"Anyone interested
-        in archery","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.kingsmountainarchers.org"],"zipcode":null},{"_id":"51d5b18ca4a4d8b01b3e4483","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Mike Lynch","city":"Redwood City","coordinates":[-122.2363548,37.48521520000001],"created_at":"2013-07-03T20:54:43-07:00","description":"An
-        organized swimming program for adults. Members can participate in a variety
-        of ways from recreational swimming programs to international competition.
-        The group swims at Peninsula Covenant Community Center.","eligibility_requirements":"Age
-        18 or over","emails":["mikel@peninsulacovenant.com"],"faxes":null,"fees":"Vary,
-        call for details","funding_sources":null,"how_to_apply":"Visit Web site, call
-        or walk in","keywords":["Special Interest Clubs"],"languages_spoken":["French","Spanish"],"leaders":null,"market_match":null,"name":"PCA
-        Masters Swimming","payments_accepted":null,"phones":[[{"number":"650 364-6272","phone_hours":"(Monday-Friday,
-        6 am-10 pm; Saturday, 7 am-10 pm; Sunday, 12:15-10 pm)"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"See Web site or call for
-        schedule","service_wait":"No wait","services_provided":null,"state":"CA","street_address":"3623
-        Jefferson Avenue. Peninsula Covenant Community Center","target_group":"Adult
-        fitness swimmers","transportation_availability":"SAMTRANS stops within 1/4
-        mile","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.pcamasters.com"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e4489","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Karen Peterson","city":"Redwood City","coordinates":[-122.2378103,37.4857914],"created_at":"2013-07-03T20:54:43-07:00","description":"Offers
-        child care and early education for infants through preschool, age 2 months
-        - 6 years. Weekly music and gymnastics classes included (age 2-5). Hot lunch
-        $15 included for toddlers and age 3 classes. NAEYC accredited.","eligibility_requirements":"Age
-        2 months-6 years","emails":["admin@sequoiachildren.org"],"faxes":["650 261-3839"],"fees":"Full-time
-        infants $1,920 per month; age 2 $1,540 per month; age 3-5 $1,340 per month.
-        Registration $225; annual materials $150. Cash and checks accepted","funding_sources":["Donations","Fees","Grants","United
-        Way"],"how_to_apply":"Tour facility, pay registration and deposit, fill out
-        registration materials","keywords":["CHILD PROTECTION AND CARE SERVICES","Day
-        Care","Child Care Providers"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Sequoia
-        Children''s Center","payments_accepted":null,"phones":[[{"number":"650 369-5277","phone_hours":"(Monday-Thursday,
-        9:30-6)"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Monday
-        - Friday, 7am - 6pm","service_wait":"From one week to several months, depending
-        upon availability","services_provided":null,"state":"CA","street_address":"1234
-        Brewster Avenue","target_group":"San Mateo County families with children age
-        2 months-6 years","transportation_availability":"SAMTRANS stops within two
-        blocks. CALTRAIN within four blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sequoiachildren.org"],"zipcode":"94062"},{"_id":"51d5b18ca4a4d8b01b3e448f","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Pat Hatfield","city":"Colma","coordinates":[-122.456447,37.682344],"created_at":"2013-07-03T20:54:43-07:00","description":"Historical
-        association that works to preserve and protect the heritage of Colma. Holds
-        four meetings a year and produces a quarterly newsletter. The museum consists
-        of four buildings: 1864 train depot (waiting room and office); blacksmith
-        shop; freight buildings; and, History museum (reference library, Colma history
-        room, cemetary room, and an early kitchen). The museum is open Tuesday-Sunday,
-        10-3.","eligibility_requirements":"None","emails":["colmahist@sbcglobal.net"],"faxes":["650
-        757-1616"],"fees":"Yearly dues are $10 for seniors, $15 for individual, $25
-        for family, $50 for patrons, $100 for businesses. Donations accepted for conducted
-        tours of the town''s 17 cemeteries cost. Cash and checks accepted","funding_sources":["City","Donations","Membership
-        dues","Sales"],"how_to_apply":"Call for information or to register for a tour","keywords":["Historical
-        Societies","Museums"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Colma
-        Historical Association","payments_accepted":null,"phones":[[{"number":"650
-        757-1676","phone_hours":"(Tuesday-Sunday, 10-3)"}]],"products_sold":null,"service_area":["Colma","Daly
-        City"],"service_areas":null,"service_hours":"Tuesday-Sunday, 10-3","service_wait":"1
-        week","services_provided":null,"state":"CA","street_address":"1500 Hillside
-        Blvd.","target_group":"Schools, out-of-town visitors, residents","transportation_availability":"BART
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.colmahistory.org"],"zipcode":"94014"},{"_id":"51d5b18ca4a4d8b01b3e449a","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Roxanne Brewer (Administrative Assistant
-        and Development Associate)","city":"San Mateo","coordinates":[-122.338608,37.5301855],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
-        scholarships to local students at the three colleges in the San Mateo County
-        Community College District and makes grants to selected programs at the colleges.
-        Typical program grants are for child care for low-income students, library
-        books, some remodeling projects and start-up funding requirements beyond the
-        normal college budget.","eligibility_requirements":"Student at College of
-        San Mateo, Canada College or Skyline College","emails":["brewerr@smcccd.edu"],"faxes":["650
-        574-6566"],"fees":"Checks and credit cards accepted","funding_sources":["Donations","Fundraising","Grants"],"how_to_apply":"Apply
-        for scholarships at campuses (Canada College, College of San Mateo or Skyline
-        College)","keywords":["Community Colleges"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
-        Mateo County Community Colleges Foundation","payments_accepted":null,"phones":[[{"number":"650
-        574-6229","phone_hours":"(Monday-Friday, 8:30-4:30)"}]],"products_sold":null,"service_area":"San
-        Mateo County","service_areas":null,"service_hours":"Monday-Friday, 8:30-4:30","service_wait":null,"services_provided":null,"state":"CA","street_address":"3401
-        CSM Drive","target_group":"Low-income students needing scholarships; college
-        programs and services needing funding","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smcccfoundation.org"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44a7","accessibility_options":["Restroom","Wheelchair
-        accessible"],"agency":"Samaritan House","ask_for":null,"city":"Redwood City","coordinates":[-122.207057,37.468678],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
-        free medical care to those in need. Offers basic medical exams for adults
-        and tuberculosis screening. Assists the individual to access other services
-        in the community. By appointment only, Project Smile provides a free dental
-        exam, dental cleaning and oral hygiene instruction for children, age 3-12,
-        of Samaritan House clients.","eligibility_requirements":"Low-income person
-        without access to health care","emails":["gracie@samaritanhouse.com"],"faxes":["650
-        839-1457"],"fees":"None","funding_sources":["Donations","Grants"],"how_to_apply":"Call
-        for screening appointment. Medical visits are by appointment only","keywords":["HEALTH
-        SERVICES","Outpatient Care","Community Clinics"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Redwood
-        City Free Medical Clinic","payments_accepted":null,"phones":[[{"number":"650
-        839-1447","phone_hours":"(Monday-Friday, 8:30-12, 1:30-5)"}]],"products_sold":null,"service_area":["Atherton","East
-        Palo Alto","Menlo Park","Redwood City","San Carlos"],"service_areas":null,"service_hours":"Monday-Friday,
-        9-12, 2-5","service_wait":"Varies","services_provided":"Provides free medical
-        care to those in need.","state":"CA","street_address":"114 Fifth Avenue","target_group":null,"transportation_availability":"SAMTRANS
-        stops within 2 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.samaritanhouse.com"],"zipcode":"94063"},{"_id":"51d5b18ca4a4d8b01b3e44b6","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Patricia Kristof Moy","city":"Burlingame","coordinates":[-122.3836066,37.5814138],"created_at":"2013-07-03T20:54:43-07:00","description":"A
-        nonprofit arts organization dedicated to enhancing the cultural fabric of
-        the Peninsula by providing quality chamber music and music education in local
-        schools. Concerts are performed at Kohl Mansion, a 1914 landmark listed on
-        the Register of National Historic Places.","eligibility_requirements":"None","emails":["associate@musicatkohl.org"],"faxes":["650
-        343-8464"],"fees":"General admission, $42; seniors, $39; students, $15. Cash,
-        checks and credit cards accepted","funding_sources":null,"how_to_apply":"Purchase
-        tickets to concerts","keywords":["Music Instruction","Music Performances"],"languages_spoken":["French","Spanish"],"leaders":null,"market_match":null,"name":"Music
-        at Kohl Mansion","payments_accepted":null,"phones":[[{"number":"650 762-1130"}]],"products_sold":null,"service_area":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Program
-        offerings include eight-concert Chamber Music Services, three evening Family
-        Concerts, four daytime Children''s Concerts and the Music in the Schools Program.","state":"CA","street_address":"2750
-        Adeline Drive","target_group":null,"transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.musicatkohl.org"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e44bf","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":null,"city":"Novato","coordinates":[-122.5338311,38.0702879],"created_at":"2013-07-03T20:54:43-07:00","description":"Provides
-        recreational, respite and peer support programs to all members of families
-        affected by childhood cancer. Operates summer camps through Camp Okizu for
-        cancer patients ages 6-17 and their siblings ages 6-17. Holds family weekends
-        eight times per year. Also, Teens and Twenties (TNT) offers programs for young
-        adults ages 17-23.","eligibility_requirements":null,"emails":["info@okizu.org"],"faxes":["415
-        382-8384"],"fees":"None","funding_sources":null,"how_to_apply":"Phone or visit
-        Web site for information","keywords":["HEALTH SERVICES","Family Support","RECREATION/LEISURE
-        SERVICES","Camping"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Okizu","payments_accepted":null,"phones":[[{"number":"415
-        382-9083","phone_hours":"(Monday-Friday, 8-4)"}]],"products_sold":null,"service_area":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County","northern California"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Provides
-        recreational, respite and peer support programs to all members of families
-        affected by childhood cancer.","state":"CA","street_address":"16 Digital Drive","target_group":"Children
-        with cancer","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.okizu.org"],"zipcode":"94949"},{"_id":"51d5b18ca4a4d8b01b3e44c1","accessibility_options":["Ramp","Restroom","Special
-        parking","Wheelchair accessible"],"agency":null,"ask_for":[],"city":"East
-        Palo Alto","coordinates":[-122.1419835,37.4633965],"created_at":"2013-07-03T20:54:43-07:00","description":"Represents
-        low-income clients in three areas of civil law: housing matters, wage and
-        hours (workers'' rights), and criminal record expungement. Also gives community
-        presentations in those areas.","eligibility_requirements":"Must be low-income","emails":null,"faxes":["650
-        326-4162"],"fees":"None","funding_sources":["Stanford University"],"how_to_apply":"Call
-        for service/information. Appointment necessary","keywords":["HOUSING SERVICES","Landlord/Tenant","LEGAL
-        AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistanc","Courts","Family
-        Support","Mediation","General Legal Aid","Landlord/Tenant Assistance"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Stanford
-        Community Law Clinic","payments_accepted":null,"phones":[[{"number":"650 725-9200","phone_hours":"(Monday-Friday,
-        9-5)"}]],"products_sold":null,"service_area":["San Mateo County","Santa Clara
-        County"],"service_areas":null,"service_hours":"Monday-Friday, 9-5","service_wait":null,"services_provided":"Represents
-        clients in a variety of areas of civil law.","state":"CA","street_address":"2117
-        University Avenue, Suite A","target_group":"Low-income people in the mid-Peninsula","transportation_availability":"SAMTRANS
-        stops within 1 block","ttys":null,"updated_at":"2013-08-25T14:52:37-07:00","urls":null,"zipcode":"94303"},{"_id":"51d5b18ca4a4d8b01b3e44d2","accessibility_options":["Elevator"],"agency":"United
-        States Government","ask_for":"Member Services Representative","city":"San
-        Bruno","coordinates":[-122.425371,37.634019],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
-        a full range of primary care and mental health services.","eligibility_requirements":"Veteran
-        with other than dishonorable discharge, eligibility individually determined","emails":null,"faxes":["650
-        615-6015"],"fees":"Copay to be determined upon enrollment","funding_sources":["Federal"],"how_to_apply":"Must
-        submit VA Healthcare enrollment form and copy of DD214 (discharge paperwork)","keywords":["HEALTH
-        SERVICES","Outpatient Care","Veteran Outpatient Clinics","Veterans"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"Veterans
-        Affairs San Francisco Health Care System., San Bruno Outpatient Clinic","payments_accepted":null,"phones":[[{"number":"650
-        615-6000"}]],"products_sold":null,"service_area":["San Francisco County","San
-        Mateo County"],"service_areas":null,"service_hours":"Monday-Friday, 8-4:30","service_wait":"3-7
-        days","services_provided":"Offers a full range of primary care, mental health,
-        social work and member services.","state":"CA","street_address":"1001 Sneath
-        Lane, Suite 300","target_group":"Veterans of the U.S. Armed Forces","transportation_availability":"BART
-        - San Bruno Station; SAMTRANS stops within 4 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.sanfrancisco.va.gov/cboc/sanbruno.asp"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44df","accessibility_options":null,"agency":null,"ask_for":"Libby
-        Traubman","city":"San Mateo","coordinates":[-122.3278108,37.5273617],"created_at":"2013-07-03T20:54:44-07:00","description":"A
-        cross-cultural and cross-generational discussion group focusing on Jewish-Palestinian
-        relations. Provides educational materials, discussion guidelines, DVDs, as
-        well as facilitated classes and gatherings.","eligibility_requirements":null,"emails":["ltraubman@igc.org"],"faxes":null,"fees":"None.
-        Donations accepted","funding_sources":["Donations","Fundraising","Grants"],"how_to_apply":"Call
-        for information or visit Web site","keywords":["Special Interest Clubs","Cultural/Racial
-        Issues","International Issues"],"languages_spoken":["Arabic","Hebrew","Spanish"],"leaders":null,"market_match":null,"name":"Jewish-Palestinian
-        Living Room Dialogue","payments_accepted":null,"phones":[[{"number":"650 574-8303"}]],"products_sold":null,"service_area":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"A
-        cross-cultural and cross-generational discussion group focusing on Jewish-Palestinian
-        relations.","state":"CA","street_address":"1448 Cedarwood Drive","target_group":"Diverse
-        youth and adults seeking communication opportunities","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://traubman.igc.org/dg-prog.htm"],"zipcode":"94403"},{"_id":"51d5b18ca4a4d8b01b3e44e2","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Kathy Lee or Claire Vesely","city":"San
-        Leandro","coordinates":[-122.1163175,37.70859360000001],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
-        respite, transitional, and end of life palliative care for seriously ill children.","eligibility_requirements":"Eligibility","emails":["info@georgemark.org"],"faxes":["510
-        346-4620"],"fees":"None. ","funding_sources":["Donations","Fundraising","Grants"],"how_to_apply":"Call
-        for information. A physician''s referral is necessary","keywords":["COMMUNITY
-        SERVICES","Speakers","Palliative Care","Respite Care"],"languages_spoken":["Chinese
-        (Cantonese)","Filipino (Tagalog)","Spanish"],"leaders":null,"market_match":null,"name":"George
-        Mark Children''s House","payments_accepted":null,"phones":[[{"number":"510
-        346-4624"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County","northern California"],"service_areas":null,"service_hours":null,"service_wait":null,"services_provided":"Offers
-        respite, transitional, and end of life palliative care for seriously ill children.","state":"CA","street_address":"2121
-        George Mark Lane","target_group":"Seriously ill children and their families","transportation_availability":null,"ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.georgemark.org"],"zipcode":"94578"},{"_id":"51d5b18ca4a4d8b01b3e44e6","accessibility_options":["Restroom","Wheelchair
-        accessible"],"agency":"San Mateo County Community College District (SMCCCD)","ask_for":null,"city":"San
-        Mateo","coordinates":[-122.335123,37.5350511],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
-        a comprehensive selection of academic classes and support services. Resources
-        include financial aid and scholarships, counseling, transfer services, tutoring,
-        employment assistance, health services and child care, among many others.","eligibility_requirements":null,"emails":null,"faxes":null,"fees":"$36/unit.
-        Cash, check and credit cards accepted","funding_sources":["Special district","State"],"how_to_apply":"Complete
-        an application for College of San Mateo at Web site www.collegeofsanmateo.edu","keywords":["EDUCATION
-        SERVICES","Pupil Support/Tutoring","Community Colleges"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"College
-        of San Mateo (CSM)., Administration","payments_accepted":null,"phones":[[{"number":"650
-        574-6222","department":"President"}],[{"number":"650 574-6165","department":"Admissions
-        and Records"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County"],"service_areas":null,"service_hours":"Monday-Thursday,
-        8-4:30; Friday, 8-12 noon","service_wait":"No wait","services_provided":null,"state":"CA","street_address":"1700
-        W Hillsdale Blvd.","target_group":null,"transportation_availability":"SAMTRANS
-        stops on campus","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://collegeofsanmateo.edu"],"zipcode":"94402"},{"_id":"51d5b18ca4a4d8b01b3e44e8","accessibility_options":["Elevator","Ramp","Restroom","Special
-        parking","Wheelchair accessible"],"agency":"San Mateo County Community College
-        District (SMCCCD)","ask_for":null,"city":"San Bruno","coordinates":[-122.4672096,37.6309074],"created_at":"2013-07-03T20:54:44-07:00","description":"Offers
-        a comprehensive selection of academic classes and support services. Resources
-        include financial aid and scholarships, counseling, transfer services, tutoring,
-        employment assistance, health services and child care, among many others.","eligibility_requirements":null,"emails":null,"faxes":["650
-        738-4251 (Admissions and Records)"],"fees":"$38 per unit if state resident.
-        Financial aid available. Checks and credit cards accepted","funding_sources":["Federal","State"],"how_to_apply":"Apply
-        online","keywords":["EDUCATION SERVICES","Pupil Support/Tutoring","HANDICAP
-        SERVICES","Education","Community Colleges"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Skyline
-        College., Administration","payments_accepted":null,"phones":[[{"number":"650
-        738-4100"}]],"products_sold":null,"service_area":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"service_areas":null,"service_hours":null,"service_wait":"No
-        wait","services_provided":null,"state":"CA","street_address":"3300 College
-        Drive","target_group":null,"transportation_availability":"SAMTRANS stops at
-        the college","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccd.net/accounts/skyline/sts/able.html"],"zipcode":"94066"},{"_id":"51d5b18ca4a4d8b01b3e44f5","accessibility_options":["Wheelchair
-        accessible"],"agency":null,"ask_for":"Receptionist","city":"Burlingame","coordinates":[-122.3486066,37.5909749],"created_at":"2013-07-03T20:54:29-07:00","description":"Offers
+      string: '[{"id":"521d32b91974fcdb2b000002","accessibility":["wheelchair"],"ask_for":["Receptionist"],"coordinates":[-122.3486066,37.5909749],"description":"Offers
         information about the county''s attractions and brochures and maps of cities
         in the county. Assists groups and individuals in booking sleeping rooms and
-        meetings.","eligibility_requirements":"None","emails":["info@smccvb.com"],"faxes":["650
-        348-7687"],"fees":"None","funding_sources":["County","Membership dues"],"how_to_apply":"Walk
-        in, call or email","keywords":["COMMUNITY SERVICES","Travelers Assistance","Tourist
-        Information"],"languages_spoken":null,"leaders":null,"market_match":null,"name":"San
-        Mateo County/Silicon Valley Convention and Visitors Bureau","payments_accepted":null,"phones":[[{"number":"800
-        288-4748","phone_hours":"(Monday-Thursday, 8:30-5; Friday, 8:30-4)"}],[{"number":"650
-        348-7600"}]],"products_sold":null,"service_area":"San Mateo County","service_areas":null,"service_hours":"Monday-Thursday,
-        8:30-5; Friday, 8:30-4","service_wait":"No wait","services_provided":"Offers
-        information about the county''s attractions and brochures and maps of cities
-        in the county.","state":"CA","street_address":"111 Anza Blvd., Suite 410","target_group":"Visitors,
-        conventions, meetings, events","transportation_availability":"SAMTRANS stops
-        within 6 blocks","ttys":null,"updated_at":"2013-08-07T15:54:49-07:00","urls":["http://www.smccvb.com"],"zipcode":"94010"},{"_id":"51d5b18ca4a4d8b01b3e445e","accessibility_options":["Varies
-        according to location of service"],"agency":null,"ask_for":[],"city":"Milpitas","coordinates":[-121.915219,37.42786],"created_at":"2013-07-03T20:54:42-07:00","description":"Provides
-        fun activities, often in an outdoor setting, for children age 8-18, including
-        camping, backpacking, rock climbing, white water rafting and more. Also offers
-        tutoring and mentoring. Children begin their involvement in the summer outreach
-        program and then continue with year-round activities. All programs are offered
-        free-of-charge.","eligibility_requirements":"Child age 8-18, at high risk
-        and/or disadvantaged","emails":["info@tymkids.org"],"faxes":["408 719-9140"],"fees":"None","funding_sources":["Donations","Grants"],"how_to_apply":"Call
-        for information. Referral necessary from children''s protective agency","keywords":["RECREATION/LEISURE
-        SERVICES","Camping","Special Events/Entertainment"],"languages_spoken":["Spanish"],"leaders":null,"market_match":null,"name":"Today''s
-        Youth Matter","payments_accepted":null,"phones":[[{"number":"408 719-9125","phone_hours":"(Monday-Friday,
-        9-5)"}]],"products_sold":null,"service_area":["Alameda County","Contra Costa
-        County","Sacramento County","San Mateo County","Santa Clara County"],"service_areas":null,"service_hours":"Daily","service_wait":"No
-        wait","services_provided":"Provides fun activities, usually in an outdoor
-        setting, for children age 8-18.","state":"CA","street_address":"469 Valley
-        Way","target_group":null,"transportation_availability":"Not necessary for
-        service","ttys":null,"updated_at":"2013-08-25T14:52:37-07:00","urls":["http://www.tymkids.org"],"zipcode":"95035"}],"count":1705,"pagination":{"current":1,"previous":null,"next":2,"per_page":30,"pages":57,"count":1705}}'
+        meetings.","emails":["info@smccvb.com"],"faxes":["650 348-7687"],"hours":"Monday-Thursday,
+        8:30-5; Friday, 8:30-4","name":"San Mateo County/Silicon Valley Convention
+        and Visitors Bureau","phones":[{"number":"800 288-4748","hours":"(Monday-Thursday,
+        8:30-5; Friday, 8:30-4)"}],"short_desc":"Offers information about the county''s
+        attractions and brochures and maps of cities in the county.","transportation":"SAMTRANS
+        stops within 6 blocks.","urls":["http://www.smccvb.com"],"address":{"street":"111
+        Anza Blvd., Suite 410","city":"Burlingame","state":"CA","zip":"94010"},"mail_address":{"attention":"Convention
+        and Visitors Bureau","street":"111 Anza Blvd., Suite 410","city":"Burlingame","state":"CA","zip":"94010"},"contacts":[{"name":"Anne
+        LeClair, CAE, CDME","title":"President, CEO"}],"updated_at":"2013-08-27T16:22:46-07:00","organization":{"id":"521d32b81974fcdb2b000001","name":"San
+        Mateo County/Silicon Valley Convention and Visitors Bureau","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b81974fcdb2b000001","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b81974fcdb2b000001/locations"},"services":[{"id":"521d32b91974fcdb2b000006","audience":"Visitors,
+        conventions, meetings, events","eligibility":"None","fees":"None.","funding_sources":["County","Membership
+        dues"],"keywords":["COMMUNITY SERVICES","Travelers Assistance","Tourist Information"],"categories":[],"how_to_apply":"Walk
+        in, call or email.","service_areas":"San Mateo County","wait":"No wait.","updated_at":"2013-09-05T01:24:51-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000002","other_locations":[]},{"id":"521d32b91974fcdb2b000008","accessibility":["wheelchair"],"ask_for":["Receptionist"],"coordinates":[-122.2584729,37.5210911],"description":"Provides
+        legal advice and counsel on civil matters to low income individuals, families
+        and groups. Civil cases include divorce, domestic violence, landlord/tenant
+        issues, government benefits, public housing problems, elder abuse and consumer
+        complaints (seniors). The Clients'' Rights Advocate and the Kids in Crisis
+        (KIC) Project help persons with disabilities with problems related to the
+        Americans with Disabilities Act, transit and para-transit, the Golden Gate
+        Regional Center, the San Mateo County Mental Health Division, Social Security
+        Administration, the Regional Center and California Children Services. The
+        Health Consumer Center assists people with problems or questions relating
+        to Medi-Cal, Healthy Families, Healthy Kids, Medicare, Well, and some private
+        insurance. The Teen Parent Project staff works with teen parents on such problems
+        as paternity, domestic violence, benefits and support. The Home Savers provides
+        advice and representation to individuals at risk of eviction. The Family Advocacy
+        Program (FAP), a collaboration with Lucille Packard Children''s Hospital,
+        helps pediatric patients with issues affecting their health. The Seniors Advocates
+        Program provides legal assistance for the elderly concerning elder abuse and
+        consumer issues. Advance Health Directive Clinics are also held several times
+        a year. Staff can visit homebound people.","emails":["jgoldstein@legalaidsmc.org"],"faxes":["650
+        517-8973"],"hours":"Monday-Friday, 9-12, 1-5","languages":["French","Russian","Spanish"],"name":"Legal
+        Aid Society of San Mateo County","phones":[{"number":"800 381-8898"}],"short_desc":"Legal
+        advice and counsel on civil matters for individuals, families and groups whose
+        incomes are below an established level.","transportation":"SAMTRANS stops
+        within 4 blocks.","urls":["http://www.legalaidsmc.org"],"address":{"street":"330
+        Twin Dolphin Drive, Suite 123","city":"Redwood City","state":"CA","zip":"94065"},"mail_address":{"attention":"Legal
+        Aid Society","street":"330 Twin Dolphin Drive, Suite 123","city":"Redwood
+        City","state":"CA","zip":"94065"},"contacts":[{"name":"M. Stacey Hawver","title":"Executive
+        Director"},{"name":"Hope Nakamura","title":"Directing Attorney"},{"name":"Tricia
+        Berke Vinson","title":"Directing Attorney"}],"updated_at":"2013-08-27T16:22:46-07:00","organization":{"id":"521d32b91974fcdb2b000007","name":"Legal
+        Aid Society of San Mateo County","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007/locations"},"services":[{"id":"521d32b91974fcdb2b00000e","audience":"Low-income
+        residents of San Mateo County, persons with disabilities, seniors, teen parents","eligibility":"Low
+        income, disabled, or senior","fees":"None for attorney services. Donations
+        welcome.","funding_sources":["Donations","Federal","Grants","United Way"],"keywords":["Certificates/Forms
+        Assistance","Legal Counseling","Legal Representation","Landlord/Tenant Assistance","Low-Cost","Low
+        Cost"],"categories":[],"how_to_apply":"Apply by phone for appointment and
+        some clinics.","service_areas":"San Mateo County","wait":"1 to 2 weeks. Emergencies
+        seen immediately.","updated_at":"2013-09-05T10:55:50-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000008","other_locations":[]},{"id":"521d32b91974fcdb2b000010","accessibility":["ramp"],"ask_for":["Receptionist"],"coordinates":[-122.221876,37.480893],"description":"Offers
+        a variety of environmental and consumer protection servcies. Environmental
+        Protection Programs: Offers agricultural protection services to the general
+        public, farmers and farmworkers. Services include enforcement of regulations
+        regarding the sale and application of pesticides (including registration of
+        pest control operators, pest control advisors and certification of private
+        applicators) and worker safety regulations. Issues burning permits to farmers
+        for destruction of pest-infested plant material.  Inspects for exotic insect
+        pests including medflies, gypsy moths, Japanese beetles, oriental fruit flies
+        and Mexican fruit flies. Will diagnose and suggest treatment for house plants
+        when brought into the office. Provides inspection of plants at nurseries,
+        and inspection and certification of all plants and produce that come into
+        or go out of the state or county. Inspects eggs, honey and produce at selling
+        points for quality standards. Consumer Protection Programs: Checks for accuracy
+        and certifies commercial weighing and measuring devices in the county, and
+        verifies quantities in pre-packaged meats and commodities. Certification includes
+        grocers'' and deli scales, and taxi and gasoline meters. Will check non-commercial
+        measuring and weighing devices for a fee. Investigates consumer complaints
+        including overcharges from retail scanners. Inspects produce markets and certifies
+        farmers'' markets. Compiles and publishes annual crop statistics.","emails":["smateoag@smcgov.org"],"faxes":["650
+        367-0130"],"hours":"Monday-Friday, 8-5","languages":["Spanish"],"name":"San
+        Mateo County Department of Agriculture and Weights/Measures","phones":[{"number":"650
+        363-4700","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Enforces pesticide
+        regulations, inspects plants and some produce, checks commercial weighing
+        and measuring devices for accuracy.","transportation":"SAMTRANS stops within
+        1 block.","urls":["http://www.co.sanmateo.ca.us/agwm"],"address":{"street":"728
+        Heller Street","city":"Redwood City","state":"CA","zip":"94063"},"mail_address":{"attention":"SMC
+        Department of Agriculture and Weights/Measures","street":"P.O. Box 999","city":"Redwood
+        City","state":"CA","zip":"94064-0999"},"contacts":[{"name":"Fred Crowder","title":"Agricultural
+        Commissioner/Sealer"}],"updated_at":"2013-08-27T16:22:46-07:00","organization":{"id":"521d32b91974fcdb2b00000f","name":"San
+        Mateo County Department of Agriculture and Weights/Measures","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00000f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00000f/locations"},"services":[{"id":"521d32b91974fcdb2b000014","eligibility":"None","fees":"Vary
+        according to service.","funding_sources":["County","State"],"keywords":["COMMUNITY
+        SERVICES","Consumer Assistance","HEALTH SERVICES","Public Health Inspection","Farmers
+        Markets","Agricultural Pest/Disease Control Assistance","Agricultural Pollution
+        Prevention/Mitigation Assistance","Consumer Complaints","Weights and Measures"],"categories":[],"how_to_apply":"Apply
+        by phone.","service_areas":"San Mateo County","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000010","other_locations":[]},{"id":"521d32b91974fcdb2b000016","accessibility":["ramp","disabled_parking","wheelchair"],"ask_for":["Robert
+        J. Foucrault"],"coordinates":[-122.332764,37.513351],"description":"The coroner
+        is required by law to investigate accidental, traumatic and certain other
+        types of deaths. In these cases, the office takes charge of the body, determines
+        the cause of death and establishes the identity of the dead person if necessary.
+        Accepts and considers requests for cremation for indigent county residents.","emails":["rfoucrault@co.sanmateo.ca.us"],"faxes":["650
+        571-6258"],"hours":"Investigations: 24 hours daily; Administration: Monday-Friday,
+        8-5","name":"San Mateo County Coroner","phones":[{"number":"650 312-5562","hours":"(24
+        hours daily)"}],"short_desc":"Investigates certain types of deaths, handles
+        requests for county burials for people without funds.","transportation":"SAMTRANS
+        stops within 2 blocks.","urls":["http://www.co.sanmateo.ca.us"],"address":{"street":"50
+        Tower Road","city":"San Mateo","state":"CA","zip":"94402"},"mail_address":{"attention":"San
+        Mateo County Coroner","street":"50 Tower Road","city":"San Mateo","state":"CA","zip":"94402"},"contacts":[{"name":"Robert
+        J. Foucrault","title":"Coroner"}],"updated_at":"2013-08-27T16:22:47-07:00","organization":{"id":"521d32b91974fcdb2b000015","name":"San
+        Mateo County Coroner","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000015","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000015/locations"},"services":[{"id":"521d32b91974fcdb2b00001a","audience":"Deceased
+        and their families","eligibility":"None","fees":"Vary according to service:
+        coroner fee per case, toxicology report, investigation report, autopsy report,
+        per day storage. Cash, checks and money orders accepted.","funding_sources":["County","Fees"],"keywords":["LEGAL
+        AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistance","Pathologists"],"categories":[{"id":"52280f5c1edd37edff000001","oe_id":"101","name":"Emergency"},{"id":"52280f5c1edd37edff000003","oe_id":"101-02","name":"Emergency
+        Cash","parent_id":"52280f5c1edd37edff000001","parent_name":"Emergency"}],"how_to_apply":"Walk
+        in or apply by phone or mail.","service_areas":"San Mateo County","wait":"No
+        wait.","updated_at":"2013-09-04T22:18:22-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000016","other_locations":[]},{"id":"521d32b91974fcdb2b00001c","accessibility":["elevator","ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Martha
+        Poyatos"],"coordinates":[-122.2802261,37.5636454],"description":"This Commission
+        convenes by authority of the Cortese-Knox-Hertzberg Local Government Reorganization
+        Act of 2000, Section 56000 Et Seq. of the Government Code. The seven commission
+        members are appointed by the Board of Supervisors, the mayors of cities, chair
+        of special district boards and the commission itself to represent the county,
+        cities, special districts and the general public.  The commission reviews
+        proposals for the incorporation of cities, annexation to cities, detachment
+        from cities, formation of districts, dissolution of districts, annexation
+        to and detachment from districts. Initiates and makes studies of existing
+        governmental agencies determining the maximum service area and service capabilities.
+        Public meetings are held every third Wednesday of every odd-numbered month
+        at the Redwood City Hall of Justice, Board of Supervisors'' Chamber, 2:30
+        pm.","emails":["mpoyatos@co.sanmateo.ca.us"],"faxes":["650 363-4849"],"hours":"Monday-Friday,
+        8-12, 1-5","languages":["Spanish"],"name":"San Mateo County Local Agency Formation
+        Commission (LAFCO)","phones":[{"number":"650 363-4224","hours":"(Monday-Friday,
+        8-12, 1-5)"}],"short_desc":"Reviews proposals for the incorporation, annexation
+        and dissolution of cities and districts.","transportation":"SAMTRANS stops
+        within 2 blocks.","urls":["http://www.sanmateolafco.org"],"address":{"street":"455
+        County Center, Second Floor","city":"Redwood City","state":"CA","zip":"94063-1646"},"mail_address":{"attention":"Local
+        Agency Formation Comm","street":"455 County Center, Second Floor","city":"Redwood
+        City","state":"CA","zip":"94063-1646"},"contacts":[{"name":"Martha Poyatos","title":"Executive
+        Officer"}],"updated_at":"2013-08-27T16:22:47-07:00","organization":{"id":"521d32b91974fcdb2b00001b","name":"San
+        Mateo County Local Agency Formation Commission (LAFCO)","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b/locations"},"services":[{"id":"521d32b91974fcdb2b000020","eligibility":"None","fees":"Fees
+        vary according to type of proposal. Cash and checks accepted.","funding_sources":["City","County","Fees","Special
+        district"],"keywords":["ADMINISTRATION AND PLANNING SERVICES","Commissions,
+        Councils, or Boards","Planning/Coordinating/Advisory Groups"],"categories":[],"how_to_apply":"Apply
+        by petition or resolution of public agency.","service_areas":"San Mateo County","wait":"5
+        weeks - 3 months for public hearings. Appointment encouraged.","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c","other_locations":[]},{"id":"521d32b91974fcdb2b000022","accessibility":["ramp","restroom","wheelchair"],"ask_for":["Karen
+        M. Lutke"],"coordinates":[-122.2303467,37.4872851],"description":"The library
+        contains statutes, administrative codes, local ordinances, copies of federal,
+        state and out-of-state cases, legal treatises and texts, legal periodicals,
+        legal encyclopedias and dictionaries. Librarians will show citizens how to
+        use the various materials to do their own legal research in the library. Lawyers,
+        judges and law students are the only persons allowed to check out books.","faxes":["650
+        367-8040"],"name":"San Mateo County Law Library","phones":[{"number":"650
+        363-4160","department":"(24-hour recording)"}],"short_desc":"Contains statutes,
+        administrative codes, local ordinances, laws, cases and legal texts available
+        for public use.","transportation":"SAMTRANS stops within 1 block.","urls":["http://www.smcll.org"],"address":{"street":"710
+        Hamilton Street","city":"Redwood City","state":"CA","zip":"94063"},"mail_address":{"attention":"San
+        Mateo County Law Library","street":"710 Hamilton Street","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"name":"Karen
+        M. Lutke","title":"Director"}],"updated_at":"2013-08-27T16:22:47-07:00","organization":{"id":"521d32b91974fcdb2b000021","name":"San
+        Mateo County Law Library","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000021","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000021/locations"},"services":[{"id":"521d32b91974fcdb2b000026","eligibility":"None","fees":"None.","funding_sources":["Fees"],"keywords":["EDUCATION
+        SERVICES","Library","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistance","Libraries","Special Libraries","Law Libraries"],"categories":[],"how_to_apply":"Walk
+        in or apply by phone .","service_areas":"San Mateo County","wait":"No wait.","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000022","other_locations":[]},{"id":"521d32b91974fcdb2b000028","accessibility":["elevator","ramp","wheelchair"],"ask_for":[],"coordinates":[-122.230148,37.488701],"description":"The
+        Tax Collector is the billing agent for schools, special districts and governmental
+        entities. Funds are collected for these entities via property taxes. The public
+        has access to these records. The Delinquent Tax Department deals with tax-defaulted
+        property and conducts a biennial public auction. Lists of property for sale
+        are available from the Redemption Department in late January of each year
+        (send a self-addressed stamped envelope).   The Treasurer acts as a central
+        bank for all county departments, schools and many special districts. Invests
+        monies for special districts, schools, cities and other government agencies
+        and the county. Deals with general obligation improvement bonds for schools.
+        Provides license information concerning unincorporated areas in the county
+        which require regulation and control. Accepts payment for property taxes in
+        San Mateo County. Revenue Services collect accounts receivable and court-ordered
+        reimbursements. Provides billing and collection services for the Courts and
+        departments/divisions that do not do their own billing. Acts as the County''s
+        collection agency for departments/programs that do their own initial billing
+        Formerly known as San Mateo County Tax Collector-Treasurer-Revenue Services.","faxes":["650
+        599-1511 (Tax Collector)","650 363-4944 (Treasurer)","650 363-4850 (Revenue
+        Services)"],"hours":"Monday-Friday, 9-5","languages":["Arabic","Armenian","Chinese
+        (Mandarin)","Filipino (Tagalog)","Greek","Hindi","Persian (Farsi)","Spanish"],"name":"San
+        Mateo County Treasurer-Tax Collector-Revenue Services","phones":[{"number":"650
+        363-4142","department":"Tax Collector (recording with options)"}],"short_desc":"Handles
+        records of property descriptions, names and addresses of owners, property
+        values and status of taxes. Holds auction to dispose of seized property, serves
+        as central bank.","transportation":"SAMTRANS, CALTRAIN stop within 3 blocks.","urls":["http://www.sanmateocountytaxcollector.org","http://www.sanmateocountytreasurer.org"],"address":{"street":"555
+        County Center, 1st Floor","city":"Redwood City","state":"CA","zip":"94063-1665"},"mail_address":{"attention":"Treasurer-Tax
+        Collector-Revenue","street":"555 County Center, 1st Floor","city":"Redwood
+        City","state":"CA","zip":"94063"},"contacts":[{"name":"Sandie Arnott","title":"Treasurer-Tax
+        Collector"},{"name":"Robin Elliott","title":"Assistant Tax Collector"},{"name":"Charles
+        Tovstein","title":"Assistant Treasurer"},{"name":"Girdie Bernard","title":"Financial
+        Services Manager"}],"updated_at":"2013-08-27T16:22:48-07:00","organization":{"id":"521d32b91974fcdb2b000027","name":"San
+        Mateo County Treasurer-Tax Collector-Revenue Services","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000027","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000027/locations"},"services":[{"id":"521d32b91974fcdb2b00002f","audience":"Property
+        owners, personal property owners (boat, airplane and business owners or lessees),
+        school districts, county departments","eligibility":"None","fees":"Service
+        fee charged (based on transaction amount) for credit card payment. Cash, checks
+        and credit cards accepted.","funding_sources":["County","Fees"],"keywords":["Property
+        Tax Collection Agencies","County Treasurer Offices"],"categories":[],"how_to_apply":"Walk
+        in, call or visit Web site.","service_areas":"San Mateo County","wait":"Minimal
+        wait.","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000028","other_locations":[]},{"id":"521d32b91974fcdb2b000031","accessibility":["elevator","ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Receptionist"],"coordinates":[-122.230148,37.488701],"description":"Furnishes
+        engineering services for the design, construction, inspection and maintenance
+        of roads and bridges in the unincorporated areas of the county, not including
+        state highways. Oversees all traffic control signs, pavement markings, highway
+        lighting and signalization, and also includes the taking of traffic counts
+        in the unincorporated area. Maintains county owned buildings. Has responsibility
+        for solid waste disposal planning, parcel maps, subdivisions and record of
+        survey maps and construction and design of street improvements by assessment
+        district preceedings. Publishes official county map, including 400-scale,
+        800-scale, 2000- and 5000-scale maps of the county. In addition, 400-scale
+        orthophoto maps are available. Provides generalized geologic information to
+        the public. Reviews private consultant''s geotechnical reports when submitted
+        to county for approval. Oversees the San Carlos and Half Moon Bay airports
+        and operates a transfer station near Pescadero. Manages ten sewage districts,
+        nine drainage districts, three flood control zones, eleven lighting districts,
+        two water supply districts, five county service areas and one landscape maintenance
+        district in the unincorporated areas of the county. Airport services provided
+        include lease and rental of hangar spaces and tie downs when available. Private
+        contractors provide all additional aircraft oriented services including fuel,
+        aircraft repair and flight instruction. Provides information on reuse, recycling
+        and composting information for county residents and businesses by phone or
+        via Web site (www.recycleworks.org). Oversees fifteen county parks and two
+        historic sites that provide over 16,000 acres of land accessible to the public.","emails":["jporter@co.sanmateo.ca.us"],"faxes":["650
+        361-8220"],"languages":["Chinese","Filipino (Tagalog)","Italian","Spanish"],"name":"San
+        Mateo County Public Works Department","phones":[{"number":"650 363-4100","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Furnishes engineering and maintenance services for all
+        roads, bridges, water supply and sewage districts, airports and flood control
+        zones in the unincorporated areas of the county.","transportation":"SAMTRANS,
+        CALTRAIN stop within 3 blocks.","urls":["http://www.co.sanmateo.ca.us","http://www.recycleworks.org"],"address":{"street":"555
+        County Center, 5th Floor","city":"Redwood City","state":"CA","zip":"94063"},"mail_address":{"attention":"San
+        Mateo County Public Works Dept.","street":"555 County Center, 5th Floor","city":"Redwood
+        City","state":"CA","zip":"94063"},"contacts":[{"name":"Jim Porter","title":"Director
+        of Public Works"}],"updated_at":"2013-08-27T16:22:48-07:00","organization":{"id":"521d32b91974fcdb2b000030","name":"San
+        Mateo County Public Works Department","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000030","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000030/locations"},"services":[{"id":"521d32b91974fcdb2b000035","eligibility":"None","fees":"County
+        maps must be purchased. Sewer service charges in specific districts, plan
+        or map checking fees, airport rents, concession and user fees, encroachment
+        permit fees, solid waste disposal fees at the landfill and surcharges and
+        water sales in specific districts. Cash and checks accepted.","funding_sources":["County","Federal","State"],"keywords":["Community
+        Planning and Public Works","Recycling"],"categories":[],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":"San Mateo County","wait":"No wait
+        to 48 hours (under emergency conditions).","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000031","other_locations":[]},{"id":"521d32b91974fcdb2b000037","accessibility":["wheelchair"],"ask_for":["Admissions
+        Desk"],"coordinates":[-122.3196377,37.5906292],"description":"Offers environmental
+        education through exhibits and wildlife habitats. The wildlife habitats feature
+        live animals (100) native to the Bay Area. All animals - bobcats, raccoons,
+        river otters, ring-tail cat, badger, snakes, reptiles and birds - are in naturalistic
+        habits and are unreleasable. The museum also has science-based exhibits,educational
+        classes, children''s activities, volunteer-docent training programs, wildlife
+        shows and animal talks. Formerly known as Coyote Point Museum for Environmental
+        Education.","emails":["info@curiodyssey.org"],"faxes":["650 342-7853"],"hours":"Tuesday-Saturday,
+        10-5; Sunday, 12-5","languages":["Spanish"],"name":"CuriOdyssey","phones":[{"number":"650
+        342-7755","hours":"(Tuesday-Saturday, 10-5; Sunday, 12-5)"}],"transportation":"SAMTRANS
+        stops within 2 miles.","urls":["http://www.curiodyssey.org"],"address":{"street":"1651
+        Coyote Point Drive","city":"San Mateo","state":"CA","zip":"94401-1097"},"mail_address":{"attention":"CuriOdyssey","street":"1651
+        Coyote Point Drive","city":"San Mateo","state":"CA","zip":"94401-1097"},"contacts":[{"name":"Rachel
+        Meyer","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:48-07:00","organization":{"id":"521d32b91974fcdb2b000036","name":"CuriOdyssey","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000036","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000036/locations"},"services":[{"id":"521d32b91974fcdb2b00003b","audience":"Pre-kindergarten
+        to 8th grade and families","eligibility":"None","fees":"Admission: $8 adult,
+        $6 senior and students age 13-17, $4 age 2-12. Membership: $45 individual,
+        $35 student/senior, $65 family. Cash and credit cards accepted.","funding_sources":["Donations","Grants"],"keywords":["Museums"],"categories":[],"how_to_apply":"At
+        Web site or museum.","service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"wait":"2-3
+        weeks.","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000037","other_locations":[]},{"id":"521d32b91974fcdb2b00003d","accessibility":["elevator","ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Receptionist"],"coordinates":[-122.2307333,37.4889287],"description":"Organizes
+        all matters of zoning, building, construction and land use for unincorporated
+        areas of the county, including coastal areas. The Current Planning Section
+        handles all questions and complaints about the use of property and zoning
+        regulations. Obtain applications for zoning, use permits, subdivisions and
+        variances from this office. The Policy Planning Section works to determine
+        long-range planning goals and policies. The Development Review Center provides
+        coordinated review of all land development proposals so that all county departments
+        are represented in one location. The Development Review Center Counter is
+        open Monday-Friday, 7:30-5. The Building Inspection Section (described separately)
+        issues building permits and inspects construction projects. Formerly a division
+        of the San Mateo County Environmental Services Agency.","emails":["plngbldg@co.sanmateo.ca.us"],"faxes":["650
+        363-4849"],"hours":"Monday-Friday, 7:30-5","languages":["Chinese (Cantonese)","Spanish"],"name":"San
+        Mateo County Planning and Building Department","phones":[{"number":"650 599-7311","department":"Building"}],"short_desc":"Organizes
+        all matters of zoning, building, construction and land use for unincorporated
+        areas of the county.","transportation":"SAMTRANS stops within 1 block. CALTRAIN
+        stops within 2 blocks.","urls":["http://www.co.sanmateo.ca.us/planning"],"address":{"street":"455
+        County Center, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063-1663"},"mail_address":{"attention":"Planning
+        and Building Dept","street":"455 County Center, 2nd Floor","city":"Redwood
+        City","state":"CA","zip":"94063-1663"},"contacts":[{"name":"Jim Eggemeyer","title":"Director,
+        Planning and Building"}],"updated_at":"2013-08-27T16:22:48-07:00","organization":{"id":"521d32b91974fcdb2b00003c","name":"San
+        Mateo County Planning and Building Department","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00003c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00003c/locations"},"services":[{"id":"521d32b91974fcdb2b000041","eligibility":"None","fees":"Filing
+        fees with development permit applications. Cash, checks and credit cards accepted.","funding_sources":["County","Fees"],"keywords":["Building
+        Code Enforcement/Appeals","City/County Planning Offices"],"categories":[],"how_to_apply":"Varies
+        by project. Phone or mail for information. Office hours are Monday-Friday,
+        7:30-5. Building inspections can be scheduled by calling the automated Hello
+        System.","service_areas":"San Mateo County","wait":"Varies according to project.","updated_at":"2013-08-27T16:14:01-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00003d","other_locations":[]},{"id":"521d32d11974fcdb2b0005a0","accessibility":[],"coordinates":[-122.414291,37.626736],"description":"Furthers
+        interest in gardening as therapy. Ecology and flower arranging for civic groups.
+        New officers elected in June. Meets the third Wednesday of each month, 11
+        am to 3 pm.","emails":["bettychapman@sbcglobal.net"],"name":"San Bruno Garden
+        Club","phones":[{"number":"650 588-6447"}],"short_desc":"Furthers interest
+        in gardening as therapy.","address":{"street":"672 Hensley Avenue","city":"San
+        Bruno","state":"CA","zip":"94066"},"mail_address":{"attention":"San Bruno
+        Garden Club","street":"672 Hensley Avenue","city":"San Bruno","state":"CA","zip":"94066"},"contacts":[{"name":"Betty
+        Chapman","title":"President"}],"updated_at":"2013-08-27T16:22:49-07:00","organization":{"id":"521d32d11974fcdb2b00059f","name":"San
+        Bruno Garden Club","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d11974fcdb2b00059f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d11974fcdb2b00059f/locations"},"services":[{"id":"521d32d11974fcdb2b0005a4","eligibility":"None","fees":"$10
+        a year.","keywords":["Special Interest Clubs","Horticultural Societies"],"categories":[],"service_areas":"San
+        Mateo County","updated_at":"2013-08-27T16:14:25-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d11974fcdb2b0005a0","other_locations":[]},{"id":"521d32ba1974fcdb2b000043","accessibility":["restroom","disabled_parking","wheelchair"],"ask_for":["Dana
+        Stoehr (Assistant General Manager)"],"coordinates":[-122.3016943,37.5439376],"description":"Conducts
+        the annual San Mateo County Fair and handles trade and consumer shows throughout
+        the year. Handles rental of fair exhibition and concession booths. Rents vary
+        according to the size and location of the booths. Issues entry forms for the
+        various public competitions including livestock, home economics, industrial
+        and fine arts shows.","emails":["info@smeventcenter.com"],"faxes":["650 574-3985"],"name":"San
+        Mateo County Event Center","phones":[{"number":"650 574-3247","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Conducts the annual San Mateo County Fair and handles
+        trade and consumer shows throughout the year at the Expo Center.","transportation":"SAMTRANS,
+        CALTRAIN stop within 3 blocks.","urls":["http://www.smeventcenter.com"],"address":{"street":"2495
+        South Delaware Street","city":"San Mateo","state":"CA","zip":"94403"},"mail_address":{"attention":"San
+        Mateo County Event Center","street":"2495 South Delaware Street","city":"San
+        Mateo","state":"CA","zip":"94403"},"contacts":[{"name":"Chris A. Carpenter","title":"General
+        Manager"}],"updated_at":"2013-08-27T16:22:49-07:00","organization":{"id":"521d32ba1974fcdb2b000042","name":"San
+        Mateo County Event Center","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000042","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000042/locations"},"services":[{"id":"521d32ba1974fcdb2b000047","audience":"Groups
+        interested in putting on a show or event","eligibility":"None","fees":"Vary
+        for rental. Cash, checks and credit cards accepted.","funding_sources":["County","Fees","State"],"keywords":["ADMINISTRATION
+        AND PLANNING SERVICES","Administration and Planning","Conference/Convention
+        Facilities"],"categories":[],"how_to_apply":"Apply by phone for rental information.","service_areas":"San
+        Mateo County","wait":"No wait.","updated_at":"2013-08-27T16:14:02-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000043","other_locations":[]},{"id":"521d32ba1974fcdb2b000049","accessibility":["wheelchair"],"ask_for":["Intake
+        manager","caseworker"],"description":"Acts as a safety net by providing human
+        services programs for residents of the San Mateo County coast. Provides emergency
+        services including food boxes, deposit and rental assistance, housing support,
+        casework, the Family Harvest Program, Brown Bag food program and assistance
+        with a variety of other needs. Also provides paralegal assistance, and immigration
+        counseling and applications. Offers free citizenship classes once a week.
+        The site is part of the core network of community service agencies of San
+        Mateo County. Formerly known as Coastside Opportunity Center.","emails":["info@coastside.org","fatima@coastsidehope.org"],"faxes":["650
+        726-7096"],"hours":"Monday, Tuesday, Thursday, Friday, 8-5; Wednesday, 11-5;
+        closed 12-1","languages":["Portuguese","Spanish"],"name":"Coastside Hope","phones":[{"number":"650
+        726-9071","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Offers information
+        and referral, immigration services and emergency assistance to Coastside residents.","transportation":"SAMTRANS
+        stops within 1 block.","urls":["http://www.coastsidehope.org"],"address":{"street":"99
+        Avenue Alhambra","city":"El Granada","state":"CA","zip":"94018"},"mail_address":{"attention":"Coastside
+        Hope: A Community Assistance Center","street":"P.O. Box 1089","city":"El Granada","state":"CA","zip":"94018"},"contacts":[{"name":"Fatima
+        Soares","title":"Executive Director"}],"updated_at":"2013-08-27T16:14:02-07:00","organization":{"id":"521d32ba1974fcdb2b000048","name":"Coastside
+        Hope","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000048","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000048/locations"},"services":[{"id":"521d32ba1974fcdb2b00004d","audience":"Low-income
+        or unemployed persons, non-English speaking (Spanish, Portuguese) or immigrant
+        populations, farmworkers, nursery workers, families, seniors, homeless","eligibility":"Low-income
+        person residing in the area served","fees":"None except for immigration work.
+        Cash and checks accepted.","funding_sources":["County","Donations","Fees","Grants"],"keywords":["COMMODITY
+        SERVICES","Food","COMMUNITY SERVICES","Immigration/Naturalization","Information
+        and Referral","Interpretation/Translation","EMERGENCY SERVICES","Food Boxes/Food
+        Vouchers","Shelter/Refuge","FINANCIAL ASSISTANCE SERVICES","Housing","Utilities","LEGAL
+        AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistance","TRANSPORTATION
+        SERVICES","Para-Transit","Food Pantries","Homeless Shelter","Housing Expense
+        Assistance","Transitional Housing/Shelter","Clothing","Utility Assistance","Comprehensive
+        Information and Referral","Youth","Social Services","Emergency Aid","Rental
+        Assistance","Food Assistance"],"categories":[],"how_to_apply":"Walk in or
+        apply by phone.","service_areas":["El Granada","Half Moon Bay","Miramar","Montara","Moss
+        Beach"],"wait":"No wait.","updated_at":"2013-09-05T10:58:23-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000049","other_locations":[]},{"id":"521d32ba1974fcdb2b00004f","accessibility":["ramp","restroom","wheelchair"],"ask_for":[],"coordinates":[-122.4922502,37.6499429],"description":"Provides
+        psychological counseling with a special focus on alcohol and other drug-related
+        problems. Provides outpatient individual, family, couple and group therapy.
+        Special programs for people age 17 or under include play therapy for preschool
+        and elementary school-age children. Youth age 12 or over can be seen without
+        parental permission. Offers additional support groups including a probation-referred
+        group for persons as a condition of their probation and children and preteen
+        support groups. Pyramid''s First Offender Program is a court-ordered 15-week
+        program for persons convicted, for the first time, of driving under the influence
+        of alcohol. Pyramid''s Multiple Offender Drinking Driver program is an 18-month
+        intensive counseling and education program for persons convicted twice or
+        more of driving while under the influence of alcohol and who elect, with court
+        approval, to enter the program. Also offers a Drug Diversion Program, Drug
+        Court Program and Domestic Violence Program. The First Offender, Multiple
+        Offender and Domestic Violence programs are offered in Spanish. The Senior
+        Program assists older persons with problems of stress, grief and medication
+        abuse. Pyramid Alternatives also has offices in San Bruno at 1590 El Camino
+        Real, in South San Francisco at 1050 El Camino Real, and in Half Moon Bay
+        at Shoreline Station. Adolescent Anger Management and Substance Abuse Program
+        with individual, group and family counseling also available.","emails":["pyramidalternatives@earthlink.net"],"faxes":["650
+        355-8780"],"hours":"Monday-Friday, 8 am-10 pm","languages":["Filipino (Tagalog)","Spanish
+        "],"name":"Pyramid Alternatives, Inc","phones":[{"number":"650 355-8787","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"General counseling for individuals, couples and groups;
+        support groups; and court-ordered counseling for various violations.","transportation":"SAMTRANS
+        stops within 1 block of most offices.","urls":["http://www.pyramidalternatives.org"],"address":{"street":"480
+        Manor Plaza","city":"Pacifica","state":"CA","zip":"94044"},"mail_address":{"attention":"Pyramid
+        Alternatives, Inc.","street":"480 Manor Plaza","city":"Pacifica","state":"CA","zip":"94044"},"contacts":[{"name":"Paul
+        Chang","title":"Executive Director"},{"name":"Erica Britton","title":"Clinical
+        Director"}],"updated_at":"2013-08-27T16:22:50-07:00","organization":{"id":"521d32ba1974fcdb2b00004e","name":"Pyramid
+        Alternatives, Inc","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00004e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00004e/locations"},"services":[{"id":"521d32ba1974fcdb2b000054","audience":"Persons
+        in need of counseling, particularly in the areas of substance abuse, domestic
+        violence, dual diagnosis and violence prevention","eligibility":"None. Youth
+        age 11 or under must have parental permission","fees":"Vary according to income.
+        Services are provided regardless of ability to pay. Private insurance and
+        military insurance accepted.","funding_sources":["City","County","Federal","Fees","School
+        district"],"keywords":["ALCOHOLISM SERVICES","Community Information","Crisis
+        Intervention/Hotlines","Driving While Intoxicated","Family Support","Individual/Group
+        Counseling","DRUG ABUSE SERVICES","Drug Diversion","MENTAL HEALTH SERVICES","Diversion
+        Programs","First Offender DUI Programs","Multiple Offender DUI Programs","Alcoholism
+        Counseling","Drug Abuse Counseling","Conjoint Counseling","Family Counseling","Group
+        Counseling","Individual Counseling","Spouse/Domestic Partner Abuse Counseling","Play
+        Therapy","Older Adults","Youth","Adolescents","Children"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f661edd37edff00004f","oe_id":"106-01","name":"Addiction
+        & Recovery","parent_id":"52280f661edd37edff00004e","parent_name":"Health"}],"how_to_apply":"Walk
+        in or apply by phone. Appointment preferred.","service_areas":["San Francisco
+        County","San Mateo County"],"wait":"Short waiting time for evening, low-fee
+        appointments.","updated_at":"2013-09-05T11:03:41-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00004f","other_locations":[]},{"id":"521d32ba1974fcdb2b000056","accessibility":["restroom","disabled_parking","wheelchair"],"ask_for":["Intake
+        Department"],"coordinates":[-122.3190162,37.56225939999999],"description":"Provides
+        a social model recovery program for alcoholic and drug-abusing individuals,
+        as well as dual diagnosis clients. The Primary program focuses on self-evaluation
+        and awareness (Month 1), planning for the future (Month 2), and putting the
+        plan into action (Month 3). Individual and group counseling looks at all aspects
+        of addiction, recovery, and relapse. Family counseling is also available.
+        Particpants live in shared bedrooms. Women''s residential substance abuse
+        treatment is available in a gender-responsive environment, including women
+        only counseling groups. The treatment follows the same phases and provides
+        the same services as the Primary program. Working Man''s Program (650-401-8766)
+        is a residential substance abuse recovery program for those with a full-time
+        job. Residents attend individual or group counseling on weekday evenings and
+        weekends. Also, offers clean and sober housing. Residents must abide by curfews
+        and assigned chores, be employed full time, attend AA/NA meetings and a weekly
+        Project Ninety aftercare meeting. Transitional housing is available for up
+        to 18 months. Contact Stacey White, Community Development Manager, at 650-579-7881
+        for an appointment. Services such as general labor, hauling, moving services,
+        painting, yard work, carpet cleaning, and handy-man services are offered to
+        the community. Contact Stacey White, Community Development Manager, at 650-579-7881
+        for an appointment. Outpatient Program has been suspended as of October 2011.
+        Additional site located in San Jose. P90 San Jose, 561 South 9th Street, San
+        Jose (408-885-1291).","emails":["jstansberry@projectninety.org"],"faxes":["650
+        579-2640"],"hours":"Monday-Friday, 9-5","languages":["Spanish"],"name":"Project
+        90","phones":[{"number":"650 579-7881","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A
+        residential treatment program for men and women who abuse drugs or alcohol.","transportation":"SAMTRANS
+        stops within 1 block. Carpools can be arranged.","urls":["http://www.projectninety.org"],"address":{"street":"720
+        South B Street","city":"San Mateo","state":"CA","zip":"94401"},"mail_address":{"attention":"Project
+        90","street":"720 South B Street","city":"San Mateo","state":"CA","zip":"94401"},"contacts":[{"name":"Jim
+        Stansberry","title":"Executive Director"},{"name":"David Meeds","title":"Director,
+        Program Operations"},{"name":"Stacey White","title":"Manager, Community Development"}],"updated_at":"2013-08-27T16:22:50-07:00","organization":{"id":"521d32ba1974fcdb2b000055","name":"Project
+        90","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000055","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000055/locations"},"services":[{"id":"521d32ba1974fcdb2b00005c","audience":"Adult
+        men and women","eligibility":"Adult males and females with a desire to overcome
+        an addiction to substance(s).","fees":"Vary according to income and ability
+        to pay. Full cost of 90-day residential program is $12,200, or $14,500 for
+        co-occurring treatment services.","funding_sources":["County","Donations","Fees"],"keywords":["ALCOHOLISM
+        SERVICES","Residential Care","DRUG ABUSE SERVICES","Residential Alcoholism
+        Treatment","Residential Drug Abuse Treatment","Women","Men"],"categories":[{"id":"52280f601edd37edff00001b","oe_id":"103","name":"Housing"},{"id":"52280f611edd37edff000027","oe_id":"103-05","name":"Residential
+        Housing","parent_id":"52280f601edd37edff00001b","parent_name":"Housing"},{"id":"52280f621edd37edff00002f","oe_id":"103-05-04","name":"Short-Term
+        Housing","parent_id":"52280f611edd37edff000027","parent_name":"Residential
+        Housing"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f661edd37edff00004f","oe_id":"106-01","name":"Addiction
+        & Recovery","parent_id":"52280f661edd37edff00004e","parent_name":"Health"}],"how_to_apply":"Apply
+        by attending a Treatment Readiness interview to be assessed for eligibility
+        for treatment. Interview lasts approximately 1.5 hours. No appointment is
+        necessary. Please arrive 15 minutes early. Tuesday at 11am and Friday at 11:45am.
+        416 2nd Avenue (at Claremont St.), San Mateo, CA 94401. Call 650-579-7881
+        for more information.","service_areas":["Alameda County","Contra Costa County","Monterey
+        County","San Benito County","San Mateo County","Santa Clara County","Santa
+        Cruz County","Solano County"],"wait":"1-6 weeks.","updated_at":"2013-09-05T11:05:28-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000056","other_locations":[]},{"id":"521d32ba1974fcdb2b00005e","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Janis
+        Haynes"],"coordinates":[-122.4991919,37.5987994],"description":"A multipurpose
+        senior center offering a variety of recreation and education programs such
+        as physical fitness, crafts, support groups, bridge, ceramics and yoga. Publishes
+        a newsletter of activities and information of interest to seniors in Pacifica.
+        Staff provide information about community services to persons age 60 or over
+        and their families. Appointments can be made with appropriate agencies and
+        transportation can be located if needed. Assistance is available for questions
+        related to housing, employment, household help and repairs, recreation and
+        social activities, financial assistance, health and counseling services, services
+        to the homebound, home delivered meals and more. Maintains information about
+        special discounts for seniors. Tax assistance is offered by AARP. Keeps a
+        file of housing available. Health insurance counseling is available by appointment.
+        Serves a hot meal at noon five days a week for persons age 60 or over. Arranges
+        to deliver meals to the homes of residents unable to prepare their own food
+        and who have no one to cook for them (call 650-738-7350). Other services offered
+        regularly include podiatry service, and nutrition and health lectures. Volunteer
+        participation is needed in the areas of delivering Meals on Wheels, teaching,
+        staffing the gift shop, food services, reception and in the SASH (Shopping
+        Assistance for Seniors who are Homebound) program. Free movies shown every
+        Friday. SIA members 60 or over can make an appointment on the first and third
+        Monday of each month for a $10 haircut.","faxes":["650 738-0564"],"hours":"Monday,
+        Tuesday, Thursday, 9-4; Wednesday, 9-7; Friday, 9-1:30","name":"Pacifica Senior
+        Services","phones":[{"number":"650 738-7384","hours":"(Monday, Tuesday, Thursday,
+        9-4; Wednesday, 9-6; Friday, 9-1:30)"}],"short_desc":"A multipurpose senior
+        citizens'' center.","transportation":"SAMTRANS stops at center. Transportation
+        to the center can also be arranged for $2.50 round trip donation. Transportation
+        to medical appointments in Daly City (Seton) and South San Francisco (Kaiser)
+        is $20.","urls":["http://www.cityofpacifica.org/depts/senior_services/"],"address":{"street":"540
+        Crespi Drive","city":"Pacifica","state":"CA","zip":"94044"},"mail_address":{"attention":"Pacifica
+        Senior Services","street":"540 Crespi Drive","city":"Pacifica","state":"CA","zip":"94044"},"contacts":[{"name":"Janis
+        Haynes","title":"Program Coordinator"},{"name":"Jim Lange","title":"Senior
+        Services/Food Service Supervisor"}],"updated_at":"2013-08-27T16:22:50-07:00","organization":{"id":"521d32ba1974fcdb2b00005d","name":"Pacifica
+        Senior Services","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00005d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00005d/locations"},"services":[{"id":"521d32ba1974fcdb2b000063","audience":"Senior
+        citizens age 60 or over","eligibility":"Vary according to service","fees":"$3
+        suggested donation for meal. Cash and checks accepted.","funding_sources":["City","County","State"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meals","COMMUNITY
+        SERVICES","Group Support","Information and Referral","RECREATION/LEISURE SERVICES","Arts
+        and Crafts","Special Events/Entertainment","Sports/Games/Exercise","Congregate
+        Meals/Nutrition Sites","Tax Preparation Assistance","Facilities/Community
+        Centers","Senior Centers","Older Adults","Older Adult Volunteers"],"categories":[{"id":"52280f5e1edd37edff000010","oe_id":"101-07","name":"Psychiatric
+        Emergency Services","parent_id":"52280f5c1edd37edff000001","parent_name":"Emergency"},{"id":"52280f5e1edd37edff000011","oe_id":"102","name":"Food"},{"id":"52280f5e1edd37edff000016","oe_id":"101-05","name":"Free
+        Meals","parent_id":"52280f5e1edd37edff000011","parent_name":"Food"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
+        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"}],"how_to_apply":"Walk in.","service_areas":"Pacifica","wait":"No
+        wait.","updated_at":"2013-09-05T11:15:43-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00005e","other_locations":[]},{"id":"521d32ba1974fcdb2b000065","accessibility":["wheelchair"],"ask_for":["Peg
+        Morris (Executive Director) "],"coordinates":[-122.3012308,37.5578428],"description":"A
+        community-based psychosocial rehabilitation service for persons with serious
+        and persistent psychiatric disabilities and co-occurring disorders. Offers
+        case management, supported housing, residential treatment, supported education,
+        vocational assessment and job placement, and a community medication clinic.   Formerly
+        known as Caminar CLC (Community Living Centers).","faxes":["650 578-8697"],"hours":"24
+        hour facility","languages":["Spanish"],"name":"Caminar","phones":[{"number":"650
+        578-8691","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A community-based
+        psychosocial rehabiliation service for persons with serious and persistent
+        psychiatric disabilities.","transportation":"Varies according to program site.","urls":["http://www.caminar.org"],"address":{"street":"1720
+        South Amphlett Blvd., Suite 123","city":"San Mateo","state":"CA","zip":"94402"},"mail_address":{"attention":"Caminar","street":"1720
+        South Amphlett Blvd., Suite 123","city":"San Mateo","state":"CA","zip":"94402"},"contacts":[{"name":"Peg
+        Morris","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:51-07:00","organization":{"id":"521d32ba1974fcdb2b000064","name":"Caminar","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064/locations"},"services":[{"id":"521d32ba1974fcdb2b000069","audience":"Persons
+        with serious and persistent mental illness and co-occurring disorders","eligibility":"Resident
+        of San Mateo County, age 18 or over, receiving County of San Mateo mental
+        health services","fees":"Vary according to income. No one denied service due
+        to inability to pay if authorized by County. Cash and private insurance accepted.","funding_sources":["County","Donations","Fees","Grants","State","United
+        Way"],"keywords":["MENTAL HEALTH SERVICES","Case Management","Out-of-Home
+        Care","Job Search/Placement","Outpatient Mental Health Facilities","Residential
+        Treatment Facilities","Psychiatric Case Management"],"categories":[],"how_to_apply":"Referral
+        is required by San Mateo County Behavioral Health and Recovery Services Division
+        .","service_areas":"San Mateo County","wait":"Varies.","updated_at":"2013-08-27T16:14:02-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000065","other_locations":[]},{"id":"521d32ba1974fcdb2b00006b","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Access
+        Department (650-688-3625)"],"coordinates":[-122.1784593,37.43911740000001],"description":"A
+        multidisciplinary diagnostic and treatment outpatient clinic for children
+        of all ages with emotional problems, learning disabilities or deficits in
+        language, motor coordination or neurologic development. Programs include diagnostic
+        assessment, learning and behavioral evaluations, individual and group therapy,
+        speech and occupational therapy and social skills workshops. Clients are referred
+        by physicians, schools and agencies. Concerned parents may apply directly.
+        Group programs are available for parents and preschoolers and for kindergarten
+        readiness.   A non-public therapeutic day school on-site provides a full-day
+        program combining education with therapy for children age 6-16 with learning,
+        behavioral and emotional challenges.  Offers a number of Parent Education
+        classes, including Building Emotional Understanding, What is Autism, and Anger
+        Management with the Explosive Child, many of which are free to the public.
+        For a full list of classes, dates, times and instructors, check the Web site
+        or call the office.  .","faxes":["650 688-0206"],"hours":"Monday-Thursday,
+        8 am-9 pm; Friday, 8-6","languages":["Chinese (Mandarin)","Chinese (Taiwanese)","French","Hebrew","Japanese","Sign
+        Languages","Spanish"],"name":"Children''s Health Council","phones":[{"number":"650
+        326-5530","department":"General information"}],"short_desc":"A multidisciplinary
+        diagnostic and treatment center for children with emotional problems, learning
+        disabilities or other neurologic problems.","transportation":"SAMTRANS stops
+        within 3 blocks, connects with VTA. CALTRAIN - Palo Alto Station with 1/2
+        mile.","urls":["http://www.chconline.org"],"address":{"street":"650 Clark
+        Way","city":"Palo Alto","state":"CA","zip":"94304"},"mail_address":{"attention":"Children''s
+        Health Council","street":"650 Clark Way","city":"Palo Alto","state":"CA","zip":"94304"},"contacts":[{"name":"Joan
+        Baran, Dr.","title":"Clinical Services Director"}],"updated_at":"2013-08-27T16:22:51-07:00","organization":{"id":"521d32ba1974fcdb2b00006a","name":"Children''s
+        Health Council","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00006a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00006a/locations"},"services":[{"id":"521d32ba1974fcdb2b00006f","audience":"Infants,
+        preschoolers, children and adolescents with emotional, behavioral, attentional,
+        learning and/or developmental issues","eligibility":"Age 18 or under for diagnostic
+        and treatment services","fees":"Vary according to income. Financial aid available.
+        Cash, checks, credit cards, Medi-Cal, private insurance and military insurance
+        accepted.","funding_sources":["County","Donations","Fees","Fundraising","Grants","School
+        district","State"],"keywords":["DEVELOPMENTAL DISABILITIES SERVICES","Individual/Group
+        Counseling","Rehabilitation/Occupational","Screening/Diagnosis","Special Education","Speech
+        Therapy","EDUCATION SERVICES","Learning Disabilities","HANDICAP SERVICES","INDIVIDUAL
+        AND FAMILY DEVELOPMENT SERVICES","Parent Groups","MENTAL HEALTH SERVICES","Day
+        Treatment","Observation/Diagnosis","Developmental Assessment","Pediatrics","Parenting
+        Education","Family Counseling","Group Counseling","Individual Counseling","Youth","Adolescents","Children","Developmental
+        Disabilities","Children and Youth with Emotional Disturbance"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
+        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
+        Education","parent_id":"52280f681edd37edff00005c","parent_name":"Health Education"}],"how_to_apply":"Apply
+        by phone. Registration required.","service_areas":["Alameda County","Contra
+        Costa County","Marin County","Monterey County","San Francisco County","San
+        Mateo County","Santa Clara County","Santa Cruz County"],"wait":"Varies, according
+        to service.","updated_at":"2013-09-05T11:16:32-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00006b","other_locations":[]},{"id":"521d32ba1974fcdb2b000071","accessibility":["wheelchair"],"ask_for":["Yuri
+        Payton (Licensed Clinical Social Worker)"],"coordinates":[-122.174863,37.451574],"description":"Can
+        refer individuals to licensed professional marriage, family and child counselors
+        and therapists who speak Japanese, Chinese, Korean and Vietnamese. Therapy
+        for Asians meets in San Jose and in Menlo Park.  .","hours":"Monday-Friday,
+        9-5","languages":["Japanese"],"name":"Asian Counseling Center/Telephone Referral
+        Services","phones":[{"number":"650 328-1200","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Can
+        refer individuals to marriage, family and child counseling as well as therapists
+        who speak Japanese, Chinese, Korean and Vietnamese.","transportation":"SAMTRANS
+        stops within 1 block.","address":{"street":"445 Burgess Drive, Suite 150","city":"Menlo
+        Park","state":"CA","zip":"94025"},"mail_address":{"attention":"Asian Counseling
+        Center/Telephone Referral Services","street":"445 Burgess Drive, Suite 150","city":"Menlo
+        Park","state":"CA","zip":"94025"},"contacts":[{"name":"Yuri Payton","title":"Volunteer
+        Professional"}],"updated_at":"2013-08-27T16:22:51-07:00","organization":{"id":"521d32ba1974fcdb2b000070","name":"Asian
+        Counseling Center/Telephone Referral Services","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000070","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000070/locations"},"services":[{"id":"521d32ba1974fcdb2b000075","audience":"Asian
+        people","eligibility":"None","fees":"Vary according to income. Private insurance
+        accepted. Cash and private insurance accepted.","keywords":["Family Counseling","Child
+        Guidance","Marriage Counseling","Psychologist referrals","Asian Community","Cultural/Racial
+        Issues","Mulitple Languages","Japanese, Chinese, Korean and Vietnamese"],"categories":[],"how_to_apply":"Apply
+        by phone. Appointment necessary.","service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County"],"wait":"No wait to one week.","updated_at":"2013-09-05T11:17:42-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000071","other_locations":[]},{"id":"521d32ba1974fcdb2b000077","accessibility":["elevator","disabled_parking","wheelchair"],"ask_for":["Receptionist"],"coordinates":[-122.3263232,37.5639394],"description":"Offers
+        programs in self-sufficiency to children, families and older adults in the
+        community. Services include child development and education programs in multiple
+        locations, as well as subsidized child care in numerous day care homes as
+        part of the Neighborhood Child Care Program. Visitation Services help families
+        in crisis receive the counseling and guidance they need to create healthier
+        relationships between parents and children. Supervised visits, child exchanges
+        and parent education workshops are part of the Visitation Services. Financial
+        Empowerment programs offer services to adults who wish to improve their financial
+        situation and create stability for themselves and their families. Services
+        include low-interest car loans for parents of dependent children and an emergency
+        savings program with financial education classes. Older adults also receive
+        help with job searches as part of the Second Careers Program. Older Adult
+        Services provide participants with case management, physical and social activities,
+        referrals and emotional support to continue to be active. The Fair Oaks Adult
+        Activity Center in Redwood City provides hot lunches and English as a Second
+        Language classes, as well as yoga and other activities.","emails":["info@peninsulafamilyservice.org"],"faxes":["650
+        403-4303"],"hours":"Monday-Thursday, 8:30-5:30; Friday, 8:30-5","languages":["Chinese","Filipino
+        (Tagalog)","Spanish"],"name":"Peninsula Family Service","phones":[{"number":"650
+        403-4300","hours":"(Monday-Thursday, 8:30-5:30; Friday, 8:30-5)"}],"short_desc":"Provides
+        a variety of services to individuals and families including counseling and
+        child care.","transportation":"SAMTRANS stops within 1 block, CALTRAIN stops
+        within 6 blocks.","urls":["http://www.peninsulafamilyservice.org"],"address":{"street":"24
+        Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"mail_address":{"attention":"Peninsula
+        Family Service","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"contacts":[{"name":"Laurie
+        Wishard","title":"President"}],"updated_at":"2013-08-27T16:22:51-07:00","organization":{"id":"521d32ba1974fcdb2b000076","name":"Peninsula
+        Family Service","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000076","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000076/locations"},"services":[{"id":"521d32ba1974fcdb2b00007b","audience":"Children,
+        low- and moderate-income persons, seniors, families, individuals, divorcing
+        or separating parents, Spanish-speaking families","eligibility":"None for
+        counseling. Child care age 3 months-4 years. For some child care, parents
+        must meet State Department of Education requirements. Referral from Children
+        and Family Services or Family Court for some services. Requirements vary for
+        senior programs","fees":"Vary according to income for counseling and visitation
+        program. Fees for child care vary according to service and income. Insurance
+        accepted where applicable. No fees for most senior services. Cash, checks,
+        credit cards, Medi-Cal and private insurance accepted.","funding_sources":["City","County","Donations","Federal","Fees","Grants","State","United
+        Way"],"keywords":["ADULT PROTECTION AND CARE SERVICES","Individual/Group Counseling","CHILD
+        PROTECTION AND CARE SERVICES","Day Care","FINANCIAL ASSISTANCE SERVICES","General
+        Support","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Parent Groups","MENTAL
+        HEALTH SERVICES","Family Support","Older Adults","Youth","Women"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
+        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
+        Education","parent_id":"52280f681edd37edff00005c","parent_name":"Health Education"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
+        Mental Health","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"},{"id":"52280f6b1edd37edff000087","oe_id":"107","name":"Money"},{"id":"52280f701edd37edff0000bb","oe_id":"107-05","name":"Financial
+        Education","parent_id":"52280f6b1edd37edff000087","parent_name":"Money"}],"how_to_apply":"Apply
+        by phone. Referral from Child and Family Services or Family Court required
+        for application for some services.","service_areas":"San Mateo County","wait":"Seniors:
+        no wait. Counseling and visitation: varies according to program and time of
+        year. Child care: varies according to priority, location and age.","updated_at":"2013-09-05T11:19:15-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000077","other_locations":[]},{"id":"521d32ba1974fcdb2b00007d","accessibility":["wheelchair"],"ask_for":["Dolores
+        Santa Cruz (Customer Relations Specialist)"],"coordinates":[-122.4009318,37.786981],"description":"Matches
+        youth age 6-18 with carefully screened and trained adult mentors, and provides
+        ongoing supervision to ensure youth, families, and volunteers enjoy their
+        mentoring experiences. Mentor may meet with youth in the community Volunteers
+        are asked to commit to the program for at least a year. In March 2006 BBBS
+        of the East Bay, of San Francisco and the Peninsula, and of Santa Clara County
+        merged to form Big Brothers Big Sisters of the Bay Area.","emails":["info@bbbsba.org"],"faxes":["408
+        586-0155"],"hours":"Monday-Friday, 9-5","languages":["Spanish"],"name":"Big
+        Brothers-Big Sisters of the Bay Area","phones":[{"number":"415 503-4050","department":"Administrative
+        Office","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Links volunteer adult
+        mentors with boys and girls age 6-18, primarily from single parent families.","urls":["http://www.bbbsba.org"],"address":{"street":"649
+        Mission Street, 5th Floor","city":"San Francisco","state":"CA","zip":"94105"},"mail_address":{"attention":"Big
+        Brothers-Big Sisters","street":"649 Mission Street, 5th Floor","city":"San
+        Francisco","state":"CA","zip":"94105"},"contacts":[{"name":"Marcia Hodges","title":"CEO"}],"updated_at":"2013-08-27T16:22:52-07:00","organization":{"id":"521d32ba1974fcdb2b00007c","name":"Big
+        Brothers-Big Sisters of the Bay Area","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00007c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00007c/locations"},"services":[{"id":"521d32ba1974fcdb2b000081","audience":"Children
+        ages 6-18","eligibility":"Child age 6-16, with parent/guardian consent. (Once
+        enrolled a child may remain until turning 18 or graduating from high school)
+        Volunteer must pass background check","fees":"$35 application fee for volunteer
+        applicants only.","funding_sources":["Donations","Fundraising","Grants","United
+        Way"],"keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Companion","Adult/Child
+        Mentoring Programs","Mentoring Services Volunteer Opportunities"],"categories":[{"id":"52280f711edd37edff0000c4","oe_id":"108","name":"Care"},{"id":"52280f741edd37edff0000e7","oe_id":"108-07","name":"Support
+        Network","parent_id":"52280f711edd37edff0000c4","parent_name":"Care"},{"id":"52280f741edd37edff0000ec","oe_id":"108-07-05","name":"Mentoring","parent_id":"52280f741edd37edff0000e7","parent_name":"Support
+        Network"}],"how_to_apply":"Apply online or call for information packet.","service_areas":["Alameda
+        County","Contra Costa County","San Francisco County","San Mateo County","Santa
+        Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:20:21-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00007d","other_locations":[]},{"id":"521d32ba1974fcdb2b000083","accessibility":["wheelchair"],"ask_for":["Laura
+        Fanucchi (Homesharing Program)","Carolyn Moore (Self-Sufficiency Program))"],"coordinates":[-122.3211965,37.5654824],"description":"Homesharing
+        program that matches persons with a home or apartment to share with those
+        seeking housing, thereby reducing housing costs for both. The Self-Sufficiency
+        Program provides housing, case management and supportive services to heads
+        of households motivated to achieve self-reliance.  The agency also owns and
+        manages properties intended to provide affordable housing for individuals
+        and families.","emails":["mailbox@hiphousing.org"],"faxes":["650 348-0284"],"hours":"Monday-Friday,
+        8-5","languages":["Chinese (Cantonese)","German","Spanish","Tagalog"],"name":"Human
+        Investment Project (HIP Housing)","phones":[{"number":"650 348-6660","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Sponsors a number of programs designed to help senior
+        citizens, single parents or persons with low or modest incomes to obtain housing
+        or remain in their own homes.","transportation":"SAMTRANS stops within 2 blocks,
+        CALTRAIN stops within 1 block.","urls":["http://www.hiphousing.org"],"address":{"street":"364
+        South Railroad Avenue","city":"San Mateo","state":"CA","zip":"94401"},"mail_address":{"attention":"HIP
+        Housing","street":"364 South Railroad Avenue","city":"San Mateo","state":"CA","zip":"94401"},"contacts":[{"name":"Kate
+        Comfort Harr","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:52-07:00","organization":{"id":"521d32ba1974fcdb2b000082","name":"Human
+        Investment Project (HIP Housing)","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000082","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000082/locations"},"services":[{"id":"521d32bb1974fcdb2b000087","audience":"Anyone
+        in need of housing or a housemate, single parents and low-income families
+        motivated to transition from welfare to work","eligibility":"Resident of San
+        Mateo County or desiring to become a resident","fees":"None.","funding_sources":["Donations","Federal","Grants","State"],"keywords":["ADMINISTRATION
+        AND PLANNING SERVICES","Administration and Planning","FINANCIAL ASSISTANCE
+        SERVICES","Housing","HOUSING SERVICES","Family Housing/Shared Housing","Relocation","Roommate/Housemate
+        Matching Assistance","Low Income/Subsidized Rental Housing","House Matching"],"categories":[],"how_to_apply":"Apply
+        by phone for appointment.","service_areas":"San Mateo County","wait":"No wait.","updated_at":"2013-09-05T11:21:45-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000083","other_locations":[]},{"id":"521d32bb1974fcdb2b000089","accessibility":["ramp"],"ask_for":["Diane
+        Smith (Associate Director)"],"coordinates":[-122.2521744,37.4640925],"description":"Offers
+        licensed residential homes which provide living skills training for clients
+        to live as independently as possible. Currently there are 57 residents living
+        in Adult Beginnings, La Vista, Triplex, Pete''s Place and Independent Living
+        units with a ratio of five residents to one counselor. The Vocational Services
+        Program includes workshops, horticulture/landscape programs and supported
+        employment. All work training is individualized to help the person progress
+        toward work in the community. A support group of concerned relatives and friends
+        meets approximately five times throughout the year to discuss programs and
+        helping methods.","languages":["Filipino (Tagalog)","Spanish"],"name":"Kainos
+        Home and Training Center for the Developmentally Disabled","phones":[{"number":"650
+        363-2423","hours":"(Monday-Friday, 8:30-4:30)"}],"short_desc":"Maintains licensed
+        residential homes and a work training program for developmentally disabled
+        adults.","transportation":"SAMTRANS stops within 2 blocks of the Vocational
+        Services Building and within 3 blocks of the home.","urls":["http://www.kainosusa.org"],"address":{"street":"3631
+        Jefferson Avenue","city":"Redwood City","state":"CA","zip":"94062-3137"},"mail_address":{"attention":"Kainos
+        Home & Training Center","street":"3631 Jefferson Avenue","city":"Redwood City","state":"CA","zip":"94062-3137"},"contacts":[{"name":"Andrew
+        Frisch","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:52-07:00","organization":{"id":"521d32bb1974fcdb2b000088","name":"Kainos
+        Home and Training Center for the Developmentally Disabled","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000088","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000088/locations"},"services":[{"id":"521d32bb1974fcdb2b00008d","audience":"Ambulatory
+        developmentally disabled adults","eligibility":"Primary disability must be
+        mental retardation. Other requirements vary by program: for residential and
+        work activity program persons must be age 18 or over","fees":"None.","funding_sources":["Donations","Fees","State"],"keywords":["DEVELOPMENTAL
+        DISABILITIES SERVICES","Out-Of-Home Care","Rehabilitation/Occupational","Sheltered
+        Employment","Adult Residential Care Homes","Support Groups","Developmental
+        Disabilities"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
+        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
+        Mental Health","parent_id":"52280f681edd37edff00005c","parent_name":"Health
+        Education"}],"how_to_apply":"Apply by phone.","service_areas":["San Mateo
+        County","Santa Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:23:15-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000089","other_locations":[]},{"id":"521d32bb1974fcdb2b00008f","accessibility":[],"coordinates":[-122.1843223,37.4517074],"description":"Conducts
+        voter registration programs, studies and takes positions on political issues.
+        Publishes election information materials, sponsors candidate forums and has
+        study groups on national, state, county and local issues. Strives for the
+        informed participation of all citizens in government. Membership is open to
+        any voting age citizen, male or female. Students and non-citizens may join
+        but cannot vote on league matters. Services and speakers are available to
+        anyone.","emails":["info@lwvssmc.org"],"name":"League of Women Voters of South
+        San Mateo County","phones":[{"number":"650 325-5780","department":"Information
+        / Membership"}],"urls":["http://www.lwvssmc.org"],"address":{"street":"713
+        Santa Cruz Avenue, Suite 9","city":"Menlo Park","state":"CA","zip":"94025-3445"},"mail_address":{"attention":"South
+        San Mateo County","street":"713 Santa Cruz Avenue, Suite 9","city":"Menlo
+        Park","state":"CA","zip":"94025-3445"},"contacts":[{"name":"Lisa Conrad","title":"President"},{"name":"Janet
+        Wells","title":"Membership"}],"updated_at":"2013-08-27T16:22:52-07:00","organization":{"id":"521d32bb1974fcdb2b00008e","name":"League
+        of Women Voters of South San Mateo County","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00008e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00008e/locations"},"services":[{"id":"521d32bb1974fcdb2b000094","eligibility":"Age
+        18 or over to become a member","fees":"Dues are $75 per year; scholarships
+        are available.","funding_sources":["Donations","Grants","Membership dues"],"keywords":["Speakers/Speakers
+        Bureaus","Women"],"categories":[],"how_to_apply":"Call or email for information.","service_areas":["Atherton","East
+        Palo Alto","Menlo Park","Portola Valley","Redwood City","Woodside"],"updated_at":"2013-08-27T16:14:03-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b00008f","other_locations":[]},{"id":"521d32bb1974fcdb2b000096","accessibility":["wheelchair"],"ask_for":["Melissa
+        Platte"],"coordinates":[-122.208183,37.4822243],"description":"Provides direct
+        services for adults with mental illnesses and/or people with HIV/AIDS including
+        housing, food, social programs and advocacy. Advocates for the improvement
+        of mental health services and the development of new programs to meet identified
+        needs.         Spring Street Shelter is a 15-bed facility for emergency and
+        short-term housing for mentally disabled clients who require immediate shelter
+        but do not require care and supervision. Acceptance is on a night-by-night
+        basis and maximum stay is 45 days. Staff will collaborate with other private
+        and public services to assist clients to find permanent housing and other
+        needed services. Referrals are accepted from county mental health agencies,
+        the Probation Department and core service centers. A Transitional Housing
+        Program serves seven clients in single rooms and 60 additional clients are
+        served in single rooms of permanent housing. Friendship Centers throughout
+        San Mateo County offer social and recreational activities for adults with
+        mental illness. Activities include living skills classes, day trips, games
+        and luncheons. Attendance is on a drop-in basis. Monthly Friendship Center
+        calendars are available by calling 650-368-3345, ext. 102 or visiting the
+        agency Web site at www.mhasmc.org The Housing and Client Assistance Program
+        provides short-term assistance to low-income persons with HIV/AIDS in obtaining
+        and maintaining permanent housing. Financial assistance is provided in the
+        form of partial rent payments to landlords and mortgage lenders. Depending
+        on financial need, the program may also help pay utility bills, WELL Program
+        enrollment fees, temporary co-payments for prescribed medication and temporary
+        shelter in a motel. Case managers can refer participants for other services
+        including medical care, social work services, drug and alcohol treatment,
+        food and transportation. Support and Advocacy for Young Adults in Transition
+        (SAYAT) provides case management to assist young adults with disabilities
+        who do not qualify for county mental health services or other case management
+        services. Belmont Apartments offer affordable and supportive housing for 24
+        homeless adults with mental illness (many of whom are dually or triply diagnosed).
+        CHRIS (Community Housing Rehabilitation Independent Skills) Program strengthens
+        the living skills of persons with mental illness. Occupational therapists
+        and interns provide assessments, training, and specific interventions, and
+        physical adaptations to allow these adults to participate in the community
+        at the highest level of independence possible.","emails":["info@mhasmc.org"],"faxes":["650
+        368-2534","650 368-9017"],"languages":["Filipino (Tagalog)","French","Japanese","Spanish","Vietnamese"],"name":"Mental
+        Health Association of San Mateo County","phones":[{"number":"650 368-3345","hours":"(Monday-Friday,
+        8:30-5)"}],"short_desc":"Provides direct services for adults with mental illnesses
+        that include housing, food, social programs, advocacy and networking.","transportation":"SAMTRANS
+        stops within 4 blocks of shelter, within 3 blocks of all Friendship Centers.","urls":["http://www.mhasmc.org"],"address":{"street":"2686
+        Spring Street","city":"Redwood City","state":"CA","zip":"94063-3522"},"mail_address":{"attention":"Mental
+        Health Assn","street":"2686 Spring Street","city":"Redwood City","state":"CA","zip":"94063-3522"},"contacts":[{"name":"Melissa
+        Platte","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:53-07:00","organization":{"id":"521d32bb1974fcdb2b000095","name":"Mental
+        Health Association of San Mateo County","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000095","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000095/locations"},"services":[{"id":"521d32bb1974fcdb2b00009a","audience":"Adults
+        with mental illnesses, people with HIV/AIDS, young adults with emotional/developmental
+        and mental disabilities who are homeless or at risk of being homeless","eligibility":"Vary
+        according to program","fees":"None for Friendship Center, Housing and Client
+        Assistance Program; fees for other programs vary according to service.","funding_sources":["County","Donations","Federal","Fundraising","Grants"],"keywords":["COMMUNITY
+        SERVICES","Human Rights/Ombudsman/Advocacy","Speakers","HOUSING SERVICES","Senior
+        and Disabled Housing","Temporary","MENTAL HEALTH SERVICES","Community Information","Recreation/Social
+        Activity","Resocialization/Social Adjustment","Transitional Housing/Shelter","Advocacy","Psychiatric
+        Case Management","Psychiatric Resocialization","Homeless","Housing Assistance"],"categories":[],"how_to_apply":"Apply
+        by phone for Friendship Center and Housing and Client Assistance Program.
+        A telephone referral from a recognized agency must be made for the emergency
+        shelter. Referral forms may be requested for the SAYAT Program.","service_areas":"San
+        Mateo County","wait":"Varies according to program.","updated_at":"2013-09-05T11:25:35-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000096","other_locations":[]},{"id":"521d32bb1974fcdb2b00009c","accessibility":[],"coordinates":[-122.3497812,37.5907395],"description":"Serves
+        as an advocate to persons with developmental disabilities regardless of family
+        income. An in-house advocate provides information and referral to educational,
+        recreational, child care, medical and legal services, and facilitates interaction
+        with agencies and professionals. Offers workshops for parents and families,
+        and family activities. Several residential facilities are available for group
+        and independent living: Cedar Street Home (San Carlos) provides group living
+        for 8 adults; Alameda House (Redwood City) provides accomodation for 5 developmentally
+        disabled adults that offers structure and support from counselors; Horizons
+        Apartments (Belmont) offers 24 units for independent living; and, Page Mill
+        Apartments offers 24 units for independent living. Also, independent living
+        skills counseling and support are available. Project REACH offers after school
+        day care and recreation for children age 5-12 in San Bruno. The program is
+        designed to include children with and without disabilities, offering experiences
+        to learn, play and have fun. Respite care is provided through Raji House.
+        Located in Burlingame, respite services are designed as an out-of-home weekend
+        (day: 12 children and overnight: 6 children) for parents and children with
+        severe developmental disabilities. Developmental disabilities include mental
+        retardation, autism, cerebral palsy, epilepsy and similar neurological disorders.","emails":["parca@parca.org"],"faxes":["650
+        312-0737"],"hours":"Varies","name":"Parca","phones":[{"number":"650 312-0730","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"Serves as an advocate to persons with developmental
+        disabilities and provides various recreational, social and support activities,
+        residential facilities.","urls":["http://www.parca.org"],"address":{"street":"800
+        Airport Blvd., Suite 320","city":"Burlingame","state":"CA","zip":"94010"},"mail_address":{"attention":"Parca","street":"800
+        Airport Blvd., Suite 320","city":"Burlingame","state":"CA","zip":"94010"},"contacts":[{"name":"Diana
+        Conti","title":"Executive Director"}],"updated_at":"2013-08-27T16:22:53-07:00","organization":{"id":"521d32bb1974fcdb2b00009b","name":"Parca","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00009b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00009b/locations"},"services":[{"id":"521d32bb1974fcdb2b0000a0","audience":"Children
+        and adults with developmental disabilities and their families","eligibility":"Varies
+        according to program","fees":"Vary according to income and program. Parent
+        support services are usually free.","funding_sources":["Donations","Federal","Fundraising","Grants","State"],"keywords":["DEVELOPMENTAL
+        DISABILITIES SERVICES","Community Information","Out-Of-Home Care","Recreation/Social
+        Activities","Respite Care","HANDICAP SERVICES","RECREATION/LEISURE SERVICES","Camping","Group
+        Residences for Adults with Disabilities","Independent Living Skills Instruction","Extended
+        Day Care","Youth","Children","Developmental Disabilities","Disabilities Issues"],"categories":[],"how_to_apply":"Call
+        to inquire about specific program requirements.","service_areas":"San Mateo
+        County","wait":"Varies.","updated_at":"2013-08-27T16:14:03-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b00009c","other_locations":[]},{"id":"521d32bb1974fcdb2b0000a2","accessibility":["wheelchair"],"ask_for":["Librarian"],"coordinates":[-122.1032611,37.4308804],"description":"Provides
+        information to individuals and businesses about environmental issues and resources
+        for solving environmental problems.  The lending library contains environmental
+        education materials, local and state agency reports, environmental impact
+        reports, government documents, journals, environment and energy indexes, and
+        an extensive clipping file. Special collections include hiking, biking and
+        backpacking information and trail maps. Has a Friends of the Library group.
+        Volunteer assistance is welcome. Formerly called Acterra and Environmental
+        Library.","emails":["library@acterra.org"],"faxes":["650 962-8234"],"hours":"Monday-Friday,
+        9-5; Resource Coordinator''s hours: approximately Monday-Friday, 1-6","name":"Acterra
+        Environmental Library and Resource Center","phones":[{"number":"650 962-9876","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"Provides information to individuals and businesses about
+        environmental issues and resources for solving environmental problems.","transportation":"VTA
+        stops within 1/4 mile.","urls":["http://www.acterra.org/library"],"address":{"street":"3921
+        East Bayshore Road","city":"Palo Alto","state":"CA","zip":"94303-4303"},"mail_address":{"attention":"Acterra
+        Environmental Library","street":"3921 East Bayshore Road","city":"Palo Alto","state":"CA","zip":"94303-4303"},"contacts":[{"title":"Coordinator"}],"updated_at":"2013-08-27T16:22:53-07:00","organization":{"id":"521d32bb1974fcdb2b0000a1","name":"Acterra
+        Environmental Library and Resource Center","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000a1","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000a1/locations"},"services":[{"id":"521d32bb1974fcdb2b0000a6","eligibility":"None","fees":"Membership
+        starts at $40. There is an annual $5 fee for library check-out privileges
+        (fee is included with membership). Cash and checks accepted.","funding_sources":["Grants","Membership
+        dues"],"keywords":["Libraries","Special Libraries"],"categories":[],"how_to_apply":"Call,
+        email or stop by the library.","service_areas":["San Mateo County","Santa
+        Clara County"],"wait":"Up to 3 working days.","updated_at":"2013-08-27T16:14:03-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b0000a2","other_locations":[]},{"id":"521d32bb1974fcdb2b0000a8","accessibility":["wheelchair"],"ask_for":["Pamela
+        Musladin"],"coordinates":[-122.2495995,37.4672442],"description":"A California
+        Department of Education certified nonpublic school dedicated to meet the educational
+        and developmental needs of deaf and hearing-impaired children and their families
+        through a program that develops spoken communication skills. The goal of the
+        school is to prepare each child to return to his or her home school with academic
+        and communication skills that will allow them to function at grade level with
+        their peers as early as possible. The school''s curriculum emphasizes the
+        development of speech, language and audition through a cognitive approach
+        to learning with a focus on literacy at all levels. Services include the Parent
+        Infant Program, the Toddler Program, Preschool Program, Pre-Kindergarden,
+        Mainstream Support Services, Diagnostic Services, Parent Education Program
+        and Counseling, Bilingual Services, occupational therapy and educational audiological
+        services.","emails":["jwposd@jwposd.org"],"faxes":["650 365-7557"],"languages":["Spanish"],"name":"Jean
+        Weingarten Peninsula Oral School for the Deaf","phones":[{"number":"650 365-7500","hours":"(Monday-Friday,
+        8-4)"}],"short_desc":"Meets the educational and developmental needs of deaf
+        and hearing-impaired children through a program that develops spoken communication
+        skills.","transportation":"Provided by parent or school district.","urls":["http://www.deafkidstalk.org"],"address":{"street":"3518
+        Jefferson Avenue","city":"Redwood City","state":"CA","zip":"94062-3136"},"mail_address":{"attention":"School
+        for the Deaf","street":"3518 Jefferson Avenue","city":"Redwood City","state":"CA","zip":"94062-3136"},"contacts":[{"name":"Pamela
+        Hefner Musladin","title":"Principal"},{"name":"Kathleen Daniel Sussman","title":"Executive
+        Director"}],"updated_at":"2013-08-27T16:22:54-07:00","organization":{"id":"521d32bb1974fcdb2b0000a7","name":"Jean
+        Weingarten Peninsula Oral School for the Deaf","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000a7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000a7/locations"},"services":[{"id":"521d32bb1974fcdb2b0000ad","audience":"Children
+        from birth to age 7","eligibility":"Child with severe to profound deafness
+        or hard-of-hearing","fees":"Vary according to service. Cash, checks and private
+        insurance accepted.","funding_sources":["Donations","Fees","School district"],"keywords":["Nonpublic
+        Special Schools","Youth","Children","Infants/Toddlers","Hearing Impairments","Disabilities
+        Issues"],"categories":[],"how_to_apply":"Appointment necessary for application.","service_areas":["Alameda
+        County","Contra Costa County","Marin County","Sacramento County","San Francisco
+        County","San Mateo County","Santa Clara County"],"wait":"No wait.","updated_at":"2013-08-27T16:14:03-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b0000a8","other_locations":[]},{"id":"521d32bb1974fcdb2b0000af","accessibility":[],"ask_for":[],"description":"A
+        12-step program for men and women who desire to stop drug use (including alcohol).
+        This is an international fellowship. It is not a crisis center. Please phone
+        for current meeting information. Most meetings are open to the public and
+        some are conducted in Spanish.","languages":["Spanish"],"name":"Narcotics
+        Anonymous (NA)","phones":[{"number":"650 802-5950","department":"Peninsula"}],"short_desc":"Self-help
+        organization for men and women who desire to stop drug/alcohol use.","transportation":"Varies
+        according to meeting site.","urls":["http://www.peninsulana.org"],"mail_address":{"attention":"Narcotics
+        Anonymous (NA)","street":"P.O. Box 5333","city":"San Mateo","state":"CA","zip":"94402"},"contacts":[],"updated_at":"2013-08-27T16:14:03-07:00","organization":{"id":"521d32bb1974fcdb2b0000ae","name":"Narcotics
+        Anonymous (NA)","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000ae","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000ae/locations"},"services":[{"id":"521d32bc1974fcdb2b0000b1","audience":"Persons
+        with a desire to stop using drugs and alcohol","eligibility":"Desire to stop
+        using drugs and alcohol","fees":"None.","funding_sources":["Donations"],"keywords":["ALCOHOLISM
+        SERVICES","Self-Help","Drugs"],"categories":[],"how_to_apply":"Apply by phone.","service_areas":["Santa
+        Clara County","San Mateo County"],"wait":"No wait.","updated_at":"2013-09-05T11:27:16-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b0000af","other_locations":[]},{"id":"521d32bc1974fcdb2b0000b3","accessibility":["ramp"],"ask_for":["Receptionist"],"coordinates":[-122.2371832,37.4708135],"description":"Provides
+        all forms of recreational services for the citizens of Redwood City and provides
+        maintenance of city parks and recreational facilities. The programmed activities
+        include municipal sports and recreational swimming, community leisure services
+        including day camps, after-school programs at schools and special interest
+        classes including teen activities, arts and crafts, dance and many others.   The
+        Little Learners Preschool Program provides supervised recreation activities
+        for children age 3-5. Activities include arts and crafts, outdoor play and
+        games. Programs run approximately ten weeks and the children participate two
+        hours a day, twice or three times a week. Programs are available for disabled
+        persons and senior citizens. Five recreational buildings are available for
+        rental for weddings, parties and organizational meetings.","emails":["cbeth@redwoodcity.org"],"faxes":["650
+        368-5087"],"hours":"Office: Monday-Friday, 8-5; activities: Monday-Thursday,
+        8 am-9 pm","languages":["Spanish"],"name":"Redwood City Parks, Recreation
+        and Community Services Department","phones":[{"number":"650 780-7250","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Provides recreational services and maintenance of city
+        parks and recreational facilities.","transportation":"SAMTRANS stops within
+        3 blocks.","urls":["http://www.redwoodcity.org"],"address":{"street":"1400
+        Roosevelt Avenue","city":"Redwood City","state":"CA","zip":"94061-1499"},"mail_address":{"attention":"Redwood
+        City Parks, Recreation","street":"1400 Roosevelt Avenue","city":"Redwood City","state":"CA","zip":"94061-1499"},"contacts":[{"name":"Chris
+        Beth","title":"Director"}],"updated_at":"2013-08-27T16:22:54-07:00","organization":{"id":"521d32bc1974fcdb2b0000b2","name":"Redwood
+        City Parks, Recreation and Community Services Department","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bc1974fcdb2b0000b2","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bc1974fcdb2b0000b2/locations"},"services":[{"id":"521d32bc1974fcdb2b0000b7","eligibility":"None","fees":"Vary.
+        Surcharge for non-residents on building rents. Cash, checks and credit cards
+        accepted.","funding_sources":["City","Fees"],"keywords":["HANDICAP SERVICES","Recreation/Social
+        Activities","RECREATION/LEISURE SERVICES","Arts and Crafts","Parks/Playground","Sports/Games/Exercise","Preschools","Community
+        Facilities/Centers","Meeting Space","Older Adults","Youth","Adolescents","Children","Disabilities
+        Issues"],"categories":[],"how_to_apply":"Walk in or apply by phone or mail.","service_areas":"Redwood
+        City","wait":"Varies according to enrollment.","updated_at":"2013-08-27T16:14:04-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bc1974fcdb2b0000b3","other_locations":[]}]'
     http_version: 
-  recorded_at: Thu, 05 Sep 2013 19:56:03 GMT
+  recorded_at: Fri, 06 Sep 2013 04:26:10 GMT
 recorded_with: VCR 2.5.0

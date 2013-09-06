@@ -7,7 +7,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
 require 'capybara/poltergeist'
-require 'hashie'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -44,35 +43,6 @@ RSpec.configure do |config|
   config.include(EmailSpec::Matchers)
   config.treat_symbols_as_metadata_keys_with_true_values = true
 
-  require 'vcr'
-  VCR.configure do |c|
-    c.configure_rspec_metadata!
-    c.ignore_hosts '127.0.0.1', 'localhost'
-    c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once }
-    c.cassette_library_dir  = "spec/cassettes"
-    c.hook_into :webmock
-    c.filter_sensitive_data("<API_TOKEN>") do
-      ENV['OHANA_API_TOKEN']
-  end
-end
-
-
-  # ## Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  # config.use_transactional_fixtures = true
-
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
@@ -83,6 +53,41 @@ end
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
 end
 
+require 'vcr'
+VCR.configure do |c|
+  c.configure_rspec_metadata!
+  c.ignore_hosts '127.0.0.1', 'localhost'
+  c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once }
+  c.cassette_library_dir  = "spec/cassettes"
+  c.hook_into :webmock
+  c.filter_sensitive_data("<API_TOKEN>") do
+    ENV['OHANA_STAGING_API_TOKEN']
+  end
+end
+
+def stub_get(url)
+  stub_request(:get, ohanapi_url(url))
+end
+
+def ohanapi_url(url)
+  url =~ /^http/ ? url : "http://ohanapi-staging.herokuapp.com/api#{url}"
+end
+
+def fixture_path
+  File.expand_path("../fixtures", __FILE__)
+end
+
+def fixture(file)
+  File.new(fixture_path + '/' + file)
+end
+
+def json_response(file)
+  {
+    :body => fixture(file),
+    :headers => {
+      :content_type => 'application/json; charset=utf-8'
+    }
+  }
+end

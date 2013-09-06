@@ -45,9 +45,9 @@ feature "results page search" do
     looks_like_no_results
   end
 
-  scenario 'with language that returns results', :vcr do
+  scenario 'with language that returns less results', :vcr do
     search_by_language("Spanish")
-    looks_like_results
+    expect(page).to have_content("5 of 5 results")
   end
 
 end

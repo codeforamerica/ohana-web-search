@@ -13,8 +13,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markerBounds; // the bounds of the markers
 
 		// constants for map button text content
-		var LARGER_MAP_TEXT = "Smaller Map";
-		var SMALLER_MAP_TEXT = "Larger Map";
+		var LARGER_MAP_TEXT = "Display small map";
+		var SMALLER_MAP_TEXT = "Display large map";
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -56,7 +56,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// map view control clicked
 		function _mapViewControlClicked(evt)
 		{
-			evt.preventDefault();
 			if (_atMaxSize)
 			{
 				_mapCanvas.classList.remove('max');

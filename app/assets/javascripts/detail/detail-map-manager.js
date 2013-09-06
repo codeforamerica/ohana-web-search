@@ -8,6 +8,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markersArray = []; // array for storing markers
 		var _markerBounds; // the bounds of the markers
 		var _locationMarker; // the location of the current org
+		var _nearbyControl; // the show nearby locations button
+		var _nearbyControlTxt; // text in the nearby locations button
+		var _nearbyShowing = false; //whether or not the nearby locations are showing
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -15,21 +18,27 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		function init(callback)
 		{
 			_callback = callback;
-			var title = document.getElementById("detail-map-canvas-title");
-			var lat = document.getElementById("detail-map-canvas-lat");
-			var lng = document.getElementById("detail-map-canvas-lng");
+			_nearbyControl = document.getElementById("show-nearby-control");
+			_nearbyControlTxt = document.querySelector("#show-nearby-control span");
 
-			if (title && lat && lng)
+			if (_nearbyControl)
 			{
+				_loadData();
+
+				_nearbyControl.addEventListener("click", _nearbyControlClicked, false);
+				var title = document.getElementById("detail-map-canvas-title");
+				var lat = document.getElementById("detail-map-canvas-lat");
+				var lng = document.getElementById("detail-map-canvas-lng");
+
 				title = title.innerHTML;
 				lat = lat.innerHTML;
 				lng = lng.innerHTML;
 
-			  var latlng = new google.maps.LatLng(lat,lng);
+			  var latLng = new google.maps.LatLng(lat,lng);
 
 			  var mapOptions = {
 			    zoom: 16,
-			    center: latlng,
+			    center: latLng,
 			    scrollwheel: false,
 			    zoomControl: true,
 			    panControl: false,
@@ -44,26 +53,61 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			  }
 			  _map = new google.maps.Map(document.getElementById("detail-map-canvas"), mapOptions);
 
-
-			  _locationMarker = new google.maps.Marker({
+				_locationMarker = new google.maps.Marker({
 						map: _map,
 						title: title,
-						position: latlng
+						position: latLng
 					});
 
-			  refresh();
+				refresh();
 			}
 		}
 
+		// nearby map control was clicked
+		function _nearbyControlClicked(evt)
+		{
+			if (_nearbyShowing)
+			{
+				_hideNearby();
+				_nearbyShowing = false;
+			}
+			else
+			{
+				_showNearby();
+				_nearbyShowing = true;
+			}
+			refresh();
+		}
+
+		function _showNearby()
+		{
+			_loadMarkers();
+	    var metadata = _markerData[_markerData.length-1];
+			var summaryText = "<span>"+metadata.count+" nearby services located</span>";
+			_nearbyControlTxt.innerHTML = summaryText+" • Hide nearby services";
+		}
+
+		function _hideNearby()
+		{
+			_clearMarkers();
+			_nearbyControlTxt.innerHTML = "Show nearby services";
+		}
+
+		function _loadData()
+		{
+			var nearby = document.getElementById("map-locations");
+			if (nearby)
+			{
+				_markerData = JSON.parse(nearby.innerHTML);
+		  	nearby.parentNode.removeChild(nearby); // remove script element
+			}
+		}
 
 		// loads markers
 		function _loadMarkers()
 		{
-			var locations = document.getElementById("map-locations");
-			if (locations)
+			if (_markerData)
 			{
-				_markerData = JSON.parse(locations.innerHTML);
-		  	locations.parentNode.removeChild(locations); // remove script element
 			  _markerBounds = new google.maps.LatLngBounds();
 			  _markerBounds.extend(_locationMarker.position);
 
@@ -74,13 +118,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		    {
 		    	_loadMarker( _markerData[m] );
 		    }
-		    var metadata = _markerData[dataLength-1];
-		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
-			}
-			else
-			{
-				// no entries found
-				_clearMarkers();
 			}
 		}
 
@@ -144,10 +181,18 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		{
 			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);
 			//if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
-			_loadMarkers();
+			//_loadMarkers();
 			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 			if (_markersArray.length > 0)
+			{
 				_map.fitBounds(_markerBounds);
+			}
+			else
+			{
+				console.log("setting map center")
+				_map.setZoom(16);
+				_map.setCenter(_locationMarker.getPosition());
+			}
 		}
 
 	return {

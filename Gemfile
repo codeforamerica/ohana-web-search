@@ -19,7 +19,8 @@ gem 'haml-rails'
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem "ohanakapa", :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => "add-nearby-endpoint", :ref => "32ded682db"
+gem "ohanakapa", :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => "add-nearby-endpoint", :ref => "2b484098f7"
+gem 'faraday-http-cache'
 
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
@@ -41,6 +42,7 @@ group :test do
   gem "capybara", ">= 2.0.3"
   gem 'json'
   gem 'poltergeist'
+  #gem 'capybara-webkit'
   gem "vcr"
   gem 'webmock', "< 1.12.0"
   gem "email_spec"
