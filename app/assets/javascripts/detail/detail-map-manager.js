@@ -8,24 +8,33 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markersArray = []; // array for storing markers
 		var _markerBounds; // the bounds of the markers
 		var _locationMarker; // the location of the current org
+
 		var _nearbyControl; // the show nearby locations button
+		var _nearbyControlIcon; // icon in the nearby locations button
 		var _nearbyControlTxt; // text in the nearby locations button
+
 		var _nearbyShowing = false; //whether or not the nearby locations are showing
 
 		var _callback; // callback to handoff search to when nearby location is clicked
+
+		// constants for map button text content
+		var NO_NEARBY = "NOTE: No nearby services at this location";
+		var SHOW_NEARBY = "Show nearby services";
+		var HIDE_NEARBY = "Hide nearby services";
 
 		// PUBLIC METHODS
 		function init(callback)
 		{
 			_callback = callback;
 			_nearbyControl = document.getElementById("show-nearby-control");
-			_nearbyControlTxt = document.querySelector("#show-nearby-control span");
+			_nearbyControlIcon = _nearbyControl.childNodes[1];
+			_nearbyControlTxt = _nearbyControl.childNodes[3];
 
 			if (_nearbyControl)
 			{
 				_loadData();
+				_initControlText();
 
-				_nearbyControl.addEventListener("click", _nearbyControlClicked, false);
 				var title = document.getElementById("detail-map-canvas-title");
 				var lat = document.getElementById("detail-map-canvas-lat");
 				var lng = document.getElementById("detail-map-canvas-lng");
@@ -79,20 +88,23 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			refresh();
 		}
 
+		// show the nearby markers
 		function _showNearby()
 		{
 			_loadMarkers();
 	    var metadata = _markerData[_markerData.length-1];
 			var summaryText = "<span>"+metadata.count+" nearby services located</span>";
-			_nearbyControlTxt.innerHTML = summaryText+" • Hide nearby services";
+			_nearbyControlTxt.innerHTML = summaryText+" • "+HIDE_NEARBY;
 		}
 
+		// hides the nearby markers
 		function _hideNearby()
 		{
 			_clearMarkers();
-			_nearbyControlTxt.innerHTML = "Show nearby services";
+			_nearbyControlTxt.innerHTML = SHOW_NEARBY;
 		}
 
+		// loads the data
 		function _loadData()
 		{
 			var nearby = document.getElementById("map-locations");
@@ -101,6 +113,22 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_markerData = JSON.parse(nearby.innerHTML);
 		  	nearby.parentNode.removeChild(nearby); // remove script element
 			}
+		}
+
+		// initializes nearby map control
+		function _initControlText()
+		{
+			if (_markerData)
+				{
+					_nearbyControl.classList.add('hover');
+					_nearbyControl.addEventListener("click", _nearbyControlClicked, false);
+					_nearbyControlTxt.innerHTML = SHOW_NEARBY;
+					_nearbyControlIcon.classList.remove('hide');
+				}
+				else
+				{
+					_nearbyControlTxt.innerHTML = NO_NEARBY;
+				}
 		}
 
 		// loads markers
@@ -189,7 +217,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			}
 			else
 			{
-				console.log("setting map center")
 				_map.setZoom(16);
 				_map.setCenter(_locationMarker.getPosition());
 			}

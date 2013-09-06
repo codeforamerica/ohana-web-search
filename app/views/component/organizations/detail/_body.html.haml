@@ -160,15 +160,11 @@
 
           - if @org.key?(:coordinates)
             %section.map
-              - if @map_data.present?
-                = render 'component/search/map_data'
-                %div#show-nearby-control.hover
-                  %img{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
-                  %span
-                    Show nearby services
-              - else
-                %div#show-nearby-control
-                  NOTE: No nearby services at this location
+              = render 'component/search/map_data'
+              %div#show-nearby-control
+                %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
+                %span
+                  &nbsp;
 
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
