@@ -102,26 +102,38 @@ class OrganizationsController < ApplicationController
   private
 
   # Used for mapping nearby locations on details map view
+  # generate json for the maps in the view
+  # this will be injected into a <script> element in the view
+  # and then consumed by the detail-map-manager javascript.
+  # map_data parses the @org hash and retrieves all entries
+  # that have coordinates, and returns that as json, otherwise map_data
+  # ends up being nil and can be checked in the view with map_data.present?
   # @param data [Object] nearby API response
   # @return [Object] JSON object containing id, name, and coordinates.
   # Or nil if there are no nearby map entries.
   def generate_map_data(data)
 
-    return nil if data.blank?
+    return nil if data.blank? # return immediately if data is empty
 
-    # generate json for the maps in the view
-    # this will be injected into a <script> element in the view
-    # and then consumed by the detail-map-manager javascript.
-    # map_data parses the @org hash and retrieves all entries
-    # that have coordinates, and returns that as json, otherwise map_data
-    # ends up being nil and can be checked in the view with map_data.present?
+    coords_list = Hash.new(0) # used for tracking coordinate frequencies
+
     map_data = data.reduce([]) do |result, o|
+
       if o.key?(:coordinates)
+
+        new_coords = o.coordinates
+
+        # increment coordinate tracking and offset position if greater than 1 occurrance
+        coords_list[new_coords.to_s] += 1
+        offset = (0.0001*(coords_list[new_coords.to_s]-1))
+        new_coords = [o.coordinates[0]-offset,o.coordinates[1]]
+
         result << {
           'id' => o.id,
           'name' => o.name,
-          'coordinates' => o.coordinates
+          'coordinates' => new_coords
         }
+
       end
       result
     end
@@ -129,7 +141,6 @@ class OrganizationsController < ApplicationController
     headers = Ohanakapa.last_response.headers
     @total_count   = headers["X-Total-Count"]
     @current_count = data.blank? ? 0 : data.count
-    # TODO set count to actual number of items
 
     # set a count and total value that will show how many (count)
     # of the data (total) were able to be located because they had coordinates.

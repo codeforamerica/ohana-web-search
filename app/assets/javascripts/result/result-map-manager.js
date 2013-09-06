@@ -32,7 +32,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
 			  var mapOptions = {
-			    zoom: 16,
+			    zoom: 15,
 			    scrollwheel: false,
 			    zoomControl: true,
 			    panControl: false,
