@@ -27,11 +27,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		{
 			_callback = callback;
 			_nearbyControl = document.getElementById("show-nearby-control");
-			_nearbyControlIcon = _nearbyControl.childNodes[1];
-			_nearbyControlTxt = _nearbyControl.childNodes[3];
 
 			if (_nearbyControl)
 			{
+				_nearbyControlIcon = _nearbyControl.childNodes[1];
+				_nearbyControlTxt = _nearbyControl.childNodes[3];
+
 				_loadData();
 				_initControlText();
 
