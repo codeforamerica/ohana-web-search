@@ -60,15 +60,9 @@
                       = "#{format_phone(fax)}"
 
       - if @org.key?(:address || :urls)
-        %section.address-box
-          %h1 Physical Address
+        %section.urls-box
+          %h1 Homepage
           %section
-
-            - if @org.key?(:address)
-              %section.address
-                %div
-                  %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-                  = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
             - if @org.key?(:urls)
               %section.urls
@@ -79,6 +73,25 @@
                       %span{:itemprop=>"url"}
                         = url
 
+      - if @org.key?(:mail_address)
+        %section.address-box
+          %h1 Mailing Address
+          %section
+
+            %section.mail-address
+              %div
+                %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
+
+      - if @org.key?(:address) && !(@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip)
+        %section.address-box
+          %h1 Physical Address
+          %section
+            - if @org.key?(:address)
+              %section.address
+                %div
+                  %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                  = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
   / main detail content
   %section
@@ -174,6 +187,15 @@
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
 
+
+    - if @org.key?(:services)
+      %section.services-box
+        %h1 Services
+        - @org.services.each do |service|
+
+          / insert template, params are:
+          / use_template,org,field,title,icon
+          = insert_template(true,service,:name,nil,nil)
 
   / detail footer content
   - if @org.key?(:updated_at)
