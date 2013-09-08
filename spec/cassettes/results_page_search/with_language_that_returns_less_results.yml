@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations&keyword=museums&language=spanish&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=museums&language=spanish&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:27:34 GMT
+      - Sun, 08 Sep 2013 04:40:26 GMT
       Etag:
-      - '"76db87da5d208b0f45298b2ad5c474ec"'
+      - '"f66be0d22cbda363a61500bc6b87a0f2"'
       Status:
       - 200 OK
       X-Current-Page:
@@ -33,13 +35,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '16'
+      - '4747'
       X-Request-Id:
-      - 447672a3df57a19156ea452e48ccfe35
+      - 71c9c62b226d0ef1ab9499f67afeaeab
       X-Runtime:
-      - '0.040891'
+      - '0.023216'
       X-Total-Count:
       - '5'
       X-Total-Pages:
@@ -69,7 +71,7 @@ http_interactions:
         $5 ($3 seniors and children age 6-12). Cash and credit cards accepted.","funding_sources":["Donations","Fees"],"how_to_apply":"Phone
         or email through Web site .","keywords":["Historical Societies","Museums"],"service_areas":"San
         Mateo County","updated_at":"2013-08-27T16:14:24-07:00"}],"organization":{"name":"San
-        Mateo County History Museum","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000587"},"id":"521d32d01974fcdb2b000588","_score":45.239716,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32de1974fcdb2b000968","accessibility":["wheelchair"],"address":{"city":"Fremont","state":"CA","street":"34600
+        Mateo County History Museum","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000587"},"id":"521d32d01974fcdb2b000588","_score":44.65285,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32de1974fcdb2b000968","accessibility":["wheelchair"],"address":{"city":"Fremont","state":"CA","street":"34600
         Ardenwood Blvd.","zip":"94555"},"ask_for":["Bernadette Cruz (Senior Office
         Assistant)"],"contacts":[{"name":"Ira Bletz","title":"Supervising Naturalist"}],"coordinates":[-122.0511103,37.5564177],"created_at":"2013-08-27T16:14:38-07:00","description":"Ardenwood
         Historic Farm is a recreation of a late 19th-century family farm. The programs
@@ -93,7 +95,7 @@ http_interactions:
         the park or Web site.","keywords":["Museums"],"service_areas":["Alameda County","Contra
         Costa County","Marin County","San Francisco County","San Mateo County","Santa
         Clara County"],"updated_at":"2013-08-27T16:14:38-07:00"}],"organization":{"name":"Ardenwood
-        Regional Preserve and Historic Farm","url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000967"},"id":"521d32de1974fcdb2b000968","_score":16.157042,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32b91974fcdb2b000037","accessibility":["wheelchair"],"address":{"city":"San
+        Regional Preserve and Historic Farm","url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000967"},"id":"521d32de1974fcdb2b000968","_score":15.947447,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32b91974fcdb2b000037","accessibility":["wheelchair"],"address":{"city":"San
         Mateo","state":"CA","street":"1651 Coyote Point Drive","zip":"94401-1097"},"ask_for":["Admissions
         Desk"],"contacts":[{"name":"Rachel Meyer","title":"Executive Director"}],"coordinates":[-122.3196377,37.5906292],"created_at":"2013-08-27T16:14:01-07:00","description":"Offers
         environmental education through exhibits and wildlife habitats. The wildlife
@@ -112,7 +114,7 @@ http_interactions:
         $35 student/senior, $65 family. Cash and credit cards accepted.","funding_sources":["Donations","Grants"],"how_to_apply":"At
         Web site or museum.","keywords":["Museums"],"service_areas":["Alameda County","Contra
         Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"updated_at":"2013-08-27T16:14:01-07:00","wait":"2-3 weeks."}],"organization":{"name":"CuriOdyssey","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000036"},"id":"521d32b91974fcdb2b000037","_score":16.157042,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d11974fcdb2b0005d1","accessibility":["restroom","wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"2530
+        Clara County"],"updated_at":"2013-08-27T16:14:01-07:00","wait":"2-3 weeks."}],"organization":{"name":"CuriOdyssey","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000036"},"id":"521d32b91974fcdb2b000037","_score":15.947447,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d11974fcdb2b0005d1","accessibility":["restroom","wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"2530
         Tenth Street, Suite 1","zip":"94710"},"ask_for":["Phyllis Cangemi"],"contacts":[{"name":"Phyllis
         Cangemi","title":"Executive Director"}],"coordinates":[-122.2904797,37.8597538],"created_at":"2013-08-27T16:14:25-07:00","description":"Works
         to make parks and nature experiences accessible to all people. Provides education,
@@ -137,7 +139,7 @@ http_interactions:
         Areas","Accessibility Information"],"service_areas":["Alameda County","Contra
         Costa County","Marin County","San Francisco County","San Mateo County","Santa
         Clara County","California"],"updated_at":"2013-08-27T16:14:25-07:00","wait":"No
-        wait."}],"organization":{"name":"Whole Access","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d11974fcdb2b0005d0"},"id":"521d32d11974fcdb2b0005d1","_score":0.3600338,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33801974fcdb2b00238d","address":{"city":"Redwood
+        wait."}],"organization":{"name":"Whole Access","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d11974fcdb2b0005d0"},"id":"521d32d11974fcdb2b0005d1","_score":0.35624415,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33801974fcdb2b00238d","address":{"city":"Redwood
         City","state":"CA","street":"455 County Center, 4th Floor","zip":"94063-1663"},"contacts":[{"name":"Jim
         Porter","title":"Director"}],"coordinates":[-122.2307333,37.4889287],"created_at":"2013-08-27T16:17:20-07:00","description":"San
         Mateo County operates 17 parks, 3 regional trails, numerous other county and
@@ -193,7 +195,7 @@ http_interactions:
         SERVICES","Camping","Parks/Playground","City/County Parks"],"service_areas":"San
         Mateo County","updated_at":"2013-08-27T16:17:23-07:00","wait":"Reservations
         are on a first-come, first-served basis."}],"organization":{"name":"San Mateo
-        County Parks Department","url":"http://ohanapi.herokuapp.com/api/organizations/521d337e1974fcdb2b002359"},"id":"521d33801974fcdb2b00238d","_score":0.13501269,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        County Parks Department","url":"http://ohanapi.herokuapp.com/api/organizations/521d337e1974fcdb2b002359"},"id":"521d33801974fcdb2b00238d","_score":0.13359156,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:27:34 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:26 GMT
 recorded_with: VCR 2.5.0

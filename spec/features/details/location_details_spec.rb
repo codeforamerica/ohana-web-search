@@ -11,7 +11,8 @@ feature "location details", :js => true do
     end
 
     scenario 'when location has an address' do
-      expect(page).to have_content("Address")
+      expect(page).to have_content("Mailing Address")
+      expect(page).to have_content("Physical Address")
       expect(page).to have_content("2013 Avenue of the fellows")
     end
 
@@ -44,8 +45,8 @@ feature "location details", :js => true do
       expect(page).to have_content("Contact")
     end
 
-    it "includes the department and phone hours" do
-      expect(page).to have_content("Information (650) 372-6200 (Monday-Friday,
+    it "includes the department, type, and phone hours" do
+      expect(page).to have_content("Information (650) 372-6200 TTY (Monday-Friday,
         8-5)")
     end
 
@@ -54,7 +55,7 @@ feature "location details", :js => true do
     end
 
     it "specifies TTY numbers" do
-      expect(page).to have_content("(650) 372-6200 (TTY)")
+      expect(page).to have_content("(650) 372-6200 TTY")
     end
 
   end
@@ -67,11 +68,11 @@ feature "location details", :js => true do
     end
 
     it "includes eligibility info" do
-      expect(page).to have_content("Everyone")
+      expect(page).to have_content("None")
     end
 
     it "includes audience info" do
-      expect(page).to have_content("Profit and nonprofit businesses")
+      expect(page).to have_content("Profit and nonprofit businesses, the public, military facilities, schools and government entities")
     end
 
     it "includes fees info" do
@@ -86,16 +87,23 @@ feature "location details", :js => true do
       expect(page).to have_content("Walk in or apply by phone or mail")
     end
 
-    it "includes wait info" do
+    # Wait time not included in the view.
+    # Till we have a consistent meaning for wait time
+    # it's best left out of the front-end view
+    xit "includes wait info" do
       expect(page).to have_content("No wait to 2 weeks")
     end
 
-    it "includes service areas" do
+    # Service areas not included in view.
+    # Best to leave this out of the view, this is data that could easily be wrong and
+    # it's better that the client contact the agency and ask for services and
+    # be referred accordingly vs. going off this list.
+    xit "includes service areas" do
       expect(page).to have_content("Marin County")
     end
 
     it "includes updated time" do
-      expect(page).to have_content("Tuesday, 27 August 2013 at 4:17 PM")
+      expect(page).to have_content("Friday, 6 September 2013 at 5:26 PM")
     end
 
   end
@@ -108,7 +116,7 @@ feature "location details", :js => true do
     end
 
     it "includes URLs" do
-      expect(page).to have_link("http://www.smchealth.org")
+      expect(page).to have_link("www.smchealth.org")
     end
 
     it "includes accessibility info" do
@@ -123,7 +131,8 @@ feature "location details", :js => true do
       expect(page).to_not have_content("[James Brown, Dawn of Midi]")
     end
 
-    it "includes Contact info" do
+    # Contact is not included with view because we have an ask_for field already
+    xit "includes Contact info" do
       expect(page).to have_content("Suzanne Badenhoop")
     end
 
@@ -167,19 +176,20 @@ feature "location details", :js => true do
       end
     end
 
-    it "includes Market Match" do
+    # farmer's market info is not currently included
+    xit "includes Market Match" do
       expect(page).to have_content("Market Match")
     end
 
-    it "includes payment info" do
+    xit "includes payment info" do
       expect(page).to have_content("Payments Accepted")
     end
 
-    it "includes info about payment types" do
+    xit "includes info about payment types" do
       expect(page).to have_content("SNAP")
     end
 
-    it "includes products info" do
+    xit "includes products info" do
       expect(page).to have_content("Products Sold")
     end
   end

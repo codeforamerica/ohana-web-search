@@ -6,15 +6,17 @@
       %h1 #{title}:
     - if org[field].kind_of?(Array)
       %ul
-      - org[field].sort.each do |f|
-        %li
-          - if f.kind_of?(Array)
-            %ul
-              - org[field].sort.each do |sf|
-                %li
-                  = sf
-          - else
-            = f
+        - org[field].sort.each do |f|
+          %li
+            %span
+              - if f.kind_of?(Array)
+                %ul
+                  - org[field].sort.each do |sf|
+                    %li
+                      %span
+                        = sf
+              - else
+                = f
     - else
       %span
         = org[field]

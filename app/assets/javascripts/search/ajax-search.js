@@ -62,12 +62,12 @@ define(['app/loading-manager',
 		{
 			splash.show({"fullscreen":false});
 
-			var id = params.id || null;
-			var keyword = params.keyword || "";
-			var location = params.location || "";
-			var radius = params.radius || null;
-			var language = params.language;
-			var page = params.page || null;
+			var id = params.id;
+			var keyword = params.keyword || inputs.getKeyword();
+			var location = params.location || inputs.getLocation();
+			var radius = params.radius;
+			var language = params.language || inputs.getLanguage();
+			var page = params.page;
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
@@ -84,20 +84,8 @@ define(['app/loading-manager',
 			if (page) query += "&page="+page;
 			query = query.replace('?&','?'); // only runs on first occurance, which is what we want
 
-			_makeAjaxRequest(query);
-		}
-
-		// performs an ajax search with a passed URL
-		function performSearchWithURL(url)
-		{
-			splash.show({"fullscreen":false});
-			_makeAjaxRequest(url);
-		}
-
-		function _makeAjaxRequest(url)
-		{
-			ajax.request(url, _callback);
-			window.history.pushState({'ajax':true}, null, url);
+			ajax.request(query, _callback);
+			window.history.pushState({'ajax':true}, null, query);
 		}
 
 		function _updateTitle()
@@ -135,7 +123,6 @@ define(['app/loading-manager',
 
 	return {
 		init:init,
-		performSearch:performSearch,
-		performSearchWithURL:performSearchWithURL
+		performSearch:performSearch
 	};
 });

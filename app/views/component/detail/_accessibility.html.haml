@@ -1,16 +1,12 @@
-- if org.key?(field || :ttys)
+- if (org.key?(field) && org[field].length > 0)
+
   %section{:class=>css_class_format(field.to_s)}
     - if icon.present?
       %span{"data-icon"=>icon , :class=>"ohana-icon"}
     %h1 #{title}:
     %ul
-      - if org.key?(field)
+      - if (org.key?(field) && org[field].length > 0)
         - org[field].sort.each do |access|
           %li
-            = access
-      - if org.key?(:ttys)
-        %li
-          - org.ttys.each do |tty|
-            %span{:class=>"ttys"}
-              TDD/TTY:
-              = "#{format_phone(tty)}"
+            %span
+              = access

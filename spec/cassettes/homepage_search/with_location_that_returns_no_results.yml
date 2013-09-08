@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=asdfg&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=asdfg&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,19 +25,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:27 GMT
+      - Sun, 08 Sep 2013 04:40:45 GMT
       Status:
       - 400 Bad Request
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '30'
+      - '4737'
       X-Request-Id:
-      - 06ecc10e5020a12aa802770f88ea33a5
+      - c7d387d6b6d74cdd01d24bf02a921793
       X-Runtime:
-      - '0.068869'
+      - '0.056985'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -46,10 +48,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:27 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:45 GMT
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?keyword=asdfasg
+    uri: http://ohanapi-staging.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
     body:
       encoding: US-ASCII
       string: ''
@@ -58,6 +60,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -70,7 +74,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:27 GMT
+      - Sun, 08 Sep 2013 04:40:46 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Status:
@@ -80,13 +84,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '29'
+      - '4736'
       X-Request-Id:
-      - 79fc75d2a84845e465cef689b813a117
+      - 7c53f666bc266991306c85e65b085bbf
       X-Runtime:
-      - '0.022036'
+      - '0.063413'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -101,5 +105,5 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:27 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:46 GMT
 recorded_with: VCR 2.5.0

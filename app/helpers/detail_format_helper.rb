@@ -27,7 +27,7 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields
-    [:short_desc,:description,:audience,:service_areas,:how_to_apply,:fees,
+    [:audience,:service_areas,:how_to_apply,:fees,
       :eligibility,:languages,:accessibility]
   end
 
@@ -67,6 +67,14 @@ module DetailFormatHelper
     else
       number
     end
+  end
+
+  # Format phone number as (XXX) XXX-XXXX
+  # @param number [String] a phone number
+  # @return [String] phone number formatted as (XXX) XXX-XXXX or
+  # returned without formatting if number is not 10 digits long
+  def format_url(url)
+    url.gsub(/^(https?:\/\/)/, '')
   end
 
   # Adds <sup>XX</sup> around ordinals in string

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c
+    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:25:37 GMT
+      - Sun, 08 Sep 2013 04:41:05 GMT
       Etag:
       - '"9f85fea11b68ecf6239d959c22ad55d0"'
       Status:
@@ -31,13 +33,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '59'
+      - '4720'
       X-Request-Id:
-      - 2a5ea89b4fc4f9bb93a461b3cd7d61c0
+      - 8a9c2356e87d3dc3d41b3faa45bd474f
       X-Runtime:
-      - '0.079377'
+      - '0.024673'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -61,10 +63,10 @@ http_interactions:
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c","other_locations":[]}'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:25:37 GMT
+  recorded_at: Sun, 08 Sep 2013 04:41:05 GMT
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c
+    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -73,6 +75,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -85,7 +89,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:25:37 GMT
+      - Sun, 08 Sep 2013 04:41:06 GMT
       Etag:
       - '"9f85fea11b68ecf6239d959c22ad55d0"'
       Status:
@@ -93,13 +97,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '58'
+      - '4719'
       X-Request-Id:
-      - be1d2af221b6f13a91f2bc8bb6807ebf
+      - 801fe3f89749f391ad17aeffebced024
       X-Runtime:
-      - '0.027600'
+      - '0.030383'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -123,10 +127,10 @@ http_interactions:
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c","other_locations":[]}'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:25:37 GMT
+  recorded_at: Sun, 08 Sep 2013 04:41:06 GMT
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c/nearby
+    uri: http://ohanapi-staging.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c/nearby?api_token=<API_TOKEN>&radius=0.5
     body:
       encoding: US-ASCII
       string: ''
@@ -135,6 +139,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -147,7 +153,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:25:37 GMT
+      - Sun, 08 Sep 2013 04:41:06 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Status:
@@ -155,13 +161,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '57'
+      - '4718'
       X-Request-Id:
-      - d969c7fe12658da4d347367f5a291164
+      - 02794311037e9209189b6b07230db50e
       X-Runtime:
-      - '0.010323'
+      - '0.008309'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -172,5 +178,5 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:25:37 GMT
+  recorded_at: Sun, 08 Sep 2013 04:41:06 GMT
 recorded_with: VCR 2.5.0

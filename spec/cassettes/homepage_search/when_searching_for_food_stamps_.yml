@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations&keyword=food%20stamps&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=food%20stamps&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:17 GMT
+      - Sun, 08 Sep 2013 04:40:48 GMT
       Etag:
-      - '"9948959d89bfe9a9a3d4af83f35fda0b"'
+      - '"167516268c099f0441a762251084ce8f"'
       Status:
       - 200 OK
       X-Current-Page:
@@ -33,13 +35,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '35'
+      - '4735'
       X-Request-Id:
-      - f73860b3ad886eaabc59df1ec47b9c67
+      - 46827786b85721d6d210875f4437965d
       X-Runtime:
-      - '0.149287'
+      - '0.062715'
       X-Total-Count:
       - '13'
       X-Total-Pages:
@@ -47,7 +49,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '44369'
+      - '45022'
       Connection:
       - keep-alive
     body:
@@ -80,7 +82,7 @@ http_interactions:
         Stamps/SNAP","CalFresh","Child Welfare","CalWORKs","Welfare"],"service_areas":["East
         Palo Alto","Menlo Park"],"updated_at":"2013-09-05T13:00:22-07:00","wait":"First
         come, first served basis for walk-in applicants."}],"organization":{"name":"San
-        Mateo County Human Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b00229f","_score":87297278000.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022a3","accessibility":["ramp","disabled_parking","wheelchair"],"address":{"city":"South
+        Mateo County Human Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b00229f","_score":87437771000.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022a3","accessibility":["ramp","disabled_parking","wheelchair"],"address":{"city":"South
         San Francisco","state":"CA","street":"1487 Huntington Avenue","zip":"94080"},"contacts":[{"name":"Jerry
         Lindner","title":"Regional Program Manager"}],"coordinates":[-122.421524,37.644686],"created_at":"2013-08-27T16:17:08-07:00","description":"Processes
         applications for financial assistance programs such as CalWORKS, Medi-Cal,
@@ -99,7 +101,7 @@ http_interactions:
         Stamps/SNAP","CalFresh","Child Welfare","Calworks","Welfare"],"service_areas":["San
         Bruno","South San Francisco"],"updated_at":"2013-09-05T13:05:43-07:00","wait":"First
         come, first served basis."}],"organization":{"name":"San Mateo County Human
-        Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b0022a3","_score":12471040000.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022ab","accessibility":["restroom","disabled_parking","wheelchair"],"address":{"city":"Daly
+        Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b0022a3","_score":12491110400.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022ab","accessibility":["restroom","disabled_parking","wheelchair"],"address":{"city":"Daly
         City","state":"CA","street":"271 - 92nd Street","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"name":"Darla
         Munson","title":"Regional Manager"}],"coordinates":[-122.4741901,37.6896347],"created_at":"2013-08-27T16:17:08-07:00","description":"Offers
         comprehensive employment services for job seekers and employers.   Employer
@@ -129,7 +131,7 @@ http_interactions:
         Finding Assistance","General Relief","TANF","Child Care Subsidies","Medicaid","Food
         Stamps/SNAP","Youth","Adolescents"],"service_areas":["Brisbane","Colma","Daly
         City","Pacifica","San Bruno","South San Francisco"],"updated_at":"2013-08-27T16:17:10-07:00","wait":"No
-        wait."}],"organization":{"name":"San Mateo County Human Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b0022ab","_score":487150016.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33891974fcdb2b002449","accessibility":["wheelchair"],"address":{"city":"Mountain
+        wait."}],"organization":{"name":"San Mateo County Human Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289"},"id":"521d33741974fcdb2b0022ab","_score":487934016.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33891974fcdb2b002449","accessibility":["wheelchair"],"address":{"city":"Mountain
         View","state":"CA","street":"100 Moffett Blvd.","zip":"94043"},"contacts":[{"name":"Guillermo
         Caceres","title":"Program Manager"}],"coordinates":[-122.0776193,37.3966257],"created_at":"2013-08-27T16:17:29-07:00","description":"CalWORKs
         is the name in California for the federal cash assistance Temporary Assistance
@@ -167,7 +169,7 @@ http_interactions:
         for information or walk in.","keywords":["FINANCIAL ASSISTANCE SERVICES","Food","General
         Support","Health"],"service_areas":["Cupertino","Los Altos","Mountain View","Palo
         Alto","Sunnyvale"],"updated_at":"2013-08-27T16:17:29-07:00","wait":"Varies."}],"organization":{"name":"Santa
-        Clara County Social Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33891974fcdb2b002448"},"id":"521d33891974fcdb2b002449","_score":0.96116203,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33201974fcdb2b001b41","accessibility":["wheelchair"],"address":{"city":"Redwood
+        Clara County Social Services Agency","url":"http://ohanapi.herokuapp.com/api/organizations/521d33891974fcdb2b002448"},"id":"521d33891974fcdb2b002449","_score":0.9614602,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33201974fcdb2b001b41","accessibility":["wheelchair"],"address":{"city":"Redwood
         City","state":"CA","street":"330 Twin Dolphin Drive, Suite 123","zip":"94065"},"ask_for":["Receptionist"],"contacts":[{"name":"M.
         Stacey Hawver","title":"Executive Director"},{"name":"Hope Nakamura","title":"Directing
         Attorney"}],"coordinates":[-122.2584729,37.5210911],"created_at":"2013-08-27T16:15:44-07:00","description":"Provides
@@ -180,19 +182,20 @@ http_interactions:
         legal assistance to remedy or prevent elder abuse, including emotional, physical
         and financial abuse. Will send an attorney or legal assistant to homebound
         persons. Efforts will be made to see a person immediately in an emergency.","emails":["jgoldstein@legalaidsmc.org"],"faxes":["650
-        517-8973"],"hours":"Monday - Friday, 9-12, 1-5","languages":["Chinese (Cantonese)","Russian","Spanish"],"mail_address":{"attention":"Senior
-        Advocates","city":"Redwood City","state":"CA","street":"330 Twin Dolphin Drive,
-        Suite 123","zip":"94065"},"name":"Senior Advocates Program","phones":[{"number":"800
-        381-8898"}],"short_desc":"Free attorney service for persons age 60 or over,
-        with priority given to minority and low-income persons.","transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2013-08-27T16:28:25-07:00","urls":["http://www.legalaidsmc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33201974fcdb2b001b41","services":[{"audience":"Senior
-        citizens","eligibility":"Age 60 or over","fees":"None for attorney services.
-        Donations welcome.","funding_sources":["Donations","Federal","Grants"],"how_to_apply":"Apply
+        517-8973"],"hours":"Monday - Friday, 9-12, 1-5","kind":"human_services","languages":["Chinese
+        (Cantonese)","Russian","Spanish"],"mail_address":{"attention":"Senior Advocates","city":"Redwood
+        City","state":"CA","street":"330 Twin Dolphin Drive, Suite 123","zip":"94065"},"name":"Senior
+        Advocates Program","phones":[{"number":"800 381-8898"}],"short_desc":"Free
+        attorney service for persons age 60 or over, with priority given to minority
+        and low-income persons.","transportation":"SAMTRANS stops within 2 blocks.","updated_at":"2013-09-06T15:33:53-07:00","urls":["http://www.legalaidsmc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33201974fcdb2b001b41","services":[{"audience":"Senior
+        citizens","category_ids":["52280f7a1edd37edff000137","52280f7a1edd37edff000138","52280f7b1edd37edff000142"],"eligibility":"Age
+        60 or over","fees":"None for attorney services. Donations welcome.","funding_sources":["Donations","Federal","Grants"],"how_to_apply":"Apply
         by phone for appointment.","keywords":["ADULT PROTECTION AND CARE SERVICES","Guardianship/Conservatorship","LEGAL
         AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistance","Defense Representation","Older
-        Adults"],"service_areas":"San Mateo County","updated_at":"2013-08-27T16:15:44-07:00","wait":"1-2
-        weeks. No wait in an emergency."}],"organization":{"name":"Legal Aid Society
-        of San Mateo County","url":"http://ohanapi.herokuapp.com/api/organizations/521d33201974fcdb2b001b40"},"id":"521d33201974fcdb2b001b41","_score":0.84101677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021b7","accessibility":["elevator","wheelchair"],"address":{"city":"San
+        Adults","free legal advice","senior residents"],"service_areas":"San Mateo
+        County","updated_at":"2013-09-06T15:33:53-07:00","wait":"1-2 weeks. No wait
+        in an emergency."}],"organization":{"name":"Legal Aid Society of San Mateo
+        County","url":"http://ohanapi.herokuapp.com/api/organizations/521d33201974fcdb2b001b40"},"id":"521d33201974fcdb2b001b41","_score":0.84127766,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021b7","accessibility":["elevator","wheelchair"],"address":{"city":"San
         Mateo","state":"CA","street":"477 9th Avenue, Suite 110","zip":"94402"},"ask_for":["Call
         the main office"],"contacts":[{"name":"Eliana C. Schultz, RD","title":"WIC
         Director"}],"coordinates":[-122.3171637,37.5624546],"created_at":"2013-08-27T16:16:31-07:00","description":"Offers
@@ -220,7 +223,7 @@ http_interactions:
         by phone. Appointment necessary for application.","keywords":["Nutrition Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
         Planning"],"service_areas":"San Mateo County","updated_at":"2013-09-05T11:35:11-07:00","wait":"2
         week wait for new enrollees."}],"organization":{"name":"San Mateo County Health
-        System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d334f1974fcdb2b0021b7","_score":0.7208715,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e1","address":{"city":"Washington","state":"DC","street":"441
+        System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d334f1974fcdb2b0021b7","_score":0.72109514,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e1","address":{"city":"Washington","state":"DC","street":"441
         G Street, NW, Room 4T21","zip":"20548"},"ask_for":["Analyst"],"contacts":[{"name":"Andrew
         A. O''Connell","title":"Assistant Director"}],"coordinates":[-77.0172233,38.8993459],"created_at":"2013-08-27T16:17:41-07:00","description":"A
         federal government program that registers complaints and investigates charges
@@ -244,75 +247,7 @@ http_interactions:
         Representation","Federal Government Complaints/Ombudsman Offices","Employee
         Fraud Reporting"],"service_areas":["Alameda County","Contra Costa County","Marin
         County","San Francisco County","San Mateo County","Santa Clara County","nationwide"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"No
-        wait."}],"organization":{"name":"United States Government","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be"},"id":"521d33951974fcdb2b0025e1","_score":0.7208715,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33221974fcdb2b001bd4","accessibility":["ramp","wheelchair"],"address":{"city":"Pacifica","state":"CA","street":"1809
-        Palmetto Avenue","zip":"94044"},"contacts":[{"name":"Anita Rees","title":"Director"}],"coordinates":[-122.491878,37.635091],"created_at":"2013-08-27T16:15:46-07:00","description":"Provides
-        crisis intervention services and emergency material assistance, preliminary
-        casework and counseling, and comprehensive information and referral. Emergency
-        assistance includes providing gift certificates for food and an emergency
-        food pantry stocked by Second Harvest Food Bank and food donated by the community.
-        Assists with enrollment in CalFresh, California''s food stamps program. Limited
-        funds are available to eligible families who need help with first and last
-        month rental deposits and delinquent rent. Confidential crisis intervention
-        services are provided in the areas of financial, emotional and family violence
-        situations. Assists with low-cost health insurance for children. Offers Earn
-        It, Keep It, Save It, a free tax preparation service from February to April
-        15. Funds are available to eligible low-income people to maintain or restore
-        energy services when a 48-hour or 15-day shut-off notice has been received
-        by PG&E. La Raza Centro Legal is available by appointment to provide legal
-        representation to low-income Spanish-speaking residents in the areas of employment,
-        housing and immigration law (call 415-575-3500 for an appointment). The site
-        is part of the core network of community service agencies of San Mateo County.","emails":["info@pacresourcecenter.org"],"faxes":["650
-        359-2053"],"hours":"Monday, Tuesday, Thursday, 8:30-12:30, 1:30-5:30; Wednesday,
-        8:30-12:30, 1:30-7:30; Friday, 8:30-1:30","languages":["Spanish"],"mail_address":{"attention":"Pacifica
-        Resource Center","city":"Pacifica","state":"CA","street":"1809 Palmetto Avenue","zip":"94044"},"name":"A
-        project of the Tides Center","phones":[{"number":"650 738-7470","hours":"(Monday,
-        Tuesday, Thursday, 8:30-12:30, 1:30-5:30; Wednesday, 8:30-12:30, 1:30-7:30;
-        Friday, 8:30-1:30)"}],"short_desc":"A community center offering a wide variety
-        of services to local residents.","transportation":"SAMTRANS stops in front.","updated_at":"2013-08-27T16:28:33-07:00","urls":["http://www.pacresourcecenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33221974fcdb2b001bd4","services":[{"audience":"Youth,
-        ethnic minorities, women, low-income persons and families and disabled persons","eligibility":"Pacifica
-        resident","fees":"None.","funding_sources":["City","County","Donations","Grants"],"how_to_apply":"Apply
-        by phone for appointment.","keywords":["COMMUNITY SERVICES","Information and
-        Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","Financial Assistance","FINANCIAL
-        ASSISTANCE SERVICES","Housing","Utilities","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
-        Assistance","Food Pantries","Housing Expense Assistance","Utility Assistance","Legal
-        Representation","Crisis Intervention","Comprehensive Information and Referral"],"service_areas":"Pacifica","updated_at":"2013-08-27T16:15:46-07:00","wait":"No
-        wait."}],"organization":{"name":"Pacifica Resource Center","url":"http://ohanapi.herokuapp.com/api/organizations/521d33221974fcdb2b001bd3"},"id":"521d33221974fcdb2b001bd4","_score":0.60072625,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
-        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
-        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
-        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
-        Puente provides a single point of entry for men, women and children to have
-        access to safety net services, health and wellness services, youth leadership
-        development and employment, and community engagement and action. Puente also
-        works with farmers, ranchers, and nursery owners to promote a sustainable
-        agricultural economy on the south coast of northern California. Permanent
-        programs include: a mobile pantry; a Second Harvest Food Bank distribution
-        site; children''s story times; and La Sala Community Living Room. Also offers
-        a program to address maternal depression. Also offers ESL classes, individual
-        tutoring in ESL, GED and citizenship classes. Periodically offers an Adult
-        Literacy Program for Spanish speakers in which students learn to read and
-        write in Spanish or complete their elementary, middle and high school within
-        the Mexican education system. Call for specific days and times for each of
-        these programs. Also offers, by appointment, WIC (Women, Infants and Children)
-        services, insurance enrollment, food stamps, CalWorks assistance, tax preparation
-        and notary services. Deposit and rental assistance subject to availability
-        of funds. The site is part of the core network of community service agencies
-        of San Mateo County. Created from the merger of North Street Community Resource
-        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
-        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","languages":["Spanish"],"mail_address":{"attention":"Puente
-        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
-        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
-        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
-        provides a single point of entry for men, women and children to have access
-        to safety net services, health and wellness services, leadership development,
-        and community engegement and action.","transportation":"Contact SamCoast for
-        information.","updated_at":"2013-08-27T16:28:37-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
-        of La Honda, Loma Mar, Pescadero, and San Gregorio","eligibility":"Some programs
-        require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
-        Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
-        Instruction","English as a Second Language","Comprehensive Information and
-        Referral","Youth","Transportation assistance","Clothing","Mental Health"],"service_areas":["La
-        Honda","Loma Mar","Pescadero","San Gregorio"],"updated_at":"2013-09-05T11:42:24-07:00"}],"organization":{"name":"Puente
-        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":0.60072625,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33291974fcdb2b001d5d","accessibility":["elevator","restroom","wheelchair"],"address":{"city":"San
+        wait."}],"organization":{"name":"United States Government","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be"},"id":"521d33951974fcdb2b0025e1","_score":0.72109514,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33291974fcdb2b001d5d","accessibility":["elevator","restroom","wheelchair"],"address":{"city":"San
         Francisco","state":"CA","street":"221 Main Street, Suite 300","zip":"94105"},"contacts":[{"name":"Loren
         Needle","title":"Acting 211 Director"}],"coordinates":[-122.3926748,37.7901873],"created_at":"2013-08-27T16:15:53-07:00","description":"Provides
         the 211 regional information and referral service to anyone needing information
@@ -346,7 +281,75 @@ http_interactions:
         Assistance","Bilingual","immigration services","CalFresh"],"service_areas":["Marin
         County","San Francisco County","San Mateo County","Napa County","Santa Cruz
         County","Solano County"],"updated_at":"2013-09-05T14:19:49-07:00","wait":"No
-        wait."}],"organization":{"name":"United Way of the Bay Area","url":"http://ohanapi.herokuapp.com/api/organizations/521d33291974fcdb2b001d5c"},"id":"521d33291974fcdb2b001d5d","_score":0.60072625,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33311974fcdb2b001ef9","accessibility":["ramp","restroom","disabled_parking"],"address":{"city":"San
+        wait."}],"organization":{"name":"United Way of the Bay Area","url":"http://ohanapi.herokuapp.com/api/organizations/521d33291974fcdb2b001d5c"},"id":"521d33291974fcdb2b001d5d","_score":0.60091263,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
+        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
+        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
+        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
+        Puente provides a single point of entry for men, women and children to have
+        access to safety net services, health and wellness services, youth leadership
+        development and employment, and community engagement and action. Puente also
+        works with farmers, ranchers, and nursery owners to promote a sustainable
+        agricultural economy on the south coast of northern California. Permanent
+        programs include: a mobile pantry; a Second Harvest Food Bank distribution
+        site; children''s story times; and La Sala Community Living Room. Also offers
+        a program to address maternal depression. Also offers ESL classes, individual
+        tutoring in ESL, GED and citizenship classes. Periodically offers an Adult
+        Literacy Program for Spanish speakers in which students learn to read and
+        write in Spanish or complete their elementary, middle and high school within
+        the Mexican education system. Call for specific days and times for each of
+        these programs. Also offers, by appointment, WIC (Women, Infants and Children)
+        services, insurance enrollment, food stamps, CalWorks assistance, tax preparation
+        and notary services. Deposit and rental assistance subject to availability
+        of funds. The site is part of the core network of community service agencies
+        of San Mateo County. Created from the merger of North Street Community Resource
+        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
+        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","kind":"human_services","languages":["Spanish"],"mail_address":{"attention":"Puente
+        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
+        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
+        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, leadership development,
+        and community engegement and action.","transportation":"Contact SamCoast for
+        information.","updated_at":"2013-09-06T17:06:59-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
+        of La Honda, Loma Mar, Pescadero, and San Gregorio","category_ids":["52280f751edd37edff0000f5","52280f751edd37edff0000fd","52280f761edd37edff000100","52280f771edd37edff000106"],"eligibility":"Some
+        programs require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
+        Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
+        Instruction","English as a Second Language","Comprehensive Information and
+        Referral","Youth","Transportation assistance","Clothing","Mental Health","ESL","WIC","safety
+        net services"],"service_areas":["La Honda","Loma Mar","Pescadero","San Gregorio"],"updated_at":"2013-09-06T17:06:59-07:00"}],"organization":{"name":"Puente
+        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":0.60091263,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33221974fcdb2b001bd4","accessibility":["ramp","wheelchair"],"address":{"city":"Pacifica","state":"CA","street":"1809
+        Palmetto Avenue","zip":"94044"},"contacts":[{"name":"Anita Rees","title":"Director"}],"coordinates":[-122.491878,37.635091],"created_at":"2013-08-27T16:15:46-07:00","description":"Provides
+        crisis intervention services and emergency material assistance, preliminary
+        casework and counseling, and comprehensive information and referral. Emergency
+        assistance includes providing gift certificates for food and an emergency
+        food pantry stocked by Second Harvest Food Bank and food donated by the community.
+        Assists with enrollment in CalFresh, California''s food stamps program. Limited
+        funds are available to eligible families who need help with first and last
+        month rental deposits and delinquent rent. Confidential crisis intervention
+        services are provided in the areas of financial, emotional and family violence
+        situations. Assists with low-cost health insurance for children. Offers Earn
+        It, Keep It, Save It, a free tax preparation service from February to April
+        15. Funds are available to eligible low-income people to maintain or restore
+        energy services when a 48-hour or 15-day shut-off notice has been received
+        by PG&E. La Raza Centro Legal is available by appointment to provide legal
+        representation to low-income Spanish-speaking residents in the areas of employment,
+        housing and immigration law (call 415-575-3500 for an appointment). The site
+        is part of the core network of community service agencies of San Mateo County.","emails":["info@pacresourcecenter.org"],"faxes":["650
+        359-2053"],"hours":"Monday, Tuesday, Thursday, 8:30-12:30, 1:30-5:30; Wednesday,
+        8:30-12:30, 1:30-7:30; Friday, 8:30-1:30","kind":"human_services","languages":["Spanish"],"mail_address":{"attention":"Pacifica
+        Resource Center","city":"Pacifica","state":"CA","street":"1809 Palmetto Avenue","zip":"94044"},"name":"A
+        project of the Tides Center","phones":[{"number":"650 738-7470","hours":"(Monday,
+        Tuesday, Thursday, 8:30-12:30, 1:30-5:30; Wednesday, 8:30-12:30, 1:30-7:30;
+        Friday, 8:30-1:30)"}],"short_desc":"A community center offering a wide variety
+        of services to local residents.","transportation":"SAMTRANS stops in front.","updated_at":"2013-09-06T17:13:22-07:00","urls":["http://www.pacresourcecenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33221974fcdb2b001bd4","services":[{"audience":"Youth,
+        ethnic minorities, women, low-income persons and families and disabled persons","category_ids":["52280f5e1edd37edff000011","52280f5e1edd37edff000015","52280f5d1edd37edff00000d","52280f5f1edd37edff000019","52280f601edd37edff00001b","52280f601edd37edff00001e","52280f601edd37edff00001f","52280f661edd37edff00004e","52280f681edd37edff000065","52280f691edd37edff000069"],"eligibility":"Pacifica
+        resident","fees":"None.","funding_sources":["City","County","Donations","Grants"],"how_to_apply":"Apply
+        by phone for appointment.","keywords":["COMMUNITY SERVICES","Information and
+        Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","Financial Assistance","FINANCIAL
+        ASSISTANCE SERVICES","Housing","Utilities","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistance","Food Pantries","Housing Expense Assistance","Utility Assistance","Legal
+        Representation","Crisis Intervention","Comprehensive Information and Referral"],"service_areas":"Pacifica","updated_at":"2013-09-06T17:30:00-07:00","wait":"No
+        wait."}],"organization":{"name":"Pacifica Resource Center","url":"http://ohanapi.herokuapp.com/api/organizations/521d33221974fcdb2b001bd3"},"id":"521d33221974fcdb2b001bd4","_score":0.60091263,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33311974fcdb2b001ef9","accessibility":["ramp","restroom","disabled_parking"],"address":{"city":"San
         Mateo","state":"CA","street":"1515 South El Camino Real, Suite 400","zip":"94402"},"ask_for":["Program
         Manager"],"contacts":[{"name":"David DeNola","title":"Executive Director"}],"coordinates":[-122.3152441,37.5536521],"created_at":"2013-08-27T16:16:01-07:00","description":"CID
         is a non-residential independent living center primarily organized and operated
@@ -393,7 +396,7 @@ http_interactions:
         Counseling","Disability Related Counseling","Outreach Programs","Youth","Disabilities
         Issues"],"service_areas":"San Mateo County","updated_at":"2013-08-27T16:16:02-07:00","wait":"Some
         programs may have a waiting list."}],"organization":{"name":"Center for Independence
-        of Individuals with Disabilities","url":"http://ohanapi.herokuapp.com/api/organizations/521d33311974fcdb2b001ef8"},"id":"521d33311974fcdb2b001ef9","_score":0.48058102,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33311974fcdb2b001efd","accessibility":["restroom","disabled_parking","wheelchair"],"address":{"city":"San
+        of Individuals with Disabilities","url":"http://ohanapi.herokuapp.com/api/organizations/521d33311974fcdb2b001ef8"},"id":"521d33311974fcdb2b001ef9","_score":0.4807301,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33311974fcdb2b001efd","accessibility":["restroom","disabled_parking","wheelchair"],"address":{"city":"San
         Bruno","state":"CA","street":"1590 El Camino Real, Suite C","zip":"94066"},"contacts":[{"name":"David
         DeNola","title":"Executive Director"}],"coordinates":[-122.4035546,37.6124418],"created_at":"2013-08-27T16:16:01-07:00","description":"Offers
         a variety of services to disabled and frail elderly persons living in the
@@ -445,7 +448,7 @@ http_interactions:
         City","El Granada","Half Moon Bay","Miramar","Montara","Moss Beach","Pacifica","Pescadero","Princeton","South
         San Francisco"],"updated_at":"2013-08-27T16:16:02-07:00","wait":"Some programs
         have a waiting list (e.g., financial benefits, Housing Modification Program)."}],"organization":{"name":"Center
-        for Independence of Individuals with Disabilities","url":"http://ohanapi.herokuapp.com/api/organizations/521d33311974fcdb2b001ef8"},"id":"521d33311974fcdb2b001efd","_score":0.48058102,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d21974fcdb2b0005ee","accessibility":["disabled_parking","wheelchair"],"address":{"city":"San
+        for Independence of Individuals with Disabilities","url":"http://ohanapi.herokuapp.com/api/organizations/521d33311974fcdb2b001ef8"},"id":"521d33311974fcdb2b001efd","_score":0.4807301,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d21974fcdb2b0005ee","accessibility":["disabled_parking","wheelchair"],"address":{"city":"San
         Carlos","state":"CA","street":"1051 Bing Street","zip":"94070-5320"},"ask_for":["Mark
         Kokoletsos","Tometrius Paxton"],"contacts":[{"name":"Kathy Jackson","title":"Chief
         Executive Officer"}],"coordinates":[-122.2448263,37.4962321],"created_at":"2013-08-27T16:14:26-07:00","description":"A
@@ -494,7 +497,7 @@ http_interactions:
         Clara County"],"updated_at":"2013-09-05T13:25:54-07:00","wait":"No wait for
         volunteer program, up to 1 month for senior and Family Harvest programs, 1
         month for agency applications."}],"organization":{"name":"Second Harvest Food
-        Bank of Santa Clara and San Mateo Counties","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d21974fcdb2b0005ed"},"id":"521d32d21974fcdb2b0005ee","_score":0.48058102,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Bank of Santa Clara and San Mateo Counties","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d21974fcdb2b0005ed"},"id":"521d32d21974fcdb2b0005ee","_score":0.4807301,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:18 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:48 GMT
 recorded_with: VCR 2.5.0

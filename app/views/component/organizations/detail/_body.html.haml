@@ -30,8 +30,9 @@
                 - @org.emails.each do |email|
                   %div
                     %span{"data-icon"=>"@" , :class=>"ohana-icon"}
-                    %span{:itemprop=>"email"}
-                      = email
+                    %a{:href=>("mailto:"+email)}
+                      %span{:itemprop=>"email"}
+                        = email
 
 
             - if @org.key?(:phones)
@@ -42,13 +43,16 @@
                     %span
                       - if hash["department"]
                         %span
-                          = "#{hash["department"]}"
+                          = hash["department"]
                       - if hash["number"]
                         %span{:itemprop=>"telephone"}
-                          = "#{format_phone(hash["number"])}"
+                          = format_phone(hash["number"])
+                      - if hash["type"]
+                        %sup.phone-type
+                          = hash["type"]
                       - if hash["hours"]
                         %span
-                          = " #{hash["hours"]}"
+                          = hash["hours"]
 
 
             - if @org.key?(:faxes)
@@ -57,9 +61,9 @@
                   %div
                     %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
                     %span{:itemprop=>"faxNumber"}
-                      = "#{format_phone(fax)}"
+                      = format_phone(fax)
 
-      - if @org.key?(:address || :urls)
+      - if @org.key?(:urls)
         %section.urls-box
           %h1 Homepage
           %section
@@ -71,7 +75,7 @@
                     %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                     %a{:href=>url,:target=>"_blank"}
                       %span{:itemprop=>"url"}
-                        = url
+                        = format_url(url)
 
       - if @org.key?(:mail_address)
         %section.address-box
@@ -83,6 +87,7 @@
                 %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
                 = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
 
+      -# has a physical address and the street address and zipcode differ from mailing address
       - if @org.key?(:address) && !(@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip)
         %section.address-box
           %h1 Physical Address
@@ -96,15 +101,55 @@
   / main detail content
   %section
 
-    - if (@org.fields & service_fields).any?
+    - if (@org.key?(:short_desc) || @org.key?(:description))
       %section.overview-box
-        %h1 Service Overview
         %section
 
           / insert template, params are:
           / use_template,org,field,title,icon
           = insert_template(true,@org,:short_desc,nil,nil)
           = insert_template(true,@org,:description,"Description",nil)
+
+    - if @org.key?(:coordinates) || @org.key?(:transportation)
+      %section.map-box
+        %h1 Location
+
+        %div
+
+          - if @org.key?(:transportation)
+            %section.transportation-availability
+              %h1 Public Transit:
+              %span
+                = @org.transportation
+
+          - if @org.key?(:coordinates)
+            %section.map
+              = render 'component/search/map_data'
+              %div#show-nearby-control
+                %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
+                %span
+                  &nbsp;
+
+              %div#detail-map-canvas
+                %span.hide#detail-map-canvas-title
+                  = address(@org)
+                %span.hide#detail-map-canvas-lat
+                  = @org.coordinates[1]
+                %span.hide#detail-map-canvas-lng
+                  = @org.coordinates[0]
+
+    - if @org.key?(:hours)
+      %section.hours-box
+        %h1 Service Hours
+        %section
+
+          = insert_template(true,@org,:hours,nil,"⧗")
+
+    - if (@org.fields & service_fields).any?
+      %section.service-opt-box
+        %h1 Service Options
+        %section
+
           = insert_template(true,@org,:audience,"Audience",nil)
           = insert_template(true,@org,:service_areas,"Service Areas",nil)
           = insert_template(true,@org,:how_to_apply,"How to Apply",nil)
@@ -113,12 +158,6 @@
           = insert_template(true,@org,:languages,"Languages Spoken",nil)
           = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
 
-    - if @org.key?(:hours)
-      %section.hours-box
-        %h1 Service Hours
-        %section
-
-          = insert_template(true,@org,:hours,nil,"⧗")
 
     - if (@org.fields & market_fields).any?
       %section.payment-box
@@ -158,44 +197,21 @@
                   %li
                     = product
 
-
-    - if @org.key?(:coordinates) || @org.key?(:transportation)
-      %section.map-box
-        %h1 Location
-
-        %div
-
-          - if @org.key?(:transportation)
-            %section.transportation-availability
-              %h1 Public Transit:
-              %span
-                = @org.transportation
-
-          - if @org.key?(:coordinates)
-            %section.map
-              = render 'component/search/map_data'
-              %div#show-nearby-control
-                %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
-                %span
-                  &nbsp;
-
-              %div#detail-map-canvas
-                %span.hide#detail-map-canvas-title
-                  = address(@org)
-                %span.hide#detail-map-canvas-lat
-                  = @org.coordinates[1]
-                %span.hide#detail-map-canvas-lng
-                  = @org.coordinates[0]
-
-
     - if @org.key?(:services)
       %section.services-box
         %h1 Services
-        - @org.services.each do |service|
+        %section
+          - @org.services.each do |service|
 
-          / insert template, params are:
-          / use_template,org,field,title,icon
-          = insert_template(true,service,:name,nil,nil)
+            / insert template, params are:
+            / use_template,org,field,title,icon
+            = insert_template(true,service,:name,nil,nil)
+            = insert_template(true,service,:description,nil,nil)
+            = insert_template(false,service,:urls,"Homepage",nil)
+            = insert_template(true,service,:fees,"Fees",nil)
+            = insert_template(true,service,:audience,"Audience",nil)
+            = insert_template(true,service,:eligibility,"Eligibility",nil)
+            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
   / detail footer content
   - if @org.key?(:updated_at)

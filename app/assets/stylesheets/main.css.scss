@@ -1739,6 +1739,7 @@ main
   {
     >li
     {
+      position: relative;
       margin-bottom:10px;
       background:$white;
       //@include box-shadow($black_alpha10 0px 0px 10px, $greyscale_light 0px 0px 0px 1px);
@@ -1751,7 +1752,25 @@ main
 
       //border-left:15px solid $blue_lightest;
       //border-right:15px solid $blue_lightest;
-      padding:10px;
+
+      >a
+      {
+        display:block;
+        position:absolute;
+        width:100%;
+        height:100%;
+        z-index:9997;
+        border-bottom:0;
+      }
+
+      .results-entry
+      {
+        padding:10px;
+        a
+        {
+          z-index:9998;
+        }
+      }
     }
 
     >li:hover
@@ -2030,6 +2049,7 @@ main
   {
     float:right;
     width:400px;
+    z-index: 9998;
     margin-left:20px;
     border-left:1px solid $white;
     border-bottom:1px solid $white;
@@ -2079,18 +2099,16 @@ main
   }
 
   // section specific styles
-  .short-desc,
-  .description
+  // accommodate aside width
+  .overview-box,
+  .map-box
   {
-    margin-right: 420px;
+    margin-right: 400px;
   }
 
   .description
   {
-    padding: 20px;
     line-height: 24px;
-    border-bottom: 1px solid $blue_midtone_alpha30;
-    margin-bottom:20px;
 
     a:last-child
     {
@@ -2139,17 +2157,44 @@ main
   ul
   {
     margin-bottom:0;
+    margin-left:20px;
+    list-style-type:square;
+    li
+    {
+      color:$purple_lightest_alpha40;
+      span
+      {
+        color:$black;
+      }
+    }
   }
 
-  li
+  .phones
   {
-    font-size:12px;
-    padding-left:10px;
-    margin:5px;
-    border-left:2px solid $black_alpha10;
-    border-bottom:1px solid $black_alpha10;
-    @include inline-block();
+    .phone-type
+    {
+      font-size:12px;
+      color:$greyscale_midtone;
+    }
   }
+
+  .hours
+  {
+    .ohana-icon
+    {
+      color:$purple_darkest;
+    }
+  }
+
+  .service-opt-box
+  {
+    >section>section
+    {
+      @include inline-block();
+      vertical-align: top;
+    }
+  }
+
 
   .market-match
   {
@@ -2186,10 +2231,6 @@ main
     cursor:pointer;
   }
 
-  .map-box
-  {
-    clear:both;
-  }
 
   .map
   {

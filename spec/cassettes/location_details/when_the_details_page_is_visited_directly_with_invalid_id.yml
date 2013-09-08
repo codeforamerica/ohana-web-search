@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/locations/1234
+    uri: http://ohanapi-staging.herokuapp.com/api/locations/1234?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,19 +25,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:34 GMT
+      - Sun, 08 Sep 2013 04:39:27 GMT
       Status:
       - 404 Not Found
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '26'
+      - '4764'
       X-Request-Id:
-      - fcbdeb1f60dd4f470b6f40a11dd848f7
+      - 40eecc1f8a39bbe9952f62e766e50b5d
       X-Runtime:
-      - '0.039278'
+      - '0.009148'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -47,5 +49,5 @@ http_interactions:
       string: '{"error":"Not Found","message":"The requested resource could not be
         found."}'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:35 GMT
+  recorded_at: Sun, 08 Sep 2013 04:39:27 GMT
 recorded_with: VCR 2.5.0

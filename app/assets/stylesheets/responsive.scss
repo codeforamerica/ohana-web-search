@@ -2,8 +2,8 @@
    Media Queries for Responsive Design.
    ========================================================================== */
 
-// Smaller than standard 960 (devices and browsers)
-@media only screen and (max-width: 959px)
+// Smaller than standard 1024 (devices and browsers)
+@media only screen and (max-width: 1023px)
 {
   .inside
   {
@@ -18,18 +18,18 @@
         border:0;
       }
 
-      > section
+      .overview-box,
+      .map-box
       {
-        margin-right:auto;
-      }
-
-      > * > section * > section
-      {
-        margin:0;
+        margin-right: auto;
       }
     }
   }
+}
 
+// Smaller than standard 960 (devices and browsers)
+@media only screen and (max-width: 959px)
+{
 }
 
 // Tablet Portrait size to standard 960 (devices and browsers)

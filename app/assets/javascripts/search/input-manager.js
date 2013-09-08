@@ -1,5 +1,5 @@
 // handles ajax search functionality
-define(function () {
+define(['util/util'],function (util) {
   'use strict';
 
   	// PRIVATE PROPERTIES
@@ -66,7 +66,8 @@ define(function () {
 
 		function setLanguage(value)
 		{
-			_language.value = value;
+			if (value)
+				_language.value = value;
 		}
 
 		// PRIVATE METHODS
@@ -88,7 +89,12 @@ define(function () {
 
 		function _linkClickedHandler(evt)
 		{
-			_callback.performSearchWithURL(evt.target.href);
+			var params = util.getQueryParams(this.search);
+			var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
+			if (id != 'organizations')
+				params.id = id;
+
+			_callback.performSearch(params);
 
 			evt.preventDefault();
 			return false;

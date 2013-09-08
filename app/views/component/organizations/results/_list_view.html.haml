@@ -2,6 +2,8 @@
 	%ul
 		- @orgs.each do |org|
 			%li{"data-href"=>"#{organization_path(org.id, @search_params)}"}
+				%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :class=>"ajax-link", :name=>"#{org.id}"}
+					&nbsp;
 				%section{:class => "results-entry"}
 					-#
 						- unless org.distance.blank?

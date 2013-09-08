@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,19 +25,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:07 GMT
+      - Sun, 08 Sep 2013 04:40:56 GMT
       Status:
       - 400 Bad Request
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '39'
+      - '4731'
       X-Request-Id:
-      - f2ef4f0812c65b3abfd25108d8e26a99
+      - 34a834975b0b4f34334a74028dd9cc95
       X-Runtime:
-      - '0.003559'
+      - '0.003803'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -47,10 +49,10 @@ http_interactions:
       string: '{"error":"bad request","description":"Either keyword, location, or
         language is missing."}'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:07 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:57 GMT
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations
+    uri: http://ohanapi-staging.herokuapp.com/api/locations?action=index&api_token=<API_TOKEN>&controller=organizations
     body:
       encoding: US-ASCII
       string: ''
@@ -59,6 +61,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -71,12 +75,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:09 GMT
+      - Sun, 08 Sep 2013 04:40:57 GMT
       Etag:
-      - '"5de76a4c7798477c12f97b8597664001"'
+      - '"2bf722319798936bb2d69aac8a0165a1"'
       Link:
-      - <http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations&page=57>;
-        rel="last", <http://ohanapi-staging.herokuapp.com/api/locations?action=index&controller=organizations&page=2>;
+      - <http://ohanapi-staging.herokuapp.com/api/locations?action=index&api_token=<API_TOKEN>&controller=organizations&page=57>;
+        rel="last", <http://ohanapi-staging.herokuapp.com/api/locations?action=index&api_token=<API_TOKEN>&controller=organizations&page=2>;
         rel="next"
       Status:
       - 200 OK
@@ -87,13 +91,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '38'
+      - '4730'
       X-Request-Id:
-      - 5f8120e6db018e0f6488368c25a816c3
+      - 40e5260efbdbb0daa8ccacae9ac38838
       X-Runtime:
-      - '1.892667'
+      - '0.625869'
       X-Total-Count:
       - '1691'
       X-Total-Pages:
@@ -101,7 +105,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '92902'
+      - '92292'
       Connection:
       - keep-alive
     body:
@@ -211,9 +215,8 @@ http_interactions:
         coroner fee per case, toxicology report, investigation report, autopsy report,
         per day storage. Cash, checks and money orders accepted.","funding_sources":["County","Fees"],"keywords":["LEGAL
         AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistance","Pathologists"],"categories":[{"id":"52280f5c1edd37edff000001","oe_id":"101","name":"Emergency"},{"id":"52280f5c1edd37edff000003","oe_id":"101-02","name":"Emergency
-        Cash","parent_id":"52280f5c1edd37edff000001","parent_name":"Emergency"}],"how_to_apply":"Walk
-        in or apply by phone or mail.","service_areas":"San Mateo County","wait":"No
-        wait.","updated_at":"2013-09-04T22:18:22-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000016","other_locations":[]},{"id":"521d32b91974fcdb2b00001c","accessibility":["elevator","ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Martha
+        Cash","parent_id":"52280f5c1edd37edff000001"}],"how_to_apply":"Walk in or
+        apply by phone or mail.","service_areas":"San Mateo County","wait":"No wait.","updated_at":"2013-09-04T22:18:22-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000016","other_locations":[]},{"id":"521d32b91974fcdb2b00001c","accessibility":["elevator","ramp","restroom","disabled_parking","wheelchair"],"ask_for":["Martha
         Poyatos"],"coordinates":[-122.2802261,37.5636454],"description":"This Commission
         convenes by authority of the Cortese-Knox-Hertzberg Local Government Reorganization
         Act of 2000, Section 56000 Et Seq. of the Government Code. The seven commission
@@ -486,7 +489,7 @@ http_interactions:
         Counseling","Drug Abuse Counseling","Conjoint Counseling","Family Counseling","Group
         Counseling","Individual Counseling","Spouse/Domestic Partner Abuse Counseling","Play
         Therapy","Older Adults","Youth","Adolescents","Children"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f661edd37edff00004f","oe_id":"106-01","name":"Addiction
-        & Recovery","parent_id":"52280f661edd37edff00004e","parent_name":"Health"}],"how_to_apply":"Walk
+        & Recovery","parent_id":"52280f661edd37edff00004e"}],"how_to_apply":"Walk
         in or apply by phone. Appointment preferred.","service_areas":["San Francisco
         County","San Mateo County"],"wait":"Short waiting time for evening, low-fee
         appointments.","updated_at":"2013-09-05T11:03:41-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00004f","other_locations":[]},{"id":"521d32ba1974fcdb2b000056","accessibility":["restroom","disabled_parking","wheelchair"],"ask_for":["Intake
@@ -527,10 +530,9 @@ http_interactions:
         co-occurring treatment services.","funding_sources":["County","Donations","Fees"],"keywords":["ALCOHOLISM
         SERVICES","Residential Care","DRUG ABUSE SERVICES","Residential Alcoholism
         Treatment","Residential Drug Abuse Treatment","Women","Men"],"categories":[{"id":"52280f601edd37edff00001b","oe_id":"103","name":"Housing"},{"id":"52280f611edd37edff000027","oe_id":"103-05","name":"Residential
-        Housing","parent_id":"52280f601edd37edff00001b","parent_name":"Housing"},{"id":"52280f621edd37edff00002f","oe_id":"103-05-04","name":"Short-Term
-        Housing","parent_id":"52280f611edd37edff000027","parent_name":"Residential
-        Housing"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f661edd37edff00004f","oe_id":"106-01","name":"Addiction
-        & Recovery","parent_id":"52280f661edd37edff00004e","parent_name":"Health"}],"how_to_apply":"Apply
+        Housing","parent_id":"52280f601edd37edff00001b"},{"id":"52280f621edd37edff00002f","oe_id":"103-05-04","name":"Short-Term
+        Housing","parent_id":"52280f611edd37edff000027"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f661edd37edff00004f","oe_id":"106-01","name":"Addiction
+        & Recovery","parent_id":"52280f661edd37edff00004e"}],"how_to_apply":"Apply
         by attending a Treatment Readiness interview to be assessed for eligibility
         for treatment. Interview lasts approximately 1.5 hours. No appointment is
         necessary. Please arrive 15 minutes early. Tuesday at 11am and Friday at 11:45am.
@@ -578,12 +580,11 @@ http_interactions:
         and Crafts","Special Events/Entertainment","Sports/Games/Exercise","Congregate
         Meals/Nutrition Sites","Tax Preparation Assistance","Facilities/Community
         Centers","Senior Centers","Older Adults","Older Adult Volunteers"],"categories":[{"id":"52280f5e1edd37edff000010","oe_id":"101-07","name":"Psychiatric
-        Emergency Services","parent_id":"52280f5c1edd37edff000001","parent_name":"Emergency"},{"id":"52280f5e1edd37edff000011","oe_id":"102","name":"Food"},{"id":"52280f5e1edd37edff000016","oe_id":"101-05","name":"Free
-        Meals","parent_id":"52280f5e1edd37edff000011","parent_name":"Food"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
-        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
-        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"}],"how_to_apply":"Walk in.","service_areas":"Pacifica","wait":"No
-        wait.","updated_at":"2013-09-05T11:15:43-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00005e","other_locations":[]},{"id":"521d32ba1974fcdb2b000065","accessibility":["wheelchair"],"ask_for":["Peg
+        Emergency Services","parent_id":"52280f5c1edd37edff000001"},{"id":"52280f5e1edd37edff000011","oe_id":"102","name":"Food"},{"id":"52280f5e1edd37edff000016","oe_id":"101-05","name":"Free
+        Meals","parent_id":"52280f5e1edd37edff000011"},{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
+        Education","parent_id":"52280f661edd37edff00004e"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c"}],"how_to_apply":"Walk
+        in.","service_areas":"Pacifica","wait":"No wait.","updated_at":"2013-09-05T11:15:43-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00005e","other_locations":[]},{"id":"521d32ba1974fcdb2b000065","accessibility":["wheelchair"],"ask_for":["Peg
         Morris (Executive Director) "],"coordinates":[-122.3012308,37.5578428],"description":"A
         community-based psychosocial rehabilitation service for persons with serious
         and persistent psychiatric disabilities and co-occurring disorders. Offers
@@ -644,10 +645,9 @@ http_interactions:
         Treatment","Observation/Diagnosis","Developmental Assessment","Pediatrics","Parenting
         Education","Family Counseling","Group Counseling","Individual Counseling","Youth","Adolescents","Children","Developmental
         Disabilities","Children and Youth with Emotional Disturbance"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
-        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
-        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
-        Education","parent_id":"52280f681edd37edff00005c","parent_name":"Health Education"}],"how_to_apply":"Apply
+        Education","parent_id":"52280f661edd37edff00004e"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
+        Education","parent_id":"52280f681edd37edff00005c"}],"how_to_apply":"Apply
         by phone. Registration required.","service_areas":["Alameda County","Contra
         Costa County","Marin County","Monterey County","San Francisco County","San
         Mateo County","Santa Clara County","Santa Cruz County"],"wait":"Varies, according
@@ -712,13 +712,11 @@ http_interactions:
         PROTECTION AND CARE SERVICES","Day Care","FINANCIAL ASSISTANCE SERVICES","General
         Support","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Parent Groups","MENTAL
         HEALTH SERVICES","Family Support","Older Adults","Youth","Women"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
-        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
-        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
-        Education","parent_id":"52280f681edd37edff00005c","parent_name":"Health Education"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
-        Mental Health","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"},{"id":"52280f6b1edd37edff000087","oe_id":"107","name":"Money"},{"id":"52280f701edd37edff0000bb","oe_id":"107-05","name":"Financial
-        Education","parent_id":"52280f6b1edd37edff000087","parent_name":"Money"}],"how_to_apply":"Apply
+        Education","parent_id":"52280f661edd37edff00004e"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c"},{"id":"52280f681edd37edff000061","oe_id":"106-04-05","name":"Parenting
+        Education","parent_id":"52280f681edd37edff00005c"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
+        Mental Health","parent_id":"52280f681edd37edff00005c"},{"id":"52280f6b1edd37edff000087","oe_id":"107","name":"Money"},{"id":"52280f701edd37edff0000bb","oe_id":"107-05","name":"Financial
+        Education","parent_id":"52280f6b1edd37edff000087"}],"how_to_apply":"Apply
         by phone. Referral from Child and Family Services or Family Court required
         for application for some services.","service_areas":"San Mateo County","wait":"Seniors:
         no wait. Counseling and visitation: varies according to program and time of
@@ -744,10 +742,9 @@ http_interactions:
         applicants only.","funding_sources":["Donations","Fundraising","Grants","United
         Way"],"keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Companion","Adult/Child
         Mentoring Programs","Mentoring Services Volunteer Opportunities"],"categories":[{"id":"52280f711edd37edff0000c4","oe_id":"108","name":"Care"},{"id":"52280f741edd37edff0000e7","oe_id":"108-07","name":"Support
-        Network","parent_id":"52280f711edd37edff0000c4","parent_name":"Care"},{"id":"52280f741edd37edff0000ec","oe_id":"108-07-05","name":"Mentoring","parent_id":"52280f741edd37edff0000e7","parent_name":"Support
-        Network"}],"how_to_apply":"Apply online or call for information packet.","service_areas":["Alameda
-        County","Contra Costa County","San Francisco County","San Mateo County","Santa
-        Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:20:21-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00007d","other_locations":[]},{"id":"521d32ba1974fcdb2b000083","accessibility":["wheelchair"],"ask_for":["Laura
+        Network","parent_id":"52280f711edd37edff0000c4"},{"id":"52280f741edd37edff0000ec","oe_id":"108-07-05","name":"Mentoring","parent_id":"52280f741edd37edff0000e7"}],"how_to_apply":"Apply
+        online or call for information packet.","service_areas":["Alameda County","Contra
+        Costa County","San Francisco County","San Mateo County","Santa Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:20:21-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00007d","other_locations":[]},{"id":"521d32ba1974fcdb2b000083","accessibility":["wheelchair"],"ask_for":["Laura
         Fanucchi (Homesharing Program)","Carolyn Moore (Self-Sufficiency Program))"],"coordinates":[-122.3211965,37.5654824],"description":"Homesharing
         program that matches persons with a home or apartment to share with those
         seeking housing, thereby reducing housing costs for both. The Self-Sufficiency
@@ -797,12 +794,10 @@ http_interactions:
         DISABILITIES SERVICES","Out-Of-Home Care","Rehabilitation/Occupational","Sheltered
         Employment","Adult Residential Care Homes","Support Groups","Developmental
         Disabilities"],"categories":[{"id":"52280f661edd37edff00004e","oe_id":"106","name":"Health"},{"id":"52280f681edd37edff00005c","oe_id":"106-04","name":"Health
-        Education","parent_id":"52280f661edd37edff00004e","parent_name":"Health"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
-        Life Skills","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
-        Mental Health","parent_id":"52280f681edd37edff00005c","parent_name":"Health
-        Education"}],"how_to_apply":"Apply by phone.","service_areas":["San Mateo
-        County","Santa Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:23:15-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000089","other_locations":[]},{"id":"521d32bb1974fcdb2b00008f","accessibility":[],"coordinates":[-122.1843223,37.4517074],"description":"Conducts
+        Education","parent_id":"52280f661edd37edff00004e"},{"id":"52280f681edd37edff00005d","oe_id":"106-04-01","name":"Daily
+        Life Skills","parent_id":"52280f681edd37edff00005c"},{"id":"52280f681edd37edff000064","oe_id":"106-04-08","name":"Understand
+        Mental Health","parent_id":"52280f681edd37edff00005c"}],"how_to_apply":"Apply
+        by phone.","service_areas":["San Mateo County","Santa Clara County"],"wait":"Varies.","updated_at":"2013-09-05T11:23:15-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000089","other_locations":[]},{"id":"521d32bb1974fcdb2b00008f","accessibility":[],"coordinates":[-122.1843223,37.4517074],"description":"Conducts
         voter registration programs, studies and takes positions on political issues.
         Publishes election information materials, sponsors candidate forums and has
         study groups on national, state, county and local issues. Strives for the
@@ -1002,5 +997,5 @@ http_interactions:
         Issues"],"categories":[],"how_to_apply":"Walk in or apply by phone or mail.","service_areas":"Redwood
         City","wait":"Varies according to enrollment.","updated_at":"2013-08-27T16:14:04-07:00"}],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bc1974fcdb2b0000b3","other_locations":[]}]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:10 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:59 GMT
 recorded_with: VCR 2.5.0

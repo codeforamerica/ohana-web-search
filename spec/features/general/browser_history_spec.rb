@@ -33,12 +33,12 @@ feature 'Visitor uses the back or forward button', :js => true do
 
   scenario 'back to results from details, then forward to details', :vcr do
     visit_details
-    find_link("http://www.smchealth.org")
+    find_link("www.smchealth.org")
     go_back
     page.find("#search-summary").
       should have_content("1 of 1 result matching 'maceo'")
     go_forward
-    find_link("http://www.smchealth.org")
+    find_link("www.smchealth.org")
     expect(page).to have_content "San Maceo"
   end
 end

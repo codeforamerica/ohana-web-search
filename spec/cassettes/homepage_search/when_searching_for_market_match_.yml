@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations&keyword=market%20match&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market%20match&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:31 GMT
+      - Sun, 08 Sep 2013 04:40:41 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Status:
@@ -33,13 +35,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '27'
+      - '4740'
       X-Request-Id:
-      - 04f9ce893c145858d36b00aec3a9c9d2
+      - 145df53b1800b2fd444df44faf347276
       X-Runtime:
-      - '0.021936'
+      - '0.013438'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -54,5 +56,5 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:31 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:41 GMT
 recorded_with: VCR 2.5.0

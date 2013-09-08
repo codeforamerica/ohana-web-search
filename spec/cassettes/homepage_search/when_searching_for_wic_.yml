@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&location=&utf8=%E2%9C%93
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=wic&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,9 +25,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 06 Sep 2013 04:26:30 GMT
+      - Sun, 08 Sep 2013 04:40:44 GMT
       Etag:
-      - '"18e04f0fbb8a5cc9be53cbca095b6e77"'
+      - '"bddc1a7fe9a5a7fc558947b0dbce55fc"'
       Status:
       - 200 OK
       X-Current-Page:
@@ -33,13 +35,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Ratelimit-Limit:
-      - '60'
+      - '5000'
       X-Ratelimit-Remaining:
-      - '28'
+      - '4738'
       X-Request-Id:
-      - 4ba54b26a9853251c2f5b452e1e1c664
+      - c7710c874497d848ac7cc187b0e21829
       X-Runtime:
-      - '0.043843'
+      - '0.152096'
       X-Total-Count:
       - '7'
       X-Total-Pages:
@@ -47,12 +49,48 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '19388'
+      - '19573'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"521d32ed1974fcdb2b000d4e","accessibility":["wheelchair"],"address":{"city":"San
+      string: '[{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
+        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
+        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
+        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
+        Puente provides a single point of entry for men, women and children to have
+        access to safety net services, health and wellness services, youth leadership
+        development and employment, and community engagement and action. Puente also
+        works with farmers, ranchers, and nursery owners to promote a sustainable
+        agricultural economy on the south coast of northern California. Permanent
+        programs include: a mobile pantry; a Second Harvest Food Bank distribution
+        site; children''s story times; and La Sala Community Living Room. Also offers
+        a program to address maternal depression. Also offers ESL classes, individual
+        tutoring in ESL, GED and citizenship classes. Periodically offers an Adult
+        Literacy Program for Spanish speakers in which students learn to read and
+        write in Spanish or complete their elementary, middle and high school within
+        the Mexican education system. Call for specific days and times for each of
+        these programs. Also offers, by appointment, WIC (Women, Infants and Children)
+        services, insurance enrollment, food stamps, CalWorks assistance, tax preparation
+        and notary services. Deposit and rental assistance subject to availability
+        of funds. The site is part of the core network of community service agencies
+        of San Mateo County. Created from the merger of North Street Community Resource
+        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
+        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","kind":"human_services","languages":["Spanish"],"mail_address":{"attention":"Puente
+        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
+        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
+        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, leadership development,
+        and community engegement and action.","transportation":"Contact SamCoast for
+        information.","updated_at":"2013-09-06T17:06:59-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
+        of La Honda, Loma Mar, Pescadero, and San Gregorio","category_ids":["52280f751edd37edff0000f5","52280f751edd37edff0000fd","52280f761edd37edff000100","52280f771edd37edff000106"],"eligibility":"Some
+        programs require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
+        Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
+        Instruction","English as a Second Language","Comprehensive Information and
+        Referral","Youth","Transportation assistance","Clothing","Mental Health","ESL","WIC","safety
+        net services"],"service_areas":["La Honda","Loma Mar","Pescadero","San Gregorio"],"updated_at":"2013-09-06T17:06:59-07:00"}],"organization":{"name":"Puente
+        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":5280974800.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ed1974fcdb2b000d4e","accessibility":["wheelchair"],"address":{"city":"San
         Jose","state":"CA","street":"1333 Meridian Avenue","zip":"95125"},"ask_for":["Central
         Registration"],"contacts":[{"name":"Liz Hunt, MSW, MPA","title":"Chief Executive
         Officer"}],"coordinates":[-121.914281,37.301772],"created_at":"2013-08-27T16:14:53-07:00","description":"Provides
@@ -80,7 +118,7 @@ http_interactions:
         SERVICES","Day Treatment","DRUG ABUSE SERVICES","HEALTH SERVICES","Dental","Education/Information","Nutrition","Mental
         Health Services","American Indian Services","WIC","Low cost medical referral
         services"],"service_areas":"Santa Clara County","updated_at":"2013-09-05T13:13:37-07:00","wait":"Varies."}],"organization":{"name":"Indian
-        Health Center of Santa Clara Valley, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d4d"},"id":"521d32ed1974fcdb2b000d4e","_score":44701176.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021b7","accessibility":["elevator","wheelchair"],"address":{"city":"San
+        Health Center of Santa Clara Valley, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d4d"},"id":"521d32ed1974fcdb2b000d4e","_score":41257616.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021b7","accessibility":["elevator","wheelchair"],"address":{"city":"San
         Mateo","state":"CA","street":"477 9th Avenue, Suite 110","zip":"94402"},"ask_for":["Call
         the main office"],"contacts":[{"name":"Eliana C. Schultz, RD","title":"WIC
         Director"}],"coordinates":[-122.3171637,37.5624546],"created_at":"2013-08-27T16:16:31-07:00","description":"Offers
@@ -108,7 +146,7 @@ http_interactions:
         by phone. Appointment necessary for application.","keywords":["Nutrition Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
         Planning"],"service_areas":"San Mateo County","updated_at":"2013-09-05T11:35:11-07:00","wait":"2
         week wait for new enrollees."}],"organization":{"name":"San Mateo County Health
-        System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d334f1974fcdb2b0021b7","_score":2793823.5,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33571974fcdb2b002236","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"South
+        System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d334f1974fcdb2b0021b7","_score":2578601.0,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33571974fcdb2b002236","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"South
         San Francisco","state":"CA","street":"306 Spruce Avenue","zip":"94080"},"ask_for":["Receptionist","charge
         nurse at 650-877-7073"],"contacts":[{"name":"Cathy Lehmkuhl","title":"Clinic
         Manager"},{"name":"Jonathan Lee","title":"Medical Director"}],"coordinates":[-122.415633,37.656645],"created_at":"2013-08-27T16:16:39-07:00","description":"Offers
@@ -129,7 +167,7 @@ http_interactions:
         Control","Infant Care","Maternity Care","STD Treatment","Pediatrics"],"service_areas":"San
         Mateo County","updated_at":"2013-09-05T12:21:23-07:00","wait":"Varies. Same
         day appointment if appropriate."}],"organization":{"name":"San Mateo County
-        Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33571974fcdb2b002236","_score":0.7817164,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f21974fcdb2b000ecb","accessibility":["wheelchair"],"address":{"city":"San
+        Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33571974fcdb2b002236","_score":0.7815608,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f21974fcdb2b000ecb","accessibility":["wheelchair"],"address":{"city":"San
         Francisco","state":"CA","street":"Sigmund Stern Grove. 19th Avenue at Wawona","zip":"94116"},"ask_for":["Elaine
         Fong"],"contacts":[{"name":"Elaine Fong","title":"Chief Financial Officer"}],"coordinates":[-122.497668,37.7432421],"created_at":"2013-08-27T16:14:58-07:00","description":"Produces
         croquet programs year-round for club members and the public at the municipal
@@ -148,7 +186,7 @@ http_interactions:
         dues"],"how_to_apply":"Apply by email (sfcroquetclub@aol.com).","keywords":["Special
         Interest Clubs"],"service_areas":["Alameda County","Contra Costa County","Marin
         County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-08-27T16:14:58-07:00"}],"organization":{"name":"San
-        Francisco Croquet Club","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000eca"},"id":"521d32f21974fcdb2b000ecb","_score":0.7417507,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32eb1974fcdb2b000ce9","accessibility":["wheelchair"],"address":{"city":"San
+        Francisco Croquet Club","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000eca"},"id":"521d32f21974fcdb2b000ecb","_score":0.7416466,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32eb1974fcdb2b000ce9","accessibility":["wheelchair"],"address":{"city":"San
         Jose","state":"CA","street":"160 East Virginia Street, Suite 100","zip":"95112"},"ask_for":["Receptionist
         will direct calls"],"coordinates":[-121.8780525,37.3256075],"created_at":"2013-08-27T16:14:51-07:00","description":"A
         full-service clinic offering mental health services, prenatal and well baby
@@ -175,7 +213,7 @@ http_interactions:
         PLANNING SERVICES","Expectant/New Parent Assistance","INDIVIDUAL AND FAMILY
         DEVELOPMENT SERVICES","Growth and Adjustment","MENTAL HEALTH SERVICES","Individual/Group
         Counseling"],"service_areas":"Santa Clara County","updated_at":"2013-08-27T16:14:51-07:00","wait":"Varies."}],"organization":{"name":"Gardner
-        Family Care Corporation, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32eb1974fcdb2b000ce8"},"id":"521d32eb1974fcdb2b000ce9","_score":0.45600122,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33531974fcdb2b002204","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"Daly
+        Family Care Corporation, Inc.","url":"http://ohanapi.herokuapp.com/api/organizations/521d32eb1974fcdb2b000ce8"},"id":"521d32eb1974fcdb2b000ce9","_score":0.45591044,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33531974fcdb2b002204","accessibility":["ramp","restroom","disabled_parking","wheelchair"],"address":{"city":"Daly
         City","state":"CA","street":"380 - 90th Street","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"name":"Cathy
         Lehmkuhl","title":"Clinic Manager"},{"name":"Jonathan Lee, Dr.","title":"Medical
         Director"}],"coordinates":[-122.4740805,37.6911172],"created_at":"2013-08-27T16:16:35-07:00","description":"Offers
@@ -201,43 +239,7 @@ http_interactions:
         Care","HIV Testing","Community Clinics","Dental Care","Youth","Family Medicine","Infant
         Care","Immunizartions","Asthma"],"service_areas":"San Mateo County","updated_at":"2013-09-05T11:54:08-07:00","wait":"Varies.
         Same day service if appropriate."}],"organization":{"name":"San Mateo County
-        Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33531974fcdb2b002204","_score":0.3908582,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c29","accessibility":["ramp"],"address":{"city":"Pescadero","state":"CA","street":"620
-        North Street","zip":"94060"},"contacts":[{"name":"Kerry Lobel","title":"Executive
-        Director"}],"coordinates":[-122.378084,37.2565669],"created_at":"2013-08-27T16:15:48-07:00","description":"A
-        community resource center serving Pescadero, La Honda, Loma Mar and San Gregorio.
-        Puente provides a single point of entry for men, women and children to have
-        access to safety net services, health and wellness services, youth leadership
-        development and employment, and community engagement and action. Puente also
-        works with farmers, ranchers, and nursery owners to promote a sustainable
-        agricultural economy on the south coast of northern California. Permanent
-        programs include: a mobile pantry; a Second Harvest Food Bank distribution
-        site; children''s story times; and La Sala Community Living Room. Also offers
-        a program to address maternal depression. Also offers ESL classes, individual
-        tutoring in ESL, GED and citizenship classes. Periodically offers an Adult
-        Literacy Program for Spanish speakers in which students learn to read and
-        write in Spanish or complete their elementary, middle and high school within
-        the Mexican education system. Call for specific days and times for each of
-        these programs. Also offers, by appointment, WIC (Women, Infants and Children)
-        services, insurance enrollment, food stamps, CalWorks assistance, tax preparation
-        and notary services. Deposit and rental assistance subject to availability
-        of funds. The site is part of the core network of community service agencies
-        of San Mateo County. Created from the merger of North Street Community Resource
-        Center and Puente de la Costa.","emails":["info@mypuente.org"],"faxes":["650
-        879-0973"],"hours":"Monday-Friday, 9-6; ESL Monday, Wednesday, 7-9","languages":["Spanish"],"mail_address":{"attention":"Puente
-        Resource Center","city":"Pescadero","state":"CA","street":"P.O. Box 554","zip":"94060"},"name":"Puente
-        Resource Center","phones":[{"number":"650 879-1691"}],"short_desc":"A community
-        resource center serving Pescadero, La Honda, Loma Mar and San Gregorio. Puente
-        provides a single point of entry for men, women and children to have access
-        to safety net services, health and wellness services, leadership development,
-        and community engegement and action.","transportation":"Contact SamCoast for
-        information.","updated_at":"2013-08-27T16:28:37-07:00","urls":["http://www.mypuente.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c29","services":[{"audience":"Residents
-        of La Honda, Loma Mar, Pescadero, and San Gregorio","eligibility":"Some programs
-        require income eligibility. All are welcome.","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Food
-        Pantries","Grocery Delivery","Housing Expense Assistance","Citizenship Education","GED
-        Instruction","English as a Second Language","Comprehensive Information and
-        Referral","Youth","Transportation assistance","Clothing","Mental Health"],"service_areas":["La
-        Honda","Loma Mar","Pescadero","San Gregorio"],"updated_at":"2013-09-05T11:42:24-07:00"}],"organization":{"name":"Puente
-        de la Costa Sur","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28"},"id":"521d33241974fcdb2b001c29","_score":0.32571518,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Health System","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175"},"id":"521d33531974fcdb2b002204","_score":0.3907804,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Fri, 06 Sep 2013 04:26:30 GMT
+  recorded_at: Sun, 08 Sep 2013 04:40:44 GMT
 recorded_with: VCR 2.5.0
