@@ -6,7 +6,9 @@
       %h1 #{title}:
     - if org[:urls].kind_of?(Array)
       %ul
-        - org[:urls].sort.each do |f|
+        - org[:urls].sort.each do |url|
           %li
             %span
-              = format_url(f)
+              %a{:href=>url,:target=>"_blank"}
+                %span{:itemprop=>"url"}
+                  = format_url(url)
