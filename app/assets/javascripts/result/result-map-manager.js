@@ -1,6 +1,6 @@
 // manages results maps view
 define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function (map) {
-  'use strict';
+	'use strict';
 
 		// PRIVATE PROPERTIES
 		var _map; // the map div that the Google map loads into
@@ -15,6 +15,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// constants for map button text content
 		var LARGER_MAP_TEXT = "Display small map";
 		var SMALLER_MAP_TEXT = "Display large map";
+
+		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -31,25 +33,25 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_mapViewControl = document.getElementById('map-view-control');
 				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
-			  var mapOptions = {
-			    zoom: 15,
-			    scrollwheel: false,
-			    zoomControl: true,
-			    panControl: false,
-			    streetViewControl: false,
-			    scaleControl: true,
-			    scaleControlOptions: {
-	        	position: google.maps.ControlPosition.RIGHT_BOTTOM
-	    		},
-			    mapTypeControl: false,
-			    mapTypeId: google.maps.MapTypeId.ROADMAP
-			  }
+				var mapOptions = {
+					zoom: 15,
+					scrollwheel: false,
+					zoomControl: true,
+					panControl: false,
+					streetViewControl: false,
+					scaleControl: true,
+					scaleControlOptions: {
+						position: google.maps.ControlPosition.RIGHT_BOTTOM
+					},
+					mapTypeControl: false,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
 
-			  _map = new google.maps.Map(_mapCanvas, mapOptions);
+				_map = new google.maps.Map(_mapCanvas, mapOptions);
 
-			  _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
+				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
-			  refresh();
+				refresh();
 			}
 		}
 
@@ -80,18 +82,18 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			if (locations)
 			{
 				_markerData = JSON.parse(locations.innerHTML);
-		  	locations.parentNode.removeChild(locations); // remove script element
-			  _markerBounds = new google.maps.LatLngBounds();
+				locations.parentNode.removeChild(locations); // remove script element
+				_markerBounds = new google.maps.LatLngBounds();
 
 				_clearMarkers();
 
 				var dataLength = _markerData.length;
-		    for(var m = 0; m<dataLength-1; m++)
-		    {
-		    	_loadMarker( _markerData[m] );
-		    }
-		    var metadata = _markerData[dataLength-1];
-		    var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
+				for(var m = 0; m<dataLength-1; m++)
+				{
+					_loadMarker( _markerData[m] );
+				}
+				var metadata = _markerData[dataLength-1];
+				var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
 			}
 			else
 			{
@@ -103,10 +105,10 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// clears all markers
 		function _clearMarkers()
 		{
-		  for (var i = 0; i < _markersArray.length; i++ ) {
-		    _markersArray[i].setMap(null);
-		  }
-		  _markersArray = [];
+			for (var i = 0; i < _markersArray.length; i++ ) {
+				_markersArray[i].setMap(null);
+			}
+			_markersArray = [];
 		}
 
 		// load a single marker
@@ -116,7 +118,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.7';
+				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
 				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
 
 				var marker = new google.maps.Marker({
@@ -129,16 +131,11 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 				_markersArray.push(marker);
 
-				/*
-				google.maps.event.addListener(marker, 'mouseover', function() {
-				    _markerInfo.innerHTML = this.title;
-				    this.setZIndex(google.maps.Marker.MAX_ZINDEX);
-				});
+				console.log(markerData['agency']);
+				var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
+				var content = "<h1>"+markerData['name']+"</h1>"+agency+"<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>"
+				_makeInfoWindowEvent(_map, _infoWindow, content, marker);
 
-				google.maps.event.addListener(marker, 'mouseout', function() {
-				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
-				});
-				*/
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 
 				_markerBounds.extend(myLatlng);
@@ -146,12 +143,18 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			}
 		}
 
+		// set the content in the info window
+		function _makeInfoWindowEvent(map, infowindow, contentString, marker) {
+			google.maps.event.addListener(marker, 'mouseover', function() {
+				_infoWindow.setContent(contentString);
+				_infoWindow.open(map, marker);
+			});
+		}
+
 		// a location marker was clicked, perform a search for the organization details
 		function _markerClickedHandler(evt)
 		{
 			var params = {'id':this.id}
-			params.keyword = document.getElementById('keyword').value;
-			params.location = document.getElementById('location').value;
 			_callback.performSearch(params);
 		}
 

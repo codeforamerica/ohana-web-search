@@ -5,7 +5,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// PRIVATE PROPERTIES
 		var _map;
 		var _markerData; // markers on the map
-		var _markersArray = []; // array for storing markers
+		var _markersArray; // array for storing markers
 		var _markerBounds; // the bounds of the markers
 		var _locationMarker; // the location of the current org
 
@@ -13,7 +13,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _nearbyControlIcon; // icon in the nearby locations button
 		var _nearbyControlTxt; // text in the nearby locations button
 
-		var _nearbyShowing = false; //whether or not the nearby locations are showing
+		var _nearbyShowing; //whether or not the nearby locations are showing
+
+		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
@@ -27,6 +29,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		{
 			_callback = callback;
 			_nearbyControl = document.getElementById("show-nearby-control");
+			_nearbyShowing = false;
+			_markersArray = [];
 
 			if (_nearbyControl)
 			{
@@ -167,7 +171,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
 				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
-				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.75';
+				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
 
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
@@ -179,16 +183,10 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 				_markersArray.push(marker);
 
-				/*
-				google.maps.event.addListener(marker, 'mouseover', function() {
-				    _markerInfo.innerHTML = this.title;
-				    this.setZIndex(google.maps.Marker.MAX_ZINDEX);
-				});
+				var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
+				var content = "<h1>"+markerData['name']+"</h1>"+agency+"<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>"
+				_makeInfoWindowEvent(_map, _infoWindow, content, marker);
 
-				google.maps.event.addListener(marker, 'mouseout', function() {
-				    _markerInfo.innerHTML = "<span>Mouse over markers for details</span>";
-				});
-				*/
 				google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 
 				_markerBounds.extend(myLatlng);
@@ -196,11 +194,18 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			}
 		}
 
+		// set the content in the info window
+		function _makeInfoWindowEvent(map, infowindow, contentString, marker) {
+			google.maps.event.addListener(marker, 'mouseover', function() {
+				_infoWindow.setContent(contentString);
+				_infoWindow.open(map, marker);
+			});
+		}
+
 		// a location marker was clicked, perform a search for the organization details
 		function _markerClickedHandler(evt)
 		{
-			var params = util.getQueryParams();
-			params.id = this.id;
+			var params = {'id':this.id}
 			_callback.performSearch(params);
 		}
 

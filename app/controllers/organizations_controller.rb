@@ -128,11 +128,17 @@ class OrganizationsController < ApplicationController
         offset = (0.0001*(coords_list[new_coords.to_s]-1))
         new_coords = [o.coordinates[0]-offset,o.coordinates[1]]
 
-        result << {
+        details = {
           'id' => o.id,
           'name' => o.name,
           'coordinates' => new_coords
         }
+
+        if o.organization.key?(:name) && o.organization.name != o.name
+          details['agency'] = o.organization.name;
+        end
+
+        result << details
 
       end
       result
