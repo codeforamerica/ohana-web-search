@@ -63,7 +63,7 @@ VCR.configure do |c|
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
-    ENV['OHANA_STAGING_API_TOKEN']
+    ENV['OHANA_API_TOKEN']
   end
 end
 
