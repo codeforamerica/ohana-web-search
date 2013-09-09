@@ -88,7 +88,7 @@
                 = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
 
       -# has a physical address and the street address and zipcode differ from mailing address
-      - if @org.key?(:address) && !(@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip)
+      - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
         %section.address-box
           %h1 Physical Address
           %section
@@ -149,7 +149,6 @@
       %section.service-opt-box
         %h1 Service Options
         %section
-
           = insert_template(true,@org,:audience,"Audience",nil)
           = insert_template(true,@org,:service_areas,"Service Areas",nil)
           = insert_template(true,@org,:how_to_apply,"How to Apply",nil)
@@ -171,7 +170,7 @@
               %h1 Payment methods accepted:
               %ul
                 -if @org.key?(:payments)
-                  -@org.payments_accepted.sort.each do |payment|
+                  -@org.payments.sort.each do |payment|
                     %li
                       %span.term-popup-container
                         %span.popup.hide
@@ -188,7 +187,7 @@
                         Market Match
 
 
-          - if @org.key?(:products)
+          - if @org.key?(:products) && @org.products.length > 0
             %section.products-sold
               %span{"data-icon"=>"␣" , :class=>"ohana-icon"}
               %h1 Products sold:
