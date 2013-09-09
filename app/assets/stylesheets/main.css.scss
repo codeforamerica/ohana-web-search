@@ -1206,9 +1206,18 @@ main
   padding-right:25px;
   height:44px;
   line-height:40px;
+  text-align:right;
+
+  p
+  {
+    @include inline-block();
+    font-family: $san_serif_font;
+    font-size:14px;
+  }
 
   ul
   {
+    @include inline-block();
     text-align:right;
 
     li

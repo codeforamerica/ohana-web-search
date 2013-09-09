@@ -7,6 +7,7 @@ feature "location details", :js => true do
       VCR.use_cassette('location_details/search_and_visit') do
         search_from_home(:keyword => 'maceo')
         visit_details
+        delay # delay to allow details to load to avoid intermittent premature content checking
       end
     end
 
@@ -105,7 +106,7 @@ feature "location details", :js => true do
     end
 
     it "includes updated time" do
-      expect(page).to have_content("Friday, 6 September 2013 at 5:26 PM")
+      expect(page).to have_content("Monday, 9 September 2013 at 10:30 AM")
     end
 
   end
@@ -173,26 +174,26 @@ feature "location details", :js => true do
 
   context 'when farmers market with market match' do
     before(:each) do
-      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+      VCR.use_cassette('location_details/when_market_details_page_is_visited_directly') do
+       visit('/organizations/522dee234becffff2700000e')
       end
     end
 
-    # farmer's market info is not currently included
-    xit "includes Market Match" do
+    it "includes Market Match" do
       expect(page).to have_content("Market Match")
     end
 
-    xit "includes payment info" do
-      expect(page).to have_content("Payments Accepted")
+    it "includes payment info" do
+      expect(page).to have_content("Payment methods accepted:")
     end
 
-    xit "includes info about payment types" do
+    it "includes info about payment types" do
       expect(page).to have_content("SNAP")
     end
 
-    xit "includes products info" do
-      expect(page).to have_content("Products Sold")
+    it "includes products info" do
+      expect(page).to have_content("Products sold:")
+      expect(page).to have_content("Baked Goods")
     end
   end
 end

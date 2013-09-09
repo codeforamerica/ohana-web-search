@@ -149,11 +149,6 @@
       %section.service-opt-box
         %h1 Service Options
         %section
-          = insert_template(true,@org,:audience,"Audience",nil)
-          = insert_template(true,@org,:service_areas,"Service Areas",nil)
-          = insert_template(true,@org,:how_to_apply,"How to Apply",nil)
-          = insert_template(true,@org,:fees,"Fees",nil)
-          = insert_template(true,@org,:eligibility,"Eligibility Requirements",nil)
           = insert_template(true,@org,:languages,"Languages Spoken",nil)
           = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
 
@@ -187,14 +182,15 @@
                         Market Match
 
 
-          - if @org.key?(:products) && @org.products.length > 0
+          - if @org.key?(:products)
             %section.products-sold
               %span{"data-icon"=>"␣" , :class=>"ohana-icon"}
               %h1 Products sold:
               %ul
                 - @org.products.sort.each do |product|
                   %li
-                    = product
+                    %span
+                      = product
 
     - if @org.key?(:services)
       %section.services-box

@@ -32,7 +32,7 @@ feature 'address formatting' do
     it "includes a Google Maps directions link to the address" do
       string = "https://maps.google.com/maps?saddr=current+location"
       string << "&daddr=2013 Avenue of the fellows, Suite 100,"
-      string << " San Maceo, VT 05201"
+      string << " Burlington, VT 05201"
       expect(page).to have_link('Directions', :href => string)
     end
   end
