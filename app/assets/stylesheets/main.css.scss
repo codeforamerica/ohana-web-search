@@ -632,7 +632,7 @@ sup
       position: absolute;
       top:10px;
       left:50%;
-      margin-left:-40px;
+      margin-left:-60px;
       //margin-top:-15px; // only needed if loading status box is vertically centered
 
       @include single-box-shadow();
@@ -2098,8 +2098,6 @@ main
 
   .description
   {
-    padding-top: 20px;
-    line-height: 24px;
 
     a:last-child
     {
@@ -2138,6 +2136,7 @@ main
     font-family:$san_serif_font;
     font-size:24px;
     padding-top:40px;
+    padding-bottom:40px;
     position:relative;
   }
 
@@ -2182,6 +2181,18 @@ main
     }
   }
 
+  .services-box
+  {
+    .name
+    {
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-bottom:0px;
+      margin-left:0;
+      font-size:24px;
+      border-left:20px solid $purple_darkest;
+    }
+  }
 
   .market-match
   {
