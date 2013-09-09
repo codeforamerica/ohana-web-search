@@ -1254,7 +1254,8 @@ main
     text-align: center;
     //@include single-box-shadow($black_alpha40, 0px, 0px, 10px );
     background: $blue_lightest;
-    @include background( linear-gradient( $blue_lightest 0%, $blue_midtone 100%) );
+    @include background( radial-gradient( $blue_lightest 0%, $blue_midtone 100%) );
+    border-bottom: 2px solid $blue_dark;
     vertical-align: bottom;
 
     > section
@@ -2098,7 +2099,6 @@ main
 
   .description
   {
-
     a:last-child
     {
       @include inline-block();
@@ -2126,18 +2126,26 @@ main
     }
   }
 
-  // stylize services summary
-  .short-desc
+  .overview-box
   {
-    color:$purple_darkest;
-    //background:$green_lightest;
-    @include border-radius(5px);
-    text-align:center;
-    font-family:$san_serif_font;
-    font-size:24px;
-    padding-top:40px;
-    padding-bottom:40px;
-    position:relative;
+    .description
+    {
+       margin-top:40px;
+    }
+
+     // stylize services summary
+    .short-desc
+    {
+      color:$purple_darkest;
+      //background:$green_lightest;
+      @include border-radius(5px);
+      text-align:center;
+      font-family:$san_serif_font;
+      font-size:24px;
+      padding-top:40px;
+      padding-bottom:0px;
+      position:relative;
+    }
   }
 
   ul
