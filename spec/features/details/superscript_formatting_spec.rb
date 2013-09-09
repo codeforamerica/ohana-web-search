@@ -14,10 +14,12 @@ feature 'superscript formatting' do
 
   scenario 'when the string is unsafe', :js => true do
     VCR.use_cassette('location_details/superscript_dynamic',
-      :erb => { :name => "<script>var x = 12345;document.body.innerHTML = x;</script>" }) do
+      :erb => { :name => "<script>var x = 123;var y = 456;document.body.innerHTML = x+y;</script>" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
       expect(page).
-        to have_content("12345")
+        to_not have_content("579")
+      expect(page).
+        to have_content("<script>var x = 123;var y = 456;document.body.innerHTML = x+y;</script>")
     end
   end
 
