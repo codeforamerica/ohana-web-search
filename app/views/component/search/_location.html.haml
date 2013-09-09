@@ -1,0 +1,17 @@
+%section#location-box.hide
+  %div
+    %div
+      %label{:for => "location"}
+        %strong
+          I am near...
+      = search_field_tag :location, params[:location], :placeholder => "e.g. redwood city, san mateo, etc.", :list => "search-locations"
+    %button{:type=>'submit',:id=>'location-search-btn', :title=>"Search"}
+      %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+
+    %div.or-divider
+      OR
+    %div
+      %h1
+        %a#find-current-location
+          Find current Location
+    %div.close-button

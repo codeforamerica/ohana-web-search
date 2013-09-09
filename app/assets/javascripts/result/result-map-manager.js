@@ -131,7 +131,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 				_markersArray.push(marker);
 
-				console.log(markerData['agency']);
 				var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
 				var content = "<h1>"+markerData['name']+"</h1>"+agency+"<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>"
 				_makeInfoWindowEvent(_map, _infoWindow, content, marker);

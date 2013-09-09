@@ -1,7 +1,8 @@
 // manages homepage scripts
-require(['search/input-manager'],function(input) {
+require(['home/location-manager','search/input-manager'],function(location,input) {
   'use strict';
 
+  location.init();
   input.init(); // input manager initialization
 
 });

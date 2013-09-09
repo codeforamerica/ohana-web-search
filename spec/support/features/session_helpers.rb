@@ -6,16 +6,17 @@ module Features
       keyword = options[:keyword]
       location = options[:location]
       fill_in('keyword', :with => keyword)
-      fill_in('location', :with => location)
       if options[:on_home].present?
+        fill_in('location', :with => location, :visible => false)
         find(:css, '#find-btn').click
       else
+        fill_in('location', :with => location)
         find(:css, '#update-btn').click
       end
     end
 
     def search_by_language(lang)
-      fill_in('keyword', :with => "museums")
+      fill_in('keyword', :with => "care")
       select(lang, :from => 'language', :exact => true)
       find(:css, '#update-btn').click
     end

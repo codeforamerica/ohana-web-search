@@ -143,13 +143,7 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		function _closeHandler(evt)
 		{
 			var el = evt.target;
-			if (el.attributes["href"] === undefined &&
-				!el.classList.contains("popup-trigger") &&
-				!el.parentNode.classList.contains("popup-container") &&
-				el.nodeName !== 'TEXTAREA' &&
-				el.nodeName !== 'INPUT' &&
-				el.nodeName !== 'BUTTON'
-				)
+			if (el.classList.contains('close-button'))
 			{
 				_closeLastPopup();
 			}

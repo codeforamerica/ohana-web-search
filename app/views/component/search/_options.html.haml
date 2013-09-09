@@ -2,11 +2,16 @@
   %fieldset
     %label{:for=>"language"}
       Services provided in...
-    = select_tag :language, options_for_select([['English', ''],['Spanish', 'spanish']], :selected => params[:language])
+    = select_tag :language, options_for_select([['English', ''],
+    ['Español', 'spanish'],
+    ['Tagalog', 'tagalog'],
+    ['中文', 'chinese'],
+    ['العربية', 'arabic'],
+    ['Русский', 'russian'],], :selected => params[:language])
 
-%button{:type=>'submit', :id=>'update-btn'}
-  Update
-  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon", :title=>"Find"}
+%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+  %span Update
 
 -#
   %fieldset
@@ -20,6 +25,6 @@
 
     %legend Gender
     %input
-    
+
     %legend Income
     %input
