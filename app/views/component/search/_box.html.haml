@@ -1,24 +1,24 @@
-= form_tag('/organizations', :method => :get, :id=>"search-form")
-= render :partial => 'component/search/location'
-%section#search-box
-  %div
-    %section#keyword-search-box
-      %label{:for => "keyword"}
-        I need...
-      = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food, health insurance, etc.", :list => "search-keywords"
+= form_tag('/organizations', :method => :get, :id=>"search-form") do
+  = render :partial => 'component/search/location'
+  %section#search-box
+    %div
+      %section#keyword-search-box
+        %label{:for => "keyword"}
+          I need...
+        = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food, health insurance, etc.", :list => "search-keywords"
 
-      %datalist#search-keywords
-        - @keywords.each do |keyword|
-          %option{:value=>keyword}
+        %datalist#search-keywords
+          - @keywords.each do |keyword|
+            %option{:value=>keyword}
 
-      %datalist#search-locations
-        - @locations.each do |location|
-          %option{:value=>location}
+        %datalist#search-locations
+          - @locations.each do |location|
+            %option{:value=>location}
 
-    %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
-      %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-      %span Search
+      %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+        %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+        %span Search
 
-    %button{:type=>'button',:id=>'location-btn', :title=>"Services near me"}
-      %span{"data-icon"=>"🔗" , :class=>"search-button ohana-icon"}
-      %span Services near me
+      %button{:type=>'button',:id=>'location-btn', :title=>"Services near me"}
+        %span{"data-icon"=>"🔗" , :class=>"search-button ohana-icon"}
+        %span Services near me

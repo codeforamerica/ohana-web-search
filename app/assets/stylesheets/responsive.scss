@@ -5,6 +5,18 @@
 // Smaller than standard 1024 (devices and browsers)
 @media only screen and (max-width: 1023px)
 {
+
+  .home
+  {
+    #search-box
+    {
+      > div
+      {
+        text-align:right;
+      }
+    }
+  }
+
   .inside
   {
     #detail-info
@@ -44,6 +56,11 @@
   {
     font-size:14px;
 
+    h2
+    {
+      padding-top:10px;
+    }
+
     nav
     {
       float:none;
@@ -59,37 +76,34 @@
       position:static;
     }
 
-    #search-container {
-      min-width: 100%;
+    #language-box
+    {
+      text-align:center;
     }
 
-    #category-box
+    #help-box
     {
-      position:static;
-      margin-left:0;
-      margin-top:0;
-      display:block;
-      width:auto;
-      margin-top:8px;
-
-      > header
+      p
       {
-        margin-top:10px;
-        margin-left:10px;
-        color:$white_alpha70;
-        font-size:14px;
+        font-size: 11px;
+        display:block;
+        text-align:center;
       }
+    }
 
-      > nav
+    #location-box
+    {
+      >*
       {
+        @include box-sizing(border-box);
+        left:0;
+        margin-left:10px;
         margin-right:10px;
       }
     }
 
-    #category-box.slide-up,
-    #search-box.slide-up
-    {
-      display:none;
+    #search-container {
+      min-width: 100%;
     }
 
     #search-box
@@ -100,12 +114,7 @@
       display:block;
       width:auto;
 
-      box-shadow: 0 0 5px $black_alpha40;
-      padding: 10px;
-      border: 1px solid $white_alpha40;
-      background: $blue_light_alpha40;
-
-      > form
+      > div
       {
         padding:20px;
         > section
@@ -159,6 +168,44 @@
           left:0;
       }
     }
+
+
+    #category-box
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+      margin-top:8px;
+      padding:10px;
+
+      > ul > li
+      {
+        min-width: 300px;
+        font-size: 24px;
+      }
+
+      > ul > li > ul > li
+      {
+        font-size:14px;
+      }
+
+      > header
+      {
+        margin-top:10px;
+        margin-left:10px;
+        color:$white_alpha70;
+        font-size:14px;
+      }
+
+      > nav
+      {
+        margin-right:10px;
+      }
+    }
+
+
   }
 
 
@@ -189,13 +236,6 @@
     {
       label
       {
-          font-size: 20px;
-          font-family: $serif_font;
-          letter-spacing: 2px;
-          display:block;
-          width:auto;
-          margin-left:auto;
-          margin-right:auto;
       }
 
       input

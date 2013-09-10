@@ -9,12 +9,12 @@ class AboutController < ApplicationController
   	end
 
   	respond_to do |format|
- 			
+
  			# JSON response is for the feedback form.
  			# No content needs to be returned, it just needs a response.
    		format.json { render :json => {} }
-      
-      format.html 
+
+      format.html
     end
 
   end
