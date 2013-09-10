@@ -69,10 +69,9 @@ module DetailFormatHelper
     end
   end
 
-  # Format phone number as (XXX) XXX-XXXX
-  # @param number [String] a phone number
-  # @return [String] phone number formatted as (XXX) XXX-XXXX or
-  # returned without formatting if number is not 10 digits long
+  # Strips http:// or https:// from URL
+  # @param number [String] a url
+  # @return [String] The url without http:// or https://
   def format_url(url)
     url.gsub(/^(https?:\/\/)/, '')
   end
