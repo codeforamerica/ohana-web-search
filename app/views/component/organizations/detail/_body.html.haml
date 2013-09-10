@@ -10,7 +10,7 @@
 
   / detail sidebar content
   - if (@org.fields & contact_details).any?
-    %aside
+    %aside#contact-info
 
       - if (@org.fields & contact_fields).any?
         %section.contact-box
@@ -57,7 +57,7 @@
 
             - if @org.key?(:faxes)
               %section.faxes
-                - @org.faxes.each_with_index do |fax,index|
+                - @org.faxes.each do |fax|
                   %div
                     %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
                     %span{:itemprop=>"faxNumber"}
@@ -70,7 +70,7 @@
 
             - if @org.key?(:urls)
               %section.urls
-                - @org.urls.each_with_index do |url,index|
+                - @org.urls.each do |url|
                   %div
                     %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
                     %a{:href=>url,:target=>"_blank"}
@@ -216,6 +216,5 @@
           %section.updated-at
             %h1
               Last updated:
-            - if @org.key?(:updated_at)
-              %span
-                = @org.updated_at.to_s(:full_date_and_time)
+            %span
+              = @org.updated_at.to_s(:full_date_and_time)
