@@ -23,7 +23,7 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 
 			_showLocationBtn.addEventListener('click', _showLocationBtnClicked, false);
 
-			var closeBtn = _locationBox.childNodes[1].childNodes[9]; // hackish way to find the close button, but it's fast
+			var closeBtn = _locationBox.childNodes[1].childNodes[7]; // hackish way to find the close button, but it's fast
 			closeBtn.addEventListener('click',_closeBtnClicked,false);
 		}
 
