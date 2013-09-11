@@ -1,10 +1,8 @@
-%section#map-view.hide
+%section#map-view
 	%div#map-view-control
 		Larger Map
 	%div#map-canvas
 	= render 'component/search/map_data'
-:javascript
-	try{
-		// prevent map view from showing when JS is disabled
-		document.getElementById('map-view').classList.remove('hide');
-	}catch(e){}
+%noscript
+	%style>
+		#map-view {display:none;}
