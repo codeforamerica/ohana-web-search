@@ -52,20 +52,18 @@ class OrganizationsController < ApplicationController
     # initializes map data
     @map_data = generate_map_data(@orgs)
 
-    if stale?(@orgs)
-      # respond to direct and ajax requests
-      respond_to do |format|
-        # visit directly
-        format.html # index.html.haml
+    # respond to direct and ajax requests
+    respond_to do |format|
+      # visit directly
+      format.html # index.html.haml
 
-        # visit via ajax
-        format.json {
-          with_format :html do
-            @html_content = render_to_string partial: 'component/organizations/results/body'
-          end
-          render :json => { :content => @html_content , :action => action_name }
-        }
-      end
+      # visit via ajax
+      format.json {
+        with_format :html do
+          @html_content = render_to_string partial: 'component/organizations/results/body'
+        end
+        render :json => { :content => @html_content , :action => action_name }
+      }
     end
 
   end
