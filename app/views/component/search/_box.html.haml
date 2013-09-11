@@ -5,7 +5,7 @@
       %section#keyword-search-box
         %label{:for => "keyword"}
           I need...
-        = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food, health insurance, etc.", :list => "search-keywords"
+        = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
 
         %datalist#search-keywords
           - @keywords.each do |keyword|
@@ -19,6 +19,6 @@
         %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
         %span Search
 
-      %button{:type=>'button',:id=>'location-btn', :title=>"Services near me"}
+      %button{:type=>'submit',:id=>'location-btn', :title=>"Services near me"}
         %span{"data-icon"=>"🔗" , :class=>"search-button ohana-icon"}
         %span Services near me

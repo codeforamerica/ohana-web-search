@@ -123,7 +123,7 @@
                 = @org.transportation
 
           - if @org.key?(:coordinates)
-            %section.map
+            %section#detail-map-view.map.hide
               = render 'component/search/map_data'
               %div#show-nearby-control
                 %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
@@ -137,7 +137,11 @@
                   = @org.coordinates[1]
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
-
+            :javascript
+              try{
+                // prevent map view from showing when JS is disabled
+                document.getElementById('detail-map-view').classList.remove('hide');
+              }catch(e){}
     - if @org.key?(:hours)
       %section.hours-box
         %h1 Service Hours

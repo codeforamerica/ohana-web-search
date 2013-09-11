@@ -1,13 +1,13 @@
 %section#search-options
   %fieldset
     %label{:for=>"language"}
-      Filter by language availability
+      Filter services by language availability:
     = select_tag :language, options_for_select([['English', ''],
-    ['Español', 'spanish'],
-    ['Tagalog', 'tagalog'],
-    ['中文', 'chinese'],
-    ['العربية', 'arabic'],
-    ['Русский', 'russian'],], :selected => params[:language])
+    ['Español (Spanish)', 'spanish'],
+    ['Tagalog (Filipino)', 'tagalog'],
+    ['中文 (Chinese)', 'chinese'],
+    ['العربية (Arabic)', 'arabic'],
+    ['Русский (Russian)', 'russian'],], :selected => params[:language])
 
 %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
   %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}

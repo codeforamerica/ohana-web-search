@@ -36,7 +36,9 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 
 		function _showLocationBtnClicked(evt)
 		{
+			evt.preventDefault();
 			_locationBox.classList.remove('hide');
+			return false;
 		}
 
 		function _dispatchSubmitBtn()
@@ -58,7 +60,7 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 
 
 		// 'use current location' link clicked
-		function _currLocationClicked(e)
+		function _currLocationClicked(evt)
 		{
 			e.preventDefault();
 			_locateUser();

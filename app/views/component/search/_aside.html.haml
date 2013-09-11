@@ -4,7 +4,7 @@
     %section#keyword-search-box
       %label{:for => "keyword"}
         I need...
-      = search_field_tag :keyword, params[:keyword], :placeholder => "e.g. food, health insurance, etc.", :list => "search-keywords"
+      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword", :list => "search-keywords"
 
       %datalist#search-keywords
         - @keywords.each do |keyword|
@@ -14,7 +14,7 @@
     %section#location-search-box
       %label{:for => "location"}
         I am near...
-      = search_field_tag :location, params[:location], :placeholder => "e.g. redwood city, san mateo, etc.", :list => "search-locations"
+      = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
 
       %datalist#search-locations
         - @locations.each do |location|

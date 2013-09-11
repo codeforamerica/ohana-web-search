@@ -934,7 +934,8 @@ sup
 
   #logo span
   {
-    color:$white_alpha40;
+    color:$white; // IE fallback
+    color:$white_alpha90;
     font-size:12px;
     margin-left:5px;
     position: relative;
@@ -966,7 +967,8 @@ sup
 
     h2
     {
-        color:$green_lightest;
+        color:$white; // IE fallback
+        color:$white_alpha90;
         font-family: $san_serif_font;
         display:inline-block;
         margin-left:25px;
@@ -1141,7 +1143,7 @@ main
     @include inline-block();
     vertical-align:bottom;
     font-family: $san_serif_font;
-    font-size:13px;
+    font-size:14px;
   }
 
   ul
@@ -1176,7 +1178,7 @@ main
 // help box styles on homepage
 #help-box
 {
-  background:$blue_midtone; // IE
+  background:$blue_midtone; // IE fallback
   background:$blue_midtone_alpha90;
   border-bottom: 2px solid $blue_dark;
   padding:21px;
@@ -1192,6 +1194,7 @@ main
     font-family:$san_serif_font;
     border:2px solid $purple_darkest;
     padding:7px;
+    background:$white; // IE fallback
     background:$white_alpha80;
 
     strong
@@ -1232,17 +1235,16 @@ main
     {
       @include inline-block();
     }
-    strong
-    {
-      font-weight:bold;
-    }
     label
     {
       font-size:24px;
+      font-family:$serif_font;
     }
     input
     {
       padding:5px;
+      border:2px solid $blue_dark;
+      @include border-radius(4px);
     }
     button
     {
@@ -1262,14 +1264,14 @@ main
         font-size:18px;
         position:relative;
         top:5px;
-        color:$greyscale_midtone;
+        color:$blue_darkest;
       }
     }
     button:hover
     {
       .search-button.ohana-icon
       {
-        color:$black;
+        color:$yellow_dark;
       }
     }
 
@@ -1329,18 +1331,19 @@ main
 
   select
   {
-    height:40px;
-    font-size: 16px;
+    font-size: 14px;
     margin:0;
     color:$black;
-    border:2px solid $black_alpha40;
+    border:2px solid $blue_darkest;
     padding:10px;
     margin-top:10px;
     letter-spacing:1px;
     @include border-radius(4px);
 
-    background:$green_dark;
-    @include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
+    background:$blue_light;
+    width:100%;
+    -webkit-box-shadow: 0 0px 0 #ccc, 0 0px #fff inset;
+    -webkit-appearance:none;
 
     > span
     {
@@ -1349,25 +1352,6 @@ main
       top:2px;
       left:2px;
     }
-  }
-
-  select
-  {
-    width:100%;
-    background:$green_midtone;
-    @include background( linear-gradient( $green_midtone 0%, $yellow_dark 100%) );
-  }
-
-  button
-  {
-    color:$green_lightest;
-    font-size:18px;
-  }
-
-  button:hover
-  {
-    background:$blue_dark;
-    @include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
   }
 }
 
@@ -1406,24 +1390,31 @@ main
 
   input
   {
-    font-size: 16px;
+    font-size: 22px;
+    height:50px;
     border:2px solid $blue_darkest;
     @include border-radius(4px);
     border-collapse: collapse;
-    padding:15px;
+    padding:10px;
     position:relative;
-    top:1px;
+    top:3px;
+    margin:0;
+    @include box-sizing(border-box);
+    width:290px;
   }
 
   button
   {
     font-size: 16px;
     margin:0;
+    height:50px;
     border:2px solid $blue_darkest;
     padding:10px;
+    vertical-align: baseline;
+    @include box-sizing(border-box);
     @include border-radius(4px);
     background:$green_light;
-    //@include background( linear-gradient( $green_dark 0%, $green_darkest 100%) );
+    font-family:$serif_font;
 
     span
     {
@@ -1434,6 +1425,7 @@ main
     .search-button.ohana-icon
     {
       font-size:18px;
+      color:$blue_darkest;
     }
   }
 
@@ -1441,7 +1433,15 @@ main
   {
     color:$green_light !important;
     background:$blue_dark;
-    //@include background( linear-gradient( $blue_dark 0%, $blue_darkest 100%) );
+
+    span
+    {
+      color:$yellow_light;
+    }
+    .search-button.ohana-icon
+    {
+      color:$yellow_light;
+    }
   }
 }
 
@@ -1491,6 +1491,12 @@ main
   {
     text-align:left;
   }
+
+  .search-button.ohana-icon
+  {
+    font-size:14px;
+    color:$black;
+  }
 }
 
 .inside #keyword-search-box,
@@ -1509,7 +1515,8 @@ main
   {
     top:5px;
     margin-left:0px;
-    width:150px;
+    width:100%;
+    font-size: 16px;
   }
 }
 

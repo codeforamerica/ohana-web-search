@@ -2,9 +2,8 @@
   %div
     %div
       %label{:for => "location"}
-        %strong
-          I am near...
-      = search_field_tag :location, params[:location], :placeholder => "e.g. redwood city, san mateo, etc.", :list => "search-locations"
+        I am near...
+      = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
     %button{:type=>'submit',:id=>'location-search-btn', :title=>"Search"}
       %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
 

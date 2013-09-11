@@ -6,7 +6,7 @@
     %ul
       - @program_terms.each do |program|
         %li
-          %a{ :href => "/organizations?keyword=#{u(program)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{program}']);" }
+          %a{ :href => "/organizations?keyword=#{u(program)}", :onClick => '_gaq.push(["_trackEvent", "Home_Categories", "Click", "#{program}"]);' }
             = program
 
   %ul
