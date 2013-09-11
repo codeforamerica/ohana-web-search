@@ -123,7 +123,7 @@
                 = @org.transportation
 
           - if @org.key?(:coordinates)
-            %section#detail-map-view.map.hide
+            %section#detail-map-view.map
               = render 'component/search/map_data'
               %div#show-nearby-control
                 %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
@@ -138,8 +138,9 @@
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
             %noscript
-              %style>
-                #detail-map-view {display:none;}
+              %style
+                -# hides map when JS is disabled
+                = "#detail-map-view {display:none;}"
 
     - if @org.key?(:hours)
       %section.hours-box
