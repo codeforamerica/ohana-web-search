@@ -19,7 +19,7 @@ feature "location details", :js => true do
     end
 
     scenario 'return to search results via details page', :vcr do
-      find("#floating-results-header").first(:css,'a').click
+      find("#floating-results-header").click
       page.find("#search-summary").
         should have_content("1 of 1 result matching 'maceo'")
     end
