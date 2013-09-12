@@ -17,10 +17,10 @@ class OrganizationsController < ApplicationController
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
 
-    ## check for results against keyword mapping if content is blank.
-    # if @orgs.blank?
-    #   @orgs = Organization.keyword_mapping(params) if params[:keyword].present?
-    # end
+    # check if results contain a "/" and search on the first term if so
+    if params[:keyword].present? && params[:keyword].include?("/")
+      @orgs = Organization.keyword_mapping(params)
+    end
 
     headers = Ohanakapa.last_response.headers
 

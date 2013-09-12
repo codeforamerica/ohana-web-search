@@ -967,7 +967,7 @@ sup
 
     h2
     {
-        color:$black; // IE fallback
+        color:$black;
         font-family: $san_serif_font;
         display:inline-block;
         margin-left:14px;
@@ -1185,24 +1185,6 @@ main
   padding:21px;
   padding-right:25px;
   text-align:right;
-
-  p
-  {
-    display:inline;
-    font-size:13px;
-    letter-spacing: 1px;
-    color:$purple_darkest;
-    font-family:$san_serif_font;
-    border:2px solid $purple_darkest;
-    padding:7px;
-    background:$white; // IE fallback
-    background:$white_alpha80;
-
-    strong
-    {
-      font-weight:bold;
-    }
-  }
 }
 
 
@@ -1545,47 +1527,70 @@ main
 {
   background:$greyscale_lightest;
   //@include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-  padding:80px;
+  padding:40px;
   text-align:left;
 
   > section
   {
-    h1
+    > ul
     {
-      font-size:30px;
-    }
-
-    padding-bottom:60px;
-    @include inline-block;
-  }
-
-  > ul
-  {
-    > li
-    {
-      text-align:left;
-      text-transform:capitalize;
-      font-size:36px;
-      display:inline-block;
-      vertical-align: top;
-      min-width:400px;
-      margin-bottom:40px;
-      > ul
+      > li
       {
-        > li
+        text-align:left;
+        text-transform:capitalize;
+        font-size:24px;
+        @include inline-block();
+        vertical-align: top;
+        margin-bottom:40px;
+        background:$white;
+        padding:10px;
+        margin:10px;
+        > ul
         {
-          margin:5px;
-          margin-left:20px;
-          padding-left:10px;
-          font-size:18px;
-          border-left:6px solid $green_light;
+          > li
+          {
+            margin:5px;
+            margin-left:20px;
+            padding-left:10px;
+            font-size:16px;
+            border-left:6px solid $green_light;
+          }
+          > li:nth-child(odd)
+          {
+            border-left:6px solid $yellow_midtone;
+          }
         }
-        > li:nth-child(odd)
-        {
-          border-left:6px solid $yellow_midtone;
-        }
-      }
 
+      }
+    }
+  }
+}
+
+.home #emergency-services
+{
+  float:right;
+
+  border:1px solid $purple_lightest;
+  background:$white;
+  z-index:9998;
+  @include border-radius(4px);
+
+  p
+  {
+    text-align:center;
+    margin:10px;
+    font-size:13px;
+    letter-spacing: 1px;
+    color:$purple_darkest;
+    font-family:$san_serif_font;
+    border:2px solid $purple_darkest;
+    padding:7px;
+    background:$white; // IE fallback
+    background:$white_alpha80;
+
+    strong
+    {
+      font-weight:bold;
     }
   }
 }
@@ -1706,7 +1711,7 @@ main
   top:0;
   -webkit-backface-visibility:hidden;
   width:100%;
-  @include single-box-shadow( $black_alpha40, 2px, 1px, 6px );
+  @include single-box-shadow( $black_alpha40, 0px, 1px, 6px );
 }
 
 #results-entries
@@ -1716,11 +1721,9 @@ main
   {
     font-family:$san_serif_font;
     font-size:14px;
-    padding:5px;
-    border-bottom:1px solid $greyscale_lightest; // IE fallback
+    padding:10px;
+    border-bottom:1px solid $greyscale_midtone; // IE fallback
     border-bottom:1px solid $black_alpha10;
-    z-index:9998;
-    display:block;
     padding-left:20px;
     @include background( linear-gradient(left,$yellow_lightest,$white) );
   }
@@ -1851,54 +1854,60 @@ main
 // Results - terminology view
 #terminology
 {
-  background:$greyscale_lightest;
-  border:2px solid $purple_darkest;
-  padding:30px;
-  margin:20px;
-  @include border-radius(4px);
-  font-family:$san_serif_font;
+  border-bottom:1px solid $greyscale_midtone; // IE fallback
+  border-bottom:1px solid $black_alpha10;
 
-  >p
+  div
   {
-    padding-top:10px;
-  }
+    background:$greyscale_lightest;
+    border:2px solid $purple_darkest;
+    padding:30px;
+    margin:20px;
+    @include border-radius(4px);
+    font-family:$san_serif_font;
 
-  dt
-  {
-    font-weight:bold;
-    font-size:18px;
-  }
-
-  table
-  {
-    margin-top:30px;
-
-    tr
+    >p
     {
-      border-bottom:1px solid $greyscale_light;
+      padding-top:10px;
     }
 
-    tr:last-child
-    {
-      border-bottom:0px;
-    }
-
-    th
+    dt
     {
       font-weight:bold;
       font-size:18px;
     }
 
-    th,td
+    table
     {
-      padding:10px;
-    }
+      margin-top:30px;
 
-    p:first-child
-    {
-      padding-bottom:10px;
-    }
+      tr
+      {
+        border-bottom:1px solid $greyscale_light;
+      }
 
+      tr:last-child
+      {
+        border-bottom:0px;
+      }
+
+      th
+      {
+        font-weight:bold;
+        font-size:18px;
+      }
+
+      th,td
+      {
+        padding:10px;
+      }
+
+      p:first-child
+      {
+        padding-bottom:10px;
+      }
+
+    }
   }
 }
 
@@ -2093,18 +2102,14 @@ main
 
 #map-view
 {
-
-  p
+  background:$white;
+  #search-summary
   {
-    @include inline-block();
+    border-bottom:0;
+    margin-left:150px;
+    border-left:1px solid $greyscale_midtone;
+    border-left:1px solid $black_alpha10;
   }
-}
-
-#map-view-summary
-{
-  font-size:14px;
-  margin-left:10px;
-  font-family:$san_serif_font;
 }
 
 #map-canvas
@@ -2120,11 +2125,8 @@ main
 
 #map-view-control
 {
+  float:left;
   width:150px;
-  margin-left:10px;
-  background:$greyscale_lightest;
-  border-right:1px solid $greyscale_midtone;
-  border-right:1px solid $black_alpha10;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;

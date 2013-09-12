@@ -11,13 +11,25 @@ define(['util/util'],
 		function init()
 		{
 			_header = document.getElementById("floating-results-header");
-			_offsetY = document.getElementById('content-header').offsetHeight;
+			//_offsetY = document.getElementById('content-header').offsetHeight;
+			var doc = document.documentElement, body = document.body;
+			var lastScroll = (doc && doc.scrollTop  || body && body.scrollTop  || 0);
+			window.scrollTo(0, 0);
+			_offsetY = util.getOffset(_header).top;
 			_floatingContent = document.querySelector('#floating-results-header .floating-content');
+
+			window.scrollTo(0, lastScroll);
+			_checkIfFloating();
 
 			window.addEventListener("scroll",_onScroll,false);
 		}
 
 		function _onScroll(evt)
+		{
+			_checkIfFloating();
+		}
+
+		function _checkIfFloating()
 		{
 			if (window.scrollY >= _offsetY)
 			{

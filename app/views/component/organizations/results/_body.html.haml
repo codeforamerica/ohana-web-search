@@ -2,16 +2,22 @@
 %section#results-entries
   - if @terminology.present?
     %section#terminology
-      - dynamic_partial = 'component/terminology/'+@terminology
-      = render :partial => "#{dynamic_partial}"
+      %div
+        - dynamic_partial = 'component/terminology/'+@terminology
+        = render :partial => "#{dynamic_partial}"
 
   - if @orgs.present?
-    = render 'component/organizations/results/summary'
-    = render 'component/organizations/results/map_view'
+    - if @map_data.present?
+      = render 'component/organizations/results/map_view'
+    - else
+      %p#search-summary
+        = format_summary(request.params)
+
     = render 'component/organizations/results/list_view'
   - else
     %section.no-results
-      = render 'component/organizations/results/summary'
+      %p#search-summary
+        = format_summary(request.params)
       %p.message
         %strong Unfortunately, your search returned no results.
         %em If you have trouble finding what you're looking for, try searching for a category of service:
