@@ -13,8 +13,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markerBounds; // the bounds of the markers
 
 		// constants for map button text content
-		var LARGER_MAP_TEXT = "Display small map";
-		var SMALLER_MAP_TEXT = "Display large map";
+		var LARGER_MAP_TEXT = "▲ Display small map";
+		var SMALLER_MAP_TEXT = "▼ Display large map";
 
 		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 

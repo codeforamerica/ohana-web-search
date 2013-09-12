@@ -1,9 +1,12 @@
-%section#map-view
-	%div#map-view-control
-		Larger Map
-	%div#map-canvas
-	= render 'component/search/map_data'
-%noscript
-	%style>
-		-# hides map when JS is disabled
-		= "#map-view {display:none;}"
+- if @map_data.present?
+	%section#map-view
+		%p#map-view-control
+			&nbsp
+		%p#map-view-summary
+			= format_map_summary
+		%div#map-canvas
+		= render 'component/search/map_data'
+		%noscript
+			%style>
+				-# hides map when JS is disabled
+				= "#map-view {display:none;}"

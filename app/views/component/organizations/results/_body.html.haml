@@ -5,12 +5,14 @@
       - dynamic_partial = 'component/terminology/'+@terminology
       = render :partial => "#{dynamic_partial}"
 
-  - if @map_data.present?
+  - if @orgs.present?
+    = render 'component/organizations/results/summary'
     = render 'component/organizations/results/map_view'
-
-  - if @orgs.blank?
+    = render 'component/organizations/results/list_view'
+  - else
     %section.no-results
-      %p
+      = render 'component/organizations/results/summary'
+      %p.message
         %strong Unfortunately, your search returned no results.
         %em If you have trouble finding what you're looking for, try searching for a category of service:
 
@@ -24,18 +26,3 @@
                 %li
                   %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
                     = sub
-  - else
-    -#%nav#results-view-options
-
-    -#%section#results-sort-options
-      -#%span
-        -#Sort by:
-      -#%button#name-sort-btn{:type=>"button"}>
-        -#Name
-      -#- if @location.blank?
-        -#%button#distance-sort-btn{:type=>"button","disabled"=>"disabled"}
-          -#Distance
-      -#- elsif
-        -#%button#distance-sort-btn{:type=>"button"}
-          -#Distance
-    = render 'component/organizations/results/list_view'

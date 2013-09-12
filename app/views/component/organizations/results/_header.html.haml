@@ -1,7 +1,5 @@
-%header#results-header
+%header#floating-results-header.results-header
 	%div
-		%span#search-summary{:title=>format_summary(request.params)}
-			= format_summary(request.params)
 
 		- path = request.fullpath
 
@@ -15,7 +13,7 @@
 			- prev_url = "#{path}&page=#{@prev_page}"
 			- next_url = "#{path}&page=#{@next_page}"
 
-		%span#pagination
+		%span.pagination
 			- unless @total_pages == "0"
 				- if @prev_page.nil?
 					= link_to '<', prev_url, :class => 'pagination prev disabled',:target=>"_self"
@@ -33,3 +31,21 @@
 		%a{ :href => '#'}
 			%span{ "data-icon" => "▲", :class => "ohana-icon" }
 			Top
+
+-# duplicate needed for the persistent header dimensions
+%header.results-header.persistent
+	%div
+
+		%span.pagination
+			- unless @total_pages == "0"
+				- if @prev_page.nil?
+					= link_to '<', prev_url, :class => 'pagination prev disabled',:target=>"_self"
+				- else
+					= link_to '<', prev_url, :class => 'pagination prev ajax-link',:target=>"_self"
+
+				= "#{@current_page} of #{@total_pages}"
+
+				- if @next_page.nil?
+					= link_to '>', next_url, :class => 'pagination next disabled',:target=>"_self"
+				- else
+					= link_to '>', next_url, :class => 'pagination next ajax-link',:target=>"_self"

@@ -115,12 +115,19 @@ class OrganizationsController < ApplicationController
 
     return nil if data.blank? # return immediately if data is empty
 
+    @total_map_count = data.count # total number of returned results
+    @current_map_count = 0
+
     coords_list = Hash.new(0) # used for tracking coordinate frequencies
 
     map_data = data.reduce([]) do |result, o|
 
-      if o.key?(:coordinates)
+      # hide "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
+      #if o.name == "San Maceo Agency"
+      #  data.delete(o)
+      #else
 
+      if o.key?(:coordinates)
         new_coords = o.coordinates
 
         # increment coordinate tracking and offset position if greater than 1 occurrance
@@ -139,18 +146,15 @@ class OrganizationsController < ApplicationController
         end
 
         result << details
-
+        @current_map_count = @current_map_count+1
       end
+
       result
     end
 
-    headers = Ohanakapa.last_response.headers
-    @total_count   = headers["X-Total-Count"]
-    @current_count = data.blank? ? 0 : data.count
-
     # set a count and total value that will show how many (count)
     # of the data (total) were able to be located because they had coordinates.
-    map_data.push({'count'=>@current_count,'total'=>@total_count})
+    map_data.push({'count'=>@current_map_count,'total'=>@total_map_count})
 
     # set map_data to nil if there are no entries
     map_data = nil if (map_data[0]['count'] == 0)

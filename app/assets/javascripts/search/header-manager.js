@@ -10,9 +10,9 @@ define(['util/util'],
 
 		function init()
 		{
-			_header = document.getElementById("results-header");
+			_header = document.getElementById("floating-results-header");
 			_offsetY = document.getElementById('content-header').offsetHeight;
-			_floatingContent = document.querySelector('#results-header .floating-content');
+			_floatingContent = document.querySelector('#floating-results-header .floating-content');
 
 			window.addEventListener("scroll",_onScroll,false);
 		}

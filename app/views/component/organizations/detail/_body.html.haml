@@ -124,7 +124,6 @@
 
           - if @org.key?(:coordinates)
             %section#detail-map-view.map
-              = render 'component/search/map_data'
               %div#show-nearby-control
                 %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
                 %span
@@ -137,10 +136,11 @@
                   = @org.coordinates[1]
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
-            %noscript
-              %style
-                -# hides map when JS is disabled
-                = "#detail-map-view {display:none;}"
+              = render 'component/search/map_data'
+              %noscript
+                %style
+                  -# hides map when JS is disabled
+                  = "#detail-map-view {display:none;}"
 
     - if @org.key?(:hours)
       %section.hours-box

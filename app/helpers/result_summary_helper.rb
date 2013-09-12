@@ -14,7 +14,7 @@ module ResultSummaryHelper
     #set radius default
     radius = 5 if radius.blank?
 
-    summary = "#{@current_count} of "
+    summary = "Search returned #{@current_count} of "
     summary << self.pluralize(@total_count, 'result')
 
     summary << " matching '#{keyword}'" if keyword.present?
@@ -25,4 +25,13 @@ module ResultSummaryHelper
 
     summary
   end
+
+  def format_map_summary
+    if @current_map_count == @total_map_count
+      summary = "All results located"
+    else
+      summary = "#{@current_map_count} of #{@total_map_count} results located"
+    end
+  end
+
 end

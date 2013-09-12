@@ -62,7 +62,7 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 		// 'use current location' link clicked
 		function _currLocationClicked(evt)
 		{
-			e.preventDefault();
+			evt.preventDefault();
 			_locateUser();
 			return false;
 		}

@@ -29,8 +29,7 @@ module Features
 
     # navigation helpers
     def visit_details
-      find('#list-view')
-      page.find("#list-view").first(:css, 'a').click
+      page.find("#list-view").first(:css, 'a').trigger('click')
     end
 
     def looks_like_results

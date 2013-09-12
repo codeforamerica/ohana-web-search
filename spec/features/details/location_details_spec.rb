@@ -7,7 +7,6 @@ feature "location details", :js => true do
       VCR.use_cassette('location_details/search_and_visit') do
         search_from_home(:keyword => 'maceo')
         visit_details
-        delay # delay to allow details to load to avoid intermittent premature content checking
       end
     end
 
@@ -20,7 +19,8 @@ feature "location details", :js => true do
     end
 
     scenario 'return to search results via details page', :vcr do
-      find_link("Result list").click
+      find("#floating-results-header").first(:css,'a').click
+      find("#search-summary") # allow search results to load
       page.find("#search-summary").
         should have_content("1 of 1 result matching 'maceo'")
     end
@@ -110,7 +110,7 @@ feature "location details", :js => true do
       # the time is checked against the Travis CI server time. The time has been
       # removed from the test till this can be sorted.
       #expect(page).to have_content("Monday, 9 September 2013 at 10:30 AM")
-      expect(page).to have_content("Monday, 9 September 2013 at")
+      expect(page).to have_content("Wednesday, 11 September 2013 at")
     end
 
   end
@@ -127,7 +127,7 @@ feature "location details", :js => true do
     end
 
     it "includes accessibility info" do
-      expect(page).to_not have_content("Disabled Parking")
+      expect(page).to have_content("Disabled Parking")
     end
 
     it "includes ask for info" do
@@ -164,7 +164,9 @@ feature "location details", :js => true do
     end
 
     it "includes short description" do
-      expect(page).to have_content("Works to control")
+      within ".short-desc" do
+        expect(page).to have_content("NOT A REAL ENTRY")
+      end
     end
 
     it "includes transporation info" do
@@ -184,19 +186,19 @@ feature "location details", :js => true do
     end
 
     # API isn't returning these fields currently so they are set to pending.
-    xit "includes Market Match" do
+    it "includes Market Match" do
       expect(page).to have_content("Market Match")
     end
 
-    xit "includes payment info" do
+    it "includes payment info" do
       expect(page).to have_content("Payment methods accepted:")
     end
 
-    xit "includes info about payment types" do
+    it "includes info about payment types" do
       expect(page).to have_content("SNAP")
     end
 
-    xit "includes products info" do
+    it "includes products info" do
       expect(page).to have_content("Products sold:")
       expect(page).to have_content("Baked Goods")
     end

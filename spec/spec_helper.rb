@@ -22,10 +22,14 @@ end
 # This will result in verbose output in the Terminal when running tests.
 
 # You can also use Poltergeist's experimental remote debugging feature by
-# adding ":inspector => true" as an additional option on line 16. Then, in the
-# failing test, add "page.driver.debug" at a spot where you want to pause the
-# test. When you run the test, it will pause at that spot, and will launch a
-# browser window where you can inspect the page contents.
+# replacing line 15-17 with:
+# Capybara.register_driver :poltergeist_debug do |app|
+#  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+# end
+# You will also need to add Capybara.javascript_driver = :poltergeist_debug
+# on line 42. Add "page.driver.debug" at a spot where you want to pause a test.
+# When you run the test, it will pause at that spot, and will launch a browser
+# window where you can inspect the page contents.
 # Remember to remove "page.driver.debug" when you're done debugging!
 # https://github.com/jonleighton/poltergeist#remote-debugging-experimental
 
