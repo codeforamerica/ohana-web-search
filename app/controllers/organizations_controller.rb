@@ -17,11 +17,6 @@ class OrganizationsController < ApplicationController
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
 
-    ## check for results against keyword mapping if content is blank.
-    # if @orgs.blank?
-    #   @orgs = Organization.keyword_mapping(params) if params[:keyword].present?
-    # end
-
     headers = Ohanakapa.last_response.headers
 
     @prev_page     = headers["X-Previous-Page"]
