@@ -1,28 +1,25 @@
 require 'spec_helper'
 
-feature "location details", :js => true do
+feature "location details" do
 
-  context "when the details page is visited via search results" do
-    background do
-      VCR.use_cassette('location_details/search_and_visit') do
-        search_from_home(:keyword => 'maceo')
-        visit_details
-      end
-    end
-
-    scenario 'when location has an address' do
+  context "when the details page is visited via search results", :vcr, :js do
+    it "includes address elements" do
+      search_from_home(:keyword => 'maceo')
+      visit_details
       expect(page).to have_content("Mailing Address")
       expect(page).to have_content("Physical Address")
       expect(page).to have_content("2013 Avenue of the fellows")
       expect(page).to have_content("90210")
       expect(page).to have_content("05201")
     end
+  end
 
-    scenario 'return to search results via details page', :vcr do
-      find("#floating-results-header").first(:css,'a').click
-      find("#search-summary") # allow search results to load
-      page.find("#search-summary").
-        should have_content("1 of 1 result matching 'maceo'")
+  context "when you return to the results page from details page", :vcr, :js do
+    it 'displays the same search results' do
+      search_from_home(:keyword => 'maceo')
+      visit_details
+      find("#floating-results-header").click
+      page.should have_content("1 of 1 result matching 'maceo'")
     end
   end
 
