@@ -2,8 +2,9 @@
 %section#results-entries
   - if @terminology.present?
     %section#terminology
-      - dynamic_partial = 'component/terminology/'+@terminology
-      = render :partial => "#{dynamic_partial}"
+      %div
+        - dynamic_partial = 'component/terminology/'+@terminology
+        = render :partial => "#{dynamic_partial}"
 
   - if @orgs.present?
     - if @map_data.present?

@@ -967,7 +967,7 @@ sup
 
     h2
     {
-        color:$black; // IE fallback
+        color:$black;
         font-family: $san_serif_font;
         display:inline-block;
         margin-left:14px;
@@ -1717,7 +1717,7 @@ main
     font-family:$san_serif_font;
     font-size:14px;
     padding:10px;
-    border-bottom:1px solid $greyscale_lightest; // IE fallback
+    border-bottom:1px solid $greyscale_midtone; // IE fallback
     border-bottom:1px solid $black_alpha10;
     padding-left:20px;
     @include background( linear-gradient(left,$yellow_lightest,$white) );
@@ -1849,54 +1849,60 @@ main
 // Results - terminology view
 #terminology
 {
-  background:$greyscale_lightest;
-  border:2px solid $purple_darkest;
-  padding:30px;
-  margin:20px;
-  @include border-radius(4px);
-  font-family:$san_serif_font;
+  border-bottom:1px solid $greyscale_midtone; // IE fallback
+  border-bottom:1px solid $black_alpha10;
 
-  >p
+  div
   {
-    padding-top:10px;
-  }
+    background:$greyscale_lightest;
+    border:2px solid $purple_darkest;
+    padding:30px;
+    margin:20px;
+    @include border-radius(4px);
+    font-family:$san_serif_font;
 
-  dt
-  {
-    font-weight:bold;
-    font-size:18px;
-  }
-
-  table
-  {
-    margin-top:30px;
-
-    tr
+    >p
     {
-      border-bottom:1px solid $greyscale_light;
+      padding-top:10px;
     }
 
-    tr:last-child
-    {
-      border-bottom:0px;
-    }
-
-    th
+    dt
     {
       font-weight:bold;
       font-size:18px;
     }
 
-    th,td
+    table
     {
-      padding:10px;
-    }
+      margin-top:30px;
 
-    p:first-child
-    {
-      padding-bottom:10px;
-    }
+      tr
+      {
+        border-bottom:1px solid $greyscale_light;
+      }
 
+      tr:last-child
+      {
+        border-bottom:0px;
+      }
+
+      th
+      {
+        font-weight:bold;
+        font-size:18px;
+      }
+
+      th,td
+      {
+        padding:10px;
+      }
+
+      p:first-child
+      {
+        padding-bottom:10px;
+      }
+
+    }
   }
 }
 
@@ -2091,10 +2097,13 @@ main
 
 #map-view
 {
+  background:$white;
   #search-summary
   {
     border-bottom:0;
     margin-left:150px;
+    border-left:1px solid $greyscale_midtone;
+    border-left:1px solid $black_alpha10;
   }
 }
 
@@ -2113,9 +2122,6 @@ main
 {
   float:left;
   width:150px;
-  background:$greyscale_lightest;
-  border-right:1px solid $greyscale_midtone;
-  border-right:1px solid $black_alpha10;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;
