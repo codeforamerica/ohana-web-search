@@ -1185,24 +1185,6 @@ main
   padding:21px;
   padding-right:25px;
   text-align:right;
-
-  p
-  {
-    display:inline;
-    font-size:13px;
-    letter-spacing: 1px;
-    color:$purple_darkest;
-    font-family:$san_serif_font;
-    border:2px solid $purple_darkest;
-    padding:7px;
-    background:$white; // IE fallback
-    background:$white_alpha80;
-
-    strong
-    {
-      font-weight:bold;
-    }
-  }
 }
 
 
@@ -1545,47 +1527,70 @@ main
 {
   background:$greyscale_lightest;
   //@include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-  padding:80px;
+  padding:40px;
   text-align:left;
 
   > section
   {
-    h1
+    > ul
     {
-      font-size:30px;
-    }
-
-    padding-bottom:60px;
-    @include inline-block;
-  }
-
-  > ul
-  {
-    > li
-    {
-      text-align:left;
-      text-transform:capitalize;
-      font-size:36px;
-      display:inline-block;
-      vertical-align: top;
-      min-width:400px;
-      margin-bottom:40px;
-      > ul
+      > li
       {
-        > li
+        text-align:left;
+        text-transform:capitalize;
+        font-size:24px;
+        @include inline-block();
+        vertical-align: top;
+        margin-bottom:40px;
+        background:$white;
+        padding:10px;
+        margin:10px;
+        > ul
         {
-          margin:5px;
-          margin-left:20px;
-          padding-left:10px;
-          font-size:18px;
-          border-left:6px solid $green_light;
+          > li
+          {
+            margin:5px;
+            margin-left:20px;
+            padding-left:10px;
+            font-size:16px;
+            border-left:6px solid $green_light;
+          }
+          > li:nth-child(odd)
+          {
+            border-left:6px solid $yellow_midtone;
+          }
         }
-        > li:nth-child(odd)
-        {
-          border-left:6px solid $yellow_midtone;
-        }
-      }
 
+      }
+    }
+  }
+}
+
+.home #emergency-services
+{
+  float:right;
+
+  border:1px solid $purple_lightest;
+  background:$white;
+  z-index:9998;
+  @include border-radius(4px);
+
+  p
+  {
+    text-align:center;
+    margin:10px;
+    font-size:13px;
+    letter-spacing: 1px;
+    color:$purple_darkest;
+    font-family:$san_serif_font;
+    border:2px solid $purple_darkest;
+    padding:7px;
+    background:$white; // IE fallback
+    background:$white_alpha80;
+
+    strong
+    {
+      font-weight:bold;
     }
   }
 }

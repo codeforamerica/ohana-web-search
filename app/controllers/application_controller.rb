@@ -9,9 +9,10 @@ class ApplicationController < ActionController::Base
 	# retrieve data for datalists used in the search form autocomplete
 	# from the Organization controller
 	def datalist_initializer
-		# Program terms are government programs displayed on the homepage
-    @program_terms = Organization.program_terms
+		# Emergency terms are displayed on the homepage
+    @emergency_terms = Organization.emergency_terms
 
+		# Service terms are displayed on the homepage and the 'no results found' page
 		@service_terms = Organization.service_terms
 
 		# Keywords are for the keyword input field datalist

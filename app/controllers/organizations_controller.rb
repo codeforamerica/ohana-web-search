@@ -17,6 +17,11 @@ class OrganizationsController < ApplicationController
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
 
+    # check if results contain a "/" and search on the first term if so
+    if params[:keyword].present? && params[:keyword].include?("/")
+      @orgs = Organization.keyword_mapping(params)
+    end
+
     headers = Ohanakapa.last_response.headers
 
     @prev_page     = headers["X-Previous-Page"]

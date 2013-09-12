@@ -1,21 +1,26 @@
 %section#category-box
   -# Category search terms that are displayed on the homepage
-  %section#programs
-    %h1
-      Human Services Programs
+  %section#emergency-services
     %ul
-      - @program_terms.each do |program|
+      - @emergency_terms.each do |service|
         %li
-          %a{ :href => "/organizations?keyword=#{u(program)}", :onClick => '_gaq.push(["_trackEvent", "Home_Categories", "Click", "#{program}"]);' }
-            = program
-
-  %ul
-    - @service_terms.each do |service|
-      %li
-        %a{ :href => "/organizations?keyword=#{u(service[:name])}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
           = service[:name]
-        %ul
-          - service[:sub].each do |sub|
-            %li
-              %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                = sub
+          %ul
+            - service[:sub].each do |sub|
+              %li
+                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                  = sub
+    %p
+      NEED IMMEDIATE ASSISTANCE?
+      %strong DIAL 2-1-1
+
+  %section#general-services
+    %ul
+      - @service_terms.each do |service|
+        %li
+          = service[:name]
+          %ul
+            - service[:sub].each do |sub|
+              %li
+                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                  = sub
