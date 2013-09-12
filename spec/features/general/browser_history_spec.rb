@@ -6,6 +6,7 @@ feature 'Visitor uses the back or forward button', :js => true do
     VCR.use_cassette('homepage_search/with keyword_that_returns_results') do
       search_from_home(:keyword => 'maceo')
       page.find("#search-summary")
+      delay # add delay to allow page to load (hopefully)
     end
   end
 
