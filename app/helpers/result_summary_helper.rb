@@ -28,9 +28,9 @@ module ResultSummaryHelper
 
   def format_map_summary
     if @current_map_count == @total_map_count
-      summary = "All results located"
+      summary = ""
     else
-      summary = "#{@current_map_count} of #{@total_map_count} results located"
+      summary = " | #{@current_map_count} of #{@total_map_count} located on map"
     end
   end
 
