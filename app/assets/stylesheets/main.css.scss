@@ -1001,7 +1001,7 @@ sup
       strong
       {
         font-weight:bold;
-        color:$red_dark;
+        color:$yellow_darkest;
       }
     }
 
@@ -1526,12 +1526,18 @@ main
 .home #category-box
 {
   background:$greyscale_lightest;
-  //@include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-  padding:40px;
-  text-align:left;
+  padding:20px;
+  text-align:center;
 
   > section
   {
+    @include single-box-shadow($black_alpha10, 0px, 0px, 5px );
+    @include inline-block();
+    @include border-radius(4px);
+    margin:10px;
+    vertical-align:top;
+    border:1px solid $blue_lightest;
+
     > ul
     {
       > li
@@ -1553,11 +1559,11 @@ main
             margin-left:20px;
             padding-left:10px;
             font-size:16px;
-            border-left:6px solid $green_light;
+            border-left:6px solid $blue_light;
           }
           > li:nth-child(odd)
           {
-            border-left:6px solid $yellow_midtone;
+            border-left:6px solid $blue_midtone;
           }
         }
 
@@ -1568,29 +1574,43 @@ main
 
 .home #emergency-services
 {
-  float:right;
-
-  border:1px solid $purple_lightest;
+  border:1px solid $purple_lightest !important;
   background:$white;
   z-index:9998;
-  @include border-radius(4px);
+
+  > ul
+  {
+    > li
+    {
+      > ul
+      {
+        > li
+        {
+          border-left:6px solid $yellow_light !important;
+        }
+        > li:nth-child(odd)
+        {
+          border-left:6px solid $yellow_midtone !important;
+        }
+      }
+
+    }
+  }
 
   p
   {
     text-align:center;
-    margin:10px;
     font-size:13px;
     letter-spacing: 1px;
     color:$purple_darkest;
+    background:$yellow_light;
     font-family:$san_serif_font;
-    border:2px solid $purple_darkest;
     padding:7px;
-    background:$white; // IE fallback
-    background:$white_alpha80;
 
     strong
     {
       font-weight:bold;
+      @include inline-block();
     }
   }
 }

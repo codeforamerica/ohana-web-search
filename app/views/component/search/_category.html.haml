@@ -1,5 +1,16 @@
 %section#category-box
   -# Category search terms that are displayed on the homepage
+  %section#general-services
+    %ul
+      - @service_terms.each do |service|
+        %li
+          = service[:name]
+          %ul
+            - service[:sub].each do |sub|
+              %li
+                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                  = sub
+
   %section#emergency-services
     %ul
       - @emergency_terms.each do |service|
@@ -13,14 +24,3 @@
     %p
       NEED IMMEDIATE ASSISTANCE?
       %strong DIAL 2-1-1
-
-  %section#general-services
-    %ul
-      - @service_terms.each do |service|
-        %li
-          = service[:name]
-          %ul
-            - service[:sub].each do |sub|
-              %li
-                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                  = sub
