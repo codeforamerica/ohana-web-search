@@ -11,26 +11,29 @@
       = render 'component/organizations/results/map_view'
     - else
       -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{format_summary(request.params)}"}
-        = format_summary(request.params)
+      %p#search-summary{:title=>"#{@search_summary_plain}"}
+        = @search_summary_html
 
     = render 'component/organizations/results/list_view'
   - else
     %section.no-results
       -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{format_summary(request.params)}"}
-        = format_summary(request.params)
+      %p#search-summary{:title=>"#{@search_summary_plain}"}
+        = @search_summary_html
+
       %p.message
         %strong Unfortunately, your search returned no results.
-        %em If you have trouble finding what you're looking for, try searching for a category of service:
+        %em If you have trouble finding what you're looking for, try searching with a single keyword or click a category of service below.
 
-      %ul
-        - @service_terms.each do |service|
-          %li
-            %a{ :href => "/organizations?keyword=#{u(service[:name])}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
-              = service[:name]
-            %ul
-              - service[:sub].each do |sub|
-                %li
-                  %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                    = sub
+    %section#category-box
+      %section
+        %ul
+          - @taxonomy_terms.each do |service|
+            %li
+              %a{ :href => "/organizations?keyword=#{u(service[:name])}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
+                = service[:name]
+              %ul
+                - service[:sub].each do |sub|
+                  %li
+                    %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                      = sub

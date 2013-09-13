@@ -10,28 +10,28 @@ describe ResultSummaryHelper do
 
     context 'when no keyword or location' do
       it 'shows result count only' do
-        helper.format_summary({}).should eq("Search returned 1 of 10 results")
+        helper.format_summary({}).should eq("Displaying <strong>10 results</strong>")
       end
     end
 
     context 'when keyword but no location' do
       it 'shows result count and keyword' do
         helper.format_summary({:keyword => 'market' })
-          .should eq("Search returned 1 of 10 results matching 'market'")
+          .should eq("Displaying <strong>10 results</strong> matching <strong>'market'</strong>")
       end
     end
 
     context 'when location but no keyword' do
       it 'shows result count within 5 miles of location' do
         helper.format_summary({ :location => 'san mateo' })
-          .should eq("Search returned 1 of 10 results within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>10 results</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
     context 'with keyword and location' do
       it 'shows result count, keyword within 5 miles of location' do
         helper.format_summary({ :keyword => 'market', :location => 'san mateo'})
-          .should eq("Search returned 1 of 10 results matching 'market' within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>10 results</strong> matching <strong>'market'</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
@@ -42,7 +42,7 @@ describe ResultSummaryHelper do
             :location => 'san mateo',
             :radius => 10
           })
-          .should eq("Search returned 1 of 10 results matching 'market' within 10 miles of 'san mateo'")
+          .should eq("Displaying <strong>10 results</strong> matching <strong>'market'</strong> within <strong>10 miles of 'san mateo'</strong>")
       end
     end
   end
@@ -56,28 +56,28 @@ describe ResultSummaryHelper do
 
     context 'when no keyword or location' do
       it 'shows result count only' do
-        helper.format_summary({}).should eq("Search returned 1 of 1 result")
+        helper.format_summary({}).should eq("Displaying <strong>1 result</strong>")
       end
     end
 
     context 'when keyword but no location' do
       it 'shows result count and keyword' do
         helper.format_summary({:keyword => 'market' })
-          .should eq("Search returned 1 of 1 result matching 'market'")
+          .should eq("Displaying <strong>1 result</strong> matching <strong>'market'</strong>")
       end
     end
 
     context 'when location but no keyword' do
       it 'shows result count within 5 miles of location' do
         helper.format_summary({ :location => 'san mateo' })
-          .should eq("Search returned 1 of 1 result within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>1 result</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
     context 'with keyword and location' do
       it 'shows result count, keyword within 5 miles of location' do
         helper.format_summary({ :keyword => 'market', :location => 'san mateo'})
-          .should eq("Search returned 1 of 1 result matching 'market' within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>1 result</strong> matching <strong>'market'</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
@@ -88,7 +88,7 @@ describe ResultSummaryHelper do
             :location => 'san mateo',
             :radius => 10
           })
-          .should eq("Search returned 1 of 1 result matching 'market' within 10 miles of 'san mateo'")
+          .should eq("Displaying <strong>1 result</strong> matching <strong>'market'</strong> within <strong>10 miles of 'san mateo'</strong>")
       end
     end
   end
@@ -102,28 +102,28 @@ describe ResultSummaryHelper do
 
     context 'when no keyword or location' do
       it 'shows result count only' do
-        helper.format_summary({}).should eq("Search returned 0 of 0 results")
+        helper.format_summary({}).should eq("Displaying <strong>0 results</strong>")
       end
     end
 
     context 'when keyword but no location' do
       it 'shows result count and keyword' do
         helper.format_summary({:keyword => 'market' })
-          .should eq("Search returned 0 of 0 results matching 'market'")
+          .should eq("Displaying <strong>0 results</strong> matching <strong>'market'</strong>")
       end
     end
 
     context 'when location but no keyword' do
       it 'shows result count within 5 miles of location' do
         helper.format_summary({ :location => 'san mateo' })
-          .should eq("Search returned 0 of 0 results within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>0 results</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
     context 'with keyword and location' do
       it 'shows result count, keyword within 5 miles of location' do
         helper.format_summary({ :keyword => 'market', :location => 'san mateo'})
-          .should eq("Search returned 0 of 0 results matching 'market' within 5 miles of 'san mateo'")
+          .should eq("Displaying <strong>0 results</strong> matching <strong>'market'</strong> within <strong>5 miles of 'san mateo'</strong>")
       end
     end
 
@@ -134,7 +134,7 @@ describe ResultSummaryHelper do
             :location => 'san mateo',
             :radius => 10
           })
-          .should eq("Search returned 0 of 0 results matching 'market' within 10 miles of 'san mateo'")
+          .should eq("Displaying <strong>0 results</strong> matching <strong>'market'</strong> within <strong>10 miles of 'san mateo'</strong>")
       end
     end
   end

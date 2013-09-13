@@ -14,24 +14,41 @@ module ResultSummaryHelper
     #set radius default
     radius = 5 if radius.blank?
 
-    summary = "Search returned #{@current_count} of "
-    summary << self.pluralize(@total_count, 'result')
+    summary = ""
+    per_page = 30
 
-    summary << " matching '#{keyword}'" if keyword.present?
+    if @total_count == "0"
+      summary << "No results"
+    elsif @total_count.to_i < per_page
+      summary << "Displaying <strong>"
+      summary << self.pluralize(@total_count, 'result')
+      summary << "</strong>"
+    else
+      page_range_end = (@current_page.to_i*per_page)
+      page_range_start = page_range_end-per_page+1
 
-    if location.present?
-      summary << " within #{self.pluralize(radius, 'mile')} of '#{location}'"
+      summary << "Displaying <strong>#{page_range_start}-#{page_range_end}</strong> of "
+      summary << self.pluralize(@total_count, 'result')
     end
 
-    summary
+    summary << " matching <strong>'#{keyword}'</strong>" if keyword.present?
+
+    if location.present?
+      summary << " within <strong>#{self.pluralize(radius, 'mile')} of '#{location}'</strong>"
+    end
+
+    summary.html_safe
   end
 
+  # Formats map result summary text
+  # @return [String] Result summary string for display on search results view.
   def format_map_summary
     if @current_map_count == @total_map_count
       summary = ""
     else
-      summary = " | #{@current_map_count} of #{@total_map_count} located on map"
+      summary = " • <em>#{@current_map_count} of #{@total_map_count} located on map</em>"
     end
+    summary.html_safe
   end
 
 end

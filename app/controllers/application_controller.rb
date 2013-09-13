@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 	# retrieve data for datalists used in the search form autocomplete
 	# from the Organization controller
 	def datalist_initializer
+
+		# Taxonomony of terms for the no found page
+		@taxonomy_terms = Organization.taxonomy_terms
+
 		# Emergency terms are displayed on the homepage
     @emergency_terms = Organization.emergency_terms
 

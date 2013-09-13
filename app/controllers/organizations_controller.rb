@@ -1,7 +1,9 @@
 class OrganizationsController < ApplicationController
   respond_to :html, :json, :xml, :js
-
   before_filter :check_location_id, only: :show
+
+  include ActionView::Helpers::TextHelper
+  include ResultSummaryHelper
 
   TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
     legal money transit work).freeze
@@ -51,6 +53,12 @@ class OrganizationsController < ApplicationController
 
     # initializes map data
     @map_data = generate_map_data(@orgs)
+
+    # construct html and plain results summaries for use in display in the view (html)
+    # and for display in the page title (plain)
+    @map_search_summary_html = format_map_summary
+    @search_summary_html = format_summary(params)
+    @search_summary_plain = @search_summary_html.gsub('<strong>', '').gsub('</strong>', '')
 
     # respond to direct and ajax requests
     respond_to do |format|
@@ -176,4 +184,5 @@ class OrganizationsController < ApplicationController
   def check_location_id
     redirect_to root_path unless Organization.get(params[:id])
   end
+
 end

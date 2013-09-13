@@ -20,7 +20,7 @@ feature 'Visitor uses the back or forward button', :js => true do
     page.find("#search-container")
     go_forward
     page.find("#search-summary").
-      should have_content("1 of 1 result matching 'maceo'")
+      should have_content("1 result matching 'maceo'")
     looks_like_results
   end
 
@@ -37,7 +37,7 @@ feature 'Visitor uses the back or forward button', :js => true do
     find_link("sanmaceo@co.sanmaceo.ca.us")
     go_back
     page.find("#search-summary").
-      should have_content("1 of 1 result matching 'maceo'")
+      should have_content("1 result matching 'maceo'")
     go_forward
     find_link("sanmaceo@co.sanmaceo.ca.us")
     expect(page).to have_content "San Maceo"

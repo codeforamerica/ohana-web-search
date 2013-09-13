@@ -125,6 +125,24 @@ class Organization
   end
 
   # top level services for when no search results are found
+  def self.taxonomy_terms
+    terms = [
+      {:name=>'care',:sub=>['animal welfare','residential caregiving','daytime caregiving','adoption & foster care','building support networks','end-of-life care','help navigating the system'].sort}, \
+      {:name=>'education',:sub=>['preschool','after-school','special education','help finding school','help paying for school','alternative education','tutoring'].sort}, \
+      {:name=>'emergency',:sub=>['psychiatric emergencies','emergency financial assistance','immediate safety needs','disaster preparedness','disaster response'].sort}, \
+      {:name=>'food',:sub=>['free meals','food pantries','help paying for food','food delivery','food benefits','nutrition support'].sort}, \
+      {:name=>'goods',:sub=>['clothing','furniture','baby supplies','toys and gifts'].sort}, \
+      {:name=>'health',:sub=>['medical care','dental care','health education','addiction and recovery','help finding services','help paying for healthcare'].sort}, \
+      {:name=>'housing',:sub=>['emergency housing','short-term housing', 'long-term housing','housing advice','help finding housing','paying for housing'].sort}, \
+      {:name=>'legal',:sub=>['legal representation','mediation','advocacy','citizenship and immigration','guardianship','civil rights'].sort}, \
+      {:name=>'money',:sub=>['pay for housing','pay for childcare','pay for school','pay for food','financial education','tax preparation','insurance','government benefits','vouchers'].sort}, \
+      {:name=>'programs',:sub=>['CalFresh','Market Match','ACA Health Insurance'].sort}, \
+      {:name=>'transit',:sub=>['bus passes','transportation to school','transportation to healthcare','transportation to appointments'].sort}, \
+      {:name=>'work',:sub=>['finding work','job skills training'].sort} \
+    ]
+  end
+
+  # top level services for when no search results are found
   def self.service_terms
     terms = [
       {:name=>'government assistance',:sub=>['CalFresh/Food Stamps','Health Insurance','WIC/Women, Infants, & Children',"SFMNP/Food vouchers for seniors",'Medi-Cal','Medicare'].sort},\

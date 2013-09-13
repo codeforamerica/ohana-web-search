@@ -34,20 +34,20 @@ module Features
 
     def looks_like_results
       expect(page).to have_content("SanMaceo Example Agency")
-      expect(page).to have_content("1 of 1 result")
-      expect(page).to have_title "1 of 1 result"
+      expect(page).to have_content("1 result")
+      expect(page).to have_title "1 result"
     end
 
     def looks_like_puente
       expect(page).to have_content("Puente Resource Center")
-      expect(page).to have_content("1 of 1 result")
-      expect(page).to have_title "1 of 1 result"
+      expect(page).to have_content("1 result")
+      expect(page).to have_title "1 result"
     end
 
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
-      expect(page).to have_content("0 of 0 results")
+      expect(page).to have_selector("#search-summary")
       expect(page).to_not have_selector('#map-canvas')
     end
 
@@ -106,10 +106,10 @@ module Features
       expect(page).to have_title "SMC-Connect"
       expect(page).to have_content "I need"
       expect(page).to have_selector('#find-btn')
-      expect(page).to_not have_title "1 of 1 result"
+      expect(page).to_not have_title "1 result"
     end
 
-    # webbrowser navigation using requirejs
+    # webbrowser navigation using browser's JS history API
     def go_back
       page.evaluate_script("window.history.back()")
     end

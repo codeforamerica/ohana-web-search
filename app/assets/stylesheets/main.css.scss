@@ -1523,7 +1523,7 @@ main
   font-family: $san_serif_font;
 }
 
-.home #category-box
+#category-box
 {
   background:$greyscale_lightest;
   padding:20px;
@@ -1572,7 +1572,7 @@ main
   }
 }
 
-.home #emergency-services
+#emergency-services
 {
   border:1px solid $purple_lightest !important;
   background:$white;
@@ -1746,6 +1746,15 @@ main
     border-bottom:1px solid $black_alpha10;
     padding-left:20px;
     @include background( linear-gradient(left,$yellow_lightest,$white) );
+
+    strong
+    {
+      font-weight:bold;
+    }
+    em
+    {
+      font-style:italic;
+    }
   }
 
   > ul
@@ -1781,39 +1790,7 @@ main
       }
     }
 
-    > ul
-    {
-      text-align:center;
-      font-family: $serif_font;
-      padding:20px;
 
-      > li
-      {
-        text-align:left;
-        text-transform:capitalize;
-        font-size:36px;
-        display:inline-block;
-        vertical-align: top;
-        min-width:300px;
-        margin-bottom:40px;
-        > ul
-        {
-          > li
-          {
-            margin:5px;
-            margin-left:20px;
-            padding-left:10px;
-            font-size:16px;
-            border-left:6px solid $green_light;
-          }
-          > li:nth-child(odd)
-          {
-            border-left:6px solid $yellow_midtone;
-          }
-        }
-
-      }
-    }
   }
 }
 
