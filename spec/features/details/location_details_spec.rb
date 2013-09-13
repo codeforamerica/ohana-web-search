@@ -18,8 +18,11 @@ feature "location details" do
     it 'displays the same search results' do
       search_from_home(:keyword => 'maceo')
       visit_details
-      find("#floating-results-header").click
-      page.should have_content("1 of 1 result matching 'maceo'")
+      find_link("maceo@parker.com")
+      within("#results-container") do
+        first("a").click
+      end
+      page.find(".agency").should have_link("SanMaceo Example Agency.")
     end
   end
 
