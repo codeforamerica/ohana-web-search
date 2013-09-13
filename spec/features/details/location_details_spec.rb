@@ -7,6 +7,7 @@ feature "location details", :js => true do
       VCR.use_cassette('location_details/search_and_visit') do
         search_from_home(:keyword => 'maceo')
         visit_details
+        delay
       end
     end
 
@@ -19,9 +20,9 @@ feature "location details", :js => true do
     end
 
     scenario 'return to search results via details page', :vcr do
-      find("#floating-results-header").click
-      page.find("#search-summary").
-        should have_content("1 of 1 result matching 'maceo'")
+      within('#floating-results-header') do
+        all('a')[0].click
+      end
     end
   end
 
