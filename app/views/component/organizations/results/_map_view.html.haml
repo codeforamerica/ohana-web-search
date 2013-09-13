@@ -1,7 +1,7 @@
 - if @map_data.present?
 	%section#map-view
 		-# literal HTML is needed here to avoid haml introducing a space between the paragraphs
-		<p id='map-view-control'></p><p id='search-summary'>
+		<p id='map-view-control'></p><p id='search-summary' title="#{format_summary(request.params)}">
 		= format_summary(request.params)
 		= format_map_summary
 		</p>
