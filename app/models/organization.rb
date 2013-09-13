@@ -128,7 +128,7 @@ class Organization
   def self.service_terms
     terms = [
       {:name=>'government assistance',:sub=>['CalFresh/Food Stamps','Health Insurance','WIC/Women, Infants, & Children',"SFMNP/Food vouchers for seniors",'Medi-Cal','Medicare'].sort},\
-      {:name=>"children, teens, youth & families",:sub=>['mentoring programs','discrimination','counseling','child care','abuse prevention','youth development'].sort}
+      {:name=>"children, teens, & families",:sub=>['mentoring programs','discrimination','counseling','child care','abuse prevention','youth development'].sort}
     ]
   end
 
