@@ -63,11 +63,11 @@ require 'vcr'
 VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_hosts '127.0.0.1', 'localhost'
-  c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once }
+  c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once, :allow_playback_repeats => true }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
-    ENV['OHANA_STAGING_API_TOKEN']
+    ENV['OHANA_API_TOKEN']
   end
 end
 
@@ -76,7 +76,7 @@ def stub_get(url)
 end
 
 def ohanapi_url(url)
-  url =~ /^http/ ? url : "http://ohanapi-staging.herokuapp.com/api#{url}"
+  url =~ /^http/ ? url : "http://ohanapi.herokuapp.com/api#{url}"
 end
 
 def fixture_path
