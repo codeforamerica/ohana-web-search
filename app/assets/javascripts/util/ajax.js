@@ -11,7 +11,7 @@ define(['jquery'],function($) {
           {
           	request.setRequestHeader("Accept", "application/json");
           },
-          cache: false,
+          cache: true,
           url: query
   			}).done(callback.done).fail(callback.fail);
 			}
@@ -22,7 +22,7 @@ define(['jquery'],function($) {
           {
           	request.setRequestHeader("Accept", "application/json");
           },
-          cache: false,
+          cache: true,
           url: query
   			}).done(_success).fail(_failure);
 			}

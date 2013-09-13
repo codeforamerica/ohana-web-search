@@ -3,170 +3,132 @@
   %header
     %h1.name{:title=>@org.name}
       = superscript_ordinals(@org.name)
-    - if has_field?(@org,["agency"])
+    - if (@org.organization.name) && (@org.organization.name != @org.name)
       %h2.agency
-        = superscript_ordinals(@org.agency)
+        = superscript_ordinals(@org.organization.name)
 
 
   / detail sidebar content
-  - if has_field?(@org, ['ask_for','phones','faxes','emails','urls'] | address_fields)
-    %aside
+  - if (@org.fields & contact_details).any?
+    %aside#contact-info
 
-      - if has_field?(@org, [ 'ask_for', 'phones', 'faxes', 'emails' ])
+      - if (@org.fields & contact_fields).any?
         %section.contact-box
           %h1 Contact
           %section
 
-            - if has_field?(@org,['ask_for'])
+            - if @org.key?(:ask_for)
               %section.ask-for
-                %div
-                  %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
-                  %span
-                    = @org.ask_for
+                - @org.ask_for.each do |ask_for|
+                  %div
+                    %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
+                    %span
+                      = ask_for
 
-            - if has_field?(@org,['emails'])
+            - if @org.key?(:emails)
               %section.emails{:itemprop=>"email"}
-                - @org.emails.each_with_index do |email, index|
+                - @org.emails.each do |email|
                   %div
                     %span{"data-icon"=>"@" , :class=>"ohana-icon"}
-                    %span{:itemprop=>"email"}
-                      = email
+                    %a{:href=>("mailto:"+email)}
+                      %span{:itemprop=>"email"}
+                        = email
 
 
-            - if @org.phones.present?
+            - if @org.key?(:phones)
               %section.phones
-                - @org.phones.each_with_index do |array,index|
-                  - array.each do |hash|
-                    %div
-                      %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-                      %span
-                        - if hash["department"]
-                          %span
-                            = "#{hash["department"]}"
-                        - if hash["number"]
-                          %span{:itemprop=>"telephone"}
-                            = "#{format_phone(hash["number"])}"
-                        - if hash["phone_hours"]
-                          %span
-                            = " #{hash["phone_hours"]}"
+                - @org.phones.each do |hash|
+                  %div
+                    %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+                    %span
+                      - if hash["department"]
+                        %span
+                          = hash["department"]
+                      - if hash["number"]
+                        %span{:itemprop=>"telephone"}
+                          = format_phone(hash["number"])
+                      - if hash["type"]
+                        %sup.phone-type
+                          = hash["type"]
+                      - if hash["hours"]
+                        %span
+                          = hash["hours"]
 
 
-            - if has_field?(@org,['faxes'])
+            - if @org.key?(:faxes)
               %section.faxes
-                - @org.faxes.each_with_index do |fax,index|
+                - @org.faxes.each do |fax|
                   %div
                     %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
                     %span{:itemprop=>"faxNumber"}
-                      = "#{format_phone(fax)}"
+                      = format_phone(fax)
 
-      - if has_field?(@org, address_fields | ['urls'])
-        %section.address-box
-          %h1 Address
+      - if @org.key?(:urls)
+        %section.urls-box
+          %h1 Homepage
           %section
 
-            - if has_field?(@org, address_fields)
+            - if @org.key?(:urls)
+              %section.urls
+                - @org.urls.each do |url|
+                  %div
+                    %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+                    %a{:href=>url,:target=>"_blank"}
+                      %span{:itemprop=>"url"}
+                        = format_url(url)
+
+      - if @org.key?(:mail_address)
+        %section.address-box
+          %h1 Mailing Address
+          %section
+
+            %section.mail-address
+              %div
+                %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
+
+      -# has a physical address and the street address and zipcode differ from mailing address
+      - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
+        %section.address-box
+          %h1 Physical Address
+          %section
+            - if @org.key?(:address)
               %section.address
                 %div
                   %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
                   = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
-            - if has_field?(@org, ['urls'])
-              %section.urls
-                - @org.urls.each_with_index do |url,index|
-                  %div
-                    %a{:href=>url,:target=>"_blank"}
-                      %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-                      %span{:itemprop=>"url"}
-                        = url
-
-
   / main detail content
   %section
 
-    - if has_field?(@org, ['services_provided','description','target_group','service_areas','how_to_apply','fees','eligibility_requirements','languages_spoken','accessibility_options','ttys'])
+    - if (@org.key?(:short_desc) || @org.key?(:description))
       %section.overview-box
-        %h1 Service Overview
         %section
 
           / insert template, params are:
           / use_template,org,field,title,icon
-          = insert_template(true,@org,'services_provided',nil,nil)
-          = insert_template(true,@org,'description',"Description",nil)
-          = insert_template(true,@org,'target_group',"Target Groups","T")
-          = insert_template(true,@org,'service_areas',"Service Areas","S")
-          = insert_template(true,@org,'how_to_apply',"How to Apply","?")
-          = insert_template(true,@org,'fees',"Fees","$")
-          = insert_template(true,@org,'eligibility_requirements',"Eligibility Requirements","E")
-          = insert_template(true,@org,'languages_spoken',"Languages Spoken","L")
-          = insert_template(false,@org,'accessibility_options',"Accessibility Options","♿")
+          = insert_template(true,@org,:short_desc,nil,nil)
+          = insert_template(true,@org,:description,"Description",nil)
 
-    - if @org.service_hours.present?
-      %section.hours-box
-        %h1 Service Hours
-        %section
-
-          = insert_template(true,@org,'service_hours',nil,"⧗")
-
-    - if has_field?(@org,['payments_accepted','market_match','products_sold'])
-      %section.payment-box
-        %h1 Payment & Products
-
-        %div
-
-          - if has_field?(@org,['payments_accepted','market_match'])
-            %section.payments-accepted
-              %span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
-              %h1 Payment methods accepted:
-              %ul
-                -if has_field?(@org,['payments_accepted'])
-                  -@org.payments_accepted.sort.each do |payment|
-                    %li
-                      %span.term-popup-container
-                        %span.popup.hide
-                          - dynamic_partial = "component/popup/#{payment.downcase}"
-                          = render :partial => "#{dynamic_partial}" rescue nil
-                        %span.popup-term
-                          = payment
-                - if has_field?(@org,['market_match'])
-                  %li
-                    %span.term-popup-container
-                      %span.popup.hide
-                        = render :partial => 'component/popup/marketmatch' rescue nil
-                      %span.market-match.popup-term
-                        Market Match
-
-
-          - if @org.products_sold.present?
-            %section.products-sold
-              %span{"data-icon"=>"␣" , :class=>"ohana-icon"}
-              %h1 Products sold:
-              %ul
-                - @org.products_sold.sort.each do |product|
-                  %li
-                    = product
-
-
-    - if @org.coordinates.present? || @org.transportation_availability.present?
+    - if @org.key?(:coordinates) || @org.key?(:transportation)
       %section.map-box
-        %h1 Map & Directions
+        %h1 Location
 
         %div
 
-          - if @org.transportation_availability.present?
+          - if @org.key?(:transportation)
             %section.transportation-availability
+              %h1 Public Transit:
               %span
-                = @org.transportation_availability
+                = @org.transportation
 
-          - if @org.coordinates.present?
-            %section.directions
-              %a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
-                %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-                %span Get Directions
-
-            %section.map
-              %div#detail-map-cover.hide
+          - if @org.key?(:coordinates)
+            %section#detail-map-view.map
+              %div#show-nearby-control
+                %img.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
                 %span
-                  Click to interact
+                  &nbsp;
+
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
                   = address(@org)
@@ -174,35 +136,89 @@
                   = @org.coordinates[1]
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
-                %span Error loading map!
+              = render 'component/search/map_data'
+              %noscript
+                %style
+                  -# hides map when JS is disabled
+                  = "#detail-map-view {display:none;}"
 
+    - if @org.key?(:hours)
+      %section.hours-box
+        %h1 Service Hours
+        %section
+
+          = insert_template(true,@org,:hours,nil,"⧗")
+
+    - if (@org.fields & service_fields).any?
+      %section.service-opt-box
+        %h1 Service Options
+        %section
+          = insert_template(true,@org,:languages,"Languages Spoken",nil)
+          = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
+
+
+    - if (@org.fields & market_fields).any?
+      %section.payment-box
+        %h1 Payment & Products
+
+        %div
+
+          - if @org.key?(:payments || :market_match)
+            %section.payments-accepted
+              %span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
+              %h1 Payment methods accepted:
+              %ul
+                -if @org.key?(:payments)
+                  -@org.payments.sort.each do |payment|
+                    %li
+                      %span.term-popup-container
+                        %span.popup.hide
+                          - dynamic_partial = "component/popup/#{payment.downcase}"
+                          = render :partial => "#{dynamic_partial}" rescue nil
+                        %span.popup-term
+                          = payment
+                - if @org.key?(:market_match)
+                  %li
+                    %span.term-popup-container
+                      %span.popup.hide
+                        = render :partial => 'component/popup/market_match' rescue nil
+                      %span.market-match.popup-term
+                        Market Match
+
+
+          - if @org.key?(:products)
+            %section.products-sold
+              %span{"data-icon"=>"␣" , :class=>"ohana-icon"}
+              %h1 Products sold:
+              %ul
+                - @org.products.sort.each do |product|
+                  %li
+                    %span
+                      = product
+
+    - if @org.key?(:services)
+      %section.services-box
+        %h1 Services
+        %section
+          - @org.services.each do |service|
+
+            / insert template, params are:
+            / use_template,org,field,title,icon
+            = insert_template(true,service,:name,nil,nil)
+            = insert_template(true,service,:description,nil,nil)
+            = insert_template(false,service,:urls,"Homepage",nil)
+            = insert_template(true,service,:fees,"Fees",nil)
+            = insert_template(true,service,:audience,"Audience",nil)
+            = insert_template(true,service,:eligibility,"Eligibility",nil)
+            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
   / detail footer content
-  - if @org.updated_at.present?
+  - if @org.key?(:updated_at)
     %footer
       %section.metadata
         %section
           %section.updated-at
             %h1
               Last updated:
-            - if @org.updated_at.present?
-              %span
-                = "#{format_timestamp(@org.updated_at)}"
-
--#
-  // field dump
-  - @org.each do |field|
-    %section
-      %h1
-      = field
-
-
-- if @nearby.present?
-  %h2
-    Nearby (within 2 miles):
-  %ul
-    - @nearby.each do |venue|
-      %li
-        %a{:href=>"#{organization_path(venue)}", :title=>"#{venue.name}"}
-          %section{:class => "results-entry"}
-            = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>1}
+            %span
+              = @org.updated_at.to_s(:full_date_and_time)

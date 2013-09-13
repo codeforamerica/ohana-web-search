@@ -1,10 +1,13 @@
-paths:
-  enquire: 'enquire.min'
-  domReady: 'requirejs/domReady'
-  async: 'requirejs/async'
-
 modules:
   - name: 'routes/home/index'
   - name: 'routes/about/index'
   - name: 'routes/organizations/index'
   - name: 'routes/organizations/show'
+
+paths:
+  domReady: 'requirejs/domReady'
+  async: 'requirejs/async'
+  enquire: 'enquire.min'
+  classList: 'polyfills/remy/classList'
+  addEventListener: 'polyfills/addEventListener'
+  trim: 'polyfills/trim'

@@ -1,7 +1,30 @@
 %section#search-options
-  -#
-    %fieldset
-      %legend Location
-      %label{:for=>"radius"}
-        Search radius:
-      = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
+  %fieldset
+    %label{:for=>"language"}
+      Filter services by language availability:
+    = select_tag :language, options_for_select([['English', ''],
+    ['Español (Spanish)', 'spanish'],
+    ['Tagalog (Filipino)', 'tagalog'],
+    ['中文 (Chinese)', 'chinese'],
+    ['العربية (Arabic)', 'arabic'],
+    ['Русский (Russian)', 'russian'],], :selected => params[:language])
+
+%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+  %span Update
+
+-#
+  %fieldset
+    %legend Location
+    %label{:for=>"radius"}
+      Search radius:
+    = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
+
+    %legend Age
+    %input
+
+    %legend Gender
+    %input
+
+    %legend Income
+    %input

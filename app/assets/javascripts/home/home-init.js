@@ -1,8 +1,8 @@
 // manages homepage scripts
-require(['home/category-search','search/input-manager'],function(category,input) {
+require(['home/location-manager','search/input-manager'],function(location,input) {
   'use strict';
 
-  category.init(); // category search initialization
+  location.init();
   input.init(); // input manager initialization
 
 });

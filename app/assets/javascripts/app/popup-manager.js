@@ -1,5 +1,5 @@
 // manages behavior of popups
-define(['util/util','enquire'],function(util,enquire) {
+define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,feedback/*enquire*/) {
   'use strict';
 
 		// PRIVATE PROPERTIES
@@ -11,13 +11,17 @@ define(['util/util','enquire'],function(util,enquire) {
 		function init()
 		{
 			_addPopups();
+			feedback.init();
+			// try/catch added to ignore IE errors
+			/*
 			window.enquire.register("screen and (max-width: 767px)", {
-			    match 	: _removePopups,  
+			    match 	: _removePopups,
 			    unmatch : _addPopups
 			});
+			*/
 		}
 
-		
+
 		// PRIVATE METHODS
 
 		// adds hooks for triggering popups present on the page
@@ -83,14 +87,14 @@ define(['util/util','enquire'],function(util,enquire) {
 
 			// get the window dimensions
 			var winDim = util.getWindowRect();
-			
+
 			// find the position offset values of the link that triggered the popup
 			var offset = util.getOffset(trigger);
 			var offsetY = (offset.top+trigger.offsetHeight);
 			var offsetX = (offset.left);
 
 			// offset needed for CSS adjustments of rotating arrow inside a masking box
-			// to move popup up/down, adjust the arrowOffset.top value, which will 
+			// to move popup up/down, adjust the arrowOffset.top value, which will
 			// cascade down to the popupOffset
 			var arrowOffset = {'top':-6,'left':-14};
 			var popupOffset = {'top':15+arrowOffset.top}
@@ -138,9 +142,8 @@ define(['util/util','enquire'],function(util,enquire) {
 		// handler for closing the popup
 		function _closeHandler(evt)
 		{
-			if (evt.target.attributes["href"] == undefined && 
-				!evt.target.classList.contains("popup-trigger") && 
-				!evt.target.parentNode.classList.contains("popup-container"))
+			var el = evt.target;
+			if (el.classList.contains('close-button'))
 			{
 				_closeLastPopup();
 			}
@@ -152,6 +155,7 @@ define(['util/util','enquire'],function(util,enquire) {
 			if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
 			document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
 			window.removeEventListener("resize", _resizeHandler, true);
+			feedback.hide();
 		}
 
 	return {

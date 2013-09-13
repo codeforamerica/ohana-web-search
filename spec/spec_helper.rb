@@ -5,8 +5,8 @@ Coveralls.wear!('rails')
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'email_spec'
 require 'capybara/poltergeist'
-require 'hashie'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -22,10 +22,14 @@ end
 # This will result in verbose output in the Terminal when running tests.
 
 # You can also use Poltergeist's experimental remote debugging feature by
-# adding ":inspector => true" as an additional option on line 16. Then, in the
-# failing test, add "page.driver.debug" at a spot where you want to pause the
-# test. When you run the test, it will pause at that spot, and will launch a
-# browser window where you can inspect the page contents.
+# replacing line 15-17 with:
+# Capybara.register_driver :poltergeist_debug do |app|
+#  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+# end
+# You will also need to add Capybara.javascript_driver = :poltergeist_debug
+# on line 42. Add "page.driver.debug" at a spot where you want to pause a test.
+# When you run the test, it will pause at that spot, and will launch a browser
+# window where you can inspect the page contents.
 # Remember to remove "page.driver.debug" when you're done debugging!
 # https://github.com/jonleighton/poltergeist#remote-debugging-experimental
 
@@ -39,22 +43,9 @@ Capybara.javascript_driver = :poltergeist
 RSpec.configure do |config|
   config.include Features::SessionHelpers, type: :feature
   config.include DetailFormatHelper
-
-  # ## Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  # config.use_transactional_fixtures = true
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -66,6 +57,41 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
 end
 
+require 'vcr'
+VCR.configure do |c|
+  c.configure_rspec_metadata!
+  c.ignore_hosts '127.0.0.1', 'localhost'
+  c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once, :allow_playback_repeats => true }
+  c.cassette_library_dir  = "spec/cassettes"
+  c.hook_into :webmock
+  c.filter_sensitive_data("<API_TOKEN>") do
+    ENV['OHANA_API_TOKEN']
+  end
+end
+
+def stub_get(url)
+  stub_request(:get, ohanapi_url(url))
+end
+
+def ohanapi_url(url)
+  url =~ /^http/ ? url : "http://ohanapi.herokuapp.com/api#{url}"
+end
+
+def fixture_path
+  File.expand_path("../fixtures", __FILE__)
+end
+
+def fixture(file)
+  File.new(fixture_path + '/' + file)
+end
+
+def json_response(file)
+  {
+    :body => fixture(file),
+    :headers => {
+      :content_type => 'application/json; charset=utf-8'
+    }
+  }
+end

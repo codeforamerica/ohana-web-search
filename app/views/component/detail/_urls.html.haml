@@ -1,0 +1,14 @@
+- if org.key?(:urls)
+  %section{:class=>'urls'}
+    - if icon.present?
+      %span{"data-icon"=>icon , :class=>"ohana-icon"}
+    - if (title.present?)
+      %h1 #{title}:
+    - if org[:urls].kind_of?(Array)
+      %ul
+        - org[:urls].sort.each do |url|
+          %li
+            %span
+              %a{:href=>url,:target=>"_blank"}
+                %span{:itemprop=>"url"}
+                  = format_url(url)

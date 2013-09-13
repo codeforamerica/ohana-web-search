@@ -20,6 +20,13 @@ HumanServicesFinder::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile << %w( *.svg *.eot *.woff *.ttf ) # fonts
+  config.assets.precompile << %w( html5shiv.js html5shiv-printshiv.js ) #polyfill
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -48,9 +55,6 @@ HumanServicesFinder::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   #config.assets.precompile << "*.js"
 
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-
   # Enable threaded mode
   # config.threadsafe!
 
@@ -64,18 +68,21 @@ HumanServicesFinder::Application.configure do
   #config.action_mailer.default_url_options = { :host => 'example.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  #config.action_mailer.delivery_method = :smtp
-  #config.action_mailer.perform_deliveries = true
-  #config.action_mailer.raise_delivery_errors = false
-  #config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'ohana.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  # Disable delivery errors, bad email addresses will be ignored
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
-  #  config.action_mailer.smtp_settings = {
-  #    :address   => "smtp.mandrillapp.com",
-  #    :port      => 25,
-  #    :user_name => ENV["MANDRILL_USERNAME"],
-  #    :password  => ENV["MANDRILL_API_KEY"]
-  #  }
-
+  config.action_mailer.smtp_settings = {
+    :port =>           '587',
+    :address =>        'smtp.mandrillapp.com',
+    :user_name =>      ENV['MANDRILL_USERNAME'],
+    :password =>       ENV['MANDRILL_APIKEY'],
+    :domain =>         'heroku.com',
+    :authentication => :plain
+  }
 
 
 end

@@ -1,10 +1,26 @@
-%section#category-box.hide
-  %header
-    I'm looking for help with...
-  %nav
-    %span#keyword-search{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-  %ul
-    - @service_terms.each do |service|
-      %a{ :href => "/organizations?keyword=#{service}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service}']);" }
+%section#category-box
+  -# Category search terms that are displayed on the homepage
+  %section#general-services
+    %ul
+      - @service_terms.each do |service|
         %li
-          = service
+          = service[:name]
+          %ul
+            - service[:sub].each do |sub|
+              %li
+                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                  = sub
+
+  %section#emergency-services
+    %ul
+      - @emergency_terms.each do |service|
+        %li
+          = service[:name]
+          %ul
+            - service[:sub].each do |sub|
+              %li
+                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
+                  = sub
+    %p
+      NEED IMMEDIATE ASSISTANCE?
+      %strong DIAL 2-1-1

@@ -1,12 +1,15 @@
 // handles ajax search functionality
-define(['util/util'],
-	function(util) {
+define(['util/util'],function (util) {
   'use strict';
 
   	// PRIVATE PROPERTIES
 		// search parameter values
 		var _keyword,
-				_location;
+				_location,
+				_language;
+
+		var _findBtn; // find button on homepage
+		var _updateBtn; // update button on inside page
 
 		var _callback; // function to execute when items are clicked
 
@@ -16,14 +19,16 @@ define(['util/util'],
 			_callback = callback;
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
-			
-			_keyword.addEventListener('focus',_inputClicked,true);
-			_location.addEventListener('focus',_inputClicked,true);
-			
+			_language = document.getElementById("language");
+
+			_findBtn = document.getElementById('find-btn');
+			_updateBtn = document.getElementById('update-btn');
+
 			// if no ajax callback is given, don't register ajax calls
 			if (callback)
 			{
-				document.getElementById('find-btn').addEventListener("click",_searchFormSubmittedHandler,false);
+				if (_updateBtn) _updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+				if (_findBtn) _findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
 				_registerAjaxHooks();
 			}
 		}
@@ -54,12 +59,18 @@ define(['util/util'],
 			_location.value = value;
 		}
 
-		// PRIVATE METHODS
-		// clear input fields when fields are clicked
-		function _inputClicked(evt)
+		function getLanguage()
 		{
-			evt.target.value = ''; // clear input when user clicked on the field
+			return _language.value;
 		}
+
+		function setLanguage(value)
+		{
+			if (value)
+				_language.value = value;
+		}
+
+		// PRIVATE METHODS
 
 		// register all links with "ajax-link" class added as ajax-enabled links
 		function _registerAjaxHooks(scope)
@@ -76,18 +87,6 @@ define(['util/util'],
 			}
 		}
 
-		function _searchFormSubmittedHandler(evt)
-		{
-			var params = util.getQueryParams(window.location.search);
-			params.keyword = getKeyword();
-			params.location = getLocation();
-			params.page = 1;
-			_callback.performSearch(params);
-
-			evt.preventDefault();
-			return false;
-		}
-
 		function _linkClickedHandler(evt)
 		{
 			var params = util.getQueryParams(this.search);
@@ -96,7 +95,20 @@ define(['util/util'],
 				params.id = id;
 
 			_callback.performSearch(params);
-			
+
+			evt.preventDefault();
+			return false;
+		}
+
+		function _searchFormSubmittedHandler(evt)
+		{
+			var params = {};
+			params.keyword = getKeyword();
+			params.location = getLocation();
+			params.language = getLanguage();
+			params.page = 1;
+			_callback.performSearch(params);
+
 			evt.preventDefault();
 			return false;
 		}
@@ -107,6 +119,8 @@ define(['util/util'],
 		getKeyword:getKeyword,
 		setKeyword:setKeyword,
 		getLocation:getLocation,
-		setLocation:setLocation
+		setLocation:setLocation,
+		getLanguage:getLanguage,
+		setLanguage:setLanguage
 	};
 });

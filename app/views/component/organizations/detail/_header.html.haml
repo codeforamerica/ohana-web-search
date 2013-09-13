@@ -1,8 +1,36 @@
-%header#results-header
-	%h1
-		Service Provider
-	%nav
-		-#= render 'component/search/map_data'
-		%a{ :href => @search_results_url, :class => "ajax-link" }
-			%span{ "data-icon" => "↵", :class => "ohana-icon" }
-			Return to results
+%header#floating-results-header.results-header
+
+	%div
+		%a{ :href => "#{organizations_url(@search_params)}##{@org.id}", :class => "ajax-link",:target=>"_self" }
+			%span{ "data-icon" => "◀", :class => "ohana-icon" }
+			Result list
+		%a{ :href => '#', :onclick=>"window.print();return false;" }
+			-# %span{ "data-icon" => "⎙", :class => "ohana-icon print" }
+			Print
+
+		- if @org.key?(:coordinates)
+			%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
+				%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+				%span Directions
+
+	%div.floating-content.hide
+		%a{ :href => '#'}
+			%span{ "data-icon" => "▲", :class => "ohana-icon" }
+			Top
+		%h1
+			= @org.name
+
+%header.results-header.persistent
+
+	%div
+		%a{ :href => "#{organizations_url(@search_params)}##{@org.id}", :class => "ajax-link",:target=>"_self" }
+			%span{ "data-icon" => "◀", :class => "ohana-icon" }
+			Result list
+		%a{ :href => '#', :onclick=>"window.print();return false;" }
+			-# %span{ "data-icon" => "⎙", :class => "ohana-icon print" }
+			Print
+
+		- if @org.key?(:coordinates)
+			%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(@org)}",:target=>"_blank"}
+				%span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+				%span Directions

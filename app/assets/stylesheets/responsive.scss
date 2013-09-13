@@ -1,0 +1,340 @@
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   ========================================================================== */
+
+// Smaller than standard 1024 (devices and browsers)
+@media only screen and (max-width: 1023px)
+{
+
+  .home
+  {
+    #search-box
+    {
+      > div
+      {
+        text-align:right;
+      }
+    }
+  }
+
+  .inside
+  {
+    #detail-info
+    {
+      > aside
+      {
+        float:none;
+        margin-left:0;
+        width:100%;
+        @include single-box-shadow(none);
+        border:0;
+      }
+
+      .overview-box,
+      .map-box
+      {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+// Smaller than standard 960 (devices and browsers)
+@media only screen and (max-width: 959px)
+{
+}
+
+// Tablet Portrait size to standard 960 (devices and browsers)
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+// All Mobile Sizes (devices and browser)
+@media only screen and (max-width: 767px)
+{
+  #content > header
+  {
+    font-size:14px;
+
+    h2
+    {
+      margin-top:15px;
+      margin-bottom:10px;
+    }
+
+    nav
+    {
+      float:none;
+      margin-left:25px;
+    }
+  }
+
+  // home screen styles
+  .home
+  {
+    main
+    {
+      position:static;
+    }
+
+    #language-box
+    {
+      text-align:center;
+    }
+
+    #help-box
+    {
+      p
+      {
+        font-size: 11px;
+        display:block;
+        text-align:center;
+      }
+    }
+
+    #location-box
+    {
+      >*
+      {
+        @include box-sizing(border-box);
+        left:10px;
+        right:10px;
+        margin-left:0;
+
+        input
+        {
+          display:block;
+        }
+        button
+        {
+          vertical-align: bottom;
+        }
+      }
+
+      #geolocate-box
+      {
+        text-align:left;
+      }
+    }
+
+    #search-container {
+      min-width: 100%;
+    }
+
+    #search-box
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+
+      > div
+      {
+        padding:20px;
+        > section
+        {
+          display:block;
+          margin:0;
+        }
+      }
+
+      input[type='text'] {font-size:16px;}
+
+      div
+      {
+          display:block;
+          text-align:center;
+      }
+
+      label
+      {
+          font-size: 20px;
+          font-family: $serif_font;
+          letter-spacing: 2px;
+          display:block;
+          width:auto;
+          margin-left:auto;
+          margin-right:auto;
+      }
+
+      input
+      {
+          height:40px;
+          font-size: 14px;
+          background:$white;
+          margin-bottom:10px;
+          margin-left:auto;
+          margin-right:auto;
+          width:100%;
+          @include box-sizing(border-box);
+          display:block;
+          position:static;
+          @include border-radius(0px);
+      }
+
+      button
+      {
+          width:100%;
+          font-size: 16px;
+          margin:0;
+          margin-top:10px;
+          top:0;
+          left:0;
+      }
+    }
+
+
+    #category-box
+    {
+      position:static;
+      margin-left:0;
+      margin-top:0;
+      display:block;
+      width:auto;
+      margin-top:8px;
+      padding:10px;
+
+      > ul > li
+      {
+        min-width: 300px;
+        font-size: 24px;
+      }
+
+      > ul > li > ul > li
+      {
+        font-size:14px;
+      }
+
+      > header
+      {
+        margin-top:10px;
+        margin-left:10px;
+        color:$white_alpha70;
+        font-size:14px;
+      }
+
+      > nav
+      {
+        margin-right:10px;
+      }
+    }
+
+
+  }
+
+
+  .inside
+  {
+    #results-container
+    {
+      //display:table-header-group;
+      margin-left:0;
+      border-left:0;
+
+      > header > nav
+      {
+        display:block;
+        padding:10px;
+        padding-top:0px;
+      }
+    }
+
+    #search-container
+    {
+      //display:table-footer-group;
+      float:none;
+      width:100%;
+      @include box-sizing(border-box);
+
+      select
+      {
+        height:auto;
+      }
+    }
+
+    #search-box
+    {
+
+      input
+      {
+          height:40px;
+          font-size: 14px;
+          background:$white;
+          margin-bottom:10px;
+          margin-left:auto;
+          margin-right:auto;
+          width:100%;
+          @include box-sizing(border-box);
+          display:block;
+          position:static;
+          @include border-radius(0px);
+      }
+    }
+
+    #results-entries {
+
+      nav{
+        margin-top:15px;
+        margin-left:15px;
+        margin-right:15px;
+      }
+    }
+
+    #detail-info
+    {
+      margin:0px;
+      @include border-radius(0px);
+      @include single-box-shadow($white,0,0,0px);
+      -ms-word-break: break-all;
+      word-break: break-all;
+      // Non standard for webkit
+      word-break: break-word;
+
+      > aside
+      {
+        float:clear;
+        width:100%;
+      }
+
+      > section
+      {
+        margin-right:auto;
+      }
+
+      > * > section * > section
+      {
+        margin:0;
+      }
+
+      .map
+      {
+        width:100%;
+        @include box-sizing(border-box);
+      }
+      #detail-map-canvas
+      {
+        width:100%;
+        @include box-sizing(border-box);
+      }
+    }
+
+    #list-view
+    {
+      li:last-child
+      {
+        margin-bottom:0px;
+      }
+    }
+  }
+}
+
+// Mobile Landscape Size to Tablet Portrait (devices and browsers)
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}
+
+// Mobile Portrait Size to Mobile Landscape Size (devices and browsers)
+@media only screen and (max-width: 479px) {
+
+}

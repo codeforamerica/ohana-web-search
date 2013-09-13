@@ -1,9 +1,11 @@
-// manages search initialization
-require(['app/loading-manager','app/popup-manager'],function(lm,pm) {
+// manages app initialization
+require(['app/loading-manager',
+	'app/popup-manager',
+	'classList',
+	'addEventListener'],function (lm,pm,pfClassList,pfAddEventListener) {
   'use strict';
-  
-  document.body.classList.add("require-loaded");
 
+	document.body.classList.add("require-loaded");
   lm.hide();
   pm.init();
 

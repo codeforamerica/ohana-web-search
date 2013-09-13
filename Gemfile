@@ -5,19 +5,22 @@ gem 'rails', '3.2.13'
 
 # front end
 group :assets do
+  gem 'html5shiv-rails' # needed for IE polyfill of sectioning content
+  gem 'selectivizr-rails' # needed for IE polyfill of modern CSS selectors
   gem 'sass-rails',   '~> 3.2.3'
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails', '>= 1.0.17'
-gem 'requirejs-rails', git: 'git://github.com/jwhitley/requirejs-rails.git'
+gem 'requirejs-rails', '0.9.1'
 gem 'haml-rails'
 
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem 'ohanakapa', :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => 'master' #for API wrapper
+gem "ohanakapa", :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => "add-nearby-endpoint", :ref => "2b484098f7"
+gem 'faraday-http-cache'
 
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
@@ -30,6 +33,7 @@ group :development do
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
+  gem "letter_opener" # for mocking emails for sending
 end
 
 group :test do
@@ -38,8 +42,10 @@ group :test do
   gem "capybara", ">= 2.0.3"
   gem 'json'
   gem 'poltergeist'
+  #gem 'capybara-webkit'
   gem "vcr"
   gem 'webmock', "< 1.12.0"
+  gem "email_spec"
 end
 
 group :development, :test do

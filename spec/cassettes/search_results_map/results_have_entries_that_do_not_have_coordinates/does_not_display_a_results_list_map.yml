@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohanapi-staging.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=alcohol%20and%20drug%20helpline&location=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 13 Sep 2013 07:05:23 GMT
+      Etag:
+      - '"6c5ea774de8d5bda617a0fd187ad682c"'
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4970'
+      X-Request-Id:
+      - 6de3f675c87bebeda27ae96e27df7c9b
+      X-Runtime:
+      - '0.125888'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '3307'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"521d33901974fcdb2b002581","contacts":[{"_id":"521d33901974fcdb2b002582","name":"Julie
+        Kinloch, LCSW","title":"Program Manager"}],"created_at":"2013-08-27T16:17:36-07:00","description":"Provides
+        information about alcohol and drug recovery programs and referrals to community
+        services. Offers support for persons dealing with their own alcohol and drug
+        issues or for those whose lives have been affected by alcohol and drug abuse.
+        All services provided over the phone.   Formerly known as Youth and Family
+        Enrichment Services (YFES).","emails":["julie.kinloch@star-vista.org"],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"StarVista/Alcohol
+        and Drug Helpline","city":"San Carlos","state":"CA","street":"610 Elm Street,
+        Suite 212","zip":"94070"},"name":"Alcohol and Drug Helpline, Department of
+        Health and Recovery Services","phones":[{"number":"650 573-3950","department":"Hotline","hours":"(24
+        hours daily)"}],"short_desc":"A 24-hour hotline offering information on alcohol
+        and drug treatment services.","transportation":"Not necessary for service.","updated_at":"2013-09-11T14:34:12-07:00","urls":["http://www.crisiscenter.cc"],"url":"http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002581","other_locations":["http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002569","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b00256c","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002574","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002579","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b00257d","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002581","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002584","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002588","http://ohanapi-staging.herokuapp.com/api/locations/521d33911974fcdb2b00258c","http://ohanapi-staging.herokuapp.com/api/locations/521d33911974fcdb2b002590","http://ohanapi-staging.herokuapp.com/api/locations/521d33911974fcdb2b002593","http://ohanapi-staging.herokuapp.com/api/locations/521d33901974fcdb2b002570"],"services":[{"_id":"521d33921974fcdb2b00259d","audience":"People
+        who desire information or referrals for themselves or others regarding drug
+        and alcohol problems","eligibility":"None","fees":"None.","funding_sources":["County"],"how_to_apply":"Apply
+        by phone.","keywords":["ALCOHOLISM SERVICES","Crisis Intervention/Hotlines","DRUG
+        ABUSE SERVICES","Telephone Crisis Intervention","Substance Abuse Referrals"],"service_areas":"San
+        Mateo County","updated_at":"2013-08-27T16:17:38-07:00","wait":"No wait."}],"organization":{"_id":"521d33901974fcdb2b002568","created_at":"2013-08-27T16:17:36-07:00","name":"StarVista
+        (formerly Youth and Family Enrichment Services (YFES))","updated_at":"2013-08-27T16:17:36-07:00","url":"http://ohanapi-staging.herokuapp.com/api/organizations/521d33901974fcdb2b002568","locations_url":"http://ohanapi-staging.herokuapp.com/api/organizations/521d33901974fcdb2b002568/locations"},"id":"521d33901974fcdb2b002581","_score":7.579608,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Fri, 13 Sep 2013 07:05:24 GMT
+recorded_with: VCR 2.5.0
