@@ -19,7 +19,7 @@ gem 'haml-rails'
 # server
 gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
-gem "ohanakapa", :git => "git://github.com/codeforamerica/ohanakapa-ruby.git", :branch => "add-nearby-endpoint", :ref => "2b484098f7"
+gem "ohanakapa", "~> 1.0"
 gem 'faraday-http-cache'
 
 # app config and ENV variables for heroku
