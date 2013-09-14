@@ -17,18 +17,18 @@ module ResultSummaryHelper
     summary = ""
     per_page = 30
 
-    if @total_count == "0"
+    if @pages[:total_count] == 0
       summary << "No results"
-    elsif @total_count.to_i < per_page
+    elsif @pages[:total_count] < per_page
       summary << "Displaying <strong>"
-      summary << self.pluralize(@total_count, 'result')
+      summary << self.pluralize(@pages[:total_count], 'result')
       summary << "</strong>"
     else
-      page_range_end = (@current_page.to_i*per_page)
+      page_range_end = (@pages[:current_page]*per_page)
       page_range_start = page_range_end-per_page+1
 
       summary << "Displaying <strong>#{page_range_start}-#{page_range_end}</strong> of "
-      summary << self.pluralize(@total_count, 'result')
+      summary << self.pluralize(@pages[:total_count], 'result')
     end
 
     summary << " matching <strong>'#{keyword}'</strong>" if keyword.present?

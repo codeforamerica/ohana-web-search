@@ -4,8 +4,8 @@ describe ResultSummaryHelper do
   describe "when current count < total_count" do
 
     before(:each) do
-      @current_count = 1
-      @total_count = 10
+      @pages[:current_count] = 1
+      @pages[:total_count] = 10
     end
 
     context 'when no keyword or location' do
