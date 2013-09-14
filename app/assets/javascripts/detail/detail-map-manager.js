@@ -34,8 +34,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 			if (_nearbyControl)
 			{
-				_nearbyControlIcon = _nearbyControl.childNodes[1];
-				_nearbyControlTxt = _nearbyControl.childNodes[3];
+				_nearbyControlIcon = document.getElementById("show-nearby-control-icon");
+				_nearbyControlTxt = document.getElementById("show-nearby-control-text");
 
 				_loadData();
 				_initControlText();

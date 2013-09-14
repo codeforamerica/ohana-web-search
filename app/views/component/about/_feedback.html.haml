@@ -6,7 +6,7 @@
 		%p
 			Submit comments to the development team:
 
-		%div#feedback-form.hide
+		%div#feedback-form
 			%p#feedback-status.hide
 				Submit feedback!
 			%p
@@ -21,13 +21,10 @@
 			%p
 				%button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
 					Send!
-		%div#feedback-form-nojs
+
+		%noscript
+			%style
+				-# hides map when JS is disabled
+				= "#feedback-form {display:none;}"
 			= link_to "Visit this form","http://ohanapi.org/#contribute",:target=>"_blank"
 			to submit comments.
-		:javascript
-			//dynamically remove hide class so form doesn't show up when JavaScript is disabled
-			//try/catch is for ignoring potential IE errors.
-			try{
-				document.getElementById('feedback-form-nojs').classList.add('hide');
-				document.getElementById('feedback-form').classList.remove('hide');
-			}catch(e){}
