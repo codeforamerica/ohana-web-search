@@ -5,7 +5,6 @@ define(['util/util'],
 
 		var _header;
 		var _offsetY;
-		var _floating = false;
 		var _floatingContent;
 
 		function init()
@@ -13,12 +12,9 @@ define(['util/util'],
 			_header = document.getElementById("floating-results-header");
 			//_offsetY = document.getElementById('content-header').offsetHeight;
 			var doc = document.documentElement, body = document.body;
-			var lastScroll = (doc && doc.scrollTop  || body && body.scrollTop  || 0);
-			window.scrollTo(0, 0);
 			_offsetY = util.getOffset(_header).top;
 			_floatingContent = document.querySelector('#floating-results-header .floating-content');
 
-			window.scrollTo(0, lastScroll);
 			_checkIfFloating();
 
 			window.addEventListener("scroll",_onScroll,false);
@@ -34,22 +30,14 @@ define(['util/util'],
 			if (window.scrollY >= _offsetY)
 			{
 				// fix header
-				if (!_floating)
-				{
-					_header.classList.add("floating");
-					_floatingContent.classList.remove('hide');
-					_floating = true;
-				}
+				_header.classList.add("floating");
+				_floatingContent.classList.remove('hide');
 			}
 			else
 			{
 				// reset header
-				if (_floating)
-				{
-					_header.classList.remove("floating");
-					_floatingContent.classList.add('hide');
-					_floating = false;
-				}
+				_header.classList.remove("floating");
+				_floatingContent.classList.add('hide');
 			}
 		}
 

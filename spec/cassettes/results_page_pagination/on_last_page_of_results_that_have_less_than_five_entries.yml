@@ -1,0 +1,1176 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 15 Sep 2013 00:51:07 GMT
+      Etag:
+      - '"b5ff73cfb087df942581807c1bb72762"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&utf8=%E2%9C%93>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4933'
+      X-Request-Id:
+      - cec291050db8b9ac8581468470e4ec30
+      X-Runtime:
+      - '0.754350'
+      X-Total-Count:
+      - '51'
+      X-Total-Pages:
+      - '2'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '54870'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"521d33771974fcdb2b0022d1","accessibility":["Disabled Restroom","Disabled
+        Parking","Wheelchair"],"address":{"city":"Portola Valley","state":"CA","street":"765
+        Portola Road","zip":"94028"},"ask_for":["Information Services"],"contacts":[{"_id":"521d33771974fcdb2b0022d2","name":"Anne-Marie
+        Despain","title":"Director of Library Services"},{"_id":"521d33771974fcdb2b0022d3","title":"Library
+        Branch Manager"}],"coordinates":[-122.2289941,37.3819448],"created_at":"2013-08-27T16:17:11-07:00","description":"Offers
+        general library services and resources including fiction and nonfiction books,
+        reference for children and adults, CDs and cassettes, adult and children''s
+        programs and story hours, large-print books, books on tape and CD, magazines,
+        Internet access, instructional videos, feature film videos, DVDs and CD-ROMs.
+        Services for the homebound can be arranged. The county library serves residents
+        of unincorporated areas and those cities without city libraries which are
+        taxed by the county for library services. The county library branches participate
+        in the Peninsula Library System.","emails":["portolavalley@smcl.org"],"faxes":["650
+        851-8365"],"hours":"Monday-Thursday, 11-7; Friday-Saturday, 11-5","kind":"Other","mail_address":{"attention":"Portola
+        Valley Library","city":"Portola Valley","state":"CA","street":"765 Portola
+        Road","zip":"94028"},"name":"Portola Valley Library","phones":[{"number":"650
+        851-0560","hours":"(Monday-Thursday, 11-7; Friday, Saturday, 11-5)"}],"short_desc":"General
+        reference and reading materials.","transportation":"SAMTRANS stops within
+        1 block.","updated_at":"2013-09-09T10:10:56-07:00","urls":["http://www.smcl.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d1","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022cc","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d1","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d6","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022db","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022e0","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022e5","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022ea","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022ef","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022f4","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b0022f9","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b0022fe","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002303","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002308","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b00230c","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002312","http://ohanapi.herokuapp.com/api/locations/521d33791974fcdb2b002316"],"services":[{"_id":"521d33791974fcdb2b00231b","eligibility":"Resident
+        of California to obtain a library card","funding_sources":["County"],"how_to_apply":"To
+        receive a library card present picture ID and proof of name and address to
+        verify residency requirement.","keywords":["EDUCATION SERVICES","Library","Libraries","Public
+        Libraries","Storytime at the Farmers'' Market","Computer Access","Reference
+        Services","Book Club"],"service_areas":["San Mateo County","Portola Valley"],"updated_at":"2013-09-05T13:27:58-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d33771974fcdb2b0022cb","created_at":"2013-08-27T16:17:11-07:00","name":"San
+        Mateo County Library","updated_at":"2013-08-27T16:17:11-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb/locations"},"id":"521d33771974fcdb2b0022d1","_score":610174.56,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33021974fcdb2b001330","address":{"city":"Redwood
+        City","state":"CA","street":"Winslow Street and Middlefield Road parking lot","zip":"94063"},"contacts":[{"_id":"521d33021974fcdb2b001331","name":"Norman
+        Shapiro","title":"Manager"},{"_id":"521d33021974fcdb2b001332","name":"Sandra
+        Farley","title":"Assistant Manager"}],"coordinates":[-122.2086579,37.5021585],"created_at":"2013-08-27T16:15:14-07:00","description":"The
+        Farmers'' Market is located out-of-doors in the parking lot between Winslow
+        Street and Middlefield Road in Redwood City. Farmers from all over Central
+        California sell their produce directly to consumers from 8 am to 12 noon from
+        approximately the first Saturday in April until the last Saturday in November.
+        The market offers fresh produce, fruit, eggs, honey, bread and baked goods,
+        plants and flowers, and fish available at prices that are usually lower than
+        in regular stores. Sponsored by the Redwood City Kiwanis Club. All proceeds
+        from rental of stalls go to local charities.","mail_address":{"attention":"Redwood
+        City Kiwanis Farmers'' Market","city":"Redwood City","state":"CA","street":"PO
+        Box 624","zip":"94063"},"name":"Redwood City Kiwanis Farmers'' Market","phones":[{"number":"650
+        592-4103"}],"updated_at":"2013-08-27T16:26:43-07:00","urls":["http://www.rwckfm.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33021974fcdb2b001330","services":[{"_id":"521d33021974fcdb2b001335","eligibility":"None","fees":"Weekly
+        vendor fees: $21-$41 for farmers, $12 for backyard gardeners. Annual registration
+        fee $10. Cash and checks accepted.","funding_sources":["Fees"],"keywords":["Farmers
+        Markets"],"service_areas":"San Mateo County","updated_at":"2013-08-27T16:15:14-07:00"}],"organization":{"_id":"521d33021974fcdb2b00132f","created_at":"2013-08-27T16:15:14-07:00","name":"Redwood
+        City Kiwanis Farmers'' Market","updated_at":"2013-08-27T16:15:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f/locations"},"id":"521d33021974fcdb2b001330","_score":21.724558,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000008","address":{"city":"Burlingame","state":"CA","street":"Howard
+        Ave. & Park","zip":"94010"},"coordinates":[-122.3456787,37.5772448],"created_at":"2013-09-09T08:49:55-07:00","hours":"April
+        - December Sunday 9:00 AM to 1:30 PM, May - mid-September Thursday 4:00 PM
+        to 8:00 PM","kind":"Farmers'' Market","name":"Burlingame Fresh Market Farmers
+        Market","updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.burlingamechamber.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000008","organization":{"_id":"522dee234becffff27000007","created_at":"2013-09-09T08:49:55-07:00","name":"Burlingame
+        Fresh Market Farmers Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007/locations"},"id":"522dee234becffff27000008","_score":2.0754411,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000002","address":{"city":"San
+        Mateo","state":"CA","street":"194 W 25th Avenue","zip":"94403"},"coordinates":[-122.309978,37.543641],"created_at":"2013-09-09T08:49:54-07:00","hours":"May
+        - October Tuesday 4:00 PM to 7:30 PM","kind":"Farmers'' Market","market_match":true,"name":"25th
+        Avenue Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Flowers","Seafood","Vegetables","Honey","Meat","Nursery","Nuts","Plants","Prepared
+        Food"],"updated_at":"2013-09-09T08:49:54-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=40"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000002","organization":{"_id":"522dee224becffff27000001","created_at":"2013-09-09T08:49:54-07:00","name":"25th
+        Avenue Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001/locations"},"id":"522dee224becffff27000002","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000005","address":{"city":"Belmont","state":"CA","street":"1201
+        El Camino Real","zip":"94002"},"coordinates":[-122.2743709,37.519226],"created_at":"2013-09-09T08:49:55-07:00","hours":"January
+        - December Sunday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","market_match":true,"name":"Belmont
+        Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Meat","Nursery","Nuts","Poultry","Prepared
+        Food"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=2"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000005","organization":{"_id":"522dee224becffff27000004","created_at":"2013-09-09T08:49:54-07:00","name":"Belmont
+        Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004/locations"},"id":"522dee224becffff27000005","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000e","address":{"city":"Pacifica","state":"CA","street":"400
+        Old County Road","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"created_at":"2013-09-09T08:49:55-07:00","hours":"May
+        - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November & December)","kind":"Farmers''
+        Market","name":"Coastside Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"_id":"522dee234becffff2700000d","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
+        Farmers'' Market of Pacifca","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"},"id":"522dee234becffff2700000e","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000023","address":{"city":"Los
+        Altos","state":"CA","street":"State Street and Second Street","zip":"94022"},"coordinates":[-122.1173552,37.3791761],"created_at":"2013-09-09T08:49:57-07:00","hours":"May
+        - September Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Market","name":"Los
+        Altos Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Flowers","Eggs","Herbs","Vegetables","Jams","Meat","Nuts","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://cafarmersmkts.com/markets/category/los-altos-farmers-market"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000023","organization":{"_id":"522dee254becffff27000022","created_at":"2013-09-09T08:49:57-07:00","name":"Los
+        Altos Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022/locations"},"id":"522dee254becffff27000023","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000026","address":{"city":"Menlo
+        Park","state":"CA","street":"Chestnut & Menlo Avenues","zip":"94025"},"coordinates":[-122.1834629,37.45091499999999],"created_at":"2013-09-09T08:49:57-07:00","hours":"January
+        - December Sunday 9:00 AM to 1:00 PM, (Open on all holidays that fall on Sundays,
+        except Christmas)","kind":"Farmers'' Market","name":"Menlo Park Farmers''
+        Market","payments":["Credit"],"products":["Baked Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Soap"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://localharvest.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000026","organization":{"_id":"522dee254becffff27000025","created_at":"2013-09-09T08:49:57-07:00","name":"Menlo
+        Park Farmers'' Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025/locations"},"id":"522dee254becffff27000026","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000029","address":{"city":"Millbrae","state":"CA","street":"200
+        Broadway","zip":"94030"},"coordinates":[-122.3905851,37.5999172],"created_at":"2013-09-09T08:49:57-07:00","hours":"January
+        - December Saturday 8:00 am to 1:00 pm","kind":"Farmers'' Market","name":"Millbrae
+        Farmers Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Flowers","Seafood","Herbs","Vegetables","Honey","Nuts","Plants"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://www.millbrae.com"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000029","organization":{"_id":"522dee254becffff27000028","created_at":"2013-09-09T08:49:57-07:00","name":"Millbrae
+        Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028/locations"},"id":"522dee254becffff27000029","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000035","address":{"city":"San
+        Mateo","state":"CA","street":"1700 West Hillsdale Boulevard","zip":"94401"},"coordinates":[-122.335123,37.5350511],"created_at":"2013-09-09T08:49:58-07:00","hours":"January
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","market_match":true,"name":"San
+        Mateo Farmers'' Market","payments":["Credit","WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap","Wine"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.pcfma.com/sanmateo"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000035","organization":{"_id":"522dee264becffff27000034","created_at":"2013-09-09T08:49:58-07:00","name":"San
+        Mateo Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034/locations"},"id":"522dee264becffff27000035","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000038","address":{"city":"Saratoga","state":"CA","street":"West
+        Valley College, 14000 Fruitvale Avenue","zip":"95070"},"coordinates":[-122.0111089,37.2654921],"created_at":"2013-09-09T08:49:58-07:00","hours":"January
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"Saratoga
+        Farmers'' Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://cafarmersmkts.com/markets/category/saratoga"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000038","organization":{"_id":"522dee264becffff27000037","created_at":"2013-09-09T08:49:58-07:00","name":"Saratoga
+        Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037/locations"},"id":"522dee264becffff27000038","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff2700002f","address":{"city":"Foster
+        City","state":"CA","street":"800 Foster City Blvd.","zip":"94404"},"coordinates":[-122.2636018,37.5582093],"created_at":"2013-09-09T08:49:58-07:00","hours":"May
+        - October Wednesday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"PJCC
+        Farmers'' Market at Foster City","payments":["WIC","WICcash","SFMNP","SNAP"],"products":["Vegetables","Plants"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.urbantable.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff2700002f","organization":{"_id":"522dee264becffff2700002e","created_at":"2013-09-09T08:49:58-07:00","name":"PJCC
+        Farmers'' Market at Foster City","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e/locations"},"id":"522dee264becffff2700002f","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000032","address":{"city":"Redwood
+        City","state":"CA","street":"850 Winslow Street","zip":"94063"},"coordinates":[-122.2300105,37.4854442],"created_at":"2013-09-09T08:49:58-07:00","hours":"April
+        - November Saturday 8:00 AM to 12:00 PM","kind":"Farmers'' Market","name":"Redwood
+        City Kiwanis Farmers Market","payments":["WICcash"],"products":["Baked Goods","Crafts","Flowers","Eggs","Seafood","Vegetables","Honey","Nuts"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.rwcfm.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000032","organization":{"_id":"522dee264becffff27000031","created_at":"2013-09-09T08:49:58-07:00","name":"Redwood
+        City Kiwanis Farmers Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031/locations"},"id":"522dee264becffff27000032","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee274becffff2700003b","address":{"city":"South
+        San Francisco","state":"CA","street":"748 Tennis Dr","zip":"94080"},"coordinates":[-122.4253156,37.6552314],"created_at":"2013-09-09T08:49:59-07:00","hours":"May
+        - October Saturday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","market_match":true,"name":"South
+        San Francisco Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"updated_at":"2013-09-09T08:49:59-07:00","urls":["http://pcfma.com/market_home.php?market_id=37"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee274becffff2700003b","organization":{"_id":"522dee274becffff2700003a","created_at":"2013-09-09T08:49:59-07:00","name":"South
+        San Francisco Farmers Market","updated_at":"2013-09-13T16:49:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a/locations"},"id":"522dee274becffff2700003b","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000b","address":{"city":"Half
+        Moon Bay","state":"CA","street":"225 Cabrillo Hwy S","zip":"94019"},"coordinates":[-122.43267,37.464756],"created_at":"2013-09-09T08:49:55-07:00","hours":"May
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"Coastside
+        Farmers'' Market in Half Moon Bay","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.coastsidefarmersmarket.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000b","organization":{"_id":"522dee234becffff2700000a","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
+        Farmers'' Market in Half Moon Bay","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a/locations"},"id":"522dee234becffff2700000b","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000011","address":{"city":"San
+        Mateo","state":"CA","street":"1700 W. Hillsdale Blvd.","zip":"94402"},"coordinates":[-122.335123,37.5350511],"created_at":"2013-09-09T08:49:55-07:00","hours":"January
+        - December Saturday 9:00 am to 1:00 pm","kind":"Farmers'' Market","market_match":true,"name":"College
+        of San Mateo Certified Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Flowers","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nuts","Plants","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://pcfma.com/market_home.php?market_id=15"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000011","organization":{"_id":"522dee234becffff27000010","created_at":"2013-09-09T08:49:55-07:00","name":"College
+        of San Mateo Certified Farmers'' Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010/locations"},"id":"522dee234becffff27000011","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000014","address":{"city":"Daly
+        City","state":"CA","street":"133 Serramonte Center","zip":"94015"},"coordinates":[-122.471026,37.6704999],"created_at":"2013-09-09T08:49:56-07:00","hours":"January
+        - December Thursday 9:00 AM to 1:00 PM, Saturday 9:00 AM to 1:00 PM","kind":"Farmers''
+        Market","name":"Daly City Farmers'' Market at Serramonte Center","payments":["WIC","SFMNP"],"products":["Baked
+        Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Nursery","Nuts","Prepared
+        Food","Soap"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://cafarmersmkts.com/markets/category/daly-city"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000014","organization":{"_id":"522dee244becffff27000013","created_at":"2013-09-09T08:49:56-07:00","name":"Daly
+        City Farmers'' Market at Serramonte Center","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013/locations"},"id":"522dee244becffff27000014","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000017","address":{"city":"East
+        Palo Alto","state":"CA","street":"1798-A Bay Road","zip":"94303"},"coordinates":[-122.1304591,37.4546566],"created_at":"2013-09-09T08:49:56-07:00","hours":"January
+        - December Wednesday 12:00 PM to 3:00 PM","kind":"Farmers'' Market","name":"East
+        Palo Alto Community Farmers Market","payments":["Credit","WIC","SNAP"],"products":["Flowers","Vegetables"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://www.collectiveroots.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000017","organization":{"_id":"522dee244becffff27000016","created_at":"2013-09-09T08:49:56-07:00","name":"East
+        Palo Alto Community Farmers Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016/locations"},"id":"522dee244becffff27000017","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001a","address":{"city":"San
+        Carlos","state":"CA","street":"700 Block, Laurel Street","zip":"94070"},"coordinates":[-122.259756,37.5048839],"created_at":"2013-09-09T08:49:56-07:00","hours":"May
+        2 - September 12 Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Market","name":"Hot
+        Harvest Nights San Carlos Farmers'' Market","products":["Baked Goods","Flowers","Seafood","Vegetables","Prepared
+        Food"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["https://www.sancarloschamber.org/textpages/farmers_market.aspx"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001a","organization":{"_id":"522dee244becffff27000019","created_at":"2013-09-09T08:49:56-07:00","name":"Hot
+        Harvest Nights San Carlos Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019/locations"},"id":"522dee244becffff2700001a","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001d","address":{"city":"Redwood
+        City","state":"CA","street":"1150 Veterans Blvd.","zip":"94063"},"coordinates":[-122.2232169,37.4889742],"created_at":"2013-09-09T08:49:56-07:00","hours":"May
+        1 - September 25 Wednesday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","name":"Kaiser
+        Permanente Redwood City Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Vegetables"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=39"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001d","organization":{"_id":"522dee244becffff2700001c","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
+        Permanente Redwood City Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c/locations"},"id":"522dee244becffff2700001d","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000020","address":{"city":"South
+        San Francisco","state":"CA","street":"1200 El Camino Real","zip":"94080"},"coordinates":[-122.4393303,37.6591467],"created_at":"2013-09-09T08:49:57-07:00","hours":"May
+        7 - October 15 Tuesday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","market_match":true,"name":"Kaiser
+        Permanente South San Francisco Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Flowers","Vegetables","Prepared Food"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=26"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000020","organization":{"_id":"522dee244becffff2700001f","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
+        Permanente South San Francisco Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f/locations"},"id":"522dee244becffff27000020","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e51974fcdb2b000b48","accessibility":["Wheelchair"],"address":{"city":"Menlo
+        Park","state":"CA","street":"1100 Merrill Street","zip":"94025"},"ask_for":["Fran
+        Dehn"],"contacts":[{"_id":"521d32e51974fcdb2b000b49","name":"Fran Dehn","title":"President
+        and CEO"}],"coordinates":[-122.1819958,37.45423419999999],"created_at":"2013-08-27T16:14:45-07:00","description":"Promotes
+        the interests of businesses in Menlo Park, Portola Valley, Atherton and Woodside.
+        Various committees representing community, retail, transportation and membership
+        issues meet monthly. Holds events throughout the year such as a community
+        holiday tree lighting, the Golden Acorn Community Awards presentation, April
+        and October crafts shows and the Connoisseur''s Marketplace, a two-day festival
+        the third weekend in July.","emails":["info@menloparkchamber.com"],"faxes":["650
+        325-0920"],"hours":"Monday-Thursday, 9-4; Friday, 9-1","mail_address":{"attention":"Menlo
+        Park Chamber of Commerce","city":"Menlo Park","state":"CA","street":"1100
+        Merrill Street","zip":"94025"},"name":"Menlo Park Chamber of Commerce","phones":[{"number":"650
+        325-2818","hours":"(Monday-Thursday, 9-4; Friday, 9-1)"}],"transportation":"CALTRAIN
+        stops within 1 block.","updated_at":"2013-08-27T16:25:06-07:00","urls":["http://www.menloparkchamber.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e51974fcdb2b000b48","services":[{"_id":"521d32e51974fcdb2b000b4c","audience":"Small
+        businesses, corporations, home-based businesses","eligibility":"None","fees":"Vary
+        according to type of business and number of employees. Checks and credit cards
+        accepted.","funding_sources":["Fundraising","Membership dues"],"how_to_apply":"Through
+        membership.","keywords":["Chambers of Commerce"],"service_areas":["Atherton","Menlo
+        Park","Portola Valley","Woodside"],"updated_at":"2013-08-27T16:14:45-07:00"}],"organization":{"_id":"521d32e51974fcdb2b000b47","created_at":"2013-08-27T16:14:45-07:00","name":"Menlo
+        Park Chamber of Commerce","updated_at":"2013-08-27T16:14:45-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e51974fcdb2b000b47","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e51974fcdb2b000b47/locations"},"id":"521d32e51974fcdb2b000b48","_score":0.716304,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f21974fcdb2b000f08","address":{"city":"San
+        Francisco","state":"CA","street":"221 Pine Street, Fifth Floor","zip":"94104"},"coordinates":[-122.4021273,37.7911148],"created_at":"2013-08-27T16:14:59-07:00","description":"Rainforest
+        Action Network campaigns for the forests, their inhabitants and the natural
+        systems that sustain life by transforming the global marketplace through education,
+        grassroots organizing and non-violent direct action.  Everyone is invited
+        to join. Membership includes a monthly \"Action Alert\" bulletin listing issues
+        of immediate concern with instructions for action steps to be taken. Interns
+        gain experience working on media operations, database coordination, campaign
+        administration, education outreach and library assistance.","emails":["rainforest@ran.org"],"faxes":["415
+        398-2732"],"mail_address":{"attention":"Rainforest Action Network","city":"San
+        Francisco","state":"CA","street":"221 Pine Street, Fifth Floor","zip":"94104"},"name":"Rainforest
+        Action Network","phones":[{"number":"415 398-4404","hours":"(Monday-Friday,
+        9-5:30)"}],"short_desc":"Works to protect the Earth''s rainforests and support
+        the rights of their inhabitants through education, grassroots organizing and
+        nonviolent direct action.","updated_at":"2013-08-27T16:25:51-07:00","urls":["http://www.ran.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32f21974fcdb2b000f08","services":[{"_id":"521d32f31974fcdb2b000f0b","eligibility":"None","fees":"Membership
+        dues are $35 annually.","service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:14:59-07:00"}],"organization":{"_id":"521d32f21974fcdb2b000f07","created_at":"2013-08-27T16:14:58-07:00","name":"Rainforest
+        Action Network","updated_at":"2013-08-27T16:14:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000f07","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000f07/locations"},"id":"521d32f21974fcdb2b000f08","_score":0.716304,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33431974fcdb2b002102","accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Bruno","state":"CA","street":"3300
+        College Dr, Bldg. 2, Rm 2227","zip":"94066"},"contacts":[{"_id":"521d33431974fcdb2b002103","title":"Coordinator"}],"coordinates":[-122.4672096,37.6309074],"created_at":"2013-08-27T16:16:19-07:00","description":"Serves
+        as a resource center for career information, labor market trends, job counseling
+        and placement Serves as a campus resource for computerized career information,
+        two- and four-year college catalogs, labor market trends and job postings.
+        The purpose of the service is to assist in realistically assessing personal
+        goals and aspirations, exploring occupational information, making career decisions
+        and finding work in a chosen occupational field.","emails":["skycareers@smccd.edu"],"faxes":["650
+        738-4260"],"languages":["Spanish"],"mail_address":{"attention":"Career Center","city":"San
+        Bruno","state":"CA","street":"3300 College Dr, Bldg. 2, Rm 2227","zip":"94066"},"name":"Skyline
+        College., Career Center","phones":[{"number":"650 738-4314","department":"Virginia
+        Padron"}],"transportation":"SAMTRANS stops on campus.","updated_at":"2013-08-27T16:30:02-07:00","urls":["http://www.skylinecollege.edu/general/careercenter/index.html"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e4","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e9","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020ed","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020f1","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f5","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f9","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020fe","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002106","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210a","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210e","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002112","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002116","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211b","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211f","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002123","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002127","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212b","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212f","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002133","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002137","http://ohanapi.herokuapp.com/api/locations/521d33461974fcdb2b00213b"],"services":[{"_id":"521d33481974fcdb2b002146","audience":"Students,
+        adults","category_ids":["52280f751edd37edff0000f5","52280f751edd37edff0000f6"],"eligibility":"Basic
+        community college entrance requirements","fees":"$26 per unit if state resident.
+        Non-resident tuition is $169 per unit, plus $26 per unit enrollment fee.","funding_sources":["Grants","State"],"how_to_apply":"Walk
+        in or apply by phone for counseling appointment (650-738-4317). Student must
+        have either applied for admission or be enrolled to receive counseling services.","keywords":["EDUCATION
+        SERVICES","Vocational","EMPLOYMENT/TRAINING SERVICES","Job Information/Placement/Referral","Community
+        Colleges","Career Counseling"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County"],"updated_at":"2013-09-05T13:21:41-07:00","wait":"No wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582,"service_ids":["521d32f71974fcdb2b001049","521d32fa1974fcdb2b00110a","521d32ce1974fcdb2b0004d1","521d32d71974fcdb2b00079c","521d32e91974fcdb2b000c6d","521d32ce1974fcdb2b0004d7","521d32d71974fcdb2b0007a2","521d32d41974fcdb2b0006cc","521d32d71974fcdb2b0007a8","521d32ce1974fcdb2b0004e2","521d32bf1974fcdb2b000120","521d32d41974fcdb2b0006d1","521d32ce1974fcdb2b0004ed","521d32ce1974fcdb2b0004f1","521d32d71974fcdb2b0007ae","521d32d81974fcdb2b0007c0","521d32d81974fcdb2b0007cc","521d32d81974fcdb2b0007d8","521d32d81974fcdb2b0007de","521d32db1974fcdb2b0008b5","521d32d81974fcdb2b0007e4","521d33121974fcdb2b001791","521d32d91974fcdb2b0007f7","521d33141974fcdb2b001813","521d32ca1974fcdb2b0003c0","521d32c11974fcdb2b0001bc","521d32cf1974fcdb2b00052d","521d32c21974fcdb2b0001c2","521d32c21974fcdb2b0001c8","521d332e1974fcdb2b001e48","521d32df1974fcdb2b000990","521d32d01974fcdb2b00057a","521d32d01974fcdb2b000586","521d33241974fcdb2b001c27","521d33481974fcdb2b002146","521d32f31974fcdb2b000f3c","521d32f31974fcdb2b000f43","521d32ed1974fcdb2b000d77","521d33261974fcdb2b001cb8","521d32ed1974fcdb2b000d96","521d33191974fcdb2b00194b","521d32ee1974fcdb2b000d9d","521d32cb1974fcdb2b000432","521d333b1974fcdb2b002046","521d331f1974fcdb2b001aeb","521d32ee1974fcdb2b000dba","521d32ee1974fcdb2b000dc1","521d331f1974fcdb2b001b02","521d32ee1974fcdb2b000de0","521d331f1974fcdb2b001b0a","521d32cc1974fcdb2b00046e","521d331f1974fcdb2b001b16","521d33201974fcdb2b001b27","521d32c51974fcdb2b0002a8","521d33201974fcdb2b001b2d","521d32ef1974fcdb2b000e25","521d331a1974fcdb2b001999","521d33241974fcdb2b001c2d","521d33221974fcdb2b001bde","521d32b91974fcdb2b000026"]},{"_id":"52280f751edd37edff0000f6","depth":1,"lft":490,"name":"Help
+        Find School","oe_id":"109-01","parent_id":"52280f751edd37edff0000f5","rgt":491,"service_ids":["521d33481974fcdb2b002146","521d32ee1974fcdb2b000d9d"]}]}],"organization":{"_id":"521d33421974fcdb2b0020e3","created_at":"2013-08-27T16:16:18-07:00","name":"San
+        Mateo County Community College District (SMCCCD)","updated_at":"2013-08-27T16:16:18-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3/locations"},"id":"521d33431974fcdb2b002102","_score":0.52422416,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e31974fcdb2b000ad7","accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1398 Valencia Street","zip":"94110"},"ask_for":["Client
+        Services Coordinator"],"contacts":[{"_id":"521d32e31974fcdb2b000ad8","name":"Julie
+        Abrams","title":"Chief Executive Officer"}],"coordinates":[-122.4208285,37.7506479],"created_at":"2013-08-27T16:14:43-07:00","description":"Offers
+        training in financial acccouting and management, planning, marketing and other
+        business management skills that provide the skills necessary to start or expand
+        a business. The agency also operates a loan fund and works with IDA savers.
+        Services are provided in both English and Spanish. Another office is located
+        at 300 South First Street, San Jose 95113.","emails":["office@womensinitiative.org"],"faxes":["415
+        826-1885"],"hours":"Day and evening classes available","languages":["Spanish"],"mail_address":{"attention":"Women''s
+        Initiative for Self Em","city":"San Francisco","state":"CA","street":"1398
+        Valencia Street","zip":"94110"},"name":"Women''s Initiative for Self Employment","phones":[{"number":"415
+        641-3460","hours":"(Monday-Friday, 8:30-4:30)"}],"short_desc":"Small business
+        development services and financial management assistance primarily for unemployed
+        or underemployed women.","transportation":"BART stops within 2 blocks.","updated_at":"2013-08-27T16:25:00-07:00","urls":["http://www.womensinitiative.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e31974fcdb2b000ad7","services":[{"_id":"521d32e31974fcdb2b000adb","audience":"Low-income
+        and very low-income women","eligibility":"Low-income as defined by HUD","fees":"Workshop
+        fees vary according to income. Business action planning sessions are free.
+        Cash, checks and credit cards accepted.","funding_sources":["City","County","Donations","Grants"],"how_to_apply":"Call
+        to inquire about business action planning sessions.","keywords":["EMPLOYMENT/TRAINING
+        SERVICES","Small Business Development and Assi","entrepreneur","solopreneur","business
+        plan","business ownership"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County"],"updated_at":"2013-09-05T10:48:59-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d32e31974fcdb2b000ad6","created_at":"2013-08-27T16:14:43-07:00","name":"Women''s
+        Initiative for Self Employment","updated_at":"2013-08-27T16:14:43-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6/locations"},"id":"521d32e31974fcdb2b000ad7","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ec1974fcdb2b000d40","address":{"city":"San
+        Jose","state":"CA","street":"100 East Santa Clara Street","zip":"95113"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32ec1974fcdb2b000d41","name":"Dennis
+        King","title":"Executive Director"},{"_id":"521d32ec1974fcdb2b000d42","name":"Ingrid
+        Alonso","title":"Membership"},{"_id":"521d32ec1974fcdb2b000d43","name":"Martha
+        Torres","title":"Business Development"}],"coordinates":[-121.8881888,37.3371725],"created_at":"2013-08-27T16:14:52-07:00","description":"Provides
+        assistance in the areas of marketing strategy, financing, management, loan
+        packaging, business planning and procurement. Assists persons with starting
+        a small business or in expansion of existing businesses. Provides workshops,
+        mixers, social events, community events and networking opportunities.","emails":["info@hccsv.org"],"faxes":["408
+        351-3611"],"languages":["Spanish"],"mail_address":{"attention":"Hispanic Chamber
+        of Commerce","city":"San Jose","state":"CA","street":"100 East Santa Clara
+        Street","zip":"95113"},"name":"Hispanic Chamber of Commerce Silicon Valley","phones":[{"number":"408
+        351-3610","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Provides assistance
+        in marketing, financing, management, business planning and procurement.","transportation":"VTA
+        stops within 2 blocks.","updated_at":"2013-08-27T16:25:29-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d32ec1974fcdb2b000d40","services":[{"_id":"521d32ec1974fcdb2b000d46","audience":"Hispanic,
+        minority and women-owned businesses","eligibility":"None","fees":"Fixed fees
+        for membership. Cash, checks and credit cards accepted.","funding_sources":["Fundraising","Membership
+        dues","Sponsorship"],"how_to_apply":"Walk in or apply by phone, Web site or
+        fax.","keywords":["EMPLOYMENT/TRAINING SERVICES","Small Business Development
+        and Assi","Chambers of Commerce"],"service_areas":"Santa Clara County","updated_at":"2013-08-27T16:14:52-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d32ec1974fcdb2b000d3f","created_at":"2013-08-27T16:14:52-07:00","name":"Hispanic
+        Chamber of Commerce Silicon Valley","updated_at":"2013-08-27T16:14:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f/locations"},"id":"521d32ec1974fcdb2b000d40","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32fb1974fcdb2b001158","contacts":[{"_id":"521d32fb1974fcdb2b001159","name":"Ann
+        Barlow","title":"Board President"}],"created_at":"2013-08-27T16:15:07-07:00","description":"Addresses
+        career and personal development needs of professional and business women by
+        offering resources to assist upward mobility and business success. Offers
+        networking opportunities, workshops and speakers, product marketing and personal
+        and professional development.  Holds an annual conference plus bimonthly meetings.","emails":["info@pbwc.org"],"mail_address":{"attention":"PBWC","city":"San
+        Francisco","state":"CA","street":"180 Sutter Street, 2nd Floor","zip":"94104"},"name":"Professional
+        BusinessWomen of California","phones":[{"number":"415 633-3210"}],"updated_at":"2013-08-27T16:15:07-07:00","urls":["http://www.pbwc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32fb1974fcdb2b001158","services":[{"_id":"521d32fb1974fcdb2b00115b","audience":"Business
+        and professional women, high school girls","eligibility":"None","fees":"$180
+        conference fee.","funding_sources":["Fees","Grants"],"keywords":["Women"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-08-27T16:15:07-07:00"}],"organization":{"_id":"521d32fb1974fcdb2b001157","created_at":"2013-08-27T16:15:07-07:00","name":"Professional
+        BusinessWomen of California","updated_at":"2013-08-27T16:15:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157/locations"},"id":"521d32fb1974fcdb2b001158","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d330b1974fcdb2b0015af","accessibility":["Wheelchair"],"address":{"city":"San
+        Carlos","state":"CA","street":"1500 Laurel Street, Suite B","zip":"94070-5103"},"contacts":[{"_id":"521d330b1974fcdb2b0015b0","name":"David
+        Buchard","title":"CEO"}],"coordinates":[-122.2483657,37.4957437],"created_at":"2013-08-27T16:15:23-07:00","description":"Supports
+        a healthy economic climate in the city of San Carlos and serves as an advocate
+        for business. Sponsors San Carlos Art and Wine Faire, Hot Harvest Nights Farmers''
+        Market and other events.  Also provides visitor and new resident information.","emails":["staff@sancarloschamber.org"],"faxes":["650
+        593-9108"],"hours":"Monday-Friday, 9-5","languages":["Chinese (Cantonese)"],"mail_address":{"attention":"San
+        Carlos Chamber of Commerce","city":"San Carlos","state":"CA","street":"1500
+        Laurel Street, Suite B","zip":"94070-5103"},"name":"San Carlos Chamber of
+        Commerce","phones":[{"number":"650 593-1068","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Supports
+        businesses in the city of San Carlos.","transportation":"SAMTRANS stops within
+        1 block.","updated_at":"2013-08-27T16:27:15-07:00","urls":["http://www.sancarloschamber.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d330b1974fcdb2b0015af","services":[{"_id":"521d330b1974fcdb2b0015b3","audience":"Businesses,
+        as well as residents and visitors","eligibility":"None","fees":"Membership
+        dues vary. Public services are free.","funding_sources":["Membership dues"],"how_to_apply":"Call,
+        email, visit Web site or walk-in for information.","keywords":["Chambers of
+        Commerce"],"service_areas":"San Carlos","updated_at":"2013-08-27T16:15:23-07:00","wait":"None."}],"organization":{"_id":"521d330b1974fcdb2b0015ae","created_at":"2013-08-27T16:15:23-07:00","name":"San
+        Carlos Chamber of Commerce","updated_at":"2013-08-27T16:15:23-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae/locations"},"id":"521d330b1974fcdb2b0015af","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33101974fcdb2b0016f4","address":{"city":"San
+        Jose","state":"CA","street":"1922 The Alameda, Suite 205","zip":"95126"},"ask_for":["Jayne
+        Booker"],"contacts":[{"_id":"521d33101974fcdb2b0016f5","name":"Jayne Booker","title":"Executive
+        Director"},{"_id":"521d33101974fcdb2b0016f6","name":"Anna Harrison","title":"Director
+        of Marketing and Development"},{"_id":"521d33101974fcdb2b0016f7","name":"Nancy
+        Braatz","title":"Program Director"}],"coordinates":[-121.923065,37.341741],"created_at":"2013-08-27T16:15:28-07:00","description":"Works
+        to improve the performance of nonprofit agencies and schools by transforming
+        their physical environments so that those in need can be served with dignity
+        in safe, well-designed and welcoming environments. Design Response leverages
+        and multiplies the resources of the design and construction community to transform
+        environments at a fraction of market value.","emails":["info@designresponse.org"],"faxes":["408
+        260-3223"],"hours":"Monday-Friday, 9-5","mail_address":{"attention":"Design
+        Response","city":"San Jose","state":"CA","street":"1922 The Alameda, Suite
+        205","zip":"95126"},"name":"Design Response","phones":[{"number":"408 260-3220","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"Works to improve the performance of nonprofit agencies
+        and schools in Silicon Valley.","transportation":"Not necessary for service.","updated_at":"2013-08-27T16:27:31-07:00","urls":["http://www.designresponse.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33101974fcdb2b0016f4","services":[{"_id":"521d33101974fcdb2b0016fa","audience":"Nonprofit
+        agencies","eligibility":"Nonprofit agency or school","fees":"$225 application
+        fee. Checks accepted.","funding_sources":["Donations","Fees","Fundraising","Grants"],"how_to_apply":"Call
+        for information.","keywords":["ORGANIZATIONAL SUPPORT SERVICES","Material
+        Resources"],"service_areas":["Alameda County","San Francisco County","San
+        Mateo County","Santa Clara County","Santa Cruz County"],"updated_at":"2013-08-27T16:15:28-07:00"}],"organization":{"_id":"521d33101974fcdb2b0016f3","created_at":"2013-08-27T16:15:28-07:00","name":"Design
+        Response","updated_at":"2013-08-27T16:15:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3/locations"},"id":"521d33101974fcdb2b0016f4","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d332e1974fcdb2b001e4f","address":{"city":"Sacramento","state":"CA","street":"1625
+        North Market Blvd., N112","zip":"95833"},"ask_for":["Customer Service Agent"],"contacts":[{"_id":"521d332e1974fcdb2b001e50","name":"Brian
+        Stiger","title":"Director"}],"coordinates":[-121.499058,38.647277],"created_at":"2013-08-27T16:15:58-07:00","description":"Promotes
+        and protects the interests of California consumers who run the risk of encountering
+        consumer-related problems when buying products or services.   Consumer Affairs
+        operates a toll-free telephone line through its Consumer Information Center
+        (CIC) that answers questions such as how to retire old cars, solve landlord/tenant
+        problems, file a complaint against an auto mechanic, or apply for a cosmetology
+        license. Provides consumers with general advice about the steps to take when
+        conducting business in the marketplace, what to watch out for and how to protect
+        themselves. Assists with filing a complaint and helps in finding alternative
+        sources for complaint resolution. Consumers may request informational pamphlets,
+        brochures, licensing applications, and complaint forms through a live agent.
+        Those who want faxed publications can access the automated \"\"fax back\"\"
+        publication library for a copy within a 24-hour turnaround time. Consumers
+        who are required to have their vehicle''s smog inspection done at a Test Only
+        Center can access an automated Zip Code Locater service to locate up to three
+        Test Only Centers in their area. CIC provides telephone translation services
+        in 177 languages for consumer and licensee inquiries.","hours":"Monday-Friday,
+        8-5","languages":["Spanish","AT&T Language Line"],"mail_address":{"attention":"Consumer
+        Information Center","city":"Sacramento","state":"CA","street":"1625 North
+        Market Blvd., N112","zip":"95833"},"name":"Consumer Information Center (CIC)","phones":[{"number":"800
+        952-5210","hours":"(Monday-Friday, 8-4:50)"}],"short_desc":"Acts as a clearinghouse
+        for consumer complaints and inquiries and guides consumers through procedures
+        and resolve problems.","transportation":"Not necessary for service.","updated_at":"2013-08-27T16:29:08-07:00","urls":["http://www.dca.ca.gov/cic"],"url":"http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4f","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4b","http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4f","http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e53"],"services":[{"_id":"521d332e1974fcdb2b001e5b","audience":"Consumers,
+        professional license holders","eligibility":"None","fees":"None to the consumer.","funding_sources":["Fees"],"how_to_apply":"Call
+        for information or consult website.","keywords":["COMMUNITY SERVICES","Consumer
+        Assistance"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","statewide"],"updated_at":"2013-08-27T16:15:58-07:00","wait":"Varies."}],"organization":{"_id":"521d332e1974fcdb2b001e4a","created_at":"2013-08-27T16:15:58-07:00","name":"California
+        State Department of Consumer Affairs","updated_at":"2013-08-27T16:15:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d332e1974fcdb2b001e4a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d332e1974fcdb2b001e4a/locations"},"id":"521d332e1974fcdb2b001e4f","_score":0.44769,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Sun, 15 Sep 2013 00:51:07 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 15 Sep 2013 00:51:09 GMT
+      Etag:
+      - '"d4102e07082f97dd584c708311debb66"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=1>;
+        rel="first", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=1>;
+        rel="prev", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=58>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=3>;
+        rel="next"
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '2'
+      X-Next-Page:
+      - '3'
+      X-Previous-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4932'
+      X-Request-Id:
+      - 80d6fd0c0ff1625e4dc5d43175a71ecf
+      X-Runtime:
+      - '1.101522'
+      X-Total-Count:
+      - '1712'
+      X-Total-Pages:
+      - '58'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '111506'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"521d339d1974fcdb2b002655","accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"333
+        Eucalyptus Drive","zip":"94132"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d339d1974fcdb2b002656","name":"Charlotte
+        Durnin","title":"Executive Director"},{"_id":"521d339d1974fcdb2b002657","name":"Rachel
+        DelMonte","title":"Associate Executive Director"},{"_id":"521d339d1974fcdb2b002658","name":"Erin
+        Reedy","title":"Associate Executive Director"}],"coordinates":[-122.4766884,37.730927],"created_at":"2013-08-27T16:17:49-07:00","description":"Offers
+        licensed elementary school-age childcare at several sites, preschool, youth
+        activities, residential camp, day camp and special interest activities including
+        programming for children of single parents and family nights. Also offers
+        mentoring, counseling and tutoring services.   The Seniors Drop-In Center
+        provides information and referral, recreational and cultural activities, health
+        screening, blood pressure check-ups, adaptive exercise for stroke survivors,
+        travel program, annual tax preparation assistance, Christmas Day party and
+        companionship for single seniors, and hot lunch served weekdays at 11:45 am.
+        The Senior Program is at 3150 - 20th Avenue, San Francisco. The branch is
+        also a full facility fitness center with an approach to total wellness offering
+        aerobics, swimming, youth sports, stretching and toning, strength training,
+        basketball, martial arts, yoga, tai chi, water aerobics, pilates, dance, youth
+        dance and soccer. Childcare is available for parents while they workout.","faxes":["415
+        759-9630"],"hours":"Monday-Friday, 5 am-10 pm; Saturday, Sunday 7 am-8 pm;
+        Senior Program, Monday-Friday, 7:30-3:30","languages":["Chinese (Mandarin)","Russian","Spanish"],"mail_address":{"attention":"Stonestown
+        Family YMCA","city":"San Francisco","state":"CA","street":"333 Eucalyptus
+        Drive","zip":"94132"},"name":"Stonestown Family YMCA","phones":[{"number":"415
+        242-7100","hours":"(Monday-Friday, 5 am-10 pm; Saturday, Sunday, 7 am-8 pm)"}],"short_desc":"Athletic/fitness
+        programs for youth/adults, drop-in senior center, meal site, day camp, after
+        school care for children.","transportation":"MUNI - 17 Parkmerced, 28 Nineteenth
+        Avenue, K Ingleside, M Oceanview, 29 Sunset, 18 46th Avenue.","updated_at":"2013-08-27T16:31:41-07:00","urls":["http://www.ymcasf.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002655","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002649","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00264d","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002651","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002655"],"services":[{"_id":"521d339d1974fcdb2b00265e","audience":"Adults,
+        seniors, families, teens","eligibility":"None","fees":"Vary according to income
+        and service. Cash and credit cards accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["ADULT PROTECTION AND CARE SERVICES","Meal
+        Sites/Home-delivered Mea","CHILD PROTECTION AND CARE SERVICES","Day Care","HEALTH
+        SERVICES","Screening/Immunization","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Companion","Growth
+        and Adjustment","RECREATION/LEISURE SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Y
+        Facilities"],"service_areas":["San Francisco County","Colma","Daly City","Pacifica"],"updated_at":"2013-08-27T16:17:49-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339c1974fcdb2b002648","created_at":"2013-08-27T16:17:48-07:00","name":"YMCA
+        of San Francisco","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648/locations"},"id":"521d339d1974fcdb2b002655","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b002660","accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Redwood City","state":"CA","street":"1445
+        Hudson Street","zip":"94061"},"ask_for":["Jose Garcia"],"contacts":[{"_id":"521d339d1974fcdb2b002661","name":"Julie
+        Wesolek","title":"Executive Director"}],"coordinates":[-122.2268014,37.47020310000001],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        social and recreational services for persons age three months or over. Services
+        include a full aquatic program (in an indoor heated pool), fitness activities,
+        active older adults programs and community programs. The Aspire Adaptive Swim
+        Program is offered for developmentally or physically disabled persons of all
+        ages. The arthritis water exercise is sanctioned by the Arthritis Foundation.  Sequoia
+        offers group exercise, Zumba, yoga, Pilates and Tai-Chi,  weight training
+        equipment and fitness equipment. Personal trainers are available to help with
+        individualized programs. Youth programs include swim lessons, basketball,
+        martial arts, soccer, dance, preschool sports program, Mommy & Me water classes
+        and more. Youth leadership opportunities are available as well as adult and
+        youth  volunteer opportunities. Offers summer and intersessions day camp for
+        children age 5-14, Monday-Friday, 7:30-6. Call for dates. Offers a free program
+        for cancer survivors, \"Living Strong, Living Well\".","faxes":["650 368-1140"],"hours":"Monday-Thursday,
+        5:30 am-10 pm; Friday, 5:30 am-8 pm; Saturday, 7-6; Sunday, 9-5","languages":["Spanish"],"mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"Redwood City","state":"CA","street":"1445 Hudson
+        Street","zip":"94061"},"name":"Sequoia Branch","phones":[{"number":"650 368-4168","hours":"(Monday-Thursday,
+        5:30 am-10 pm; Friday, 5:30 am-8:30 pm; Saturday, 7-6; Sunday, 9-5)"}],"short_desc":"Provides
+        social and recreational programs for all ages.","transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2013-08-27T16:31:41-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339e1974fcdb2b00268e","audience":"Seniors,
+        youth, teens, families, physically challenged persons","eligibility":"None","fees":"Vary
+        according to service. Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Walk
+        in.","keywords":["DEVELOPMENTAL DISABILITIES SERVICES","Recreation/Social
+        Activities","HANDICAP SERVICES","RECREATION/LEISURE SERVICES","Sports/Games/Exercise","Y
+        Facilities","Older Adults","Youth","Disabilities Issues"],"service_areas":["Atherton","East
+        Palo Alto","La Honda","Menlo Park","Portola Valley","Redwood City","San Carlos","Woodside"],"updated_at":"2013-08-27T16:17:50-07:00","wait":"No
+        wait for most programs."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b002660","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b002664","accessibility":["Wheelchair"],"address":{"city":"Saratoga","state":"CA","street":"13500
+        Quito Road","zip":"95070"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d339d1974fcdb2b002665","name":"Maria
+        Sparagna-Drake","title":"Executive Director"}],"coordinates":[-121.9935273,37.2754533],"created_at":"2013-08-27T16:17:49-07:00","description":"Offers
+        specific program activities for teens, senior citizens, families and children.
+        Facilities include indoor pool, lockers, showers, strength training equipment,
+        cardiovascular equipment, aerobics studio and program meeting rooms and outdoor
+        play areas. Provides youth development activities including sports, preschool,
+        and before- and after-school child care. Summer day, travel and resident camping,
+        leadership skills, health enhancement classes and aquatics are available.
+        Fitness center and aerobics are offered. Program outreach services at Alta
+        Vista, Anderson, Casterbrook, Fammatre, Farnham, Leitz elementary schools,
+        Castro Middle School, and Boyton, Camden Community, Del Mar and Prospect high
+        schools.","faxes":["408 370-1333"],"hours":"Monday-Friday, 5:30 am-10 pm;
+        Saturday, 6 am-8 pm; Sunday, 8-7","languages":["Hindi","Persian (Farsi)","Spanish"],"mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"Saratoga","state":"CA","street":"13500 Quito Road","zip":"95070"},"name":"Southwest
+        Branch","phones":[{"number":"408 370-1877","hours":"(Monday-Friday, 5:30 am-10
+        pm; Saturday, 6 am-8 pm; Sunday, 8-7)"}],"short_desc":"Provides youth development
+        activities including sports, camping, swimming, aerobics and child care.","transportation":"VTA
+        stops within 2 blocks.","updated_at":"2013-08-27T16:31:42-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339e1974fcdb2b00268f","eligibility":"None","fees":"Vary.
+        Financial assistance available. Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants","Membership
+        dues","United Way Silicon Valley"],"how_to_apply":"Walk in or apply by mail,
+        fax or phone.","keywords":["CHILD PROTECTION AND CARE SERVICES","Day Care","RECREATION/LEISURE
+        SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Y Facilities"],"service_areas":["Campbell","Los
+        Gatos","Monte Sereno","San Jose","Saratoga"],"updated_at":"2013-08-27T16:17:50-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b002664","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b002668","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"5632 Santa Teresa Blvd.","zip":"95123"},"ask_for":["Julie
+        Griswold (Administrative Assistant) "],"contacts":[{"_id":"521d339d1974fcdb2b002669","name":"Rick
+        Valdez","title":"Executive Director"}],"coordinates":[-121.8600066,37.2451453],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        activities for adults, youth and families including sports, child care, youth
+        leadership, physical education and day and resident camping.","faxes":["408
+        226-3324"],"languages":["Spanish"],"mail_address":{"attention":"YMCA of Silicon
+        Valley","city":"San Jose","state":"CA","street":"5632 Santa Teresa Blvd.","zip":"95123"},"name":"South
+        Valley Family Branch","phones":[{"number":"408 226-9622","hours":"(Monday-Friday,
+        5 am-10 pm; Saturday, 6:30 am-7:30 pm; Sunday, 7-7)"}],"short_desc":"Provides
+        activities including sports, youth leadership, physical education, day and
+        resident camping and child care.","transportation":"VTA stops within 1 block.","updated_at":"2013-08-27T16:31:42-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339e1974fcdb2b002690","eligibility":"None","fees":"Vary
+        according to income and service. Financial assistance available to qualified
+        individuals/families. Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants","Membership
+        dues","United Way Silicon Valley"],"how_to_apply":"Walk in or apply by phone
+        or fax.","keywords":["CHILD PROTECTION AND CARE SERVICES","Day Care","RECREATION/LEISURE
+        SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Y Facilities"],"service_areas":["Almaden
+        Valley","San Jose","Willow Glen"],"updated_at":"2013-08-27T16:17:50-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b002668","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b00266c","accessibility":["Wheelchair"],"address":{"city":"Boulder
+        Creek","state":"CA","street":"16275 Highway 9","zip":"95006"},"ask_for":["Receptionist"],"coordinates":[-122.1347335,37.1628316],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        camp and conference grounds/program, outdoor science school, local community
+        activities, aquatics, resident and travel camping, leadership development
+        and child care for Boulder Creek and Redwood elementary schools.","mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"Boulder Creek","state":"CA","street":"16275 Highway
+        9","zip":"95006"},"name":"Camp Campbell","phones":[{"number":"831 338-2128","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"Provides activities for youth and adults including camping,
+        aquatics, community activities, sports and leadership development.","transportation":"Santa
+        Cruz County Transit stops within 4 blocks.","updated_at":"2013-08-27T16:31:43-07:00","urls":["http://www.ymcacampcampbell.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339e1974fcdb2b002691","audience":"Nonprofit
+        conference groups, youth and teens","eligibility":"None","fees":"Vary. Cash,
+        checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants","Membership
+        dues","State","United Way Silicon Valley"],"how_to_apply":"Walk in or apply
+        by phone.","keywords":["CHILD PROTECTION AND CARE SERVICES","Day Care","RECREATION/LEISURE
+        SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Day Camps","Y
+        Facilities"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","Santa
+        Cruz County","Northern California"],"updated_at":"2013-08-27T16:17:50-07:00","wait":"Varies."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b00266c","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b00266f","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"1922 The Alameda, 3rd Floor","zip":"95126"},"contacts":[{"_id":"521d339d1974fcdb2b002670","name":"Dave
+        Thornton","title":"President"},{"_id":"521d339d1974fcdb2b002671","name":"Pamela
+        Von Wiegand","title":"Executive Vice President"},{"_id":"521d339d1974fcdb2b002672","name":"Mary
+        Hoshiko","title":"Vice President of Program and Community Development"}],"coordinates":[-121.923065,37.341741],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        activities for children, teens, adults, seniors and families such as sports,
+        child care, teen leadership, health enhancement, swim lessons, resident camp
+        and day camping. Also provides tutoring services, computer training and CPR/first
+        aid classes.","hours":"Vary according to location and program","mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"San Jose","state":"CA","street":"1922 The Alameda,
+        3rd Floor","zip":"95126"},"name":"Administration","phones":[{"number":"408
+        351-6400","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Provides activities
+        for adults, youth and families including sports, childcare, youth leadership,
+        health enhancement and camping.","transportation":"Varies according to program
+        site.","updated_at":"2013-08-27T16:31:43-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339f1974fcdb2b002692","eligibility":"None","fees":"Vary
+        according to income and program activities. Financial assistance available.
+        Cash, checks and credit cards accepted.","funding_sources":["Donations","Grants","Membership
+        dues","United Way Silicon Valley"],"how_to_apply":"Walk in, apply by phone
+        or mail.","keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Parent
+        Groups","RECREATION/LEISURE SERVICES","Camping","Parks/Playground","Special
+        Events/Entertainment","Sports/Games/Exercise","Y Facilities"],"service_areas":"Santa
+        Clara County","updated_at":"2013-08-27T16:17:51-07:00","wait":"No wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b00266f","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b002675","accessibility":["Wheelchair"],"address":{"city":"Cupertino","state":"CA","street":"20803
+        Alves Drive","zip":"95014"},"ask_for":["Sheila Williams","Lisa Taiz"],"coordinates":[-122.0380297,37.3252378],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        activities for adults, youth and families including sports, child care, youth
+        leadership, health enhancement, swim lessons and recreational swimming, and
+        day and resident camping. Drop-In Teen Center offers recreational activities
+        and a safe place for teens age 13-17 to meet and interact.","emails":["eglissmeyer@scvymca.org"],"hours":"Varies
+        according to service","languages":["Chinese (Cantonese)","Chinese (Mandarin)","French","Russian","Spanish","Vietnamese"],"mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"Cupertino","state":"CA","street":"20803 Alves Drive","zip":"95014"},"name":"Northwest
+        Branch","phones":[{"number":"408 257-7160","hours":"(Monday-Friday, 6 am-10
+        pm; Saturday, Sunday, 7 am-8 pm)"}],"short_desc":"Provides activities for
+        adults, youth and families including sports, childcare, youth leadership,
+        health enhancement and camping.","transportation":"VTA stops within 1 block.","updated_at":"2013-08-27T16:31:44-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339f1974fcdb2b002693","audience":"Children,
+        families, adults, parents, teens, volunteers","eligibility":"None","fees":"Vary.
+        Financial assistance is available. Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants","Membership
+        dues"],"how_to_apply":"Walk in or apply by phone.","keywords":["CHILD PROTECTION
+        AND CARE SERVICES","Day Care","RECREATION/LEISURE SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Y
+        Facilities"],"service_areas":["Cupertino","Los Altos","San Jose","Santa Clara","Sunnyvale"],"updated_at":"2013-08-27T16:17:51-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b002675","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b002678","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"1975 South White Road","zip":"95148"},"ask_for":["Danielle
+        Ramirez-King (Director of Administration and Support Service)"],"contacts":[{"_id":"521d339d1974fcdb2b002679","name":"Mario
+        Vargas","title":"Executive Director"}],"coordinates":[-121.8079431,37.3429724],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        activities for adults, teens, seniors and families including sports, child
+        care, teen leadership, health enhancement, swim lessons and day camping. Also
+        provides tutoring services, computer training and CPR/first aid classes. The
+        Mayfair Project provides clubs, day camp, sports and school activities for
+        children and teens in the Alum Rock School District. Some activities and programs
+        offered free or at low cost for the entire family.","emails":["dking@scvymca.org"],"hours":"Monday-Friday,
+        5:30 am-10 pm; Saturday, 6:30 am-6 pm; Sunday, 7:30 am-6 pm","languages":["Chinese
+        (Mandarin)","German","Portuguese","Spanish","Vietnamese"],"mail_address":{"attention":"YMCA
+        of Silicon Valley","city":"San Jose","state":"CA","street":"1975 South White
+        Road","zip":"95148"},"name":"East Valley Branch","phones":[{"number":"408
+        715-6500","hours":"(Monday-Friday, 5:30 am-10 pm; Saturday, 6:30 am - 6 pm;
+        Sunday, 7:30 am-6 pm)"}],"short_desc":"Provides activities for adults, youth
+        and families including sports, child care, youth leadership, health enhancement
+        and camping.","transportation":"VTA stops in front.","updated_at":"2013-08-27T16:31:44-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339f1974fcdb2b002694","audience":"Youth
+        and families","eligibility":"None","fees":"Vary, financial assistance available.
+        Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants","Membership
+        dues","United Way"],"how_to_apply":"Walk in, apply by phone or internet.","keywords":["CHILD
+        PROTECTION AND CARE SERVICES","Day Care","EDUCATION SERVICES","English Language","RECREATION/LEISURE
+        SERVICES","Camping","Parks/Playground","Sports/Games/Exercise","Y Facilities"],"service_areas":["Berryessa","east
+        San Jose","Evergreen","Milpitas","Silver Creek"],"updated_at":"2013-08-27T16:17:51-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b002678","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339d1974fcdb2b00267c","accessibility":["Wheelchair"],"address":{"city":"Palo
+        Alto","state":"CA","street":"755 Page Mill Road, Bldg. B","zip":"94304"},"ask_for":["Kelly
+        Ear"],"contacts":[{"_id":"521d339d1974fcdb2b00267d","name":"Matt Hitchcock","title":"Executive
+        Director"},{"_id":"521d339d1974fcdb2b00267e","name":"Kathryn Keefe","title":"Healthy
+        Lifestyles Director"},{"_id":"521d339d1974fcdb2b00267f","name":"Kelly Ear","title":"Administrative
+        Services Director"}],"coordinates":[-122.14243,37.419901],"created_at":"2013-08-27T16:17:49-07:00","description":"Provides
+        health and physical fitness programs including racquetball/handball, strength
+        training, wellness and fitness training classes, aerobic dance (50 classes
+        per week), volunteer opportunities, youth sports, aquatics and day camp in
+        East Palo Alto, Menlo Park and Palo Alto via affiliated branches.","faxes":["650
+        858-0664"],"mail_address":{"attention":"YMCA of Silicon Valley","city":"Palo
+        Alto","state":"CA","street":"755 Page Mill Road, Bldg. B","zip":"94304"},"name":"Page
+        Mill Branch","phones":[{"number":"650 858-0661","hours":"(Monday-Friday, 5
+        am-10 pm; Saturday, Sunday, 7 am-8 pm)"}],"transportation":"VTA stops within
+        4 blocks.","updated_at":"2013-08-27T16:31:45-07:00","urls":["http://www.ymcasv.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002660","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002664","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002668","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266c","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00266f","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002675","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002678","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b00267c","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002682","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b002685","http://ohanapi.herokuapp.com/api/locations/521d339e1974fcdb2b00268a"],"services":[{"_id":"521d339f1974fcdb2b002695","eligibility":"None","fees":"Vary
+        according to service and income ($65/month full year membership). Cash, checks
+        and credit cards accepted.","funding_sources":["Donations","Fees","Membership
+        dues"],"how_to_apply":"Walk in.","keywords":["RECREATION/LEISURE SERVICES","Sports/Games/Exercise","Y
+        Facilities"],"service_areas":["Atherton","East Palo Alto","Los Altos","Los
+        Altos Hills","Menlo Park","Monte Vista","Mountain View","Palo Alto","Stanford"],"updated_at":"2013-08-27T16:17:51-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339d1974fcdb2b00265f","created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
+        of Silicon Valley","updated_at":"2013-08-27T16:17:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"id":"521d339d1974fcdb2b00267c","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002622","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"1553 Berger Drive, Bldg. 1","zip":"95112"},"contacts":[{"_id":"521d339c1974fcdb2b002623","name":"Linda
+        S. Baity","title":"Master Gardener Program Coordinator"}],"coordinates":[-121.896811,37.374934],"created_at":"2013-08-27T16:17:48-07:00","description":"Provides
+        a gardening hotline Monday-Friday, 9:30-12:30, at the San Jose office. The
+        North County Hotline, at Gamble Garden in Palo Alto, is staffed Fridays, 1-4
+        pm, during all but two or three months during the winter (call 650-329-1356).   The
+        Master Gardener Program offers gardening classes in the community at various
+        locations and speakers to go out upon request to schools, churches, senior
+        centers, etc. Plant clinics are held at various locations and gardening publications
+        are for sale through the office. The Spring Garden Market is held in April.
+        Call for a publication catalog or more information.","emails":["mgsantaclara@yahoo.com"],"faxes":["408
+        298-5160"],"hours":"Monday-Friday, 9:30-12:30","languages":["Spanish"],"mail_address":{"attention":"Master
+        Gardener Program","city":"San Jose","state":"CA","street":"1553 Berger Drive,
+        Bldg. 1","zip":"95112"},"name":"Master Gardener Program","phones":[{"number":"408
+        482-3105","hours":"(Monday-Friday, 9:30-12:30)"}],"short_desc":"Gardening
+        hotline, classes and plant clinics.","transportation":"VTA stops in front.","updated_at":"2013-08-27T16:31:37-07:00","urls":["http://mastergardeners.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002622","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002622","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002626"],"services":[{"_id":"521d339c1974fcdb2b00262a","audience":"Home
+        gardeners","eligibility":"None","fees":"None.","funding_sources":["County","State"],"how_to_apply":"Call
+        hotline or walk in during office hours.","keywords":["Horticultural Societies","Speakers/Speakers
+        Bureaus"],"service_areas":"Santa Clara County","updated_at":"2013-08-27T16:17:48-07:00"}],"organization":{"_id":"521d339c1974fcdb2b002621","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California Cooperative Extension","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002621","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002621/locations"},"id":"521d339c1974fcdb2b002622","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002626","accessibility":["Wheelchair"],"address":{"city":"Half
+        Moon Bay","state":"CA","street":"1500 Purisma Creek Road","zip":"94019"},"ask_for":["Leslie
+        Jensen"],"contacts":[{"_id":"521d339c1974fcdb2b002627","name":"Leslie Jensen","title":"Program
+        Coordinator"}],"coordinates":[-122.3934241,37.4124145],"created_at":"2013-08-27T16:17:48-07:00","description":"Provides
+        the children of the San Francisco Bay Area a hands-on environmental education.
+        School classes and youth groups, from preschool through high school, visit
+        the ranch for visits lasting two hours to two days. They focus on the sources
+        of food and fiber, and learn about natural resources through trail walks in
+        the coastal hills.   The Ranch is home to sheep, goats, chickens, rabbits,
+        horse, miniature donkeys and a variety of wildlife. The horticulture areas
+        offer endless opportunities to learn about gardening and nutrition by becoming
+        involved in planting, harvesting and developing menus. Areas have been adapted
+        for the use of visitors with special needs. Adults, teachers and guardians
+        are given the opportunity to plan the day''s curriculum. Resident and day
+        camps are held during the summer. The 4,000-square-foot Conference Center
+        is used for seminars, meetings and educational forums, and is available for
+        use by outside groups.","emails":["elkusranch@ucdavis.edu"],"faxes":["650
+        712-3153"],"hours":"Monday-Friday, 8-5; some weekends","languages":["Spanish"],"mail_address":{"attention":"Elkus
+        Youth Ranch","city":"Half Moon Bay","state":"CA","street":"80 Stone Pine Road,
+        #100","zip":"94019"},"name":"Elkus Youth Ranch","phones":[{"number":"650 712-3151","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"A 600-acre property that provides Bay Area children
+        with a hands-on experience of farming and wildlife.","transportation":"SAMTRANS
+        stops within 4.5 miles.","updated_at":"2013-08-27T16:31:37-07:00","urls":["http://cesanmateo.ucdavis.edu"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002626","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002622","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002626"],"services":[{"_id":"521d339c1974fcdb2b00262b","audience":"Students
+        and children with special needs","eligibility":"None","fees":"Vary according
+        to program. Some scholarships available. Cash and checks accepted.","funding_sources":["Donations","Fees","Fundraising","State"],"how_to_apply":"Call
+        for information and schedule.","keywords":["RECREATION/LEISURE SERVICES","Camping","Camperships","Special
+        Events/Entertainment","Outdoor Environmental Education","Youth"],"service_areas":["San
+        Francisco County","San Mateo County"],"updated_at":"2013-08-27T16:17:48-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339c1974fcdb2b002621","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California Cooperative Extension","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002621","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002621/locations"},"id":"521d339c1974fcdb2b002626","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b00262d","accessibility":["Elevator","Ramp","Disabled
+        Parking","Wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"535
+        University Hall","zip":"94720"},"ask_for":["Desi Owens"],"contacts":[{"_id":"521d339c1974fcdb2b00262e","name":"Desi
+        Owens, MS, MSW","title":"Academic Coordinator"}],"coordinates":[-122.3057746,37.8663982],"created_at":"2013-08-27T16:17:48-07:00","description":"A
+        clearinghouse for information about activities in aging, on and off campus,
+        including research grant availability. A small lending library is available
+        for use by students, faculty and the public. Publishes a bi-weekly email newsletter
+        and a job list on aging in California, and has an extensive Web site including
+        an electronic library. Email ddriver@berkeley.edu to be added to email list.   The
+        center is located in room 535 of University Hall.","emails":["desiowens@berkeley.edu"],"faxes":["510
+        642-1197"],"mail_address":{"attention":"Resource Ctr on Aging","city":"Berkeley","state":"CA","street":"140
+        Warren Hall","zip":"94720"},"name":"Resource Center on Aging","phones":[{"number":"510
+        643-6427","hours":"(Monday-Friday, 12:30-4:30)"}],"short_desc":"Information,
+        newsletter, library on gerontology for professionals, faculty and public.","transportation":"AC
+        Transit stops within 1 block. BART - Berkeley Station within 4 blocks.","updated_at":"2013-08-27T16:31:38-07:00","urls":["http://socrates.berkeley.edu/~aging"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00262d","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00262d","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002631"],"services":[{"_id":"521d339c1974fcdb2b002635","audience":"Students,
+        faculty, staff of UC Berkeley, service providers in aging, general public","eligibility":"None","fees":"None.","funding_sources":["State"],"how_to_apply":"Apply
+        by phone or email.","keywords":["EDUCATION SERVICES","Library","HEALTH SERVICES","Education/Information"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","Santa Clara County","San Francisco
+        County","San Mateo County"],"updated_at":"2013-08-27T16:17:48-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339c1974fcdb2b00262c","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California, Berkeley","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b00262c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b00262c/locations"},"id":"521d339c1974fcdb2b00262d","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002631","accessibility":["Wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"2626
+        Bancroft Way","zip":"94720"},"ask_for":["Peter Cavagnaro (Media Relations
+        Manager)"],"contacts":[{"_id":"521d339c1974fcdb2b002632","name":"Lawrence
+        Rinder","title":"Interim Director"}],"coordinates":[-122.2556347,37.8689846],"created_at":"2013-08-27T16:17:48-07:00","description":"The
+        UC Berkeley Art Museum and Pacific Film Archive (BAM / PFA) is one of the
+        largest university art museums in the United States in both size and attendance,
+        presenting fifteen art exhibitions and five hundred film programs each year.
+        The museum''s collection of more than 15,000 works includes examples of mid-twentieth-century
+        painting, including important works by Hans Hofmann, Jackson Pollock, Eva
+        Hesse, and Mark Rothko, as well as historical and contemporary Asian art,
+        early American painting, Conceptual and contemporary international art, and
+        California and Bay Area art. The PFA film and video collection includes the
+        largest group of Japanese films outside of Japan, as well as holdings of Soviet
+        silents, West Coast avant-garde cinema, video art, animation, Central Asian
+        productions, Eastern European cinema and international classics.","emails":["bampfa@berkeley.edu"],"hours":"Wednesday,
+        Sunday, 11-5","kind":"Other","mail_address":{"attention":"Pacific Film Archive","city":"Berkeley","state":"CA","street":"2625
+        Durant Avenue","zip":"94720"},"name":"Art Museum and Pacific Film Archive","phones":[{"number":"510
+        642-0808","hours":"(24 hours daily)"}],"transportation":"AC Transit stops
+        in front, Downtown Berkeley BART Station within 8 blocks.","updated_at":"2013-09-11T01:53:06-07:00","urls":["http://bampfa.berkeley.edu"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002631","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00262d","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002631"],"services":[{"_id":"521d339c1974fcdb2b002636","eligibility":"None","fees":"General
+        admission to gallery is $8, $5 after 5 pm on Fridays, general admission to
+        PFA Theatre is $9.50 for adults. Membership costs: $50 individual, $75 dual
+        / family, $35 student / senior / disabled, $25 PFA Library and Film Study
+        Center only. Cash, checks and credit cards accepted.","funding_sources":["Donations","State"],"keywords":["Museums"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","Napa County","San Francisco
+        County","San Mateo County","Santa Clara County"],"updated_at":"2013-08-27T16:17:48-07:00"}],"organization":{"_id":"521d339c1974fcdb2b00262c","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California, Berkeley","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b00262c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b00262c/locations"},"id":"521d339c1974fcdb2b002631","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002638","accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"707
+        Parnassus Avenue","zip":"94143-0752"},"ask_for":["First floor reception desk"],"contacts":[{"_id":"521d339c1974fcdb2b002639","name":"Julian
+        Ponce","title":"Dean, Clinic Administration"},{"_id":"521d339c1974fcdb2b00263a","name":"William
+        Bird, DDS","title":"Associate Dean, Clinic Administration"}],"coordinates":[-122.4617709,37.7622408],"created_at":"2013-08-27T16:17:48-07:00","description":"Provides
+        comprehensive dental care, including fillings, dentures, bridges, root canals,
+        oral surgery, dental hygiene, education and periodontic work. A special clinic
+        provides maxillo-facial rehabilitation (facial reconstruction) and treatment
+        of cleft palate. Clinic reserves the right to redirect patients who require
+        unusually extensive or complex work to another clinic. In general, care costs
+        approximately one-half of private dental fees, but will take longer to complete.
+        Clinics operate year-round, but close for two to three weeks during quarter
+        breaks.","emails":["dental@itsa.ucsf.edu"],"faxes":["415 476-0409"],"hours":"Monday-Wednesday,
+        9-12; Thursday, 9-12, 2-5, 6-9; Friday, 9-45, 2-5","languages":["Chinese (Cantonese)","Filipino
+        (Tagalog)","Japanese","Spanish","Vietnamese"],"mail_address":{"attention":"Clinical
+        Services","city":"San Francisco","state":"CA","street":"707 Parnassus Avenue","zip":"94143-0752"},"name":"School
+        of Dentistry., Clinical Services","phones":[{"number":"415 476-5814","hours":"After-hours
+        Emergency"}],"short_desc":"Provides comprehensive dental care and services.","transportation":"MUNI
+        - 6 Parnassus, 66 Quintara, 43 Masonic, N Judah.","updated_at":"2013-08-27T16:31:38-07:00","urls":["http://dentistry.ucsf.edu"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002638","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002638","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00263d","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002641"],"services":[{"_id":"521d339c1974fcdb2b002645","audience":"Age
+        3 or over","eligibility":"None","fees":"Vary according to service. Fees in
+        dental student clinics are generally half the cost of private dental fees.
+        Cash, checks, Denti-Cal and private insurance accepted.","funding_sources":["Fees","State"],"how_to_apply":"Apply
+        by phone. Appointment necessary. Walk-in emergency hours 8:30-4.","keywords":["HEALTH
+        SERVICES","Dental"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","Northern
+        California"],"updated_at":"2013-08-27T16:17:48-07:00","wait":"Varies."}],"organization":{"_id":"521d339c1974fcdb2b002637","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California, San Francisco (UCSF)","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637/locations"},"id":"521d339c1974fcdb2b002638","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b00263d","accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"400
+        Parnassus Avenue, 2nd Floor","zip":"94143"},"ask_for":["Roseann Dial (Practice
+        Manager)"],"contacts":[{"_id":"521d339c1974fcdb2b00263e","name":"Lee Atkinson-McEvoy,
+        MD","title":"Clinical Director, Pediatric Practices"}],"coordinates":[-122.4583942,37.7638681],"created_at":"2013-08-27T16:17:48-07:00","description":"Provides
+        ongoing health care for children and adolescents age 21 or under. Well child
+        visits are scheduled for a primary pediatrician or nurse practitioner. Children
+        who are ill may drop in during urgent care clinic hours. Urgent care is provided
+        Monday-Friday, 9 am-6:30 pm, and Saturday, 9-11:45. An ill child requiring
+        hospitalization may be admitted to Long/Moffitt Hospital. A lactation specialist
+        is available for consultation through Early Newborn Discharge Clinic. The
+        Adolescent Clinic for age 11-21 includes a multidisciplinary team of physicians,
+        social workers, psychologists, nutritionist and teacher. Patients are self-referred
+        or referred by a physician.","faxes":["415 353-2680"],"hours":"Mon.-Fri.,
+        9-6:30, Sat., 9-11:45; Teen Clinic: Mon.-Fri., 1-5","languages":["Chinese
+        (Cantonese)","Spanish"],"mail_address":{"attention":"UCSF Primary Care Pediatrics","city":"San
+        Francisco","state":"CA","street":"400 Parnassus Avenue, 2nd Floor","zip":"94143"},"name":"Primary
+        Care Pediatrics Practice","phones":[{"number":"415 353-2000","hours":"(24
+        hours daily)"}],"short_desc":"Provides ongoing health care for children and
+        adolescents age 18 or under.","transportation":"MUNI - 6 Parnassus, N Judah,
+        43 Masonic, 66 Quintara.","updated_at":"2013-08-27T16:31:39-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00263d","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002638","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00263d","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002641"],"services":[{"_id":"521d339c1974fcdb2b002646","audience":"Infants,
+        children, youth","eligibility":"Age 21 or under","fees":"Vary according to
+        service. Medi-Cal, private insurance, many HMOs and cash accepted.","funding_sources":["Fees","State"],"how_to_apply":"Phone
+        for appointment. Bring insurance information, proof of income and alien registration
+        if applicable.","keywords":["EMERGENCY SERVICES","Medical Assistance","HEALTH
+        SERVICES","Outpatient Care","Pediatrics","Youth","Adolescents","Children"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-08-27T16:17:48-07:00","wait":"No
+        wait to 3 months, varies according to service."}],"organization":{"_id":"521d339c1974fcdb2b002637","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California, San Francisco (UCSF)","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637/locations"},"id":"521d339c1974fcdb2b00263d","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002641","accessibility":["Elevator","Interpreter
+        for the deaf","Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"505 Parnassus Avenue","zip":"94143-0296"},"ask_for":["Call
+        Physician Referral for information about physicians'' services (888-689-8273)"],"contacts":[{"_id":"521d339c1974fcdb2b002642","name":"Mark
+        R. Laret","title":"CEO"}],"coordinates":[-122.4576884,37.7632367],"created_at":"2013-08-27T16:17:48-07:00","description":"Comprehensive
+        outpatient medical care for all ages A 600-bed hospital offering specialized
+        diagnosis and treatment in such areas as cardiology, cancer treatment, neurosurgery,
+        high-risk obstetrics and organ transplants, as well as outpatient services
+        in more than 70 specialty areas.  The UCSF Children''s Hospital is a 180-bed
+        hospital with pediatric experts and specialists ranging from cancer care to
+        urology. The hospital is located within the larger UCSF Medical Center on
+        the 6th, 7th, and 15th floors. Successful surgeries performed include fetal
+        surgery, congenital heart disease, and kidney and liver transplants for children.
+        Also provides new treatments not available in other facilities. Outpatient
+        clinics are located at Parnassus, Mt. Zion, and Lake Shore sites. Over 75
+        outreach clinics from San Luis Obispo to the Oregon border provide care to
+        children who otherwise might not have access to the services.","hours":"Monday-Friday,
+        8-5; Emergency, 24 hours daily; clinic hours vary","languages":["Chinese (Cantonese)","Russian","Spanish","Interpreter"],"mail_address":{"attention":"UCSF
+        Medical Center","city":"San Francisco","state":"CA","street":"505 Parnassus
+        Avenue","zip":"94143-0296"},"name":"Medical Center","phones":[{"number":"415
+        476-1000","hours":"(24 hours daily)"}],"transportation":"MUNI - 66 Quintara,
+        43 Masonic, 6 Parnassus, N Judah.","updated_at":"2013-08-27T16:31:39-07:00","urls":["http://www.ucsfhealth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002641","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002638","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00263d","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002641"],"services":[{"_id":"521d339c1974fcdb2b002647","eligibility":"None","fees":"Vary
+        according to income and service. Cash, credit card, Medi-Cal, Medicare and
+        private insurance accepted.","funding_sources":["Fees"],"how_to_apply":"Apply
+        by phone, Web-site or walk in.","keywords":["EMERGENCY SERVICES","Medical
+        Assistance","HEALTH SERVICES","Inpatient Care","Outpatient Care","Hospitals"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","northern California","worldwide"],"updated_at":"2013-08-27T16:17:48-07:00","wait":"Varies."}],"organization":{"_id":"521d339c1974fcdb2b002637","created_at":"2013-08-27T16:17:48-07:00","name":"University
+        of California, San Francisco (UCSF)","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002637/locations"},"id":"521d339c1974fcdb2b002641","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b002649","accessibility":["Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"1877 South Grant Street","zip":"94402"},"ask_for":["Any
+        YMCA representative"],"contacts":[{"_id":"521d339c1974fcdb2b00264a","name":"Charlotte
+        Durnin","title":"Executive Director"}],"coordinates":[-122.301389,37.5531079],"created_at":"2013-08-27T16:17:48-07:00","description":"Offers
+        counseling services, outreach programs, health and wellbeing classes, youth
+        wellness center, Living Strong, Living Well (a program for recovering cancer
+        patients) and Building Futures Mentoring program. Three counseling centers
+        include the the Pacifica Youth Services Bureau, the San Mateo Youth Service
+        Bureau, and the South San Francisco Youth Service Bureau. Also offers over
+        100 fitness classes a week including cycle, bosu sport, kick boxing, boot
+        camp and Pilates. Offers a variety of programs for youth and older adults
+        including seasonal day camps, swim lessons, aqua aerobics, sports programs
+        and outdoor excursions. Complimentary babysitting is included in all family
+        memberships.","emails":["rfischer@ymcasf.org"],"faxes":["650 286-0128"],"hours":"Monday-Friday,
+        5:30 am-10 pm; Saturday, 7 am-7 pm; Sunday, 8-7","languages":["Spanish"],"mail_address":{"attention":"Peninsula
+        Family YMCA","city":"San Mateo","state":"CA","street":"1877 South Grant Street","zip":"94402"},"name":"Peninsula
+        Family YMCA","phones":[{"number":"650 286-9622","hours":"(Monday-Friday, 5:30
+        am-10 pm; Saturday, 7-7; Sunday, 8-7)"}],"short_desc":"Provides social, physical
+        education and recreational activities for all ages.","transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2013-08-27T16:31:40-07:00","urls":["http://www.ymcasf.org/peninsula"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002649","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002649","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00264d","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002651","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002655"],"services":[{"_id":"521d339d1974fcdb2b00265b","audience":"Youth,
+        teens, adults, seniors, families","eligibility":"None","fees":"Annual memberships.
+        Fees for some classes and services. Cash, checks, credit cards and electronic
+        transfers accepted.","funding_sources":["Donations","Fees","Membership dues"],"how_to_apply":"Walk
+        in or apply by phone, mail or email.","keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT
+        SERVICES","Companion","Parent Groups","RECREATION/LEISURE SERVICES","Camping","Field
+        Trips/Travel","Parks/Playground","Sports/Games/Exercise","Y Facilities","Youth"],"service_areas":["Belmont","Burlingame","Foster
+        City","Half Moon Bay","Hillsborough","Millbrae","Redwood City","San Bruno","San
+        Carlos","San Mateo","South San Francisco"],"updated_at":"2013-08-27T16:17:49-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d339c1974fcdb2b002648","created_at":"2013-08-27T16:17:48-07:00","name":"YMCA
+        of San Francisco","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648/locations"},"id":"521d339c1974fcdb2b002649","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d339c1974fcdb2b00264d","accessibility":["Disabled
+        Restroom","Wheelchair"],"address":{"city":"La Honda","state":"CA","street":"11000
+        Pescadero Creek Road","zip":"94020"},"ask_for":["Andrew Boyd-Goodrich (Executive
+        Director)","Lorraine Eberhardt (Group Services)","Thomas Deal (Administrative
+        Services Director)","Daniel Sarno (Resident Camp Director)"],"contacts":[{"_id":"521d339c1974fcdb2b00264e","name":"Andrew
+        Boyd-Goodrich","title":"Executive Director"}],"coordinates":[-122.2657347,37.2996271],"created_at":"2013-08-27T16:17:48-07:00","description":"Serves
+        as a camping, conference and retreat center and community YMCA for area groups
+        including agencies for the disabled. The camp is available year-round for
+        groups up to 400 people. Groups or agencies make reservations in advance through
+        the Group Services Director.   The camp is located 55 miles south of San Francisco
+        on the Pescadero-La Honda Road in the Santa Cruz Mountains. There are 34 cabins
+        housing 10-16 people each (bring your own bedding). Two large dining rooms
+        serve family-style meals. The recreation facilities include a swimming pool
+        (in season), basketball and street hockey court, sand volleyball court, hiking
+        trails, athletic fields, climbing tower, pond with canoes and funyaks, horseback
+        riding (in season), ropes course and sports equipment. Individuals who wish
+        to attend the summer YMCA resident camp should make reservations through Camp
+        Jones Gulch directly (650-747-1200).","emails":["info@campjonesgulch.org"],"faxes":["650
+        747-0986"],"hours":"Monday-Friday, 8:30-5:30","languages":["Spanish"],"mail_address":{"attention":"Camp
+        Jones Gulch","city":"La Honda","state":"CA","street":"11000 Pescadero Creek
+        Road","zip":"94020"},"name":"Camp Jones Gulch","phones":[{"number":"650 747-1200","hours":"(Monday-Friday,
+        8:30-5:30)"}],"transportation":"Bus service during summer months.","updated_at":"2013-08-27T16:31:40-07:00","urls":["http://www.campjonesgulch.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00264d","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b002649","http://ohanapi.herokuapp.com/api/locations/521d339c1974fcdb2b00264d","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002651","http://ohanapi.herokuapp.com/api/locations/521d339d1974fcdb2b002655"],"services":[{"_id":"521d339d1974fcdb2b00265c","audience":"Groups
+        interested in a camping, conference or retreat facility. Specializes in youth
+        and family camping programs","eligibility":"Age 16 or over (younger if accompanied
+        by an adult)","fees":"Vary according to service. Cash, checks and credit cards
+        accepted.","funding_sources":["Donations","Fees"],"how_to_apply":"Apply by
+        phone, mail or email or visit website. Registration deadline is 14 days before
+        start of a session.","keywords":["RECREATION/LEISURE SERVICES","Camping","Y
+        Facilities","Youth"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","Napa County","San Francisco County","San Mateo County","Santa Clara
+        County","Solano County"],"updated_at":"2013-08-27T16:17:49-07:00","wait":"No
+        wait, unless session is full."}],"organization":{"_id":"521d339c1974fcdb2b002648","created_at":"2013-08-27T16:17:48-07:00","name":"YMCA
+        of San Francisco","updated_at":"2013-08-27T16:17:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648/locations"},"id":"521d339c1974fcdb2b00264d","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645468000],"highlight":null,"_explanation":null},{"_id":"521d33971974fcdb2b002609","accessibility":["Elevator"],"address":{"city":"San
+        Bruno","state":"CA","street":"1001 Sneath Lane, Suite 300","zip":"94066"},"ask_for":["Member
+        Services Representative"],"coordinates":[-122.425371,37.634019],"created_at":"2013-08-27T16:17:43-07:00","description":"Offers
+        a full range of primary care and mental health services.","faxes":["650 615-6015"],"hours":"Monday-Friday,
+        8-4:30","mail_address":{"attention":"San Bruno Outpatient Clinic","city":"San
+        Bruno","state":"CA","street":"1001 Sneath Lane, Suite 300","zip":"94066"},"name":"Veterans
+        Affairs San Francisco Health Care System., San Bruno Outpatient Clinic","phones":[{"number":"650
+        615-6000"}],"short_desc":"Offers a full range of primary care, mental health,
+        social work and member services.","transportation":"BART - San Bruno Station;
+        SAMTRANS stops within 4 blocks.","updated_at":"2013-08-27T16:31:37-07:00","urls":["http://www.sanfrancisco.va.gov/cboc/sanbruno.asp"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339b1974fcdb2b002620","audience":"Veterans
+        of the U.S. Armed Forces","eligibility":"Veteran with other than dishonorable
+        discharge, eligibility individually determined","fees":"Copay to be determined
+        upon enrollment.","funding_sources":["Federal"],"how_to_apply":"Must submit
+        VA Healthcare enrollment form and copy of DD214 (discharge paperwork).","keywords":["HEALTH
+        SERVICES","Outpatient Care","Veteran Outpatient Clinics","Veterans"],"service_areas":["San
+        Francisco County","San Mateo County"],"updated_at":"2013-08-27T16:17:47-07:00","wait":"3-7
+        days."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33971974fcdb2b002609","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645463000],"highlight":null,"_explanation":null},{"_id":"521d33961974fcdb2b0025f4","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"96 North Third Street #400","zip":"95112"},"contacts":[{"_id":"521d33961974fcdb2b0025f5","name":"Maria
+        E. Jackson","title":"Assistant District Director"}],"coordinates":[-121.889295,37.3386621],"created_at":"2013-08-27T16:17:42-07:00","description":"Investigates
+        and processes wage (overtime, minimum wage) and child labor complaints in
+        businesses with interstate commerce or contracts for construction for the
+        federal government, financed by the federal government, or provision of services
+        to the federal government.","faxes":["408 291-7731"],"hours":"Monday-Friday,
+        8:30-4","languages":["Chinese (Cantonese)","Spanish","Vietnamese"],"mail_address":{"attention":"Wage
+        and Hour Division","city":"San Jose","state":"CA","street":"96 North Third
+        Street #400","zip":"95112"},"name":"Department of Labor., Wage and Hour Division","phones":[{"number":"408
+        291-7730","hours":"(Monday-Friday, 8:30-4)"}],"short_desc":"Investigates wage
+        and child labor complaints and contracts for construction or services to the
+        federal government.","transportation":"VTA stops within 1 block.","updated_at":"2013-08-27T16:31:34-07:00","urls":["http://www.dol.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339a1974fcdb2b00261b","eligibility":"Complaint
+        must concern interstate business or a covered enterprise","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Walk
+        in, call or write.","keywords":["COMMUNITY SERVICES","Human Rights/Ombudsman/Advocacy"],"service_areas":["Alameda
+        County","Contra Costa County","San Mateo County","Santa Clara County","Monterey
+        County","San Benito County"],"updated_at":"2013-08-27T16:17:46-07:00","wait":"Varies."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33961974fcdb2b0025f4","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33961974fcdb2b0025f8","accessibility":["Wheelchair"],"address":{"city":"San
+        Jose","state":"CA","street":"280 South 1st Street, Suite 106","zip":"95113"},"ask_for":["Robert
+        Ramirez","Susan Portillo"],"contacts":[{"_id":"521d33961974fcdb2b0025f9","name":"Robert
+        Ramirez","title":"Supervisor"},{"_id":"521d33961974fcdb2b0025fa","name":"Susan
+        Portillo","title":"Supervisor"}],"coordinates":[-121.8872928,37.3317515],"created_at":"2013-08-27T16:17:42-07:00","description":"Conducts
+        investigations for the United States District Court. Supervises probationers
+        and supervised releasees for the District Court and parolees for the United
+        States Parole Commission and for the military. Acts as community liaison with
+        the United States Bureau of Prisons.","faxes":["408 535-5206"],"languages":["Spanish"],"mail_address":{"attention":"Federal
+        Probation Parole Service","city":"San Jose","state":"CA","street":"280 South
+        1st Street, Suite 106","zip":"95113"},"name":"U.S. District Court for the
+        Northern District of California., Federal Probation and Parole Services","phones":[{"number":"408
+        535-5200","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Supervises probationers
+        for the district court and parolees for the United States Parole Commission.","transportation":"VTA
+        stops within 1 block.","updated_at":"2013-08-27T16:31:35-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339a1974fcdb2b00261c","eligibility":"Federal
+        parolee, probationer or supervised releasee","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Referral
+        required.","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Re-Entry/Ex-Offender","Probation"],"service_areas":["Santa
+        Clara County","Monterey County","San Benito County","Santa Cruz County"],"updated_at":"2013-08-27T16:17:46-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33961974fcdb2b0025f8","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33961974fcdb2b0025fd","accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"75 Hawthorne Street, 13th Floor","zip":"94105"},"contacts":[{"_id":"521d33961974fcdb2b0025fe","name":"Rosemary
+        Hardy","title":"Head Librarian"}],"coordinates":[-122.398017,37.785455],"created_at":"2013-08-27T16:17:42-07:00","description":"Provides
+        information to the public on a wide range of environmental concerns, policies
+        and laws. Maintains a large collection of EPA reports, print or microfiche.
+        Other special collections include materials on hazardous wastes, pollution
+        prevention, recycling, environmental health and U.S. Geological Survey topographical
+        maps. The public is welcome to search the library''s environmental databases.   The
+        public is not allowed to check out materials, but interlibrary loan is available.
+        Copies of shorter documents can be made on site. The library is open Monday-Thursday,
+        9-12, 1-4 (closed federal holidays).","emails":["library-reg9@epa.gov"],"faxes":["415
+        947-3553"],"hours":"Monday-Thursday, 9-12, 1-4 (Closed federal holidays)","kind":"Other","mail_address":{"attention":"Library","city":"San
+        Francisco","state":"CA","street":"75 Hawthorne Street, 13th Floor","zip":"94105"},"name":"Environmental
+        Protection Agency (EPA)., Library","phones":[{"number":"415 947-4406","department":"Library","hours":"(Monday-Thursday,
+        9-12, 1-4) (Closed federal holidays))"}],"transportation":"MUNI stops within
+        1 block. BART - Montgomery Street Station.","updated_at":"2013-09-11T02:31:23-07:00","urls":["http://www.epa.gov/libraries/region9.html"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339a1974fcdb2b00261d","eligibility":"None","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Call,
+        walk in or email.","keywords":["Libraries","Special Libraries"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","Arizona","California","Hawaii","Nevada"],"updated_at":"2013-08-27T16:17:47-07:00","wait":"Varies."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33961974fcdb2b0025fd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33961974fcdb2b002601","accessibility":["Wheelchair"],"address":{"city":"Palo
+        Alto","state":"CA","street":"3801 Miranda Avenue (11C)","zip":"94304"},"ask_for":["Telephone
+        Care Program (TCP) staff"],"contacts":[{"_id":"521d33961974fcdb2b002602","name":"Don
+        Gorday","title":"Administration Officer for Ambulatory Care"}],"coordinates":[-122.1418083,37.4036049],"created_at":"2013-08-27T16:17:42-07:00","description":"V.A.
+        Information & Referral Service (VAIRS) provides information about services
+        at the VA such as addiction treatment, mental health programs, short-stay
+        nursing home program, homeless shelter, case management, women''s services,
+        rehabilitation programs for stroke, trauma or spinal cord injury. A veteran
+        or the family or friends of a veteran can call to have VA programs explained
+        and for direct referral to these programs.","faxes":["650 849-0116"],"hours":"Monday-Friday,
+        8-4","languages":["Chinese","Filipino (Tagalog)","Japanese","Spanish"],"mail_address":{"attention":"Ambulatory
+        Care Service","city":"Palo Alto","state":"CA","street":"3801 Miranda Avenue
+        (11C)","zip":"94304"},"name":"Veterans Affairs Palo Alto Health Care System.,
+        Ambulatory Care Service., Veterans Affairs Information and Referral Service
+        (VAIRS)","phones":[{"number":"800 455-0057","hours":"(Monday-Friday, 8-4)"}],"short_desc":"An
+        information and referral service for veterans and their dependents.","transportation":"SAMTRANS
+        stops in front.","updated_at":"2013-08-27T16:31:36-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339b1974fcdb2b00261e","audience":"Veterans
+        and their families","eligibility":"Honorably discharged veteran","fees":"Vary.","funding_sources":["Federal"],"how_to_apply":"Call
+        for information.","keywords":["COMMUNITY SERVICES","Information and Referral","Veterans"],"service_areas":["Contra
+        Costa County","Monterey County","San Benito County","San Mateo County","Santa
+        Clara County"],"updated_at":"2013-08-27T16:17:47-07:00","wait":"Varies."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33961974fcdb2b002601","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33961974fcdb2b002605","accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
+        Miranda Avenue, Building 100, Unit 4A","zip":"94304-1290"},"ask_for":["Social
+        worker"],"contacts":[{"_id":"521d33961974fcdb2b002606","name":"Sheila Kennedy,
+        MSW, LCSW","title":"Hospice Coordinator"}],"coordinates":[-122.1418139,37.403608],"created_at":"2013-08-27T16:17:42-07:00","description":"Provides
+        medical, nursing and end-of-life care to veterans and to members of the community
+        connected with a community hospice when care can no longer be managed at home.
+        The 25-bed facility offers symptom management, nursing care, social services,
+        psychological and bereavement services, spiritual counseling and massage.","emails":["sheila-kennedy@va.gov"],"faxes":["650
+        849-0260"],"hours":"Monday-Friday, 7:30-4:30","languages":["Filipino (Tagalog)"],"mail_address":{"attention":"Hospice
+        Care Center","city":"Palo Alto","state":"CA","street":"3801 Miranda Avenue,
+        Building 100, Unit 4A","zip":"94304-1290"},"name":"Veterans Affairs Palo Alto
+        Health Care System., Hospice Care Center","phones":[{"number":"650 849-0176","hours":"(Monday-Friday,
+        8-4:30)"}],"short_desc":"Provides medical and nursing care to veterans and
+        to members of the community.","transportation":"SAMTRANS, VTA stop in front.","updated_at":"2013-08-27T16:31:36-07:00","urls":["http://www.palo-alto.med.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d339b1974fcdb2b00261f","audience":"Veterans
+        with terminal diagnosis","eligibility":"Honorably discharged veteran facing
+        life-threatening illness given top priority (6 months or less prognosis)","fees":"No
+        fee for veterans. $250 per day for non-veterans. Checks accepted.","funding_sources":["Federal"],"how_to_apply":"For
+        veterans, anyone may initiate referral but physician must verify terminal
+        status. For non-veterans, anyone may initiate referral, but a community hospice
+        must be involved.","keywords":["HEALTH SERVICES","Hospice","Hospice Care","Veterans"],"service_areas":["Alameda
+        County","Calaveras County","Monterey County","San Mateo County","Santa Clara
+        County","Stanislaus County","Tuolumne County","northern California"],"updated_at":"2013-08-27T16:17:47-07:00","wait":"Varies
+        depending on bed availability."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33961974fcdb2b002605","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025d1","accessibility":["Elevator","Disabled
+        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"350
+        The Embarcadero, Suite 500","zip":"94105"},"ask_for":["Intake Supervisor"],"contacts":[{"_id":"521d33951974fcdb2b0025d2","name":"Michael
+        Baldonado","title":"District Director"}],"coordinates":[-122.3898627,37.7902187],"created_at":"2013-08-27T16:17:41-07:00","description":"Investigates
+        charges of employment discrimination based on race, color, religion, sex,
+        disability, national origin or age. Charges may be filed either in person,
+        by mail or telephone. Charges for employment discrimination must generally
+        be filed within 300 days of alleged discriminatory act.   EEOC can take charges
+        of employment discrimination from workers against employers with 15 or more
+        employees (under Title VII and the Americans with Disabilities Act); employers
+        with 20 or more employees (under the Age Discrimination in Employment Act);
+        and employers with two or more employees (under the Equal Protection Act).
+        EEOC also provides free outreach, and training for a fee to the general public,
+        including workers, employers and community organizations.","faxes":["415 625-5609"],"hours":"Monday-Friday,
+        8-4:30. Walk-ins accepted Tuesday, Wednesday and Thursday, 8:30-3","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","French","Korean","Spanish"],"mail_address":{"attention":"San
+        Francisco District Office","city":"San Francisco","state":"CA","street":"350
+        The Embarcadero, Suite 500","zip":"94105"},"name":"Equal Employment Opportunity
+        Commission (EEOC)., San Francisco District Office","phones":[{"number":"866
+        408-8075","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Investigates charges
+        of employment discrimination based on race, color, religion, sex, disability,
+        national origin or age.","transportation":"MUNI - Market Street lines. BART
+        - Embarcadero Street Station.","updated_at":"2013-08-27T16:31:30-07:00","urls":["http://www.eeoc.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33981974fcdb2b002612","audience":"Any
+        person who believes that he/she has been discriminated against by an employer,
+        labor union or employment agency when applying for a job or on the job (includes
+        discharge) because of race, color, sex, religion, national origin, disability
+        or age","eligibility":"See description of services","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Walk
+        in or apply by phone or mail for an appointment.","keywords":["COMMUNITY SERVICES","Human
+        Rights/Ombudsman/Advocacy","LEGAL AND CRIMINAL JUSTICE SERVICES","Mediation","Cultural/Racial
+        Issues"],"service_areas":["Alameda County","Contra Costa County","Marin County","San
+        Francisco County","San Mateo County","Santa Clara County","central California","northern
+        California"],"updated_at":"2013-08-27T16:17:44-07:00","wait":"No wait."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025d1","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025d5","accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
+        Miranda Avenue","zip":"94304"},"ask_for":["Staff on duty in admitting/eligibility"],"contacts":[{"_id":"521d33951974fcdb2b0025d6","title":"Educational
+        Coordinator, Nursing Service"}],"coordinates":[-122.1418083,37.4036049],"created_at":"2013-08-27T16:17:41-07:00","description":"Primary
+        entry point for VA medical services in Palo Alto, including admission to the
+        hospital. Services are provided only to veterans, and preference is given
+        to those with service-connected illnesses or disabilities. On the first visit,
+        the veteran should arrive at the clinic with discharge papers and any appropriate
+        medical records. No appointment is necessary, but there may be a two hour
+        or longer wait. If the veteran is legally and medically eligible, he or she
+        will be given an appointment for general medical or speciality services. All
+        persons in need of immediate care will be seen right away. Emergency care
+        is provided 24 hours a day. Limited services are available at satellites in
+        San Jose and Monterey, as well as in the divisions at Menlo Park, Livermore,
+        Stockton and Modesto.","languages":["Japanese","Spanish","Filipino (Tagalog)"],"mail_address":{"attention":"VA
+        PA Ambulatory Care Service","city":"Palo Alto","state":"CA","street":"3801
+        Miranda Avenue","zip":"94304"},"name":"Veterans Affairs Palo Alto Health Care
+        System., Ambulatory Care Service","phones":[{"number":"650 493-5000","extensions":["22175"],"hours":"(Monday-Friday,
+        8-4:30)"}],"short_desc":"Outpatient care for all honorably discharged veterans.","transportation":"SAMTRANS
+        stops in front.","updated_at":"2013-08-27T16:31:31-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33981974fcdb2b002613","audience":"Veterans
+        and employees","eligibility":"Honorably discharged veteran. Priority given
+        to service-connected or low-income veterans","fees":"None for service-connected
+        conditions. Co-payment (30% to 100%) for nonservice connected prescriptions
+        and nonservice connected veterans depending on income. Cash and checks accepted.","funding_sources":["Federal","Fees"],"how_to_apply":"Walk
+        in. Service discharge papers necessary for application. Means testing may
+        be required.","keywords":["Veteran Outpatient Clinics","Veterans"],"service_areas":["Monterey
+        County","San Benito County","San Mateo County","Santa Clara County","Santa
+        Cruz County","Castro Valley","Dublin","Fremont","Hayward","Newark","Pleasanton","San
+        Leandro","San Lorenzo","San Ramon","Union City"],"updated_at":"2013-08-27T16:17:44-07:00","wait":"2-6
+        weeks for scheduled clinic appointments, walk in for same day clinic."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025d5","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025d9","accessibility":["Disabled
+        Restroom","Wheelchair"],"address":{"city":"Menlo Park","state":"CA","street":"795
+        Willow Road","zip":"94025"},"ask_for":["Staff on duty"],"contacts":[{"_id":"521d33951974fcdb2b0025da","name":"Tina
+        Lee, MD","title":"Medical Director"}],"coordinates":[-122.16023,37.466287],"created_at":"2013-08-27T16:17:41-07:00","description":"Offers
+        evaluation for and follow-up of psychotropic medication, limited individual
+        therapy and group psychotherapy, crisis intervention and case management.
+        A multi-disciplinary team evaluates patients for services and refers to non-VA
+        services when appropriate. VA services to which veterans may be referred include
+        day treatment, post traumatic stress disorder (PTSD), drug and alcohol programs
+        and inpatient psychiatry programs. Veterans may call directly but referral
+        from an agency is preferred. When openings are limited, preference is given
+        to veterans whose illnesses are service-connected.","faxes":["650 617-2710"],"hours":"Monday-Friday,
+        8-4:30","languages":["Chinese (Mandarin)","Filipino (Tagalog)","French","German","Hindi","Polish","Punjabi","Spanish"],"mail_address":{"attention":"VA
+        PA Mental Health Clinic","city":"Palo Alto","state":"CA","street":"3801 Miranda
+        Avenue (170AMPD)","zip":"94304"},"name":"Veterans Affairs Palo Alto Health
+        Care System., Menlo Park Division., Mental Health Clinic","phones":[{"number":"650
+        493-5000","extensions":["22234"],"hours":"(Monday-Thursday, 8-6:30; Friday,
+        8-4:30)"}],"short_desc":"Primary provider of psychiatric and mental health
+        services for veterans.","transportation":"SAMTRANS stops in front.","updated_at":"2013-08-27T16:31:31-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33991974fcdb2b002614","audience":"Veterans
+        and their families","eligibility":"Honorably discharged veteran. Active duty
+        and dependents under tricare. Priority given to service-connected veterans
+        and to nonservice connected veterans with low incomes","fees":"Treatment of
+        nonservice connected conditions may require partial payment for medications
+        and clinical services. Veterans with insurance will have their insurance billed.
+        Varies.","funding_sources":["Federal"],"how_to_apply":"Walk in or apply by
+        phone.","keywords":["Mental Health Support Services","Veterans"],"service_areas":["Alameda
+        County","Contra Costa County","Monterey County","San Benito County","San Mateo
+        County","Santa Clara County","Santa Cruz County"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"Varies.
+        Not accepting any new TRICARE patients."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025d9","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025dd","accessibility":["Wheelchair"],"address":{"city":"Menlo
+        Park","state":"CA","street":"795 Willow Road, Building 321","zip":"94025"},"ask_for":["Intake
+        Consultation Team"],"contacts":[{"_id":"521d33951974fcdb2b0025de","name":"Paula
+        Wilbourne","title":"Director"}],"coordinates":[-122.1572991,37.4651746],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
+        services to veterans addicted to alcohol or other drugs and ready to become
+        abstinent. Provides inpatient medical treatment for withdrawal, a residential
+        therapeutic community and outpatient clinics in support of continuing abstinence
+        in Menlo Park and San Jose.","faxes":["650 617-2618"],"languages":["Interpreter"],"mail_address":{"attention":"VA
+        PA Addiction Treatment Services","city":"Menlo Park","state":"CA","street":"795
+        Willow Road, Building 321","zip":"94025"},"name":"Veterans Affairs Palo Alto
+        Health Care System., Menlo Park Division., Addiction Treatment Services (ATS)","phones":[{"number":"866
+        717-1978"}],"short_desc":"Provides residential and outpatient programs to
+        help veterans with alcohol or other drug-related difficulties.","transportation":"SAMTRANS
+        stops in front.","updated_at":"2013-08-27T16:31:31-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33991974fcdb2b002615","audience":"Veterans
+        addicted to alcohol or other drugs","eligibility":"Veteran who meets eligibility
+        for benefits","fees":"Vary according to income.","funding_sources":["Federal"],"how_to_apply":"Phone
+        for information and/or to make an appointment.","keywords":["ALCOHOLISM SERVICES","Detoxification","Individual/Group
+        Counseling","Residential Care","DRUG ABUSE SERVICES","Drug-Free Treatment","Maintenance","Substance
+        Abuse Services","Veterans"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County","Stanislaus County","Northern California"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"2-3
+        weeks for inpatient programs. No wait for outpatient services."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025dd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e1","address":{"city":"Washington","state":"DC","street":"441
+        G Street, NW, Room 4T21","zip":"20548"},"ask_for":["Analyst"],"contacts":[{"_id":"521d33951974fcdb2b0025e2","name":"Andrew
+        A. O''Connell","title":"Assistant Director"}],"coordinates":[-77.0172233,38.8993459],"created_at":"2013-08-27T16:17:41-07:00","description":"A
+        federal government program that registers complaints and investigates charges
+        involving federal employees and/or fraud, abuse and mismanagement of federal
+        funds. Complainants can remain anonymous.   U.S. General Accounting Office
+        probes charges of fraud where federal monies are concerned such as contractors''
+        kickbacks, bribes, misappropriation of federal grants and some areas of income
+        cheating. Any person can report a complaint against a civil servant or private
+        individual and/or a firm. Federal workers who falsify timecards or take excessive
+        lunch hours can also be investigated. Complaints can be filed by mail, through
+        the FraudNET Web site, by email or FAX. For recipient fraud matters (Medicare,
+        Medi-Cal, AFDC, food stamps, etc.) contact 800-447-8477. Formerly known as
+        Government Accounting Office.","emails":["fraudnet@gao.gov"],"faxes":["202
+        512-3086"],"languages":["Spanish"],"mail_address":{"attention":"FraudNET","city":"Washington","state":"DC","street":"441
+        G Street, NW, Room 4T21","zip":"20548"},"name":"Government Accountability
+        Office., FraudNET","phones":[{"number":"800 424-5454","department":"(24-hour
+        answering system)"}],"short_desc":"Investigates complaints involving fraud,
+        waste, abuse or mismanagement of federal funds.","transportation":"Not necessary
+        for service.","updated_at":"2013-08-27T16:31:32-07:00","urls":["http://www.gao.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33991974fcdb2b002616","eligibility":"None","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Apply
+        by mail, fax or Internet.","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Prosecution
+        Representation","Federal Government Complaints/Ombudsman Offices","Employee
+        Fraud Reporting"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","nationwide"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"No
+        wait."}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025e1","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e5","accessibility":["Wheelchair"],"address":{"city":"Monterey","state":"CA","street":"21
+        Grace Hopper Avenue, Stop 5","zip":"93943-5505"},"contacts":[{"_id":"521d33951974fcdb2b0025e6","name":"David
+        Soroka","title":"Meteorologist in Charge"}],"coordinates":[-121.8740501,36.5964368],"created_at":"2013-08-27T16:17:41-07:00","description":"Information
+        over the phone regarding current forecasts up to seven days in advance across
+        the United States, outlook to 90 days. Functional questions on weather, climatology
+        (e.g., vacation information) will be answered. A few pamphlets on hurricanes,
+        etc. No technical information available.","emails":["w-mtr.webmaster@noaa.gov"],"hours":"Monday-Friday,
+        8-4","languages":["Spanish"],"mail_address":{"attention":"National Weather
+        Service","city":"Monterey","state":"CA","street":"21 Grace Hopper Avenue,
+        Stop 5","zip":"93943-5505"},"name":"Department of Commerce., National Oceanic
+        and Atmospheric Administration (NOAA)., National Weather Service (NWS)","phones":[{"number":"831
+        656-1725","hours":"(24 hours daily)"}],"updated_at":"2013-08-27T16:31:32-07:00","urls":["http://weather.gov/sanfranciso"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025bf","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c2","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c5","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c7","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025c9","http://ohanapi.herokuapp.com/api/locations/521d33941974fcdb2b0025cd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e1","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e5","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f4","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025f8","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b0025fd","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002601","http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","http://ohanapi.herokuapp.com/api/locations/521d33971974fcdb2b002609"],"services":[{"_id":"521d33991974fcdb2b002617","eligibility":"None","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Call,
+        walk in or visit Web site.","service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County","Monterey County","Napa County","San Benito County","Santa Cruz County","Sonoma
+        County"],"updated_at":"2013-08-27T16:17:45-07:00"}],"organization":{"_id":"521d33941974fcdb2b0025be","created_at":"2013-08-27T16:17:40-07:00","name":"United
+        States Government","updated_at":"2013-08-27T16:17:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"id":"521d33951974fcdb2b0025e5","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Sun, 15 Sep 2013 00:51:10 GMT
+recorded_with: VCR 2.5.0
