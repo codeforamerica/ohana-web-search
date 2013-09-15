@@ -19,9 +19,8 @@ feature "location details" do
       search_from_home(:keyword => 'maceo')
       visit_details
       find_link("maceo@parker.com")
-      within("#results-container") do
-        first("a").click
-      end
+      find_link("a", :text=>"Back").click
+      expect(page).to have_selector("#list-view")
       page.find(".agency").should have_link("SanMaceo Example Agency.")
     end
   end
