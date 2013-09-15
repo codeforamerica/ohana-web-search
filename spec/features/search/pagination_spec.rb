@@ -37,6 +37,7 @@ feature "results page pagination" do
     go_to_page(58)
     expect(page).to have_selector('.pagination')
     expect(page).to have_content('Page: < 1 ... 54 55 56 57 58')
+    expect(page).to have_content('1711-1712 of 1712 results')
   end
 
   scenario 'on page less than three pages from beginning of results that have more than five entries', :vcr do
