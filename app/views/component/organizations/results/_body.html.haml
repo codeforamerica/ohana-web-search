@@ -1,10 +1,9 @@
 = render 'component/organizations/results/header'
 %section#results-entries
-  - if @terminology.present?
+  - if dynamic_partial
     %section#terminology
       %div
-        - dynamic_partial = 'component/terminology/'+@terminology
-        = render :partial => "#{dynamic_partial}"
+        = render :partial => dynamic_partial
 
   - if @orgs.present?
     - if @map_data.present?
@@ -28,12 +27,12 @@
     %section#category-box
       %section
         %ul
-          - @taxonomy_terms.each do |service|
+          - taxonomy_terms.each do |service|
             %li
-              %a{ :href => "/organizations?keyword=#{u(service[:name])}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:name]}']);" }
-                = service[:name]
+              %a{ :href => "/organizations?keyword=#{u service[:parent]}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:parent]}']);" }
+                = service[:parent]
               %ul
-                - service[:sub].each do |sub|
+                - service[:children].each do |child|
                   %li
-                    %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                      = sub
+                    %a{ :href => "/organizations?keyword=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{child}']);" }
+                      = child

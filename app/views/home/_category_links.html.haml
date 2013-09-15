@@ -1,0 +1,8 @@
+%li
+  = service[:parent]
+  %ul
+    - service[:children].each do |child|
+      - child.include?("/") ? keyword = child.split("/").first : child
+      %li
+        %a{ :href => "/organizations?keyword=#{u keyword}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{child}']);" }
+          = child

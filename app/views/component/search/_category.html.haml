@@ -2,25 +2,13 @@
   -# Category search terms that are displayed on the homepage
   %section#general-services
     %ul
-      - @service_terms.each do |service|
-        %li
-          = service[:name]
-          %ul
-            - service[:sub].each do |sub|
-              %li
-                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                  = sub
+      - service_terms.each do |service|
+        = render :partial => "home/category_links", :locals => { :service => service }
 
   %section#emergency-services
     %ul
-      - @emergency_terms.each do |service|
-        %li
-          = service[:name]
-          %ul
-            - service[:sub].each do |sub|
-              %li
-                %a{ :href => "/organizations?keyword=#{u(sub)}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{sub}']);" }
-                  = sub
+      - emergency_terms.each do |service|
+        = render :partial => "home/category_links", :locals => { :service => service }
     %p
       NEED IMMEDIATE ASSISTANCE?
       %strong DIAL 2-1-1

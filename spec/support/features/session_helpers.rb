@@ -99,7 +99,8 @@ module Features
       expect(page).to have_content "Feedback"
       expect(page).to have_content "I need"
       expect(page).to have_content "I am near"
-      expect(page).to have_content "emergency"
+      expect(page).to have_content "reporting"
+      expect(page).to have_content "government assistance"
     end
 
     def looks_like_homepage_as_user_sees_it
