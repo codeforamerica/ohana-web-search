@@ -64,7 +64,7 @@ class OrganizationsController < ApplicationController
     #   end
     # end
 
-    # initializes map data
+    # initializes map data for search results map
     @map_data = generate_map_data(@orgs)
 
     # construct html and plain results summaries for use in display in the view (html)
@@ -82,6 +82,9 @@ class OrganizationsController < ApplicationController
       format.json {
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/results/body'
+          #if(params[:language] == "spanish")
+          #  translate
+          #end
         end
         render :json => { :content => @html_content , :action => action_name }
       }
@@ -99,6 +102,7 @@ class OrganizationsController < ApplicationController
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
+
     # To disable or remove the Result list button on details page
     # when visiting location directly
     @referer = request.env['HTTP_REFERER']
@@ -112,9 +116,9 @@ class OrganizationsController < ApplicationController
       format.json {
 
         with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/detail/body'
+          html_content = render_to_string partial: 'component/organizations/detail/body'
         end
-        render :json => { :content => @html_content , :action => action_name }
+        render :json => { :content => html_content , :action => action_name }
       }
     end
 
@@ -122,16 +126,17 @@ class OrganizationsController < ApplicationController
 
   private
 
-  # Used for mapping nearby locations on details map view
-  # generate json for the maps in the view
-  # this will be injected into a <script> element in the view
-  # and then consumed by the detail-map-manager javascript.
-  # map_data parses the @org hash and retrieves all entries
-  # that have coordinates, and returns that as json, otherwise map_data
-  # ends up being nil and can be checked in the view with map_data.present?
-  # @param data [Object] nearby API response
+  # Used for generating data for the two Google maps used in the app:
+  # (1) The search results map and (2) nearby locations map on details view.
+  # Method generates json for the maps that will be injected into a <script>
+  # element in the view and then consumed by the map-manager or detail-map-manager
+  # javascript. The map_data variable parses the object returned from the API
+  # and retrieves all entries that have coordinates, and returns that as json,
+  # otherwise map_data ends up being nil and can be checked in the view with
+  # map_data.present?
+  # @param data [Object] API response data
   # @return [Object] JSON object containing id, name, and coordinates.
-  # Or nil if there are no nearby map entries.
+  # Or nil if there are no mappable entries.
   def generate_map_data(data)
 
     return nil if data.blank? # return immediately if data is empty
@@ -143,7 +148,8 @@ class OrganizationsController < ApplicationController
 
     map_data = data.reduce([]) do |result, o|
 
-      # hide "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
+      # Uncomment this section if it is desirable to hide the
+      # "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
       #if o.name == "San Maceo Agency"
       #  data.delete(o)
       #else
@@ -182,6 +188,7 @@ class OrganizationsController < ApplicationController
     map_data = map_data.to_json.html_safe unless map_data.nil?
   end
 
+  # Used for passing rendered HTML partials in a json response to requests made via ajax
   # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
   # execute a block with a different format (ex: an html partial while in an ajax request)
   def with_format(format, &block)
