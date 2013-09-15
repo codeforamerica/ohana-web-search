@@ -22,6 +22,9 @@ gem 'newrelic_rpm'
 gem "ohanakapa", "~> 1.0"
 gem 'faraday-http-cache'
 
+# For Google translation API
+gem "google-api-client"
+
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
 
@@ -49,7 +52,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "teaspoon"
+  #gem "teaspoon" #enable teaspoon to use JasmineJS for performing unit testing on JS code
   gem "rspec-rails", ">= 2.12.2"
   gem 'yard' #for code documentation
 end
