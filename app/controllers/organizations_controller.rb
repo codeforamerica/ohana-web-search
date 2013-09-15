@@ -11,18 +11,8 @@ class OrganizationsController < ApplicationController
   # search results view
   def index
 
-    # initialize terminology box if the keyword is a term
-    # that has a matching partial as defined in Organization.terminology
-    # and app/views/component/terminology
-    @terminology = Organization.terminology(params[:keyword])
-
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
-
-    # check if results contain a "/" and search on the first term if so
-    if params[:keyword].present? && params[:keyword].include?("/")
-      @orgs = Organization.keyword_mapping(params)
-    end
 
     headers = Ohanakapa.last_response.headers
 

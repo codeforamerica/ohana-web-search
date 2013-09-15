@@ -7,7 +7,7 @@
       = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword", :list => "search-keywords"
 
       %datalist#search-keywords
-        - @keywords.each do |keyword|
+        - cip_keywords.each do |keyword|
           %option{:value=>keyword}
 
     -# location search box input field appears below
@@ -17,7 +17,7 @@
       = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
 
       %datalist#search-locations
-        - @locations.each do |location|
-          %option{:value=>location}
+        - smc_cities.each do |city|
+          %option{:value=>city}
 
     = render :partial => 'component/search/options'
