@@ -53,18 +53,26 @@ define(function() {
     }
 
     // get left and top offset of an element
-    // (from http://stackoverflow.com/questions/442404/dynamically-retrieve-the-position-x-y-of-an-html-element)
+    // (from http://stackoverflow.com/questions/8111094/cross-browser-javascript-function-to-find-actual-position-of-an-element-in-page)
     // @return [Object] with top and left properties
-    function getOffset( el )
+    function getOffset( element )
     {
-        var _x = 0;
-        var _y = 0;
-        while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
-            _x += el.offsetLeft - el.scrollLeft;
-            _y += el.offsetTop - el.scrollTop;
-            el = el.offsetParent;
-        }
-        return { top: _y, left: _x };
+        var body = document.body,
+        win = document.defaultView,
+        docElem = document.documentElement,
+        box = document.createElement('div');
+        box.style.paddingLeft = box.style.width = "1px";
+        body.appendChild(box);
+        var isBoxModel = box.offsetWidth == 2;
+        body.removeChild(box);
+        box = element.getBoundingClientRect();
+        var clientTop  = docElem.clientTop  || body.clientTop  || 0,
+            clientLeft = docElem.clientLeft || body.clientLeft || 0,
+            scrollTop  = win.pageYOffset || isBoxModel && docElem.scrollTop  || body.scrollTop,
+            scrollLeft = win.pageXOffset || isBoxModel && docElem.scrollLeft || body.scrollLeft;
+        return {
+            top : box.top  + scrollTop  - clientTop,
+            left: box.left + scrollLeft - clientLeft};
     }
 
     // @return [Object] browser-appropriate requestanimationframe implementation

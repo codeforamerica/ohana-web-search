@@ -16,12 +16,35 @@ class OrganizationsController < ApplicationController
 
     headers = Ohanakapa.last_response.headers
 
-    @prev_page     = headers["X-Previous-Page"]
-    @next_page     = headers["X-Next-Page"]
-    @current_page  = headers["X-Current-Page"]
-    @total_pages   = headers["X-Total-Pages"]
-    @total_count   = headers["X-Total-Count"]
-    @current_count = @orgs.blank? ? 0 : @orgs.count
+    @pages = Hash.new
+
+    @pages[:total_count]   = headers["X-Total-Count"].to_i
+    @pages[:current_count] = @orgs.blank? ? 0 : @orgs.count
+
+    @pages[:total_pages]   = headers["X-Total-Pages"].to_i
+    @pages[:current_page]  = headers["X-Current-Page"].to_i
+    @pages[:prev_page]  = headers["X-Previous-Page"].to_i
+    @pages[:next_page]  = headers["X-Next-Page"].to_i
+
+    @pages[:prev_page] = nil if @pages[:prev_page] == 0
+    @pages[:next_page] = nil if @pages[:next_page] == 0
+
+    @pages[:pages] = []
+
+    min = @pages[:current_page].to_i-2
+    max = @pages[:current_page].to_i+2
+    while min < 1
+      min = min+1
+      max = max+1
+    end
+    while max > @pages[:total_pages]
+      min = min-1 if min > 1
+      max = max-1
+    end
+
+    min.upto(max) do |n|
+      @pages[:pages].push(n)
+    end
 
     # The parameters to use to provide a link to the location
     @search_params = request.params.except(:action, :id, :_, :controller)

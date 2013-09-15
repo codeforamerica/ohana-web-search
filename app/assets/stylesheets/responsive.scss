@@ -56,6 +56,11 @@
   {
     font-size:14px;
 
+    h1
+    {
+      margin-left:15px;
+    }
+
     h2
     {
       margin-top:15px;
@@ -240,6 +245,43 @@
       }
     }
 
+    .results-header
+    {
+      text-align:left;
+      >div
+      {
+       >p,>h1
+      {
+        display:none;
+      }
+      }
+
+      .floating-content
+      {
+
+        .utility-links // back to search, directions, print
+        {
+          >span
+          {
+            padding-left:0;
+          }
+        }
+      }
+
+      .utility-links // back to search, directions, print
+      {
+        >span
+        {
+          border:0;
+        }
+
+        >span:first-child
+        {
+          border:0;
+        }
+      }
+    }
+
     #search-container
     {
       //display:table-footer-group;
@@ -272,7 +314,8 @@
       }
     }
 
-    #results-entries {
+    #results-entries
+    {
 
       nav{
         margin-top:15px;
