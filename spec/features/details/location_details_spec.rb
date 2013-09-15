@@ -185,7 +185,6 @@ feature "location details" do
       end
     end
 
-    # API isn't returning these fields currently so they are set to pending.
     it "includes Market Match" do
       expect(page).to have_content("Market Match")
     end
