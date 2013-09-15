@@ -109,6 +109,18 @@ module Features
       expect(page).to_not have_title "1 result"
     end
 
+    def go_to_next_page
+      first('.pagination').find_link('>').click
+    end
+
+    def go_to_prev_page
+      first('.pagination').find_link('<').click
+    end
+
+    def go_to_page(page)
+      first('.pagination').find_link(page).click
+    end
+
     # webbrowser navigation using browser's JS history API
     def go_back
       page.evaluate_script("window.history.back()")

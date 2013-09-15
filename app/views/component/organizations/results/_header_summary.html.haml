@@ -8,7 +8,7 @@
 
 			- if pages[:pages][0] != 1
 				= link_to '1', {:page=>1}, :class => 'ajax-link',:target=>"_self"
-			- if pages[:pages][1] != 2
+			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
 				= "..."
 
 			- pages[:pages].each do |page|
