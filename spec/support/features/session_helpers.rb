@@ -4,10 +4,8 @@ module Features
     # search helpers
     def search(options = {})
       keyword = options[:keyword]
-      location = options[:location]
       fill_in('keyword', :with => keyword)
       if options[:on_home].present?
-        fill_in('location', :with => location, :visible => false)
         find(:css, '#find-btn').click
       else
         fill_in('location', :with => location)
