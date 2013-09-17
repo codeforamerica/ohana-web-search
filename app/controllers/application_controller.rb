@@ -2,11 +2,10 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery
 	before_filter :check_language_settings
 
-	# Retrieves language parameter and performs
+	# Retrieves translate parameter and performs
 	# mapping to Google Translate API language code
-	# values. Sets cookie with english to [language] setting
-	# Deletes cooke if [language] is english or if language
-	# parameter is missing.
+	# values. Sets cookie with english -> [translate] language value.
+	# Deletes cookie if [translate] is english
 	def check_language_settings
 		if params[:translate].present?
 
@@ -24,8 +23,6 @@ class ApplicationController < ActionController::Base
 		  	cookies.delete :googtrans
 		  end
 		  cookies[:googtrans] = "/en/#{lang}"
-		else
-		  cookies.delete :googtrans
 		end
 	end
 

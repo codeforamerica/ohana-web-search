@@ -203,6 +203,7 @@ define(function() {
     requestAnimationFrame:requestAnimationFrame,
     getStyle:getStyle,
     queryString:queryString,
-    getQueryParams:getQueryParams
+    getQueryParams:getQueryParams,
+    isURLParamPresent:isURLParamPresent
   };
 });
