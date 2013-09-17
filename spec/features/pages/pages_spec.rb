@@ -21,7 +21,7 @@ feature 'Site Pages' do
 
   @javascript
   scenario 'when visiting results page directly', :vcr do
-    visit ('/organizations?utf8=%E2%9C%93&keyword=maceo&location=')
+    visit ('/organizations?utf8=%E2%9C%93&keyword=maceo')
     looks_like_results
   end
 
