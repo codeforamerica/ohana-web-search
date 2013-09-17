@@ -10,6 +10,8 @@ define(['util/util'],
 		function init()
 		{
 			_header = document.getElementById("floating-results-header");
+			if(_header)
+			{
 			//_offsetY = document.getElementById('content-header').offsetHeight;
 			var doc = document.documentElement, body = document.body;
 			_offsetY = util.getOffset(_header).top;
@@ -18,6 +20,7 @@ define(['util/util'],
 			_checkIfFloating();
 
 			window.addEventListener("scroll",_onScroll,false);
+			}
 		}
 
 		function _onScroll(evt)

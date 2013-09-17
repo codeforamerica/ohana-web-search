@@ -182,6 +182,19 @@ define(function() {
       return params;
     }
 
+    // Check if a URL parameter is present
+    // (from http://stackoverflow.com/questions/1314383/how-to-check-if-a-querystring-value-is-present-via-javascript)
+    // @param [String] The parameter to check for the existence of.
+    function isURLParamPresent(param)
+    {
+      var url = window.location.href;
+      if(url.indexOf('?' + param + '=') != -1)
+        return true;
+      else if(url.indexOf('&' + param + '=') != -1)
+        return true;
+      return false
+    }
+
   return {
     isEmpty:isEmpty,
     isEventSupported:isEventSupported,

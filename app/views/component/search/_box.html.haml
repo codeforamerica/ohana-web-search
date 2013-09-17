@@ -1,4 +1,5 @@
 = form_tag('/organizations', :method => :get, :id=>"search-form") do
+  = hidden_field_tag 'translate', params[:translate]
   = render :partial => 'component/search/location'
   %section#search-box
     %div

@@ -1,4 +1,10 @@
 %section#search-options
+
+%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+  %span Update
+
+-#
   %fieldset
     %label{:for=>"language"}
       Filter services by language availability:
@@ -9,11 +15,6 @@
     ['العربية (Arabic)', 'arabic'],
     ['Русский (Russian)', 'russian'],], :selected => params[:language])
 
-%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
-  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-  %span Update
-
--#
   %fieldset
     %legend Location
     %label{:for=>"radius"}

@@ -50,7 +50,6 @@ define(['app/loading-manager',
 
 				inputs.setKeyword(keyword);
 				inputs.setLocation(location);
-				inputs.setLanguage(language);
 
 				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
@@ -66,12 +65,11 @@ define(['app/loading-manager',
 			var keyword = params.keyword || inputs.getKeyword();
 			var location = params.location || inputs.getLocation();
 			var radius = params.radius;
-			var language = params.language || inputs.getLanguage();
+			var language = params.language;
 			var page = params.page;
 
 			inputs.setKeyword(keyword);
 			inputs.setLocation(location);
-			inputs.setLanguage(language);
 
 			var query = '/organizations';
 			if (id) query += '/'+id;

@@ -1,3 +1,5 @@
+require 'google/api_client'
+
 class OrganizationsController < ApplicationController
   respond_to :html, :json, :xml, :js
   before_filter :check_location_id, only: :show
@@ -82,14 +84,10 @@ class OrganizationsController < ApplicationController
       format.json {
         with_format :html do
           @html_content = render_to_string partial: 'component/organizations/results/body'
-          #if(params[:language] == "spanish")
-          #  translate
-          #end
         end
         render :json => { :content => @html_content , :action => action_name }
       }
     end
-
   end
 
   # organization details view
@@ -116,9 +114,9 @@ class OrganizationsController < ApplicationController
       format.json {
 
         with_format :html do
-          html_content = render_to_string partial: 'component/organizations/detail/body'
+          @html_content = render_to_string partial: 'component/organizations/detail/body'
         end
-        render :json => { :content => html_content , :action => action_name }
+        render :json => { :content => @html_content , :action => action_name }
       }
     end
 
@@ -203,6 +201,33 @@ class OrganizationsController < ApplicationController
   # and display an alert (TODO), or do something else.
   def check_location_id
     redirect_to root_path unless Organization.get(params[:id])
+  end
+
+  # Translate the page using the Google Translate API.
+  # @param [String] text to translate
+  # @param [String] target language code to translate into
+  def translate(text, target)
+
+    client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
+    translate = client.discovered_api('translate', 'v2')
+
+    chunks = text.scan(/.{1442}/)
+    params = {
+        'format' => 'html',
+        'source' => 'en',
+        'target' => target,
+        'q' => chunks[0]
+      }
+    @original = chunks[0]
+    chunks.each do |chunk|
+      params['q'] = chunk
+    end
+
+    result = client.execute(
+      :api_method => translate.translations.list,
+      :parameters => params
+    )
+    result.data.translations
   end
 
 end

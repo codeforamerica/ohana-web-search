@@ -1,19 +1,20 @@
 %section#language-box
-  %p
-    Filter services by language availability:
   %ul
     %li
-      %a{:href=>"/organizations/?language=spanish"}
+      %a{:href=>"?translate=english",:lang=>"en",:class=>"notranslate"}
+        English
+    %li
+      %a{:href=>"?translate=spanish",:lang=>"es",:class=>"notranslate"}
         Español
     %li
-      %a{:href=>"/organizations/?language=tagalog"}
+      %a{:href=>"?translate=tagalog",:lang=>"fi",:class=>"notranslate"}
         Tagalog
     %li
-      %a{:href=>"/organizations/?language=chinese"}
+      %a{:href=>"?translate=chinese",:lang=>"zh",:class=>"notranslate"}
         中文
     %li
-      %a{:href=>"/organizations/?language=arabic"}
+      %a{:href=>"?translate=arabic",:lang=>"ar",:class=>"notranslate"}
         العربية
     %li
-      %a{:href=>"/organizations/?language=russian"}
+      %a{:href=>"?translate=russian",:lang=>"ru",:class=>"notranslate"}
         Русский
