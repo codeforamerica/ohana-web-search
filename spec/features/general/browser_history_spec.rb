@@ -29,6 +29,7 @@ feature 'Visitor uses the back or forward button', :js => true do
     go_back
     go_back
     page.find("#search-container")
+    delay # add delay to allow page to load (hopefully)
     looks_like_homepage_as_user_sees_it
   end
 

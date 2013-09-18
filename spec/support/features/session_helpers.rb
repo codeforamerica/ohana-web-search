@@ -106,6 +106,7 @@ module Features
     def looks_like_homepage_as_user_sees_it
       expect(page).to have_title "SMC-Connect"
       expect(page).to have_content "I need"
+      find("#language-box").should have_content("English")
       expect(page).to have_selector('#find-btn')
       expect(page).to_not have_title "1 result"
     end
