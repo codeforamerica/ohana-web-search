@@ -1,20 +1,44 @@
 %section#language-box
   %ul
     %li
-      %a{:href=>"?translate=english",:lang=>"en",:class=>"notranslate"}
-        English
+      - if @current_lang == 'en'
+        %span{:lang=>"en",:class=>"notranslate"}
+          English
+      - else
+        %a{:href=>"?translate=english",:lang=>"en",:class=>"notranslate"}
+          English
     %li
-      %a{:href=>"?translate=spanish",:lang=>"es",:class=>"notranslate"}
-        Español
+      - if @current_lang == 'es'
+        %span{:lang=>"es",:class=>"notranslate"}
+          Español
+      - else
+        %a{:href=>"?translate=spanish",:lang=>"es",:class=>"notranslate"}
+          Español
     %li
-      %a{:href=>"?translate=tagalog",:lang=>"fi",:class=>"notranslate"}
-        Tagalog
+      - if @current_lang == 'tl'
+        %span{:lang=>"tl",:class=>"notranslate"}
+          Tagalog
+      - else
+        %a{:href=>"?translate=tagalog",:lang=>"fi",:class=>"notranslate"}
+          Tagalog
     %li
-      %a{:href=>"?translate=chinese",:lang=>"zh",:class=>"notranslate"}
-        中文
+      - if @current_lang == 'zh-CN'
+        %span{:lang=>"zh-CN",:class=>"notranslate"}
+          中文
+      - else
+        %a{:href=>"?translate=chinese",:lang=>"zh",:class=>"notranslate"}
+          中文
     %li
-      %a{:href=>"?translate=arabic",:lang=>"ar",:class=>"notranslate"}
-        العربية
+      - if @current_lang == 'ar'
+        %span{:lang=>"ar",:class=>"notranslate"}
+          العربية
+      - else
+        %a{:href=>"?translate=arabic",:lang=>"ar",:class=>"notranslate"}
+          العربية
     %li
-      %a{:href=>"?translate=russian",:lang=>"ru",:class=>"notranslate"}
-        Русский
+      - if @current_lang == 'ru'
+        %span{:lang=>"ru",:class=>"notranslate"}
+          Русский
+      - else
+        %a{:href=>"?translate=russian",:lang=>"ru",:class=>"notranslate"}
+          Русский

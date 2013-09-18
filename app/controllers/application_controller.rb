@@ -17,12 +17,17 @@ class ApplicationController < ActionController::Base
 			end
 
 		  lang = language_mapping(lang_param)
-			@lang = lang
 
 		  if lang == 'en'
 		  	cookies.delete :googtrans
 		  end
 		  cookies[:googtrans] = "/en/#{lang}"
+		end
+
+		if cookies[:googtrans].present?
+			@current_lang = cookies[:googtrans][4..cookies[:googtrans].length]
+		else
+			@current_lang = lang
 		end
 	end
 
