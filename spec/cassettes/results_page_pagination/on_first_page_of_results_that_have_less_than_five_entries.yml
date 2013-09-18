@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&translate=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Sun, 15 Sep 2013 00:50:54 GMT
+      - Wed, 18 Sep 2013 05:31:58 GMT
       Etag:
-      - '"b5ff73cfb087df942581807c1bb72762"'
+      - '"4c8f98d710f4e6bb99216f9217d0a176"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&translate=&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=market&location=&page=2&translate=&utf8=%E2%9C%93>;
         rel="next"
       Status:
       - 200 OK
@@ -43,50 +43,25 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4938'
+      - '4901'
       X-Request-Id:
-      - 667b21eac09983e667bf8e3b4472ace8
+      - 64c354fece86a8e9d56ceaf3910c0cdc
       X-Runtime:
-      - '0.626819'
+      - '1.128924'
       X-Total-Count:
-      - '51'
+      - '47'
       X-Total-Pages:
       - '2'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '54870'
+      - '53090'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"521d33771974fcdb2b0022d1","accessibility":["Disabled Restroom","Disabled
-        Parking","Wheelchair"],"address":{"city":"Portola Valley","state":"CA","street":"765
-        Portola Road","zip":"94028"},"ask_for":["Information Services"],"contacts":[{"_id":"521d33771974fcdb2b0022d2","name":"Anne-Marie
-        Despain","title":"Director of Library Services"},{"_id":"521d33771974fcdb2b0022d3","title":"Library
-        Branch Manager"}],"coordinates":[-122.2289941,37.3819448],"created_at":"2013-08-27T16:17:11-07:00","description":"Offers
-        general library services and resources including fiction and nonfiction books,
-        reference for children and adults, CDs and cassettes, adult and children''s
-        programs and story hours, large-print books, books on tape and CD, magazines,
-        Internet access, instructional videos, feature film videos, DVDs and CD-ROMs.
-        Services for the homebound can be arranged. The county library serves residents
-        of unincorporated areas and those cities without city libraries which are
-        taxed by the county for library services. The county library branches participate
-        in the Peninsula Library System.","emails":["portolavalley@smcl.org"],"faxes":["650
-        851-8365"],"hours":"Monday-Thursday, 11-7; Friday-Saturday, 11-5","kind":"Other","mail_address":{"attention":"Portola
-        Valley Library","city":"Portola Valley","state":"CA","street":"765 Portola
-        Road","zip":"94028"},"name":"Portola Valley Library","phones":[{"number":"650
-        851-0560","hours":"(Monday-Thursday, 11-7; Friday, Saturday, 11-5)"}],"short_desc":"General
-        reference and reading materials.","transportation":"SAMTRANS stops within
-        1 block.","updated_at":"2013-09-09T10:10:56-07:00","urls":["http://www.smcl.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d1","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022cc","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d1","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022d6","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022db","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022e0","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022e5","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022ea","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022ef","http://ohanapi.herokuapp.com/api/locations/521d33771974fcdb2b0022f4","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b0022f9","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b0022fe","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002303","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002308","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b00230c","http://ohanapi.herokuapp.com/api/locations/521d33781974fcdb2b002312","http://ohanapi.herokuapp.com/api/locations/521d33791974fcdb2b002316"],"services":[{"_id":"521d33791974fcdb2b00231b","eligibility":"Resident
-        of California to obtain a library card","funding_sources":["County"],"how_to_apply":"To
-        receive a library card present picture ID and proof of name and address to
-        verify residency requirement.","keywords":["EDUCATION SERVICES","Library","Libraries","Public
-        Libraries","Storytime at the Farmers'' Market","Computer Access","Reference
-        Services","Book Club"],"service_areas":["San Mateo County","Portola Valley"],"updated_at":"2013-09-05T13:27:58-07:00","wait":"No
-        wait."}],"organization":{"_id":"521d33771974fcdb2b0022cb","created_at":"2013-08-27T16:17:11-07:00","name":"San
-        Mateo County Library","updated_at":"2013-08-27T16:17:11-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb/locations"},"id":"521d33771974fcdb2b0022d1","_score":610174.56,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33021974fcdb2b001330","address":{"city":"Redwood
-        City","state":"CA","street":"Winslow Street and Middlefield Road parking lot","zip":"94063"},"contacts":[{"_id":"521d33021974fcdb2b001331","name":"Norman
+      string: '[{"_id":"521d33021974fcdb2b001330","address":{"city":"Redwood City","state":"CA","street":"Winslow
+        Street and Middlefield Road parking lot","zip":"94063"},"contacts":[{"_id":"521d33021974fcdb2b001331","name":"Norman
         Shapiro","title":"Manager"},{"_id":"521d33021974fcdb2b001332","name":"Sandra
         Farley","title":"Assistant Manager"}],"coordinates":[-122.2086579,37.5021585],"created_at":"2013-08-27T16:15:14-07:00","description":"The
         Farmers'' Market is located out-of-doors in the parking lot between Winslow
@@ -103,141 +78,104 @@ http_interactions:
         vendor fees: $21-$41 for farmers, $12 for backyard gardeners. Annual registration
         fee $10. Cash and checks accepted.","funding_sources":["Fees"],"keywords":["Farmers
         Markets"],"service_areas":"San Mateo County","updated_at":"2013-08-27T16:15:14-07:00"}],"organization":{"_id":"521d33021974fcdb2b00132f","created_at":"2013-08-27T16:15:14-07:00","name":"Redwood
-        City Kiwanis Farmers'' Market","updated_at":"2013-08-27T16:15:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f/locations"},"id":"521d33021974fcdb2b001330","_score":21.724558,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000008","address":{"city":"Burlingame","state":"CA","street":"Howard
+        City Kiwanis Farmers'' Market","updated_at":"2013-08-27T16:15:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00132f/locations"},"id":"521d33021974fcdb2b001330","_score":22.3769,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000008","address":{"city":"Burlingame","state":"CA","street":"Howard
         Ave. & Park","zip":"94010"},"coordinates":[-122.3456787,37.5772448],"created_at":"2013-09-09T08:49:55-07:00","hours":"April
         - December Sunday 9:00 AM to 1:30 PM, May - mid-September Thursday 4:00 PM
-        to 8:00 PM","kind":"Farmers'' Market","name":"Burlingame Fresh Market Farmers
-        Market","updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.burlingamechamber.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000008","organization":{"_id":"522dee234becffff27000007","created_at":"2013-09-09T08:49:55-07:00","name":"Burlingame
-        Fresh Market Farmers Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007/locations"},"id":"522dee234becffff27000008","_score":2.0754411,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000002","address":{"city":"San
-        Mateo","state":"CA","street":"194 W 25th Avenue","zip":"94403"},"coordinates":[-122.309978,37.543641],"created_at":"2013-09-09T08:49:54-07:00","hours":"May
-        - October Tuesday 4:00 PM to 7:30 PM","kind":"Farmers'' Market","market_match":true,"name":"25th
-        Avenue Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
-        Goods","Flowers","Seafood","Vegetables","Honey","Meat","Nursery","Nuts","Plants","Prepared
-        Food"],"updated_at":"2013-09-09T08:49:54-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=40"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000002","organization":{"_id":"522dee224becffff27000001","created_at":"2013-09-09T08:49:54-07:00","name":"25th
-        Avenue Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001/locations"},"id":"522dee224becffff27000002","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000005","address":{"city":"Belmont","state":"CA","street":"1201
+        to 8:00 PM","kind":"Farmers'' Markets","name":"Burlingame Fresh Market Farmers
+        Market","updated_at":"2013-09-17T15:05:58-07:00","urls":["http://www.burlingamechamber.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000008","organization":{"_id":"522dee234becffff27000007","created_at":"2013-09-09T08:49:55-07:00","name":"Burlingame
+        Fresh Market Farmers Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000007/locations"},"id":"522dee234becffff27000008","_score":2.1382508,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000005","address":{"city":"Belmont","state":"CA","street":"1201
         El Camino Real","zip":"94002"},"coordinates":[-122.2743709,37.519226],"created_at":"2013-09-09T08:49:55-07:00","hours":"January
-        - December Sunday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","market_match":true,"name":"Belmont
+        - December Sunday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"Belmont
         Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Meat","Nursery","Nuts","Poultry","Prepared
-        Food"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=2"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000005","organization":{"_id":"522dee224becffff27000004","created_at":"2013-09-09T08:49:54-07:00","name":"Belmont
-        Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004/locations"},"id":"522dee224becffff27000005","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000e","address":{"city":"Pacifica","state":"CA","street":"400
+        Food"],"updated_at":"2013-09-17T15:05:59-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=2"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000005","organization":{"_id":"522dee224becffff27000004","created_at":"2013-09-09T08:49:54-07:00","name":"Belmont
+        Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000004/locations"},"id":"522dee224becffff27000005","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000e","address":{"city":"Pacifica","state":"CA","street":"400
         Old County Road","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"created_at":"2013-09-09T08:49:55-07:00","hours":"May
         - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November & December)","kind":"Farmers''
-        Market","name":"Coastside Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
+        Markets","name":"Coastside Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"_id":"522dee234becffff2700000d","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
-        Farmers'' Market of Pacifca","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"},"id":"522dee234becffff2700000e","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000023","address":{"city":"Los
+        Food","Soap"],"updated_at":"2013-09-17T15:05:59-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"_id":"522dee234becffff2700000d","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
+        Farmers'' Market of Pacifca","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"},"id":"522dee234becffff2700000e","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee224becffff27000002","address":{"city":"San
+        Mateo","state":"CA","street":"194 W 25th Avenue","zip":"94403"},"coordinates":[-122.309978,37.543641],"created_at":"2013-09-09T08:49:54-07:00","hours":"May
+        - October Tuesday 4:00 PM to 7:30 PM","kind":"Farmers'' Markets","market_match":true,"name":"25th
+        Avenue Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Flowers","Seafood","Vegetables","Honey","Meat","Nursery","Nuts","Plants","Prepared
+        Food"],"updated_at":"2013-09-17T15:05:58-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=40"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee224becffff27000002","organization":{"_id":"522dee224becffff27000001","created_at":"2013-09-09T08:49:54-07:00","name":"25th
+        Avenue Farmers'' Market","updated_at":"2013-09-09T08:49:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee224becffff27000001/locations"},"id":"522dee224becffff27000002","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000023","address":{"city":"Los
         Altos","state":"CA","street":"State Street and Second Street","zip":"94022"},"coordinates":[-122.1173552,37.3791761],"created_at":"2013-09-09T08:49:57-07:00","hours":"May
-        - September Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Market","name":"Los
+        - September Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","name":"Los
         Altos Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Flowers","Eggs","Herbs","Vegetables","Jams","Meat","Nuts","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://cafarmersmkts.com/markets/category/los-altos-farmers-market"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000023","organization":{"_id":"522dee254becffff27000022","created_at":"2013-09-09T08:49:57-07:00","name":"Los
-        Altos Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022/locations"},"id":"522dee254becffff27000023","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000026","address":{"city":"Menlo
+        Food","Soap"],"updated_at":"2013-09-17T15:06:02-07:00","urls":["http://cafarmersmkts.com/markets/category/los-altos-farmers-market"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000023","organization":{"_id":"522dee254becffff27000022","created_at":"2013-09-09T08:49:57-07:00","name":"Los
+        Altos Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000022/locations"},"id":"522dee254becffff27000023","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000026","address":{"city":"Menlo
         Park","state":"CA","street":"Chestnut & Menlo Avenues","zip":"94025"},"coordinates":[-122.1834629,37.45091499999999],"created_at":"2013-09-09T08:49:57-07:00","hours":"January
         - December Sunday 9:00 AM to 1:00 PM, (Open on all holidays that fall on Sundays,
-        except Christmas)","kind":"Farmers'' Market","name":"Menlo Park Farmers''
-        Market","payments":["Credit"],"products":["Baked Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Soap"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://localharvest.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000026","organization":{"_id":"522dee254becffff27000025","created_at":"2013-09-09T08:49:57-07:00","name":"Menlo
-        Park Farmers'' Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025/locations"},"id":"522dee254becffff27000026","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000029","address":{"city":"Millbrae","state":"CA","street":"200
+        except Christmas)","kind":"Farmers'' Markets","name":"Menlo Park Farmers''
+        Market","payments":["Credit"],"products":["Baked Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Soap"],"updated_at":"2013-09-17T15:06:02-07:00","urls":["http://localharvest.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000026","organization":{"_id":"522dee254becffff27000025","created_at":"2013-09-09T08:49:57-07:00","name":"Menlo
+        Park Farmers'' Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000025/locations"},"id":"522dee254becffff27000026","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee254becffff27000029","address":{"city":"Millbrae","state":"CA","street":"200
         Broadway","zip":"94030"},"coordinates":[-122.3905851,37.5999172],"created_at":"2013-09-09T08:49:57-07:00","hours":"January
-        - December Saturday 8:00 am to 1:00 pm","kind":"Farmers'' Market","name":"Millbrae
-        Farmers Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Flowers","Seafood","Herbs","Vegetables","Honey","Nuts","Plants"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://www.millbrae.com"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000029","organization":{"_id":"522dee254becffff27000028","created_at":"2013-09-09T08:49:57-07:00","name":"Millbrae
-        Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028/locations"},"id":"522dee254becffff27000029","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000035","address":{"city":"San
+        - December Saturday 8:00 am to 1:00 pm","kind":"Farmers'' Markets","name":"Millbrae
+        Farmers Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Flowers","Seafood","Herbs","Vegetables","Honey","Nuts","Plants"],"updated_at":"2013-09-17T15:06:02-07:00","urls":["http://www.millbrae.com"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee254becffff27000029","organization":{"_id":"522dee254becffff27000028","created_at":"2013-09-09T08:49:57-07:00","name":"Millbrae
+        Farmers Market","updated_at":"2013-09-09T08:49:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee254becffff27000028/locations"},"id":"522dee254becffff27000029","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000035","address":{"city":"San
         Mateo","state":"CA","street":"1700 West Hillsdale Boulevard","zip":"94401"},"coordinates":[-122.335123,37.5350511],"created_at":"2013-09-09T08:49:58-07:00","hours":"January
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","market_match":true,"name":"San
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"San
         Mateo Farmers'' Market","payments":["Credit","WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
-        Food","Soap","Wine"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.pcfma.com/sanmateo"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000035","organization":{"_id":"522dee264becffff27000034","created_at":"2013-09-09T08:49:58-07:00","name":"San
-        Mateo Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034/locations"},"id":"522dee264becffff27000035","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000038","address":{"city":"Saratoga","state":"CA","street":"West
+        Food","Soap","Wine"],"updated_at":"2013-09-17T15:06:04-07:00","urls":["http://www.pcfma.com/sanmateo"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000035","organization":{"_id":"522dee264becffff27000034","created_at":"2013-09-09T08:49:58-07:00","name":"San
+        Mateo Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000034/locations"},"id":"522dee264becffff27000035","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000038","address":{"city":"Saratoga","state":"CA","street":"West
         Valley College, 14000 Fruitvale Avenue","zip":"95070"},"coordinates":[-122.0111089,37.2654921],"created_at":"2013-09-09T08:49:58-07:00","hours":"January
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"Saratoga
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","name":"Saratoga
         Farmers'' Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Nursery","Nuts","Plants","Poultry","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://cafarmersmkts.com/markets/category/saratoga"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000038","organization":{"_id":"522dee264becffff27000037","created_at":"2013-09-09T08:49:58-07:00","name":"Saratoga
-        Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037/locations"},"id":"522dee264becffff27000038","_score":1.6772097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff2700002f","address":{"city":"Foster
+        Food","Soap"],"updated_at":"2013-09-17T15:06:04-07:00","urls":["http://cafarmersmkts.com/markets/category/saratoga"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000038","organization":{"_id":"522dee264becffff27000037","created_at":"2013-09-09T08:49:58-07:00","name":"Saratoga
+        Farmers'' Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000037/locations"},"id":"522dee264becffff27000038","_score":1.7279677,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff2700002f","address":{"city":"Foster
         City","state":"CA","street":"800 Foster City Blvd.","zip":"94404"},"coordinates":[-122.2636018,37.5582093],"created_at":"2013-09-09T08:49:58-07:00","hours":"May
-        - October Wednesday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"PJCC
-        Farmers'' Market at Foster City","payments":["WIC","WICcash","SFMNP","SNAP"],"products":["Vegetables","Plants"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.urbantable.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff2700002f","organization":{"_id":"522dee264becffff2700002e","created_at":"2013-09-09T08:49:58-07:00","name":"PJCC
-        Farmers'' Market at Foster City","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e/locations"},"id":"522dee264becffff2700002f","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000032","address":{"city":"Redwood
+        - October Wednesday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","name":"PJCC
+        Farmers'' Market at Foster City","payments":["WIC","WICcash","SFMNP","SNAP"],"products":["Vegetables","Plants"],"updated_at":"2013-09-17T15:06:03-07:00","urls":["http://www.urbantable.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff2700002f","organization":{"_id":"522dee264becffff2700002e","created_at":"2013-09-09T08:49:58-07:00","name":"PJCC
+        Farmers'' Market at Foster City","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff2700002e/locations"},"id":"522dee264becffff2700002f","_score":1.5119717,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee264becffff27000032","address":{"city":"Redwood
         City","state":"CA","street":"850 Winslow Street","zip":"94063"},"coordinates":[-122.2300105,37.4854442],"created_at":"2013-09-09T08:49:58-07:00","hours":"April
-        - November Saturday 8:00 AM to 12:00 PM","kind":"Farmers'' Market","name":"Redwood
-        City Kiwanis Farmers Market","payments":["WICcash"],"products":["Baked Goods","Crafts","Flowers","Eggs","Seafood","Vegetables","Honey","Nuts"],"updated_at":"2013-09-09T08:49:58-07:00","urls":["http://www.rwcfm.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000032","organization":{"_id":"522dee264becffff27000031","created_at":"2013-09-09T08:49:58-07:00","name":"Redwood
-        City Kiwanis Farmers Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031/locations"},"id":"522dee264becffff27000032","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee274becffff2700003b","address":{"city":"South
+        - November Saturday 8:00 AM to 12:00 PM","kind":"Farmers'' Markets","name":"Redwood
+        City Kiwanis Farmers Market","payments":["WICcash"],"products":["Baked Goods","Crafts","Flowers","Eggs","Seafood","Vegetables","Honey","Nuts"],"updated_at":"2013-09-17T15:06:03-07:00","urls":["http://www.rwcfm.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee264becffff27000032","organization":{"_id":"522dee264becffff27000031","created_at":"2013-09-09T08:49:58-07:00","name":"Redwood
+        City Kiwanis Farmers Market","updated_at":"2013-09-09T08:49:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee264becffff27000031/locations"},"id":"522dee264becffff27000032","_score":1.5119717,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee274becffff2700003b","address":{"city":"South
         San Francisco","state":"CA","street":"748 Tennis Dr","zip":"94080"},"coordinates":[-122.4253156,37.6552314],"created_at":"2013-09-09T08:49:59-07:00","hours":"May
-        - October Saturday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","market_match":true,"name":"South
+        - October Saturday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"South
         San Francisco Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
-        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"updated_at":"2013-09-09T08:49:59-07:00","urls":["http://pcfma.com/market_home.php?market_id=37"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee274becffff2700003b","organization":{"_id":"522dee274becffff2700003a","created_at":"2013-09-09T08:49:59-07:00","name":"South
-        San Francisco Farmers Market","updated_at":"2013-09-13T16:49:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a/locations"},"id":"522dee274becffff2700003b","_score":1.4675585,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000b","address":{"city":"Half
-        Moon Bay","state":"CA","street":"225 Cabrillo Hwy S","zip":"94019"},"coordinates":[-122.43267,37.464756],"created_at":"2013-09-09T08:49:55-07:00","hours":"May
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Market","name":"Coastside
-        Farmers'' Market in Half Moon Bay","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
-        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://www.coastsidefarmersmarket.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000b","organization":{"_id":"522dee234becffff2700000a","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
-        Farmers'' Market in Half Moon Bay","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a/locations"},"id":"522dee234becffff2700000b","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000011","address":{"city":"San
+        Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"updated_at":"2013-09-17T15:06:04-07:00","urls":["http://pcfma.com/market_home.php?market_id=37"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee274becffff2700003b","organization":{"_id":"522dee274becffff2700003a","created_at":"2013-09-09T08:49:59-07:00","name":"South
+        San Francisco Farmers Market","updated_at":"2013-09-13T16:49:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee274becffff2700003a/locations"},"id":"522dee274becffff2700003b","_score":1.5119717,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff27000011","address":{"city":"San
         Mateo","state":"CA","street":"1700 W. Hillsdale Blvd.","zip":"94402"},"coordinates":[-122.335123,37.5350511],"created_at":"2013-09-09T08:49:55-07:00","hours":"January
-        - December Saturday 9:00 am to 1:00 pm","kind":"Farmers'' Market","market_match":true,"name":"College
+        - December Saturday 9:00 am to 1:00 pm","kind":"Farmers'' Markets","market_match":true,"name":"College
         of San Mateo Certified Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Flowers","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nuts","Plants","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:55-07:00","urls":["http://pcfma.com/market_home.php?market_id=15"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000011","organization":{"_id":"522dee234becffff27000010","created_at":"2013-09-09T08:49:55-07:00","name":"College
-        of San Mateo Certified Farmers'' Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010/locations"},"id":"522dee234becffff27000011","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000014","address":{"city":"Daly
+        Food","Soap"],"updated_at":"2013-09-17T15:06:00-07:00","urls":["http://pcfma.com/market_home.php?market_id=15"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff27000011","organization":{"_id":"522dee234becffff27000010","created_at":"2013-09-09T08:49:55-07:00","name":"College
+        of San Mateo Certified Farmers'' Market","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff27000010/locations"},"id":"522dee234becffff27000011","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000014","address":{"city":"Daly
         City","state":"CA","street":"133 Serramonte Center","zip":"94015"},"coordinates":[-122.471026,37.6704999],"created_at":"2013-09-09T08:49:56-07:00","hours":"January
         - December Thursday 9:00 AM to 1:00 PM, Saturday 9:00 AM to 1:00 PM","kind":"Farmers''
-        Market","name":"Daly City Farmers'' Market at Serramonte Center","payments":["WIC","SFMNP"],"products":["Baked
+        Markets","name":"Daly City Farmers'' Market at Serramonte Center","payments":["WIC","SFMNP"],"products":["Baked
         Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Nursery","Nuts","Prepared
-        Food","Soap"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://cafarmersmkts.com/markets/category/daly-city"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000014","organization":{"_id":"522dee244becffff27000013","created_at":"2013-09-09T08:49:56-07:00","name":"Daly
-        City Farmers'' Market at Serramonte Center","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013/locations"},"id":"522dee244becffff27000014","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000017","address":{"city":"East
+        Food","Soap"],"updated_at":"2013-09-17T15:06:00-07:00","urls":["http://cafarmersmkts.com/markets/category/daly-city"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000014","organization":{"_id":"522dee244becffff27000013","created_at":"2013-09-09T08:49:56-07:00","name":"Daly
+        City Farmers'' Market at Serramonte Center","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000013/locations"},"id":"522dee244becffff27000014","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000017","address":{"city":"East
         Palo Alto","state":"CA","street":"1798-A Bay Road","zip":"94303"},"coordinates":[-122.1304591,37.4546566],"created_at":"2013-09-09T08:49:56-07:00","hours":"January
-        - December Wednesday 12:00 PM to 3:00 PM","kind":"Farmers'' Market","name":"East
-        Palo Alto Community Farmers Market","payments":["Credit","WIC","SNAP"],"products":["Flowers","Vegetables"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://www.collectiveroots.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000017","organization":{"_id":"522dee244becffff27000016","created_at":"2013-09-09T08:49:56-07:00","name":"East
-        Palo Alto Community Farmers Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016/locations"},"id":"522dee244becffff27000017","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001a","address":{"city":"San
+        - December Wednesday 12:00 PM to 3:00 PM","kind":"Farmers'' Markets","name":"East
+        Palo Alto Community Farmers Market","payments":["Credit","WIC","SNAP"],"products":["Flowers","Vegetables"],"updated_at":"2013-09-17T15:06:00-07:00","urls":["http://www.collectiveroots.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000017","organization":{"_id":"522dee244becffff27000016","created_at":"2013-09-09T08:49:56-07:00","name":"East
+        Palo Alto Community Farmers Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000016/locations"},"id":"522dee244becffff27000017","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee234becffff2700000b","address":{"city":"Half
+        Moon Bay","state":"CA","street":"225 Cabrillo Hwy S","zip":"94019"},"coordinates":[-122.43267,37.464756],"created_at":"2013-09-09T08:49:55-07:00","hours":"May
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","name":"Coastside
+        Farmers'' Market in Half Moon Bay","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap"],"updated_at":"2013-09-17T15:05:59-07:00","urls":["http://www.coastsidefarmersmarket.org"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000b","organization":{"_id":"522dee234becffff2700000a","created_at":"2013-09-09T08:49:55-07:00","name":"Coastside
+        Farmers'' Market in Half Moon Bay","updated_at":"2013-09-09T08:49:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000a/locations"},"id":"522dee234becffff2700000b","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001a","address":{"city":"San
         Carlos","state":"CA","street":"700 Block, Laurel Street","zip":"94070"},"coordinates":[-122.259756,37.5048839],"created_at":"2013-09-09T08:49:56-07:00","hours":"May
-        2 - September 12 Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Market","name":"Hot
+        2 - September 12 Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","name":"Hot
         Harvest Nights San Carlos Farmers'' Market","products":["Baked Goods","Flowers","Seafood","Vegetables","Prepared
-        Food"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["https://www.sancarloschamber.org/textpages/farmers_market.aspx"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001a","organization":{"_id":"522dee244becffff27000019","created_at":"2013-09-09T08:49:56-07:00","name":"Hot
-        Harvest Nights San Carlos Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019/locations"},"id":"522dee244becffff2700001a","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001d","address":{"city":"Redwood
+        Food"],"updated_at":"2013-09-17T15:06:01-07:00","urls":["https://www.sancarloschamber.org/textpages/farmers_market.aspx"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001a","organization":{"_id":"522dee244becffff27000019","created_at":"2013-09-09T08:49:56-07:00","name":"Hot
+        Harvest Nights San Carlos Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff27000019/locations"},"id":"522dee244becffff2700001a","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff2700001d","address":{"city":"Redwood
         City","state":"CA","street":"1150 Veterans Blvd.","zip":"94063"},"coordinates":[-122.2232169,37.4889742],"created_at":"2013-09-09T08:49:56-07:00","hours":"May
-        1 - September 25 Wednesday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","name":"Kaiser
-        Permanente Redwood City Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Vegetables"],"updated_at":"2013-09-09T08:49:56-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=39"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001d","organization":{"_id":"522dee244becffff2700001c","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
-        Permanente Redwood City Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c/locations"},"id":"522dee244becffff2700001d","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000020","address":{"city":"South
+        1 - September 25 Wednesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","name":"Kaiser
+        Permanente Redwood City Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Vegetables"],"updated_at":"2013-09-17T15:06:01-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=39"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff2700001d","organization":{"_id":"522dee244becffff2700001c","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
+        Permanente Redwood City Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001c/locations"},"id":"522dee244becffff2700001d","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"522dee244becffff27000020","address":{"city":"South
         San Francisco","state":"CA","street":"1200 El Camino Real","zip":"94080"},"coordinates":[-122.4393303,37.6591467],"created_at":"2013-09-09T08:49:57-07:00","hours":"May
-        7 - October 15 Tuesday 10:00 AM to 2:00 PM","kind":"Farmers'' Market","market_match":true,"name":"Kaiser
+        7 - October 15 Tuesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"Kaiser
         Permanente South San Francisco Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
-        Goods","Flowers","Vegetables","Prepared Food"],"updated_at":"2013-09-09T08:49:57-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=26"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000020","organization":{"_id":"522dee244becffff2700001f","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
-        Permanente South San Francisco Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f/locations"},"id":"522dee244becffff27000020","_score":1.2579073,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e51974fcdb2b000b48","accessibility":["Wheelchair"],"address":{"city":"Menlo
-        Park","state":"CA","street":"1100 Merrill Street","zip":"94025"},"ask_for":["Fran
-        Dehn"],"contacts":[{"_id":"521d32e51974fcdb2b000b49","name":"Fran Dehn","title":"President
-        and CEO"}],"coordinates":[-122.1819958,37.45423419999999],"created_at":"2013-08-27T16:14:45-07:00","description":"Promotes
-        the interests of businesses in Menlo Park, Portola Valley, Atherton and Woodside.
-        Various committees representing community, retail, transportation and membership
-        issues meet monthly. Holds events throughout the year such as a community
-        holiday tree lighting, the Golden Acorn Community Awards presentation, April
-        and October crafts shows and the Connoisseur''s Marketplace, a two-day festival
-        the third weekend in July.","emails":["info@menloparkchamber.com"],"faxes":["650
-        325-0920"],"hours":"Monday-Thursday, 9-4; Friday, 9-1","mail_address":{"attention":"Menlo
-        Park Chamber of Commerce","city":"Menlo Park","state":"CA","street":"1100
-        Merrill Street","zip":"94025"},"name":"Menlo Park Chamber of Commerce","phones":[{"number":"650
-        325-2818","hours":"(Monday-Thursday, 9-4; Friday, 9-1)"}],"transportation":"CALTRAIN
-        stops within 1 block.","updated_at":"2013-08-27T16:25:06-07:00","urls":["http://www.menloparkchamber.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e51974fcdb2b000b48","services":[{"_id":"521d32e51974fcdb2b000b4c","audience":"Small
-        businesses, corporations, home-based businesses","eligibility":"None","fees":"Vary
-        according to type of business and number of employees. Checks and credit cards
-        accepted.","funding_sources":["Fundraising","Membership dues"],"how_to_apply":"Through
-        membership.","keywords":["Chambers of Commerce"],"service_areas":["Atherton","Menlo
-        Park","Portola Valley","Woodside"],"updated_at":"2013-08-27T16:14:45-07:00"}],"organization":{"_id":"521d32e51974fcdb2b000b47","created_at":"2013-08-27T16:14:45-07:00","name":"Menlo
-        Park Chamber of Commerce","updated_at":"2013-08-27T16:14:45-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e51974fcdb2b000b47","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e51974fcdb2b000b47/locations"},"id":"521d32e51974fcdb2b000b48","_score":0.716304,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f21974fcdb2b000f08","address":{"city":"San
-        Francisco","state":"CA","street":"221 Pine Street, Fifth Floor","zip":"94104"},"coordinates":[-122.4021273,37.7911148],"created_at":"2013-08-27T16:14:59-07:00","description":"Rainforest
-        Action Network campaigns for the forests, their inhabitants and the natural
-        systems that sustain life by transforming the global marketplace through education,
-        grassroots organizing and non-violent direct action.  Everyone is invited
-        to join. Membership includes a monthly \"Action Alert\" bulletin listing issues
-        of immediate concern with instructions for action steps to be taken. Interns
-        gain experience working on media operations, database coordination, campaign
-        administration, education outreach and library assistance.","emails":["rainforest@ran.org"],"faxes":["415
-        398-2732"],"mail_address":{"attention":"Rainforest Action Network","city":"San
-        Francisco","state":"CA","street":"221 Pine Street, Fifth Floor","zip":"94104"},"name":"Rainforest
-        Action Network","phones":[{"number":"415 398-4404","hours":"(Monday-Friday,
-        9-5:30)"}],"short_desc":"Works to protect the Earth''s rainforests and support
-        the rights of their inhabitants through education, grassroots organizing and
-        nonviolent direct action.","updated_at":"2013-08-27T16:25:51-07:00","urls":["http://www.ran.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32f21974fcdb2b000f08","services":[{"_id":"521d32f31974fcdb2b000f0b","eligibility":"None","fees":"Membership
-        dues are $35 annually.","service_areas":["Alameda County","Contra Costa County","Marin
-        County","San Francisco County","San Mateo County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:14:59-07:00"}],"organization":{"_id":"521d32f21974fcdb2b000f07","created_at":"2013-08-27T16:14:58-07:00","name":"Rainforest
-        Action Network","updated_at":"2013-08-27T16:14:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000f07","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f21974fcdb2b000f07/locations"},"id":"521d32f21974fcdb2b000f08","_score":0.716304,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33431974fcdb2b002102","accessibility":["Elevator","Ramp","Disabled
+        Goods","Flowers","Vegetables","Prepared Food"],"updated_at":"2013-09-17T15:06:01-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=26"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee244becffff27000020","organization":{"_id":"522dee244becffff2700001f","created_at":"2013-09-09T08:49:56-07:00","name":"Kaiser
+        Permanente South San Francisco Farmers'' Market","updated_at":"2013-09-09T08:49:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee244becffff2700001f/locations"},"id":"522dee244becffff27000020","_score":1.2959758,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33431974fcdb2b002102","accessibility":["Elevator","Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Bruno","state":"CA","street":"3300
         College Dr, Bldg. 2, Rm 2227","zip":"94066"},"contacts":[{"_id":"521d33431974fcdb2b002103","title":"Coordinator"}],"coordinates":[-122.4672096,37.6309074],"created_at":"2013-08-27T16:16:19-07:00","description":"Serves
         as a resource center for career information, labor market trends, job counseling
@@ -249,7 +187,7 @@ http_interactions:
         738-4260"],"languages":["Spanish"],"mail_address":{"attention":"Career Center","city":"San
         Bruno","state":"CA","street":"3300 College Dr, Bldg. 2, Rm 2227","zip":"94066"},"name":"Skyline
         College., Career Center","phones":[{"number":"650 738-4314","department":"Virginia
-        Padron"}],"transportation":"SAMTRANS stops on campus.","updated_at":"2013-08-27T16:30:02-07:00","urls":["http://www.skylinecollege.edu/general/careercenter/index.html"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e4","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e9","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020ed","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020f1","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f5","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f9","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020fe","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002106","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210a","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210e","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002112","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002116","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211b","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211f","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002123","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002127","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212b","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212f","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002133","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002137","http://ohanapi.herokuapp.com/api/locations/521d33461974fcdb2b00213b"],"services":[{"_id":"521d33481974fcdb2b002146","audience":"Students,
+        Padron"}],"transportation":"SAMTRANS stops on campus.","updated_at":"2013-08-27T16:30:02-07:00","urls":["http://www.skylinecollege.edu/general/careercenter/index.html"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e4","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020e9","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020ed","http://ohanapi.herokuapp.com/api/locations/521d33421974fcdb2b0020f1","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f5","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020f9","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b0020fe","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002102","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002106","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210a","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b00210e","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002116","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211b","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b00211f","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002123","http://ohanapi.herokuapp.com/api/locations/521d33441974fcdb2b002127","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212b","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b00212f","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002133","http://ohanapi.herokuapp.com/api/locations/521d33451974fcdb2b002137","http://ohanapi.herokuapp.com/api/locations/521d33461974fcdb2b00213b","http://ohanapi.herokuapp.com/api/locations/521d33431974fcdb2b002112"],"services":[{"_id":"521d33481974fcdb2b002146","audience":"Students,
         adults","category_ids":["52280f751edd37edff0000f5","52280f751edd37edff0000f6"],"eligibility":"Basic
         community college entrance requirements","fees":"$26 per unit if state resident.
         Non-resident tuition is $169 per unit, plus $26 per unit enrollment fee.","funding_sources":["Grants","State"],"how_to_apply":"Walk
@@ -258,9 +196,9 @@ http_interactions:
         SERVICES","Vocational","EMPLOYMENT/TRAINING SERVICES","Job Information/Placement/Referral","Community
         Colleges","Career Counseling"],"service_areas":["Alameda County","Contra Costa
         County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County"],"updated_at":"2013-09-05T13:21:41-07:00","wait":"No wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582,"service_ids":["521d32f71974fcdb2b001049","521d32fa1974fcdb2b00110a","521d32ce1974fcdb2b0004d1","521d32d71974fcdb2b00079c","521d32e91974fcdb2b000c6d","521d32ce1974fcdb2b0004d7","521d32d71974fcdb2b0007a2","521d32d41974fcdb2b0006cc","521d32d71974fcdb2b0007a8","521d32ce1974fcdb2b0004e2","521d32bf1974fcdb2b000120","521d32d41974fcdb2b0006d1","521d32ce1974fcdb2b0004ed","521d32ce1974fcdb2b0004f1","521d32d71974fcdb2b0007ae","521d32d81974fcdb2b0007c0","521d32d81974fcdb2b0007cc","521d32d81974fcdb2b0007d8","521d32d81974fcdb2b0007de","521d32db1974fcdb2b0008b5","521d32d81974fcdb2b0007e4","521d33121974fcdb2b001791","521d32d91974fcdb2b0007f7","521d33141974fcdb2b001813","521d32ca1974fcdb2b0003c0","521d32c11974fcdb2b0001bc","521d32cf1974fcdb2b00052d","521d32c21974fcdb2b0001c2","521d32c21974fcdb2b0001c8","521d332e1974fcdb2b001e48","521d32df1974fcdb2b000990","521d32d01974fcdb2b00057a","521d32d01974fcdb2b000586","521d33241974fcdb2b001c27","521d33481974fcdb2b002146","521d32f31974fcdb2b000f3c","521d32f31974fcdb2b000f43","521d32ed1974fcdb2b000d77","521d33261974fcdb2b001cb8","521d32ed1974fcdb2b000d96","521d33191974fcdb2b00194b","521d32ee1974fcdb2b000d9d","521d32cb1974fcdb2b000432","521d333b1974fcdb2b002046","521d331f1974fcdb2b001aeb","521d32ee1974fcdb2b000dba","521d32ee1974fcdb2b000dc1","521d331f1974fcdb2b001b02","521d32ee1974fcdb2b000de0","521d331f1974fcdb2b001b0a","521d32cc1974fcdb2b00046e","521d331f1974fcdb2b001b16","521d33201974fcdb2b001b27","521d32c51974fcdb2b0002a8","521d33201974fcdb2b001b2d","521d32ef1974fcdb2b000e25","521d331a1974fcdb2b001999","521d33241974fcdb2b001c2d","521d33221974fcdb2b001bde","521d32b91974fcdb2b000026"]},{"_id":"52280f751edd37edff0000f6","depth":1,"lft":490,"name":"Help
+        County"],"updated_at":"2013-09-05T13:21:41-07:00","wait":"No wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582,"service_ids":["521d32f71974fcdb2b001049","521d32fa1974fcdb2b00110a","521d32ce1974fcdb2b0004d1","521d32d71974fcdb2b00079c","521d32e91974fcdb2b000c6d","521d32ce1974fcdb2b0004d7","521d32d71974fcdb2b0007a2","521d32d41974fcdb2b0006cc","521d32ce1974fcdb2b0004e2","521d32bf1974fcdb2b000120","521d32d41974fcdb2b0006d1","521d32ce1974fcdb2b0004ed","521d32ce1974fcdb2b0004f1","521d32d71974fcdb2b0007ae","521d32d81974fcdb2b0007c0","521d32d81974fcdb2b0007cc","521d32d81974fcdb2b0007d8","521d32d81974fcdb2b0007de","521d32db1974fcdb2b0008b5","521d32d81974fcdb2b0007e4","521d33121974fcdb2b001791","521d32d91974fcdb2b0007f7","521d33141974fcdb2b001813","521d32ca1974fcdb2b0003c0","521d32c11974fcdb2b0001bc","521d32cf1974fcdb2b00052d","521d32c21974fcdb2b0001c2","521d32c21974fcdb2b0001c8","521d332e1974fcdb2b001e48","521d32df1974fcdb2b000990","521d32d01974fcdb2b00057a","521d32d01974fcdb2b000586","521d33241974fcdb2b001c27","521d33481974fcdb2b002146","521d32f31974fcdb2b000f3c","521d32f31974fcdb2b000f43","521d32ed1974fcdb2b000d77","521d33261974fcdb2b001cb8","521d32ed1974fcdb2b000d96","521d33191974fcdb2b00194b","521d32ee1974fcdb2b000d9d","521d32cb1974fcdb2b000432","521d333b1974fcdb2b002046","521d331f1974fcdb2b001aeb","521d32ee1974fcdb2b000dba","521d32ee1974fcdb2b000dc1","521d331f1974fcdb2b001b02","521d32ee1974fcdb2b000de0","521d331f1974fcdb2b001b0a","521d32cc1974fcdb2b00046e","521d331f1974fcdb2b001b16","521d33201974fcdb2b001b27","521d32c51974fcdb2b0002a8","521d33201974fcdb2b001b2d","521d32ef1974fcdb2b000e25","521d331a1974fcdb2b001999","521d33241974fcdb2b001c2d","521d33221974fcdb2b001bde","521d32b91974fcdb2b000026"]},{"_id":"52280f751edd37edff0000f6","depth":1,"lft":490,"name":"Help
         Find School","oe_id":"109-01","parent_id":"52280f751edd37edff0000f5","rgt":491,"service_ids":["521d33481974fcdb2b002146","521d32ee1974fcdb2b000d9d"]}]}],"organization":{"_id":"521d33421974fcdb2b0020e3","created_at":"2013-08-27T16:16:18-07:00","name":"San
-        Mateo County Community College District (SMCCCD)","updated_at":"2013-08-27T16:16:18-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3/locations"},"id":"521d33431974fcdb2b002102","_score":0.52422416,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e31974fcdb2b000ad7","accessibility":["Wheelchair"],"address":{"city":"San
+        Mateo County Community College District (SMCCCD)","updated_at":"2013-08-27T16:16:18-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33421974fcdb2b0020e3/locations"},"id":"521d33431974fcdb2b002102","_score":0.54011863,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e31974fcdb2b000ad7","accessibility":["Wheelchair"],"address":{"city":"San
         Francisco","state":"CA","street":"1398 Valencia Street","zip":"94110"},"ask_for":["Client
         Services Coordinator"],"contacts":[{"_id":"521d32e31974fcdb2b000ad8","name":"Julie
         Abrams","title":"Chief Executive Officer"}],"coordinates":[-122.4208285,37.7506479],"created_at":"2013-08-27T16:14:43-07:00","description":"Offers
@@ -283,7 +221,7 @@ http_interactions:
         plan","business ownership"],"service_areas":["Alameda County","Contra Costa
         County","Marin County","San Francisco County","San Mateo County"],"updated_at":"2013-09-05T10:48:59-07:00","wait":"No
         wait."}],"organization":{"_id":"521d32e31974fcdb2b000ad6","created_at":"2013-08-27T16:14:43-07:00","name":"Women''s
-        Initiative for Self Employment","updated_at":"2013-08-27T16:14:43-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6/locations"},"id":"521d32e31974fcdb2b000ad7","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ec1974fcdb2b000d40","address":{"city":"San
+        Initiative for Self Employment","updated_at":"2013-08-27T16:14:43-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000ad6/locations"},"id":"521d32e31974fcdb2b000ad7","_score":0.47740194,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ec1974fcdb2b000d40","address":{"city":"San
         Jose","state":"CA","street":"100 East Santa Clara Street","zip":"95113"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32ec1974fcdb2b000d41","name":"Dennis
         King","title":"Executive Director"},{"_id":"521d32ec1974fcdb2b000d42","name":"Ingrid
         Alonso","title":"Membership"},{"_id":"521d32ec1974fcdb2b000d43","name":"Martha
@@ -304,7 +242,7 @@ http_interactions:
         fax.","keywords":["EMPLOYMENT/TRAINING SERVICES","Small Business Development
         and Assi","Chambers of Commerce"],"service_areas":"Santa Clara County","updated_at":"2013-08-27T16:14:52-07:00","wait":"No
         wait."}],"organization":{"_id":"521d32ec1974fcdb2b000d3f","created_at":"2013-08-27T16:14:52-07:00","name":"Hispanic
-        Chamber of Commerce Silicon Valley","updated_at":"2013-08-27T16:14:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f/locations"},"id":"521d32ec1974fcdb2b000d40","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32fb1974fcdb2b001158","contacts":[{"_id":"521d32fb1974fcdb2b001159","name":"Ann
+        Chamber of Commerce Silicon Valley","updated_at":"2013-08-27T16:14:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ec1974fcdb2b000d3f/locations"},"id":"521d32ec1974fcdb2b000d40","_score":0.47740194,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32fb1974fcdb2b001158","contacts":[{"_id":"521d32fb1974fcdb2b001159","name":"Ann
         Barlow","title":"Board President"}],"created_at":"2013-08-27T16:15:07-07:00","description":"Addresses
         career and personal development needs of professional and business women by
         offering resources to assist upward mobility and business success. Offers
@@ -316,7 +254,7 @@ http_interactions:
         conference fee.","funding_sources":["Fees","Grants"],"keywords":["Women"],"service_areas":["Alameda
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County"],"updated_at":"2013-08-27T16:15:07-07:00"}],"organization":{"_id":"521d32fb1974fcdb2b001157","created_at":"2013-08-27T16:15:07-07:00","name":"Professional
-        BusinessWomen of California","updated_at":"2013-08-27T16:15:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157/locations"},"id":"521d32fb1974fcdb2b001158","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d330b1974fcdb2b0015af","accessibility":["Wheelchair"],"address":{"city":"San
+        BusinessWomen of California","updated_at":"2013-08-27T16:15:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32fb1974fcdb2b001157/locations"},"id":"521d32fb1974fcdb2b001158","_score":0.47740194,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d330b1974fcdb2b0015af","accessibility":["Wheelchair"],"address":{"city":"San
         Carlos","state":"CA","street":"1500 Laurel Street, Suite B","zip":"94070-5103"},"contacts":[{"_id":"521d330b1974fcdb2b0015b0","name":"David
         Buchard","title":"CEO"}],"coordinates":[-122.2483657,37.4957437],"created_at":"2013-08-27T16:15:23-07:00","description":"Supports
         a healthy economic climate in the city of San Carlos and serves as an advocate
@@ -332,7 +270,7 @@ http_interactions:
         dues vary. Public services are free.","funding_sources":["Membership dues"],"how_to_apply":"Call,
         email, visit Web site or walk-in for information.","keywords":["Chambers of
         Commerce"],"service_areas":"San Carlos","updated_at":"2013-08-27T16:15:23-07:00","wait":"None."}],"organization":{"_id":"521d330b1974fcdb2b0015ae","created_at":"2013-08-27T16:15:23-07:00","name":"San
-        Carlos Chamber of Commerce","updated_at":"2013-08-27T16:15:23-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae/locations"},"id":"521d330b1974fcdb2b0015af","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33101974fcdb2b0016f4","address":{"city":"San
+        Carlos Chamber of Commerce","updated_at":"2013-08-27T16:15:23-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d330b1974fcdb2b0015ae/locations"},"id":"521d330b1974fcdb2b0015af","_score":0.47740194,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33101974fcdb2b0016f4","address":{"city":"San
         Jose","state":"CA","street":"1922 The Alameda, Suite 205","zip":"95126"},"ask_for":["Jayne
         Booker"],"contacts":[{"_id":"521d33101974fcdb2b0016f5","name":"Jayne Booker","title":"Executive
         Director"},{"_id":"521d33101974fcdb2b0016f6","name":"Anna Harrison","title":"Director
@@ -353,36 +291,93 @@ http_interactions:
         for information.","keywords":["ORGANIZATIONAL SUPPORT SERVICES","Material
         Resources"],"service_areas":["Alameda County","San Francisco County","San
         Mateo County","Santa Clara County","Santa Cruz County"],"updated_at":"2013-08-27T16:15:28-07:00"}],"organization":{"_id":"521d33101974fcdb2b0016f3","created_at":"2013-08-27T16:15:28-07:00","name":"Design
-        Response","updated_at":"2013-08-27T16:15:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3/locations"},"id":"521d33101974fcdb2b0016f4","_score":0.4633531,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d332e1974fcdb2b001e4f","address":{"city":"Sacramento","state":"CA","street":"1625
-        North Market Blvd., N112","zip":"95833"},"ask_for":["Customer Service Agent"],"contacts":[{"_id":"521d332e1974fcdb2b001e50","name":"Brian
-        Stiger","title":"Director"}],"coordinates":[-121.499058,38.647277],"created_at":"2013-08-27T16:15:58-07:00","description":"Promotes
-        and protects the interests of California consumers who run the risk of encountering
-        consumer-related problems when buying products or services.   Consumer Affairs
-        operates a toll-free telephone line through its Consumer Information Center
-        (CIC) that answers questions such as how to retire old cars, solve landlord/tenant
-        problems, file a complaint against an auto mechanic, or apply for a cosmetology
-        license. Provides consumers with general advice about the steps to take when
-        conducting business in the marketplace, what to watch out for and how to protect
-        themselves. Assists with filing a complaint and helps in finding alternative
-        sources for complaint resolution. Consumers may request informational pamphlets,
-        brochures, licensing applications, and complaint forms through a live agent.
-        Those who want faxed publications can access the automated \"\"fax back\"\"
-        publication library for a copy within a 24-hour turnaround time. Consumers
-        who are required to have their vehicle''s smog inspection done at a Test Only
-        Center can access an automated Zip Code Locater service to locate up to three
-        Test Only Centers in their area. CIC provides telephone translation services
-        in 177 languages for consumer and licensee inquiries.","hours":"Monday-Friday,
-        8-5","languages":["Spanish","AT&T Language Line"],"mail_address":{"attention":"Consumer
-        Information Center","city":"Sacramento","state":"CA","street":"1625 North
-        Market Blvd., N112","zip":"95833"},"name":"Consumer Information Center (CIC)","phones":[{"number":"800
-        952-5210","hours":"(Monday-Friday, 8-4:50)"}],"short_desc":"Acts as a clearinghouse
-        for consumer complaints and inquiries and guides consumers through procedures
-        and resolve problems.","transportation":"Not necessary for service.","updated_at":"2013-08-27T16:29:08-07:00","urls":["http://www.dca.ca.gov/cic"],"url":"http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4f","other_locations":["http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4b","http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e4f","http://ohanapi.herokuapp.com/api/locations/521d332e1974fcdb2b001e53"],"services":[{"_id":"521d332e1974fcdb2b001e5b","audience":"Consumers,
-        professional license holders","eligibility":"None","fees":"None to the consumer.","funding_sources":["Fees"],"how_to_apply":"Call
-        for information or consult website.","keywords":["COMMUNITY SERVICES","Consumer
-        Assistance"],"service_areas":["Alameda County","Contra Costa County","Marin
-        County","San Francisco County","San Mateo County","Santa Clara County","statewide"],"updated_at":"2013-08-27T16:15:58-07:00","wait":"Varies."}],"organization":{"_id":"521d332e1974fcdb2b001e4a","created_at":"2013-08-27T16:15:58-07:00","name":"California
-        State Department of Consumer Affairs","updated_at":"2013-08-27T16:15:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d332e1974fcdb2b001e4a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d332e1974fcdb2b001e4a/locations"},"id":"521d332e1974fcdb2b001e4f","_score":0.44769,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Response","updated_at":"2013-08-27T16:15:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33101974fcdb2b0016f3/locations"},"id":"521d33101974fcdb2b0016f4","_score":0.47740194,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c11974fcdb2b0001b2","accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1095 Market Street, Room 601","zip":"94103"},"ask_for":["Geoffrey
+        Link","Marjorie Beggs"],"contacts":[{"_id":"521d32c11974fcdb2b0001b3","name":"Geoffrey
+        Link","title":"Executive Director"}],"coordinates":[-122.412014,37.780329],"created_at":"2013-08-27T16:14:09-07:00","description":"Assists
+        nonprofits, foundations and government agencies to produce promotional and
+        educational materials to provide community awareness of their services. Services
+        include research, writing, editing, design, illustration, and photography.
+        Also offers printing coordination, public relations, media consultation, book
+        distribution and promotion, direct mail and other marketing services. Provides
+        fiscal sponsorship services to organizations whose nonprofit status is pending.
+        Formerly known as Study Center, Community Graphics.","emails":["marjorie@studycenter.org"],"faxes":["415
+        626-7276"],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)"],"mail_address":{"attention":"San
+        Francisco Study Center","city":"San Francisco","state":"CA","street":"1095
+        Market Street, Room 601","zip":"94103"},"name":"San Francisco Study Center","phones":[{"number":"415
+        626-1650","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Assists nonprofit
+        organizations with the production and distribution of promotional and educational
+        materials.","transportation":"MUNI - Market Street lines. BART - Civic Center
+        Station. SAMTRANS - Missiona and 7th Street.","updated_at":"2013-08-27T16:23:06-07:00","urls":["http://www.studycenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c11974fcdb2b0001b2","services":[{"_id":"521d32c11974fcdb2b0001b6","audience":"Private
+        nonprofits, foundations, public agencies, community groups","eligibility":"Nonprofit
+        educational or charitable service","fees":"Graphics and editorial services
+        are $65 per hour. Fiscal sponsorship services vary. Cash, checks and credit
+        cards accepted.","funding_sources":["Fees","Grants"],"how_to_apply":"Apply
+        by phone or email.","keywords":["ORGANIZATIONAL SUPPORT SERVICES","Management
+        Assistance","Technical Assistance"],"service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County","Statewide"],"updated_at":"2013-08-27T16:14:09-07:00","wait":"Occasionally."}],"organization":{"_id":"521d32c11974fcdb2b0001b1","created_at":"2013-08-27T16:14:09-07:00","name":"San
+        Francisco Study Center","updated_at":"2013-08-27T16:14:09-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b0001b1","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b0001b1/locations"},"id":"521d32c11974fcdb2b0001b2","_score":0.38192156,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32da1974fcdb2b00085e","accessibility":["Wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"2530
+        San Pablo Avenue","zip":"94702"},"ask_for":["Beck Cowles"],"contacts":[{"_id":"521d32da1974fcdb2b00085f","name":"Amy
+        Kiser"}],"coordinates":[-122.2894898,37.8600413],"created_at":"2013-08-27T16:14:34-07:00","description":"Provides
+        the public with information on environmental issues and demonstrates sustainable
+        living. Projects include an Environmental Information Center, a store featuring
+        books, gardening supplies and a variety of alternative products, a library
+        and hotline, and the operation of a weekly curbside recycling program (multiple
+        materials), three weekly farmers'' markets in Berkeley, and offers classes
+        in gardening and ecological living. The group publishes booklets and fact
+        sheets on environmental topics. Maintains an extensive Web site with a calendar
+        of community events and action alerts.","emails":["info@ecologycenter.org"],"faxes":["510
+        548-2240"],"hours":"Tuesday-Saturday, 11-6","languages":["Spanish"],"mail_address":{"attention":"Ecology
+        Center","city":"Berkeley","state":"CA","street":"2530 San Pablo Avenue","zip":"94702"},"name":"Ecology
+        Center","phones":[{"number":"510 548-2220","extensions":["233"],"department":"Library","hours":"Tuesday-Saturday,
+        11-6"}],"short_desc":"Provides the public with information on environmental
+        issues and demonstrates sustainable living.","transportation":"AC Transit
+        stops within 1 block.","updated_at":"2013-08-27T16:24:29-07:00","urls":["http://www.ecologycenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32da1974fcdb2b00085e","services":[{"_id":"521d32da1974fcdb2b000862","eligibility":"None","fees":"None
+        for services. Membership available.","funding_sources":["Fees","Grants","Membership
+        dues"],"how_to_apply":"Phone, drop in or visit Web site.","service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-08-27T16:14:34-07:00"}],"organization":{"_id":"521d32da1974fcdb2b00085d","created_at":"2013-08-27T16:14:34-07:00","name":"Ecology
+        Center","updated_at":"2013-08-27T16:14:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32da1974fcdb2b00085d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32da1974fcdb2b00085d/locations"},"id":"521d32da1974fcdb2b00085e","_score":0.38192156,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33131974fcdb2b0017b1","address":{"city":"Millbrae","state":"CA","street":"50
+        Victoria, Suite 103","zip":"94030"},"ask_for":["John Ford"],"contacts":[{"_id":"521d33131974fcdb2b0017b2","name":"John
+        Ford","title":"President/CEO"}],"coordinates":[-122.3903665,37.6001412],"created_at":"2013-08-27T16:15:31-07:00","description":"A
+        professional organization that promotes the interests of businesses in Millbrae.
+        The not-for-profit corporation of voluntary members carries forth a program
+        of work to benefit the local economy as well as civic, cultural and educational
+        interests. Holds quarterly After Hours Business Mixers open to members and
+        prospective members. Sponsors the year-round Farmers'' Market every Saturday
+        and the annual Art and Wine Festival on Labor Day weekend. Publishes a monthly
+        newsletter with a calendar of events for members.","emails":["chamber@millbrae.com"],"faxes":["650
+        259-7918"],"mail_address":{"attention":"Millbrae Chamber of Commerce","city":"Millbrae","state":"CA","street":"50
+        Victoria, Suite 103","zip":"94030"},"name":"Millbrae Chamber of Commerce","phones":[{"number":"650
+        697-7324","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A professional organization
+        that promotes the interests of businesses in Millbrae.","transportation":"CALTRAIN,
+        SAMTRANs stop within 3 blocks.","updated_at":"2013-08-27T16:27:41-07:00","urls":["http://www.millbrae.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33131974fcdb2b0017b1","services":[{"_id":"521d33131974fcdb2b0017b5","eligibility":"None","fees":"Vary
+        according to membership type.","funding_sources":["Fundraising","Membership
+        dues"],"keywords":["Chambers of Commerce"],"service_areas":["Burlingame","Millbrae","San
+        Bruno","South San Francisco"],"updated_at":"2013-08-27T16:15:31-07:00"}],"organization":{"_id":"521d33131974fcdb2b0017b0","created_at":"2013-08-27T16:15:31-07:00","name":"Millbrae
+        Chamber of Commerce","updated_at":"2013-08-27T16:15:31-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33131974fcdb2b0017b0","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33131974fcdb2b0017b0/locations"},"id":"521d33131974fcdb2b0017b1","_score":0.38192156,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33271974fcdb2b001cc0","accessibility":["Wheelchair"],"address":{"city":"Gilroy","state":"CA","street":"700
+        West 6th Street, Suite L","zip":"95020"},"contacts":[{"_id":"521d33271974fcdb2b001cc1","name":"David
+        Matuszak, Dr.","title":"Director"}],"coordinates":[-121.577399,37.003775],"created_at":"2013-08-27T16:15:51-07:00","description":"Provides
+        career and vocational training for adults, out of school youth and high school
+        students who are age 16 or over. Most Regional Occupational Program classes
+        are open entry. Training is individualized, enabling students to complete
+        courses at their own pace. ROP courses furnish practical hands-on experience
+        to provide students with specialized skills to compete in the technical job
+        market.   A central county site is located at Hillsdale and Route 87 in San
+        Jose.","emails":["david_matuszak@sccoe.org"],"hours":"Vary according to program","kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"attention":"Santa Clara
+        County Office of E","city":"Gilroy","state":"CA","street":"700 West 6th Street,
+        Suite L","zip":"95020"},"name":"Santa Clara County Regional Occupational Programs
+        (ROP)","phones":[{"number":"408 842-0361","department":"Gilroy","hours":"(Monday-Friday,
+        8-5)"}],"transportation":"VTA stops in front.","updated_at":"2013-09-17T21:17:07-07:00","urls":["http://www.sccoe.org/depts/scrop"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33271974fcdb2b001cc0","services":[{"_id":"521d33271974fcdb2b001cc4","audience":"Based
+        on labor market studies","eligibility":"Age 16 or over. Referral required
+        from high school coordinator, if still in high school","fees":"No tuition
+        or fees for most programs; dental assisting, $675.","funding_sources":["State"],"how_to_apply":"Walk
+        in or apply by phone or mail. Appointment necessary.","keywords":["EDUCATION
+        SERVICES","Vocational"],"service_areas":["Gilroy","Morgan Hill","San Benito
+        County"],"updated_at":"2013-08-27T16:15:51-07:00","wait":"Varies."}],"organization":{"_id":"521d33271974fcdb2b001cbf","created_at":"2013-08-27T16:15:51-07:00","name":"Santa
+        Clara County Office of Education","updated_at":"2013-08-27T16:15:51-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33271974fcdb2b001cbf","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33271974fcdb2b001cbf/locations"},"id":"521d33271974fcdb2b001cc0","_score":0.38192156,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Sun, 15 Sep 2013 00:50:55 GMT
+  recorded_at: Wed, 18 Sep 2013 05:31:57 GMT
 recorded_with: VCR 2.5.0
