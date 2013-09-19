@@ -26,6 +26,7 @@ module ResultSummaryHelper
     else
       page_range_end = (@pages[:current_page]*per_page)
       page_range_start = page_range_end-per_page+1
+      page_range_end = @pages[:total_count] if page_range_end > @pages[:total_count]
 
       summary << "Displaying <strong>#{page_range_start}-#{page_range_end}</strong> of "
       summary << self.pluralize(@pages[:total_count], 'result')

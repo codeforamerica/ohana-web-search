@@ -47,7 +47,7 @@ feature "results page search" do
 
   xscenario 'with language that returns less results', :vcr do
     search_by_language("Tagalog (Filipino)")
-    expect(page).to have_content("30 of 114 results")
+    expect(page).to have_content("30 of 107 results")
   end
 
 end

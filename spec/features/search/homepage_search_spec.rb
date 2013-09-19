@@ -15,33 +15,7 @@ feature "homepage search" do
     expect(page).to_not have_content("No results located!")
   end
 
-  scenario 'with location that returns results', :vcr do
-    search_from_home(:location => '94060')
-    looks_like_puente
-    find_field("location").value.should == "94060"
-    expect(page).to_not have_content("1 result located!")
-  end
-
-  scenario 'with location that returns no results', :vcr do
-    search_from_home(:location => 'asdfg')
-    looks_like_no_results
-    expect(page).to_not have_content("No results located!")
-  end
-
-  scenario 'with keyword and location that returns results', :vcr do
-    search_from_home(:keyword => "puente", :location => '94060')
-    looks_like_puente
-    find_field("location").value.should == "94060"
-    expect(page).to_not have_content("1 result located!")
-  end
-
-  scenario 'with keyword and location that returns no results', :vcr do
-    search_from_home(:keyword => "sdaff", :location => '94403')
-    looks_like_no_results
-    expect(page).to_not have_content("No results located!")
-  end
-
-  scenario "when searching for 'food stamps'", :vcr do
+    scenario "when searching for 'food stamps'", :vcr do
     search_from_home(:keyword => 'food stamps')
     expect(page).to have_content("Known federally as SNAP")
   end
@@ -76,6 +50,33 @@ feature "homepage search" do
     visit("/")
     click_link("Market Match")
     expect(page).to have_link("Food")
+  end
+
+  # location is no longer displayed on homepage. Leaving this in case it's re-added.
+  xscenario 'with location that returns results', :vcr do
+    search_from_home(:location => '94060')
+    looks_like_puente
+    find_field("location").value.should == "94060"
+    expect(page).to_not have_content("1 result located!")
+  end
+
+  xscenario 'with location that returns no results', :vcr do
+    search_from_home(:location => 'asdfg')
+    looks_like_no_results
+    expect(page).to_not have_content("No results located!")
+  end
+
+  xscenario 'with keyword and location that returns results', :vcr do
+    search_from_home(:keyword => "puente", :location => '94060')
+    looks_like_puente
+    find_field("location").value.should == "94060"
+    expect(page).to_not have_content("1 result located!")
+  end
+
+  xscenario 'with keyword and location that returns no results', :vcr do
+    search_from_home(:keyword => "sdaff", :location => '94403')
+    looks_like_no_results
+    expect(page).to_not have_content("No results located!")
   end
 
 end
