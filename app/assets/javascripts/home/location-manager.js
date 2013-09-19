@@ -1,63 +1,23 @@
-// manages results maps view
-define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (geo) {
+// manages geolocation button on homepage
+define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (geo,alert) {
 	'use strict';
 
 		// PRIVATE PROPERTIES
-		var _showLocationBtn; // services near me button
-		var _locationSearchBtn; // search location button
-		var _locationBox; // popup box for location search
-		var _locationInput; // location input text field
 		var _locateBtn; // locate current location button
+		var _locationValue; // hidden field that contains location value
 
 
 		// PUBLIC METHODS
-		function init(callback)
+		function init()
 		{
-			_showLocationBtn = document.getElementById('location-btn');
-			_locationSearchBtn = document.getElementById('location-search-btn');
-			_locationBox = document.getElementById('location-box');
-			_locationInput = document.getElementById('location');
-
 			_locateBtn = document.getElementById('locate-btn');
+			if (navigator.geolocation) // if geolocation is supported, show geolocate button
+			{
+				_locateBtn.classList.remove('hide');
+			}
 			_locateBtn.addEventListener( "click" , _currLocationClicked , false );
-
-			_showLocationBtn.addEventListener('click', _showLocationBtnClicked, false);
-
-			var closeBtn = document.getElementById('locate-close-btn'); // hackish way to find the close button, but it's fast
-			closeBtn.addEventListener('click',_closeBtnClicked,false);
+			_locationValue = document.getElementById('location');
 		}
-
-		function _closeBtnClicked(evt)
-		{
-			_locationBox.classList.add('hide');
-			if (_locationInput.value)
-				_dispatchSubmitBtn();
-		}
-
-		function _showLocationBtnClicked(evt)
-		{
-			evt.preventDefault();
-			_locationBox.classList.remove('hide');
-			return false;
-		}
-
-		function _dispatchSubmitBtn()
-		{
-			if(document.createEvent)
-			{
-			    var click = document.createEvent("MouseEvents");
-			    click.initMouseEvent("click", true, true, window,
-			    0, 0, 0, 0, 0, false, false, false, false, 0, null);
-			    _locationSearchBtn.dispatchEvent(click);
-			    _locationSearchBtn.focus();
-			}
-			else if(document.documentElement.fireEvent)
-			{
-			    _locationSearchBtn.fireEvent("onclick");
-			    _locationSearchBtn.focus();
-			}
-		}
-
 
 		// 'use current location' link clicked
 		function _currLocationClicked(evt)
@@ -81,7 +41,8 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 				,
 				error:function(error)
 				{
-					console.log("Geolocation failed due to: " + error.message);
+					//console.log("Geolocation failed due to: " + error.message);
+					alert.show("Your location could not be determined!");
 				}
 			}
 
@@ -98,12 +59,13 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 			{
 			  if (status == google.maps.GeocoderStatus.OK && results[0])
 			  {
-					_locationInput.value = results[0].formatted_address;
-					_dispatchSubmitBtn();
+					_locationValue.value = results[0].formatted_address;
+					document.getElementById('location-form').submit();
 			  }
 			  else
 			  {
-					console.log("Geocoder failed due to: " + status);
+					//console.log("Geocoder failed due to: " + status);
+					alert.show("Your location could not be determined!");
 			  }
 			});
 		}
@@ -112,3 +74,4 @@ define(['util/geolocation','async!https://maps.googleapis.com/maps/api/js?v=3.ex
 		init:init
 	};
 });
+

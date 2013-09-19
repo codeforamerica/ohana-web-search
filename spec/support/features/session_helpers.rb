@@ -4,13 +4,11 @@ module Features
     # search helpers
     def search(options = {})
       keyword = options[:keyword]
-      location = options[:location]
       fill_in('keyword', :with => keyword)
       if options[:on_home].present?
-        fill_in('location', :with => location, :visible => false)
         find(:css, '#find-btn').click
       else
-        fill_in('location', :with => location)
+        fill_in('location', :with => options[:location])
         find(:css, '#update-btn').click
       end
     end
@@ -98,7 +96,6 @@ module Features
       expect(page).to have_content "Contribute"
       expect(page).to have_content "Feedback"
       expect(page).to have_content "I need"
-      expect(page).to have_content "I am near"
       expect(page).to have_content "reporting"
       expect(page).to have_content "government assistance"
     end

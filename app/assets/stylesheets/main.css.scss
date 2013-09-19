@@ -1195,6 +1195,29 @@ main
   padding:21px;
   padding-right:25px;
   text-align:right;
+  min-height:34px;
+
+  button
+  {
+    font-size:13px;
+    font-family:$san_serif_font;
+    padding:5px;
+    @include border-radius(4px);
+    background:$green_lightest;
+    border:2px solid $blue_darkest;
+    font-weight:bold;
+
+    span
+    {
+      color:$blue_darkest;
+    }
+  }
+
+  button:hover
+  {
+    color:$green_light !important;
+    background:$blue_dark;
+  }
 }
 
 
@@ -2626,65 +2649,58 @@ main
 // alert messages
 #alert-box
 {
-    width:500px;
-    margin-left:-250px;
-    left:50%;
+  position:relative;
+  z-index:9999;
+  font-family:$san_serif_font;
+  letter-spacing: 1px;
+  >div
+  {
+    min-width:400px;
+    margin:0 auto;
+    position:relative;
+
+    p
+    {
+      text-align:center;
+      padding: 10px;
+      font-weight:bold;
+    }
+  }
+
+  .close-button
+  {
+    color:$greyscale_midtone; // IE Fallback
+    color:$black_alpha50;
     position:absolute;
-    z-index: 9997;
+    right:10px;
+    top:0px;
+    font-size:24px;
+  }
+
+  .close-button:after
+  {
+    content:"×";
+  }
+
+  .close-button:hover
+  {
+    color:$black;
+    cursor:pointer;
+  }
 }
 
-#alert-box .alert
-{
-    padding: 10px;
-    font-weight: bold;
-    @include border-radius(0px 0px 10px 10px);
-    @include single-box-shadow($black_alpha40, 0px, 2px, 20px);
-    text-align: right;
-}
-
-#alert-box .alert div
-{
-    text-align: left;
-    padding: 10px;
-}
-
-#alert-box .alert-error
+#alert-box.alert-error
 {
     color: $white;
     background:$red_dark;
 }
 
-#alert-box .alert-success
+#alert-box.alert-success
 {
     color: $black;
     background:$green_light;
 }
 
-#alert-box .close
-{
-    color: $white;
-    font-weight:bold;
-    background:$greyscale_midtone; // IE fallback
-    background:$black_alpha40;
-    padding:5px;
-    @include border-radius(5px);
-    height: 10px;
-    width: 10px;
-    @include inline-block();
-    line-height: 9px;
-    cursor:pointer;
-    text-align: center;
-}
-
-#alert-box .close:hover
-{
-    background:$greyscale_dark; // IE fallback
-    background:$black_alpha60;
-
-    -webkit-transition: background $default_duration;
-    -moz-transition: background $default_duration;
-    transition: background $default_duration;
-}
 
 
 /* ==========================================================================

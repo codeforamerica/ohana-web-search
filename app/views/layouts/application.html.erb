@@ -59,6 +59,13 @@
       }catch(e){}
     </script>
 
+    <aside id="alert-box" class='alert-error hide'>
+      <div>
+        <div id="alert-close" class='close-button'></div>
+        <p id="alert-message"></p>
+      </div>
+    </aside>
+
     <header id="content-header">
       <h1 id="logo"><a href="/" target="_self">SMC-Connect</a><span>alpha</span></h1>
       <h2>Find San Mateo County community services</h2>
@@ -75,6 +82,7 @@
       </div>
     </header>
 
+    <% # hide popups on /about because they are redundant to the content on that page %>
     <% if controller_name != "about" %>
     <aside id="popups">
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/about' %></div>
@@ -82,8 +90,6 @@
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/feedback' %></div>
     </aside>
     <% end %>
-
-    <%= render 'component/status/alert' %>
 
     <main>
       <%= yield %>
