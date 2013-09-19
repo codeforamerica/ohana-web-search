@@ -13,6 +13,12 @@ class OrganizationsController < ApplicationController
   # search results view
   def index
 
+    # translate search keyword to current language if other than english
+    #if params[:keyword].present? && @current_lang != 'en'
+    #  translated_word = translate(params[:keyword],@current_lang,'en',false)
+    #  params[:keyword] = translated_word[0].translatedText if translated_word.present?
+    #end
+
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
 
@@ -206,22 +212,18 @@ class OrganizationsController < ApplicationController
   # Translate the page using the Google Translate API.
   # @param [String] text to translate
   # @param [String] target language code to translate into
-  def translate(text, target)
+  def translate(text, source, target, is_html)
 
     client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
     translate = client.discovered_api('translate', 'v2')
+    html_or_plain = is_html ? "html" : "text"
 
-    chunks = text.scan(/.{1442}/)
     params = {
-        'format' => 'html',
-        'source' => 'en',
+        'format' => html_or_plain,
+        'source' => source,
         'target' => target,
-        'q' => chunks[0]
+        'q' => text
       }
-    @original = chunks[0]
-    chunks.each do |chunk|
-      params['q'] = chunk
-    end
 
     result = client.execute(
       :api_method => translate.translations.list,

@@ -69,6 +69,9 @@ VCR.configure do |c|
   c.filter_sensitive_data("<API_TOKEN>") do
     ENV['OHANA_API_TOKEN']
   end
+  c.filter_sensitive_data("<GOOGLE_TRANSLATE>") do
+    ENV['GOOGLE_TRANSLATE_API_TOKEN']
+  end
 end
 
 def stub_get(url)
