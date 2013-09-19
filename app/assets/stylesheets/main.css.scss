@@ -997,7 +997,6 @@ sup
   #app-footer
   {
     position:relative;
-    padding:20px;
     text-align:center;
     background:$white;
     clear:both;
@@ -1005,11 +1004,18 @@ sup
 
     p#call-211
     {
+      text-align:center;
       font-size:16px;
+      letter-spacing: 1px;
+      color:$purple_darkest;
+      background:$yellow_light;
+      font-family:$san_serif_font;
+      padding:7px;
+      border-bottom:2px solid $blue_midtone;
+
       strong
       {
         font-weight:bold;
-        color:$yellow_darkest;
       }
     }
 
@@ -1019,7 +1025,6 @@ sup
       font-size:14px;
       font-family:$san_serif_font;
       color:$greyscale_midtone;
-      display:inline-block;
     }
 
     p span.cfaflag
@@ -1632,23 +1637,6 @@ main
         }
       }
 
-    }
-  }
-
-  p
-  {
-    text-align:center;
-    font-size:13px;
-    letter-spacing: 1px;
-    color:$purple_darkest;
-    background:$yellow_light;
-    font-family:$san_serif_font;
-    padding:7px;
-
-    strong
-    {
-      font-weight:bold;
-      @include inline-block();
     }
   }
 }
