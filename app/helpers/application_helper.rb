@@ -56,7 +56,7 @@ module ApplicationHelper
     main_terms = info_box_terms.keys
     synonyms = info_box_terms.values.flatten
 
-    keyword = params[:keyword]
+    keyword = params[:keyword].downcase if params[:keyword].present?
 
     # Check if the keyword matches any of the hash keys or values
     if (main_terms + synonyms).include?(keyword)

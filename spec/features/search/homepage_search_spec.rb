@@ -21,7 +21,7 @@ feature "homepage search" do
   end
 
   scenario "when searching for 'health care reform'", :vcr do
-    search_from_home(:keyword => 'health care reform')
+    search_from_home(:keyword => 'Health care reform')
     expect(page).to have_content("Millions of Californians can choose")
   end
 
@@ -31,7 +31,7 @@ feature "homepage search" do
   end
 
   scenario "when searching for 'sfmnp'", :vcr do
-    search_from_home(:keyword => 'sfmnp')
+    search_from_home(:keyword => 'SFMNP')
     expect(page).to have_content("provides low-income seniors with coupons")
   end
 
