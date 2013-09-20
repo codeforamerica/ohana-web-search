@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  # hardcoded kinds - this should pull from the API eventually
+  def org_kind
+    ["Arts", "Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Other","Parks","Sports"].freeze
+  end
+
 	def title(page_title)
 		default = "SMC-Connect"
 		if page_title.present?

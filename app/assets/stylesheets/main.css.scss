@@ -1562,8 +1562,35 @@ main
   border-top:1px dotted $black_alpha40;
   border-bottom:1px dotted $black_alpha40;
   padding:10px;
-  margin-bottom:10px;
+  margin-bottom:25px;
   font-family: $san_serif_font;
+
+  fieldset
+  {
+    margin-top:15px;
+    margin-bottom:15px;
+
+    legend
+    {
+      font-weight:bold;
+      font-size:14px;
+    }
+  }
+}
+
+#kind-options
+{
+
+  label
+  {
+    vertical-align: baseline;
+  }
+  input
+  {
+    width:auto;
+    height:auto;
+    vertical-align: text-top;
+  }
 }
 
 #category-box
@@ -2213,6 +2240,11 @@ main
     {
       color:$blue_dark;
       font-size:14px;
+
+      a:hover
+      {
+        text-decoration:underline;
+      }
     }
 
     .address
