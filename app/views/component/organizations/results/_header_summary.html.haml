@@ -2,29 +2,56 @@
 	- unless pages[:total_pages] == 0
 		%span.pagination
 			Page:
+
+			-# appends existing path with updated page parameter
+			- path = request.fullpath
+
+			- if (path =~ /page=\d*&?/).present?
+				- first_url = path.gsub(/page=\d*&?/, "page=1&")
+				- last_url = path.gsub(/page=\d*&?/, "page=#{pages[:total_pages]}&")
+				- prev_url = path.gsub(/page=\d*&?/, "page=#{pages[:prev_page]}&")
+				- next_url = path.gsub(/page=\d*&?/, "page=#{pages[:next_page]}&")
+			- elsif (path =~ /\?/).nil?
+				- first_url = "?page=1"
+				- last_url = "?page=#{pages[:total_pages]}"
+				- prev_url = "?page=#{pages[:prev_page]}"
+				- next_url = "?page=#{pages[:next_page]}"
+			- else
+				- first_url = "#{path}&page=1}"
+				- last_url = "#{path}&page=#{pages[:total_pages]}"
+				- prev_url = "#{path}&page=#{pages[:prev_page]}"
+				- next_url = "#{path}&page=#{pages[:next_page]}"
+
 			- if pages[:prev_page].present?
 				%span.prev
-					= link_to "<", {:page=>pages[:prev_page]}, :class => 'ajax-link',:target=>"_self"
+					= link_to "<", prev_url, :class => 'ajax-link',:target=>"_self"
 
 			- if pages[:pages][0] != 1
-				= link_to '1', {:page=>1}, :class => 'ajax-link',:target=>"_self"
+				= link_to '1', first_url, :class => 'ajax-link',:target=>"_self"
 			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
 				= "..."
 
 			- pages[:pages].each do |page|
 
+				- if (path =~ /page=\d*&?/).present?
+					- page_url = path.gsub(/page=\d*&?/, "page=#{page}&")
+				- elsif (path =~ /\?/).nil?
+					- page_url = "?page=#{page}"
+				- else
+					- page_url = "#{path}&page=#{page}"
+
 				- if page == pages[:current_page]
 					%span.current
 						= pages[:current_page]
 				- else
-					= link_to page, {:page=>page}, :class => 'ajax-link', :target=>"_self"
+					= link_to page, page_url, :class => 'ajax-link', :target=>"_self"
 
 			- far_last_item = pages[:pages][pages[:pages].length-1]
 			- near_last_item = pages[:pages][pages[:pages].length-2]
 			- if near_last_item != far_last_item && far_last_item != pages[:total_pages]
 				= "..."
 			- if far_last_item != pages[:total_pages]
-				= link_to pages[:total_pages], {:page=>pages[:total_pages]}, :class => 'ajax-link',:target=>"_self"
+				= link_to pages[:total_pages], last_url, :class => 'ajax-link',:target=>"_self"
 			- if pages[:next_page].present?
 				%span.next
-					= link_to ">", {:page=>pages[:next_page]}, :class => 'ajax-link',:target=>"_self"
+					= link_to ">", next_url, :class => 'ajax-link',:target=>"_self"

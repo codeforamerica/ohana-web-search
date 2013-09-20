@@ -1,7 +1,15 @@
 %section#search-options
-  %fieldset
-    %label{:for=>"language"}
-      Filter services by language availability:
+  %fieldset#kind-options
+    %legend Kind
+    - org_kind.each_with_index do |kind,index|
+      %div
+        - is_checked = params[:kind].present? ? (params[:kind].include? kind) : false
+        = check_box_tag('kind[]',kind,is_checked,:id=>"kind-checkbox-#{index}",:class=>"kind-option")
+        %label{:for=>"kind-checkbox-#{index}"}
+          = kind
+
+  %fieldset#language-option
+    %legend Language availability
     = select_tag :language, options_for_select([['English', ''],
     ['Español (Spanish)', 'spanish'],
     ['Tagalog (Filipino)', 'tagalog'],
