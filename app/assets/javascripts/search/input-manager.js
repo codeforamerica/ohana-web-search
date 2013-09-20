@@ -66,7 +66,8 @@ define(['util/util'],function (util) {
 			var returnVal = [];
 			for (var v=0;v< _kind.length;v++)
 			{
-				returnVal.push(_kind[v].value);
+				var isChecked = _kind[v].checked ? _kind[v].value : null;
+				returnVal.push( isChecked );
 			}
 			return returnVal;
 		}
@@ -113,6 +114,7 @@ define(['util/util'],function (util) {
 		function _linkClickedHandler(evt)
 		{
 			var params = util.getQueryParams(this.search);
+			params.kind = getKind();
 			var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
 			if (id != 'organizations')
 				params.id = id;
@@ -144,6 +146,8 @@ define(['util/util'],function (util) {
 		setKeyword:setKeyword,
 		getLocation:getLocation,
 		setLocation:setLocation,
+		getKind:getKind,
+		setKind:setKind,
 		getLanguage:getLanguage,
 		setLanguage:setLanguage
 	};

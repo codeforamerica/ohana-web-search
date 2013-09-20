@@ -84,7 +84,7 @@ define(['app/loading-manager',
 			if (radius) query += "&radius="+radius;
 			for (var k=0;k<kind.length;k++)
 			{
-				if (kind) query += "&kind[]="+kind[k]
+				if (kind[k] != null) query += "&kind[]="+kind[k]
 			}
 			if (language) query += "&language="+language;
 			if (page) query += "&page="+page;
