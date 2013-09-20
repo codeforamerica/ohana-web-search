@@ -23,6 +23,9 @@ gem "ohanakapa", "~> 1.0"
 gem 'faraday-http-cache'
 gem 'rails_12factor' # Heroku recommended
 
+# Analytics
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
+
 # app config and ENV variables for heroku
 gem "figaro", ">= 0.6.3"
 
