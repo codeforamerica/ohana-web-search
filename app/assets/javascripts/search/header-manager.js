@@ -17,6 +17,13 @@ define(['util/util'],
 
 				_checkIfFloating();
 
+				// if window has a hash, offset the scrolling by the height of the floating header
+				if(window.location.hash)
+				{
+					var scrollOffset = _header.offsetHeight;
+					window.scrollTo(0,(window.scrollY-scrollOffset));
+				}
+
 				window.addEventListener("scroll",_onScroll,false);
 			}
 		}
@@ -30,7 +37,7 @@ define(['util/util'],
 		{
 			if (window.scrollY >= _offsetY)
 			{
-				// fix header
+				// floating header
 				_header.classList.add("floating");
 				_floatingContent.classList.remove('hide');
 			}
