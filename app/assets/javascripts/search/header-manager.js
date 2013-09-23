@@ -12,14 +12,12 @@ define(['util/util'],
 			_header = document.getElementById("floating-results-header");
 			if(_header)
 			{
-			//_offsetY = document.getElementById('content-header').offsetHeight;
-			var doc = document.documentElement, body = document.body;
-			_offsetY = util.getOffset(_header).top;
-			_floatingContent = document.querySelector('#floating-results-header .floating-content');
+				_offsetY = util.getOffset(_header).top;
+				_floatingContent = document.querySelector('#floating-results-header .floating-content');
 
-			_checkIfFloating();
+				_checkIfFloating();
 
-			window.addEventListener("scroll",_onScroll,false);
+				window.addEventListener("scroll",_onScroll,false);
 			}
 		}
 
