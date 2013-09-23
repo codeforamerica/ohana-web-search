@@ -79,4 +79,11 @@ feature "homepage search" do
     expect(page).to_not have_content("No results located!")
   end
 
+  scenario "when click Kind link", :vcr do
+    search_from_home(:keyword => 'soccer')
+    page.first("a", text: "Other").click
+    expect(page).to_not have_content("Sports")
+    expect(page).to have_content("415 results")
+  end
+
 end

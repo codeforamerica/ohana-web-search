@@ -4,10 +4,10 @@
 			Page:
 			- if pages[:prev_page].present?
 				%span.prev
-					= link_to "<", {:page=>pages[:prev_page]}, :class => 'ajax-link',:target=>"_self"
+					= link_to "<", {:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self"
 
 			- if pages[:pages][0] != 1
-				= link_to '1', {:page=>1}, :class => 'ajax-link',:target=>"_self"
+				= link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
 			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
 				= "..."
 
@@ -17,14 +17,14 @@
 					%span.current
 						= pages[:current_page]
 				- else
-					= link_to page, {:page=>page}, :class => 'ajax-link', :target=>"_self"
+					= link_to page, {:page=>page}.merge(@page_params), :target=>"_self"
 
 			- far_last_item = pages[:pages][pages[:pages].length-1]
 			- near_last_item = pages[:pages][pages[:pages].length-2]
 			- if near_last_item != far_last_item && far_last_item != pages[:total_pages]
 				= "..."
 			- if far_last_item != pages[:total_pages]
-				= link_to pages[:total_pages], {:page=>pages[:total_pages]}, :class => 'ajax-link',:target=>"_self"
+				= link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
 			- if pages[:next_page].present?
 				%span.next
-					= link_to ">", {:page=>pages[:next_page]}, :class => 'ajax-link',:target=>"_self"
+					= link_to ">", {:page=>pages[:next_page]}.merge(@page_params), :target=>"_self"
