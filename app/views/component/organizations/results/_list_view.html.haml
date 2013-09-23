@@ -3,7 +3,7 @@
 		- @orgs.each do |org|
 
 			%li
-				%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :class=>"ajax-link", :name=>"#{org.id}"}
+				%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
 					&nbsp;
 				%section.results-entry
 					-#
@@ -13,20 +13,21 @@
 									== #{org.distance} mi
 					- if org.key?(:kind)
 						%p.kind
-							= org.kind
+							%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
+								= org.kind
 					%header
 						- if org.key?(:category)
 							%ul.category
 								- org.category.each do |category|
 									%li
-										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}", :class=>"ajax-link"}
+										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
 											= category
 						%h1{:class=>'name'}
-							%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :class=>"ajax-link", :name=>"#{org.id}"}
+							%a{:href=>"#{organization_path(org.id, @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
 								= superscript_ordinals(org.name)
 						- if (org.organization.name) && (org.organization.name != org.name)
 							%h2.agency
-								%a{:href=>"/organizations?keyword=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}", :class=>"ajax-link"}
+								%a{:href=>"/organizations?keyword=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
 									%span
 										= superscript_ordinals(org.organization.name)
 					- if org.key?(:phones)

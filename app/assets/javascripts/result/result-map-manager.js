@@ -153,8 +153,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// a location marker was clicked, perform a search for the organization details
 		function _markerClickedHandler(evt)
 		{
-			var params = {'id':this.id}
-			_callback.performSearch(params);
+			window.location.href = '/organizations/'+this.id+(window.location.search);
 		}
 
 		// refresh the data
