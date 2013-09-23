@@ -21,6 +21,20 @@ gem "unicorn", ">= 4.3.1"
 gem 'newrelic_rpm'
 gem "ohanakapa", "~> 1.0"
 gem 'faraday-http-cache'
+gem 'rails_12factor' # Heroku recommended
+
+# Caching
+gem "rack-cache"
+gem "dalli"
+gem "memcachier"
+gem "kgio"
+
+## For passing data to JS
+## http://railscasts.com/episodes/324-passing-data-to-javascript
+#gem "gon"
+
+# Analytics
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 # For Google translation API
 gem "google-api-client"

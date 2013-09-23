@@ -1,7 +1,6 @@
 require 'google/api_client'
 
 class OrganizationsController < ApplicationController
-  respond_to :html, :json, :xml, :js
   before_filter :check_location_id, only: :show
 
   include ActionView::Helpers::TextHelper
@@ -56,6 +55,7 @@ class OrganizationsController < ApplicationController
 
     # The parameters to use to provide a link to the location
     @search_params = request.params.except(:action, :id, :_, :controller)
+    @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
     ## Adds top-level category terms to @orgs for display on results list.
     ## This will likely be refactored to use the top-level keywords when those
@@ -81,18 +81,11 @@ class OrganizationsController < ApplicationController
     @search_summary_html = format_summary(params)
     @search_summary_plain = @search_summary_html.gsub('<strong>', '').gsub('</strong>', '')
 
-    # respond to direct and ajax requests
-    respond_to do |format|
-      # visit directly
-      format.html # index.html.haml
-
-      # visit via ajax
-      format.json {
-        with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/results/body'
-        end
-        render :json => { :content => @html_content , :action => action_name }
-      }
+    expires_in 30.minutes, :public => true
+    if stale?(etag: @orgs, public: true)
+      respond_to do |format|
+        format.html # index.html.haml
+      end
     end
   end
 
@@ -112,18 +105,11 @@ class OrganizationsController < ApplicationController
     @referer = request.env['HTTP_REFERER']
 
     # respond to direct and ajax requests
-    respond_to do |format|
-      # visit directly
-      format.html #show.html.haml
-
-      # visit via ajax
-      format.json {
-
-        with_format :html do
-          @html_content = render_to_string partial: 'component/organizations/detail/body'
-        end
-        render :json => { :content => @html_content , :action => action_name }
-      }
+    expires_in 30.minutes, :public => true
+    if stale?(etag: @org, public: true)
+      respond_to do |format|
+        format.html #show.html.haml
+      end
     end
 
   end

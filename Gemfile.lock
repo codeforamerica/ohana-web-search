@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: f597e0aef308d51517d519173ced65a87180d849
+  specs:
+    sentry-raven (0.6.0)
+      faraday (>= 0.7.6)
+      hashie (>= 1.1.0)
+      uuidtools
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,6 +90,7 @@ GEM
       thor
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
+    dalli (2.6.4)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
     email_spec (1.5.0)
@@ -124,6 +134,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
     html5shiv-rails (0.0.2)
@@ -151,6 +162,7 @@ GEM
       fattr (>= 2.2.0)
       map (>= 5.1.0)
     map (6.5.1)
+    memcachier (0.0.2)
     metric_fu (4.4.0)
       bluff
       cane (~> 2.5.2)
@@ -201,6 +213,9 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.14.1)
       activesupport
       awesome_print
@@ -210,6 +225,8 @@ GEM
       i18n
       require_all
       ruby-progressbar
+    rails_serve_static_assets (0.0.1)
+    rails_stdout_logging (0.0.2)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -306,6 +323,7 @@ DEPENDENCIES
   capybara (>= 2.0.3)
   compass-rails
   coveralls
+  dalli
   email_spec
   faraday-http-cache
   figaro (>= 0.6.3)
@@ -314,17 +332,22 @@ DEPENDENCIES
   html5shiv-rails
   jquery-rails (>= 1.0.17)
   json
+  kgio
   letter_opener
+  memcachier
   metric_fu
   newrelic_rpm
   ohanakapa (~> 1.0)
   poltergeist
   quiet_assets (>= 1.0.2)
+  rack-cache
   rails (= 3.2.13)
+  rails_12factor
   requirejs-rails (= 0.9.1)
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   selectivizr-rails
+  sentry-raven!
   uglifier (>= 1.0.3)
   unicorn (>= 4.3.1)
   vcr

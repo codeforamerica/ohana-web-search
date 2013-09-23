@@ -1,11 +1,10 @@
 // handles ajax search functionality
 define(['app/loading-manager',
 				'util/ajax','util/util',
-				'search/input-manager',
 				'result/result-init',
 				'detail/detail-init',
 				'search/header-manager'],
-	function(splash,ajax,util,inputs,result,detail,header) {
+	function(splash,ajax,util,result,detail,header) {
   'use strict';
 
 		var _resultsContainer; // area of HTML to refresh with ajax
@@ -20,7 +19,6 @@ define(['app/loading-manager',
 		{
 			_resultsContainer = document.getElementById('results-container');
 
-			inputs.init(this); // initialize search form and ajax links
 			header.init(); // initialize the header manager
 			detail.init(this); // initializes detail scripts
 			result.init(this); // initializes results scripts
@@ -48,9 +46,6 @@ define(['app/loading-manager',
 				var location = params.location || "";
 				var language = params.language || "";
 
-				inputs.setKeyword(keyword);
-				inputs.setLocation(location);
-
 				splash.show({"fullscreen":false});
 				ajax.request(window.location.href, _callback);
 			}
@@ -62,14 +57,12 @@ define(['app/loading-manager',
 			splash.show({"fullscreen":false});
 
 			var id = params.id;
-			var keyword = params.keyword || inputs.getKeyword();
-			var location = params.location || inputs.getLocation();
+			var keyword = params.keyword
+			var location = params.location
 			var radius = params.radius;
-			var language = params.language;
-			var page = params.page;
 
-			inputs.setKeyword(keyword);
-			inputs.setLocation(location);
+			var language = params.language
+			var page = params.page;
 
 			var query = '/organizations';
 			if (id) query += '/'+id;
@@ -106,7 +99,6 @@ define(['app/loading-manager',
 			else if (evt.action == _requestType.RESULT)
 				result.refresh(); // re-initializes results scripts
 
-			inputs.refresh("#results-container"); // refresh search inputs
 			header.init(); // re-initialize header manager
 
 			_updateTitle(); // update page title
