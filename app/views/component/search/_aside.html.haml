@@ -5,19 +5,19 @@
       %label{:for => "keyword"}
         I need...
       = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword", :list => "search-keywords"
-
-      %datalist#search-keywords
-        - cip_keywords.each do |keyword|
-          %option{:value=>keyword}
+      - cache ['keywords-list', *cip_keywords] do
+        %datalist#search-keywords
+          - cip_keywords.each do |keyword|
+            %option{:value=>keyword}
 
     -# location search box input field appears below
     %section#location-search-box
       %label{:for => "location"}
         I am near...
       = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
-
-      %datalist#search-locations
-        - smc_cities.each do |city|
-          %option{:value=>city}
+      - cache ['cities-list', *smc_cities] do
+        %datalist#search-locations
+          - smc_cities.each do |city|
+            %option{:value=>city}
 
     = render :partial => 'component/search/options'

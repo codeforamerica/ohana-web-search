@@ -1,11 +1,12 @@
 %section#category-box
   -# Category search terms that are displayed on the homepage
-  %section#general-services
-    %ul
-      - service_terms.each do |service|
-        = render :partial => "home/category_links", :locals => { :service => service }
-
-  %section#emergency-services
-    %ul
-      - emergency_terms.each do |service|
-        = render :partial => "home/category_links", :locals => { :service => service }
+  - cache ['service-list', *service_terms] do
+    %section#general-services
+      %ul
+        - service_terms.each do |service|
+          = render :partial => "home/category_links", :locals => { :service => service }
+  - cache ['emergency-list', *emergency_terms] do
+    %section#emergency-services
+      %ul
+        - emergency_terms.each do |service|
+          = render :partial => "home/category_links", :locals => { :service => service }
