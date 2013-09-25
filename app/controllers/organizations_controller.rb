@@ -88,7 +88,13 @@ class OrganizationsController < ApplicationController
     @org = Organization.get(params[:id])
 
     # initializes map data
-    @map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
+    # Fetching nearby places is the most time-consuming activity in the app.
+    # The API method needs to be optimized, but the app should not be
+    # automatically fetching them every time you visit the details page.
+    # It should only fetch them if someone asks for them on the details page,
+    # and we should add a Google Analytics event to track how many times
+    # people click "Show nearby places".
+    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
