@@ -9,36 +9,38 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markerBounds; // the bounds of the markers
 		var _locationMarker; // the location of the current org
 
-		var _nearbyControl; // the show nearby locations button
-		var _nearbyControlIcon; // icon in the nearby locations button
-		var _nearbyControlTxt; // text in the nearby locations button
+		//var _nearbyControl; // the show nearby locations button
+		var _mapCanvas; // the details map div
+		//var _nearbyControlIcon; // icon in the nearby locations button
+		//var _nearbyControlTxt; // text in the nearby locations button
 
-		var _nearbyShowing; //whether or not the nearby locations are showing
+		//var _nearbyShowing; //whether or not the nearby locations are showing
 
 		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
 		var _callback; // callback to handoff search to when nearby location is clicked
 
 		// constants for map button text content
-		var NO_NEARBY = "NOTE: No nearby services at this location";
-		var SHOW_NEARBY = "Show nearby services";
-		var HIDE_NEARBY = "Hide nearby services";
+		//var NO_NEARBY = "NOTE: No nearby services at this location";
+		//var SHOW_NEARBY = "Show nearby services";
+		//var HIDE_NEARBY = "Hide nearby services";
 
 		// PUBLIC METHODS
 		function init(callback)
 		{
 			_callback = callback;
-			_nearbyControl = document.getElementById("show-nearby-control");
-			_nearbyShowing = false;
+			//_nearbyControl = document.getElementById("show-nearby-control");
+			_mapCanvas = document.getElementById("detail-map-canvas");
+			//_nearbyShowing = false;
 			_markersArray = [];
 
-			if (_nearbyControl)
+			if (_mapCanvas)
 			{
-				_nearbyControlIcon = document.getElementById("show-nearby-control-icon");
-				_nearbyControlTxt = document.getElementById("show-nearby-control-text");
+				//_nearbyControlIcon = document.getElementById("show-nearby-control-icon");
+				//_nearbyControlTxt = document.getElementById("show-nearby-control-text");
 
 				_loadData();
-				_initControlText();
+				//_initControlText();
 
 				var title = document.getElementById("detail-map-canvas-title");
 				var lat = document.getElementById("detail-map-canvas-lat");
@@ -78,36 +80,36 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		}
 
 		// nearby map control was clicked
-		function _nearbyControlClicked(evt)
-		{
-			if (_nearbyShowing)
-			{
-				_hideNearby();
-				_nearbyShowing = false;
-			}
-			else
-			{
-				_showNearby();
-				_nearbyShowing = true;
-			}
-			refresh();
-		}
+		// function _nearbyControlClicked(evt)
+		// {
+		// 	if (_nearbyShowing)
+		// 	{
+		// 		_hideNearby();
+		// 		_nearbyShowing = false;
+		// 	}
+		// 	else
+		// 	{
+		// 		_showNearby();
+		// 		_nearbyShowing = true;
+		// 	}
+		// 	refresh();
+		// }
 
 		// show the nearby markers
-		function _showNearby()
-		{
-			_loadMarkers();
-	    var metadata = _markerData[_markerData.length-1];
-			var summaryText = "<span>"+metadata.count+" nearby services located</span>";
-			_nearbyControlTxt.innerHTML = summaryText+" • "+HIDE_NEARBY;
-		}
+		// function _showNearby()
+		// {
+		// 	_loadMarkers();
+	 //    var metadata = _markerData[_markerData.length-1];
+		// 	var summaryText = "<span>"+metadata.count+" nearby services located</span>";
+		// 	_nearbyControlTxt.innerHTML = summaryText+" • "+HIDE_NEARBY;
+		// }
 
-		// hides the nearby markers
-		function _hideNearby()
-		{
-			_clearMarkers();
-			_nearbyControlTxt.innerHTML = SHOW_NEARBY;
-		}
+		// // hides the nearby markers
+		// function _hideNearby()
+		// {
+		// 	_clearMarkers();
+		// 	_nearbyControlTxt.innerHTML = SHOW_NEARBY;
+		// }
 
 		// loads the data
 		function _loadData()
@@ -121,20 +123,20 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		}
 
 		// initializes nearby map control
-		function _initControlText()
-		{
-			if (_markerData)
-				{
-					_nearbyControl.classList.add('hover');
-					_nearbyControl.addEventListener("click", _nearbyControlClicked, false);
-					_nearbyControlTxt.innerHTML = SHOW_NEARBY;
-					_nearbyControlIcon.classList.remove('hide');
-				}
-				else
-				{
-					_nearbyControlTxt.innerHTML = NO_NEARBY;
-				}
-		}
+		// function _initControlText()
+		// {
+		// 	if (_markerData)
+		// 		{
+		// 			_nearbyControl.classList.add('hover');
+		// 			_nearbyControl.addEventListener("click", _nearbyControlClicked, false);
+		// 			_nearbyControlTxt.innerHTML = SHOW_NEARBY;
+		// 			_nearbyControlIcon.classList.remove('hide');
+		// 		}
+		// 		else
+		// 		{
+		// 			_nearbyControlTxt.innerHTML = NO_NEARBY;
+		// 		}
+		// }
 
 		// loads markers
 		function _loadMarkers()
