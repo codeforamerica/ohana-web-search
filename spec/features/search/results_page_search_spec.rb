@@ -50,4 +50,11 @@ feature "results page search" do
     expect(page).to have_content("30 of 107 results")
   end
 
+  scenario 'when clicking organization link in results', :vcr do
+    search(:keyword => "St. Vincent de Paul Society")
+    page.first("a", text: "St. Vincent de Paul Society").click
+    expect(page).to_not have_content("Shelter Network")
+    expect(page).to have_content("San Mateo Homeless Help Center")
+  end
+
 end
