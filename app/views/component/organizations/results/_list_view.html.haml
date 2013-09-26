@@ -27,7 +27,7 @@
 								= superscript_ordinals(org.name)
 						- if (org.organization.name) && (org.organization.name != org.name)
 							%h2.agency
-								%a{:href=>"/organizations?keyword=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
+								%a{:href=>"/organizations?org_name=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
 									%span
 										= superscript_ordinals(org.organization.name)
 					- if org.key?(:phones)
