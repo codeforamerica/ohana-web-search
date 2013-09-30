@@ -1,6 +1,11 @@
 HumanServicesFinder::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+    r301 %r{.*}, 'http://smc-connect.org$&',
+      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'smc-connect.org' }
+  end
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

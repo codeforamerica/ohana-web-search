@@ -29,6 +29,9 @@ gem "dalli"
 gem "memcachier"
 gem "kgio"
 
+# URL redirects
+gem "rack-rewrite"
+
 ## For passing data to JS
 ## http://railscasts.com/episodes/324-passing-data-to-javascript
 #gem "gon"
