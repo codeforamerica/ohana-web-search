@@ -14,9 +14,8 @@ HumanServicesFinder::Application.configure do
   # you tell search engines that the canonical URL is the one that matters, and
   # it prevents them from continuing to index the duplicate content.
   #
-  # The next step would be to submit a request to the search engines to have
-  # them delete their index of the non-canonical URLs.
-  # Google example: https://support.google.com/webmasters/answer/1663416
+  # Google's recommendations for canonicalization:
+  # https://support.google.com/webmasters/answer/139066
   config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
     # change this if you're deploying to another domain name
     canonical_url = "smc-connect.org"
