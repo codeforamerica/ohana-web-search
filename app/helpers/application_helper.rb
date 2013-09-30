@@ -9,6 +9,19 @@ module ApplicationHelper
 		end
 	end
 
+  # Since this app includes various parameters in the URL when linking to a
+  # location's details page, we can end up with many URLs that display the
+  # same content. To gain more control over which URL appears in Google search
+  # results, we can use the <link> element with the "rel=canonical" attribute.
+
+  # This helper allows us to set the canonical URL for the details page in the
+  # view. See app/views/organizations/show.html.haml
+  #
+  # More info: https://support.google.com/webmasters/answer/139066
+  def canonical(url)
+    content_for(:canonical, tag(:link, :rel => :canonical, :href => url)) if url
+  end
+
   # Top level services and their children categories.
   # Displayed on the home page and on the details page
   # when no search results are found.
