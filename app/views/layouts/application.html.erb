@@ -34,6 +34,7 @@
     <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+    <%= yield :canonical %>
     <% if Rails.env.production? %>
       <script type="text/javascript">
         var _gaq = _gaq || [];
