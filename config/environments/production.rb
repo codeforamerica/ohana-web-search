@@ -1,9 +1,28 @@
 HumanServicesFinder::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # Thanks to the "rack-rewrite" gem, this will redirect all URLs that don't
+  # come from the domain specified in the canonica_url variable to the
+  # canonical URL equivalent. Full URLs are preserved
+  # (i.e. including path and parameters).
+  #
+  # This is necessary if search engines have been indexing your site while it
+  # was hosted on herokuapp.com, and you later set up a custom domain name.
+  # This makes the site accessible via two different domain names, which
+  # major search engines consider duplicate content and can count against you.
+  # By setting up this permanent redirect (via the HTTP 301 status code),
+  # you tell search engines that the canonical URL is the one that matters, and
+  # it prevents them from continuing to index the duplicate content.
+  #
+  # The next step would be to submit a request to the search engines to have
+  # them delete their index of the non-canonical URLs.
+  # Google example: https://support.google.com/webmasters/answer/1663416
   config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-    r301 %r{.*}, 'http://smc-connect.org$&',
-      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != 'smc-connect.org' }
+    # change this if you're deploying to another domain name
+    canonical_url = "smc-connect.org"
+
+    r301 %r{.*}, "http://#{canonical_url}$&",
+      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
   end
 
   # Code is not reloaded between requests
