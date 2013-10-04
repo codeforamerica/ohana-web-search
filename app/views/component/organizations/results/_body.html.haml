@@ -27,12 +27,12 @@
       %section#category-box
         %section
           %ul
-            - taxonomy_terms.each do |service|
+            - taxonomy_terms.keys.each do |parent|
               %li
-                %a{ :href => "/organizations?keyword=#{u service[:parent]}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{service[:parent]}']);" }
-                  = service[:parent]
+                %a{ :href => "/organizations?category=#{u parent}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{parent}']);" }
+                  = parent
                 %ul
-                  - service[:children].each do |child|
+                  - taxonomy_terms[parent].each do |child|
                     %li
-                      %a{ :href => "/organizations?keyword=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{child}']);" }
+                      %a{ :href => "/organizations?category=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{child}']);" }
                         = child
