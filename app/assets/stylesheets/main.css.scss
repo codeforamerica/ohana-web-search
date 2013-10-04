@@ -1176,9 +1176,14 @@ main
         font-family:$san_serif_font;
         padding:5px;
         @include border-radius(4px);
-        background:$green_lightest;
-        border:2px solid $blue_darkest;
+        //background:$green_lightest;
+        //border:2px solid $blue_darkest;
         font-weight:bold;
+        letter-spacing:1px;
+      }
+
+      a{
+        border-bottom:0;
       }
 
       a:hover
@@ -1194,6 +1199,11 @@ main
       }
     }
   }
+}
+
+#google_translate_element
+{
+  padding-bottom:20px;
 }
 
 .goog-te-banner-frame.skiptranslate {display: none !important;}
