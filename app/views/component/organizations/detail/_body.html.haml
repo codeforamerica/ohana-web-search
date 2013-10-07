@@ -5,7 +5,8 @@
       = superscript_ordinals(@org.name)
     - if (@org.organization.name) && (@org.organization.name != @org.name)
       %h2.agency
-        = superscript_ordinals(@org.organization.name)
+        %a{:href=>"/organizations?org_name=#{CGI::escape(@org.organization.name)}", :title=>"#{@org.organization.name}"}
+          = superscript_ordinals(@org.organization.name)
 
 
   / detail sidebar content
@@ -153,7 +154,7 @@
       %section.service-opt-box
         %h1 Service Options
         %section
-          = insert_template(true,@org,:languages,"Languages Spoken",nil)
+          = insert_template(false,@org,:languages,"Languages Spoken",nil)
           = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
 
 
@@ -215,12 +216,13 @@
             - if service.key?(:categories)
               %section.categories-box
                 %h1 Categories
-                %section
-                  - service.categories.each do |cat|
-                    - category = cat.name
-                    %a{ :href => "/organizations?category=#{u category}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{category}']);" }
-                      = category
-
+                - if service.categories.length > 0
+                  %ul
+                    - service.categories.each do |cat|
+                      - category = cat.name
+                      %li
+                        %span
+                          = link_to category, organization_path('', @search_params.merge(:category => category))
   / detail footer content
   - if @org.key?(:updated_at)
     %footer

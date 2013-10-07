@@ -4,11 +4,16 @@ class OrganizationsController < ApplicationController
   include ActionView::Helpers::TextHelper
   include ResultSummaryHelper
 
-  TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
-    legal money transit work).freeze
-
   # search results view
   def index
+
+    # remove blank entries from the URL parameters
+    # blank location was causing API search to return no results
+    params.each do |key,val|
+      if val.blank? || val.nil? || val == ""
+        params[key].delete
+      end
+    end
 
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)

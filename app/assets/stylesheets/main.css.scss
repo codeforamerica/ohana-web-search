@@ -1578,18 +1578,42 @@ main
   }
 }
 
-#kind-options
+#search-options
 {
-
-  label
+  legend
   {
-    vertical-align: baseline;
+    margin-bottom:5px;
   }
-  input
+
+  a
   {
-    width:auto;
-    height:auto;
-    vertical-align: text-top;
+    background:$white; // IE fallback
+    background:$white_alpha80;
+    @include border-radius(4px);
+    padding:5px;
+    font-family:$san_serif_font;
+    font-size:14px;
+    display:block;
+    border-bottom:0;
+  }
+
+  a:hover
+  {
+    background:$purple_lightest;
+    border-bottom:0;
+  }
+
+  a:before
+  {
+    font-size:16px;
+    content:"×";
+    padding:5px;
+    color: $greyscale_midtone;
+  }
+
+  a:hover:before
+  {
+    color: $white;
   }
 }
 
