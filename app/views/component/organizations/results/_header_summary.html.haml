@@ -2,44 +2,16 @@
 	- unless pages[:total_pages] == 0
 		%span.pagination
 			Page:
-
-			-# appends existing path with updated page parameter
-			- path = request.fullpath
-
-			- if (path =~ /page=\d*&?/).present?
-				- first_url = path.gsub(/page=\d*&?/, "page=1&")
-				- last_url = path.gsub(/page=\d*&?/, "page=#{pages[:total_pages]}&")
-				- prev_url = path.gsub(/page=\d*&?/, "page=#{pages[:prev_page]}&")
-				- next_url = path.gsub(/page=\d*&?/, "page=#{pages[:next_page]}&")
-			- elsif (path =~ /\?/).nil?
-				- first_url = "?page=1"
-				- last_url = "?page=#{pages[:total_pages]}"
-				- prev_url = "?page=#{pages[:prev_page]}"
-				- next_url = "?page=#{pages[:next_page]}"
-			- else
-				- first_url = "#{path}&page=1}"
-				- last_url = "#{path}&page=#{pages[:total_pages]}"
-				- prev_url = "#{path}&page=#{pages[:prev_page]}"
-				- next_url = "#{path}&page=#{pages[:next_page]}"
-
 			- if pages[:prev_page].present?
 				%span.prev
 					= link_to "<", {:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self"
 
 			- if pages[:pages][0] != 1
 				= link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
-
 			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
 				= "..."
 
 			- pages[:pages].each do |page|
-
-				- if (path =~ /page=\d*&?/).present?
-					- page_url = path.gsub(/page=\d*&?/, "page=#{page}&")
-				- elsif (path =~ /\?/).nil?
-					- page_url = "?page=#{page}"
-				- else
-					- page_url = "#{path}&page=#{page}"
 
 				- if page == pages[:current_page]
 					%span.current
