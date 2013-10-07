@@ -110,19 +110,112 @@ module ApplicationHelper
     ['Atherton, CA','Belmont, CA','Brisbane, CA','Burlingame, CA','Colma, CA','Daly City, CA','East Palo Alto, CA','Foster City, CA','Half Moon Bay, CA','Hillsborough, CA','Menlo Park, CA','Millbrae, CA','Pacifica, CA','Portola Valley, CA','Redwood City, CA','San Bruno, CA','San Carlos, CA','San Mateo, CA','South San Francisco, CA','Woodside, CA','Broadmoor, CA','Burlingame Hills, CA','Devonshire, CA','El Granada, CA','Emerald Lake Hills, CA','Highlands-Baywood Park, CA','Kings Mountain, CA','Ladera, CA','La Honda, CA','Loma Mar, CA','Menlo Oaks, CA','Montara, CA','Moss Beach, CA','North Fair Oaks, CA','Palomar Park, CA','Pescadero, CA','Princeton-by-the-Sea, CA','San Gregorio, CA','Sky Londa, CA','West Menlo Park, CA']
   end
 
-  # Full list of Open Eligibility categories for when no search results are found
+  # List of Open Eligibility categories for when no search results are found.
+  # Only returns categories that have been associated with services since
+  # it doesn't make sense to include categories that will return no locations.
   def taxonomy_terms
-    { "Emergency" => ["Disaster Response", "Emergency Cash", "Cash for Food", "Cash for Healthcare", "Cash for Housing", "Cash for Gas", "Cash for School", "Cash for Utilities", "Emergency Food", "Emergency Shelter", "Help Find Missing Persons", "Immediate Safety", "Help Escape Violence", "Safe Housing", "Psychiatric Emergency Services"],
-      "Food" => ["Community Gardens", "Emergency Food", "Food Delivery", "Food Pantry", "Free Meals", "Help Pay for Food", "Cash for Food", "Food Benefits", "Nutrition"],
-      "Housing" => ["Emergency Shelter", "Help Find Housing", "Help Pay for Housing", "Cash for Housing", "Cash for Utilities", "Home & Renters Insurance", "Housing Vouchers", "Maintenance & Repairs", "Housing Advice", "Foreclosure Counseling", "Homebuyer Education", "Residential Housing", "Housing with Support", "Long-Term Housing", "Assisted Living", "Independent Living", "Nursing Home", "Public Housing", "Safe Housing", "Short-Term Housing", "Nursing Home", "Sober Living"],
-      "Goods" => ["Baby Supplies", "Baby Clothes", "Diapers & Formula", "Clothing", "Baby Clothes", "Clothes for School", "Clothes for Work", "Clothing Vouchers", "Home Goods", "Blankets & Fans", "Books", "Furniture", "Personal Care Items", "Supplies for Work", "Medical Supplies", "Technology", "Assistive Technology", "Internet", "Phone Services", "Toys & Gifts"],
-      "Transit" => ["Help Pay for Transit", "Bus Passes", "Cash for Gas", "Transportation", "Transportation for Healthcare", "Transportation for School"],
-      "Health" => ["Addiction & Recovery", "12-Step", "Detox", "Halfway Housing", "Outpatient Treatment", "Residential Treatment", "Sober Living", "Dental Care", "End-of-Life Care", "Bereavement", "Burial & Funeral Help", "Hospice", "Pain Management", "Health Education", "Daily Life Skills", "Disease Management", "Family Planning", "Nutrition", "Parenting Education", "Sex Education", "Understand Disability", "Understand Mental Health", "Help Pay for Healthcare", "Cash for Healthcare", "Disability Benefits", "Discounted Healthcare", "Health Insurance", "Medical Supplies", "Prescription Assistance", "Transportation for Healthcare", "Medical Care", "Alternative Medicine", "Assistive Technology", "Birth Control", "Checkup & Test", "Disability Screening", "Disease Screening", "Hearing Tests", "Mental Health Evaluation", "Pregnancy Tests", "Vision Tests", "Maternity Care", "Personal Hygiene", "Prevent & Treat", "Counseling", "HIV Treatment", "Pain Management", "Disease Management", "Nursing Home", "Physical Therapy", "Specialized Therapy", "Vaccinations", "In-Home Support", "Residential Treatment", "Outpatient Treatment", "Psychiatric Emergency Services"],
-      "Money" => ["Emergency Cash", "Cash for Food", "Cash for Healthcare", "Cash for Housing", "Cash for Childcare", "Cash for Gas", "Cash for School", "Cash for Utilities", "Financial Assistance", "Help Pay for Childcare", "Cash for Childcare", "Childcare Vouchers", "Help Pay for Food", "Food Benefits", "Cash for Food", "Help Pay for Healthcare", "Cash for Healthcare", "Disability Benefits", "Discounted Healthcare", "Health Insurance", "Medical Supplies", "Prescription Assistance", "Transportation for Healthcare", "Healthcare Vouchers", "Help Pay for Housing", "Cash for Housing", "Cash for Utilities", "Home & Renters Insurance", "Housing Vouchers", "Maintenance & Repairs", "Help Pay for School", "Books", "Cash for School", "Clothes for School", "Financial Aid & Loans", "Transportation for School", "Help Pay for Transit", "Cash for Gas", "Bus Passes", "Help Pay for Work Expenses", "Government Benefits", "Disability Benefits", "Food Benefits", "Retirement Benefits", "Understand Government Programs", "Unemployment Benefits", "Vouchers", "Childcare Vouchers", "Clothing Vouchers", "Healthcare Vouchers", "Housing Vouchers", "Financial Education", "Credit Counseling", "Foreclosure Counseling", "Homebuyer Education", "Savings Program", "Insurance", "Health Insurance", "Home & Renters Insurance", "Tax Preparation"],
-      "Care" => ["Adoption & Foster Care", "Adoption & Foster Placement", "Adoption & Foster Parenting", "Adoption Planning", "Post-Adoption Support", "Animal Welfare", "Daytime Care", "Adult Daycare", "Afterschool Care", "Childcare", "Child Daycare", "Help Find Childcare", "Childcare Vouchers", "Cash for Childcare", "Day Camp", "Preschool", "Recreation", "Relief for Caregivers", "End-of-Life Care", "Bereavement", "Burial & Funeral Help", "Hospice", "Pain Management", "Navigating the System", "Help Fill out Forms", "Help Find Childcare", "Help Find Housing", "Help Find School", "Help Find Work", "Residential Care", "Assisted Living", "Residential Treatment", "Nursing Home", "Overnight Camp", "Support Network", "Counseling", "Help Hotlines", "Home Visiting", "In-Home Support", "Mentoring", "One-on-One Support", "Peer Support", "Spiritual Support", "Support Groups", "12-Step", "Bereavement", "Parenting Education", "Virtual Support"],
-      "Education" => ["Help Find School", "Help Pay for School", "Books", "Cash for School", "Clothes for School", "Financial Aid & Loans", "Transportation for School", "More Education", "Alternative Education", "Disaster Preparedness & Response", "English as a Second Language (ESL)", "Financial Education", "Credit Counseling", "Foreclosure Counseling", "Homebuyer Education", "Foreign Languages", "GED/High-School Equivalency", "Health Education", "Disease Management", "Family Planning", "Nutrition Education", "Parenting Education", "Sex Education", "Understand Disability", "Understand Mental Health", "Supported Employment", "Special Education", "Tutoring", "Preschool", "Screening & Exams", "Citizenship & Immigration", "GED/High-School", "English as a Second Language (ESL)", "Skills & Training", "Basic Literacy", "Computer Class", "Daily Life Skills", "Interview Training", "Resume Development", "Skills Assessment", "Specialized Training", "Technology", "Assistive Technology", "Internet", "Medical Supplies", "Phone Services"],
-      "Work" => ["Help Find Work", "Job Placement", "Supported Employment", "Help Pay for Work Expenses", "Clothes for Work", "Retirement Benefits", "Supplies for Work", "Unemployment Benefits", "Skills & Training", "Basic Literacy", "Computer Class", "GED/High-School Equivalency", "Interview Training", "Resume Development", "Skills Assessment", "Specialized Training", "Supported Employment", "Workplace Rights"],
-      "Legal" => ["Advocacy & Legal Aid", "Adoption & Foster Care", "Adoption & Foster Placement", "Adoption & Foster Parenting", "Adoption Planning", "Post-Adoption Support", "Citizenship & Immigration", "Discrimination & Civil Rights", "Guardianship", "Identification Recovery", "Understand Government Programs", "Workplace Rights", "Mediation", "Notary", "Representation", "Translation & Interpretation"]
+    { "Emergency" =>
+        ["Disaster Response", "Emergency Cash", "Cash for Food",
+          "Cash for Healthcare", "Cash for Housing", "Cash for Gas",
+          "Cash for Utilities", "Emergency Food", "Emergency Shelter",
+          "Help Find Missing Persons", "Immediate Safety",
+          "Help Escape Violence", "Safe Housing",
+          "Psychiatric Emergency Services"
+        ],
+      "Food" =>
+        ["Emergency Food", "Food Delivery", "Food Pantry", "Free Meals",
+          "Help Pay for Food", "Food Benefits", "Nutrition"
+        ],
+      "Housing" =>
+        ["Emergency Shelter", "Help Find Housing", "Help Pay for Housing",
+          "Cash for Housing", "Cash for Utilities", "Housing Vouchers",
+          "Maintenance & Repairs", "Housing Advice", "Foreclosure Counseling",
+          "Homebuyer Education", "Residential Housing", "Housing with Support",
+          "Long-Term Housing", "Assisted Living", "Independent Living",
+          "Nursing Home", "Safe Housing", "Short-Term Housing"
+        ],
+      "Goods" =>
+        ["Baby Supplies", "Baby Clothes", "Clothing", "Baby Clothes",
+          "Clothes for School", "Clothes for Work", "Clothing Vouchers",
+          "Home Goods", "Blankets & Fans", "Furniture", "Personal Care Items",
+          "Technology", "Assistive Technology", "Internet", "Phone Services",
+          "Toys & Gifts"
+        ],
+      "Transit" =>
+        ["Help Pay for Transit", "Bus Passes", "Cash for Gas",
+          "Transportation", "Transportation for Healthcare",
+          "Transportation for School"
+        ],
+      "Health" =>
+        ["Addiction & Recovery", "12-Step", "Detox", "Halfway Housing",
+          "Outpatient Treatment", "Residential Treatment", "Sober Living",
+          "Dental Care", "End-of-Life Care", "Bereavement", "Hospice",
+          "Pain Management", "Health Education", "Daily Life Skills",
+          "Disease Management", "Family Planning", "Nutrition",
+          "Parenting Education", "Sex Education", "Understand Disability",
+          "Understand Mental Health", "Help Pay for Healthcare",
+          "Cash for Healthcare", "Discounted Healthcare", "Health Insurance",
+          "Medical Supplies", "Prescription Assistance",
+          "Transportation for Healthcare", "Medical Care",
+          "Alternative Medicine", "Assistive Technology", "Birth Control",
+          "Checkup & Test", "Disability Screening", "Disease Screening",
+          "Hearing Tests", "Mental Health Evaluation", "Pregnancy Tests",
+          "Vision Tests", "Maternity Care", "Personal Hygiene",
+          "Prevent & Treat", "Counseling", "HIV Treatment", "Nursing Home",
+          "Specialized Therapy", "Vaccinations", "Outpatient Treatment",
+          "Psychiatric Emergency Services"
+        ],
+      "Money" =>
+        ["Emergency Cash", "Financial Assistance", "Help Pay for Childcare",
+          "Help Pay for Food", "Help Pay for Housing", "Help Pay for Transit",
+          "Help Pay for Work Expenses", "Government Benefits",
+          "Disability Benefits", "Food Benefits", "Retirement Benefits",
+          "Understand Government Programs", "Vouchers", "Clothing Vouchers",
+          "Housing Vouchers", "Financial Education", "Foreclosure Counseling",
+          "Savings Program", "Insurance", "Health Insurance",
+          "Home & Renters Insurance", "Tax Preparation"
+        ],
+      "Care" =>
+        ["Adoption & Foster Care", "Adoption & Foster Placement",
+          "Adoption & Foster Parenting", "Adoption Planning",
+          "Post-Adoption Support", "Animal Welfare", "Daytime Care",
+          "Adult Daycare", "Afterschool Care", "Childcare", "Child Daycare",
+          "Day Camp", "Preschool", "Recreation", "Relief for Caregivers",
+          "End-of-Life Care", "Bereavement", "Hospice", "Pain Management",
+          "Navigating the System", "Help Fill out Forms", "Help Find Housing",
+          "Help Find Work", "Residential Care", "Assisted Living",
+          "Residential Treatment", "Nursing Home", "Support Network",
+          "Counseling", "Help Hotlines", "Home Visiting", "In-Home Support",
+          "Mentoring", "One-on-One Support", "Peer Support",
+          "Spiritual Support", "Support Groups", "12-Step",
+          "Parenting Education", "Virtual Support"
+        ],
+      "Education" =>
+        ["Help Find School", "Help Pay for School", "Books",
+          "Financial Aid & Loans", "More Education", "Alternative Education",
+          "English as a Second Language (ESL)", "Financial Education",
+          "Foreign Languages", "GED/High-School Equivalency",
+          "Health Education", "Supported Employment", "Special Education",
+          "Tutoring", "Preschool", "Screening & Exams", "GED/High-School",
+          "English as a Second Language (ESL)", "Skills & Training",
+          "Basic Literacy", "Computer Class", "Daily Life Skills",
+          "Interview Training", "Resume Development", "Skills Assessment",
+          "Specialized Training", "Technology", "Assistive Technology"
+        ],
+      "Work" => ["Help Find Work", "Job Placement", "Supported Employment",
+        "Help Pay for Work Expenses", "Skills & Training", "Basic Literacy",
+        "Computer Class", "GED/High-School Equivalency", "Interview Training",
+        "Resume Development", "Skills Assessment", "Specialized Training",
+        "Supported Employment", "Workplace Rights"
+      ],
+      "Legal" =>
+        ["Advocacy & Legal Aid", "Adoption & Foster Care",
+          "Adoption & Foster Placement", "Adoption Planning",
+          "Post-Adoption Support", "Citizenship & Immigration",
+          "Discrimination & Civil Rights", "Guardianship",
+          "Understand Government Programs", "Workplace Rights", "Mediation",
+          "Representation", "Translation & Interpretation"
+        ]
     }
   end
 
