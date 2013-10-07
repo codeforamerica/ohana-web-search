@@ -49,21 +49,6 @@ class OrganizationsController < ApplicationController
     @search_params = request.params.except(:action, :id, :_, :controller)
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
-    ## Adds top-level category terms to @orgs for display on results list.
-    ## This will likely be refactored to use the top-level keywords when those
-    ## are organized in the database using OE or equivalent.
-    # if @orgs.present?
-    #   @orgs.each do |org|
-    #     org.category = []
-    #     if org.keywords.present?
-    #       org.keywords.each do |k|
-    #         org.category.push(k) if TOP_LEVEL_CATEGORIES.include? k.downcase
-    #       end
-    #     end
-    #     org.category = org.category.uniq.sort
-    #   end
-    # end
-
     # initializes map data
     @map_data = generate_map_data(@orgs)
 
