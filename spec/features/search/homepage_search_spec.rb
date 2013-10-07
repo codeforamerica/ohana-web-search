@@ -83,7 +83,7 @@ feature "homepage search" do
     search_from_home(:keyword => 'soccer')
     page.first("a", text: "Other").click
     find("#list-view").should_not have_content("Sports")
-    expect(page).to have_content("415 results")
+    expect(page).to have_content("4 results")
   end
 
 end

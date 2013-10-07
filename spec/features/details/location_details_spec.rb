@@ -109,7 +109,7 @@ feature "location details" do
       # the time is checked against the Travis CI server time. The time has been
       # removed from the test till this can be sorted.
       #expect(page).to have_content("Monday, 9 September 2013 at 10:30 AM")
-      expect(page).to have_content("Wednesday, 11 September 2013 at")
+      expect(page).to have_content("Tuesday, 1 October 2013 at")
     end
 
   end
