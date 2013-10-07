@@ -13,12 +13,6 @@ module Features
       end
     end
 
-    def search_by_language(lang)
-      fill_in('keyword', :with => "care")
-      select(lang, :from => 'language', :exact => true)
-      find(:css, '#update-btn').click
-    end
-
     def search_from_home(options = {})
       visit ("/")
       options[:on_home] = true
