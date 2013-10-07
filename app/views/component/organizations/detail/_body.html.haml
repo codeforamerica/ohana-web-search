@@ -212,6 +212,15 @@
             = insert_template(true,service,:eligibility,"Eligibility",nil)
             = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
+            - if service.key?(:categories)
+              %section.categories-box
+                %h1 Categories
+                %section
+                  - service.categories.each do |cat|
+                    - category = cat.name
+                    %a{ :href => "/organizations?category=#{u category}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{category}']);" }
+                      = category
+
   / detail footer content
   - if @org.key?(:updated_at)
     %footer
