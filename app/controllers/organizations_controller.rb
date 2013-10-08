@@ -85,8 +85,7 @@ class OrganizationsController < ApplicationController
   # organization details view
   def show
     # retrieve specific organization's details
-    path = params[:id].split("/")
-    path.length == 1 ? id = path[0] : id = path[1]
+    id = params[:id].split("/")[-1]
     @org = Organization.get(id)
 
     # initializes map data
@@ -189,8 +188,7 @@ class OrganizationsController < ApplicationController
   # If the location id is invalid, redirect to home page
   # and display an alert (TODO), or do something else.
   def check_location_id
-    path = params[:id].split("/")
-    path.length == 1 ? id = path[0] : id = path[1]
+    id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
   end
 
