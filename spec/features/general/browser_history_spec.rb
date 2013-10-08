@@ -6,7 +6,6 @@ feature 'Visitor uses the back or forward button', :js => true do
     VCR.use_cassette('homepage_search/with keyword_that_returns_results') do
       search_from_home(:keyword => 'maceo')
       page.find("#search-summary")
-      delay # add delay to allow page to load (hopefully)
     end
   end
 
@@ -19,12 +18,11 @@ feature 'Visitor uses the back or forward button', :js => true do
     go_back
     page.find("#search-container")
     go_forward
-    page.find("#search-summary").
-      should have_content("1 result matching 'maceo'")
+    sleep(2)
     looks_like_results
   end
 
-  scenario 'back to homepage after 2 queries', :vcr => { :record => :new_episodes } do
+  scenario 'back to homepage after 2 queries', :vcr do
     search(:keyword => 'maceo')
     go_back
     go_back

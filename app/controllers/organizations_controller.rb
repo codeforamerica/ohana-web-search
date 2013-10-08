@@ -85,7 +85,8 @@ class OrganizationsController < ApplicationController
   # organization details view
   def show
     # retrieve specific organization's details
-    @org = Organization.get(params[:id])
+    id = params[:id].split("/")[-1]
+    @org = Organization.get(id)
 
     # initializes map data
     # Fetching nearby places is the most time-consuming activity in the app.
@@ -100,7 +101,7 @@ class OrganizationsController < ApplicationController
     @search_params = request.params.except(:action, :id, :_, :controller)
     # To disable or remove the Result list button on details page
     # when visiting location directly
-    @referer = request.env['HTTP_REFERER']
+    #@referer = request.env['HTTP_REFERER']
 
     # respond to direct and ajax requests
     expires_in 30.minutes, :public => true
@@ -187,7 +188,8 @@ class OrganizationsController < ApplicationController
   # If the location id is invalid, redirect to home page
   # and display an alert (TODO), or do something else.
   def check_location_id
-    redirect_to root_path unless Organization.get(params[:id])
+    id = params[:id].split("/")[-1]
+    redirect_to root_path unless Organization.get(id)
   end
 
 end
