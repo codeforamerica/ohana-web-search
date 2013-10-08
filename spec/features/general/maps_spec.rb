@@ -9,11 +9,9 @@ feature 'search results map', :js=>true do
     end
   end
 
-  context 'results have entries that do not have coordinates', :vcr do
-    # Set to pending because a search that doesn't return a map has
-    # not not been found.
-    xit "does not display a results list map" do
-      search_from_home({:keyword=>'alcohol and drug helpline'})
+  context 'none of the results have coordinates', :vcr do
+    it "does not display a results list map" do
+      visit('/organizations?org_name=California+Coalition+for+Youth')
       expect(page).to_not have_selector("#map-view")
     end
   end
