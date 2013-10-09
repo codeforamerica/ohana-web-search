@@ -2637,23 +2637,35 @@ main
     min-width:400px;
     margin:0 auto;
     position:relative;
+    text-align:center;
 
     p
     {
       text-align:center;
       padding: 10px;
       font-weight:bold;
+      @include inline-block();
+    }
+
+    a
+    {
+      color:$white;
+      border-bottom:1px solid $white_alpha50;
+    }
+
+    a:hover
+    {
+      color:$white;
+      border-bottom:1px solid $white;
     }
   }
 
   .close-button
   {
     color:$greyscale_midtone; // IE Fallback
-    color:$black_alpha50;
-    position:absolute;
-    right:10px;
-    top:0px;
+    color:$white_alpha50;
     font-size:24px;
+    @include inline-block();
   }
 
   .close-button:after
@@ -2663,7 +2675,7 @@ main
 
   .close-button:hover
   {
-    color:$black;
+    color:$white;
     cursor:pointer;
   }
 }

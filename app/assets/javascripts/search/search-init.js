@@ -1,7 +1,5 @@
 // manages search initialization
-require(['search/ajax-search'],function(as) {
+require(function() {
   'use strict';
-
-  as.init();
 
 });

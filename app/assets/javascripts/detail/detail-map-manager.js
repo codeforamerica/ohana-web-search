@@ -18,17 +18,14 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
-		var _callback; // callback to handoff search to when nearby location is clicked
-
 		// constants for map button text content
 		//var NO_NEARBY = "NOTE: No nearby services at this location";
 		//var SHOW_NEARBY = "Show nearby services";
 		//var HIDE_NEARBY = "Hide nearby services";
 
 		// PUBLIC METHODS
-		function init(callback)
+		function init()
 		{
-			_callback = callback;
 			//_nearbyControl = document.getElementById("show-nearby-control");
 			_mapCanvas = document.getElementById("detail-map-canvas");
 			//_nearbyShowing = false;
@@ -232,4 +229,13 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 	return {
 		init:init
 	};
+}, function (err) {
+    //The errback, error callback
+    //The error has a list of modules that failed
+    var failedId = err.requireModules && err.requireModules[0];
+
+    console.log("Map failed to load! Hiding map HTML code.",failedId);
+
+		var mapContainer = document.getElementById('map-view');
+		    mapContainer.classList.add('hide');
 });
