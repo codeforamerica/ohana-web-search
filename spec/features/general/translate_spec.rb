@@ -35,7 +35,7 @@ feature 'page translation', :js=>true do
       visit('/')
       find_link("Español").click
       find(:css, '#find-btn').click
-      delay # give Google Translate a chance to tranlate page
+      delay # give Google Translate a chance to translate page
       expect(page).to have_content("Mostrando")
     end
   end

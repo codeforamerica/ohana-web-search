@@ -125,7 +125,7 @@ module Features
 
     # helper to (hopefully) wait for page to load
     def delay
-      sleep(1)
+      sleep(2)
     end
 
   end
