@@ -2,14 +2,13 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery
 	before_filter :set_translation_cookie
 
-	# Retrieves translate parameter and performs
-	# mapping to Google Translate API language code
-	# values. Sets cookie with english -> [translate] language value.
+	# Retrieves translate parameter as language code.
+	# Sets cookie with english -> [translate] language code value.
 	# Deletes cookie if [translate] is english
 	def set_translation_cookie
 		if params[:translate].present?
 
-			# List of used values are as follows:
+			# List of used language code values are as follows:
 			# {'english'=>'en','afrikaans'=>'af','albanian'=>'sq','arabic'=>'ar',
 			# 'armenian'=>'hy','azerbaijani'=>'az','basque'=>'eu','belarusian'=>'be',
 			# 'bengali'=>'bn','bosnian'=>'bs','bulgarian'=>'bg','catalan'=>'ca',
