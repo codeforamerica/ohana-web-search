@@ -11,12 +11,14 @@ class OrganizationsController < ApplicationController
 
     # translate search keyword to current language if other than english
     #if params[:keyword].present? && @current_lang != 'en'
+    #  original_word = params[:keyword]
     #  translated_word = translate(params[:keyword],@current_lang,'en',false)
     #  params[:keyword] = translated_word[0].translatedText if translated_word.present?
     #end
 
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
+    #params[:keyword] = original_word if original_word.present?
 
     headers = Ohanakapa.last_response.headers
 
