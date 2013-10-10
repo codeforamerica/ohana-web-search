@@ -37,7 +37,7 @@ define(['util/util'],function(util) {
 
     function _langUpdated(evt)
     {
-      document.location.search = util.queryString({"translate":_languages.options[_languages.selectedIndex].text.toLowerCase()});
+      document.location.search = util.queryString({"translate":_languages.options[_languages.selectedIndex].value});
     }
 
 	return {
