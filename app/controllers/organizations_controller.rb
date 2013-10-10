@@ -6,9 +6,6 @@ class OrganizationsController < ApplicationController
   include ActionView::Helpers::TextHelper
   include ResultSummaryHelper
 
-  TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
-    legal money transit work).freeze
-
   # search results view
   def index
 
