@@ -47,7 +47,14 @@ feature "results page search" do
 
   xscenario 'with language that returns less results', :vcr do
     search_by_language("Tagalog (Filipino)")
-    expect(page).to have_content("30 of 107 results")
+    expect(page).to have_content("30 of 112 results")
+  end
+
+  scenario 'when clicking organization link in results', :vcr do
+    search(:keyword => "St. Vincent de Paul Society")
+    page.first("a", text: "St. Vincent de Paul Society").click
+    expect(page).to_not have_content("Shelter Network")
+    expect(page).to have_content("San Mateo Homeless Help Center")
   end
 
 end

@@ -23,16 +23,16 @@
       %p.message
         %strong Unfortunately, your search returned no results.
         %em If you have trouble finding what you're looking for, try searching with a single keyword or click a category of service below.
-
-    %section#category-box
-      %section
-        %ul
-          - taxonomy_terms.each do |service|
-            %li
-              %a{ :href => "/organizations?keyword=#{u service[:parent]}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{service[:parent]}']);" }
-                = service[:parent]
-              %ul
-                - service[:children].each do |child|
-                  %li
-                    %a{ :href => "/organizations?keyword=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Home_Categories', 'Click', '#{child}']);" }
-                      = child
+    - cache ['taxonomy-list', *taxonomy_terms] do
+      %section#category-box
+        %section
+          %ul
+            - taxonomy_terms.keys.each do |parent|
+              %li
+                %a{ :href => "/organizations?category=#{u parent}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{parent}']);" }
+                  = parent
+                %ul
+                  - taxonomy_terms[parent].each do |child|
+                    %li
+                      %a{ :href => "/organizations?category=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{child}']);" }
+                        = child

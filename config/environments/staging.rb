@@ -1,45 +1,8 @@
 HumanServicesFinder::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  # Thanks to the "rack-rewrite" gem, the code in lines 38-43 will redirect all
-  # URLs that don't come from the domain specified in the canonica_url variable
-  # to the canonical URL equivalent. Full URLs are preserved
-  # (i.e. including path and parameters).
-  #
-  # This is necessary if search engines have been indexing your site while it
-  # was hosted on herokuapp.com, and you later set up a custom domain name.
-  # Adding a custom domain on Heroku does not automatically redirect the heroku
-  # domain to your custome domain, which leaves your site accessible via two
-  # different domain names, which major search engines consider duplicate
-  # content and can count against you.
-  # By setting up this permanent redirect (via the HTTP 301 status code),
-  # you tell search engines that the canonical URL is the one you prefer, and
-  # it prevents them from continuing to index the duplicate content.
-  #
-  # Google's recommendations for canonicalization:
-  # https://support.google.com/webmasters/answer/139066
-  #
-  # When deploying, set the environment variable to your desired URL.
-  # For example, if you want the URL to be "smc-connect.org" and you
-  # are deploying to Heroku, you would use the command line to run this from
-  # your app's directory: heroku config:set CANONICAL_URL=smc-connect.org
-  #
-  # To test the redirection in development, you can set the environment
-  # variable in config/application.yml by adding this line:
-  # CANONICAL_URL: smc-connect.org (or whatever URL you want).
-  # Alternatively, you can export the environment variable
-  # locally by running this command from the directory of your app:
-  # export CANONICAL_URL=smc-connect.org
-  #
-  # Then copy and paste lines 38-43 from this file into
-  # config/environments/development.rb and restart your server.
-  # Don't forget to remove the redirection code from development.rb
-  # when you're done testing.
-  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-    canonical_url = ENV["CANONICAL_URL"]
-
-    r301 %r{.*}, "http://#{canonical_url}$&",
-      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
+  config.middleware.use '::Rack::Auth::Basic' do |u, p|
+    [u, p] == [ENV["STAGING_USER"], ENV["STAGING_PASSWORD"]]
   end
 
   # Code is not reloaded between requests
@@ -132,6 +95,5 @@ HumanServicesFinder::Application.configure do
     :domain =>         'heroku.com',
     :authentication => :plain
   }
-
 
 end

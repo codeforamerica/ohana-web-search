@@ -1,12 +1,12 @@
-#Ohana SMC
+#SMC-Connect
 
 [![Build Status](https://travis-ci.org/codeforamerica/human_services_finder.png?branch=master)](https://travis-ci.org/codeforamerica/human_services_finder) [![Coverage Status](https://coveralls.io/repos/codeforamerica/human_services_finder/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/human_services_finder) [![Dependency Status](https://gemnasium.com/codeforamerica/human_services_finder.png)](https://gemnasium.com/codeforamerica/human_services_finder)
 
-A brand new project underway by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. We have acquired the Peninsula Library System's [Community Information Program](http://cip.plsinfo.org) — a dataset of community resources in San Mateo County — which we are making available via an [API](https://github.com/codeforamerica/ohana-api).
+This is a Rails app built  by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. We have acquired the Peninsula Library System's [Community Information Program](http://cip.plsinfo.org) — a dataset of community resources in San Mateo County — which we are making available via an [API](https://github.com/codeforamerica/ohana-api).
 
-This app serves as an example of what can be built with that data, and is consuming our API. The goal is to build an interface that makes it easy to find available services in San Mateo County, and to provide as much pertinent information as possible, such as travel directions, hours of operation, other services residents in need might be eligible for, etc.
+This app serves as an example of what can be built with that data, and is consuming our API. It is deployed at [http://smc-connect.org](http://smc-connect.org). The goal is to build an interface that makes it easy to find available services in San Mateo County, and to provide as much pertinent information as possible, such as travel directions, hours of operation, other services residents in need might be eligible for, etc.
 
-This repo is in the early stages of development, but we've reached a stable point where we are ready to accept contributions. Below you will find instructions for installing the project and contributing.
+We gladly welcome contributions. Below you will find instructions for installing the project and contributing.
 
 ## Installation
 Please note that the instructions below have only been tested on OS X. If you are running another operating system and run into any issues, feel free to update this README, or open an issue if you are unable to resolve installation issues.

@@ -92,17 +92,24 @@ class OrganizationsController < ApplicationController
   # organization details view
   def show
     # retrieve specific organization's details
-    @org = Organization.get(params[:id])
+    id = params[:id].split("/")[-1]
+    @org = Organization.get(id)
 
     # initializes map data
-    @map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
+    # Fetching nearby places is the most time-consuming activity in the app.
+    # The API method needs to be optimized, but the app should not be
+    # automatically fetching them every time you visit the details page.
+    # It should only fetch them if someone asks for them on the details page,
+    # and we should add a Google Analytics event to track how many times
+    # people click "Show nearby places".
+    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
 
     # To disable or remove the Result list button on details page
     # when visiting location directly
-    @referer = request.env['HTTP_REFERER']
+    #@referer = request.env['HTTP_REFERER']
 
     # respond to direct and ajax requests
     expires_in 30.minutes, :public => true
@@ -192,7 +199,8 @@ class OrganizationsController < ApplicationController
   # If the location id is invalid, redirect to home page
   # and display an alert (TODO), or do something else.
   def check_location_id
-    redirect_to root_path unless Organization.get(params[:id])
+    id = params[:id].split("/")[-1]
+    redirect_to root_path unless Organization.get(id)
   end
 
   # Translate the page using the Google Translate API.
