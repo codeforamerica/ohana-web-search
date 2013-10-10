@@ -1,4 +1,4 @@
-// manages behavior of popups
+// manages behavior of google translate drop-down
 define(['util/util'],function(util) {
   'use strict';
 
@@ -14,13 +14,15 @@ define(['util/util'],function(util) {
 
     function _checkForGoog()
     {
-      if (_timeoutCount++ < 10)
+      // Polling check for Google Translate drop-down to be initialized
+      // Set to 7 seconds (same as RequireJS timeout wait time)
+      if (_timeoutCount++ < 7)
       {
         setTimeout(function(){
           _languages = document.querySelector('#google_translate_element select');
           if (!_languages) _checkForGoog();
           else _hookDropDown();
-        },100);
+        },1000);
       }
       else
       {
