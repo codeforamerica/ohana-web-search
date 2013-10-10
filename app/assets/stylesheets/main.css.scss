@@ -2246,7 +2246,7 @@ body { top: 0px !important; }
   #search-summary
   {
     border-bottom:0;
-    margin-left:150px;
+    @include inline-block();
     border-left:1px solid $greyscale_light; // IE fallback
     border-left:1px solid $black_alpha10;
   }
@@ -2265,8 +2265,8 @@ body { top: 0px !important; }
 
 #map-view-control
 {
-  float:left;
-  width:150px;
+  @include inline-block();
+  min-width:150px;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;
