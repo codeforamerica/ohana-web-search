@@ -19,9 +19,19 @@ class ApplicationController < ActionController::Base
 		  lang = language_mapping(lang_param)
 
 		  if lang == 'en'
-		  	cookies.delete :googtrans
+		  	cookies.delete(:name=>:googtrans,:domain=>:all)
+		  else
+		  	cookies[:googtrans] = {
+					:value => "/en/#{lang}",
+					:domain => :all
+				}
+				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=.herokuapp.com"
+				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=ohana-staging.herokuapp.com"
+				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=.ohana-staging.herokuapp.com"
 		  end
-		  cookies[:googtrans] = "/en/#{lang}"
+
+		else
+			lang = 'en'
 		end
 
 		if cookies[:googtrans].present?
