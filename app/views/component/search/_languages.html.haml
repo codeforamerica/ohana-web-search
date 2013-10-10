@@ -1,19 +1,44 @@
 %section#language-box
-  %p
-    Filter services by language availability:
   %ul
     %li
-      %a{:href=>"/organizations/?language=spanish"}
-        Español
+      - if @current_lang == 'en'
+        %span{:lang=>"en",:class=>"notranslate"}
+          English
+      - else
+        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate"}
+          English
     %li
-      %a{:href=>"/organizations/?language=tagalog"}
-        Tagalog
+      - if @current_lang == 'es'
+        %span{:lang=>"es",:class=>"notranslate"}
+          Español
+      - else
+        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate"}
+          Español
     %li
-      %a{:href=>"/organizations/?language=chinese"}
-        中文
+      - if @current_lang == 'tl'
+        %span{:lang=>"tl",:class=>"notranslate"}
+          Tagalog
+      - else
+        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate"}
+          Tagalog
     %li
-      %a{:href=>"/organizations/?language=arabic"}
-        العربية
+      - if @current_lang == 'zh-CN'
+        %span{:lang=>"zh-CN",:class=>"notranslate"}
+          中文
+      - else
+        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate"}
+          中文
     %li
-      %a{:href=>"/organizations/?language=russian"}
-        Русский
+      - if @current_lang == 'ar'
+        %span{:lang=>"ar",:class=>"notranslate"}
+          العربية
+      - else
+        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate"}
+          العربية
+    %li
+      - if @current_lang == 'ru'
+        %span{:lang=>"ru",:class=>"notranslate"}
+          Русский
+      - else
+        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate"}
+          Русский

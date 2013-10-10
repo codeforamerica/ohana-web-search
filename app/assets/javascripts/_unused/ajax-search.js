@@ -60,6 +60,7 @@ define(['app/loading-manager',
 			var keyword = params.keyword
 			var location = params.location
 			var radius = params.radius;
+
 			var language = params.language
 			var page = params.page;
 

@@ -5,8 +5,7 @@ define(['util/util'],function (util) {
   	// PRIVATE PROPERTIES
 		// search parameter values
 		var _keyword,
-				_location,
-				_language;
+				_location;
 
 		var _findBtn; // find button on homepage
 		var _updateBtn; // update button on inside page
@@ -19,7 +18,6 @@ define(['util/util'],function (util) {
 			_callback = callback;
 			_keyword = document.getElementById("keyword");
 			_location = document.getElementById("location");
-			_language = document.getElementById("language");
 
 			_findBtn = document.getElementById('find-btn');
 			_updateBtn = document.getElementById('update-btn');
@@ -59,17 +57,6 @@ define(['util/util'],function (util) {
 			_location.value = value;
 		}
 
-		function getLanguage()
-		{
-			return _language.value;
-		}
-
-		function setLanguage(value)
-		{
-			if (value)
-				_language.value = value;
-		}
-
 		// PRIVATE METHODS
 
 		// register all links with "ajax-link" class added as ajax-enabled links
@@ -105,7 +92,6 @@ define(['util/util'],function (util) {
 			var params = {};
 			params.keyword = getKeyword();
 			params.location = getLocation();
-			params.language = getLanguage();
 			params.page = 1;
 			_callback.performSearch(params);
 
@@ -119,8 +105,6 @@ define(['util/util'],function (util) {
 		getKeyword:getKeyword,
 		setKeyword:setKeyword,
 		getLocation:getLocation,
-		setLocation:setLocation,
-		getLanguage:getLanguage,
-		setLanguage:setLanguage
+		setLocation:setLocation
 	};
 });

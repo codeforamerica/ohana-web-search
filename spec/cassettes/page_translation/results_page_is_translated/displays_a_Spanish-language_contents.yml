@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 10 Oct 2013 00:23:54 GMT
+      - Thu, 10 Oct 2013 06:28:12 GMT
       Etag:
       - '"1674e5861e4d28861e1d69e55ed81529"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=57>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=57&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=2&utf8=%E2%9C%93>;
         rel="next"
       Status:
       - 200 OK
@@ -43,11 +43,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4954'
+      - '4998'
       X-Request-Id:
-      - cf5df46fed7225c74f2d714f91c93412
+      - 71a4f8c9a4c0fb732c3c875e3cc6f67c
       X-Runtime:
-      - '1.065492'
+      - '0.307753'
       X-Total-Count:
       - '1709'
       X-Total-Pages:
@@ -431,5 +431,5 @@ http_interactions:
         Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427,"service_ids":["521d32c31974fcdb2b000204","521d32c31974fcdb2b00020b","521d32c31974fcdb2b00021d","521d32c41974fcdb2b000258","521d32cc1974fcdb2b00046e","521d33211974fcdb2b001b5e","521d33211974fcdb2b001b98","521d33231974fcdb2b001c04","521d32bb1974fcdb2b0000a0","521d330b1974fcdb2b0015ad","521d33121974fcdb2b00175c","521d339f1974fcdb2b002698","521d33081974fcdb2b0014ee","521d339f1974fcdb2b002697","521d339d1974fcdb2b00265e","521d339e1974fcdb2b002691","521d339f1974fcdb2b002692","521d339f1974fcdb2b002694","521d339f1974fcdb2b002695","521d33381974fcdb2b001fd7","521d339e1974fcdb2b00268f","521d339f1974fcdb2b002693","521d338a1974fcdb2b002480","521d339e1974fcdb2b002690","521d330a1974fcdb2b00154c","521d338e1974fcdb2b002519","521d330a1974fcdb2b001558","521d338e1974fcdb2b00251a","521d33321974fcdb2b001f15","521d338e1974fcdb2b002524","521d33311974fcdb2b001ee4","521d32f81974fcdb2b00109b","521d33311974fcdb2b001ef7","521d338e1974fcdb2b00250f","521d332d1974fcdb2b001e2d","521d332d1974fcdb2b001e2e","521d332d1974fcdb2b001e2f","521d338b1974fcdb2b0024c2","521d332d1974fcdb2b001e46","521d32ca1974fcdb2b0003ea","521d32c21974fcdb2b0001f4","521d32cb1974fcdb2b000405","521d32cd1974fcdb2b0004a3","521d32cf1974fcdb2b000515","521d32d61974fcdb2b000747","521d32dc1974fcdb2b0008db","521d32ec1974fcdb2b000d0a","521d32ed1974fcdb2b000d64","521d32ef1974fcdb2b000e2b","521d333a1974fcdb2b002012","521d333a1974fcdb2b002029","521d33661974fcdb2b00226f","521d33201974fcdb2b001b58"]},{"_id":"52280f721edd37edff0000d5","depth":2,"lft":423,"name":"Recreation","oe_id":"108-03-06","parent_id":"52280f721edd37edff0000cb","rgt":424,"service_ids":["521d32c31974fcdb2b00020b","521d32c31974fcdb2b00021d","521d32c41974fcdb2b000258","521d32cc1974fcdb2b00046e","521d32bb1974fcdb2b0000a0","521d339f1974fcdb2b002698","521d339d1974fcdb2b00265e","521d339e1974fcdb2b002691","521d339f1974fcdb2b002692","521d339f1974fcdb2b002694","521d339e1974fcdb2b00268f","521d339f1974fcdb2b002693","521d338a1974fcdb2b002480","521d339e1974fcdb2b002690","521d338e1974fcdb2b002519","521d338e1974fcdb2b00251a","521d33311974fcdb2b001ef7","521d332d1974fcdb2b001e2d","521d332d1974fcdb2b001e2e","521d332d1974fcdb2b001e2f","521d332d1974fcdb2b001e46","521d32ca1974fcdb2b0003ea","521d32dc1974fcdb2b0008db","521d333a1974fcdb2b002012","521d33201974fcdb2b001b58"]}]}],"organization":{"_id":"521d339c1974fcdb2b002648","_slugs":["ymca-of-san-francisco"],"created_at":"2013-08-27T16:17:48-07:00","name":"YMCA
         of San Francisco","updated_at":"2013-10-01T12:18:42-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339c1974fcdb2b002648/locations"},"slugs":["stonestown-family-ymca"],"id":"521d339d1974fcdb2b002655","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Thu, 10 Oct 2013 00:23:56 GMT
+  recorded_at: Thu, 10 Oct 2013 06:28:14 GMT
 recorded_with: VCR 2.5.0
