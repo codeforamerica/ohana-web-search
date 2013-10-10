@@ -1,21 +1,16 @@
-// the result and details inits are full modules unlike the other section initializers
-// because they need to have a method to re-initialize their functionality after an
-// ajax request updates part of the page.
-define(['result/result-map-manager'], function (map) {
+require(['result/result-map-manager'], function (map) {
   'use strict';
 
-  var _callback; // store callback used to hand to map for searches
+  map.init();
 
-  function init(callback)
-  {
-  	_callback = callback;
-  	refresh();
-  }
+}, function (err) {
+    //The errback, error callback
+    //The error has a list of modules that failed
+    var failedId = err.requireModules && err.requireModules[0];
+    requirejs.undef(failedId);
 
-  function refresh()
-  {
-  	map.init(_callback);
-  }
+    console.log("RequireJS threw an Error:",failedId,err.requireType);
 
-return {init:init,refresh:refresh}
+    // initialize no map loaded state
+    require(['result/no-result-map-manager'], function (map) {map.init();});
 });

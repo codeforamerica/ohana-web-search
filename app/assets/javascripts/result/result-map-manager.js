@@ -1,5 +1,5 @@
 // manages results maps view
-define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function (map) {
+define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'],function () {
 	'use strict';
 
 		// PRIVATE PROPERTIES
@@ -18,13 +18,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
-		var _callback; // callback to handoff search to when nearby location is clicked
-
 		// PUBLIC METHODS
-		function init(callback)
+		function init()
 		{
-			_callback = callback;
-
 			var mapContainer = document.getElementById('map-view');
 
 			if (mapContainer)
