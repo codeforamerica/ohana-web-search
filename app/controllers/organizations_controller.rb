@@ -1,17 +1,24 @@
+require 'google/api_client'
+
 class OrganizationsController < ApplicationController
   before_filter :check_location_id, only: :show
 
   include ActionView::Helpers::TextHelper
   include ResultSummaryHelper
 
-  TOP_LEVEL_CATEGORIES = %w(care education emergency food goods health housing
-    legal money transit work).freeze
-
   # search results view
   def index
 
+    # translate search keyword to current language if other than english
+    #if params[:keyword].present? && @current_lang != 'en'
+    #  original_word = params[:keyword]
+    #  translated_word = translate(params[:keyword],@current_lang,'en',false)
+    #  params[:keyword] = translated_word[0].translatedText if translated_word.present?
+    #end
+
     # initialize query. Content may be blank if no results were found.
     @orgs = Organization.search(params)
+    #params[:keyword] = original_word if original_word.present?
 
     headers = Ohanakapa.last_response.headers
 
@@ -64,7 +71,7 @@ class OrganizationsController < ApplicationController
     #   end
     # end
 
-    # initializes map data
+    # initializes map data for search results map
     @map_data = generate_map_data(@orgs)
 
     # construct html and plain results summaries for use in display in the view (html)
@@ -79,7 +86,6 @@ class OrganizationsController < ApplicationController
         format.html # index.html.haml
       end
     end
-
   end
 
   # organization details view
@@ -99,6 +105,7 @@ class OrganizationsController < ApplicationController
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
+
     # To disable or remove the Result list button on details page
     # when visiting location directly
     #@referer = request.env['HTTP_REFERER']
@@ -115,16 +122,17 @@ class OrganizationsController < ApplicationController
 
   private
 
-  # Used for mapping nearby locations on details map view
-  # generate json for the maps in the view
-  # this will be injected into a <script> element in the view
-  # and then consumed by the detail-map-manager javascript.
-  # map_data parses the @org hash and retrieves all entries
-  # that have coordinates, and returns that as json, otherwise map_data
-  # ends up being nil and can be checked in the view with map_data.present?
-  # @param data [Object] nearby API response
+  # Used for generating data for the two Google maps used in the app:
+  # (1) The search results map and (2) nearby locations map on details view.
+  # Method generates json for the maps that will be injected into a <script>
+  # element in the view and then consumed by the map-manager or detail-map-manager
+  # javascript. The map_data variable parses the object returned from the API
+  # and retrieves all entries that have coordinates, and returns that as json,
+  # otherwise map_data ends up being nil and can be checked in the view with
+  # map_data.present?
+  # @param data [Object] API response data
   # @return [Object] JSON object containing id, name, and coordinates.
-  # Or nil if there are no nearby map entries.
+  # Or nil if there are no mappable entries.
   def generate_map_data(data)
 
     return nil if data.blank? # return immediately if data is empty
@@ -136,7 +144,8 @@ class OrganizationsController < ApplicationController
 
     map_data = data.reduce([]) do |result, o|
 
-      # hide "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
+      # Uncomment this section if it is desirable to hide the
+      # "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
       #if o.name == "San Maceo Agency"
       #  data.delete(o)
       #else
@@ -175,6 +184,7 @@ class OrganizationsController < ApplicationController
     map_data = map_data.to_json.html_safe unless map_data.nil?
   end
 
+  # Used for passing rendered HTML partials in a json response to requests made via ajax
   # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
   # execute a block with a different format (ex: an html partial while in an ajax request)
   def with_format(format, &block)
@@ -191,5 +201,28 @@ class OrganizationsController < ApplicationController
     id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
   end
+
+  # Translate the page using the Google Translate API.
+  # @param [String] text to translate
+  # @param [String] target language code to translate into
+  # def translate(text, source, target, is_html)
+
+  #   client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
+  #   translate = client.discovered_api('translate', 'v2')
+  #   html_or_plain = is_html ? "html" : "text"
+
+  #   params = {
+  #       'format' => html_or_plain,
+  #       'source' => source,
+  #       'target' => target,
+  #       'q' => text
+  #     }
+
+  #   result = client.execute(
+  #     :api_method => translate.translations.list,
+  #     :parameters => params
+  #   )
+  #   result.data.translations
+  # end
 
 end

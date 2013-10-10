@@ -1,5 +1,3 @@
-require 'json'
-
 class Organization
 
   # Calls the search endpoint of the Ohana API

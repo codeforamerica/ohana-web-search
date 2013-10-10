@@ -98,13 +98,8 @@ module Features
       expect(page).to have_content "I need"
       expect(page).to have_content "reporting"
       expect(page).to have_content "government assistance"
-    end
-
-    def looks_like_homepage_as_user_sees_it
-      expect(page).to have_title "SMC-Connect"
-      expect(page).to have_content "I need"
-      expect(page).to have_selector('#find-btn')
       expect(page).to_not have_title "1 result"
+      find("#language-box").should have_content("English")
     end
 
     def go_to_next_page

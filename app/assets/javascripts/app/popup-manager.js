@@ -10,15 +10,18 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		// PUBLIC METHODS
 		function init()
 		{
-			_addPopups();
-			feedback.init();
-			// try/catch added to ignore IE errors
-			/*
-			window.enquire.register("screen and (max-width: 767px)", {
-			    match 	: _removePopups,
-			    unmatch : _addPopups
-			});
-			*/
+			if (!util.isURLParamPresent("translate"))
+			{
+				_addPopups();
+				feedback.init();
+				// try/catch added to ignore IE errors
+				/*
+				window.enquire.register("screen and (max-width: 767px)", {
+				    match 	: _removePopups,
+				    unmatch : _addPopups
+				});
+				*/
+			}
 		}
 
 
