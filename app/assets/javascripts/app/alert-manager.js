@@ -1,4 +1,4 @@
-// manages behavior of popups
+// manages behavior of alert popups
 define(function() {
   'use strict';
 
