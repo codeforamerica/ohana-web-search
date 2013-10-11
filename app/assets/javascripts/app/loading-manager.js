@@ -2,12 +2,20 @@
 define(function() {
   'use strict';
 
-	var _view = document.getElementById("loading-box");
-	var _main = document.getElementById("content");
+	var _view;
+	var _main;
 	var _fullscreen = true;
+
+	// lazy initializer
+	function _init()
+	{
+		if (!_view) _view = document.getElementById("loading-box");
+		if (!_main) _main = document.getElementById("content");
+	}
 
 	function show(params)
 	{
+		_init();
 		_view.classList.remove('fade-out');
 		_view.classList.add('fade-in');
 
@@ -27,6 +35,7 @@ define(function() {
 
 	function hide()
 	{
+		_init();
 		_view.classList.remove('fade-in');
 		_view.classList.add('fade-out');
 
