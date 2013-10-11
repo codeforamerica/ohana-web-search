@@ -163,7 +163,7 @@ define(function() {
       }
     }
 
-    // parse query string into object
+    // Parse query string into object
     // (from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter)
     // @param [String] the query string parameter
     // @return [Object] query string as object
@@ -195,6 +195,15 @@ define(function() {
       return false
     }
 
+    // Retrieve a cookie value by name
+    // @param [String] the name of the cookie.
+    // @return [String] the cookie value.
+    function getCookie(name) {
+      var parts = document.cookie.split(name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+
+
   return {
     isEmpty:isEmpty,
     isEventSupported:isEventSupported,
@@ -204,6 +213,7 @@ define(function() {
     getStyle:getStyle,
     queryString:queryString,
     getQueryParams:getQueryParams,
-    isURLParamPresent:isURLParamPresent
+    isURLParamPresent:isURLParamPresent,
+    getCookie:getCookie
   };
 });
