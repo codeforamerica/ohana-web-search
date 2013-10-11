@@ -19,7 +19,7 @@ feature 'page translation', :js=>true do
   end
 
   context 'homepage is translated', :vcr do
-    it "displays a Spanish-language contents" do
+    xit "displays a Spanish-language contents" do
       visit('/')
       find_link("Español").click
       within("#language-box") do
@@ -31,7 +31,7 @@ feature 'page translation', :js=>true do
   end
 
   context 'results page is translated', :vcr do
-    it "displays a Spanish-language contents" do
+    xit "displays a Spanish-language contents" do
       visit('/')
       find_link("Español").click
       find(:css, '#find-btn').click
