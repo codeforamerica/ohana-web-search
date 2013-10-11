@@ -10,7 +10,6 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		// PUBLIC METHODS
 		function init()
 		{
-			console.log("translated",_isTranslated());
       if (!_isTranslated())
       {
 				_addPopups();
