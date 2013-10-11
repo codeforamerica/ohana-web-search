@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 			cookies.delete(:googtrans,:domain=>"www.#{ENV['TRANSLATE_URL']}")
 			cookies.delete(:googtrans,:domain=>".www.#{ENV['TRANSLATE_URL']}")
 			cookies.delete(:googtrans,:domain=>:all)
-			headers['Set-Cookie'] = "googtrans=/en/#{@current_lang};domain=.www#{ENV['TRANSLATE_URL']}"
+			headers['Set-Cookie'] = "googtrans=/en/#{@current_lang};domain=.www.#{ENV['TRANSLATE_URL']}"
 
 		else
 			@current_lang = 'en'
