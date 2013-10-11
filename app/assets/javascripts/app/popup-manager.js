@@ -10,8 +10,9 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		// PUBLIC METHODS
 		function init()
 		{
-			if (!util.isURLParamPresent("translate"))
-			{
+			var translate = util.getQueryParams()['translate'];
+      if (!translate || translate != 'en')
+      {
 				_addPopups();
 				feedback.init();
 				// try/catch added to ignore IE errors
