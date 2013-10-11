@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 	# Sets cookie with english -> [translate] language code value.
 	# Deletes cookie if [translate] is english
 	def set_translation_cookie
+
 		if params[:translate].present?
 
 			# List of used language code values are as follows:
@@ -25,26 +26,19 @@ class ApplicationController < ActionController::Base
 			# 'tamil'=>'ta','telugu'=>'te','thai'=>'th','turkish'=>'tr','ukrainian'=>'uk',
 			# 'urdu'=>'ur','vietnamese'=>'vi','yiddish'=>'yi'}
 
-		  lang = params[:translate]
+		  @current_lang = params[:translate]
 
-		  if lang == 'en'
-		  	cookies.delete :googtrans
-		  else
-		  	cookies[:googtrans] = "/en/#{lang}"
-				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=.herokuapp.com"
-				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=ohana-staging.herokuapp.com"
-				#headers['Set-Cookie'] = "googtrans=/en/#{lang};domain=.ohana-staging.herokuapp.com"
-		  end
+			# clear all translation cookies
+			cookies.delete(:googtrans,:domain=>".#{ENV['TRANSLATE_URL']}")
+			cookies.delete(:googtrans,:domain=>"www.#{ENV['TRANSLATE_URL']}")
+			cookies.delete(:googtrans,:domain=>".www.#{ENV['TRANSLATE_URL']}")
+			cookies.delete(:googtrans,:domain=>:all)
+			headers['Set-Cookie'] = "googtrans=/en/#{@current_lang};domain=.www#{ENV['TRANSLATE_URL']}"
 
 		else
-			lang = 'en'
+			@current_lang = 'en'
 		end
 
-		if cookies[:googtrans].present?
-			@current_lang = cookies[:googtrans][4..cookies[:googtrans].length]
-		else
-			@current_lang = lang
-		end
 	end
 
 end
