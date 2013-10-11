@@ -1,6 +1,7 @@
 %section#language-box
   %ul
     %li
+      = ENV['TRANSLATE_URL']
       - if @current_lang == 'en'
         %span{:lang=>"en",:class=>"notranslate"}
           English
