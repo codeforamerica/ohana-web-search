@@ -10,8 +10,8 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 		// PUBLIC METHODS
 		function init()
 		{
-			var translate = util.getQueryParams()['translate'];
-      if (!translate || translate != 'en')
+			console.log("translated",_isTranslated());
+      if (!_isTranslated())
       {
 				_addPopups();
 				feedback.init();
@@ -23,6 +23,16 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
 				});
 				*/
 			}
+		}
+
+		// Check if the page is currently translated using Google Translation
+		function _isTranslated()
+		{
+			var translate = util.getQueryParams()['translate'];
+			if (translate && translate != "en") return true;
+			var googtrans = util.getCookie("googtrans");
+			if (googtrans && googtrans != "/en/en") return true;
+			return false;
 		}
 
 
