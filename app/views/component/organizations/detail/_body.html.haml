@@ -1,7 +1,7 @@
 = render 'component/organizations/detail/header'
-%section#detail-info
+%section#detail-info{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
   %header
-    %h1.name{:title=>@org.name}
+    %h1.name{:title=>@org.name, :itemprop=>"name"}
       = superscript_ordinals(@org.name)
     - if (@org.organization.name) && (@org.organization.name != @org.name)
       %h2.agency
@@ -18,7 +18,7 @@
           %section
 
             - if @org.key?(:ask_for)
-              %section.ask-for
+              %section.ask-for{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
                 - @org.ask_for.each do |ask_for|
                   %div
                     %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
@@ -36,13 +36,13 @@
 
 
             - if @org.key?(:phones)
-              %section.phones
+              %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
                 - @org.phones.each do |hash|
                   %div
                     %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
                     %span
                       - if hash["department"]
-                        %span
+                        %span{:itemprop=>"contactType"}
                           = hash["department"]
                       - if hash["number"]
                         %span{:itemprop=>"telephone"}
@@ -199,8 +199,8 @@
     - if @org.key?(:services)
       %section.services-box
         %h1 Services
-        %section
-          - @org.services.each do |service|
+        - @org.services.each do |service|
+          %section.service{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
 
             / insert template, params are:
             / use_template,org,field,title,icon
