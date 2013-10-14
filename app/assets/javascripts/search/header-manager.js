@@ -17,11 +17,17 @@ define(['util/util'],
 
 				_checkIfFloating();
 
-				// if window has a hash, offset the scrolling by the height of the floating header
-				if(window.location.hash)
+				// If window has a hash, offset the scrolling by the height of the floating header.
+				// Also offset scrolling if search container is above search results (it's not floated)
+				if(window.location.hash )
 				{
 					var scrollOffset = _header.offsetHeight;
 					window.scrollTo(0,(window.scrollY-scrollOffset));
+				}
+				else if( (util.getStyle(document.getElementById('search-container'),"float") == "none") )
+				{
+					var scrollOffset = util.getOffset(document.getElementById("persistent-results-header")).top;
+					window.scrollTo(0,scrollOffset-1);
 				}
 
 				window.addEventListener("scroll",_onScroll,false);
