@@ -4,7 +4,7 @@ class StatusController < ApplicationController
   def get_status
     # API checks
     test_location = Ohanakapa.location("downtown-palo-alto-food-closet")
-    test_search = Ohanakapa.search("search", :keyword => "food")
+    test_search = Ohanakapa.search("search", :org_name => "InnVision")
 
     if test_location.blank? || test_search.blank?
       status = "API did not respond"
