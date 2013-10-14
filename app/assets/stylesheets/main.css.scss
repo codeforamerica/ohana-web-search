@@ -1348,7 +1348,7 @@ main
   float:left;
   vertical-align: top;
   padding: 20px;
-  width:200px;
+  width: 240px;
   background-color: $blue_lightest;
   border-right:2px solid $blue_midtone;
 
@@ -1417,23 +1417,19 @@ main
   input
   {
     font-size: 22px;
-    height:50px;
     border:2px solid $blue_darkest;
     @include border-radius(4px);
     border-collapse: collapse;
     padding:10px;
     position:relative;
-    top:3px;
     margin:0;
     @include box-sizing(border-box);
-    width:290px;
   }
 
   button
   {
     font-size: 16px;
     margin:0;
-    height:50px;
     border:2px solid $blue_darkest;
     padding:10px;
     vertical-align: baseline;
@@ -1501,8 +1497,15 @@ main
     text-shadow: 1px 4px 6px $blue_lightest, 0 0 0 $black, 1px 4px 6px $blue_lightest;
   }
 
+  input
+  {
+    height:50px;
+    width:290px;
+  }
+
   button // find button styles
   {
+    height:50px;
     font-size:22px;
     @include inline-block();
     @include border-radius(4px);
@@ -1537,21 +1540,199 @@ main
 {
   padding:10px;
   padding-top:0px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
-  label // form input field labels
+  >div label
   {
-    font-size:24px;
+    font-size:16px;
+    font-family:$san_serif_font;
+    font-weight:bold;
+    cursor:pointer;
+    @include inline-block();
   }
 
-  input
+  input[type=search]
   {
     top:5px;
     margin-left:0px;
-    width:100%;
-    font-size: 16px;
+    width:133px;
+    height:34px;
+    padding:3px;
+    padding-left:6px;
+    font-size: 14px;
+    @include inline-block();
+    vertical-align: bottom;
   }
 }
+
+.search-check input[type=checkbox]{
+  visibility: hidden;
+}
+
+.search-check {
+  width: 61px;
+  height: 20px;
+  @include background( linear-gradient(top,$blue_midtone,$blue_light) );
+  @include inline-block();
+  position: relative;
+
+  @include box-shadow( inset 0px 1px 0px $blue_dark, inset 0px 1px 1px $blue_darkest );
+  border:1px solid $blue_darkest;
+  @include border-radius(3px);
+  cursor:pointer;
+}
+
+.search-check label {
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+
+  border:1px solid $blue_darkest;
+  @include box-sizing(border-box);
+  @include background( linear-gradient(top,$greyscale_lightest,$white) );
+  overflow:hidden;
+  @include border-radius(3px);
+}
+
+.search-check label:after
+{
+  @include opacity(0.3);
+  content: '🔍';
+  font-family:$icon_font;
+  font-size: 12px;
+  color:$blue_darkest;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  //background: transparent;
+  top: 2px;
+  left: 4px;
+}
+
+.search-check input[type=checkbox]:checked + label {
+  left: 20px;
+}
+
+.search-check input[type=checkbox]:indeterminate + label {
+  left: 40px;
+}
+
+.search-check label:before
+{
+  content:'';
+  position: absolute;
+  width: 2px;
+  height: 34px;
+  position:absolute;
+  left:4px;
+  top:-5px;
+
+  border-right: 3px solid $blue_darkest_alpha30;
+
+  @include rotate(45deg);
+}
+
+.search-check input[type=checkbox]:checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+}
+
+.search-check input[type=checkbox]:indeterminate + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+}
+
+.search-check input[type=checkbox]:checked + label::before
+{
+  border:none;
+}
+
+
+/*
+
+.search-check {
+  width: 20px;
+  position: relative;
+  @include inline-block();
+}
+
+.search-check label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  border-radius: 4px;
+  display:block;
+
+  border:1px solid $greyscale_light;
+  //@include box-shadow( inset 0px 1px 0px $black_alpha50, 0px 1px 1px $white_alpha40 );
+  @include background( linear-gradient(top,$greyscale_lightest,$white) );
+  overflow:hidden;
+}
+
+.search-check label:before
+{
+  content:'';
+  position: absolute;
+  width: 2px;
+  height: 34px;
+  position:absolute;
+  left:4px;
+  top:-5px;
+
+  border-right: 3px solid $blue_darkest_alpha30;
+
+  @include rotate(45deg);
+}
+
+.search-check label:after
+{
+  @include opacity(0.3);
+  content: '🔍';
+  font-family:$icon_font;
+  font-size: 12px;
+  color:$blue_darkest;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  //background: transparent;
+  top: 2px;
+  left: 4px;
+}
+
+.search-check label:hover::after
+{
+  @include opacity(0.3);
+}
+
+.search-check label:hover::before,
+.search-check input[type=checkbox]:checked + label::before
+{
+  border:none;
+}
+
+.search-check input[type=checkbox]:checked + label:after {
+  @include opacity(1);
+}
+
+.search-check input[type=checkbox]:checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+  border:1px solid $blue_darkest;
+}
+*/
+
 
 #search-options
 {
@@ -1567,22 +1748,14 @@ main
 
   fieldset
   {
-    margin-top:15px;
     margin-bottom:15px;
 
     legend
     {
       font-weight:bold;
       font-size:14px;
+      margin-bottom:5px;
     }
-  }
-}
-
-#search-options
-{
-  legend
-  {
-    margin-bottom:5px;
   }
 
   a
@@ -1595,6 +1768,8 @@ main
     font-size:14px;
     display:block;
     border-bottom:0;
+    width:124px;
+    @include inline-block();
   }
 
   a:hover

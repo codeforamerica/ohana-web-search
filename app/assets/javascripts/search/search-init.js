@@ -1,7 +1,7 @@
 // manages search initialization
-require(['search/ajax-search'],function(as) {
+require(['search/search-filter-manager'],function(filter) {
   'use strict';
 
-  as.init();
+  filter.init();
 
 });
