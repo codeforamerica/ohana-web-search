@@ -1464,6 +1464,12 @@ main
       text-shadow: none;
     }
   }
+
+  #reset-btn
+  {
+    @include inline-block();
+    vertical-align: middle;
+  }
 }
 
 .home #search-box
@@ -1522,10 +1528,10 @@ main
     text-align:left;
   }
 
-  button // find button styles
+  button // update button styles
   {
     height:40px;
-    vertical-align: top;
+    vertical-align: middle;
 
     .ohana-icon
     {
@@ -1570,7 +1576,7 @@ main
 }
 
 .search-check {
-  width: 61px;
+  width: 41px;
   height: 20px;
   @include background( linear-gradient(top,$blue_midtone,$blue_light) );
   @include inline-block();
@@ -1621,10 +1627,6 @@ main
 
 .search-check input[type=checkbox]:checked + label {
   left: 20px;
-}
-
-.search-check input[type=checkbox]:indeterminate + label {
-  left: 40px;
 }
 
 .search-check label:before

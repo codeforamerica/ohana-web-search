@@ -8,12 +8,12 @@
         - org_name = params[:org_name]
         - new_params = @search_params.dup
         - new_params.delete(:org_name)
-        %a{ :href => organization_path('', new_params) }
+        %a{ :href => organizations_path(new_params) }
           = org_name
         = hidden_field_tag 'org_name',org_name
         %div.search-check
-          %input{:type=>"checkbox"}
-          %label
+          %input{:type=>"checkbox",:id=>"org-name-checkbox"}
+          %label{:for=>"org-name-checkbox"}
 
 
     - if params[:category].present?
@@ -22,12 +22,12 @@
         - category = params[:category]
         - new_params = @search_params.dup
         - new_params.delete(:category)
-        %a{ :href => organization_path('', new_params) }
+        %a{ :href => organizations_path(new_params) }
           = category
         = hidden_field_tag 'category',category
         %div.search-check
-          %input{:type=>"checkbox"}
-          %label
+          %input{:type=>"checkbox",:id=>"category-checkbox"}
+          %label{:for=>"category-checkbox"}
 
     - if params[:kind].present?
       %fieldset#kind-options
@@ -35,12 +35,12 @@
         - kind = params[:kind][0]
         - new_params = @search_params.dup
         - new_params.delete(:kind)
-        %a{ :href => organization_path('', new_params) }
+        %a{ :href => organizations_path(new_params) }
           = kind
         = hidden_field_tag 'kind[]',kind
         %div.search-check
-          %input{:type=>"checkbox"}
-          %label
+          %input{:type=>"checkbox",:id=>"kind-checkbox"}
+          %label{:for=>"kind-checkbox"}
 
     - if params[:language].present?
       %fieldset#language-options
@@ -48,16 +48,19 @@
         - language = params[:language]
         - new_params = @search_params.dup
         - new_params.delete(:language)
-        %a{ :href => organization_path('', new_params) }
+        %a{ :href => organizations_path(new_params) }
           = language
         = hidden_field_tag 'language',language
         %div.search-check
-          %input{:type=>"checkbox"}
-          %label
+          %input{:type=>"checkbox",:id=>"language-checkbox"}
+          %label{:for=>"language-checkbox"}
 
 %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
   %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
   %span Update
+%div#reset-btn
+  %a{:href=>organizations_path}
+    Reset
 
 -#
   %fieldset

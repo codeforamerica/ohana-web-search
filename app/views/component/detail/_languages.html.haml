@@ -8,4 +8,4 @@
         %li
           %span
             - lang_url = /.+\((.+)\)/.match(lang).nil? ? lang : /.+\((.+)\)/.match(lang)[1]
-            = link_to lang, organization_path('', @search_params.merge(:language => lang_url))
+            = link_to lang, organizations_path(@search_params.merge(:language => lang_url))
