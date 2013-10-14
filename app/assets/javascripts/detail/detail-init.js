@@ -1,9 +1,10 @@
-require(['detail/detail-map-manager','detail/character-limiter','detail/term-popup-manager'],function (map,cl,tpm) {
+require(['detail/detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'],function (map,cl,tpm,header) {
   'use strict';
 
   map.init();
   cl.init();
   tpm.init();
+  header.init();
 
 }, function (err) {
     //The errback, error callback
@@ -14,9 +15,10 @@ require(['detail/detail-map-manager','detail/character-limiter','detail/term-pop
     console.log("RequireJS threw an Error:",failedId,err.requireType);
 
     // initialize no map loaded state
-    require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager'], function (map,cl,tpm) {
+    require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'], function (map,cl,tpm,header) {
  			map.init();
   		cl.init();
   		tpm.init();
+      header.init();
   	});
 });
