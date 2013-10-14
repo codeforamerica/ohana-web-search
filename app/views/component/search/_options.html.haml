@@ -1,4 +1,4 @@
-- if params[:org_name].present? || params[:kind].present? || params[:category].present? || params[:language].present?
+- if params[:org_name].present? || params[:kind].present? || params[:category].present? || params[:language].present? || [:service_area].present?
 
   %section#search-options
 
@@ -9,7 +9,7 @@
           - org_name = params[:org_name]
           - new_params = @search_params.dup
           - new_params.delete(:org_name)
-          %a{ :href => organization_path('', new_params) }
+          %a{ :href => organizations_path(new_params) }
             = org_name
           = hidden_field_tag 'org_name',org_name
 
@@ -20,7 +20,7 @@
           - category = params[:category]
           - new_params = @search_params.dup
           - new_params.delete(:category)
-          %a{ :href => organization_path('', new_params) }
+          %a{ :href => organizations_path(new_params) }
             = category
           = hidden_field_tag 'category',category
 
@@ -31,7 +31,7 @@
           - kind = params[:kind][0]
           - new_params = @search_params.dup
           - new_params.delete(:kind)
-          %a{ :href => organization_path('', new_params) }
+          %a{ :href => organizations_path(new_params) }
             = kind
           = hidden_field_tag 'kind[]',kind
 
@@ -42,7 +42,7 @@
           - language = params[:language]
           - new_params = @search_params.dup
           - new_params.delete(:language)
-          %a{ :href => organization_path('', new_params) }
+          %a{ :href => organizations_path(new_params) }
             = language
           = hidden_field_tag 'language',language
 
@@ -54,7 +54,7 @@
           - service_area = "San Mateo County, CA" if service_area == 'smc'
           - new_params = @search_params.dup
           - new_params.delete(:service_area)
-          %a{ :href => organization_path('', new_params) }
+          %a{ :href => organizations_path(new_params) }
             = service_area
           = hidden_field_tag 'service_area',service_area
 
@@ -63,6 +63,16 @@
   %span Update
 
 -#
+  %fieldset
+    %label{:for=>"language"}
+      Filter services by language availability:
+    = select_tag :language, options_for_select([['English', ''],
+    ['Español (Spanish)', 'spanish'],
+    ['Tagalog (Filipino)', 'tagalog'],
+    ['中文 (Chinese)', 'chinese'],
+    ['العربية (Arabic)', 'arabic'],
+    ['Русский (Russian)', 'russian'],], :selected => params[:language])
+
   %fieldset
     %legend Location
     %label{:for=>"radius"}

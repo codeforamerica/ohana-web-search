@@ -11,7 +11,7 @@ feature 'search results map', :js=>true do
 
   context 'none of the results have coordinates', :vcr do
     it "does not display a results list map" do
-      visit('/organizations?org_name=California+Coalition+for+Youth')
+      visit("/organizations?org_name=California+Coalition+for+Youth")
       expect(page).to_not have_selector("#map-view")
     end
   end
