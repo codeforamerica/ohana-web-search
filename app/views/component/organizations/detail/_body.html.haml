@@ -112,7 +112,7 @@
       - if @aggregate_categories.present?
         %section#categories-box
           %h1 Service Categories
-          - if @org.kind == 'Government'
+          - if @org.key?(:kind) && @org.kind == 'Government'
             %section.services{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
           - else
             %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
@@ -224,7 +224,7 @@
       %section.services-box
         %h1 Services
         - @org.services.each do |service|
-          - if @org.kind == 'Government'
+          - if @org.key?(:kind) && @org.kind == 'Government'
             %section.service{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
           - else
             %section.service{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
