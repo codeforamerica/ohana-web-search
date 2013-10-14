@@ -12,9 +12,10 @@
 								%span
 									== #{org.distance} mi
 					- if org.key?(:kind)
-						%p.kind
-							%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
-								= org.kind
+						%section
+							%p.kind
+								%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
+									= org.kind
 					%header
 						- if org.key?(:category)
 							%ul.category
