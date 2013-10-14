@@ -2146,43 +2146,46 @@ body { top: 0px !important; }
 
     > header
     {
-      font-family: $serif_font;
-      padding: 10px;
-
-      h1.name
+      >hgroup
       {
-        font-size:24px;
-        letter-spacing: 1px;
-        display:inline;
-        font-family:$serif_font;
-      }
+        font-family: $serif_font;
+        padding: 10px;
 
-      h1.name > a:after
-      {
-        content:" more...";
-        font-size:12px;
-        font-family:$san_serif_font;
-        color:$greyscale_midtone; // IE fallback
-        color:$black_alpha40;
-      }
-
-      h1.name > a:hover:after
-      {
-        color:$black;
-        border-right:0;
-        border-top:0;
-      }
-
-
-      h2.agency // agency
-      {
-        font-size:14px;
-        color:$greyscale_dark;
-        font-family:$serif_font;
-
-        span
+        h1.name
         {
-          margin-top:5px;
+          font-size:24px;
+          letter-spacing: 1px;
+          display:inline;
+          font-family:$serif_font;
+        }
+
+        h1.name > a:after
+        {
+          content:" more...";
+          font-size:12px;
+          font-family:$san_serif_font;
+          color:$greyscale_midtone; // IE fallback
+          color:$black_alpha40;
+        }
+
+        h1.name > a:hover:after
+        {
+          color:$black;
+          border-right:0;
+          border-top:0;
+        }
+
+
+        h2.agency // agency
+        {
+          font-size:14px;
+          color:$greyscale_dark;
+          font-family:$serif_font;
+
+          span
+          {
+            margin-top:5px;
+          }
         }
       }
     }
