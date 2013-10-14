@@ -4,7 +4,7 @@
 
     - if params[:org_name].present?
       %fieldset#orgname-options
-        %legend Agency
+        %legend Agency name...
         %div
           - org_name = params[:org_name]
           - new_params = @search_params.dup
@@ -15,7 +15,7 @@
 
     - if params[:category].present?
       %fieldset#category-options
-        %legend Category
+        %legend Category of service...
         %div
           - category = params[:category]
           - new_params = @search_params.dup
@@ -26,7 +26,7 @@
 
     - if params[:kind].present?
       %fieldset#kind-options
-        %legend Kind
+        %legend Kind of service...
         %div
           - kind = params[:kind][0]
           - new_params = @search_params.dup
@@ -37,7 +37,7 @@
 
     - if params[:language].present?
       %fieldset#language-options
-        %legend Language availability
+        %legend Language availability...
         %div
           - language = params[:language]
           - new_params = @search_params.dup
@@ -45,6 +45,18 @@
           %a{ :href => organization_path('', new_params) }
             = language
           = hidden_field_tag 'language',language
+
+    - if params[:service_area].present?
+      %fieldset#service-area-options
+        %legend Service available in...
+        %div
+          - service_area = params[:service_area]
+          - service_area = "San Mateo County, CA" if service_area == 'smc'
+          - new_params = @search_params.dup
+          - new_params.delete(:service_area)
+          %a{ :href => organization_path('', new_params) }
+            = service_area
+          = hidden_field_tag 'service_area',service_area
 
 %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
   %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
