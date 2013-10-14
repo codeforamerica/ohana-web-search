@@ -1,5 +1,6 @@
 // manages results maps view
-define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback','util/util'],function(util) {
+define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback','util/util',
+         'domReady!'],function(util) {
   'use strict';
 
 		// PRIVATE PROPERTIES
