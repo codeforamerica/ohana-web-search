@@ -120,8 +120,7 @@
                 - @aggregate_categories.each do |category|
                   %li{:class=>"depth#{category.depth}"}
                     %span{:itemprop=>"serviceType"}
-                      = category.name
-                      -#= link_to category, organizations_path('', @search_params.merge(:category => category))
+                      = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
 
   / main detail content
   %section
