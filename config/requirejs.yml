@@ -12,4 +12,9 @@ paths:
   addEventListener: 'polyfills/addEventListener'
   trim: 'polyfills/trim'
 
-waitSeconds: 200
+# needs to always be set to true for IE support
+# see http://requirejs.org/docs/api.html#ieloadfail
+enforceDefine: true
+
+# amount of time to wait before timing out. 7 seconds is default.
+waitSeconds: 7

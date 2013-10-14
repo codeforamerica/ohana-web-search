@@ -7,6 +7,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
 require 'capybara/poltergeist'
+require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -68,6 +69,9 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
     ENV['OHANA_API_TOKEN']
+  end
+  c.filter_sensitive_data("<GOOGLE_TRANSLATE>") do
+    ENV['GOOGLE_TRANSLATE_API_TOKEN']
   end
 end
 

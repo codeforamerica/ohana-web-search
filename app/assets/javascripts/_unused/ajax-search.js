@@ -61,7 +61,7 @@ define(['app/loading-manager',
 			var location = params.location
 			var radius = params.radius;
 			var kind = params.kind || []
-			var language = params.language || inputs.getLanguage();
+			var language = params.language;
 			var page = params.page;
 
 			inputs.setKeyword(keyword);

@@ -64,6 +64,16 @@
 
 -#
   %fieldset
+    %label{:for=>"language"}
+      Filter services by language availability:
+    = select_tag :language, options_for_select([['English', ''],
+    ['Español (Spanish)', 'spanish'],
+    ['Tagalog (Filipino)', 'tagalog'],
+    ['中文 (Chinese)', 'chinese'],
+    ['العربية (Arabic)', 'arabic'],
+    ['Русский (Russian)', 'russian'],], :selected => params[:language])
+
+  %fieldset
     %legend Location
     %label{:for=>"radius"}
       Search radius:

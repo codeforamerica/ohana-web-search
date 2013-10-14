@@ -163,7 +163,7 @@ define(function() {
       }
     }
 
-    // parse query string into object
+    // Parse query string into object
     // (from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter)
     // @param [String] the query string parameter
     // @return [Object] query string as object
@@ -182,6 +182,28 @@ define(function() {
       return params;
     }
 
+    // Check if a URL parameter is present
+    // (from http://stackoverflow.com/questions/1314383/how-to-check-if-a-querystring-value-is-present-via-javascript)
+    // @param [String] The parameter to check for the existence of.
+    function isURLParamPresent(param)
+    {
+      var url = window.location.href;
+      if(url.indexOf('?' + param + '=') != -1)
+        return true;
+      else if(url.indexOf('&' + param + '=') != -1)
+        return true;
+      return false
+    }
+
+    // Retrieve a cookie value by name
+    // @param [String] the name of the cookie.
+    // @return [String] the cookie value.
+    function getCookie(name) {
+      var parts = document.cookie.split(name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+
+
   return {
     isEmpty:isEmpty,
     isEventSupported:isEventSupported,
@@ -190,6 +212,8 @@ define(function() {
     requestAnimationFrame:requestAnimationFrame,
     getStyle:getStyle,
     queryString:queryString,
-    getQueryParams:getQueryParams
+    getQueryParams:getQueryParams,
+    isURLParamPresent:isURLParamPresent,
+    getCookie:getCookie
   };
 });

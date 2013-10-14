@@ -1170,15 +1170,20 @@ main
       @include inline-block();
       margin-top:10px;
 
-      a
+      a,span
       {
         font-size:13px;
         font-family:$san_serif_font;
         padding:5px;
         @include border-radius(4px);
-        background:$green_lightest;
-        border:2px solid $blue_darkest;
+        //background:$green_lightest;
+        //border:2px solid $blue_darkest;
         font-weight:bold;
+        letter-spacing:1px;
+      }
+
+      a{
+        border-bottom:0;
       }
 
       a:hover
@@ -1186,9 +1191,23 @@ main
         color:$green_light !important;
         background:$blue_dark;
       }
+
+      span
+      {
+        background:$blue_dark;
+        color:$green_light !important;
+      }
     }
   }
 }
+
+#google_translate_element
+{
+  padding-bottom:20px;
+}
+
+.goog-te-banner-frame.skiptranslate {display: none !important;}
+body { top: 0px !important; }
 
 //=================================================================================
 // help box styles on homepage
@@ -1739,10 +1758,10 @@ main
 #search-options
 {
   // IE fallback
-  border-top:1px dotted $greyscale_midtone;
+  //border-top:1px dotted $greyscale_midtone;
   border-bottom:1px dotted $greyscale_midtone;
 
-  border-top:1px dotted $black_alpha40;
+  //border-top:1px dotted $black_alpha40;
   border-bottom:1px dotted $black_alpha40;
   padding:10px;
   margin-bottom:25px;
@@ -2460,7 +2479,7 @@ main
   #search-summary
   {
     border-bottom:0;
-    margin-left:150px;
+    @include inline-block();
     border-left:1px solid $greyscale_light; // IE fallback
     border-left:1px solid $black_alpha10;
   }
@@ -2479,8 +2498,8 @@ main
 
 #map-view-control
 {
-  float:left;
-  width:150px;
+  @include inline-block();
+  min-width:150px;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;
@@ -2870,23 +2889,35 @@ main
     min-width:400px;
     margin:0 auto;
     position:relative;
+    text-align:center;
 
     p
     {
       text-align:center;
       padding: 10px;
       font-weight:bold;
+      @include inline-block();
+    }
+
+    a
+    {
+      color:$white;
+      border-bottom:1px solid $white_alpha50;
+    }
+
+    a:hover
+    {
+      color:$white;
+      border-bottom:1px solid $white;
     }
   }
 
   .close-button
   {
     color:$greyscale_midtone; // IE Fallback
-    color:$black_alpha50;
-    position:absolute;
-    right:10px;
-    top:0px;
+    color:$white_alpha50;
     font-size:24px;
+    @include inline-block();
   }
 
   .close-button:after
@@ -2896,7 +2927,7 @@ main
 
   .close-button:hover
   {
-    color:$black;
+    color:$white;
     cursor:pointer;
   }
 }
