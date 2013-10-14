@@ -12,5 +12,5 @@
 	= render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
 
 -# Persistent header duplicate needed to maintain layout when header floats
-%header.results-header.persistent
+%header#persistent-results-header.results-header.persistent
 	= render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
