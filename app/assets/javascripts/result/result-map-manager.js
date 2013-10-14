@@ -22,7 +22,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		function init()
 		{
 			var mapContainer = document.getElementById('map-view');
-
 			if (mapContainer)
 			{
 				_mapCanvas = document.getElementById("map-canvas");
@@ -48,6 +47,10 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
 				refresh();
+			}
+			else
+			{
+				console.log("Warning: The result map container was not found!");
 			}
 		}
 
