@@ -91,11 +91,13 @@ class OrganizationsController < ApplicationController
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
 
-    @aggregate_categories = []
-    @org.services.each do |service|
-      if service.key?(:categories) && service.categories.length > 0
-        service.categories.each do |category|
-          @aggregate_categories.push(category)
+    if @org.key?(:services)
+      @aggregate_categories = []
+      @org.services.each do |service|
+        if service.key?(:categories) && service.categories.length > 0
+          service.categories.each do |category|
+            @aggregate_categories.push(category)
+          end
         end
       end
     end

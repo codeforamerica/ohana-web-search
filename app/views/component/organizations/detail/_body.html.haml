@@ -109,7 +109,7 @@
                       %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
                       = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
-      - if @aggregate_categories.length > 0
+      - if @aggregate_categories.present?
         %section#categories-box
           %h1 Service Categories
           - if @org.kind == 'Government'
