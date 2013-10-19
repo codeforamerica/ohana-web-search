@@ -47,12 +47,12 @@ To test locally, you can run tests with this simple command:
 
     rspec
 
-To configure rspec output formatting (for example, to provide code highlighting in output), use the command `pico ./.rspec` while in the project root directory in the command line (or `pico ~/.rspec` to provide rspec configuration globally for all projects on your machine). Settings such as color coding and the output style can be added with:
+To configure rspec output formatting (for example, to provide command line output in color), use the command from the command line `pico ./.rspec` while in the project root directory (or `pico ~/.rspec` to provide rspec configuration globally for all projects on your machine). Settings such as color highlighting and the output style can be set with:
 
     --color
     --format documentation
 
-Formatting options are `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the rspec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
+Options for the format configuration are `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the rspec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
 
 For faster tests:
 
