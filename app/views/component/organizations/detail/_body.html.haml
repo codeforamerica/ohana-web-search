@@ -1,102 +1,126 @@
 = render 'component/organizations/detail/header'
-%section#detail-info
-  %header
-    %h1.name{:title=>@org.name}
-      = superscript_ordinals(@org.name)
-    - if (@org.organization.name) && (@org.organization.name != @org.name)
-      %h2.agency
-        = superscript_ordinals(@org.organization.name)
+%section#detail-info{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
 
+  %header
+    - if @org.key?(:kind)
+      %section
+        %p.kind
+          %a{:href=>"/organizations?kind[]=#{CGI::escape(@org.kind)}", :title=>"all locations of type #{@org.kind}"}
+            = @org.kind
+
+    %hgroup
+      %h1.name{:title=>@org.name, :itemprop=>"name"}
+        = superscript_ordinals(@org.name)
+      - if (@org.organization.name) && (@org.organization.name != @org.name)
+        %h2.agency
+          %a{:href=>"/organizations?org_name=#{CGI::escape(@org.organization.name)}", :title=>"#{@org.organization.name}"}
+            %span
+              = superscript_ordinals(@org.organization.name)
 
   / detail sidebar content
-  - if (@org.fields & contact_details).any?
-    %aside#contact-info
+  - if (@org.fields & contact_details).any? || @org.key?(:services)
+    %aside
+      - if (@org.fields & contact_details).any?
+        %section#contact-info
 
-      - if (@org.fields & contact_fields).any?
-        %section.contact-box
-          %h1 Contact
-          %section
+          - if (@org.fields & contact_fields).any?
+            %section.contact-box
+              %h1 Contact
+              %section
 
-            - if @org.key?(:ask_for)
-              %section.ask-for
-                - @org.ask_for.each do |ask_for|
-                  %div
-                    %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
-                    %span
-                      = ask_for
-
-            - if @org.key?(:emails)
-              %section.emails{:itemprop=>"email"}
-                - @org.emails.each do |email|
-                  %div
-                    %span{"data-icon"=>"@" , :class=>"ohana-icon"}
-                    %a{:href=>("mailto:"+email)}
-                      %span{:itemprop=>"email"}
-                        = email
-
-
-            - if @org.key?(:phones)
-              %section.phones
-                - @org.phones.each do |hash|
-                  %div
-                    %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
-                    %span
-                      - if hash["department"]
+                - if @org.key?(:ask_for)
+                  %section.ask-for{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
+                    - @org.ask_for.each do |ask_for|
+                      %div
+                        %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
                         %span
-                          = hash["department"]
-                      - if hash["number"]
-                        %span{:itemprop=>"telephone"}
-                          = format_phone(hash["number"])
-                      - if hash["type"]
-                        %sup.phone-type
-                          = hash["type"]
-                      - if hash["hours"]
+                          = ask_for
+
+                - if @org.key?(:emails)
+                  %section.emails{:itemprop=>"email"}
+                    - @org.emails.each do |email|
+                      %div
+                        %span{"data-icon"=>"@" , :class=>"ohana-icon"}
+                        %a{:href=>("mailto:"+email)}
+                          %span{:itemprop=>"email"}
+                            = email
+
+
+                - if @org.key?(:phones)
+                  %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
+                    - @org.phones.each do |hash|
+                      %div
+                        %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
                         %span
-                          = hash["hours"]
+                          - if hash["department"]
+                            %span{:itemprop=>"contactType"}
+                              = hash["department"]
+                          - if hash["number"]
+                            %span{:itemprop=>"telephone"}
+                              = format_phone(hash["number"])
+                          - if hash["type"]
+                            %sup.phone-type
+                              = hash["type"]
+                          - if hash["hours"]
+                            %span
+                              = hash["hours"]
 
 
-            - if @org.key?(:faxes)
-              %section.faxes
-                - @org.faxes.each do |fax|
+                - if @org.key?(:faxes)
+                  %section.faxes
+                    - @org.faxes.each do |fax|
+                      %div
+                        %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
+                        %span{:itemprop=>"faxNumber"}
+                          = format_phone(fax)
+
+          - if @org.key?(:urls)
+            %section.urls-box
+              %h1 Homepage
+              %section
+
+                - if @org.key?(:urls)
+                  %section.urls
+                    - @org.urls.each do |url|
+                      %div
+                        %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+                        %a{:href=>url,:target=>"_blank"}
+                          %span{:itemprop=>"url"}
+                            = format_url(url)
+
+          - if @org.key?(:mail_address)
+            %section.address-box
+              %h1 Mailing Address
+              %section
+
+                %section.mail-address
                   %div
-                    %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
-                    %span{:itemprop=>"faxNumber"}
-                      = format_phone(fax)
+                    %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                    = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
 
-      - if @org.key?(:urls)
-        %section.urls-box
-          %h1 Homepage
-          %section
+          -# has a physical address and the street address and zipcode differ from mailing address
+          - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
+            %section.address-box
+              %h1 Physical Address
+              %section
+                - if @org.key?(:address)
+                  %section.address
+                    %div
+                      %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                      = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
-            - if @org.key?(:urls)
-              %section.urls
-                - @org.urls.each do |url|
-                  %div
-                    %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
-                    %a{:href=>url,:target=>"_blank"}
-                      %span{:itemprop=>"url"}
-                        = format_url(url)
-
-      - if @org.key?(:mail_address)
-        %section.address-box
-          %h1 Mailing Address
-          %section
-
-            %section.mail-address
-              %div
-                %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-                = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
-
-      -# has a physical address and the street address and zipcode differ from mailing address
-      - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
-        %section.address-box
-          %h1 Physical Address
-          %section
-            - if @org.key?(:address)
-              %section.address
-                %div
-                  %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
-                  = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
+      - if @aggregate_categories.present?
+        %section#categories-box
+          %h1 Service Categories
+          - if @org.key?(:kind) && @org.kind == 'Government'
+            %section.services{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
+          - else
+            %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
+              %ul{:itemscope=>"", :itemtype=>"http://schema.org/ServiceType"}
+                - @aggregate_categories.each do |category|
+                  %li{:class=>"depth#{category.depth}"}
+                    %span{:itemprop=>"serviceType"}
+                      = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
 
   / main detail content
   %section
@@ -199,18 +223,21 @@
     - if @org.key?(:services)
       %section.services-box
         %h1 Services
-        %section
-          - @org.services.each do |service|
+        - @org.services.each do |service|
+          - if @org.key?(:kind) && @org.kind == 'Government'
+            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
+          - else
+            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
 
-            / insert template, params are:
-            / use_template,org,field,title,icon
-            = insert_template(true,service,:name,nil,nil)
-            = insert_template(true,service,:description,nil,nil)
-            = insert_template(false,service,:urls,"Homepage",nil)
-            = insert_template(true,service,:fees,"Fees",nil)
-            = insert_template(true,service,:audience,"Audience",nil)
-            = insert_template(true,service,:eligibility,"Eligibility",nil)
-            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
+              / insert template, params are:
+              / use_template,org,field,title,icon
+              = insert_template(true,service,:name,nil,nil)
+              = insert_template(true,service,:description,nil,nil)
+              = insert_template(false,service,:urls,"Homepage",nil)
+              = insert_template(true,service,:fees,"Fees",nil)
+              = insert_template(true,service,:audience,"Audience",nil)
+              = insert_template(true,service,:eligibility,"Eligibility",nil)
+              = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
   / detail footer content
   - if @org.key?(:updated_at)

@@ -5,31 +5,35 @@
 			%li
 				%a{:href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
 					&nbsp;
-				%section.results-entry
+				%section.results-entry{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
 					-#
 						- unless org.distance.blank?
 							%p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
 								%span
 									== #{org.distance} mi
-					- if org.key?(:kind)
-						%p.kind
-							%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
-								= org.kind
+
 					%header
+						- if org.key?(:kind)
+							%section
+								%p.kind
+									%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
+										= org.kind
+
 						- if org.key?(:category)
 							%ul.category
 								- org.category.each do |category|
 									%li
 										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
 											= category
-						%h1{:class=>'name'}
-							%a{ :href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
-								= superscript_ordinals(org.name)
-						- if (org.organization.name) && (org.organization.name != org.name)
-							%h2.agency
-								%a{:href=>"/organizations?org_name=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
-									%span
-										= superscript_ordinals(org.organization.name)
+						%hgroup
+							%h1{:class=>'name'}
+								%a{ :href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
+									= superscript_ordinals(org.name)
+							- if (org.organization.name) && (org.organization.name != org.name)
+								%h2.agency
+									%a{:href=>"/organizations?org_name=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
+										%span
+											= superscript_ordinals(org.organization.name)
 					- if org.key?(:phones)
 						%ul.phones
 							- org.phones.each do |hash|
