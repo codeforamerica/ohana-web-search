@@ -42,6 +42,7 @@ end
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
+
   config.include Features::SessionHelpers, type: :feature
   config.include DetailFormatHelper
   config.include(EmailSpec::Helpers)

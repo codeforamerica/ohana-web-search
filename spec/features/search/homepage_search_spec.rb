@@ -80,10 +80,10 @@ feature "homepage search" do
   end
 
   scenario "when click Kind link", :vcr do
-    search_from_home(:keyword => 'soccer')
+    visit('/organizations?keyword=soccer')
     page.first("a", text: "Other").click
     find("#list-view").should_not have_content("Sports")
-    expect(page).to have_content("4 results")
+    expect(page).to have_content("557 results")
   end
 
 end
