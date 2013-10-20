@@ -2374,43 +2374,46 @@ body { top: 0px !important; }
 
     > header
     {
-      font-family: $serif_font;
-      padding: 10px;
-
-      h1.name
+      >hgroup
       {
-        font-size:24px;
-        letter-spacing: 1px;
-        display:inline;
-        font-family:$serif_font;
-      }
+        font-family: $serif_font;
+        padding: 10px;
 
-      h1.name > a:after
-      {
-        content:" more...";
-        font-size:12px;
-        font-family:$san_serif_font;
-        color:$greyscale_midtone; // IE fallback
-        color:$black_alpha40;
-      }
-
-      h1.name > a:hover:after
-      {
-        color:$black;
-        border-right:0;
-        border-top:0;
-      }
-
-
-      h2.agency // agency
-      {
-        font-size:14px;
-        color:$greyscale_dark;
-        font-family:$serif_font;
-
-        span
+        h1.name
         {
-          margin-top:5px;
+          font-size:24px;
+          letter-spacing: 1px;
+          display:inline;
+          font-family:$serif_font;
+        }
+
+        h1.name > a:after
+        {
+          content:" more...";
+          font-size:12px;
+          font-family:$san_serif_font;
+          color:$greyscale_midtone; // IE fallback
+          color:$black_alpha40;
+        }
+
+        h1.name > a:hover:after
+        {
+          color:$black;
+          border-right:0;
+          border-top:0;
+        }
+
+
+        h2.agency // agency
+        {
+          font-size:14px;
+          color:$greyscale_dark;
+          font-family:$serif_font;
+
+          span
+          {
+            margin-top:5px;
+          }
         }
       }
     }
@@ -2519,30 +2522,59 @@ body { top: 0px !important; }
 {
   background:$greyscale_lightest;
   color:$black;
+  font-family: $san_serif_font;
 
   // section header
   > header
   {
-    font-family: $serif_font;
+    padding:10px;
     border-bottom: 1px solid $greyscale_light; // IE fallback
     border-bottom: 1px solid $black_alpha10;
     background:$blue_lightest; // IE fallback
     background:$blue_lightest_alpha10;
     @include border-radius(4px 4px 0px 0px);
-    padding: 20px;
-    padding-left: 30px;
 
-    h1 // name
+    .kind // kind
     {
-      font-size:32px;
-      letter-spacing: 1px;
-      color:$black;
+      color:$blue_dark;
+      font-size:14px;
     }
 
-    h2 // agency
+    a
     {
-      font-size:16px;
-      color:$greyscale_dark;
+      text-decoration: none;
+      color:$greyscale_midtone; // IE fallback
+      color:$black_alpha60;
+      cursor:pointer;
+      padding-bottom:2px;
+      border-bottom:0px;
+    }
+
+    a:hover
+    {
+      color:$black;
+      border-bottom:0px;
+      text-decoration: underline;
+    }
+
+    > hgroup
+    {
+      font-family: $serif_font;
+      padding: 10px;
+      padding-left: 20px;
+
+      h1 // name
+      {
+        font-size:32px;
+        letter-spacing: 1px;
+        color:$black;
+      }
+
+      h2 // agency
+      {
+        font-size:16px;
+        color:$greyscale_dark;
+      }
     }
   }
 
@@ -2570,7 +2602,7 @@ body { top: 0px !important; }
       vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
     }
 
-    * > section
+    > * > section
     {
       margin:0;
       font-size:16px;
@@ -2598,6 +2630,23 @@ body { top: 0px !important; }
     }
   }
 
+
+  ul
+  {
+    margin-bottom:0;
+    margin-left:20px;
+    list-style-type:square;
+    li
+    {
+      color:$purple_lightest; // IE fallback
+      color:$purple_lightest_alpha40;
+      span
+      {
+        color:$black;
+      }
+    }
+  }
+
   // sidebar
   > aside
   {
@@ -2605,41 +2654,84 @@ body { top: 0px !important; }
     width:400px;
     z-index: 9998;
     margin-left:20px;
-    border-left:1px solid $white;
-    border-bottom:1px solid $white;
-    @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
-    background:$white;
 
-    -ms-word-break: break-all;
-    word-break: break-all;
-    // Non standard for webkit
-    word-break: break-word;
-
-    @include border-radius(0px 0px 0px 10px);
-
-    > section > section > section
+    >section
     {
-      display:table;
-      font-size:18px;
-      font-family: $san_serif_font;
-      color:$black;
+      @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20, 0px -1px 2px $black_alpha20);
+    }
+    >section:first-child
+    {
+      @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
+    }
+    >section
+    {
+      margin-bottom:20px;
+      border-left:1px solid $white;
+      border-bottom:1px solid $white;
+      background:$white;
 
-      > div
+      -ms-word-break: break-all;
+      word-break: break-all;
+      // Non standard for webkit
+      word-break: break-word;
+
+      @include border-radius(0px 0px 0px 10px);
+
+      > section > h1
       {
-        display:table-row;
+        font-size: 14px;
+        color: $greyscale_midtone;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border-bottom:1px solid $greyscale_light; // IE fallback
+        border-bottom:1px solid $black_alpha10;
+        letter-spacing: 1px;
+        font-family: $san_serif_font;
+        @include inline-block();
+        vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
+      }
 
-        > span
-        {
-          vertical-align:top;
-          display:table-cell;
-        }
+      > section > ul
+      {
+        padding:35px;
+        padding-top:0px;
+        padding-bottom:20px;
 
-        > span:first-child
+        .depth1{margin-left:10px;}
+        .depth2{margin-left:20px;}
+        .depth3{margin-left:30px;}
+      }
+
+      > section > section > section
+      {
+        display:table;
+        font-size:18px;
+        font-family: $san_serif_font;
+        color:$black;
+        padding-bottom:20px;
+
+        > div
         {
-          text-align: middle;
-          width:25px;
-          color:$purple_darkest;
+          display:table-row;
+
+          > span
+          {
+            vertical-align:top;
+            display:table-cell;
+          }
+
+          > span:first-child
+          {
+            text-align: middle;
+            width:25px;
+            color:$purple_darkest;
+          }
         }
+      }
+      > section > section > section:last-child
+      {
+        padding-bottom:0px;
       }
     }
   }
@@ -2712,22 +2804,6 @@ body { top: 0px !important; }
       padding-top:40px;
       padding-bottom:0px;
       position:relative;
-    }
-  }
-
-  ul
-  {
-    margin-bottom:0;
-    margin-left:20px;
-    list-style-type:square;
-    li
-    {
-      color:$purple_lightest; // IE fallback
-      color:$purple_lightest_alpha40;
-      span
-      {
-        color:$black;
-      }
     }
   }
 
