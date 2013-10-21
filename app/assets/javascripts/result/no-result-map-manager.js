@@ -8,7 +8,7 @@ define(['app/alert-manager'],function (alert) {
 			console.log("Map failed to load! Hiding map HTML code.");
 
 			var mapContainer = document.getElementById('map-view');
-			    mapContainer.classList.add('hide');
+			    mapContainer.className = 'hide';
 
 			alert.show("Oops! Map failed to load. Try reloading the page or <a href='/about/#feedback-box'>send us a message</a>.");
 		}
