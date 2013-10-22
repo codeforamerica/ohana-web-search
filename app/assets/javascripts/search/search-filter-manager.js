@@ -61,17 +61,23 @@ define(
 		function _legendClicked(evt)
 		{
 			var legend = evt.target;
-			var toggleGroup = legend.parentNode.querySelector(":scope >.options");
+			var container = legend.parentNode;
+			var toggleGroup = container.querySelector(":scope >.options");
+			var selected = toggleGroup.querySelector(":scope input[type=radio]:checked");
+			var current = container.querySelector(":scope >.current-option");
 			if (legend.classList.contains('open'))
 			{
-				toggleGroup.className = 'hide';
+				toggleGroup.classList.add('hide');
+				current.querySelector(":scope div+label").innerHTML = selected.value || "All";
+				current.classList.remove('hide');
 				//toggleGroup.querySelector(":scope input:first-child").checked = true;
 				//toggleGroup.querySelector(":scope input[type=hidden]").value = "";
 				legend.className = 'closed';
 			}
 			else
 			{
-				toggleGroup.className = '';
+				toggleGroup.classList.remove('hide');
+				current.classList.add('hide');
 				legend.className = 'open';
 			}
 		}

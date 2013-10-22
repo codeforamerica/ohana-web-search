@@ -1,7 +1,15 @@
 %fieldset{:id=>"#{css_class_format(field)}-options"}
   - is_checked = field_value.blank? ? true : false
   %legend{:class=> (is_checked ? 'closed' : 'open') }
-    #{legend}
+    = legend
+
+  %div.current-option{:class=> (is_checked ? '' : 'hide') }
+    %div.radio-group
+      %div.toggle
+        %input{:type=>"radio",:id=>"#{field}_option", :checked=>true}
+        %label{:for => "#{field}_option"}
+      %label
+        = (field_value.blank? ? "All" : field_value)
 
   %div.options{:class=> (is_checked ? 'hide' : '') }
     %div.radio-group
