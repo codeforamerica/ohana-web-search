@@ -20,15 +20,16 @@ class OrganizationsController < ApplicationController
     @orgs = Organization.search(params)
     #params[:keyword] = original_word if original_word.present?
 
-    # cached location names
-    @aggregate_locations = Rails.cache.fetch('aggregate_locations') || Rails.cache.fetch('aggregate_locations'){[]}
-    @orgs.each do |org|
-      @aggregate_locations.push(org.address["city"])
-    end
-    @aggregate_locations.uniq!
-    @aggregate_locations = @aggregate_locations[-5,5] || @aggregate_locations
-    @aggregate_locations.sort!
-    Rails.cache.write('aggregate_locations', @aggregate_locations)
+    # cached locations
+    @aggregate_locations = cache_filter_values('aggregate_locations'){|org| org.address['city'] }
+
+    # cached kinds
+    @aggregate_kinds = cache_filter_values('aggregate_kinds'){|org| org.kind }
+
+    # cached organization names
+    @aggregate_org_names = cache_filter_values('aggregate_org_names'){|org|
+      org.organization.name if org.key?(:organization) && org.organization.name != org.name
+      }
 
     # cached organization names
     @aggregate_org_names = Rails.cache.fetch('aggregate_org_names') || Rails.cache.fetch('aggregate_org_names'){[]}
@@ -42,15 +43,6 @@ class OrganizationsController < ApplicationController
     @aggregate_org_names.sort!
     Rails.cache.write('aggregate_org_names', @aggregate_org_names)
 
-    # cached kind names
-    @aggregate_kinds = Rails.cache.fetch('aggregate_kinds') || Rails.cache.fetch('aggregate_kinds'){[]}
-    @orgs.each do |org|
-      @aggregate_kinds.push(org.kind)
-    end
-    @aggregate_kinds.uniq!
-    @aggregate_kinds = @aggregate_kinds[-5,5] || @aggregate_kinds
-    @aggregate_kinds.sort!
-    Rails.cache.write('aggregate_kinds', @aggregate_kinds)
 
     headers = Ohanakapa.last_response.headers
 
@@ -228,6 +220,22 @@ class OrganizationsController < ApplicationController
   def check_location_id
     id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
+  end
+
+  # Cache filter values.
+  # @param key [String] The key name in the cache for the aggregated values.
+  # @return [Array] The aggregated values.
+  def cache_filter_values(key, &block)
+    aggregate = Rails.cache.fetch(key) || Rails.cache.fetch(key){[]}
+    @orgs.each { |org|
+      val = block.call(org)
+      aggregate.push( val ) if val.present?
+    }
+    aggregate.uniq!
+    aggregate = aggregate[-5,5] || aggregate
+    aggregate.sort!
+    Rails.cache.write(key, aggregate)
+    aggregate
   end
 
   # Translate the page using the Google Translate API.
