@@ -12,14 +12,14 @@
             %option{:value=>keyword}
 
     -# location search box input field appears below
-    %section#location-search-box
-      %div
-        %label{:for => "location"}
-          Near address...
-      = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
-      - cache ['cities-list', *smc_cities] do
-        %datalist#search-locations
-          - smc_cities.each do |city|
-            %option{:value=>city}
+      %section#location-search-box
+        %div
+          %label{:for => "location"}
+            Near address...
+        = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
+        - cache ['cities-list', *smc_cities] do
+          %datalist#search-locations
+            - smc_cities.each do |city|
+              %option{:value=>city}
 
     = render :partial => 'component/search/options'

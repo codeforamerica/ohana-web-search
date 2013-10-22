@@ -20,6 +20,16 @@ class OrganizationsController < ApplicationController
     @orgs = Organization.search(params)
     #params[:keyword] = original_word if original_word.present?
 
+    # cached location names
+    @aggregate_locations = Rails.cache.fetch('aggregate_locations') || Rails.cache.fetch('aggregate_locations'){[]}
+    @orgs.each do |org|
+      @aggregate_locations.push(org.address["city"])
+    end
+    @aggregate_locations.uniq!
+    @aggregate_locations = @aggregate_locations[-5,5] || @aggregate_locations
+    @aggregate_locations.sort!
+    Rails.cache.write('aggregate_locations', @aggregate_locations)
+
     # cached organization names
     @aggregate_org_names = Rails.cache.fetch('aggregate_org_names') || Rails.cache.fetch('aggregate_org_names'){[]}
     @orgs.each do |org|

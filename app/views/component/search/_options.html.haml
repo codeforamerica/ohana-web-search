@@ -2,6 +2,8 @@
 
 %section#search-options
 
+  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location],:aggregate_field=>@aggregate_locations}
+
   -#- if params[:org_name].present?
   = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name],:aggregate_field=>@aggregate_org_names}
 
