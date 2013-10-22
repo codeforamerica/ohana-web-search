@@ -10,22 +10,16 @@
         %datalist#search-keywords
           - cip_keywords.each do |keyword|
             %option{:value=>keyword}
-      %div.search-check
-        %input{:type=>"checkbox"}
-        %label
 
     -# location search box input field appears below
     %section#location-search-box
       %div
         %label{:for => "location"}
-          I am near...
+          Near address...
       = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
       - cache ['cities-list', *smc_cities] do
         %datalist#search-locations
           - smc_cities.each do |city|
             %option{:value=>city}
-      %div.search-check
-        %input{:type=>"checkbox"}
-        %label
 
     = render :partial => 'component/search/options'

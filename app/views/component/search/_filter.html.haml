@@ -1,0 +1,32 @@
+%fieldset{:id=>"#{css_class_format(field)}-options"}
+  - is_checked = field_value.blank? ? true : false
+  %legend{:class=> (is_checked ? 'closed' : 'open') }
+    #{legend}
+
+  %div.options{:class=> (is_checked ? 'hide' : '') }
+    %div.radio-group
+      %div.toggle
+        = radio_button_tag "#{field}_option", "", is_checked, {:id=>"#{field}_option_0"}
+        %label{:for => "#{field}_option_0"}
+      %label{:for => "#{field}_option_0",:id => "#{field}_option_0_label"}
+        All
+
+    - cache ["aggregate_#{field}", *aggregate_field] do
+      - length = aggregate_field.length-1
+      - for i in 0..length
+        %div.radio-group
+          %div.toggle
+            - is_checked = aggregate_field[i] == field_value ? true : false
+            = radio_button_tag "#{field}_option", aggregate_field[i], is_checked, {:id=>"#{field}_option_#{i+1}"}
+            %label{:for => "#{field}_option_#{i+1}"}
+          %label{:for => "#{field}_option_#{i+1}",:id => "#{field}_option_#{i+1}_label"}
+            = aggregate_field[i]
+      %div.radio-group
+        %div.toggle.add
+          %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}"}
+          %label{:for => "#{field}_option_#{length+2}"}
+        %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
+          %span
+            Add...
+          = search_field_tag "#{field}_option_input", "", :class=>"hide"
+    = hidden_field_tag field, field_value

@@ -20,6 +20,28 @@ class OrganizationsController < ApplicationController
     @orgs = Organization.search(params)
     #params[:keyword] = original_word if original_word.present?
 
+    # cached organization names
+    @aggregate_org_names = Rails.cache.fetch('aggregate_org_names') || Rails.cache.fetch('aggregate_org_names'){[]}
+    @orgs.each do |org|
+      if org.key?(:organization) && org.organization.name != org.name
+        @aggregate_org_names.push(org.organization.name)
+      end
+    end
+    @aggregate_org_names.uniq!
+    @aggregate_org_names = @aggregate_org_names[-5,5] || @aggregate_org_names
+    @aggregate_org_names.sort!
+    Rails.cache.write('aggregate_org_names', @aggregate_org_names)
+
+    # cached kind names
+    @aggregate_kinds = Rails.cache.fetch('aggregate_kinds') || Rails.cache.fetch('aggregate_kinds'){[]}
+    @orgs.each do |org|
+      @aggregate_kinds.push(org.kind)
+    end
+    @aggregate_kinds.uniq!
+    @aggregate_kinds = @aggregate_kinds[-5,5] || @aggregate_kinds
+    @aggregate_kinds.sort!
+    Rails.cache.write('aggregate_kinds', @aggregate_kinds)
+
     headers = Ohanakapa.last_response.headers
 
     @pages = Hash.new

@@ -1,59 +1,87 @@
-- if params[:org_name].present? || params[:kind].present? || params[:category].present? || params[:language].present?
+-#- if params[:org_name].present? || params[:kind].present? || params[:category].present? || params[:language].present?
 
-  %section#search-options
+%section#search-options
 
-    - if params[:org_name].present?
-      %fieldset#orgname-options
-        %legend Agency name...
-        - org_name = params[:org_name]
-        - new_params = @search_params.dup
-        - new_params.delete(:org_name)
-        %a{ :href => organizations_path(new_params) }
-          = org_name
-        = hidden_field_tag 'org_name',org_name
-        %div.search-check
-          %input{:type=>"checkbox",:id=>"org-name-checkbox"}
-          %label{:for=>"org-name-checkbox"}
+  -#- if params[:org_name].present?
+  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name],:aggregate_field=>@aggregate_org_names}
+
+  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind],:aggregate_field=>@aggregate_kinds}
+
+  -#
+    %fieldset#kind-options
+      %legend.open
+        Kind of organization
+      - kind = params[:kind] || ""
+      - is_checked = kind.blank? ? true : false
+
+      %div
+        %div.radio-group
+          %div.toggle
+            = radio_button_tag :kind_option, "", is_checked, {:id=>"kind_option_0"}
+            %label{:for => "kind_option_0"}
+          %label{:for => "kind_option_0",:id => "kind_option_0_label"}
+            All
+
+        - cache ['aggregate_kinds', *@aggregate_kinds] do
+          - length = @aggregate_kinds.length-1
+          - for i in 0..length
+            %div.radio-group
+              %div.toggle
+                - is_checked = @aggregate_kinds[i] == kind ? true : false
+                = radio_button_tag :kind_option, @aggregate_kinds[i], is_checked, {:id=>"kind_option_#{i+1}"}
+                %label{:for => "kind_option_#{i+1}"}
+              %label{:for => "kind_option_#{i+1}",:id => "kind_option_#{i+1}_label"}
+                = @aggregate_kinds[i]
+          %div.radio-group
+            %div.toggle.add
+              %input{:type=>"radio",:name=>"kind_option",:id=>"kind_option_#{length+2}"}
+              %label{:for => "kind_option_#{length+2}"}
+            %label{:for => "kind_option_#{length+2}",:id => "kind_option_#{length+2}_label"}
+              %span
+                Add...
+              = search_field_tag "kind_option_input", "", :class=>"hide"
+      = hidden_field_tag 'kind',kind
 
 
-    - if params[:category].present?
-      %fieldset#category-options
-        %legend Category of service...
-        - category = params[:category]
-        - new_params = @search_params.dup
-        - new_params.delete(:category)
-        %a{ :href => organizations_path(new_params) }
-          = category
-        = hidden_field_tag 'category',category
-        %div.search-check
-          %input{:type=>"checkbox",:id=>"category-checkbox"}
-          %label{:for=>"category-checkbox"}
+-#- if params[:category].present?
+  %fieldset#category-options
+    %legend Category of service...
+    - category = params[:category]
+    - new_params = @search_params.dup
+    - new_params.delete(:category)
+    %a{ :href => organizations_path(new_params) }
+      = category
+    = hidden_field_tag 'category',category
+    %div.search-check
+      %input{:type=>"checkbox",:id=>"category-checkbox"}
+      %label{:for=>"category-checkbox"}
 
-    - if params[:kind].present?
-      %fieldset#kind-options
-        %legend Kind of service...
-        - kind = params[:kind][0]
-        - new_params = @search_params.dup
-        - new_params.delete(:kind)
-        %a{ :href => organizations_path(new_params) }
-          = kind
-        = hidden_field_tag 'kind[]',kind
-        %div.search-check
-          %input{:type=>"checkbox",:id=>"kind-checkbox"}
-          %label{:for=>"kind-checkbox"}
+  -#- if params[:kind].present?
+  %fieldset#kind-options
+    %legend Kind of service...
+    - kind = params[:kind]
+    - kind = kind[0] if kind.present?
+    - new_params = @search_params.dup
+    - new_params.delete(:kind)
+    %a{ :href => organizations_path(new_params) }
+      = kind
+    = hidden_field_tag 'kind[]',kind
+    %div.search-check
+      %input{:type=>"checkbox",:id=>"kind-checkbox"}
+      %label{:for=>"kind-checkbox"}
 
-    - if params[:language].present?
-      %fieldset#language-options
-        %legend Language availability...
-        - language = params[:language]
-        - new_params = @search_params.dup
-        - new_params.delete(:language)
-        %a{ :href => organizations_path(new_params) }
-          = language
-        = hidden_field_tag 'language',language
-        %div.search-check
-          %input{:type=>"checkbox",:id=>"language-checkbox"}
-          %label{:for=>"language-checkbox"}
+  -#- if params[:language].present?
+  %fieldset#language-options
+    %legend Language availability...
+    - language = params[:language]
+    - new_params = @search_params.dup
+    - new_params.delete(:language)
+    %a{ :href => organizations_path(new_params) }
+      = language
+    = hidden_field_tag 'language',language
+    %div.search-check
+      %input{:type=>"checkbox",:id=>"language-checkbox"}
+      %label{:for=>"language-checkbox"}
 
 %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
   %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
