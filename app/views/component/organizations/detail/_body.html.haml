@@ -240,16 +240,6 @@
               = insert_template(true,service,:eligibility,"Eligibility",nil)
               = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
-            - if service.key?(:categories)
-              %section.categories-box
-                %h1 Categories
-                - if service.categories.length > 0
-                  %ul
-                    - service.categories.each do |cat|
-                      - category = cat.name
-                      %li
-                        %span
-                          = link_to category, organization_path('', @search_params.merge(:category => category))
   / detail footer content
   - if @org.key?(:updated_at)
     %footer
