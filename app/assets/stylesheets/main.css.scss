@@ -1603,6 +1603,21 @@ body { top: 0px !important; }
         cursor:pointer;
         @include inline-block();
       }
+
+
+    }
+
+    .current-option
+    {
+      .toggle label,
+      .toggle + label
+      {
+        cursor:auto;
+      }
+
+      .radio-group >.toggle label {
+        background:none;
+      }
     }
 
     input[type=search]

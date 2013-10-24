@@ -2,12 +2,19 @@
 
 %section#search-options
 
-  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location],:aggregate_field=>@aggregate_locations}
+  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations}
+  - cache ['cities-list', *smc_cities] do
+    %datalist#location-list
+      - smc_cities.each do |city|
+        %option{:value=>city}
+
+  = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas, :exclude_add_button=>true}
+
+  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds}
 
   -#- if params[:org_name].present?
-  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name],:aggregate_field=>@aggregate_org_names}
+  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names}
 
-  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind],:aggregate_field=>@aggregate_kinds}
 
   -#
     %fieldset#kind-options

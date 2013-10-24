@@ -21,27 +21,23 @@ class OrganizationsController < ApplicationController
     #params[:keyword] = original_word if original_word.present?
 
     # cached locations
-    @aggregate_locations = cache_filter_values('aggregate_locations'){|org| org.address['city'] }
+    @aggregate_locations = cache_filter_values(:location,'aggregate_locations'){|org|
+      if org.key?(:address)
+        val = org.address['city']
+        val += ", #{org.address['state']}" if org.address['state'].present?
+      end
+    }
 
     # cached kinds
-    @aggregate_kinds = cache_filter_values('aggregate_kinds'){|org| org.kind }
+    @aggregate_kinds = cache_filter_values(:kind,'aggregate_kinds'){|org| org.kind }
+
+    # cached service areas
+    @aggregate_service_areas = ['smc']
 
     # cached organization names
-    @aggregate_org_names = cache_filter_values('aggregate_org_names'){|org|
+    @aggregate_org_names = cache_filter_values(:org_name,'aggregate_org_names'){|org|
       org.organization.name if org.key?(:organization) && org.organization.name != org.name
-      }
-
-    # cached organization names
-    @aggregate_org_names = Rails.cache.fetch('aggregate_org_names') || Rails.cache.fetch('aggregate_org_names'){[]}
-    @orgs.each do |org|
-      if org.key?(:organization) && org.organization.name != org.name
-        @aggregate_org_names.push(org.organization.name)
-      end
-    end
-    @aggregate_org_names.uniq!
-    @aggregate_org_names = @aggregate_org_names[-5,5] || @aggregate_org_names
-    @aggregate_org_names.sort!
-    Rails.cache.write('aggregate_org_names', @aggregate_org_names)
+    }
 
 
     headers = Ohanakapa.last_response.headers
@@ -224,19 +220,23 @@ class OrganizationsController < ApplicationController
 
   # Cache filter values.
   # @param key [String] The key name in the cache for the aggregated values.
+  # @param block [Block] block to call for accessing a particular caller value.
   # @return [Array] The aggregated values.
-  def cache_filter_values(key, &block)
-    aggregate = Rails.cache.fetch(key) || Rails.cache.fetch(key){[]}
+  def cache_filter_values(param, key, &block)
+    aggregate = session[key] || []
+
     @orgs.each { |org|
       val = block.call(org)
+      aggregate.shift if aggregate.length >= 5 && aggregate.include?(val) == false
       aggregate.push( val ) if val.present?
+      break if aggregate.length >= 5
     }
     aggregate.uniq!
-    aggregate = aggregate[-5,5] || aggregate
-    aggregate.sort!
-    Rails.cache.write(key, aggregate)
+    #aggregate.sort!
+    session[key] = aggregate
     aggregate
   end
+
 
   # Translate the page using the Google Translate API.
   # @param [String] text to translate

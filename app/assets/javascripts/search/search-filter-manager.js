@@ -4,53 +4,73 @@ define(
   'use strict';
 
   	// PRIVATE PROPERTIES
-  	var _fieldsets;
+  	var _fieldsets = {};
 
 		function init()
 		{
-			var searchForm = document.getElementById("search-form");
-			searchForm.addEventListener("submit",_formSubmitted,false);
+			// capture form submission
+			document.getElementById("search-form").addEventListener("submit",_formSubmitted,false);
 
-			_fieldsets = document.querySelectorAll('#search-box fieldset');
-			var toggles;
-			for (var f = 0; f < _fieldsets.length; f++)
+			// initialize fieldsets
+			var fieldsets = document.querySelectorAll('#search-box fieldset');
+			var numFieldsets = fieldsets.length;
+			var fieldset;
+
+			for (var f = 0; f < numFieldsets; f++)
 			{
-				_fieldsets[f].querySelector(':scope legend').addEventListener('mousedown',_legendClicked,false);
-				toggles = _fieldsets[f].querySelectorAll(':scope .radio-group .toggle input');
-				for (var t = 0; t < toggles.length-1; t++)
+				_fieldsets[fieldsets[f].id] = {};
+				_fieldsets[fieldsets[f].id].legend 	= fieldsets[f].querySelector(":scope legend");
+				_fieldsets[fieldsets[f].id].legend.setAttribute("data-fieldset",fieldsets[f].id);
+
+				_fieldsets[fieldsets[f].id].toggleGroup 	= fieldsets[f].querySelector(":scope >.options");
+				_fieldsets[fieldsets[f].id].currentToggle = fieldsets[f].querySelector(":scope >.current-option");
+				_fieldsets[fieldsets[f].id].toggles 			= fieldsets[f].querySelectorAll(":scope .radio-group .toggle input");
+
+				_fieldsets[fieldsets[f].id].input 	= fieldsets[f].querySelector(":scope input[type=search]");
+				_fieldsets[fieldsets[f].id].hidden 	= fieldsets[f].querySelector(":scope input[type=hidden]");
+
+				fieldset = _fieldsets[fieldsets[f].id];
+
+				// setup event listeners
+				fieldset.legend.addEventListener('mousedown',_legendClicked,false);
+
+				var toggle;
+				for (var t = 0; t < fieldset.toggles.length; t++)
 				{
-					toggles[t].addEventListener('change',_toggleClicked,false);
+					toggle = fieldset.toggles[t];
+					toggle.setAttribute("data-fieldset",fieldsets[f].id);
+					if (t == fieldset.toggles.length-1 && fieldset.input)
+					{
+						toggle.addEventListener("change",_addBtnClicked,false);
+						break;
+					}
+					toggle.addEventListener('change',_toggleClicked,false);
 				}
-				toggles[toggles.length-1].addEventListener("change",_addBtnClicked,false)
 			}
 		}
 
 		function _formSubmitted(evt)
 		{
 			var form = evt.target;
-			var count = 0;
 			var input;
-			var hidden;
 
-			for (var f = 0; f < _fieldsets.length; f++)
+			for (var f in _fieldsets)
 			{
-				input = _fieldsets[f].querySelector(':scope input[type=search]');
-				hidden = _fieldsets[f].querySelector(':scope input[type=hidden]');
-				if (input.value != "")
+				input = _fieldsets[f].input;
+				if (input && input.value != "")
 				{
-					hidden.value = input.value;
-					input.value = "";
+					_fieldsets[f].hidden.value = input.value;
+					input.disabled = true;
 				}
 			}
 
+			var count = 0;
 			while(form[count] != undefined)
 			{
 				input = form[count++];
 				if (input.value == "" || input.type == "radio")
 					input.disabled = true;
 			}
-
-
 
 			form.submit();
 
@@ -61,17 +81,21 @@ define(
 		function _legendClicked(evt)
 		{
 			var legend = evt.target;
-			var container = legend.parentNode;
-			var toggleGroup = container.querySelector(":scope >.options");
+			var fieldset = _fieldsets[legend.getAttribute("data-fieldset")];
+			var toggleGroup = fieldset.toggleGroup;
 			var selected = toggleGroup.querySelector(":scope input[type=radio]:checked");
-			var current = container.querySelector(":scope >.current-option");
+
+			// if the fieldset has an add input field,
+			// set the add checkbox value to the input field value
+			if (fieldset.input)
+				fieldset.toggles[fieldset.toggles.length-1].value = fieldset.input.value;
+
+			var current = fieldset.currentToggle;
 			if (legend.classList.contains('open'))
 			{
 				toggleGroup.classList.add('hide');
 				current.querySelector(":scope div+label").innerHTML = selected.value || "All";
 				current.classList.remove('hide');
-				//toggleGroup.querySelector(":scope input:first-child").checked = true;
-				//toggleGroup.querySelector(":scope input[type=hidden]").value = "";
 				legend.className = 'closed';
 			}
 			else
@@ -86,30 +110,33 @@ define(
 		function _toggleClicked(evt)
 		{
 			var toggle = evt.target;
-			var label = document.getElementById(toggle.id+"_label");
-			var group = toggle.name.substring(0,toggle.name.length-7);
-			var hidden = document.getElementById(group);
-			hidden.value = toggle.value;
-			_hideAddInput(group+"_option_input");
+			var fieldset = _fieldsets[toggle.getAttribute("data-fieldset")];
+
+			fieldset.hidden.value = toggle.value;
+
+			if (fieldset.input)
+				_hideAddInput(fieldset);
 		}
 
 		function _addBtnClicked(evt)
 		{
-			var group = evt.target.name+"_input";
-			_showAddInput(group);
+			var toggle = evt.target;
+			var fieldset = _fieldsets[toggle.getAttribute("data-fieldset")];
+
+			_showAddInput(fieldset);
 		}
 
-		function _showAddInput(id)
+		function _showAddInput(fieldset)
 		{
-			var input = document.getElementById(id);
+			var input = fieldset.input;
 			input.parentNode.childNodes[1].classList.add('hide'); // hide "Add..." text
 			input.classList.remove('hide'); // show input field
 			input.focus(); // give the input field focus
 		}
 
-		function _hideAddInput(id)
+		function _hideAddInput(fieldset)
 		{
-			var input = document.getElementById(id);
+			var input = fieldset.input;
 			input.value = ""; // clear input field value
 			input.classList.add('hide'); // hide input field
 			input.parentNode.childNodes[1].classList.remove('hide'); // show "Add..." text
