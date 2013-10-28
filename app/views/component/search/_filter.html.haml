@@ -29,16 +29,26 @@
           %label{:for => "#{field}_option_#{i+1}"}
         %label{:for => "#{field}_option_#{i+1}",:id => "#{field}_option_#{i+1}_label"}
           = aggregate_field[i]
-    - exclude_add_button = exclude_add_button ||= false
-    - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
-    - unless exclude_add_button
-      %div.radio-group
-        %div.toggle.add
-          %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
-          %label{:for => "#{field}_option_#{length+2}"}
-        %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
-          %span{:class=>(add_is_checked ? "hide" : "")}
-            Add...
-          = search_field_tag "#{field}_option_input", (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{field}-list"
-
+    - add_input_type = add_input_type ||= false
+    - if add_input_type
+      - if add_input_type == "TEXT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.radio-group
+          %div.toggle.add
+            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+            %label{:for => "#{field}_option_#{length+2}"}
+          %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
+            %span{:class=>(add_is_checked ? "hide" : "")}
+              Add...
+            = search_field_tag "#{field}_option_input", (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{field}-list"
+      - elsif add_input_type == "SELECT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.radio-group
+          %div.toggle.add
+            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+            %label{:for => "#{field}_option_#{length+2}"}
+          %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
+            %span{:class=>(add_is_checked ? "hide" : "")}
+              Add...
+            = select_tag("#{field}_option_input", options_for_select(list_values, selected: :option ))
     = hidden_field_tag field, field_value
