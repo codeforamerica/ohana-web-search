@@ -17,7 +17,19 @@ class OrganizationsController < ApplicationController
     #end
 
     # initialize query. Content may be blank if no results were found.
-    @orgs = Organization.search(params)
+    begin
+      @orgs = Ohanakapa.search("search", params)
+    rescue Ohanakapa::ServiceUnavailable
+      redirect_to "#{root_url}",
+        alert: "Sorry, we are experiencing issues with search.
+          Please try again later." and return
+    rescue Ohanakapa::BadRequest => e
+      if e.to_s.include?("missing")
+        @orgs = Ohanakapa.locations(params)
+      else
+        @orgs = Ohanakapa.search("search", keyword: "asdfasg")
+      end
+    end
     #params[:keyword] = original_word if original_word.present?
 
     headers = Ohanakapa.last_response.headers

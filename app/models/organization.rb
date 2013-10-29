@@ -12,17 +12,19 @@ class Organization
   #
   # @param params [Hash] Search options.
   # @return [Array] Array of locations.
-  def self.search(params = {})
-    begin
-      Ohanakapa.search("search", params)
-    rescue Ohanakapa::BadRequest => e
-      if e.to_s.include?("missing")
-        Ohanakapa.locations(params)
-      else
-        Ohanakapa.search("search", keyword: "asdfasg")
-      end
-    end
-  end
+  # def self.search(params = {})
+  #   begin
+  #     Ohanakapa.search("search", params)
+  #   rescue Ohanakapa::ServiceUnavailable
+  #     redirect_to "http://#{ENV["CANONICAL_URL"]}", alert: "Sorry, we are experiencing issues with search. Please try again later."
+  #   rescue Ohanakapa::BadRequest => e
+  #     if e.to_s.include?("missing")
+  #       Ohanakapa.locations(params)
+  #     else
+  #       Ohanakapa.search("search", keyword: "asdfasg")
+  #     end
+  #   end
+  # end
 
   # Calls the locations/{id} endpoint of the Ohana API
   # Fetches a single location by id
