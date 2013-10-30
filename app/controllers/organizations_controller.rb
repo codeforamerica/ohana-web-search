@@ -235,7 +235,8 @@ class OrganizationsController < ApplicationController
     }
 
     # cached kinds
-    @aggregate_kinds = cache_filter_values(collection,'aggregate_kinds'){|org| org.kind }
+    #@aggregate_kinds = cache_filter_values(collection,'aggregate_kinds'){|org| org.kind }
+    @aggregate_kinds = ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Parks","Sports","Other"]
 
     # cached service areas
     @aggregate_service_areas = ['smc']
