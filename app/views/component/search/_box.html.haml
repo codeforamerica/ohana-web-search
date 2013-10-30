@@ -9,6 +9,7 @@
           %datalist#search-keywords
             - cip_keywords.each do |keyword|
               %option{:value=>keyword}
+                = keyword
 
         = hidden_field_tag "service_area", "smc"
         = hidden_field_tag "kind", "Human Services"

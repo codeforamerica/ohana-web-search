@@ -7,17 +7,20 @@
     %datalist#location-list
       - smc_cities.each do |city|
         %option{:value=>city}
+          = city
 
   = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
 
-  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds, :add_input_type=>"SELECT", :list_values=>(kind_terms.reject{|x| @aggregate_kinds.include? x})}
+  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds, :add_input_type=>"TEXT", :list_values=>(kind_terms.reject{|x| @aggregate_kinds.include? x})}
+
   - cache ['kind_terms', *kind_terms] do
     %datalist#kind-list
       - kind_terms.each do |kind|
         %option{:value=>kind}
+          = kind
 
   -#- if params[:org_name].present?
-    = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_input_type=>"TEXT"}
+  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_input_type=>"TEXT"}
 
 
   -#

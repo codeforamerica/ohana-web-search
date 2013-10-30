@@ -2,14 +2,12 @@
   %section#search-box
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
-      %div
-        %label{:for => "keyword"}
-          I need...
-      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword", :list => "search-keywords"
+      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
       - cache ['keywords-list', *cip_keywords] do
         %datalist#search-keywords
           - cip_keywords.each do |keyword|
             %option{:value=>keyword}
+              = keyword
 
     -# location search box input field appears below
       %section#location-search-box
@@ -21,5 +19,6 @@
           %datalist#search-locations
             - smc_cities.each do |city|
               %option{:value=>city}
+                = city
 
     = render :partial => 'component/search/options'

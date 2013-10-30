@@ -241,9 +241,9 @@ class OrganizationsController < ApplicationController
     @aggregate_service_areas = ['smc']
 
     # cached organization names
-    #@aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
-    #  org.organization.name if org.key?(:organization) && org.organization.name != org.name
-    #}
+    @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
+      org.organization.name if org.key?(:organization) && org.organization.name != org.name
+    }
 
   end
 

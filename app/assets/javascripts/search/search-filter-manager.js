@@ -19,15 +19,15 @@ define(
 			for (var f = 0; f < numFieldsets; f++)
 			{
 				_fieldsets[fieldsets[f].id] = {};
-				_fieldsets[fieldsets[f].id].legend 	= fieldsets[f].querySelector(":scope legend");
+				_fieldsets[fieldsets[f].id].legend 	= fieldsets[f].querySelector("legend");
 				_fieldsets[fieldsets[f].id].legend.setAttribute("data-fieldset",fieldsets[f].id);
 
-				_fieldsets[fieldsets[f].id].toggleGroup 	= fieldsets[f].querySelector(":scope >.options");
-				_fieldsets[fieldsets[f].id].currentToggle = fieldsets[f].querySelector(":scope >.current-option");
-				_fieldsets[fieldsets[f].id].toggles 			= fieldsets[f].querySelectorAll(":scope .radio-group .toggle input");
+				_fieldsets[fieldsets[f].id].toggleGroup 	= fieldsets[f].querySelector(".options");
+				_fieldsets[fieldsets[f].id].currentToggle = fieldsets[f].querySelector(".current-option");
+				_fieldsets[fieldsets[f].id].toggles 			= fieldsets[f].querySelectorAll(".radio-group .toggle input");
 
-				_fieldsets[fieldsets[f].id].input 	= fieldsets[f].querySelector(":scope input[type=search]");
-				_fieldsets[fieldsets[f].id].hidden 	= fieldsets[f].querySelector(":scope input[type=hidden]");
+				_fieldsets[fieldsets[f].id].input 	= fieldsets[f].querySelector("input[type=search]");
+				_fieldsets[fieldsets[f].id].hidden 	= fieldsets[f].querySelector("input[type=hidden]");
 
 				fieldset = _fieldsets[fieldsets[f].id];
 
@@ -44,7 +44,7 @@ define(
 						toggle.addEventListener("change",_addBtnClicked,false);
 						break;
 					}
-					toggle.addEventListener('change',_toggleClicked,false);
+					toggle.addEventListener('change',_toggleChanged,false);
 				}
 			}
 		}
@@ -83,7 +83,7 @@ define(
 			var legend = evt.target;
 			var fieldset = _fieldsets[legend.getAttribute("data-fieldset")];
 			var toggleGroup = fieldset.toggleGroup;
-			var selected = toggleGroup.querySelector(":scope input[type=radio]:checked");
+			var selected = toggleGroup.querySelector("input[type=radio]:checked");
 
 			// if the fieldset has an add input field,
 			// set the add checkbox value to the input field value
@@ -94,7 +94,9 @@ define(
 			if (legend.classList.contains('open'))
 			{
 				toggleGroup.classList.add('hide');
-				current.querySelector(":scope div+label").innerHTML = selected.value || "All";
+				current.querySelector("div+label").innerHTML = selected.value || "All";
+				if (!selected.value)
+					_setToggle(fieldset.toggles[1]);
 				current.classList.remove('hide');
 				legend.className = 'closed';
 			}
@@ -106,8 +108,14 @@ define(
 			}
 		}
 
+		function _setToggle(toggle)
+		{
+			toggle.checked = true;
+			_toggleChanged({target:toggle});
+		}
+
 		// Sets the hidden field to value of the label
-		function _toggleClicked(evt)
+		function _toggleChanged(evt)
 		{
 			var toggle = evt.target;
 			var fieldset = _fieldsets[toggle.getAttribute("data-fieldset")];
