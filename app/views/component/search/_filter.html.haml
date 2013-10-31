@@ -22,6 +22,7 @@
         %label{:for => "#{field}_option_0"}
       %label{:for => "#{field}_option_0",:id => "#{field}_option_label"}
         All
+    - toggle_is_checked = false
     - length = aggregate_field.length-1
     - for i in 0..length
       -# If the supplied field contains a hash, it means there's a difference between
