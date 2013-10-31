@@ -1657,12 +1657,6 @@ body { top: 0px !important; }
 
     .current-option
     {
-      .toggle label,
-      .toggle + label
-      {
-        cursor:auto;
-      }
-
       .radio-group >.toggle label {
         background:none;
       }
@@ -1729,8 +1723,10 @@ body { top: 0px !important; }
   position: absolute;
   width: 9px;
   height: 5px;
-  top: 1px;
-  left: 3px;
+  top: 50%;
+  left: 50%;
+  margin-left:-5px;
+  margin-top:-7px;
 }
 
 .radio-group >.toggle input[type=radio]:hover + label:after,
@@ -1756,12 +1752,12 @@ body { top: 0px !important; }
   position: absolute;
   width: 9px;
   height: 5px;
-  top: -4px;
-  left: 4px;
+  margin-left:-4px;
+  margin-top:-12px;
   color:$blue_darkest;
 }
 
-.radio-group >.toggle.add input[type=radio]:hover + label:after
+.radio-group >.toggle.add input[type=radio]:not(:checked):hover + label:after
 {
   color:$black;
 }

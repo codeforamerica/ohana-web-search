@@ -102,12 +102,13 @@
       %input{:type=>"checkbox",:id=>"language-checkbox"}
       %label{:for=>"language-checkbox"}
 
-%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
-  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-  %span Update
-%div#reset-btn
-  %a{:href=>organizations_path}
-    Reset
+%div
+  %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+    %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+    %span Update
+  %div#reset-btn
+    %a{:href=>organizations_path}
+      Reset
 
 -#
   %fieldset

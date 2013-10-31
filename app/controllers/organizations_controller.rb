@@ -239,7 +239,7 @@ class OrganizationsController < ApplicationController
     @aggregate_kinds = ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Parks","Sports","Other"]
 
     # cached service areas
-    @aggregate_service_areas = ['smc']
+    @aggregate_service_areas = [{:name=>'San Mateo County, CA',:value=>'smc'}]
 
     # cached organization names
     @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
