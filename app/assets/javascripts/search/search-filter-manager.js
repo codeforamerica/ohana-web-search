@@ -175,9 +175,22 @@ define(
 			// Show/hide the filter
 			function _toggleFilter(fieldset)
 			{
-				//var legend = fieldset.legend;
-				//var toggleGroup = fieldset.toggleGroup;
-				var selected = _toggleGroupsContainer.querySelector("input[type=radio]:checked");
+				var selected;
+				try
+				{
+					selected = _toggleGroupsContainer.querySelector("input[type=radio]:checked");
+				}
+				// catch IE 8
+				catch(e)
+				{
+					arr = _toggleGroupsContainer.querySelectorAll("input[type=radio]");
+					for (var a=0; a<arr.length;a++)
+					{
+						arr[a].style.visibility = "inherit";
+						if (arr[a].checked)
+							selected = arr[a];
+					}
+				}
 
 				// if the fieldset has an add input field,
 				// set the add checkbox value to the input field value

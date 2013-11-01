@@ -1734,6 +1734,11 @@ body { top: 0px !important; }
 {
   content: "🔍";
 }
+.radio-group >.toggle input[type=radio]:hover + label:after,
+.radio-group >.toggle input[type=radio].checked + label:after
+{
+  content: "🔍";
+}
 
 .radio-group >.toggle input[type=radio]:hover + label:after
 {
@@ -1741,6 +1746,10 @@ body { top: 0px !important; }
 }
 
 .radio-group >.toggle input[type=radio]:checked + label:after
+{
+  color:$blue_darkest;
+}
+.radio-group >.toggle input[type=radio].checked + label:after
 {
   color:$blue_darkest;
 }
@@ -1761,6 +1770,10 @@ body { top: 0px !important; }
 {
   color:$black;
 }
+.radio-group >.toggle.add input[type=radio]:not(.checked):hover + label:after
+{
+  color:$black;
+}
 
 .radio-group >.toggle input[type=radio]:checked + label
 {
@@ -1768,8 +1781,18 @@ body { top: 0px !important; }
   border:1px solid $blue_darkest;
   @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
 }
+.radio-group >.toggle input[type=radio].checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+  border:1px solid $blue_darkest;
+  @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
+}
 
 .radio-group >.toggle input[type=radio]:checked + label::before
+{
+  border:none;
+}
+.radio-group >.toggle input[type=radio].checked + label::before
 {
   border:none;
 }
