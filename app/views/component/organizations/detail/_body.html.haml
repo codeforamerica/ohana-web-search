@@ -48,22 +48,22 @@
 
                 - if @org.key?(:phones)
                   %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
-                    - @org.phones.each do |hash|
+                    - @org.phones.each do |phone|
                       %div
                         %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
                         %span
-                          - if hash["department"]
+                          - if phone["department"]
                             %span{:itemprop=>"contactType"}
-                              = hash["department"]
-                          - if hash["number"]
+                              = phone["department"]
+                          - if phone["number"]
                             %span{:itemprop=>"telephone"}
-                              = format_phone(hash["number"])
-                          - if hash["type"]
+                              = format_phone(phone["number"])
+                          - if phone["type"]
                             %sup.phone-type
-                              = hash["type"]
-                          - if hash["hours"]
+                              = phone["type"]
+                          - if phone["hours"]
                             %span
-                              = hash["hours"]
+                              = phone["hours"]
 
 
                 - if @org.key?(:faxes)
@@ -71,8 +71,16 @@
                     - @org.faxes.each do |fax|
                       %div
                         %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
-                        %span{:itemprop=>"faxNumber"}
-                          = format_phone(fax)
+                        - if fax.is_a?(String)
+                          %span{:itemprop=>"faxNumber"}
+                            = format_phone(fax)
+                        - elsif fax.is_a?(Sawyer::Resource)
+                          - if fax["department"]
+                            %span{:itemprop=>"contactType"}
+                              = fax["department"]
+                          - if fax["number"]
+                            %span{:itemprop=>"faxNumber"}
+                              = format_phone(fax["number"])
 
           - if @org.key?(:urls)
             %section.urls-box
