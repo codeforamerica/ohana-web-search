@@ -8,8 +8,7 @@ module Features
       if options[:on_home].present?
         find(:css, '#find-btn').click
       else
-        fill_in('location', :with => options[:location])
-        find(:css, '#update-btn').click
+        set_location_filter(options)
       end
     end
 
@@ -17,6 +16,39 @@ module Features
       visit ("/")
       options[:on_home] = true
       search(options)
+    end
+
+    def search_for_test_case
+      search_from_home(:keyword => 'maceo')
+      set_service_area_filter
+      save_screenshot("spec/screenshots/one.png")
+      set_kind_filter
+    end
+
+    def set_location_filter(options = {})
+      set_filter(options,"location",:location)
+    end
+
+    def set_service_area_filter(options = {})
+      set_filter(options,"service-area",:service_area)
+    end
+
+    def set_kind_filter(options = {})
+      set_filter(options,"kind",:kind)
+    end
+
+    def set_filter(options,name,field)
+      find(:css, "##{name}-options").find(".closed").click
+
+      within("##{name}-options") do
+        if options[field].present?
+          find(:css, ".add").click
+          fill_in("#{name}_option_input", :with => options[field])
+        else
+          first("label").click
+        end
+      end
+      find(:css, '#update-btn').click
     end
 
     # navigation helpers
