@@ -5,8 +5,6 @@
         %label{:for => "keyword"}
           I need...
         = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
-        = hidden_field_tag 'service_area',"smc"
-        = hidden_field_tag 'kind[]',"Human Services"
         - cache ['keywords-list', *cip_keywords] do
           %datalist#search-keywords
             - cip_keywords.each do |keyword|
