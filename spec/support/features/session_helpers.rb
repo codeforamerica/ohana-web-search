@@ -9,6 +9,7 @@ module Features
         find(:css, '#find-btn').click
       else
         set_location_filter(options)
+        find(:css, '#update-btn').click
       end
     end
 
@@ -22,6 +23,7 @@ module Features
       search_from_home(:keyword => 'maceo')
       set_service_area_filter
       set_kind_filter
+      find(:css, '#update-btn').click
     end
 
     def set_location_filter(options = {})
@@ -47,7 +49,6 @@ module Features
           first("label").click
         end
       end
-      find(:css, '#update-btn').click
     end
 
     # navigation helpers
