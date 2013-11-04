@@ -46,7 +46,7 @@ gem "figaro", ">= 0.6.3"
 
 gem 'coveralls', require: false
 
-group :production do
+group :production, :staging do
   # rails_12factor runs only in production to suppress logging in rspec output.
   # Per advice of http://stackoverflow.com/questions/18132920/how-to-suppress-noise-from-requests-when-running-rspec-feature-specs
   gem 'rails_12factor' # Heroku recommended

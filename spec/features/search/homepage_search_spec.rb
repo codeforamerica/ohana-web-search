@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-feature "homepage search" do
+feature "homepage search", :js=>true do
 
   scenario 'with keyword that returns results', :vcr do
-    search_from_home(:keyword => 'maceo')
+    search_for_test_case
     looks_like_results
     find_field("keyword").value.should == "maceo"
     expect(page).to_not have_content("1 result located!")

@@ -3,14 +3,14 @@ module ApplicationHelper
   # Handles formatting of the page title by appending site name to end
   # of a particular page's title.
   # @param page_title [String] the page title from a particular view.
-	def title(page_title)
-		default = "SMC-Connect"
-		if page_title.present?
-			content_for :title, "#{page_title.to_str} | #{default}"
-		else
-			content_for :title, default
-		end
-	end
+  def title(page_title)
+    default = "SMC-Connect"
+    if page_title.present?
+      content_for :title, "#{page_title.to_str} | #{default}"
+    else
+      content_for :title, default
+    end
+  end
 
   # Since this app includes various parameters in the URL when linking to a
   # location's details page, we can end up with many URLs that display the
@@ -112,6 +112,11 @@ module ApplicationHelper
   def smc_cities
     ['Atherton, CA','Belmont, CA','Brisbane, CA','Burlingame, CA','Colma, CA','Daly City, CA','East Palo Alto, CA','Foster City, CA','Half Moon Bay, CA','Hillsborough, CA','Menlo Park, CA','Millbrae, CA','Pacifica, CA','Portola Valley, CA','Redwood City, CA','San Bruno, CA','San Carlos, CA','San Mateo, CA','South San Francisco, CA','Woodside, CA','Broadmoor, CA','Burlingame Hills, CA','Devonshire, CA','El Granada, CA','Emerald Lake Hills, CA','Highlands-Baywood Park, CA','Kings Mountain, CA','Ladera, CA','La Honda, CA','Loma Mar, CA','Menlo Oaks, CA','Montara, CA','Moss Beach, CA','North Fair Oaks, CA','Palomar Park, CA','Pescadero, CA','Princeton-by-the-Sea, CA','San Gregorio, CA','Sky Londa, CA','West Menlo Park, CA']
   end
+
+  def kind_terms
+    ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Other","Parks","Sports"]
+  end
+
 
   # List of Open Eligibility categories for when no search results are found.
   # @return [Array] Arrays of categories and sub-categories.

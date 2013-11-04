@@ -19,13 +19,13 @@ var prototype = Array.prototype,
     splice = prototype.splice,
     join = prototype.join;
 
-function DOMTokenList(el) {  
+function DOMTokenList(el) {
   this._element = el;
   if (el.className != this._classCache) {
     this._classCache = el.className;
 
     if (!this._classCache) return;
-    
+
       // The className needs to be trimmed and split on whitespace
       // to retrieve a list of classes.
       var classes = this._classCache.replace(/^\s+|\s+$/g,'').split(/\s+/),
@@ -81,13 +81,13 @@ function defineElementGetter (obj, prop, getter) {
 		Object.defineProperty(obj, prop,{
 			get : getter
 		})
-	} else {					
+	} else {
 		obj.__defineGetter__(prop, getter);
 	}
 }
 
 defineElementGetter(Element.prototype, 'classList', function () {
-  return new DOMTokenList(this);			
+  return new DOMTokenList(this);
 });
 
 })();

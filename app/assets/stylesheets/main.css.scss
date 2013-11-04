@@ -486,6 +486,45 @@ sup
     font-size:80%;
 }
 
+.drop-down-container
+{
+  position:relative;
+  ul.drop-down
+  {
+    position:absolute;
+    border:1px solid $blue_midtone;
+    display:block;
+    overflow:scroll;
+    overflow-x:hidden;
+    background:white;
+    z-index:9998;
+    @include single-box-shadow($blue_darkest, 0px, 2px, 10px);
+    @include box-sizing(border-box);
+    padding:5px;
+
+    li
+    {
+      display:block;
+      font-size:14px;
+      font-family:$san_serif_font;
+      padding:5px;
+      @include box-sizing(border-box);
+      cursor:pointer;
+      color:$black;
+    }
+
+    li:hover
+    {
+      background:$blue_light;
+    }
+
+    li.highlight
+    {
+      background:$blue_light;
+    }
+  }
+}
+
 //=================================================================================
 // icons
 .ohana-icon:before {
@@ -1138,6 +1177,7 @@ main
 .inside main
 {
   background-color: $blue_lightest;
+  border-left:2px solid $blue_midtone;
   //@include background( linear-gradient( $blue_lightest 0%, $blue_midtone 100%) );
 }
 
@@ -1366,8 +1406,7 @@ body { top: 0px !important; }
 {
   float:left;
   vertical-align: top;
-  padding: 20px;
-  width:200px;
+  width: 240px;
   background-color: $blue_lightest;
   border-right:2px solid $blue_midtone;
 
@@ -1436,23 +1475,19 @@ body { top: 0px !important; }
   input
   {
     font-size: 22px;
-    height:50px;
-    border:2px solid $blue_darkest;
+    border:1px solid $greyscale_light;
     @include border-radius(4px);
     border-collapse: collapse;
     padding:10px;
     position:relative;
-    top:3px;
     margin:0;
     @include box-sizing(border-box);
-    width:290px;
   }
 
   button
   {
     font-size: 16px;
     margin:0;
-    height:50px;
     border:2px solid $blue_darkest;
     padding:10px;
     vertical-align: baseline;
@@ -1487,11 +1522,22 @@ body { top: 0px !important; }
       text-shadow: none;
     }
   }
+
+  #reset-btn
+  {
+    @include inline-block();
+    vertical-align: middle;
+  }
 }
 
 .home #search-box
 {
   padding:0px;
+
+  ul
+  {
+    text-align:left;
+  }
 
   > div
   {
@@ -1520,8 +1566,15 @@ body { top: 0px !important; }
     text-shadow: 1px 4px 6px $blue_lightest, 0 0 0 $black, 1px 4px 6px $blue_lightest;
   }
 
+  input
+  {
+    height:50px;
+    width:290px;
+  }
+
   button // find button styles
   {
+    height:50px;
     font-size:22px;
     @include inline-block();
     @include border-radius(4px);
@@ -1530,18 +1583,18 @@ body { top: 0px !important; }
 
 .inside #search-box
 {
-  padding-top:10px;
   text-align:center;
+  margin-bottom:20px;
 
   section
   {
     text-align:left;
   }
 
-  button // find button styles
+  button // update button styles
   {
     height:40px;
-    vertical-align: top;
+    vertical-align: middle;
 
     .ohana-icon
     {
@@ -1549,59 +1602,396 @@ body { top: 0px !important; }
       color:$blue_darkest;
     }
   }
+
+  fieldset
+  {
+    >legend
+    {
+      font-size:16px;
+      font-family:$san_serif_font;
+      font-weight:bold;
+      cursor:pointer;
+      @include inline-block();
+    }
+
+    >legend:hover
+    {
+      text-decoration:underline;
+    }
+
+    >legend.open:before
+    {
+      content:"▲ ";
+      color:$blue_midtone;
+      font-size:12px;
+    }
+
+    >legend.closed:before
+    {
+      content:"▼ ";
+      color:$blue_midtone;
+      font-size:12px;
+    }
+
+    .radio-group
+    {
+      display:table-row;
+
+      > *
+      {
+        display:table-cell;
+        padding-left:5px;
+        vertical-align: middle;
+        padding-bottom:5px;
+      }
+
+      .toggle + label
+      {
+        font-size:14px;
+        cursor:pointer;
+        @include inline-block();
+      }
+
+
+    }
+
+    .current-option
+    {
+      .radio-group >.toggle label {
+        background:none;
+      }
+    }
+
+    input[type=search]
+    {
+      width: 100%;
+      padding: 3px;
+      font-size: 12px;
+      height: 22px;
+    }
+  }
 }
 
-.inside #keyword-search-box,
-.inside #location-search-box
+.inside #keyword-search-box
 {
   padding:10px;
-  padding-top:0px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  background:$blue_midtone;
 
-  label // form input field labels
-  {
-    font-size:24px;
-  }
-
-  input
+  input[type=search]
   {
     top:5px;
     margin-left:0px;
     width:100%;
-    font-size: 16px;
+    height:34px;
+    padding:3px;
+    padding-left:6px;
+    font-size: 14px;
+    @include inline-block();
+    vertical-align: bottom;
   }
 }
+
+.radio-group >.toggle input[type=radio]{
+  visibility: hidden;
+}
+
+
+
+.radio-group >.toggle label {
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  border:1px solid $blue_dark;
+  @include box-sizing(border-box);
+  @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+  @include border-radius(3px);
+  //@include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 1px 1px $blue_dark );
+  overflow:hidden;
+}
+
+.radio-group >.toggle input[type=radio] + label:after
+{
+  font-family:$icon_font;
+  font-size: 10px;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  top: 50%;
+  left: 50%;
+  margin-left:-5px;
+  margin-top:-7px;
+}
+
+.radio-group >.toggle input[type=radio]:hover + label:after,
+.radio-group >.toggle input[type=radio]:checked + label:after
+{
+  content: "🔍";
+}
+.radio-group >.toggle input[type=radio]:hover + label:after,
+.radio-group >.toggle input[type=radio].checked + label:after
+{
+  content: "🔍";
+}
+
+.radio-group >.toggle input[type=radio]:hover + label:after
+{
+  color:$blue_light;
+}
+
+.radio-group >.toggle input[type=radio]:checked + label:after
+{
+  color:$blue_darkest;
+}
+.radio-group >.toggle input[type=radio].checked + label:after
+{
+  color:$blue_darkest;
+}
+
+.radio-group >.toggle.add input[type=radio] + label:after
+{
+  content: "+";
+  font-size: 14px;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  margin-left:-4px;
+  margin-top:-12px;
+  color:$blue_darkest;
+}
+
+.radio-group >.toggle.add input[type=radio]:not(:checked):hover + label:after
+{
+  color:$black;
+}
+.radio-group >.toggle.add input[type=radio]:not(.checked):hover + label:after
+{
+  color:$black;
+}
+
+.radio-group >.toggle input[type=radio]:checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+  border:1px solid $blue_darkest;
+  @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
+}
+.radio-group >.toggle input[type=radio].checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+  border:1px solid $blue_darkest;
+  @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
+}
+
+.radio-group >.toggle input[type=radio]:checked + label::before
+{
+  border:none;
+}
+.radio-group >.toggle input[type=radio].checked + label::before
+{
+  border:none;
+}
+
+
+
+
+
+.search-check input[type=checkbox]{
+  visibility: hidden;
+}
+
+.search-check {
+  width: 41px;
+  height: 20px;
+  @include background( linear-gradient(top,$blue_midtone,$blue_light) );
+  @include inline-block();
+  position: relative;
+
+  @include box-shadow( inset 0px 1px 0px $blue_dark, inset 0px 1px 1px $blue_darkest );
+  border:1px solid $blue_darkest;
+  @include border-radius(3px);
+  cursor:pointer;
+}
+
+.search-check label {
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  transition: all .4s ease;
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+
+  border:1px solid $blue_darkest;
+  @include box-sizing(border-box);
+  @include background( linear-gradient(top,$greyscale_lightest,$white) );
+  overflow:hidden;
+  @include border-radius(3px);
+}
+
+.search-check label:after
+{
+  @include opacity(0.3);
+  content: '🔍';
+  font-family:$icon_font;
+  font-size: 12px;
+  color:$blue_darkest;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  //background: transparent;
+  top: 2px;
+  left: 4px;
+}
+
+.search-check input[type=checkbox]:checked + label {
+  left: 20px;
+}
+
+.search-check label:before
+{
+  content:'';
+  position: absolute;
+  width: 2px;
+  height: 34px;
+  position:absolute;
+  left:4px;
+  top:-5px;
+
+  border-right: 3px solid $blue_darkest_alpha30;
+
+  @include rotate(45deg);
+}
+
+.search-check input[type=checkbox]:checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+}
+
+.search-check input[type=checkbox]:indeterminate + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+}
+
+.search-check input[type=checkbox]:checked + label::before
+{
+  border:none;
+}
+
+
+/*
+
+.search-check {
+  width: 20px;
+  position: relative;
+  @include inline-block();
+}
+
+.search-check label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  border-radius: 4px;
+  display:block;
+
+  border:1px solid $greyscale_light;
+  //@include box-shadow( inset 0px 1px 0px $black_alpha50, 0px 1px 1px $white_alpha40 );
+  @include background( linear-gradient(top,$greyscale_lightest,$white) );
+  overflow:hidden;
+}
+
+.search-check label:before
+{
+  content:'';
+  position: absolute;
+  width: 2px;
+  height: 34px;
+  position:absolute;
+  left:4px;
+  top:-5px;
+
+  border-right: 3px solid $blue_darkest_alpha30;
+
+  @include rotate(45deg);
+}
+
+.search-check label:after
+{
+  @include opacity(0.3);
+  content: '🔍';
+  font-family:$icon_font;
+  font-size: 12px;
+  color:$blue_darkest;
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  //background: transparent;
+  top: 2px;
+  left: 4px;
+}
+
+.search-check label:hover::after
+{
+  @include opacity(0.3);
+}
+
+.search-check label:hover::before,
+.search-check input[type=checkbox]:checked + label::before
+{
+  border:none;
+}
+
+.search-check input[type=checkbox]:checked + label:after {
+  @include opacity(1);
+}
+
+.search-check input[type=checkbox]:checked + label
+{
+  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+  border:1px solid $blue_darkest;
+}
+*/
+
 
 #search-options
 {
   // IE fallback
   //border-top:1px dotted $greyscale_midtone;
-  border-bottom:1px dotted $greyscale_midtone;
+  //border-bottom:1px dotted $greyscale_midtone;
 
   //border-top:1px dotted $black_alpha40;
-  border-bottom:1px dotted $black_alpha40;
-  padding:10px;
+  //border-bottom:1px dotted $black_alpha40;
   margin-bottom:25px;
   font-family: $san_serif_font;
 
   fieldset
   {
-    margin-top:15px;
+    margin-left:10px;
+    margin-right:10px;
+    padding:10px;
+    margin-top:10px;
     margin-bottom:15px;
+    border-bottom:1px solid $blue_midtone;
 
     legend
     {
-      font-weight:bold;
+      color:$blue_darkest;
       font-size:14px;
+      margin-bottom:5px;
     }
-  }
-}
-
-#search-options
-{
-  legend
-  {
-    margin-bottom:5px;
   }
 
   a
@@ -1614,6 +2004,8 @@ body { top: 0px !important; }
     font-size:14px;
     display:block;
     border-bottom:0;
+    width:123px;
+    @include inline-block();
   }
 
   a:hover
@@ -1689,7 +2081,7 @@ body { top: 0px !important; }
 {
   border:1px solid $purple_lightest !important;
   background:$white;
-  z-index:9998;
+  z-index:9997;
 
   > ul
   {

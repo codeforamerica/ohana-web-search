@@ -1,15 +1,13 @@
 require 'spec_helper'
 
-feature "results page search" do
+feature "results page search", :js=>true do
 
   background do
-    VCR.use_cassette('homepage_search/with_keyword_that_returns_results') do
-      search_from_home(:keyword => 'maceo')
-    end
+    search_from_home
   end
 
   scenario 'with keyword that returns results', :vcr do
-    search(:keyword => 'maceo')
+    search_for_test_case
     find_field("keyword").value.should == "maceo"
     looks_like_results
   end
@@ -24,7 +22,9 @@ feature "results page search" do
     # The search from the background action leaves the keyword field
     # populated, so to do a location-only search, we have to clear it first.
     search(:keyword => "", :location => '94060')
-    find_field("location").value.should == "94060"
+    within("#location-options") do
+      find(".current-option").should have_content('94060')
+    end
     looks_like_puente
   end
 
@@ -45,13 +45,9 @@ feature "results page search" do
     looks_like_no_results
   end
 
-  xscenario 'with language that returns less results', :vcr do
-    search_by_language("Tagalog (Filipino)")
-    expect(page).to have_content("30 of 112 results")
-  end
-
   scenario 'when clicking organization link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
+    delay
     page.first("a", text: "St. Vincent de Paul Society").click
     expect(page).to_not have_content("Shelter Network")
     expect(page).to have_content("San Mateo Homeless Help Center")

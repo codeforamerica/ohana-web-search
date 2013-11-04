@@ -1,0 +1,62 @@
+%fieldset{:id=>"#{css_class_format(field)}-options"}
+  - all_is_checked = field_value.blank? ? true : false
+  %legend.closed
+    = legend
+
+  %div.current-option
+    %div.radio-group
+      %div.toggle
+        %input{:type=>"radio",:id=>"#{field}_option", :checked=>true}
+        %label{:for => "#{field}_option"}
+      %label
+        -# Check if field display value and parameter value differ
+        - field_display = field_value
+        - for i in 0..(aggregate_field.length-1)
+          - field_display = aggregate_field[i].is_a?(Hash) ? (aggregate_field[i][:name] if aggregate_field[i][:value] == field_value) : field_value
+        = (field_value.blank? ? "All" : field_display)
+
+  %div.options.hide
+    %div.radio-group
+      %div.toggle
+        = radio_button_tag "#{field}_option", "", all_is_checked, {:id=>"#{field}_option_0"}
+        %label{:for => "#{field}_option_0"}
+      %label{:for => "#{field}_option_0",:id => "#{field}_option_label"}
+        All
+    - toggle_is_checked = false
+    - length = aggregate_field.length-1
+    - for i in 0..length
+      -# If the supplied field contains a hash, it means there's a difference between
+      -# the text displayed and passed to the response when the form is submitted.
+      - field_display = aggregate_field[i].is_a?(Hash) ? aggregate_field[i][:name] : aggregate_field[i]
+      - aggregate_field[i] = aggregate_field[i][:value] if aggregate_field[i].is_a?(Hash)
+      %div.radio-group
+        %div.toggle
+          - check_current_toggle = aggregate_field[i] == field_value
+          - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
+          = radio_button_tag "#{field}_option", aggregate_field[i], check_current_toggle, {:id=>"#{field}_option_#{i+1}","data-display-value"=>field_display}
+          %label{:for => "#{field}_option_#{i+1}"}
+        %label{:for => "#{field}_option_#{i+1}",:id => "#{field}_option_#{i+1}_label"}
+          = field_display
+    - add_input_type = add_input_type ||= false
+    - if add_input_type
+      - if add_input_type == "TEXT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.radio-group
+          %div.toggle.add
+            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+            %label{:for => "#{field}_option_#{length+2}"}
+          %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
+            %span{:class=>(add_is_checked ? "hide" : "")}
+              Add...
+            = search_field_tag "#{field}_option_input", (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{field}-list"
+      - elsif add_input_type == "SELECT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.radio-group
+          %div.toggle.add
+            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+            %label{:for => "#{field}_option_#{length+2}"}
+          %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
+            %span{:class=>(add_is_checked ? "hide" : "")}
+              Add...
+            = select_tag("#{field}_option_input", options_for_select(list_values, selected: :option ))
+    = hidden_field_tag field, field_value

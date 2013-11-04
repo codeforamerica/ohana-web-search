@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind%5B0%5D=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 14 Oct 2013 05:37:58 GMT
+      - Mon, 04 Nov 2013 07:29:04 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Status:
@@ -37,11 +37,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4835'
+      - '4901'
       X-Request-Id:
-      - a620851d3ad02f0e7203c9b6d8387f0b
+      - b8f831b98b0dc0ed4774dfe2b660c490
       X-Runtime:
-      - '0.031302'
+      - '0.022402'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -56,119 +56,5 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:37:58 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 14 Oct 2013 05:37:59 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4834'
-      X-Request-Id:
-      - 88c656462d3386765aa6d27f2fc85956
-      X-Runtime:
-      - '0.027384'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:37:59 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 14 Oct 2013 05:37:59 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4833'
-      X-Request-Id:
-      - 306edf3b428bbd69ff158f7927b777df
-      X-Runtime:
-      - '0.028191'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:37:59 GMT
+  recorded_at: Mon, 04 Nov 2013 07:29:04 GMT
 recorded_with: VCR 2.5.0

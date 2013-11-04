@@ -1,89 +1,60 @@
-- if params[:org_name].present? || params[:kind].present? || params[:category].present? || params[:language].present? || [:service_area].present?
+%section#search-options
 
-  %section#search-options
+  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_input_type=>"TEXT"}
+  - cache ['cities-list', *smc_cities] do
+    %datalist#location-list
+      - smc_cities.each do |city|
+        %option{:value=>city}
+          = city
 
-    - if params[:org_name].present?
-      %fieldset#orgname-options
-        %legend Agency name...
-        %div
-          - org_name = params[:org_name]
-          - new_params = @search_params.dup
-          - new_params.delete(:org_name)
-          %a{ :href => organizations_path(new_params) }
-            = org_name
-          = hidden_field_tag 'org_name',org_name
+  = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
 
-    - if params[:category].present?
-      %fieldset#category-options
-        %legend Category of service...
-        %div
-          - category = params[:category]
-          - new_params = @search_params.dup
-          - new_params.delete(:category)
-          %a{ :href => organizations_path(new_params) }
-            = category
-          = hidden_field_tag 'category',category
+  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds}
 
-    - if params[:kind].present?
-      %fieldset#kind-options
-        %legend Kind of service...
-        %div
-          - kind = params[:kind][0]
-          - new_params = @search_params.dup
-          - new_params.delete(:kind)
-          %a{ :href => organizations_path(new_params) }
+  -#
+
+    = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds, :add_input_type=>"TEXT", :list_values=>(kind_terms.reject{|x| @aggregate_kinds.include? x})}
+
+    - cache ['kind_terms', *kind_terms] do
+      %datalist#kind-list
+        - kind_terms.each do |kind|
+          %option{:value=>kind}
             = kind
-          = hidden_field_tag 'kind[]',kind
 
-    - if params[:language].present?
-      %fieldset#language-options
-        %legend Language availability...
-        %div
-          - language = params[:language]
-          - new_params = @search_params.dup
-          - new_params.delete(:language)
-          %a{ :href => organizations_path(new_params) }
-            = language
-          = hidden_field_tag 'language',language
+  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_input_type=>"TEXT"}
 
-    - if params[:service_area].present?
-      %fieldset#service-area-options
-        %legend Service available in...
-        %div
-          - service_area = params[:service_area]
-          - service_area = "San Mateo County, CA" if service_area == 'smc'
-          - new_params = @search_params.dup
-          - new_params.delete(:service_area)
-          %a{ :href => organizations_path(new_params) }
-            = service_area
-          = hidden_field_tag 'service_area',service_area
 
-%button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
-  %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
-  %span Update
 
--#
-  %fieldset
-    %label{:for=>"language"}
-      Filter services by language availability:
-    = select_tag :language, options_for_select([['English', ''],
-    ['Español (Spanish)', 'spanish'],
-    ['Tagalog (Filipino)', 'tagalog'],
-    ['中文 (Chinese)', 'chinese'],
-    ['العربية (Arabic)', 'arabic'],
-    ['Русский (Russian)', 'russian'],], :selected => params[:language])
+-#- if params[:category].present?
+  %fieldset#category-options
+    %legend Category of service...
+    - category = params[:category]
+    - new_params = @search_params.dup
+    - new_params.delete(:category)
+    %a{ :href => organizations_path(new_params) }
+      = category
+    = hidden_field_tag 'category',category
+    %div.search-check
+      %input{:type=>"checkbox",:id=>"category-checkbox"}
+      %label{:for=>"category-checkbox"}
 
-  %fieldset
-    %legend Location
-    %label{:for=>"radius"}
-      Search radius:
-    = select_tag :radius, options_for_select([['2 miles', 2],['5 miles', 5],['10 miles', 10]], :selected => params[:radius])
+  -#- if params[:language].present?
+  %fieldset#language-options
+    %legend Language availability...
+    - language = params[:language]
+    - new_params = @search_params.dup
+    - new_params.delete(:language)
+    %a{ :href => organizations_path(new_params) }
+      = language
+    = hidden_field_tag 'language',language
+    %div.search-check
+      %input{:type=>"checkbox",:id=>"language-checkbox"}
+      %label{:for=>"language-checkbox"}
 
-    %legend Age
-    %input
-
-    %legend Gender
-    %input
-
-    %legend Income
-    %input
+%div
+  %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+    %span{"data-icon"=>"🔍" , :class=>"search-button ohana-icon"}
+    %span Update
+  %div#reset-btn
+    %a{:href=>organizations_path}
+      Reset

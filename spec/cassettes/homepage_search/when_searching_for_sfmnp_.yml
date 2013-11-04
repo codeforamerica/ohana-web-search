@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=SFMNP&kind%5B0%5D=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=SFMNP&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 14 Oct 2013 05:38:03 GMT
+      - Mon, 04 Nov 2013 07:29:03 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Status:
@@ -37,11 +37,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4832'
+      - '4902'
       X-Request-Id:
-      - 544faaeef96e79a920cb592dc3401528
+      - 43e6d7ceafa6b716a6e9f214f3b61f78
       X-Runtime:
-      - '0.096296'
+      - '0.035920'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -56,119 +56,5 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:38:03 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=SFMNP&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 14 Oct 2013 05:38:04 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4831'
-      X-Request-Id:
-      - dcf6ac1c4d98f26d3a75593618e21e96
-      X-Runtime:
-      - '0.064078'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:38:04 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=SFMNP&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 14 Oct 2013 05:38:04 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4830'
-      X-Request-Id:
-      - 66307c309d5470659901e4976af4752a
-      X-Runtime:
-      - '0.060820'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Mon, 14 Oct 2013 05:38:04 GMT
+  recorded_at: Mon, 04 Nov 2013 07:29:03 GMT
 recorded_with: VCR 2.5.0

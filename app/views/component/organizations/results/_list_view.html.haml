@@ -16,15 +16,19 @@
 						- if org.key?(:kind)
 							%section
 								%p.kind
-									%a{:href=>"/organizations?kind[]=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
+									%a{:href=>"/organizations?kind=#{CGI::escape(org.kind)}", :title=>"all locations of type #{org.kind}"}
 										= org.kind
 
-						- if org.key?(:category)
-							%ul.category
-								- org.category.each do |category|
-									%li
-										%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
-											= category
+						-#
+							- if org.key?(:services)
+								- org.services.each do |service|
+									- if service.key?(:categories)
+										%ul.category
+											- service.categories.each do |cat|
+												- category = cat.name
+												%li
+													%a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
+														= category
 						%hgroup
 							%h1{:class=>'name'}
 								%a{ :href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
