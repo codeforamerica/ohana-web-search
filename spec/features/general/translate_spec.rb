@@ -14,6 +14,7 @@ feature 'page translation', :js=>true do
         all_links = all('a')
         all_links.should_not include "Español"
       end
+      delay
       expect(page).to have_content("Necesito")
     end
   end
