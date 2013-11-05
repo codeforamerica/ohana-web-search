@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "homepage search", :js=>true do
 
   scenario 'with keyword that returns results', :vcr do
-    search_for_test_case
+    search_for_maceo
     looks_like_results
     find_field("keyword").value.should == "maceo"
     expect(page).to_not have_content("1 result located!")

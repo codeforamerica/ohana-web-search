@@ -8,7 +8,7 @@ feature "results page pagination", :js=>true do
   end
 
   scenario 'with results that have one result', :vcr do
-    search_for_test_case
+    search_for_maceo
     expect(page).to have_selector('.pagination')
     expect(page).to have_content('Page: 1')
   end

@@ -7,7 +7,7 @@ feature "results page search", :js=>true do
   end
 
   scenario 'with keyword that returns results', :vcr do
-    search_for_test_case
+    search_for_maceo
     find_field("keyword").value.should == "maceo"
     looks_like_results
   end

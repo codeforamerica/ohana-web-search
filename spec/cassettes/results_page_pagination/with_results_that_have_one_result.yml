@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&utf8=?
     body:
       encoding: US-ASCII
       string: ''
@@ -25,66 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 05 Nov 2013 19:50:21 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4969'
-      X-Request-Id:
-      - 60029772d85e4648eacce5f0f28b6e48
-      X-Runtime:
-      - '0.029733'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Via:
-      - 1.1 ironport1.co.sanmateo.ca.us:80 (Cisco-IronPort-WSA/7.5.0-833)
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Tue, 05 Nov 2013 19:50:22 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 05 Nov 2013 19:50:22 GMT
+      - Tue, 05 Nov 2013 21:57:13 GMT
       Etag:
       - '"31b27894839dd7dcbc7f181aa3485e2c"'
       Status:
@@ -96,11 +37,11 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4968'
+      - '4886'
       X-Request-Id:
-      - f191d28c87aab6710c9d3751c656e6b0
+      - 479a333097531a5854c2add2c402edd1
       X-Runtime:
-      - '0.028731'
+      - '0.040015'
       X-Total-Count:
       - '1'
       X-Total-Pages:
@@ -177,5 +118,5 @@ http_interactions:
         wait to 2 weeks","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7b1edd37edff000144","depth":1,"lft":646,"name":"Mediation","oe_id":"111-02","parent_id":"52280f7a1edd37edff000137","rgt":647}]}],"organization":{"_id":"521d339f1974fcdb2b00273d","_slugs":["sanmaceo-example-agency"],"created_at":"2013-08-27T16:17:51-07:00","name":"SanMaceo
         Example Agency.","updated_at":"2013-10-01T12:18:53-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d/locations"},"slugs":["san-maceo-agency"],"id":"521d33a01974fcdb2b0026a9","_score":0.07112064,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Tue, 05 Nov 2013 19:50:24 GMT
+  recorded_at: Tue, 05 Nov 2013 21:57:15 GMT
 recorded_with: VCR 2.5.0

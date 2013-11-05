@@ -4,7 +4,7 @@ feature "location details" do
 
   context "when the details page is visited via search results", :vcr, :js do
     it "includes address elements" do
-      search_for_test_case
+      search_for_maceo
       visit_details
       expect(page).to have_content("Mailing Address")
       expect(page).to have_content("Physical Address")
@@ -16,7 +16,7 @@ feature "location details" do
 
   context "when you return to the results page from details page", :vcr, :js do
     it 'displays the same search results' do
-      search_for_test_case
+      search_for_maceo
       visit_details
       find_link("maceo@parker.com")
       find_link("a", :text=>"Back").click

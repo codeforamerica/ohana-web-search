@@ -5,25 +5,23 @@ module Features
     def search(options = {})
       keyword = options[:keyword]
       fill_in('keyword', :with => keyword)
-      if options[:on_home].present?
-        find(:css, '#find-btn').click
-      else
+
+      if options[:location].present?
         set_location_filter(options)
-        find(:css, '#update-btn').click
       end
+
+      find(:css, '#update-btn').click
     end
 
     def search_from_home(options = {})
       visit ("/")
-      options[:on_home] = true
-      search(options)
+      keyword = options[:keyword]
+      fill_in('keyword', :with => keyword)
+      find(:css, '#find-btn').click
     end
 
-    def search_for_test_case
-      search_from_home(:keyword => 'maceo')
-      set_service_area_filter
-      set_kind_filter
-      find(:css, '#update-btn').click
+    def search_for_maceo
+      visit('/organizations?utf8=✓&keyword=maceo')
     end
 
     def set_location_filter(options = {})
