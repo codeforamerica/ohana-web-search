@@ -10,7 +10,8 @@ define(
   	function init()
   	{
 			// capture form submission
-			document.getElementById("search-form").addEventListener("submit",_formSubmitted,false);
+			var searchForm = document.getElementById("search-form");
+			searchForm.addEventListener("submit",_formSubmitted,false);
 
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
