@@ -1618,35 +1618,6 @@ body { top: 0px !important; }
       font-size:12px;
     }
 
-    .radio-group
-    {
-      display:table-row;
-
-      > *
-      {
-        display:table-cell;
-        padding-left:5px;
-        vertical-align: middle;
-        padding-bottom:5px;
-      }
-
-      .toggle + label
-      {
-        font-size:14px;
-        cursor:pointer;
-        @include inline-block();
-      }
-
-
-    }
-
-    .current-option
-    {
-      .radio-group >.toggle label {
-        background:none;
-      }
-    }
-
     input[type=search]
     {
       width: 100%;
@@ -1677,112 +1648,144 @@ body { top: 0px !important; }
   }
 }
 
-.radio-group >.toggle input[type=radio]{
-  visibility: hidden;
-}
 
-
-
-.radio-group >.toggle label {
-  display: block;
-  width: 18px;
-  height: 18px;
-
-  cursor: pointer;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-
-  border:1px solid $blue_dark;
-  @include box-sizing(border-box);
-  @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
-  @include border-radius(3px);
-  //@include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 1px 1px $blue_dark );
-  overflow:hidden;
-}
-
-.radio-group >.toggle input[type=radio] + label:after
+.inside fieldset
 {
-  font-family:$icon_font;
-  font-size: 10px;
-  position: absolute;
-  width: 9px;
-  height: 5px;
-  top: 50%;
-  left: 50%;
-  margin-left:-5px;
-  margin-top:-7px;
-}
+  .current-option
+  {
+    .radio-group >.toggle label {
+      background:none;
+    }
+  }
 
-.radio-group >.toggle input[type=radio]:hover + label:after,
-.radio-group >.toggle input[type=radio]:checked + label:after
-{
-  content: "🔍";
-}
-.radio-group >.toggle input[type=radio]:hover + label:after,
-.radio-group >.toggle input[type=radio].checked + label:after
-{
-  content: "🔍";
-}
+  .radio-group
+  {
+    display:table-row;
 
-.radio-group >.toggle input[type=radio]:hover + label:after
-{
-  color:$blue_light;
-}
+    > .toggle
+    {
+      display:table-cell;
+      vertical-align: middle;
+      width: 25px;
+      height: 18px;
+    }
 
-.radio-group >.toggle input[type=radio]:checked + label:after
-{
-  color:$blue_darkest;
-}
-.radio-group >.toggle input[type=radio].checked + label:after
-{
-  color:$blue_darkest;
-}
+    .toggle + label
+    {
+      padding-bottom:5px;
+      font-size:14px;
+      cursor:pointer;
+      @include inline-block();
+      //display:table-cell;
+      vertical-align: middle;
+    }
 
-.radio-group >.toggle.add input[type=radio] + label:after
-{
-  content: "+";
-  font-size: 14px;
-  position: absolute;
-  width: 9px;
-  height: 5px;
-  margin-left:-4px;
-  margin-top:-12px;
-  color:$blue_darkest;
-}
+  }
 
-.radio-group >.toggle.add input[type=radio]:not(:checked):hover + label:after
-{
-  color:$black;
-}
-.radio-group >.toggle.add input[type=radio]:not(.checked):hover + label:after
-{
-  color:$black;
-}
+  .radio-group >.toggle >div input[type=radio]{
+    visibility: hidden;
+  }
 
-.radio-group >.toggle input[type=radio]:checked + label
-{
-  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
-  border:1px solid $blue_darkest;
-  @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
-}
-.radio-group >.toggle input[type=radio].checked + label
-{
-  @include background( linear-gradient(top,$green_lightest,$green_midtone) );
-  border:1px solid $blue_darkest;
-  @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
-}
+  .radio-group >.toggle >div label {
+    display: block;
+    width: 18px;
+    height: 18px;
 
-.radio-group >.toggle input[type=radio]:checked + label::before
-{
-  border:none;
-}
-.radio-group >.toggle input[type=radio].checked + label::before
-{
-  border:none;
-}
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 
+    border:1px solid $blue_dark;
+    @include box-sizing(border-box);
+    @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+    @include border-radius(3px);
+    //@include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 1px 1px $blue_dark );
+    overflow:hidden;
+  }
 
+  .radio-group >.toggle >div input[type=radio] + label:after
+  {
+    font-family:$icon_font;
+    font-size: 10px;
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    margin-left:-5px;
+    margin-top:-7px;
+    @include box-sizing(border-box);
+  }
+
+  .radio-group >.toggle >div input[type=radio]:hover + label:after,
+  .radio-group >.toggle >div input[type=radio]:checked + label:after
+  {
+    content: "🔍";
+  }
+  .radio-group >.toggle >div input[type=radio]:hover + label:after,
+  .radio-group >.toggle >div input[type=radio].checked + label:after
+  {
+    content: "🔍";
+  }
+
+  .radio-group >.toggle >div input[type=radio]:hover + label:after
+  {
+    color:$blue_light;
+  }
+
+  .radio-group >.toggle >div input[type=radio]:checked + label:after
+  {
+    color:$blue_darkest;
+  }
+  .radio-group >.toggle >div input[type=radio].checked + label:after
+  {
+    color:$blue_darkest;
+  }
+
+  .radio-group >.toggle.add >div input[type=radio] + label:after
+  {
+    content: "+";
+    font-size: 14px;
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    margin-left:-4px;
+    margin-top:-12px;
+    color:$blue_darkest;
+  }
+
+  .radio-group >.toggle.add >div input[type=radio]:not(:checked):hover + label:after
+  {
+    color:$black;
+  }
+  .radio-group >.toggle.add >div input[type=radio]:not(.checked):hover + label:after
+  {
+    color:$black;
+  }
+
+  .radio-group >.toggle >div input[type=radio]:checked + label
+  {
+    @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+    border:1px solid $blue_darkest;
+    @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
+  }
+  .radio-group >.toggle >div input[type=radio].checked + label
+  {
+    @include background( linear-gradient(top,$green_lightest,$green_midtone) );
+    border:1px solid $blue_darkest;
+    @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
+  }
+
+  .radio-group >.toggle >div input[type=radio]:checked + label::before
+  {
+    border:none;
+  }
+  .radio-group >.toggle >div input[type=radio].checked + label::before
+  {
+    border:none;
+  }
+}
 
 
 
@@ -1975,7 +1978,6 @@ body { top: 0px !important; }
     {
       color:$blue_darkest;
       font-size:14px;
-      margin-bottom:5px;
     }
   }
 

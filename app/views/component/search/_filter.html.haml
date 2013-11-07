@@ -6,8 +6,9 @@
   %div.current-option
     %div.radio-group
       %div.toggle
-        %input{:type=>"radio",:id=>"#{field}_option", :checked=>true}
-        %label{:for => "#{field}_option"}
+        %div
+          %input{:type=>"radio",:id=>"#{field}_option", :checked=>true}
+          %label{:for => "#{field}_option"}
       %label
         -# Check if field display value and parameter value differ
         - field_display = field_value
@@ -18,8 +19,9 @@
   %div.options.hide
     %div.radio-group
       %div.toggle
-        = radio_button_tag "#{field}_option", "", all_is_checked, {:id=>"#{field}_option_0"}
-        %label{:for => "#{field}_option_0"}
+        %div
+          = radio_button_tag "#{field}_option", "", all_is_checked, {:id=>"#{field}_option_0"}
+          %label{:for => "#{field}_option_0"}
       %label{:for => "#{field}_option_0",:id => "#{field}_option_label"}
         All
     - toggle_is_checked = false
@@ -31,10 +33,11 @@
       - aggregate_field[i] = aggregate_field[i][:value] if aggregate_field[i].is_a?(Hash)
       %div.radio-group
         %div.toggle
-          - check_current_toggle = aggregate_field[i] == field_value
-          - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
-          = radio_button_tag "#{field}_option", aggregate_field[i], check_current_toggle, {:id=>"#{field}_option_#{i+1}","data-display-value"=>field_display}
-          %label{:for => "#{field}_option_#{i+1}"}
+          %div
+            - check_current_toggle = aggregate_field[i] == field_value
+            - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
+            = radio_button_tag "#{field}_option", aggregate_field[i], check_current_toggle, {:id=>"#{field}_option_#{i+1}","data-display-value"=>field_display}
+            %label{:for => "#{field}_option_#{i+1}"}
         %label{:for => "#{field}_option_#{i+1}",:id => "#{field}_option_#{i+1}_label"}
           = field_display
     - add_input_type = add_input_type ||= false
@@ -43,8 +46,9 @@
         - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
         %div.radio-group
           %div.toggle.add
-            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
-            %label{:for => "#{field}_option_#{length+2}"}
+            %div
+              %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+              %label{:for => "#{field}_option_#{length+2}"}
           %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
             %span{:class=>(add_is_checked ? "hide" : "")}
               Add...
@@ -53,8 +57,9 @@
         - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
         %div.radio-group
           %div.toggle.add
-            %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
-            %label{:for => "#{field}_option_#{length+2}"}
+            %div
+              %input{:type=>"radio",:name=>"#{field}_option",:id=>"#{field}_option_#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+              %label{:for => "#{field}_option_#{length+2}"}
           %label{:for => "#{field}_option_#{length+2}",:id => "#{field}_option_#{length+2}_label"}
             %span{:class=>(add_is_checked ? "hide" : "")}
               Add...
