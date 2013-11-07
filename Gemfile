@@ -12,7 +12,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails', '>= 1.0.17'
 gem 'requirejs-rails', '0.9.1'
 gem 'haml-rails'
 
@@ -68,6 +67,7 @@ group :test do
   gem 'json'
   gem 'rack_session_access' # for getting access to the session from Capybara
   gem 'poltergeist'
+  #gem 'selenium-webdriver'
   #gem 'capybara-webkit'
   gem "vcr"
   gem 'webmock', "< 1.12.0"
