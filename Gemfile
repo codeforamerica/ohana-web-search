@@ -66,6 +66,7 @@ group :test do
   #gem "launchy", ">= 2.2.0"
   gem "capybara", ">= 2.0.3"
   gem 'json'
+  gem 'rack_session_access' # for getting access to the session from Capybara
   gem 'poltergeist'
   #gem 'capybara-webkit'
   gem "vcr"

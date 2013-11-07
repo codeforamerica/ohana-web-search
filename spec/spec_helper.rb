@@ -1,4 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require "rack_session_access/capybara"
 require 'coveralls'
 Coveralls.wear!('rails')
 

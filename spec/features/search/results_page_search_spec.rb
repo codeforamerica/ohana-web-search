@@ -45,12 +45,4 @@ feature "results page search", :js=>true do
     looks_like_no_results
   end
 
-  scenario 'when clicking organization link in results', :vcr do
-    search(:keyword => "St. Vincent de Paul Society")
-    delay
-    page.first("a", text: "St. Vincent de Paul Society").click
-    expect(page).to_not have_content("Shelter Network")
-    expect(page).to have_content("San Mateo Homeless Help Center")
-  end
-
 end
