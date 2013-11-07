@@ -37,7 +37,7 @@ feature "results page pagination", :js=>true do
     go_to_page(20)
     expect(page).to have_selector('.pagination')
     expect(page).to have_content('Page: < 1 ... 16 17 18 19 20')
-    expect(page).to have_content('571-589 of 589 results')
+    expect(page).to have_content('571-587 of 587 results')
   end
 
   scenario 'on page less than three pages from beginning of results that have more than five entries', :vcr do
