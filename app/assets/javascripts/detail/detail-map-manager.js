@@ -73,7 +73,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 						position: latLng
 					});
 
-				refresh();
+				_refresh();
 			}
 			else
 			{
@@ -95,7 +95,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// 		_showNearby();
 		// 		_nearbyShowing = true;
 		// 	}
-		// 	refresh();
+		// 	_refresh();
 		// }
 
 		// show the nearby markers
@@ -214,13 +214,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		}
 
 		// refresh the data
-		// @param coordinates [Object] object with 'lat'/'lng' attributes on
-		function refresh()
+		function _refresh()
 		{
-			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);
-			//if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
-			//_loadMarkers();
-			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 			if (_markersArray.length > 0)
 			{
 				_map.fitBounds(_markerBounds);

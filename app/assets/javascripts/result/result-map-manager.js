@@ -47,7 +47,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
-				refresh();
+				_loadMarkers();
+				_refresh()
 			}
 			else
 			{
@@ -70,9 +71,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_mapViewControl.innerHTML = LARGER_MAP_TEXT;
 				_atMaxSize = true;
 			}
-			google.maps.event.trigger(_map, "resize");
-			if (_markersArray.length > 0)
-				_map.fitBounds(_markerBounds);
+			_refresh();
 		}
 
 		// loads markers
@@ -156,23 +155,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			window.location.href = '/organizations/'+this.id+(window.location.search);
 		}
 
-		// refresh the data
-		// @param coordinates [Object] object with 'lat'/'lng' attributes on
-		function refresh()
+		// Triggers a resize event and refits the map to the bounds of the markers
+		function _refresh()
 		{
-			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);
-			//if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
-			_loadMarkers();
-			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
+			google.maps.event.trigger(_map, "resize");
 			if (_markersArray.length > 0)
 				_map.fitBounds(_markerBounds);
-
-			//(optional) restore the zoom level after the map is done scaling
-			//var listener = google.maps.event.addListener(_map, "idle", function () {
-			//    _map.setZoom(10);
-			//    google.maps.event.removeListener(listener);
-			//});
-
 		}
 
 	return {
