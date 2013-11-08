@@ -10,13 +10,13 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
 		// PUBLIC METHODS
 		function init()
 		{
-			_locateBtn = document.getElementById('locate-btn');
 			if (navigator.geolocation) // if geolocation is supported, show geolocate button
 			{
+				_locateBtn = document.getElementById('locate-btn');
+				_locateBtn.addEventListener( "click" , _currLocationClicked , false );
+				_locationValue = document.getElementById('location');
 				_locateBtn.classList.remove('hide');
 			}
-			_locateBtn.addEventListener( "click" , _currLocationClicked , false );
-			_locationValue = document.getElementById('location');
 		}
 
 		// 'use current location' link clicked
