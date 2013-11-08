@@ -29,10 +29,10 @@
           %ul
             - taxonomy_terms.keys.each do |parent|
               %li
-                %a{ :href => "/organizations?category=#{u parent}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{parent}']);" }
+                %a{ :href => "/organizations?category=#{u parent}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{parent}']" }
                   = parent
                 %ul
                   - taxonomy_terms[parent].each do |child|
                     %li
-                      %a{ :href => "/organizations?category=#{u child}", :onClick => "_gaq.push(['_trackEvent', 'Results_Categories', 'Click', '#{child}']);" }
+                      %a{ :href => "/organizations?category=#{u child}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{child}']" }
                         = child

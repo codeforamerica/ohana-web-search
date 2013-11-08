@@ -2,14 +2,15 @@
 require(['app/loading-manager',
 	'app/popup-manager',
 	'app/google-translate-manager',
+  'app/google-analytics-manager',
 	'classList',
 	'addEventListener',
-  'modernizr',
+  'Modernizr',
   'modernizrSelectors',
   'jquery',
   'checked',
 	'app/datalist-dropdown'],
-  function (lm,pm,goog,pfClassList,pfAddEventListener,Modernizr,ModernizrSelectors,$,pfChecked,datalist) {
+  function (lm,pm,goog,ga,pfClassList,pfAddEventListener,Modernizr,ModernizrSelectors,$,pfChecked,datalist) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
@@ -31,6 +32,7 @@ require(['app/loading-manager',
     }
   ]);
 
+  ga.init(); // initalize google analytics
   lm.hide();
   // if box-shadow CSS is supported, initialize the popups.
   if (Modernizr.boxshadow)
