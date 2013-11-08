@@ -129,7 +129,7 @@ define(function() {
         var urlobj = {};
         var param,key,val;
 
-        for (var p in url)
+        for (var p=0;p<url.length;p++)
         {
           param = url[p].split('=');
           key = param[0];
