@@ -32,7 +32,9 @@ require(['app/loading-manager',
   ]);
 
   lm.hide();
-  pm.init();
+  // if box-shadow CSS is supported, initialize the popups.
+  if (Modernizr.boxshadow)
+    pm.init();
   goog.init();
 
   var inputs = document.querySelectorAll('input[list]');
