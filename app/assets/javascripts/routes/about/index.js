@@ -3,7 +3,7 @@ require(['app/loading-manager',
 				 'addEventListener',
 				 'classList',
 				 'domReady!'],
-	function(lm,feedback,pfAddEventListener,pfClassList) {
+	function(lm,feedback) {
   'use strict';
 
 	document.body.classList.add("require-loaded");

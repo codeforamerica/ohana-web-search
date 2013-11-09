@@ -3,19 +3,18 @@ require(['app/loading-manager',
 	'app/popup-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
-	'classList',
-	'addEventListener',
-  'Modernizr',
-  'modernizrSelectors',
   'jquery',
+	'app/datalist-dropdown',
+  'classList',
+  'addEventListener',
   'checked',
-	'app/datalist-dropdown'],
-  function (lm,pm,goog,ga,pfClassList,pfAddEventListener,Modernizr,ModernizrSelectors,$,pfChecked,datalist) {
+  'Modernizr',
+  'modernizrSelectors'],
+  function (lm,pm,goog,ga,$,datalist) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
 
-  Modernizr = window.Modernizr;
   Modernizr.addTest('checkedselector',function(){
     return selectorSupported(':checked');
   });
@@ -23,7 +22,7 @@ require(['app/loading-manager',
   Modernizr.load([
     {
         test: Modernizr.checkedselector,
-        nope: pfChecked,
+        nope: $.fn.checkedPolyfill,
         callback: function() {
             jQuery(function(){
                 $('input:radio').checkedPolyfill();

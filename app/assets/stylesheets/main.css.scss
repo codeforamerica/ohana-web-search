@@ -1658,9 +1658,10 @@ body { top: 0px !important; }
     }
   }
 
-  .radio-group
+  .toggle-group
   {
     display:table-row;
+    cursor:pointer;
 
     > .toggle
     {
@@ -1682,11 +1683,11 @@ body { top: 0px !important; }
 
   }
 
-  .radio-group >.toggle >div input[type=radio]{
+  .toggle-group >.toggle >div input[type=radio]{
     visibility: hidden;
   }
 
-  .radio-group >.toggle >div label {
+  .toggle-group >.toggle >div label {
     display: block;
     width: 18px;
     height: 18px;
@@ -1704,7 +1705,7 @@ body { top: 0px !important; }
     overflow:hidden;
   }
 
-  .radio-group >.toggle >div input[type=radio] + label:after
+  .toggle-group >.toggle >div input[type=radio] + label:after
   {
     font-family:$icon_font;
     font-size: 10px;
@@ -1718,32 +1719,41 @@ body { top: 0px !important; }
     @include box-sizing(border-box);
   }
 
-  .radio-group >.toggle >div input[type=radio]:hover + label:after,
-  .radio-group >.toggle >div input[type=radio]:checked + label:after
+  .toggle-group:hover >.toggle >div input[type=radio] + label:after,
+  .toggle-group >.toggle >div input[type=radio]:checked + label:after
   {
     content: "🔍";
   }
-  .radio-group >.toggle >div input[type=radio]:hover + label:after,
-  .radio-group >.toggle >div input[type=radio].checked + label:after
+  .toggle-group:hover >.toggle >div input[type=radio] + label:after,
+  .toggle-group >.toggle >div input[type=radio].checked + label:after
   {
     content: "🔍";
   }
 
-  .radio-group >.toggle >div input[type=radio]:hover + label:after
+  .toggle-group:hover >.toggle >div input[type=radio] + label:after
   {
     color:$blue_light;
   }
 
-  .radio-group >.toggle >div input[type=radio]:checked + label:after
+  .toggle-group >.toggle >div input[type=radio]:checked + label:after
   {
     color:$blue_darkest;
   }
-  .radio-group >.toggle >div input[type=radio].checked + label:after
+  .toggle-group >.toggle >div input[type=radio].checked + label:after
   {
     color:$blue_darkest;
   }
 
-  .radio-group >.toggle.add >div input[type=radio] + label:after
+  .toggle-group:hover >.toggle >div input[type=radio]:checked + label:after
+  {
+    color:$black;
+  }
+  .toggle-group:hover >.toggle >div input[type=radio].checked + label:after
+  {
+    color:$black;
+  }
+
+  .toggle-group.add >.toggle >div input[type=radio] + label:after
   {
     content: "+";
     font-size: 14px;
@@ -1755,33 +1765,33 @@ body { top: 0px !important; }
     color:$blue_darkest;
   }
 
-  .radio-group >.toggle.add >div input[type=radio]:not(:checked):hover + label:after
+  .toggle-group.add >.toggle >div input[type=radio]:not(:checked):hover + label:after
   {
     color:$black;
   }
-  .radio-group >.toggle.add >div input[type=radio]:not(.checked):hover + label:after
+  .toggle-group.add >.toggle >div input[type=radio]:not(.checked):hover + label:after
   {
     color:$black;
   }
 
-  .radio-group >.toggle >div input[type=radio]:checked + label
+  .toggle-group >.toggle >div input[type=radio]:checked + label
   {
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
     border:1px solid $blue_darkest;
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
-  .radio-group >.toggle >div input[type=radio].checked + label
+  .toggle-group >.toggle >div input[type=radio].checked + label
   {
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
     border:1px solid $blue_darkest;
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
-  .radio-group >.toggle >div input[type=radio]:checked + label::before
+  .toggle-group >.toggle >div input[type=radio]:checked + label::before
   {
     border:none;
   }
-  .radio-group >.toggle >div input[type=radio].checked + label::before
+  .toggle-group >.toggle >div input[type=radio].checked + label::before
   {
     border:none;
   }
