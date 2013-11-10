@@ -25,26 +25,31 @@ module Features
     end
 
     def set_location_filter(options = {})
-      set_filter(options,"location",:location)
+      set_filter("location",options[:location])
     end
 
     def set_service_area_filter(options = {})
-      set_filter(options,"service-area",:service_area)
+      set_filter("service-area",options[:service_area])
     end
 
     def set_kind_filter(options = {})
-      set_filter(options,"kind",:kind)
+      set_filter("kind",options[:kind])
     end
 
-    def set_filter(options,name,field)
-      find(:css, "##{name}-options").find(".closed").click
+    # @param options [Object] the URL parameters object
+    # @param name [String] the CSS name of the field
+    # @oaram field [Symbol] the field to look up in the options object.
+    def set_filter(name,field)
+      within(".require-loaded") do
+        find("##{name}-options .closed").click
 
-      within("##{name}-options") do
-        if options[field].present?
-          find(:css, ".add").click
-          fill_in("#{name}_option_input", :with => options[field])
-        else
-          first("label").click
+        within("##{name}-options") do
+          if field.present?
+            all(".toggle").last.click
+            fill_in("#{name}_option_input", :with => field)
+          else
+            first("label").click
+          end
         end
       end
     end

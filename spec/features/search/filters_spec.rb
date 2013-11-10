@@ -9,32 +9,45 @@ feature "results page search", :js=>true do
 
   # user clicks a filter
   scenario 'when filter has no cached values', :vcr do
-
     # check filter settings
-    expect(all(:css,"#location-options .current-option label").last).to have_content("All")
-    find(:css, "#location-options").find(".closed").click
-    page.should have_css("#location-options .radio-group", :count=>2)
+    within("#location-options") do
+      expect(all(".current-option label").last).to have_content("All")
+      find(".closed").click
+      page.should have_css("#location-options .toggle-group", :count=>2)
+    end
   end
 
   scenario 'when filter has custom value and no results', :vcr do
     set_location_filter(:location=>'San Mateo, CA')
-    find(:css, "#location-options").find(".open").click
-    expect(all(:css,"#location-options .current-option label").last).to have_content("San Mateo, CA")
-    find(:css, '#update-btn').click
-    find(:css, "#location-options").find(".closed").click
-    page.should have_css("#location-options .radio-group", :count=>2)
+
+    find("#location-options .open").trigger('mousedown')
+    expect(all("#location-options .current-option label").last).to have_content("San Mateo, CA")
+
+    find('#update-btn').click
+
+    within("#location-options") do
+      find(".closed").click
+    end
+
+    page.should have_css("#location-options .toggle-group", :count=>2)
   end
 
   scenario 'when filter has custom value and has results', :vcr do
     set_location_filter(:location=>'San Mateo, CA')
     fill_in('keyword', :with => '') # clear keyword
-    find(:css, "#location-options").find(".open").click
-    expect(all(:css,"#location-options .current-option label").last).to have_content("San Mateo, CA")
-    find(:css, '#update-btn').click
-    find(:css, "#location-options").find(".closed").click
-    page.should have_css("#location-options .radio-group", :count=>3)
+    within("#location-options") do
+      find(".open").click
+      expect(all(".current-option label").last).to have_content("San Mateo, CA")
+    end
 
-    expect(page).to have_content("Peninsula Family Service")
+    find('#update-btn').click
+
+    within("#location-options") do
+      find(".closed").click
+      page.should have_css(".toggle-group", :count=>6)
+    end
+
+    expect(page).to have_content("Veterans Affairs")
   end
 
 

@@ -203,10 +203,6 @@ define(
 				var addInputToggle = _toggleGroups[groups[groups.length-1].id];
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
-				// The input text field is showing if it has a value
-				//if(_addInput && _addInput.value)
-				//	_addInputShowing = true;
-
 				// setup event listeners
 				_legend.addEventListener('mousedown',_legendClicked,false);
 			}
@@ -265,54 +261,7 @@ define(
 					if (_selectedToggle != _addInputToggle)
 						_addInputToggle.hideAddInput();
 				}
-/*
 
-				// set selected toggle
-				_selectedToggle = toggleGroup;
-
-
-				// show or hide the add input field if the add button was clicked
-				var inputVal = _addInputToggle.getAddInput().value;
-
-				//_addInputToggle.value = inputVal;
-				if (toggleGroup == _addInputToggle)
-				{
-					if (toggleGroup.addInputShowing())
-					{
-						if (current != toggleGroup.getAddInput())
-						{
-							if (inputVal == "")
-							{
-								//_highlightToggle.setLabel("All");
-								_allToggle.getToggle().checked = true;
-							}
-							_toggleFilter();
-						}
-
-					}
-					else
-					{
-						toggleGroup.showAddInput();
-					}
-				}
-				else
-				{
-			 		_addInputToggle.hideAddInput();
-			 		if (toggle.checked)
-			 			_toggleFilter();
-			 	}
-
-			 	//if (!toggleGroup.isAddToggle() && toggle.checked)
-			 	//	_toggleFilter();
-
-				// do not toggle the filter if the checkbox is checked or what was clicked is
-				// the add field input or drop-down menu.
-				// if (!isAddToggle && toggle.checked)
-				// 	_toggleFilter();
-
-				// set the fieldset's hidden value to the toggle value
-				//_hidden.value = toggle.value;
-*/
 			}
 
 
@@ -367,41 +316,6 @@ define(
 					_selectedToggle.showAddInput();
 				}
 			}
-
-
-
-
-
-			// Show/hide the filter
-			// function _toggleFilter()
-			// {
-			// 	// var selected;
-			// 	// try
-			// 	// {
-			// 	// 	selected = _toggleGroupsContainer.querySelector("input[type=radio]:checked");
-			// 	// }
-			// 	// // IE 8
-			// 	// // Doesn't support :checked selector so this provides a fallback that shows
-			// 	// // the actual underlying radio button inputs (which are normally set invisible).
-			// 	// catch(e)
-			// 	// {
-			// 	// 	arr = _toggleGroupsContainer.querySelectorAll("input[type=radio]");
-			// 	// 	for (var a=0; a<arr.length;a++)
-			// 	// 	{
-			// 	// 		arr[a].style.visibility = "inherit";
-			// 	// 		if (arr[a].checked)
-			// 	// 			selected = arr[a];
-			// 	// 	}
-			// 	// }
-
-			// 	// if the fieldset has an add input field,
-			// 	// set the add checkbox value to the input field value
-			// 	if (_addInput)
-			// 		_addInputToggle.value = _addInput.value;
-
-
-			// }
-
 
 
 			// GETTERS
