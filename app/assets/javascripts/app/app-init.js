@@ -7,7 +7,6 @@ require(['app/loading-manager',
 	'app/datalist-dropdown',
   'classList',
   'addEventListener',
-  'checked',
   'Modernizr',
   'modernizrSelectors'],
   function (lm,pm,goog,ga,$,datalist) {
@@ -19,17 +18,15 @@ require(['app/loading-manager',
     return selectorSupported(':checked');
   });
 
-  Modernizr.load([
+  if (!Modernizr.checkedselector)
+  {
+    var radios = document.querySelectorAll("input[type=radio]");
+    for(var r=0; r< radios.length; r++)
     {
-        test: Modernizr.checkedselector,
-        nope: $.fn.checkedPolyfill,
-        callback: function() {
-            jQuery(function(){
-                $('input:radio').checkedPolyfill();
-            });
-        }
+      console.log(radios[r]);
+      radios[r].style.visibility = "inherit";
     }
-  ]);
+  }
 
   ga.init(); // initalize google analytics
   lm.hide();

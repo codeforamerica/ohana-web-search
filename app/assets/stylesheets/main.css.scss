@@ -1698,7 +1698,7 @@ body { top: 0px !important; }
 
     border:1px solid $blue_dark;
     @include box-sizing(border-box);
-    background:$white; // IE fallback
+    background-color:$white; // IE fallback
     @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
     @include border-radius(3px);
     overflow:hidden;
@@ -1723,11 +1723,6 @@ body { top: 0px !important; }
   {
     content: "🔍";
   }
-  .toggle-group:hover >.toggle >div input[type=radio] + label:after,
-  .toggle-group >.toggle >div input[type=radio].checked + label:after
-  {
-    content: "🔍";
-  }
 
   .toggle-group:hover >.toggle >div input[type=radio] + label:after
   {
@@ -1738,16 +1733,8 @@ body { top: 0px !important; }
   {
     color:$blue_darkest;
   }
-  .toggle-group >.toggle >div input[type=radio].checked + label:after
-  {
-    color:$blue_darkest;
-  }
 
   .toggle-group:hover >.toggle >div input[type=radio]:checked + label:after
-  {
-    color:$black;
-  }
-  .toggle-group:hover >.toggle >div input[type=radio].checked + label:after
   {
     color:$black;
   }
@@ -1768,31 +1755,16 @@ body { top: 0px !important; }
   {
     color:$black;
   }
-  .toggle-group.add >.toggle >div input[type=radio]:not(.checked):hover + label:after
-  {
-    color:$black;
-  }
 
   .toggle-group >.toggle >div input[type=radio]:checked + label
   {
-    background:$green_lightest; // IE fallback
-    @include background( linear-gradient(top,$green_lightest,$green_midtone) );
-    border:1px solid $blue_darkest;
-    @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
-  }
-  .toggle-group >.toggle >div input[type=radio].checked + label
-  {
-    background:$green_lightest; // IE fallback
+    background-color:$green_lightest; // IE fallback
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
     border:1px solid $blue_darkest;
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
   .toggle-group >.toggle >div input[type=radio]:checked + label::before
-  {
-    border:none;
-  }
-  .toggle-group >.toggle >div input[type=radio].checked + label::before
   {
     border:none;
   }
