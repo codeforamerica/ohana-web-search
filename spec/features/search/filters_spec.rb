@@ -44,10 +44,10 @@ feature "results page search", :js=>true do
 
     within("#location-options") do
       find(".closed").click
-      page.should have_css(".toggle-group", :count=>6)
+      page.should have_css(".toggle-group", :count=>3)
     end
 
-    expect(page).to have_content("Veterans Affairs")
+    expect(page).to have_content("Peninsula Family Service")
   end
 
 
