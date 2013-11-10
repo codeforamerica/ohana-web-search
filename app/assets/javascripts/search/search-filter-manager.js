@@ -38,7 +38,7 @@ define(
 				input = _fieldsets[f].getInput();
 				if (input && input.value != "")
 				{
-					_fieldsets[f].getHidden().value = input.value;
+					_fieldsets[f].getHidden().value = input.getAddInput().value;
 					input.disabled = true;
 				}
 			}
@@ -47,7 +47,7 @@ define(
 			while(form[count] != undefined)
 			{
 				input = form[count++];
-				if (input.value == "" || input.type == "radio")
+				if (input.value == "" || (input.type == "radio" || input.type == "checkbox"))
 					input.disabled = true;
 			}
 
@@ -327,7 +327,7 @@ define(
 
 			function getInput()
 			{
-				return _addInput;
+				return _addInputToggle;
 			}
 
 			function getHidden()
