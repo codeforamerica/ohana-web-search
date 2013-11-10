@@ -1677,7 +1677,6 @@ body { top: 0px !important; }
       font-size:14px;
       cursor:pointer;
       @include inline-block();
-      //display:table-cell;
       vertical-align: middle;
     }
 
@@ -1699,9 +1698,9 @@ body { top: 0px !important; }
 
     border:1px solid $blue_dark;
     @include box-sizing(border-box);
+    background:$white; // IE fallback
     @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
     @include border-radius(3px);
-    //@include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 1px 1px $blue_dark );
     overflow:hidden;
   }
 
@@ -1776,12 +1775,14 @@ body { top: 0px !important; }
 
   .toggle-group >.toggle >div input[type=radio]:checked + label
   {
+    background:$green_lightest; // IE fallback
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
     border:1px solid $blue_darkest;
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
   .toggle-group >.toggle >div input[type=radio].checked + label
   {
+    background:$green_lightest; // IE fallback
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
     border:1px solid $blue_darkest;
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
