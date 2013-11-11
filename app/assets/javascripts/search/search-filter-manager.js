@@ -275,13 +275,17 @@ define(
 					// If it doesn't and the add input toggle is selected
 					// uncheck the selected toggle and check the "All"
 					// toggle and set the selected toggle to "All".
-					var inputVal = _addInputToggle.getAddInput().value;
-					if (_selectedToggle == _addInputToggle && inputVal == "")
+					var inputVal;
+					if (_addInputToggle)
 					{
-						_selectedToggle.getToggle().checked = false;
-						_selectedToggle.hideAddInput();
-						_selectedToggle = _allToggle;
-						_allToggle.getToggle().checked = true;
+						inputVal = _addInputToggle.getAddInput().value;
+						if (_selectedToggle == _addInputToggle && inputVal == "")
+						{
+							_selectedToggle.getToggle().checked = false;
+							_selectedToggle.hideAddInput();
+							_selectedToggle = _allToggle;
+							_allToggle.getToggle().checked = true;
+						}
 					}
 
 					var toggle = _selectedToggle.getToggle();
