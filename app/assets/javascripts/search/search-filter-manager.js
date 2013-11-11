@@ -258,7 +258,7 @@ define(
 					_selectedToggle = toggleGroup;
 
 					// hide add input if selected toggle is not the add input toggle
-					if (_selectedToggle != _addInputToggle)
+					if (_addInputToggle && _selectedToggle != _addInputToggle)
 						_addInputToggle.hideAddInput();
 				}
 
