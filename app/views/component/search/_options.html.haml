@@ -1,6 +1,6 @@
 %section#search-options
 
-  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_input_type=>"TEXT"}
+  = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_placeholder=>"address", :add_input_type=>"TEXT"}
   - cache ['cities-list', *smc_cities] do
     %datalist#location-list
       - smc_cities.each do |city|
@@ -21,7 +21,7 @@
           %option{:value=>kind}
             = kind
 
-  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_input_type=>"TEXT"}
+  = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_placeholder=>"agency name", :add_input_type=>"TEXT"}
 
 
 
