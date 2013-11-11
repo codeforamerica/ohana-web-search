@@ -24,6 +24,8 @@ module Features
       visit('/organizations?utf8=✓&keyword=maceo')
     end
 
+
+    # helpers for filters
     def set_location_filter(options = {})
       set_filter("location",options[:location])
     end
@@ -41,16 +43,74 @@ module Features
     # @oaram field [Symbol] the field to look up in the options object.
     def set_filter(name,field)
       within(".require-loaded") do
-        find("##{name}-options .closed").click
-
         within("##{name}-options") do
+          find(".closed").click
           if field.present?
-            all(".toggle").last.click
-            fill_in("#{name}_option_input", :with => field)
+            all(".toggle").last.trigger('mousedown')
+            fill_in("#{name}-option-input", :with => field)
           else
             first("label").click
           end
         end
+      end
+    end
+
+    # Tests opening and closing the fieldset by clicking the legend.
+    # @param name [String] The name of the filter field to test.
+    # @param val [String] The value that should be showing in the current toggle.
+    # @param count [Number] The amount of toggle that should be showing.
+    def test_filter_legend(name,val="All",count=2)
+      within("##{name}-options") do
+        # test clicking legend functionality
+        expect(all(".current-option label").last).to have_content(val)
+        find(".closed").trigger("mousedown")
+        page.should have_css(".toggle-group", :count=>count)
+        find(".open").trigger("mousedown")
+        expect(all(".current-option label").last).to have_content(val)
+      end
+    end
+
+    # Tests opening and closing the fieldset by clicking the current toggle.
+    # @param name [String] The name of the filter field to test.
+    # @param val [String] The value that should be showing in the current toggle.
+    # @param count [Number] The amount of toggle that should be showing.
+    def test_filter_toggle(name,val="All",count=2)
+      within("##{name}-options") do
+        # test clicking toggle functionality
+        expect(all(".current-option label").last).to have_content(val)
+        all(".current-option label").last.trigger("mousedown")
+        page.should have_css(".toggle-group", :count=>count)
+        find(".options label",:text=>val).trigger("mousedown")
+        expect(all(".current-option label").last).to have_content(val)
+      end
+    end
+
+    # Tests opening the filter fieldset, setting a custom value, and closing the fieldset.
+    # By clicking on the toggle.
+    # @param name [String] The name of the filter field to test.
+    # @param val [String] The value that should be showing in the current toggle.
+    # @param count [Number] The amount of toggle that should be showing.
+    def test_filter_custom_value(name)
+      within("##{name}-options") do
+        # test adding custom value functionality
+        find(".closed").trigger("mousedown")
+        page.should have_css(".toggle-group", :count=>2)
+        all(".options label").last.trigger("mousedown")
+        fill_in("#{name}-option-input", :with => "Custom Value")
+        all(".options label").last.trigger("mousedown")
+        expect(all(".current-option label").last).to have_content("Custom Value")
+      end
+    end
+
+    def test_filter_custom_value_no_results(name,field)
+      set_filter(name,field)
+
+      find('#update-btn').click
+
+      within("##{name}-options") do
+        find(".closed").trigger('mousedown')
+        page.should have_css(".toggle-group", :count=>2)
+        find_field("#{name}-option-input").value.should eq field
       end
     end
 
@@ -156,6 +216,7 @@ module Features
     def delay
       sleep(2)
     end
+
 
   end
 end

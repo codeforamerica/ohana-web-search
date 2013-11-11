@@ -35,10 +35,12 @@ define(
 
 			for (var f in _fieldsets)
 			{
-				input = _fieldsets[f].getInput();
+				input = _fieldsets[f].getAddInputToggle();
+				if (input)
+					input = input.getAddInput()
 				if (input && input.value != "")
 				{
-					_fieldsets[f].getHidden().value = input.getAddInput().value;
+					_fieldsets[f].getHidden().value = input.value;
 					input.disabled = true;
 				}
 			}
@@ -52,7 +54,6 @@ define(
 			}
 
 			form.submit();
-
 			evt.preventDefault();
 			return false;
 		}
@@ -329,7 +330,7 @@ define(
 				return _id;
 			}
 
-			function getInput()
+			function getAddInputToggle()
 			{
 				return _addInputToggle;
 			}
@@ -342,7 +343,7 @@ define(
     return {
       init:init,
       getId:getId,
-      getInput:getInput,
+      getAddInputToggle:getAddInputToggle,
       getHidden:getHidden
     };
 
