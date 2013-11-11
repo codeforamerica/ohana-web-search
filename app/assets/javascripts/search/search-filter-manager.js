@@ -35,14 +35,14 @@ define(
 
 			for (var f in _fieldsets)
 			{
-				input = _fieldsets[f].getAddInputToggle();
-				if (input)
-					input = input.getAddInput()
-				if (input && input.value != "")
-				{
-					_fieldsets[f].getHidden().value = input.value;
-					input.disabled = true;
-				}
+				input = _fieldsets[f].getSelectedToggle();
+				if (input.isAddToggle())
+					input = input.getAddInput();
+				else
+					input = input.getToggle()
+
+				_fieldsets[f].getHidden().value = input.value;
+				input.disabled = true;
 			}
 
 			var count = 0;
@@ -330,9 +330,9 @@ define(
 				return _id;
 			}
 
-			function getAddInputToggle()
+			function getSelectedToggle()
 			{
-				return _addInputToggle;
+				return _selectedToggle;
 			}
 
 			function getHidden()
@@ -343,7 +343,7 @@ define(
     return {
       init:init,
       getId:getId,
-      getAddInputToggle:getAddInputToggle,
+      getSelectedToggle:getSelectedToggle,
       getHidden:getHidden
     };
 
