@@ -17,7 +17,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var LARGER_MAP_TEXT = "▲ Display small map";
 		var SMALLER_MAP_TEXT = "▼ Display large map";
 
-		var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
+		var _infoWindow; // info window to pop up on roll over
 
 		// PUBLIC METHODS
 		function init()
@@ -44,6 +44,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				}
 
 				_map = new google.maps.Map(_mapCanvas, mapOptions);
+
+				_infoWindow = new google.maps.InfoWindow();
+				_infoWindow.setOptions( {disableAutoPan : true} );
 
 				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
@@ -118,8 +121,38 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			{
 				var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-				var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
+				var markerIcon;
+
+
+				if (markerData['kind'] == "Arts")
+					markerIcon = '/assets/arts.png'
+				else if (markerData['kind'] == "Clinics")
+					markerIcon = '/assets/clinics.png'
+				else if (markerData['kind'] == "Education")
+					markerIcon = '/assets/education.png'
+				else if (markerData['kind'] == "Entertainment")
+					markerIcon = '/assets/entertainment.png'
+				else if (markerData['kind'] == "Farmers' Markets")
+					markerIcon = '/assets/farmers_markets.png'
+				else if (markerData['kind'] == "Government")
+					markerIcon = '/assets/government.png'
+				else if (markerData['kind'] == "Human Services")
+					markerIcon = '/assets/human_services.png'
+				else if (markerData['kind'] == "Libraries")
+					markerIcon = '/assets/libraries.png'
+				else if (markerData['kind'] == "Museums")
+					markerIcon = '/assets/museums.png'
+				else if (markerData['kind'] == "Parks")
+					markerIcon = '/assets/parks.png'
+				else if (markerData['kind'] == "Sports")
+					markerIcon = '/assets/sports.png'
+				else
+					markerIcon = '/assets/other.png'
+
+				//var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
 				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
+
+				//console.log( markerData['kind'] );
 
 				var marker = new google.maps.Marker({
 					id: markerData['id'],

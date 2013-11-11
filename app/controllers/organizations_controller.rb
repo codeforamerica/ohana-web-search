@@ -169,6 +169,7 @@ class OrganizationsController < ApplicationController
         details = {
           'id' => o.id,
           'name' => o.name,
+          'kind' => o.kind,
           'coordinates' => new_coords
         }
 
