@@ -149,11 +149,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				else
 					markerIcon = '/assets/other.png'
 
-				//var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
-				//var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
-
-				//console.log( markerData['kind'] );
-
 				var marker = new google.maps.Marker({
 					id: markerData['id'],
 					map: _map,
@@ -190,13 +185,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		}
 
 		// refresh the data
-		// @param coordinates [Object] object with 'lat'/'lng' attributes on
 		function refresh()
 		{
-			//if (_zoomListener) google.maps.event.removeListener(_zoomListener);
-			//if (_tilesLoadedListener) google.maps.event.removeListener(_tilesLoadedListener);
 			_loadMarkers();
-			//_tilesLoadedListener = google.maps.event.addListener(_map,"tilesloaded",_mapLoaded);
 			if (_markersArray.length > 0)
 				_map.fitBounds(_markerBounds);
 
