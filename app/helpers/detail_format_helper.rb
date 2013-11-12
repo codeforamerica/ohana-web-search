@@ -1,11 +1,12 @@
 module DetailFormatHelper
 
   # Formats ruby field names in CSS convention format
-  # by converting underscore delimiting to dash delimiting
+  # by converting underscore or space delimiting to dash delimiting
   # @param name [String] string to format as
   # @return [String] formatted CSS class name
   def css_class_format(name)
-    name.sub '_','-'
+    val = name.downcase.sub '_','-'
+    val.sub ' ','-'
   end
 
   # Renders template partial for detail view
