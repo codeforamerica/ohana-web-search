@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/locations/1234?api_token=<API_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Nov 2013 07:30:33 GMT
+      Server:
+      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      Status:
+      - 404 Not Found
+      X-Powered-By:
+      - Phusion Passenger 4.0.23
+      X-Rack-Cache:
+      - miss
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4911'
+      X-Request-Id:
+      - 1e6ff6b0f26c720ba4215b378b3eab35
+      X-Runtime:
+      - '0.009513'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '76'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"Not Found","message":"The requested resource could not be
+        found."}'
+    http_version: 
+  recorded_at: Tue, 12 Nov 2013 07:30:33 GMT
+recorded_with: VCR 2.5.0
