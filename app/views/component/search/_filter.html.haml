@@ -18,7 +18,7 @@
           - field_display = aggregate_field[i].is_a?(Hash) ? (aggregate_field[i][:name] if aggregate_field[i][:value] == field_value) : field_value
         = (field_value.blank? ? "All" : field_display)
 
-  %div.options.hide
+  %div.options.available-options.hide
     %div.toggle-group{:id=>"#{css_field}-toggle-group-0"}
       %div.toggle
         %div

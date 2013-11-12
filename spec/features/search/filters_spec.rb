@@ -62,7 +62,7 @@ feature "results page search", :js=>true do
 
     within("##{name}-options") do
       find(".closed").click
-      page.should have_css(".toggle-group", :count=>3)
+      find(".available-options").should have_css(".toggle-group", :count=>3)
       page.should_not have_css("##{name}-option-input")
     end
   end
@@ -76,9 +76,35 @@ feature "results page search", :js=>true do
 
     within("##{name}-options") do
       find(".closed").click
-      page.should have_css(".toggle-group", :count=>3)
+      find(".available-options").should have_css(".toggle-group", :count=>3)
       page.should_not have_css("##{name}-option-input")
     end
+  end
+
+  # test filter selection across all filters
+  scenario 'when location filter has cached values and new option is selected', :vcr do
+    fill_in('keyword', :with => '') # clear keyword
+    find('#update-btn').click
+    set_filter("location","San Francisco, CA",false)
+    find('#update-btn').click
+    expect(all("#location-options .current-option label").last).to have_content("San Francisco, CA")
+  end
+  scenario 'when service-area filter has cached values and new option is selected', :vcr do
+    fill_in('keyword', :with => '') # clear keyword
+    find('#update-btn').click
+    set_filter("service-area","All",false)
+    find('#update-btn').click
+    expect(all("#service-area-options .current-option label").last).to have_content("All")
+  end
+  scenario 'when kind filter has cached values and new option is selected', :vcr do
+    fill_in('keyword', :with => '') # clear keyword
+    find('#update-btn').click
+    set_filter("kind","Other",false)
+    find('#update-btn').click
+    expect(all("#kind-options .current-option label").last).to have_content("Other")
+  end
+  xscenario 'when agency filter has cached values and new option is selected', :vcr do
+    search(:keyword=>"")
   end
 
 

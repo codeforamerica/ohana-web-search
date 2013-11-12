@@ -41,13 +41,15 @@ module Features
     # @param options [Object] the URL parameters object
     # @param name [String] the CSS name of the field
     # @oaram field [Symbol] the field to look up in the options object.
-    def set_filter(name,field)
+    def set_filter(name,field,custom=true)
       within(".require-loaded") do
         within("##{name}-options") do
           find(".closed").click
-          if field.present?
+          if field.present? && custom == true
             all(".toggle").last.trigger('mousedown')
             fill_in("#{name}-option-input", :with => field)
+          elsif custom == false
+            find(".toggle-group",:text=>field).trigger('mousedown')
           else
             first("label").click
           end
@@ -64,7 +66,7 @@ module Features
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
         find(".closed").trigger("mousedown")
-        page.should have_css(".toggle-group", :count=>count)
+        find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".open").trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -79,7 +81,8 @@ module Features
         # test clicking toggle functionality
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
-        page.should have_css(".toggle-group", :count=>count)
+        save_screenshot("spec/screenshots/#{name}.png")
+        find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -94,22 +97,22 @@ module Features
       within("##{name}-options") do
         # test adding custom value functionality
         find(".closed").trigger("mousedown")
-        page.should have_css(".toggle-group", :count=>2)
-        all(".options label").last.trigger("mousedown")
+        find(".options.available-options").should have_css(".toggle-group", :count=>2)
+        all(".options.available-options label").last.trigger("mousedown")
         fill_in("#{name}-option-input", :with => "Custom Value")
-        all(".options label").last.trigger("mousedown")
+        all(".options.available-options label").last.trigger("mousedown")
         expect(all(".current-option label").last).to have_content("Custom Value")
       end
     end
 
     def test_filter_custom_value_no_results(name,field)
       set_filter(name,field)
-
       find('#update-btn').click
 
       within("##{name}-options") do
+        save_screenshot("spec/screenshots/#{name}.png")
         find(".closed").trigger('mousedown')
-        page.should have_css(".toggle-group", :count=>2)
+        find(".available-options").should have_css(".toggle-group", :count=>2)
         find_field("#{name}-option-input").value.should eq field
       end
     end
