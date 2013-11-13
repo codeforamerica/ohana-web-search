@@ -82,7 +82,7 @@ module Features
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
         save_screenshot("spec/screenshots/#{name}.png")
-        find(".available-options").should have_css(".toggle-group", :count=>count)
+        find(".options.available-options").should have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
