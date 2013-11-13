@@ -66,7 +66,7 @@ module Features
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
         find(".closed").trigger("mousedown")
-        find(".available-options").should have_css(".toggle-group", :count=>count)
+        find(".options.available-options").should have_css(".toggle-group", :count=>count)
         find(".open").trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -81,7 +81,6 @@ module Features
         # test clicking toggle functionality
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
-        save_screenshot("spec/screenshots/#{name}.png")
         find(".options.available-options").should have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
@@ -112,7 +111,7 @@ module Features
       within("##{name}-options") do
         save_screenshot("spec/screenshots/#{name}.png")
         find(".closed").trigger('mousedown')
-        find(".available-options").should have_css(".toggle-group", :count=>2)
+        find(".options.available-options").should have_css(".toggle-group", :count=>2)
         find_field("#{name}-option-input").value.should eq field
       end
     end
