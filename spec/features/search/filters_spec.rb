@@ -103,8 +103,12 @@ feature "results page search", :js=>true do
     find('#update-btn').click
     expect(all("#kind-options .current-option label").last).to have_content("Other")
   end
-  xscenario 'when agency filter has cached values and new option is selected', :vcr do
-    search(:keyword=>"")
+  scenario 'when agency filter has cached values and new option is selected', :vcr do
+    fill_in('keyword', :with => '') # clear keyword
+    find('#update-btn').click
+    set_filter("org-name","San Mateo County Human Services Agency",false)
+    find('#update-btn').click
+    expect(all("#org-name-options .current-option label").last).to have_content("San Mateo County Human Services Agency")
   end
 
 
