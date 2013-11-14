@@ -109,7 +109,6 @@ module Features
       find('#update-btn').click
 
       within("##{name}-options") do
-        save_screenshot("spec/screenshots/#{name}.png")
         find(".closed").trigger('mousedown')
         find(".available-options").should have_css(".toggle-group", :count=>2)
         find_field("#{name}-option-input").value.should eq field

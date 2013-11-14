@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 14 Nov 2013 04:49:33 GMT
+      - Thu, 14 Nov 2013 04:39:48 GMT
       Etag:
       - '"694aa69009426454d0b728e974cc5474"'
       Link:
@@ -45,9 +45,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 95d306783ac40620e46fe1abe8c27bac
+      - f3df6319635c22f362339e30ff90be58
       X-Runtime:
-      - '0.236730'
+      - '0.247302'
       X-Total-Count:
       - '590'
       X-Total-Pages:
@@ -974,10 +974,59 @@ http_interactions:
         Education","oe_id":"109-03-07","parent_id":"52280f751edd37edff0000fd","rgt":538}]}],"organization":{"_id":"521d338e1974fcdb2b00251b","_slugs":["south-san-francisco-unified-school-district"],"created_at":"2013-08-27T16:17:34-07:00","name":"South
         San Francisco Unified School District","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b00251b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b00251b/locations"},"slugs":["teen-age-parent-program-tapp"],"id":"521d338e1974fcdb2b00251c","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Thu, 14 Nov 2013 04:49:33 GMT
+  recorded_at: Thu, 14 Nov 2013 04:39:48 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&page=20&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&location=asdfg&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 14 Nov 2013 04:39:49 GMT
+      Server:
+      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      Status:
+      - 400 Bad Request
+      X-Powered-By:
+      - Phusion Passenger 4.0.23
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 3c21e2518cdb0fe13be673774736a3ca
+      X-Runtime:
+      - '0.028109'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
+    http_version: 
+  recorded_at: Thu, 14 Nov 2013 04:39:50 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
     body:
       encoding: US-ASCII
       string: ''
@@ -1000,771 +1049,36 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 14 Nov 2013 04:49:34 GMT
+      - Thu, 14 Nov 2013 04:39:50 GMT
       Etag:
-      - '"2dfb76d883c117b9d249fecfe37810ca"'
-      Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=1&service_area=smc&utf8=%E2%9C%93>;
-        rel="first", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=19&service_area=smc&utf8=%E2%9C%93>;
-        rel="prev"
+      - '"d751713988987e9331980363e24189ce"'
       Server:
       - nginx/1.4.3 + Phusion Passenger 4.0.23
       Status:
       - 200 OK
       X-Current-Page:
-      - '20'
+      - '1'
       X-Powered-By:
       - Phusion Passenger 4.0.23
-      X-Previous-Page:
-      - '19'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 34061a0759efb39fdcafa81180f45b63
+      - d94661bfd4c903a6d2905de12d1a493f
       X-Runtime:
-      - '0.104853'
+      - '0.201316'
       X-Total-Count:
-      - '590'
+      - '0'
       X-Total-Pages:
-      - '20'
+      - '0'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '90398'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"521d32be1974fcdb2b000103","_slugs":["service-league-of-san-mateo-county"],"accessibility":["Wheelchair"],"address":{"city":"Redwood
-        City","state":"CA","street":"727 Middlefield Road","zip":"94063"},"contacts":[{"_id":"521d32be1974fcdb2b000104","name":"Mike
-        Nevin","title":"Executive Director"},{"_id":"521d32be1974fcdb2b000105","name":"Karen
-        Francone","title":"Director"}],"coordinates":[-122.229184,37.487321],"created_at":"2013-08-27T16:14:06-07:00","description":"Provides
-        a variety of services to inmates of the county jail including coordination
-        of all religious services in the jails, as well as outreach services for inmate
-        families. Provides pre-release counseling services and a request/message program
-        for inmates, Alcoholics Anonymous and Narcotics Anonymous groups and various
-        educational and motivational groups. Provides defendants in jury trials with
-        appropriate clothes to wear to court.   Services offered for persons released
-        from jail include crisis counseling and emergency assistance with housing,
-        employment, food, clothing and transportation. Hope House for Women is a residential
-        facility for women leaving women''s correctional institutions who wish to
-        receive treatment for alcohol and drug dependency. Also offers transitional
-        housing. Hope House for Men is a clean and sober shared living facility and
-        structured program for men released from jail. (both described separately).","emails":["info@serviceleague.org"],"faxes":[{"number":"650
-        365-6817"}],"kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Service
-        League","city":"Redwood City","state":"CA","street":"727 Middlefield Road","zip":"94063"},"name":"Service
-        League of San Mateo County","phones":[{"number":"650 364-4664","hours":"(Monday-Friday,
-        8-5)"}],"short_desc":"Provides a variety of services to inmates of the county
-        jail, persons released from jail and their families.","transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2013-11-11T00:44:14-08:00","urls":["http://www.serviceleague.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32be1974fcdb2b000103","services":[{"_id":"521d32be1974fcdb2b000108","audience":"Jail
-        inmates, former inmates and their families","eligibility":"Recent jail involvement","fees":"None,
-        except for Hope House (portion of welfare grant). Donations welcome.","funding_sources":["City","County","Donations","Grants","State","United
-        Way"],"how_to_apply":"Walk in or apply by phone or through contact in jail.","keywords":["LEGAL
-        AND CRIMINAL JUSTICE SERVICES","Family Support","Inmate Support","Inmate Support
-        Services","Alcohol and drug treatment","jail","counseling","inmate resources"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:14-08:00","wait":"No wait.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654}]}],"organization":{"_id":"521d32be1974fcdb2b000102","_slugs":["service-league-of-san-mateo-county"],"created_at":"2013-08-27T16:14:06-07:00","name":"Service
-        League of San Mateo County","updated_at":"2013-10-01T12:05:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32be1974fcdb2b000102","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32be1974fcdb2b000102/locations"},"slugs":["service-league-of-san-mateo-county"],"id":"521d32be1974fcdb2b000103","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645246000],"highlight":null,"_explanation":null},{"_id":"521d32be1974fcdb2b00010a","_slugs":["peninsula-jewish-community-center-pjcc"],"accessibility":["Disabled
-        Parking","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"Foster
-        City","state":"CA","street":"800 Foster City Blvd.","zip":"94404"},"ask_for":["Becka
-        Boscarino"],"contacts":[{"_id":"521d32be1974fcdb2b00010b","name":"Deborah
-        Pinsky","title":"Executive Director"}],"coordinates":[-122.2671307,37.5578841],"created_at":"2013-08-27T16:14:06-07:00","description":"Offers
-        a variety of recreation, social, educational and cutural activities for people
-        of all ages, faiths and backgrounds. Membership is open to everyone. Programs
-        include preschool, The Treehouse after-school program, seasonal day camps
-        for preschoolers through age 18, sports programs, enrichment classes, wellness
-        programs, Jewish education, adult trips and tours, and adult special-interest
-        programs. The Byer Athletic Center features a heated outdoor pool, kiddie
-        pool, and an indoor pool; cardiovascular equipment, weight room, certified
-        personal trainers, whirlpool, wet and dry sauna and fully stocked locker room.
-        The swim program is open to the public on a fee basis. Get Up and Go is a
-        program designed to assist older adults who no longer drive. Every Monday,
-        Tuesday and Friday, trained volunteers provide transportation and escort individuals
-        to personal appointments, errands and services. On alternating Wednesdays,
-        wheelchair-accessible van transportation is provided from the individual''s
-        home to the PJCC for a low-cost lunch and entertainment (e.g. concerts, film
-        and lectures). Call 650-378-2750.","faxes":[{"number":"650 378-2799"}],"kind":"Human
-        Services","languages":["Hebrew","Russian","Spanish","Yiddish"],"mail_address":{"attention":"Peninsula
-        Jewish Community Ctr","city":"Foster City","state":"CA","street":"800 Foster
-        City Blvd.","zip":"94404"},"name":"Peninsula Jewish Community Center (PJCC)","phones":[{"number":"650
-        212-7522","department":"PJCC","hours":"(Monday-Friday, 8:30-5)"}],"short_desc":"Offers
-        a variety of recreational, social, cultural and educational activities for
-        all ages, faiths and backgrounds.","transportation":"PJCC offers wheelchair
-        accessible vans that transport people to programs and errands.","updated_at":"2013-11-07T12:42:48-08:00","urls":["http://www.pjcc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32be1974fcdb2b00010a","services":[{"_id":"521d32be1974fcdb2b00010e","eligibility":"None
-        to join the center. Some services are for members only (Fitness Center, swimming,
-        pre-school, day camp), but nonmembers can participate in many classes for
-        a fee","fees":"Full center membership: adults, $106 per month/$1272 per year;
-        seniors, $76 per month/$912 per year. Additional fees for programs. Cash,
-        checks and credit cards are accepted.","funding_sources":["Fees","Grants","Membership
-        dues"],"how_to_apply":"Walk in or apply by phone or mail.","keywords":["CHILD
-        PROTECTION AND CARE SERVICES","Day Care","RECREATION/LEISURE SERVICES","Arts
-        and Crafts","Camping","Special Events/Entertainment","Sports/Games/Exercise","Community
-        Facilities/Centers","Older Adults","Youth","Jewish Community","Women","seniors","senior
-        transportation","childcare","after-school programs"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:14-08:00","wait":"No wait.","categories":[{"_id":"52280f651edd37edff000047","depth":0,"lft":141,"name":"Transit","oe_id":"105","parent_id":null,"rgt":154},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268}]}],"organization":{"_id":"521d32be1974fcdb2b000109","_slugs":["peninsula-jewish-community-center-pjcc"],"created_at":"2013-08-27T16:14:06-07:00","name":"Peninsula
-        Jewish Community Center (PJCC)","updated_at":"2013-10-01T12:05:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32be1974fcdb2b000109","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32be1974fcdb2b000109/locations"},"slugs":["peninsula-jewish-community-center-pjcc"],"id":"521d32be1974fcdb2b00010a","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645246000],"highlight":null,"_explanation":null},{"_id":"521d32bd1974fcdb2b0000e9","_slugs":["womens-recovery-association-wra"],"accessibility":["Disabled
-        Restroom","Wheelchair"],"address":{"city":"Burlingame","state":"CA","street":"1818
-        Gilbreth Road, Suite 230","zip":"94010"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32bd1974fcdb2b0000ea","name":"Christina
-        Todaro","title":"Interim Executive Director"}],"coordinates":[-122.3756264,37.6004015],"created_at":"2013-08-27T16:14:05-07:00","description":"Offers
-        residential and outpatient treatment programs for women and their children
-        who are having problems with alcohol or drugs and/or mental health issues.
-        Outpatient services include a dual diagnosis program, counseling, recovery
-        planning and relapse prevention. Parenting groups, continuing care groups,
-        a job retention and job training program, transitional and re-entry groups.
-        Child care is available to parents in residential treatment. Operates three
-        residential treatment facilities for women: Laurel House, The Elms, and Hillside
-        House. Residents complete a core program which addresses chemical dependency
-        and recovery. Transitional housing is available at Juniper House.","emails":["wra@womensrecovery.org"],"faxes":[{"number":"650
-        348-0615"}],"hours":"Monday-Thursday, 9-5","kind":"Human Services","mail_address":{"attention":"Women''s
-        Recovery Assn","city":"Burlingame","state":"CA","street":"1818 Gilbreth Road,
-        Suite 230","zip":"94010"},"name":"Women''s Recovery Association (WRA)","phones":[{"number":"650
-        348-6603","hours":"(Monday-Thursday, 9-5)"}],"short_desc":"Offers a full range
-        of outpatient and residential therapeutic programs for addicted women and
-        their children.","transportation":"SAMTRANS stops within 1 block, CALTRAIN
-        station within 2 blocks.","updated_at":"2013-11-07T12:42:48-08:00","urls":["http://www.womensrecovery.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bd1974fcdb2b0000e9","services":[{"_id":"521d32bd1974fcdb2b0000ed","audience":"Women
-        with alcohol and/or drug problems and their children, women with dual and
-        triple diagnoses, mental health or HIV/AIDS concerns, adolescent girls","eligibility":"Directly
-        or indirectly experiencing alcohol or drug related problems","fees":"Vary
-        according to income. Cash, checks, and credit cards accepted.","funding_sources":["County","Donations","Fees","Grants"],"how_to_apply":"Apply
-        by phone. Walk-in orientations Tuesdays and Thursdays at 3pm.","keywords":["Transitional
-        Housing/Shelter","Diversion Programs","Outpatient Mental Health Facilities","Comprehensive
-        Outpatient Alcoholism Treatment","Comprehensive Outpatient Drug Abuse Treatment","Residential
-        Alcoholism Treatment Facilities","Residential Drug Abuse Treatment Facilities","Alcoholism
-        Counseling","Drug Abuse Counseling","Women"],"service_areas":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County","western United States"],"updated_at":"2013-09-05T11:30:10-07:00","wait":"Varies.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000053","depth":2,"lft":163,"name":"Outpatient
-        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164},{"_id":"52280f661edd37edff000054","depth":2,"lft":165,"name":"Residential
-        Treatment","oe_id":"106-01-05","parent_id":"52280f661edd37edff00004f","rgt":166},{"_id":"52280f661edd37edff000055","depth":2,"lft":167,"name":"Sober
-        Living","oe_id":"106-01-06","parent_id":"52280f661edd37edff00004f","rgt":168}]}],"organization":{"_id":"521d32bd1974fcdb2b0000e8","_slugs":["womens-recovery-association-wra"],"created_at":"2013-08-27T16:14:05-07:00","name":"Women''s
-        Recovery Association (WRA)","updated_at":"2013-10-01T12:05:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000e8","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000e8/locations"},"slugs":["womens-recovery-association-wra"],"id":"521d32bd1974fcdb2b0000e9","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645245000],"highlight":null,"_explanation":null},{"_id":"521d32bc1974fcdb2b0000c0","_slugs":["st-anthonys-padua-dining-room"],"accessibility":["Wheelchair"],"address":{"city":"Menlo
-        Park","state":"CA","street":"3500 Middlefield Road","zip":"94025"},"contacts":[{"_id":"521d32bd1974fcdb2b0000c1","name":"Maximiliano
-        Torres","title":"Operations Manager"},{"_id":"521d32bd1974fcdb2b0000c2","name":"Arturo
-        Jimenez","title":"Assistant Operations Manager"},{"_id":"521d32bd1974fcdb2b0000c3","name":"Maria
-        Perez","title":"Parish Secretary"}],"coordinates":[-122.201567,37.468863],"created_at":"2013-08-27T16:14:05-07:00","description":"St.
-        Anthony''s Padua Dining Room provides free hot lunches Monday through Saturday
-        from 11 am to 1 pm.  On Thanksgiving, Christmas and Easter Saturday, meals
-        are served from 12:00 to 2:30 pm. All are welcome, no questions asked. The
-        Clothing Distribution Center distributes free clothing to women and children
-        each Wednesday between 9:30 am and 11 am, and to men on Thursday between 9:30
-        am and 11 am.","emails":["maxtorres@covad.net"],"faxes":[{"number":"650 365-9699"}],"hours":"See
-        Services for details","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"St.
-        Anthony''s","city":"Menlo Park","state":"CA","street":"3500 Middlefield Road","zip":"94025"},"name":"St.
-        Anthony''s Padua Dining Room","phones":[{"number":"650 365-9665","department":"Dining
-        Room","hours":"(Monday-Saturday, 8-4:30)"}],"short_desc":"Provides free hot
-        meals at noon to senior citizens and needy persons every day except Sunday,
-        emergency food boxes Monday through Friday, and clothing on Wednesday and
-        Thursday.","transportation":"SAMTRANS stops in front.","updated_at":"2013-11-07T12:42:49-08:00","urls":["http://www.paduadiningroom.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bc1974fcdb2b0000c0","services":[{"_id":"521d32bd1974fcdb2b0000c6","audience":"Needy
-        and homeless people","eligibility":"None","fees":"None. Donations welcome.","funding_sources":["Donations","Grants"],"how_to_apply":"Walk
-        in.","keywords":["ADULT PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered
-        Mea","COMMODITY SERVICES","Clothing/Personal Items","Food","Furniture/Appliances","EMERGENCY
-        SERVICES","Food Boxes/Food Vouchers","Food Served/Soup Kitchens","Food Pantries","Soup
-        Kitchens","Clothing","Older Adults"],"service_areas":["San Mateo County","Santa
-        Clara County"],"updated_at":"2013-09-27T19:31:02-07:00","wait":"No wait.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000016","depth":1,"lft":42,"name":"Free
-        Meals","oe_id":"102-05","parent_id":"52280f5e1edd37edff000011","rgt":43},{"_id":"52280f621edd37edff000032","depth":0,"lft":99,"name":"Goods","oe_id":"104","parent_id":null,"rgt":140},{"_id":"52280f631edd37edff000036","depth":1,"lft":106,"name":"Clothing","oe_id":"104-02","parent_id":"52280f621edd37edff000032","rgt":115}]}],"organization":{"_id":"521d32bc1974fcdb2b0000bf","_slugs":["st-anthonys-padua-dining-room"],"created_at":"2013-08-27T16:14:04-07:00","name":"St.
-        Anthony''s Padua Dining Room","updated_at":"2013-10-01T12:05:01-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bc1974fcdb2b0000bf","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bc1974fcdb2b0000bf/locations"},"slugs":["st-anthonys-padua-dining-room"],"id":"521d32bc1974fcdb2b0000c0","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645245000],"highlight":null,"_explanation":null},{"_id":"521d32bd1974fcdb2b0000ce","_slugs":["consumer-credit-counseling-service-of-san-francisco"],"accessibility":["Disabled
-        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"595
-        Market Street, 15th Floor","zip":"94105"},"ask_for":["Appointment Desk"],"contacts":[{"_id":"521d32bd1974fcdb2b0000cf","name":"Joanne
-        Budde","title":"Executive Director"}],"coordinates":[-122.400811,37.789251],"created_at":"2013-08-27T16:14:05-07:00","description":"Provides
-        counseling on personal money management, budget planning, bankruptcy and the
-        various uses of credit. Also assists individuals to develop a workable plan
-        for the orderly liquidation of debts if necessary.   Free workshops are offered
-        on surviving unemployment, first-time home buying and mastering credit for
-        high school students. Also offers counseling for the purchase of a house,
-        default counseling, and transitional housing and tenant counseling. Also offers
-        foreclosure prevention counseling to help families keep their homes by working
-        with lenders to do loan modifications where possible.","emails":["info@cccssf.org"],"hours":"Monday-Friday,
-        8-5: Saturday, 9-5; Evenings until 7 pm (by phone)","kind":"Human Services","languages":["Chinese
-        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Consumer
-        Credit Counseling Ser","city":"San Francisco","state":"CA","street":"595 Market
-        Street, 15th Floor","zip":"94105"},"name":"Consumer Credit Counseling Service
-        of San Francisco","phones":[{"number":"800 777-7526","hours":"(Monday-Friday,
-        8:30-5)"}],"short_desc":"Counseling on alternatives for family money management,
-        debt liquidation, budget planning and the use of credit.","transportation":"MUNI
-        - Market Street lines. BART - Montgomery Street Station.","updated_at":"2013-10-02T15:32:27-07:00","urls":["http://www.cccssf.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bd1974fcdb2b0000ce","services":[{"_id":"521d32bd1974fcdb2b0000d2","audience":"Individuals
-        or families having difficulty setting or meeting financial goals, people having
-        trouble paying bills, people wanting to become homeowners, people wanting
-        to save homes from foreclosure","eligibility":"None","fees":"None for counseling.
-        Fees for administration of debt management plan vary according to income ($1-$35
-        per month). ATM, cashiers checks and money orders accepted.","funding_sources":["Donations","Fees"],"how_to_apply":"Call
-        for an appointment.","keywords":["COMMUNITY SERVICES","Speakers","FINANCIAL
-        ASSISTANCE SERVICES","Money Management","Housing Counseling","Credit Counseling","Mortgage
-        Delinquency and Default Resolution Counseling"],"service_areas":["Marin County","San
-        Francisco County","San Mateo County","Mendocino County","Napa County","Sonoma
-        County","nationwide"],"updated_at":"2013-10-07T21:34:13-07:00","wait":"No
-        wait to maximum of 5 days.","categories":[{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","depth":1,"lft":286,"name":"Financial
-        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f701edd37edff0000bb","depth":1,"lft":372,"name":"Financial
-        Education","oe_id":"107-05","parent_id":"52280f6b1edd37edff000087","rgt":381},{"_id":"52280f701edd37edff0000bc","depth":2,"lft":373,"name":"Credit
-        Counseling","oe_id":"107-05-01","parent_id":"52280f701edd37edff0000bb","rgt":374},{"_id":"52280f701edd37edff0000bd","depth":2,"lft":375,"name":"Foreclosure
-        Counseling","oe_id":"107-05-02","parent_id":"52280f701edd37edff0000bb","rgt":376},{"_id":"52280f701edd37edff0000be","depth":2,"lft":377,"name":"Homebuyer
-        Education","oe_id":"107-05-03","parent_id":"52280f701edd37edff0000bb","rgt":378}]}],"organization":{"_id":"521d32bd1974fcdb2b0000cd","_slugs":["consumer-credit-counseling-service-of-san-francisco"],"created_at":"2013-08-27T16:14:05-07:00","name":"Consumer
-        Credit Counseling Service of San Francisco","updated_at":"2013-10-01T12:05:02-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000cd","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000cd/locations"},"slugs":["consumer-credit-counseling-service-of-san-francisco"],"id":"521d32bd1974fcdb2b0000ce","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645245000],"highlight":null,"_explanation":null},{"_id":"521d32bd1974fcdb2b0000c8","_slugs":["community-gatepath-of-northern-california"],"accessibility":["Disabled
-        Restroom","Wheelchair"],"address":{"city":"Burlingame","state":"CA","street":"875
-        Stanton Road","zip":"94010"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32bd1974fcdb2b0000c9","name":"Sheryl
-        Young","title":"Chief Executive Officer"}],"coordinates":[-122.3711614,37.5984551],"created_at":"2013-08-27T16:14:05-07:00","description":"Provides
-        vocational training, career planning and job placement for adults with disabilities.
-        Services include career counseling, paid work experience, short-term job assessments,
-        computer education and training, and post-employment job coaching. Offers
-        Adult Day Services, a day activity program for adults and seniors with developmental
-        disabilities (described separately). Early intervention services for infants
-        age 3 or under provide physical, occupational, speech therapy and special
-        education for children with special needs. Support groups and informational
-        resources are made available to parents (described separately). Formerly known
-        as Poplar ReCare.","emails":["info@gatepath.com"],"faxes":[{"number":"650
-        697-5010"}],"hours":"Monday-Friday, 8:30-4:30","kind":"Human Services","languages":["Chinese
-        (Mandarin)","Filipino (Tagalog)","Sign Languages","Spanish"],"mail_address":{"attention":"Community
-        Gatepath","city":"Burlingame","state":"CA","street":"875 Stanton Road","zip":"94010"},"name":"Community
-        Gatepath of Northern California","phones":[{"number":"650 259-8500","hours":"(Monday-Friday,
-        8:30-4:30)"}],"short_desc":"Provides vocational training and day activity
-        programs for adults with developmental disabilities, and early intervention
-        services for infants age 3 or under.","transportation":"SAMTRANS stops within
-        2 blocks. Transportation can be arranged through Redi-Wheels.","updated_at":"2013-11-07T12:42:48-08:00","urls":["http://www.gatepath.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bd1974fcdb2b0000c8","services":[{"_id":"521d32bd1974fcdb2b0000cc","audience":"Infants,
-        youth and adults with disabilities","eligibility":"Documented disability.
-        Other requirements vary by program","fees":"Generally paid by referring agency.","funding_sources":["Donations","Fees","Fundraising","Grants","Membership
-        dues"],"how_to_apply":"Referral from State Department of Rehabilitation or
-        Golden Gate Regional Center.","keywords":["DEVELOPMENTAL DISABILITIES SERVICES","Physical
-        Therapy","Rehabilitation/Occupational","Speech Therapy","HANDICAP SERVICES","Rehabilitation/Occupational
-        Therapy","Special Needs Job Development","Older Adults","Disabilities Issues"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:13-08:00","wait":"Varies.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","depth":2,"lft":219,"name":"Assistive
-        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f6a1edd37edff00007a","depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6b1edd37edff000080","depth":3,"lft":252,"name":"Physical
-        Therapy","oe_id":"106-06-07-06","parent_id":"52280f6a1edd37edff00007a","rgt":253},{"_id":"52280f6b1edd37edff000081","depth":3,"lft":254,"name":"Specialized
-        Therapy","oe_id":"106-06-07-07","parent_id":"52280f6a1edd37edff00007a","rgt":255},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff00012d","depth":1,"lft":600,"name":"Skills
-        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615},{"_id":"52280f7a1edd37edff000134","depth":2,"lft":613,"name":"Specialized
-        Training","oe_id":"110-03-07","parent_id":"52280f7a1edd37edff00012d","rgt":614}]}],"organization":{"_id":"521d32bd1974fcdb2b0000c7","_slugs":["community-gatepath-of-northern-california"],"created_at":"2013-08-27T16:14:05-07:00","name":"Community
-        Gatepath of Northern California","updated_at":"2013-10-01T12:05:02-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000c7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bd1974fcdb2b0000c7/locations"},"slugs":["community-gatepath-of-northern-california"],"id":"521d32bd1974fcdb2b0000c8","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645245000],"highlight":null,"_explanation":null},{"_id":"521d32bb1974fcdb2b0000af","_slugs":["narcotics-anonymous-na"],"created_at":"2013-08-27T16:14:03-07:00","description":"A
-        12-step program for men and women who desire to stop drug use (including alcohol).
-        This is an international fellowship. It is not a crisis center. Please phone
-        for current meeting information. Most meetings are open to the public and
-        some are conducted in Spanish.","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Narcotics
-        Anonymous (NA)","city":"San Mateo","state":"CA","street":"P.O. Box 5333","zip":"94402"},"name":"Narcotics
-        Anonymous (NA)","phones":[{"number":"650 802-5950","department":"Peninsula"}],"short_desc":"Self-help
-        organization for men and women who desire to stop drug/alcohol use.","transportation":"Varies
-        according to meeting site.","updated_at":"2013-10-02T21:39:09-07:00","urls":["http://www.peninsulana.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b0000af","services":[{"_id":"521d32bc1974fcdb2b0000b1","audience":"Persons
-        with a desire to stop using drugs and alcohol","eligibility":"Desire to stop
-        using drugs and alcohol","fees":"None.","funding_sources":["Donations"],"how_to_apply":"Apply
-        by phone.","keywords":["ALCOHOLISM SERVICES","Self-Help","Drugs"],"service_areas":["Santa
-        Clara County","San Mateo County"],"updated_at":"2013-10-02T21:37:55-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000050","depth":2,"lft":157,"name":"12-Step","oe_id":"106-01-01","parent_id":"52280f661edd37edff00004f","rgt":158},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f751edd37edff0000f0","depth":2,"lft":477,"name":"Support
-        Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484},{"_id":"52280f751edd37edff0000f1","depth":3,"lft":478,"name":"12-Step","oe_id":"108-07-08-01","parent_id":"52280f751edd37edff0000f0","rgt":479}]}],"organization":{"_id":"521d32bb1974fcdb2b0000ae","_slugs":["narcotics-anonymous-na"],"created_at":"2013-08-27T16:14:03-07:00","name":"Narcotics
-        Anonymous (NA)","updated_at":"2013-10-01T12:05:00-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000ae","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b0000ae/locations"},"slugs":["narcotics-anonymous-na"],"id":"521d32bb1974fcdb2b0000af","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645243000],"highlight":null,"_explanation":null},{"_id":"521d32bb1974fcdb2b000089","_slugs":["kainos-home-and-training-center-for-the-developmentally-disabled"],"accessibility":["Ramp"],"address":{"city":"Redwood
-        City","state":"CA","street":"3631 Jefferson Avenue","zip":"94062-3137"},"ask_for":["Diane
-        Smith (Associate Director)"],"contacts":[{"_id":"521d32bb1974fcdb2b00008a","name":"Andrew
-        Frisch","title":"Executive Director"}],"coordinates":[-122.2521744,37.4640925],"created_at":"2013-08-27T16:14:03-07:00","description":"Offers
-        licensed residential homes which provide living skills training for clients
-        to live as independently as possible. Currently there are 57 residents living
-        in Adult Beginnings, La Vista, Triplex, Pete''s Place and Independent Living
-        units with a ratio of five residents to one counselor. The Vocational Services
-        Program includes workshops, horticulture/landscape programs and supported
-        employment. All work training is individualized to help the person progress
-        toward work in the community. A support group of concerned relatives and friends
-        meets approximately five times throughout the year to discuss programs and
-        helping methods.","kind":"Human Services","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Kainos
-        Home & Training Center","city":"Redwood City","state":"CA","street":"3631
-        Jefferson Avenue","zip":"94062-3137"},"name":"Kainos Home and Training Center
-        for the Developmentally Disabled","phones":[{"number":"650 363-2423","hours":"(Monday-Friday,
-        8:30-4:30)"}],"short_desc":"Maintains licensed residential homes and a work
-        training program for developmentally disabled adults.","transportation":"SAMTRANS
-        stops within 2 blocks of the Vocational Services Building and within 3 blocks
-        of the home.","updated_at":"2013-10-02T15:04:52-07:00","urls":["http://www.kainosusa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000089","services":[{"_id":"521d32bb1974fcdb2b00008d","audience":"Ambulatory
-        developmentally disabled adults","eligibility":"Primary disability must be
-        mental retardation. Other requirements vary by program: for residential and
-        work activity program persons must be age 18 or over","fees":"None.","funding_sources":["Donations","Fees","State"],"how_to_apply":"Apply
-        by phone.","keywords":["DEVELOPMENTAL DISABILITIES SERVICES","Out-Of-Home
-        Care","Rehabilitation/Occupational","Sheltered Employment","Adult Residential
-        Care Homes","Support Groups","Developmental Disabilities"],"service_areas":["San
-        Mateo County","Santa Clara County"],"updated_at":"2013-09-05T11:23:15-07:00","wait":"Varies.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005d","depth":2,"lft":183,"name":"Daily
-        Life Skills","oe_id":"106-04-01","parent_id":"52280f681edd37edff00005c","rgt":184},{"_id":"52280f681edd37edff000064","depth":2,"lft":197,"name":"Understand
-        Mental Health","oe_id":"106-04-08","parent_id":"52280f681edd37edff00005c","rgt":198}]}],"organization":{"_id":"521d32bb1974fcdb2b000088","_slugs":["kainos-home-and-training-center-for-the-developmentally-disabled"],"created_at":"2013-08-27T16:14:03-07:00","name":"Kainos
-        Home and Training Center for the Developmentally Disabled","updated_at":"2013-10-01T12:04:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000088","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000088/locations"},"slugs":["kainos-home-and-training-center-for-the-developmentally-disabled"],"id":"521d32bb1974fcdb2b000089","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645243000],"highlight":null,"_explanation":null},{"_id":"521d32bb1974fcdb2b00009c","_slugs":["parca"],"address":{"city":"Burlingame","state":"CA","street":"800
-        Airport Blvd., Suite 320","zip":"94010"},"contacts":[{"_id":"521d32bb1974fcdb2b00009d","name":"Diana
-        Conti","title":"Executive Director"}],"coordinates":[-122.3497812,37.5907395],"created_at":"2013-08-27T16:14:03-07:00","description":"Serves
-        as an advocate to persons with developmental disabilities regardless of family
-        income. An in-house advocate provides information and referral to educational,
-        recreational, child care, medical and legal services, and facilitates interaction
-        with agencies and professionals. Offers workshops for parents and families,
-        and family activities. Several residential facilities are available for group
-        and independent living: Cedar Street Home (San Carlos) provides group living
-        for 8 adults; Alameda House (Redwood City) provides accomodation for 5 developmentally
-        disabled adults that offers structure and support from counselors; Horizons
-        Apartments (Belmont) offers 24 units for independent living; and, Page Mill
-        Apartments offers 24 units for independent living. Also, independent living
-        skills counseling and support are available. Project REACH offers after school
-        day care and recreation for children age 5-12 in San Bruno. The program is
-        designed to include children with and without disabilities, offering experiences
-        to learn, play and have fun. Respite care is provided through Raji House.
-        Located in Burlingame, respite services are designed as an out-of-home weekend
-        (day: 12 children and overnight: 6 children) for parents and children with
-        severe developmental disabilities. Developmental disabilities include mental
-        retardation, autism, cerebral palsy, epilepsy and similar neurological disorders.","emails":["parca@parca.org"],"faxes":[{"number":"650
-        312-0737"}],"hours":"Varies","kind":"Human Services","mail_address":{"attention":"Parca","city":"Burlingame","state":"CA","street":"800
-        Airport Blvd., Suite 320","zip":"94010"},"name":"Parca","phones":[{"number":"650
-        312-0730","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Serves as an advocate
-        to persons with developmental disabilities and provides various recreational,
-        social and support activities, residential facilities.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.parca.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b00009c","services":[{"_id":"521d32bb1974fcdb2b0000a0","audience":"Children
-        and adults with developmental disabilities and their families","eligibility":"Varies
-        according to program","fees":"Vary according to income and program. Parent
-        support services are usually free.","funding_sources":["Donations","Federal","Fundraising","Grants","State"],"how_to_apply":"Call
-        to inquire about specific program requirements.","keywords":["DEVELOPMENTAL
-        DISABILITIES SERVICES","Community Information","Out-Of-Home Care","Recreation/Social
-        Activities","Respite Care","HANDICAP SERVICES","RECREATION/LEISURE SERVICES","Camping","Group
-        Residences for Adults with Disabilities","Independent Living Skills Instruction","Extended
-        Day Care","Youth","Children","Developmental Disabilities","Disabilities Issues"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:13-08:00","wait":"Varies.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","depth":1,"lft":404,"name":"Daytime
-        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000ce","depth":2,"lft":409,"name":"Childcare","oe_id":"108-03-03","parent_id":"52280f721edd37edff0000cb","rgt":418},{"_id":"52280f721edd37edff0000d5","depth":2,"lft":423,"name":"Recreation","oe_id":"108-03-06","parent_id":"52280f721edd37edff0000cb","rgt":424}]}],"organization":{"_id":"521d32bb1974fcdb2b00009b","_slugs":["parca"],"created_at":"2013-08-27T16:14:03-07:00","name":"Parca","updated_at":"2013-10-01T12:04:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00009b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b00009b/locations"},"slugs":["parca"],"id":"521d32bb1974fcdb2b00009c","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645243000],"highlight":null,"_explanation":null},{"_id":"521d32bb1974fcdb2b000096","_slugs":["mental-health-association-of-san-mateo-county"],"accessibility":["Wheelchair"],"address":{"city":"Redwood
-        City","state":"CA","street":"2686 Spring Street","zip":"94063-3522"},"ask_for":["Melissa
-        Platte"],"contacts":[{"_id":"521d32bb1974fcdb2b000097","name":"Melissa Platte","title":"Executive
-        Director"}],"coordinates":[-122.208183,37.4822243],"created_at":"2013-08-27T16:14:03-07:00","description":"Provides
-        direct services for adults with mental illnesses and/or people with HIV/AIDS
-        including housing, food, social programs and advocacy. Advocates for the improvement
-        of mental health services and the development of new programs to meet identified
-        needs.         Spring Street Shelter is a 15-bed facility for emergency and
-        short-term housing for mentally disabled clients who require immediate shelter
-        but do not require care and supervision. Acceptance is on a night-by-night
-        basis and maximum stay is 45 days. Staff will collaborate with other private
-        and public services to assist clients to find permanent housing and other
-        needed services. Referrals are accepted from county mental health agencies,
-        the Probation Department and core service centers. A Transitional Housing
-        Program serves seven clients in single rooms and 60 additional clients are
-        served in single rooms of permanent housing. Friendship Centers throughout
-        San Mateo County offer social and recreational activities for adults with
-        mental illness. Activities include living skills classes, day trips, games
-        and luncheons. Attendance is on a drop-in basis. Monthly Friendship Center
-        calendars are available by calling 650-368-3345, ext. 102 or visiting the
-        agency Web site at www.mhasmc.org The Housing and Client Assistance Program
-        provides short-term assistance to low-income persons with HIV/AIDS in obtaining
-        and maintaining permanent housing. Financial assistance is provided in the
-        form of partial rent payments to landlords and mortgage lenders. Depending
-        on financial need, the program may also help pay utility bills, WELL Program
-        enrollment fees, temporary co-payments for prescribed medication and temporary
-        shelter in a motel. Case managers can refer participants for other services
-        including medical care, social work services, drug and alcohol treatment,
-        food and transportation. Support and Advocacy for Young Adults in Transition
-        (SAYAT) provides case management to assist young adults with disabilities
-        who do not qualify for county mental health services or other case management
-        services. Belmont Apartments offer affordable and supportive housing for 24
-        homeless adults with mental illness (many of whom are dually or triply diagnosed).
-        CHRIS (Community Housing Rehabilitation Independent Skills) Program strengthens
-        the living skills of persons with mental illness. Occupational therapists
-        and interns provide assessments, training, and specific interventions, and
-        physical adaptations to allow these adults to participate in the community
-        at the highest level of independence possible.","emails":["info@mhasmc.org"],"faxes":[{"number":"650
-        368-2534"},{"number":"650 368-9017"}],"kind":"Human Services","languages":["Filipino
-        (Tagalog)","French","Japanese","Spanish","Vietnamese"],"mail_address":{"attention":"Mental
-        Health Assn","city":"Redwood City","state":"CA","street":"2686 Spring Street","zip":"94063-3522"},"name":"Mental
-        Health Association of San Mateo County","phones":[{"number":"650 368-3345","hours":"(Monday-Friday,
-        8:30-5)"}],"short_desc":"Provides direct services for adults with mental illnesses
-        that include housing, food, social programs, advocacy and networking.","transportation":"SAMTRANS
-        stops within 4 blocks of shelter, within 3 blocks of all Friendship Centers.","updated_at":"2013-11-07T12:45:07-08:00","urls":["http://www.mhasmc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32bb1974fcdb2b000096","services":[{"_id":"521d32bb1974fcdb2b00009a","audience":"Adults
-        with mental illnesses, people with HIV/AIDS, young adults with emotional/developmental
-        and mental disabilities who are homeless or at risk of being homeless","eligibility":"Vary
-        according to program","fees":"None for Friendship Center, Housing and Client
-        Assistance Program; fees for other programs vary according to service.","funding_sources":["County","Donations","Federal","Fundraising","Grants"],"how_to_apply":"Apply
-        by phone for Friendship Center and Housing and Client Assistance Program.
-        A telephone referral from a recognized agency must be made for the emergency
-        shelter. Referral forms may be requested for the SAYAT Program.","keywords":["COMMUNITY
-        SERVICES","Human Rights/Ombudsman/Advocacy","Speakers","HOUSING SERVICES","Senior
-        and Disabled Housing","Temporary","MENTAL HEALTH SERVICES","Community Information","Recreation/Social
-        Activity","Resocialization/Social Adjustment","Transitional Housing/Shelter","Advocacy","Psychiatric
-        Case Management","Psychiatric Resocialization","Homeless","Housing Assistance"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:46:43-08:00","wait":"Varies according
-        to program.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000b","depth":1,"lft":20,"name":"Emergency
-        Shelter","oe_id":"101-04","parent_id":"52280f5c1edd37edff000001","rgt":21},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001c","depth":1,"lft":54,"name":"Emergency
-        Shelter","oe_id":"103-01","parent_id":"52280f601edd37edff00001b","rgt":55},{"_id":"52280f601edd37edff00001e","depth":1,"lft":58,"name":"Help
-        Pay for Housing","oe_id":"103-03","parent_id":"52280f601edd37edff00001b","rgt":69},{"_id":"52280f601edd37edff00001f","depth":2,"lft":59,"name":"Cash
-        for Housing","oe_id":"103-03-01","parent_id":"52280f601edd37edff00001e","rgt":60},{"_id":"52280f601edd37edff000020","depth":2,"lft":61,"name":"Cash
-        for Utilities","oe_id":"103-03-02","parent_id":"52280f601edd37edff00001e","rgt":62},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","depth":1,"lft":286,"name":"Financial
-        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f6d1edd37edff0000a0","depth":2,"lft":317,"name":"Help
-        Pay for Housing","oe_id":"107-02-04","parent_id":"52280f6c1edd37edff000090","rgt":328},{"_id":"52280f6d1edd37edff0000a1","depth":3,"lft":318,"name":"Cash
-        for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319},{"_id":"52280f6d1edd37edff0000a2","depth":3,"lft":320,"name":"Cash
-        for Utilities","oe_id":"107-02-04-02","parent_id":"52280f6d1edd37edff0000a0","rgt":321}]}],"organization":{"_id":"521d32bb1974fcdb2b000095","_slugs":["mental-health-association-of-san-mateo-county"],"created_at":"2013-08-27T16:14:03-07:00","name":"Mental
-        Health Association of San Mateo County","updated_at":"2013-10-01T12:19:24-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000095","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bb1974fcdb2b000095/locations"},"slugs":["mental-health-association-of-san-mateo-county"],"id":"521d32bb1974fcdb2b000096","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645243000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000049","_slugs":["coastside-hope"],"accessibility":["Wheelchair"],"address":{"city":"El
-        Granada","state":"CA","street":"99 Avenue Alhambra","zip":"94018"},"ask_for":["Intake
-        manager","caseworker"],"contacts":[{"_id":"521d32ba1974fcdb2b00004a","name":"Fatima
-        Soares","title":"Executive Director"}],"created_at":"2013-08-27T16:14:02-07:00","description":"Acts
-        as a safety net by providing human services programs for residents of the
-        San Mateo County coast. Provides emergency services including food boxes,
-        deposit and rental assistance, housing support, casework, the Family Harvest
-        Program, Brown Bag food program and assistance with a variety of other needs.
-        Also provides paralegal assistance, and immigration counseling and applications.
-        Offers free citizenship classes once a week. The site is part of the core
-        network of community service agencies of San Mateo County. Formerly known
-        as Coastside Opportunity Center.","emails":["info@coastside.org","fatima@coastsidehope.org"],"faxes":[{"number":"650
-        726-7096"}],"hours":"Monday, Tuesday, Thursday, Friday, 8-5; Wednesday, 11-5;
-        closed 12-1","kind":"Human Services","languages":["Portuguese","Spanish"],"mail_address":{"attention":"Coastside
-        Hope: A Community Assistance Center","city":"El Granada","state":"CA","street":"P.O.
-        Box 1089","zip":"94018"},"name":"Coastside Hope","phones":[{"number":"650
-        726-9071","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Offers information
-        and referral, immigration services and emergency assistance to Coastside residents.","transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.coastsidehope.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000049","services":[{"_id":"521d32ba1974fcdb2b00004d","audience":"Low-income
-        or unemployed persons, non-English speaking (Spanish, Portuguese) or immigrant
-        populations, farmworkers, nursery workers, families, seniors, homeless","eligibility":"Low-income
-        person residing in the area served","fees":"None except for immigration work.
-        Cash and checks accepted.","funding_sources":["County","Donations","Fees","Grants"],"how_to_apply":"Walk
-        in or apply by phone.","keywords":["COMMODITY SERVICES","Food","COMMUNITY
-        SERVICES","Immigration/Naturalization","Information and Referral","Interpretation/Translation","EMERGENCY
-        SERVICES","Food Boxes/Food Vouchers","Shelter/Refuge","FINANCIAL ASSISTANCE
-        SERVICES","Housing","Utilities","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
-        Assistance","TRANSPORTATION SERVICES","Para-Transit","Food Pantries","Homeless
-        Shelter","Housing Expense Assistance","Transitional Housing/Shelter","Clothing","Utility
-        Assistance","Comprehensive Information and Referral","Youth","Social Services","Emergency
-        Aid","Rental Assistance","Food Assistance"],"service_areas":["El Granada","Half
-        Moon Bay","Miramar","Montara","Moss Beach"],"updated_at":"2013-10-07T20:56:32-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5c1edd37edff000003","depth":1,"lft":4,"name":"Emergency
-        Cash","oe_id":"101-02","parent_id":"52280f5c1edd37edff000001","rgt":17},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000013","depth":1,"lft":36,"name":"Emergency
-        Food","oe_id":"102-02","parent_id":"52280f5e1edd37edff000011","rgt":37},{"_id":"52280f5e1edd37edff000015","depth":1,"lft":40,"name":"Food
-        Pantry","oe_id":"102-04","parent_id":"52280f5e1edd37edff000011","rgt":41},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001d","depth":1,"lft":56,"name":"Help
-        Find Housing","oe_id":"103-02","parent_id":"52280f601edd37edff00001b","rgt":57},{"_id":"52280f601edd37edff00001e","depth":1,"lft":58,"name":"Help
-        Pay for Housing","oe_id":"103-03","parent_id":"52280f601edd37edff00001b","rgt":69},{"_id":"52280f601edd37edff00001f","depth":2,"lft":59,"name":"Cash
-        for Housing","oe_id":"103-03-01","parent_id":"52280f601edd37edff00001e","rgt":60},{"_id":"52280f601edd37edff000020","depth":2,"lft":61,"name":"Cash
-        for Utilities","oe_id":"103-03-02","parent_id":"52280f601edd37edff00001e","rgt":62},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f621edd37edff00002f","depth":2,"lft":91,"name":"Short-Term
-        Housing","oe_id":"103-05-04","parent_id":"52280f611edd37edff000027","rgt":96},{"_id":"52280f651edd37edff000047","depth":0,"lft":141,"name":"Transit","oe_id":"105","parent_id":null,"rgt":154},{"_id":"52280f651edd37edff00004b","depth":1,"lft":148,"name":"Transportation","oe_id":"105-02","parent_id":"52280f651edd37edff000047","rgt":153},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
-        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7b1edd37edff00013e","depth":2,"lft":633,"name":"Citizenship
-        & Immigration","oe_id":"111-01-02","parent_id":"52280f7a1edd37edff000138","rgt":634},{"_id":"52280f7b1edd37edff000142","depth":2,"lft":641,"name":"Understand
-        Government Programs","oe_id":"111-01-06","parent_id":"52280f7a1edd37edff000138","rgt":642},{"_id":"52280f7c1edd37edff000147","depth":1,"lft":652,"name":"Translation
-        & Interpretation","oe_id":"111-05","parent_id":"52280f7a1edd37edff000137","rgt":653}]}],"organization":{"_id":"521d32ba1974fcdb2b000048","_slugs":["coastside-hope"],"created_at":"2013-08-27T16:14:02-07:00","name":"Coastside
-        Hope","updated_at":"2013-10-01T12:04:53-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000048","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000048/locations"},"slugs":["coastside-hope"],"id":"521d32ba1974fcdb2b000049","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b00004f","_slugs":["pyramid-alternatives-inc"],"accessibility":["Ramp","Disabled
-        Restroom","Wheelchair"],"address":{"city":"Pacifica","state":"CA","street":"480
-        Manor Plaza","zip":"94044"},"contacts":[{"_id":"521d32ba1974fcdb2b000050","name":"Paul
-        Chang","title":"Executive Director"},{"_id":"521d32ba1974fcdb2b000051","name":"Erica
-        Britton","title":"Clinical Director"}],"coordinates":[-122.4922502,37.6499429],"created_at":"2013-08-27T16:14:02-07:00","description":"Provides
-        psychological counseling with a special focus on alcohol and other drug-related
-        problems. Provides outpatient individual, family, couple and group therapy.
-        Special programs for people age 17 or under include play therapy for preschool
-        and elementary school-age children. Youth age 12 or over can be seen without
-        parental permission. Offers additional support groups including a probation-referred
-        group for persons as a condition of their probation and children and preteen
-        support groups. Pyramid''s First Offender Program is a court-ordered 15-week
-        program for persons convicted, for the first time, of driving under the influence
-        of alcohol. Pyramid''s Multiple Offender Drinking Driver program is an 18-month
-        intensive counseling and education program for persons convicted twice or
-        more of driving while under the influence of alcohol and who elect, with court
-        approval, to enter the program. Also offers a Drug Diversion Program, Drug
-        Court Program and Domestic Violence Program. The First Offender, Multiple
-        Offender and Domestic Violence programs are offered in Spanish. The Senior
-        Program assists older persons with problems of stress, grief and medication
-        abuse. Pyramid Alternatives also has offices in San Bruno at 1590 El Camino
-        Real, in South San Francisco at 1050 El Camino Real, and in Half Moon Bay
-        at Shoreline Station. Adolescent Anger Management and Substance Abuse Program
-        with individual, group and family counseling also available.","emails":["pyramidalternatives@earthlink.net"],"faxes":[{"number":"650
-        355-8780"}],"hours":"Monday-Friday, 8 am-10 pm","kind":"Human Services","languages":["Filipino
-        (Tagalog)","Spanish"],"mail_address":{"attention":"Pyramid Alternatives, Inc.","city":"Pacifica","state":"CA","street":"480
-        Manor Plaza","zip":"94044"},"name":"Pyramid Alternatives, Inc","phones":[{"number":"650
-        355-8787","hours":"(Monday-Friday, 9-5)"}],"short_desc":"General counseling
-        for individuals, couples and groups; support groups; and court-ordered counseling
-        for various violations.","transportation":"SAMTRANS stops within 1 block of
-        most offices.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.pyramidalternatives.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00004f","services":[{"_id":"521d32ba1974fcdb2b000054","audience":"Persons
-        in need of counseling, particularly in the areas of substance abuse, domestic
-        violence, dual diagnosis and violence prevention","eligibility":"None. Youth
-        age 11 or under must have parental permission","fees":"Vary according to income.
-        Services are provided regardless of ability to pay. Private insurance and
-        military insurance accepted.","funding_sources":["City","County","Federal","Fees","School
-        district"],"how_to_apply":"Walk in or apply by phone. Appointment preferred.","keywords":["ALCOHOLISM
-        SERVICES","Community Information","Crisis Intervention/Hotlines","Driving
-        While Intoxicated","Family Support","Individual/Group Counseling","DRUG ABUSE
-        SERVICES","Drug Diversion","MENTAL HEALTH SERVICES","Diversion Programs","First
-        Offender DUI Programs","Multiple Offender DUI Programs","Alcoholism Counseling","Drug
-        Abuse Counseling","Conjoint Counseling","Family Counseling","Group Counseling","Individual
-        Counseling","Spouse/Domestic Partner Abuse Counseling","Play Therapy","Older
-        Adults","Youth","Adolescents","Children"],"service_areas":["San Francisco
-        County","San Mateo County"],"updated_at":"2013-09-05T11:03:41-07:00","wait":"Short
-        waiting time for evening, low-fee appointments.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169}]}],"organization":{"_id":"521d32ba1974fcdb2b00004e","_slugs":["pyramid-alternatives-inc"],"created_at":"2013-08-27T16:14:02-07:00","name":"Pyramid
-        Alternatives, Inc","updated_at":"2013-10-01T12:04:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00004e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00004e/locations"},"slugs":["pyramid-alternatives-inc"],"id":"521d32ba1974fcdb2b00004f","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000056","_slugs":["project-90"],"accessibility":["Disabled
-        Parking","Disabled Restroom","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"720
-        South B Street","zip":"94401"},"ask_for":["Intake Department"],"contacts":[{"_id":"521d32ba1974fcdb2b000057","name":"Jim
-        Stansberry","title":"Executive Director"},{"_id":"521d32ba1974fcdb2b000058","name":"David
-        Meeds","title":"Director, Program Operations"},{"_id":"521d32ba1974fcdb2b000059","name":"Stacey
-        White","title":"Manager, Community Development"}],"coordinates":[-122.3190162,37.56225939999999],"created_at":"2013-08-27T16:14:02-07:00","description":"Provides
-        a social model recovery program for alcoholic and drug-abusing individuals,
-        as well as dual diagnosis clients. The Primary program focuses on self-evaluation
-        and awareness (Month 1), planning for the future (Month 2), and putting the
-        plan into action (Month 3). Individual and group counseling looks at all aspects
-        of addiction, recovery, and relapse. Family counseling is also available.
-        Particpants live in shared bedrooms. Women''s residential substance abuse
-        treatment is available in a gender-responsive environment, including women
-        only counseling groups. The treatment follows the same phases and provides
-        the same services as the Primary program. Working Man''s Program (650-401-8766)
-        is a residential substance abuse recovery program for those with a full-time
-        job. Residents attend individual or group counseling on weekday evenings and
-        weekends. Also, offers clean and sober housing. Residents must abide by curfews
-        and assigned chores, be employed full time, attend AA/NA meetings and a weekly
-        Project Ninety aftercare meeting. Transitional housing is available for up
-        to 18 months. Contact Stacey White, Community Development Manager, at 650-579-7881
-        for an appointment. Services such as general labor, hauling, moving services,
-        painting, yard work, carpet cleaning, and handy-man services are offered to
-        the community. Contact Stacey White, Community Development Manager, at 650-579-7881
-        for an appointment. Outpatient Program has been suspended as of October 2011.
-        Additional site located in San Jose. P90 San Jose, 561 South 9th Street, San
-        Jose (408-885-1291).","emails":["jstansberry@projectninety.org"],"faxes":[{"number":"650
-        579-2640"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Project
-        90","city":"San Mateo","state":"CA","street":"720 South B Street","zip":"94401"},"name":"Project
-        90","phones":[{"number":"650 579-7881","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A
-        residential treatment program for men and women who abuse drugs or alcohol.","transportation":"SAMTRANS
-        stops within 1 block. Carpools can be arranged.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.projectninety.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000056","services":[{"_id":"521d32ba1974fcdb2b00005c","audience":"Adult
-        men and women","eligibility":"Adult males and females with a desire to overcome
-        an addiction to substance(s).","fees":"Vary according to income and ability
-        to pay. Full cost of 90-day residential program is $12,200, or $14,500 for
-        co-occurring treatment services.","funding_sources":["County","Donations","Fees"],"how_to_apply":"Apply
-        by attending a Treatment Readiness interview to be assessed for eligibility
-        for treatment. Interview lasts approximately 1.5 hours. No appointment is
-        necessary. Please arrive 15 minutes early. Tuesday at 11am and Friday at 11:45am.
-        416 2nd Avenue (at Claremont St.), San Mateo, CA 94401. Call 650-579-7881
-        for more information.","keywords":["ALCOHOLISM SERVICES","Residential Care","DRUG
-        ABUSE SERVICES","Residential Alcoholism Treatment","Residential Drug Abuse
-        Treatment","Women","Men"],"service_areas":["Alameda County","Contra Costa
-        County","Monterey County","San Benito County","San Mateo County","Santa Clara
-        County","Santa Cruz County","Solano County"],"updated_at":"2013-09-05T11:05:28-07:00","wait":"1-6
-        weeks.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f621edd37edff00002f","depth":2,"lft":91,"name":"Short-Term
-        Housing","oe_id":"103-05-04","parent_id":"52280f611edd37edff000027","rgt":96},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169}]}],"organization":{"_id":"521d32ba1974fcdb2b000055","_slugs":["project-90"],"created_at":"2013-08-27T16:14:02-07:00","name":"Project
-        90","updated_at":"2013-10-01T12:04:54-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000055","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000055/locations"},"slugs":["project-90"],"id":"521d32ba1974fcdb2b000056","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000071","_slugs":["asian-counseling-center-slash-telephone-referral-services"],"accessibility":["Wheelchair"],"address":{"city":"Menlo
-        Park","state":"CA","street":"445 Burgess Drive, Suite 150","zip":"94025"},"ask_for":["Yuri
-        Payton (Licensed Clinical Social Worker)"],"contacts":[{"_id":"521d32ba1974fcdb2b000072","name":"Yuri
-        Payton","title":"Volunteer Professional"}],"coordinates":[-122.174863,37.451574],"created_at":"2013-08-27T16:14:02-07:00","description":"Can
-        refer individuals to licensed professional marriage, family and child counselors
-        and therapists who speak Japanese, Chinese, Korean and Vietnamese. Therapy
-        for Asians meets in San Jose and in Menlo Park.","hours":"Monday-Friday, 9-5","kind":"Human
-        Services","languages":["Japanese"],"mail_address":{"attention":"Asian Counseling
-        Center/Telephone Referral Services","city":"Menlo Park","state":"CA","street":"445
-        Burgess Drive, Suite 150","zip":"94025"},"name":"Asian Counseling Center/Telephone
-        Referral Services","phones":[{"number":"650 328-1200","hours":"(Monday-Friday,
-        9-5)"}],"short_desc":"Can refer individuals to marriage, family and child
-        counseling as well as therapists who speak Japanese, Chinese, Korean and Vietnamese.","transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2013-10-02T15:02:28-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000071","services":[{"_id":"521d32ba1974fcdb2b000075","audience":"Asian
-        people","eligibility":"None","fees":"Vary according to income. Private insurance
-        accepted. Cash and private insurance accepted.","how_to_apply":"Apply by phone.
-        Appointment necessary.","keywords":["Family Counseling","Child Guidance","Marriage
-        Counseling","Psychologist referrals","Asian Community","Cultural/Racial Issues","Mulitple
-        Languages","Japanese, Chinese, Korean and Vietnamese"],"service_areas":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County"],"updated_at":"2013-10-07T20:59:07-07:00","wait":"No
-        wait to one week.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d32ba1974fcdb2b000070","_slugs":["asian-counseling-center-slash-telephone-referral-services"],"created_at":"2013-08-27T16:14:02-07:00","name":"Asian
-        Counseling Center/Telephone Referral Services","updated_at":"2013-10-01T12:04:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000070","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000070/locations"},"slugs":["asian-counseling-center-slash-telephone-referral-services"],"id":"521d32ba1974fcdb2b000071","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b00007d","_slugs":["big-brothers-big-sisters-of-the-bay-area"],"accessibility":["Wheelchair"],"address":{"city":"San
-        Francisco","state":"CA","street":"649 Mission Street, 5th Floor","zip":"94105"},"ask_for":["Dolores
-        Santa Cruz (Customer Relations Specialist)"],"contacts":[{"_id":"521d32ba1974fcdb2b00007e","name":"Marcia
-        Hodges","title":"CEO"}],"coordinates":[-122.4009318,37.786981],"created_at":"2013-08-27T16:14:02-07:00","description":"Matches
-        youth age 6-18 with carefully screened and trained adult mentors, and provides
-        ongoing supervision to ensure youth, families, and volunteers enjoy their
-        mentoring experiences. Mentor may meet with youth in the community Volunteers
-        are asked to commit to the program for at least a year. In March 2006 BBBS
-        of the East Bay, of San Francisco and the Peninsula, and of Santa Clara County
-        merged to form Big Brothers Big Sisters of the Bay Area.","emails":["info@bbbsba.org"],"hours":"Monday-Friday,
-        9-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Big
-        Brothers-Big Sisters","city":"San Francisco","state":"CA","street":"649 Mission
-        Street, 5th Floor","zip":"94105"},"name":"Big Brothers-Big Sisters of the
-        Bay Area","phones":[{"number":"415 503-4050","department":"Administrative
-        Office","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Links volunteer adult
-        mentors with boys and girls age 6-18, primarily from single parent families.","updated_at":"2013-11-07T12:47:27-08:00","urls":["http://www.bbbsba.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00007d","services":[{"_id":"521d32ba1974fcdb2b000081","audience":"Children
-        ages 6-18","eligibility":"Child age 6-16, with parent/guardian consent. (Once
-        enrolled a child may remain until turning 18 or graduating from high school)
-        Volunteer must pass background check","fees":"$35 application fee for volunteer
-        applicants only.","funding_sources":["Donations","Fundraising","Grants","United
-        Way"],"how_to_apply":"Apply online or call for information packet.","keywords":["INDIVIDUAL
-        AND FAMILY DEVELOPMENT SERVICES","Companion","Adult/Child Mentoring Programs","Mentoring
-        Services Volunteer Opportunities"],"service_areas":["Alameda County","Contra
-        Costa County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-09-05T11:20:21-07:00","wait":"Varies.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000ec","depth":2,"lft":469,"name":"Mentoring","oe_id":"108-07-05","parent_id":"52280f741edd37edff0000e7","rgt":470}]}],"organization":{"_id":"521d32ba1974fcdb2b00007c","_slugs":["big-brothers-big-sisters-of-the-bay-area"],"created_at":"2013-08-27T16:14:02-07:00","name":"Big
-        Brothers-Big Sisters of the Bay Area","updated_at":"2013-10-01T12:04:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00007c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00007c/locations"},"slugs":["big-brothers-big-sisters-of-the-bay-area"],"id":"521d32ba1974fcdb2b00007d","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b00005e","_slugs":["pacifica-senior-services"],"accessibility":["Disabled
-        Parking","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"Pacifica","state":"CA","street":"540
-        Crespi Drive","zip":"94044"},"ask_for":["Janis Haynes"],"contacts":[{"_id":"521d32ba1974fcdb2b00005f","name":"Janis
-        Haynes","title":"Program Coordinator"},{"_id":"521d32ba1974fcdb2b000060","name":"Jim
-        Lange","title":"Senior Services/Food Service Supervisor"}],"coordinates":[-122.4991919,37.5987994],"created_at":"2013-08-27T16:14:02-07:00","description":"A
-        multipurpose senior center offering a variety of recreation and education
-        programs such as physical fitness, crafts, support groups, bridge, ceramics
-        and yoga. Publishes a newsletter of activities and information of interest
-        to seniors in Pacifica. Staff provide information about community services
-        to persons age 60 or over and their families. Appointments can be made with
-        appropriate agencies and transportation can be located if needed. Assistance
-        is available for questions related to housing, employment, household help
-        and repairs, recreation and social activities, financial assistance, health
-        and counseling services, services to the homebound, home delivered meals and
-        more. Maintains information about special discounts for seniors. Tax assistance
-        is offered by AARP. Keeps a file of housing available. Health insurance counseling
-        is available by appointment. Serves a hot meal at noon five days a week for
-        persons age 60 or over. Arranges to deliver meals to the homes of residents
-        unable to prepare their own food and who have no one to cook for them (call
-        650-738-7350). Other services offered regularly include podiatry service,
-        and nutrition and health lectures. Volunteer participation is needed in the
-        areas of delivering Meals on Wheels, teaching, staffing the gift shop, food
-        services, reception and in the SASH (Shopping Assistance for Seniors who are
-        Homebound) program. Free movies shown every Friday. SIA members 60 or over
-        can make an appointment on the first and third Monday of each month for a
-        $10 haircut.","faxes":[{"number":"650 738-0564"}],"hours":"Monday, Tuesday,
-        Thursday, 9-4; Wednesday, 9-7; Friday, 9-1:30","kind":"Human Services","mail_address":{"attention":"Pacifica
-        Senior Services","city":"Pacifica","state":"CA","street":"540 Crespi Drive","zip":"94044"},"name":"Pacifica
-        Senior Services","phones":[{"number":"650 738-7384","hours":"(Monday, Tuesday,
-        Thursday, 9-4; Wednesday, 9-6; Friday, 9-1:30)"}],"short_desc":"A multipurpose
-        senior citizens'' center.","transportation":"SAMTRANS stops at center. Transportation
-        to the center can also be arranged for $2.50 round trip donation. Transportation
-        to medical appointments in Daly City (Seton) and South San Francisco (Kaiser)
-        is $20.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.cityofpacifica.org/depts/senior_services/"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b00005e","services":[{"_id":"521d32ba1974fcdb2b000063","audience":"Senior
-        citizens age 60 or over","eligibility":"Vary according to service","fees":"$3
-        suggested donation for meal. Cash and checks accepted.","funding_sources":["City","County","State"],"how_to_apply":"Walk
-        in.","keywords":["ADULT PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered
-        Meals","COMMUNITY SERVICES","Group Support","Information and Referral","RECREATION/LEISURE
-        SERVICES","Arts and Crafts","Special Events/Entertainment","Sports/Games/Exercise","Congregate
-        Meals/Nutrition Sites","Tax Preparation Assistance","Facilities/Community
-        Centers","Senior Centers","Older Adults","Older Adult Volunteers"],"service_areas":["Pacifica"],"updated_at":"2013-11-11T00:44:13-08:00","wait":"No
-        wait.","categories":[{"_id":"52280f5e1edd37edff000010","depth":1,"lft":30,"name":"Psychiatric
-        Emergency Services","oe_id":"101-07","parent_id":"52280f5c1edd37edff000001","rgt":31},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000016","depth":1,"lft":42,"name":"Free
-        Meals","oe_id":"102-05","parent_id":"52280f5e1edd37edff000011","rgt":43},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005d","depth":2,"lft":183,"name":"Daily
-        Life Skills","oe_id":"106-04-01","parent_id":"52280f681edd37edff00005c","rgt":184}]}],"organization":{"_id":"521d32ba1974fcdb2b00005d","_slugs":["pacifica-senior-services"],"created_at":"2013-08-27T16:14:02-07:00","name":"Pacifica
-        Senior Services","updated_at":"2013-10-01T12:04:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00005d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b00005d/locations"},"slugs":["pacifica-senior-services"],"id":"521d32ba1974fcdb2b00005e","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000077","_slugs":["peninsula-family-service"],"accessibility":["Disabled
-        Parking","Elevator","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"24
-        Second Avenue","zip":"94401"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32ba1974fcdb2b000078","name":"Laurie
-        Wishard","title":"President"}],"coordinates":[-122.3263232,37.5639394],"created_at":"2013-08-27T16:14:02-07:00","description":"Offers
-        programs in self-sufficiency to children, families and older adults in the
-        community. Services include child development and education programs in multiple
-        locations, as well as subsidized child care in numerous day care homes as
-        part of the Neighborhood Child Care Program. Visitation Services help families
-        in crisis receive the counseling and guidance they need to create healthier
-        relationships between parents and children. Supervised visits, child exchanges
-        and parent education workshops are part of the Visitation Services. Financial
-        Empowerment programs offer services to adults who wish to improve their financial
-        situation and create stability for themselves and their families. Services
-        include low-interest car loans for parents of dependent children and an emergency
-        savings program with financial education classes. Older adults also receive
-        help with job searches as part of the Second Careers Program. Older Adult
-        Services provide participants with case management, physical and social activities,
-        referrals and emotional support to continue to be active. The Fair Oaks Adult
-        Activity Center in Redwood City provides hot lunches and English as a Second
-        Language classes, as well as yoga and other activities.","emails":["info@peninsulafamilyservice.org"],"faxes":[{"number":"650
-        403-4303"}],"hours":"Monday-Thursday, 8:30-5:30; Friday, 8:30-5","kind":"Human
-        Services","languages":["Chinese","Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Peninsula
-        Family Service","city":"San Mateo","state":"CA","street":"24 Second Avenue","zip":"94401"},"name":"Peninsula
-        Family Service","phones":[{"number":"650 403-4300","hours":"(Monday-Thursday,
-        8:30-5:30; Friday, 8:30-5)"}],"short_desc":"Provides a variety of services
-        to individuals and families including counseling and child care.","transportation":"SAMTRANS
-        stops within 1 block, CALTRAIN stops within 6 blocks.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000077","services":[{"_id":"521d32ba1974fcdb2b00007b","audience":"Children,
-        low- and moderate-income persons, seniors, families, individuals, divorcing
-        or separating parents, Spanish-speaking families","eligibility":"None for
-        counseling. Child care age 3 months-4 years. For some child care, parents
-        must meet State Department of Education requirements. Referral from Children
-        and Family Services or Family Court for some services. Requirements vary for
-        senior programs","fees":"Vary according to income for counseling and visitation
-        program. Fees for child care vary according to service and income. Insurance
-        accepted where applicable. No fees for most senior services. Cash, checks,
-        credit cards, Medi-Cal and private insurance accepted.","funding_sources":["City","County","Donations","Federal","Fees","Grants","State","United
-        Way"],"how_to_apply":"Apply by phone. Referral from Child and Family Services
-        or Family Court required for application for some services.","keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Individual/Group Counseling","CHILD PROTECTION
-        AND CARE SERVICES","Day Care","FINANCIAL ASSISTANCE SERVICES","General Support","INDIVIDUAL
-        AND FAMILY DEVELOPMENT SERVICES","Parent Groups","MENTAL HEALTH SERVICES","Family
-        Support","Older Adults","Youth","Women"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:44:13-08:00","wait":"Seniors:
-        no wait. Counseling and visitation: varies according to program and time of
-        year. Child care: varies according to priority, location and age.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005d","depth":2,"lft":183,"name":"Daily
-        Life Skills","oe_id":"106-04-01","parent_id":"52280f681edd37edff00005c","rgt":184},{"_id":"52280f681edd37edff000061","depth":2,"lft":191,"name":"Parenting
-        Education","oe_id":"106-04-05","parent_id":"52280f681edd37edff00005c","rgt":192},{"_id":"52280f681edd37edff000064","depth":2,"lft":197,"name":"Understand
-        Mental Health","oe_id":"106-04-08","parent_id":"52280f681edd37edff00005c","rgt":198},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f701edd37edff0000bb","depth":1,"lft":372,"name":"Financial
-        Education","oe_id":"107-05","parent_id":"52280f6b1edd37edff000087","rgt":381}]}],"organization":{"_id":"521d32ba1974fcdb2b000076","_slugs":["peninsula-family-service"],"created_at":"2013-08-27T16:14:02-07:00","name":"Peninsula
-        Family Service","updated_at":"2013-10-01T12:04:57-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000076","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000076/locations"},"slugs":["peninsula-family-service"],"id":"521d32ba1974fcdb2b000077","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000083","_slugs":["human-investment-project-hip-housing"],"accessibility":["Wheelchair"],"address":{"city":"San
-        Mateo","state":"CA","street":"364 South Railroad Avenue","zip":"94401"},"ask_for":["Laura
-        Fanucchi (Homesharing Program)","Carolyn Moore (Self-Sufficiency Program))"],"contacts":[{"_id":"521d32ba1974fcdb2b000084","name":"Kate
-        Comfort Harr","title":"Executive Director"}],"coordinates":[-122.3211965,37.5654824],"created_at":"2013-08-27T16:14:02-07:00","description":"Homesharing
-        program that matches persons with a home or apartment to share with those
-        seeking housing, thereby reducing housing costs for both. The Self-Sufficiency
-        Program provides housing, case management and supportive services to heads
-        of households motivated to achieve self-reliance.  The agency also owns and
-        manages properties intended to provide affordable housing for individuals
-        and families.","emails":["mailbox@hiphousing.org"],"hours":"Monday-Friday,
-        8-5","kind":"Human Services","languages":["Chinese (Cantonese)","German","Spanish","Tagalog"],"mail_address":{"attention":"HIP
-        Housing","city":"San Mateo","state":"CA","street":"364 South Railroad Avenue","zip":"94401"},"name":"Human
-        Investment Project (HIP Housing)","phones":[{"number":"650 348-6660","hours":"(Monday-Friday,
-        8-5)"}],"short_desc":"Sponsors a number of programs designed to help senior
-        citizens, single parents or persons with low or modest incomes to obtain housing
-        or remain in their own homes.","transportation":"SAMTRANS stops within 2 blocks,
-        CALTRAIN stops within 1 block.","updated_at":"2013-11-07T12:47:27-08:00","urls":["http://www.hiphousing.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000083","services":[{"_id":"521d32bb1974fcdb2b000087","audience":"Anyone
-        in need of housing or a housemate, single parents and low-income families
-        motivated to transition from welfare to work","eligibility":"Resident of San
-        Mateo County or desiring to become a resident","fees":"None.","funding_sources":["Donations","Federal","Grants","State"],"how_to_apply":"Apply
-        by phone for appointment.","keywords":["ADMINISTRATION AND PLANNING SERVICES","Administration
-        and Planning","FINANCIAL ASSISTANCE SERVICES","Housing","HOUSING SERVICES","Family
-        Housing/Shared Housing","Relocation","Roommate/Housemate Matching Assistance","Low
-        Income/Subsidized Rental Housing","House Matching"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:13-08:00","wait":"No wait.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001d","depth":1,"lft":56,"name":"Help
-        Find Housing","oe_id":"103-02","parent_id":"52280f601edd37edff00001b","rgt":57},{"_id":"52280f611edd37edff000024","depth":1,"lft":70,"name":"Housing
-        Advice","oe_id":"103-04","parent_id":"52280f601edd37edff00001b","rgt":75},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97}]}],"organization":{"_id":"521d32ba1974fcdb2b000082","_slugs":["human-investment-project-hip-housing"],"created_at":"2013-08-27T16:14:02-07:00","name":"Human
-        Investment Project (HIP Housing)","updated_at":"2013-10-01T12:04:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000082","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000082/locations"},"slugs":["human-investment-project-hip-housing"],"id":"521d32ba1974fcdb2b000083","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000065","_slugs":["caminar"],"accessibility":["Wheelchair"],"address":{"city":"San
-        Mateo","state":"CA","street":"1720 South Amphlett Blvd., Suite 123","zip":"94402"},"ask_for":["Peg
-        Morris (Executive Director) "],"contacts":[{"_id":"521d32ba1974fcdb2b000066","name":"Peg
-        Morris","title":"Executive Director"}],"coordinates":[-122.3012308,37.5578428],"created_at":"2013-08-27T16:14:02-07:00","description":"A
-        community-based psychosocial rehabilitation service for persons with serious
-        and persistent psychiatric disabilities and co-occurring disorders. Offers
-        case management, supported housing, residential treatment, supported education,
-        vocational assessment and job placement, and a community medication clinic.   Formerly
-        known as Caminar CLC (Community Living Centers).","faxes":[{"number":"650
-        578-8697"}],"hours":"24 hour facility","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Caminar","city":"San
-        Mateo","state":"CA","street":"1720 South Amphlett Blvd., Suite 123","zip":"94402"},"name":"Caminar","phones":[{"number":"650
-        578-8691","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A community-based
-        psychosocial rehabiliation service for persons with serious and persistent
-        psychiatric disabilities.","transportation":"Varies according to program site.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.caminar.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000065","services":[{"_id":"521d32ba1974fcdb2b000069","audience":"Persons
-        with serious and persistent mental illness and co-occurring disorders","eligibility":"Resident
-        of San Mateo County, age 18 or over, receiving County of San Mateo mental
-        health services","fees":"Vary according to income. No one denied service due
-        to inability to pay if authorized by County. Cash and private insurance accepted.","funding_sources":["County","Donations","Fees","Grants","State","United
-        Way"],"how_to_apply":"Referral is required by San Mateo County Behavioral
-        Health and Recovery Services Division .","keywords":["MENTAL HEALTH SERVICES","Case
-        Management","Out-of-Home Care","Job Search/Placement","Outpatient Mental Health
-        Facilities","Residential Treatment Facilities","Psychiatric Case Management"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:46:44-08:00","wait":"Varies.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000075","depth":3,"lft":230,"name":"Mental
-        Health Evaluation","oe_id":"106-06-04-04","parent_id":"52280f691edd37edff000071","rgt":231},{"_id":"52280f6a1edd37edff00007a","depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6b1edd37edff000086","depth":2,"lft":265,"name":"Psychiatric
-        Emergency Services","oe_id":"106-06-08","parent_id":"52280f691edd37edff00006d","rgt":266},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
-        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f791edd37edff000126","depth":2,"lft":585,"name":"Job
-        Placement","oe_id":"110-01-01","parent_id":"52280f791edd37edff000125","rgt":586},{"_id":"52280f7a1edd37edff000135","depth":1,"lft":616,"name":"Supported
-        Employment","oe_id":"110-04","parent_id":"52280f791edd37edff000124","rgt":617}]}],"organization":{"_id":"521d32ba1974fcdb2b000064","_slugs":["caminar"],"created_at":"2013-08-27T16:14:02-07:00","name":"Caminar","updated_at":"2013-10-01T12:04:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064/locations"},"slugs":["caminar"],"id":"521d32ba1974fcdb2b000065","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645242000],"highlight":null,"_explanation":null},{"_id":"521d32b91974fcdb2b000008","_slugs":["legal-aid-society-of-san-mateo-county"],"accessibility":["Wheelchair"],"address":{"city":"Redwood
-        City","state":"CA","street":"330 Twin Dolphin Drive, Suite 123","zip":"94065"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32b91974fcdb2b000009","name":"M.
-        Stacey Hawver","title":"Executive Director"},{"_id":"521d32b91974fcdb2b00000a","name":"Hope
-        Nakamura","title":"Directing Attorney"},{"_id":"521d32b91974fcdb2b00000b","name":"Tricia
-        Berke Vinson","title":"Directing Attorney"}],"coordinates":[-122.2584729,37.5210911],"created_at":"2013-08-27T16:14:01-07:00","description":"Provides
-        legal advice and counsel on civil matters to low income individuals, families
-        and groups. Civil cases include divorce, domestic violence, landlord/tenant
-        issues, government benefits, public housing problems, elder abuse and consumer
-        complaints (seniors). The Clients'' Rights Advocate and the Kids in Crisis
-        (KIC) Project help persons with disabilities with problems related to the
-        Americans with Disabilities Act, transit and para-transit, the Golden Gate
-        Regional Center, the San Mateo County Mental Health Division, Social Security
-        Administration, the Regional Center and California Children Services. The
-        Health Consumer Center assists people with problems or questions relating
-        to Medi-Cal, Healthy Families, Healthy Kids, Medicare, Well, and some private
-        insurance. The Teen Parent Project staff works with teen parents on such problems
-        as paternity, domestic violence, benefits and support. The Home Savers provides
-        advice and representation to individuals at risk of eviction. The Family Advocacy
-        Program (FAP), a collaboration with Lucille Packard Children''s Hospital,
-        helps pediatric patients with issues affecting their health. The Seniors Advocates
-        Program provides legal assistance for the elderly concerning elder abuse and
-        consumer issues. Advance Health Directive Clinics are also held several times
-        a year. Staff can visit homebound people.","emails":["jgoldstein@legalaidsmc.org"],"faxes":[{"number":"650
-        517-8973"}],"hours":"Monday-Friday, 9-12, 1-5","kind":"Human Services","languages":["French","Russian","Spanish"],"mail_address":{"attention":"Legal
-        Aid Society","city":"Redwood City","state":"CA","street":"330 Twin Dolphin
-        Drive, Suite 123","zip":"94065"},"name":"Legal Aid Society of San Mateo County","phones":[{"number":"800
-        381-8898"}],"short_desc":"Legal advice and counsel on civil matters for individuals,
-        families and groups whose incomes are below an established level.","transportation":"SAMTRANS
-        stops within 4 blocks.","updated_at":"2013-11-07T12:42:46-08:00","urls":["http://www.legalaidsmc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000008","services":[{"_id":"521d32b91974fcdb2b00000e","audience":"Low-income
-        residents of San Mateo County, persons with disabilities, seniors, teen parents","eligibility":"Low
-        income, disabled, or senior","fees":"None for attorney services. Donations
-        welcome.","funding_sources":["Donations","Federal","Grants","United Way"],"how_to_apply":"Apply
-        by phone for appointment and some clinics.","keywords":["Certificates/Forms
-        Assistance","Legal Counseling","Legal Representation","Landlord/Tenant Assistance","Low-Cost","Low
-        Cost"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:44-08:00","wait":"1
-        to 2 weeks. Emergencies seen immediately.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
-        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7b1edd37edff00013f","depth":2,"lft":635,"name":"Discrimination
-        & Civil Rights","oe_id":"111-01-03","parent_id":"52280f7a1edd37edff000138","rgt":636},{"_id":"52280f7c1edd37edff000146","depth":1,"lft":650,"name":"Representation","oe_id":"111-04","parent_id":"52280f7a1edd37edff000137","rgt":651}]}],"organization":{"_id":"521d32b91974fcdb2b000007","_slugs":["legal-aid-society-of-san-mateo-county"],"created_at":"2013-08-27T16:14:01-07:00","name":"Legal
-        Aid Society of San Mateo County","updated_at":"2013-10-01T12:04:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007/locations"},"slugs":["legal-aid-society-of-san-mateo-county"],"id":"521d32b91974fcdb2b000008","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645241000],"highlight":null,"_explanation":null}]'
+      string: '[]'
     http_version: 
-  recorded_at: Thu, 14 Nov 2013 04:49:34 GMT
+  recorded_at: Thu, 14 Nov 2013 04:39:50 GMT
 recorded_with: VCR 2.5.0
