@@ -7,7 +7,7 @@
       - class_name = css_class_format(@org.kind.sub("'",""))
       %section
         %p.kind
-          %a{:href=>"/organizations?kind[]=#{CGI::escape(@org.kind)}", :title=>"All locations of type #{@org.kind}",:class=>"kind icon #{class_name}"}
+          %a{:href=>"/organizations?kind=#{CGI::escape(@org.kind)}", :title=>"All locations of type #{@org.kind}",:class=>"kind icon #{class_name}"}
             = @org.kind
 
     %hgroup
