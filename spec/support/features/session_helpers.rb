@@ -66,7 +66,7 @@ module Features
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
         find(".closed").trigger("mousedown")
-        find(".options.available-options").should have_css(".toggle-group", :count=>count)
+        find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".open").trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -81,7 +81,7 @@ module Features
         # test clicking toggle functionality
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
-        find(".options.available-options").should have_css(".toggle-group", :count=>count)
+        find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -96,10 +96,10 @@ module Features
       within("##{name}-options") do
         # test adding custom value functionality
         find(".closed").trigger("mousedown")
-        find(".options.available-options").should have_css(".toggle-group", :count=>2)
-        all(".options.available-options label").last.trigger("mousedown")
+        find(".available-options").should have_css(".toggle-group", :count=>2)
+        all(".available-options label").last.trigger("mousedown")
         fill_in("#{name}-option-input", :with => "Custom Value")
-        all(".options.available-options label").last.trigger("mousedown")
+        all(".available-options label").last.trigger("mousedown")
         expect(all(".current-option label").last).to have_content("Custom Value")
       end
     end
@@ -111,7 +111,7 @@ module Features
       within("##{name}-options") do
         save_screenshot("spec/screenshots/#{name}.png")
         find(".closed").trigger('mousedown')
-        find(".options.available-options").should have_css(".toggle-group", :count=>2)
+        find(".available-options").should have_css(".toggle-group", :count=>2)
         find_field("#{name}-option-input").value.should eq field
       end
     end
