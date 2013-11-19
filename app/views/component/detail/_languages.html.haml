@@ -7,5 +7,7 @@
       - org[field].sort.each do |lang|
         %li
           %span
-            - lang_url = /.+\((.+)\)/.match(lang).nil? ? lang : /.+\((.+)\)/.match(lang)[1]
-            = link_to lang, location_path(@org.id, @search_params.merge(:language => lang_url))
+            -# Disables languages link till there's a corresponding filter that can be toggled!
+              - lang_url = /.+\((.+)\)/.match(lang).nil? ? lang : /.+\((.+)\)/.match(lang)[1]
+              = link_to lang, location_path(@org.id, @search_params.merge(:language => lang_url))
+            = lang
