@@ -8,51 +8,51 @@ feature "results page search", :js=>true do
   end
 
   # test filter fieldset legend toggling across all filters
-  scenario 'when location filter has no cached values and legend is toggled', :vcr do
+  xscenario 'when location filter has no cached values and legend is toggled', :vcr do
     test_filter_legend("location")
   end
-  scenario 'when service-area filter has no cached values and legend is toggled', :vcr do
+  xscenario 'when service-area filter has no cached values and legend is toggled', :vcr do
     test_filter_legend("service-area","San Mateo County, CA")
   end
-  scenario 'when kind filter has no cached values and legend is toggled', :vcr do
+  xscenario 'when kind filter has no cached values and legend is toggled', :vcr do
     test_filter_legend("kind", "Human Services",13)
   end
-  scenario 'when agency filter has no cached values and legend is toggled', :vcr do
+  xscenario 'when agency filter has no cached values and legend is toggled', :vcr do
     test_filter_legend("org-name")
   end
 
   # test filter fieldset toggle toggling across all filters
-  scenario 'when location filter has no cached values and toggle is toggled', :vcr do
+  xscenario 'when location filter has no cached values and toggle is toggled', :vcr do
     test_filter_toggle("location")
   end
-  scenario 'when service-area filter has no cached values and toggle is toggled', :vcr do
+  xscenario 'when service-area filter has no cached values and toggle is toggled', :vcr do
     test_filter_toggle("service-area","San Mateo County, CA")
   end
-  scenario 'when kind filter has no cached values and toggle is toggled', :vcr do
+  xscenario 'when kind filter has no cached values and toggle is toggled', :vcr do
     test_filter_toggle("kind", "Human Services",13)
   end
-  scenario 'when agency filter has no cached values and toggle is toggled', :vcr do
+  xscenario 'when agency filter has no cached values and toggle is toggled', :vcr do
     test_filter_toggle("org-name")
   end
 
   # test adding custom value to filters that accept custom values
-  scenario 'when location filter has no cached values and custom value is added', :vcr do
+  xscenario 'when location filter has no cached values and custom value is added', :vcr do
     test_filter_custom_value("location")
   end
-  scenario 'when agency filter has no cached values and custom value is added', :vcr do
+  xscenario 'when agency filter has no cached values and custom value is added', :vcr do
     test_filter_custom_value("org-name")
   end
 
   # test adding custom value to filters and retrieving no results
-  scenario 'when location filter has custom value and no results', :vcr do
+  xscenario 'when location filter has custom value and no results', :vcr do
     test_filter_custom_value_no_results("location","San Mateo, CA")
   end
-  scenario 'when agency filter has custom value and no results', :vcr do
+  xscenario 'when agency filter has custom value and no results', :vcr do
     test_filter_custom_value_no_results("org-name","United States Government")
   end
 
   # test adding custom value to filters and retrieving results
-  scenario 'when location filter has custom value and has results', :vcr do
+  xscenario 'when location filter has custom value and has results', :vcr do
     name = "location"
     field = "San Mateo, CA"
     set_filter(name,field)
@@ -66,7 +66,7 @@ feature "results page search", :js=>true do
       page.should_not have_css("##{name}-option-input")
     end
   end
-  scenario 'when agency filter has custom value and has results', :vcr do
+  xscenario 'when agency filter has custom value and has results', :vcr do
     name = "org-name"
     field = "United States Government"
     set_filter(name,field)
@@ -82,28 +82,28 @@ feature "results page search", :js=>true do
   end
 
   # test filter selection across all filters
-  scenario 'when location filter has cached values and new option is selected', :vcr do
+  xscenario 'when location filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
     set_filter("location","San Francisco, CA",false)
     find('#update-btn').click
     expect(all("#location-options .current-option label").last).to have_content("San Francisco, CA")
   end
-  scenario 'when service-area filter has cached values and new option is selected', :vcr do
+  xscenario 'when service-area filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
     set_filter("service-area","All",false)
     find('#update-btn').click
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
-  scenario 'when kind filter has cached values and new option is selected', :vcr do
+  xscenario 'when kind filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
     set_filter("kind","Other",false)
     find('#update-btn').click
     expect(all("#kind-options .current-option label").last).to have_content("Other")
   end
-  scenario 'when agency filter has cached values and new option is selected', :vcr do
+  xscenario 'when agency filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
     set_filter("org-name","San Mateo County Human Services Agency",false)
@@ -115,9 +115,10 @@ feature "results page search", :js=>true do
   # user clicks filter links in results list
   scenario 'when clicking organization link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    find("#results-container").first("a", text: "St. Vincent de Paul Society").trigger("click")
-    expect(page).to_not have_content("Shelter Network")
-    expect(page).to have_content("San Mateo Homeless Help Center")
+    page.should have_content("St. Vincent de Paul Society")
+    first("#list-view li").click_link("St. Vincent de Paul Society")
+    page.should_not have_content("Shelter Network")
+    page.should have_content("San Mateo Homeless Help Center")
 
     # check filter settings
     expect(all(:css,"#location-options .current-option label").last).to have_content("All")
@@ -128,7 +129,8 @@ feature "results page search", :js=>true do
 
   scenario 'when clicking kind link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    find("#results-container").first("a", text: "Human Services").trigger("click")
+    page.should have_content("St. Vincent de Paul Society")
+    first("#list-view li").click_link("Human Services")
     expect(page).to_not have_content("Shelter Network")
     expect(page).to have_content("San Mateo County Human Services Agency")
 
@@ -138,6 +140,5 @@ feature "results page search", :js=>true do
     expect(all(:css,"#kind-options .current-option label").last).to have_content("Human Services")
     expect(all(:css,"#org-name-options .current-option label").last).to have_content("All")
   end
-
 
 end

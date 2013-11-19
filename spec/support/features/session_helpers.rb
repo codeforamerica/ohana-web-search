@@ -62,10 +62,12 @@ module Features
     # @param val [String] The value that should be showing in the current toggle.
     # @param count [Number] The amount of toggle that should be showing.
     def test_filter_legend(name,val="All",count=2)
+      find(".require-loaded")
       within("##{name}-options") do
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
         find(".closed").trigger("mousedown")
+        page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".open").trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
@@ -77,10 +79,12 @@ module Features
     # @param val [String] The value that should be showing in the current toggle.
     # @param count [Number] The amount of toggle that should be showing.
     def test_filter_toggle(name,val="All",count=2)
+      find(".require-loaded")
       within("##{name}-options") do
         # test clicking toggle functionality
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
+        page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
@@ -93,9 +97,11 @@ module Features
     # @param val [String] The value that should be showing in the current toggle.
     # @param count [Number] The amount of toggle that should be showing.
     def test_filter_custom_value(name)
+      find(".require-loaded")
       within("##{name}-options") do
         # test adding custom value functionality
         find(".closed").trigger("mousedown")
+        page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>2)
         all(".available-options label").last.trigger("mousedown")
         fill_in("#{name}-option-input", :with => "Custom Value")
@@ -110,6 +116,7 @@ module Features
 
       within("##{name}-options") do
         find(".closed").trigger('mousedown')
+        page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>2)
         find_field("#{name}-option-input").value.should eq field
       end
