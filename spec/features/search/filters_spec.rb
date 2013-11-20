@@ -92,9 +92,10 @@ feature "results page search", :js=>true do
   scenario 'when service-area filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
+    page.should have_content("590 results")
     set_filter("service-area","All",false)
     find('#update-btn').click
-    page.should have_content("Veterans Affairs San Francisco Health Care System")
+    page.should have_content("679 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
   scenario 'when kind filter has cached values and new option is selected', :vcr do
