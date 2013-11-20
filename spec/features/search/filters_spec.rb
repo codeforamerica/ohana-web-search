@@ -60,8 +60,10 @@ feature "results page search", :js=>true do
 
     find('#update-btn').click
 
+    find(".require-loaded")
     within("##{name}-options") do
       find(".closed").click
+      page.should have_selector(".open")
       find(".available-options").should have_css(".toggle-group", :count=>3)
       page.should_not have_css("##{name}-option-input")
     end
@@ -74,8 +76,10 @@ feature "results page search", :js=>true do
 
     find('#update-btn').click
 
+    find(".require-loaded")
     within("##{name}-options") do
       find(".closed").click
+      page.should have_selector(".open")
       find(".available-options").should have_css(".toggle-group", :count=>3)
       page.should_not have_css("##{name}-option-input")
     end
