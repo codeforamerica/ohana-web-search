@@ -144,8 +144,8 @@ feature "results page search", :js=>true do
     search(:keyword => "St. Vincent de Paul Society")
     page.should have_content("St. Vincent de Paul Society")
     first("#list-view li").click_link("Human Services")
-    expect(page).to_not have_content("Shelter Network")
-    expect(page).to have_content("San Mateo County Human Services Agency")
+    page.should_not have_content("Shelter Network")
+    page.should have_content("San Mateo County Human Services Agency")
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")

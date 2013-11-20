@@ -6,7 +6,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "703-555-1212" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("(703) 555-1212")
+      page.should have_content("(703) 555-1212")
     end
   end
 
@@ -14,7 +14,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "7035551212" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("(703) 555-1212")
+      page.should have_content("(703) 555-1212")
     end
   end
 
@@ -22,7 +22,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "703.555.1212" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("(703) 555-1212")
+      page.should have_content("(703) 555-1212")
     end
   end
 
@@ -30,7 +30,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "703 555 1212" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("(703) 555-1212")
+      page.should have_content("(703) 555-1212")
     end
   end
 
@@ -38,7 +38,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "703-555-121" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("703-555-121")
+      page.should have_content("703-555-121")
     end
   end
 
@@ -46,7 +46,7 @@ feature 'phone number formatting' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
       :erb => { :number => "703-555-12123" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
-      expect(page).to have_content("703-555-12123")
+      page.should have_content("703-555-12123")
     end
   end
 end

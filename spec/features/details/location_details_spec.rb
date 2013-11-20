@@ -6,11 +6,11 @@ feature "location details" do
     it "includes address elements" do
       search_for_maceo
       visit_details
-      expect(page).to have_content("Mailing Address")
-      expect(page).to have_content("Physical Address")
-      expect(page).to have_content("2013 Avenue of the fellows")
-      expect(page).to have_content("90210")
-      expect(page).to have_content("05201")
+      page.should have_content("Mailing Address")
+      page.should have_content("Physical Address")
+      page.should have_content("2013 Avenue of the fellows")
+      page.should have_content("90210")
+      page.should have_content("05201")
     end
   end
 
@@ -20,7 +20,7 @@ feature "location details" do
       visit_details
       find_link("maceo@parker.com")
       find_link("a", :text=>"Back").click
-      expect(page).to have_selector("#list-view")
+      page.should have_selector("#list-view")
       page.find(".agency").should have_link("SanMaceo Example Agency.")
     end
   end
