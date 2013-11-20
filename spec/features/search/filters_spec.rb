@@ -89,8 +89,10 @@ feature "results page search", :js=>true do
   scenario 'when location filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
+    page.should have_content("590 results")
     set_filter("location","San Francisco, CA",false)
     find('#update-btn').click
+    page.should have_content("78 results")
     expect(all("#location-options .current-option label").last).to have_content("San Francisco, CA")
   end
   scenario 'when service-area filter has cached values and new option is selected', :vcr do
@@ -99,21 +101,26 @@ feature "results page search", :js=>true do
     page.should have_content("590 results")
     set_filter("service-area","All",false)
     find('#update-btn').click
+    save_screenshot("spec/screenshots/one.png")
     page.should have_content("679 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
   scenario 'when kind filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
+    page.should have_content("590 results")
     set_filter("kind","Other",false)
     find('#update-btn').click
+    page.should have_content("521 results")
     expect(all("#kind-options .current-option label").last).to have_content("Other")
   end
   scenario 'when agency filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#update-btn').click
+    page.should have_content("590 results")
     set_filter("org-name","San Mateo County Human Services Agency",false)
     find('#update-btn').click
+    page.should have_content("11 results")
     expect(all("#org-name-options .current-option label").last).to have_content("San Mateo County Human Services Agency")
   end
 
