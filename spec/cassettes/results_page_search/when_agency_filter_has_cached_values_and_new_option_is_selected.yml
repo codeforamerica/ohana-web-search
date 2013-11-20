@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,69 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 19 Nov 2013 23:56:06 GMT
+      - Tue, 19 Nov 2013 23:58:00 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.23
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 95255102e68944a940d5b8750d407955
+      X-Runtime:
+      - '0.030251'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 23:58:00 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Nov 2013 23:58:01 GMT
       Etag:
       - '"99512e082b5556b52f19e13916e3fe29"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.3 + Phusion Passenger 4.0.23
@@ -45,9 +102,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 0e3380b53bed459c8c12cee91f75ea94
+      - 6bb2fe5794c476de22a47415794bc0f9
       X-Runtime:
-      - '0.283513'
+      - '0.392617'
       X-Total-Count:
       - '590'
       X-Total-Pages:
@@ -1010,10 +1067,10 @@ http_interactions:
         for Utilities","oe_id":"107-02-04-02","parent_id":"52280f6d1edd37edff0000a0","rgt":321}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 23:56:06 GMT
+  recorded_at: Tue, 19 Nov 2013 23:58:02 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=sdaff&kind=Human%20Services&location=94403&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&org_name=San%20Mateo%20County%20Human%20Services%20Agency&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -1036,9 +1093,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 19 Nov 2013 23:56:08 GMT
+      - Tue, 19 Nov 2013 23:58:04 GMT
       Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - '"782c58970d30f56bd89513ebda923ceb"'
       Server:
       - nginx/1.4.3 + Phusion Passenger 4.0.23
       Status:
@@ -1050,22 +1107,434 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c9dababbc7c95f6642c44d9560dd455f
+      - 565c26addaf7b35f26ccf32ff9e83d1d
       X-Runtime:
-      - '0.137365'
+      - '0.075991'
       X-Total-Count:
-      - '0'
+      - '11'
       X-Total-Pages:
-      - '0'
+      - '1'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '2'
+      - '51796'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: '[{"_id":"5277f9c4ed6a9f3403000005","_slugs":["redwood-city-office-1"],"accessibility":["Disabled
+        Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
+        van"],"address":{"city":"Redwood City","state":"CA","street":"2500 Middlefield
+        Rd.","zip":"94063"},"coordinates":[-122.2141324,37.4773738],"created_at":"2013-11-04T11:47:16-08:00","description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","faxes":[{"number":"650
+        364-5684"}],"hours":"Monday-Friday, 8:00am-5:00pm; 24 hours a day, call 1-800-223-8383
+        for case status; 24 hours a day, call (650) 802-7922 to report child abuse","kind":"Human
+        Services","mail_address":{"attention":"","city":"Redwood City","state":"CA","street":"2500
+        Middlefield Rd.","zip":"94063"},"name":"Redwood City Office","phones":[{"number":"800-223-8383","department":"Economic
+        Self-Sufficiency"},{"number":"650-802-7922","department":"Children and Family
+        Services"}],"short_desc":"Provides social services eligibility determination
+        and assistance for Health Coverage, CalFresh, CalWORKs and General Assistance
+        and Children and Family Services.","transportation":"SamTrans stops in front
+        on the building, and CalTrain is located within one mile of the office location.","updated_at":"2013-11-12T23:02:14-08:00","urls":["http://www.smchsa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/5277f9c4ed6a9f3403000005","services":[{"_id":"5277fbb737f9ba0a4700000b","audience":"San
+        Mateo County residents seeking social service assistance.","description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","eligibility":"Determined
+        based on eligibility regulations and unique family or individual household
+        composition and resource levels.","fees":"None.","how_to_apply":"There are
+        four ways to apply for social services: 1) Mail: Request an application by
+        phone by calling the Human Services Agency at 1-800-223-8383 or pick one up
+        at any Human Services Agency office. 2) Website:  Complete and submit an application
+        online at www.mybenefitscalwin.org or www.coveredca.com 3) Call the Human
+        Services Agency at 800-223-8383 to speak to a representative who can answer
+        your questions or help you apply by phone. 4) In person:  Visit one of the
+        Human Services Agency offices to apply in person or pick up an application.  View
+        all our centers here: http://www.smc-connect.org/organizations?org_name=San+Mateo+County+Human+Services+Agency","keywords":["Health
+        Insurance","Food","Cash Aid","Welfare","Obamacare","Medical Assistance","Social
+        Services"],"service_areas":["San Mateo County"],"updated_at":"2013-11-12T23:02:15-08:00","wait":"Based
+        on method of application and daily customer volume. Our goal is to serve all
+        residents with the best and fastest service to meet their needs.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6e1edd37edff0000b0","depth":1,"lft":350,"name":"Government
+        Benefits","oe_id":"107-03","parent_id":"52280f6b1edd37edff000087","rgt":361},{"_id":"52280f6f1edd37edff0000b2","depth":2,"lft":353,"name":"Food
+        Benefits","oe_id":"107-03-02","parent_id":"52280f6e1edd37edff0000b0","rgt":354},{"_id":"52280f6f1edd37edff0000b4","depth":2,"lft":357,"name":"Understand
+        Government Programs","oe_id":"107-03-04","parent_id":"52280f6e1edd37edff0000b0","rgt":358},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f731edd37edff0000dc","depth":1,"lft":438,"name":"Navigating
+        the System","oe_id":"108-05","parent_id":"52280f711edd37edff0000c4","rgt":449},{"_id":"52280f731edd37edff0000dd","depth":2,"lft":439,"name":"Help
+        Fill out Forms","oe_id":"108-05-01","parent_id":"52280f731edd37edff0000dc","rgt":440},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["redwood-city-office-1"],"id":"5277f9c4ed6a9f3403000005","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1383594436000],"highlight":null,"_explanation":null},{"_id":"521d33751974fcdb2b0022bb","_slugs":["health-insurance-telecenter"],"address":{"city":"Belmont","state":"CA","street":"310
+        Harbor Boulevard, Building E","zip":"94002"},"contacts":[{"_id":"521d33751974fcdb2b0022bc","name":"Eduardo
+        Kiryczun","title":"Operations Manager"}],"coordinates":[-122.2674564,37.5209317],"created_at":"2013-08-27T16:17:09-07:00","description":"Offers
+        a toll-free number to report Medi-Cal changes, ask questions about health
+        coverage and other services.","faxes":[{"number":"650 620-9732"}],"hours":"Monday-Friday,
+        8-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"San
+        Mateo County Human Service","city":"Belmont","state":"CA","street":"310 Harbor
+        Boulevard, Building E","zip":"94002"},"name":"Health Insurance TeleCenter","phones":[{"number":"800
+        223-8383","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Offers a toll-free
+        number to report Medi-Cal changes, ask questions about health coverage and
+        other services.","updated_at":"2013-11-07T12:46:44-08:00","urls":["http://www.smchsa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33751974fcdb2b0022bb","services":[{"_id":"521d33771974fcdb2b0022ca","audience":"Medi-Cal
+        recipients","funding_sources":["Federal","State"],"how_to_apply":"Phone for
+        service.","keywords":["Medicaid","update medical information","health care
+        consultants"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:45:45-08:00","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f701edd37edff0000c0","depth":1,"lft":382,"name":"Insurance","oe_id":"107-06","parent_id":"52280f6b1edd37edff000087","rgt":387},{"_id":"52280f711edd37edff0000c1","depth":2,"lft":383,"name":"Health
+        Insurance","oe_id":"107-06-01","parent_id":"52280f701edd37edff0000c0","rgt":384}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["health-insurance-telecenter"],"id":"521d33751974fcdb2b0022bb","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645429000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022a3","_slugs":["northern-region-dot-south-san-francisco-services-center"],"accessibility":["Disabled
+        Parking","Ramp","Wheelchair"],"address":{"city":"South San Francisco","state":"CA","street":"1487
+        Huntington Avenue","zip":"94080"},"contacts":[{"_id":"521d33741974fcdb2b0022a4","name":"Jerry
+        Lindner","title":"Regional Program Manager"}],"coordinates":[-122.421524,37.644686],"created_at":"2013-08-27T16:17:08-07:00","description":"Processes
+        applications for financial assistance programs such as CalWORKS, Medi-Cal,
+        CalFresh (Food Stamps), General Assistance and child care.   To get the process
+        started, applicants are encouraged to apply online at https://www.mybenefitscalwin.org/.","faxes":[{"number":"650
+        877-5606"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
+        (Mandarin)","Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"South
+        San Francisco Services Ctr","city":"South San Francisco","state":"CA","street":"1487
+        Huntington Avenue","zip":"94080"},"name":"Northern Region., South San Francisco
+        Services Center","phones":[{"number":"650 877-5608","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Processes applications for financial assistance programs
+        such as CalWORKS, Medi-Cal and Food Stamps.","transportation":"SAMTRANS stops
+        in front.","updated_at":"2013-11-07T12:45:05-08:00","urls":["https://www.mybenefitscalwin.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b0022a3","services":[{"_id":"521d33761974fcdb2b0022c4","eligibility":"Vary
+        according to program","fees":"None.","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["EMERGENCY SERVICES","Financial Assistance","Health","General
+        Relief","TANF","Child Care Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Child
+        Welfare","Calworks","Welfare"],"service_areas":["San Bruno","South San Francisco"],"updated_at":"2013-10-06T18:12:55-07:00","wait":"First
+        come, first served basis.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5f1edd37edff000017","depth":1,"lft":44,"name":"Help
+        Pay for Food","oe_id":"102-06","parent_id":"52280f5e1edd37edff000011","rgt":49},{"_id":"52280f5f1edd37edff000019","depth":2,"lft":47,"name":"Food
+        Benefits","oe_id":"102-06-02","parent_id":"52280f5f1edd37edff000017","rgt":48},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","depth":1,"lft":286,"name":"Financial
+        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f6c1edd37edff000091","depth":2,"lft":287,"name":"Help
+        Pay for Childcare","oe_id":"107-02-01","parent_id":"52280f6c1edd37edff000090","rgt":292},{"_id":"52280f6e1edd37edff0000b0","depth":1,"lft":350,"name":"Government
+        Benefits","oe_id":"107-03","parent_id":"52280f6b1edd37edff000087","rgt":361},{"_id":"52280f6f1edd37edff0000b2","depth":2,"lft":353,"name":"Food
+        Benefits","oe_id":"107-03-02","parent_id":"52280f6e1edd37edff0000b0","rgt":354},{"_id":"52280f6f1edd37edff0000b4","depth":2,"lft":357,"name":"Understand
+        Government Programs","oe_id":"107-03-04","parent_id":"52280f6e1edd37edff0000b0","rgt":358},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f731edd37edff0000dc","depth":1,"lft":438,"name":"Navigating
+        the System","oe_id":"108-05","parent_id":"52280f711edd37edff0000c4","rgt":449},{"_id":"52280f731edd37edff0000dd","depth":2,"lft":439,"name":"Help
+        Fill out Forms","oe_id":"108-05-01","parent_id":"52280f731edd37edff0000dc","rgt":440}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["northern-region-dot-south-san-francisco-services-center"],"id":"521d33741974fcdb2b0022a3","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b00228a","_slugs":["central-region-dot-veterans-service-office"],"accessibility":["Disabled
+        Parking","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"Belmont","state":"CA","street":"400
+        Harbor Blvd, Bldg. B","zip":"94002"},"ask_for":["Veterans Service Officer","Veterans
+        Service Representative"],"contacts":[{"_id":"521d33741974fcdb2b00228b","name":"Diana
+        Kremer","title":"Veterans Services Officer"}],"coordinates":[-122.268615,37.5201137],"created_at":"2013-08-27T16:17:08-07:00","description":"An
+        advocacy service that helps veterans, survivors and dependents of veterans
+        file for Department of Veterans Affairs benefits and provides follow-up. Benefits
+        might include pension, compensation, home loans, benefits for disabled veterans
+        and information about hospital care. Provides information and referral to
+        providers of veterans'' services and other services as needed.","emails":["dkremer@co.sanmateo.ca.us"],"faxes":[{"number":"650
+        595-2419"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Interpreter"],"mail_address":{"attention":"Veterans
+        Service Office","city":"Belmont","state":"CA","street":"400 Harbor Blvd.,
+        Bldg. B","zip":"94002"},"name":"Central Region., Veterans Service Office","phones":[{"number":"650
+        802-6598"}],"short_desc":"Assists veterans, survivors and dependents of veterans.","transportation":"SAMTRANS
+        stops within 3 blocks.","updated_at":"2013-11-07T12:46:41-08:00","urls":["https://www.mybenefitscalwin.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b00228a","services":[{"_id":"521d33751974fcdb2b0022bf","audience":"Veterans,
+        dependents of veterans and survivors of veterans of military service","eligibility":"Veteran,
+        veteran dependent or survivor of deceased veteran","fees":"None.","funding_sources":["County","State"],"how_to_apply":"Varies
+        according to benefit or service. Appointment recommended.","keywords":["FINANCIAL
+        ASSISTANCE SERVICES","Health","Housing","Veteran Compensation and Pension
+        Benefits","Veterans","PTSD","Disabled Vets"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:45:20-08:00","wait":"Varies."}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["central-region-dot-veterans-service-office"],"id":"521d33741974fcdb2b00228a","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b002296","_slugs":["central-region-dot-belmont-harbor-park"],"accessibility":["Disabled
+        Parking","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"Belmont","state":"CA","street":"400
+        Harbor Blvd., Bldg. B","zip":"94002-4047"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d33741974fcdb2b002297","title":"Regional
+        Program Manager"},{"_id":"521d33741974fcdb2b002298","name":"Jackie Coombs","title":"CAPI
+        Supervisor"}],"coordinates":[-122.268615,37.5201137],"created_at":"2013-08-27T16:17:08-07:00","description":"Processes
+        applications for Cash Assistance Program for Immigrants (CAPI) recipients
+        who are low-income, aged, blind or disabled legal permanent resident immigrants.","kind":"Human
+        Services","languages":["Chinese (Cantonese)","Chinese (Mandarin)","Filipino
+        (Tagalog)","French","Hindi","Persian (Farsi)","Spanish","Tamil","Vietnamese"],"mail_address":{"attention":"Belmont
+        Harbor Park","city":"Belmont","state":"CA","street":"400 Harbor Blvd., Bldg.
+        B","zip":"94002-4047"},"name":"Central Region., Belmont Harbor Park","phones":[{"number":"800
+        648-0954"}],"short_desc":"Processes applications for Cash Assistance Program
+        for Immigrants (CAPI).","transportation":"SAMTRANS stops within 3 blocks.","updated_at":"2013-10-01T12:17:00-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b002296","services":[{"_id":"521d33751974fcdb2b0022c1","eligibility":"Low-income,
+        aged, blind or disabled legal permanent resident immigrant","fees":"None.","funding_sources":["County","Federal","State"],"how_to_apply":"Apply
+        by phone for an appointment.","keywords":["FINANCIAL ASSISTANCE SERVICES","General
+        Support","Cash Assistance Program for Immigrants","CalWORKs","CalFRESH","Job
+        Information Center"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:41-08:00","wait":"No
+        wait.","categories":[{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","depth":1,"lft":286,"name":"Financial
+        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f6c1edd37edff000094","depth":2,"lft":293,"name":"Help
+        Pay for Food","oe_id":"107-02-02","parent_id":"52280f6c1edd37edff000090","rgt":298},{"_id":"52280f6c1edd37edff000095","depth":3,"lft":294,"name":"Food
+        Benefits","oe_id":"107-02-02-01","parent_id":"52280f6c1edd37edff000094","rgt":295},{"_id":"52280f6e1edd37edff0000b0","depth":1,"lft":350,"name":"Government
+        Benefits","oe_id":"107-03","parent_id":"52280f6b1edd37edff000087","rgt":361},{"_id":"52280f6f1edd37edff0000b2","depth":2,"lft":353,"name":"Food
+        Benefits","oe_id":"107-03-02","parent_id":"52280f6e1edd37edff0000b0","rgt":354},{"_id":"52280f6f1edd37edff0000b4","depth":2,"lft":357,"name":"Understand
+        Government Programs","oe_id":"107-03-04","parent_id":"52280f6e1edd37edff0000b0","rgt":358},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["central-region-dot-belmont-harbor-park"],"id":"521d33741974fcdb2b002296","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b00229f","_slugs":["southern-region-dot-east-palo-alto-services-center"],"accessibility":["Interpreter
+        for the deaf","Disabled Parking","Elevator","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"East
+        Palo Alto","state":"CA","street":"2415 University Avenue, 3rd Floor","zip":"94303"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d33741974fcdb2b0022a0","name":"Elaine
+        Azzopardi","title":"Regional Program Manager"}],"coordinates":[-122.140106,37.472276],"created_at":"2013-08-27T16:17:08-07:00","description":"Processes
+        applications for financial assistance programs such as Temporary Assistance
+        for Needy Families (TANF), CalWORKS, food stamps and Medi-Cal.   Applicants
+        are assessed and directed to the most appropriate program to achieve self
+        sufficiency. Most adults on TANF immediately enter a Work First component.
+        Families and individuals with either acute or long-standing barriers to self
+        sufficiency are served by the Family Self-Sufficiency Team which provides
+        case management and specialty services through an assigned primary case manager.
+        Translation services are provided free to clients and include translation
+        of written documents and oral interpretation of services by appointment. Child
+        welfare services are also provided in family maintenance, family reunification
+        and long-term placement programs.","faxes":[{"number":"650 325-5327"}],"hours":"Monday-Friday,
+        8-5","kind":"Human Services","languages":["Chinese","Spanish"],"mail_address":{"attention":"East
+        Palo Alto Services Center","city":"East Palo Alto","state":"CA","street":"2415
+        University Avenue, 3rd Floor","zip":"94303"},"name":"Southern Region., East
+        Palo Alto Services Center","phones":[{"number":"650 363-4218","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Processes applications for financial assistance programs
+        for residents of East Palo Alto and Menlo Park.","transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2013-11-07T12:46:42-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b00229f","services":[{"_id":"521d33761974fcdb2b0022c3","eligibility":"Vary
+        according to program","fees":"None.","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["ADULT PROTECTION AND CARE SERVICES","Case
+        Management","EMERGENCY SERVICES","Financial Assistance","FINANCIAL ASSISTANCE
+        SERVICES","Food","Health","General Relief","TANF","Child Care Subsidies","Medicaid","Food
+        Stamps/SNAP","CalFresh","Child Welfare","CalWORKs","Welfare"],"service_areas":["East
+        Palo Alto","Menlo Park"],"updated_at":"2013-10-06T18:17:26-07:00","wait":"First
+        come, first served basis for walk-in applicants.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5f1edd37edff000017","depth":1,"lft":44,"name":"Help
+        Pay for Food","oe_id":"102-06","parent_id":"52280f5e1edd37edff000011","rgt":49},{"_id":"52280f5f1edd37edff000019","depth":2,"lft":47,"name":"Food
+        Benefits","oe_id":"102-06-02","parent_id":"52280f5f1edd37edff000017","rgt":48},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","depth":1,"lft":286,"name":"Financial
+        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f6c1edd37edff000094","depth":2,"lft":293,"name":"Help
+        Pay for Food","oe_id":"107-02-02","parent_id":"52280f6c1edd37edff000090","rgt":298},{"_id":"52280f6c1edd37edff000095","depth":3,"lft":294,"name":"Food
+        Benefits","oe_id":"107-02-02-01","parent_id":"52280f6c1edd37edff000094","rgt":295},{"_id":"52280f6e1edd37edff0000b0","depth":1,"lft":350,"name":"Government
+        Benefits","oe_id":"107-03","parent_id":"52280f6b1edd37edff000087","rgt":361},{"_id":"52280f6f1edd37edff0000b2","depth":2,"lft":353,"name":"Food
+        Benefits","oe_id":"107-03-02","parent_id":"52280f6e1edd37edff0000b0","rgt":354},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["southern-region-dot-east-palo-alto-services-center"],"id":"521d33741974fcdb2b00229f","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022af","_slugs":["northern-region-dot-south-san-francisco-services-center-dot-daly-city-family-resource-centers-dot-ben-franklin-family-resource-center"],"accessibility":["Disabled
+        Parking","Ramp","Wheelchair"],"address":{"city":"Colma","state":"CA","street":"700
+        Stewart Street, Room 17","zip":"94015"},"ask_for":["Natasha Bourbonnais"],"contacts":[{"_id":"521d33741974fcdb2b0022b0","name":"Natasha
+        Bourbonnais","title":"Site Supervisor"}],"coordinates":[-122.482136,37.6940951],"created_at":"2013-08-27T16:17:08-07:00","description":"Provides
+        prevention and early intervention at school sites in San Mateo County. Staff
+        works in collaboration with several school districts, county and city government,
+        local nonprofit agencies, and foundations to increase parental involvement
+        with the outcome of improving the health, safety, and academic, social, and
+        emotional success of children.   There are three school-based family resource
+        centers. The Ben Franklin Family Resource Center (650-301-8845) is located
+        at 700 Stewart, Room 17, Colma. Bayshore Family Resource Center (650-301-8828)
+        is located at 155 Oriente Street, Room 11. Jefferson Family Resource Center
+        (650-301-8836) is at 6996 Mission Street. The program is co-sponsored by the
+        San Mateo County Human Services Agency, the San Mateo County Office of Education,
+        the city of Daly City and the Jefferson Elementary, Jefferson Union High School
+        and Bayshore Elementary school districts.","hours":"Monday-Friday, 8-5","kind":"Human
+        Services","languages":["Chinese (Cantonese)","Chinese (Mandarin)","Spanish"],"mail_address":{"attention":"Kennedy
+        FRC","city":"Colma","state":"CA","street":"700 Stewart Street, Room 17","zip":"94015"},"name":"Northern
+        Region., South San Francisco Services Center., Daly City Family Resource Centers.,
+        Ben Franklin Family Resource Center","phones":[{"number":"650 301-8845","department":"Ben
+        Franklin Center","hours":"(Monday-Friday, 8-5)"}],"transportation":"SAMTRANS
+        stops within 2 blocks of all sites.","updated_at":"2013-10-01T12:17:02-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b0022af","services":[{"_id":"521d33761974fcdb2b0022c7","eligibility":"Resident
+        of catchment area and/or have child enrolled in the Jefferson School District,
+        Jefferson Union High School District or Bayshore School District","fees":"None.","funding_sources":["City","County","Grants","School
+        district"],"how_to_apply":"Walk in or apply by phone. Appointments available.","keywords":["CHILD
+        PROTECTION AND CARE SERVICES","Community Information","COMMUNITY SERVICES","Information
+        and Referral","EDUCATION SERVICES","Pupil Support/Tutoring","INDIVIDUAL AND
+        FAMILY DEVELOPMENT SERVICES","Growth and Adjustment","Parent/Family Involvement
+        in Education","Youth","Preventitive Services"],"service_areas":["Daly City"],"updated_at":"2013-11-11T00:45:56-08:00","wait":"No
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff000061","depth":2,"lft":191,"name":"Parenting
+        Education","oe_id":"106-04-05","parent_id":"52280f681edd37edff00005c","rgt":192},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["northern-region-dot-south-san-francisco-services-center-dot-daly-city-family-resource-centers-dot-ben-franklin-family-resource-center"],"id":"521d33741974fcdb2b0022af","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b00228e","_slugs":["vocational-rehabilitation-services-vrs-workcenter"],"accessibility":["Disabled
+        Parking","Elevator","Ramp","Disabled Restroom","Wheelchair"],"address":{"city":"San
+        Carlos","state":"CA","street":"550 Quarry Road","zip":"94070"},"ask_for":["Carmen
+        O''Keefe"],"contacts":[{"_id":"528680921a21b326aa000001","name":"Carmen O''Keefe","title":"Vocational
+        Rehabilitation Program Manager"},{"_id":"528680921a21b326aa000002","name":"Wendy
+        Jordan","title":"Vocational Couseling Supervisor"},{"_id":"528680921a21b326aa000003","name":"Judy
+        Downing","title":"Social Security Benefits Couseling"},{"_id":"528680921a21b326aa000004","name":"Joe
+        Hennen","title":"Medicare, Part D"},{"_id":"528680921a21b326aa000005","name":"Gretchen
+        Glynn","title":"Marketing Manager"}],"coordinates":[-122.2671065,37.5175545],"created_at":"2013-08-27T16:17:08-07:00","description":"A
+        vocational rehabilitation center for any employable county resident who is
+        disabled or economically disadvantaged who wishes to enter, re-enter or remain
+        in the labor market. Referrals are accepted from county agencies, the State
+        Department of Rehabilitation and private treatment providers. Services include
+        vocational evaluation, work adjustment training, vocational testing, vocational
+        social security benefits counseling, Medi Care Part D counseling, job placement,
+        and supported employment services. The Workcenter bids competitively for outside
+        contracts from industry - packaging, assembly, sorting, collating, etc. A
+        food service program provides training in culinary arts, hot lunches for the
+        workforce and catering in the public and private nonprofit sector. Provides
+        a Workfare component using the Workcenter to help GA (General Assistance)clients
+        earn their GA grants by working two days a week. GA clients must participate
+        in an intensive program to maintain their eligibility and to get them back
+        into the labor force. Provides vocational counseling, assessment and training,
+        skills and interest inventories,and case management in a structured transitional
+        work environment, job search, job placement and job coaching services as well
+        as information, referral and advocacy to persons with barriers to employment
+        including mental health, General Assistance, CalWORKs, alcohol and other drug
+        abuse issues, and the currently or formerly incarcerated.","faxes":[{"number":"650
+        596-5162"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Vocational
+        Rehabilitation Services","city":"San Carlos","state":"CA","street":"550 Quarry
+        Road","zip":"94070"},"name":"Vocational Rehabilitation Services (VRS) Workcenter","phones":[{"number":"650
+        802-6482","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Provides job training,
+        placement or employment for any employable county resident collecting General
+        Assistance or undergoing psychiatric treatment.","transportation":"SAMTRANS
+        stops within 3 blocks.","updated_at":"2013-11-15T12:14:10-08:00","urls":["http://www.smchsavrs.org","http://www.smchsa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b00228e","services":[{"_id":"521d33751974fcdb2b0022c0","audience":"Individuals
+        with barriers to employment (primarily mental health) who are not working
+        but want to obtain assistance with going back to work","description":"A vocational
+        rehabilitation center for any employable county resident who is disabled or
+        economically disadvantaged who wishes to enter, re-enter or remain in the
+        labor market. Referrals are accepted from county agencies, the State Department
+        of Rehabilitation and private treatment providers. Services include vocational
+        evaluation, work adjustment training, vocational testing, vocational social
+        security benefits counseling, Medi Care Part D counseling, job placement,
+        and supported employment services. The Workcenter bids competitively for outside
+        contracts from industry - packaging, assembly, sorting, collating, etc. A
+        food service program provides training in culinary arts, hot lunches for the
+        workforce and catering in the public and private nonprofit sector. Provides
+        a Workfare component using the Workcenter to help GA (General Assistance)clients
+        earn their GA grants by working two days a week. GA clients must participate
+        in an intensive program to maintain their eligibility and to get them back
+        into the labor force. Provides vocational counseling, assessment and training,
+        skills and interest inventories,and case management in a structured transitional
+        work environment, job search, job placement and job coaching services as well
+        as information, referral and advocacy to persons with barriers to employment
+        including mental health, General Assistance, CalWORKs, alcohol and other drug
+        abuse issues, and the currently or formerly incarcerated.","eligibility":"County
+        resident disabled or economically disadvantaged","fees":"None.","how_to_apply":"Referral
+        from therapist, California State Department of Rehabilitation or eligibility
+        worker required.","keywords":["EMPLOYMENT/TRAINING SERVICES","Job Counseling/Testing","Job
+        Information/Placement/Referral","Job Training","General Relief","Job Search/Placement","Vocational
+        Rehabilitation"],"service_areas":["San Mateo County"],"updated_at":"2013-11-15T12:14:11-08:00","wait":"1
+        week to 10 days.","categories":[{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6e1edd37edff0000b0","depth":1,"lft":350,"name":"Government
+        Benefits","oe_id":"107-03","parent_id":"52280f6b1edd37edff000087","rgt":361},{"_id":"52280f6f1edd37edff0000b2","depth":2,"lft":353,"name":"Food
+        Benefits","oe_id":"107-03-02","parent_id":"52280f6e1edd37edff0000b0","rgt":354},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f791edd37edff000126","depth":2,"lft":585,"name":"Job
+        Placement","oe_id":"110-01-01","parent_id":"52280f791edd37edff000125","rgt":586},{"_id":"52280f7a1edd37edff00012d","depth":1,"lft":600,"name":"Skills
+        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615},{"_id":"52280f7a1edd37edff000131","depth":2,"lft":607,"name":"Interview
+        Training","oe_id":"110-03-04","parent_id":"52280f7a1edd37edff00012d","rgt":608},{"_id":"52280f7a1edd37edff000132","depth":2,"lft":609,"name":"Resume
+        Development","oe_id":"110-03-05","parent_id":"52280f7a1edd37edff00012d","rgt":610},{"_id":"52280f7a1edd37edff000133","depth":2,"lft":611,"name":"Skills
+        Assessment","oe_id":"110-03-06","parent_id":"52280f7a1edd37edff00012d","rgt":612}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["vocational-rehabilitation-services-vrs-workcenter"],"id":"521d33741974fcdb2b00228e","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b00229b","_slugs":["children-and-family-services"],"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Belmont","state":"CA","street":"1
+        Davis Drive","zip":"94002"},"ask_for":["Marsha Beaman (Court Investigations)","Matt
+        Radisch (Licensing)","Pravin Patel (Shelter Care)","Marie Morris (Adoptions)"],"contacts":[{"_id":"521d33741974fcdb2b00229c","name":"Deborah
+        Lee Torres, LCSW","title":"Director, Child Welfare Services"}],"coordinates":[-122.308362,37.511806],"created_at":"2013-08-27T16:17:08-07:00","description":"Takes
+        reports of situations in which children age 17 or under may be in jeopardy
+        because of abuse, abandonment, sexual molestation, exploitation or neglect.
+        When the home situation is such that the child needs to be placed under the
+        protection of the juvenile court, this unit initiates court action, conducts
+        an investigation and supervises children who have been removed from parental
+        custody. Can make immediate placements in emergency shelter care when children
+        are endangered. May also aid children by providing casework and related services
+        to their families, and making referrals to appropriate agencies.                  A
+        report may be made in person, by phone or letter and may be anonymous, though
+        all names are held confidential. Anyone initiating a referral in good faith
+        is immune from liability. Provides information and refers within the agency
+        for all specialized children''s services. Counseling, support groups and in-home
+        services can be provided to families receiving protective services supervision
+        from this agency. Provides shelter care for children, age 18 or under, who
+        need to be removed from their own homes because they are in danger due to
+        neglect, abuse, abandonment, exploitation or other family crisis. Young children
+        are placed in temporary foster homes. Adolescents are placed in the central
+        receiving home. All requests for emergency care or removal of a child from
+        a home in crisis must be made through the Hotline or the local police department.
+        The county is a state-licensed adoption and foster home licensing agency providing
+        services to birth parents, pre-adoptive children, adoptive and foster parent
+        applicants. Provides information about adoption procedures to birth parents.
+        Children are generally of school age, of minority or mixed background or have
+        special problems. Written application, office and home interviews are necessary.
+        Provides post-adoption services to assist adoptees, birth parents or adoptive
+        parents. Provides relinquishment adoption services. Does not provide intercountry
+        adoption services. Helps to arrange for out-of-home placement of children,
+        age 17 or under, in group homes or institutions. Families must meet certain
+        criteria in order for the children to be considered for placement. This unit
+        cannot handle the placement of delinquents or children beyond parental control.
+        This office also licenses foster family homes throughout the county as required
+        by law for care on a regular basis of a non-related child age 17 or under.
+        Homes are licensed for one year and renewed annually. Will investigate complaints
+        or reports of persons caring for non-related children without a license or
+        of licensed persons giving improper care. The Foster Care Eligibility line
+        handles questions related to payments to foster parents, non-related guardians,
+        and relatives. Speakers are available for clubs or groups who wish to know
+        more about foster care, \"fostadopt\" and adoptions. For matters other than
+        court investigations, licensing, shelter care or adoptions, please contact
+        the appropriate regional office. For East Palo Alto, Menlo Park, or Redwood
+        City residents, contact the South County office at 650-363-4218. For San Carlos,
+        Belmont, San Mateo, Foster City, Hillsborough, Burlingame, Millbrae, Half
+        Moon Bay, El Granada, La Honda, Loma Mar, Montara, Moss Beach, Pescadero,
+        or San Gregorio residents, contact the Central County office at 650-802-5018.
+        For Pacifica, Daly City, South San Francisco, Colma, Brisbane or San Bruno
+        residents, contact the North County office at 650-877-5608. Family Resource
+        Center provides counseling, support and education services for youth and adults,
+        home visiting, parent involvement in leadership, financial assistance and
+        case management at specific school locations with Spanish speaking staff.   Translators
+        available with prior notice. HSA, San Mateo County has been COA accredited
+        since 2008.","faxes":[{"number":"650 802-5001"}],"hours":"Monday-Friday, 8-5","kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"attention":"Children and
+        Family Services","city":"Belmont","state":"CA","street":"1 Davis Drive","zip":"94002"},"name":"Children
+        and Family Services","phones":[{"number":"800 632-4615","department":"Hotline","hours":"(24
+        hours daily)"}],"short_desc":"Accepts referrals about situations in which
+        children age 17 or under are in jeopardy because of abuse, abandonment or
+        exploitation.","transportation":"SAMTRANS stops within 3 blocks.","updated_at":"2013-11-07T12:44:31-08:00","urls":["http://www.smchsa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b00229b","services":[{"_id":"521d33751974fcdb2b0022c2","audience":"Children,
+        age 17 or under","eligibility":"Child must reside in San Mateo County","fees":"Placement
+        costs are a parental responsibility and are assessed on basis of ability to
+        pay.","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail.","keywords":["CHILD PROTECTION AND CARE SERVICES","Adoption","Crisis/Abuse
+        Intervention/Hot","Guardianship/Conservatorship","Investigation/Intervention","Out-Of-Home
+        Care","Out-Of-Home Care Placement","Respite/Emergency Caretaker","Adoption
+        Services","Foster Homes for Dependent Children","Children''s Protective Services","Speakers/Speakers
+        Bureaus","Youth","Adolescents","Children","CPS","Foster Youth Services","Child
+        Abuse","Report Child Abuse"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:13-08:00","wait":"Priority
+        given to reports of physical abuse, sexual abuse or life-threatening neglect.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000b","depth":1,"lft":20,"name":"Emergency
+        Shelter","oe_id":"101-04","parent_id":"52280f5c1edd37edff000001","rgt":21},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001c","depth":1,"lft":54,"name":"Emergency
+        Shelter","oe_id":"103-01","parent_id":"52280f601edd37edff00001b","rgt":55},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f711edd37edff0000c5","depth":1,"lft":392,"name":"Adoption
+        & Foster Care","oe_id":"108-01","parent_id":"52280f711edd37edff0000c4","rgt":401},{"_id":"52280f711edd37edff0000c6","depth":2,"lft":393,"name":"Adoption
+        & Foster Placement","oe_id":"108-01-01","parent_id":"52280f711edd37edff0000c5","rgt":394},{"_id":"52280f711edd37edff0000c7","depth":2,"lft":395,"name":"Adoption
+        & Foster Parenting","oe_id":"108-01-02","parent_id":"52280f711edd37edff0000c5","rgt":396},{"_id":"52280f711edd37edff0000c8","depth":2,"lft":397,"name":"Adoption
+        Planning","oe_id":"108-01-03","parent_id":"52280f711edd37edff0000c5","rgt":398},{"_id":"52280f721edd37edff0000c9","depth":2,"lft":399,"name":"Post-Adoption
+        Support","oe_id":"108-01-04","parent_id":"52280f711edd37edff0000c5","rgt":400},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f741edd37edff0000e9","depth":2,"lft":463,"name":"Help
+        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["children-and-family-services"],"id":"521d33741974fcdb2b00229b","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022ab","_slugs":["northern-region-dot-peninsulaworks-daly-city"],"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"city":"Daly City","state":"CA","street":"271
+        - 92nd Street","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d33741974fcdb2b0022ac","name":"Darla
+        Munson","title":"Regional Manager"}],"coordinates":[-122.4741901,37.6896347],"created_at":"2013-08-27T16:17:08-07:00","description":"Offers
+        comprehensive employment services for job seekers and employers.   Employer
+        services include screening and referral of job-ready workers, up to 50% reimbursement
+        of wages for new employees during the on-the-job training period, and space
+        and resources necessary for recruitment. Offers a job bank to persons age
+        16 or over. Offers information on job openings, company profiles and training
+        information in government, nonprofit agencies, corporations and private industry.
+        Offers access to the Internet and the use of computers, phones and fax machines.
+        Also offers information and referral services to other community resources
+        as needed by clients. Accepts applications for public assistance programs:
+        CalWorks, CalFresh, General Assistance and Medi-Cal. Determines eligibility
+        of needy individuals and families seeking public assistance benefits. Serves
+        low-income clients in need of health insurance (Medi-Cal), nutritional food
+        supplements (CalFresh), and temporary financial assistance (CalWorks and General
+        Assistance).","emails":["dmunson@co.sanmateo.ca.us"],"faxes":[{"number":"650
+        301-8455"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Filipino
+        (Tagalog)","Spanish"],"mail_address":{"attention":"PeninsulaWorks Daly City","city":"Daly
+        City","state":"CA","street":"271 - 92nd Street","zip":"94015"},"name":"Northern
+        Region., PeninsulaWorks Daly City","phones":[{"number":"650 301-8440","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Offers comprehensive employment services for job seekers
+        and employers.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-11-07T12:44:32-08:00","urls":["http://www.peninsulaworks.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b0022ab","services":[{"_id":"521d33761974fcdb2b0022c6","audience":"Persons
+        in need of Public Assistance benefits. Persons in need of employment and/or
+        training services, job seekers and employers","eligibility":"Vary according
+        to program. No requirements to use job information center or to take workshops","fees":"None.","funding_sources":["County","Federal","State"],"how_to_apply":"Walk
+        in to use job information center and/or apply for Public Assistance Programs.","keywords":["Employment","Job
+        Placement","Job Training","Prejob Guidance","Job Finding Assistance","General
+        Relief","TANF","Child Care Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Youth","Adolescents"],"service_areas":["Brisbane","Colma","Daly
+        City","Pacifica","San Bruno","South San Francisco"],"updated_at":"2013-09-19T10:12:21-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f791edd37edff000126","depth":2,"lft":585,"name":"Job
+        Placement","oe_id":"110-01-01","parent_id":"52280f791edd37edff000125","rgt":586},{"_id":"52280f7a1edd37edff00012d","depth":1,"lft":600,"name":"Skills
+        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["northern-region-dot-peninsulaworks-daly-city"],"id":"521d33741974fcdb2b0022ab","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null},{"_id":"521d33741974fcdb2b0022b7","_slugs":["jobs-for-youth"],"accessibility":["Wheelchair"],"address":{"city":"Daly
+        City","state":"CA","street":"271 - 92nd Street","zip":"94015"},"ask_for":["Jobs
+        for Youth counselor at the nearest location"],"contacts":[{"_id":"521d33741974fcdb2b0022b8","name":"Ruby
+        Tomas","title":"Youth Coordinator"}],"coordinates":[-122.4741901,37.6896347],"created_at":"2013-08-27T16:17:08-07:00","description":"Finds
+        employment for young people age 14-21 who do not qualify for federal job programs.
+        The program helps teens, regardless of socio-economic status or risk-level,  to
+        pepare for interviews,  fill out job applications, create resumes, use the
+        Internet to find a job and gain the confidence necessary to seek out employment.
+        Offices are located in Daly City, Redwood City, and San Mateo. A collaborative
+        effort of the San Mateo County Human Services Agency, the state Employment
+        Development Department, the private sector, cities in San Mateo County and
+        local schools.","emails":["jobsforyouth@smchsa.org"],"faxes":[{"number":"650
+        757-3224"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Jobs
+        for Youth","city":"Daly City","state":"CA","street":"271 - 92nd Street","zip":"94015"},"name":"Jobs
+        for Youth","phones":[{"number":"650 301-8434","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Finds
+        employment for young people age 14-21.","transportation":"SAMTRANS stops within
+        2 blocks.","updated_at":"2013-11-07T12:44:33-08:00","urls":["http://www.peninsulaworks.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33741974fcdb2b0022b7","services":[{"_id":"521d33761974fcdb2b0022c9","audience":"Adolescents","eligibility":"Age
+        14-21","fees":"None.","funding_sources":["City","County"],"how_to_apply":"Call
+        the Jobs for Youth counselor at the nearest location.","keywords":["EMPLOYMENT/TRAINING
+        SERVICES","Youth Employment","Youth Job Development","Youth","Adolescents"],"service_areas":["San
+        Mateo County"],"updated_at":"2013-11-11T00:45:49-08:00","wait":"No wait. Clients
+        seen on a first-come, first-serve basis.","categories":[{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f791edd37edff000126","depth":2,"lft":585,"name":"Job
+        Placement","oe_id":"110-01-01","parent_id":"52280f791edd37edff000125","rgt":586},{"_id":"52280f791edd37edff000127","depth":2,"lft":587,"name":"Supported
+        Employment","oe_id":"110-01-02","parent_id":"52280f791edd37edff000125","rgt":588},{"_id":"52280f7a1edd37edff00012d","depth":1,"lft":600,"name":"Skills
+        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615},{"_id":"52280f7a1edd37edff000131","depth":2,"lft":607,"name":"Interview
+        Training","oe_id":"110-03-04","parent_id":"52280f7a1edd37edff00012d","rgt":608},{"_id":"52280f7a1edd37edff000132","depth":2,"lft":609,"name":"Resume
+        Development","oe_id":"110-03-05","parent_id":"52280f7a1edd37edff00012d","rgt":610}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
+        Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["jobs-for-youth"],"id":"521d33741974fcdb2b0022b7","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 23:56:08 GMT
+  recorded_at: Tue, 19 Nov 2013 23:58:05 GMT
 recorded_with: VCR 2.5.0

@@ -94,6 +94,7 @@ feature "results page search", :js=>true do
     find('#update-btn').click
     set_filter("service-area","All",false)
     find('#update-btn').click
+    page.should have_content("Veterans Affairs San Francisco Health Care System")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
   scenario 'when kind filter has cached values and new option is selected', :vcr do
@@ -121,10 +122,10 @@ feature "results page search", :js=>true do
     page.should have_content("San Mateo Homeless Help Center")
 
     # check filter settings
-    expect(all(:css,"#location-options .current-option label").last).to have_content("All")
-    expect(all(:css,"#service-area-options .current-option label").last).to have_content("All")
-    expect(all(:css,"#kind-options .current-option label").last).to have_content("All")
-    expect(all(:css,"#org-name-options .current-option label").last).to have_content("St. Vincent de Paul Society")
+    expect(all("#location-options .current-option label").last).to have_content("All")
+    expect(all("#service-area-options .current-option label").last).to have_content("All")
+    expect(all("#kind-options .current-option label").last).to have_content("All")
+    expect(all("#org-name-options .current-option label").last).to have_content("St. Vincent de Paul Society")
   end
 
   scenario 'when clicking kind link in results', :vcr do
@@ -135,10 +136,10 @@ feature "results page search", :js=>true do
     expect(page).to have_content("San Mateo County Human Services Agency")
 
     # check filter settings
-    expect(all(:css,"#location-options .current-option label").last).to have_content("All")
-    expect(all(:css,"#service-area-options .current-option label").last).to have_content("All")
-    expect(all(:css,"#kind-options .current-option label").last).to have_content("Human Services")
-    expect(all(:css,"#org-name-options .current-option label").last).to have_content("All")
+    expect(all("#location-options .current-option label").last).to have_content("All")
+    expect(all("#service-area-options .current-option label").last).to have_content("All")
+    expect(all("#kind-options .current-option label").last).to have_content("Human Services")
+    expect(all("#org-name-options .current-option label").last).to have_content("All")
   end
 
 end

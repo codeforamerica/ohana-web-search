@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,12 +25,69 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 19 Nov 2013 23:56:06 GMT
+      - Tue, 19 Nov 2013 23:58:56 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.23
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 34f1016796dc93e671cc06b272c87eaf
+      X-Runtime:
+      - '0.073390'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Tue, 19 Nov 2013 23:58:56 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 19 Nov 2013 23:58:58 GMT
       Etag:
       - '"99512e082b5556b52f19e13916e3fe29"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.3 + Phusion Passenger 4.0.23
@@ -45,9 +102,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 0e3380b53bed459c8c12cee91f75ea94
+      - c2a6cb002ada69903497af07885a59f6
       X-Runtime:
-      - '0.283513'
+      - '0.930562'
       X-Total-Count:
       - '590'
       X-Total-Pages:
@@ -1010,10 +1067,10 @@ http_interactions:
         for Utilities","oe_id":"107-02-04-02","parent_id":"52280f6d1edd37edff0000a0","rgt":321}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 23:56:06 GMT
+  recorded_at: Tue, 19 Nov 2013 23:58:59 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=sdaff&kind=Human%20Services&location=94403&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&location=San%20Francisco,%20CA&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -1036,36 +1093,911 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 19 Nov 2013 23:56:08 GMT
+      - Tue, 19 Nov 2013 23:59:02 GMT
       Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - '"fbde7ddaa37ca0db4fd28e09bb3baf05"'
+      Link:
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&location=San+Francisco%2C+CA&page=3&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind%5B%5D=Human+Services&location=San+Francisco%2C+CA&page=2&service_area=smc&utf8=%E2%9C%93>;
+        rel="next"
       Server:
       - nginx/1.4.3 + Phusion Passenger 4.0.23
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
+      X-Next-Page:
+      - '2'
       X-Powered-By:
       - Phusion Passenger 4.0.23
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c9dababbc7c95f6642c44d9560dd455f
+      - fc17e51e9b256d65a124882c98a1553f
       X-Runtime:
-      - '0.137365'
+      - '0.746466'
       X-Total-Count:
-      - '0'
+      - '78'
       X-Total-Pages:
-      - '0'
+      - '3'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '2'
+      - '114274'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: '[{"_id":"521d32e21974fcdb2b000a54","_slugs":["hospice-by-the-bay"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1540 Market Street, Suite 350","zip":"94102"},"ask_for":["Admissions","Mary
+        Kay Simmons "],"contacts":[{"_id":"521d32e21974fcdb2b000a55","name":"Mary
+        Kay Simmons","title":"Branch Manager"},{"_id":"521d32e21974fcdb2b000a56","name":"Erin
+        Henke","title":"Director of Communications and Community Relations"}],"coordinates":[-122.419966,37.775058],"created_at":"2013-08-27T16:14:42-07:00","description":"Provides
+        services and care to individuals and their families during the late stages
+        of a terminal illness. Services include hospice and palliative care, grief
+        counseling for individuals facing life-threatening/terminal illness, nursing,
+        pain management, social services/counseling, home health aides, physical/speech
+        therapy, dietary counseling, spiritual counseling, bereavement/grief counseling
+        and patient/family education.","emails":["ehenke@hospiceofmarin.org"],"faxes":[{"number":"415
+        626-7800"}],"hours":"Monday-Friday, 8:30-5, for referrals","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Russian","Spanish"],"mail_address":{"attention":"Hospice by
+        the Bay","city":"San Francisco","state":"CA","street":"1540 Market Street,
+        Suite 350","zip":"94102"},"name":"Hospice by the Bay","phones":[{"number":"415
+        626-5900","hours":"(24 hours daily)"}],"short_desc":"Care/services to individuals
+        and their families during the late stages of a terminal illness.","transportation":"Not
+        necessary for service.","updated_at":"2013-11-07T12:43:06-08:00","urls":["http://www.hospicebythebay.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e21974fcdb2b000a54","services":[{"_id":"521d32e21974fcdb2b000a59","audience":"Terminally
+        ill persons and their families","eligibility":"Patient consent to hospice
+        care, diagnosed as terminal (6 months or less)","fees":"Vary according to
+        income and service. Cash, Medi-Cal, Medicare, private insurance and military
+        insurance accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Apply
+        by phone or with referral from hospital or physician.","keywords":["Hospice
+        Care"],"service_areas":["San Francisco County","Northern San Mateo County","Brisbane","Daly
+        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"updated_at":"2013-10-04T13:56:15-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000d7","depth":1,"lft":428,"name":"End-of-Life
+        Care","oe_id":"108-04","parent_id":"52280f711edd37edff0000c4","rgt":437},{"_id":"52280f731edd37edff0000da","depth":2,"lft":433,"name":"Hospice","oe_id":"108-04-03","parent_id":"52280f721edd37edff0000d7","rgt":434}]}],"organization":{"_id":"521d32e21974fcdb2b000a53","_slugs":["hospice-by-the-bay"],"created_at":"2013-08-27T16:14:42-07:00","name":"Hospice
+        by the Bay","updated_at":"2013-10-01T12:08:45-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e21974fcdb2b000a53","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e21974fcdb2b000a53/locations"},"slugs":["hospice-by-the-bay"],"id":"521d32e21974fcdb2b000a54","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.031383047229338226],"highlight":null,"_explanation":null},{"_id":"521d33121974fcdb2b001758","_slugs":["mercy-housing-california"],"accessibility":["Elevator","Ramp","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1360 Mission Street, Suite 300","zip":"94103"},"contacts":[{"_id":"521d33121974fcdb2b001759","name":"Doug
+        Shoemaker","title":"Interim President"}],"coordinates":[-122.415622,37.775872],"created_at":"2013-08-27T16:15:30-07:00","description":"Develops,
+        finances and operates affordable, program-enriched housing for families, seniors
+        and people with special needs who lack the economic resources to access quality,
+        safe housing opportunities. Services include after-school and summer programs
+        for children, GED and English classes, financial education classes, health
+        classes and health care services for seniors.","emails":["dshoemaker@mercyhousing.org"],"faxes":[{"number":"415
+        355-7101"}],"hours":"Monday-Friday, 8:30-5","kind":"Human Services","languages":["Chinese","Russian","Spanish"],"mail_address":{"attention":"Mercy
+        Housing California","city":"San Francisco","state":"CA","street":"1360 Mission
+        Street, Suite 300","zip":"94103"},"name":"Mercy Housing California","phones":[{"number":"415
+        355-7100","hours":"(Monday-Friday, 8:30-5)"}],"short_desc":"Develops, finances
+        and operates affordable, program-enriched housing for families, seniors and
+        people with special needs who lack the economic resources to access quality,
+        safe housing opportunities.","transportation":"BART stops within 1 block.","updated_at":"2013-11-07T12:45:30-08:00","urls":["http://www.mercyhousing.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33121974fcdb2b001758","services":[{"_id":"521d33121974fcdb2b00175c","audience":"Seniors,
+        families, special needs population","eligibility":"Phone for information","how_to_apply":"Phone
+        or visit Web site for information.","keywords":["HOUSING SERVICES","Rehabilitation","Senior
+        and Disabled Housing","Older Adult/Disability Related Supportive Housing"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-09-18T17:06:27-07:00","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001d","depth":1,"lft":56,"name":"Help
+        Find Housing","oe_id":"103-02","parent_id":"52280f601edd37edff00001b","rgt":57},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","depth":1,"lft":404,"name":"Daytime
+        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000cd","depth":2,"lft":407,"name":"Afterschool
+        Care","oe_id":"108-03-02","parent_id":"52280f721edd37edff0000cb","rgt":408},{"_id":"52280f721edd37edff0000d3","depth":2,"lft":419,"name":"Day
+        Camp","oe_id":"108-03-04","parent_id":"52280f721edd37edff0000cb","rgt":420},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582}]}],"organization":{"_id":"521d33121974fcdb2b001757","_slugs":["mercy-housing-california"],"created_at":"2013-08-27T16:15:30-07:00","name":"Mercy
+        Housing California","updated_at":"2013-10-01T12:12:44-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33121974fcdb2b001757","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33121974fcdb2b001757/locations"},"slugs":["mercy-housing-california"],"id":"521d33121974fcdb2b001758","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.21740981034132403],"highlight":null,"_explanation":null},{"_id":"521d33151974fcdb2b001856","_slugs":["arc-of-san-francisco"],"address":{"city":"San
+        Francisco","state":"CA","street":"1500 Howard Street","zip":"94103"},"ask_for":["Jacy
+        Cohen (Director of Intake)"],"contacts":[{"_id":"521d33151974fcdb2b001857","name":"Dr
+        Glenn Motola","title":"Chief Executive Director"}],"coordinates":[-122.416099,37.773138],"created_at":"2013-08-27T16:15:33-07:00","description":"Offers
+        programs for the developmentally disabled on community living skills, employment,
+        independent living, recreationa and the arts, and senior services. Also has
+        a location in San Mateo County: 6644 Mission Street, Daly City, 94014 (650-756-1304).","emails":["info@thearcsanfrancisco.org"],"faxes":[{"number":"415
+        255-9488"}],"hours":"Monday-Friday, 8:30-4:30","kind":"Human Services","mail_address":{"attention":"The
+        Arc","city":"San Francisco","state":"CA","street":"1500 Howard Street","zip":"94103"},"name":"Arc
+        of San Francisco","phones":[{"number":"415 255-7200"}],"short_desc":"Offers
+        programs for the developmentally disabled on community living skills, employment,
+        independent living, recreationa and the arts, and senior services.","updated_at":"2013-11-07T12:43:23-08:00","urls":["http://www.thearcsanfrancisco.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33151974fcdb2b001856","services":[{"_id":"521d33151974fcdb2b00185a","audience":"Adults
+        with developmental disabilities","eligibility":"Primarily GGRC Clients","keywords":["Day
+        Treatment for Adults with Developmental Disabilities","Developmental Disabilities","senior
+        services"],"service_areas":["San Francisco County","San Mateo County"],"updated_at":"2013-09-18T18:02:46-07:00","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268}]}],"organization":{"_id":"521d33151974fcdb2b001855","_slugs":["arc-of-san-francisco"],"created_at":"2013-08-27T16:15:33-07:00","name":"Arc
+        of San Francisco","updated_at":"2013-10-01T12:13:00-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33151974fcdb2b001855","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33151974fcdb2b001855/locations"},"slugs":["arc-of-san-francisco"],"id":"521d33151974fcdb2b001856","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.21962741756810053],"highlight":null,"_explanation":null},{"_id":"521d33151974fcdb2b00184a","_slugs":["breast-cancer-emergency-fund"],"accessibility":["Interpreter
+        for the deaf","Elevator"],"address":{"city":"San Francisco","state":"CA","street":"12
+        Grace Street, Suite 300","zip":"94103"},"ask_for":["Suzy Goldsmith","Athenia
+        Teng"],"contacts":[{"_id":"521d33151974fcdb2b00184b","name":"Suzy Goldsmith","title":"Client
+        Services Manager"}],"coordinates":[-122.4151082,37.7752297],"created_at":"2013-08-27T16:15:33-07:00","description":"Provides
+        emergency financial assistance to individuals in San Francisco, San Mateo
+        and Santa Clara counties who are in treatment for breast cancer. Helps cover
+        basic living needs such as rent, utilities, phone, and uncovered medical costs
+        including co-pays, premiums, prescriptions, and tests. Clients can renew funding
+        annually pending qualification.","emails":["suzy@bcef.org"],"faxes":[{"number":"415
+        558-6990"}],"hours":"Service hours","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Spanish"],"mail_address":{"attention":"BCEF","city":"San Francisco","state":"CA","street":"12
+        Grace Street, Suite 300","zip":"94103"},"name":"Breast Cancer Emergency Fund","phones":[{"number":"415
+        558-6999","extensions":["8"],"hours":"(Monday-Friday, 10-4)"}],"short_desc":"Provides
+        emergency financial assistance to men and women in San Francisco, San Mateo
+        and Santa Clara counties who are in treatment for breast cancer.","transportation":"MUNI
+        stops in front. BART stops within 2 blocks.","updated_at":"2013-11-07T12:43:22-08:00","urls":["http://www.bcef.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33151974fcdb2b00184a","services":[{"_id":"521d33151974fcdb2b00184e","audience":"Low
+        income people in treatment for breast cancer","eligibility":"Resident of San
+        Francisco, San Mateo or Santa Clara counties who is in treatment for breast
+        cancer. Must have a individual monthly  income of less than $2000","fees":"None.","funding_sources":["Donations","Fundraising","Grants"],"how_to_apply":"Apply
+        by phone or walk in. Appointment suggested.","keywords":["Temporary Financial
+        Assistance","Breast Cancer"],"service_areas":["San Francisco County","San
+        Mateo County","Santa Clara County"],"updated_at":"2013-09-23T07:04:11-07:00","wait":"Less
+        than 5 days upon receipt of completed application.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5c1edd37edff000005","depth":2,"lft":7,"name":"Cash
+        for Healthcare","oe_id":"101-02-02","parent_id":"52280f5c1edd37edff000003","rgt":8},{"_id":"52280f5d1edd37edff000006","depth":2,"lft":9,"name":"Cash
+        for Housing","oe_id":"101-02-03","parent_id":"52280f5c1edd37edff000003","rgt":10},{"_id":"52280f5d1edd37edff000009","depth":2,"lft":15,"name":"Cash
+        for Utilities","oe_id":"101-02-06","parent_id":"52280f5c1edd37edff000003","rgt":16},{"_id":"52280f5e1edd37edff000013","depth":1,"lft":36,"name":"Emergency
+        Food","oe_id":"102-02","parent_id":"52280f5e1edd37edff000011","rgt":37}]}],"organization":{"_id":"521d33151974fcdb2b001849","_slugs":["breast-cancer-emergency-fund"],"created_at":"2013-08-27T16:15:33-07:00","name":"Breast
+        Cancer Emergency Fund","updated_at":"2013-10-01T12:13:00-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33151974fcdb2b001849","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33151974fcdb2b001849/locations"},"slugs":["breast-cancer-emergency-fund"],"id":"521d33151974fcdb2b00184a","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.23641114807850233],"highlight":null,"_explanation":null},{"_id":"521d32ce1974fcdb2b0004de","_slugs":["la-casa-de-las-madres"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1663 Mission Street, Suite 225","zip":"94103"},"ask_for":["An
+        advocate"],"contacts":[{"_id":"521d32ce1974fcdb2b0004df","name":"Kathy Black","title":"Executive
+        Director"}],"coordinates":[-122.4194009,37.7712479],"created_at":"2013-08-27T16:14:22-07:00","description":"La
+        Casa de las Madres offers refuge and support for women, teens and children
+        who are experiencing physical or emotional abuse, are being threatened with
+        abuse or are at risk of abuse. Adult and Teen Crisis Hotlines: two toll-free
+        lines provide 24-hour crisis counseling, information and referrals to callers
+        statewide. Drop-In Counseling Center provides victims and survivors with crisis
+        and on-going counseling; suppport groups; emergency food and clothing; and
+        resource advocacy and referrals. Emergency Shelter proram provides up to 8
+        weeks of safe housing and supportive services for women and children fleeing
+        violence, with 24-hour intake capacity. Domestic Violence Response Team provides
+        victims with crisis intervention and support through advocates who work on-site
+        with the San Francisco Police Department. Teen Program provides multi-site,
+        adolescent-specific crisis intervention, counseling, support groups, education
+        and outreach, and advocacy to teens who have experienced or are at risk of
+        domestic and dating violence. Safe Havens Project provides specialized assistance
+        to domestic violence victims in developing and implementing shared custody
+        arrangements with their batterers. Safe Housing Project works on-site at housing
+        sites throughout San Francisco to empower residents to create communities
+        that foster ad demand violence-free lives. The Mary Elizabeth Inn and Verona
+        Hotel Case Management Program offers housing stability, community-building
+        and emotional support services to residents of these two transitional/permanent
+        housing sites. Community Education and Outreach Program offers outreach, presentations,
+        and workshops in the community on domestic violence, healthy relationships,
+        agency services, and other topics. La Casa de las Madres accepts donations
+        of clothing and toiletries for women, infants and children, including professional
+        work clothing. Donated itmes are given to participants in all programs.","emails":["info@lacasa.org"],"faxes":[{"number":"415
+        503-0301"}],"hours":"Monday-Friday, 8:30-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"La
+        Casa de las Madres","city":"San Francisco","state":"CA","street":"1663 Mission
+        Street, Suite 225","zip":"94103"},"name":"La Casa de las Madres","phones":[{"number":"877
+        503-1850","department":"Crisis Line","hours":"(24 hours daily)"}],"short_desc":"Refuge
+        for women and their children who are being physically or emotionally abused.","transportation":"MUNI
+        - 9 San Bruno, 14 Mission, 47 Van Ness, 49 Van Ness-Mission. BART - 16th and
+        Mission Street Station.","updated_at":"2013-11-07T12:42:56-08:00","urls":["http://lacasa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ce1974fcdb2b0004de","services":[{"_id":"521d32ce1974fcdb2b0004e2","audience":"Women,
+        teens and children who are victims of or threatened by domestic violence","eligibility":"Women,
+        teens and children who are victims of or threatened by domestic violence","fees":"None.
+        Donations welcome.","funding_sources":["City","Donations","State"],"how_to_apply":"Call
+        the 24-hour crisis line or come to the Drop-In Center.","keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Crisis/Abuse Intervention/Hot","Individual/Group
+        Counseling","EMERGENCY SERVICES","Shelter/Refuge","INDIVIDUAL AND FAMILY DEVELOPMENT
+        SERVICES","Growth and Adjustment","Domestic violence","Workshops/Domestic
+        Violence"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Napa County","Solano County"],"updated_at":"2013-09-05T10:42:53-07:00","wait":"No
+        wait if space is available and individual meets eligibility requirements.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f621edd37edff000032","depth":0,"lft":99,"name":"Goods","oe_id":"104","parent_id":null,"rgt":140},{"_id":"52280f651edd37edff000047","depth":0,"lft":141,"name":"Transit","oe_id":"105","parent_id":null,"rgt":154},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f6b1edd37edff000087","depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654}]}],"organization":{"_id":"521d32ce1974fcdb2b0004dd","_slugs":["la-casa-de-las-madres"],"created_at":"2013-08-27T16:14:22-07:00","name":"La
+        Casa de las Madres","updated_at":"2013-10-01T12:06:35-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ce1974fcdb2b0004dd","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ce1974fcdb2b0004dd/locations"},"slugs":["la-casa-de-las-madres"],"id":"521d32ce1974fcdb2b0004de","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.2546601909862515],"highlight":null,"_explanation":null},{"_id":"521d33131974fcdb2b0017bd","_slugs":["people-with-disabilities-foundation"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"507 Polk Street, Suite 430","zip":"94102"},"contacts":[{"_id":"521d33131974fcdb2b0017be","name":"Steven
+        Bruce","title":"Interim Executive Director, Legal Director"},{"_id":"521d33131974fcdb2b0017bf","name":"Annie
+        Hsia","title":"Program Manager Advocacy"}],"coordinates":[-122.4190941,37.7814649],"created_at":"2013-08-27T16:15:31-07:00","description":"Represents
+        the interests of people with psychiatric or physical impairments before the
+        Social Security Administration and other agencies. Maintains two staff attorneys.
+        Also provides training, public seminars, videos and CDs to inform the general
+        public about issues confronting people with disabilities. Consultations on
+        reasonable accommodations and Social Security Work Incentives available. For
+        more information please visit www.pwdf.org.","emails":["info@pwdf.org"],"faxes":[{"number":"415
+        931-2828"}],"hours":"Monday-Friday, 9-4","kind":"Human Services","languages":["Chinese
+        (Mandarin)","Russian"],"mail_address":{"attention":"People With Disabilities
+        Found","city":"San Francisco","state":"CA","street":"507 Polk Street, Suite
+        430","zip":"94102"},"name":"People With Disabilities Foundation","phones":[{"number":"415
+        931-3070","hours":"(Monday-Friday, 9-4)"}],"transportation":"SAMTRANS stops
+        within 2 blocks. MUNI stops within 2 blocks. BART - Civic Center Station.","updated_at":"2013-11-07T12:45:31-08:00","urls":["http://www.pwdf.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33131974fcdb2b0017bd","services":[{"_id":"521d33131974fcdb2b0017c2","audience":"People
+        with psychiatric/physical disabilities","eligibility":"Must be psychiatrically/physically
+        disabled","fees":"Vary according to income. Pro bono possible. Cash, checks
+        and credit cards accepted.","funding_sources":["Donations","Fees"],"how_to_apply":"Call
+        for appointment.","keywords":["HANDICAP SERVICES","Community Information","LEGAL
+        AND CRIMINAL JUSTICE SERVICES","Mediation","MENTAL HEALTH SERVICES","Legal
+        Representation","Welfare Rights Assistance","SSI Appeals/Complaints","Social
+        Security Disability Insurance Appeals/Complaints"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Napa County","Solano County","Sonoma County"],"updated_at":"2013-09-05T11:40:57-07:00","wait":"1
+        week.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7b1edd37edff00013f","depth":2,"lft":635,"name":"Discrimination
+        & Civil Rights","oe_id":"111-01-03","parent_id":"52280f7a1edd37edff000138","rgt":636}]}],"organization":{"_id":"521d33131974fcdb2b0017bc","_slugs":["people-with-disabilities-foundation"],"created_at":"2013-08-27T16:15:31-07:00","name":"People
+        With Disabilities Foundation","updated_at":"2013-10-01T12:12:50-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33131974fcdb2b0017bc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33131974fcdb2b0017bc/locations"},"slugs":["people-with-disabilities-foundation"],"id":"521d33131974fcdb2b0017bd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.4523997281264191],"highlight":null,"_explanation":null},{"_id":"521d32d81974fcdb2b0007da","_slugs":["child-care-law-center-cclc"],"accessibility":["Elevator"],"address":{"city":"San
+        Francisco","state":"CA","street":"100 McAllister Street, Suite 360","zip":"94102"},"contacts":[{"_id":"521d32d81974fcdb2b0007db","name":"Melissa
+        Rodgers","title":"Directing Attorney"}],"coordinates":[-122.41408,37.78116300000001],"created_at":"2013-08-27T16:14:32-07:00","description":"A
+        national nonprofit legal services organization that advocates to make high
+        quality, affordable child care available to every child, family and community.
+        CCLC is the only organization in the country devoted exclusively to the complex
+        legal issues that affect the establishment and provision of child care. Provides
+        legal information and referral services to over 800 people each year, trains
+        legal services attorneys and advocates, represents clients in cases with a
+        broad impact, and works with other organizations on policy development and
+        advocacy. High priority is placed on collaboration with other advocates. CCLC''s
+        diverse substantive work focuses on child care subsidies and on inclusion
+        of children with disabilities.","emails":["info@childcarelaw.org"],"kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"attention":"Child Care
+        Law Center (CCLC)","city":"San Francisco","state":"CA","street":"100 McAllister
+        Street, Suite 360","zip":"94102"},"name":"Child Care Law Center (CCLC)","phones":[{"number":"415
+        558-8005","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Advocacy, education,
+        advice and legal representation about child care issues.","transportation":"MUNI
+        - Civic Center Station. BART - Civic Center Station.","updated_at":"2013-10-04T12:05:11-07:00","urls":["http://www.childcarelaw.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d81974fcdb2b0007da","services":[{"_id":"521d32d81974fcdb2b0007de","audience":"Legal
+        aid attorneys, low-income families, child care providers, parents and policy
+        makers","eligibility":"None; priority to clients of legal aid attorneys/advocates","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Apply
+        by phone.","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistanc","ORGANIZATIONAL SUPPORT SERVICES","Technical Assistance","child
+        care advocacy","child care policy","child care subsidies"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","California statewide","nationwide"],"updated_at":"2013-09-05T11:21:04-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654}]}],"organization":{"_id":"521d32d81974fcdb2b0007d9","_slugs":["child-care-law-center-cclc"],"created_at":"2013-08-27T16:14:32-07:00","name":"Child
+        Care Law Center (CCLC)","updated_at":"2013-10-01T12:07:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007d9","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007d9/locations"},"slugs":["child-care-law-center-cclc"],"id":"521d32d81974fcdb2b0007da","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.5205788155321337],"highlight":null,"_explanation":null},{"_id":"521d32d81974fcdb2b0007b6","_slugs":["woman-inc-women-organized-to-make-abuse-nonexistent"],"accessibility":["Elevator","Disabled
+        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"333
+        Valencia Street, Suite 450","zip":"94103"},"contacts":[{"_id":"521d32d81974fcdb2b0007b7","name":"Roberta
+        Toomer","title":"Executive Director"}],"coordinates":[-122.4220308,37.7676615],"created_at":"2013-08-27T16:14:32-07:00","description":"Provides
+        supportive services to women who are survivors of domestic violence. Maintains
+        a daily inventory of bed space at Bay Area battered women''s shelters. A drop-in
+        center provides crisis assistance, options counseling and individual long-term
+        therapy. Offers support groups for battered women and referrals to selected
+        therapists and attorneys who work with abused women.   The Latina Services
+        program provides 24-hour, culturally appropriate services to monolingual Spanish
+        speaking survivors. Provides training on domestic violence issues to other
+        community organizations, hospitals and corporations. Volunteer program offers
+        40-hour certification trainings 3-4 times a year. Outreach program offers
+        10-hour training and also gives presentations in the community and tables
+        at  local events.","emails":["info@womaninc.org"],"faxes":[{"number":"415
+        864-1082"}],"kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"WOMAN,
+        Inc.","city":"San Francisco","state":"CA","street":"333 Valencia Street, Suite
+        450","zip":"94103"},"name":"WOMAN, Inc. (Women Organized to Make Abuse Nonexistent)","phones":[{"number":"415
+        864-4777","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Supportive/social
+        services to women who are victims of domestic violence.","transportation":"MUNI
+        - 22 Fillmore, Mission Street lines. BART - 16th Street, Church Street stations.","updated_at":"2013-11-07T12:45:20-08:00","urls":["http://www.womaninc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d81974fcdb2b0007b6","services":[{"_id":"521d32d81974fcdb2b0007ba","audience":"Women
+        victims of domestic violence","eligibility":"Woman who is a victim of domestic
+        violence","fees":"Vary according to income and service. No one will be denied
+        service for inability to pay. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"how_to_apply":"Apply
+        by phone for support groups. Walk in for therapy consultations: English: Wednesday,
+        3-4:30, Thursday, 5-6:30 pm; English and Spanish: Thursday, 12-1:30.","keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Crisis/Abuse Intervention/Hot","Individual/Group
+        Counseling","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth and Adjustment","ORGANIZATIONAL
+        SUPPORT SERVICES","Staff Training","Latina Services","volunteer opportunities","battered
+        women","abuse survivor"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County"],"updated_at":"2013-10-04T12:06:21-07:00","wait":"Varies.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000d","depth":1,"lft":24,"name":"Immediate
+        Safety","oe_id":"101-06","parent_id":"52280f5c1edd37edff000001","rgt":29},{"_id":"52280f5e1edd37edff00000e","depth":2,"lft":25,"name":"Help
+        Escape Violence","oe_id":"101-06-01","parent_id":"52280f5d1edd37edff00000d","rgt":26},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f741edd37edff0000e9","depth":2,"lft":463,"name":"Help
+        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464}]}],"organization":{"_id":"521d32d81974fcdb2b0007b5","_slugs":["woman-inc-women-organized-to-make-abuse-nonexistent"],"created_at":"2013-08-27T16:14:32-07:00","name":"WOMAN,
+        Inc. (Women Organized to Make Abuse Nonexistent)","updated_at":"2013-10-01T12:07:45-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007b5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007b5/locations"},"slugs":["woman-inc-women-organized-to-make-abuse-nonexistent"],"id":"521d32d81974fcdb2b0007b6","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.5226741243188263],"highlight":null,"_explanation":null},{"_id":"521d32da1974fcdb2b000846","_slugs":["center-on-juvenile-and-criminal-justice-cjcj"],"address":{"city":"San
+        Francisco","state":"CA","street":"440 Ninth Street","zip":"94103"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32da1974fcdb2b000847","name":"Daniel
+        Macallair","title":"Executive Director"}],"coordinates":[-122.4095396,37.7718328],"created_at":"2013-08-27T16:14:34-07:00","description":"Promotes
+        the safe and effective use of alternatives to incarceration.","emails":["cjcj@cjcj.org"],"faxes":[{"number":"415
+        621-5466"}],"kind":"Human Services","languages":["French","Samoan","Spanish"],"mail_address":{"attention":"Ctr
+        on Juvenile & Criminal Jus","city":"San Francisco","state":"CA","street":"440
+        Ninth Street","zip":"94103"},"name":"Center on Juvenile and Criminal Justice
+        (CJCJ)","phones":[{"number":"415 621-5661","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Promotes
+        the safe and effective use of alternatives to incarceration.","transportation":"MUNI
+        stops within 1 block.","updated_at":"2013-11-07T12:43:29-08:00","urls":["http://cjcj.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32da1974fcdb2b000846","services":[{"_id":"521d32da1974fcdb2b00084a","audience":"Persons
+        who are incarcerated, facing incarceration or men on parole","eligibility":"Varies
+        according to program","fees":"Vary according to income. Cash and checks accepted.","funding_sources":["County","Fees","Grants"],"how_to_apply":"Varies
+        according to program.","keywords":["LEGAL AND CRIMINAL JUSTICE SERVICES","Diversion","Re-Entry/Ex-Offender","Diversion
+        Programs"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","Santa Clara County","San Francisco County","San Mateo County","Santa
+        Clara County","California"],"updated_at":"2013-10-04T12:29:50-07:00","wait":"Varies
+        according to program.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7c1edd37edff000146","depth":1,"lft":650,"name":"Representation","oe_id":"111-04","parent_id":"52280f7a1edd37edff000137","rgt":651}]}],"organization":{"_id":"521d32da1974fcdb2b000845","_slugs":["center-on-juvenile-and-criminal-justice-cjcj"],"created_at":"2013-08-27T16:14:34-07:00","name":"Center
+        on Juvenile and Criminal Justice (CJCJ)","updated_at":"2013-10-01T12:08:03-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32da1974fcdb2b000845","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32da1974fcdb2b000845/locations"},"slugs":["center-on-juvenile-and-criminal-justice-cjcj"],"id":"521d32da1974fcdb2b000846","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.5809019867294161],"highlight":null,"_explanation":null},{"_id":"521d33071974fcdb2b001479","_slugs":["bay-area-young-positives"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"701 Oak Street","zip":"94117"},"contacts":[{"_id":"521d33071974fcdb2b00147a","name":"Curtis
+        Moore","title":"Executive Director"}],"coordinates":[-122.4308207,37.7739556],"created_at":"2013-08-27T16:15:19-07:00","description":"Helps
+        young people, age 26 or under, living with HIV/AIDS to live longer, happier,
+        healthier, more productive and quality-filled lives. Works to decrease a sense
+        of isolation, reduce self-destructive behaviors and advocate for clients in
+        HIV/AIDS care systems. Offers individual counseling and support groups, case
+        management, education, outreach, retreats, and social and recreational events.","emails":["info@baypositives.org"],"faxes":[{"number":"415
+        487-1617"}],"hours":"Monday-Friday, 10-6; drop-in support group each Monday,
+        7-9pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Bay
+        Area Young Positives","city":"San Francisco","state":"CA","street":"701 Oak
+        Street","zip":"94117"},"name":"Bay Area Young Positives","phones":[{"number":"415
+        487-1616","hours":"(Monday-Friday, 10-6)"}],"short_desc":"Support groups and
+        other services for young people age 26 or under who are HIV positive.","transportation":"MUNI
+        stops in front.","updated_at":"2013-11-07T12:43:18-08:00","urls":["http://www.baypositives.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33071974fcdb2b001479","services":[{"_id":"521d33071974fcdb2b00147d","audience":"HIV
+        positive youth","eligibility":"HIV+ person age 26 or under","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        for intake appointment.","keywords":["HEALTH SERVICES","Individual/Group Counseling"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-09-18T17:10:36-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f751edd37edff0000f0","depth":2,"lft":477,"name":"Support
+        Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484}]}],"organization":{"_id":"521d33071974fcdb2b001478","_slugs":["bay-area-young-positives"],"created_at":"2013-08-27T16:15:19-07:00","name":"Bay
+        Area Young Positives","updated_at":"2013-10-01T12:11:53-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33071974fcdb2b001478","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33071974fcdb2b001478/locations"},"slugs":["bay-area-young-positives"],"id":"521d33071974fcdb2b001479","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.627201828721849],"highlight":null,"_explanation":null},{"_id":"521d32d01974fcdb2b000576","_slugs":["san-francisco-aids-foundation"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1035 Market Street, Suite 400","zip":"94103"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32d01974fcdb2b000577","name":"Barbara
+        Kimport","title":"Interim Executive Director"}],"coordinates":[-122.410785,37.781219],"created_at":"2013-08-27T16:14:24-07:00","description":"Provides
+        callers with up-to-date information about AIDS and HIV disease and makes referrals
+        to medical and psychological service providers who are informed about and
+        sensitive to AIDS. Provides subsidized housing for qualified clients and financial
+        benefits counseling. Offers drop-in programs for African American and Latino
+        men, as well as those with substance abuse problems. Advocates for increased
+        funding for services and prevention/education about HIV and AIDS with local,
+        state and federal governments and within the private sector.","hours":"Monday-Friday,
+        9-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"San
+        Francisco AIDS Foundation","city":"San Francisco","state":"CA","street":"P.O.
+        Box 426182","zip":"94142-6182"},"name":"San Francisco AIDS Foundation","phones":[{"number":"415
+        863-2437","department":"SF Hotline","hours":"(Monday, Wednesday-Friday, 9-5;
+        Tuesday, 9-9)"}],"short_desc":"Up-to-date information about AIDS, referrals
+        to supportive services.","transportation":"MUNI - Market Street lines. BART
+        - Powell Station.","updated_at":"2013-10-01T12:06:55-07:00","urls":["http://www.sfaf.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d01974fcdb2b000576","services":[{"_id":"521d32d01974fcdb2b00057a","audience":"Anyone
+        concerned about or infected by AIDS/HIV, including people living with AIDS/HIV","eligibility":"Vary
+        according to service","fees":"None.","funding_sources":["City","County","Donations","Grants","State"],"how_to_apply":"Apply
+        by phone or walk in for emergencies only, appointment preferred.","keywords":["COMMUNITY
+        SERVICES","Speakers","HEALTH SERVICES","Prevention","Individual/Group Counseling","Advocacy","AIDS/HIV
+        Issues","Gay/Lesbian/Bisexual/Transgender Issues"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-09-05T12:58:33-07:00","wait":"Varies.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000107","depth":2,"lft":523,"name":"Health
+        Education","oe_id":"109-03-07","parent_id":"52280f751edd37edff0000fd","rgt":538}]}],"organization":{"_id":"521d32d01974fcdb2b000575","_slugs":["san-francisco-aids-foundation"],"created_at":"2013-08-27T16:14:24-07:00","name":"San
+        Francisco AIDS Foundation","updated_at":"2013-10-01T12:06:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000575","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000575/locations"},"slugs":["san-francisco-aids-foundation"],"id":"521d32d01974fcdb2b000576","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.6417987730860313],"highlight":null,"_explanation":null},{"_id":"521d32dc1974fcdb2b0008bd","_slugs":["instituto-laboral-de-la-raza"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"2947 - 16th Street","zip":"94103"},"ask_for":["Sarah
+        M. Shaker"],"contacts":[{"_id":"521d32dc1974fcdb2b0008be","name":"Sarah M.
+        Shaker","title":"Executive Director"}],"coordinates":[-122.4185755,37.76502430000001],"created_at":"2013-08-27T16:14:36-07:00","description":"Offers
+        supportive services for Hispanic workers, union and non-union. Provides legal
+        counseling, referrals and representation for monolingual persons in areas
+        of employment, unemployment, wage claims, worker''s compensation referrals,
+        domestic work and labor-related problems. Assists in writing work authorization
+        letters and contacting employers for workers who are having difficulty as
+        a result of the new immigration law. Offers classes and workshops in labor
+        affairs, leadership skills, collective bargaining, labor history, contracts,
+        negotiations, women and comparable worth, legalization and English as a Second
+        Language. Helps coordinate labor studies programs in colleges. Consults frequently
+        with Hispanic unionists on courses and programs.  .","emails":["info@ilaboral.org"],"faxes":[{"number":"415
+        431-4846"}],"hours":"Monday-Friday, 8-6; Saturday, Sunday by appointment","kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"attention":"Instituto Laboral
+        de la Raza","city":"San Francisco","state":"CA","street":"2947 - 16th Street","zip":"94103"},"name":"Instituto
+        Laboral de la Raza","phones":[{"number":"415 431-7522","department":"San Francisco","hours":"(Monday-Friday,
+        8-6)"}],"short_desc":"Supportive services for Hispanic workers union or nonunion
+        who are having labor-related problems.","transportation":"MUNI - 22 Fillmore,
+        Mission Street lines, 33 Stanyan, 53 Southern Heights. BART - 16th Street
+        station.","updated_at":"2013-11-07T12:43:04-08:00","urls":["http://www.ilaboral.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32dc1974fcdb2b0008bd","services":[{"_id":"521d32dc1974fcdb2b0008c1","audience":"The
+        working poor, Latinos and immigrant families","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["COMMUNITY SERVICES","Human Rights/Ombudsman/Advocacy","EDUCATION
+        SERVICES","English Language","EMPLOYMENT/TRAINING SERVICES","Job Counseling/Testing","LEGAL
+        AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistance","Defense Representation","Cultural/Racial
+        Issues","Hispanic worker support services"],"service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County","Napa County","Sonoma County"],"updated_at":"2013-10-04T12:44:15-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7c1edd37edff000146","depth":1,"lft":650,"name":"Representation","oe_id":"111-04","parent_id":"52280f7a1edd37edff000137","rgt":651},{"_id":"52280f7c1edd37edff000147","depth":1,"lft":652,"name":"Translation
+        & Interpretation","oe_id":"111-05","parent_id":"52280f7a1edd37edff000137","rgt":653}]}],"organization":{"_id":"521d32dc1974fcdb2b0008bc","_slugs":["instituto-laboral-de-la-raza"],"created_at":"2013-08-27T16:14:36-07:00","name":"Instituto
+        Laboral de la Raza","updated_at":"2013-10-01T12:08:12-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32dc1974fcdb2b0008bc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32dc1974fcdb2b0008bc/locations"},"slugs":["instituto-laboral-de-la-raza"],"id":"521d32dc1974fcdb2b0008bd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.686687585777207],"highlight":null,"_explanation":null},{"_id":"521d32e31974fcdb2b000aa8","_slugs":["adopt-international"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1000 Brannan Street, Suite 301","zip":"94103"},"ask_for":["Lynne
+        Silver"],"contacts":[{"_id":"521d32e31974fcdb2b000aa9","name":"Lynne Silver","title":"Executive
+        Director"},{"_id":"521d32e31974fcdb2b000aaa","name":"Lisa Clark","title":"Associate
+        Director"}],"coordinates":[-122.407618,37.7700699],"created_at":"2013-08-27T16:14:43-07:00","description":"Facilitates
+        the adoption process for couples and single adults who wish to adopt children.
+        Will complete a home study and coordinate other legal requirements for the
+        person who has already located a child. Will also assist in the search for
+        a child. Provides birth parent counseling and education. Relinquishment services
+        are also available.   LIcensed to place children from China. Also works with
+        families who adopted from Korea, Russia, India, Pakistan and Ethiopia. Completes
+        home studies for families adopting abroad, for families using the agency''s
+        search services and for other organizations. Post-adoption services are also
+        provided.","emails":["adopt@adoptinter.org"],"faxes":[{"number":"415 934-0700"}],"hours":"Monday-Thursday,
+        9-5","kind":"Human Services","languages":["Chinese"],"mail_address":{"attention":"Adopt
+        International","city":"San Francisco","state":"CA","street":"1000 Brannan
+        Street, Suite 301","zip":"94103"},"name":"Adopt International","phones":[{"number":"415
+        934-0300","hours":"(Monday-Thursday, 9-5)"}],"short_desc":"Facilitates the
+        adoption process for couples and single adults who wish to adopt children.","transportation":"MUNI
+        stops within 1 block.","updated_at":"2013-11-07T12:45:22-08:00","urls":["http://www.adoptinter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e31974fcdb2b000aa8","services":[{"_id":"521d32e31974fcdb2b000aad","eligibility":"None","fees":"Vary
+        according to country of birth of adopted child. $250 application fee, $2,600
+        (couple) for an Adoption Home Study, $2,000 for Domestic Home Study, $300-$400
+        post placement visit. Service for domestic adoption program $8,200. Checks
+        accepted.","funding_sources":["Fees"],"how_to_apply":"Apply by phone for application
+        form.","keywords":["Certificates/Forms Assistance","Adoption Services","Youth","Cultural/Racial
+        Issues","Foreign Adoption","Adoption for Single Adults","Post Adoption Services"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","statewide","Hawaii"],"updated_at":"2013-10-04T14:27:15-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7b1edd37edff000139","depth":2,"lft":623,"name":"Adoption
+        & Foster Care","oe_id":"111-01-01","parent_id":"52280f7a1edd37edff000138","rgt":632},{"_id":"52280f7b1edd37edff00013c","depth":3,"lft":628,"name":"Adoption
+        Planning","oe_id":"111-01-01-03","parent_id":"52280f7b1edd37edff000139","rgt":629}]}],"organization":{"_id":"521d32e31974fcdb2b000aa7","_slugs":["adopt-international"],"created_at":"2013-08-27T16:14:43-07:00","name":"Adopt
+        International","updated_at":"2013-10-01T12:08:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000aa7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e31974fcdb2b000aa7/locations"},"slugs":["adopt-international"],"id":"521d32e31974fcdb2b000aa8","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.7273701020513287],"highlight":null,"_explanation":null},{"_id":"521d32cc1974fcdb2b00047a","_slugs":["thesecondopinion"],"accessibility":["Elevator","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"1200
+        Gough Street, Suite 500","zip":"94109"},"contacts":[{"_id":"521d32cc1974fcdb2b00047b","name":"Michael
+        Stoll","title":"Executive Director"},{"_id":"521d32cc1974fcdb2b00047c","name":"Howard
+        Kleckner, MD","title":"Medical Director"}],"coordinates":[-122.424123,37.784778],"created_at":"2013-08-27T16:14:20-07:00","description":"Offers
+        a free second opinion for adults diagnosed with new or recurring cancer. Physicians
+        specializing in various disciplines related to cancer serve on the panel.
+        Other specialists serve when there is a specific need. The panel meets approximately
+        every two to three weeks to review cases and provide recommendations for future
+        treatment. Patient, family member and/or friend attend the meeting and are
+        able to direct questions to panel members. Patient must be present at panel.
+        A summary letter of the findings is sent to both the patient and the referring
+        physician. Patients self-refer or are referred by a physician. Patients can
+        come more than once if there is a change in their status.","emails":["mail@thesecondopinion.org"],"faxes":[{"number":"415
+        346-8652"}],"hours":"Monday-Friday, 9-4","kind":"Human Services","languages":["Interpreter"],"mail_address":{"attention":"thesecondopinion","city":"San
+        Francisco","state":"CA","street":"1200 Gough Street, Suite 500","zip":"94109"},"name":"thesecondopinion","phones":[{"number":"415
+        775-9956","hours":"(Monday-Friday, 10-4)"}],"short_desc":"Offers a free second
+        opinion consultation service for persons with cancer.","transportation":"MUNI
+        - 38 stops in front, 5 stops within 2 blocks.","updated_at":"2013-11-07T12:45:20-08:00","urls":["http://www.thesecondopinion.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32cc1974fcdb2b00047a","services":[{"_id":"521d32cc1974fcdb2b00047f","audience":"Adults
+        with cancer","eligibility":"Cancer diagnosis, California resident, adults
+        only, must attend panel in person","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Apply
+        by phone or email.","keywords":["HEALTH SERVICES","Prevention","cancer second
+        opinion","medical advice"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County","California"],"updated_at":"2013-09-05T14:25:51-07:00","wait":"As
+        soon as possible after appropriate medical records received.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff00007a","depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264}]}],"organization":{"_id":"521d32cc1974fcdb2b000479","_slugs":["thesecondopinion"],"created_at":"2013-08-27T16:14:20-07:00","name":"thesecondopinion","updated_at":"2013-10-01T12:06:24-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cc1974fcdb2b000479","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cc1974fcdb2b000479/locations"},"slugs":["thesecondopinion"],"id":"521d32cc1974fcdb2b00047a","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.7282213269159802],"highlight":null,"_explanation":null},{"_id":"521d32d81974fcdb2b0007c8","_slugs":["community-united-against-violence-cuav"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"170A - Capp Street","zip":"94110"},"contacts":[{"_id":"521d32d81974fcdb2b0007c9","name":"Carolina
+        Morales","title":"Intervention Coordinator"}],"coordinates":[-122.4186253,37.7639793],"created_at":"2013-08-27T16:14:32-07:00","description":"Provides
+        assistance to victims of hate and domestic violence and develops strategies
+        to prevent violence. Counseling is offered on an individual basis. Individual
+        counseling is provided to battered individuals through the domestic violence
+        education program. Does community organizing and offers a youth safety project,
+        and a hate violence and domestic violence survivor program. Assists with restraining
+        order paperwork and court accompaniment. Provides legal referrals.","faxes":[{"number":"415
+        777-5565"}],"hours":"Office hours: Monday-Friday, 10-6; Walk-in: Fridays,
+        11-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Community
+        United Against Viole","city":"San Francisco","state":"CA","street":"170A -
+        Capp Street","zip":"94110"},"name":"Community United Against Violence (CUAV)","phones":[{"number":"415
+        333-4357","department":"Safety Line"}],"short_desc":"Assistance and services
+        to gay/lesbian/bisexual/transgender victims of hate violence and domestic
+        violence.","transportation":"MUNI - 49, 14, 22 lines. BART - 16th Street Station.","updated_at":"2013-11-07T12:43:03-08:00","urls":["http://www.cuav.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d81974fcdb2b0007c8","services":[{"_id":"521d32d81974fcdb2b0007cc","audience":"Lesbian,
+        gay, bisexual and transgender domestic violence and hate violence victims","eligibility":"None","fees":"None.","funding_sources":["City","County","Donations","Grants","State"],"how_to_apply":"Apply
+        by phone or walk-in (Fridays, 10 am-5 pm).","keywords":["ADULT PROTECTION
+        AND CARE SERVICES","Individual/Group Counseling","COMMUNITY SERVICES","Group
+        Support","Speakers","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistanc","MENTAL HEALTH SERVICES","Speakers/Speakers Bureaus","domestic
+        violence","counseling","restraining order","legal referrals"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County"],"updated_at":"2013-09-05T11:02:54-07:00","wait":"No wait.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654}]}],"organization":{"_id":"521d32d81974fcdb2b0007c7","_slugs":["community-united-against-violence-cuav"],"created_at":"2013-08-27T16:14:32-07:00","name":"Community
+        United Against Violence (CUAV)","updated_at":"2013-10-01T12:07:47-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007c7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d81974fcdb2b0007c7/locations"},"slugs":["community-united-against-violence-cuav"],"id":"521d32d81974fcdb2b0007c8","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.7586646004724916],"highlight":null,"_explanation":null},{"_id":"521d33211974fcdb2b001b71","_slugs":["greater-bay-area-chapter-1"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1375 Sutter Street, Suite 300","zip":"94109"},"ask_for":["Bobby
+        Abernathy","Jessica Alper","Jennifer Fisher (Health Care Services Coordinators)"],"contacts":[{"_id":"521d33211974fcdb2b001b72","name":"Odette
+        Lepe","title":"Executive Director"}],"coordinates":[-122.4230716,37.7872651],"created_at":"2013-08-27T16:15:45-07:00","description":"Provides
+        educational information about muscular dystrophy and other diseases of the
+        muscle. Provides direct services to those afflicted by the dystrophies including
+        a free medical clinic at California Pacific Medical Center in San Francisco,
+        loan of medical and orthopedic equipment, social activities and a summer camp
+        for children. Volunteers age 18 or over are needed as camp counselors or general
+        office help. Printed materials are available by request.","emails":["sanfrancisco@mdausa.org"],"faxes":[{"number":"415
+        673-7501"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Muscular
+        Dystrophy Assn","city":"San Francisco","state":"CA","street":"1375 Sutter
+        Street, Suite 300","zip":"94109"},"name":"Greater Bay Area Chapter","phones":[{"number":"415
+        673-7500","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Provides information
+        about diseases of the muscle, loan of medical and orthopedic equipment, social
+        activities and a summer camp for children.","transportation":"MUNI stops within
+        1 block.","updated_at":"2013-11-07T12:43:38-08:00","urls":["http://www.mda.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33211974fcdb2b001b71","services":[{"_id":"521d33211974fcdb2b001b75","audience":"Persons
+        with any one of 43 neuromuscular diseases","eligibility":"Diagnosis of any
+        one of 43 neuromuscular diseases, including Amyotrophic Lateral Sclerosis
+        (ALS) and Duchennes","fees":"None.","funding_sources":["Donations","Fundraising"],"how_to_apply":"Apply
+        by phone or mail.","keywords":["COMMODITY SERVICES","Assistive/Medical Aids","HANDICAP
+        SERVICES","Recreation/Social Activities","HEALTH SERVICES","Prevention","Youth","Disabilities
+        Issues","volunteer","muscular dystrophy","muscle disease","summer camp"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","Del Norte County","Humboldt County","Mendocino
+        County","Santa Cruz County","Siskiyou County","Solano County","Sonoma County"],"updated_at":"2013-09-06T16:19:56-07:00","wait":"Varies.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","depth":2,"lft":219,"name":"Assistive
+        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d33211974fcdb2b001b70","_slugs":["muscular-dystrophy-association-mda"],"created_at":"2013-08-27T16:15:45-07:00","name":"Muscular
+        Dystrophy Association (MDA)","updated_at":"2013-10-01T12:14:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b70","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b70/locations"},"slugs":["greater-bay-area-chapter-1"],"id":"521d33211974fcdb2b001b71","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.8763604863111124],"highlight":null,"_explanation":null},{"_id":"521d32d71974fcdb2b00078b","_slugs":["larkin-street-youth-services"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1138 Sutter Street","zip":"94109"},"ask_for":["Case
+        manager"],"contacts":[{"_id":"521d32d71974fcdb2b00078c","name":"Sherilyn Adams","title":"Executive
+        Director"},{"_id":"521d32d71974fcdb2b00078d","name":"Toby Eastman","title":"Chief
+        of Programs"}],"coordinates":[-122.4191082,37.7879416],"created_at":"2013-08-27T16:14:31-07:00","description":"Offers
+        a continuum of services designed to help homeless and runaway youth find permanent
+        alternatives to street life. Services include street outreach, a drop-in center
+        that includes three meals a day, counseling, support groups and recreation,
+        case management, and two emergency shelters. The agency also offers longer
+        term, transitional housing. In addition, a medical clinic provides primary
+        care as well as anonymous HIV testing and counseling. Also provides education
+        and employment services. Formerly known as Larkin Street Youth Center.","faxes":[{"number":"415
+        749-3838"}],"hours":"24 hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Larkin
+        Street Youth Services","city":"San Francisco","state":"CA","street":"1138
+        Sutter Street","zip":"94109"},"name":"Larkin Street Youth Services","phones":[{"number":"800
+        447-8223","department":"Hotline","hours":"(24 hours daily)"}],"short_desc":"Multipurpose
+        center for runaway, homeless and street youth that provides emergency services
+        including shelter, counseling, medical treatment and an on-site school.","transportation":"MUNI
+        - 2 Clement, 3 Jackson, 4 Sutter, 19 Polk, 47 Van Ness. BART to Civic Center
+        Station, then transfer to 19 Polk.","updated_at":"2013-11-07T12:43:03-08:00","urls":["http://www.larkinstreetyouth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d71974fcdb2b00078b","services":[{"_id":"521d32d71974fcdb2b000790","audience":"Runaway
+        and homeless youth","eligibility":"Age 12-24","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["CHILD PROTECTION AND CARE SERVICES","Individual/Group
+        Counseling","EDUCATION SERVICES","Alternative","EMERGENCY SERVICES","Drop-in
+        Services","HEALTH SERVICES","Outpatient Care","HOUSING SERVICES","Temporary","INDIVIDUAL
+        AND FAMILY DEVELOPMENT SERVICES","Growth and Adjustment","Runaway Youth","Youth
+        Services"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-09-05T13:46:04-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d32d71974fcdb2b00078a","_slugs":["larkin-street-youth-services"],"created_at":"2013-08-27T16:14:31-07:00","name":"Larkin
+        Street Youth Services","updated_at":"2013-10-01T12:07:41-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d71974fcdb2b00078a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d71974fcdb2b00078a/locations"},"slugs":["larkin-street-youth-services"],"id":"521d32d71974fcdb2b00078b","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9002131605300603],"highlight":null,"_explanation":null},{"_id":"521d32cf1974fcdb2b00054a","_slugs":["prevent-blindness-northern-california"],"address":{"city":"San
+        Francisco","state":"CA","street":"1388 Sutter Street, Suite 408","zip":"94118"},"ask_for":["April
+        Nakayoshi"],"contacts":[{"_id":"521d32cf1974fcdb2b00054b","name":"Wing-see
+        Leung","title":"CEO"},{"_id":"521d32cf1974fcdb2b00054c","name":"April Nakayoshi","title":"Program
+        Director"}],"coordinates":[-122.423065,37.787645],"created_at":"2013-08-27T16:14:23-07:00","description":"Provides
+        services to aid in the prevention of blindness. Among the services offered
+        are a vision screening program for preschool children age 3-5, as well as
+        an adults'' vision screening program, and a fundus imaging that screens for
+        symptoms of eye disease that the individual may be unaware of. Offers professional
+        education on children''s vision screening to medical office and childcare
+        professional. Provides free publications on diabetes and vision, glaucoma,
+        cataracts, the aging eye, and a large printing on-line resource book, \"Coping
+        with Sight Loss in Northern California.\" Brochures are available in Spanish.
+        Home eye tests are available for parents of preschool age children to test
+        the child''s vision in their own homes. Education for those providing community
+        vision screenings is also offered.","emails":["savingsight@eyeinfo.org"],"faxes":[{"number":"415
+        567-7600"}],"kind":"Human Services","languages":["Chinese (Cantonese)","Punjabi","Spanish"],"mail_address":{"attention":"Prevent
+        Blindness Northern Cal","city":"San Francisco","state":"CA","street":"1388
+        Sutter Street, Suite 408","zip":"94118"},"name":"Prevent Blindness Northern
+        California","phones":[{"number":"415 567-7500","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Services
+        to aid in the prevention of blindness.","transportation":"Office: MUNI - 1
+        California, 4 Sutter, 2 Clement stop within 1 block.","updated_at":"2013-11-07T12:47:16-08:00","urls":["http://www.eyeinfo.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32cf1974fcdb2b00054a","services":[{"_id":"521d32cf1974fcdb2b00054f","audience":"Anyone
+        interested in vision loss and prevention of blindness","eligibility":"None","fees":"None,
+        except for large quantities of publications or for professional education
+        classes. Cash and checks accepted.","funding_sources":["Donations","Grants"],"how_to_apply":"Apply
+        by phone or see Web site for a schedule of adult vision screening clinics.","keywords":["Eye
+        Screening","Vision Education"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County","northern California"],"updated_at":"2013-10-04T11:26:15-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000077","depth":3,"lft":234,"name":"Vision
+        Tests","oe_id":"106-06-04-06","parent_id":"52280f691edd37edff000071","rgt":235}]}],"organization":{"_id":"521d32cf1974fcdb2b000549","_slugs":["prevent-blindness-northern-california"],"created_at":"2013-08-27T16:14:23-07:00","name":"Prevent
+        Blindness Northern California","updated_at":"2013-10-01T12:06:47-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cf1974fcdb2b000549","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cf1974fcdb2b000549/locations"},"slugs":["prevent-blindness-northern-california"],"id":"521d32cf1974fcdb2b00054a","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9018857501695926],"highlight":null,"_explanation":null},{"_id":"521d330d1974fcdb2b001625","_slugs":["francis-j-curry-national-tuberculosis-center"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"3180 - 18th Street, Suite 101","zip":"94110-2028"},"ask_for":["Lois
+        Edblad"],"coordinates":[-122.414601,37.76238499999999],"created_at":"2013-08-27T16:15:25-07:00","description":"Works
+        to decrease tuberculosis morbidity through training, technical assistance,
+        demonstration projects and enhanced program activities. One of four Regional
+        Tuberculosis Training and Medical Consultation Centers (RTMCC) funded by the
+        Division of Tuberculosis Elimination, Centers for Disease Control and Prevention.
+        The three other RTMCC sites are located in Newark, NJ; San Antonio, TX; and
+        Gainesville, FL. Offers training to medical and social service providers on
+        a variety of clinical and non-clinical topics, distance learning opportunities
+        and a \"Warmline\" for clinical consultation on medically difficult to manage
+        patients. The San Francisco Center is a collaborative effort among the San
+        Francisco Department of Public Health, the UCSF Division of Pulmonary and
+        Critical Care Medicine, and the Tuberculosis Control Branch, California State
+        Department of Health Services.","emails":["tbcenter@nationaltbcenter.edu"],"faxes":[{"number":"415
+        502-4620"}],"hours":"Monday-Friday, 8-4:30","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Spanish","Vietnamese"],"mail_address":{"attention":"Francis
+        J. Curry TB Center","city":"San Francisco","state":"CA","street":"3180 - 18th
+        Street, Suite 101","zip":"94110-2028"},"name":"Francis J. Curry National Tuberculosis
+        Center","phones":[{"number":"415 502-4600"}],"short_desc":"One of four centers
+        in the country working to decrease TB cases.","transportation":"MUNI stops
+        within 1 block.","updated_at":"2013-11-07T12:45:16-08:00","urls":["http://www.nationaltbcenter.edu"],"url":"http://ohanapi.herokuapp.com/api/locations/521d330d1974fcdb2b001625","services":[{"_id":"521d330d1974fcdb2b001628","audience":"Physicians,
+        clinicians, TB control staff, public and private health care staff","eligibility":"None","fees":"Deposits
+        requested to reserve course space. Checks accepted.","keywords":["HEALTH SERVICES","Prevention"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","western U.S."],"updated_at":"2013-09-18T17:27:02-07:00","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582}]}],"organization":{"_id":"521d330d1974fcdb2b001624","_slugs":["francis-j-curry-national-tuberculosis-center"],"created_at":"2013-08-27T16:15:25-07:00","name":"Francis
+        J. Curry National Tuberculosis Center","updated_at":"2013-10-01T12:19:33-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d330d1974fcdb2b001624","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d330d1974fcdb2b001624/locations"},"slugs":["francis-j-curry-national-tuberculosis-center"],"id":"521d330d1974fcdb2b001625","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9067664872032858],"highlight":null,"_explanation":null},{"_id":"521d32c61974fcdb2b0002b6","_slugs":["raphael-house"],"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"1065
+        Sutter Street","zip":"94109"},"ask_for":["Intake worker"],"contacts":[{"_id":"521d32c61974fcdb2b0002b7","name":"David
+        Lowell","title":"Executive Director"}],"coordinates":[-122.4177118,37.7879852],"created_at":"2013-08-27T16:14:14-07:00","description":"An
+        emergency family shelter for parents (individuals and couples) and their children.
+        This is not a \"safe house.\" Three meals served daily to shelter residents.
+        Length of stay is based on individual need. The shelter is not equipped to
+        take active alcoholics, drug addicts or persons with mental severe illness.
+        Offers complete case management services. Provides a living room for residents
+        and a playroom for children.  Donations of children''s clothing, toys, sweaters,
+        socks, blankets, sheets, towels, pots, pans, dishes and occasionally, small
+        furniture items are welcome - no pickup available.","hours":"24 hours daily","kind":"Human
+        Services","languages":["Russian","Spanish"],"mail_address":{"attention":"Raphael
+        House","city":"San Francisco","state":"CA","street":"1065 Sutter Street","zip":"94109"},"name":"Raphael
+        House","phones":[{"number":"415 474-4621"}],"short_desc":"Emergency shelter
+        for families.","transportation":"MUNI - 2 Clement, 3 Jackson, 4 Sutter, 19
+        Polk, 45 Van Ness lines.","updated_at":"2013-11-07T12:43:00-08:00","urls":["http://raphaelhouse.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c61974fcdb2b0002b6","services":[{"_id":"521d32c61974fcdb2b0002ba","audience":"Families
+        and single mothers with children in need of emergency shelter","eligibility":"Single
+        man or woman with child, family with children, woman in final month of pregnancy","fees":"$3
+        per day for adults, $2 per day for children, meals included. No one will be
+        denied service for inability to pay. Cash accepted.","funding_sources":["Donations","Grants"],"how_to_apply":"Family
+        calls intake worker.","keywords":["EMERGENCY SERVICES","Shelter/Refuge","HOUSING
+        SERVICES","Temporary"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County"],"updated_at":"2013-10-02T22:21:36-07:00","wait":"5-10
+        days from interview to intake if room is available.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000b","depth":1,"lft":20,"name":"Emergency
+        Shelter","oe_id":"101-04","parent_id":"52280f5c1edd37edff000001","rgt":21},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001c","depth":1,"lft":54,"name":"Emergency
+        Shelter","oe_id":"103-01","parent_id":"52280f601edd37edff00001b","rgt":55}]}],"organization":{"_id":"521d32c61974fcdb2b0002b5","_slugs":["raphael-house"],"created_at":"2013-08-27T16:14:14-07:00","name":"Raphael
+        House","updated_at":"2013-10-01T12:05:45-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c61974fcdb2b0002b5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c61974fcdb2b0002b5/locations"},"slugs":["raphael-house"],"id":"521d32c61974fcdb2b0002b6","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9078626161256448],"highlight":null,"_explanation":null},{"_id":"521d32fa1974fcdb2b001128","_slugs":["immune-enhancement-project"],"accessibility":["Disabled
+        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"3450
+        - 16th Street","zip":"94114"},"contacts":[{"_id":"521d32fa1974fcdb2b001129","name":"Debbie
+        Shargel","title":"Executive Director"}],"coordinates":[-122.4298896,37.7646447],"created_at":"2013-08-27T16:15:06-07:00","description":"Provides
+        complementary medicine including acupuncture, massage, herbal therapy and
+        nutritional counseling. Addresses a full range of health concerns with a holistic
+        approach that is customized to individual needs and can be complementary to
+        Western medicine regimens.","faxes":[{"number":"415 252-8710"}],"hours":"Monday-Friday,
+        10-8; Saturday, 10-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Immune
+        Enhancement Project","city":"San Francisco","state":"CA","street":"3450 -
+        16th Street","zip":"94114"},"name":"Immune Enhancement Project","phones":[{"number":"415
+        252-8711","hours":"(Monday, Wednesday-Friday, 10-8)"}],"short_desc":"Alternative
+        healing using Chinese herbs and acupuncture for persons with HIV/AIDS.","transportation":"MUNI
+        - J, K, L, 8 Market, 22 Fillmore.","updated_at":"2013-11-07T12:43:14-08:00","urls":["http://www.iepclinic.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32fa1974fcdb2b001128","services":[{"_id":"521d32fa1974fcdb2b00112c","audience":"Persons
+        with chronic conditions, such as HIV/AIDS, cancer, hepatitis. Emphasis on
+        low income, uninsured and underinsured","eligibility":"Vary according to service","fees":"Vary
+        according to income. Accept most private insurance, workers compensation.
+        Cash, checks and credit cards accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Walk
+        in or apply by phone.","keywords":["HEALTH SERVICES","Alternative Health Care"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County"],"updated_at":"2013-09-18T18:18:26-07:00","wait":"No wait for self
+        pay or private insurance patients. No wait for drop-in acupuncture clinics.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006e","depth":2,"lft":217,"name":"Alternative
+        Medicine","oe_id":"106-06-01","parent_id":"52280f691edd37edff00006d","rgt":218}]}],"organization":{"_id":"521d32fa1974fcdb2b001127","_slugs":["immune-enhancement-project"],"created_at":"2013-08-27T16:15:06-07:00","name":"Immune
+        Enhancement Project","updated_at":"2013-10-01T12:10:42-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32fa1974fcdb2b001127","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32fa1974fcdb2b001127/locations"},"slugs":["immune-enhancement-project"],"id":"521d32fa1974fcdb2b001128","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9132841172651426],"highlight":null,"_explanation":null},{"_id":"521d33281974fcdb2b001d0d","_slugs":["san-francisco-district-council-dot-riley-center"],"address":{"city":"San
+        Francisco","state":"CA","street":"3543 - 18th Street, 3rd Floor","zip":"94110"},"contacts":[{"_id":"521d33281974fcdb2b001d0e","name":"Maria
+        Chavez","title":"Director"}],"coordinates":[-122.4226693,37.76155730000001],"created_at":"2013-08-27T16:15:52-07:00","description":"The
+        Riley Center operates Rosalie House, a 24-bed emergency shelter providing
+        food, counseling and advocacy for women victims of domestic violence and their
+        children. Maximum stay is 12 weeks. Case management, support groups and counseling
+        are available after the shelter stay. Has a public office for drop-in counseling,
+        follow-up services, community education and a volunteer program.   Also operates
+        Brennan House, a 28-bed transitional housing program for formerly battered
+        women and their children. Services include counseling, support groups, parenting
+        classes, job/education workshops and a children''s program. Maximum stay is
+        18 months.","emails":["becki@rileycenter.org"],"faxes":[{"number":"415 552-0337"}],"hours":"24
+        hours daily","kind":"Human Services","languages":["Chinese (Cantonese)","Chinese
+        (Mandarin)","Interpreter","Spanish"],"mail_address":{"attention":"Riley Center","city":"San
+        Francisco","state":"CA","street":"3543 - 18th Street, Box 4","zip":"94110"},"name":"San
+        Francisco District Council., Riley Center","phones":[{"number":"415 255-0165","department":"Crisis
+        Line","hours":"(24 hours daily)"}],"short_desc":"Safehouse and transitional
+        housing for women victims of domestic violence.","transportation":"MUNI stops
+        within 1 block.","updated_at":"2013-11-07T12:45:36-08:00","urls":["http://www.rileycenter.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33281974fcdb2b001d0d","services":[{"_id":"521d33281974fcdb2b001d11","audience":"Female
+        victims of domestic violence and their children","eligibility":"Woman (single
+        or with children), victim of domestic violence or at risk of domestic violence","fees":"Vary
+        according to income and service. No charge for children. No one denied service
+        for inability to pay. Cash accepted.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        crisis line or visit the office.","keywords":["EMERGENCY SERVICES","Shelter/Refuge","battered
+        women","Crisis hotline"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County"],"updated_at":"2013-10-07T15:12:46-07:00","wait":"Varies
+        according to space availability and the type of service requested.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000a","depth":1,"lft":18,"name":"Emergency
+        Food","oe_id":"101-03","parent_id":"52280f5c1edd37edff000001","rgt":19},{"_id":"52280f5d1edd37edff00000b","depth":1,"lft":20,"name":"Emergency
+        Shelter","oe_id":"101-04","parent_id":"52280f5c1edd37edff000001","rgt":21},{"_id":"52280f5d1edd37edff00000d","depth":1,"lft":24,"name":"Immediate
+        Safety","oe_id":"101-06","parent_id":"52280f5c1edd37edff000001","rgt":29},{"_id":"52280f5e1edd37edff00000e","depth":2,"lft":25,"name":"Help
+        Escape Violence","oe_id":"101-06-01","parent_id":"52280f5d1edd37edff00000d","rgt":26},{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000013","depth":1,"lft":36,"name":"Emergency
+        Food","oe_id":"102-02","parent_id":"52280f5e1edd37edff000011","rgt":37},{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001c","depth":1,"lft":54,"name":"Emergency
+        Shelter","oe_id":"103-01","parent_id":"52280f601edd37edff00001b","rgt":55},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f741edd37edff0000e9","depth":2,"lft":463,"name":"Help
+        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464}]}],"organization":{"_id":"521d33281974fcdb2b001d0c","_slugs":["st-vincent-de-paul-society"],"created_at":"2013-08-27T16:15:52-07:00","name":"St.
+        Vincent de Paul Society","updated_at":"2013-10-30T17:53:43-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33281974fcdb2b001d0c","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33281974fcdb2b001d0c/locations"},"slugs":["san-francisco-district-council-dot-riley-center"],"id":"521d33281974fcdb2b001d0d","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.941920109158815],"highlight":null,"_explanation":null},{"_id":"521d33171974fcdb2b0018ed","_slugs":["northern-california-chapter"],"address":{"city":"San
+        Francisco","state":"CA","street":"870 Market Street, Suite 1048","zip":"94102"},"contacts":[{"_id":"521d33171974fcdb2b0018ee","name":"Gregory
+        Martin","title":"Division Director"}],"coordinates":[-122.4071517,37.7850356],"created_at":"2013-08-27T16:15:35-07:00","description":"Promotes
+        liver health and disease prevention. Provides reasearch, education, and advocacy
+        for the 30 million Americans affected by liver related diseases, including
+        hepatitis.","emails":["northernca@liverfoundation.org"],"faxes":[{"number":"415
+        248-1066"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","mail_address":{"attention":"American
+        Liver Foundation","city":"San Francisco","state":"CA","street":"870 Market
+        Street, Suite 1048","zip":"94102"},"name":"Northern California Chapter","phones":[{"number":"415
+        248-1060","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Information, education
+        and support group referrals to liver patients and their families.","transportation":"Varies
+        according to meeting location.","updated_at":"2013-11-07T12:45:32-08:00","urls":["http://www.liverfoundation.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33171974fcdb2b0018ed","services":[{"_id":"521d33171974fcdb2b0018f1","audience":"Those
+        affected by liver diseases, including hepatitis","eligibility":"None","fees":"No
+        charge for information. Membership dues $25. Checks and credit cards accepted.","funding_sources":["Donations","Fundraising","Grants","Membership
+        dues"],"how_to_apply":"Apply by phone.","keywords":["HEALTH SERVICES","Prevention","Individual/Group
+        Counseling","Disease/Disability Information"],"service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County","northern California","Nevada"],"updated_at":"2013-09-18T17:44:33-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f681edd37edff000063","depth":2,"lft":195,"name":"Understand
+        Disability","oe_id":"106-04-07","parent_id":"52280f681edd37edff00005c","rgt":196},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582}]}],"organization":{"_id":"521d33171974fcdb2b0018ec","_slugs":["american-liver-foundation"],"created_at":"2013-08-27T16:15:35-07:00","name":"American
+        Liver Foundation","updated_at":"2013-10-01T12:13:10-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33171974fcdb2b0018ec","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33171974fcdb2b0018ec/locations"},"slugs":["northern-california-chapter"],"id":"521d33171974fcdb2b0018ed","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9686028673603211],"highlight":null,"_explanation":null},{"_id":"521d32e61974fcdb2b000b77","_slugs":["national-center-for-lesbian-rights"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"870 Market Street, Suite 370","zip":"94102"},"contacts":[{"_id":"521d32e61974fcdb2b000b78","name":"Kate
+        Kendell, ED","title":"Executive Director"}],"coordinates":[-122.4071517,37.7850356],"created_at":"2013-08-27T16:14:46-07:00","description":"A
+        legal resource center providing no-fee legal service for men and women who
+        have experienced discrimination based on their sexual orientation. Also conducts
+        a nationwide telephone advice and counseling program. Publishes materials
+        about the legal effects of anti-gay discrimination.","emails":["info@nclrights.org"],"faxes":[{"number":"415
+        392-8442"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Nat''l
+        Ctr for Lesbian Rights","city":"San Francisco","state":"CA","street":"870
+        Market Street, Suite 370","zip":"94102"},"name":"National Center for Lesbian
+        Rights","phones":[{"number":"415 392-6257","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Public
+        interest law firm for persons who have experienced discrimination based on
+        their sexual orientation.","transportation":"MUNI - Market and Powell Street
+        lines. BART - Powell Station.","updated_at":"2013-11-07T12:45:23-08:00","urls":["http://www.nclrights.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e61974fcdb2b000b77","services":[{"_id":"521d32e61974fcdb2b000b7b","audience":"Persons
+        experiencing discrimination based upon their sexual orientation or perceived
+        sexual orientation","eligibility":"Must have experienced some form of gender
+        identity or sexual orientation-based discrimination","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Apply
+        by phone or email.","keywords":["COMMUNITY SERVICES","Human Rights/Ombudsman/Advocacy","LEGAL
+        AND CRIMINAL JUSTICE SERVICES","Certificates/Forms Assistanc","Prosecution
+        Representation","Gay/Lesbian/Bisexual/Transgender Issues"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","nationwide"],"updated_at":"2013-10-04T14:39:57-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645}]}],"organization":{"_id":"521d32e61974fcdb2b000b76","_slugs":["national-center-for-lesbian-rights"],"created_at":"2013-08-27T16:14:46-07:00","name":"National
+        Center for Lesbian Rights","updated_at":"2013-10-01T12:09:07-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e61974fcdb2b000b76","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e61974fcdb2b000b76/locations"},"slugs":["national-center-for-lesbian-rights"],"id":"521d32e61974fcdb2b000b77","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.9686028673603211],"highlight":null,"_explanation":null},{"_id":"521d331f1974fcdb2b001aff","_slugs":["nobiru-kai-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1840 Sutter Street, Suite 207","zip":"94115"},"coordinates":[-122.430927,37.78667],"created_at":"2013-08-27T16:15:43-07:00","description":"Provides
+        bilingual social services primarily for Japanese persons, including translation
+        and interpretation. Drop-in center provides employment, housing and immigration
+        information, cultural, educational and recreational activities, and information
+        and referral. Offers a small library of Japanese books. A community board
+        lists job openings, housing information and educational opportunities in Japanese.
+        Publishes a bimonthly newsletter.   A women''s project offers peer counseling
+        and group support.","emails":["info@nobiru-kai.org"],"faxes":[{"number":"415
+        922-0410"}],"kind":"Human Services","languages":["Japanese"],"mail_address":{"attention":"Japanese
+        Newcomers Services","city":"San Francisco","state":"CA","street":"1840 Sutter
+        Street, Suite 207","zip":"94115"},"name":"Nobiru Kai Inc.","phones":[{"number":"415
+        922-2033"}],"short_desc":"Bilingual social services for Japanese, including
+        translation and interpretation, a drop-in center, library, educational and
+        recreational activities.","transportation":"MUNI - 2 Clement, 3 Jackson, 4
+        Sutter, 38 Geary, 22 Fillmore.","updated_at":"2013-11-07T12:45:34-08:00","urls":["http://www.nobiru-kai.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d331f1974fcdb2b001aff","services":[{"_id":"521d331f1974fcdb2b001b02","audience":"Japanese-speaking
+        newcomers as well as the community-at-large","eligibility":"None","fees":"None.
+        Donations requested for ESL classes and some events. Cash and checks accepted.","funding_sources":["Donations","Membership
+        dues"],"how_to_apply":"Walk in or apply by phone.","keywords":["COMMUNITY
+        SERVICES","Group Support","Interpretation/Translation","INDIVIDUAL AND FAMILY
+        DEVELOPMENT SERVICES","Growth and Adjustment","RECREATION/LEISURE SERVICES","Special
+        Events/Entertainment","Cultural/Racial Issues","employment","language services","Japanese"],"service_areas":["Contra
+        Costa County","Marin County","San Francisco County","San Mateo County"],"updated_at":"2013-09-05T14:16:18-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7c1edd37edff000147","depth":1,"lft":652,"name":"Translation
+        & Interpretation","oe_id":"111-05","parent_id":"52280f7a1edd37edff000137","rgt":653}]}],"organization":{"_id":"521d331f1974fcdb2b001afe","_slugs":["japanese-newcomers-services"],"created_at":"2013-08-27T16:15:43-07:00","name":"Japanese
+        Newcomers Services","updated_at":"2013-10-01T12:14:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe/locations"},"slugs":["nobiru-kai-inc"],"id":"521d331f1974fcdb2b001aff","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.0274057637543024],"highlight":null,"_explanation":null},{"_id":"521d331d1974fcdb2b001a50","_slugs":["bay-area-caregiver-resource-center"],"accessibility":["Elevator","Disabled
+        Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"785
+        Market Street, Suite 750","zip":"94103"},"ask_for":["Program Associate"],"contacts":[{"_id":"521d331d1974fcdb2b001a51","name":"Kathy
+        Kelly","title":"Executive Director"}],"coordinates":[-122.4052981,37.78597],"created_at":"2013-08-27T16:15:41-07:00","description":"Family
+        Caregiver Alliance (FCA) as the Bay Area Caregiver Resource Center, offers
+        direct, comprehensive services for caregivers (partners/spouses, family, and
+        friends) of adults who became cognitively impaired, due to illness or injury,
+        after age 18. Diagnoses served include Alzheimer''s disease, stroke, Traumatic
+        Brain Injury, Huntington''s disease, Parkinson''s disease, multiple sclerosis,
+        Amyotrophic Lateral Scleroses (ALS), and others. Offers information and referral
+        regarding caregiver issues, brain impairing conditions, community resources,
+        and public awareness, education and training.   In some counties, FCA also
+        provides services to caregivers of adults age 60 or over (with or without
+        cognitive impairment) and to adults age 59 or under with demintia (not including
+        stroke) through funding from the National Family Caregiver Support Program
+        administered locally through Area Agencies on Aging. Long-term care planning
+        services include: individual and family consultation in the home regarding
+        the client''s caregiving situation; legal consultation; counseling; respite,
+        Link2Care, an on-line caregiver support services program; a comprehensive
+        Web site; an on-line support group for all caregivers, an on-line group for
+        Huntington''s caregivers, and an on-line group for Lesbian/Gay/Bisexual/Transgender
+        (LGBT) caregivers; workshops and classes that focus on relieving caregiver
+        stress by teaching caregivers new skills for interacting with people with
+        dementia and caregiver self care. Also offers professional training, conferences,
+        publications, in-service trainings to other professionals, and technical assistance.
+        Publishes fact sheets in English, Spanish and Chinese on specific brain impairing
+        illnesses, legal issues, in-home care, community resources, and caregiver
+        issues. Also publishes three fact sheets focusing on the needs of LGBT caregivers.
+        Produces UPDATE, an award-winning quarterly newsletter, which is also available
+        on-line. The National Center on Caregiving is a  program that advocates for
+        caregivers, as well as provides information and conducts research, at the
+        national level, and works to affect policy by supporting legislation that
+        will improve awareness and availability of services to people taking care
+        of family or friends with cognitive impairment, or who are elderly and frail.","emails":["info@caregiver.org"],"faxes":[{"number":"415
+        434-3508"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Chinese
+        (Mandarin)","Spanish"],"mail_address":{"attention":"Family Caregiver Alliance","city":"San
+        Francisco","state":"CA","street":"785 Market Street, Suite 750","zip":"94103"},"name":"Bay
+        Area Caregiver Resource Center","phones":[{"number":"800 445-8106","hours":"(Monday-Friday,
+        9-5)"}],"short_desc":"Offers a comprehensive range of services for family,
+        partners, friends and others concerned with or caring for a brain impaired
+        adult.","transportation":"MUNI - Market Street lines, 2 Clement, 3 Jackson,
+        4 Sutter, 38 Geary. BART - Montgomery Street Station within 2 blocks.","updated_at":"2013-11-07T12:43:37-08:00","urls":["http://www.caregiver.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d331d1974fcdb2b001a50","services":[{"_id":"521d331d1974fcdb2b001a54","audience":"Caregivers
+        of adults with adult onset brain impairment (e.g., Alzheimer''s, dementia,
+        Huntington''s, Parkinson''s, stroke or Traumatic Brain Injury). In some counties,
+        caregivers of any adult age 60 or over or age 59 or under with dementia (does
+        not include stroke)","eligibility":"None for telephone resource consultation
+        and referrals","fees":"Most services are free; others vary according to income
+        or are low cost. Respite care programs require co-payment. Cash, checks and
+        credit cards accepted.","funding_sources":["Donations","Grants","State"],"how_to_apply":"Apply
+        by phone.","keywords":["ADULT PROTECTION AND CARE SERVICES","Community Information","COMMUNITY
+        SERVICES","Speakers","Family Support","HEALTH SERVICES","Prevention","Support
+        Groups","caregiver issues","caregiver support group","cognitively impaired","brain
+        impairing conditions"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-09-18T17:22:29-07:00","wait":"Waiting
+        list for respite services.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f681edd37edff000063","depth":2,"lft":195,"name":"Understand
+        Disability","oe_id":"106-04-07","parent_id":"52280f681edd37edff00005c","rgt":196},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462}]}],"organization":{"_id":"521d331d1974fcdb2b001a4f","_slugs":["family-caregiver-alliance-fca"],"created_at":"2013-08-27T16:15:41-07:00","name":"Family
+        Caregiver Alliance (FCA)","updated_at":"2013-10-01T12:14:05-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331d1974fcdb2b001a4f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331d1974fcdb2b001a4f/locations"},"slugs":["bay-area-caregiver-resource-center"],"id":"521d331d1974fcdb2b001a50","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.085762405065023],"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c1e","_slugs":["taft-school-health-services"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"785 Market Street, 10th Floor","zip":"94103"},"contacts":[{"_id":"521d33241974fcdb2b001c1f","name":"Brett
+        Andrews","title":"Executive Director"}],"coordinates":[-122.4052981,37.78597],"created_at":"2013-08-27T16:15:48-07:00","description":"Assists
+        people affected by, or at risk for, HIV/AIDS through culturally appropriate
+        counseling, education and advocacy to make informed choices which maximize
+        available benefits and employment opportunities.   The Employment Services
+        Program includes job search skills workshops, computer training, resume assistance,
+        career counseling/vocational testing and Working While Disabled workshops.
+        The Benefits Counseling Program for San Francisco residents provides individualized
+        benefits counseling and advocacy.","faxes":[{"number":"415 777-1770"}],"hours":"Monday-Friday,
+        9-5","kind":"Human Services","languages":["Chinese (Cantonese)","Spanish"],"mail_address":{"attention":"Positive
+        Resource Center","city":"San Francisco","state":"CA","street":"785 Market
+        Street, 10th Floor","zip":"94103"},"name":"Taft School Health Services","phones":[{"number":"415
+        777-0333","hours":"(Monday-Friday, 9-5)"}],"short_desc":"An employment service
+        for persons with AIDS/HIV.","transportation":"MUNI, BART - Powell Street station.","updated_at":"2013-11-07T12:45:15-08:00","urls":["http://www.positiveresource.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33241974fcdb2b001c1e","services":[{"_id":"521d33241974fcdb2b001c22","audience":"People
+        living with HIV/AIDS or mental health disabilities","eligibility":"HIV-positive
+        or mental health disabilities","fees":"None.","funding_sources":["City","County","Donations","Grants"],"how_to_apply":"Call
+        for intake process - varies by program and population served.","keywords":["EMPLOYMENT/TRAINING
+        SERVICES","Job Counseling/Testing","Job Information/Placement/Referral"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-09-18T17:24:41-07:00","wait":"Up
+        to 2 weeks.","categories":[{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff00012d","depth":1,"lft":600,"name":"Skills
+        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615},{"_id":"52280f7a1edd37edff00012e","depth":2,"lft":601,"name":"Basic
+        Literacy","oe_id":"110-03-01","parent_id":"52280f7a1edd37edff00012d","rgt":602},{"_id":"52280f7a1edd37edff00012f","depth":2,"lft":603,"name":"Computer
+        Class","oe_id":"110-03-02","parent_id":"52280f7a1edd37edff00012d","rgt":604},{"_id":"52280f7a1edd37edff000130","depth":2,"lft":605,"name":"GED/High-School
+        Equivalency","oe_id":"110-03-03","parent_id":"52280f7a1edd37edff00012d","rgt":606},{"_id":"52280f7a1edd37edff000131","depth":2,"lft":607,"name":"Interview
+        Training","oe_id":"110-03-04","parent_id":"52280f7a1edd37edff00012d","rgt":608},{"_id":"52280f7a1edd37edff000132","depth":2,"lft":609,"name":"Resume
+        Development","oe_id":"110-03-05","parent_id":"52280f7a1edd37edff00012d","rgt":610},{"_id":"52280f7a1edd37edff000133","depth":2,"lft":611,"name":"Skills
+        Assessment","oe_id":"110-03-06","parent_id":"52280f7a1edd37edff00012d","rgt":612},{"_id":"52280f7a1edd37edff000134","depth":2,"lft":613,"name":"Specialized
+        Training","oe_id":"110-03-07","parent_id":"52280f7a1edd37edff00012d","rgt":614}]}],"organization":{"_id":"521d33241974fcdb2b001c1d","_slugs":["positive-resource-center"],"created_at":"2013-08-27T16:15:48-07:00","name":"Positive
+        Resource Center","updated_at":"2013-10-01T12:19:31-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c1d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c1d/locations"},"slugs":["taft-school-health-services"],"id":"521d33241974fcdb2b001c1e","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.085762405065023],"highlight":null,"_explanation":null},{"_id":"521d32c41974fcdb2b000266","_slugs":["hearing-and-speech-center-of-northern-california"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"1234 Divisadero Street","zip":"94115"},"ask_for":["community
+        resource staff"],"contacts":[{"_id":"521d32c51974fcdb2b000267","name":"David
+        McClure","title":"Chief Executive Officer"}],"coordinates":[-122.4389,37.7810729],"created_at":"2013-08-27T16:14:13-07:00","description":"Provides
+        information and referral on hearing, hearing loss assessment and hearing conservation.
+        Services include information and referral, audiological counseling, social
+        work and mental health services, and individual and group counseling for hard
+        of hearing and deaf people and their families. Provides counseling for those
+        living with hearing loss. Provides social/developmental activities for children
+        and youth.   Speakers and literature are available (some materials in languages
+        other than English). Offers outreach services to schools and senior centers
+        including hearing screenings by professionals. Assistive Devices are available
+        for demonstration and sale. Formerly known as Hearing Society for the Bay
+        Area.","emails":["info@hearingspeech.org"],"faxes":[{"number":"415 921-2243"}],"hours":"Monday-Friday,
+        8:30-5","kind":"Human Services","languages":["Arabic","Chinese (Cantonese)","Sign
+        Languages","Spanish"],"mail_address":{"attention":"Hearing and Speech Center","city":"San
+        Francisco","state":"CA","street":"1234 Divisadero Street","zip":"94115"},"name":"Hearing
+        and Speech Center of Northern California","phones":[{"number":"415 921-7658","hours":"(Monday-Friday,
+        8:30-5)"}],"short_desc":"Information/services on hearing, hearing loss, hearing
+        conservation, deafness. Loan of hearing aids.","transportation":"MUNI stops
+        within 1 block.","updated_at":"2013-11-07T12:45:19-08:00","urls":["http://www.hearingspeech.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c41974fcdb2b000266","services":[{"_id":"521d32c51974fcdb2b00026a","audience":"Hard
+        of hearing and deaf persons and their families, and friends, or same with
+        speech impairment","eligibility":"Deafness or hearing loss in self, family,
+        friend, or same with speech impairment","fees":"Vary according to income for
+        counseling or classes. Cash, checks, credit cards and private insurance accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Apply
+        by phone, mail, email, TTY.","keywords":["COMMODITY SERVICES","Assistive/Medical
+        Aids","COMMUNITY SERVICES","Speakers","HANDICAP SERVICES","Community Information","Education","Individual/Group
+        Counseling","Screening/Diagnosis","Support Groups","Speakers/Speakers Bureaus","counseling","deaf","developmental
+        services","assisted devices"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County"],"updated_at":"2013-09-05T14:08:37-07:00","wait":"Varies
+        according to service.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f741edd37edff0000e9","depth":2,"lft":463,"name":"Help
+        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464},{"_id":"52280f751edd37edff0000ed","depth":2,"lft":471,"name":"One-on-One
+        Support","oe_id":"108-07-06","parent_id":"52280f741edd37edff0000e7","rgt":472},{"_id":"52280f751edd37edff0000f0","depth":2,"lft":477,"name":"Support
+        Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484}]}],"organization":{"_id":"521d32c41974fcdb2b000265","_slugs":["hearing-and-speech-center-of-northern-california"],"created_at":"2013-08-27T16:14:12-07:00","name":"Hearing
+        and Speech Center of Northern California","updated_at":"2013-10-01T12:05:36-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c41974fcdb2b000265","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c41974fcdb2b000265/locations"},"slugs":["hearing-and-speech-center-of-northern-california"],"id":"521d32c41974fcdb2b000266","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.1468840559265743],"highlight":null,"_explanation":null},{"_id":"521d33341974fcdb2b001f5b","_slugs":["aids-chronic-illness-and-disabilities-program"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"2150 Post Street","zip":"94115"},"ask_for":["Abby
+        Kovalsky"],"contacts":[{"_id":"521d33341974fcdb2b001f5c","name":"Abby Kovalsky,
+        LCSW","title":"Supervisor of Case Management, Adult Services"}],"coordinates":[-122.4375073,37.7848366],"created_at":"2013-08-27T16:16:04-07:00","description":"Provides
+        counseling, case management, information and referral, support groups, financial
+        assistance and advocacy for Jewish individuals with HIV/AIDS, chronic illness
+        or disability, their family and loved ones.   \"Chicken Souper\" meals are
+        prepared and delivered twice a month by local congregations. Offers support
+        and assistance to out-of-town families. Volunteers provide practical support
+        for clients. Provides referrals to rabbis for pastoral counseling and spiritual
+        support. Offers a meal delivery program for low-income, physically disabled
+        clients living in San Francisco (regardless of religion) weekly which provides
+        food for seven days. Call 415-449-3824 for more information.  Other offices
+        offering disability services are located at 200 Channing Avenue, Palo Alto,
+        94301 and 2001 Windward Way, San Mateo 94404.","emails":["abbyk@jfcs.org"],"faxes":[{"number":"415
+        449-1253"}],"hours":"Monday-Friday, 8:30-5; evening hours by appointment","kind":"Human
+        Services","languages":["Hebrew","Russian"],"mail_address":{"attention":"AIDS
+        Project","city":"San Francisco","state":"CA","street":"2150 Post Street","zip":"94115"},"name":"AIDS,
+        Chronic Illness and Disabilities Program","phones":[{"number":"415 449-1224","hours":"(Monday-Friday,
+        8:30-5)"}],"short_desc":"Counseling, support, case management, crisis intervention
+        and financial assistance for Jewish persons with HIV/AIDS, family and loved
+        ones.","transportation":"MUNI - 38 Geary, 24 Divisadero, 2 Clement, 4 Sutter.","updated_at":"2013-11-07T12:45:09-08:00","urls":["http://www.jfcs.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33341974fcdb2b001f5b","services":[{"_id":"521d33351974fcdb2b001f70","audience":"Jewish
+        people with chronic illness or disabiilty, their families and loved ones","eligibility":"Jewish
+        person with HIV/AIDs, chronic illness or physical/developmental disability,
+        family and loved ones","fees":"Fees for therapy (up tp $145), support groups
+        (up to $45) and case management (up tp $145) vary according to income and
+        service. Cash, checks, credit cards and private insurance accepted.","funding_sources":["Donations","Fees","Grants"],"how_to_apply":"Apply
+        by phone.","keywords":["ADULT PROTECTION AND CARE SERVICES","In-Home Supportive","Meal
+        Sites/Home-delivered Mea","EMERGENCY SERVICES","Financial Assistance","HEALTH
+        SERVICES","Family Support","Individual/Group Counseling","Religious Groups/Communities"],"service_areas":["Marin
+        County","San Francisco County","San Mateo County","Sonoma County","Palo Alto"],"updated_at":"2013-09-18T17:26:46-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d33331974fcdb2b001f4e","_slugs":["jewish-family-and-childrens-services"],"created_at":"2013-08-27T16:16:03-07:00","name":"Jewish
+        Family and Children''s Services","updated_at":"2013-10-01T12:13:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33331974fcdb2b001f4e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33331974fcdb2b001f4e/locations"},"slugs":["aids-chronic-illness-and-disabilities-program"],"id":"521d33341974fcdb2b001f5b","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.2032889013265176],"highlight":null,"_explanation":null},{"_id":"521d331c1974fcdb2b001a18","_slugs":["northern-california-chapter-4"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"5 Third Street, Suite 625","zip":"94103"},"ask_for":["Dana
+        Hall"],"contacts":[{"_id":"521d331c1974fcdb2b001a19","name":"Tamara Block","title":"Executive
+        Director"}],"coordinates":[-122.4033543,37.7873279],"created_at":"2013-08-27T16:15:40-07:00","description":"Assists
+        and educates patients, physicians and the public with a program of support
+        and information services, and raises funds for research to find the cause
+        of, and cure for, Crohn''s disease and ulcerative colitis. Monthly support
+        meetings are held at various locations throughout the Bay Area for patients
+        with ulcerative colitis and Crohn''s disease and their families.","emails":["ncal@ccfa.org"],"faxes":[{"number":"415
+        356-0880"}],"kind":"Human Services","mail_address":{"attention":"Northern
+        California Chapter","city":"San Francisco","state":"CA","street":"5 Third
+        Street, Suite 625","zip":"94103"},"name":"Northern California Chapter","phones":[{"number":"415
+        356-2232","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Education, support
+        and fundraising to find the cause of, and cure for, colitis and Crohn''s disease.","transportation":"BART
+        and MUNI stop within 1 block.","updated_at":"2013-11-07T12:45:32-08:00","urls":["http://www.ccfa.org/chapters/northerncalifornia","http://california.ccfa.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d331c1974fcdb2b001a18","services":[{"_id":"521d331c1974fcdb2b001a1c","audience":"People
+        with ulcerative colitis or Crohn''s Disease, their families, friends, physicians
+        and health professionals","eligibility":"None","fees":"Membership dues - $30
+        per year includes quarterly newsletter. Cash, checks and credit cards accepted.","funding_sources":["Donations","Fundraising","Grants","Membership
+        dues"],"how_to_apply":"Apply by phone or mail.","keywords":["HEALTH SERVICES","Prevention","Family
+        Support","Self-Help","Disease/Disability Information","Crohn''s Disease","Ulcerative
+        colitis"],"service_areas":["Alameda County","Contra Costa County","Marin County","San
+        Francisco County","San Mateo County","Santa Clara County","central California"],"updated_at":"2013-09-18T17:25:36-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d331c1974fcdb2b001a17","_slugs":["crohns-and-colitis-foundation-of-america-inc"],"created_at":"2013-08-27T16:15:40-07:00","name":"Crohn''s
+        and Colitis Foundation of America, Inc","updated_at":"2013-10-01T12:13:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331c1974fcdb2b001a17","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331c1974fcdb2b001a17/locations"},"slugs":["northern-california-chapter-4"],"id":"521d331c1974fcdb2b001a18","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1.2273856737385496],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Tue, 19 Nov 2013 23:56:08 GMT
+  recorded_at: Tue, 19 Nov 2013 23:59:02 GMT
 recorded_with: VCR 2.5.0
