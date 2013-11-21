@@ -114,6 +114,7 @@ module Features
       set_filter(name,field)
       find('#update-btn').click
 
+      find(".require-loaded")
       within("##{name}-options") do
         find(".closed").trigger('mousedown')
         page.should have_selector(".open")
