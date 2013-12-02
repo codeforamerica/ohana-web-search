@@ -13,6 +13,9 @@ define(
 			var searchForm = document.getElementById("search-form");
 			searchForm.addEventListener("submit",_formSubmitted,false);
 
+			var resetBtn = document.getElementById("reset-btn-link");
+			resetBtn.addEventListener("click",_resetClicked,false);
+
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
 			var numFieldsets = fieldsets.length;
@@ -25,6 +28,17 @@ define(
 	      fs.init(fieldsets[f]);
 	      _fieldsets[fs.getId()] = fs;
 	    }
+  	}
+
+  	function _resetClicked(evt)
+  	{
+  		for (var f in _fieldsets)
+  		{
+  			_fieldsets[f].reset()
+  		}
+
+  		evt.preventDefault();
+  		return false;
   	}
 
   	// Handle form submission
@@ -162,8 +176,8 @@ define(
   		var _toggleGroupContainers; // the container for all toggles
   		var _toggleGroups = {}; // array of toggles radio-groups
 
-  		var _highlightToggle; // the currently show toggle when fieldset is closed
-  		var _allToggle; // the "All" toggle
+  		var _highlightToggle; // the currently shown toggle when fieldset is closed
+  		var _defaultToggle; // the "All" toggle
   		var _selectedToggle; // the currently selected toggle
   		var _addInputToggle; // add input toggle
 
@@ -195,12 +209,14 @@ define(
 						_toggleGroups[group.id] = toggle;
 						if (toggle.getToggle().checked && c>0)
 							_selectedToggle = toggle;
+
 						group.addEventListener("mousedown",_toggleClicked,false);
 					}
 					_highlightToggle = _highlightToggle || _toggleGroups[groups[0].id];
-					if (c > 0)
-						_allToggle = _allToggle || _toggleGroups[groups[0].id];
 				}
+
+				_defaultToggle = _toggleGroups[groups[0].id];
+
 				var addInputToggle = _toggleGroups[groups[groups.length-1].id];
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
@@ -284,8 +300,8 @@ define(
 						{
 							_selectedToggle.getToggle().checked = false;
 							_selectedToggle.hideAddInput();
-							_selectedToggle = _allToggle;
-							_allToggle.getToggle().checked = true;
+							_selectedToggle = _defaultToggle;
+							_defaultToggle.getToggle().checked = true;
 						}
 					}
 
@@ -323,8 +339,22 @@ define(
 			}
 
 
+			function reset()
+			{
+				_defaultToggle.checked = true;
+				_selectedToggle.checked = false;
+				_selectedToggle = _defaultToggle;
+
+				var toggle = _defaultToggle.getToggle();
+				_highlightToggle.setLabel(
+						toggle.getAttribute("data-display-value") ||
+						"All");
+
+				document.getElementById("keyword").value = "";
+			}
+
 			// GETTERS
-			// Publically exposed getters for properties
+			// Publicly exposed getters for properties
 			function getId()
 			{
 				return _id;
@@ -344,7 +374,8 @@ define(
       init:init,
       getId:getId,
       getSelectedToggle:getSelectedToggle,
-      getHidden:getHidden
+      getHidden:getHidden,
+      reset:reset
     };
 
   };
