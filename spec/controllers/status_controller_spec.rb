@@ -29,7 +29,7 @@ describe StatusController do
             'X-Api-Token'=>"#{ENV["OHANA_API_TOKEN"]}"}).
           to_return(:status => 200, :body => "", :headers => {})
 
-        stub_request(:get, "http://ohanapi.herokuapp.com/api/search?api_token=#{ENV["OHANA_API_TOKEN"]}&org_name=InnVision").
+        stub_request(:get, "http://ohanapi.herokuapp.com/api/search?api_token=#{ENV["OHANA_API_TOKEN"]}&keyword=maceo").
           with(:headers => {'Accept'=>'application/vnd.ohanapi-v1+json',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0',
