@@ -154,6 +154,7 @@ feature "results page search", :js=>true do
   end
 
   scenario 'when clicking the reset button', :vcr do
+    page.should have_content("No results")
     page.click_link("Reset")
 
     # check filter settings
