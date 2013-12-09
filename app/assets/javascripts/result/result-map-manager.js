@@ -22,40 +22,45 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// PUBLIC METHODS
 		function init()
 		{
-			var mapContainer = document.getElementById('map-view');
-			if (mapContainer)
+			var noResults = document.querySelector("#results-entries .no-results");
+			// only check for result map if the page isn't showing no results
+			if (!noResults)
 			{
-				_mapCanvas = document.getElementById("map-canvas");
-				_mapViewControl = document.getElementById('map-view-control');
-				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
+				var mapContainer = document.getElementById('map-view');
+				if (mapContainer)
+				{
+					_mapCanvas = document.getElementById("map-canvas");
+					_mapViewControl = document.getElementById('map-view-control');
+					_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
-				var mapOptions = {
-					zoom: 15,
-					scrollwheel: false,
-					zoomControl: true,
-					panControl: false,
-					streetViewControl: false,
-					scaleControl: true,
-					scaleControlOptions: {
-						position: google.maps.ControlPosition.RIGHT_BOTTOM
-					},
-					mapTypeControl: false,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
+					var mapOptions = {
+						zoom: 15,
+						scrollwheel: false,
+						zoomControl: true,
+						panControl: false,
+						streetViewControl: false,
+						scaleControl: true,
+						scaleControlOptions: {
+							position: google.maps.ControlPosition.RIGHT_BOTTOM
+						},
+						mapTypeControl: false,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					}
+
+					_map = new google.maps.Map(_mapCanvas, mapOptions);
+
+					_infoWindow = new google.maps.InfoWindow();
+					_infoWindow.setOptions( {disableAutoPan : true} );
+
+					_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
+
+					_loadMarkers();
+					_refresh()
 				}
-
-				_map = new google.maps.Map(_mapCanvas, mapOptions);
-
-				_infoWindow = new google.maps.InfoWindow();
-				_infoWindow.setOptions( {disableAutoPan : true} );
-
-				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
-
-				_loadMarkers();
-				_refresh()
-			}
-			else
-			{
-				console.log("Warning: The result map container was not found!");
+				else
+				{
+					console.log("Warning: The result map container was not found!");
+				}
 			}
 		}
 
