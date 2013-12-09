@@ -101,7 +101,6 @@ feature "results page search", :js=>true do
     page.should have_content("590 results")
     set_filter("service-area","All",false)
     find('#update-btn').click
-    save_screenshot("spec/screenshots/one.png")
     page.should have_content("679 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
@@ -152,6 +151,20 @@ feature "results page search", :js=>true do
     expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#kind-options .current-option label").last).to have_content("Human Services")
     expect(all("#org-name-options .current-option label").last).to have_content("All")
+  end
+
+  scenario 'when clicking the reset button', :vcr do
+    page.click_link("Reset")
+
+    # check filter settings
+    find("#keyword").value.should have_content("")
+    expect(all("#location-options .current-option label").last).to have_content("All")
+    expect(all("#service-area-options .current-option label").last).to have_content("All")
+    expect(all("#kind-options .current-option label").last).to have_content("All")
+    expect(all("#org-name-options .current-option label").last).to have_content("All")
+
+    find('#update-btn').click
+    page.should have_content("1710 results")
   end
 
 end
