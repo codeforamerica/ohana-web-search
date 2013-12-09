@@ -157,9 +157,7 @@ feature "results page search", :js=>true do
     page.click_link("Reset")
 
     # check filter settings
-    within("#keyword-search-box") do
-      find_field("keyword").value.should eq ""
-    end
+    find_field("keyword").value.should eq ""
     expect(all("#location-options .current-option label").last).to have_content("All")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#kind-options .current-option label").last).to have_content("All")
