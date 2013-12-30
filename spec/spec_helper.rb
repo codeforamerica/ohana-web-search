@@ -1,4 +1,5 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require "rack_session_access/capybara"
 require 'coveralls'
 Coveralls.wear!('rails')
 
@@ -65,7 +66,7 @@ require 'vcr'
 VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_hosts '127.0.0.1', 'localhost'
-  c.default_cassette_options = { :record => ENV['TRAVIS'] ? :none : :once, :allow_playback_repeats => true }
+  c.default_cassette_options = { :record => :once, :allow_playback_repeats => true }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
