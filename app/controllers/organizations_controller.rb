@@ -32,6 +32,9 @@ class OrganizationsController < ApplicationController
     end
     #params[:keyword] = original_word if original_word.present?
 
+    initialize_filter_data(@orgs) # intialize search filter data
+
+
     headers = Ohanakapa.last_response.headers
 
     @pages = Hash.new
@@ -90,6 +93,8 @@ class OrganizationsController < ApplicationController
     # retrieve specific organization's details
     id = params[:id].split("/")[-1]
     @org = Organization.get(id)
+
+    initialize_filter_data(@org) # intialize search filter data
 
     # initializes map data
     # Fetching nearby places is the most time-consuming activity in the app.
@@ -210,6 +215,52 @@ class OrganizationsController < ApplicationController
     id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
   end
+
+  # Cache filter values.
+  # @param collection [Object]
+  # @param key [String] The key name in the cache for the aggregated values.
+  # @param block [Block] block to call for accessing a particular caller value.
+  # @return [Array] The aggregated values.
+  def cache_filter_values(collection, key, &block)
+    aggregate = session[key] || []
+
+    if collection.respond_to?('each')
+      collection.each { |org|
+        val = block.call(org)
+        aggregate.shift if aggregate.length >= 5 && aggregate.include?(val) == false
+        aggregate.push( val ) if val.present?
+        break if aggregate.length >= 5
+      }
+      aggregate.uniq!
+      session[key] = aggregate
+    end
+
+    aggregate
+  end
+
+  def initialize_filter_data(collection)
+    # cached locations
+    @aggregate_locations = cache_filter_values(collection,'aggregate_locations'){|org|
+      if org.key?(:address)
+        val = org.address['city']
+        val += ", #{org.address['state']}" if org.address['state'].present?
+      end
+    }
+
+    # cached kinds
+    #@aggregate_kinds = cache_filter_values(collection,'aggregate_kinds'){|org| org.kind }
+    @aggregate_kinds = ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Parks","Sports","Other"]
+
+    # cached service areas
+    @aggregate_service_areas = [{:name=>'San Mateo County, CA',:value=>'smc'}]
+
+    # cached organization names
+    @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
+      org.organization.name if org.key?(:organization) && org.organization.name != org.name
+    }
+
+  end
+
 
   # Translate the page using the Google Translate API.
   # @param [String] text to translate

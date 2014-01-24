@@ -4,23 +4,23 @@ feature "location details" do
 
   context "when the details page is visited via search results", :vcr, :js do
     it "includes address elements" do
-      search_from_home(:keyword => 'maceo')
+      search_for_maceo
       visit_details
-      expect(page).to have_content("Mailing Address")
-      expect(page).to have_content("Physical Address")
-      expect(page).to have_content("2013 Avenue of the fellows")
-      expect(page).to have_content("90210")
-      expect(page).to have_content("05201")
+      page.should have_content("Mailing Address")
+      page.should have_content("Physical Address")
+      page.should have_content("2013 Avenue of the fellows")
+      page.should have_content("90210")
+      page.should have_content("05201")
     end
   end
 
   context "when you return to the results page from details page", :vcr, :js do
     it 'displays the same search results' do
-      search_from_home(:keyword => 'maceo')
+      search_for_maceo
       visit_details
       find_link("maceo@parker.com")
       find_link("a", :text=>"Back").click
-      expect(page).to have_selector("#list-view")
+      page.should have_selector("#list-view")
       page.find(".agency").should have_link("SanMaceo Example Agency.")
     end
   end
@@ -109,7 +109,7 @@ feature "location details" do
       # the time is checked against the Travis CI server time. The time has been
       # removed from the test till this can be sorted.
       #expect(page).to have_content("Tuesday, 1 October 2013 at 3:18 PM")
-      expect(page).to have_content("Tuesday, 1 October 2013 at")
+      expect(page).to have_content("Thursday, 7 November 2013 at")
     end
 
   end

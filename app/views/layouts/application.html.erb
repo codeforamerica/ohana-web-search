@@ -35,13 +35,11 @@
     </script>
     <![endif]-->
 
-    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
-    <%= csrf_meta_tags %>
-    <%= yield(:head) %>
-    <%= yield :canonical %>
-    <% if Rails.env.production? %>
       <script type="text/javascript">
+
         var _gaq = _gaq || [];
+      <% if Rails.env.production? %>
+
         _gaq.push(['_setAccount', 'UA-40905652-1']);
         _gaq.push(['_trackPageview']);
 
@@ -50,8 +48,17 @@
           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+
+      <% end %>
+        if (window)
+          window._gaq = _gaq; // export as global
+
       </script>
-    <% end %>
+
+    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+    <%= yield :canonical %>
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
 
@@ -100,7 +107,7 @@
     </aside>
     <% end %>
 
-    <main>
+    <main class="main">
       <%= yield %>
     </main>
 

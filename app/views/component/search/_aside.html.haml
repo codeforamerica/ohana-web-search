@@ -2,22 +2,11 @@
   %section#search-box
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
-      %label{:for => "keyword"}
-        I need...
-      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword", :list => "search-keywords"
+      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
       - cache ['keywords-list', *cip_keywords] do
         %datalist#search-keywords
           - cip_keywords.each do |keyword|
             %option{:value=>keyword}
-
-    -# location search box input field appears below
-    %section#location-search-box
-      %label{:for => "location"}
-        I am near...
-      = search_field_tag :location, params[:location], :placeholder => "enter a location", :list => "search-locations"
-      - cache ['cities-list', *smc_cities] do
-        %datalist#search-locations
-          - smc_cities.each do |city|
-            %option{:value=>city}
+              = keyword
 
     = render :partial => 'component/search/options'

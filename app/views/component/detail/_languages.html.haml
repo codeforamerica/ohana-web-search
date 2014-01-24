@@ -1,0 +1,13 @@
+- if org.key?(field)
+  %section{:class=>css_class_format(field.to_s)}
+    - if icon.present?
+      %span{"data-icon"=>icon , :class=>"ohana-icon"}
+    %h1 #{title}:
+    %ul
+      - org[field].sort.each do |lang|
+        %li
+          %span
+            -# Disables languages link till there's a corresponding filter that can be toggled!
+              - lang_url = /.+\((.+)\)/.match(lang).nil? ? lang : /.+\((.+)\)/.match(lang)[1]
+              = link_to lang, location_path(@org.id, @search_params.merge(:language => lang_url))
+            = lang

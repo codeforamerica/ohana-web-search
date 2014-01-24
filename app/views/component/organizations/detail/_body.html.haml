@@ -1,4 +1,5 @@
 = render 'component/organizations/detail/header'
+
 %section#detail-info{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
 
   %header
@@ -6,7 +7,7 @@
       - class_name = css_class_format(@org.kind.sub("'",""))
       %section
         %p.kind
-          %a{:href=>"/organizations?kind[]=#{CGI::escape(@org.kind)}", :title=>"All locations of type #{@org.kind}",:class=>"kind icon #{class_name}"}
+          %a{:href=>"/organizations?kind=#{CGI::escape(@org.kind)}", :title=>"All locations of type #{@org.kind}",:class=>"kind icon #{class_name}"}
             = @org.kind
 
     %hgroup
@@ -129,7 +130,9 @@
                 - @aggregate_categories.each do |category|
                   %li{:class=>"depth#{category.depth}"}
                     %span{:itemprop=>"serviceType"}
-                      = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
+                      -# Category links are disabled till there's a corresponding filter that can be toggled!
+                        = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
+                      = category.name
 
   / main detail content
   %section
@@ -186,7 +189,7 @@
       %section.service-opt-box
         %h1 Service Options
         %section
-          = insert_template(true,@org,:languages,"Languages Spoken",nil)
+          = insert_template(false,@org,:languages,"Languages Spoken",nil)
           = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
 
 
@@ -233,20 +236,18 @@
       %section.services-box
         %h1 Services
         - @org.services.each do |service|
-          - if @org.key?(:kind) && @org.kind == 'Government'
-            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
-          - else
-            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
 
-              / insert template, params are:
-              / use_template,org,field,title,icon
-              = insert_template(true,service,:name,nil,nil)
-              = insert_template(true,service,:description,nil,nil)
-              = insert_template(false,service,:urls,"Homepage",nil)
-              = insert_template(true,service,:fees,"Fees",nil)
-              = insert_template(true,service,:audience,"Audience",nil)
-              = insert_template(true,service,:eligibility,"Eligibility",nil)
-              = insert_template(true,service,:how_to_apply,"How to Apply",nil)
+          %section.service{:itemscope=>"", :itemtype=> (@org.key?(:kind) && @org.kind == 'Government') ? "http://schema.org/GovernmentService" : "http://schema.org/Service"}
+
+            / insert template, params are:
+            / use_template,org,field,title,icon
+            = insert_template(true,service,:name,nil,nil)
+            = insert_template(true,service,:description,nil,nil)
+            = insert_template(false,service,:urls,"Homepage",nil)
+            = insert_template(true,service,:fees,"Fees",nil)
+            = insert_template(true,service,:audience,"Audience",nil)
+            = insert_template(true,service,:eligibility,"Eligibility",nil)
+            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
   / detail footer content
   - if @org.key?(:updated_at)

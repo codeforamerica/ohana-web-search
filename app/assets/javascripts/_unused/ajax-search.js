@@ -60,9 +60,14 @@ define(['app/loading-manager',
 			var keyword = params.keyword
 			var location = params.location
 			var radius = params.radius;
-
-			var language = params.language
+			var kind = params.kind || []
+			var language = params.language;
 			var page = params.page;
+
+			inputs.setKeyword(keyword);
+			inputs.setLocation(location);
+			inputs.setKind(kind)
+			inputs.setLanguage(language);
 
 			var query = '/organizations';
 			if (id) query += '/'+id;
@@ -71,6 +76,10 @@ define(['app/loading-manager',
 			if (keyword) query += "&keyword="+encodeURIComponent(keyword);
 			if (location) query += "&location="+encodeURIComponent(location);
 			if (radius) query += "&radius="+radius;
+			for (var k=0;k<kind.length;k++)
+			{
+				if (kind[k] != null) query += "&kind[]="+kind[k]
+			}
 			if (language) query += "&language="+language;
 			if (page) query += "&page="+page;
 			query = query.replace('?&','?'); // only runs on first occurance, which is what we want

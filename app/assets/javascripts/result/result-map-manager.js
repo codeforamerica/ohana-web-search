@@ -22,39 +22,45 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		// PUBLIC METHODS
 		function init()
 		{
-			var mapContainer = document.getElementById('map-view');
-			if (mapContainer)
+			var noResults = document.querySelector("#results-entries .no-results");
+			// only check for result map if the page isn't showing no results
+			if (!noResults)
 			{
-				_mapCanvas = document.getElementById("map-canvas");
-				_mapViewControl = document.getElementById('map-view-control');
-				_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
+				var mapContainer = document.getElementById('map-view');
+				if (mapContainer)
+				{
+					_mapCanvas = document.getElementById("map-canvas");
+					_mapViewControl = document.getElementById('map-view-control');
+					_mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
-				var mapOptions = {
-					zoom: 15,
-					scrollwheel: false,
-					zoomControl: true,
-					panControl: false,
-					streetViewControl: false,
-					scaleControl: true,
-					scaleControlOptions: {
-						position: google.maps.ControlPosition.RIGHT_BOTTOM
-					},
-					mapTypeControl: false,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
+					var mapOptions = {
+						zoom: 15,
+						scrollwheel: false,
+						zoomControl: true,
+						panControl: false,
+						streetViewControl: false,
+						scaleControl: true,
+						scaleControlOptions: {
+							position: google.maps.ControlPosition.RIGHT_BOTTOM
+						},
+						mapTypeControl: false,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					}
+
+					_map = new google.maps.Map(_mapCanvas, mapOptions);
+
+					_infoWindow = new google.maps.InfoWindow();
+					_infoWindow.setOptions( {disableAutoPan : true} );
+
+					_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
+
+					_loadMarkers();
+					_refresh()
 				}
-
-				_map = new google.maps.Map(_mapCanvas, mapOptions);
-
-				_infoWindow = new google.maps.InfoWindow();
-				_infoWindow.setOptions( {disableAutoPan : true} );
-
-				_mapViewControl.addEventListener('click', _mapViewControlClicked, false);
-
-				refresh();
-			}
-			else
-			{
-				console.log("Warning: The result map container was not found!");
+				else
+				{
+					console.log("Warning: The result map container was not found!");
+				}
 			}
 		}
 
@@ -73,9 +79,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 				_mapViewControl.innerHTML = LARGER_MAP_TEXT;
 				_atMaxSize = true;
 			}
-			google.maps.event.trigger(_map, "resize");
-			if (_markersArray.length > 0)
-				_map.fitBounds(_markerBounds);
+			_refresh();
 		}
 
 		// loads markers
@@ -184,19 +188,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 			window.location.href = '/organizations/'+this.id+(window.location.search);
 		}
 
-		// refresh the data
-		function refresh()
+		// Triggers a resize event and refits the map to the bounds of the markers
+		function _refresh()
 		{
-			_loadMarkers();
+			google.maps.event.trigger(_map, "resize");
 			if (_markersArray.length > 0)
 				_map.fitBounds(_markerBounds);
-
-			//(optional) restore the zoom level after the map is done scaling
-			//var listener = google.maps.event.addListener(_map, "idle", function () {
-			//    _map.setZoom(10);
-			//    google.maps.event.removeListener(listener);
-			//});
-
 		}
 
 	return {

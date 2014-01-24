@@ -5,12 +5,25 @@ modules:
   - name: 'routes/organizations/show'
 
 paths:
+  jquery: 'jquery-min'
   domReady: 'requirejs/domReady'
   async: 'requirejs/async'
   enquire: 'enquire.min'
+  Modernizr: 'polyfills/modernizr.min'
+  modernizrSelectors: 'polyfills/modernizr.selectors'
   classList: 'polyfills/remy/classList'
   addEventListener: 'polyfills/addEventListener'
   trim: 'polyfills/trim'
+
+shim:
+  'Modernizr':
+    exports: 'Modernizr'
+  'modernizrSelectors':
+    dep: ['Modernizr']
+    exports: 'ModernizrSelectors'
+  'checked':
+    dep: ['jquery']
+    exports: 'pfChecked'
 
 # needs to always be set to true for IE support
 # see http://requirejs.org/docs/api.html#ieloadfail

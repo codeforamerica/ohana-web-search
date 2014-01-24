@@ -6,11 +6,11 @@ feature 'address formatting' do
     before(:each) { visit('/organizations/521d32ff1974fcdb2b00126c') }
 
     it "does not include the physical address header" do
-      expect(page).to_not have_content("Physical Address")
+      page.should_not have_content("Physical Address")
     end
 
     it "does not include a Google Maps directions link" do
-      expect(page).to_not have_content('Directions')
+      page.should_not have_content('Directions')
     end
   end
 
@@ -22,18 +22,18 @@ feature 'address formatting' do
     end
 
     it "includes the address header" do
-      expect(page).to have_content("Address")
+      page.should have_content("Address")
     end
 
     it "includes the street address" do
-      expect(page).to have_content("2013 Avenue of the fellows")
+      page.should have_content("2013 Avenue of the fellows")
     end
 
     it "includes a Google Maps directions link to the address" do
       string = "https://maps.google.com/maps?saddr=current+location"
       string << "&daddr=2013 Avenue of the fellows, Suite 100,"
       string << " Burlington, VT 05201"
-      expect(page).to have_link('Directions', :href => string)
+      page.should have_link('Directions', :href => string)
     end
   end
 

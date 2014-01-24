@@ -36,4 +36,7 @@ HumanServicesFinder::Application.configure do
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'example.com' }
 
+  # Access to rack session
+  config.middleware.use RackSessionAccess::Middleware
+
 end
