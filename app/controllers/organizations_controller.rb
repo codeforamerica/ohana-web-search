@@ -10,11 +10,11 @@ class OrganizationsController < ApplicationController
   def index
 
     # translate search keyword to current language if other than english
-    #if params[:keyword].present? && @current_lang != 'en'
-    #  original_word = params[:keyword]
-    #  translated_word = translate(params[:keyword],@current_lang,'en',false)
-    #  params[:keyword] = translated_word[0].translatedText if translated_word.present?
-    #end
+    if params[:keyword].present? && @current_lang != 'en'
+      original_word = params[:keyword]
+      translated_word = translate(params[:keyword],@current_lang,'en',false)
+      params[:keyword] = translated_word[0].translatedText if translated_word.present?
+    end
 
     # initialize query. Content may be blank if no results were found.
     begin
@@ -30,7 +30,7 @@ class OrganizationsController < ApplicationController
         @orgs = Ohanakapa.search("search", keyword: "asdfasg")
       end
     end
-    #params[:keyword] = original_word if original_word.present?
+    params[:keyword] = original_word if original_word.present?
 
     initialize_filter_data(@orgs) # intialize search filter data
 
