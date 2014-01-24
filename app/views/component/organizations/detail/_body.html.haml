@@ -236,20 +236,18 @@
       %section.services-box
         %h1 Services
         - @org.services.each do |service|
-          - if @org.key?(:kind) && @org.kind == 'Government'
-            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/GovernmentService"}
-          - else
-            %section.service{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
 
-              / insert template, params are:
-              / use_template,org,field,title,icon
-              = insert_template(true,service,:name,nil,nil)
-              = insert_template(true,service,:description,nil,nil)
-              = insert_template(false,service,:urls,"Homepage",nil)
-              = insert_template(true,service,:fees,"Fees",nil)
-              = insert_template(true,service,:audience,"Audience",nil)
-              = insert_template(true,service,:eligibility,"Eligibility",nil)
-              = insert_template(true,service,:how_to_apply,"How to Apply",nil)
+          %section.service{:itemscope=>"", :itemtype=> (@org.key?(:kind) && @org.kind == 'Government') ? "http://schema.org/GovernmentService" : "http://schema.org/Service"}
+
+            / insert template, params are:
+            / use_template,org,field,title,icon
+            = insert_template(true,service,:name,nil,nil)
+            = insert_template(true,service,:description,nil,nil)
+            = insert_template(false,service,:urls,"Homepage",nil)
+            = insert_template(true,service,:fees,"Fees",nil)
+            = insert_template(true,service,:audience,"Audience",nil)
+            = insert_template(true,service,:eligibility,"Eligibility",nil)
+            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
 
   / detail footer content
   - if @org.key?(:updated_at)
