@@ -1,7 +1,7 @@
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
 #SMC-Connect
 
 [![Build Status](https://travis-ci.org/codeforamerica/human_services_finder.png?branch=master)](https://travis-ci.org/codeforamerica/human_services_finder) [![Coverage Status](https://coveralls.io/repos/codeforamerica/human_services_finder/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/human_services_finder) [![Dependency Status](https://gemnasium.com/codeforamerica/human_services_finder.png)](https://gemnasium.com/codeforamerica/human_services_finder)
+[![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
 
 This is a Rails app built  by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. We have acquired the Peninsula Library System's [Community Information Program](http://cip.plsinfo.org) — a dataset of community resources in San Mateo County — which we are making available via an [API](https://github.com/codeforamerica/ohana-api).
 
