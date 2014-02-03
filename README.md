@@ -1,6 +1,4 @@
 [![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
 #SMC-Connect
 
 [![Build Status](https://travis-ci.org/codeforamerica/human_services_finder.png?branch=master)](https://travis-ci.org/codeforamerica/human_services_finder) [![Coverage Status](https://coveralls.io/repos/codeforamerica/human_services_finder/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/human_services_finder) [![Dependency Status](https://gemnasium.com/codeforamerica/human_services_finder.png)](https://gemnasium.com/codeforamerica/human_services_finder)
