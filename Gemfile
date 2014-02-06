@@ -70,7 +70,7 @@ group :test do
   #gem 'selenium-webdriver'
   #gem 'capybara-webkit'
   gem "vcr"
-  gem 'webmock', "< 1.12.0"
+  gem 'webmock', "< 1.16.0"
   gem "email_spec"
 end
 
