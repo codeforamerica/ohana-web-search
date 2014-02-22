@@ -593,9 +593,7 @@ $red_dark: rgb(255,10,50);
 
 // component styles
 $link_header: $blue_darkest;
-$link_header_underline: $yellow_lightest;
 $link_header_hover: $purple_darkest;
-$link_header_hover_underline: $purple_midtone;
 
 // fonts
 @font-face {
@@ -681,13 +679,13 @@ a:hover
     {
       color:$link_header;
       padding-bottom:2px;
-      border-bottom:1px solid $link_header_underline;
+      border-bottom:none;
     }
 
     a:hover
     {
       color:$link_header_hover;
-      border-bottom:1px solid $link_header_hover_underline;
+      border-bottom:none;
     }
   }
 }
@@ -1248,6 +1246,7 @@ sup
       @include inline-block();
       float:right;
       padding-top: 11px;
+      padding-bottom: 10px;
       padding-right: 15px;
     }
 
@@ -1265,6 +1264,11 @@ sup
     background:$white;
     clear:both;
     border-top:2px solid $blue_dark;
+
+    #hsa-logo a
+    {
+      border-bottom:none;
+    }
 
     p
     {
