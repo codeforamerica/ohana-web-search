@@ -62,16 +62,7 @@
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
 
-  <%= render 'component/status/loading' %>
-
   <section id="content">
-    <script type="text/javascript">
-      // dynamically add transparent class so content shows up when JavaScript is disabled
-      // try/catch is for ignoring IE errors.
-      try{
-        document.getElementById('content').classList.add('transparent');
-      }catch(e){}
-    </script>
 
     <aside id="alert-box" class='alert-error hide'>
       <div>
