@@ -1,6 +1,5 @@
 // manages app initialization
-require(['app/loading-manager',
-	'app/popup-manager',
+require(['app/popup-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
   'jquery',
@@ -8,7 +7,8 @@ require(['app/loading-manager',
   'addEventListener',
   'Modernizr',
   'modernizrSelectors'],
-  function (lm,pm,goog,ga,$) {
+
+  function (pm,goog,ga,$) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
@@ -28,7 +28,7 @@ require(['app/loading-manager',
   }
 
   ga.init(); // initalize google analytics
-  lm.hide();
+
   // if box-shadow CSS is supported, initialize the popups.
   if (Modernizr.boxshadow)
     pm.init();
