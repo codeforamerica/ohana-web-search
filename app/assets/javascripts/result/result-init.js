@@ -5,8 +5,8 @@ require(['result/result-map-manager','search/header-manager'], function (map,hea
   header.init();
 
 }, function (err) {
-    //The errback, error callback
-    //The error has a list of modules that failed
+    //The error callback
+    //The err object has a list of modules that failed
     var failedId = err.requireModules && err.requireModules[0];
     requirejs.undef(failedId);
 

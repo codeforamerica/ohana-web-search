@@ -3,16 +3,17 @@ require(['app/popup-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
   'jquery',
-	'app/datalist-dropdown',
   'classList',
   'addEventListener',
   'Modernizr',
   'modernizrSelectors'],
-  function (pm,goog,ga,$,datalist) {
+
+  function (pm,goog,ga,$) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
 
+  // Check if browser supports the :checked selector
   Modernizr.addTest('checkedselector',function(){
     return selectorSupported(':checked');
   });
@@ -22,7 +23,6 @@ require(['app/popup-manager',
     var radios = document.querySelectorAll("input[type=radio]");
     for(var r=0; r< radios.length; r++)
     {
-      console.log(radios[r]);
       radios[r].style.visibility = "inherit";
     }
   }
@@ -33,11 +33,5 @@ require(['app/popup-manager',
   if (Modernizr.boxshadow)
     pm.init();
   goog.init();
-
-  var inputs = document.querySelectorAll('input[list]');
-  for (var i in inputs)
-  {
-  	//datalist.init(inputs[i]);
-  }
 
 });

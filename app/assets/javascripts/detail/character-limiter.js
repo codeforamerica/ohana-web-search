@@ -1,6 +1,6 @@
-// manages limiting the characters of the description
-// on the details page and providing a more/less link to
-// toggle showing or hiding excess text
+// Manages limiting the characters of the description on the
+// details page and providing a more/less link to toggle
+// showing or hiding excess text.
 define(['trim'],function(trim) {
   'use strict';
 
@@ -8,7 +8,7 @@ define(['trim'],function(trim) {
 		var desc;
 		var fulltext;
 		var showChar = 400; // how many characters to show
-		var softLimit = 100; // soft limit to add to showChar if truncated value is less than this value
+		var softLimit = 100; // limit added to showChar if truncated value is less than this value
 		var ellipsestext = "…";
 		var moretext = "more";
     var lesstext = "less";

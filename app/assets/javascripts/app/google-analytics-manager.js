@@ -1,4 +1,4 @@
-// manages behavior of google analytics enabled links
+// Manages behavior of google analytics enabled links
 define(function() {
   'use strict';
 
