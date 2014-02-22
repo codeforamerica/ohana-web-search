@@ -3,12 +3,12 @@
   = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_placeholder=>"address", :add_input_type=>"TEXT"}
   - cache ['cities-list', *smc_cities] do
     %datalist#location-list
-      /[if IE 8]
+      /[if lte IE 9]
         <select disabled='disabled' style='display:none;'>
       - smc_cities.each do |city|
         %option{:value=>city}
           = city
-      /[if IE 8]
+      /[if lte IE 9]
         </select>
 
   = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
