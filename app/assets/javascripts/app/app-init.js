@@ -14,6 +14,7 @@ require(['app/loading-manager',
 
 	document.body.classList.add("require-loaded");
 
+  // Check if browser supports the :checked selector
   Modernizr.addTest('checkedselector',function(){
     return selectorSupported(':checked');
   });
@@ -23,7 +24,6 @@ require(['app/loading-manager',
     var radios = document.querySelectorAll("input[type=radio]");
     for(var r=0; r< radios.length; r++)
     {
-      console.log(radios[r]);
       radios[r].style.visibility = "inherit";
     }
   }
@@ -34,11 +34,5 @@ require(['app/loading-manager',
   if (Modernizr.boxshadow)
     pm.init();
   goog.init();
-
-  var inputs = document.querySelectorAll('input[list]');
-  for (var i in inputs)
-  {
-  	//datalist.init(inputs[i]);
-  }
 
 });
