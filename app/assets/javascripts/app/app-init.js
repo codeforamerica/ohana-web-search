@@ -4,12 +4,11 @@ require(['app/loading-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
   'jquery',
-	'app/datalist-dropdown',
   'classList',
   'addEventListener',
   'Modernizr',
   'modernizrSelectors'],
-  function (lm,pm,goog,ga,$,datalist) {
+  function (lm,pm,goog,ga,$) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
