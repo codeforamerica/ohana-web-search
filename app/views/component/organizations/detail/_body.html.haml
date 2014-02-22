@@ -198,8 +198,7 @@
         %h1 Payment & Products
 
         %div
-
-          - if @org.key?(:payments || :market_match)
+          - if @org.key?(:payments) || @org.key?(:market_match)
             %section.payments-accepted
               %span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
               %h1 Payment methods accepted:
