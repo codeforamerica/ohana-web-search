@@ -1,4 +1,4 @@
-// manages page appearance when Google Maps can't be loaded
+// Manages page appearance when Google Maps can't be loaded
 define(['app/alert-manager'],function (alert) {
 	'use strict';
 

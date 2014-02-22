@@ -1,4 +1,4 @@
-// manages behavior of google translate drop-down
+// Manages behavior of google translate drop-down
 define(['util/util'],function(util) {
   'use strict';
 
@@ -13,6 +13,8 @@ define(['util/util'],function(util) {
       _checkForGoog();
 		}
 
+    // Removes the google translate cookies by setting their expiration date
+    // into the past.
     function _deleteTranslateCookies() {
         var cookies = document.cookie.split(";");
 
@@ -25,11 +27,11 @@ define(['util/util'],function(util) {
         }
     }
 
+    // Polling check for Google Translate drop-down to be initialized
     function _checkForGoog()
     {
-      // Polling check for Google Translate drop-down to be initialized
-      // Set to 7 seconds (same as RequireJS timeout wait time)
-      if (_timeoutCount++ < 7)
+      // timeout check set to 20 seconds
+      if (_timeoutCount++ < 20)
       {
         setTimeout(function(){
           _languages = document.querySelector('#google_translate_element select');
@@ -43,6 +45,8 @@ define(['util/util'],function(util) {
       }
     }
 
+    // Hook in a change event to the language drop-down menu so the page reloads
+    // and is appended a translate query string when the drop-down menu is changed.
     function _hookDropDown()
     {
       _languages.addEventListener('change',_langUpdated,false);
