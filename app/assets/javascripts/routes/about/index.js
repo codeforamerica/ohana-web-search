@@ -1,13 +1,11 @@
-require(['app/loading-manager',
-				 'app/feedback-form-manager',
+require(['app/feedback-form-manager',
 				 'addEventListener',
 				 'classList',
 				 'domReady!'],
-	function(lm,feedback) {
+	function(feedback) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
-  lm.hide();
   feedback.init();
 
 });
