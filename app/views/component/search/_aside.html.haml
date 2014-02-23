@@ -2,11 +2,13 @@
   %section#search-box
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
-      = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
-      - cache ['keywords-list', *cip_keywords] do
-        %datalist#search-keywords
-          - cip_keywords.each do |keyword|
-            %option{:value=>keyword}
-              = keyword
-
+      %div
+        = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
+        - cache ['keywords-list', *cip_keywords] do
+          %datalist#search-keywords
+            - cip_keywords.each do |keyword|
+              %option{:value=>keyword}
+                = keyword
+        %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+          %i{:class=>"fa fa-search"}
     = render :partial => 'component/search/options'

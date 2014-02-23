@@ -735,19 +735,6 @@ sup
 }
 
 //=================================================================================
-// icons
-.ohana-icon:before {
-    content: attr(data-icon);
-    font-family: $icon_font;
-}
-
-.ohana-icon
-{
-    font-size: 16px;
-    vertical-align: middle;
-}
-
-//=================================================================================
 // effects styles
 .hide
 {
@@ -1401,10 +1388,10 @@ body { top: 0px !important; }
   {
     font-size:13px;
     font-family:$san_serif_font;
-    padding:5px;
+    padding:10px;
     @include border-radius(4px);
     background:$green_lightest;
-    border:2px solid $blue_darkest;
+    border:1px solid $blue_darkest;
     font-weight:bold;
 
     span
@@ -1475,7 +1462,7 @@ body { top: 0px !important; }
         @include inline-block();
         vertical-align: baseline;
       }
-      .search-button.ohana-icon
+      .search-button.fa
       {
         font-size:18px;
         position:relative;
@@ -1485,7 +1472,7 @@ body { top: 0px !important; }
     }
     button:hover
     {
-      .search-button.ohana-icon
+      .search-button.fa
       {
         color:$yellow_dark;
       }
@@ -1612,7 +1599,7 @@ body { top: 0px !important; }
   {
     font-size: 22px;
     border:1px solid $greyscale_light;
-    @include border-radius(4px);
+    @include border-radius(4px 0px 0px 4px);
     border-collapse: collapse;
     padding:10px;
     position:relative;
@@ -1625,7 +1612,7 @@ body { top: 0px !important; }
   {
     font-size: 16px;
     margin:0;
-    border:2px solid $blue_darkest;
+    border:1px solid $blue_darkest;
     padding:10px;
     vertical-align: baseline;
     @include box-sizing(border-box);
@@ -1641,9 +1628,8 @@ body { top: 0px !important; }
       color: $black_alpha50;
       text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
     }
-    .ohana-icon
+    .fa
     {
-      font-size:18px;
       color:$blue_darkest;
     }
   }
@@ -1706,16 +1692,21 @@ body { top: 0px !important; }
   input
   {
     height:50px;
-    width:290px;
+    width:413px;
+    padding-right: 123px;
     vertical-align:middle;
   }
 
-  button // find button styles
+  button // search button styles
   {
     height:50px;
     font-size:22px;
     @include inline-block();
-    @include border-radius(4px);
+    @include border-radius(0px 4px 4px 0px);
+    border-left: 1px solid $greyscale_light;
+    margin-left: -123px;
+    z-index:9998;
+    position:relative;
   }
 }
 
@@ -1734,9 +1725,8 @@ body { top: 0px !important; }
     height:40px;
     vertical-align: middle;
 
-    .ohana-icon
+    .fa
     {
-      font-size:14px;
       color:$blue_darkest;
     }
   }
@@ -1778,27 +1768,60 @@ body { top: 0px !important; }
       font-size: 12px;
       height: 22px;
     }
+
+    button
+    {
+      @include inline-block();
+    }
   }
 }
 
 .inside #keyword-search-box
 {
   padding:10px;
-  padding-bottom: 19px;
+  padding-bottom: 14px;
   background:$blue_midtone;
   border-bottom:1px solid $blue_dark;
 
-  input[type=search]
+  .fa
   {
-    top:5px;
-    margin-left:0px;
-    width:100%;
+    position:absolute;
+    z-index:9998;
+    top:50%;
+    margin-top:-7px;
+    right:8px;
+    @include box-sizing(border-box);
+  }
+
+  div
+  {
+    position:relative;
     height:34px;
-    padding:3px;
-    padding-left:6px;
-    font-size: 14px;
-    @include inline-block();
-    vertical-align: bottom;
+    margin-top:5px;
+
+    button
+    {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 34px;
+      width: 34px;
+      @include border-radius(0px 4px 4px 0px);
+      border-left: 1px solid $greyscale_light;
+    }
+
+    input[type=search]
+    {
+      margin-left:0px;
+      width:100%;
+      height:34px;
+      padding:3px;
+      padding-left:6px;
+      padding-right:39px;
+      font-size: 14px;
+      @include inline-block();
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -1820,15 +1843,16 @@ body { top: 0px !important; }
     > .toggle
     {
       display:table-cell;
-      vertical-align: middle;
-      width: 25px;
+      vertical-align: top;
+      width: 30px;
       height: 18px;
     }
 
     .toggle + label
     {
-      padding-bottom:5px;
-      font-size:14px;
+      padding-bottom:3px;
+      padding-top:3px;
+      font-size:16px;
       cursor:pointer;
       @include inline-block();
       vertical-align: middle;
@@ -1842,8 +1866,8 @@ body { top: 0px !important; }
 
   .toggle-group >.toggle >div label {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
 
     cursor: pointer;
     position: absolute;
@@ -1858,59 +1882,46 @@ body { top: 0px !important; }
     overflow:hidden;
   }
 
-  .toggle-group >.toggle >div input[type=radio] + label:after
+  .toggle-group > .toggle > div
   {
-    font-family:$icon_font;
-    font-size: 10px;
+    @include box-sizing(border-box);
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-group > .toggle > div > .fa
+  {
     position: absolute;
-    width: 9px;
-    height: 5px;
-    top: 50%;
-    left: 50%;
-    margin-left:-5px;
-    margin-top:-7px;
+    z-index: 9998;
+    margin:auto;
+    height:20px;
+    width:20px;
+    top:50%;
+    left:50%;
+    margin-top:-9px;
+    margin-left:-8px;
+    line-height:19px;
+    color:$black_alpha10;
     @include box-sizing(border-box);
   }
 
-  .toggle-group:hover >.toggle >div input[type=radio] + label:after,
-  .toggle-group >.toggle >div input[type=radio]:checked + label:after
+  .toggle-group > .toggle > div > .fa-plus
   {
-    content: "🔍";
+    margin-top:-8px;
+    margin-left:-6px;
   }
 
-  .toggle-group:hover >.toggle >div input[type=radio] + label:after
+  .toggle-group:hover > .toggle > div > .fa
   {
-    color:$blue_light;
+    color:$black_alpha60;
   }
 
-  .toggle-group >.toggle >div input[type=radio]:checked + label:after
-  {
-    color:$blue_darkest;
-  }
-
-  .toggle-group:hover >.toggle >div input[type=radio]:checked + label:after
+  .toggle-group > .toggle > div input[type=radio]:checked + .fa
   {
     color:$black;
   }
 
-  .toggle-group.add >.toggle >div input[type=radio] + label:after
-  {
-    content: "+";
-    font-size: 14px;
-    position: absolute;
-    width: 9px;
-    height: 5px;
-    margin-left:-4px;
-    margin-top:-12px;
-    color:$blue_darkest;
-  }
-
-  .toggle-group.add >.toggle >div input[type=radio]:not(:checked):hover + label:after
-  {
-    color:$black;
-  }
-
-  .toggle-group >.toggle >div input[type=radio]:checked + label
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label
   {
     background-color:$green_lightest; // IE fallback
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
@@ -1918,7 +1929,7 @@ body { top: 0px !important; }
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
-  .toggle-group >.toggle >div input[type=radio]:checked + label::before
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label::before
   {
     border:none;
   }
@@ -2367,14 +2378,6 @@ body { top: 0px !important; }
       }
     }
   }
-
-  .ohana-icon.print
-  {
-    position: relative;
-    top:-1px;
-    left:1px;
-    font-size:18px;
-  }
 }
 
 #list-view div:last-child
@@ -2455,23 +2458,49 @@ body { top: 0px !important; }
 #results-entries
 {
 
+  #map-view-control
+  {
+    background:$white;
+    min-height:40px;
+  }
+
+  #search-summary-container
+  {
+    @include background( linear-gradient(left,$yellow_lightest,$white) );
+  }
+
   #search-summary
   {
     font-family:$san_serif_font;
     font-size:14px;
     padding:10px;
-    border-bottom:1px solid $greyscale_midtone; // IE fallback
-    border-bottom:1px solid $black_alpha10;
     padding-left:20px;
-    @include background( linear-gradient(left,$yellow_lightest,$white) );
 
     strong
     {
       font-weight:bold;
     }
-    em
+
+    div:first-child
     {
-      font-style:italic;
+      margin-right:20px;
+    }
+
+    div
+    {
+      display:inline-block;
+      .fa
+      {
+        color:$greyscale_midtone;
+      }
+      em
+      {
+        color:$greyscale_midtone;
+      }
+      em > strong
+      {
+        color:$red_dark;
+      }
     }
   }
 
@@ -2780,7 +2809,7 @@ body { top: 0px !important; }
     {
       margin-left:20px;
 
-      .ohana-icon
+      .fa
       {
         color:$purple_darkest;
       }
@@ -2788,6 +2817,7 @@ body { top: 0px !important; }
       li
       {
         @include inline-block();
+        margin-right: 10px;
       }
     }
 
@@ -2862,7 +2892,7 @@ body { top: 0px !important; }
 #map-view-control
 {
   @include inline-block();
-  min-width:150px;
+  min-width:135px;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;
@@ -3100,11 +3130,15 @@ body { top: 0px !important; }
             display:table-cell;
           }
 
-          > span:first-child
+          > .fa
           {
-            text-align: middle;
-            width:25px;
+            width:23px;
             color:$purple_darkest;
+          }
+
+          >.fax::after
+          {
+            content:"℻";
           }
         }
       }

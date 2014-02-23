@@ -9,22 +9,6 @@ module DetailFormatHelper
     val.sub ' ','-'
   end
 
-  # Renders template partial for detail view
-  # @param use_template [Boolean] whether to use the template or a custom partial
-  # @param org [Object] a JSON object
-  # @param field [String] a field name in org
-  # @param title_singular [String] a singular title for name, can be nil
-  # @param title_plural [String] a plural title for name, can be nil
-  # @param icon [String] a utf-8 icon character for field, can be nil
-  # @return rendered partial.
-  def insert_template(use_template,org,field,title,icon)
-    if use_template
-      render :partial => "component/detail/template", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
-    else
-      render :partial => "component/detail/#{field.to_s}", :locals => {:org=>org, :field=>field, :title=>title, :icon=>icon}
-    end
-  end
-
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields

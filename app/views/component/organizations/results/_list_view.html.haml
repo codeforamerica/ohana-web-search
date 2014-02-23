@@ -45,7 +45,7 @@
 							- org.phones.each do |hash|
 								- if hash["number"].present?
 									%li
-										%span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+										%i{:class=>"fa fa-phone-square"}
 										%span{:itemprop=>"telephone"}
 											= "#{format_phone(hash["number"])}"
 

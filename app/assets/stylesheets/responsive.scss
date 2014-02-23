@@ -14,6 +14,19 @@
       {
         text-align:right;
       }
+
+      input
+      {
+        @include border-radius(4px);
+        padding-right:10px;
+      }
+
+      button
+      {
+        @include border-radius(4px);
+        border:1px solid $blue_darkest;
+        margin-top: 10px;
+      }
     }
   }
 
@@ -160,8 +173,6 @@
         }
       }
 
-      input[type='text'] {font-size:16px;}
-
       div
       {
           display:block;
@@ -192,7 +203,10 @@
           display:block;
           position:static;
           @include border-radius(0px);
+          padding-right:10px;
       }
+
+      input[type='text'] {font-size:16px;}
 
       button
       {
@@ -202,6 +216,8 @@
           margin-top:10px;
           top:0;
           left:0;
+          @include border-radius(4px);
+          border:1px solid $blue_darkest;
       }
     }
 
@@ -342,9 +358,19 @@
         margin-right:15px;
       }
 
-      #search-summary
+      #search-summary-container
       {
         background:$yellow_lightest;
+        border-bottom:1px solid $greyscale_midtone; // IE fallback
+        border-bottom:1px solid $black_alpha10;
+      }
+
+      #map-view-control
+      {
+        padding-left:20px;
+        width: 100%;
+        border-bottom:1px solid $greyscale_midtone; // IE fallback
+        border-bottom:1px solid $black_alpha10;
       }
     }
 

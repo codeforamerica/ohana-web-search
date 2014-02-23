@@ -10,6 +10,7 @@
       %div.toggle
         %div
           %input{:type=>"radio",:id=>"#{css_field}-option", :checked=>true}
+          %i{:class=>"fa fa-check"}
           %label{:for => "#{css_field}-option"}
       %label{:for => "#{css_field}-option"}
         -# Check if field display value and parameter value differ
@@ -23,6 +24,7 @@
       %div.toggle
         %div
           = radio_button_tag "#{css_field}-option", "", all_is_checked, {:id=>"#{css_field}-option-0"}
+          %i{:class=>"fa fa-check"}
           %label{:for => "#{css_field}_option_0"}
       %label{:for => "#{css_field}-option-0",:id => "#{css_field}-option-label"}
         All
@@ -39,6 +41,7 @@
             - check_current_toggle = aggregate_field[i] == field_value
             - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
             = radio_button_tag "#{css_field}-option", aggregate_field[i], check_current_toggle, {:id=>"#{css_field}-option-#{i+1}","data-display-value"=>field_display}
+            %i{:class=>"fa fa-check"}
             %label{:for => "#{css_field}-option-#{i+1}"}
         %label{:for => "#{css_field}-option-#{i+1}",:id => "#{css_field}-option-#{i+1}-label"}
           = field_display
@@ -50,6 +53,7 @@
           %div.toggle
             %div
               %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+              %i{:class=>"fa fa-plus"}
               %label{:for => "#{css_field}-option-#{length+2}"}
           %label{:for => "#{css_field}-option-#{length+2}",:id => "#{css_field}-option-#{length+2}-label"}
             %span{:class=>(add_is_checked ? "hide" : "")}
@@ -61,6 +65,7 @@
           %div.toggle
             %div
               %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
+              %i{:class=>"fa fa-plus"}
               %label{:for => "#{css_field}-option-#{length+2}"}
           %label{:for => "#{css_field}-option-#{length+2}",:id => "#{css_field}-option-#{length+2}-label"}
             %span{:class=>(add_is_checked ? "hide" : "")}
