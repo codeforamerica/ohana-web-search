@@ -1847,7 +1847,8 @@ body { top: 0px !important; }
 
     .toggle + label
     {
-      padding-bottom:5px;
+      padding-bottom:3px;
+      padding-top:3px;
       font-size:16px;
       cursor:pointer;
       @include inline-block();
@@ -1862,8 +1863,8 @@ body { top: 0px !important; }
 
   .toggle-group >.toggle >div label {
     display: block;
-    width: 23px;
-    height: 23px;
+    width: 25px;
+    height: 25px;
 
     cursor: pointer;
     position: absolute;
@@ -1878,67 +1879,46 @@ body { top: 0px !important; }
     overflow:hidden;
   }
 
-  .toggle-group >.toggle >div input[type=radio] + label:after
+  .toggle-group > .toggle > div
   {
-    font-family:$icon_font;
-    font-size: 10px;
-    position: absolute;
-    width: 9px;
-    height: 5px;
-    top: 50%;
-    left: 50%;
-    margin-left:-5px;
-    margin-top:-7px;
     @include box-sizing(border-box);
+    width: 24px;
+    height: 24px;
   }
 
-  .toggle-group:hover >.toggle >div input[type=radio] + label:after,
-  .toggle-group >.toggle >div input[type=radio]:checked + label:after
-  {
-    //content: "🔍";
-  }
-
-  .toggle-group > .toggle > .fa
+  .toggle-group > .toggle > div > .fa
   {
     position: absolute;
     z-index: 9998;
-    left: 4px;
-    top: 4px;
+    margin:auto;
+    height:20px;
+    width:20px;
+    top:50%;
+    left:50%;
+    margin-top:-9px;
+    margin-left:-8px;
+    line-height:19px;
+    color:$black_alpha10;
+    @include box-sizing(border-box);
   }
 
-  .toggle-group:hover >.toggle >div input[type=radio] + label:after
+  .toggle-group > .toggle > div > .fa-plus
   {
-    color:$blue_light;
+    margin-top:-8px;
+    margin-left:-6px;
   }
 
-  .toggle-group >.toggle >div input[type=radio]:checked + label:after
+  .toggle-group:hover > .toggle > div > .fa
   {
-    color:$blue_darkest;
+    color:$black_alpha60;
   }
 
-  .toggle-group:hover >.toggle >div input[type=radio]:checked + label:after
-  {
-    color:$black;
-  }
-
-  .toggle-group.add >.toggle >div input[type=radio] + label:after
-  {
-    content: "+";
-    font-size: 14px;
-    position: absolute;
-    width: 9px;
-    height: 5px;
-    margin-left:-4px;
-    margin-top:-12px;
-    color:$blue_darkest;
-  }
-
-  .toggle-group.add >.toggle >div input[type=radio]:not(:checked):hover + label:after
+  .toggle-group > .toggle > div input[type=radio]:checked + .fa
   {
     color:$black;
   }
 
-  .toggle-group >.toggle >div input[type=radio]:checked + label
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label
   {
     background-color:$green_lightest; // IE fallback
     @include background( linear-gradient(top,$green_lightest,$green_midtone) );
@@ -1946,7 +1926,7 @@ body { top: 0px !important; }
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
-  .toggle-group >.toggle >div input[type=radio]:checked + label::before
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label::before
   {
     border:none;
   }
@@ -2808,6 +2788,7 @@ body { top: 0px !important; }
       li
       {
         @include inline-block();
+        margin-right: 10px;
       }
     }
 
