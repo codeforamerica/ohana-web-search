@@ -2,6 +2,7 @@
   %section#search-box
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
+      %i{:class=>"fa fa-search"}
       = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
       - cache ['keywords-list', *cip_keywords] do
         %datalist#search-keywords
