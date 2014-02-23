@@ -1,8 +1,8 @@
 - if org.key?(field)
   %section{:class=>css_class_format(field.to_s)}
-    - if icon.present?
-      %span{"data-icon"=>icon , :class=>"ohana-icon"}
-    %h1 #{title}:
+    - if defined? icon
+      %i{:class=>icon}
+    %h1 #{stitle}:
     %ul
       - org[field].sort.each do |access|
         %li

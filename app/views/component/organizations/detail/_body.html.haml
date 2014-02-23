@@ -143,10 +143,8 @@
       %section.overview-box
         %section
 
-          / insert template, params are:
-          / use_template,org,field,title,icon
-          = insert_template(true,@org,:short_desc,nil,nil)
-          = insert_template(true,@org,:description,"Description",nil)
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:short_desc}
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:description, :stitle=>"Description"}
 
     - if @org.key?(:coordinates) || @org.key?(:transportation)
       %section.map-box
@@ -184,16 +182,14 @@
       %section.hours-box
         %h1 Service Hours
         %section
-
-          = insert_template(true,@org,:hours,nil,"⧗")
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:hours, :stitle=>nil, :icon=>"fa fa-clock-o"}
 
     - if (@org.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
         %section
-          = insert_template(false,@org,:languages,"Languages Spoken",nil)
-          = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
-
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:languages, :stitle=>"Languages Spoken"}
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:accessibility, :stitle=>"Accessibility Options"}
 
     - if (@org.fields & market_fields).any?
       %section.payment-box
@@ -241,15 +237,13 @@
 
           %section.service{:itemscope=>"", :itemtype=> (@org.key?(:kind) && @org.kind == 'Government') ? "http://schema.org/GovernmentService" : "http://schema.org/Service"}
 
-            / insert template, params are:
-            / use_template,org,field,title,icon
-            = insert_template(true,service,:name,nil,nil)
-            = insert_template(true,service,:description,nil,nil)
-            = insert_template(false,service,:urls,"Homepage",nil)
-            = insert_template(true,service,:fees,"Fees",nil)
-            = insert_template(true,service,:audience,"Audience",nil)
-            = insert_template(true,service,:eligibility,"Eligibility",nil)
-            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:name}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:description}
+            = render :partial => "component/detail/urls", :locals => {:org=>service, :field=>:urls, :stitle=>"Homepage"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:fees, :stitle=>"Fees"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:audience, :stitle=>"Audience"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:eligibility, :stitle=>"Eligibility"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:how_to_apply, :stitle=>"How to Apply"}
 
   / detail footer content
   - if @org.key?(:updated_at)

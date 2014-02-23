@@ -1,9 +1,10 @@
 - if org.key?(:urls)
   %section{:class=>'urls'}
-    - if icon.present?
-      %span{"data-icon"=>icon , :class=>"ohana-icon"}
-    - if (title.present?)
-      %h1 #{title}:
+    - if defined? icon
+      %i{:class=>icon}
+    - if defined? stitle
+      - if stitle.present?
+        %h1 #{stitle}:
     - if org[:urls].kind_of?(Array)
       %ul
         - org[:urls].sort.each do |url|
