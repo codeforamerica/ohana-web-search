@@ -8,6 +8,7 @@
   %div.options.current-option
     %div.toggle-group{:id=>"#{css_field}-toggle-group"}
       %div.toggle
+        %i{:class=>"fa fa-search"}
         %div
           %input{:type=>"radio",:id=>"#{css_field}-option", :checked=>true}
           %label{:for => "#{css_field}-option"}
@@ -21,6 +22,7 @@
   %div.options.available-options.hide
     %div.toggle-group{:id=>"#{css_field}-toggle-group-0"}
       %div.toggle
+        %i{:class=>"fa fa-search"}
         %div
           = radio_button_tag "#{css_field}-option", "", all_is_checked, {:id=>"#{css_field}-option-0"}
           %label{:for => "#{css_field}_option_0"}
@@ -35,6 +37,7 @@
       - aggregate_field[i] = aggregate_field[i][:value] if aggregate_field[i].is_a?(Hash)
       %div.toggle-group{:id=>"#{css_field}-toggle-group-#{i+1}"}
         %div.toggle
+          %i{:class=>"fa fa-search"}
           %div
             - check_current_toggle = aggregate_field[i] == field_value
             - toggle_is_checked = toggle_is_checked ? true : check_current_toggle

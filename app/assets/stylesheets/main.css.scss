@@ -1807,15 +1807,15 @@ body { top: 0px !important; }
     > .toggle
     {
       display:table-cell;
-      vertical-align: middle;
-      width: 25px;
+      vertical-align: top;
+      width: 30px;
       height: 18px;
     }
 
     .toggle + label
     {
       padding-bottom:5px;
-      font-size:14px;
+      font-size:16px;
       cursor:pointer;
       @include inline-block();
       vertical-align: middle;
@@ -1829,8 +1829,8 @@ body { top: 0px !important; }
 
   .toggle-group >.toggle >div label {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
 
     cursor: pointer;
     position: absolute;
@@ -1862,7 +1862,15 @@ body { top: 0px !important; }
   .toggle-group:hover >.toggle >div input[type=radio] + label:after,
   .toggle-group >.toggle >div input[type=radio]:checked + label:after
   {
-    content: "🔍";
+    //content: "🔍";
+  }
+
+  .toggle-group > .toggle > .fa
+  {
+    position: absolute;
+    z-index: 9998;
+    left: 4px;
+    top: 4px;
   }
 
   .toggle-group:hover >.toggle >div input[type=radio] + label:after
