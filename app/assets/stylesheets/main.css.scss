@@ -2455,23 +2455,49 @@ body { top: 0px !important; }
 #results-entries
 {
 
+  #map-view-control
+  {
+    background:$white;
+    min-height:40px;
+  }
+
+  #search-summary-container
+  {
+    @include background( linear-gradient(left,$yellow_lightest,$white) );
+  }
+
   #search-summary
   {
     font-family:$san_serif_font;
     font-size:14px;
     padding:10px;
-    border-bottom:1px solid $greyscale_midtone; // IE fallback
-    border-bottom:1px solid $black_alpha10;
     padding-left:20px;
-    @include background( linear-gradient(left,$yellow_lightest,$white) );
 
     strong
     {
       font-weight:bold;
     }
-    em
+
+    div:first-child
     {
-      font-style:italic;
+      margin-right:20px;
+    }
+
+    div
+    {
+      display:inline-block;
+      .fa
+      {
+        color:$greyscale_midtone;
+      }
+      em
+      {
+        color:$greyscale_midtone;
+      }
+      em > strong
+      {
+        color:$red_dark;
+      }
     }
   }
 
@@ -2863,7 +2889,7 @@ body { top: 0px !important; }
 #map-view-control
 {
   @include inline-block();
-  min-width:150px;
+  min-width:135px;
   padding:10px;
   font-size:14px;
   font-family:$san_serif_font;

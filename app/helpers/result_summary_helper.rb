@@ -47,7 +47,7 @@ module ResultSummaryHelper
     if @current_map_count == @total_map_count
       summary = ""
     else
-      summary = " • <em>#{@current_map_count} of #{@total_map_count} located on map</em>"
+      summary = " <i class='fa fa-map-marker'></i> <em><strong>#{@current_map_count}</strong>/#{@total_map_count} located on map</em>"
     end
     summary.html_safe
   end
