@@ -1697,7 +1697,7 @@ body { top: 0px !important; }
     vertical-align:middle;
   }
 
-  button // find button styles
+  button // search button styles
   {
     height:50px;
     font-size:22px;
@@ -1705,6 +1705,8 @@ body { top: 0px !important; }
     @include border-radius(0px 4px 4px 0px);
     border-left: 1px solid $greyscale_light;
     margin-left: -123px;
+    z-index:9998;
+    position:relative;
   }
 }
 
@@ -1777,7 +1779,7 @@ body { top: 0px !important; }
 .inside #keyword-search-box
 {
   padding:10px;
-  padding-bottom: 19px;
+  padding-bottom: 14px;
   background:$blue_midtone;
   border-bottom:1px solid $blue_dark;
 
@@ -1788,6 +1790,7 @@ body { top: 0px !important; }
     top:50%;
     margin-top:-7px;
     right:8px;
+    @include box-sizing(border-box);
   }
 
   div
