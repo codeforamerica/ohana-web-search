@@ -94,4 +94,7 @@
       %span Update
 
     - if css_field == "location"
-      = render :partial => 'component/search/geolocate'
+      %div#geolocate-box
+        %button#locate-btn.hide{:type=>'button'}
+          %i{ :class=>"fa fa-map-marker" }
+          Services near me

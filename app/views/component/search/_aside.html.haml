@@ -13,3 +13,5 @@
           %i{:class=>"fa fa-search"}
 
     = render :partial => 'component/search/options'
+  = form_tag('/organizations', :method => :get, :id=>"location-form") do
+    = hidden_field_tag 'location'

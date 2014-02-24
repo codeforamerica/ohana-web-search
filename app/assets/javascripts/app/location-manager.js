@@ -41,7 +41,7 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
 				,
 				error:function(error)
 				{
-					//console.log("Geolocation failed due to: " + error.message);
+					console.log("Geolocation failed due to: " + error.message);
 					alert.show("Your location could not be determined!");
 				}
 			}
@@ -57,14 +57,15 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
 
 			geocoder.geocode({'latLng': latlng}, function(results, status)
 			{
+				console.log(status,results[0].formatted_address)
 			  if (status == google.maps.GeocoderStatus.OK && results[0])
 			  {
 					_locationValue.value = results[0].formatted_address;
-					document.getElementById('location-form').submit();
+					//document.getElementById('location-form').submit();
 			  }
 			  else
 			  {
-					//console.log("Geocoder failed due to: " + status);
+					console.log("Geocoder failed due to: " + status);
 					alert.show("Your location could not be determined!");
 			  }
 			});
