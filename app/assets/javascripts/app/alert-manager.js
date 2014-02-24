@@ -13,9 +13,9 @@ define(function() {
 		// PUBLIC METHODS
 		function init()
 		{
-			_alert = document.getElementById('alert-box');
-			_content = document.getElementById('alert-message');
-			_closeBtn = document.getElementById('alert-close');
+			_alert = document.querySelector('#alert-box .alert');
+			_content = _alert.querySelector('.alert-message');
+			_closeBtn = _alert.querySelector('.alert-close');
 			_closeBtn.addEventListener('click',_closeBtnClicked,false);
 		}
 
