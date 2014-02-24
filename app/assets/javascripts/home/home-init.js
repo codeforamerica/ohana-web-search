@@ -1,7 +1,5 @@
 // manages homepage scripts
-require(['home/location-manager'],function(location) {
+require(function() {
   'use strict';
-
-  location.init();
 
 });

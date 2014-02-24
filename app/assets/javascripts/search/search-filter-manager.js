@@ -217,7 +217,7 @@ define(
 
 				_defaultToggle = _toggleGroups[groups[0].id];
 
-				var addInputToggle = _toggleGroups[groups[groups.length-1].id];
+				var addInputToggle = _toggleGroups[groups[1].id];
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
 				// setup event listeners

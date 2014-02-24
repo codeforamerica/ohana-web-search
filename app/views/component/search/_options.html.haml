@@ -1,5 +1,10 @@
 %section#search-options
 
+  %div#reset-btn
+    %a#reset-btn-link{:href=>organizations_path}
+      %i{:class=>"fa fa-refresh"}
+      Clear
+
   = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_placeholder=>"address", :add_input_type=>"TEXT"}
   - cache ['cities-list', *smc_cities] do
     %datalist#location-list
@@ -54,11 +59,3 @@
     %div.search-check
       %input{:type=>"checkbox",:id=>"language-checkbox"}
       %label{:for=>"language-checkbox"}
-
-%div
-  %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
-    %i{:class=>"fa fa-search"}
-    %span Update
-  %div#reset-btn
-    %a#reset-btn-link{:href=>organizations_path}
-      Reset

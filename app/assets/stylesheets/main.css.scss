@@ -1389,7 +1389,10 @@ body { top: 0px !important; }
   padding-right:25px;
   text-align:right;
   min-height:34px;
+}
 
+#geolocate-box
+{
   button
   {
     font-size:13px;
@@ -1398,7 +1401,6 @@ body { top: 0px !important; }
     @include border-radius(4px);
     background:$green_lightest;
     border:1px solid $blue_darkest;
-    font-weight:bold;
 
     span
     {
@@ -1412,7 +1414,6 @@ body { top: 0px !important; }
     background:$blue_dark;
   }
 }
-
 
 //=================================================================================
 // location box styles on homepage
@@ -1605,7 +1606,7 @@ body { top: 0px !important; }
   {
     font-size: 22px;
     border:1px solid $greyscale_light;
-    @include border-radius(4px 0px 0px 4px);
+    @include border-radius(4px);
     border-collapse: collapse;
     padding:10px;
     position:relative;
@@ -1650,12 +1651,6 @@ body { top: 0px !important; }
       color:$yellow_light;
       text-shadow: none;
     }
-  }
-
-  #reset-btn
-  {
-    @include inline-block();
-    vertical-align: middle;
   }
 }
 
@@ -1728,8 +1723,12 @@ body { top: 0px !important; }
 
   button // update button styles
   {
-    height:40px;
-    vertical-align: middle;
+    margin-top: 10px;
+    font-family: $san_serif_font;
+    height:30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
 
     .fa
     {
@@ -1773,6 +1772,7 @@ body { top: 0px !important; }
       padding: 3px;
       font-size: 12px;
       height: 22px;
+      vertical-align: top;
     }
 
     button
@@ -1799,7 +1799,7 @@ body { top: 0px !important; }
     @include box-sizing(border-box);
   }
 
-  div
+  div:first-child
   {
     position:relative;
     height:34px;
@@ -1812,6 +1812,7 @@ body { top: 0px !important; }
       right: 0px;
       height: 34px;
       width: 34px;
+      margin-top:0px;
       @include border-radius(0px 4px 4px 0px);
       border-left: 1px solid $greyscale_light;
     }
@@ -1831,6 +1832,28 @@ body { top: 0px !important; }
   }
 }
 
+#reset-btn
+{
+  @include box-sizing(border-box);
+  padding: 5px;
+  text-align: right;
+  position:absolute;
+  right:5px;
+  top:-10px;
+  z-index: 9998;
+
+  a
+  {
+    font-family:$san_serif_font;
+    font-size:14px;
+    border-bottom:none;
+  }
+  a:hover
+  {
+    color:$blue_dark;
+  }
+
+}
 
 .inside fieldset
 {
@@ -1866,11 +1889,13 @@ body { top: 0px !important; }
 
   }
 
-  .toggle-group >.toggle >div input[type=radio]{
+  .toggle-group >.toggle >div input[type=radio]
+  {
     visibility: hidden;
   }
 
-  .toggle-group >.toggle >div label {
+  .toggle-group >.toggle >div label
+  {
     display: block;
     width: 25px;
     height: 25px;
@@ -1886,6 +1911,26 @@ body { top: 0px !important; }
     @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
     @include border-radius(3px);
     overflow:hidden;
+  }
+
+  .toggle-group.add >.toggle >div label
+  {
+    background-color:$white; // IE fallback
+    @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+  }
+
+  .toggle-group-wrapper
+  {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-bottom: 2px;
+    //border-bottom: 1px solid $white;
+    //border-top: 1px solid $white;
+    border: 2px dotted $blue_midtone;
+    @include border-radius(4px);
+    //background:$greyscale_lightest;
   }
 
   .toggle-group > .toggle > div
@@ -2133,39 +2178,6 @@ body { top: 0px !important; }
       color:$blue_darkest;
       font-size:14px;
     }
-  }
-
-  a
-  {
-    background:$white; // IE fallback
-    background:$white_alpha80;
-    @include border-radius(4px);
-    padding:5px;
-    font-family:$san_serif_font;
-    font-size:14px;
-    display:block;
-    border-bottom:0;
-    width:123px;
-    @include inline-block();
-  }
-
-  a:hover
-  {
-    background:$purple_lightest;
-    border-bottom:0;
-  }
-
-  a:before
-  {
-    font-size:16px;
-    content:"×";
-    padding:5px;
-    color: $greyscale_midtone;
-  }
-
-  a:hover:before
-  {
-    color: $white;
   }
 }
 

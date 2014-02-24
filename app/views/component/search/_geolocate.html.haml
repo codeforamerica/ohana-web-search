@@ -1,0 +1,6 @@
+%div#geolocate-box
+  = form_tag('/organizations', :method => :get, :id=>"location-form") do
+    = hidden_field_tag 'location'
+    %button#locate-btn.hide{:type=>'submit'}
+      %i{ :class=>"fa fa-map-marker" }
+      Services near me

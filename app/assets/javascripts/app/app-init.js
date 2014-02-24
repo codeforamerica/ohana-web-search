@@ -2,13 +2,14 @@
 require(['app/popup-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
+  'app/location-manager',
   'jquery',
   'classList',
   'addEventListener',
   'Modernizr',
   'modernizrSelectors'],
 
-  function (pm,goog,ga,$) {
+  function (pm,goog,ga,location,$) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
@@ -33,5 +34,7 @@ require(['app/popup-manager',
   if (Modernizr.boxshadow)
     pm.init();
   goog.init();
+
+  location.init();
 
 });
