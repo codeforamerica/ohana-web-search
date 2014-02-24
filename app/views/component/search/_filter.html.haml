@@ -92,5 +92,6 @@
     %button{:type=>'submit', :id=>'update-btn-css_field', :class=>'update-btn', :title=>"Update"}
       %i{:class=>"fa fa-search"}
       %span Update
-    - if
+
+    - if css_field == "location"
       = render :partial => 'component/search/geolocate'
