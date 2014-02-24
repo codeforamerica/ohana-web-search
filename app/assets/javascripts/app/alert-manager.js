@@ -13,7 +13,7 @@ define(function() {
 		// PUBLIC METHODS
 		function init()
 		{
-			_alert = document.querySelector('#alert-box .alert');
+			_alert = document.querySelector('#alert-box');
 			_content = _alert.querySelector('.alert-message');
 			_closeBtn = _alert.querySelector('.alert-close');
 			_closeBtn.addEventListener('click',_closeBtnClicked,false);

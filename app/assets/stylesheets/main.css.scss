@@ -848,6 +848,12 @@ sup
   top:0;
   bottom:0;
   right:0;
+  pointer-events:none;
+
+  .popup-container
+  {
+    pointer-events:auto;
+  }
 
   .popup-container > article
   {
@@ -3378,9 +3384,11 @@ body { top: 0px !important; }
   font-family:$san_serif_font;
   letter-spacing: 1px;
   text-align: center;
+  pointer-events:none;
 
   .alert
   {
+    pointer-events:auto;
     min-width:300px;
     margin:0 auto;
     padding-left:10px;
