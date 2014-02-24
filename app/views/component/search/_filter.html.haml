@@ -31,7 +31,15 @@
       %label{:for => "#{css_field}-option-0",:id => "#{css_field}-option-label"}
         All
 
+
+    -# This is a repeat of the loop that follows the add button.
+    -# This is needed to check that another toggle is not checked.
+    -# Removing this extra loop should be addressed if possible in a refactor.
     - toggle_is_checked = false
+    - length = aggregate_field.length-1
+    - for i in 0..length
+      - check_current_toggle = aggregate_field[i] == field_value
+      - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
 
     - add_input_type = add_input_type ||= false
     - if add_input_type
@@ -62,6 +70,7 @@
                 Other...
               = select_tag("#{css_field}-option-input", options_for_select(list_values, selected: :option ))
 
+    - toggle_is_checked = false
     - length = aggregate_field.length-1
     - for i in 0..length
       -# If the supplied field contains a hash, it means there's a difference between
@@ -80,7 +89,7 @@
           = field_display
 
     = hidden_field_tag field, field_value
-    %button{:type=>'submit', :id=>'update-btn', :title=>"Update"}
+    %button{:type=>'submit', :id=>'update-btn-css_field', :class=>'update-btn', :title=>"Update"}
       %i{:class=>"fa fa-search"}
       %span Update
     - if

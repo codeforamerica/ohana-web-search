@@ -10,7 +10,7 @@ module Features
         set_location_filter(options)
       end
 
-      find('#update-btn').click
+      find('#find-btn').click
     end
 
     def search_from_home(options = {})
@@ -46,7 +46,7 @@ module Features
         within("##{name}-options") do
           find(".closed").click
           if field.present? && custom == true
-            all(".toggle").last.trigger('mousedown')
+            find(".add .toggle").trigger('mousedown')
             fill_in("#{name}-option-input", :with => field)
           elsif custom == false
             find(".toggle-group",:text=>field).trigger('mousedown')
@@ -112,7 +112,7 @@ module Features
 
     def test_filter_custom_value_no_results(name,field)
       set_filter(name,field)
-      find('#update-btn').click
+      find('#find-btn').click
 
       find(".require-loaded")
       within("##{name}-options") do
