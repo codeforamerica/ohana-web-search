@@ -11,9 +11,11 @@ define(
   	{
 			// capture form submission
 			var searchForm = document.getElementById("search-form");
+			if (!searchForm) console.log("search form DOM not found!");
 			searchForm.addEventListener("submit",_formSubmitted,false);
 
 			var resetBtn = document.getElementById("reset-btn-link");
+			if (!resetBtn) console.log("reset link DOM not found!");
 			resetBtn.addEventListener("click",_resetClicked,false);
 
 			// initialize fieldsets
