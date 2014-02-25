@@ -91,13 +91,19 @@ define(
 				_toggle = _group.querySelector(".toggle input");
 				_label = _group.querySelector("div+label");
 
+				// If input element exists in this toggle it is an add input
 				_addInput = _label.querySelector("input");
 				_isAddToggle = (_addInput) ? true : false;
 
 				if (_isAddToggle)
+				{
 					_addInputLabel = _label.querySelector("span");
+					if (_addInput.value != "") showAddInput();
+				}
 				else
+				{
 					_isCurrentToggle = (_group.parentNode.classList.contains("current-option"));
+				}
 			}
 
 			// Show the add input text field.
