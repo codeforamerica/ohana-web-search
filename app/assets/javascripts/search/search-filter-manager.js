@@ -1,5 +1,5 @@
 // handles search filter toggle functionality
-define(
+define(['domReady!'],
 	function() {
   'use strict';
 
