@@ -10,11 +10,11 @@ class OrganizationsController < ApplicationController
   def index
 
     # translate search keyword to current language if other than english
-    #if params[:keyword].present? && @current_lang != 'en'
-    #  original_word = params[:keyword]
-    #  translated_word = translate(params[:keyword],@current_lang,'en',false)
-    #  params[:keyword] = translated_word[0].translatedText if translated_word.present?
-    #end
+    if params[:keyword].present? && @current_lang != 'en'
+      original_word = params[:keyword]
+      translated_word = translate(params[:keyword],@current_lang,'en',false)
+      params[:keyword] = translated_word[0].translatedText if translated_word.present?
+    end
 
     # initialize query. Content may be blank if no results were found.
     begin
@@ -30,7 +30,7 @@ class OrganizationsController < ApplicationController
         @orgs = Ohanakapa.search("search", keyword: "asdfasg")
       end
     end
-    #params[:keyword] = original_word if original_word.present?
+    params[:keyword] = original_word if original_word.present?
 
     initialize_filter_data(@orgs) # intialize search filter data
 
@@ -265,24 +265,24 @@ class OrganizationsController < ApplicationController
   # Translate the page using the Google Translate API.
   # @param [String] text to translate
   # @param [String] target language code to translate into
-  # def translate(text, source, target, is_html)
+  def translate(text, source, target, is_html)
 
-  #   client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
-  #   translate = client.discovered_api('translate', 'v2')
-  #   html_or_plain = is_html ? "html" : "text"
+    client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
+    translate = client.discovered_api('translate', 'v2')
+    html_or_plain = is_html ? "html" : "text"
 
-  #   params = {
-  #       'format' => html_or_plain,
-  #       'source' => source,
-  #       'target' => target,
-  #       'q' => text
-  #     }
+    params = {
+        'format' => html_or_plain,
+        'source' => source,
+        'target' => target,
+        'q' => text
+      }
 
-  #   result = client.execute(
-  #     :api_method => translate.translations.list,
-  #     :parameters => params
-  #   )
-  #   result.data.translations
-  # end
+    result = client.execute(
+      :api_method => translate.translations.list,
+      :parameters => params
+    )
+    result.data.translations
+  end
 
 end

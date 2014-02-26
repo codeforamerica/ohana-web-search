@@ -1,5 +1,5 @@
 // handles search filter toggle functionality
-define(
+define(['domReady!'],
 	function() {
   'use strict';
 
@@ -17,10 +17,9 @@ define(
 			_searchForm.addEventListener("submit",_formSubmissionHandler,false);
 
 			// Hook all reset buttons on the page and listen for a click event
-			var resetBtn = document.querySelectorAll(".reset-btn");
+			var resetBtn = document.getElementById("reset-btn");
 			if (!resetBtn) console.log("reset link DOM not found!");
-			for (var r = 0;r<resetBtn.length;r++)
-				resetBtn[r].addEventListener("click",_resetClicked,false);
+			resetBtn.addEventListener("click",_resetClicked,false);
 
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
