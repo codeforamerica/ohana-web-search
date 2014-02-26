@@ -116,7 +116,7 @@ define(
 					_addInputLabel.classList.add('hide'); // hide "Add..." text
 					_addInput.classList.remove('hide'); // show input field
 					_addInputShowing = true;
-					setTimeout(function() { _addInput.focus(); }, 0);
+					setTimeout(function(){ _addInput.focus(); }, 0);
 				}
 			}
 
@@ -349,7 +349,8 @@ define(
 			{
 				if (_selectedToggle == _addInputToggle)
 				{
-					if (clicked.type != "search")
+					// Checking for type text is for IE compatibility
+					if (clicked.type != "search" && clicked.type != "text")
 						_toggleFilter();
 				}
 				else
