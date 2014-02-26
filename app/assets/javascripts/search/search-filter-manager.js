@@ -6,12 +6,14 @@ define(
   	// PRIVATE PROPERTIES
   	var _fieldsets = {}; // set of all fieldsets
 
+  	var _searchForm;
+
   	// main module initialization
   	function init()
   	{
 			// capture form submission
-			var searchForm = document.getElementById("search-form");
-			searchForm.addEventListener("submit",_formSubmitted,false);
+			_searchForm = document.getElementById("search-form");
+			_searchForm.addEventListener("submit",_formSubmissionHandler,false);
 
 			// Hook all reset buttons on the page and listen for a click event
 			var resetBtn = document.querySelectorAll(".reset-btn");
@@ -44,9 +46,14 @@ define(
   	}
 
   	// Handle form submission
-  	function _formSubmitted(evt)
+  	function _formSubmissionHandler(evt)
 		{
-			var form = evt.target;
+			_triggerFormSubmission(evt.target);
+			evt.preventDefault();
+		}
+
+		function _triggerFormSubmission(form)
+		{
 			var input;
 
 			for (var f in _fieldsets)
@@ -70,8 +77,6 @@ define(
 			}
 
 			form.submit();
-			evt.preventDefault();
-			return false;
 		}
 
 		// New ToggleGroup instance constructor
@@ -200,6 +205,9 @@ define(
 
   		var _hidden; // the fieldset's hidden input that's used for form submission
 
+  		// if set to true, the form will be submitted the next time the toggle group is closed
+  		var _queueUpdate = false;
+
 			function init(fieldset)
 			{
 				_fieldset = fieldset;
@@ -277,6 +285,7 @@ define(
 				// Toggle filters.
 				if (toggleGroup == _highlightToggle)
 				{
+					_queueUpdate = true;
 					_toggleFilter();
 				}
 				else if (toggleGroup == _addInputToggle)
@@ -304,11 +313,17 @@ define(
 			function _toggleFilter()
 			{
 				if (_legend.className == 'open')
-					_closeToggle();
+				{
+					_triggerFormSubmission(_searchForm);
+					_closeToggle()
+				}
 				else
+				{
 					_openToggle();
+				}
 			}
 
+			// Closes the toggle group
 			function _closeToggle()
 			{
 				// Check if add input value has a value.
@@ -338,6 +353,7 @@ define(
 				_legend.className = 'closed';
 			}
 
+			// Opens the toggle group
 			function _openToggle()
 			{
 				_toggleGroupContainers[1].classList.remove('hide');
