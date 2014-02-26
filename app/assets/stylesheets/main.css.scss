@@ -1021,7 +1021,8 @@ button.big-btn:hover
     font-size:24px;
   }
 
-  .close-button:after
+  .close-button:after,
+  .close-button::after
   {
     content:"×";
   }
@@ -1668,14 +1669,16 @@ body { top: 0px !important; }
       text-decoration:underline;
     }
 
-    >legend.open:before
+    >legend.open:before,
+    >legend.open::before
     {
       content:"▲ ";
       color:$blue_midtone;
       font-size:12px;
     }
 
-    >legend.closed:before
+    >legend.closed:before,
+    >legend.closed::before
     {
       content:"▼ ";
       color:$blue_midtone;
@@ -1883,6 +1886,7 @@ body { top: 0px !important; }
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label:before,
   .toggle-group >.toggle >div input[type=radio]:checked ~ label::before
   {
     border:none;
@@ -1930,7 +1934,8 @@ body { top: 0px !important; }
   @include border-radius(3px);
 }
 
-.search-check label:after
+.search-check label:after,
+.search-check label::after
 {
   @include opacity(0.3);
   content: '🔍';
@@ -1949,7 +1954,8 @@ body { top: 0px !important; }
   left: 20px;
 }
 
-.search-check label:before
+.search-check label:before,
+.search-check label::before
 {
   content:'';
   position: absolute;
@@ -1974,6 +1980,7 @@ body { top: 0px !important; }
   @include background( linear-gradient(top,$green_lightest,$green_midtone) );
 }
 
+.search-check input[type=checkbox]:checked + label:before,
 .search-check input[type=checkbox]:checked + label::before
 {
   border:none;
@@ -2678,7 +2685,8 @@ body { top: 0px !important; }
           font-family:$serif_font;
         }
 
-        h1.name > a:after
+        h1.name > a:after,
+        h1.name > a::after
         {
           content:" more...";
           font-size:12px;
@@ -2687,7 +2695,8 @@ body { top: 0px !important; }
           color:$black_alpha40;
         }
 
-        h1.name > a:hover:after
+        h1.name > a:hover:after,
+        h1.name > a:hover::after
         {
           color:$black;
           border-right:0;
@@ -3057,6 +3066,7 @@ body { top: 0px !important; }
             color:$purple_darkest;
           }
 
+          >.fax:after,
           >.fax::after
           {
             content:"℻";
@@ -3098,14 +3108,16 @@ body { top: 0px !important; }
       line-height: normal;
     }
 
-    a:last-child:after
+    a:last-child:after,
+    a:last-child::after
     {
       content:">";
       color:$greyscale_midtone; // IE fallback
       color:$black_alpha40;
     }
 
-    a:last-child:before
+    a:last-child:before,
+    a:last-child::before
     {
       content:"<";
       color:$greyscale_midtone; // IE fallback
@@ -3382,7 +3394,7 @@ body { top: 0px !important; }
     *text-indent: -9999px;
 }
 
-.ir:before {
+.ir:before,.ir::before {
     content: "";
     display: block;
     width: 0;
@@ -3449,12 +3461,15 @@ body { top: 0px !important; }
  */
 
 .clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix:after,
+.clearfix::after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.clearfix:after {
+.clearfix:after,
+.clearfix::after {
     clear: both;
 }
 
