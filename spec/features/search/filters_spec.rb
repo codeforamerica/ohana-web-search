@@ -89,25 +89,25 @@ feature "results page search", :js=>true do
   scenario 'when location filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("590 results")
-    set_filter("location","San Francisco, CA",false)
+    page.should have_content("589 results")
+    set_filter("location","San Mateo, CA",false)
     find('#find-btn').click
-    page.should have_content("78 results")
-    expect(all("#location-options .current-option label").last).to have_content("San Francisco, CA")
+    page.should have_content("129 results")
+    expect(all("#location-options .current-option label").last).to have_content("San Mateo, CA")
   end
   scenario 'when service-area filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("590 results")
+    page.should have_content("589 results")
     set_filter("service-area","All",false)
     find('#find-btn').click
-    page.should have_content("679 results")
+    page.should have_content("678 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
   scenario 'when kind filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("590 results")
+    page.should have_content("589 results")
     set_filter("kind","Other",false)
     find('#find-btn').click
     page.should have_content("521 results")
@@ -116,7 +116,7 @@ feature "results page search", :js=>true do
   scenario 'when agency filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("590 results")
+    page.should have_content("589 results")
     set_filter("org-name","San Mateo County Human Services Agency",false)
     find('#find-btn').click
     page.should have_content("11 results")
@@ -165,7 +165,7 @@ feature "results page search", :js=>true do
     expect(all("#org-name-options .current-option label").last).to have_content("All")
 
     find('#find-btn').click
-    page.should have_content("1710 results")
+    page.should have_content("1709 results")
   end
 
 end

@@ -25,15 +25,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Jan 2014 08:15:30 GMT
-      Etag:
-      - '"a9f19df3eb32fda34ba3312a512d6ca7"'
+      - Wed, 26 Feb 2014 09:06:09 GMT
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=libraries&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=libraries&kind%5B%5D=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=libraries&kind=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=libraries&kind=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      - nginx/1.4.4 + Phusion Passenger 4.0.37
       Status:
       - 200 OK
       X-Current-Page:
@@ -41,26 +39,58 @@ http_interactions:
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.23
+      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 0c70fae2-c12d-472e-a3fa-b944f1bbf91e
+      - 83bb38a9-eb28-4cf3-8006-ae91153fc50e
       X-Runtime:
-      - '0.310428'
+      - '0.277228'
       X-Total-Count:
       - '35'
       X-Total-Pages:
       - '2'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Content-Length:
-      - '116215'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"521d33361974fcdb2b001f9a","_slugs":["project-read-adult-literacy-program"],"address":{"city":"Menlo
+      string: '[{"_id":"521d333b1974fcdb2b00203b","_slugs":["project-read-1"],"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking"],"address":{"city":"Redwood City","state":"CA","street":"1044
+        Middlefield Road, 2nd Floor","zip":"94063"},"contacts":[{"_id":"521d333b1974fcdb2b00203c","name":"Kathy
+        Endaya","title":"Director"}],"coordinates":[-122.227542,37.4839129],"created_at":"2013-08-27T16:16:11-07:00","description":"Offers
+        an intergenerational literacy program for youth and English-speaking adults
+        seeking to improver literacy skills. Adult services include: adult one-to-one
+        tutoring to improve basic skills in reading, writing and critical thinking;
+        Families for Literacy (FFL), a home-based family literacy program for parents
+        who want to be able to read to their young children; and small group/English
+        as a Second Language (ESL). Youth services include: Youth Tutoring, Families
+        in Partnership (FIP); Teen-to-Elementary Student Tutoring, Kids in Partnership
+        (KIP); and computer-aided literacy. Redwood City Friends of Literacy is a
+        fundraising board that helps to support and to fund Redwood City''s Project
+        Read. Call for more information about each service.","emails":["rclread@redwoodcity.org"],"faxes":[{"number":"650
+        780-7004"}],"hours":"Monday-Thursday, 10-8:30; Friday, 10-5","kind":"Human
+        Services","mail_address":{"attention":"Project Read","city":"Redwood City","state":"CA","street":"1044
+        Middlefield Road, 2nd Floor","zip":"94063"},"name":"Project Read","phones":[{"number":"650
+        780-7077","hours":"(Monday-Thursday, 9:30 am-9 pm; Friday, 9:30-5)"}],"short_desc":"Offers
+        an intergenerational literacy program for adults and youth seeking to improver
+        literacy skills.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-11-07T12:45:44-08:00","urls":["http://www.projectreadredwoodcity.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d333b1974fcdb2b00203b","services":[{"_id":"521d333b1974fcdb2b002046","audience":"Adults,
+        parents, children in 1st-12th grades in the Redwood City school districta","eligibility":"English-speaking
+        adult reading at or below 7th grade level or child in 1st-12th grade in the
+        Redwood City school districts","fees":"None.","funding_sources":["City","Donations","Federal","Grants","State"],"how_to_apply":"Walk
+        in or apply by phone, email or webpage registration.","keywords":["EDUCATION
+        SERVICES","Adult","Alternative","Literacy","Literacy Programs","Libraries","Public
+        Libraries","Youth","Youth Tutoring"],"service_areas":["Redwood City"],"updated_at":"2013-11-11T00:45:55-08:00","wait":"Depends
+        on availability of tutors for small groups and one-on-one.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f761edd37edff000100","_slugs":["english-as-a-second-language-esl-1"],"depth":2,"lft":509,"name":"English
+        as a Second Language (ESL)","oe_id":"109-03-03","parent_id":"52280f751edd37edff0000fd","rgt":510},{"_id":"52280f771edd37edff000105","_slugs":["foreign-languages"],"depth":2,"lft":519,"name":"Foreign
+        Languages","oe_id":"109-03-05","parent_id":"52280f751edd37edff0000fd","rgt":520},{"_id":"52280f771edd37edff000111","_slugs":["tutoring"],"depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","_slugs":["basic-literacy-1"],"depth":2,"lft":557,"name":"Basic
+        Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558}]}],"organization":{"_id":"521d333b1974fcdb2b00202b","_slugs":["redwood-city-public-library"],"created_at":"2013-08-27T16:16:11-07:00","name":"Redwood
+        City Public Library","updated_at":"2013-10-01T12:16:05-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d333b1974fcdb2b00202b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d333b1974fcdb2b00202b/locations"},"slugs":["project-read-1"],"id":"521d333b1974fcdb2b00203b","_score":0.43773642,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33361974fcdb2b001f9a","_slugs":["project-read-adult-literacy-program"],"address":{"city":"Menlo
         Park","state":"CA","street":"800 Alma Street","zip":"94025"},"ask_for":["Alice
         Bradshaw","Roberta Roth"],"contacts":[{"_id":"521d33361974fcdb2b001f9b","name":"Alice
         Bradshaw","title":"Program Manager"}],"coordinates":[-122.1795451,37.4532874],"created_at":"2013-08-27T16:16:06-07:00","description":"Offers
@@ -93,10 +123,10 @@ http_interactions:
         by phone for an interview.","keywords":["EDUCATION SERVICES","Adult","Alternative","Literacy","Literacy
         Programs","Libraries","Public Libraries","Reading"],"service_areas":["Atherton","Menlo
         Park","Palo Alto","Portola Valley","Stanford"],"updated_at":"2013-09-18T17:21:10-07:00","wait":"Depends
-        on availability of volunteer tutors.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","depth":2,"lft":557,"name":"Basic
+        on availability of volunteer tutors.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","_slugs":["basic-literacy-1"],"depth":2,"lft":557,"name":"Basic
         Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558}]}],"organization":{"_id":"521d33361974fcdb2b001f99","_slugs":["menlo-park-public-library"],"created_at":"2013-08-27T16:16:06-07:00","name":"Menlo
-        Park Public Library","updated_at":"2013-10-01T12:15:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33361974fcdb2b001f99","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33361974fcdb2b001f99/locations"},"slugs":["project-read-adult-literacy-program"],"id":"521d33361974fcdb2b001f9a","_score":0.4386497,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33781974fcdb2b002312","_slugs":["san-mateo-county-reads"],"accessibility":["Elevator","Ramp","Disabled
+        Park Public Library","updated_at":"2013-10-01T12:15:55-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33361974fcdb2b001f99","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33361974fcdb2b001f99/locations"},"slugs":["project-read-adult-literacy-program"],"id":"521d33361974fcdb2b001f9a","_score":0.43773642,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33781974fcdb2b002312","_slugs":["san-mateo-county-reads"],"accessibility":["Elevator","Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"125
         Lessingia Court","zip":"94402"},"ask_for":["Sarah Lapin"],"contacts":[{"_id":"521d33781974fcdb2b002313","title":"Coordinator"}],"coordinates":[-122.3352206,37.5102705],"created_at":"2013-08-27T16:17:12-07:00","description":"Offers
         a literacy program to all English-speaking adults, age 16 or over, living
@@ -120,69 +150,11 @@ http_interactions:
         by phone.","keywords":["EDUCATION SERVICES","Literacy","Literacy Programs","Libraries","Public
         Libraries","Tutoring","Adult Learning","Volunteer Opportunities"],"service_areas":["San
         Mateo County"],"updated_at":"2013-11-11T00:46:08-08:00","wait":"Approximately
-        2-4 weeks.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000111","depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","depth":2,"lft":557,"name":"Basic
+        2-4 weeks.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000111","_slugs":["tutoring"],"depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","_slugs":["basic-literacy-1"],"depth":2,"lft":557,"name":"Basic
         Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558}]}],"organization":{"_id":"521d33771974fcdb2b0022cb","_slugs":["san-mateo-county-library"],"created_at":"2013-08-27T16:17:11-07:00","name":"San
-        Mateo County Library","updated_at":"2013-10-01T12:17:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb/locations"},"slugs":["san-mateo-county-reads"],"id":"521d33781974fcdb2b002312","_score":0.4386497,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d333b1974fcdb2b00203b","_slugs":["project-read-1"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking"],"address":{"city":"Redwood City","state":"CA","street":"1044
-        Middlefield Road, 2nd Floor","zip":"94063"},"contacts":[{"_id":"521d333b1974fcdb2b00203c","name":"Kathy
-        Endaya","title":"Director"}],"coordinates":[-122.227542,37.4839129],"created_at":"2013-08-27T16:16:11-07:00","description":"Offers
-        an intergenerational literacy program for youth and English-speaking adults
-        seeking to improver literacy skills. Adult services include: adult one-to-one
-        tutoring to improve basic skills in reading, writing and critical thinking;
-        Families for Literacy (FFL), a home-based family literacy program for parents
-        who want to be able to read to their young children; and small group/English
-        as a Second Language (ESL). Youth services include: Youth Tutoring, Families
-        in Partnership (FIP); Teen-to-Elementary Student Tutoring, Kids in Partnership
-        (KIP); and computer-aided literacy. Redwood City Friends of Literacy is a
-        fundraising board that helps to support and to fund Redwood City''s Project
-        Read. Call for more information about each service.","emails":["rclread@redwoodcity.org"],"faxes":[{"number":"650
-        780-7004"}],"hours":"Monday-Thursday, 10-8:30; Friday, 10-5","kind":"Human
-        Services","mail_address":{"attention":"Project Read","city":"Redwood City","state":"CA","street":"1044
-        Middlefield Road, 2nd Floor","zip":"94063"},"name":"Project Read","phones":[{"number":"650
-        780-7077","hours":"(Monday-Thursday, 9:30 am-9 pm; Friday, 9:30-5)"}],"short_desc":"Offers
-        an intergenerational literacy program for adults and youth seeking to improver
-        literacy skills.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-11-07T12:45:44-08:00","urls":["http://www.projectreadredwoodcity.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d333b1974fcdb2b00203b","services":[{"_id":"521d333b1974fcdb2b002046","audience":"Adults,
-        parents, children in 1st-12th grades in the Redwood City school districta","eligibility":"English-speaking
-        adult reading at or below 7th grade level or child in 1st-12th grade in the
-        Redwood City school districts","fees":"None.","funding_sources":["City","Donations","Federal","Grants","State"],"how_to_apply":"Walk
-        in or apply by phone, email or webpage registration.","keywords":["EDUCATION
-        SERVICES","Adult","Alternative","Literacy","Literacy Programs","Libraries","Public
-        Libraries","Youth","Youth Tutoring"],"service_areas":["Redwood City"],"updated_at":"2013-11-11T00:45:55-08:00","wait":"Depends
-        on availability of tutors for small groups and one-on-one.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f761edd37edff000100","depth":2,"lft":509,"name":"English
-        as a Second Language (ESL)","oe_id":"109-03-03","parent_id":"52280f751edd37edff0000fd","rgt":510},{"_id":"52280f771edd37edff000105","depth":2,"lft":519,"name":"Foreign
-        Languages","oe_id":"109-03-05","parent_id":"52280f751edd37edff0000fd","rgt":520},{"_id":"52280f771edd37edff000111","depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","depth":2,"lft":557,"name":"Basic
-        Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558}]}],"organization":{"_id":"521d333b1974fcdb2b00202b","_slugs":["redwood-city-public-library"],"created_at":"2013-08-27T16:16:11-07:00","name":"Redwood
-        City Public Library","updated_at":"2013-10-01T12:16:05-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d333b1974fcdb2b00202b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d333b1974fcdb2b00202b/locations"},"slugs":["project-read-1"],"id":"521d333b1974fcdb2b00203b","_score":0.4386497,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d338d1974fcdb2b002507","_slugs":["community-learning-center"],"accessibility":["Wheelchair"],"address":{"city":"South
-        San Francisco","state":"CA","street":"520 Tamarack Lane","zip":"94080"},"contacts":[{"_id":"521d338d1974fcdb2b002508","name":"Valerie
-        Sommer","title":"Library Director"},{"_id":"521d338d1974fcdb2b002509","name":"Ana
-        Linder","title":"Manager"}],"coordinates":[-122.4167427,37.6583202],"created_at":"2013-08-27T16:17:33-07:00","description":"The
-        Community Learning Center offers an alternative learning environment where
-        adults enhance their English language fluency, native language literacy, computer
-        competency, work-related capacity and parenting skills. Children receive assistance
-        with their homework. While parents are attending classes, their children age
-        3-12 are engaged in creative learning activities.","emails":["clc@ssf.net"],"faxes":[{"number":"650
-        875-6969"}],"hours":"Monday-Thursday, 2:30-7:30; Friday, 2:30-5:30; Saturday,
-        9:45-2","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Community
-        Learning Center","city":"South San Francisco","state":"CA","street":"520 Tamarack
-        Lane","zip":"94080"},"name":"Community Learning Center","phones":[{"number":"650
-        877-8540"}],"short_desc":"Homework and study center for children, teens and
-        adults.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-11-07T12:44:50-08:00","urls":["http://www.ssf.net/clc"],"url":"http://ohanapi.herokuapp.com/api/locations/521d338d1974fcdb2b002507","services":[{"_id":"521d338e1974fcdb2b00250f","eligibility":"Varies
-        by program","fees":"None.","funding_sources":["City","County","Donations","Grants","State"],"how_to_apply":"Walk
-        in or call for information.","keywords":["EDUCATION SERVICES","Pupil Support/Tutoring","Libraries","Public
-        Libraries","Youth"],"service_areas":["South San Francisco"],"updated_at":"2013-11-11T00:46:04-08:00","wait":"No
-        wait.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","depth":1,"lft":404,"name":"Daytime
-        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000d6","depth":2,"lft":425,"name":"Relief
-        for Caregivers","oe_id":"108-03-07","parent_id":"52280f721edd37edff0000cb","rgt":426},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f761edd37edff000100","depth":2,"lft":509,"name":"English
-        as a Second Language (ESL)","oe_id":"109-03-03","parent_id":"52280f751edd37edff0000fd","rgt":510},{"_id":"52280f771edd37edff000111","depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","depth":2,"lft":557,"name":"Basic
-        Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558},{"_id":"52280f781edd37edff000119","depth":2,"lft":559,"name":"Computer
-        Class","oe_id":"109-06-02","parent_id":"52280f781edd37edff000117","rgt":560}]}],"organization":{"_id":"521d338d1974fcdb2b0024f9","_slugs":["south-san-francisco-public-library"],"created_at":"2013-08-27T16:17:33-07:00","name":"South
-        San Francisco Public Library","updated_at":"2013-10-01T12:17:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9/locations"},"slugs":["community-learning-center"],"id":"521d338d1974fcdb2b002507","_score":0.3838185,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d338d1974fcdb2b002503","_slugs":["project-read-north-county"],"accessibility":["Disabled
+        Mateo County Library","updated_at":"2013-10-01T12:17:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33771974fcdb2b0022cb/locations"},"slugs":["san-mateo-county-reads"],"id":"521d33781974fcdb2b002312","_score":0.43773642,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d338d1974fcdb2b002503","_slugs":["project-read-north-county"],"accessibility":["Disabled
         Restroom","Wheelchair"],"address":{"city":"South San Francisco","state":"CA","street":"840
         West Orange Avenue","zip":"94080"},"contacts":[{"_id":"521d338d1974fcdb2b002504","name":"Holly
         Fulghum-Nutters","title":"Program Manager"}],"coordinates":[-122.4364291,37.6524928],"created_at":"2013-08-27T16:17:33-07:00","description":"Offers
@@ -209,10 +181,36 @@ http_interactions:
         for an application.","keywords":["EDUCATION SERVICES","Adult","Alternative","Literacy","Literacy
         Programs","Libraries","Public Libraries"],"service_areas":["Colma","Daly City","San
         Bruno","South San Francisco"],"updated_at":"2013-09-18T17:05:40-07:00","wait":"Varies
-        from no wait to 4 weeks.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","depth":2,"lft":557,"name":"Basic
+        from no wait to 4 weeks.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","_slugs":["basic-literacy-1"],"depth":2,"lft":557,"name":"Basic
         Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558}]}],"organization":{"_id":"521d338d1974fcdb2b0024f9","_slugs":["south-san-francisco-public-library"],"created_at":"2013-08-27T16:17:33-07:00","name":"South
-        San Francisco Public Library","updated_at":"2013-10-01T12:17:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9/locations"},"slugs":["project-read-north-county"],"id":"521d338d1974fcdb2b002503","_score":0.3838185,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d331f1974fcdb2b001ae1","_slugs":["health-and-healing-center-a-planetree-affiliate"],"accessibility":["Disabled
+        San Francisco Public Library","updated_at":"2013-10-01T12:17:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9/locations"},"slugs":["project-read-north-county"],"id":"521d338d1974fcdb2b002503","_score":0.38301936,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d338d1974fcdb2b002507","_slugs":["community-learning-center"],"accessibility":["Wheelchair"],"address":{"city":"South
+        San Francisco","state":"CA","street":"520 Tamarack Lane","zip":"94080"},"contacts":[{"_id":"521d338d1974fcdb2b002508","name":"Valerie
+        Sommer","title":"Library Director"},{"_id":"521d338d1974fcdb2b002509","name":"Ana
+        Linder","title":"Manager"}],"coordinates":[-122.4167427,37.6583202],"created_at":"2013-08-27T16:17:33-07:00","description":"The
+        Community Learning Center offers an alternative learning environment where
+        adults enhance their English language fluency, native language literacy, computer
+        competency, work-related capacity and parenting skills. Children receive assistance
+        with their homework. While parents are attending classes, their children age
+        3-12 are engaged in creative learning activities.","emails":["clc@ssf.net"],"faxes":[{"number":"650
+        875-6969"}],"hours":"Monday-Thursday, 2:30-7:30; Friday, 2:30-5:30; Saturday,
+        9:45-2","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Community
+        Learning Center","city":"South San Francisco","state":"CA","street":"520 Tamarack
+        Lane","zip":"94080"},"name":"Community Learning Center","phones":[{"number":"650
+        877-8540"}],"short_desc":"Homework and study center for children, teens and
+        adults.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-11-07T12:44:50-08:00","urls":["http://www.ssf.net/clc"],"url":"http://ohanapi.herokuapp.com/api/locations/521d338d1974fcdb2b002507","services":[{"_id":"521d338e1974fcdb2b00250f","eligibility":"Varies
+        by program","fees":"None.","funding_sources":["City","County","Donations","Grants","State"],"how_to_apply":"Walk
+        in or call for information.","keywords":["EDUCATION SERVICES","Pupil Support/Tutoring","Libraries","Public
+        Libraries","Youth"],"service_areas":["South San Francisco"],"updated_at":"2013-11-11T00:46:04-08:00","wait":"No
+        wait.","categories":[{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","_slugs":["daytime-care"],"depth":1,"lft":404,"name":"Daytime
+        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000d6","_slugs":["relief-for-caregivers"],"depth":2,"lft":425,"name":"Relief
+        for Caregivers","oe_id":"108-03-07","parent_id":"52280f721edd37edff0000cb","rgt":426},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f761edd37edff000100","_slugs":["english-as-a-second-language-esl-1"],"depth":2,"lft":509,"name":"English
+        as a Second Language (ESL)","oe_id":"109-03-03","parent_id":"52280f751edd37edff0000fd","rgt":510},{"_id":"52280f771edd37edff000111","_slugs":["tutoring"],"depth":2,"lft":543,"name":"Tutoring","oe_id":"109-03-10","parent_id":"52280f751edd37edff0000fd","rgt":544},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff000118","_slugs":["basic-literacy-1"],"depth":2,"lft":557,"name":"Basic
+        Literacy","oe_id":"109-06-01","parent_id":"52280f781edd37edff000117","rgt":558},{"_id":"52280f781edd37edff000119","_slugs":["computer-class-1"],"depth":2,"lft":559,"name":"Computer
+        Class","oe_id":"109-06-02","parent_id":"52280f781edd37edff000117","rgt":560}]}],"organization":{"_id":"521d338d1974fcdb2b0024f9","_slugs":["south-san-francisco-public-library"],"created_at":"2013-08-27T16:17:33-07:00","name":"South
+        San Francisco Public Library","updated_at":"2013-10-01T12:17:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338d1974fcdb2b0024f9/locations"},"slugs":["community-learning-center"],"id":"521d338d1974fcdb2b002507","_score":0.38301936,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d331f1974fcdb2b001ae1","_slugs":["health-and-healing-center-a-planetree-affiliate"],"accessibility":["Disabled
         Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"2040
         Webster Street","zip":"94115"},"ask_for":["Betsy Feichtmeir"],"contacts":[{"_id":"521d331f1974fcdb2b001ae2","name":"Betsy
         Feichtmeir","title":"Health Researcher"}],"coordinates":[-122.4322445,37.7899046],"created_at":"2013-08-27T16:15:43-07:00","description":"Provides
@@ -237,10 +235,10 @@ http_interactions:
         Libraries","health and medical information","self care"],"service_areas":["Alameda
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County"],"updated_at":"2013-09-18T17:13:42-07:00","wait":"Varies.
-        Information Service is on a first-come, first-served basis.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff000063","depth":2,"lft":195,"name":"Understand
-        Disability","oe_id":"106-04-07","parent_id":"52280f681edd37edff00005c","rgt":196},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d331f1974fcdb2b001ae0","_slugs":["institute-for-health-and-healing"],"created_at":"2013-08-27T16:15:43-07:00","name":"Institute
-        for Health and Healing","updated_at":"2013-10-01T12:19:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001ae0","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001ae0/locations"},"slugs":["health-and-healing-center-a-planetree-affiliate"],"id":"521d331f1974fcdb2b001ae1","_score":0.29645663,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f11974fcdb2b000e90","_slugs":["second-harvest-food-bank-of-santa-clara-and-san-mateo-counties-1"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Information Service is on a first-come, first-served basis.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff000063","_slugs":["understand-disability-1"],"depth":2,"lft":195,"name":"Understand
+        Disability","oe_id":"106-04-07","parent_id":"52280f681edd37edff00005c","rgt":196},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d331f1974fcdb2b001ae0","_slugs":["institute-for-health-and-healing"],"created_at":"2013-08-27T16:15:43-07:00","name":"Institute
+        for Health and Healing","updated_at":"2013-10-01T12:19:26-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001ae0","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001ae0/locations"},"slugs":["health-and-healing-center-a-planetree-affiliate"],"id":"521d331f1974fcdb2b001ae1","_score":0.2958211,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f11974fcdb2b000e90","_slugs":["second-harvest-food-bank-of-santa-clara-and-san-mateo-counties-1"],"accessibility":["Wheelchair"],"address":{"city":"San
         Jose","state":"CA","street":"750 Curtner Avenue","zip":"95125"},"ask_for":["Shirley
         Chang (Agencies)","Food Connections (Individuals)"],"contacts":[{"_id":"5286c1c42d979af1c5000001","name":"Kathy
         Jackson","title":"Chief Executive Officer"}],"coordinates":[-121.876311,37.2925],"created_at":"2013-08-27T16:14:57-07:00","description":"The
@@ -285,16 +283,16 @@ http_interactions:
         to locate a program location. Application may be required.","keywords":["COMMODITY
         SERVICES","Food","ORGANIZATIONAL SUPPORT SERVICES","Material Resources","Food
         Pantries","Food Banks/Food Distribution Warehouses","Nutrition Education","Older
-        Adults","Meals"],"service_areas":["San Mateo County","Santa Clara County"],"updated_at":"2013-11-15T16:52:20-08:00","wait":"Varies.","categories":[{"_id":"52280f5e1edd37edff000011","depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000015","depth":1,"lft":40,"name":"Food
-        Pantry","oe_id":"102-04","parent_id":"52280f5e1edd37edff000011","rgt":41},{"_id":"52280f5e1edd37edff000016","depth":1,"lft":42,"name":"Free
-        Meals","oe_id":"102-05","parent_id":"52280f5e1edd37edff000011","rgt":43},{"_id":"52280f5f1edd37edff00001a","depth":1,"lft":50,"name":"Nutrition","oe_id":"102-07","parent_id":"52280f5e1edd37edff000011","rgt":51},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff000060","depth":2,"lft":189,"name":"Nutrition","oe_id":"106-04-04","parent_id":"52280f681edd37edff00005c","rgt":190},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e9","depth":2,"lft":463,"name":"Help
-        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000107","depth":2,"lft":523,"name":"Health
-        Education","oe_id":"109-03-07","parent_id":"52280f751edd37edff0000fd","rgt":538},{"_id":"52280f771edd37edff00010a","depth":3,"lft":528,"name":"Nutrition
+        Adults","Meals"],"service_areas":["San Mateo County","Santa Clara County"],"updated_at":"2013-11-15T16:52:20-08:00","wait":"Varies.","categories":[{"_id":"52280f5e1edd37edff000011","_slugs":["food"],"depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000015","_slugs":["food-pantry"],"depth":1,"lft":40,"name":"Food
+        Pantry","oe_id":"102-04","parent_id":"52280f5e1edd37edff000011","rgt":41},{"_id":"52280f5e1edd37edff000016","_slugs":["free-meals"],"depth":1,"lft":42,"name":"Free
+        Meals","oe_id":"102-05","parent_id":"52280f5e1edd37edff000011","rgt":43},{"_id":"52280f5f1edd37edff00001a","_slugs":["nutrition-1"],"depth":1,"lft":50,"name":"Nutrition","oe_id":"102-07","parent_id":"52280f5e1edd37edff000011","rgt":51},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff000060","_slugs":["nutrition"],"depth":2,"lft":189,"name":"Nutrition","oe_id":"106-04-04","parent_id":"52280f681edd37edff00005c","rgt":190},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e9","_slugs":["help-hotlines"],"depth":2,"lft":463,"name":"Help
+        Hotlines","oe_id":"108-07-02","parent_id":"52280f741edd37edff0000e7","rgt":464},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000107","_slugs":["health-education-1"],"depth":2,"lft":523,"name":"Health
+        Education","oe_id":"109-03-07","parent_id":"52280f751edd37edff0000fd","rgt":538},{"_id":"52280f771edd37edff00010a","_slugs":["nutrition-education"],"depth":3,"lft":528,"name":"Nutrition
         Education","oe_id":"109-03-07-03","parent_id":"52280f771edd37edff000107","rgt":529}]}],"organization":{"_id":"521d32f11974fcdb2b000e8f","_slugs":["second-harvest-food-bank-of-santa-clara-and-san-mateo-counties-1"],"created_at":"2013-08-27T16:14:57-07:00","name":"Second
-        Harvest Food Bank of Santa Clara and San Mateo Counties","updated_at":"2013-10-01T12:10:02-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000e8f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000e8f/locations"},"slugs":["second-harvest-food-bank-of-santa-clara-and-san-mateo-counties-1"],"id":"521d32f11974fcdb2b000e90","_score":0.27828684,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c36","_slugs":["northern-california-unit"],"address":{"city":"Palo
+        Harvest Food Bank of Santa Clara and San Mateo Counties","updated_at":"2013-10-01T12:10:02-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000e8f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000e8f/locations"},"slugs":["second-harvest-food-bank-of-santa-clara-and-san-mateo-counties-1"],"id":"521d32f11974fcdb2b000e90","_score":0.27808535,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33241974fcdb2b001c36","_slugs":["northern-california-unit"],"address":{"city":"Palo
         Alto","state":"CA","street":"488 West Charleston Road","zip":"94306-4103"},"ask_for":["Lynne
         Van Tilburg"],"contacts":[{"_id":"521d33241974fcdb2b001c37","name":"Lynne
         Van Tilburg","title":"Development Director"}],"coordinates":[-122.1225609,37.4113455],"created_at":"2013-08-27T16:15:48-07:00","description":"A
@@ -323,8 +321,8 @@ http_interactions:
         County","Contra Costa County","Marin County","Monterey County","Santa Clara
         County","Santa Cruz County","San Francisco County","San Mateo County","Sonoma
         County","nationwide"],"updated_at":"2013-09-18T16:58:38-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268}]}],"organization":{"_id":"521d33241974fcdb2b001c35","_slugs":["recording-for-the-blind-and-dyslexic-inc"],"created_at":"2013-08-27T16:15:48-07:00","name":"Recording
-        for the Blind and Dyslexic, Inc","updated_at":"2013-10-01T12:14:42-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c35","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c35/locations"},"slugs":["northern-california-unit"],"id":"521d33241974fcdb2b001c36","_score":0.20962651,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32de1974fcdb2b000973","_slugs":["ucsf-womens-health-resource-center"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268}]}],"organization":{"_id":"521d33241974fcdb2b001c35","_slugs":["recording-for-the-blind-and-dyslexic-inc"],"created_at":"2013-08-27T16:15:48-07:00","name":"Recording
+        for the Blind and Dyslexic, Inc","updated_at":"2013-10-01T12:14:42-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c35","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c35/locations"},"slugs":["northern-california-unit"],"id":"521d33241974fcdb2b001c36","_score":0.2091771,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32de1974fcdb2b000973","_slugs":["ucsf-womens-health-resource-center"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
         Francisco","state":"CA","street":"2356 Sutter Street, Room J112","zip":"94115-1648"},"ask_for":["Gina","Joanne"],"contacts":[{"_id":"521d32de1974fcdb2b000974","name":"Joanne
         DeLeon","title":"WHRC Manager"}],"coordinates":[-122.4392096,37.7854759],"created_at":"2013-08-27T16:14:38-07:00","description":"Offers
         a lending library and bookstore, special events and conferences on women''s
@@ -346,13 +344,13 @@ http_interactions:
         FAMILY DEVELOPMENT SERVICES","Parent Groups","Women''s Health Centers","Women"],"service_areas":["Alameda
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County"],"updated_at":"2013-10-04T13:00:56-07:00","wait":"Varies according
-        to call volume.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000070","depth":2,"lft":221,"name":"Birth
-        Control","oe_id":"106-06-03","parent_id":"52280f691edd37edff00006d","rgt":222},{"_id":"52280f691edd37edff000071","depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000076","depth":3,"lft":232,"name":"Pregnancy
-        Tests","oe_id":"106-06-04-05","parent_id":"52280f691edd37edff000071","rgt":233},{"_id":"52280f6a1edd37edff000078","depth":2,"lft":237,"name":"Maternity
+        to call volume.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000070","_slugs":["birth-control"],"depth":2,"lft":221,"name":"Birth
+        Control","oe_id":"106-06-03","parent_id":"52280f691edd37edff00006d","rgt":222},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000076","_slugs":["pregnancy-tests"],"depth":3,"lft":232,"name":"Pregnancy
+        Tests","oe_id":"106-06-04-05","parent_id":"52280f691edd37edff000071","rgt":233},{"_id":"52280f6a1edd37edff000078","_slugs":["maternity-care"],"depth":2,"lft":237,"name":"Maternity
         Care","oe_id":"106-06-05","parent_id":"52280f691edd37edff00006d","rgt":238}]}],"organization":{"_id":"521d32de1974fcdb2b000972","_slugs":["ucsf-womens-health-resource-center"],"created_at":"2013-08-27T16:14:38-07:00","name":"UCSF
-        Women''s Health Resource Center","updated_at":"2013-10-01T12:08:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000972","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000972/locations"},"slugs":["ucsf-womens-health-resource-center"],"id":"521d32de1974fcdb2b000973","_score":0.13422616,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012bd","_slugs":["rotary-haciendas"],"accessibility":["Elevator","Ramp","Disabled
+        Women''s Health Resource Center","updated_at":"2013-10-01T12:08:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000972","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32de1974fcdb2b000972/locations"},"slugs":["ucsf-womens-health-resource-center"],"id":"521d32de1974fcdb2b000973","_score":0.13387366,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012bd","_slugs":["rotary-haciendas"],"accessibility":["Elevator","Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"2700
         Hacienda Street","zip":"94403"},"ask_for":["Administrator"],"contacts":[{"_id":"521d33001974fcdb2b0012be","name":"Lenora
         Barnett","title":"Administrator"}],"coordinates":[-122.3082912,37.5400478],"created_at":"2013-08-27T16:15:12-07:00","description":"An
@@ -373,11 +371,11 @@ http_interactions:
         accepting applications at this time.","keywords":["HOUSING SERVICES","Senior
         and Disabled Housing","Older Adult/Disability Related Supportive Housing","Older
         Adults"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:12-08:00","wait":"Waiting
-        list is currently closed.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","depth":3,"lft":80,"name":"Assisted
+        list is currently closed.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","_slugs":["assisted-living-1"],"depth":3,"lft":80,"name":"Assisted
         Living","oe_id":"103-05-02-01","parent_id":"52280f611edd37edff000029","rgt":81}]}],"organization":{"_id":"521d33001974fcdb2b0012bc","_slugs":["rotary-haciendas"],"created_at":"2013-08-27T16:15:12-07:00","name":"Rotary
-        Haciendas","updated_at":"2013-10-01T12:11:20-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012bc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012bc/locations"},"slugs":["rotary-haciendas"],"id":"521d33001974fcdb2b0012bd","_score":0.13422616,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e71974fcdb2b000bef","_slugs":["family-resource-center-at-community-gatepath"],"accessibility":["Ramp","Disabled
+        Haciendas","updated_at":"2013-10-01T12:11:20-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012bc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012bc/locations"},"slugs":["rotary-haciendas"],"id":"521d33001974fcdb2b0012bd","_score":0.13387366,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e71974fcdb2b000bef","_slugs":["family-resource-center-at-community-gatepath"],"accessibility":["Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Burlingame","state":"CA","street":"1764
         Marco Polo Way","zip":"94010"},"contacts":[{"_id":"521d32e81974fcdb2b000bf0","name":"Dennis
         Nunan","title":"Director of Children''s Services"}],"coordinates":[-122.385552,37.591132],"created_at":"2013-08-27T16:14:48-07:00","description":"Provides
@@ -394,10 +392,10 @@ http_interactions:
         for information.","keywords":["CHILD PROTECTION AND CARE SERVICES","Community
         Information","DEVELOPMENTAL DISABILITIES SERVICES","MENTAL HEALTH SERVICES","Support
         Groups","Youth","Disabilities Issues","ADA","MORE"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:29-08:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","depth":2,"lft":219,"name":"Assistive
-        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d32e71974fcdb2b000bee","_slugs":["family-resource-center-at-community-gatepath"],"created_at":"2013-08-27T16:14:47-07:00","name":"Family
-        Resource Center at Community Gatepath","updated_at":"2013-10-01T12:09:16-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bee","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bee/locations"},"slugs":["family-resource-center-at-community-gatepath"],"id":"521d32e71974fcdb2b000bef","_score":0.11389467,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33021974fcdb2b00134e","_slugs":["american-diabetes-association"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Mateo County"],"updated_at":"2013-11-11T00:44:29-08:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","_slugs":["assistive-technology-2"],"depth":2,"lft":219,"name":"Assistive
+        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d32e71974fcdb2b000bee","_slugs":["family-resource-center-at-community-gatepath"],"created_at":"2013-08-27T16:14:47-07:00","name":"Family
+        Resource Center at Community Gatepath","updated_at":"2013-10-01T12:09:16-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bee","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bee/locations"},"slugs":["family-resource-center-at-community-gatepath"],"id":"521d32e71974fcdb2b000bef","_score":0.11359558,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33021974fcdb2b00134e","_slugs":["american-diabetes-association"],"accessibility":["Wheelchair"],"address":{"city":"San
         Jose","state":"CA","street":"4040 Moorpark Avenue, Suite 105","zip":"95117"},"contacts":[{"_id":"521d33021974fcdb2b00134f","name":"Richard
         Alejandro","title":"Executive Director"}],"coordinates":[-121.973547,37.315463],"created_at":"2013-08-27T16:15:14-07:00","description":"Provides
         educational literature and information about diabetes to patients, the community
@@ -417,12 +415,12 @@ http_interactions:
         SERVICES","Prevention","Family Support","Disease/Disability Information","Support
         Groups","Speakers/Speakers Bureaus","diabetes"],"service_areas":["San Mateo
         County","Santa Clara County","Monterey County","San Benito County","Santa
-        Cruz County"],"updated_at":"2013-09-18T17:47:34-07:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff00007a","depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f751edd37edff0000f0","depth":2,"lft":477,"name":"Support
+        Cruz County"],"updated_at":"2013-09-18T17:47:34-07:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","_slugs":["counseling"],"depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f751edd37edff0000f0","_slugs":["support-groups"],"depth":2,"lft":477,"name":"Support
         Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484}]}],"organization":{"_id":"521d33021974fcdb2b00134d","_slugs":["american-diabetes-association"],"created_at":"2013-08-27T16:15:14-07:00","name":"American
-        Diabetes Association","updated_at":"2013-10-01T12:11:30-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00134d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00134d/locations"},"slugs":["american-diabetes-association"],"id":"521d33021974fcdb2b00134e","_score":0.09491222,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33351974fcdb2b001f79","_slugs":["administration-1"],"accessibility":["Elevator","Interpreter
+        Diabetes Association","updated_at":"2013-10-01T12:11:30-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00134d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33021974fcdb2b00134d/locations"},"slugs":["american-diabetes-association"],"id":"521d33021974fcdb2b00134e","_score":0.09466298,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33351974fcdb2b001f79","_slugs":["administration-1"],"accessibility":["Elevator","Interpreter
         for the deaf","Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"city":"South
         San Francisco","state":"CA","street":"1200 El Camino Real","zip":"94080"},"ask_for":["Paula
         Duarte (Community and Government Relations Manager)"],"contacts":[{"_id":"521d33351974fcdb2b001f7a","name":"Michelle
@@ -453,9 +451,67 @@ http_interactions:
         SERVICES","Medical Assistance","HEALTH SERVICES","Education/Information","Inpatient
         Care","Outpatient Care","Hospitals","Smoking Cessation"],"service_areas":["Brisbane","Burlingame","Colma","Daly
         City","Hillsborough","Millbrae","Pacifica","San Bruno","San Mateo","South
-        San Francisco"],"updated_at":"2013-10-04T17:40:39-07:00","wait":"Varies.","categories":[{"_id":"52280f5c1edd37edff000001","depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
+        San Francisco"],"updated_at":"2013-10-04T17:40:39-07:00","wait":"Varies.","categories":[{"_id":"52280f5c1edd37edff000001","_slugs":["emergency"],"depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
         Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267}]}],"organization":{"_id":"521d33351974fcdb2b001f74","_slugs":["kaiser-permanente-medical-center"],"created_at":"2013-08-27T16:16:05-07:00","name":"Kaiser
-        Permanente Medical Center","updated_at":"2013-10-01T12:15:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33351974fcdb2b001f74","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33351974fcdb2b001f74/locations"},"slugs":["administration-1"],"id":"521d33351974fcdb2b001f79","_score":0.08053569,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33081974fcdb2b0014cd","_slugs":["pacific-ada-center"],"accessibility":["Elevator","Information
+        Permanente Medical Center","updated_at":"2013-10-01T12:15:52-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33351974fcdb2b001f74","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33351974fcdb2b001f74/locations"},"slugs":["administration-1"],"id":"521d33351974fcdb2b001f79","_score":0.080324195,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32bf1974fcdb2b000151","_slugs":["casa-de-redwood"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"Redwood
+        City","state":"CA","street":"1280 Veterans Blvd.","zip":"94063"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32bf1974fcdb2b000152","title":"Administrator"}],"coordinates":[-122.219873,37.48884],"created_at":"2013-08-27T16:14:07-07:00","description":"Low-cost
+        housing for any senior citizen age 62 or over who meets the eligibility requirements.
+        Call office for an application. The building is a high rise and has 136 units.
+        Parking space ($10 per month) is very limited. All units are unfurnished except
+        for refrigerator, electric stove, carpets and drapes. All utilities except
+        phone are provided in the rent. Rooms are heated by electric panel heat. A
+        laundry room, mini-gym and library are also available. An escrow deposit equal
+        to one month''s rent is required.","emails":["cdr-administrator@abhow.com"],"faxes":[{"number":"650
+        369-2780"}],"kind":"Human Services","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Casa
+        de Redwood","city":"Redwood City","state":"CA","street":"1280 Veterans Blvd.","zip":"94063"},"name":"Casa
+        de Redwood","phones":[{"number":"650 369-4819","hours":"(Monday-Friday, 9-4)"}],"short_desc":"Low-cost
+        housing for senior citizens age 62 or over.","transportation":"SAMTRANS stops
+        in front.","updated_at":"2013-11-07T12:42:49-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d32bf1974fcdb2b000151","services":[{"_id":"521d32bf1974fcdb2b000155","audience":"Low-
+        or moderate-income senior citizens","eligibility":"Age 62 or over, HUD income
+        limits","fees":"Studio - $477-$635, 1 bedroom (1 or 2 people) - $580-$700.
+        5 dinners per week at $149 per month (mandatory). Checks and money orders
+        accepted.","funding_sources":["Federal","Fees"],"how_to_apply":"There is a
+        waiting list. Applications are accepted on an ongoing basis. Walk in or phone
+        to request an application.","keywords":["HOUSING SERVICES","Senior and Disabled
+        Housing","Older Adult/Disability Related Supportive Housing","Older Adults","senior
+        housing","low income senior housing","low income housing"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County"],"updated_at":"2013-10-07T21:36:33-07:00","wait":"6
+        months-2 years.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","_slugs":["assisted-living-1"],"depth":3,"lft":80,"name":"Assisted
+        Living","oe_id":"103-05-02-01","parent_id":"52280f611edd37edff000029","rgt":81}]}],"organization":{"_id":"521d32bf1974fcdb2b000150","_slugs":["casa-de-redwood"],"created_at":"2013-08-27T16:14:07-07:00","name":"Casa
+        de Redwood","updated_at":"2013-10-01T12:05:13-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bf1974fcdb2b000150","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bf1974fcdb2b000150/locations"},"slugs":["casa-de-redwood"],"id":"521d32bf1974fcdb2b000151","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d51974fcdb2b000704","_slugs":["resolve-of-northern-california-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Francisco","state":"CA","street":"312 Sutter Street, Suite 405","zip":"94108"},"contacts":[{"_id":"521d32d51974fcdb2b000705","name":"Roberta
+        Havens","title":"President of Board of Directors"}],"coordinates":[-122.405848,37.7896823],"created_at":"2013-08-27T16:14:29-07:00","description":"Helps
+        individuals and couples facing infertility. Offers telephone counseling, local
+        support groups, information about infertility and adoption, two symposiums
+        a year on all aspects of infertility and adoption, pre-adoption information
+        meetings, monthly focus workshops on related topics, a quarterly newsletter,
+        a member network and a lending library. Membership also includes access to
+        National Resolve, Inc. which offers a newsletter, referral services and more.","emails":["resolvenc@aol.com"],"faxes":[{"number":"415
+        788-6774"}],"kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Resolve
+        of Northern California","city":"San Francisco","state":"CA","street":"312
+        Sutter Street, Suite 405","zip":"94108"},"name":"Resolve of Northern California,
+        Inc.","phones":[{"number":"415 788-3002","department":"Helpline","hours":"(Monday-Thursday,
+        9:30-11:30, 7-9; Friday, 9:30-11:30)"}],"transportation":"MUNI - 1 California,
+        2 Clement, 3 Jackson, 4 Sutter, 30 Stockton, 45 Union. BART - Montgomery Street
+        Station.","updated_at":"2013-11-07T12:43:02-08:00","urls":["http://www.resolvenc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d51974fcdb2b000704","services":[{"_id":"521d32d51974fcdb2b000708","audience":"Persons
+        with infertility problems, people interested in adoption","eligibility":"None","fees":"Vary
+        according to service. $55 for local and national unified dues.","funding_sources":["Donations","Fees","Grants","Membership
+        dues"],"how_to_apply":"Apply by phone, mail or website.","keywords":["CHILD
+        PROTECTION AND CARE SERVICES","Adoption","FAMILY PLANNING SERVICES","Infertility
+        Diagnosis/Treatment","HEALTH SERVICES","Individual/Group Counseling","Parenting"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","Northern California","Santa
+        Clara County","San Francisco County","San Mateo County","Fresno","San Luis
+        Obispo"],"updated_at":"2013-10-04T11:35:45-07:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000076","_slugs":["pregnancy-tests"],"depth":3,"lft":232,"name":"Pregnancy
+        Tests","oe_id":"106-06-04-05","parent_id":"52280f691edd37edff000071","rgt":233},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f711edd37edff0000c5","_slugs":["adoption-and-foster-care-1"],"depth":1,"lft":392,"name":"Adoption
+        & Foster Care","oe_id":"108-01","parent_id":"52280f711edd37edff0000c4","rgt":401},{"_id":"52280f711edd37edff0000c8","_slugs":["adoption-planning-1"],"depth":2,"lft":397,"name":"Adoption
+        Planning","oe_id":"108-01-03","parent_id":"52280f711edd37edff0000c5","rgt":398}]}],"organization":{"_id":"521d32d51974fcdb2b000703","_slugs":["resolve-of-northern-california-inc"],"created_at":"2013-08-27T16:14:29-07:00","name":"Resolve
+        of Northern California, Inc.","updated_at":"2013-10-01T12:07:31-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d51974fcdb2b000703","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d51974fcdb2b000703/locations"},"slugs":["resolve-of-northern-california-inc"],"id":"521d32d51974fcdb2b000704","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33081974fcdb2b0014cd","_slugs":["pacific-ada-center"],"accessibility":["Elevator","Information
         on CD","Disabled Restroom","Wheelchair"],"address":{"city":"Oakland","state":"CA","street":"555
         12th Street, Suite 1030","zip":"94607-4046"},"ask_for":["Technical assistance
         specialists"],"contacts":[{"_id":"521d33081974fcdb2b0014ce","name":"Erica
@@ -483,9 +539,9 @@ http_interactions:
         SUPPORT SERVICES","Technical Assistance","ADA Implementation Assistance","Disabilities
         Issues"],"service_areas":["Alameda County","Contra Costa County","Marin County","San
         Francisco County","San Mateo County","Santa Clara County","Arizona","California","Hawaii","Nevada"],"updated_at":"2013-09-18T18:02:47-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff00011f","depth":1,"lft":572,"name":"Technology","oe_id":"109-07","parent_id":"52280f751edd37edff0000f5","rgt":581},{"_id":"52280f791edd37edff000120","depth":2,"lft":573,"name":"Assistive
+        wait.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff00011f","_slugs":["technology-1"],"depth":1,"lft":572,"name":"Technology","oe_id":"109-07","parent_id":"52280f751edd37edff0000f5","rgt":581},{"_id":"52280f791edd37edff000120","_slugs":["assistive-technology"],"depth":2,"lft":573,"name":"Assistive
         Technology","oe_id":"109-07-01","parent_id":"52280f791edd37edff00011f","rgt":574}]}],"organization":{"_id":"521d33081974fcdb2b0014cc","_slugs":["pacific-ada-center"],"created_at":"2013-08-27T16:15:20-07:00","name":"Pacific
-        ADA Center","updated_at":"2013-10-01T12:11:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33081974fcdb2b0014cc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33081974fcdb2b0014cc/locations"},"slugs":["pacific-ada-center"],"id":"521d33081974fcdb2b0014cd","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f11974fcdb2b000ea8","_slugs":["books-aloud-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
+        ADA Center","updated_at":"2013-10-01T12:11:58-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33081974fcdb2b0014cc","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33081974fcdb2b0014cc/locations"},"slugs":["pacific-ada-center"],"id":"521d33081974fcdb2b0014cd","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32f11974fcdb2b000ea8","_slugs":["books-aloud-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
         Jose","state":"CA","street":"150 East San Fernando Street","zip":"95112"},"ask_for":["Joyce
         Meurer "],"contacts":[{"_id":"521d32f11974fcdb2b000ea9","name":"Joyce Meurer","title":"Executive
         Director"}],"coordinates":[-121.8859396,37.3360353],"created_at":"2013-08-27T16:14:57-07:00","description":"Records
@@ -508,11 +564,60 @@ http_interactions:
         Materials","Visually Impaired","Audio Materials"],"service_areas":["Alameda
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County","nationwide"],"updated_at":"2013-10-08T16:21:10-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000110","depth":2,"lft":541,"name":"Special
-        Education","oe_id":"109-03-09","parent_id":"52280f751edd37edff0000fd","rgt":542},{"_id":"52280f791edd37edff00011f","depth":1,"lft":572,"name":"Technology","oe_id":"109-07","parent_id":"52280f751edd37edff0000f5","rgt":581},{"_id":"52280f791edd37edff000120","depth":2,"lft":573,"name":"Assistive
+        wait.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f771edd37edff000110","_slugs":["special-education"],"depth":2,"lft":541,"name":"Special
+        Education","oe_id":"109-03-09","parent_id":"52280f751edd37edff0000fd","rgt":542},{"_id":"52280f791edd37edff00011f","_slugs":["technology-1"],"depth":1,"lft":572,"name":"Technology","oe_id":"109-07","parent_id":"52280f751edd37edff0000f5","rgt":581},{"_id":"52280f791edd37edff000120","_slugs":["assistive-technology"],"depth":2,"lft":573,"name":"Assistive
         Technology","oe_id":"109-07-01","parent_id":"52280f791edd37edff00011f","rgt":574}]}],"organization":{"_id":"521d32f11974fcdb2b000ea7","_slugs":["books-aloud-inc"],"created_at":"2013-08-27T16:14:57-07:00","name":"Books
-        Aloud, Inc.","updated_at":"2013-10-01T12:10:03-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000ea7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000ea7/locations"},"slugs":["books-aloud-inc"],"id":"521d32f11974fcdb2b000ea8","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d331f1974fcdb2b001aff","_slugs":["nobiru-kai-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Aloud, Inc.","updated_at":"2013-10-01T12:10:03-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000ea7","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32f11974fcdb2b000ea7/locations"},"slugs":["books-aloud-inc"],"id":"521d32f11974fcdb2b000ea8","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ee1974fcdb2b000dac","_slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"accessibility":["Wheelchair"],"ask_for":["Leave
+        a voice message and phone number. Messages are checked daily"],"created_at":"2013-08-27T16:14:54-07:00","description":"Offers
+        support, education and advocacy. Provides monthly support groups for gays
+        and lesbians, their families and friends. Crisis support by telephone, a speakers''
+        bureau, and a lending library of materials on homosexuality is available.
+        Meets on the second Wednesday of every month at the First Congregational Church,
+        1980 Hamilton Avenue in San Jose at 7:30 pm and on the second Monday of month,
+        Sequoia Union High School District offices, 480 James Avenue in Redwood City
+        at 7:30 pm.","emails":["pflag-info@pflagsanjose.org"],"kind":"Human Services","mail_address":{"attention":"Peninsula
+        P-Flag","city":"Sunnyvale","state":"CA","street":"P.O. Box 2718","zip":"94087"},"name":"Parents,
+        Families, and Friends of Lesbians and Gays (Peninsula P-Flag)","phones":[{"number":"408
+        270-8182","department":"(24-hour answering machine)"}],"short_desc":"Provides
+        support groups for gays and lesbians, their families and friends.","transportation":"Varies
+        according to meeting location.","updated_at":"2013-10-04T15:56:56-07:00","urls":["http://www.pflagsanjose.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ee1974fcdb2b000dac","services":[{"_id":"521d32ee1974fcdb2b000dae","audience":"Lesbians,
+        gays, bisexuals and transgenders, and their parents, families, and friends","eligibility":"None","fees":"Memberships:
+        $30 individual, $40 household, $15 student/newsletter only.","funding_sources":["Donations","Membership
+        dues"],"how_to_apply":"Apply by phone or attend a meeting.","keywords":["COMMUNITY
+        SERVICES","Group Support","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth
+        and Adjustment","Parent Groups","Support Groups","Speakers/Speakers Bureaus","Families/Friends
+        of GLBT Individuals","Gay/Lesbian/Bisexual/Transgender Issues"],"service_areas":["San
+        Mateo County","Santa Clara County"],"updated_at":"2013-10-04T15:56:55-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d32ee1974fcdb2b000dab","_slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"created_at":"2013-08-27T16:14:54-07:00","name":"Parents,
+        Families, and Friends of Lesbians and Gays (Peninsula P-Flag)","updated_at":"2013-10-01T12:09:47-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ee1974fcdb2b000dab","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ee1974fcdb2b000dab/locations"},"slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"id":"521d32ee1974fcdb2b000dac","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012a6","_slugs":["stratford"],"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"601
+        Laurel Avenue","zip":"94401-4160"},"ask_for":["Jennifer G. Whitaker (Marketing)"],"contacts":[{"_id":"521d33001974fcdb2b0012a7","name":"Gayle
+        Ponti Viola","title":"Executive Director"}],"coordinates":[-122.320795,37.562616],"created_at":"2013-08-27T16:15:12-07:00","description":"A
+        continuing care retirement community offering 65 condominiums. Modeled after
+        a world class hotel, The Stratford features a dining room, a swimming pool
+        and spa, fitness center, library, entertainment areas, guest suites and a
+        full complement of services. The Stratford also offers a state-licensed medical
+        program with an on-premises assisted living wing and off-premises skilled
+        nursing.","emails":["stratford.dcr@sunriseseniorliving.org"],"faxes":[{"number":"650
+        375-1392"}],"hours":"24 hours daily","kind":"Human Services","languages":["Chinese","Croatian","Filipino
+        (Tagalog)","French","Hindi","Italian","Russian","Spanish","Tibetan","Ukrainian"],"mail_address":{"attention":"The
+        Stratford","city":"San Mateo","state":"CA","street":"601 Laurel Avenue","zip":"94401-4160"},"name":"Stratford","phones":[{"number":"650
+        342-4106","hours":"(24 hours daily)"}],"short_desc":"A life care retirement
+        facility.","transportation":"Transportation available for residents.","updated_at":"2013-11-07T12:47:17-08:00","urls":["http://www.thestratfordsm.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33001974fcdb2b0012a6","services":[{"_id":"521d33001974fcdb2b0012aa","audience":"Seniors
+        age 62 or over","eligibility":"Must be in good health and financially able
+        to purchase residence and maintain monthly fee","fees":"Ownership of condominium
+        plus $4,692 per month - 1st resident, $2,212 per month - 2nd resident. Checks
+        accepted.","funding_sources":["Fees"],"how_to_apply":"Walk in or apply by
+        phone or mail.","keywords":["HOUSING SERVICES","Senior and Disabled Housing","Older
+        Adult/Disability Related Supportive Housing","Older Adults"],"service_areas":["San
+        Francisco County","San Mateo County"],"updated_at":"2013-10-04T16:25:11-07:00","wait":"Varies
+        according to availability.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","_slugs":["assisted-living-1"],"depth":3,"lft":80,"name":"Assisted
+        Living","oe_id":"103-05-02-01","parent_id":"52280f611edd37edff000029","rgt":81}]}],"organization":{"_id":"521d33001974fcdb2b0012a5","_slugs":["stratford"],"created_at":"2013-08-27T16:15:12-07:00","name":"Stratford","updated_at":"2013-10-01T12:11:18-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012a5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012a5/locations"},"slugs":["stratford"],"id":"521d33001974fcdb2b0012a6","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d331f1974fcdb2b001aff","_slugs":["nobiru-kai-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
         Francisco","state":"CA","street":"1840 Sutter Street, Suite 207","zip":"94115"},"coordinates":[-122.430927,37.78667],"created_at":"2013-08-27T16:15:43-07:00","description":"Provides
         bilingual social services primarily for Japanese persons, including translation
         and interpretation. Drop-in center provides employment, housing and immigration
@@ -535,116 +640,102 @@ http_interactions:
         DEVELOPMENT SERVICES","Growth and Adjustment","RECREATION/LEISURE SERVICES","Special
         Events/Entertainment","Cultural/Racial Issues","employment","language services","Japanese"],"service_areas":["Contra
         Costa County","Marin County","San Francisco County","San Mateo County"],"updated_at":"2013-09-05T14:16:18-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff000124","depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7c1edd37edff000147","depth":1,"lft":652,"name":"Translation
+        wait.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff000137","_slugs":["legal"],"depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7c1edd37edff000147","_slugs":["translation-and-interpretation"],"depth":1,"lft":652,"name":"Translation
         & Interpretation","oe_id":"111-05","parent_id":"52280f7a1edd37edff000137","rgt":653}]}],"organization":{"_id":"521d331f1974fcdb2b001afe","_slugs":["japanese-newcomers-services"],"created_at":"2013-08-27T16:15:43-07:00","name":"Japanese
-        Newcomers Services","updated_at":"2013-10-01T12:14:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe/locations"},"slugs":["nobiru-kai-inc"],"id":"521d331f1974fcdb2b001aff","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ee1974fcdb2b000dac","_slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"accessibility":["Wheelchair"],"ask_for":["Leave
-        a voice message and phone number. Messages are checked daily"],"created_at":"2013-08-27T16:14:54-07:00","description":"Offers
-        support, education and advocacy. Provides monthly support groups for gays
-        and lesbians, their families and friends. Crisis support by telephone, a speakers''
-        bureau, and a lending library of materials on homosexuality is available.
-        Meets on the second Wednesday of every month at the First Congregational Church,
-        1980 Hamilton Avenue in San Jose at 7:30 pm and on the second Monday of month,
-        Sequoia Union High School District offices, 480 James Avenue in Redwood City
-        at 7:30 pm.","emails":["pflag-info@pflagsanjose.org"],"kind":"Human Services","mail_address":{"attention":"Peninsula
-        P-Flag","city":"Sunnyvale","state":"CA","street":"P.O. Box 2718","zip":"94087"},"name":"Parents,
-        Families, and Friends of Lesbians and Gays (Peninsula P-Flag)","phones":[{"number":"408
-        270-8182","department":"(24-hour answering machine)"}],"short_desc":"Provides
-        support groups for gays and lesbians, their families and friends.","transportation":"Varies
-        according to meeting location.","updated_at":"2013-10-04T15:56:56-07:00","urls":["http://www.pflagsanjose.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ee1974fcdb2b000dac","services":[{"_id":"521d32ee1974fcdb2b000dae","audience":"Lesbians,
-        gays, bisexuals and transgenders, and their parents, families, and friends","eligibility":"None","fees":"Memberships:
-        $30 individual, $40 household, $15 student/newsletter only.","funding_sources":["Donations","Membership
-        dues"],"how_to_apply":"Apply by phone or attend a meeting.","keywords":["COMMUNITY
-        SERVICES","Group Support","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth
-        and Adjustment","Parent Groups","Support Groups","Speakers/Speakers Bureaus","Families/Friends
-        of GLBT Individuals","Gay/Lesbian/Bisexual/Transgender Issues"],"service_areas":["San
-        Mateo County","Santa Clara County"],"updated_at":"2013-10-04T15:56:55-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d32ee1974fcdb2b000dab","_slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"created_at":"2013-08-27T16:14:54-07:00","name":"Parents,
-        Families, and Friends of Lesbians and Gays (Peninsula P-Flag)","updated_at":"2013-10-01T12:09:47-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ee1974fcdb2b000dab","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ee1974fcdb2b000dab/locations"},"slugs":["parents-families-and-friends-of-lesbians-and-gays-peninsula-p-flag"],"id":"521d32ee1974fcdb2b000dac","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012a6","_slugs":["stratford"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"601
-        Laurel Avenue","zip":"94401-4160"},"ask_for":["Jennifer G. Whitaker (Marketing)"],"contacts":[{"_id":"521d33001974fcdb2b0012a7","name":"Gayle
-        Ponti Viola","title":"Executive Director"}],"coordinates":[-122.320795,37.562616],"created_at":"2013-08-27T16:15:12-07:00","description":"A
-        continuing care retirement community offering 65 condominiums. Modeled after
-        a world class hotel, The Stratford features a dining room, a swimming pool
-        and spa, fitness center, library, entertainment areas, guest suites and a
-        full complement of services. The Stratford also offers a state-licensed medical
-        program with an on-premises assisted living wing and off-premises skilled
-        nursing.","emails":["stratford.dcr@sunriseseniorliving.org"],"faxes":[{"number":"650
-        375-1392"}],"hours":"24 hours daily","kind":"Human Services","languages":["Chinese","Croatian","Filipino
-        (Tagalog)","French","Hindi","Italian","Russian","Spanish","Tibetan","Ukrainian"],"mail_address":{"attention":"The
-        Stratford","city":"San Mateo","state":"CA","street":"601 Laurel Avenue","zip":"94401-4160"},"name":"Stratford","phones":[{"number":"650
-        342-4106","hours":"(24 hours daily)"}],"short_desc":"A life care retirement
-        facility.","transportation":"Transportation available for residents.","updated_at":"2013-11-07T12:47:17-08:00","urls":["http://www.thestratfordsm.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33001974fcdb2b0012a6","services":[{"_id":"521d33001974fcdb2b0012aa","audience":"Seniors
-        age 62 or over","eligibility":"Must be in good health and financially able
-        to purchase residence and maintain monthly fee","fees":"Ownership of condominium
-        plus $4,692 per month - 1st resident, $2,212 per month - 2nd resident. Checks
-        accepted.","funding_sources":["Fees"],"how_to_apply":"Walk in or apply by
-        phone or mail.","keywords":["HOUSING SERVICES","Senior and Disabled Housing","Older
-        Adult/Disability Related Supportive Housing","Older Adults"],"service_areas":["San
-        Francisco County","San Mateo County"],"updated_at":"2013-10-04T16:25:11-07:00","wait":"Varies
-        according to availability.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","depth":3,"lft":80,"name":"Assisted
-        Living","oe_id":"103-05-02-01","parent_id":"52280f611edd37edff000029","rgt":81}]}],"organization":{"_id":"521d33001974fcdb2b0012a5","_slugs":["stratford"],"created_at":"2013-08-27T16:15:12-07:00","name":"Stratford","updated_at":"2013-10-01T12:11:18-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012a5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012a5/locations"},"slugs":["stratford"],"id":"521d33001974fcdb2b0012a6","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32bf1974fcdb2b000151","_slugs":["casa-de-redwood"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"Redwood
-        City","state":"CA","street":"1280 Veterans Blvd.","zip":"94063"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32bf1974fcdb2b000152","title":"Administrator"}],"coordinates":[-122.219873,37.48884],"created_at":"2013-08-27T16:14:07-07:00","description":"Low-cost
-        housing for any senior citizen age 62 or over who meets the eligibility requirements.
-        Call office for an application. The building is a high rise and has 136 units.
-        Parking space ($10 per month) is very limited. All units are unfurnished except
-        for refrigerator, electric stove, carpets and drapes. All utilities except
-        phone are provided in the rent. Rooms are heated by electric panel heat. A
-        laundry room, mini-gym and library are also available. An escrow deposit equal
-        to one month''s rent is required.","emails":["cdr-administrator@abhow.com"],"faxes":[{"number":"650
-        369-2780"}],"kind":"Human Services","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Casa
-        de Redwood","city":"Redwood City","state":"CA","street":"1280 Veterans Blvd.","zip":"94063"},"name":"Casa
-        de Redwood","phones":[{"number":"650 369-4819","hours":"(Monday-Friday, 9-4)"}],"short_desc":"Low-cost
-        housing for senior citizens age 62 or over.","transportation":"SAMTRANS stops
-        in front.","updated_at":"2013-11-07T12:42:49-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d32bf1974fcdb2b000151","services":[{"_id":"521d32bf1974fcdb2b000155","audience":"Low-
-        or moderate-income senior citizens","eligibility":"Age 62 or over, HUD income
-        limits","fees":"Studio - $477-$635, 1 bedroom (1 or 2 people) - $580-$700.
-        5 dinners per week at $149 per month (mandatory). Checks and money orders
-        accepted.","funding_sources":["Federal","Fees"],"how_to_apply":"There is a
-        waiting list. Applications are accepted on an ongoing basis. Walk in or phone
-        to request an application.","keywords":["HOUSING SERVICES","Senior and Disabled
-        Housing","Older Adult/Disability Related Supportive Housing","Older Adults","senior
-        housing","low income senior housing","low income housing"],"service_areas":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County"],"updated_at":"2013-10-07T21:36:33-07:00","wait":"6
-        months-2 years.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88},{"_id":"52280f611edd37edff00002a","depth":3,"lft":80,"name":"Assisted
-        Living","oe_id":"103-05-02-01","parent_id":"52280f611edd37edff000029","rgt":81}]}],"organization":{"_id":"521d32bf1974fcdb2b000150","_slugs":["casa-de-redwood"],"created_at":"2013-08-27T16:14:07-07:00","name":"Casa
-        de Redwood","updated_at":"2013-10-01T12:05:13-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32bf1974fcdb2b000150","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32bf1974fcdb2b000150/locations"},"slugs":["casa-de-redwood"],"id":"521d32bf1974fcdb2b000151","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d51974fcdb2b000704","_slugs":["resolve-of-northern-california-inc"],"accessibility":["Wheelchair"],"address":{"city":"San
-        Francisco","state":"CA","street":"312 Sutter Street, Suite 405","zip":"94108"},"contacts":[{"_id":"521d32d51974fcdb2b000705","name":"Roberta
-        Havens","title":"President of Board of Directors"}],"coordinates":[-122.405848,37.7896823],"created_at":"2013-08-27T16:14:29-07:00","description":"Helps
-        individuals and couples facing infertility. Offers telephone counseling, local
-        support groups, information about infertility and adoption, two symposiums
-        a year on all aspects of infertility and adoption, pre-adoption information
-        meetings, monthly focus workshops on related topics, a quarterly newsletter,
-        a member network and a lending library. Membership also includes access to
-        National Resolve, Inc. which offers a newsletter, referral services and more.","emails":["resolvenc@aol.com"],"faxes":[{"number":"415
-        788-6774"}],"kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Resolve
-        of Northern California","city":"San Francisco","state":"CA","street":"312
-        Sutter Street, Suite 405","zip":"94108"},"name":"Resolve of Northern California,
-        Inc.","phones":[{"number":"415 788-3002","department":"Helpline","hours":"(Monday-Thursday,
-        9:30-11:30, 7-9; Friday, 9:30-11:30)"}],"transportation":"MUNI - 1 California,
-        2 Clement, 3 Jackson, 4 Sutter, 30 Stockton, 45 Union. BART - Montgomery Street
-        Station.","updated_at":"2013-11-07T12:43:02-08:00","urls":["http://www.resolvenc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d51974fcdb2b000704","services":[{"_id":"521d32d51974fcdb2b000708","audience":"Persons
-        with infertility problems, people interested in adoption","eligibility":"None","fees":"Vary
-        according to service. $55 for local and national unified dues.","funding_sources":["Donations","Fees","Grants","Membership
-        dues"],"how_to_apply":"Apply by phone, mail or website.","keywords":["CHILD
-        PROTECTION AND CARE SERVICES","Adoption","FAMILY PLANNING SERVICES","Infertility
-        Diagnosis/Treatment","HEALTH SERVICES","Individual/Group Counseling","Parenting"],"service_areas":["Alameda
-        County","Contra Costa County","Marin County","Northern California","Santa
-        Clara County","San Francisco County","San Mateo County","Fresno","San Luis
-        Obispo"],"updated_at":"2013-10-04T11:35:45-07:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000076","depth":3,"lft":232,"name":"Pregnancy
-        Tests","oe_id":"106-06-04-05","parent_id":"52280f691edd37edff000071","rgt":233},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f711edd37edff0000c5","depth":1,"lft":392,"name":"Adoption
-        & Foster Care","oe_id":"108-01","parent_id":"52280f711edd37edff0000c4","rgt":401},{"_id":"52280f711edd37edff0000c8","depth":2,"lft":397,"name":"Adoption
-        Planning","oe_id":"108-01-03","parent_id":"52280f711edd37edff0000c5","rgt":398}]}],"organization":{"_id":"521d32d51974fcdb2b000703","_slugs":["resolve-of-northern-california-inc"],"created_at":"2013-08-27T16:14:29-07:00","name":"Resolve
-        of Northern California, Inc.","updated_at":"2013-10-01T12:07:31-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d51974fcdb2b000703","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d51974fcdb2b000703/locations"},"slugs":["resolve-of-northern-california-inc"],"id":"521d32d51974fcdb2b000704","_score":0.07592978,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012ac","_slugs":["sterling-court"],"accessibility":["Elevator","Ramp","Disabled
+        Newcomers Services","updated_at":"2013-10-01T12:14:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d331f1974fcdb2b001afe/locations"},"slugs":["nobiru-kai-inc"],"id":"521d331f1974fcdb2b001aff","_score":0.07573038,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c01974fcdb2b000157","_slugs":["lesley-towers"],"accessibility":["Elevator"],"address":{"city":"San
+        Mateo","state":"CA","street":"700 Laurel Avenue","zip":"94401"},"ask_for":["Mary
+        Cheung (Assistant Administrator)","Terence Wong (Administrative Assistant)"],"contacts":[{"_id":"521d32c01974fcdb2b000158","name":"Mercedes
+        Gervasi","title":"Administrator"}],"coordinates":[-122.320931,37.561631],"created_at":"2013-08-27T16:14:08-07:00","description":"Low-
+        to moderate-cost housing for senior citizens age 62 or over, capable of self
+        care, who meet the income eligibility requirement. A security deposit equal
+        to one month''s rent required at time of signing the lease. Each resident
+        must sign up for meals. There are 200 units in a 12-story high rise. Units
+        are unfurnished except for mini-blinds and carpets. There is a social hall,
+        laundry, library, music room, billiards room and dining room. A social service
+        coordinator and public health nurse are also on staff. Formerly known as Park
+        Towers.","emails":["mgervasi@lesleysc.org"],"faxes":[{"number":"650 342-4156"}],"hours":"Monday-Friday,
+        8-4:30","kind":"Human Services","languages":["Chinese (Cantonese)","Chinese
+        (Mandarin)","Spanish"],"mail_address":{"attention":"Lesley Towers","city":"San
+        Mateo","state":"CA","street":"700 Laurel Avenue","zip":"94401"},"name":"Lesley
+        Towers","phones":[{"number":"650 342-2051","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Low-
+        to moderate-cost housing for ambulatory senior citizens.","transportation":"SAMTRANS
+        stops within 2 blocks.","updated_at":"2013-11-07T12:42:50-08:00","urls":["http://www.lesleyfoundation.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c01974fcdb2b000157","services":[{"_id":"521d32c01974fcdb2b00015b","audience":"Senior
+        citizens","eligibility":"Age 62 or over and capable of independent living.
+        Maximum income: $63,350 per year for a single, $72,400 per year for a couple","fees":"Studio
+        $344-$470 per month, 1 bedroom $635-$678 per month. Mandatory meal program
+        $265 per month. Checks and money orders accepted.","funding_sources":["Fees"],"how_to_apply":"Call
+        for appointment.","keywords":["HOUSING SERVICES","Senior and Disabled Housing","Older
+        Adult/Disability Related Supportive Housing","Older Adults","senior housing","low
+        income senior housing","low income housing"],"service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County"],"updated_at":"2013-10-08T13:42:49-07:00","wait":"Approximately
+        1 month for studio, 1 year for 1 bedroom (double occupancy), 2 years for 1
+        bedroom (single occupancy).","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d32c01974fcdb2b000156","_slugs":["lesley-towers"],"created_at":"2013-08-27T16:14:08-07:00","name":"Lesley
+        Towers","updated_at":"2013-10-01T12:05:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000156","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000156/locations"},"slugs":["lesley-towers"],"id":"521d32c01974fcdb2b000157","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c11974fcdb2b000181","_slugs":["lesley-terrace"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"Belmont","state":"CA","street":"2400
+        Carlmont Drive","zip":"94002"},"ask_for":["Pamela Bulaong (Assistant Administrator)"],"contacts":[{"_id":"521d32c11974fcdb2b000182","name":"Anahi
+        Espinoza","title":"Administrator"}],"coordinates":[-122.2999556,37.5093318],"created_at":"2013-08-27T16:14:09-07:00","description":"Affordable
+        housing for adults age 62 or over and age 61 or under with a long-term verifiable
+        disability. This is a housing-only facility and is not licensed to provide
+        care. There are 164 units, unfurnished, all utilities included. A mandatory
+        meal program provides two meals a day, seven days a week. Garaged parking
+        is available for $10 per month. Small pets allowed. A residents'' association
+        plans activities and entertainment. A social services coordinator is available
+        to assist with linkages to community services. Also available are laundry
+        facilities, several lounges, a large outdoor terrace, a convenience store,
+        a library and exercise equipment. Activities Coordinator plans activities
+        and entertainment. Formerly known as Bonnie Brae Terrace.","emails":["aespinoza@lesleysc.org"],"faxes":[{"number":"650
+        592-3026"}],"kind":"Human Services","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Lesley
+        Terrace","city":"Belmont","state":"CA","street":"2400 Carlmont Drive","zip":"94002"},"name":"Lesley
+        Terrace","phones":[{"number":"650 593-1818","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Low-cost
+        housing for people age 62 or over.","transportation":"SAMTRANS stops within
+        1 block.","updated_at":"2013-11-07T12:42:50-08:00","urls":["http://www.lesleyseniorcommunities.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c11974fcdb2b000181","services":[{"_id":"521d32c11974fcdb2b000185","audience":"Adults
+        age 62 or over","eligibility":"Age 62 or over, or age 61 or under with a long-term
+        verifiable disability. Income requirements are $62,000 per year maximum income
+        for single person and $68,000 for a couple","fees":"Studio $484-$582, studio-alcove
+        $713, 1 bedroom $808. Breakfast and dinner 7 days a week, $282 per month.
+        Refundable deposit equal to 1 month''s rent. Cash and checks accepted.","funding_sources":["Federal"],"how_to_apply":"Phone
+        for an appointment necessary to view units and receive an application. An
+        interview with administrator and social worker determines eligibility.","keywords":["HOUSING
+        SERVICES","Senior and Disabled Housing","Older Adult/Disability Related Supportive
+        Housing","Older Adults","senior housing","low income senior housing","low
+        income housing"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-10-08T13:43:58-07:00","wait":"6
+        months for a studio, 4 years for a 1-bedroom. Section 8 waiting list open.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d32c11974fcdb2b000180","_slugs":["lesley-terrace"],"created_at":"2013-08-27T16:14:09-07:00","name":"Lesley
+        Terrace","updated_at":"2013-10-01T12:05:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b000180","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b000180/locations"},"slugs":["lesley-terrace"],"id":"521d32c11974fcdb2b000181","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32cd1974fcdb2b0004b6","_slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"accessibility":["Wheelchair"],"ask_for":["Joan
+        Stone"],"contacts":[{"_id":"521d32cd1974fcdb2b0004b7","name":"Jennifer Hoppe","title":"President"}],"created_at":"2013-08-27T16:14:21-07:00","description":"A
+        volunteer group of parents that offer peer support to parents that have experienced
+        miscarriage, genetic abortion, stillbirth or death of an infant A volunteer
+        group of parents that offers peer support to parents and families that have
+        experienced miscarriage, genetic abortion, stillbirth or death of an infant.
+        Services include peer support groups, phone support, in-service programs to
+        educate hospital personnel, physicians and others, a resource library, newsletter
+        and training program for volunteers. HAND volunteers are available to act
+        as labor support to those anticipating a stillbirth. Also offers a support
+        group for those who are pregnant subsequent to a loss. Can also refer inquiries
+        to offices in Alameda, Santa Clara and Santa Cruz counties.","emails":["info@HANDsupport.org"],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"HAND
+        of the Peninsula","city":"Redwood City","state":"CA","street":"P.O. Box 3693","zip":"94064"},"name":"HAND
+        of the Peninsula (Helping After Neonatal Death)","phones":[{"number":"650
+        367-6993","department":"Voicemail","hours":"(24 hours daily)"}],"transportation":"Varies
+        according to location of service.","updated_at":"2013-10-03T18:23:24-07:00","urls":["http://www.HANDsupport.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32cd1974fcdb2b0004b6","services":[{"_id":"521d32cd1974fcdb2b0004b9","audience":"Parents
+        who have lost a child","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        for information. Attend a Wednesday support meeting. Health Care providers
+        may also provide information.","keywords":["HEALTH SERVICES","Family Support","Self-Help","Support
+        Groups","Youth","Newborns"],"service_areas":["Alameda County","Contra Costa
+        County","Marin County","San Francisco County","San Mateo County","Santa Clara
+        County"],"updated_at":"2013-10-03T18:23:23-07:00","wait":"Calls to our business
+        line (650-367-6993) are returned as soon as possible; Calls to Crisis Center
+        (888-220-7575 or 650-579-0350) are returned immediately. Grief meeting is
+        twice a month. Subsequent pregnancy meetings are monthly.","categories":[{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000d7","_slugs":["end-of-life-care-1"],"depth":1,"lft":428,"name":"End-of-Life
+        Care","oe_id":"108-04","parent_id":"52280f711edd37edff0000c4","rgt":437},{"_id":"52280f731edd37edff0000d8","_slugs":["bereavement-2"],"depth":2,"lft":429,"name":"Bereavement","oe_id":"108-04-01","parent_id":"52280f721edd37edff0000d7","rgt":430},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d32cd1974fcdb2b0004b5","_slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"created_at":"2013-08-27T16:14:21-07:00","name":"HAND
+        of the Peninsula (Helping After Neonatal Death)","updated_at":"2013-10-01T12:06:29-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cd1974fcdb2b0004b5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cd1974fcdb2b0004b5/locations"},"slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"id":"521d32cd1974fcdb2b0004b6","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012ac","_slugs":["sterling-court"],"accessibility":["Elevator","Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"850
         North El Camino Real","zip":"94401-3715"},"ask_for":["Sarah St. Charlies"],"contacts":[{"_id":"521d33001974fcdb2b0012ad","name":"Sarah
         St. Charlies","title":"Executive Director"}],"coordinates":[-122.3422933,37.5744638],"created_at":"2013-08-27T16:15:12-07:00","description":"A
@@ -669,11 +760,38 @@ http_interactions:
         SERVICES","Senior and Disabled Housing","Older Adult/Disability Related Supportive
         Housing","Older Adults","disabled older adults","retirement housing"],"service_areas":["Marin
         County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-09-18T17:39:03-07:00","wait":"No
-        wait-2 months.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
+        wait-2 months.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
         Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d33001974fcdb2b0012ab","_slugs":["sterling-court"],"created_at":"2013-08-27T16:15:12-07:00","name":"Sterling
-        Court","updated_at":"2013-10-01T12:11:19-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012ab","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012ab/locations"},"slugs":["sterling-court"],"id":"521d33001974fcdb2b0012ac","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33211974fcdb2b001b94","_slugs":["northern-california-chapter-8"],"accessibility":["Disabled
+        Court","updated_at":"2013-10-01T12:11:19-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012ab","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012ab/locations"},"slugs":["sterling-court"],"id":"521d33001974fcdb2b0012ac","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012b2","_slugs":["pacific-oaks"],"accessibility":["Elevator","Ramp","Disabled
+        Restroom"],"address":{"city":"Pacifica","state":"CA","street":"750 Oddstad
+        Blvd.","zip":"94044"},"contacts":[{"_id":"521d33001974fcdb2b0012b3","name":"Donna
+        Walton","title":"Resident Manager"}],"coordinates":[-122.474105,37.582637],"created_at":"2013-08-27T16:15:12-07:00","description":"Low-cost
+        housing for seniors age 62 or over who meet the eligibility requirements.
+        All applicants must be ambulatory, able to care for themselves and able to
+        exit by stair in case of emergency. A personal interview is necessary to be
+        placed on the waiting list. Offers one bedroom apartments with patio or balcony.
+        There are three floors with elevator. A shopping center is across the street.
+        Also offers a community room, beauty salon, library, exercise room and coin
+        laundry. The Senior Center is two miles away with van available. The apartments
+        have dishwasher, disposal, electric kitchen and cable hook-up. They are unfurnished.
+        A large walking park is located nearby.","emails":["pacoaks@pacbell.net"],"faxes":[{"number":"650
+        359-8491"}],"kind":"Human Services","mail_address":{"attention":"Pacific Oaks","city":"Pacifica","state":"CA","street":"750
+        Oddstad Blvd.","zip":"94044"},"name":"Pacific Oaks","phones":[{"number":"650
+        359-7559","hours":"(Monday-Friday, 9-4)"}],"short_desc":"An apartment complex
+        for seniors age 62 or over who are ambulatory and capable of self care.","transportation":"SAMTRANS
+        stops in front .","updated_at":"2013-11-07T12:45:26-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33001974fcdb2b0012b2","services":[{"_id":"521d33001974fcdb2b0012b6","audience":"Seniors
+        age 62 or over","eligibility":"Age 62 or over, ambulatory and capable of self
+        care","fees":"$1,200 for 1 bedroom, $1,500 for 2 bedrooms. Checks accepted.","funding_sources":["Fees"],"how_to_apply":"Walk
+        in. Verification of income required.","keywords":["HOUSING SERVICES","Senior
+        and Disabled Housing","Older Adult/Disability Related Supportive Housing","Older
+        Adults","low cost living for seniors","low income housing"],"service_areas":["San
+        Mateo County"],"updated_at":"2013-11-11T00:44:27-08:00","wait":"No new subsidized
+        apartments at this time.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000029","_slugs":["long-term-housing"],"depth":2,"lft":79,"name":"Long-Term
+        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d33001974fcdb2b0012b1","_slugs":["pacific-oaks"],"created_at":"2013-08-27T16:15:12-07:00","name":"Pacific
+        Oaks","updated_at":"2013-10-01T12:11:19-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012b1","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012b1/locations"},"slugs":["pacific-oaks"],"id":"521d33001974fcdb2b0012b2","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33211974fcdb2b001b94","_slugs":["northern-california-chapter-8"],"accessibility":["Disabled
         Restroom","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"1700
         Owens Street, Suite 190","zip":"94158"},"contacts":[{"_id":"521d33211974fcdb2b001b95","name":"Janelle
         Del Carlo","title":"Chapter President"}],"coordinates":[-122.393666,37.766979],"created_at":"2013-08-27T16:15:45-07:00","description":"Provides
@@ -703,160 +821,15 @@ http_interactions:
         Information","Multiple Sclerosis","legislative advocacy"],"service_areas":["Alameda
         County","Contra Costa County","Marin County","San Francisco County","San Mateo
         County","Santa Clara County","Monterey County","northern California"],"updated_at":"2013-09-06T16:32:37-07:00","wait":"Varies
-        for equipment .","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff000065","depth":1,"lft":200,"name":"Help
-        Pay for Healthcare","oe_id":"106-05","parent_id":"52280f661edd37edff00004e","rgt":215},{"_id":"52280f691edd37edff00006a","depth":2,"lft":209,"name":"Medical
-        Supplies","oe_id":"106-05-05","parent_id":"52280f681edd37edff000065","rgt":210},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","depth":1,"lft":404,"name":"Daytime
-        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000d6","depth":2,"lft":425,"name":"Relief
-        for Caregivers","oe_id":"108-03-07","parent_id":"52280f721edd37edff0000cb","rgt":426},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f751edd37edff0000ee","depth":2,"lft":473,"name":"Peer
-        Support","oe_id":"108-07-06","parent_id":"52280f741edd37edff0000e7","rgt":474},{"_id":"52280f751edd37edff0000f0","depth":2,"lft":477,"name":"Support
+        for equipment .","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff000065","_slugs":["help-pay-for-healthcare-1"],"depth":1,"lft":200,"name":"Help
+        Pay for Healthcare","oe_id":"106-05","parent_id":"52280f661edd37edff00004e","rgt":215},{"_id":"52280f691edd37edff00006a","_slugs":["medical-supplies-1","medical-supplies-4"],"depth":2,"lft":209,"name":"Medical
+        Supplies","oe_id":"106-05-05","parent_id":"52280f681edd37edff000065","rgt":210},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000cb","_slugs":["daytime-care"],"depth":1,"lft":404,"name":"Daytime
+        Care","oe_id":"108-03","parent_id":"52280f711edd37edff0000c4","rgt":427},{"_id":"52280f721edd37edff0000d6","_slugs":["relief-for-caregivers"],"depth":2,"lft":425,"name":"Relief
+        for Caregivers","oe_id":"108-03-07","parent_id":"52280f721edd37edff0000cb","rgt":426},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f751edd37edff0000ee","_slugs":["peer-support"],"depth":2,"lft":473,"name":"Peer
+        Support","oe_id":"108-07-06","parent_id":"52280f741edd37edff0000e7","rgt":474},{"_id":"52280f751edd37edff0000f0","_slugs":["support-groups"],"depth":2,"lft":477,"name":"Support
         Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484}]}],"organization":{"_id":"521d33211974fcdb2b001b93","_slugs":["national-multiple-sclerosis-society"],"created_at":"2013-08-27T16:15:45-07:00","name":"National
-        Multiple Sclerosis Society","updated_at":"2013-10-01T12:14:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b93","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b93/locations"},"slugs":["northern-california-chapter-8"],"id":"521d33211974fcdb2b001b94","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c01974fcdb2b000157","_slugs":["lesley-towers"],"accessibility":["Elevator"],"address":{"city":"San
-        Mateo","state":"CA","street":"700 Laurel Avenue","zip":"94401"},"ask_for":["Mary
-        Cheung (Assistant Administrator)","Terence Wong (Administrative Assistant)"],"contacts":[{"_id":"521d32c01974fcdb2b000158","name":"Mercedes
-        Gervasi","title":"Administrator"}],"coordinates":[-122.320931,37.561631],"created_at":"2013-08-27T16:14:08-07:00","description":"Low-
-        to moderate-cost housing for senior citizens age 62 or over, capable of self
-        care, who meet the income eligibility requirement. A security deposit equal
-        to one month''s rent required at time of signing the lease. Each resident
-        must sign up for meals. There are 200 units in a 12-story high rise. Units
-        are unfurnished except for mini-blinds and carpets. There is a social hall,
-        laundry, library, music room, billiards room and dining room. A social service
-        coordinator and public health nurse are also on staff. Formerly known as Park
-        Towers.","emails":["mgervasi@lesleysc.org"],"faxes":[{"number":"650 342-4156"}],"hours":"Monday-Friday,
-        8-4:30","kind":"Human Services","languages":["Chinese (Cantonese)","Chinese
-        (Mandarin)","Spanish"],"mail_address":{"attention":"Lesley Towers","city":"San
-        Mateo","state":"CA","street":"700 Laurel Avenue","zip":"94401"},"name":"Lesley
-        Towers","phones":[{"number":"650 342-2051","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Low-
-        to moderate-cost housing for ambulatory senior citizens.","transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2013-11-07T12:42:50-08:00","urls":["http://www.lesleyfoundation.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c01974fcdb2b000157","services":[{"_id":"521d32c01974fcdb2b00015b","audience":"Senior
-        citizens","eligibility":"Age 62 or over and capable of independent living.
-        Maximum income: $63,350 per year for a single, $72,400 per year for a couple","fees":"Studio
-        $344-$470 per month, 1 bedroom $635-$678 per month. Mandatory meal program
-        $265 per month. Checks and money orders accepted.","funding_sources":["Fees"],"how_to_apply":"Call
-        for appointment.","keywords":["HOUSING SERVICES","Senior and Disabled Housing","Older
-        Adult/Disability Related Supportive Housing","Older Adults","senior housing","low
-        income senior housing","low income housing"],"service_areas":["Alameda County","Contra
-        Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County"],"updated_at":"2013-10-08T13:42:49-07:00","wait":"Approximately
-        1 month for studio, 1 year for 1 bedroom (double occupancy), 2 years for 1
-        bedroom (single occupancy).","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d32c01974fcdb2b000156","_slugs":["lesley-towers"],"created_at":"2013-08-27T16:14:08-07:00","name":"Lesley
-        Towers","updated_at":"2013-10-01T12:05:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000156","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000156/locations"},"slugs":["lesley-towers"],"id":"521d32c01974fcdb2b000157","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c11974fcdb2b000181","_slugs":["lesley-terrace"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"Belmont","state":"CA","street":"2400
-        Carlmont Drive","zip":"94002"},"ask_for":["Pamela Bulaong (Assistant Administrator)"],"contacts":[{"_id":"521d32c11974fcdb2b000182","name":"Anahi
-        Espinoza","title":"Administrator"}],"coordinates":[-122.2999556,37.5093318],"created_at":"2013-08-27T16:14:09-07:00","description":"Affordable
-        housing for adults age 62 or over and age 61 or under with a long-term verifiable
-        disability. This is a housing-only facility and is not licensed to provide
-        care. There are 164 units, unfurnished, all utilities included. A mandatory
-        meal program provides two meals a day, seven days a week. Garaged parking
-        is available for $10 per month. Small pets allowed. A residents'' association
-        plans activities and entertainment. A social services coordinator is available
-        to assist with linkages to community services. Also available are laundry
-        facilities, several lounges, a large outdoor terrace, a convenience store,
-        a library and exercise equipment. Activities Coordinator plans activities
-        and entertainment. Formerly known as Bonnie Brae Terrace.","emails":["aespinoza@lesleysc.org"],"faxes":[{"number":"650
-        592-3026"}],"kind":"Human Services","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"Lesley
-        Terrace","city":"Belmont","state":"CA","street":"2400 Carlmont Drive","zip":"94002"},"name":"Lesley
-        Terrace","phones":[{"number":"650 593-1818","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Low-cost
-        housing for people age 62 or over.","transportation":"SAMTRANS stops within
-        1 block.","updated_at":"2013-11-07T12:42:50-08:00","urls":["http://www.lesleyseniorcommunities.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c11974fcdb2b000181","services":[{"_id":"521d32c11974fcdb2b000185","audience":"Adults
-        age 62 or over","eligibility":"Age 62 or over, or age 61 or under with a long-term
-        verifiable disability. Income requirements are $62,000 per year maximum income
-        for single person and $68,000 for a couple","fees":"Studio $484-$582, studio-alcove
-        $713, 1 bedroom $808. Breakfast and dinner 7 days a week, $282 per month.
-        Refundable deposit equal to 1 month''s rent. Cash and checks accepted.","funding_sources":["Federal"],"how_to_apply":"Phone
-        for an appointment necessary to view units and receive an application. An
-        interview with administrator and social worker determines eligibility.","keywords":["HOUSING
-        SERVICES","Senior and Disabled Housing","Older Adult/Disability Related Supportive
-        Housing","Older Adults","senior housing","low income senior housing","low
-        income housing"],"service_areas":["Alameda County","Contra Costa County","Marin
-        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-10-08T13:43:58-07:00","wait":"6
-        months for a studio, 4 years for a 1-bedroom. Section 8 waiting list open.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","depth":2,"lft":77,"name":"Housing
-        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d32c11974fcdb2b000180","_slugs":["lesley-terrace"],"created_at":"2013-08-27T16:14:09-07:00","name":"Lesley
-        Terrace","updated_at":"2013-10-01T12:05:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b000180","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c11974fcdb2b000180/locations"},"slugs":["lesley-terrace"],"id":"521d32c11974fcdb2b000181","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32cd1974fcdb2b0004b6","_slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"accessibility":["Wheelchair"],"ask_for":["Joan
-        Stone"],"contacts":[{"_id":"521d32cd1974fcdb2b0004b7","name":"Jennifer Hoppe","title":"President"}],"created_at":"2013-08-27T16:14:21-07:00","description":"A
-        volunteer group of parents that offer peer support to parents that have experienced
-        miscarriage, genetic abortion, stillbirth or death of an infant A volunteer
-        group of parents that offers peer support to parents and families that have
-        experienced miscarriage, genetic abortion, stillbirth or death of an infant.
-        Services include peer support groups, phone support, in-service programs to
-        educate hospital personnel, physicians and others, a resource library, newsletter
-        and training program for volunteers. HAND volunteers are available to act
-        as labor support to those anticipating a stillbirth. Also offers a support
-        group for those who are pregnant subsequent to a loss. Can also refer inquiries
-        to offices in Alameda, Santa Clara and Santa Cruz counties.","emails":["info@HANDsupport.org"],"hours":"24
-        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"HAND
-        of the Peninsula","city":"Redwood City","state":"CA","street":"P.O. Box 3693","zip":"94064"},"name":"HAND
-        of the Peninsula (Helping After Neonatal Death)","phones":[{"number":"650
-        367-6993","department":"Voicemail","hours":"(24 hours daily)"}],"transportation":"Varies
-        according to location of service.","updated_at":"2013-10-03T18:23:24-07:00","urls":["http://www.HANDsupport.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32cd1974fcdb2b0004b6","services":[{"_id":"521d32cd1974fcdb2b0004b9","audience":"Parents
-        who have lost a child","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
-        for information. Attend a Wednesday support meeting. Health Care providers
-        may also provide information.","keywords":["HEALTH SERVICES","Family Support","Self-Help","Support
-        Groups","Youth","Newborns"],"service_areas":["Alameda County","Contra Costa
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County"],"updated_at":"2013-10-03T18:23:23-07:00","wait":"Calls to our business
-        line (650-367-6993) are returned as soon as possible; Calls to Crisis Center
-        (888-220-7575 or 650-579-0350) are returned immediately. Grief meeting is
-        twice a month. Subsequent pregnancy meetings are monthly.","categories":[{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000d7","depth":1,"lft":428,"name":"End-of-Life
-        Care","oe_id":"108-04","parent_id":"52280f711edd37edff0000c4","rgt":437},{"_id":"52280f731edd37edff0000d8","depth":2,"lft":429,"name":"Bereavement","oe_id":"108-04-01","parent_id":"52280f721edd37edff0000d7","rgt":430},{"_id":"52280f741edd37edff0000e7","depth":1,"lft":460,"name":"Support
-        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487}]}],"organization":{"_id":"521d32cd1974fcdb2b0004b5","_slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"created_at":"2013-08-27T16:14:21-07:00","name":"HAND
-        of the Peninsula (Helping After Neonatal Death)","updated_at":"2013-10-01T12:06:29-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cd1974fcdb2b0004b5","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cd1974fcdb2b0004b5/locations"},"slugs":["hand-of-the-peninsula-helping-after-neonatal-death"],"id":"521d32cd1974fcdb2b0004b6","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33001974fcdb2b0012b2","_slugs":["pacific-oaks"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom"],"address":{"city":"Pacifica","state":"CA","street":"750 Oddstad
-        Blvd.","zip":"94044"},"contacts":[{"_id":"521d33001974fcdb2b0012b3","name":"Donna
-        Walton","title":"Resident Manager"}],"coordinates":[-122.474105,37.582637],"created_at":"2013-08-27T16:15:12-07:00","description":"Low-cost
-        housing for seniors age 62 or over who meet the eligibility requirements.
-        All applicants must be ambulatory, able to care for themselves and able to
-        exit by stair in case of emergency. A personal interview is necessary to be
-        placed on the waiting list. Offers one bedroom apartments with patio or balcony.
-        There are three floors with elevator. A shopping center is across the street.
-        Also offers a community room, beauty salon, library, exercise room and coin
-        laundry. The Senior Center is two miles away with van available. The apartments
-        have dishwasher, disposal, electric kitchen and cable hook-up. They are unfurnished.
-        A large walking park is located nearby.","emails":["pacoaks@pacbell.net"],"faxes":[{"number":"650
-        359-8491"}],"kind":"Human Services","mail_address":{"attention":"Pacific Oaks","city":"Pacifica","state":"CA","street":"750
-        Oddstad Blvd.","zip":"94044"},"name":"Pacific Oaks","phones":[{"number":"650
-        359-7559","hours":"(Monday-Friday, 9-4)"}],"short_desc":"An apartment complex
-        for seniors age 62 or over who are ambulatory and capable of self care.","transportation":"SAMTRANS
-        stops in front .","updated_at":"2013-11-07T12:45:26-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33001974fcdb2b0012b2","services":[{"_id":"521d33001974fcdb2b0012b6","audience":"Seniors
-        age 62 or over","eligibility":"Age 62 or over, ambulatory and capable of self
-        care","fees":"$1,200 for 1 bedroom, $1,500 for 2 bedrooms. Checks accepted.","funding_sources":["Fees"],"how_to_apply":"Walk
-        in. Verification of income required.","keywords":["HOUSING SERVICES","Senior
-        and Disabled Housing","Older Adult/Disability Related Supportive Housing","Older
-        Adults","low cost living for seniors","low income housing"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:44:27-08:00","wait":"No new subsidized
-        apartments at this time.","categories":[{"_id":"52280f601edd37edff00001b","depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","depth":1,"lft":76,"name":"Residential
-        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000029","depth":2,"lft":79,"name":"Long-Term
-        Housing","oe_id":"103-05-02","parent_id":"52280f611edd37edff000027","rgt":88}]}],"organization":{"_id":"521d33001974fcdb2b0012b1","_slugs":["pacific-oaks"],"created_at":"2013-08-27T16:15:12-07:00","name":"Pacific
-        Oaks","updated_at":"2013-10-01T12:11:19-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012b1","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33001974fcdb2b0012b1/locations"},"slugs":["pacific-oaks"],"id":"521d33001974fcdb2b0012b2","_score":0.066438556,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33161974fcdb2b00186f","_slugs":["adapt-foundation"],"accessibility":["Ramp","Disabled
-        Restroom","Wheelchair"],"contacts":[{"_id":"521d33161974fcdb2b001870","name":"Rodney
-        Clark","title":"President"},{"_id":"521d33161974fcdb2b001871","name":"David
-        Bernal","title":"Vice President"}],"created_at":"2013-08-27T16:15:34-07:00","description":"Offers
-        support to the families and friends of alcholics and drug addicts. Programs
-        include educational presentations, lectures and group discussions. The focus
-        is on helping family and friends to understand the nature and effects of addiction.
-        Also, suggests healthy ways of coping and creating positive environments.
-        Meetings are free of charge; donations are accepted.  Monday meetings are
-        held at Kathy''s Creative Kakes and Cupcakes, 631 South B Street, San Mateo
-        94401, 5:30-7 pm. Tuesday meetings are held at Redwood Shores Library, 399
-        Marine Parkway - Room B, Redwood City, 94065, 6-8 pm. Thursday meetings are
-        held at 125 Northwood Drive, Suite C, South San Francisco, 94080, 6-7:30 pm.","emails":["admin@adaptfoundation.com"],"kind":"Human
-        Services","mail_address":{"attention":"ADAPT Foundation","city":"San Carlos","state":"CA","street":"P.O.
-        Box 1052","zip":"94070-1052"},"name":"ADAPT Foundation","phones":[{"number":"650
-        447-3234"}],"short_desc":"Offers support to the families and friends of alcoholics
-        and drug addicts.","updated_at":"2013-10-01T12:13:02-07:00","urls":["http://www.adaptfoundation.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33161974fcdb2b00186f","services":[{"_id":"521d33161974fcdb2b001873","audience":"Families
-        and friends of addicts and alcoholics","eligibility":"None","fees":"None.","funding_sources":["Donations","Fundraising"],"how_to_apply":"Attend
-        a meeting.","keywords":["COMMUNITY SERVICES","Speakers","Families/Friends
-        of Alcoholics Support Groups","Families/Friends of Drug Abusers Support Groups","Addiction/Dependencies
-        Issues","Addiction","substance/dru abuse","drug use","alcohol use"],"service_areas":["San
-        Mateo County"],"updated_at":"2013-11-11T00:45:52-08:00","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000055","depth":2,"lft":167,"name":"Sober
-        Living","oe_id":"106-01-06","parent_id":"52280f661edd37edff00004f","rgt":168},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199}]}],"organization":{"_id":"521d33161974fcdb2b00186e","_slugs":["adapt-foundation"],"created_at":"2013-08-27T16:15:34-07:00","name":"ADAPT
-        Foundation","updated_at":"2013-10-01T12:13:02-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33161974fcdb2b00186e","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33161974fcdb2b00186e/locations"},"slugs":["adapt-foundation"],"id":"521d33161974fcdb2b00186f","_score":0.056947336,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c01974fcdb2b00017b","_slugs":["vista-center-for-the-blind-and-visually-impaired"],"accessibility":["Disabled
+        Multiple Sclerosis Society","updated_at":"2013-10-01T12:14:28-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b93","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33211974fcdb2b001b93/locations"},"slugs":["northern-california-chapter-8"],"id":"521d33211974fcdb2b001b94","_score":0.066264085,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c01974fcdb2b00017b","_slugs":["vista-center-for-the-blind-and-visually-impaired"],"accessibility":["Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"2470
         El Camino Real, Suite 107","zip":"94306"},"ask_for":["Front desk (operator)
         for low-vision clinic information."],"contacts":[{"_id":"521d32c01974fcdb2b00017c","name":"Pam
@@ -888,11 +861,11 @@ http_interactions:
         Therapy","Eye Care","Physical Medicine and Rehabilitation","Support Groups","Individual
         Counseling","Information and Referral","Disabilities Issues"],"service_areas":["San
         Mateo County","Santa Clara County","San Benito County","Santa Cruz County"],"updated_at":"2013-09-05T11:56:58-07:00","wait":"Varies
-        according to program, up to 6 weeks.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005d","depth":2,"lft":183,"name":"Daily
-        Life Skills","oe_id":"106-04-01","parent_id":"52280f681edd37edff00005c","rgt":184},{"_id":"52280f681edd37edff000063","depth":2,"lft":195,"name":"Understand
+        according to program, up to 6 weeks.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005d","_slugs":["daily-life-skills"],"depth":2,"lft":183,"name":"Daily
+        Life Skills","oe_id":"106-04-01","parent_id":"52280f681edd37edff00005c","rgt":184},{"_id":"52280f681edd37edff000063","_slugs":["understand-disability-1"],"depth":2,"lft":195,"name":"Understand
         Disability","oe_id":"106-04-07","parent_id":"52280f681edd37edff00005c","rgt":196}]}],"organization":{"_id":"521d32c01974fcdb2b00017a","_slugs":["vista-center-for-the-blind-and-visually-impaired"],"created_at":"2013-08-27T16:14:08-07:00","name":"Vista
-        Center for the Blind and Visually Impaired","updated_at":"2013-10-01T12:05:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b00017a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b00017a/locations"},"slugs":["vista-center-for-the-blind-and-visually-impaired"],"id":"521d32c01974fcdb2b00017b","_score":0.056947336,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32cb1974fcdb2b000420","_slugs":["stanford-hospital-and-clinics"],"accessibility":["Elevator","Ramp","Disabled
+        Center for the Blind and Visually Impaired","updated_at":"2013-10-01T12:05:17-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b00017a","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b00017a/locations"},"slugs":["vista-center-for-the-blind-and-visually-impaired"],"id":"521d32c01974fcdb2b00017b","_score":0.05679779,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32cb1974fcdb2b000420","_slugs":["stanford-hospital-and-clinics"],"accessibility":["Elevator","Ramp","Disabled
         Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Stanford","state":"CA","street":"300
         Pasteur Drive","zip":"94305"},"ask_for":["Community and Patient Relations"],"contacts":[{"_id":"521d32cb1974fcdb2b000421","name":"Martha
         Marsh","title":"C.E.O."}],"coordinates":[-122.180129,37.4343609],"created_at":"2013-08-27T16:14:19-07:00","description":"Offers
@@ -922,12 +895,12 @@ http_interactions:
         Care","Outpatient Care","clinical trials","ravenswood clinic","Packard Children''s
         Center"],"service_areas":["Alameda County","Contra Costa County","Marin County","Santa
         Clara County","San Francisco County","San Mateo County"],"updated_at":"2013-10-03T18:05:12-07:00","wait":"No
-        wait.","categories":[{"_id":"52280f661edd37edff00004e","depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006e","depth":2,"lft":217,"name":"Alternative
-        Medicine","oe_id":"106-06-01","parent_id":"52280f691edd37edff00006d","rgt":218},{"_id":"52280f691edd37edff000071","depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff00007a","depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f711edd37edff0000c4","depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d32cb1974fcdb2b00041f","_slugs":["stanford-hospital-and-clinics"],"created_at":"2013-08-27T16:14:19-07:00","name":"Stanford
-        Hospital and Clinics","updated_at":"2013-10-01T12:06:15-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cb1974fcdb2b00041f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cb1974fcdb2b00041f/locations"},"slugs":["stanford-hospital-and-clinics"],"id":"521d32cb1974fcdb2b000420","_score":0.056947336,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d91974fcdb2b0007f3","_slugs":["pacific-center-for-human-growth"],"accessibility":["Ramp","Disabled
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006e","_slugs":["alternative-medicine"],"depth":2,"lft":217,"name":"Alternative
+        Medicine","oe_id":"106-06-01","parent_id":"52280f691edd37edff00006d","rgt":218},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d32cb1974fcdb2b00041f","_slugs":["stanford-hospital-and-clinics"],"created_at":"2013-08-27T16:14:19-07:00","name":"Stanford
+        Hospital and Clinics","updated_at":"2013-10-01T12:06:15-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32cb1974fcdb2b00041f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32cb1974fcdb2b00041f/locations"},"slugs":["stanford-hospital-and-clinics"],"id":"521d32cb1974fcdb2b000420","_score":0.05679779,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d91974fcdb2b0007f3","_slugs":["pacific-center-for-human-growth"],"accessibility":["Ramp","Disabled
         Restroom","Wheelchair"],"address":{"city":"Berkeley","state":"CA","street":"2712
         Telegraph Avenue","zip":"94705"},"contacts":[{"_id":"521d32d91974fcdb2b0007f4","name":"Leslie
         Ewing","title":"Executive Director"}],"coordinates":[-122.2593705,37.86111590000001],"created_at":"2013-08-27T16:14:33-07:00","description":"A
@@ -961,12 +934,46 @@ http_interactions:
         services","AIDS services"],"service_areas":["Alameda County","Contra Costa
         County","Marin County","San Francisco County","San Mateo County","Santa Clara
         County","nationwide"],"updated_at":"2013-09-05T11:47:53-07:00","wait":"Varies
-        according to service.","categories":[{"_id":"52280f751edd37edff0000f5","depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","depth":1,"lft":504,"name":"More
-        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f781edd37edff000113","depth":1,"lft":548,"name":"Screening
-        & Exams","oe_id":"109-05","parent_id":"52280f751edd37edff0000f5","rgt":555},{"_id":"52280f781edd37edff000117","depth":1,"lft":556,"name":"Skills
-        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff00011a","depth":2,"lft":561,"name":"Daily
+        according to service.","categories":[{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f781edd37edff000113","_slugs":["screening-and-exams"],"depth":1,"lft":548,"name":"Screening
+        & Exams","oe_id":"109-05","parent_id":"52280f751edd37edff0000f5","rgt":555},{"_id":"52280f781edd37edff000117","_slugs":["skills-and-training"],"depth":1,"lft":556,"name":"Skills
+        & Training","oe_id":"109-06","parent_id":"52280f751edd37edff0000f5","rgt":571},{"_id":"52280f781edd37edff00011a","_slugs":["daily-life-skills-1"],"depth":2,"lft":561,"name":"Daily
         Life Skills","oe_id":"109-06-03","parent_id":"52280f781edd37edff000117","rgt":562}]}],"organization":{"_id":"521d32d91974fcdb2b0007f2","_slugs":["pacific-center-for-human-growth"],"created_at":"2013-08-27T16:14:33-07:00","name":"Pacific
-        Center for Human Growth","updated_at":"2013-10-01T12:07:50-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d91974fcdb2b0007f2","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d91974fcdb2b0007f2/locations"},"slugs":["pacific-center-for-human-growth"],"id":"521d32d91974fcdb2b0007f3","_score":0.056947336,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Center for Human Growth","updated_at":"2013-10-01T12:07:50-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d91974fcdb2b0007f2","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d91974fcdb2b0007f2/locations"},"slugs":["pacific-center-for-human-growth"],"id":"521d32d91974fcdb2b0007f3","_score":0.05679779,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e71974fcdb2b000bd1","_slugs":["womens-cancer-resource-center"],"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"city":"Oakland","state":"CA","street":"5741
+        Telegraph Avenue","zip":"94609"},"ask_for":["Dolores Moorehead"],"contacts":[{"_id":"521d32e71974fcdb2b000bd2","name":"Peggy
+        McGuire","title":"Executive Director"}],"coordinates":[-122.2616145,37.8437994],"created_at":"2013-08-27T16:14:47-07:00","description":"Provides
+        advocacy, information, peer counseling, local support groups, and physician
+        and healthcare provider referrals for women with cancer, their families and
+        friends. Publishes an e-newsletter which includes an events calendar, book
+        reviews and articles on the latest issues in cancer and women''s health. A
+        comprehensive lending library provides accessible, up-to-date information
+        on cancer treatment and women''s health issues. Community education programs
+        offered for women with cancer. Trained volunteers provide one-to-one practical
+        and emotional support for women with cancer residing in Alameda, Contra Costa
+        and San Francisco counties. Peer-based support groups include (for Spanish-speaking
+        women), African American Women with Cancer, Lesbians with Cancer, Metastatic
+        Cancer Group, Art Therapy.","emails":["wcrc@wcrc.org"],"faxes":[{"number":"510
+        601-4045"}],"kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Women''s
+        Cancer Resource Center","city":"Oakland","state":"CA","street":"5741 Telegraph
+        Avenue","zip":"94609"},"name":"Women''s Cancer Resource Center","phones":[{"number":"510
+        420-7900","department":"Helpline","hours":"(Monday-Friday, 9-5)"}],"short_desc":"Information,
+        support, peer counseling and advocacy for women with cancer.","transportation":"AC
+        Transit stops within 1 block.","updated_at":"2013-11-07T12:45:23-08:00","urls":["http://www.wcrc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e71974fcdb2b000bd1","services":[{"_id":"521d32e71974fcdb2b000bd5","audience":"Women
+        seeking information or assistance on cancer related issues","eligibility":"None","fees":"None.
+        Donations gratefully accepted.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        for information or drop in during open hours, or by appointment.","keywords":["HEALTH
+        SERVICES","Alternative Health Care","Prevention","Family Support","Individual/Group
+        Counseling","Cancer Resources","Cancer Healthcare","Cancer Support","Cancer
+        Education"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-10-08T15:37:53-07:00","wait":"No
+        wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006e","_slugs":["alternative-medicine"],"depth":2,"lft":217,"name":"Alternative
+        Medicine","oe_id":"106-06-01","parent_id":"52280f691edd37edff00006d","rgt":218},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000073","_slugs":["disease-screening"],"depth":3,"lft":226,"name":"Disease
+        Screening","oe_id":"106-06-04-02","parent_id":"52280f691edd37edff000071","rgt":227},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264}]}],"organization":{"_id":"521d32e71974fcdb2b000bd0","_slugs":["womens-cancer-resource-center"],"created_at":"2013-08-27T16:14:47-07:00","name":"Women''s
+        Cancer Resource Center","updated_at":"2013-10-01T12:09:14-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bd0","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bd0/locations"},"slugs":["womens-cancer-resource-center"],"id":"521d32e71974fcdb2b000bd1","_score":0.05679779,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 08:15:30 GMT
-recorded_with: VCR 2.5.0
+  recorded_at: Wed, 26 Feb 2014 09:06:10 GMT
+recorded_with: VCR 2.8.0
