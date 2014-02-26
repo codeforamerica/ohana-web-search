@@ -5,6 +5,7 @@
         %label{:for => "keyword"}
           I need...
         = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
+        <b>TEST</b>
         - cache ['keywords-list', *cip_keywords] do
           %datalist#search-keywords
             <!--[if IE 8]><select disabled style="display:none"><![endif]-->
