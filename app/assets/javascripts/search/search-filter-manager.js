@@ -288,6 +288,7 @@ define(
 				}
 				else if (toggleGroup == _addInputToggle)
 				{
+					_queueUpdate = true;
 					_toggleAddInputFilter(current);
 				}
 				else if (toggleGroup == _selectedToggle)
