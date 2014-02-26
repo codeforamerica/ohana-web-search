@@ -1,13 +1,14 @@
 %section#search-options
 
   = render :partial => "component/search/filter", :locals => {:field=>"location", :legend=>"Near Address",:field_value=>params[:location], :aggregate_field=>@aggregate_locations, :add_placeholder=>"address", :add_input_type=>"TEXT"}
-  - cache ['cities-list', *smc_cities] do
-    %datalist#location-list
-      <!--[if IE 8]><select disabled style="display:none"><![endif]-->
-      - smc_cities.each do |city|
-        %option{:value=>city}
-          = city
-      <!--[if IE 8]> </select> <![endif]-->
+  -#
+    - cache ['cities-list', *smc_cities] do
+      %datalist#location-list
+        <!--[if IE 8]><select disabled style="display:none"><![endif]-->
+        - smc_cities.each do |city|
+          %option{:value=>city}
+            = city
+        <!--[if IE 8]> </select> <![endif]-->
 
   = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
 
