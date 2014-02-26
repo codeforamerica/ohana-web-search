@@ -212,6 +212,7 @@ define(
 
 			function init(fieldset)
 			{
+				if (!fieldset) console.log("fieldset null");
 				_fieldset = fieldset;
 				_id = _fieldset.id;
 
