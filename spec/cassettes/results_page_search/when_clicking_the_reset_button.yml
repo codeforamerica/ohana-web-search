@@ -2,112 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 26 Feb 2014 09:28:37 GMT
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 400 Bad Request
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 2d843ee1-530d-4fbf-8665-bdac99547686
-      X-Runtime:
-      - '0.036260'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version: 
-  recorded_at: Wed, 26 Feb 2014 09:28:37 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 26 Feb 2014 09:28:37 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 9ac08632-4636-4639-8afe-ca2d50e6a558
-      X-Runtime:
-      - '0.024001'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[]'
-    http_version: 
-  recorded_at: Wed, 26 Feb 2014 09:28:37 GMT
-- request:
-    method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
@@ -131,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 26 Feb 2014 09:28:38 GMT
+      - Wed, 26 Feb 2014 09:48:06 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Server:
@@ -145,9 +39,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 8c66e817-ee37-496f-be93-b88547157f77
+      - 2364df08-9759-4d9d-bffc-4c91bb46e12b
       X-Runtime:
-      - '0.030057'
+      - '0.029352'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -162,7 +56,7 @@ http_interactions:
       encoding: UTF-8
       string: '[]'
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 09:28:38 GMT
+  recorded_at: Wed, 26 Feb 2014 09:48:06 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&utf8=%E2%9C%93
@@ -188,7 +82,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 26 Feb 2014 09:28:39 GMT
+      - Wed, 26 Feb 2014 09:48:07 GMT
       Link:
       - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=57&utf8=%E2%9C%93>;
         rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2&utf8=%E2%9C%93>;
@@ -206,9 +100,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 90896598-93ee-4182-8b18-a565b7ba7e25
+      - 6c131047-8fce-4cc8-930f-13f614155e83
       X-Runtime:
-      - '0.113757'
+      - '0.212409'
       X-Total-Count:
       - '1709'
       X-Total-Pages:
@@ -590,5 +484,5 @@ http_interactions:
         Camp","oe_id":"108-03-04","parent_id":"52280f721edd37edff0000cb","rgt":420},{"_id":"52280f721edd37edff0000d5","_slugs":["recreation"],"depth":2,"lft":423,"name":"Recreation","oe_id":"108-03-06","parent_id":"52280f721edd37edff0000cb","rgt":424}]}],"organization":{"_id":"521d339d1974fcdb2b00265f","_slugs":["ymca-of-silicon-valley"],"created_at":"2013-08-27T16:17:49-07:00","name":"YMCA
         of Silicon Valley","updated_at":"2013-10-01T12:18:44-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339d1974fcdb2b00265f/locations"},"slugs":["camp-campbell"],"id":"521d339d1974fcdb2b00266c","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645469000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 26 Feb 2014 09:28:40 GMT
+  recorded_at: Wed, 26 Feb 2014 09:48:07 GMT
 recorded_with: VCR 2.8.0
