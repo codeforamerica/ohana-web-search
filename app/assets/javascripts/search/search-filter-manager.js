@@ -281,11 +281,9 @@ define(
 						toggle.checked = !toggle.checked;
 				}
 
-
 				// Toggle filters.
 				if (toggleGroup == _highlightToggle)
 				{
-					_queueUpdate = true;
 					_toggleFilter();
 				}
 				else if (toggleGroup == _addInputToggle)
@@ -298,6 +296,7 @@ define(
 				}
 				else
 				{
+					_queueUpdate = true;
 					_selectedToggle = toggleGroup;
 
 					// hide add input if selected toggle is not the add input toggle
@@ -314,7 +313,8 @@ define(
 			{
 				if (_legend.className == 'open')
 				{
-					_triggerFormSubmission(_searchForm);
+					if (_queueUpdate)
+						_triggerFormSubmission(_searchForm);
 					_closeToggle()
 				}
 				else
