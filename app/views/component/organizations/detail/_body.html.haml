@@ -254,3 +254,7 @@
               Last updated:
             %span
               = @org.updated_at.to_s(:full_date_and_time)
+            %div
+              %a{ :href => "#{request.protocol}admin.#{request.host_with_port}#{request.fullpath}", :target=>"_self" }
+                %i{ :class => "fa fa-pencil" }
+                Edit
