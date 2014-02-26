@@ -12,13 +12,13 @@ define(
   	function init()
   	{
 			// capture form submission
-			_searchForm = document.getElementById("search-form");
-			_searchForm.addEventListener("submit",_formSubmissionHandler,false);
+			var searchForm = document.getElementById("search-form");
+			if (!searchForm) console.log("search form DOM not found!");
+			searchForm.addEventListener("submit",_formSubmitted,false);
 
-			// Hook all reset buttons on the page and listen for a click event
-			var resetBtn = document.querySelectorAll(".reset-btn");
-			for (var r = 0;r<resetBtn.length;r++)
-				resetBtn[r].addEventListener("click",_resetClicked,false);
+			var resetBtn = document.getElementById("reset-btn-link");
+			if (!resetBtn) console.log("reset link DOM not found!");
+			resetBtn.addEventListener("click",_resetClicked,false);
 
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
