@@ -745,6 +745,7 @@ button.small-btn
 
   font-size:14px;
    @include border-radius(4px);
+   @include box-sizing(border-box);
 
   .fa
   {
@@ -767,9 +768,9 @@ button.small-btn:hover // update button styles
 button.medium-btn
 {
   @extend button.small-btn;
-  font-size:13px;
+  font-size:15px;
   font-family:$san_serif_font;
-  padding:10px;
+  padding:7px;
   @include border-radius(4px);
   background:$green_lightest;
   border:1px solid $blue_darkest;
@@ -1404,7 +1405,7 @@ button.big-btn:hover
   background:$blue_midtone; // IE fallback
   background:$blue_midtone_alpha90;
   padding: 10px;
-  min-height: 36px;
+  min-height: 38px;
   padding-right:25px;
   padding-bottom: 24px;
   text-align:right;
@@ -1470,13 +1471,13 @@ body { top: 0px !important; }
 // help box styles on homepage
 #help-box
 {
-  background:$blue_midtone; // IE fallback
-  background:$blue_midtone_alpha90;
+  background: $blue_midtone; // IE fallback
+  background: $blue_midtone_alpha90;
   border-bottom: 2px solid $blue_dark;
-  padding:21px;
-  padding-right:25px;
-  text-align:right;
-  min-height:36px;
+  padding: 21px;
+  padding-right: 25px;
+  text-align: right;
+  min-height: 38px;
 }
 
 //=================================================================================
@@ -1750,6 +1751,11 @@ body { top: 0px !important; }
   {
     @include inline-block();
   }
+}
+
+#geolocate-box
+{
+  margin-top:5px;
 }
 
 .inside fieldset
