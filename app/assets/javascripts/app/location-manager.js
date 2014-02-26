@@ -1,5 +1,5 @@
 // manages geolocation button on homepage
-define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (geo,alert) {
+define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback','domReady!'], function (geo,alert) {
 	'use strict';
 
 		// PRIVATE PROPERTIES
