@@ -14,8 +14,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		var _markerBounds; // the bounds of the markers
 
 		// constants for map button text content
-		var LARGER_MAP_TEXT = "▲ Display small map";
-		var SMALLER_MAP_TEXT = "▼ Display large map";
+		var LARGER_MAP_TEXT = "<i class='fa fa-search-minus'></i> View small map";
+		var SMALLER_MAP_TEXT = "<i class='fa fa-search-plus'></i> View large map";
 
 		var _infoWindow; // info window to pop up on roll over
 
@@ -129,29 +129,29 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
 
 				if (markerData['kind'] == "Arts")
-					markerIcon = '/assets/arts.png'
+					markerIcon = '/assets/markers/arts.png'
 				else if (markerData['kind'] == "Clinics")
-					markerIcon = '/assets/clinics.png'
+					markerIcon = '/assets/markers/clinics.png'
 				else if (markerData['kind'] == "Education")
-					markerIcon = '/assets/education.png'
+					markerIcon = '/assets/markers/education.png'
 				else if (markerData['kind'] == "Entertainment")
-					markerIcon = '/assets/entertainment.png'
+					markerIcon = '/assets/markers/entertainment.png'
 				else if (markerData['kind'] == "Farmers' Markets")
-					markerIcon = '/assets/farmers_markets.png'
+					markerIcon = '/assets/markers/farmers_markets.png'
 				else if (markerData['kind'] == "Government")
-					markerIcon = '/assets/government.png'
+					markerIcon = '/assets/markers/government.png'
 				else if (markerData['kind'] == "Human Services")
-					markerIcon = '/assets/human_services.png'
+					markerIcon = '/assets/markers/human_services.png'
 				else if (markerData['kind'] == "Libraries")
-					markerIcon = '/assets/libraries.png'
+					markerIcon = '/assets/markers/libraries.png'
 				else if (markerData['kind'] == "Museums")
-					markerIcon = '/assets/museums.png'
+					markerIcon = '/assets/markers/museums.png'
 				else if (markerData['kind'] == "Parks")
-					markerIcon = '/assets/parks.png'
+					markerIcon = '/assets/markers/parks.png'
 				else if (markerData['kind'] == "Sports")
-					markerIcon = '/assets/sports.png'
+					markerIcon = '/assets/markers/sports.png'
 				else
-					markerIcon = '/assets/other.png'
+					markerIcon = '/assets/markers/other.png'
 
 				var marker = new google.maps.Marker({
 					id: markerData['id'],

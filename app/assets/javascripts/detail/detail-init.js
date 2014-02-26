@@ -7,8 +7,8 @@ require(['detail/detail-map-manager','detail/character-limiter','detail/term-pop
   header.init();
 
 }, function (err) {
-    //The errback, error callback
-    //The error has a list of modules that failed
+    //The error callback
+    //The err object has a list of modules that failed
     var failedId = err.requireModules && err.requireModules[0];
     requirejs.undef(failedId);
 

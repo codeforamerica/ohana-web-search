@@ -1,19 +1,20 @@
 // manages app initialization
-require(['app/loading-manager',
-	'app/popup-manager',
+require(['app/popup-manager',
 	'app/google-translate-manager',
   'app/google-analytics-manager',
+  'app/location-manager',
   'jquery',
-	'app/datalist-dropdown',
   'classList',
   'addEventListener',
   'Modernizr',
   'modernizrSelectors'],
-  function (lm,pm,goog,ga,$,datalist) {
+
+  function (pm,goog,ga,location,$) {
   'use strict';
 
 	document.body.classList.add("require-loaded");
 
+  // Check if browser supports the :checked selector
   Modernizr.addTest('checkedselector',function(){
     return selectorSupported(':checked');
   });
@@ -23,22 +24,17 @@ require(['app/loading-manager',
     var radios = document.querySelectorAll("input[type=radio]");
     for(var r=0; r< radios.length; r++)
     {
-      console.log(radios[r]);
       radios[r].style.visibility = "inherit";
     }
   }
 
   ga.init(); // initalize google analytics
-  lm.hide();
+
   // if box-shadow CSS is supported, initialize the popups.
   if (Modernizr.boxshadow)
     pm.init();
   goog.init();
 
-  var inputs = document.querySelectorAll('input[list]');
-  for (var i in inputs)
-  {
-  	//datalist.init(inputs[i]);
-  }
+  location.init();
 
 });

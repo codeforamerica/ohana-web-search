@@ -57,7 +57,7 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
 
 			geocoder.geocode({'latLng': latlng}, function(results, status)
 			{
-			  if (status == google.maps.GeocoderStatus.OK && results[0])
+				if (status == google.maps.GeocoderStatus.OK && results[0])
 			  {
 					_locationValue.value = results[0].formatted_address;
 					document.getElementById('location-form').submit();

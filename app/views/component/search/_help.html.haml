@@ -1,7 +1,0 @@
-%section#help-box
-  %div#geolocate-box
-    = form_tag('/organizations', :method => :get, :id=>"location-form") do
-      = hidden_field_tag 'location'
-      %button#locate-btn.hide{:type=>'submit'}
-        %span{"data-icon"=>"🔗" , :class=>"search-button ohana-icon"}
-        Find services near me

@@ -227,8 +227,8 @@ class OrganizationsController < ApplicationController
     if collection.respond_to?('each')
       collection.each { |org|
         val = block.call(org)
-        aggregate.shift if aggregate.length >= 5 && aggregate.include?(val) == false
-        aggregate.push( val ) if val.present?
+        aggregate.pop if aggregate.length >= 5 && aggregate.include?(val) == false
+        aggregate.unshift( val ) if val.present?
         break if aggregate.length >= 5
       }
       aggregate.uniq!

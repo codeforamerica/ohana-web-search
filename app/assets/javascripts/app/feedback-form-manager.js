@@ -1,4 +1,4 @@
-// manages behavior of feedback form
+// Manages behavior of feedback form
 define(['util/util','trim','jquery'],function(util,trim,$) {
 	'use strict';
 

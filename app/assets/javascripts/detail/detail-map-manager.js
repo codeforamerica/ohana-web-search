@@ -231,8 +231,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 		init:init
 	};
 }, function (err) {
-    //The errback, error callback
-    //The error has a list of modules that failed
+    //The error callback
+    //The err object has a list of modules that failed
     var failedId = err.requireModules && err.requireModules[0];
 
     console.log("Map failed to load! Hiding map HTML code.",failedId);

@@ -34,7 +34,7 @@
                   %section.ask-for{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
                     - @org.ask_for.each do |ask_for|
                       %div
-                        %span{"data-icon"=>"☺" , :class=>"ohana-icon"}
+                        %i{:class=>"fa fa-user"}
                         %span
                           = ask_for
 
@@ -42,7 +42,7 @@
                   %section.emails{:itemprop=>"email"}
                     - @org.emails.each do |email|
                       %div
-                        %span{"data-icon"=>"@" , :class=>"ohana-icon"}
+                        %i{:class=>"fa fa-laptop"}
                         %a{:href=>("mailto:"+email)}
                           %span{:itemprop=>"email"}
                             = email
@@ -52,27 +52,29 @@
                   %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
                     - @org.phones.each do |phone|
                       %div
-                        %span{"data-icon"=>"☎" , :class=>"ohana-icon"}
+                        %i{:class=>"fa fa-phone-square"}
                         %span
-                          - if phone["department"]
-                            %span{:itemprop=>"contactType"}
-                              = phone["department"]
                           - if phone["number"]
                             %span{:itemprop=>"telephone"}
                               = format_phone(phone["number"])
                           - if phone["type"]
                             %sup.phone-type
                               = phone["type"]
+                          - if phone["department"]
+                            %p
+                              %span{:itemprop=>"contactType"}
+                                = phone["department"]
                           - if phone["hours"]
-                            %span
-                              = phone["hours"]
+                            %p
+                              %span
+                                = phone["hours"]
 
 
                 - if @org.key?(:faxes)
                   %section.faxes
                     - @org.faxes.each do |fax|
                       %div
-                        %span{"data-icon"=>"℻" , :class=>"ohana-icon"}
+                        %i{:class=>"fa fa-print fax"}
                         - if fax.is_a?(String)
                           %span{:itemprop=>"faxNumber"}
                             = format_phone(fax)
@@ -93,7 +95,7 @@
                   %section.urls
                     - @org.urls.each do |url|
                       %div
-                        %span{"data-icon"=>"🔗" , :class=>"external-link ohana-icon"}
+                        %i{:class=>"fa fa-external-link-square"}
                         %a{:href=>url,:target=>"_blank"}
                           %span{:itemprop=>"url"}
                             = format_url(url)
@@ -105,7 +107,7 @@
 
                 %section.mail-address
                   %div
-                    %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                    %i{:class=>"fa fa-envelope"}
                     = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
 
           -# has a physical address and the street address and zipcode differ from mailing address
@@ -116,7 +118,7 @@
                 - if @org.key?(:address)
                   %section.address
                     %div
-                      %span{"data-icon"=>"✉" , :class=>"ohana-icon"}
+                      %i{:class=>"fa fa-home"}
                       = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
 
       - if @aggregate_categories.present?
@@ -141,10 +143,8 @@
       %section.overview-box
         %section
 
-          / insert template, params are:
-          / use_template,org,field,title,icon
-          = insert_template(true,@org,:short_desc,nil,nil)
-          = insert_template(true,@org,:description,"Description",nil)
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:short_desc}
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:description, :stitle=>"Description"}
 
     - if @org.key?(:coordinates) || @org.key?(:transportation)
       %section.map-box
@@ -182,26 +182,23 @@
       %section.hours-box
         %h1 Service Hours
         %section
-
-          = insert_template(true,@org,:hours,nil,"⧗")
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:hours, :stitle=>nil, :icon=>"fa fa-clock-o"}
 
     - if (@org.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
         %section
-          = insert_template(false,@org,:languages,"Languages Spoken",nil)
-          = insert_template(false,@org,:accessibility,"Accessibility Options",nil)
-
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:languages, :stitle=>"Languages Spoken"}
+          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:accessibility, :stitle=>"Accessibility Options"}
 
     - if (@org.fields & market_fields).any?
       %section.payment-box
         %h1 Payment & Products
 
         %div
-
-          - if @org.key?(:payments || :market_match)
+          - if @org.key?(:payments) || @org.key?(:market_match)
             %section.payments-accepted
-              %span{"data-icon"=>"$" , :class=>"payment ohana-icon"}
+              %i{:class=>"fa fa-money"}
               %h1 Payment methods accepted:
               %ul
                 -if @org.key?(:payments)
@@ -224,7 +221,7 @@
 
           - if @org.key?(:products)
             %section.products-sold
-              %span{"data-icon"=>"␣" , :class=>"ohana-icon"}
+              %i{:class=>"fa fa-shopping-cart"}
               %h1 Products sold:
               %ul
                 - @org.products.sort.each do |product|
@@ -239,15 +236,13 @@
 
           %section.service{:itemscope=>"", :itemtype=> (@org.key?(:kind) && @org.kind == 'Government') ? "http://schema.org/GovernmentService" : "http://schema.org/Service"}
 
-            / insert template, params are:
-            / use_template,org,field,title,icon
-            = insert_template(true,service,:name,nil,nil)
-            = insert_template(true,service,:description,nil,nil)
-            = insert_template(false,service,:urls,"Homepage",nil)
-            = insert_template(true,service,:fees,"Fees",nil)
-            = insert_template(true,service,:audience,"Audience",nil)
-            = insert_template(true,service,:eligibility,"Eligibility",nil)
-            = insert_template(true,service,:how_to_apply,"How to Apply",nil)
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:name}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:description}
+            = render :partial => "component/detail/urls", :locals => {:org=>service, :field=>:urls, :stitle=>"Homepage"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:fees, :stitle=>"Fees"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:audience, :stitle=>"Audience"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:eligibility, :stitle=>"Eligibility"}
+            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:how_to_apply, :stitle=>"How to Apply"}
 
   / detail footer content
   - if @org.key?(:updated_at)
@@ -259,3 +254,7 @@
               Last updated:
             %span
               = @org.updated_at.to_s(:full_date_and_time)
+            %div
+              %a{ :href => "#{request.protocol}admin.#{request.domain}#{request.fullpath.split("?")[0]}", :target=>"_self" }
+                %i{ :class => "fa fa-pencil" }
+                Edit

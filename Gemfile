@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 ruby '2.0.0'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.16'
 
 # front end
 group :assets do
   gem 'html5shiv-rails' # needed for IE polyfill of sectioning content
   gem 'selectivizr-rails' # needed for IE polyfill of modern CSS selectors
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'font-awesome-sass' #font-awesome icons
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -63,14 +64,14 @@ end
 group :test do
   #gem "cucumber-rails", ">= 1.3.1", :require => false
   #gem "launchy", ">= 2.2.0"
-  gem "capybara", ">= 2.0.3"
+  gem "capybara"
   gem 'json'
   gem 'rack_session_access' # for getting access to the session from Capybara
   gem 'poltergeist'
   #gem 'selenium-webdriver'
   #gem 'capybara-webkit'
   gem "vcr"
-  gem 'webmock', "< 1.12.0"
+  gem 'webmock', "< 1.16.0"
   gem "email_spec"
 end
 

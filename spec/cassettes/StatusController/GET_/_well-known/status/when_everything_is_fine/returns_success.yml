@@ -2,6 +2,63 @@
 http_interactions:
 - request:
     method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Feb 2014 09:48:44 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.4 + Phusion Passenger 4.0.37
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.37
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 0e2c1bd3-058f-4f43-8ac6-2a4103e17154
+      X-Runtime:
+      - '0.032274'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Wed, 26 Feb 2014 09:48:44 GMT
+- request:
+    method: get
     uri: http://ohanapi.herokuapp.com/api/locations/downtown-palo-alto-food-closet?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
@@ -25,25 +82,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Jan 2014 08:14:21 GMT
-      Etag:
-      - '"f472e85c72a2f7a48e332113c7a0ffeb"'
+      - Wed, 26 Feb 2014 09:48:44 GMT
       Server:
-      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      - nginx/1.4.4 + Phusion Passenger 4.0.37
       Status:
       - 200 OK
       X-Powered-By:
-      - Phusion Passenger 4.0.23
+      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - eb698e4c-4af8-4b6b-bef7-abb58d3425d3
+      - 05b39277-ab24-458f-b2da-6c4c87b2cbdd
       X-Runtime:
-      - '0.033446'
+      - '0.073004'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '2884'
+      - '1137'
       Connection:
       - keep-alive
     body:
@@ -65,16 +120,16 @@ http_interactions:
         of Palo Alto, East Palo Alto, and Menlo Park.","eligibility":"Need a form
         of ID or documentation for proof of residency.  See http://www.ivsn.org/get-help/food-services/
         for more information","keywords":["COMMODITY SERVICES","Food","EMERGENCY SERVICES","Food
-        Boxes/Food Vouchers","Emergency Food"],"categories":[{"id":"52280f5c1edd37edff000001","depth":0,"oe_id":"101","name":"Emergency","parent_id":null},{"id":"52280f5d1edd37edff00000a","depth":1,"oe_id":"101-03","name":"Emergency
-        Food","parent_id":"52280f5c1edd37edff000001"},{"id":"52280f5e1edd37edff000011","depth":0,"oe_id":"102","name":"Food","parent_id":null},{"id":"52280f5e1edd37edff000013","depth":1,"oe_id":"102-02","name":"Emergency
-        Food","parent_id":"52280f5e1edd37edff000011"},{"id":"52280f5e1edd37edff000015","depth":1,"oe_id":"102-04","name":"Food
-        Pantry","parent_id":"52280f5e1edd37edff000011"}],"how_to_apply":"Need a form
-        of ID or documentation for proof of residency.  See http://www.ivsn.org/get-help/food-services/
+        Boxes/Food Vouchers","Emergency Food"],"categories":[{"id":"52280f5c1edd37edff000001","depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slugs":["emergency"]},{"id":"52280f5d1edd37edff00000a","depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":"52280f5c1edd37edff000001","slugs":["emergency-food"]},{"id":"52280f5e1edd37edff000011","depth":0,"oe_id":"102","name":"Food","parent_id":null,"slugs":["food"]},{"id":"52280f5e1edd37edff000013","depth":1,"oe_id":"102-02","name":"Emergency
+        Food","parent_id":"52280f5e1edd37edff000011","slugs":["emergency-food-1"]},{"id":"52280f5e1edd37edff000015","depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":"52280f5e1edd37edff000011","slugs":["food-pantry"]}],"how_to_apply":"Need
+        a form of ID or documentation for proof of residency.  See http://www.ivsn.org/get-help/food-services/
         for more information","service_areas":["East Palo Alto","Menlo Park","Palo
         Alto"],"updated_at":"2013-12-02T11:30:00-08:00"}],"organization":{"id":"521d33331974fcdb2b001f44","name":"InnVision
         Shelter Network","slugs":["innvision-1","innvision-shelter-network-2"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d33331974fcdb2b001f44","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33331974fcdb2b001f44/locations"}}'
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 08:14:22 GMT
+  recorded_at: Wed, 26 Feb 2014 09:48:44 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=maceo
@@ -100,31 +155,29 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 24 Jan 2014 08:14:22 GMT
-      Etag:
-      - '"f4d4a125e28ef91ca71da56a6c66e3ae"'
+      - Wed, 26 Feb 2014 09:48:44 GMT
       Server:
-      - nginx/1.4.3 + Phusion Passenger 4.0.23
+      - nginx/1.4.4 + Phusion Passenger 4.0.37
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Powered-By:
-      - Phusion Passenger 4.0.23
+      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 23aca3af-706b-493e-a3bb-55370b14642b
+      - c5922577-8777-4aaf-a983-4db2918cff9b
       X-Runtime:
-      - '0.208346'
+      - '0.027704'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Content-Length:
-      - '6621'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -170,7 +223,7 @@ http_interactions:
         or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA World Cup"],"name":"bazfoo","service_areas":["San
         Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
         County","Santa Clara County"],"updated_at":"2013-10-14T14:51:24-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7b1edd37edff000144","depth":1,"lft":646,"name":"Mediation","oe_id":"111-02","parent_id":"52280f7a1edd37edff000137","rgt":647}]},{"_id":"521d339f1974fcdb2b00373e","audience":"Second
+        wait to 2 weeks","categories":[{"_id":"52280f7a1edd37edff000137","_slugs":["legal"],"depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7b1edd37edff000144","_slugs":["mediation"],"depth":1,"lft":646,"name":"Mediation","oe_id":"111-02","parent_id":"52280f7a1edd37edff000137","rgt":647}]},{"_id":"521d339f1974fcdb2b00373e","audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -188,8 +241,8 @@ http_interactions:
         on Rails/MongoDB/Redis","FIFA World Cup"],"name":"hasdfasf","service_areas":["San
         Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
         County","Santa Clara County"],"updated_at":"2013-10-14T14:45:43-07:00","urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","categories":[{"_id":"52280f7a1edd37edff000137","depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7b1edd37edff000144","depth":1,"lft":646,"name":"Mediation","oe_id":"111-02","parent_id":"52280f7a1edd37edff000137","rgt":647}]}],"organization":{"_id":"521d339f1974fcdb2b00273d","_slugs":["sanmaceo-example-agency"],"created_at":"2013-08-27T16:17:51-07:00","name":"SanMaceo
-        Example Agency.","updated_at":"2013-10-01T12:18:53-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d/locations"},"slugs":["san-maceo-agency"],"id":"521d33a01974fcdb2b0026a9","_score":0.07124143,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        wait to 2 weeks","categories":[{"_id":"52280f7a1edd37edff000137","_slugs":["legal"],"depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7b1edd37edff000144","_slugs":["mediation"],"depth":1,"lft":646,"name":"Mediation","oe_id":"111-02","parent_id":"52280f7a1edd37edff000137","rgt":647}]}],"organization":{"_id":"521d339f1974fcdb2b00273d","_slugs":["sanmaceo-example-agency"],"created_at":"2013-08-27T16:17:51-07:00","name":"SanMaceo
+        Example Agency.","updated_at":"2013-10-01T12:18:53-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d/locations"},"slugs":["san-maceo-agency"],"id":"521d33a01974fcdb2b0026a9","_score":0.07118985,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Fri, 24 Jan 2014 08:14:22 GMT
-recorded_with: VCR 2.5.0
+  recorded_at: Wed, 26 Feb 2014 09:48:44 GMT
+recorded_with: VCR 2.8.0

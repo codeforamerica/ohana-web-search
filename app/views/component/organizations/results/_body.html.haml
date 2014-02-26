@@ -20,9 +20,18 @@
       %p#search-summary{:title=>"#{@search_summary_plain}"}
         = @search_summary_html
 
-      %p.message
+      %div.message
         %strong Unfortunately, your search returned no results.
-        %em If you have trouble finding what you're looking for, try searching with a single keyword or click a category of service below.
+        %em If you have trouble finding what you're looking for, try:
+        %ul
+          %li
+            Searching with a single keyword.
+          %li
+            Scrolling down & choosing a category of service.
+          %li
+            %a{:href=>'/organizations'}
+              %i{:class=>'fa fa-eraser'}
+              Clearing all search filters.
     - cache ['taxonomy-list', *taxonomy_terms] do
       %section#category-box
         %section

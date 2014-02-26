@@ -7,20 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><%= yield(:title) %></title>
+
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Find free food, housing, clothes, medical care, jobs, and other human services in San Mateo County." %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-
     <meta name="google" value="notranslate">
     <meta http-equiv="Content-Language" content="en_US">
     <meta name="google-translate-customization" content="569f6c621d1c9cc6-60a55f4caded4d41-gf5c25b4be2fe7541-1b"></meta>
-
-    <!--[if lt IE 9]>
-      <%= javascript_include_tag 'html5shiv-printshiv' %>
-    <![endif]-->
-
-    <!--[if lte IE 8]>
-      <%= javascript_include_tag 'selectivizr' %>
-    <![endif]-->
+    <%= csrf_meta_tags %>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
@@ -29,6 +22,8 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!--[if lt IE 9]>
+    <%= javascript_include_tag 'selectivizr' %>
+    <%= javascript_include_tag 'html5shiv-printshiv' %>
     <script type="text/javascript">
       // patch to handle suppression of JS errors in IE
       window.onerror=function(){return true;};
@@ -56,34 +51,18 @@
       </script>
 
     <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
-    <%= csrf_meta_tags %>
+
     <%= yield(:head) %>
     <%= yield :canonical %>
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
 
-  <%= render 'component/status/loading' %>
-
   <section id="content">
-    <script type="text/javascript">
-      // dynamically add transparent class so content shows up when JavaScript is disabled
-      // try/catch is for ignoring IE errors.
-      try{
-        document.getElementById('content').classList.add('transparent');
-      }catch(e){}
-    </script>
-
-    <aside id="alert-box" class='alert-error hide'>
-      <div>
-        <p id="alert-message"></p>
-        <div id="alert-close" class='close-button'></div>
-      </div>
-    </aside>
 
     <%= render 'component/status/alert' %>
 
     <header id="content-header">
-      <h1 id="logo"><a href="/" target="_self">SMC-Connect</a><span>alpha</span></h1>
+      <h1 id="logo"><a href="/" target="_self"><img src="/assets/smc_connect_logo.png" width="231" height="42" alt="SMC-Connect" /></a></h1>
       <h2>Find San Mateo County community services</h2>
       <nav>
         <ul>
@@ -112,6 +91,11 @@
     </main>
 
     <footer id='app-footer'>
+
+      <p id="hsa-logo">
+        <a href='http://www.co.sanmateo.ca.us/portal/site/humanservices' target='_blank' title='San Mateo County Human Services Agency'><img src="/assets/smc_hsa_logotype.png" width="200" height="38" alt="San Mateo County Human Services Agency" /></a>
+      </p>
+
       <p>This website is a <a href='http://codeforamerica.org' target='_blank' title='Code for America'>Code for America</a> project <span class='cfaflag'></span> in partnership with the <a href='http://www.co.sanmateo.ca.us/portal/site/humanservices' target='_blank' title='San Mateo County Human Services agency'>San Mateo County Human Services Agency</a>
       </p>
 
