@@ -13,8 +13,8 @@ class OrganizationsController < ApplicationController
     if params[:keyword].present? && @current_lang != 'en'
       original_word = params[:keyword]
       translated_word = translate(params[:keyword],@current_lang,'en',false)
-      @translated_word = translated_word[0].translatedText
       params[:keyword] = translated_word[0].translatedText if translated_word.present?
+      @translated_word = params[:keyword]
     end
 
     # initialize query. Content may be blank if no results were found.
