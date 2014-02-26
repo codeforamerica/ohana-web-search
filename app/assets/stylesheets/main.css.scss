@@ -2450,8 +2450,10 @@ body { top: 0px !important; }
 
     .message
     {
-      margin:80px;
-      text-align:center;
+      margin:80px auto;
+      max-width:370px;
+      font-size:14px;
+
       > strong
       {
         font-size:18px;
@@ -2460,8 +2462,17 @@ body { top: 0px !important; }
       }
       > em
       {
-        font-size:14px;
         font-color:$greyscale_midtone;
+      }
+
+      ul
+      {
+        list-style-type: square;
+      }
+
+      li
+      {
+        margin-top: 5px;
       }
     }
 
