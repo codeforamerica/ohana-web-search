@@ -1512,7 +1512,7 @@ body { top: 0px !important; }
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
   }
 
-  button
+  button.big-btn
   {
     font-size: 16px;
     margin:0;
@@ -1538,7 +1538,7 @@ body { top: 0px !important; }
     }
   }
 
-  button:hover
+  button.big-btn:hover
   {
     color:$green_light !important;
     background:$blue_dark;
@@ -1548,6 +1548,12 @@ body { top: 0px !important; }
       color:$yellow_light;
       text-shadow: none;
     }
+  }
+
+  button.small-btn
+  {
+    background:none;
+    border:none;
   }
 }
 
@@ -1595,7 +1601,7 @@ body { top: 0px !important; }
     vertical-align:middle;
   }
 
-  button // search button styles
+  button.big-btn // search button styles
   {
     height:50px;
     font-size:22px;
@@ -1618,18 +1624,31 @@ body { top: 0px !important; }
     text-align:left;
   }
 
-  button // update button styles
+
+  button.big-btn
   {
-    margin-top: 10px;
-    font-family: $san_serif_font;
-    height:30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    @include inline-block();
+  }
+
+  button.small-btn // update button styles
+  {
+    font-size:14px;
+     @include border-radius(4px);
 
     .fa
     {
       color:$blue_darkest;
+    }
+  }
+
+  button.small-btn:hover // update button styles
+  {
+    background:$blue_dark;
+    color:$green_light;
+
+    .fa
+    {
+      color:$blue_light;
     }
   }
 
@@ -1671,11 +1690,6 @@ body { top: 0px !important; }
       height: 22px;
       vertical-align: top;
     }
-
-    button
-    {
-      @include inline-block();
-    }
   }
 }
 
@@ -1702,7 +1716,7 @@ body { top: 0px !important; }
     height:34px;
     margin-top:5px;
 
-    button
+    button.big-btn
     {
       position: absolute;
       top: 0px;
@@ -1729,27 +1743,14 @@ body { top: 0px !important; }
   }
 }
 
-#reset-btn
+#search-controls
 {
-  @include box-sizing(border-box);
-  padding: 5px;
-  text-align: right;
-  position:absolute;
-  right:5px;
-  top:-10px;
-  z-index: 9998;
+  padding:5px;
 
-  a
+  li
   {
-    font-family:$san_serif_font;
-    font-size:14px;
-    border-bottom:none;
+    @include inline-block();
   }
-  a:hover
-  {
-    color:$blue_dark;
-  }
-
 }
 
 .inside fieldset

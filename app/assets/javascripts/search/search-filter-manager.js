@@ -13,8 +13,10 @@ define(
 			var searchForm = document.getElementById("search-form");
 			searchForm.addEventListener("submit",_formSubmitted,false);
 
-			var resetBtn = document.getElementById("reset-btn-link");
-			resetBtn.addEventListener("click",_resetClicked,false);
+			// Hook all reset buttons on the page and listen for a click event
+			var resetBtn = document.querySelectorAll(".reset-btn");
+			for (var r = 0;r<resetBtn.length;r++)
+				resetBtn[r].addEventListener("click",_resetClicked,false);
 
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
@@ -38,7 +40,7 @@ define(
   		}
 
   		evt.preventDefault();
-  		return false;
+  		evt.target.blur();
   	}
 
   	// Handle form submission
@@ -293,41 +295,47 @@ define(
 			function _toggleFilter()
 			{
 				if (_legend.className == 'open')
-				{
-					// Check if add input value has a value.
-					// If it doesn't and the add input toggle is selected
-					// uncheck the selected toggle and check the "All"
-					// toggle and set the selected toggle to "All".
-					var inputVal;
-					if (_addInputToggle)
-					{
-						inputVal = _addInputToggle.getAddInput().value;
-						if (_selectedToggle == _addInputToggle && inputVal == "")
-						{
-							_selectedToggle.getToggle().checked = false;
-							_selectedToggle.hideAddInput();
-							_selectedToggle = _defaultToggle;
-							_defaultToggle.getToggle().checked = true;
-						}
-					}
-
-					var toggle = _selectedToggle.getToggle();
-					_highlightToggle.setLabel(
-						toggle.getAttribute("data-display-value") ||
-						inputVal ||
-						toggle.value ||
-						"All");
-
-					_toggleGroupContainers[1].classList.add('hide');
-					_toggleGroupContainers[0].classList.remove('hide');
-					_legend.className = 'closed';
-				}
+					_closeToggle();
 				else
+					_openToggle();
+			}
+
+			function _closeToggle()
+			{
+				// Check if add input value has a value.
+				// If it doesn't and the add input toggle is selected
+				// uncheck the selected toggle and check the "All"
+				// toggle and set the selected toggle to "All".
+				var inputVal;
+				if (_addInputToggle)
 				{
-					_toggleGroupContainers[1].classList.remove('hide');
-					_toggleGroupContainers[0].classList.add('hide');
-					_legend.className = 'open';
+					inputVal = _addInputToggle.getAddInput().value;
+					if (_selectedToggle == _addInputToggle && inputVal == "")
+					{
+						_selectedToggle.getToggle().checked = false;
+						_selectedToggle.hideAddInput();
+						_selectedToggle = _defaultToggle;
+						_defaultToggle.getToggle().checked = true;
+					}
 				}
+
+				var toggle = _selectedToggle.getToggle();
+				_highlightToggle.setLabel(
+					toggle.getAttribute("data-display-value") ||
+					inputVal ||
+					toggle.value ||
+					"All");
+
+				_toggleGroupContainers[1].classList.add('hide');
+				_toggleGroupContainers[0].classList.remove('hide');
+				_legend.className = 'closed';
+			}
+
+			function _openToggle()
+			{
+				_toggleGroupContainers[1].classList.remove('hide');
+				_toggleGroupContainers[0].classList.add('hide');
+				_legend.className = 'open';
 			}
 
 			function _toggleAddInputFilter(clicked)
@@ -357,6 +365,9 @@ define(
 						"All");
 
 				document.getElementById("keyword").value = "";
+
+				if (_legend.className == 'open')
+					_closeToggle();
 			}
 
 			// GETTERS

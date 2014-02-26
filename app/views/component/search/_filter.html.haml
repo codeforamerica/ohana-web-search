@@ -89,12 +89,9 @@
           = field_display
 
     = hidden_field_tag field, field_value
-    %button{:type=>'submit', :id=>'update-btn-css_field', :class=>'update-btn', :title=>"Update"}
-      %i{:class=>"fa fa-search"}
-      %span Update
 
     - if css_field == "location"
       %div#geolocate-box
-        %button#locate-btn.hide{:type=>'button'}
+        %button#locate-btn.hide.big-btn{:type=>'button'}
           %i{ :class=>"fa fa-map-marker" }
           Services near me

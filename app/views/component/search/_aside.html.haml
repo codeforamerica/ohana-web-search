@@ -11,8 +11,19 @@
             - cip_keywords.each do |keyword|
               %option{:value=>keyword}
                 = keyword
-        %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+        %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
           %i{:class=>"fa fa-search"}
+
+
+    %ul#search-controls
+      %li
+        %button.update-btn.small-btn{:type=>"submit"}
+          %i{:class=>"fa fa-refresh"}
+          Update results
+      %li
+        %button.reset-btn.small-btn{:type=>"reset"}
+          %i{:class=>"fa fa-eraser"}
+          Clear filters
 
     = render :partial => 'component/search/options'
 
