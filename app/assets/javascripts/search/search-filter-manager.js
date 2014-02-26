@@ -238,6 +238,7 @@ define(
 						if (toggle.getToggle().checked && c>0)
 							_selectedToggle = toggle;
 
+						if (!group) console.log("group DOM not found!");
 						group.addEventListener("mousedown",_toggleClicked,false);
 					}
 					_highlightToggle = _highlightToggle || _toggleGroups[groups[0].id];
@@ -249,6 +250,7 @@ define(
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
 				// setup event listeners
+				if (!_legend) console.log("legend DOM not found!");
 				_legend.addEventListener('mousedown',_legendClicked,false);
 			}
 
