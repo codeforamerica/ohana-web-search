@@ -211,7 +211,6 @@ define(['domReady!'],
 
 			function init(fieldset)
 			{
-				if (!fieldset) console.log("fieldset null");
 				_fieldset = fieldset;
 				_id = _fieldset.id;
 
@@ -237,7 +236,6 @@ define(['domReady!'],
 						if (toggle.getToggle().checked && c>0)
 							_selectedToggle = toggle;
 
-						if (!group) console.log("group DOM not found!");
 						group.addEventListener("mousedown",_toggleClicked,false);
 					}
 					_highlightToggle = _highlightToggle || _toggleGroups[groups[0].id];
@@ -249,7 +247,6 @@ define(['domReady!'],
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
 				// setup event listeners
-				if (!_legend) console.log("legend DOM not found!");
 				_legend.addEventListener('mousedown',_legendClicked,false);
 			}
 
