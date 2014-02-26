@@ -142,6 +142,14 @@ define(
 			}
 
 			// GETTERS
+			function getLabel()
+			{
+				if (_isAddToggle)
+					return _addInputLabel.innerHTML;
+				else
+					return _label.innerHTML;
+			}
+
 			function getToggle()
 			{
 				return _toggle;
@@ -168,6 +176,7 @@ define(
 				showAddInput:showAddInput,
 				hideAddInput:hideAddInput,
 				setLabel:setLabel,
+				getLabel:getLabel,
 				getToggle:getToggle,
 				getAddInput:getAddInput,
 				addInputShowing:addInputShowing
@@ -321,10 +330,8 @@ define(
 
 				var toggle = _selectedToggle.getToggle();
 				_highlightToggle.setLabel(
-					toggle.getAttribute("data-display-value") ||
 					inputVal ||
-					toggle.value ||
-					"All");
+					_selectedToggle.getLabel());
 
 				_toggleGroupContainers[1].classList.add('hide');
 				_toggleGroupContainers[0].classList.remove('hide');
@@ -355,19 +362,17 @@ define(
 
 			function reset()
 			{
-				_defaultToggle.checked = true;
-				_selectedToggle.checked = false;
-				_selectedToggle = _defaultToggle;
-
-				var toggle = _defaultToggle.getToggle();
-				_highlightToggle.setLabel(
-						toggle.getAttribute("data-display-value") ||
-						"All");
-
-				document.getElementById("keyword").value = "";
-
 				if (_legend.className == 'open')
 					_closeToggle();
+
+				_selectedToggle.getToggle().checked = false;
+				_defaultToggle.getToggle().checked = true;
+				if (_addInputToggle) _addInputToggle.hideAddInput();
+				_selectedToggle = _defaultToggle;
+
+				_highlightToggle.setLabel(_defaultToggle.getLabel());
+
+				document.getElementById("keyword").value = "";
 			}
 
 			// GETTERS
