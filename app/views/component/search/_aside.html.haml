@@ -7,12 +7,12 @@
       %div
         = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
         - cache ['keywords-list', *cip_keywords] do
-          <!--[if lte IE 9]> <select disabled='disabled' style='display:none;'> <![endif]-->
           %datalist#search-keywords
+            <!--[if IE 8]><select disabled style="display:none"><![endif]-->
             - cip_keywords.each do |keyword|
               %option{:value=>keyword}
                 = keyword
-          <!--[if lte IE 9]> </select> <![endif]-->
+            <!--[if IE 8]> </select> <![endif]-->
         %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
           %i{:class=>"fa fa-search"}
 

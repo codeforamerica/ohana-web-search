@@ -6,12 +6,12 @@
           I need...
         = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
         - cache ['keywords-list', *cip_keywords] do
-          <!--[if lte IE 9]> <select disabled='disabled' style='display:none;'> <![endif]-->
           %datalist#search-keywords
+            <!--[if IE 8]><select disabled style="display:none"><![endif]-->
             - cip_keywords.each do |keyword|
               %option{:value=>keyword}
                 = keyword
-          <!--[if lte IE 9]> </select> <![endif]-->
+            <!--[if IE 8]> </select> <![endif]-->
         = hidden_field_tag "service_area", "smc"
         = hidden_field_tag "kind", "Human Services"
 
