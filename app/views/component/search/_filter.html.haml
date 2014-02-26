@@ -19,6 +19,8 @@
           - field_display = aggregate_field[i].is_a?(Hash) ? (aggregate_field[i][:name] if aggregate_field[i][:value] == field_value) : field_value
         = (field_value.blank? ? "All" : field_display)
 
+
+
   %div.options.available-options.hide
     %div.toggle-group{:id=>"#{css_field}-toggle-group-0"}
       %div.toggle
@@ -28,6 +30,46 @@
           %label{:for => "#{css_field}_option_0"}
       %label{:for => "#{css_field}-option-0",:id => "#{css_field}-option-label"}
         All
+
+
+    -# This is a repeat of the loop that follows the add button.
+    -# This is needed to check that another toggle is not checked.
+    -# Removing this extra loop should be addressed if possible in a refactor.
+    - toggle_is_checked = false
+    - length = aggregate_field.length-1
+    - for i in 0..length
+      - check_current_toggle = aggregate_field[i] == field_value
+      - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
+
+    - add_input_type = add_input_type ||= false
+    - if add_input_type
+      - if add_input_type == "TEXT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.toggle-group-wrapper.add
+          %div.toggle-group.add{:id=>"#{css_field}-toggle-group-1"}
+            %div.toggle
+              %div
+                %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
+                %i{:class=>"fa fa-plus"}
+                %label{:for => "#{css_field}-option-1"}
+            %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
+              %span{:class=>(add_is_checked ? "hide" : "")}
+                Other...
+              = search_field_tag "#{css_field}-option-input", (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{css_field}-list",:placeholder=>"#{add_placeholder}"
+      - elsif add_input_type == "SELECT"
+        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
+        %div.toggle-group-wrapper.add
+          %div.toggle-group.add{:id=>"#{css_field}-toggle-group-1"}
+            %div.toggle
+              %div
+                %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
+                %i{:class=>"fa fa-plus"}
+                %label{:for => "#{css_field}-option-1"}
+            %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
+              %span{:class=>(add_is_checked ? "hide" : "")}
+                Other...
+              = select_tag("#{css_field}-option-input", options_for_select(list_values, selected: :option ))
+
     - toggle_is_checked = false
     - length = aggregate_field.length-1
     - for i in 0..length
@@ -35,40 +77,21 @@
       -# the text displayed and passed to the response when the form is submitted.
       - field_display = aggregate_field[i].is_a?(Hash) ? aggregate_field[i][:name] : aggregate_field[i]
       - aggregate_field[i] = aggregate_field[i][:value] if aggregate_field[i].is_a?(Hash)
-      %div.toggle-group{:id=>"#{css_field}-toggle-group-#{i+1}"}
+      %div.toggle-group{:id=>"#{css_field}-toggle-group-#{i+2}"}
         %div.toggle
           %div
             - check_current_toggle = aggregate_field[i] == field_value
             - toggle_is_checked = toggle_is_checked ? true : check_current_toggle
-            = radio_button_tag "#{css_field}-option", aggregate_field[i], check_current_toggle, {:id=>"#{css_field}-option-#{i+1}","data-display-value"=>field_display}
+            = radio_button_tag "#{css_field}-option", aggregate_field[i], check_current_toggle, {:id=>"#{css_field}-option-#{i+2}","data-display-value"=>field_display}
             %i{:class=>"fa fa-check"}
-            %label{:for => "#{css_field}-option-#{i+1}"}
-        %label{:for => "#{css_field}-option-#{i+1}",:id => "#{css_field}-option-#{i+1}-label"}
+            %label{:for => "#{css_field}-option-#{i+2}"}
+        %label{:for => "#{css_field}-option-#{i+2}",:id => "#{css_field}-option-#{i+2}-label"}
           = field_display
-    - add_input_type = add_input_type ||= false
-    - if add_input_type
-      - if add_input_type == "TEXT"
-        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
-        %div.toggle-group.add{:id=>"#{css_field}-toggle-group-#{length+2}"}
-          %div.toggle
-            %div
-              %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
-              %i{:class=>"fa fa-plus"}
-              %label{:for => "#{css_field}-option-#{length+2}"}
-          %label{:for => "#{css_field}-option-#{length+2}",:id => "#{css_field}-option-#{length+2}-label"}
-            %span{:class=>(add_is_checked ? "hide" : "")}
-              Add...
-            = search_field_tag "#{css_field}-option-input", (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{css_field}-list",:placeholder=>"#{add_placeholder}"
-      - elsif add_input_type == "SELECT"
-        - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
-        %div.toggle-group.add{:id=>"#{css_field}-toggle-group-#{length+2}"}
-          %div.toggle
-            %div
-              %input{:type=>"radio",:name=>"#{css_field}-option",:id=>"#{css_field}-option-#{length+2}",:checked=>(add_is_checked ? "checked" : false )}
-              %i{:class=>"fa fa-plus"}
-              %label{:for => "#{css_field}-option-#{length+2}"}
-          %label{:for => "#{css_field}-option-#{length+2}",:id => "#{css_field}-option-#{length+2}-label"}
-            %span{:class=>(add_is_checked ? "hide" : "")}
-              Add...
-            = select_tag("#{css_field}-option-input", options_for_select(list_values, selected: :option ))
+
     = hidden_field_tag field, field_value
+
+    - if css_field == "location"
+      %div#geolocate-box
+        %button#locate-btn.hide.medium-btn{:type=>'button'}
+          %i{ :class=>"fa fa-map-marker" }
+          Services near me

@@ -2,5 +2,6 @@
 %section#search-container
 	= render :partial => 'component/search/languages'
 	= render :partial => 'component/search/box'
-	= render :partial => 'component/search/help'
+	%section#help-box
+		= render :partial => 'component/search/geolocate'
 = render :partial => 'component/search/category'

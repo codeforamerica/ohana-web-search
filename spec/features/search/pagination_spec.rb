@@ -37,7 +37,7 @@ feature "results page pagination", :js=>true do
     go_to_page(20)
     page.should have_selector('.pagination')
     page.should have_content('Page: < 1 ... 16 17 18 19 20')
-    page.should have_content('571-590 of 590 results')
+    page.should have_content('571-589 of 589 results')
   end
 
   scenario 'on page less than three pages from beginning of results that have more than five entries', :vcr do

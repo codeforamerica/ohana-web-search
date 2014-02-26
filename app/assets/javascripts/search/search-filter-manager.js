@@ -6,15 +6,19 @@ define(
   	// PRIVATE PROPERTIES
   	var _fieldsets = {}; // set of all fieldsets
 
+  	var _searchForm;
+
   	// main module initialization
   	function init()
   	{
 			// capture form submission
-			var searchForm = document.getElementById("search-form");
-			searchForm.addEventListener("submit",_formSubmitted,false);
+			_searchForm = document.getElementById("search-form");
+			_searchForm.addEventListener("submit",_formSubmissionHandler,false);
 
-			var resetBtn = document.getElementById("reset-btn-link");
-			resetBtn.addEventListener("click",_resetClicked,false);
+			// Hook all reset buttons on the page and listen for a click event
+			var resetBtn = document.querySelectorAll(".reset-btn");
+			for (var r = 0;r<resetBtn.length;r++)
+				resetBtn[r].addEventListener("click",_resetClicked,false);
 
 			// initialize fieldsets
 			var fieldsets = document.querySelectorAll('#search-box fieldset');
@@ -38,13 +42,18 @@ define(
   		}
 
   		evt.preventDefault();
-  		return false;
+  		evt.target.blur();
   	}
 
   	// Handle form submission
-  	function _formSubmitted(evt)
+  	function _formSubmissionHandler(evt)
 		{
-			var form = evt.target;
+			_triggerFormSubmission(evt.target);
+			evt.preventDefault();
+		}
+
+		function _triggerFormSubmission(form)
+		{
 			var input;
 
 			for (var f in _fieldsets)
@@ -68,8 +77,6 @@ define(
 			}
 
 			form.submit();
-			evt.preventDefault();
-			return false;
 		}
 
 		// New ToggleGroup instance constructor
@@ -91,13 +98,19 @@ define(
 				_toggle = _group.querySelector(".toggle input");
 				_label = _group.querySelector("div+label");
 
+				// If input element exists in this toggle it is an add input
 				_addInput = _label.querySelector("input");
 				_isAddToggle = (_addInput) ? true : false;
 
 				if (_isAddToggle)
+				{
 					_addInputLabel = _label.querySelector("span");
+					if (_addInput.value != "") showAddInput();
+				}
 				else
+				{
 					_isCurrentToggle = (_group.parentNode.classList.contains("current-option"));
+				}
 			}
 
 			// Show the add input text field.
@@ -108,7 +121,7 @@ define(
 					_addInputLabel.classList.add('hide'); // hide "Add..." text
 					_addInput.classList.remove('hide'); // show input field
 					_addInputShowing = true;
-					setTimeout(function() { _addInput.focus(); }, 0);
+					setTimeout(function(){ _addInput.focus(); }, 0);
 				}
 			}
 
@@ -134,6 +147,14 @@ define(
 			}
 
 			// GETTERS
+			function getLabel()
+			{
+				if (_isAddToggle)
+					return _addInputLabel.innerHTML;
+				else
+					return _label.innerHTML;
+			}
+
 			function getToggle()
 			{
 				return _toggle;
@@ -160,6 +181,7 @@ define(
 				showAddInput:showAddInput,
 				hideAddInput:hideAddInput,
 				setLabel:setLabel,
+				getLabel:getLabel,
 				getToggle:getToggle,
 				getAddInput:getAddInput,
 				addInputShowing:addInputShowing
@@ -182,6 +204,9 @@ define(
   		var _addInputToggle; // add input toggle
 
   		var _hidden; // the fieldset's hidden input that's used for form submission
+
+  		// if set to true, the form will be submitted the next time the toggle group is closed
+  		var _queueUpdate = false;
 
 			function init(fieldset)
 			{
@@ -217,7 +242,7 @@ define(
 
 				_defaultToggle = _toggleGroups[groups[0].id];
 
-				var addInputToggle = _toggleGroups[groups[groups.length-1].id];
+				var addInputToggle = _toggleGroups[groups[1].id];
 				_addInputToggle = addInputToggle.isAddToggle() ? addInputToggle : null;
 
 				// setup event listeners
@@ -256,7 +281,6 @@ define(
 						toggle.checked = !toggle.checked;
 				}
 
-
 				// Toggle filters.
 				if (toggleGroup == _highlightToggle)
 				{
@@ -264,6 +288,7 @@ define(
 				}
 				else if (toggleGroup == _addInputToggle)
 				{
+					_queueUpdate = true;
 					_toggleAddInputFilter(current);
 				}
 				else if (toggleGroup == _selectedToggle)
@@ -272,6 +297,7 @@ define(
 				}
 				else
 				{
+					_queueUpdate = true;
 					_selectedToggle = toggleGroup;
 
 					// hide add input if selected toggle is not the add input toggle
@@ -288,47 +314,60 @@ define(
 			{
 				if (_legend.className == 'open')
 				{
-					// Check if add input value has a value.
-					// If it doesn't and the add input toggle is selected
-					// uncheck the selected toggle and check the "All"
-					// toggle and set the selected toggle to "All".
-					var inputVal;
-					if (_addInputToggle)
-					{
-						inputVal = _addInputToggle.getAddInput().value;
-						if (_selectedToggle == _addInputToggle && inputVal == "")
-						{
-							_selectedToggle.getToggle().checked = false;
-							_selectedToggle.hideAddInput();
-							_selectedToggle = _defaultToggle;
-							_defaultToggle.getToggle().checked = true;
-						}
-					}
-
-					var toggle = _selectedToggle.getToggle();
-					_highlightToggle.setLabel(
-						toggle.getAttribute("data-display-value") ||
-						inputVal ||
-						toggle.value ||
-						"All");
-
-					_toggleGroupContainers[1].classList.add('hide');
-					_toggleGroupContainers[0].classList.remove('hide');
-					_legend.className = 'closed';
+					if (_queueUpdate)
+						_triggerFormSubmission(_searchForm);
+					_closeToggle()
 				}
 				else
 				{
-					_toggleGroupContainers[1].classList.remove('hide');
-					_toggleGroupContainers[0].classList.add('hide');
-					_legend.className = 'open';
+					_openToggle();
 				}
+			}
+
+			// Closes the toggle group
+			function _closeToggle()
+			{
+				// Check if add input value has a value.
+				// If it doesn't and the add input toggle is selected
+				// uncheck the selected toggle and check the "All"
+				// toggle and set the selected toggle to "All".
+				var inputVal;
+				if (_addInputToggle)
+				{
+					inputVal = _addInputToggle.getAddInput().value;
+					if (_selectedToggle == _addInputToggle && inputVal == "")
+					{
+						_selectedToggle.getToggle().checked = false;
+						_selectedToggle.hideAddInput();
+						_selectedToggle = _defaultToggle;
+						_defaultToggle.getToggle().checked = true;
+					}
+				}
+
+				var toggle = _selectedToggle.getToggle();
+				_highlightToggle.setLabel(
+					inputVal ||
+					_selectedToggle.getLabel());
+
+				_toggleGroupContainers[1].classList.add('hide');
+				_toggleGroupContainers[0].classList.remove('hide');
+				_legend.className = 'closed';
+			}
+
+			// Opens the toggle group
+			function _openToggle()
+			{
+				_toggleGroupContainers[1].classList.remove('hide');
+				_toggleGroupContainers[0].classList.add('hide');
+				_legend.className = 'open';
 			}
 
 			function _toggleAddInputFilter(clicked)
 			{
 				if (_selectedToggle == _addInputToggle)
 				{
-					if (clicked.type != "search")
+					// Checking for type text is for IE compatibility
+					if (clicked.type != "search" && clicked.type != "text")
 						_toggleFilter();
 				}
 				else
@@ -341,14 +380,15 @@ define(
 
 			function reset()
 			{
-				_defaultToggle.checked = true;
-				_selectedToggle.checked = false;
+				if (_legend.className == 'open')
+					_closeToggle();
+
+				_selectedToggle.getToggle().checked = false;
+				_defaultToggle.getToggle().checked = true;
+				if (_addInputToggle) _addInputToggle.hideAddInput();
 				_selectedToggle = _defaultToggle;
 
-				var toggle = _defaultToggle.getToggle();
-				_highlightToggle.setLabel(
-						toggle.getAttribute("data-display-value") ||
-						"All");
+				_highlightToggle.setLabel(_defaultToggle.getLabel());
 
 				document.getElementById("keyword").value = "";
 			}

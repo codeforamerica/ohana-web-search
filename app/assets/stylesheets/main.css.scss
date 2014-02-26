@@ -734,6 +734,94 @@ sup
   }
 }
 
+
+//=================================================================================
+// component styles
+
+button.small-btn
+{
+  background:none;
+  border:none;
+
+  font-size:14px;
+   @include border-radius(4px);
+   @include box-sizing(border-box);
+
+  .fa
+  {
+    color:$blue_darkest;
+  }
+}
+
+button.small-btn:hover // update button styles
+{
+  background:$blue_dark;
+  color:$green_light;
+
+  .fa
+  {
+    color:$blue_light;
+  }
+}
+
+
+button.medium-btn
+{
+  @extend button.small-btn;
+  font-size:15px;
+  font-family:$san_serif_font;
+  padding:7px;
+  @include border-radius(4px);
+  background:$green_lightest;
+  border:1px solid $blue_darkest;
+}
+
+button.medium-btn:hover
+{
+  color:$green_light;
+  background:$blue_dark;
+}
+
+
+button.big-btn
+{
+  @extend button.medium-btn;
+  font-size: 16px;
+  margin:0;
+  border:1px solid $blue_darkest;
+  padding:10px;
+  vertical-align: baseline;
+  @include box-sizing(border-box);
+  @include border-radius(4px);
+  background:$green_light;
+  font-family:$serif_font;
+
+  span
+  {
+    @include inline-block();
+    vertical-align: baseline;
+    color: $black; // IE fallback
+    color: $black_alpha50;
+    text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
+  }
+  .fa
+  {
+    color:$blue_darkest;
+  }
+}
+
+button.big-btn:hover
+{
+  background:$blue_dark;
+
+  span
+  {
+    color:$green_light;
+    text-shadow: none;
+  }
+}
+
+
 //=================================================================================
 // effects styles
 .hide
@@ -933,7 +1021,8 @@ sup
     font-size:24px;
   }
 
-  .close-button:after
+  .close-button:after,
+  .close-button::after
   {
     content:"×";
   }
@@ -1317,6 +1406,7 @@ sup
   background:$blue_midtone; // IE fallback
   background:$blue_midtone_alpha90;
   padding: 10px;
+  min-height: 38px;
   padding-right:25px;
   padding-bottom: 24px;
   text-align:right;
@@ -1382,139 +1472,13 @@ body { top: 0px !important; }
 // help box styles on homepage
 #help-box
 {
-  background:$blue_midtone; // IE fallback
-  background:$blue_midtone_alpha90;
+  background: $blue_midtone; // IE fallback
+  background: $blue_midtone_alpha90;
   border-bottom: 2px solid $blue_dark;
-  padding:21px;
-  padding-right:25px;
-  text-align:right;
-  min-height:34px;
-
-  button
-  {
-    font-size:13px;
-    font-family:$san_serif_font;
-    padding:10px;
-    @include border-radius(4px);
-    background:$green_lightest;
-    border:1px solid $blue_darkest;
-    font-weight:bold;
-
-    span
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  button:hover
-  {
-    color:$green_light !important;
-    background:$blue_dark;
-  }
-}
-
-
-//=================================================================================
-// location box styles on homepage
-#location-box
-{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  top:0;
-  z-index:9998;
-  background:$black_alpha50; // don't use IE fallback or content will be covered
-
-  >*
-  {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-209px;
-    margin-top:-46px;
-
-    background:$white;
-    padding:20px;
-    @include border-radius(4px);
-    @include single-box-shadow($black_alpha40, 0px, 0px, 10px );
-    font-family: $san_serif_font;
-
-    > div
-    {
-      @include inline-block();
-    }
-    label
-    {
-      font-size:24px;
-      font-family:$serif_font;
-    }
-    input
-    {
-      padding:5px;
-      border:2px solid $blue_dark;
-      @include border-radius(4px);
-    }
-    button
-    {
-      font-size: 18px;
-      margin:0;
-      border:0;
-      @include border-radius(4px);
-      background:$white;
-
-      span
-      {
-        @include inline-block();
-        vertical-align: baseline;
-      }
-      .search-button.fa
-      {
-        font-size:18px;
-        position:relative;
-        top:5px;
-        color:$blue_darkest;
-      }
-    }
-    button:hover
-    {
-      .search-button.fa
-      {
-        color:$yellow_dark;
-      }
-    }
-
-    div.close-button
-    {
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha50;
-      position:absolute;
-      right:10px;
-      top:0px;
-      font-size:24px;
-    }
-
-    div.close-button:after
-    {
-      content:"×";
-    }
-
-    div.close-button:hover
-    {
-      color:$black;
-      cursor:pointer;
-    }
-  }
-
-  #geolocate-box
-  {
-    display:block;
-    margin-top:5px;
-    margin-right:35px;
-    font-size:14px;
-    text-align:right;
-  }
-
+  padding: 21px;
+  padding-right: 25px;
+  text-align: right;
+  min-height: 38px;
 }
 
 //=================================================================================
@@ -1605,57 +1569,13 @@ body { top: 0px !important; }
   {
     font-size: 22px;
     border:1px solid $greyscale_light;
-    @include border-radius(4px 0px 0px 4px);
+    @include border-radius(4px);
     border-collapse: collapse;
     padding:10px;
     position:relative;
     margin:0;
     @include box-sizing(border-box);
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
-  }
-
-  button
-  {
-    font-size: 16px;
-    margin:0;
-    border:1px solid $blue_darkest;
-    padding:10px;
-    vertical-align: baseline;
-    @include box-sizing(border-box);
-    @include border-radius(4px);
-    background:$green_light;
-    font-family:$serif_font;
-
-    span
-    {
-      @include inline-block();
-      vertical-align: baseline;
-      color: $black; // IE fallback
-      color: $black_alpha50;
-      text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
-    }
-    .fa
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  button:hover
-  {
-    color:$green_light !important;
-    background:$blue_dark;
-
-    span
-    {
-      color:$yellow_light;
-      text-shadow: none;
-    }
-  }
-
-  #reset-btn
-  {
-    @include inline-block();
-    vertical-align: middle;
   }
 }
 
@@ -1703,9 +1623,10 @@ body { top: 0px !important; }
     vertical-align:middle;
   }
 
-  button // search button styles
+  button.big-btn // search button styles
   {
     height:50px;
+    min-width:124px;
     font-size:22px;
     @include inline-block();
     @include border-radius(0px 4px 4px 0px);
@@ -1726,15 +1647,10 @@ body { top: 0px !important; }
     text-align:left;
   }
 
-  button // update button styles
-  {
-    height:40px;
-    vertical-align: middle;
 
-    .fa
-    {
-      color:$blue_darkest;
-    }
+  button.big-btn
+  {
+    @include inline-block();
   }
 
   fieldset
@@ -1753,14 +1669,16 @@ body { top: 0px !important; }
       text-decoration:underline;
     }
 
-    >legend.open:before
+    >legend.open:before,
+    >legend.open::before
     {
       content:"▲ ";
       color:$blue_midtone;
       font-size:12px;
     }
 
-    >legend.closed:before
+    >legend.closed:before,
+    >legend.closed::before
     {
       content:"▼ ";
       color:$blue_midtone;
@@ -1773,11 +1691,7 @@ body { top: 0px !important; }
       padding: 3px;
       font-size: 12px;
       height: 22px;
-    }
-
-    button
-    {
-      @include inline-block();
+      vertical-align: top;
     }
   }
 }
@@ -1799,19 +1713,20 @@ body { top: 0px !important; }
     @include box-sizing(border-box);
   }
 
-  div
+  div:first-child
   {
     position:relative;
     height:34px;
     margin-top:5px;
 
-    button
+    button.big-btn
     {
       position: absolute;
       top: 0px;
       right: 0px;
       height: 34px;
       width: 34px;
+      margin-top:0px;
       @include border-radius(0px 4px 4px 0px);
       border-left: 1px solid $greyscale_light;
     }
@@ -1831,6 +1746,20 @@ body { top: 0px !important; }
   }
 }
 
+#search-controls
+{
+  padding:5px;
+
+  li
+  {
+    @include inline-block();
+  }
+}
+
+#geolocate-box
+{
+  margin-top:5px;
+}
 
 .inside fieldset
 {
@@ -1866,11 +1795,13 @@ body { top: 0px !important; }
 
   }
 
-  .toggle-group >.toggle >div input[type=radio]{
+  .toggle-group >.toggle >div input[type=radio]
+  {
     visibility: hidden;
   }
 
-  .toggle-group >.toggle >div label {
+  .toggle-group >.toggle >div label
+  {
     display: block;
     width: 25px;
     height: 25px;
@@ -1886,6 +1817,26 @@ body { top: 0px !important; }
     @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
     @include border-radius(3px);
     overflow:hidden;
+  }
+
+  .toggle-group.add >.toggle >div label
+  {
+    background-color:$white; // IE fallback
+    @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+  }
+
+  .toggle-group-wrapper
+  {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-bottom: 2px;
+    //border-bottom: 1px solid $white;
+    //border-top: 1px solid $white;
+    border: 2px dotted $blue_midtone;
+    @include border-radius(4px);
+    //background:$greyscale_lightest;
   }
 
   .toggle-group > .toggle > div
@@ -1935,6 +1886,7 @@ body { top: 0px !important; }
     @include box-shadow( inset 0px 0px 0px $blue_darkest, inset 0px 0px 1px $blue_dark );
   }
 
+  .toggle-group >.toggle >div input[type=radio]:checked ~ label:before,
   .toggle-group >.toggle >div input[type=radio]:checked ~ label::before
   {
     border:none;
@@ -1982,7 +1934,8 @@ body { top: 0px !important; }
   @include border-radius(3px);
 }
 
-.search-check label:after
+.search-check label:after,
+.search-check label::after
 {
   @include opacity(0.3);
   content: '🔍';
@@ -2001,7 +1954,8 @@ body { top: 0px !important; }
   left: 20px;
 }
 
-.search-check label:before
+.search-check label:before,
+.search-check label::before
 {
   content:'';
   position: absolute;
@@ -2026,6 +1980,7 @@ body { top: 0px !important; }
   @include background( linear-gradient(top,$green_lightest,$green_midtone) );
 }
 
+.search-check input[type=checkbox]:checked + label:before,
 .search-check input[type=checkbox]:checked + label::before
 {
   border:none;
@@ -2133,39 +2088,6 @@ body { top: 0px !important; }
       color:$blue_darkest;
       font-size:14px;
     }
-  }
-
-  a
-  {
-    background:$white; // IE fallback
-    background:$white_alpha80;
-    @include border-radius(4px);
-    padding:5px;
-    font-family:$san_serif_font;
-    font-size:14px;
-    display:block;
-    border-bottom:0;
-    width:123px;
-    @include inline-block();
-  }
-
-  a:hover
-  {
-    background:$purple_lightest;
-    border-bottom:0;
-  }
-
-  a:before
-  {
-    font-size:16px;
-    content:"×";
-    padding:5px;
-    color: $greyscale_midtone;
-  }
-
-  a:hover:before
-  {
-    color: $white;
   }
 }
 
@@ -2505,7 +2427,7 @@ body { top: 0px !important; }
       }
       em > strong
       {
-        color:$red_dark;
+        color:$black;
       }
     }
   }
@@ -2528,8 +2450,10 @@ body { top: 0px !important; }
 
     .message
     {
-      margin:80px;
-      text-align:center;
+      margin:80px auto;
+      max-width:370px;
+      font-size:14px;
+
       > strong
       {
         font-size:18px;
@@ -2538,12 +2462,19 @@ body { top: 0px !important; }
       }
       > em
       {
-        font-size:14px;
         font-color:$greyscale_midtone;
       }
+
+      ul
+      {
+        list-style-type: square;
+      }
+
+      li
+      {
+        margin-top: 5px;
+      }
     }
-
-
   }
 }
 
@@ -2763,7 +2694,8 @@ body { top: 0px !important; }
           font-family:$serif_font;
         }
 
-        h1.name > a:after
+        h1.name > a:after,
+        h1.name > a::after
         {
           content:" more...";
           font-size:12px;
@@ -2772,7 +2704,8 @@ body { top: 0px !important; }
           color:$black_alpha40;
         }
 
-        h1.name > a:hover:after
+        h1.name > a:hover:after,
+        h1.name > a:hover::after
         {
           color:$black;
           border-right:0;
@@ -3142,6 +3075,7 @@ body { top: 0px !important; }
             color:$purple_darkest;
           }
 
+          >.fax:after,
           >.fax::after
           {
             content:"℻";
@@ -3183,14 +3117,16 @@ body { top: 0px !important; }
       line-height: normal;
     }
 
-    a:last-child:after
+    a:last-child:after,
+    a:last-child::after
     {
       content:">";
       color:$greyscale_midtone; // IE fallback
       color:$black_alpha40;
     }
 
-    a:last-child:before
+    a:last-child:before,
+    a:last-child::before
     {
       content:"<";
       color:$greyscale_midtone; // IE fallback
@@ -3467,7 +3403,7 @@ body { top: 0px !important; }
     *text-indent: -9999px;
 }
 
-.ir:before {
+.ir:before,.ir::before {
     content: "";
     display: block;
     width: 0;
@@ -3534,12 +3470,15 @@ body { top: 0px !important; }
  */
 
 .clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix:after,
+.clearfix::after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.clearfix:after {
+.clearfix:after,
+.clearfix::after {
     clear: both;
 }
 
