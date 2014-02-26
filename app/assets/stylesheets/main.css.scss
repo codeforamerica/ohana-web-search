@@ -734,6 +734,93 @@ sup
   }
 }
 
+
+//=================================================================================
+// component styles
+
+button.small-btn
+{
+  background:none;
+  border:none;
+
+  font-size:14px;
+   @include border-radius(4px);
+
+  .fa
+  {
+    color:$blue_darkest;
+  }
+}
+
+button.small-btn:hover // update button styles
+{
+  background:$blue_dark;
+  color:$green_light;
+
+  .fa
+  {
+    color:$blue_light;
+  }
+}
+
+
+button.medium-btn
+{
+  @extend button.small-btn;
+  font-size:13px;
+  font-family:$san_serif_font;
+  padding:10px;
+  @include border-radius(4px);
+  background:$green_lightest;
+  border:1px solid $blue_darkest;
+}
+
+button.medium-btn:hover
+{
+  color:$green_light;
+  background:$blue_dark;
+}
+
+
+button.big-btn
+{
+  @extend button.medium-btn;
+  font-size: 16px;
+  margin:0;
+  border:1px solid $blue_darkest;
+  padding:10px;
+  vertical-align: baseline;
+  @include box-sizing(border-box);
+  @include border-radius(4px);
+  background:$green_light;
+  font-family:$serif_font;
+
+  span
+  {
+    @include inline-block();
+    vertical-align: baseline;
+    color: $black; // IE fallback
+    color: $black_alpha50;
+    text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
+  }
+  .fa
+  {
+    color:$blue_darkest;
+  }
+}
+
+button.big-btn:hover
+{
+  background:$blue_dark;
+
+  span
+  {
+    color:$green_light;
+    text-shadow: none;
+  }
+}
+
+
 //=================================================================================
 // effects styles
 .hide
@@ -1317,6 +1404,7 @@ sup
   background:$blue_midtone; // IE fallback
   background:$blue_midtone_alpha90;
   padding: 10px;
+  min-height: 36px;
   padding-right:25px;
   padding-bottom: 24px;
   text-align:right;
@@ -1388,31 +1476,7 @@ body { top: 0px !important; }
   padding:21px;
   padding-right:25px;
   text-align:right;
-  min-height:34px;
-}
-
-#geolocate-box
-{
-  button
-  {
-    font-size:13px;
-    font-family:$san_serif_font;
-    padding:10px;
-    @include border-radius(4px);
-    background:$green_lightest;
-    border:1px solid $blue_darkest;
-
-    span
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  button:hover
-  {
-    color:$green_light !important;
-    background:$blue_dark;
-  }
+  min-height:36px;
 }
 
 //=================================================================================
@@ -1511,50 +1575,6 @@ body { top: 0px !important; }
     @include box-sizing(border-box);
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
   }
-
-  button.big-btn
-  {
-    font-size: 16px;
-    margin:0;
-    border:1px solid $blue_darkest;
-    padding:10px;
-    vertical-align: baseline;
-    @include box-sizing(border-box);
-    @include border-radius(4px);
-    background:$green_light;
-    font-family:$serif_font;
-
-    span
-    {
-      @include inline-block();
-      vertical-align: baseline;
-      color: $black; // IE fallback
-      color: $black_alpha50;
-      text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
-    }
-    .fa
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  button.big-btn:hover
-  {
-    color:$green_light !important;
-    background:$blue_dark;
-
-    span
-    {
-      color:$yellow_light;
-      text-shadow: none;
-    }
-  }
-
-  button.small-btn
-  {
-    background:none;
-    border:none;
-  }
 }
 
 .home #search-box
@@ -1603,7 +1623,8 @@ body { top: 0px !important; }
 
   button.big-btn // search button styles
   {
-    height:50px;
+    min-height:50px;
+    min-width:124px;
     font-size:22px;
     @include inline-block();
     @include border-radius(0px 4px 4px 0px);
@@ -1628,28 +1649,6 @@ body { top: 0px !important; }
   button.big-btn
   {
     @include inline-block();
-  }
-
-  button.small-btn // update button styles
-  {
-    font-size:14px;
-     @include border-radius(4px);
-
-    .fa
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  button.small-btn:hover // update button styles
-  {
-    background:$blue_dark;
-    color:$green_light;
-
-    .fa
-    {
-      color:$blue_light;
-    }
   }
 
   fieldset
