@@ -155,7 +155,7 @@ feature "results page search", :js=>true do
 
   scenario 'when clicking the reset button', :vcr do
     page.should have_content("No results")
-    page.click_link("Clear")
+    all(".reset-btn").first.click
 
     # check filter settings
     find_field("keyword").value.should eq ""
