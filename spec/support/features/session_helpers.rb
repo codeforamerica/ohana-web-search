@@ -103,9 +103,12 @@ module Features
         find(".closed").trigger("mousedown")
         page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>2)
-        all(".available-options label").last.trigger("mousedown")
+        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
         fill_in("#{name}-option-input", :with => "Custom Value")
-        all(".available-options label").last.trigger("mousedown")
+        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
+      end
+      within("##{name}-options") do
+        find(".closed")
         expect(all(".current-option label").last).to have_content("Custom Value")
       end
     end
