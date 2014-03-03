@@ -66,7 +66,7 @@ require 'vcr'
 VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_hosts '127.0.0.1', 'localhost'
-  c.default_cassette_options = { :record => :once, :allow_playback_repeats => true }
+  c.default_cassette_options = { :record => :new_episodes, :allow_playback_repeats => true }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
