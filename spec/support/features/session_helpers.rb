@@ -106,9 +106,6 @@ module Features
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
         fill_in("#{name}-option-input", :with => "Custom Value")
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-      end
-      within("##{name}-options") do
-        find(".closed")
         expect(all(".current-option label").last).to have_content("Custom Value")
       end
     end
