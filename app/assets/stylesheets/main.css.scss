@@ -596,17 +596,6 @@ $link_header: $blue_darkest;
 $link_header_hover: $purple_darkest;
 
 // fonts
-@font-face {
-    font-family: 'OhanaIcons';
-    src: url('OhanaIcons.eot');
-    src: url('OhanaIcons.eot?#iefix') format('embedded-opentype'),
-         url('OhanaIcons.woff') format('woff'),
-         url('OhanaIcons.ttf') format('truetype'),
-         url('OhanaIcons.svg#OhanaIcons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-$icon_font: 'OhanaIcons';
 $serif_font: 'Libre Baskerville', serif;
 $san_serif_font: 'Quattrocento Sans', sans-serif;
 
@@ -1939,7 +1928,6 @@ body { top: 0px !important; }
 {
   @include opacity(0.3);
   content: '🔍';
-  font-family:$icon_font;
   font-size: 12px;
   color:$blue_darkest;
   position: absolute;
@@ -3091,13 +3079,6 @@ body { top: 0px !important; }
 
   // adjust margin of main content to fit aside
 
-  .ohana-icon
-  {
-    color:$greyscale_midtone; // IE fallback
-    color:$black_alpha40;
-    margin-right:5px;
-  }
-
   // section specific styles
   // accommodate aside width
   .overview-box,
@@ -3168,14 +3149,6 @@ body { top: 0px !important; }
     {
       font-size:12px;
       color:$greyscale_midtone;
-    }
-  }
-
-  .hours
-  {
-    .ohana-icon
-    {
-      color:$purple_darkest;
     }
   }
 
@@ -3285,30 +3258,6 @@ body { top: 0px !important; }
   }
 
 }
-
-// icon adjustments
-.external-link.ohana-icon
-{
-  position:relative;
-  left:2px;
-  top:1px;
-}
-
-.browse.ohana-icon,
-.time.ohana-icon,
-.payment.ohana-icon
-{
-  position:relative;
-  top:2px;
-}
-
-.emails .ohana-icon
-{
-  position:relative;
-  top:2px;
-}
-
-
 
 
 
