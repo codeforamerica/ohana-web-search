@@ -826,6 +826,8 @@ a.button-small
 // search
 .input-search-small
 {
+  position:relative;
+  width:220px;
 
   > input::input-placeholder
   {
@@ -859,14 +861,14 @@ a.button-small
 
   > input[type=search]
   {
+    font-size:16px;
     margin-left:0px;
-    height:42px;
-    min-width:220px;
+    height:40px;
     padding:3px;
     padding-left:6px;
-    padding-right:40px;
+    padding-right:42px;
     font-size: 14px;
-    @include inline-block();
+    width:100%;
     vertical-align: bottom;
 
     border-collapse: collapse;
@@ -879,12 +881,13 @@ a.button-small
   > button
   {
     @extend .button-big;
-    height: 42px;
+    height: 40px;
     min-width: 34px;
-    margin-left: -41px;
     border-left: 1px solid $greyscale_light;
     @include border-radius(0px 4px 4px 0px);
-    @include inline-block();
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
 }
@@ -892,28 +895,24 @@ a.button-small
 .input-search-big
 {
   @extend .input-search-small;
+  width:440px;
 
   > input[type=search]
   {
-    font-size: 24px;
-    padding:10px;
-    position:relative;
-    margin:0;
-
     height:50px;
-    min-width:300px;
-    padding-right: 130px;
+    padding:10px;
+    padding-right: 144px;
+    margin:0;
+    font-size: 24px;
     vertical-align:middle;
   }
 
   > button
   {
     height:50px;
-    min-width:124px;
+    min-width:134px;
     font-size:24px;
-    margin-left: -128px;
     z-index:9998;
-    position:relative;
   }
 }
 
@@ -1629,53 +1628,6 @@ body { top: 0px !important; }
   }
 }
 
-#search-box
-{
-
-  input::input-placeholder
-  {
-    color:$black_alpha20;
-    font-style: italic;
-  }
-
-  input::-webkit-input-placeholder
-  {
-    color:$black_alpha20;
-    font-style: italic;
-  }
-
-  input:-moz-placeholder
-  {
-    color:$black_alpha20;
-    font-style: italic;
-  }
-
-  input::-moz-placeholder
-  {
-    color:$black_alpha20;
-    font-style: italic;
-  }
-
-  input:-ms-input-placeholder
-  {
-    color:$black_alpha20;
-    font-style: italic;
-  }
-
-  input
-  {
-    font-size: 22px;
-    border:1px solid $greyscale_light;
-    @include border-radius(4px);
-    border-collapse: collapse;
-    padding:10px;
-    position:relative;
-    margin:0;
-    @include box-sizing(border-box);
-    -webkit-appearance: none; // remove rounding styling of input fields on iOS
-  }
-}
-
 .home #search-box
 {
   padding:0px;
@@ -1712,27 +1664,13 @@ body { top: 0px !important; }
     text-shadow: 1px 4px 6px $blue_lightest, 0 0 0 $black, 1px 4px 6px $blue_lightest;
   }
 
-  input
+  .input-search-big
   {
-    height:50px;
-    width:413px;
-    padding-right: 123px;
-    vertical-align:middle;
-  }
-
-  button.button-big // search button styles
-  {
-    height:50px;
-    min-width:124px;
-    font-size:22px;
     @include inline-block();
-    @include border-radius(0px 4px 4px 0px);
-    border-left: 1px solid $greyscale_light;
-    margin-left: -123px;
-    z-index:9998;
-    position:relative;
   }
 }
+
+
 
 .inside #search-box
 {
@@ -1783,6 +1721,7 @@ body { top: 0px !important; }
       font-size: 12px;
       height: 22px;
       vertical-align: top;
+      @include box-sizing(border-box)
     }
   }
 }
@@ -1793,49 +1732,6 @@ body { top: 0px !important; }
   padding-bottom: 14px;
   background:$blue_midtone;
   border-bottom:1px solid $blue_dark;
-
-  .fa
-  {
-    position:absolute;
-    z-index:9998;
-    top:50%;
-    margin-top:-7px;
-    right:8px;
-    @include box-sizing(border-box);
-  }
-
-  div:first-child
-  {
-    position:relative;
-    height:34px;
-    margin-top:5px;
-
-    button.button-big
-    {
-      @include inline-block();
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      height: 34px;
-      width: 34px;
-      margin-top:0px;
-      @include border-radius(0px 4px 4px 0px);
-      border-left: 1px solid $greyscale_light;
-    }
-
-    input[type=search]
-    {
-      margin-left:0px;
-      width:100%;
-      height:34px;
-      padding:3px;
-      padding-left:6px;
-      padding-right:39px;
-      font-size: 14px;
-      @include inline-block();
-      vertical-align: bottom;
-    }
-  }
 }
 
 #search-controls

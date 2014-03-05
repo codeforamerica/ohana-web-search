@@ -4,7 +4,7 @@
       = hidden_field_tag 'location'
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
-      %div
+      %div.input-search-small
         = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
         -#
           - cache ['keywords-list', *cip_keywords] do
@@ -14,7 +14,7 @@
                 %option{:value=>keyword}
                   = keyword
               <!--[if IE 8]> </select> <![endif]-->
-        %button.button-big{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+        %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
           %i{:class=>"fa fa-search"}
 
 

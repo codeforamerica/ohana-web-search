@@ -10,28 +10,41 @@
   {
     #search-box
     {
-      > div
+      >div
       {
+        text-align:left;
+      }
+
+      .input-search-big
+      {
+        width:100%;
         text-align:right;
-      }
 
-      input
-      {
-        @include border-radius(4px);
-        padding-right:10px;
-      }
+        > input
+        {
+          @include border-radius(4px);
+          padding-right:10px;
+        }
 
-      button.button-big
-      {
-        @include border-radius(4px);
-        border:1px solid $blue_darkest;
-        margin-top: 10px;
+        > button
+        {
+          position:relative;
+          @include border-radius(4px);
+          border:1px solid $blue_darkest;
+          margin-top: 10px;
+        }
       }
     }
   }
 
   .inside
   {
+
+    .input-search-small
+    {
+      width:100%;
+    }
+
     #detail-info
     {
       > aside
@@ -165,35 +178,33 @@
           margin-right:auto;
       }
 
-      input
+      .input-search-big
       {
-          height:40px;
-          font-size: 14px;
-          background:$white;
-          margin-bottom:10px;
-          margin-left:auto;
-          margin-right:auto;
-          width:100%;
-          @include box-sizing(border-box);
-          display:block;
-          position:static;
-          @include border-radius(0px);
-          padding-right:10px;
+        >input
+        {
+            height:40px;
+            font-size: 14px;
+            background:$white;
+            margin:10px auto;
+            width:100%;
+            @include box-sizing(border-box);
+            display:block;
+            @include border-radius(0px);
+            padding-right:10px;
+        }
+
+        >button
+        {
+            width:100%;
+            font-size: 16px;
+            margin:0;
+            margin-top:10px;
+            @include border-radius(4px);
+            border:1px solid $blue_darkest;
+        }
       }
 
-      input[type='text'] {font-size:16px;}
 
-      button.button-big
-      {
-          width:100%;
-          font-size: 16px;
-          margin:0;
-          margin-top:10px;
-          top:0;
-          left:0;
-          @include border-radius(4px);
-          border:1px solid $blue_darkest;
-      }
     }
 
 
@@ -305,18 +316,11 @@
     #search-box
     {
 
-      input
-      {
-          font-size: 14px;
-          background:$white;
-          margin-left:auto;
-          margin-right:auto;
-          width:100%;
-          @include box-sizing(border-box);
-          display:block;
-          position:static;
-          @include border-radius(0px);
-      }
+    .input-search-small
+    {
+      width:100%;
+    }
+
     }
 
     #keyword-search-box
