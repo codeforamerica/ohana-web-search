@@ -727,12 +727,14 @@ sup
 //=================================================================================
 // component styles
 
-button.small-btn
+// buttons
+.button-small
 {
   background:none;
   border:none;
 
   font-size:14px;
+  color:$black;
    @include border-radius(4px);
    @include box-sizing(border-box);
 
@@ -740,9 +742,19 @@ button.small-btn
   {
     color:$blue_darkest;
   }
+
+  strong
+  {
+    font-weight:bold;
+  }
 }
 
-button.small-btn:hover // update button styles
+a.button-small
+{
+  padding:2px 6px;
+}
+
+.button-small:hover // update button styles
 {
   background:$blue_dark;
   color:$green_light;
@@ -754,38 +766,36 @@ button.small-btn:hover // update button styles
 }
 
 
-button.medium-btn
+.button-medium
 {
-  @extend button.small-btn;
+  @extend .button-small;
   font-size:15px;
   font-family:$san_serif_font;
   padding:7px;
   @include border-radius(4px);
-  background:$green_lightest;
+  background:$green_light;
   border:1px solid $blue_darkest;
 }
 
-button.medium-btn:hover
+.button-medium:hover
 {
   color:$green_light;
   background:$blue_dark;
 }
 
 
-button.big-btn
+.button-big
 {
-  @extend button.medium-btn;
+  @extend .button-medium;
   font-size: 16px;
   margin:0;
-  border:1px solid $blue_darkest;
   padding:10px;
   vertical-align: baseline;
   @include box-sizing(border-box);
   @include border-radius(4px);
-  background:$green_light;
   font-family:$serif_font;
 
-  span
+  >span
   {
     @include inline-block();
     vertical-align: baseline;
@@ -793,13 +803,13 @@ button.big-btn
     color: $black_alpha50;
     text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
   }
-  .fa
+  >.fa
   {
     color:$blue_darkest;
   }
 }
 
-button.big-btn:hover
+.button-big:hover
 {
   background:$blue_dark;
 
@@ -809,6 +819,104 @@ button.big-btn:hover
     text-shadow: none;
   }
 }
+
+
+// Form input styles
+
+// search
+.input-search-small
+{
+
+  > input::input-placeholder
+  {
+    color:$black_alpha20;
+    font-style: italic;
+  }
+
+  > input::-webkit-input-placeholder
+  {
+    color:$black_alpha20;
+    font-style: italic;
+  }
+
+  > input:-moz-placeholder
+  {
+    color:$black_alpha20;
+    font-style: italic;
+  }
+
+  > input::-moz-placeholder
+  {
+    color:$black_alpha20;
+    font-style: italic;
+  }
+
+  > input:-ms-input-placeholder
+  {
+    color:$black_alpha20;
+    font-style: italic;
+  }
+
+  > input[type=search]
+  {
+    margin-left:0px;
+    height:42px;
+    min-width:220px;
+    padding:3px;
+    padding-left:6px;
+    padding-right:40px;
+    font-size: 14px;
+    @include inline-block();
+    vertical-align: bottom;
+
+    border-collapse: collapse;
+    -webkit-appearance: none; // remove rounding styling of input fields on iOS
+    border:1px solid $greyscale_light;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+  }
+
+  > button
+  {
+    @extend .button-big;
+    height: 42px;
+    min-width: 34px;
+    margin-left: -41px;
+    border-left: 1px solid $greyscale_light;
+    @include border-radius(0px 4px 4px 0px);
+    @include inline-block();
+  }
+
+}
+
+.input-search-big
+{
+  @extend .input-search-small;
+
+  > input[type=search]
+  {
+    font-size: 24px;
+    padding:10px;
+    position:relative;
+    margin:0;
+
+    height:50px;
+    min-width:300px;
+    padding-right: 130px;
+    vertical-align:middle;
+  }
+
+  > button
+  {
+    height:50px;
+    min-width:124px;
+    font-size:24px;
+    margin-left: -128px;
+    z-index:9998;
+    position:relative;
+  }
+}
+
 
 
 //=================================================================================
@@ -1612,7 +1720,7 @@ body { top: 0px !important; }
     vertical-align:middle;
   }
 
-  button.big-btn // search button styles
+  button.button-big // search button styles
   {
     height:50px;
     min-width:124px;
@@ -1634,12 +1742,6 @@ body { top: 0px !important; }
   section
   {
     text-align:left;
-  }
-
-
-  button.big-btn
-  {
-    @include inline-block();
   }
 
   fieldset
@@ -1708,8 +1810,9 @@ body { top: 0px !important; }
     height:34px;
     margin-top:5px;
 
-    button.big-btn
+    button.button-big
     {
+      @include inline-block();
       position: absolute;
       top: 0px;
       right: 0px;

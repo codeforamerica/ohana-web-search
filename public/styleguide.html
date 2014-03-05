@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+  <link href="/assets/normalize.css?body=1" media="all" rel="stylesheet" type="text/css">
+  <link href="/assets/font-awesome.css?body=1" media="all" rel="stylesheet" type="text/css">
+  <link href="/assets/main.css?body=1" media="all" rel="stylesheet" type="text/css">
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css">
+
+  <style>
+    body { margin: 20px; font-family: sans-serif; overflow-x: scroll; }
+    body > article > header > h1 { font-size:36px; font-weight:bold;}
+    body > article > article > header > h1 { font-size:24px; font-weight:bold; }
+
+    dt { margin-bottom:5px; }
+    dd { margin-bottom:20px; font-size:10.667px; }
+    code { font-family: monospace; }
+  </style>
+
+</head>
+<body>
+
+  <article>
+    <header>
+      <h1>Components</h1>
+    </header>
+
+    <article>
+      <header>
+        <h1>Buttons</h1>
+      </header>
+
+      <section>
+        <dl>
+          <dt>
+            <button class="button-small"><i class="fa fa-star"></i> Button</button>
+            <a href="#" class="button-small"><i class="fa fa-star"></i> Link</a>
+            <a href="#" class="button-small"><i class="fa fa-star"></i> <strong>Bold Link</strong></a>
+          </dt>
+            <dd> Small button <code>class="button-small"</code> </dd>
+          <dt> <button class="button-medium"><i class="fa fa-star"></i> Medium</button> </dt>
+            <dd> Medium button <code>class="button-medium"</code> </dd>
+          <dt> <button class="button-big"><i class="fa fa-star"></i> Big</button> </dt>
+            <dd> Big button <code>class="button-big"</code> </dd>
+        </dl>
+      </section>
+
+    </article>
+
+    <article>
+      <header>
+        <h1>Form Inputs</h1>
+      </header>
+
+      <section>
+        <dl>
+
+          <dt>
+            <div class="input-search-small">
+              <input type="search" placeholder="Search input small">
+              <button type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </dt>
+            <dd> Search input small <code>class="input-search-small"</code> </dd>
+
+          <dt>
+            <div class="input-search-big">
+              <input type="search" placeholder="Search input big">
+              <button type="submit">
+                <i class="fa fa-search"></i>
+                <span>Search</span>
+              </button>
+            </div>
+          </dt>
+            <dd> Search input big <code>class="input-search-big"</code> </dd>
+
+
+        </dl>
+      </section>
+
+    </article>
+
+  </article>
+
+</body>
+</html>
