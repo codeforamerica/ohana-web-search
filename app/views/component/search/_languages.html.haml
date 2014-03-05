@@ -2,43 +2,55 @@
   %ul
     %li
       - if @current_lang == 'en'
-        %span{:lang=>"en",:class=>"notranslate"}
-          English
+        %button{:disabled=>"disabled",:lang=>"en",:class=>"notranslate button-small"}
+          %strong
+            English
       - else
-        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate"}
-          English
+        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate button-small"}
+          %strong
+            English
     %li
       - if @current_lang == 'es'
-        %span{:lang=>"es",:class=>"notranslate"}
-          Español
+        %button{:disabled=>"disabled",:lang=>"es",:class=>"notranslate button-small"}
+          %strong
+            Español
       - else
-        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate"}
-          Español
+        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate button-small"}
+          %strong
+            Español
     %li
       - if @current_lang == 'tl'
-        %span{:lang=>"tl",:class=>"notranslate"}
-          Tagalog
+        %button{:disabled=>"disabled",:lang=>"tl",:class=>"notranslate button-small"}
+          %strong
+            Tagalog
       - else
-        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate"}
-          Tagalog
+        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate button-small"}
+          %strong
+            Tagalog
     %li
       - if @current_lang == 'zh-CN'
-        %span{:lang=>"zh-CN",:class=>"notranslate"}
-          中文
+        %button{:disabled=>"disabled",:lang=>"zh-CN",:class=>"notranslate button-small"}
+          %strong
+            中文
       - else
-        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate"}
-          中文
+        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate button-small"}
+          %strong
+            中文
     %li
       - if @current_lang == 'ar'
-        %span{:lang=>"ar",:class=>"notranslate"}
-          العربية
+        %abutton{:disabled=>"disabled",:lang=>"ar",:class=>"notranslate button-small"}
+          %strong
+            العربية
       - else
-        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate"}
-          العربية
+        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate button-small"}
+          %strong
+            العربية
     %li
       - if @current_lang == 'ru'
-        %span{:lang=>"ru",:class=>"notranslate"}
-          Русский
+        %button{:disabled=>"disabled",:lang=>"ru",:class=>"notranslate button-small"}
+          %strong
+            Русский
       - else
-        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate"}
-          Русский
+        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate button-small"}
+          %strong
+            Русский
