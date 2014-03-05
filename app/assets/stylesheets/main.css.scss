@@ -746,14 +746,7 @@ sup
   }
 }
 
-a.button-small
-{
-  font-family: $san_serif_font;
-  border-bottom:none;
-}
-
-.button-small:hover, // update button styles
-.button-small:disabled
+.button-small:hover
 {
   background:$blue_dark;
   color:$green_light;
@@ -762,6 +755,18 @@ a.button-small
   {
     color:$blue_light;
   }
+}
+
+a.button-small
+{
+  font-family: $san_serif_font;
+  border-bottom:none;
+}
+
+a.button-small:not([href])
+{
+  @extend .button-small:hover;
+  cursor:default;
 }
 
 .button-medium
