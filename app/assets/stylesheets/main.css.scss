@@ -734,24 +734,22 @@ sup
   border:none;
 
   font-size:14px;
+  letter-spacing: 1px;
   color:$black;
    @include border-radius(4px);
    @include box-sizing(border-box);
+   padding:4px 6px;
 
   .fa
   {
     color:$blue_darkest;
   }
-
-  strong
-  {
-    font-weight:bold;
-  }
 }
 
 a.button-small
 {
-  padding:2px 6px;
+  font-family: $san_serif_font;
+  border-bottom:none;
 }
 
 .button-small:hover, // update button styles
@@ -770,6 +768,7 @@ a.button-small
 {
   @extend .button-small;
   font-size:15px;
+  letter-spacing: 0px;
   font-family:$san_serif_font;
   padding:7px;
   @include border-radius(4px);
