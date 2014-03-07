@@ -4,6 +4,7 @@ require 'coveralls'
 Coveralls.wear!('rails')
 
 ENV["RAILS_ENV"] ||= 'test'
+ENV["OHANA_API_TOKEN"] = "abcd1234" if ENV["OHANA_API_TOKEN"].nil?
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
