@@ -1,7 +1,7 @@
 #SMC-Connect
 
-[![Build Status](https://travis-ci.org/codeforamerica/human_services_finder.png?branch=master)](https://travis-ci.org/codeforamerica/human_services_finder) [![Coverage Status](https://coveralls.io/repos/codeforamerica/human_services_finder/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/human_services_finder) [![Dependency Status](https://gemnasium.com/codeforamerica/human_services_finder.png)](https://gemnasium.com/codeforamerica/human_services_finder)
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/human_services_finder.png?label=ready)](https://waffle.io/codeforamerica/human_services_finder)
+[![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search)
+[![Stories in Ready](https://badge.waffle.io/codeforamerica/ohana-web-search.png?label=ready)](https://waffle.io/codeforamerica/ohana-web-search)
 
 This is a Rails app built  by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. We have acquired the Peninsula Library System's [Community Information Program](http://cip.plsinfo.org) — a dataset of community resources in San Mateo County — which we are making available via an [API](https://github.com/codeforamerica/ohana-api).
 
@@ -29,8 +29,8 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ### Clone the app on your local machine:
 
-    git clone https://github.com/codeforamerica/human_services_finder.git
-    cd human_services_finder
+    git clone https://github.com/codeforamerica/ohana-web-search.git
+    cd ohana-web-search
 
 ### Install the dependencies:
 
@@ -61,7 +61,7 @@ For faster tests:
     zeus start #in a separate Terminal window or tab
     zeus rspec spec
 
-To see the actual tests, browse through the [spec](https://github.com/codeforamerica/human_services_finder/tree/master/spec) directory.
+To see the actual tests, browse through the [spec](https://github.com/codeforamerica/ohana-web-search/tree/master/spec) directory.
 
 ## Development Details
 
@@ -84,12 +84,12 @@ Here are some ways *you* can contribute:
 * by writing code (**no patch is too small**: fix typos, add comments, clean up
   inconsistent whitespace)
 * by refactoring code
-* by closing [issues](https://github.com/codeforamerica/human_services_finder/issues)
+* by closing [issues](https://github.com/codeforamerica/ohana-web-search/issues)
 * by reviewing patches
 * [financially](https://secure.codeforamerica.org/page/contribute)
 
 ## Submitting an Issue
-We use the [GitHub issue tracker](https://github.com/codeforamerica/human_services_finder/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
+We use the [GitHub issue tracker](https://github.com/codeforamerica/ohana-web-search/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
 
 ## Submitting a Pull Request
 1. [Fork the repository.][fork]
@@ -107,4 +107,4 @@ We use the [GitHub issue tracker](https://github.com/codeforamerica/human_servic
 [pr]: http://help.github.com/send-pull-requests/
 
 ## Copyright
-Copyright (c) 2013 Code for America. See [LICENSE](https://github.com/codeforamerica/human_services_finder/blob/master/LICENSE.md) for details.
+Copyright (c) 2013 Code for America. See [LICENSE](https://github.com/codeforamerica/ohana-web-search/blob/master/LICENSE.md) for details.
