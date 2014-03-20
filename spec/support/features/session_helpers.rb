@@ -91,12 +91,10 @@ module Features
       end
     end
 
-    # Tests opening the filter fieldset, setting a custom value, and closing the fieldset.
-    # By clicking on the toggle.
+    # Opens the filter fieldset, sets a custom value, and closes the fieldset.
     # @param name [String] The name of the filter field to test.
-    # @param val [String] The value that should be showing in the current toggle.
-    # @param count [Number] The amount of toggle that should be showing.
-    def test_filter_custom_value(name)
+    # @param val [String] The custom value that should be applied to the toggle.
+    def fill_filter_custom_field(name,val)
       find(".require-loaded")
       within("##{name}-options") do
         # test adding custom value functionality
@@ -104,9 +102,8 @@ module Features
         page.should have_selector(".open")
         find(".available-options").should have_css(".toggle-group", :count=>2)
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-        fill_in("#{name}-option-input", :with => "Custom Value")
+        fill_in("#{name}-option-input", :with => val)
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-        expect(all(".current-option label").last).to have_content("Custom Value")
       end
     end
 
