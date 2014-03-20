@@ -29,11 +29,33 @@ class ApplicationController < ActionController::Base
 		  @current_lang = params[:translate]
 
 			# clear all translation cookies
-			cookies.delete(:googtrans,:domain=>".#{ENV['TRANSLATE_URL']}")
-			cookies.delete(:googtrans,:domain=>"www.#{ENV['TRANSLATE_URL']}")
-			cookies.delete(:googtrans,:domain=>".www.#{ENV['TRANSLATE_URL']}")
-			cookies.delete(:googtrans,:domain=>:all)
-			headers['Set-Cookie'] = "googtrans=/en/#{@current_lang};domain=.www.#{ENV['TRANSLATE_URL']}"
+			cookies.delete(:googtrans, :domain => "#{ENV['DOMAIN_NAME']}")
+			cookies.delete(:googtrans, :domain => ".#{ENV['DOMAIN_NAME']}")
+			cookies.delete(:googtrans, :domain => "www.#{ENV['DOMAIN_NAME']}")
+			cookies.delete(:googtrans, :domain => ".www.#{ENV['DOMAIN_NAME']}")
+
+			# set translation cookie
+
+			# The "DOMAIN_NAME" environment variable should be set
+			# to your app's domain name, without the subdomain.
+			# If you're on Heroku, that means setting it to "herokuapp.com".
+			# If you have a custom domain name, like "www.smc-connect.org", that
+			# means setting it to "smc-connect.org".
+
+			# In development, it should only be set to a 2-level domain name,
+			# like "lvh.me", or "myapp.dev" if you're using Pow. You can set it in
+			# config/application.yml.
+
+			# Translation won't work with "localhost", so please open the site
+			# locally via http://lvh.me:{port number}
+
+			# Read more about lvh.me here:
+			# http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme
+			# Pow should work too if you prefer that: http://pow.cx/
+			cookies[:googtrans] = {
+				value: "/en/#{@current_lang}",
+				domain: "#{ENV['DOMAIN_NAME']}"
+			}
 
 		elsif cookies[:googtrans].present?
 			@current_lang = cookies[:googtrans].split('/')[-1]

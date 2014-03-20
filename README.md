@@ -1,11 +1,14 @@
-#SMC-Connect
+#Ohana Web Search
 
 [![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search)
 [![Stories in Ready](https://badge.waffle.io/codeforamerica/ohana-web-search.png?label=ready)](https://waffle.io/codeforamerica/ohana-web-search)
 
-This is a Rails app built  by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. We have acquired the Peninsula Library System's [Community Information Program](http://cip.plsinfo.org) — a dataset of community resources in San Mateo County — which we are making available via an [API](https://github.com/codeforamerica/ohana-api).
+Ohana Web Search is one of two Rails apps that come out of the box with the [Ohana API](https://github.com/codeforamerica/ohana-api) platform. The other app is an [admin interface](https://github.com/codeforamerica/ohana-api-admin) that allows people to update the data. Both apps also serve as examples of what can be built on top of the social services data that the Ohana API exposes.
 
-This app serves as an example of what can be built with that data, and is consuming our API. It is deployed at [http://smc-connect.org](http://smc-connect.org). The goal is to build an interface that makes it easy to find available services in San Mateo County, and to provide as much pertinent information as possible, such as travel directions, hours of operation, other services residents in need might be eligible for, etc.
+This project was developed by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. Thanks to a [grant from the Knight Foundation](http://www.knightfoundation.org/grants/201447979/), [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford) will continue to push code in 2014.
+
+Ohana Web Search aims to make it easy to find available services in a community, and to provide as much pertinent information as possible, such as travel directions, hours of operation, other services residents in need might be eligible for, etc.
+You can see a live example for services in San Mateo County here: [http://smc-connect.org](http://smc-connect.org)
 
 We gladly welcome contributions. Below you will find instructions for installing the project and contributing.
 
@@ -14,7 +17,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ###Prerequisites
 
-#### Git, Ruby 2.0.0+, Rails 3.2.13+ (+ Homebrew on OS X)
+#### Git, Ruby 2.0.0+, Rails 3.2.16+ (+ Homebrew on OS X)
 **OS X**: [Set up a dev environment on OS X with Homebrew, Git, RVM, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
@@ -36,12 +39,19 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
     bundle
 
+### Set up the environment variables
+Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it has been added to your `.gitignore` file (it should be by default).
+
+By default, the app is configured to point to the demo API at `http://ohanapi.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
+
 ### Run the app
 Start the app locally using Unicorn:
 
     unicorn
 
-Ohana SMC should now be running at [http://localhost:8080](http://localhost:8080)
+Ohana SMC should now be running at [http://lvh.me:8080](http://lvh.me:8080)
+
+Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
 ### Test the app
 To test locally, you can run tests with this simple command:
@@ -66,7 +76,7 @@ To see the actual tests, browse through the [spec](https://github.com/codeforame
 ## Development Details
 
 * Ruby version 2.0.0
-* Rails version 3.2.13
+* Rails version 3.2.16
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
