@@ -12,6 +12,16 @@ You can see a live example for services in San Mateo County here: [http://smc-co
 
 We gladly welcome contributions. Below you will find instructions for installing the project and contributing.
 
+## Stack Overview
+
+* Ruby version 2.0.0
+* Rails version 3.2.16
+* Template Engines: ERB and HAML
+* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
+
+## Deploying to Heroku
+See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).
+
 ## Installation
 Please note that the instructions below have only been tested on OS X. If you are running another operating system and run into any issues, feel free to update this README, or open an issue if you are unable to resolve installation issues.
 
@@ -47,9 +57,9 @@ By default, the app is configured to point to the demo API at `http://ohanapi.he
 ### Run the app
 Start the app locally using Unicorn:
 
-    unicorn
+    unicorn -p 4000
 
-Ohana SMC should now be running at [http://lvh.me:8080](http://lvh.me:8080)
+Ohana SMC should now be running at [http://lvh.me:4000](http://lvh.me:4000)
 
 Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
@@ -72,13 +82,6 @@ For faster tests:
     zeus rspec spec
 
 To see the actual tests, browse through the [spec](https://github.com/codeforamerica/ohana-web-search/tree/master/spec) directory.
-
-## Development Details
-
-* Ruby version 2.0.0
-* Rails version 3.2.16
-* Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
 ## Contributing
 In the spirit of open source software, **everyone** is encouraged to help improve this project.
