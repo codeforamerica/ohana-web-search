@@ -15,7 +15,7 @@ We gladly welcome contributions. Below you will find instructions for installing
 ## Stack Overview
 
 * Ruby version 2.0.0
-* Rails version 3.2.16
+* Rails version 3.2.17
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
@@ -27,7 +27,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ###Prerequisites
 
-#### Git, Ruby 2.0.0+, Rails 3.2.16+ (+ Homebrew on OS X)
+#### Git, Ruby 2.0.0+, Rails 3.2.17+ (+ Homebrew on OS X)
 **OS X**: [Set up a dev environment on OS X with Homebrew, Git, RVM, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
