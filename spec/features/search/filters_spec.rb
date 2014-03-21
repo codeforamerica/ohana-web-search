@@ -7,60 +7,6 @@ feature "results page search", :js=>true do
     search_from_home(:keyword=>"asdfg")
   end
 
-  # shared tests
-
-  # Tests opening and closing the fieldset by clicking the legend.
-  # @param name [String] The name of the filter field to test.
-  # @param val [String] The value that should be showing in the current toggle.
-  # @param count [Number] The amount of toggle that should be showing.
-  def test_filter_legend(name,val="All",count=2)
-    find(".require-loaded")
-    within("##{name}-options") do
-      # test clicking legend functionality
-      expect(all(".current-option label").last).to have_content(val)
-      find(".closed").trigger("mousedown")
-      page.should have_selector(".open")
-      find(".available-options").should have_css(".toggle-group", :count=>count)
-      find(".open").trigger("mousedown")
-      expect(all(".current-option label").last).to have_content(val)
-    end
-  end
-
-  # Tests opening and closing the fieldset by clicking the current toggle.
-  # @param name [String] The name of the filter field to test.
-  # @param val [String] The value that should be showing in the current toggle.
-  # @param count [Number] The amount of toggle that should be showing.
-  def test_filter_toggle(name,val="All",count=2)
-    find(".require-loaded")
-    within("##{name}-options") do
-      # test clicking toggle functionality
-      expect(all(".current-option label").last).to have_content(val)
-      all(".current-option label").last.trigger("mousedown")
-      page.should have_selector(".open")
-      find(".available-options").should have_css(".toggle-group", :count=>count)
-      find(".options label",:text=>val).trigger("mousedown")
-      expect(all(".current-option label").last).to have_content(val)
-    end
-  end
-
-  # Tests filter fieldset where custom filter value does not appear in pre-filled
-  # list and appears in custom input field after page has reloaded.
-  # @param name [String] the CSS name of the field
-  # @oaram field [Symbol] the field to look up in the options object.
-  def test_filter_custom_value_no_results(name,field)
-    set_filter(name,field)
-    find('#find-btn').click
-
-    find(".require-loaded")
-    within("##{name}-options") do
-      find(".closed").trigger('mousedown')
-      page.should have_selector(".open")
-      find(".available-options").should have_css(".toggle-group", :count=>2)
-      find_field("#{name}-option-input").value.should eq field
-    end
-  end
-
-
   # test filter fieldset legend toggling across all filters
   scenario 'when location filter has no cached values and legend is toggled', :vcr do
     test_filter_legend("location")
