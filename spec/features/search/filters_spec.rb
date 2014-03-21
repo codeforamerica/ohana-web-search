@@ -37,14 +37,12 @@ feature "results page search", :js=>true do
 
   # test adding custom value to filters that accept custom values
   scenario 'when location filter has no cached values and custom value is added', :vcr do
-    filter,value = "location","Custom Value"
-    fill_filter_custom_field(filter,value)
-    expect(all("##{filter}-options .current-option label").last).to have_content(value)
+    fill_filter_custom_field("location","Custom Value")
+    expect(all("##{filter}-options .current-option label").last).to have_content("Custom Value")
   end
   scenario 'when agency filter has no cached values and custom value is added', :vcr do
-    filter,value = "org-name","Custom Value"
-    fill_filter_custom_field(filter,value)
-    expect(all("##{filter}-options .current-option label").last).to have_content(value)
+    fill_filter_custom_field("org-name","Custom Value")
+    expect(all("##{filter}-options .current-option label").last).to have_content("Custom Value")
   end
 
   # test adding custom value to filters and retrieving no results
