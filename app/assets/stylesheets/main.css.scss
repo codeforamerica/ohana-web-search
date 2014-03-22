@@ -921,6 +921,60 @@ a.button-small:not([href])
 }
 
 
+// pagination styles
+
+.pagination
+{
+  > h1,ul,li
+  {
+    @include inline-block();
+  }
+
+  li
+  {
+    vertical-align: baseline;
+  }
+
+  a:hover
+  {
+    text-decoration: underline;
+    border-bottom:0;
+  }
+
+  .current
+  {
+    color:$purple_darkest !important;
+    font-weight:bold;
+    background:$purple_lightest;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:0;
+  }
+
+  .next,
+  .prev
+  {
+    background:$greyscale_light;
+    a
+    {
+      color:$white;
+      padding-left:3px;
+      padding-right:3px;
+      border-bottom:0;
+    }
+    a:hover
+    {
+      text-decoration: none !important;
+    }
+  }
+
+  .next:hover,
+  .prev:hover
+  {
+    background:$purple_darkest;
+  }
+}
+
 
 //=================================================================================
 // effects styles
@@ -2170,7 +2224,7 @@ body { top: 0px !important; }
     }
   }
 
-  h1
+  >*>h1
   {
     font-size: 18px;
     letter-spacing: 1px;
@@ -2236,13 +2290,10 @@ body { top: 0px !important; }
 
   .static-content
   {
+    margin-left:5px;
+
     .utility-links // back to search, directions, print
     {
-      >span:first-child
-      {
-        margin-left: 5px;
-      }
-
       >span:last-child
       {
         margin-right: 5px;
@@ -2276,59 +2327,6 @@ body { top: 0px !important; }
   text-align:right;
   padding:20px;
   padding-right:25px;
-}
-
-.results-header,
-#list-view div:last-child
-{
-  .pagination
-  {
-    margin-left:5px;
-    > *
-    {
-      @include inline-block();
-      vertical-align: baseline;
-    }
-
-    a:hover
-    {
-      text-decoration: underline;
-      border-bottom:0;
-    }
-
-    .current
-    {
-      color:$purple_darkest !important;
-      font-weight:bold;
-      background:$purple_lightest;
-      padding-left:5px;
-      padding-right:5px;
-      padding-top:0;
-    }
-
-    .next,
-    .prev
-    {
-      background:$greyscale_light;
-      a
-      {
-        color:$white;
-        padding-left:3px;
-        padding-right:3px;
-        border-bottom:0;
-      }
-      a:hover
-      {
-        text-decoration: none !important;
-      }
-    }
-
-    .next:hover,
-    .prev:hover
-    {
-      background:$purple_darkest;
-    }
-  }
 }
 
 .results-header.persistent
