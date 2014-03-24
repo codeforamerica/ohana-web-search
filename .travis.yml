@@ -6,20 +6,14 @@ before_script:
 notifications:
   campfire:
     rooms:
-    - secure: |-
-        eEuzoYFXLPeIMt+zHGzZp6XCvbfxRDe8FA3kVwrNRB0zoOktPRZXD9O8ng2z
-        x2Yg8C7i1unstuW0bjPvwphpdxJOTFSxliw6P4Xk1Y9HnTYQqqUbDat/zL9c
-        AyjYezuRQgYFSBP2BgNZ2RL9RiLSyLQBWhcHGB0yBS6rsheKWbk=
+    - secure: b20Ulu9dgqeC4YrnCDadz1JudFha77wR6gAsMWqWg7HMK4aXuJjimr/ag/iLk0ouTZRAM26LIfGXzVu5ke/13q5xdVCgUnOZRdq8iysK1S0H7saZ2nV5oXvN9b5HfIZjpIoMIiBKvpsLDknf+fgqn2gGIM2fk72A8+XbHF6VVH4=
     on_success: never
     on_failure: always
 deploy:
   provider: heroku
   app: ohana-staging
   api_key:
-  - secure: |-
-      snkEoAaiMCqlk2KtkNDRQ8dEWSmbhY3bYQgraO70LXDtiey1+iusC0hfuHe2
-      dlmMwWjB7LCCBWGReY7nf6WzZf0oAznyYwIhSDG9pb5mtAr8xINvacfPY8Fg
-      B/sYeZYnHQ1YB4wDl6ef6x3ugYU+WG/eoaN2uYcLFL23l9J99IQ=
+    secure: Xi9OujdxI7Tg1iuuBIsM949fXwWJpwktoSWcI1/tOkjKKQCwoLSQCnIaQVmkNyS52Y9hsFHdF8pmE7giby5iqXWVGEWxE/a5P1tCzDxEiO2TFdU3MMqNNmfo7v1lgCl7y+jiSn35zr4wskRdULyUTqn9zwoEMYqRSYolkVx8p/E=
 env:
   matrix:
-    secure: ZhrMOK9JCzqqiI3mHBNh/g/bUWEZe+SXn91eZuU0zdFKrUlCRwglhABiIf+9a1Ysk1aB0g4LO4tNTV0ku7cdQUHeNabueho88qUKyDj70QB05xHEgtcjelgpD2F9InVi8D47S9UG6LBf9gJAXGN7UTw2CH+sm9q5SLbrKb9fszo=
+  - secure: E7pU+I2VhRfS3g3Fn8sWNF3ecrMG0PkNJ4CMrIwV0mnhtTQGIcI2k6MrMPYcms04nCn8lmd6iH+ey8Yjovva3O2WmttRoEpCNORd6oGQYkSafLK+QyAJYSJ6tZ+aIHHiJKQ+z6O13LlaLNHEJqLq0SQ9uYcF+ZWDx58u0Ed/v5Q=
