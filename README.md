@@ -1,33 +1,25 @@
-#Ohana Web Search
+#SMC-Connect
 
-[![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search)
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/ohana-web-search.png?label=ready)](https://waffle.io/codeforamerica/ohana-web-search)
+[![Build Status](https://travis-ci.org/smcgov/SMC-Connect.png?branch=master)](https://travis-ci.org/smcgov/SMC-Connect) [![Coverage Status](https://coveralls.io/repos/smcgov/SMC-Connect/badge.png?branch=master)](https://coveralls.io/r/smcgov/SMC-Connect)
 
-Ohana Web Search is one of two Rails apps that come out of the box with the [Ohana API](https://github.com/codeforamerica/ohana-api) platform. The other app is an [admin interface](https://github.com/codeforamerica/ohana-api-admin) that allows people to update the data. Both apps also serve as examples of what can be built on top of the social services data that the Ohana API exposes.
+[SMC-Connect](smc-connect.org) is a mobile-friendly website that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California. The website is powered by the [Ohana API](http://ohanapi.org) platform.
 
-This project was developed by [Code for America's 2013 San Mateo County](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team. Thanks to a [grant from the Knight Foundation](http://www.knightfoundation.org/grants/201447979/), [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford) will continue to push code in 2014.
-
-Ohana Web Search aims to make it easy to find available services in a community, and to provide as much pertinent information as possible, such as travel directions, hours of operation, other services residents in need might be eligible for, etc.
-You can see a live example for services in San Mateo County here: [http://smc-connect.org](http://smc-connect.org)
-
-We gladly welcome contributions. Below you will find instructions for installing the project and contributing.
+In San Mateo County, there are three Ohana apps: SMC-Connect, the [San Mateo County API](https://github.com/smcgov/ohana-api-smc) (that feeds the data to SMC-Connect), and the [admin interface](https://github.com/smcgov/SMC-Connect-Admin) that allows people to update the data.
 
 ## Stack Overview
 
-* Ruby version 2.0.0
+* Ruby version 2.1.1
 * Rails version 3.2.17
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
 
-## Deploying to Heroku
-See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).
 
 ## Installation
 Please note that the instructions below have only been tested on OS X. If you are running another operating system and run into any issues, feel free to update this README, or open an issue if you are unable to resolve installation issues.
 
 ###Prerequisites
 
-#### Git, Ruby 2.0.0+, Rails 3.2.17+ (+ Homebrew on OS X)
+#### Git, Ruby 2.1+, Rails 3.2.17+ (+ Homebrew on OS X)
 **OS X**: [Set up a dev environment on OS X with Homebrew, Git, RVM, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
@@ -42,8 +34,8 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ### Clone the app on your local machine:
 
-    git clone https://github.com/codeforamerica/ohana-web-search.git
-    cd ohana-web-search
+    git clone https://github.com/smcgov/SMC-Connect.git
+    cd smc-connect
 
 ### Install the dependencies:
 
@@ -52,7 +44,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 ### Set up the environment variables
 Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it has been added to your `.gitignore` file (it should be by default).
 
-By default, the app is configured to point to the demo API at `http://ohanapi.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
+By default, the app is configured to point to the Ohana API at `http://ohanapi.herokuapp.com/api`.
 
 ### Run the app
 Start the app locally using Unicorn:
@@ -68,7 +60,7 @@ To test locally, you can run tests with this simple command:
 
     rspec
 
-To configure rspec output formatting (for example, to provide command line output in color), use the command from the command line `pico ./.rspec` while in the project root directory (or `pico ~/.rspec` to provide rspec configuration globally for all projects on your machine). Settings such as color highlighting and the output style can be set with:
+To configure rspec output formatting (for example, to provide command line output in color), create a file called `.rspec` at the root of the project, and add one option per line, such as:
 
     --color
     --format documentation
@@ -81,7 +73,7 @@ For faster tests:
     zeus start #in a separate Terminal window or tab
     zeus rspec spec
 
-To see the actual tests, browse through the [spec](https://github.com/codeforamerica/ohana-web-search/tree/master/spec) directory.
+To see the actual tests, browse through the [spec](https://github.com/smcgov/SMC-Connect/tree/master/spec) directory.
 
 ## Contributing
 In the spirit of open source software, **everyone** is encouraged to help improve this project.
@@ -97,12 +89,11 @@ Here are some ways *you* can contribute:
 * by writing code (**no patch is too small**: fix typos, add comments, clean up
   inconsistent whitespace)
 * by refactoring code
-* by closing [issues](https://github.com/codeforamerica/ohana-web-search/issues)
+* by closing [issues](https://github.com/smcgov/SMC-Connect/issues)
 * by reviewing patches
-* [financially](https://secure.codeforamerica.org/page/contribute)
 
 ## Submitting an Issue
-We use the [GitHub issue tracker](https://github.com/codeforamerica/ohana-web-search/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
+We use the [GitHub issue tracker](https://github.com/smcgov/SMC-Connect/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
 
 ## Submitting a Pull Request
 1. [Fork the repository.][fork]
