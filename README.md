@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/smcgov/SMC-Connect.png?branch=master)](https://travis-ci.org/smcgov/SMC-Connect) [![Coverage Status](https://coveralls.io/repos/smcgov/SMC-Connect/badge.png?branch=master)](https://coveralls.io/r/smcgov/SMC-Connect)
 
-[SMC-Connect](smc-connect.org) is a mobile-friendly website that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California. The website is powered by the [Ohana API](http://ohanapi.org) platform.
+[SMC-Connect](http://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California. The website is powered by the [Ohana API](http://ohanapi.org) platform.
 
 In San Mateo County, there are three Ohana apps: SMC-Connect, the [San Mateo County API](https://github.com/smcgov/ohana-api-smc) (that feeds the data to SMC-Connect), and the [admin interface](https://github.com/smcgov/SMC-Connect-Admin) that allows people to update the data.
 
@@ -34,7 +34,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ### Clone the app on your local machine:
 
-    git clone https://github.com/smcgov/SMC-Connect.git
+    git clone https://github.com/smcgov/SMC-Connect.git smc-connect
     cd smc-connect
 
 ### Install the dependencies:
@@ -44,7 +44,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 ### Set up the environment variables
 Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it has been added to your `.gitignore` file (it should be by default).
 
-By default, the app is configured to point to the Ohana API at `http://ohanapi.herokuapp.com/api`.
+By default, the app is configured to point to the San Mateo County API at `http://ohanapi.herokuapp.com/api`.
 
 ### Run the app
 Start the app locally using Unicorn:
@@ -60,12 +60,12 @@ To test locally, you can run tests with this simple command:
 
     rspec
 
-To configure rspec output formatting (for example, to provide command line output in color), create a file called `.rspec` at the root of the project, and add one option per line, such as:
+To configure RSpec output formatting (for example, to provide command line output in color), create a file called `.rspec` at the root of the project, and add one option per line, such as:
 
     --color
     --format documentation
 
-Options for the format configuration are `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the rspec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
+Options for the format configuration are `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the RSpec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
 
 For faster tests:
 
