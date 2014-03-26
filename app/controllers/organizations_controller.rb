@@ -171,10 +171,12 @@ class OrganizationsController < ApplicationController
         offset = (0.0001*(coords_list[new_coords.to_s]-1))
         new_coords = [o.coordinates[0]-offset,o.coordinates[1]]
 
+        kind = o.kind if o.key?(:kind)
+
         details = {
           'id' => o.id,
           'name' => o.name,
-          'kind' => o.kind,
+          'kind' => kind,
           'coordinates' => new_coords
         }
 

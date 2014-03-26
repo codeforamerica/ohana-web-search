@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-gem 'rails', '3.2.16'
+ruby '2.1.1'
+gem 'rails', '3.2.17'
 
 # front end
 group :assets do
@@ -35,8 +35,6 @@ gem "rack-rewrite"
 ## http://railscasts.com/episodes/324-passing-data-to-javascript
 #gem "gon"
 
-# Analytics
-gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 # For Google translation API
 gem "google-api-client"

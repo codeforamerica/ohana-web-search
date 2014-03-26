@@ -65,7 +65,7 @@
                               %span{:itemprop=>"contactType"}
                                 = phone["department"]
                           - if phone["hours"]
-                            %p
+                            %p.phone-hours
                               %span
                                 = phone["hours"]
 
@@ -75,16 +75,18 @@
                     - @org.faxes.each do |fax|
                       %div
                         %i{:class=>"fa fa-print fax"}
-                        - if fax.is_a?(String)
-                          %span{:itemprop=>"faxNumber"}
-                            = format_phone(fax)
-                        - elsif fax.is_a?(Sawyer::Resource)
-                          - if fax["department"]
-                            %span{:itemprop=>"contactType"}
-                              = fax["department"]
-                          - if fax["number"]
+                        %span
+                          - if fax.is_a?(String)
                             %span{:itemprop=>"faxNumber"}
-                              = format_phone(fax["number"])
+                              = format_phone(fax)
+                          - elsif fax.is_a?(Sawyer::Resource)
+                            - if fax["number"]
+                              %span{:itemprop=>"faxNumber"}
+                                = format_phone(fax["number"])
+                            - if fax["department"]
+                              %p
+                                %span{:itemprop=>"contactType"}
+                                  = fax["department"]
 
           - if @org.key?(:urls)
             %section.urls-box

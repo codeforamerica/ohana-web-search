@@ -36,10 +36,19 @@ HumanServicesFinder::Application.configure do
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
   config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
-    canonical_url = ENV["CANONICAL_URL"]
+    if ENV["CANONICAL_URL"].blank?
+      raise "The CANONICAL_URL environment variable is not set on your"+
+      " production server. It should be set to your app's domain name,"+
+      " without the protocol. For example: www.smc-connect.org, or"+
+      " flying-tiger.herokuapp.com. If you're using Heroku, you can set it"+
+      " like this: \"heroku config:set CANONICAL_URL=your_domain_name\". See"+
+      " config/environments/production.rb in the source code for more details."
+    else
+      canonical_url = ENV["CANONICAL_URL"]
 
-    r301 %r{.*}, "http://#{canonical_url}$&",
-      :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
+      r301 %r{.*}, "http://#{canonical_url}$&",
+        :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
+    end
   end
 
   # Code is not reloaded between requests
