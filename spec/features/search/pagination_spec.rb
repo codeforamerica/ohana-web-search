@@ -29,14 +29,14 @@ feature "results page pagination", :js=>true do
   scenario 'on first page of results that have more than five entries', :vcr do
     search_from_home
     page.should have_selector('.pagination')
-    page.should have_content('Page: 1 2 3 4 5 ... 20 >')
+    page.should have_content('Page: 1 2 3 4 5 … 20 >')
   end
 
   scenario 'on last page of results that have more than five entries', :vcr do
     search_from_home
     go_to_page(20)
     page.should have_selector('.pagination')
-    page.should have_content('Page: < 1 ... 16 17 18 19 20')
+    page.should have_content('Page: < 1 … 16 17 18 19 20')
     page.should have_content('571-589 of 589 results')
   end
 
@@ -44,14 +44,14 @@ feature "results page pagination", :js=>true do
     search_from_home
     go_to_page(3)
     page.should have_selector('.pagination')
-    page.should have_content('Page: < 1 2 3 4 5 ... 20 >')
+    page.should have_content('Page: < 1 2 3 4 5 … 20 >')
   end
 
   scenario 'on page more than three pages from beginning of results that have more than five entries', :vcr do
     search_from_home
     go_to_page(4)
     page.should have_selector('.pagination')
-    page.should have_content('Page: <  1 ... 2 3 4 5 6 ... 20 >')
+    page.should have_content('Page: <  1 … 2 3 4 5 6 … 20 >')
   end
 
   scenario 'on page less than three pages from end of results that have more than five entries', :vcr do
@@ -59,7 +59,7 @@ feature "results page pagination", :js=>true do
     go_to_page(20)
     go_to_page(18)
     page.should have_selector('.pagination')
-    page.should have_content('<  1 ... 16 17 18 19 20 >')
+    page.should have_content('<  1 … 16 17 18 19 20 >')
   end
 
   scenario 'on page more than three pages from end of results that have more than five entries', :vcr do
@@ -67,7 +67,7 @@ feature "results page pagination", :js=>true do
     go_to_page(20)
     go_to_page(17)
     page.should have_selector('.pagination')
-    page.should have_content('<  1 ... 15 16 17 18 19 ... 20 >')
+    page.should have_content('<  1 … 15 16 17 18 19 … 20 >')
   end
 
 end
