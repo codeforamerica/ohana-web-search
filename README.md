@@ -55,11 +55,13 @@ Inside the `config` folder, you will find a file named `application.example.yml`
 By default, the app is configured to point to the demo API at `http://ohanapi.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
 
 ### Run the app
-Start the app locally using Unicorn:
+Start the app locally on port 4000 using Unicorn:
 
     unicorn -p 4000
 
 Ohana SMC should now be running at [http://lvh.me:4000](http://lvh.me:4000)
+
+The `-p` option allows you to specify which port you want to run the server on. This is useful when running other servers at the same time. For example, if you're also running the Ohana API locally (which uses port 8080 by default), you wouldn't be able to run Ohana Web Search with the simple `unicorn` command, because it would also default to port 8080. By specifying a different port number, you can run both servers at the same time.
 
 Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
