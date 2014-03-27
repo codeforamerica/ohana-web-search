@@ -1,0 +1,23 @@
+// mixins are custom functions that abbreviate generating CSS effects
+
+// type size mixin provides mapping from human-readable font sizing labeling to base font size values.
+@mixin type-size($size) {
+ @if $size == "tiny" {
+  @include adjust-font-size-to($font-size-80);
+ }
+ @if $size == "small" {
+  @include adjust-font-size-to($font-size-90);
+ }
+ @if $size == "base" {
+  @include adjust-font-size-to($font-size-100);
+ }
+ @if $size == "medium" {
+  @include adjust-font-size-to($font-size-110);
+ }
+ @if $size == "large" {
+  @include adjust-font-size-to($font-size-120);
+ }
+ @if $size == "xlarge" {
+  @include adjust-font-size-to($font-size-130);
+ }
+}
