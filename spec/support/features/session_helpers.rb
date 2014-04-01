@@ -195,6 +195,14 @@ module Features
       page.should have_content "government assistance"
       page.should_not have_title "1 result"
       find("#language-box").should have_content("English")
+
+      within("#app-footer") do
+        find_link('San Mateo County Human Services Agency')[:href].should == 'http://www.co.sanmateo.ca.us/portal/site/humanservices'
+        find_link('Code for America')[:href].should == 'http://codeforamerica.org'
+        find_link('Get this app')[:href].should == 'https://github.com/codeforamerica/ohana-web-search'
+        find_link('view project details')[:href].should == 'http://ohanapi.org'
+      end
+
     end
 
     def go_to_next_page
