@@ -14,6 +14,7 @@
    @include border-radius(4px);
    @include box-sizing(border-box);
    padding:4px 6px;
+   cursor:pointer;
 
   .fa
   {
@@ -184,7 +185,7 @@ a.button-small:not([href])
     padding:10px;
     padding-right: 144px;
     margin:0;
-    font-size: 24px;
+    font-size: 18px;
     vertical-align:middle;
   }
 
@@ -202,6 +203,9 @@ a.button-small:not([href])
 
 .pagination
 {
+  text-align: left;
+  @include inline-block();
+
   > h1,ul,li
   {
     @include inline-block();
@@ -237,7 +241,7 @@ a.button-small:not([href])
       color:$white;
       padding-left:3px;
       padding-right:3px;
-      border-bottom:0;
+      border-bottom:none;
     }
     a:hover
     {
@@ -249,5 +253,6 @@ a.button-small:not([href])
   .prev:hover
   {
     background:$purple_darkest;
+    cursor:pointer;
   }
 }
