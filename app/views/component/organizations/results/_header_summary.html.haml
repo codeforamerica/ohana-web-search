@@ -6,8 +6,8 @@
 			%ul
 			- if pages[:prev_page].present?
 				%li.prev
-					%a{:href=>{:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self"}
-						%i{:class=>"fa fa-chevron-left"}
+					%a{:href=>{:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self", :title=>"previous"}
+						%i{:class=>"fa fa-chevron-left", :title=>"<"}
 
 			- if pages[:pages][0] != 1
 				%li
@@ -35,5 +35,5 @@
 					= link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
 			- if pages[:next_page].present?
 				%li.next
-					%a{:href=>{:page=>pages[:next_page]}.merge(@page_params), :target=>"_self"}
-						%i{:class=>"fa fa-chevron-right"}
+					%a{:href=>{:page=>pages[:next_page]}.merge(@page_params), :target=>"_self", :title=>"next"}
+						%i{:class=>"fa fa-chevron-right", :title=>">"}
