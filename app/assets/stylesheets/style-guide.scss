@@ -1,0 +1,64 @@
+@import "compass/reset";
+@import "compass/css3/inline-block";
+@import "variables";
+
+body { margin: 20px; font-family: sans-serif; overflow-x: scroll; }
+body > article > header > h1 { font-size:36px; font-weight:bold;}
+body > article > article > header > h1 { font-size:24px; font-weight:bold; }
+
+h1,h2,article
+{
+	margin-bottom:20px;
+}
+
+dt { margin-bottom:5px; }
+dd { margin-bottom:20px; font-size:10.667px; }
+code { font-family: monospace; }
+
+.color-scheme
+{
+	dd{display:none !important;}
+	dt,dd{@include inline-block();}
+	dt
+	{
+		border:1px solid rgba($black,.2);
+		width:40px;
+		height:40px;
+	}
+
+	dt.greyscale.darkest 	{ background: $black; }
+	dt.greyscale.dark 		{ background: lighten($black,25); }
+	dt.greyscale.midtone 	{ background: lighten($black,50); }
+	dt.greyscale.light 		{ background: lighten($black,75); }
+	dt.greyscale.lightest { background: $white; }
+
+	dt.primary.darkest 		{ background: shade($blue,50) }
+	dt.primary.dark 			{ background: shade($blue,25) }
+	dt.primary.midtone 		{ background: $blue }
+	dt.primary.light 			{ background: tint($blue,25) }
+	dt.primary.lightest 	{ background: tint($blue,50) }
+
+	dt.secondaryA.darkest 		{ background: shade($green,50) }
+	dt.secondaryA.dark 			{ background: shade($green,25) }
+	dt.secondaryA.midtone 		{ background: $green }
+	dt.secondaryA.light 			{ background: tint($green,25) }
+	dt.secondaryA.lightest 	{ background: tint($green,50) }
+
+	dt.secondaryB.darkest 		{ background: shade($yellow,50) }
+	dt.secondaryB.dark 			{ background: shade($yellow,25) }
+	dt.secondaryB.midtone 		{ background: $yellow }
+	dt.secondaryB.light 			{ background: tint($yellow,25) }
+	dt.secondaryB.lightest 	{ background: tint($yellow,50) }
+
+	dt.complementary.darkest 		{ background: shade($purple,50) }
+	dt.complementary.dark 			{ background: shade($purple,25) }
+	dt.complementary.midtone 		{ background: $purple }
+	dt.complementary.light 			{ background: tint($purple,25) }
+	dt.complementary.lightest 	{ background: tint($purple,50) }
+
+	dt.alert.darkest 		{ background: shade($red,50) }
+	dt.alert.dark 			{ background: shade($red,25) }
+	dt.alert.midtone 		{ background: $red }
+	dt.alert.light 			{ background: tint($red,25) }
+	dt.alert.lightest 	{ background: tint($red,50) }
+}
