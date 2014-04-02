@@ -127,8 +127,8 @@ ul
 a
 {
   text-decoration: none;
-  color:$greyscale_midtone; // IE fallback
-  color:$black_alpha60;
+  color: $greyscale_midtone; // IE fallback
+  color: rgba($black, .6);
   cursor:pointer;
   border-bottom:1px solid $white;
 }
@@ -137,7 +137,7 @@ a:hover
 {
   color:$blue_dark;
   border-bottom:1px solid $greyscale_midtone;
-  border-bottom:1px solid $black_alpha40;
+  border-bottom:1px solid rgba($black, .4);
 }
 
 #popups article:hover,
@@ -342,7 +342,7 @@ sup
     width: 300px;
     background: $white;
     overflow-y:auto;
-    @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
+    @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px);
     @include border-radius(10px);
 
     > div:last-child
@@ -355,7 +355,7 @@ sup
       > footer
       {
         border-top:1px solid $greyscale_light; // IE fallback
-        border-top:1px solid $black_alpha10;
+        border-top:1px solid rgba($black, .1);
         margin-top:10px;
         padding-top:10px;
         padding-bottom:10px;
@@ -368,12 +368,12 @@ sup
   }
 
   .popup-container > article::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 10px $black_alpha20;
+    -webkit-box-shadow: inset 0 0 10px rgba($black, .2);
     -webkit-border-radius: 0px 10px 10px 0px;
   }
 
   .popup-container > article::-webkit-scrollbar-thumb {
-    background: $black_alpha20;
+    background: rgba($black, .2);
     -webkit-border-radius: 0px 10px 10px 0px;
   }
 
@@ -399,14 +399,14 @@ sup
       border-right: 1px solid #CCCCCC;
       background: none repeat scroll 0 0 #FFFFFF;
       display:block;
-      @include single-box-shadow($black_alpha20, 1px, 1px, 1px);
+      @include single-box-shadow( rgba($black, .2), 1px, 1px, 1px);
     }
   }
 
   .close-button
   {
-    color:$greyscale_midtone; // IE Fallback
-    color:$black_alpha50;
+    color: $greyscale_midtone; // IE Fallback
+    color: rgba($black, .5);
     position:absolute;
     right:10px;
     top:0px;
@@ -502,8 +502,8 @@ sup
 {
   a
   {
-    color:$greyscale_midtone; // IE fallback
-    color:$black_alpha60;
+    color: $greyscale_midtone; // IE fallback
+    color: rgba($black, .6);
   }
 }
 
@@ -522,8 +522,8 @@ sup
       @include border-radius(5px 5px 5px 0px);
       background:$white;
       border: 1px solid $greyscale_midtone; // IE fallback
-      border: 1px solid $black_alpha40;
-      @include single-box-shadow($black_alpha40, 0px, 0px, 10px);
+      border: 1px solid rgba($black, .4);
+      @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px );
       color:#000;
       position: absolute;
       top: 0px;
@@ -547,8 +547,8 @@ sup
     dt
     {
       font-weight:bold;
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha40;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black, .4);
     }
 
     dd
@@ -563,8 +563,8 @@ sup
         height:10px;
         padding:0;
         margin:0;
-        background:$greyscale_midtone; // IE fallback
-        background:$black_alpha40;
+        background: $greyscale_midtone; // IE fallback
+        background: rgba($black, .4);
         position: absolute;
         left:0;
         bottom:0;
@@ -576,7 +576,7 @@ sup
     cursor:pointer;
     color:$blue_dark;
     border-bottom:1px solid $greyscale_midtone; // IE fallback
-    border-bottom:1px solid $black_alpha40;
+    border-bottom:1px solid rgba($black, .4);
   }
 
 }
@@ -718,7 +718,7 @@ sup
   display:block;
   padding: 30px;
   border-bottom:1px solid $greyscale_midtone; // IE fallback
-  border-bottom:1px solid $black_alpha10;
+  border-bottom:1px solid rgba($black, .1);
   background:$white;
 
   h1
@@ -735,7 +735,7 @@ sup
   footer
   {
     border-top:1px solid $greyscale_light; // IE fallback
-    border-top:1px solid $black_alpha10;
+    border-top:1px solid rgba($black, .1);
     margin-top:10px;
     padding-top:10px;
     font-size:14px;
@@ -795,8 +795,8 @@ sup
 // language box styles on homepage
 #language-box
 {
-  background:$blue_midtone; // IE fallback
-  background:$blue_midtone_alpha90;
+  background: $blue_midtone; // IE fallback
+  background: rgba($blue_midtone, .9);
   padding: 10px;
   min-height: 38px;
   padding-right:25px;
@@ -837,7 +837,7 @@ body { top: 0px !important; }
 #help-box
 {
   background: $blue_midtone; // IE fallback
-  background: $blue_midtone_alpha90;
+  background: rgba($blue_midtone, .9);
   border-bottom: 2px solid $blue_dark;
   padding: 21px;
   padding-right: 25px;
@@ -928,7 +928,7 @@ body { top: 0px !important; }
     @include inline-block();
 
     color: $black; // IE fallback
-    color: $black_alpha70;
+    color: rgba($black, .7);
     text-shadow: 1px 4px 6px $blue_lightest, 0 0 0 $black, 1px 4px 6px $blue_lightest;
   }
 
@@ -1070,7 +1070,7 @@ body { top: 0px !important; }
     border:1px solid $blue_dark;
     @include box-sizing(border-box);
     background-color:$white; // IE fallback
-    @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+    @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
     @include border-radius(3px);
     overflow:hidden;
   }
@@ -1078,7 +1078,7 @@ body { top: 0px !important; }
   .toggle-group.add >.toggle >div label
   {
     background-color:$white; // IE fallback
-    @include background( linear-gradient(top,$white_alpha80,$white_alpha60) );
+    @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
   }
 
   .toggle-group-wrapper
@@ -1114,7 +1114,7 @@ body { top: 0px !important; }
     margin-top:-9px;
     margin-left:-8px;
     line-height:19px;
-    color:$black_alpha10;
+    color: rgba($black, .1);
     @include box-sizing(border-box);
   }
 
@@ -1126,7 +1126,7 @@ body { top: 0px !important; }
 
   .toggle-group:hover > .toggle > div > .fa
   {
-    color:$black_alpha60;
+    color: rgba($black, .6);
   }
 
   .toggle-group > .toggle > div input[type=radio]:checked + .fa
@@ -1220,7 +1220,7 @@ body { top: 0px !important; }
   left:4px;
   top:-5px;
 
-  border-right: 3px solid $blue_darkest_alpha30;
+  border-right: 3px solid rgba($blue_darkest, .3);
 
   @include rotate(45deg);
 }
@@ -1260,7 +1260,7 @@ body { top: 0px !important; }
   display:block;
 
   border:1px solid $greyscale_light;
-  //@include box-shadow( inset 0px 1px 0px $black_alpha50, 0px 1px 1px $white_alpha40 );
+  //@include box-shadow( inset 0px 1px 0px rgba($black, .5), 0px 1px 1px $white_alpha40 );
   @include background( linear-gradient(top,$greyscale_lightest,$white) );
   overflow:hidden;
 }
@@ -1354,7 +1354,7 @@ body { top: 0px !important; }
 
   > section
   {
-    @include single-box-shadow($black_alpha10, 0px, 0px, 5px );
+    @include single-box-shadow( rgba($black, .1), 0px, 0px, 5px );
     @include inline-block();
     @include border-radius(4px);
     margin:10px;
@@ -1445,7 +1445,7 @@ body { top: 0px !important; }
   background:$greyscale_lightest;
   padding:20px;
   border-bottom: 1px solid $greyscale_light; // IE fallback
-  border-bottom: 1px solid $black_alpha10;
+  border-bottom: 1px solid rgba($black, .1);
   width: 100%;
   min-height: 64px;
   text-align:right;
@@ -1578,7 +1578,7 @@ body { top: 0px !important; }
   top:0;
   -webkit-backface-visibility:hidden;
   width:100%;
-  @include single-box-shadow( $black_alpha40, 0px, 1px, 6px );
+  @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
 }
 
 #results-entries
@@ -1734,7 +1734,7 @@ body { top: 0px !important; }
 #terminology
 {
   border-bottom:1px solid $greyscale_midtone; // IE fallback
-  border-bottom:1px solid $black_alpha10;
+  border-bottom:1px solid rgba($black,.1);
 
   div
   {
@@ -1803,7 +1803,7 @@ body { top: 0px !important; }
       position: relative;
       background:$white;
       border-top:1px solid $greyscale_light; // IE fallback
-      border-top:1px solid $black_alpha10;
+      border-top:1px solid rgba($black,.1);
       background:$greyscale_lightest;
 
       >a
@@ -1831,8 +1831,8 @@ body { top: 0px !important; }
 
     >li:hover
     {
-      background:$blue_lightest; // IE fallback
-      background:$blue_lightest_alpha50;
+      background: $blue_lightest; // IE fallback
+      background: rgba($blue_lightest,.5);
       h1
       {
         padding-bottom:5px;
@@ -1852,7 +1852,7 @@ body { top: 0px !important; }
     {
       margin-bottom:0px;
       border-bottom:1px solid $greyscale_light; // IE fallback
-      border-bottom:1px solid $black_alpha10;
+      border-bottom:1px solid rgba($black,.1);
     }
   }
 
@@ -1863,8 +1863,8 @@ body { top: 0px !important; }
     a
     {
       text-decoration: none;
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha60;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.6);
       cursor:pointer;
       padding-bottom:2px;
       border-bottom:0px;
@@ -1898,8 +1898,8 @@ body { top: 0px !important; }
           content:" more...";
           font-size:12px;
           font-family:$san_serif_font;
-          color:$greyscale_midtone; // IE fallback
-          color:$black_alpha40;
+          color: $greyscale_midtone; // IE fallback
+          color: rgba($black,.4);
         }
 
         h1.name > a:hover:after,
@@ -1932,8 +1932,8 @@ body { top: 0px !important; }
       li
       {
         margin-bottom:0px;
-        background:$white; // IE fallback
-        background:$white_alpha80;
+        background: $white; // IE fallback
+        background: rgba($white,.8);
         @include box-shadow(none);
         @include border-radius(4px);
         padding:5px;
@@ -2011,7 +2011,7 @@ body { top: 0px !important; }
     border-bottom:0;
     @include inline-block();
     border-left:1px solid $greyscale_light; // IE fallback
-    border-left:1px solid $black_alpha10;
+    border-left:1px solid rgba($black,.1);
   }
 }
 
@@ -2056,9 +2056,9 @@ body { top: 0px !important; }
   {
     padding:10px;
     border-bottom: 1px solid $greyscale_light; // IE fallback
-    border-bottom: 1px solid $black_alpha10;
-    background:$blue_lightest; // IE fallback
-    background:$blue_lightest_alpha10;
+    border-bottom: 1px solid rgba($black, .1);
+    background: $blue_lightest; // IE fallback
+    background: rgba($blue_lightest, .1);
     @include border-radius(4px 4px 0px 0px);
 
     .kind // kind
@@ -2089,8 +2089,8 @@ body { top: 0px !important; }
     a
     {
       text-decoration: none;
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha60;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.6);
       cursor:pointer;
       padding-bottom:2px;
       border-bottom:0px;
@@ -2141,7 +2141,7 @@ body { top: 0px !important; }
       margin-bottom: 10px;
       padding: 5px;
       border-bottom:1px solid $greyscale_light; // IE fallback
-      border-bottom:1px solid $black_alpha10;
+      border-bottom:1px solid rgba($black,.1);
       letter-spacing: 1px;
       font-family: $san_serif_font;
       @include inline-block();
@@ -2164,8 +2164,8 @@ body { top: 0px !important; }
         color:$black;
         font-size:16px;
         font-weight:bold;
-        background:$white; // IE fallback
-        background:$purple_lightest_alpha20;
+        background: $white; // IE fallback
+        background: rgba($purple_lightest, .2);
         padding-left:5px;
         padding-right:5px;
         @include border-radius(5px);
@@ -2184,8 +2184,8 @@ body { top: 0px !important; }
     list-style-type:square;
     li
     {
-      color:$purple_lightest; // IE fallback
-      color:$purple_lightest_alpha40;
+      color: $purple_lightest; // IE fallback
+      color: rgba($purple_lightest, .4);
       span
       {
         color:$black;
@@ -2203,11 +2203,11 @@ body { top: 0px !important; }
 
     >section
     {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20, 0px -1px 2px $black_alpha20);
+      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2), 0px -1px 2px rgba($black,.2));
     }
     >section:first-child
     {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px $black_alpha20, 0px 1px 2px $black_alpha20);
+      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2));
     }
     >section
     {
@@ -2231,7 +2231,7 @@ body { top: 0px !important; }
         margin-bottom: 10px;
         padding: 5px;
         border-bottom:1px solid $greyscale_light; // IE fallback
-        border-bottom:1px solid $black_alpha10;
+        border-bottom:1px solid rgba($black,.1);
         letter-spacing: 1px;
         font-family: $san_serif_font;
         @include inline-block();
@@ -2312,22 +2312,22 @@ body { top: 0px !important; }
     a:last-child::after
     {
       content:">";
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha40;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.4);
     }
 
     a:last-child:before,
     a:last-child::before
     {
       content:"<";
-      color:$greyscale_midtone; // IE fallback
-      color:$black_alpha40;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.4);
     }
 
     a:last-child:hover
     {
       border-bottom: 1px solid $greyscale_midtone; // IE fallback
-      border-bottom: 1px solid $black_alpha40;
+      border-bottom: 1px solid rgba($black,.4);
     }
   }
 
@@ -2510,7 +2510,7 @@ body { top: 0px !important; }
     a
     {
       color:$white;
-      border-bottom:1px solid $white_alpha50;
+      border-bottom:1px solid rgba($white,.5);
     }
 
     a:hover
@@ -2534,8 +2534,8 @@ body { top: 0px !important; }
 
   .alert-close
   {
-    color:$greyscale_midtone !important; // IE Fallback
-    color:$white_alpha50 !important;
+    color: $greyscale_midtone !important; // IE Fallback
+    color: rgba($white,.5) !important;
     border-bottom:none !important;
     margin-top:5px;
     margin-bottom:5px;

@@ -82,7 +82,7 @@ a.button-small:not([href])
     @include inline-block();
     vertical-align: baseline;
     color: $black; // IE fallback
-    color: $black_alpha50;
+    color: rgba($black, .5);
     text-shadow: 1px 4px 6px $green_light, 0 0 0 $black, 1px 4px 6px $green_light;
   }
   >.fa
@@ -113,31 +113,31 @@ a.button-small:not([href])
 
   > input::input-placeholder
   {
-    color:$black_alpha20;
+    color: rgba($black,.2);
     font-style: italic;
   }
 
   > input::-webkit-input-placeholder
   {
-    color:$black_alpha20;
+    color: rgba($black,.2);
     font-style: italic;
   }
 
   > input:-moz-placeholder
   {
-    color:$black_alpha20;
+    color: rgba($black,.2);
     font-style: italic;
   }
 
   > input::-moz-placeholder
   {
-    color:$black_alpha20;
+    color: rgba($black,.2);
     font-style: italic;
   }
 
   > input:-ms-input-placeholder
   {
-    color:$black_alpha20;
+    color: rgba($black,.2);
     font-style: italic;
   }
 
