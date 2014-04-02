@@ -185,26 +185,6 @@ module Features
       page.should have_link("Directions")
     end
 
-    def looks_like_homepage
-      page.should have_title "SMC-Connect"
-      page.should have_content "About"
-      page.should have_content "Contribute"
-      page.should have_content "Feedback"
-      page.should have_content "I need"
-      page.should have_content "reporting"
-      page.should have_content "government assistance"
-      page.should_not have_title "1 result"
-      find("#language-box").should have_content("English")
-
-      within("#app-footer") do
-        all('a',:text=>'San Mateo County Human Services Agency').last[:href].should == 'http://www.co.sanmateo.ca.us/portal/site/humanservices'
-        find_link('Code for America')[:href].should == 'http://codeforamerica.org'
-        find_link('Get this app')[:href].should == 'https://github.com/codeforamerica/ohana-web-search'
-        find_link('view project details')[:href].should == 'http://ohanapi.org'
-      end
-
-    end
-
     def go_to_next_page
       first('.pagination').find_link('>').click
     end
