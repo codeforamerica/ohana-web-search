@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,57 +11,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 03 Mar 2014 05:52:30 GMT
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 400 Bad Request
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - dcb1c8ea-2cf5-4d6d-a1a0-bc60b4842e1d
-      X-Runtime:
-      - '0.073243'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:30 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -74,23 +23,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:52:30 GMT
+      - Wed, 02 Apr 2014 05:38:48 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
       X-Current-Page:
       - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 75651c20-657d-44be-8ab5-292486e8de4d
+      - 0b69dbd2-af12-42e5-9658-7d3ce5ed8233
       X-Runtime:
-      - '0.024116'
+      - '0.023156'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -103,9 +46,58 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:30 GMT
+  recorded_at: Wed, 02 Apr 2014 05:38:48 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=San%20Mateo,%20CA&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 02 Apr 2014 05:38:49 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 8f4c019b-04c7-4d05-ad56-6f2df2879d20
+      X-Runtime:
+      - '0.030211'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Wed, 02 Apr 2014 05:38:49 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
@@ -118,7 +110,7 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -131,23 +123,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:52:31 GMT
+      - Wed, 02 Apr 2014 05:47:07 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
       X-Current-Page:
       - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 608a6f70-c055-42c2-aa8e-7f36e3464e2d
+      - 5d335475-a996-4bff-afa4-c9cdbba187ef
       X-Runtime:
-      - '0.044770'
+      - '0.025641'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -160,9 +146,9 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:31 GMT
+  recorded_at: Wed, 02 Apr 2014 05:47:07 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=San%20Mateo,%20CA&service_area=smc&utf8=%E2%9C%93
@@ -175,7 +161,7 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -188,23 +174,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:52:31 GMT
+      - Wed, 02 Apr 2014 05:47:08 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
       X-Current-Page:
       - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 037bc3db-ae23-4350-9a05-ba700080d401
+      - 61b7e72d-2280-48b5-b047-7b4753f6c591
       X-Runtime:
-      - '0.030555'
+      - '0.031814'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -217,12 +197,12 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:31 GMT
+  recorded_at: Wed, 02 Apr 2014 05:47:08 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=Custom%20Value&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -232,41 +212,43 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 07:15:25 GMT
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 400 Bad Request
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
+      - Wed, 02 Apr 2014 05:59:06 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Current-Page:
+      - '1'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 22fe830f-dec5-4617-95f6-baf1220c6d22
+      - 8b0098ef-c679-4967-8b5c-3236e385c35a
       X-Runtime:
-      - '0.109472'
+      - '0.025416'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '68'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 07:15:26 GMT
+  recorded_at: Wed, 02 Apr 2014 05:59:07 GMT
 recorded_with: VCR 2.8.0

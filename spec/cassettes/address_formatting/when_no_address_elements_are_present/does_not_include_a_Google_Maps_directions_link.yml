@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c?api_token=<API_TOKEN>
+    uri: http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c
     body:
       encoding: US-ASCII
       string: ''
@@ -11,8 +11,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,23 +23,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:54:07 GMT
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
+      - Wed, 02 Apr 2014 05:36:46 GMT
+      Etag:
+      - '"7e84afce6885ed5f3076af66bec21220"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 35a98f92-7fd1-4457-bf75-4a43a94241e8
+      - 2941e985-907f-41c2-97f9-9809824729a8
       X-Runtime:
-      - '0.101925'
+      - '0.039979'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '821'
+      - '1776'
       Connection:
       - keep-alive
     body:
@@ -62,7 +56,64 @@ http_interactions:
         County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"organization":{"id":"521d32ff1974fcdb2b00126b","name":"Angel
         Island Association","slugs":["angel-island-association"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b/locations"}}'
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:54:08 GMT
+  recorded_at: Wed, 02 Apr 2014 05:36:46 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 02 Apr 2014 05:36:47 GMT
+      Etag:
+      - '"7e84afce6885ed5f3076af66bec21220"'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 4ca08c4d-7cc2-45d2-873b-a213377607cf
+      X-Runtime:
+      - '0.058706'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '1776'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"521d32ff1974fcdb2b00126c","accessibility":["Wheelchair"],"ask_for":["Jacquie
+        Klose (Administrator)"],"contacts":[{"id":"521d32ff1974fcdb2b00126d","name":"Suzanne
+        Badenhoop","title":"Board President"}],"description":"Supports the preservation
+        and interpretation of history, structures and natural resources of Angel Island
+        State Park. The association works in partnership with the California State
+        Parks to raise funds, educate and volunteer to provide an enjoyable experience
+        for the visitor.","emails":["aia@angelisland.org"],"faxes":[{"number":"415
+        435-2950"}],"hours":"Daily, sunrise to sunset","kind":"Parks","mail_address":{"attention":"Angel
+        Island Assn","street":"P.O. Box 866","city":"Tiburon","state":"CA","zip":"94920-0866"},"name":"Angel
+        Island Association","phones":[{"number":"415 435-3972","hours":"(Monday-Friday,
+        9-3)"}],"short_desc":"Supports the preservation and interpretation of history,
+        structures and natural resources of Angel Island State Park.","slugs":["angel-island-association"],"updated_at":"2013-11-07T12:43:15-08:00","urls":["http://angelisland.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c","services":[{"id":"521d32ff1974fcdb2b00126f","eligibility":"None","funding_sources":["Donations","Fundraising","Grants"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"organization":{"id":"521d32ff1974fcdb2b00126b","name":"Angel
+        Island Association","slugs":["angel-island-association"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b/locations"}}'
+    http_version: 
+  recorded_at: Wed, 02 Apr 2014 05:36:47 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c?api_token=<API_TOKEN>
@@ -75,7 +126,7 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -88,23 +139,19 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:54:07 GMT
-      Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.37
+      - Wed, 02 Apr 2014 05:46:06 GMT
+      Etag:
+      - '"7e84afce6885ed5f3076af66bec21220"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b4ec5753-0f3f-43c5-b20f-63d060b77d9d
+      - 0f41f148-2fcd-44a5-94aa-9dc5c49e5617
       X-Runtime:
-      - '0.047492'
+      - '0.045863'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '821'
+      - '1776'
       Connection:
       - keep-alive
     body:
@@ -125,5 +172,64 @@ http_interactions:
         County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"organization":{"id":"521d32ff1974fcdb2b00126b","name":"Angel
         Island Association","slugs":["angel-island-association"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b/locations"}}'
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:54:08 GMT
+  recorded_at: Wed, 02 Apr 2014 05:46:07 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c?api_token=<API_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 02 Apr 2014 05:46:07 GMT
+      Etag:
+      - '"7e84afce6885ed5f3076af66bec21220"'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - c3322694-7677-4a9a-a424-c9ed05599c06
+      X-Runtime:
+      - '0.052979'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '1776'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"521d32ff1974fcdb2b00126c","accessibility":["Wheelchair"],"ask_for":["Jacquie
+        Klose (Administrator)"],"contacts":[{"id":"521d32ff1974fcdb2b00126d","name":"Suzanne
+        Badenhoop","title":"Board President"}],"description":"Supports the preservation
+        and interpretation of history, structures and natural resources of Angel Island
+        State Park. The association works in partnership with the California State
+        Parks to raise funds, educate and volunteer to provide an enjoyable experience
+        for the visitor.","emails":["aia@angelisland.org"],"faxes":[{"number":"415
+        435-2950"}],"hours":"Daily, sunrise to sunset","kind":"Parks","mail_address":{"attention":"Angel
+        Island Assn","street":"P.O. Box 866","city":"Tiburon","state":"CA","zip":"94920-0866"},"name":"Angel
+        Island Association","phones":[{"number":"415 435-3972","hours":"(Monday-Friday,
+        9-3)"}],"short_desc":"Supports the preservation and interpretation of history,
+        structures and natural resources of Angel Island State Park.","slugs":["angel-island-association"],"updated_at":"2013-11-07T12:43:15-08:00","urls":["http://angelisland.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ff1974fcdb2b00126c","services":[{"id":"521d32ff1974fcdb2b00126f","eligibility":"None","funding_sources":["Donations","Fundraising","Grants"],"service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","worldwide"],"updated_at":"2013-08-27T16:15:11-07:00"}],"organization":{"id":"521d32ff1974fcdb2b00126b","name":"Angel
+        Island Association","slugs":["angel-island-association"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ff1974fcdb2b00126b/locations"}}'
+    http_version: 
+  recorded_at: Wed, 02 Apr 2014 05:46:07 GMT
 recorded_with: VCR 2.8.0

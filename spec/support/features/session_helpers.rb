@@ -197,7 +197,7 @@ module Features
       find("#language-box").should have_content("English")
 
       within("#app-footer") do
-        find_link('San Mateo County Human Services Agency')[:href].should == 'http://www.co.sanmateo.ca.us/portal/site/humanservices'
+        all('a',:text=>'San Mateo County Human Services Agency').last[:href].should == 'http://www.co.sanmateo.ca.us/portal/site/humanservices'
         find_link('Code for America')[:href].should == 'http://codeforamerica.org'
         find_link('Get this app')[:href].should == 'https://github.com/codeforamerica/ohana-web-search'
         find_link('view project details')[:href].should == 'http://ohanapi.org'
