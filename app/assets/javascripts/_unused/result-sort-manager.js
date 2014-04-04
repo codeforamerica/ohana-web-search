@@ -26,17 +26,17 @@ var module = (function (module) {
         distanceSortButton.addEventListener( "mousedown" , distanceClickHandler , false);
 
         var settings = webStorageProxy.getItem(resultSortManager.storageName);
-        if (settings["field"] == "name"){
+        if (settings["field"] === "name"){
           selected = nameSortButton;
-          if (settings["descending"] == true) selected.innerHTML = "Name ▼";
+          if (settings["descending"] === true) selected.innerHTML = "Name ▼";
           else selected.innerHTML = "Name ▲";
         }else{
           selected = distanceSortButton;
-          if (settings["descending"] == true) selected.innerHTML = "Distance ▼";
+          if (settings["descending"] === true) selected.innerHTML = "Distance ▼";
           else selected.innerHTML = "Distance ▲";
         }
       }
-    }
+    };
 
     // PRIVATE METHODS
     function nameClickHandler(evt)
@@ -67,4 +67,4 @@ var module = (function (module) {
   })({});
 
   return module;
-})(module || {})
+})(module || {});

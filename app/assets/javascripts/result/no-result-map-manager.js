@@ -2,16 +2,16 @@
 define(['app/alert-manager'],function (alert) {
   'use strict';
 
-    // PUBLIC METHODS
-    function init()
-    {
-      console.log("Map failed to load! Hiding map HTML code.");
+  // PUBLIC METHODS
+  function init()
+  {
+    console.log("Map failed to load! Hiding map HTML code.");
 
-      var mapContainer = document.getElementById('map-view');
-          mapContainer.className = 'hide';
+    var mapContainer = document.getElementById('map-view');
+    mapContainer.className = 'hide';
 
-      alert.show("Oops! Map failed to load. Try reloading the page or <a href='/about/#feedback-box'>send us a message</a>.");
-    }
+    alert.show("Oops! Map failed to load. Try reloading the page or <a href='/about/#feedback-box'>send us a message</a>.");
+  }
 
   return {
     init:init

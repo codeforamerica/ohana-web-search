@@ -19,11 +19,13 @@ var module = (function (module) {
         for(var d = 0;d<distances.length;d++)
         {
           var distanceBarBox = document.createElement("div");
-            distanceBarBox.classList.add("distance-bar-box");
+          distanceBarBox.classList.add("distance-bar-box");
+
           var distanceBar = document.createElement("div");
-            distanceBar.classList.add("distance-bar");
+          distanceBar.classList.add("distance-bar");
+
           var distanceLine = document.createElement("div");
-            distanceLine.classList.add("distance-line");
+          distanceLine.classList.add("distance-line");
 
           distances[d].appendChild(distanceBarBox);
           distanceBarBox.appendChild(distanceBar);
@@ -39,10 +41,10 @@ var module = (function (module) {
           distanceLine.style.width = travelDistance+"px";
         }
       }
-    }
+    };
 
     return distanceManager;
   })({});
 
   return module;
-})(module || {})
+})(module || {});

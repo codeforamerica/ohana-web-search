@@ -7,7 +7,7 @@ define(function() {
   function init(input)
   {
     // alternative list query code for Safari
-    if (input.list == undefined && input.tagName == "INPUT") input.list = document.getElementById(input.getAttribute('list'));
+    if (input.list === undefined && input.tagName === "INPUT") input.list = document.getElementById(input.getAttribute('list'));
 
     if (input.list)
     {
@@ -36,12 +36,12 @@ define(function() {
       _input = input;
       id = _input.id;
 
-      var id = _input.list.id+"-drop-down";
+      id = _input.list.id+"-drop-down";
       var container = _input.parentNode;
       var ul = document.createElement('ul');
-        ul.id = id;
-        ul.className = "drop-down hide";
-        ul.innerHTML = String(_input.list.innerHTML).replace(/(<\s*\/?\s*)option(\s*([^>]*)?\s*>)/gi, "$1li$2");
+      ul.id = id;
+      ul.className = "drop-down hide";
+      ul.innerHTML = String(_input.list.innerHTML).replace(/(<\s*\/?\s*)option(\s*([^>]*)?\s*>)/gi, "$1li$2");
       container.appendChild(ul);
       _list = container.querySelector("#"+id);
 
@@ -86,7 +86,7 @@ define(function() {
         left:_input.offsetLeft,
         width:_input.offsetWidth,
         height:_input.offsetHeight
-      }
+      };
 
       _list.style.top = offsets.top+offsets.height+"px";
       _list.style.left = offsets.left+"px";
@@ -107,21 +107,21 @@ define(function() {
     {
       if (_list.classList.contains('hide'))
         _showList();
-      if (_input.value.length == 0)
+      if (_input.value.length === 0)
         _hideList();
 
       // down or up arrow pressed
-      if (evt.keyCode == 40 || evt.keyCode == 38)
+      if (evt.keyCode === 40 || evt.keyCode === 38)
       {
-        var increment = function(){ _arrowKeyPosition = (++_arrowKeyPosition > _showingItems.length) ? _showingItems.length-1 : _arrowKeyPosition  };
-        var decrement = function(){ _arrowKeyPosition = (--_arrowKeyPosition < 0) ? 0 : _arrowKeyPosition  };
-        evt.keyCode == 40 ? increment() : decrement();
+        var increment = function(){ _arrowKeyPosition = (++_arrowKeyPosition > _showingItems.length) ? _showingItems.length-1 : _arrowKeyPosition; };
+        var decrement = function(){ _arrowKeyPosition = (--_arrowKeyPosition < 0) ? 0 : _arrowKeyPosition; };
+        evt.keyCode === 40 ? increment() : decrement();
 
         var item = _showingItems[_arrowKeyPosition];
-          item.classList.add("highlight");
-          if (_lastHighlighted)
-            _lastHighlighted.classList.remove("highlight");
-          _lastHighlighted = item;
+        item.classList.add("highlight");
+        if (_lastHighlighted)
+          _lastHighlighted.classList.remove("highlight");
+        _lastHighlighted = item;
 
         _input.value = item.innerHTML.trim();
       }
@@ -130,7 +130,6 @@ define(function() {
         if (_lastHighlighted)
           _lastHighlighted.classList.remove("highlight");
 
-        var item;
         var aggregateHeight = 0;
         _showingItems = [];
         for (var l=0;l<_items.length;l++)
@@ -144,7 +143,7 @@ define(function() {
       _list.style.height = heightVal+"px";
 
       // no items showing
-      if (_showingItems.length == 0)
+      if (_showingItems.length === 0)
       {
         _list.classList.add('hide');
       }
@@ -167,7 +166,7 @@ define(function() {
       }
       else
       {
-        if (itemVal.indexOf(_input.value.toLowerCase()) != -1)
+        if (itemVal.indexOf(_input.value.toLowerCase()) !== -1)
           _showItem(item);
         else
           _hideItem(item);

@@ -31,17 +31,17 @@ define(function() {
   {
     switch(error.code)
     {
-      case error.PERMISSION_DENIED:
-         error.message = "User denied the request for Geolocation.";
+    case error.PERMISSION_DENIED:
+      error.message = "User denied the request for Geolocation.";
       break;
-      case error.POSITION_UNAVAILABLE:
-        error.message = "Location information is unavailable.";
+    case error.POSITION_UNAVAILABLE:
+      error.message = "Location information is unavailable.";
       break;
-      case error.TIMEOUT:
-        error.message = "The request to get user location timed out.";
+    case error.TIMEOUT:
+      error.message = "The request to get user location timed out.";
       break;
-      case error.UNKNOWN_ERROR:
-        error.message = "An unknown error occurred.";
+    case error.UNKNOWN_ERROR:
+      error.message = "An unknown error occurred.";
       break;
     }
 

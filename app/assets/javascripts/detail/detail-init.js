@@ -7,18 +7,19 @@ require(['detail/detail-map-manager','detail/character-limiter','detail/term-pop
   header.init();
 
 }, function (err) {
-    //The error callback
-    //The err object has a list of modules that failed
-    var failedId = err.requireModules && err.requireModules[0];
-    requirejs.undef(failedId);
+  'use strict';
+  //The error callback
+  //The err object has a list of modules that failed
+  var failedId = err.requireModules && err.requireModules[0];
+  requirejs.undef(failedId);
 
-    console.log("RequireJS threw an Error:",failedId,err.requireType);
+  console.log("RequireJS threw an Error:",failedId,err.requireType);
 
-    // initialize no map loaded state
-    require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'], function (map,cl,tpm,header) {
-      map.init();
-      cl.init();
-      tpm.init();
-      header.init();
-    });
+  // initialize no map loaded state
+  require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'], function (map,cl,tpm,header) {
+    map.init();
+    cl.init();
+    tpm.init();
+    header.init();
+  });
 });
