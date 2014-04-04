@@ -132,11 +132,10 @@ GEM
       railties (>= 3.2.0, < 5.0)
     i18n (0.6.9)
     journey (1.0.4)
-    jshint (0.0.2)
-      execjs (~> 1.4.0)
-      multi_json (~> 1.0)
-      railties (>= 3.2.0)
-      therubyracer (~> 0.12.1)
+    jshintrb (0.2.4)
+      execjs
+      multi_json (>= 1.3)
+      rake
     json (1.8.1)
     json_pure (1.8.1)
     jwt (0.1.11)
@@ -146,7 +145,6 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.2.0)
       launchy (~> 2.2)
-    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -238,7 +236,6 @@ GEM
       ruby2ruby (~> 2.0.7)
       ruby_parser (~> 3.2)
       sexp_processor
-    ref (1.0.5)
     require_all (1.3.2)
     requirejs-rails (0.9.1)
       railties (>= 3.1.1, < 3.3)
@@ -293,9 +290,6 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
-    therubyracer (0.12.1)
-      libv8 (~> 3.16.14.0)
-      ref
     thor (0.18.1)
     tilt (1.4.1)
     tins (0.13.2)
@@ -338,7 +332,7 @@ DEPENDENCIES
   google-api-client
   haml-rails
   html5shiv-rails
-  jshint
+  jshintrb
   json
   kgio
   letter_opener
