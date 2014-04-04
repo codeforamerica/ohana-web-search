@@ -11,7 +11,6 @@ group :assets do
   gem 'font-awesome-sass' #font-awesome icons
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jshintrb'
 end
 
 gem 'requirejs-rails', '0.9.1'
@@ -58,6 +57,7 @@ group :development do
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
   gem "letter_opener" # for mocking emails for sending
+  gem 'jshintrb' # for linting JS with `rake jshint`
 end
 
 group :test do
