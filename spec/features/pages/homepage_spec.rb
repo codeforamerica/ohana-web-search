@@ -50,7 +50,8 @@ describe "Home page footer elements" do
 
   it "includes a link to SMCHSA" do
     within("#app-footer") do
-      expect(all('a',:text=>'San Mateo County Human Services Agency').last[:href]).to eq('http://www.co.sanmateo.ca.us/portal/site/humanservices')
+      expect(all('a',:text=>'San Mateo County Human Services Agency').last[:href]).
+        to eq('http://www.co.sanmateo.ca.us/portal/site/humanservices')
     end
   end
 
