@@ -11,6 +11,7 @@ group :assets do
   gem 'font-awesome-sass' #font-awesome icons
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
+  gem 'jshint'
 end
 
 gem 'requirejs-rails', '0.9.1'
