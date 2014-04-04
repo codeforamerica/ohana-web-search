@@ -4490,4 +4490,55 @@ http_interactions:
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council","st-vincent-de-paul-county-wide-services"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
   recorded_at: Wed, 02 Apr 2014 05:47:25 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 02 Apr 2014 22:36:07 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 0bf1388a-19a0-4ebc-854d-af64ec35b920
+      X-Runtime:
+      - '0.033515'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Wed, 02 Apr 2014 22:36:07 GMT
 recorded_with: VCR 2.8.0
