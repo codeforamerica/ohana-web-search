@@ -2,16 +2,16 @@
 define(['util/util'],function(util) {
   'use strict';
 
-	// PRIVATE PROPERTIES
+  // PRIVATE PROPERTIES
   var _languages;
   var _timeoutCount = 0;
 
-	// PUBLIC METHODS
-	function init()
-	{
+  // PUBLIC METHODS
+  function init()
+  {
     _deleteTranslateCookies();
     _checkForGoog();
-	}
+  }
 
   // Removes the google translate cookies by setting their expiration date
   // into the past.
@@ -57,7 +57,7 @@ define(['util/util'],function(util) {
     document.location.search = util.queryString({"translate":_languages.options[_languages.selectedIndex].value});
   }
 
-	return {
-		init:init
-	};
+  return {
+    init:init
+  };
 });

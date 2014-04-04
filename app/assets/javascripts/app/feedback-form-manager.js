@@ -42,7 +42,7 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
   function _sendBtnClicked(evt)
   {
     evt.preventDefault(); // stop the form from submitting
-    var emailCheck = new RegExp('.+@.+\..+','i');
+    var emailCheck = new RegExp('.+@.+\..+','i'); // jshint ignore:line
     var match = emailCheck.exec(_emailInput.value);
     if (match || _emailInput.value === '')
       _feedbackFormSend();

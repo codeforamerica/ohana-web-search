@@ -14,7 +14,7 @@ require(['result/result-map-manager','search/header-manager'], function (map,hea
 
     // initialize no map loaded state
     require(['result/no-result-map-manager','search/header-manager'], function (map,header) {
-    	map.init();
-  	  header.init();
+      map.init();
+      header.init();
   });
 });

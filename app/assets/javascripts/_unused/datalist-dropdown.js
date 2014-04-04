@@ -9,8 +9,8 @@ define(function() {
     // alternative list query code for Safari
     if (input.list == undefined && input.tagName == "INPUT") input.list = document.getElementById(input.getAttribute('list'));
 
-  	if (input.list)
-  	{
+    if (input.list)
+    {
       var i = new item();
       i.init(input);
       _inputs[i.id] = i;
@@ -213,7 +213,7 @@ define(function() {
 
   };
 
-	return {
-		init:init
-	};
+  return {
+    init:init
+  };
 });

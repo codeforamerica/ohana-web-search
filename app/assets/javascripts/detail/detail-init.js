@@ -16,9 +16,9 @@ require(['detail/detail-map-manager','detail/character-limiter','detail/term-pop
 
     // initialize no map loaded state
     require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'], function (map,cl,tpm,header) {
- 			map.init();
-  		cl.init();
-  		tpm.init();
+      map.init();
+      cl.init();
+      tpm.init();
       header.init();
-  	});
+    });
 });
