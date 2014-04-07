@@ -185,18 +185,6 @@ module Features
       page.should have_link("Directions")
     end
 
-    def looks_like_homepage
-      page.should have_title "SMC-Connect"
-      page.should have_content "About"
-      page.should have_content "Contribute"
-      page.should have_content "Feedback"
-      page.should have_content "I need"
-      page.should have_content "reporting"
-      page.should have_content "government assistance"
-      page.should_not have_title "1 result"
-      find("#language-box").should have_content("English")
-    end
-
     def go_to_next_page
       first('.pagination').find_link('>').click
     end
