@@ -2,153 +2,153 @@
 define(['util/util'],function (util) {
   'use strict';
 
-  	// PRIVATE PROPERTIES
-		// search parameter values
-		var _keyword,
-				_location,
-				_language,
-				_kind;
+  // PRIVATE PROPERTIES
+  // search parameter values
+  var _keyword,
+      _location,
+      _language,
+      _kind;
 
-		var _findBtn; // find button on homepage
-		var _updateBtn; // update button on inside page
+  var _findBtn; // find button on homepage
+  var _updateBtn; // update button on inside page
 
-		var _callback; // function to execute when items are clicked
+  var _callback; // function to execute when items are clicked
 
-		// PUBLIC METHODS
-		function init(callback)
-		{
-			_callback = callback;
-			_keyword = document.getElementById("keyword");
-			_location = document.getElementById("location");
-			_kind = document.querySelectorAll("#kind-options .kind-option")
-			_language = document.getElementById("language");
+  // PUBLIC METHODS
+  function init(callback)
+  {
+    _callback = callback;
+    _keyword = document.getElementById("keyword");
+    _location = document.getElementById("location");
+    _kind = document.querySelectorAll("#kind-options .kind-option");
+    _language = document.getElementById("language");
 
-			_findBtn = document.getElementById('find-btn');
-			_updateBtn = document.getElementById('update-btn');
+    _findBtn = document.getElementById('find-btn');
+    _updateBtn = document.getElementById('update-btn');
 
-			// if no ajax callback is given, don't register ajax calls
-			if (callback)
-			{
-				if (_updateBtn) _updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
-				if (_findBtn) _findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
-				_registerAjaxHooks();
-			}
-		}
+    // if no ajax callback is given, don't register ajax calls
+    if (callback)
+    {
+      if (_updateBtn) _updateBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+      if (_findBtn) _findBtn.addEventListener("click",_searchFormSubmittedHandler,false);
+      _registerAjaxHooks();
+    }
+  }
 
-		function refresh(scope)
-		{
-			_registerAjaxHooks(scope)
-		}
+  function refresh(scope)
+  {
+    _registerAjaxHooks(scope);
+  }
 
-		// getters and setters for keyword and location
-		function getKeyword()
-		{
-			return _keyword.value;
-		}
+  // getters and setters for keyword and location
+  function getKeyword()
+  {
+    return _keyword.value;
+  }
 
-		function setKeyword(value)
-		{
-			_keyword.value = value;
-		}
+  function setKeyword(value)
+  {
+    _keyword.value = value;
+  }
 
-		function getLocation()
-		{
-			return _location.value;
-		}
+  function getLocation()
+  {
+    return _location.value;
+  }
 
-		function setLocation(value)
-		{
-			_location.value = value;
-		}
+  function setLocation(value)
+  {
+    _location.value = value;
+  }
 
-		function getKind()
-		{
-			var returnVal = [];
-			for (var v=0;v< _kind.length;v++)
-			{
-				var isChecked = _kind[v].checked ? _kind[v].value : null;
-				returnVal.push( isChecked );
-			}
-			return returnVal;
-		}
+  function getKind()
+  {
+    var returnVal = [];
+    for (var v=0;v< _kind.length;v++)
+    {
+      var isChecked = _kind[v].checked ? _kind[v].value : null;
+      returnVal.push( isChecked );
+    }
+    return returnVal;
+  }
 
-		function setKind(value)
-		{
-			if (value && value instanceof Array)
-			{
-				for (var v=0;v< value.length;v++)
-				{
-					_kind[v].checked = value[v];
-				}
-			}
-		}
+  function setKind(value)
+  {
+    if (value && value instanceof Array)
+    {
+      for (var v=0;v< value.length;v++)
+      {
+        _kind[v].checked = value[v];
+      }
+    }
+  }
 
-		function getLanguage()
-		{
-			return _language.value;
-		}
+  function getLanguage()
+  {
+    return _language.value;
+  }
 
-		function setLanguage(value)
-		{
-			if (value)
-				_language.value = value;
-		}
+  function setLanguage(value)
+  {
+    if (value)
+      _language.value = value;
+  }
 
-		// PRIVATE METHODS
+  // PRIVATE METHODS
 
-		// register all links with "ajax-link" class added as ajax-enabled links
-		function _registerAjaxHooks(scope)
-		{
-			scope = scope || ""
-			scope+=" .ajax-link";
-			var lnks = document.querySelectorAll(scope);
+  // register all links with "ajax-link" class added as ajax-enabled links
+  function _registerAjaxHooks(scope)
+  {
+    scope = scope || "";
+    scope+=" .ajax-link";
+    var lnks = document.querySelectorAll(scope);
 
-			var curr;
-			for (var l=0; l < lnks.length; l++)
-			{
-				curr = lnks[l];
-				curr.addEventListener("click", _linkClickedHandler, false);
-			}
-		}
+    var curr;
+    for (var l=0; l < lnks.length; l++)
+    {
+      curr = lnks[l];
+      curr.addEventListener("click", _linkClickedHandler, false);
+    }
+  }
 
-		function _linkClickedHandler(evt)
-		{
-			var params = util.getQueryParams(this.search);
-			params.kind = getKind();
-			var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
-			if (id != 'organizations')
-				params.id = id;
+  function _linkClickedHandler(evt)
+  {
+    var params = util.getQueryParams(this.search);
+    params.kind = getKind();
+    var id = this.pathname.substring(this.pathname.lastIndexOf("/")+1, this.pathname.length);
+    if (id !== 'organizations')
+      params.id = id;
 
-			_callback.performSearch(params);
+    _callback.performSearch(params);
 
-			evt.preventDefault();
-			return false;
-		}
+    evt.preventDefault();
+    return false;
+  }
 
-		function _searchFormSubmittedHandler(evt)
-		{
-			var params = {};
-			params.keyword = getKeyword();
-			params.location = getLocation();
-			params.kind = getKind();
-			params.language = getLanguage();
-			params.page = 1;
-			_callback.performSearch(params);
+  function _searchFormSubmittedHandler(evt)
+  {
+    var params = {};
+    params.keyword = getKeyword();
+    params.location = getLocation();
+    params.kind = getKind();
+    params.language = getLanguage();
+    params.page = 1;
+    _callback.performSearch(params);
 
-			evt.preventDefault();
-			return false;
-		}
+    evt.preventDefault();
+    return false;
+  }
 
-	return {
-		init:init,
-		refresh:refresh,
-		getKeyword:getKeyword,
-		setKeyword:setKeyword,
-		getLocation:getLocation,
-		setLocation:setLocation,
-		getKind:getKind,
-		setKind:setKind,
-		getLanguage:getLanguage,
-		setLanguage:setLanguage
-	};
+  return {
+    init:init,
+    refresh:refresh,
+    getKeyword:getKeyword,
+    setKeyword:setKeyword,
+    getLocation:getLocation,
+    setLocation:setLocation,
+    getKind:getKind,
+    setKind:setKind,
+    getLanguage:getLanguage,
+    setLanguage:setLanguage
+  };
 });
