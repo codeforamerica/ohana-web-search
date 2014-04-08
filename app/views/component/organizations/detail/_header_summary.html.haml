@@ -1,17 +1,17 @@
-%div.static-content
+%div.static-content><
 	%span.utility-links
-		%span
-			%a{ :href => '#', :onclick=>"window.print();return false;" }
+		%span><
+			%a{ :href => '#', :class=>"button-utility", :onclick=>"window.print();return false;" }
 				%i{ :class => "fa fa-print" }
 				Print
 
 		- if org.key?(:coordinates)
-			%span
-				%a{:href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}",:target=>"_blank"}
+			%span><
+				%a{:class=>"button-utility", :href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}",:target=>"_blank"}
 					%i{ :class=>"fa fa-external-link-square" }
 					%span Directions
 
 		%span
-			%a{ :href => "#{organizations_url(@search_params)}##{org.id}", :target=>"_self" }
+			%a{:class=>"button-utility", :href => "#{organizations_url(@search_params)}##{org.id}", :target=>"_self" }
 				%i{ :class => "fa fa-arrow-circle-left" }
 				Back

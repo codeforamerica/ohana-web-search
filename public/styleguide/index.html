@@ -3,12 +3,82 @@
 <head>
   <meta charset="utf-8">
   <title>Style Guide</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+
   <link href="/assets/font-awesome.css?body=1" media="all" rel="stylesheet" type="text/css">  <link href="/assets/main.css?body=1" media="all" rel="stylesheet" type="text/css">
-  <link href="/assets/main.css?body=1" media="all" rel="stylesheet" type="text/css">
   <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css">
   <link href="/assets/style-guide.css?body=1" media="all" rel="stylesheet" type="text/css">
+
+  <style>
+    .pattern-container
+    {
+      border-bottom:1px dotted #ccc;
+      margin-bottom:10px;
+      padding-bottom:10px;
+    }
+
+    .pattern-container > p
+    {
+      font-size: 16px;
+      margin-bottom:10px;
+    }
+
+    .pattern-source
+    {
+      font-size: 14px;
+      background: rgba(0,0,0,0.1);
+      padding: 10px;
+      margin-bottom:20px;
+      display:inline-block;
+    }
+
+    .pattern-container > header > h1,
+    .pattern-container > header > h2,
+    .pattern-container > header > h3,
+    .pattern-container > header > h4,
+    .pattern-container > header > h5,
+    .pattern-container > header > h6
+    {
+      margin-bottom:10px;
+      color:#ccc;
+      text-transform: capitalize;
+    }
+
+    .pattern-container > header > *:last-child
+    {
+      text-transform: none;
+    }
+
+    .pattern-container > header > h1 { font-size:36px; }
+    .pattern-container > header > h2 { font-size:24px; }
+    .pattern-container > header > h3 { font-size:18px; }
+    .pattern-container > header > h4 { font-size:16px; }
+    .pattern-container > header > h5 { font-size:14px; }
+    .pattern-container > header > h6 { font-size:12px; }
+
+    .pattern-container > .source-container
+    {
+      float:right;
+      text-align: right;
+    }
+
+    .pattern-container > .example-container
+    {
+      display:inline-block;
+      vertical-align: middle;
+    }
+
+  </style>
+
+  <link href="css/prism.css" media="all" rel="stylesheet" type="text/css">
+  <script src="js/prism.js"></script>
+
 </head>
 <body>
+
+<!--
 
   <article class="color-scheme">
     <header>
@@ -320,5 +390,105 @@
 
   </article>
 
+-->
+
+  <script>
+
+    var index = 0;
+    var templates = [
+      "alert/alert-valid.html",
+      "alert/alert-error.html",
+      "alert/alert-warning.html",
+      "alert/alert-info.html",
+      "form/input-search/input-small.html",
+      "form/input-search/input-big.html",
+      "button/button-small.html",
+      "button/button-medium.html",
+      "button/button-big.html",
+      "button/button-utility.html",
+      "pagination/pagination.html"
+    ];
+
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    var xhr = new XMLHttpRequest();
+    var loadingPatterns = false;
+        xhr.onload = reqListener;
+        xhr.open("GET","typography/typeface.html",false);
+        xhr.send();
+        xhr.open("GET","typography/fontsize.html",false);
+        xhr.send();
+        xhr.open("GET","color-scheme/index.html",false);
+        xhr.send();
+        loadingPatterns = true;
+
+    for (var t=0, len = templates.length; t<len; t++)
+    {
+      xhr.open("GET","patterns/"+templates[t],false);
+      xhr.send();
+    }
+
+    function reqListener(evt)
+    {
+      if (loadingPatterns)
+      {
+        addPattern(evt.target.response);
+      }
+      else
+      {
+        var section = document.createElement("section");
+            section.innerHTML = evt.target.response;
+        document.body.appendChild(section);
+      }
+    }
+
+    function addPattern(html)
+    {
+      // extract description, if present
+      var regex = /<!--[\s\S]*?-->\n/g;
+      var commentText = html.match(/(<!-+)([\s\S]* )-+>/);
+      commentText = commentText ? commentText[2] : "";
+      var html = html.replace(regex, "");
+
+      // break template path apart to retrieve grouping names for h1-h6
+      var groups = templates[index++].split("/");
+
+      // build template
+      var pattern = document.createElement("section");
+          pattern.className = "pattern-container"
+
+
+      var header = document.createElement("header");
+          pattern.appendChild(header);
+      var helm;
+      var hnum;
+      for (var g=0, len=groups.length;g<len;g++)
+      {
+        hnum = Number(g+1);
+        if(hnum>6) hnum = 6;
+        helm = document.createElement( ("h"+hnum) );
+        helm.innerHTML = groups[g];
+        header.appendChild(helm);
+      }
+      var comment = document.createElement("p");
+          comment.textContent = commentText;
+      pattern.appendChild(comment);
+
+      var example = document.createElement("section");
+          example.className = "pattern-example";
+          example.innerHTML = html;
+      var source = document.createElement("section");
+          source.className = "pattern-source";
+      var code = document.createElement("code");
+          code.className="language-markup";
+          code.textContent = html;
+          source.appendChild(code);
+
+      pattern.appendChild(source);
+      pattern.appendChild(example);
+
+      document.body.appendChild(pattern);
+    }
+
+  </script>
 </body>
 </html>

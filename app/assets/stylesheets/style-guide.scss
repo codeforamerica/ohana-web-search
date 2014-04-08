@@ -1,70 +1,73 @@
-@import "compass/reset";
-@import "compass/css3/inline-block";
-@import "variables";
+@import "main";
 
 body { margin: 20px; font-family: sans-serif; overflow-x: scroll; }
 body > article > header > h1 { font-size:36px; font-weight:bold;}
 body > article > article > header > h1 { font-size:24px; font-weight:bold; }
 
-h1,h2,article
-{
-	margin-bottom:20px;
-}
-
 dt { margin-bottom:5px; }
 dd { margin-bottom:20px; font-size:10.667px; }
 code { font-family: monospace; }
 
+
+.typography > section > div
+{
+	@include inline-block();
+}
+
+.typography-size-tiny { @include type-size(tiny); }
+.typography-size-small { @include type-size(small); }
+.typography-size-baseline { @include type-size(baseline); }
+.typography-size-medium { @include type-size(medium); }
+.typography-size-large { @include type-size(large); }
+.typography-size-xlarge { @include type-size(xlarge); }
+
+.typography-font-san-serif { font-family:$san_serif_font; }
+.typography-font-serif { font-family:$serif_font; }
+
+
 .color-scheme
 {
-	dd{display:none !important;}
-	dt,dd{@include inline-block();}
-	dt
+	div
 	{
 		border:1px solid rgba($black,.2);
 		width:40px;
 		height:40px;
+		@include inline-block();
 	}
 
-	dt.color-greyscale.darkest 	{ background: $black; }
-	dt.color-greyscale.dark 		{ background: lighten($black,25); }
-	dt.color-greyscale.midtone 	{ background: lighten($black,50); }
-	dt.color-greyscale.light 		{ background: lighten($black,75); }
-	dt.color-greyscale.lightest { background: $white; }
+	.color-greyscale.darkest 	{ background: $black; }
+	.color-greyscale.dark 		{ background: lighten($black,25); }
+	.color-greyscale.midtone 	{ background: lighten($black,50); }
+	.color-greyscale.light 		{ background: lighten($black,75); }
+	.color-greyscale.lightest { background: $white; }
 
-	dt.color-primary.darkest 		{ background: shade($blue,50) }
-	dt.color-primary.dark 			{ background: shade($blue,25) }
-	dt.color-primary.midtone 		{ background: $blue }
-	dt.color-primary.light 			{ background: tint($blue,25) }
-	dt.color-primary.lightest 	{ background: tint($blue,50) }
+	.color-primary.darkest 		{ background: shade($blue,50) }
+	.color-primary.dark 			{ background: shade($blue,25) }
+	.color-primary.midtone 		{ background: $blue }
+	.color-primary.light 			{ background: tint($blue,25) }
+	.color-primary.lightest 	{ background: tint($blue,50) }
 
-	dt.color-secondaryA.darkest 		{ background: shade($green,50) }
-	dt.color-secondaryA.dark 			{ background: shade($green,25) }
-	dt.color-secondaryA.midtone 		{ background: $green }
-	dt.color-secondaryA.light 			{ background: tint($green,25) }
-	dt.color-secondaryA.lightest 	{ background: tint($green,50) }
+	.color-secondaryA.darkest 		{ background: shade($green,50) }
+	.color-secondaryA.dark 			{ background: shade($green,25) }
+	.color-secondaryA.midtone 		{ background: $green }
+	.color-secondaryA.light 			{ background: tint($green,25) }
+	.color-secondaryA.lightest 	{ background: tint($green,50) }
 
-	dt.color-secondaryB.darkest 		{ background: shade($yellow,50) }
-	dt.color-secondaryB.dark 			{ background: shade($yellow,25) }
-	dt.color-secondaryB.midtone 		{ background: $yellow }
-	dt.color-secondaryB.light 			{ background: tint($yellow,25) }
-	dt.color-secondaryB.lightest 	{ background: tint($yellow,50) }
+	.color-secondaryB.darkest 		{ background: shade($yellow,50) }
+	.color-secondaryB.dark 			{ background: shade($yellow,25) }
+	.color-secondaryB.midtone 		{ background: $yellow }
+	.color-secondaryB.light 			{ background: tint($yellow,25) }
+	.color-secondaryB.lightest 	{ background: tint($yellow,50) }
 
-	dt.color-complementaryA.darkest 		{ background: shade($purple,50) }
-	dt.color-complementaryA.dark 			{ background: shade($purple,25) }
-	dt.color-complementaryA.midtone 		{ background: $purple }
-	dt.color-complementaryA.light 			{ background: tint($purple,25) }
-	dt.color-complementaryA.lightest 	{ background: tint($purple,50) }
+	.color-complementaryA.darkest 		{ background: shade($purple,50) }
+	.color-complementaryA.dark 			{ background: shade($purple,25) }
+	.color-complementaryA.midtone 		{ background: $purple }
+	.color-complementaryA.light 			{ background: tint($purple,25) }
+	.color-complementaryA.lightest 	{ background: tint($purple,50) }
 
-	dt.color-complementaryB.darkest 		{ background: shade($red,50) }
-	dt.color-complementaryB.dark 			{ background: shade($red,25) }
-	dt.color-complementaryB.midtone 		{ background: $red }
-	dt.color-complementaryB.light 			{ background: tint($red,25) }
-	dt.color-complementaryB.lightest 	{ background: tint($red,50) }
-
-
-	dt.alert-valid				{ background: saturate($green,1) }
-	dt.alert-error 				{ background: saturate($red,1) }
-	dt.alert-warning 			{ background: saturate($yellow,1) }
-	dt.alert-info				 	{ background: saturate($blue,1) }
+	.color-complementaryB.darkest 		{ background: shade($red,50) }
+	.color-complementaryB.dark 			{ background: shade($red,25) }
+	.color-complementaryB.midtone 		{ background: $red }
+	.color-complementaryB.light 			{ background: tint($red,25) }
+	.color-complementaryB.lightest 	{ background: tint($red,50) }
 }

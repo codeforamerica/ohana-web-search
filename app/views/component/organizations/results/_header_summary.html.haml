@@ -1,39 +1,35 @@
 %div.static-content
 	- unless pages[:total_pages] == 0
 		%nav.pagination
-			%h1
-				Page:
 			%ul
-			- if pages[:prev_page].present?
-				%li.prev
-					%a{:href=>{:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self", :title=>"previous"}
-						%i{:class=>"fa fa-chevron-left", :title=>"<"}
+				- if pages[:prev_page].present?
+					%li.prev><
+						= link_to( "<i class='fa fa-chevron-left' title='previous'></i>".html_safe,{:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self", :title=>"previous" )
 
-			- if pages[:pages][0] != 1
-				%li
-					= link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
-			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
-				%li.collapsed
-					= "…"
+				- if pages[:pages][0] != 1
+					%li><
+						= link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
+				- if pages[:total_pages] > 1 && pages[:pages][1] != 2
+					%li.collapsed><
+						= "…"
 
-			- pages[:pages].each do |page|
+				- pages[:pages].each do |page|
 
-				- if page == pages[:current_page]
-					%li.current
-						= pages[:current_page]
-				- else
-					%li
-						= link_to page, {:page=>page}.merge(@page_params), :target=>"_self"
+					- if page == pages[:current_page]
+						%li.current><
+							= pages[:current_page]
+					- else
+						%li><
+							= link_to page, {:page=>page}.merge(@page_params), :target=>"_self"
 
-			- far_last_item = pages[:pages][pages[:pages].length-1]
-			- near_last_item = pages[:pages][pages[:pages].length-2]
-			- if near_last_item != far_last_item && far_last_item != pages[:total_pages]
-				%li.collapsed
-					= "…"
-			- if far_last_item != pages[:total_pages]
-				%li
-					= link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
-			- if pages[:next_page].present?
-				%li.next
-					%a{:href=>{:page=>pages[:next_page]}.merge(@page_params), :target=>"_self", :title=>"next"}
-						%i{:class=>"fa fa-chevron-right", :title=>">"}
+				- far_last_item = pages[:pages][pages[:pages].length-1]
+				- near_last_item = pages[:pages][pages[:pages].length-2]
+				- if near_last_item != far_last_item && far_last_item != pages[:total_pages]
+					%li.collapsed><
+						= "…"
+				- if far_last_item != pages[:total_pages]
+					%li><
+						= link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
+				- if pages[:next_page].present?
+					%li.next><
+						= link_to( "<i class='fa fa-chevron-right' title='next'></i>".html_safe,{:page=>pages[:next_page]}.merge(@page_params), :target=>"_self", :title=>"next" )

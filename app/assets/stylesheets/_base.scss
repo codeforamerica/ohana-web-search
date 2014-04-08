@@ -124,7 +124,9 @@ ul
   list-style-type: none;
 }
 
-a
+#category-box a,
+#detail-info a,
+.popup-container a
 {
   text-decoration: none;
   color: $greyscale_midtone; // IE fallback
@@ -133,11 +135,24 @@ a
   border-bottom:1px solid $white;
 }
 
-a:hover
+#category-box a:hover,
+#detail-info a:hover,
+.popup-container a:hover
 {
   color:$blue_dark;
   border-bottom:1px solid $greyscale_midtone;
   border-bottom:1px solid rgba($black, .4);
+}
+
+// prevent selection of font awesome icons
+.fa
+{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #popups article:hover,
@@ -212,111 +227,6 @@ sup
       background:$blue_light;
     }
   }
-}
-
-//=================================================================================
-// effects styles
-.hide
-{
-    display: none !important;
-    visibility: hidden;
-}
-
-.transparent
-{
-    @include opacity(0);
-}
-
-// fading styles
-.fade-in
-{
-    @include opacity(1);
-
-    z-index:9999 !important;
-    position:relative;
-
-    //@include transition(opacity $default_duration, z-index $default_duration);
-}
-
-.fade-out
-{
-    @include opacity(0);
-
-    z-index:0 !important;
-    position:relative;
-
-    //@include transition(opacity $default_duration, z-index $default_duration);
-}
-
-// delayed fading styles that trigger at a delay equal to 1/2 the duration of the fading styles
-.fade-in-delay
-{
-    @include opacity(1);
-
-    z-index:9998 !important;
-    position:relative;
-
-    //@include transition(opacity $default_duration, z-index $default_duration);
-    //@include transition-delay($short_duration);
-}
-
-.fade-out-delay
-{
-    @include opacity(0);
-
-    z-index:-9998 !important;
-    position:relative;
-
-    //@include transition(opacity $default_duration, z-index $default_duration);
-    //@include transition-delay($short_duration);
-}
-
-.flip
-{
-    @include rotateY(180deg);
-    @include transition(transform $default_duration);
-    @include backface-visibility( hidden );
-}
-
-.unflip
-{
-    @include rotateY(0deg);
-    @include transition(transform $default_duration);
-    @include backface-visibility( hidden );
-}
-
-.blur
-{
-    @include filter(blur(4px));
-    @include transition(filter $default_duration);
-}
-
-.unblur
-{
-    @include filter(blur(0px));
-    @include transition(filter $default_duration);
-}
-
-.slide-up
-{
-    z-index:-1 !important;
-    margin-top: -9999px !important;
-    position:absolute !important;
-
-    -webkit-transition: margin-top $default_duration, z-index $default_duration;
-    -moz-transition: margin-top $default_duration, z-index $default_duration;
-    transition: margin-top $default_duration, z-index $default_duration;
-}
-
-.slide-down
-{
-    z-index:-1 !important;
-    margin-top: 0px !important;
-    position:absolute !important;
-
-    -webkit-transition: margin-top $default_duration, z-index $default_duration;
-    -moz-transition: margin-top $default_duration, z-index $default_duration;
-    transition: margin-top $default_duration, z-index $default_duration;
 }
 
 //=================================================================================
@@ -1441,20 +1351,18 @@ body { top: 0px !important; }
   top:0;
   right:0;
   z-index: 9999;
+  min-height: 45px;
   font-family: $san_serif_font;
   background:$greyscale_lightest;
-  padding:20px;
-  border-bottom: 1px solid $greyscale_light; // IE fallback
-  border-bottom: 1px solid rgba($black, .1);
+  border-bottom: 1px solid lightest($black); // IE fallback
   width: 100%;
-  min-height: 64px;
   text-align:right;
   @include box-sizing(border-box);
 
   >div
   {
     @include inline-block();
-    vertical-align: baseline;
+    vertical-align: top;
     >*
     {
       @include inline-block();
@@ -1514,12 +1422,8 @@ body { top: 0px !important; }
 
   .utility-links // back to search, directions, print
   {
-    padding-top:5px;
-    padding-bottom:5px;
     >span
     {
-      margin-right: 5px;
-      padding-right: 10px;
       border-right: 1px dotted $greyscale_light;
       @include inline-block();
       vertical-align: baseline;
@@ -1528,16 +1432,13 @@ body { top: 0px !important; }
 
   .static-content
   {
-    margin-left:5px;
+    // Negative margine needed to remove gap between inline buttons.
+    // See http://css-tricks.com/fighting-the-space-between-inline-block-elements/
+    margin-left:-5px;
 
-    .utility-links // back to search, directions, print
+    > *:last-child
     {
-      >span:last-child
-      {
-        margin-right: 5px;
-        padding-right: 0;
-        border-right: 0;
-      }
+      margin-right: 20px;
     }
   }
 
@@ -1547,8 +1448,6 @@ body { top: 0px !important; }
     {
       >span:first-child
       {
-        margin-left: 5px;
-        padding-left: 10px;
         border-left: 1px dotted $greyscale_light;
       }
 

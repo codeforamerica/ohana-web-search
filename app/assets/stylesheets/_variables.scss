@@ -58,46 +58,50 @@ $link_header_hover: $purple_darkest;
 //animation settings
 $default_duration: 50ms;
 
+// styles
+$border_radius_base: 6px;
+
 // fonts
 $serif_font: 'Libre Baskerville', serif;
 $san_serif_font: 'Quattrocento Sans', sans-serif;
 
 // Font sizes. Relative numbered names (-80,-90,-100,-110...) are used
 // instead of labels (small, medium, large) to allow easy insertion
-// of additional intermediate sizes. The font sizing mixins in _mixins.scss
-// provide mapping of human-readable labels to font sizes.
+// of additional intermediate sizes. 100 is the baseline.
+// The font sizing mixins in _mixins.scss provide mapping of human-readable labels to font sizes.
+// For actual font size rhythm calculations, see http://modularscale.com/
 
 // tiny
-$font-size-80: 10px;
+$font-size-80: 9px;
 $font-leading-80: 0.75;
 
 // small
-$font-size-90: 14px;
+$font-size-90: 12px;
 $font-leading-90: 0.75;
 
-// base
-$font-size-100: 18px;
+// baseline
+$font-size-100: 16px;
 $font-leading-100: 1;
 
 // medium
-$font-size-110: 24px;
+$font-size-110: 21px;
 $font-leading-110: 1.25;
 
 // large
-$font-size-120: 32px;
+$font-size-120: 28px;
 $font-leading-120: 1.25;
 
 // x-large
-$font-size-130: 43px;
+$font-size-130: 38px;
 $font-leading-130: 1.5;
 
 // The base font size
-$base-font-size: 18px;
+$font-size-base: 18px;
 // Base line height
-$base-line-height: 30px;
+$ine-height-base: 30px;
 // Rhythm unit (Compass vertical rhythm)
 $rhythm-unit: "rem";
 
-$base-font-family: $san_serif_font;
-$base-font-weight: 400;
-$base-font-color: #303033;
+$font-family-base: $san_serif_font;
+$font-weight-base: 400;
+$font-color-base: #303033;

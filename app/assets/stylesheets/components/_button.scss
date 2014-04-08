@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+// buttons
+.button-small
+{
+  background:none;
+  border:none;
+
+  @include type-size(small);
+  letter-spacing: 1px;
+  color:$black;
+  @include border-radius(4px);
+  @include box-sizing(border-box);
+  padding:4px 6px;
+  cursor:pointer;
+
+  .fa
+  {
+    color: darkest($blue);
+  }
+}
+
+.button-small:hover
+{
+  background: dark($blue);
+  color: light($green);
+
+  .fa
+  {
+    color: light($blue);
+  }
+}
+
+a.button-small,
+a.button-small:hover
+{
+  font-family: $san_serif_font;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+a.button-small:not([href])
+{
+  @extend .button-small:hover;
+  cursor:default;
+}
+
+
+.button-medium
+{
+  @extend .button-small;
+  @include type-size(baseline);
+  letter-spacing: 0px;
+  font-family:$san_serif_font;
+  padding:7px;
+  @include border-radius(4px);
+  background: light($green);
+  border:1px solid darkest($blue);
+}
+
+.button-medium:hover
+{
+  color: light($green);
+  background: dark($blue);
+}
+
+
+.button-big
+{
+  @extend .button-medium;
+  margin:0;
+  padding:10px;
+  @include box-sizing(border-box);
+  vertical-align: baseline;
+  @include border-radius(4px);
+  font-family:$serif_font;
+  @include type-size(medium);
+
+  >span
+  {
+    @include inline-block();
+    vertical-align: baseline;
+    color: $black; // IE fallback
+    color: midtone($black, .5);
+    text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+  }
+  >.fa
+  {
+    color: darkest($blue);
+  }
+}
+
+.button-big:hover
+{
+  background: dark($blue);
+
+  span
+  {
+    color: light($green);
+    text-shadow: none;
+  }
+}
+
+
+// Utility buttons appear in the floating header, which is above the search results and
+// the details page and is set in a fixed position when the page scrolls.
+.button-utility
+{
+  background:none;
+  text-decoration: none;
+  @include inline-block();
+  @include type-size(baseline);
+  letter-spacing: 1px;
+  color:$black;
+  @include box-sizing(border-box);
+  padding:10px;
+  margin:0px;
+  cursor:pointer;
+
+  .fa
+  {
+    color: darkest($blue);
+  }
+
+  &:hover
+  {
+    background: lightest($purple);
+  }
+}
+

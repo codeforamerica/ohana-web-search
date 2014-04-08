@@ -3,15 +3,8 @@
    ========================================================================== */
 
 // alert messages
-.alert-container.floating
-{
-  position:fixed;
-}
 .alert-container
 {
-  z-index:10000;
-  left:0;
-  top:0;
   width:100%;
   min-height:51px;
   font-family:$san_serif_font;
@@ -28,8 +21,8 @@
     position:relative;
     text-align:center;
     @include inline-block();
-    @include border-radius(0px 0px 10px 10px);
-    @include single-box-shadow($black, 0px, 0px, 10px);
+    @include border-radius($border_radius_base);
+    @include single-box-shadow($black, 0px, 0px, $border_radius_base);
 
     p
     {
@@ -98,4 +91,17 @@
     cursor:pointer;
   }
 
+}
+
+.alert-container.floating
+{
+  position:fixed;
+  z-index:10000;
+  left:0;
+  top:0;
+
+  .alert
+  {
+    @include border-radius(0px 0px $border_radius_base $border_radius_base);
+  }
 }

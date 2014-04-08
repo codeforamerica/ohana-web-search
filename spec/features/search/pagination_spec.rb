@@ -20,7 +20,7 @@ feature "results page pagination", :js=>true do
     search_from_home(:keyword=>'libraries')
     within("#floating-results-header .pagination") do
       page.should have_selector('.next')
-      page.should have_content('1 2')
+      page.should have_content('12')
     end
   end
 
@@ -29,7 +29,7 @@ feature "results page pagination", :js=>true do
     go_to_page(2)
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
-      page.should have_content('1 2')
+      page.should have_content('12')
     end
   end
 
@@ -37,7 +37,7 @@ feature "results page pagination", :js=>true do
     search_from_home
     within('#floating-results-header .pagination') do
       page.should have_selector('.next')
-      page.should have_content('1 2 3 4 5 … 20')
+      page.should have_content('12345…20')
     end
   end
 
@@ -47,7 +47,7 @@ feature "results page pagination", :js=>true do
     page.should have_content('571-589 of 589 results')
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
-      page.should have_content('1 … 16 17 18 19 20')
+      page.should have_content('1…1617181920')
     end
   end
 
@@ -57,7 +57,7 @@ feature "results page pagination", :js=>true do
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
       page.should have_selector('.next')
-      page.should have_content('1 2 3 4 5 … 20')
+      page.should have_content('12345…20')
     end
   end
 
@@ -67,7 +67,7 @@ feature "results page pagination", :js=>true do
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
       page.should have_selector('.next')
-      page.should have_content('1 … 2 3 4 5 6 … 20')
+      page.should have_content('1…23456…20')
     end
   end
 
@@ -78,7 +78,7 @@ feature "results page pagination", :js=>true do
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
       page.should have_selector('.next')
-      page.should have_content('1 … 16 17 18 19 20')
+      page.should have_content('1…1617181920')
     end
   end
 
@@ -89,7 +89,7 @@ feature "results page pagination", :js=>true do
     within('#floating-results-header .pagination') do
       page.should have_selector('.prev')
       page.should have_selector('.next')
-      page.should have_content('1 … 15 16 17 18 19 … 20')
+      page.should have_content('1…1516171819…20')
     end
   end
 
