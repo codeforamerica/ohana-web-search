@@ -100,7 +100,7 @@ textarea {
 html,body
 {
   height: 100%;
-  font-family: $serif_font;
+  font-family: $font_serif;
 }
 
 body
@@ -162,7 +162,7 @@ ul
 {
   a
   {
-    color:$blue_darkest;
+    color:darkest($blue);
   }
 }
 
@@ -173,14 +173,12 @@ ul
     a
     {
       color:$link_header;
-      padding-bottom:2px;
-      border-bottom:none;
+      text-decoration: none;
     }
 
     a:hover
     {
       color:$link_header_hover;
-      border-bottom:none;
     }
   }
 }
@@ -210,7 +208,7 @@ sup
     {
       display:block;
       font-size:14px;
-      font-family:$san_serif_font;
+      font-family:$font_san_serif;
       padding:5px;
       @include box-sizing(border-box);
       cursor:pointer;
@@ -353,7 +351,7 @@ sup
   }
   p
   {
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
     font-size:14px;
     margin-bottom:5px;
     margin-left:10px;
@@ -363,7 +361,7 @@ sup
   footer > p
   {
     font-size:12px;
-    font-family: $san_serif_font;
+    font-family: $font_san_serif;
   }
 
   // feedback form styles
@@ -400,7 +398,7 @@ sup
     border:1px solid $black;
     color:$black;
     background:$purple_lightest;
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
     padding:10px;
     margin-top:10px;
     margin-bottom:5px;
@@ -505,7 +503,7 @@ sup
     margin-left:5px;
     position: relative;
     top:-10px;
-    font-family: $san_serif_font;
+    font-family: $font_san_serif;
   }
 
   // logo/header area
@@ -541,7 +539,7 @@ sup
     h2
     {
         color:$black;
-        font-family: $san_serif_font;
+        font-family: $font_san_serif;
         display:inline-block;
         margin-left:14px;
         padding-bottom: 12px;
@@ -582,7 +580,7 @@ sup
     {
       padding:20px;
       font-size:14px;
-      font-family:$san_serif_font;
+      font-family:$font_san_serif;
       color:$greyscale_midtone;
     }
 
@@ -686,7 +684,7 @@ sup
     border:1px solid $black;
     color:$black;
     background:$purple_lightest;
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
     padding:10px;
     margin-top:10px;
     margin-bottom:5px;
@@ -717,7 +715,7 @@ sup
   {
     @include inline-block();
     vertical-align:bottom;
-    font-family: $san_serif_font;
+    font-family: $font_san_serif;
     font-size:14px;
   }
 
@@ -865,7 +863,7 @@ body { top: 0px !important; }
     >legend
     {
       font-size:16px;
-      font-family:$san_serif_font;
+      font-family:$font_san_serif;
       font-weight:bold;
       cursor:pointer;
       @include inline-block();
@@ -1237,7 +1235,7 @@ body { top: 0px !important; }
   //border-top:1px dotted $black_alpha40;
   //border-bottom:1px dotted $black_alpha40;
   margin-bottom:25px;
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
 
   fieldset
   {
@@ -1352,7 +1350,7 @@ body { top: 0px !important; }
   right:0;
   z-index: 9999;
   min-height: 45px;
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
   background:$greyscale_lightest;
   border-bottom: 1px solid lightest($black); // IE fallback
   width: 100%;
@@ -1377,7 +1375,7 @@ body { top: 0px !important; }
     margin: 0px;
     margin-left: 10px;
     color: $black;
-    font-family: $serif_font;
+    font-family: $font_serif;
   }
 
   /*
@@ -1496,7 +1494,7 @@ body { top: 0px !important; }
 
   #search-summary
   {
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
     font-size:14px;
     padding:10px;
     padding-left:20px;
@@ -1543,7 +1541,7 @@ body { top: 0px !important; }
   // no results styling
   section.no-results
   {
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
 
     .message
     {
@@ -1582,7 +1580,7 @@ body { top: 0px !important; }
   @include inline-block();
   margin-bottom: 15px;
   font-size:12px;
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
 
   button
   {
@@ -1642,7 +1640,7 @@ body { top: 0px !important; }
     padding:30px;
     margin:20px;
     @include border-radius(4px);
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
 
     >p
     {
@@ -1694,7 +1692,7 @@ body { top: 0px !important; }
 // Results - list view
 #list-view
 {
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
   >ul
   {
     >li
@@ -1780,7 +1778,7 @@ body { top: 0px !important; }
     {
       >hgroup
       {
-        font-family: $serif_font;
+        font-family: $font_serif;
         padding: 10px;
 
         h1.name
@@ -1788,7 +1786,7 @@ body { top: 0px !important; }
           font-size:24px;
           letter-spacing: 1px;
           display:inline;
-          font-family:$serif_font;
+          font-family:$font_serif;
         }
 
         h1.name > a:after,
@@ -1796,7 +1794,7 @@ body { top: 0px !important; }
         {
           content:" more...";
           font-size:12px;
-          font-family:$san_serif_font;
+          font-family:$font_san_serif;
           color: $greyscale_midtone; // IE fallback
           color: rgba($black,.4);
         }
@@ -1814,7 +1812,7 @@ body { top: 0px !important; }
         {
           font-size:14px;
           color:$greyscale_dark;
-          font-family:$serif_font;
+          font-family:$font_serif;
 
           span
           {
@@ -1837,7 +1835,7 @@ body { top: 0px !important; }
         @include border-radius(4px);
         padding:5px;
         @include inline-block();
-        font-family:$san_serif_font;
+        font-family:$font_san_serif;
       }
     }
 
@@ -1931,7 +1929,7 @@ body { top: 0px !important; }
   min-width:135px;
   padding:10px;
   font-size:14px;
-  font-family:$san_serif_font;
+  font-family:$font_san_serif;
   @include box-sizing(border-box);
   cursor:pointer;
   color:$greyscale_midtone;
@@ -1948,7 +1946,7 @@ body { top: 0px !important; }
 {
   background:$greyscale_lightest;
   color:$black;
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
 
   // section header
   > header
@@ -2004,7 +2002,7 @@ body { top: 0px !important; }
 
     > hgroup
     {
-      font-family: $serif_font;
+      font-family: $font_serif;
       padding: 10px;
       padding-left: 20px;
 
@@ -2042,7 +2040,7 @@ body { top: 0px !important; }
       border-bottom:1px solid $greyscale_light; // IE fallback
       border-bottom:1px solid rgba($black,.1);
       letter-spacing: 1px;
-      font-family: $san_serif_font;
+      font-family: $font_san_serif;
       @include inline-block();
       vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
     }
@@ -2056,7 +2054,7 @@ body { top: 0px !important; }
       color:$greyscale_dark;
       padding:20px;
       padding-top:0px;
-      font-family: $san_serif_font;
+      font-family: $font_san_serif;
 
       > h1
       {
@@ -2132,7 +2130,7 @@ body { top: 0px !important; }
         border-bottom:1px solid $greyscale_light; // IE fallback
         border-bottom:1px solid rgba($black,.1);
         letter-spacing: 1px;
-        font-family: $san_serif_font;
+        font-family: $font_san_serif;
         @include inline-block();
         vertical-align: baseline; // overrides compass inline-block polyfill - needed for correct font alignment
       }
@@ -2152,7 +2150,7 @@ body { top: 0px !important; }
       {
         display:table;
         font-size:18px;
-        font-family: $san_serif_font;
+        font-family: $font_san_serif;
         color:$black;
         padding-bottom:20px;
 
@@ -2202,7 +2200,7 @@ body { top: 0px !important; }
     {
       @include inline-block();
       vertical-align: baseline; // fix for compass polyfill
-      font-family: $san_serif_font;
+      font-family: $font_san_serif;
       margin-left:5px;
       line-height: normal;
     }
@@ -2244,7 +2242,7 @@ body { top: 0px !important; }
       //background:$green_lightest;
       @include border-radius(5px);
       text-align:center;
-      font-family:$san_serif_font;
+      font-family:$font_san_serif;
       font-size:24px;
       padding-top:40px;
       padding-bottom:0px;
@@ -2291,7 +2289,7 @@ body { top: 0px !important; }
     background:$blue_lightest;
     padding:5px;
     font-size:14px;
-    font-family:$san_serif_font;
+    font-family:$font_san_serif;
     border:2px solid $blue_dark;
     border-bottom:0;
     text-align:center;
@@ -2350,7 +2348,7 @@ body { top: 0px !important; }
     {
       text-align: right;
       font-size: 12px;
-      font-family: $san_serif_font;
+      font-family: $font_san_serif;
 
       > h1
       {

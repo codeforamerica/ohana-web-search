@@ -36,7 +36,7 @@
 a.button-small,
 a.button-small:hover
 {
-  font-family: $san_serif_font;
+  font-family: $font_san_serif;
   border-bottom: none;
   text-decoration: none;
 }
@@ -53,7 +53,7 @@ a.button-small:not([href])
   @extend .button-small;
   @include type-size(baseline);
   letter-spacing: 0px;
-  font-family:$san_serif_font;
+  font-family:$font_san_serif;
   padding:7px;
   @include border-radius(4px);
   background: light($green);
@@ -75,7 +75,7 @@ a.button-small:not([href])
   @include box-sizing(border-box);
   vertical-align: baseline;
   @include border-radius(4px);
-  font-family:$serif_font;
+  font-family:$font_serif;
   @include type-size(medium);
 
   >span
