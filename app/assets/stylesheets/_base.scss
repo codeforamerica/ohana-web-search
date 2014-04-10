@@ -1126,12 +1126,12 @@ body { top: 0px !important; }
 
 .search-check input[type=checkbox]:checked + label
 {
-  @include background( linear-gradient(top,lightest($green),$green_midtone) );
+  @include background( linear-gradient(top,lightest($green),midtone($green)) );
 }
 
 .search-check input[type=checkbox]:indeterminate + label
 {
-  @include background( linear-gradient(top,lightest($green),$green_midtone) );
+  @include background( linear-gradient(top,lightest($green),midtone($green)) );
 }
 
 .search-check input[type=checkbox]:checked + label:before,
@@ -1211,7 +1211,7 @@ body { top: 0px !important; }
 
 .search-check input[type=checkbox]:checked + label
 {
-  @include background( linear-gradient(top,lightest($green),$green_midtone) );
+  @include background( linear-gradient(top,lightest($green),midtone($green)) );
   border:1px solid darkest($blue);
 }
 */
@@ -1308,11 +1308,11 @@ body { top: 0px !important; }
       {
         > li
         {
-          border-left:6px solid $yellow_light !important;
+          border-left:6px solid light($yellow) !important;
         }
         > li:nth-child(odd)
         {
-          border-left:6px solid $yellow_midtone !important;
+          border-left:6px solid midtone($yellow) !important;
         }
       }
 

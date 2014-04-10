@@ -226,7 +226,7 @@
             margin:0;
             margin-top:10px;
             @include border-radius(4px);
-            border:1px solid $blue_darkest;
+            border:1px solid darkest($blue);
         }
       }
 
@@ -377,26 +377,26 @@
 
       #search-summary-container
       {
-        background:$yellow_lightest;
-        border-bottom:1px solid $greyscale_midtone; // IE fallback
-        border-bottom:1px solid rgba($black,.1);
+        background: lightest($yellow);
+        border-bottom: 1px solid $greyscale_midtone; // IE fallback
+        border-bottom: 1px solid rgba($black,.1);
       }
 
       #map-view-control
       {
-        padding-left:20px;
+        padding-left: 20px;
         width: 100%;
-        border-bottom:1px solid $greyscale_midtone; // IE fallback
-        border-bottom:1px solid rgba($black,.1);
+        border-bottom: 1px solid $greyscale_midtone; // IE fallback
+        border-bottom: 1px solid rgba($black,.1);
       }
     }
 
     #map-canvas
     {
-      border-left:20px solid $greyscale_lightest;
-      border-right:20px solid $greyscale_lightest;
-      border-bottom:0;
-      border-top:0;
+      border-left: 20px solid $greyscale_lightest;
+      border-right: 20px solid $greyscale_lightest;
+      border-bottom: 0;
+      border-top: 0;
     }
 
     #detail-info
