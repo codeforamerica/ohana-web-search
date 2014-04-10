@@ -30,8 +30,30 @@
         {
           position:relative;
           @include border-radius(4px);
-          border:1px solid $blue_darkest;
+          border:1px solid darkest($blue);
+          background: light($green);
           margin-top: 10px;
+
+          >span
+          {
+            text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+          }
+
+          &:hover
+          {
+            background: dark($blue);
+
+            >span
+            {
+              color: lightest($green);
+              text-shadow: none;
+            }
+
+            >.fa
+            {
+              color: light($blue);
+            }
+          }
         }
       }
     }
@@ -72,7 +94,11 @@
 
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-
+  .button-directions,
+      .button-map-zoom
+      {
+        border-left: 1px dotted $greyscale_light;
+      }
 }
 
 // All Mobile Sizes (devices and browser)
@@ -265,37 +291,49 @@
 
     .results-header
     {
-      text-align:left;
-      >div
+      text-align:center;
+
+      h1
       {
-       >p,>h1
-      {
-        display:none;
-      }
+        display: none;
       }
 
-      .floating-content
+      .left-column
       {
+        position: static;
+      }
 
-        .utility-links // back to search, directions, print
+      .right-column
+      {
+        position: static;
+      }
+
+      .static-content > *:last-child
+      {
+        margin-right: 0;
+      }
+
+      .button-print
+      {
+        display: none;
+      }
+
+      .button-directions,
+      .button-map-zoom
+      {
+        border-left: 1px dotted $greyscale_light;
+      }
+
+      .pagination
+      {
+        li
         {
-          >span
-          {
-            padding-left:0;
-          }
+          display:none;
         }
-      }
 
-      .utility-links // back to search, directions, print
-      {
-        >span
+        .next,.prev,.current
         {
-          border:0;
-        }
-
-        >span:first-child
-        {
-          border:0;
+          @include inline-block();
         }
       }
     }
@@ -375,6 +413,11 @@
       {
         float:clear;
         width:100%;
+
+        > section
+        {
+          @include border-radius(0px);
+        }
       }
 
       > section

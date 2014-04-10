@@ -695,8 +695,6 @@ sup
 .inside .main
 {
   background-color: $blue_lightest;
-  border-left:2px solid $blue_dark;
-  //@include background( linear-gradient( $blue_lightest 0%, $blue_midtone 100%) );
 }
 
 //=================================================================================
@@ -850,12 +848,12 @@ body { top: 0px !important; }
 
 .inside #search-box
 {
-  text-align:center;
-  margin-bottom:20px;
+  text-align: left;
+  margin-bottom: 20px;
 
   section
   {
-    text-align:left;
+    text-align: left;
   }
 
   fieldset
@@ -904,20 +902,17 @@ body { top: 0px !important; }
 
 .inside #keyword-search-box
 {
-  padding:10px;
-  padding-bottom: 14px;
-  background:$blue_midtone;
-  border-bottom:1px solid $blue_dark;
+  padding: 10px;
+  padding-top: 6px;
+  padding-bottom: 0px;
+  background: midtone($blue);
 }
 
 #search-controls
 {
-  padding:5px;
-
-  li
-  {
-    @include inline-block();
-  }
+  padding: 5px;
+  margin: 10px;
+  border-bottom: 1px solid midtone($blue);
 }
 
 #geolocate-box
@@ -1357,69 +1352,26 @@ body { top: 0px !important; }
   text-align:right;
   @include box-sizing(border-box);
 
-  >div
+  h1
   {
-    @include inline-block();
-    vertical-align: top;
-    >*
-    {
-      @include inline-block();
-      vertical-align: baseline;
-    }
-  }
-
-  >*>h1
-  {
-    font-size: 18px;
+    font-size: $font-size-110;
     letter-spacing: 1px;
     margin: 0px;
-    margin-left: 10px;
+    padding-left: 20px;
+    padding-top: 9px;
+    padding-bottom: 6px;
     color: $black;
     font-family: $font_serif;
   }
 
-  /*
-  a
-  {
-    color: $black;
-    padding:5px;
-    border-radius:5px;
-    text-decoration: none;
-    border-bottom:0;
-    margin-right:10px;
-
-    border:2px solid $blue_darkest;
-    background:$green_light;
-
-    .ohana-icon
-    {
-      color:$blue_darkest;
-    }
-  }
-
-  a:last-child
-  {
-    margin-right:0px;
-  }
-
-  a:hover
-  {
-    color: $yellow_light;
-    background:$blue_dark;
-  }
-
-  a.disabled
-  {
-    background: $greyscale_light;
-    color: $greyscale_midtone; // IE fallback
-    color: $black_alpha40;
-    cursor:default;
-    pointer-events:none; // not supported in IE<11!
-  }
-  */
-
   .utility-links // back to search, directions, print
   {
+
+    >span:first-child
+    {
+      border-left: 1px dotted $greyscale_light;
+    }
+
     >span
     {
       border-right: 1px dotted $greyscale_light;
@@ -1428,33 +1380,74 @@ body { top: 0px !important; }
     }
   }
 
-  .static-content
+  .button-top
   {
-    // Negative margine needed to remove gap between inline buttons.
-    // See http://css-tricks.com/fighting-the-space-between-inline-block-elements/
-    margin-left:-5px;
+    border-left: 1px dotted $greyscale_light;
+  }
 
-    > *:last-child
+  .button-map-zoom
+  {
+    border-right: 1px dotted $greyscale_light;
+  }
+
+  .left-column
+  {
+    float:left;
+    z-index:9998;
+
+    > *
     {
-      margin-right: 20px;
+      @include inline-block();
     }
   }
 
-  .floating-content
+  .right-column
   {
-    .utility-links // back to search, directions, print
+    z-index:9997;
+    > *
     {
-      >span:first-child
-      {
-        border-left: 1px dotted $greyscale_light;
-      }
-
-      >span:last-child
-      {
-        margin-right: 0;
-      }
+      @include inline-block();
     }
   }
+
+  .search-summary
+  {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+
+    > *
+    {
+      @include inline-block();
+    }
+
+    strong
+    {
+      font-weight: bold;
+    }
+
+    .map-summary
+    {
+      margin-left: 20px;
+    }
+
+    .fa-map-marker
+    {
+      color: $greyscale_midtone;
+    }
+  }
+
+  > *:last-child
+  {
+    margin-right: 20px;
+  }
+}
+
+// hide static content when header is floating
+#floating-results-header.floating .static-content
+{
+  display: none !important;
 }
 
 #list-view div:last-child
@@ -1480,13 +1473,6 @@ body { top: 0px !important; }
 
 #results-entries
 {
-
-  #map-view-control
-  {
-    background:$white;
-    min-height:40px;
-  }
-
   #search-summary-container
   {
     @include background( linear-gradient(left,$yellow_lightest,$white) );
@@ -1926,13 +1912,9 @@ body { top: 0px !important; }
 #map-view-control
 {
   @include inline-block();
-  min-width:135px;
-  padding:10px;
-  font-size:14px;
   font-family:$font_san_serif;
   @include box-sizing(border-box);
   cursor:pointer;
-  color:$greyscale_midtone;
 }
 
 #map-view-control:hover
