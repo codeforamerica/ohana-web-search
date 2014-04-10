@@ -126,7 +126,8 @@ ul
 
 #category-box a,
 #detail-info a,
-.popup-container a
+.popup-container a,
+section.no-results .message a
 {
   text-decoration: none;
   color: $greyscale_midtone; // IE fallback
@@ -137,7 +138,8 @@ ul
 
 #category-box a:hover,
 #detail-info a:hover,
-.popup-container a:hover
+.popup-container a:hover,
+section.no-results .message a:hover
 {
   color:$blue_dark;
   border-bottom:1px solid $greyscale_midtone;
@@ -1354,7 +1356,7 @@ body { top: 0px !important; }
 
   h1
   {
-    font-size: $font-size-110;
+    font-size: $font_size_110;
     letter-spacing: 1px;
     margin: 0px;
     padding-left: 20px;
@@ -1481,7 +1483,7 @@ body { top: 0px !important; }
   #search-summary
   {
     font-family:$font_san_serif;
-    font-size:14px;
+    @include type-size(baseline);
     padding:10px;
     padding-left:20px;
 
@@ -1532,14 +1534,15 @@ body { top: 0px !important; }
     .message
     {
       margin:80px auto;
-      max-width:370px;
-      font-size:14px;
+      max-width:245px;
+      font-size: $font_size_100;
 
       > strong
       {
-        font-size:18px;
+        font-size: $font_size_110;
         font-weight:bold;
         display:block;
+        margin-bottom:10px;
       }
       > em
       {
@@ -1873,16 +1876,22 @@ body { top: 0px !important; }
 
     .address
     {
-      font-size:14px;
+      @include type-size(baseline);
       margin-left:20px;
     }
 
     .short-desc
     {
-      font-size:14px;
+      @include type-size(baseline);
       margin-left:20px;
       color:$purple_darkest;
     }
+  }
+
+  footer
+  {
+    margin-right: 20px;
+    text-align: right;
   }
 }
 
@@ -1943,7 +1952,7 @@ body { top: 0px !important; }
     .kind // kind
     {
       color:$blue_dark;
-      font-size:14px;
+      @include type-size(baseline);
     }
 
     .icon
@@ -1990,14 +1999,14 @@ body { top: 0px !important; }
 
       h1 // name
       {
-        font-size:32px;
+        @include type-size(large);
         letter-spacing: 1px;
         color:$black;
       }
 
       h2 // agency
       {
-        font-size:16px;
+        @include type-size(medium);
         color:$greyscale_dark;
       }
     }
@@ -2014,7 +2023,7 @@ body { top: 0px !important; }
 
     > h1
     {
-      font-size: 14px;
+      @include type-size(small);
       color: $greyscale_midtone;
       margin-top: 0px;
       margin-bottom: 10px;
@@ -2030,7 +2039,7 @@ body { top: 0px !important; }
     > * > section
     {
       margin:0;
-      font-size:16px;
+      @include type-size(baseline);
       margin-left:20px;
       margin-right:20px;
       color:$greyscale_dark;
@@ -2041,7 +2050,7 @@ body { top: 0px !important; }
       > h1
       {
         color:$black;
-        font-size:16px;
+        @include type-size(baseline);
         font-weight:bold;
         background: $white; // IE fallback
         background: rgba($purple_lightest, .2);
