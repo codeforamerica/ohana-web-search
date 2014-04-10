@@ -8,7 +8,6 @@ dt { margin-bottom:5px; }
 dd { margin-bottom:20px; font-size:10.667px; }
 code { font-family: monospace; }
 
-
 .typography > section > div
 {
 	@include inline-block();
@@ -70,4 +69,63 @@ code { font-family: monospace; }
 	.color-complementaryB.midtone 		{ background: $red }
 	.color-complementaryB.light 			{ background: tint($red,25) }
 	.color-complementaryB.lightest 	{ background: tint($red,50) }
+}
+
+.pattern-container
+{
+  border-bottom:1px dotted #ccc;
+  margin-bottom:10px;
+  padding-bottom:10px;
+}
+
+.pattern-container > p
+{
+  font-size: 16px;
+  margin-bottom:10px;
+}
+
+.pattern-source
+{
+  font-size: 14px;
+  background: rgba(0,0,0,0.1);
+  padding: 10px;
+  margin-bottom:20px;
+  display:inline-block;
+}
+
+.pattern-container > header > h1,
+.pattern-container > header > h2,
+.pattern-container > header > h3,
+.pattern-container > header > h4,
+.pattern-container > header > h5,
+.pattern-container > header > h6
+{
+  margin-bottom:10px;
+  color:#ccc;
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.pattern-container > header > *:last-child
+{
+  text-transform: none;
+}
+
+.pattern-container > header > h1 { font-size:36px; }
+.pattern-container > header > h2 { font-size:24px; }
+.pattern-container > header > h3 { font-size:18px; }
+.pattern-container > header > h4 { font-size:16px; }
+.pattern-container > header > h5 { font-size:14px; }
+.pattern-container > header > h6 { font-size:12px; }
+
+.pattern-container > .source-container
+{
+  float:right;
+  text-align: right;
+}
+
+.pattern-container > .example-container
+{
+  display:inline-block;
+  vertical-align: middle;
 }
