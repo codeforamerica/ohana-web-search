@@ -18,17 +18,17 @@ feature 'search results map', :js=>true do
 
 end
 
-feature 'nearby map', :js=>true do
+feature 'detail view map', :js=>true do
 
   context 'location has coordinates', :vcr do
-    it "displays a nearby map" do
+    it "displays a map" do
       visit('/organizations/521d32b91974fcdb2b00001c')
       page.should have_selector("#detail-map-view")
     end
   end
 
   context 'location does not have coordinates', :vcr do
-    it "does not display a nearby map" do
+    it "does not display a map" do
       visit('/organizations/521d33901974fcdb2b002581')
       page.should_not have_selector("#detail-map-view")
     end
