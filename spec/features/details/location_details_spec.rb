@@ -47,9 +47,8 @@ feature "location details" do
       expect(page).to have_content("Contact")
     end
 
-    it "includes the department, type, and phone hours" do
-      expect(page).to have_content("(650) 372-6200 TTY Information (Monday-Friday,
-        8-5)")
+    it "includes the department and phone type" do
+      expect(page).to have_content("(650) 372-6200 TTY Information")
     end
 
     it "includes the Fax number" do
