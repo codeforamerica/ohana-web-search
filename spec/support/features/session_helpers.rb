@@ -67,8 +67,8 @@ module Features
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
         find(".closed").trigger("mousedown")
-        page.should have_selector(".open")
-        find(".available-options").should have_css(".toggle-group", :count=>count)
+        expect(page).to have_selector(".open")
+        expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
         find(".open").trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -84,8 +84,8 @@ module Features
         # test clicking toggle functionality
         expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
-        page.should have_selector(".open")
-        find(".available-options").should have_css(".toggle-group", :count=>count)
+        expect(page).to have_selector(".open")
+        expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
         find(".options label",:text=>val).trigger("mousedown")
         expect(all(".current-option label").last).to have_content(val)
       end
@@ -99,8 +99,8 @@ module Features
       within("##{name}-options") do
         # test adding custom value functionality
         find(".closed").trigger("mousedown")
-        page.should have_selector(".open")
-        find(".available-options").should have_css(".toggle-group", :count=>2)
+        expect(page).to have_selector(".open")
+        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
         fill_in("#{name}-option-input", :with => val)
         all(".toggle-group-wrapper.add label").first.trigger("mousedown")
@@ -114,9 +114,9 @@ module Features
       find(".require-loaded")
       within("##{name}-options") do
         find(".closed").trigger('mousedown')
-        page.should have_selector(".open")
-        find(".available-options").should have_css(".toggle-group", :count=>2)
-        find_field("#{name}-option-input").value.should eq field
+        expect(page).to have_selector(".open")
+        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
+        expect(find_field("#{name}-option-input").value).to eq field
       end
     end
 
@@ -126,63 +126,63 @@ module Features
     end
 
     def looks_like_results
-      page.should have_content("SanMaceo Example Agency")
-      page.should have_content("1 result")
-      page.should have_title "1 result"
+      expect(page).to have_content("SanMaceo Example Agency")
+      expect(page).to have_content("1 result")
+      expect(page).to have_title "1 result"
     end
 
     def looks_like_puente
-      page.should have_content("Puente Resource Center")
-      page.should have_content("1 result")
-      page.should have_title "1 result"
+      expect(page).to have_content("Puente Resource Center")
+      expect(page).to have_content("1 result")
+      expect(page).to have_title "1 result"
     end
 
     def looks_like_no_results
-      page.should have_selector(".no-results")
-      page.should have_content("your search returned no results.")
-      page.should have_selector("#search-summary")
-      page.should_not have_selector('#map-canvas')
+      expect(page).to have_selector(".no-results")
+      expect(page).to have_content("your search returned no results.")
+      expect(page).to have_selector("#search-summary")
+      expect(page).not_to have_selector('#map-canvas')
     end
 
     def looks_like_location
-      find("#detail-info .description a").should have_content("more")
+      expect(find("#detail-info .description a")).to have_content("more")
       find("#detail-info .description a").click
-      find("#detail-info .description a").should have_content("less")
+      expect(find("#detail-info .description a")).to have_content("less")
 
-      page.should have_title "San Maceo Agency | SMC-Connect"
+      expect(page).to have_title "San Maceo Agency | SMC-Connect"
 
-      page.should have_content("Works to control")
-      page.should have_content("Profit and nonprofit")
-      page.should have_content("Marin County")
-      page.should have_content("Walk in")
-      page.should have_content("permits and photocopying")
-      page.should have_content("Russian")
-      page.should have_content("Special parking")
-      page.should have_link("Print")
-      page.should have_link("Directions")
+      expect(page).to have_content("Works to control")
+      expect(page).to have_content("Profit and nonprofit")
+      expect(page).to have_content("Marin County")
+      expect(page).to have_content("Walk in")
+      expect(page).to have_content("permits and photocopying")
+      expect(page).to have_content("Russian")
+      expect(page).to have_content("Special parking")
+      expect(page).to have_link("Print")
+      expect(page).to have_link("Directions")
     end
 
     def looks_like_market
-      find("#detail-info .description a").should have_content("more")
+      expect(find("#detail-info .description a")).to have_content("more")
       find("#detail-info .description a").click
-      find("#detail-info .description a").should have_content("less")
+      expect(find("#detail-info .description a")).to have_content("less")
 
-      page.should have_title "San Maceo Agency | SMC-Connect"
+      expect(page).to have_title "San Maceo Agency | SMC-Connect"
 
       within ("#detail-info .payments-accepted") do
-        page.should_not have_content("Women, Infants, and Children")
+        expect(page).not_to have_content("Women, Infants, and Children")
         find(".popup-term", :text=>"WIC").trigger(:mousedown)
-        page.should have_content("Women, Infants, and Children")
+        expect(page).to have_content("Women, Infants, and Children")
       end
-      page.should have_content("Works to control")
-      page.should have_content("Profit and nonprofit")
-      page.should have_content("Marin County")
-      page.should have_content("Walk in")
-      page.should have_content("permits and photocopying")
-      page.should have_content("Russian")
-      page.should have_content("Special parking")
-      page.should have_link("Print")
-      page.should have_link("Directions")
+      expect(page).to have_content("Works to control")
+      expect(page).to have_content("Profit and nonprofit")
+      expect(page).to have_content("Marin County")
+      expect(page).to have_content("Walk in")
+      expect(page).to have_content("permits and photocopying")
+      expect(page).to have_content("Russian")
+      expect(page).to have_content("Special parking")
+      expect(page).to have_link("Print")
+      expect(page).to have_link("Directions")
     end
 
     def go_to_next_page

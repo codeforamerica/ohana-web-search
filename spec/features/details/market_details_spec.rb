@@ -17,8 +17,8 @@ feature "market details", :js => true do
 
     xscenario 'return to search results via details page', :vcr do
       find_link("Result list").click
-      page.find("#search-summary").
-        should have_content("1 of 1 result matching 'maceo'")
+      expect(page.find("#search-summary")).
+        to have_content("1 of 1 result matching 'maceo'")
     end
   end
 
