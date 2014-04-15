@@ -7,7 +7,7 @@ feature 'nearby locations on details page', :js => true do
 
     xit "does not include nearby locations control" do
       within('#show-nearby-control') do
-        page.should have_content("NOTE: No nearby services at this location")
+        expect(page).to have_content("NOTE: No nearby services at this location")
       end
     end
 
@@ -18,7 +18,7 @@ feature 'nearby locations on details page', :js => true do
 
     xit "includes nearby locations control" do
       within('#show-nearby-control') do
-        page.should have_content("Show nearby services")
+        expect(page).to have_content("Show nearby services")
       end
     end
 
