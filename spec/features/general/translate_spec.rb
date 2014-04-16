@@ -12,10 +12,10 @@ feature 'page translation', :js=>true do
       visit('/')
       within("#language-box") do
         all_links = all('a')
-        all_links.should_not include "Español"
+        expect(all_links).not_to include "Español"
       end
       delay
-      page.should have_content("Necesito")
+      expect(page).to have_content("Necesito")
     end
   end
 
@@ -25,9 +25,9 @@ feature 'page translation', :js=>true do
       find_link("Español").click
       within("#language-box") do
         all_links = all('a')
-        all_links.should_not include "Español"
+        expect(all_links).not_to include "Español"
       end
-      page.should have_content("Necesito")
+      expect(page).to have_content("Necesito")
     end
   end
 
@@ -37,7 +37,7 @@ feature 'page translation', :js=>true do
       find_link("Español").click
       find(:css, '#find-btn').click
       delay # give Google Translate a chance to translate page
-      page.should have_content("Mostrando")
+      expect(page).to have_content("Mostrando")
     end
   end
 
@@ -45,11 +45,11 @@ feature 'page translation', :js=>true do
     xit "displays a Spanish-language, Tagalog-language, and English-language contents" do
       visit('/')
       find_link("Español").click
-      page.should have_content("Necesito")
+      expect(page).to have_content("Necesito")
       find_link("Tagalog").click
-      page.should have_content("Kailangan ko")
+      expect(page).to have_content("Kailangan ko")
       find_link("English").click
-      page.should have_content("I Need")
+      expect(page).to have_content("I Need")
     end
   end
 

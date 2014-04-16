@@ -65,9 +65,9 @@ feature "results page search", :js=>true do
     find(".require-loaded")
     within("##{name}-options") do
       find(".closed").click
-      page.should have_selector(".open")
-      find(".available-options").should have_css(".toggle-group", :count=>3)
-      page.should_not have_css("##{name}-option-input")
+      expect(page).to have_selector(".open")
+      expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
+      expect(page).not_to have_css("##{name}-option-input")
     end
   end
   scenario 'when agency filter has custom value and has results', :vcr do
@@ -81,9 +81,9 @@ feature "results page search", :js=>true do
     find(".require-loaded")
     within("##{name}-options") do
       find(".closed").click
-      page.should have_selector(".open")
-      find(".available-options").should have_css(".toggle-group", :count=>3)
-      page.should_not have_css("##{name}-option-input")
+      expect(page).to have_selector(".open")
+      expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
+      expect(page).not_to have_css("##{name}-option-input")
     end
   end
 
@@ -91,37 +91,37 @@ feature "results page search", :js=>true do
   scenario 'when location filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("589 results")
+    expect(page).to have_content("589 results")
     set_filter("location","San Mateo, CA",false)
     find('#find-btn').click
-    page.should have_content("129 results")
+    expect(page).to have_content("129 results")
     expect(all("#location-options .current-option label").last).to have_content("San Mateo, CA")
   end
   scenario 'when service-area filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("589 results")
+    expect(page).to have_content("589 results")
     set_filter("service-area","All",false)
     find('#find-btn').click
-    page.should have_content("678 results")
+    expect(page).to have_content("678 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
   scenario 'when kind filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("589 results")
+    expect(page).to have_content("589 results")
     set_filter("kind","Other",false)
     find('#find-btn').click
-    page.should have_content("521 results")
+    expect(page).to have_content("521 results")
     expect(all("#kind-options .current-option label").last).to have_content("Other")
   end
   scenario 'when agency filter has cached values and new option is selected', :vcr do
     fill_in('keyword', :with => '') # clear keyword
     find('#find-btn').click
-    page.should have_content("589 results")
+    expect(page).to have_content("589 results")
     set_filter("org-name","San Mateo County Human Services Agency",false)
     find('#find-btn').click
-    page.should have_content("11 results")
+    expect(page).to have_content("11 results")
     expect(all("#org-name-options .current-option label").last).to have_content("San Mateo County Human Services Agency")
   end
 
@@ -129,10 +129,10 @@ feature "results page search", :js=>true do
   # user clicks filter links in results list
   scenario 'when clicking organization link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    page.should have_content("St. Vincent de Paul Society")
+    expect(page).to have_content("St. Vincent de Paul Society")
     first("#list-view li").click_link("St. Vincent de Paul Society")
-    page.should_not have_content("Shelter Network")
-    page.should have_content("San Mateo Homeless Help Center")
+    expect(page).not_to have_content("Shelter Network")
+    expect(page).to have_content("San Mateo Homeless Help Center")
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")
@@ -143,10 +143,10 @@ feature "results page search", :js=>true do
 
   scenario 'when clicking kind link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    page.should have_content("St. Vincent de Paul Society")
+    expect(page).to have_content("St. Vincent de Paul Society")
     first("#list-view li").click_link("Human Services")
-    page.should_not have_content("Shelter Network")
-    page.should have_content("San Mateo County Human Services Agency")
+    expect(page).not_to have_content("Shelter Network")
+    expect(page).to have_content("San Mateo County Human Services Agency")
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")
@@ -156,18 +156,18 @@ feature "results page search", :js=>true do
   end
 
   scenario 'when clicking the reset button', :vcr do
-    page.should have_content("No results")
+    expect(page).to have_content("No results")
     all(".reset-btn").first.click
 
     # check filter settings
-    find_field("keyword").value.should eq ""
+    expect(find_field("keyword").value).to eq ""
     expect(all("#location-options .current-option label").last).to have_content("All")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#kind-options .current-option label").last).to have_content("All")
     expect(all("#org-name-options .current-option label").last).to have_content("All")
 
     find('#find-btn').click
-    page.should have_content("1709 results")
+    expect(page).to have_content("1709 results")
   end
 
 end
