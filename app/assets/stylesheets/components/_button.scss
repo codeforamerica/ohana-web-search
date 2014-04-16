@@ -10,11 +10,12 @@
 
   @include type-size(baseline);
   font-family: $font_san_serif;
-  color: $black;
   @include border-radius(4px);
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
+  border: 1px solid darkest($blue,0);
+  color: light($black);
 
   .fa
   {
@@ -24,12 +25,13 @@
 
 .button-small:hover
 {
-  background: dark($blue);
-  color: light($green);
+  background: light($blue);
+  border: 1px solid darkest($blue,0.2);
+  color: darkest($purple);
 
   .fa
   {
-    color: light($blue);
+    color: darkest($purple);
   }
 }
 
@@ -37,7 +39,6 @@ a.button-small,
 a.button-small:hover
 {
   font-family: $font_san_serif;
-  border-bottom: none;
   text-decoration: none;
 }
 
@@ -50,21 +51,34 @@ a.button-small:not([href])
 
 .button-medium
 {
-  @extend .button-small;
+  padding: 4px 6px;
+  cursor: pointer;
   @include type-size(baseline);
   letter-spacing: 0px;
-  font-family:$font_san_serif;
-  padding-left:7px;
-  padding-right:7px;
+  font-family: $font_san_serif;
+  padding-left: 7px;
+  padding-right: 7px;
   @include border-radius(4px);
   background: light($green);
-  border:1px solid darkest($blue);
+  border: 1px solid darkest($blue); // IE Fallback
+  border: 1px solid darkest($blue,0.4);
+  color: light($black);
+
+  .fa
+  {
+    color: darkest($blue);
+  }
 }
 
 .button-medium:hover
 {
-  color: light($green);
-  background: dark($blue);
+  background: shade(light($green),5);
+  color: darkest($purple);
+
+  .fa
+  {
+    color: darkest($purple);
+  }
 }
 
 
@@ -77,7 +91,7 @@ a.button-small:not([href])
   @include inline-block();
   @include type-size(baseline);
   letter-spacing: 1px;
-  color:$black;
+  color: darkest($purple);
   @include box-sizing(border-box);
   padding:10px;
   margin:0px;
@@ -91,6 +105,11 @@ a.button-small:not([href])
   &:hover
   {
     background: lightest($purple);
+
+    .fa
+    {
+      color: darkest($purple);
+    }
   }
 }
 

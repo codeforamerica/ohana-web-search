@@ -743,7 +743,7 @@ body { top: 0px !important; }
   padding: 21px;
   padding-right: 25px;
   text-align: right;
-  min-height: 38px;
+  min-height: 43px;
 }
 
 //=================================================================================
@@ -862,9 +862,13 @@ body { top: 0px !important; }
       @include inline-block();
     }
 
-    >legend:hover
+    >legend:hover,
+    >legend.open:hover:before,
+    >legend.open:hover::before,
+    >legend.closed:hover:before,
+    >legend.closed:hover::before
     {
-      text-decoration: underline;
+      color: darkest($purple);
     }
 
     >legend.open:before,
@@ -1219,12 +1223,6 @@ body { top: 0px !important; }
 
 #search-options
 {
-  // IE fallback
-  //border-top:1px dotted $greyscale_midtone;
-  //border-bottom:1px dotted $greyscale_midtone;
-
-  //border-top:1px dotted $black_alpha40;
-  //border-bottom:1px dotted $black_alpha40;
   margin-bottom:25px;
   font-family: $font_san_serif;
 

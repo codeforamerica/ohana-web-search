@@ -41,17 +41,17 @@
 
           &:hover
           {
-            background: dark($blue);
+            background: shade(light($green),5);
 
             >span
             {
-              color: lightest($green);
+              color: darkest($purple);
               text-shadow: none;
             }
 
             >.fa
             {
-              color: light($blue);
+              color: darkest($purple);
             }
           }
         }
@@ -113,6 +113,7 @@
       display: block;
       margin: 0 auto;
       width: 231px;
+      padding-top:15px;
     }
 
     h2
@@ -195,13 +196,7 @@
 
       label
       {
-          font-size: 20px;
-          font-family: $font_serif;
-          letter-spacing: 2px;
-          display:block;
-          width:auto;
-          margin-left:auto;
-          margin-right:auto;
+          display:none;
       }
 
       .input-search-big
@@ -222,7 +217,6 @@
         >button
         {
             width:100%;
-            font-size: 16px;
             margin:0;
             margin-top:10px;
             @include border-radius(4px);
@@ -353,12 +347,10 @@
 
     #search-box
     {
-
-    .input-search-small
-    {
-      width:100%;
-    }
-
+      .input-search-small
+      {
+        width:100%;
+      }
     }
 
     #keyword-search-box

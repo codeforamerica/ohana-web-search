@@ -12,31 +12,31 @@
 
   > input::input-placeholder
   {
-    color: rgba($black,.2);
+    color: lightest($blue);
     font-style: italic;
   }
 
   > input::-webkit-input-placeholder
   {
-    color: rgba($black,.2);
+    color: lightest($blue);
     font-style: italic;
   }
 
   > input:-moz-placeholder
   {
-    color: rgba($black,.2);
+    color: lightest($blue);
     font-style: italic;
   }
 
   > input::-moz-placeholder
   {
-    color: rgba($black,.2);
+    color: lightest($blue);
     font-style: italic;
   }
 
   > input:-ms-input-placeholder
   {
-    color: rgba($black,.2);
+    color: lightest($blue);
     font-style: italic;
   }
 
@@ -55,13 +55,12 @@
 
   > input[type=search]
   {
-    @include type-size(baseline);
+    @include type-size(base-medium);
     margin-left: 0px;
     height: 40px;
     padding: 3px;
     padding-left: 36px;
     padding-right: 6px;
-    font-size: 14px;
     width: 100%;
     vertical-align: bottom;
 
@@ -129,6 +128,36 @@
   @extend .input-search-small;
   width:440px;
 
+  > input::input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input::-webkit-input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input:-moz-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input::-moz-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input:-ms-input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
   > input[type=search]
   {
     height: 50px;
@@ -139,7 +168,7 @@
     vertical-align:middle;
     background: $white;
     @include border-radius(4px);
-    border: none;
+    border:1px solid darkest($blue,0.4);
     color: $black;
   }
 
@@ -151,5 +180,29 @@
     font-size: 24px;
     right: 0;
     left: auto;
+    border: 1px solid darkest($blue,0.4);
+    border-left: 1px solid darkest($blue,0.2);
+    background: light($green);
+    @include border-radius(0px 4px 4px 0px);
+
+    >span
+    {
+      text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+    }
+
+    &:hover
+    {
+      background: shade(light($green),5);
+
+      >span
+      {
+        text-shadow: none;
+      }
+
+      >.fa
+      {
+        color: darkest($purple);
+      }
+    }
   }
 }
