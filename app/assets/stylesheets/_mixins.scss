@@ -11,9 +11,17 @@
  {
   @include adjust-font-size-to($font_size_90);
  }
+ @if $size == "base-small"
+ {
+  @include adjust-font-size-to($font_size_95);
+ }
  @if $size == "baseline"
  {
   @include adjust-font-size-to($font_size_100);
+ }
+ @if $size == "base-medium"
+ {
+  @include adjust-font-size-to($font_size_105);
  }
  @if $size == "medium"
  {
