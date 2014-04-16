@@ -64,11 +64,6 @@
                             %p
                               %span{:itemprop=>"contactType"}
                                 = phone["department"]
-                          - if phone["hours"]
-                            %p.phone-hours
-                              %span
-                                = phone["hours"]
-
 
                 - if @org.key?(:faxes)
                   %section.faxes
