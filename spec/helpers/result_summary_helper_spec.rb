@@ -1,4 +1,6 @@
 require 'spec_helper'
+# The expected results of these specs are dependent on the per_page
+# method in result_summary_helper.rb
 describe ResultSummaryHelper do
 
   describe "when current count < total_count" do
@@ -7,19 +9,20 @@ describe ResultSummaryHelper do
       @pages = Hash.new
       @pages[:current_count] = 1
       @pages[:total_count] = 10
+      @pages[:current_page] = 1
     end
 
     context 'when no keyword or location' do
       it 'shows result count only' do
         expect(helper.format_summary({})).
-          to eq("Displaying <strong>10 results</strong>")
+          to eq("Displaying <strong>1-1</strong> of 10 results")
       end
     end
 
     context 'when keyword but no location' do
       it 'shows result count and keyword' do
         expect(helper.format_summary({ :keyword => 'market' })).
-          to eq("Displaying <strong>10 results</strong> matching "+
+          to eq("Displaying <strong>1-1</strong> of 10 results matching "+
             "<strong>'market'</strong>")
       end
     end
@@ -27,7 +30,7 @@ describe ResultSummaryHelper do
     context 'when location but no keyword' do
       it 'shows result count within 5 miles of location' do
         expect(helper.format_summary({ :location => 'san mateo' })).
-          to eq("Displaying <strong>10 results</strong> within "+
+          to eq("Displaying <strong>1-1</strong> of 10 results within "+
             "<strong>5 miles of 'san mateo'</strong>")
       end
     end
@@ -40,7 +43,7 @@ describe ResultSummaryHelper do
             :location => 'san mateo'
           }
         )).
-          to eq("Displaying <strong>10 results</strong> matching "+
+          to eq("Displaying <strong>1-1</strong> of 10 results matching "+
             "<strong>'market'</strong> within <strong>5 miles of "+
             "'san mateo'</strong>")
       end
@@ -54,7 +57,7 @@ describe ResultSummaryHelper do
             :radius => 10
           }
         )).
-          to eq("Displaying <strong>10 results</strong> matching "+
+          to eq("Displaying <strong>1-1</strong> of 10 results matching "+
             "<strong>'market'</strong> within <strong>10 miles of "+
             "'san mateo'</strong>")
       end
@@ -67,6 +70,7 @@ describe ResultSummaryHelper do
       @pages = Hash.new
       @pages[:current_count] = 1
       @pages[:total_count] = 1
+      @pages[:current_page] = 1
     end
 
     context 'when no keyword or location' do

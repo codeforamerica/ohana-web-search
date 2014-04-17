@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'address formatting' do
 
   context 'when no address elements are present', :vcr do
-    before(:each) { visit('/organizations/521d32ff1974fcdb2b00126c') }
+    before(:each) { visit_location_with_no_address }
 
     it "does not include the physical address header" do
       expect(page).not_to have_content("Physical Address")
@@ -17,7 +17,7 @@ feature 'address formatting' do
   context 'when all address elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 

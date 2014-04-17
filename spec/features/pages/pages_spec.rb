@@ -14,9 +14,8 @@ feature 'Site Pages' do
     expect(page).to have_selector "#feedback-form-btn"
   end
 
-  @javascript
   scenario 'when visiting results page directly', :vcr do
-    visit ('/organizations?utf8=%E2%9C%93&keyword=maceo')
+    search_for_maceo
     looks_like_results
   end
 

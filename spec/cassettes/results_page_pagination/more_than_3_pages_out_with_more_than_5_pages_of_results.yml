@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:43:30 GMT
+      - Thu, 17 Apr 2014 09:45:49 GMT
       Link:
       - <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=2&service_area=&utf8=%E2%9C%93>;
@@ -41,9 +41,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 23603058-dd81-4758-8929-440cb7bd7238
+      - 3539cb96-1f46-4e5e-920d-43e37932fd2f
       X-Runtime:
-      - '0.024529'
+      - '0.027859'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -61,10 +61,10 @@ http_interactions:
         is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
         Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Thu, 17 Apr 2014 09:43:30 GMT
+  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
 - request:
     method: get
-    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=maceo
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -87,23 +87,29 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:43:30 GMT
+      - Thu, 17 Apr 2014 09:45:49 GMT
+      Link:
+      - <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=1&service_area=&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=21&service_area=&utf8=%E2%9C%93>;
+        rel="prev"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
-      - '1'
+      - '22'
       X-Powered-By:
       - Phusion Passenger 4.0.40
+      X-Previous-Page:
+      - '21'
       X-Request-Id:
-      - b62e2ca8-b628-4677-b36d-a7a537187abc
+      - 3eb84c52-ccaf-4415-9967-50d18b4c8537
       X-Runtime:
-      - '0.068942'
+      - '0.041008'
       X-Total-Count:
-      - '1'
+      - '22'
       X-Total-Pages:
-      - '1'
+      - '22'
       Transfer-Encoding:
       - chunked
       Connection:
@@ -168,7 +174,97 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","name":"San Maceo
         Agency","created_at":"2014-04-16T19:48:29.958-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
-        Restroom","Disabled Parking","Wheelchair"],"_score":0.028199336,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397702909958],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Thu, 17 Apr 2014 09:43:31 GMT
+  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
+- request:
+    method: get
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=18&service_area=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 09:45:49 GMT
+      Link:
+      - <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=1&service_area=&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=17&service_area=&utf8=%E2%9C%93>;
+        rel="prev", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=19&service_area=&utf8=%E2%9C%93>;
+        rel="next"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '18'
+      X-Next-Page:
+      - '19'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Previous-Page:
+      - '17'
+      X-Request-Id:
+      - 450eb09c-06ae-45fd-892a-73d9e94393f3
+      X-Runtime:
+      - '0.029856'
+      X-Total-Count:
+      - '22'
+      X-Total-Pages:
+      - '22'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"services":[{"id":6,"audience":"Parents, children, families with
+        problems of custody disputes, domestic violence or substance abuse, families
+        going through a separation or divorce","eligibility":"None","fees":"Vary according
+        to income ($5-$90). Cash, checks and credit cards accepted.","how_to_apply":"Apply
+        by phone.","wait":"No wait.","funding_sources":["County","Donations","Grants"],"service_areas":["San
+        Mateo County"],"keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth
+        and Adjustment","LEGAL AND CRIMINAL JUSTICE SERVICES","Mediation","Parental
+        Visitation Monitoring","Divorce Counseling","Youth"],"updated_at":"2014-04-16T19:51:24.681-07:00"}],"mail_address":{"id":5,"location_id":5,"attention":"PFS
+        Family Visitation Center","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"hours":"Monday,
+        10-6; Tuesday-Friday, 10-8; Saturday, Sunday, 9:30-5:30","urls":["http://www.peninsulafamilyservice.org"],"emails":["kpesavento@peninsulafamilyservice.org"],"transportation":"SAMTRANS
+        stops within 1 block, CALTRAIN stops within 4 blocks.","short_desc":"Provides
+        supervised visitation services and a neutral site for parents in extremely
+        hostile divorces to carry out supervised exchanges of children.","url":"http://ohana-api-demo.herokuapp.com/api/locations/5","phones":[{"id":6,"location_id":5,"number":"650
+        403-4300","extension":"4500"}],"contacts":[{"id":6,"location_id":5,"name":"Kimberly
+        Pesavento","title":"Director of Visitation"}],"id":"5","languages":["Spanish"],"organization":{"id":2,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","created_at":"2014-04-16T19:51:22.599-07:00","updated_at":"2014-04-16T19:51:25.176-07:00","url":"http://ohana-api-demo.herokuapp.com/api/organizations/2","locations_url":"http://ohana-api-demo.herokuapp.com/api/organizations/2/locations"},"updated_at":"2014-04-16T19:51:24.690-07:00","faxes":[{"id":5,"location_id":5,"number":"650
+        403-4303"}],"address":{"id":5,"location_id":5,"street":"24 Second Avenue","city":"San
+        Mateo","state":"CA","zip":"94401"},"description":"Provides supervised visitation
+        services and a neutral site for parents to carry out supervised exchanges
+        of children in a safe manner. Therapeutic visitation and other counseling
+        services available. Kids in the Middle is an education class for separating
+        or divorcing parents. The goal is to enable parents to focus on their children''s
+        needs while the family is going through separation, divorce or other transition.
+        The class explores the psychological aspects of divorce and its impact on
+        children, builds effective communication techniques and points out areas in
+        which outside help may be indicated. The fee is $50 for working parents, $15
+        for unemployed people. Classes are scheduled on Saturdays and Sundays and
+        held at various sites throughout the county. Call 650-403-4300 ext. 4500 to
+        register. Formerly known as Family Service Agency of San Mateo County, Family
+        Visitation Center.","name":"Family Visitation Center","created_at":"2014-04-16T19:51:24.425-07:00","slug":"family-visitation-center","longitude":-122.3263232,"latitude":37.5639394,"coordinates":[-122.3263232,37.5639394],"accessibility":["Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703084425],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
 recorded_with: VCR 2.8.0
