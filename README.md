@@ -55,11 +55,13 @@ Inside the `config` folder, you will find a file named `application.example.yml`
 By default, the app is configured to point to the demo API at `http://ohanapi.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
 
 ### Run the app
-Start the app locally using Unicorn:
+Start the app locally on port 4000 using Unicorn:
 
     unicorn -p 4000
 
 Ohana SMC should now be running at [http://lvh.me:4000](http://lvh.me:4000)
+
+The `-p` option allows you to specify which port you want to run the server on. This is useful when running other servers at the same time. For example, if you're also running the Ohana API locally (which uses port 8080 by default), you wouldn't be able to run Ohana Web Search with the simple `unicorn` command, because it would also default to port 8080. By specifying a different port number, you can run both servers at the same time.
 
 Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
@@ -101,19 +103,20 @@ Here are some ways *you* can contribute:
 * by reviewing patches
 * [financially](https://secure.codeforamerica.org/page/contribute)
 
-## Submitting an Issue
+### Submitting an Issue
 We use the [GitHub issue tracker](https://github.com/codeforamerica/ohana-web-search/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug, including your gem version, Ruby version, and operating system. Ideally, a bug report should include a pull request with failing specs.
 
-## Submitting a Pull Request
-1. [Fork the repository.][fork]
-2. [Create a topic branch.][branch]
-3. Add specs for your unimplemented feature or bug fix.
-4. Run `rspec`. If your specs pass, return to step 3. In the spirit of Test-Driven Development, you want to write a failing test first, then implement the feature or bug fix to make the test pass.
-5. Implement your feature or bug fix.
-6. Run `rspec`. If your specs fail, return to step 5.
-7. Run `metric_fu -r`. This will go through all the files in the app and analyze the code quality and check for things like trailing whitespaces and hard tabs. When it's done, it will open a page in your browser with the results. Click on `Cane` and `Rails Best Practices` to check for files containing trailing whitespaces and hard tabs. If you use Sublime Text 2, you can use the [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin to highlight the trailing whitespaces and delete them. If the report complains about "hard tabs" in a file, change your indentation to `spaces` by clicking on `Tabs: 2` at the bottom of your Sublime Text 2 window, then selecting `Convert Indentation to Spaces`. As for the code itself, we try to follow [GitHub's Ruby styleguide](https://github.com/styleguide/ruby).
-8. Add, commit, and push your changes.
-9. [Submit a pull request.][pr]
+### Submitting a Pull Request
+1. **Fork:** [Fork the repository][fork] to create a copy on your GitHub account.
+2. **Branch:** [Create a topic branch][branch]; your version of the code that you'll edit.
+3. **Spec:** Add testing specs for your unimplemented feature or bug fix in the `/spec/` directory.
+4. **Test to fail:** Run `rspec`. If your specs pass, return to **step 3**. In the spirit of Test-Driven Development, you want to write a failing test first, then implement the feature or bug fix to make the test pass.
+5. **Implement:** Implement your feature or bug fix.
+6. **Test to pass:** Run `rspec`. If your specs fail, return to **step 5**.
+7. _(If applicable)_ **Clean up Ruby code:** Run `metric_fu -r`. This will go through all the files in the app and analyze the code quality and check for things like trailing whitespaces and hard tabs. When it's done, it will open a page in your browser with the results. Click on `Cane` and `Rails Best Practices` to check for files containing trailing whitespaces and hard tabs. If you use Sublime Text 2, you can use the [TrailingSpaces](https://github.com/SublimeText/TrailingSpaces) plugin to highlight the trailing whitespaces and delete them. If the report complains about "hard tabs" in a file, change your indentation to `spaces` by clicking on `Tabs: 2` at the bottom of your Sublime Text 2 window, then selecting `Convert Indentation to Spaces`. As for the code itself, we try to follow [GitHub's Ruby styleguide](https://github.com/styleguide/ruby).
+8. _(If applicable)_ **Clean up JavaScript code:** Run `rake jshint` to check JavaScript code quality.
+9. **Commit changes:** Add, commit, and push your changes.
+10. **Pull request:** [Submit a pull request][pr] to send your changes to this repository for review.
 
 [fork]: http://help.github.com/fork-a-repo/
 [branch]: http://learn.github.com/p/branching.html

@@ -57,6 +57,7 @@ group :development do
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
   gem "letter_opener" # for mocking emails for sending
+  gem 'jshintrb' # for linting JS with `rake jshint`
 end
 
 group :test do
@@ -75,6 +76,6 @@ end
 
 group :development, :test do
   #gem "teaspoon" #enable teaspoon to use JasmineJS for performing unit testing on JS code
-  gem "rspec-rails", ">= 2.12.2"
+  gem "rspec-rails", ">= 2.14"
   gem 'yard' #for code documentation
 end

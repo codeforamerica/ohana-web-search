@@ -1,6 +1,6 @@
 // handles creating a fixed search header when scrolling
 define(['util/util'],
-	function(util) {
+  function(util) {
   'use strict';
 
 		var _header;
@@ -62,4 +62,5 @@ define(['util/util'],
 	return {
 		init:init
 	};
+
 });

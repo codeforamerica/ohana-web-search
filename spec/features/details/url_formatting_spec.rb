@@ -7,7 +7,7 @@ feature 'url formatting' do
       :erb => { :url => "https://www.smctest.org" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
       within('#contact-info') do
-        find_link('www.smctest.org')[:href].should == 'https://www.smctest.org'
+        expect(find_link('www.smctest.org')[:href]).to eq('https://www.smctest.org')
       end
     end
   end
@@ -17,7 +17,7 @@ feature 'url formatting' do
       :erb => { :url => "http://www.smctest.org" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
       within('#contact-info') do
-        find_link('www.smctest.org')[:href].should == 'http://www.smctest.org'
+        expect(find_link('www.smctest.org')[:href]).to eq('http://www.smctest.org')
       end
     end
   end
@@ -27,7 +27,7 @@ feature 'url formatting' do
       :erb => { :url => "smctest.org" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
       within('#contact-info') do
-        find_link('smctest.org')[:href].should == 'smctest.org'
+        expect(find_link('smctest.org')[:href]).to eq('smctest.org')
       end
     end
   end
@@ -37,7 +37,7 @@ feature 'url formatting' do
       :erb => { :url => "http:/www.smctest.org" }) do
       visit('/organizations/521d33a01974fcdb2b0026a9')
       within('#contact-info') do
-        find_link('http:/www.smctest.org')[:href].should == 'http:/www.smctest.org'
+        expect(find_link('http:/www.smctest.org')[:href]).to eq('http:/www.smctest.org')
       end
     end
   end
