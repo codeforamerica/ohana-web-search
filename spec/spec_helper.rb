@@ -57,7 +57,7 @@ def stub_get(url)
 end
 
 def ohanapi_url(url)
-  url =~ /^http/ ? url : "http://ohana-api-demo.herokuapp.com/api#{url}"
+  url =~ /^http/ ? url : "http://ohana-api-test.herokuapp.com/api#{url}"
 end
 
 def fixture_path
