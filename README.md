@@ -67,6 +67,8 @@ Inside the `config` folder, you will find a file named `application.example.yml`
 
 By default, the app is configured to point to the demo API at `http://ohana-api-demo.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
 
+Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API.
+
 ### Run the app
 Start the app locally on port 4000 using Unicorn:
 
