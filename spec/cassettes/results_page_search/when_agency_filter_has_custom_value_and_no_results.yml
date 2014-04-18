@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,41 +25,37 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:52:51 GMT
+      - Thu, 17 Apr 2014 08:34:09 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Powered-By:
-      - Phusion Passenger 4.0.37
-      X-Rack-Cache:
-      - miss
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 33e5f0fb-f005-4f8e-a7f7-6fed8a541412
+      - 11e19348-e346-4b2e-ba5b-82830ddc32a1
       X-Runtime:
-      - '0.025549'
+      - '0.058546'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
       - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:51 GMT
+  recorded_at: Thu, 17 Apr 2014 08:34:09 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=United%20States%20Government&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -69,7 +65,7 @@ http_interactions:
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
       X-Api-Token:
-      - <API_TOKEN>
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -82,36 +78,236 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 03 Mar 2014 05:52:51 GMT
+      - Thu, 17 Apr 2014 08:34:09 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Server:
-      - nginx/1.4.4 + Phusion Passenger 4.0.37
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Powered-By:
-      - Phusion Passenger 4.0.37
-      X-Rack-Cache:
-      - miss
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 81eecc43-7834-4d7f-904c-64b83430aa6a
+      - 71cd1311-c561-4f47-a8ea-b909c0ae48e6
       X-Runtime:
-      - '0.023203'
+      - '0.054717'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
       - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 03 Mar 2014 05:52:52 GMT
+  recorded_at: Thu, 17 Apr 2014 08:34:10 GMT
+- request:
+    method: get
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=Custom%20Value&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 10:18:52 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 400 Bad Request
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 7786a581-7825-4980-812b-6d2a62fe3e98
+      X-Runtime:
+      - '0.035741'
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 10:18:53 GMT
+- request:
+    method: get
+    uri: http://ohana-api-demo.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 10:18:52 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - dd17e822-8882-40e5-b99a-54a4d11ade92
+      X-Runtime:
+      - '0.016223'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 10:18:53 GMT
+- request:
+    method: get
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=Custom%20Value&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 10:21:07 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 801a4091-d2da-4932-8f8c-bb96bd7fa95d
+      X-Runtime:
+      - '0.023491'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 10:21:08 GMT
+- request:
+    method: get
+    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=Custom%20Value&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 10:30:47 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - f1855aaf-cb10-4c6a-ab89-708770576bba
+      X-Runtime:
+      - '0.020904'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 17 Apr 2014 10:30:48 GMT
 recorded_with: VCR 2.8.0

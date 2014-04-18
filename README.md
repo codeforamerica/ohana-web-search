@@ -37,8 +37,21 @@ Please note that the instructions below have only been tested on OS X. If you ar
 * [RVM](http://rvm.io) is great, and this project uses it, but in any case, try to use the same ruby version as listed in the .ruby-version file. If you install it, it'll take care of making sure you have the right ruby, and let you focus on contributing to the app.
 * You need a Javascript runtime. We recommend Node.JS (if you have a good reason not to use it, [there are other options](https://github.com/sstephenson/execjs)). On Ubuntu, it's as simple as <code>sudo apt-get install nodejs</code>. On others, [check the official instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 
-#### PhantomJS
-[Installation instructions](https://github.com/jonleighton/poltergeist#installing-phantomjs) for Mac, Linux, and Windows
+#### Qt (required by capybara-webkit for integration tests)
+**OS X**
+
+On OS X, the easiest way to install Qt is with Homebrew:
+
+    brew update && brew install qt
+
+Note that if you already have Qt installed, and you see some messages referring to CoreText when running the specs, you'll need to reinstall Qt:
+
+    brew uninstall qt && brew update && brew install qt
+
+
+**Other**
+
+Follow the instructions in the [capybara-webkit Wiki](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit).
 
 ### Clone the app on your local machine:
 
@@ -52,7 +65,9 @@ Please note that the instructions below have only been tested on OS X. If you ar
 ### Set up the environment variables
 Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it has been added to your `.gitignore` file (it should be by default).
 
-By default, the app is configured to point to the demo API at `http://ohanapi.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
+By default, the app is configured to point to the demo API at `http://ohana-api-demo.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
+
+Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API.
 
 ### Run the app
 Start the app locally on port 4000 using Unicorn:

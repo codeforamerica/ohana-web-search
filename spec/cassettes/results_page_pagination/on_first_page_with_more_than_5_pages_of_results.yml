@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:43:27 GMT
+      - Thu, 17 Apr 2014 09:45:52 GMT
       Link:
       - <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=2&service_area=&utf8=%E2%9C%93>;
@@ -41,15 +41,15 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - dcefebda-717c-4e23-9ad0-48c20476f589
+      - 6811750a-6252-4fed-83dc-a0a50211f09e
       X-Runtime:
-      - '0.053357'
+      - '0.041278'
       X-Total-Count:
       - '22'
       X-Total-Pages:
       - '22'
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '739'
       Connection:
       - keep-alive
     body:
@@ -61,58 +61,5 @@ http_interactions:
         is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
         Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Thu, 17 Apr 2014 09:43:27 GMT
-- request:
-    method: get
-    uri: http://ohana-api-demo.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=&location-option=&location-option-input=&org-name-option=&org-name-option-input=&org_name=&service-area-option=&service_area=&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:43:27 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 59c6459e-af06-40f7-ac28-6a5af10a97d2
-      X-Runtime:
-      - '0.038692'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Thu, 17 Apr 2014 09:43:27 GMT
+  recorded_at: Thu, 17 Apr 2014 09:45:52 GMT
 recorded_with: VCR 2.8.0

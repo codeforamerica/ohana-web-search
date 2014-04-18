@@ -1,6 +1,11 @@
 module ResultSummaryHelper
   extend ActionView::Helpers::TextHelper
 
+  # In non-test environments, set this to match the Ohana API per_page value
+  def per_page
+    Rails.env.test? ? 1 : 30
+  end
+
   # Formats search result summary text
   # @param params [Hash] Contains last request params
   # @return [String] Result summary string for display on search results view.
@@ -15,11 +20,10 @@ module ResultSummaryHelper
     radius = 5 if radius.blank?
 
     summary = ""
-    per_page = 30
 
     if @pages[:total_count] == 0
       summary << "No results"
-    elsif @pages[:total_count] < per_page
+    elsif @pages[:total_count] <= per_page
       summary << "Displaying <strong>"
       summary << self.pluralize(@pages[:total_count], 'result')
       summary << "</strong>"
