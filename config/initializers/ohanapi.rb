@@ -7,7 +7,7 @@ Ohanakapa.configure do |config|
   config.api_token = ENV["OHANA_API_TOKEN"]
 
   if Rails.env.test?
-    config.api_endpoint = "http://ohana-api-demo.herokuapp.com/api"
+    config.api_endpoint = "http://ohana-api-test.herokuapp.com/api"
   elsif ENV["OHANA_API_ENDPOINT"].blank?
     raise "The OHANA_API_ENDPOINT environment variable is not set! "+
       "To set it locally, add it to config/application.yml."
