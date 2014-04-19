@@ -17,7 +17,7 @@ We gladly welcome contributions. Below you will find instructions for installing
 * Ruby version 2.1.1
 * Rails version 3.2.17
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Capybara and PhantomJS (via Poltergeist gem), JasmineJS installed but not currently used (via Teaspoon gem)
+* Testing Frameworks: RSpec, Capybara and capybara-webkit
 
 ## Deploying to Heroku
 See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).
@@ -63,11 +63,11 @@ Follow the instructions in the [capybara-webkit Wiki](https://github.com/thought
     bundle
 
 ### Set up the environment variables
-Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it has been added to your `.gitignore` file (it should be by default).
+Inside the `config` folder, you will find a file named `application.example.yml`. Rename it to `application.yml` and double check that it is in your `.gitignore` file (it should be by default).
 
 By default, the app is configured to point to the demo API at `http://ohana-api-demo.herokuapp.com/api`. To point to your own instance of Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
 
-Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API.
+Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API, or any v2.0.0 Ohana API.
 
 ### Run the app
 Start the app locally on port 4000 using Unicorn:
@@ -80,23 +80,30 @@ The `-p` option allows you to specify which port you want to run the server on. 
 
 Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
+### Adjusting the number of results per page
+The Ohana API now supports the ability to set the number of results you want returned per page via the `per_page` parameter (with a maximum of 100). So, if you want to test the layout of the results page with a certain number of results, just add something like `&per_page=5` to the end of the URL.
+
 ### Test the app
 To test locally, you can run tests with this simple command:
 
     rspec
 
-To configure rspec output formatting (for example, to provide command line output in color), use the command from the command line `pico ./.rspec` while in the project root directory (or `pico ~/.rspec` to provide rspec configuration globally for all projects on your machine). Settings such as color highlighting and the output style can be set with:
+To configure the way RSpec displays test results, create a file called `.rspec` in the root directory, and add the following to it:
 
     --color
     --format documentation
 
-Options for the format configuration are `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the rspec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
+The `--color` option allows you to see passing tests in green and failing ones in red. Otherwise, by default, you would just see a series of dots for passing tests, and the letter "F" for failing ones.
+
+Parameters for the `--format` option are: `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the RSpec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
 
 For faster tests:
 
     gem install zeus
     zeus start #in a separate Terminal window or tab
     zeus rspec spec
+
+Read more about [Zeus](https://github.com/burke/zeus).
 
 To see the actual tests, browse through the [spec](https://github.com/codeforamerica/ohana-web-search/tree/master/spec) directory.
 
