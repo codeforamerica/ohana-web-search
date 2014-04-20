@@ -12,6 +12,10 @@ You can see a live example for services in San Mateo County here: [http://smc-co
 
 We gladly welcome contributions. Below you will find instructions for installing the project and contributing.
 
+## Demo
+You can see a running version of the application at
+[http://ohana-web-search-demo.herokuapp.com/](http://ohana-web-search-demo.herokuapp.com/).
+
 ## Stack Overview
 
 * Ruby version 2.1.1
