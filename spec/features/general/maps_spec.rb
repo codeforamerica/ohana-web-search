@@ -16,3 +16,21 @@ feature 'search results map' do
     end
   end
 end
+
+feature 'detail view map' do
+
+  context 'location has coordinates', :vcr do
+    it "displays a map" do
+      visit_test_location
+      expect(page).to have_selector("#detail-map-view")
+    end
+  end
+
+  context 'location does not have coordinates', :vcr do
+    it "does not display a map" do
+      visit_location_with_no_address
+      expect(page).to_not have_selector("#detail-map-view")
+    end
+  end
+
+end
