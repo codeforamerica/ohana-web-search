@@ -17,7 +17,7 @@ feature 'search results map' do
   end
 end
 
-feature 'detail view map', :js=>true do
+feature 'detail view map' do
 
   context 'location has coordinates', :vcr do
     it "displays a map" do
