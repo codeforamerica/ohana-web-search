@@ -9,7 +9,7 @@ define(function() {
   // to these elements that register the element with google analytics.
   function init()
   {
-    if (window._gaq.length > 0)
+    if (window._gaq && window._gaq.length > 0)
     {
       var toTrack = document.querySelectorAll("*[data-gaq]");
       var item;
@@ -21,6 +21,7 @@ define(function() {
     }
   }
 
+  // PRIVATE METHODS
   function _track(evt)
   {
     var item = evt.currentTarget;
