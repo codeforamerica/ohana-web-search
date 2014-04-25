@@ -171,12 +171,9 @@ class OrganizationsController < ApplicationController
         offset = (0.0001*(coords_list[new_coords.to_s]-1))
         new_coords = [o.coordinates[0]-offset,o.coordinates[1]]
 
-        kind = o.kind if o.key?(:kind)
-
         details = {
           'id' => o.id,
           'name' => o.name,
-          'kind' => kind,
           'coordinates' => new_coords
         }
 
@@ -248,10 +245,6 @@ class OrganizationsController < ApplicationController
         val += ", #{org.address['state']}" if org.address['state'].present?
       end
     }
-
-    # cached kinds
-    #@aggregate_kinds = cache_filter_values(collection,'aggregate_kinds'){|org| org.kind }
-    @aggregate_kinds = ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Parks","Sports","Other"]
 
     # cached service areas
     @aggregate_service_areas = [{:name=>'San Mateo County, CA',:value=>'smc'}]

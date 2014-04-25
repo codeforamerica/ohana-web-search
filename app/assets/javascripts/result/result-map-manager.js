@@ -127,33 +127,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     {
       var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-      var markerIcon;
-
-
-      if (markerData['kind'] === "Arts")
-        markerIcon = '/assets/markers/arts.png';
-      else if (markerData['kind'] === "Clinics")
-        markerIcon = '/assets/markers/clinics.png';
-      else if (markerData['kind'] === "Education")
-        markerIcon = '/assets/markers/education.png';
-      else if (markerData['kind'] === "Entertainment")
-        markerIcon = '/assets/markers/entertainment.png';
-      else if (markerData['kind'] === "Farmers' Markets")
-        markerIcon = '/assets/markers/farmers_markets.png';
-      else if (markerData['kind'] === "Government")
-        markerIcon = '/assets/markers/government.png';
-      else if (markerData['kind'] === "Human Services")
-        markerIcon = '/assets/markers/human_services.png';
-      else if (markerData['kind'] === "Libraries")
-        markerIcon = '/assets/markers/libraries.png';
-      else if (markerData['kind'] === "Museums")
-        markerIcon = '/assets/markers/museums.png';
-      else if (markerData['kind'] === "Parks")
-        markerIcon = '/assets/markers/parks.png';
-      else if (markerData['kind'] === "Sports")
-        markerIcon = '/assets/markers/sports.png';
-      else
-        markerIcon = '/assets/markers/other.png';
+      var markerIcon = '/assets/markers/human_services.png';
 
       var marker = new google.maps.Marker({
         id: markerData['id'],
