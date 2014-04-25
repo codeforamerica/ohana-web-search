@@ -1,4 +1,4 @@
 - title @search_summary_plain
 = render 'component/search/aside'
-%section#results-container
+%section#results-container{ class: ("result-map-showing" if @map_data.present?) }
   = render 'component/organizations/results/body'
