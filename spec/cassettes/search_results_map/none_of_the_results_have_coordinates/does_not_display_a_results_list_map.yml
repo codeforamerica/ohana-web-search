@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Location%20with%20no%20phone
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 17 Apr 2014 04:12:14 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 1736ef88-9b7d-4b24-91b2-97b60ad7413e
+      X-Runtime:
+      - '0.029925'
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      Content-Length:
+      - '419'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":"21","organization":{"id":7,"name":"Location with no phone","slug":"location-with-no-phone","created_at":"2014-04-16T19:51:31.330-07:00","updated_at":"2014-04-16T19:51:31.516-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/7","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/7/locations"},"services":[{"id":22,"updated_at":"2014-04-16T19:51:31.433-07:00"}],"updated_at":"2014-04-16T19:51:31.443-07:00","mail_address":{"id":21,"location_id":21,"attention":"","street":"puma","city":"fairfax","state":"VA","zip":"22031"},"description":"no
+        phone","name":"Location with no phone","created_at":"2014-04-16T19:51:31.376-07:00","slug":"location-with-no-phone","short_desc":"no
+        phone","url":"http://ohana-api-test.herokuapp.com/api/locations/21","kind":"Test","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091376],"highlight":null,"_explanation":null}]'
+    http_version:
+  recorded_at: Thu, 17 Apr 2014 04:12:14 GMT
+recorded_with: VCR 2.8.0
