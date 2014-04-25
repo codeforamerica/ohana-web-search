@@ -1,10 +1,9 @@
-before_install: gem update bundler
-bundler_args: "--without assets:development:production"
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 language: ruby
 rvm:
 - 2.1.1
-services:
-before_script:
 notifications:
   campfire:
     rooms:
@@ -17,4 +16,4 @@ notifications:
   webhooks: http://cfa-project-monitor.herokuapp.com/projects/67f80d53-afb0-4344-bd40-2644f55a4462/status
 env:
   matrix:
-    secure: ZhrMOK9JCzqqiI3mHBNh/g/bUWEZe+SXn91eZuU0zdFKrUlCRwglhABiIf+9a1Ysk1aB0g4LO4tNTV0ku7cdQUHeNabueho88qUKyDj70QB05xHEgtcjelgpD2F9InVi8D47S9UG6LBf9gJAXGN7UTw2CH+sm9q5SLbrKb9fszo=
+    - secure: ZhrMOK9JCzqqiI3mHBNh/g/bUWEZe+SXn91eZuU0zdFKrUlCRwglhABiIf+9a1Ysk1aB0g4LO4tNTV0ku7cdQUHeNabueho88qUKyDj70QB05xHEgtcjelgpD2F9InVi8D47S9UG6LBf9gJAXGN7UTw2CH+sm9q5SLbrKb9fszo=

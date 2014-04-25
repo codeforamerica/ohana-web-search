@@ -12,8 +12,6 @@
 
   = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
 
-  = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds}
-
   -#
 
     = render :partial => "component/search/filter", :locals => {:field=>"kind", :legend=>"Kind of Organization",:field_value=>params[:kind], :aggregate_field=>@aggregate_kinds, :add_input_type=>"TEXT", :list_values=>(kind_terms.reject{|x| @aggregate_kinds.include? x})}

@@ -1,0 +1,597 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session
+    body:
+      encoding: UTF-8
+      string: '{"desiredCapabilities":{"browserName":"Internet Explorer","version":"10","platform":"Windows
+        8","name":"Unnamed Ruby job","client_version":"Ruby: ruby 2.1.1 (x86_64-darwin12.0)
+        Sauce gem: 3.4.1 Tools: [\"Rspec\", \"Capybara\", \"Test::Unit\"]"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '245'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:06 GMT
+      Content-Type:
+      - text/html
+      Location:
+      - http://ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:16 GMT
+- request:
+    method: get
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:17 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: '{"status": 0, "sessionId": "889d3211985d40ed900d67c561dfa91d", "value":
+        {"takesScreenshot": true, "enableElementCacheCleanup": true, "unexpectedAlertBehaviour":
+        "dismiss", "cssSelectorsEnabled": true, "javascriptEnabled": true, "webdriver.remote.sessionid":
+        "55e0c71b-ee10-4617-8869-9b498ffd6143", "allowAsynchronousJavaScript": false,
+        "requireWindowFocus": false, "browserName": "internet explorer", "version":
+        "10", "elementScrollBehavior": 0, "platform": "WINDOWS", "nativeEvents": true,
+        "ignoreProtectedModeSettings": false, "ignoreZoomSetting": false, "hasMetadata":
+        true, "initialBrowserUrl": "", "handlesAlerts": true, "enablePersistentHover":
+        true}, "state": null, "hCode": 101492, "class": "org.openqa.selenium.remote.Response"}'
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:16 GMT
+- request:
+    method: post
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d/url
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://127.0.0.1:3000organizations/location-with-no-phone"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '67'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:17 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: '{"status": 13, "state": "unhandled error", "value": {"hCode": 31198842,
+        "stackTrace": [{"methodName": "newInstance0", "fileName": null, "className":
+        "sun.reflect.NativeConstructorAccessorImpl", "nativeMethod": true, "lineNumber":
+        -2, "hCode": 513928194, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "newInstance", "fileName": null, "className": "sun.reflect.NativeConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -432498851, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "sun.reflect.DelegatingConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -2147429624, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "java.lang.reflect.Constructor",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1851634561, "class": "java.lang.StackTraceElement"},
+        {"methodName": "createThrowable", "fileName": "ErrorHandler.java", "className":
+        "org.openqa.selenium.remote.ErrorHandler", "nativeMethod": false, "lineNumber":
+        187, "hCode": 514255469, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "throwIfResponseFailed", "fileName": "ErrorHandler.java", "className": "org.openqa.selenium.remote.ErrorHandler",
+        "nativeMethod": false, "lineNumber": 145, "hCode": 1091067072, "class": "java.lang.StackTraceElement"},
+        {"methodName": "execute", "fileName": "RemoteWebDriver.java", "className":
+        "org.openqa.selenium.remote.RemoteWebDriver", "nativeMethod": false, "lineNumber":
+        554, "hCode": 1767885041, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "get", "fileName": "RemoteWebDriver.java", "className": "org.openqa.selenium.remote.RemoteWebDriver",
+        "nativeMethod": false, "lineNumber": 276, "hCode": -1337857156, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke0", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": true, "lineNumber": -2, "hCode": 703090916, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1217602907, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.DelegatingMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 506642458, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "java.lang.reflect.Method",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 708160817, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver$2", "nativeMethod":
+        false, "lineNumber": 101, "hCode": -1760971953, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": null, "className": "com.sun.proxy.$Proxy1",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1146440483, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver", "nativeMethod":
+        false, "lineNumber": 155, "hCode": 1465791089, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 38, "hCode": -602011615, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 1, "hCode": -602011652, "class": "java.lang.StackTraceElement"},
+        {"methodName": "innerRun", "fileName": null, "className": "java.util.concurrent.FutureTask$Sync",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 1144956884, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.FutureTask",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 424519275, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": "DefaultSession.java", "className": "org.openqa.selenium.remote.server.DefaultSession$1",
+        "nativeMethod": false, "lineNumber": 167, "hCode": -255143476, "class": "java.lang.StackTraceElement"},
+        {"methodName": "runTask", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1076768003, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -166011880, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.lang.Thread", "nativeMethod":
+        false, "lineNumber": -1, "hCode": 1432591020, "class": "java.lang.StackTraceElement"}],
+        "buildInformation": {"buildRevision": "dc1ef9c", "buildTime": "2013-02-19
+        00:15:27", "releaseLabel": "2.30.0", "hCode": 32689826, "class": "org.openqa.selenium.internal.BuildInfo"},
+        "localizedMessage": "Failed to navigate to http://127.0.0.1:3000organizations/location-with-no-phone.
+        This usually means that a call to the COM method IWebBrowser2::Navigate2()
+        failed. (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 14 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "class": "org.openqa.selenium.WebDriverException",
+        "additionalInformation": "\nSession ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver
+        info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{platform=WINDOWS,
+        elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "systemInformation":
+        "System info: os.name: ''Windows Server 2012'', os.arch: ''x86'', os.version:
+        ''6.2'', java.version: ''1.6.0_43''", "cause": null, "message": "Failed to
+        navigate to http://127.0.0.1:3000organizations/location-with-no-phone. This
+        usually means that a call to the COM method IWebBrowser2::Navigate2() failed.
+        (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 14 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "supportUrl":
+        null}, "sessionId": "889d3211985d40ed900d67c561dfa91d", "hCode": 28113457,
+        "class": "org.openqa.selenium.remote.Response"}'
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:16 GMT
+- request:
+    method: post
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d/url
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://127.0.0.1:3000organizations/location-with-no-phone"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '67'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:17 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: '{"status": 13, "state": "unhandled error", "value": {"hCode": 4694228,
+        "stackTrace": [{"methodName": "newInstance0", "fileName": null, "className":
+        "sun.reflect.NativeConstructorAccessorImpl", "nativeMethod": true, "lineNumber":
+        -2, "hCode": 513928194, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "newInstance", "fileName": null, "className": "sun.reflect.NativeConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -432498851, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "sun.reflect.DelegatingConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -2147429624, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "java.lang.reflect.Constructor",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1851634561, "class": "java.lang.StackTraceElement"},
+        {"methodName": "createThrowable", "fileName": "ErrorHandler.java", "className":
+        "org.openqa.selenium.remote.ErrorHandler", "nativeMethod": false, "lineNumber":
+        187, "hCode": 514255469, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "throwIfResponseFailed", "fileName": "ErrorHandler.java", "className": "org.openqa.selenium.remote.ErrorHandler",
+        "nativeMethod": false, "lineNumber": 145, "hCode": 1091067072, "class": "java.lang.StackTraceElement"},
+        {"methodName": "execute", "fileName": "RemoteWebDriver.java", "className":
+        "org.openqa.selenium.remote.RemoteWebDriver", "nativeMethod": false, "lineNumber":
+        554, "hCode": 1767885041, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "get", "fileName": "RemoteWebDriver.java", "className": "org.openqa.selenium.remote.RemoteWebDriver",
+        "nativeMethod": false, "lineNumber": 276, "hCode": -1337857156, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke0", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": true, "lineNumber": -2, "hCode": 703090916, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1217602907, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.DelegatingMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 506642458, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "java.lang.reflect.Method",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 708160817, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver$2", "nativeMethod":
+        false, "lineNumber": 101, "hCode": -1760971953, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": null, "className": "com.sun.proxy.$Proxy1",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1146440483, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver", "nativeMethod":
+        false, "lineNumber": 155, "hCode": 1465791089, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 38, "hCode": -602011615, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 1, "hCode": -602011652, "class": "java.lang.StackTraceElement"},
+        {"methodName": "innerRun", "fileName": null, "className": "java.util.concurrent.FutureTask$Sync",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 1144956884, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.FutureTask",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 424519275, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": "DefaultSession.java", "className": "org.openqa.selenium.remote.server.DefaultSession$1",
+        "nativeMethod": false, "lineNumber": 167, "hCode": -255143476, "class": "java.lang.StackTraceElement"},
+        {"methodName": "runTask", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1076768003, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -166011880, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.lang.Thread", "nativeMethod":
+        false, "lineNumber": -1, "hCode": 1432591020, "class": "java.lang.StackTraceElement"}],
+        "buildInformation": {"buildRevision": "dc1ef9c", "buildTime": "2013-02-19
+        00:15:27", "releaseLabel": "2.30.0", "hCode": 12206609, "class": "org.openqa.selenium.internal.BuildInfo"},
+        "localizedMessage": "Failed to navigate to http://127.0.0.1:3000organizations/location-with-no-phone.
+        This usually means that a call to the COM method IWebBrowser2::Navigate2()
+        failed. (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 16 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "class": "org.openqa.selenium.WebDriverException",
+        "additionalInformation": "\nSession ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver
+        info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{platform=WINDOWS,
+        elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "systemInformation":
+        "System info: os.name: ''Windows Server 2012'', os.arch: ''x86'', os.version:
+        ''6.2'', java.version: ''1.6.0_43''", "cause": null, "message": "Failed to
+        navigate to http://127.0.0.1:3000organizations/location-with-no-phone. This
+        usually means that a call to the COM method IWebBrowser2::Navigate2() failed.
+        (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 16 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "supportUrl":
+        null}, "sessionId": "889d3211985d40ed900d67c561dfa91d", "hCode": 9434319,
+        "class": "org.openqa.selenium.remote.Response"}'
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:17 GMT
+- request:
+    method: post
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d/url
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://127.0.0.1:3000organizations/location-with-no-phone"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '67'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:18 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: '{"status": 13, "state": "unhandled error", "value": {"hCode": 24840600,
+        "stackTrace": [{"methodName": "newInstance0", "fileName": null, "className":
+        "sun.reflect.NativeConstructorAccessorImpl", "nativeMethod": true, "lineNumber":
+        -2, "hCode": 513928194, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "newInstance", "fileName": null, "className": "sun.reflect.NativeConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -432498851, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "sun.reflect.DelegatingConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -2147429624, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "java.lang.reflect.Constructor",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1851634561, "class": "java.lang.StackTraceElement"},
+        {"methodName": "createThrowable", "fileName": "ErrorHandler.java", "className":
+        "org.openqa.selenium.remote.ErrorHandler", "nativeMethod": false, "lineNumber":
+        187, "hCode": 514255469, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "throwIfResponseFailed", "fileName": "ErrorHandler.java", "className": "org.openqa.selenium.remote.ErrorHandler",
+        "nativeMethod": false, "lineNumber": 145, "hCode": 1091067072, "class": "java.lang.StackTraceElement"},
+        {"methodName": "execute", "fileName": "RemoteWebDriver.java", "className":
+        "org.openqa.selenium.remote.RemoteWebDriver", "nativeMethod": false, "lineNumber":
+        554, "hCode": 1767885041, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "get", "fileName": "RemoteWebDriver.java", "className": "org.openqa.selenium.remote.RemoteWebDriver",
+        "nativeMethod": false, "lineNumber": 276, "hCode": -1337857156, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke0", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": true, "lineNumber": -2, "hCode": 703090916, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1217602907, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.DelegatingMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 506642458, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "java.lang.reflect.Method",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 708160817, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver$2", "nativeMethod":
+        false, "lineNumber": 101, "hCode": -1760971953, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": null, "className": "com.sun.proxy.$Proxy1",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1146440483, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver", "nativeMethod":
+        false, "lineNumber": 155, "hCode": 1465791089, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 38, "hCode": -602011615, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 1, "hCode": -602011652, "class": "java.lang.StackTraceElement"},
+        {"methodName": "innerRun", "fileName": null, "className": "java.util.concurrent.FutureTask$Sync",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 1144956884, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.FutureTask",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 424519275, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": "DefaultSession.java", "className": "org.openqa.selenium.remote.server.DefaultSession$1",
+        "nativeMethod": false, "lineNumber": 167, "hCode": -255143476, "class": "java.lang.StackTraceElement"},
+        {"methodName": "runTask", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1076768003, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -166011880, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.lang.Thread", "nativeMethod":
+        false, "lineNumber": -1, "hCode": 1432591020, "class": "java.lang.StackTraceElement"}],
+        "buildInformation": {"buildRevision": "dc1ef9c", "buildTime": "2013-02-19
+        00:15:27", "releaseLabel": "2.30.0", "hCode": 30373009, "class": "org.openqa.selenium.internal.BuildInfo"},
+        "localizedMessage": "Failed to navigate to http://127.0.0.1:3000organizations/location-with-no-phone.
+        This usually means that a call to the COM method IWebBrowser2::Navigate2()
+        failed. (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 14 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "class": "org.openqa.selenium.WebDriverException",
+        "additionalInformation": "\nSession ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver
+        info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{platform=WINDOWS,
+        elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "systemInformation":
+        "System info: os.name: ''Windows Server 2012'', os.arch: ''x86'', os.version:
+        ''6.2'', java.version: ''1.6.0_43''", "cause": null, "message": "Failed to
+        navigate to http://127.0.0.1:3000organizations/location-with-no-phone. This
+        usually means that a call to the COM method IWebBrowser2::Navigate2() failed.
+        (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 14 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "supportUrl":
+        null}, "sessionId": "889d3211985d40ed900d67c561dfa91d", "hCode": 11733267,
+        "class": "org.openqa.selenium.remote.Response"}'
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:17 GMT
+- request:
+    method: post
+    uri: http://ohanapi:531db7d3-5bb0-4651-b497-274bd9d71d81@ondemand.saucelabs.com/wd/hub/session/889d3211985d40ed900d67c561dfa91d/url
+    body:
+      encoding: UTF-8
+      string: '{"url":"http://127.0.0.1:3000organizations/location-with-no-phone"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '67'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Thu, 24 Apr 2014 08:14:18 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - monocle/0.26
+    body:
+      encoding: UTF-8
+      string: '{"status": 13, "state": "unhandled error", "value": {"hCode": 8140933,
+        "stackTrace": [{"methodName": "newInstance0", "fileName": null, "className":
+        "sun.reflect.NativeConstructorAccessorImpl", "nativeMethod": true, "lineNumber":
+        -2, "hCode": 513928194, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "newInstance", "fileName": null, "className": "sun.reflect.NativeConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -432498851, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "sun.reflect.DelegatingConstructorAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -2147429624, "class": "java.lang.StackTraceElement"},
+        {"methodName": "newInstance", "fileName": null, "className": "java.lang.reflect.Constructor",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1851634561, "class": "java.lang.StackTraceElement"},
+        {"methodName": "createThrowable", "fileName": "ErrorHandler.java", "className":
+        "org.openqa.selenium.remote.ErrorHandler", "nativeMethod": false, "lineNumber":
+        187, "hCode": 514255469, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "throwIfResponseFailed", "fileName": "ErrorHandler.java", "className": "org.openqa.selenium.remote.ErrorHandler",
+        "nativeMethod": false, "lineNumber": 145, "hCode": 1091067072, "class": "java.lang.StackTraceElement"},
+        {"methodName": "execute", "fileName": "RemoteWebDriver.java", "className":
+        "org.openqa.selenium.remote.RemoteWebDriver", "nativeMethod": false, "lineNumber":
+        554, "hCode": 1767885041, "class": "java.lang.StackTraceElement"}, {"methodName":
+        "get", "fileName": "RemoteWebDriver.java", "className": "org.openqa.selenium.remote.RemoteWebDriver",
+        "nativeMethod": false, "lineNumber": 276, "hCode": -1337857156, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke0", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": true, "lineNumber": -2, "hCode": 703090916, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.NativeMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1217602907, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "sun.reflect.DelegatingMethodAccessorImpl",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 506642458, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": null, "className": "java.lang.reflect.Method",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 708160817, "class": "java.lang.StackTraceElement"},
+        {"methodName": "invoke", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver$2", "nativeMethod":
+        false, "lineNumber": 101, "hCode": -1760971953, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": null, "className": "com.sun.proxy.$Proxy1",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1146440483, "class": "java.lang.StackTraceElement"},
+        {"methodName": "get", "fileName": "EventFiringWebDriver.java", "className":
+        "org.openqa.selenium.support.events.EventFiringWebDriver", "nativeMethod":
+        false, "lineNumber": 155, "hCode": 1465791089, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 38, "hCode": -602011615, "class": "java.lang.StackTraceElement"},
+        {"methodName": "call", "fileName": "ChangeUrl.java", "className": "org.openqa.selenium.remote.server.handler.ChangeUrl",
+        "nativeMethod": false, "lineNumber": 1, "hCode": -602011652, "class": "java.lang.StackTraceElement"},
+        {"methodName": "innerRun", "fileName": null, "className": "java.util.concurrent.FutureTask$Sync",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 1144956884, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.FutureTask",
+        "nativeMethod": false, "lineNumber": -1, "hCode": 424519275, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": "DefaultSession.java", "className": "org.openqa.selenium.remote.server.DefaultSession$1",
+        "nativeMethod": false, "lineNumber": 167, "hCode": -255143476, "class": "java.lang.StackTraceElement"},
+        {"methodName": "runTask", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -1076768003, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.util.concurrent.ThreadPoolExecutor$Worker",
+        "nativeMethod": false, "lineNumber": -1, "hCode": -166011880, "class": "java.lang.StackTraceElement"},
+        {"methodName": "run", "fileName": null, "className": "java.lang.Thread", "nativeMethod":
+        false, "lineNumber": -1, "hCode": 1432591020, "class": "java.lang.StackTraceElement"}],
+        "buildInformation": {"buildRevision": "dc1ef9c", "buildTime": "2013-02-19
+        00:15:27", "releaseLabel": "2.30.0", "hCode": 23602584, "class": "org.openqa.selenium.internal.BuildInfo"},
+        "localizedMessage": "Failed to navigate to http://127.0.0.1:3000organizations/location-with-no-phone.
+        This usually means that a call to the COM method IWebBrowser2::Navigate2()
+        failed. (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 16 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "class": "org.openqa.selenium.WebDriverException",
+        "additionalInformation": "\nSession ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver
+        info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities [{platform=WINDOWS,
+        elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "systemInformation":
+        "System info: os.name: ''Windows Server 2012'', os.arch: ''x86'', os.version:
+        ''6.2'', java.version: ''1.6.0_43''", "cause": null, "message": "Failed to
+        navigate to http://127.0.0.1:3000organizations/location-with-no-phone. This
+        usually means that a call to the COM method IWebBrowser2::Navigate2() failed.
+        (WARNING: The server did not provide any stacktrace information)\nCommand
+        duration or timeout: 16 milliseconds\nBuild info: version: ''2.30.0'', revision:
+        ''dc1ef9c'', time: ''2013-02-19 00:15:27''\nSystem info: os.name: ''Windows
+        Server 2012'', os.arch: ''x86'', os.version: ''6.2'', java.version: ''1.6.0_43''\nSession
+        ID: 2329babc-e798-4fad-bbd7-7141a1936d9f\nDriver info: org.openqa.selenium.ie.InternetExplorerDriver\nCapabilities
+        [{platform=WINDOWS, elementScrollBehavior=0, javascriptEnabled=true, enablePersistentHover=true,
+        ignoreZoomSetting=false, browserName=internet explorer, enableElementCacheCleanup=true,
+        unexpectedAlertBehaviour=dismiss, version=10, cssSelectorsEnabled=true, ignoreProtectedModeSettings=false,
+        requireWindowFocus=false, allowAsynchronousJavaScript=false, handlesAlerts=true,
+        initialBrowserUrl=, nativeEvents=true, takesScreenshot=true}]", "supportUrl":
+        null}, "sessionId": "889d3211985d40ed900d67c561dfa91d", "hCode": 23257749,
+        "class": "org.openqa.selenium.remote.Response"}'
+    http_version: 
+  recorded_at: Thu, 24 Apr 2014 08:14:17 GMT
+recorded_with: VCR 2.8.0

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "location details" do
 
-  context "when the details page is visited via search results", :vcr, :js do
+  context "when the details page is visited via search results", :vcr do
     it "includes address elements" do
       search_for_maceo
       visit_details
@@ -14,7 +14,7 @@ feature "location details" do
     end
   end
 
-  context "when you return to the results page from details page", :vcr, :js do
+  context "when you return to the results page from details page", :js, :vcr do
     it 'displays the same search results' do
       search_for_maceo
       visit_details
@@ -26,12 +26,12 @@ feature "location details" do
   end
 
   scenario "when the details page is visited directly", :vcr do
-    visit('/organizations/521d33a01974fcdb2b0026a9')
+    visit_test_location
     expect(page).to have_content("2013 Avenue of the fellows")
   end
 
   scenario "when the details page is visited directly with invalid id", :vcr do
-    visit('/organizations/1234')
+    visit('/organizations/foobar')
     expect(page).to have_content("CalFresh")
     expect(page).to have_title "SMC-Connect"
   end
@@ -39,7 +39,7 @@ feature "location details" do
   context 'when phone elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -47,7 +47,7 @@ feature "location details" do
       expect(page).to have_content("Contact")
     end
 
-    it "includes the department and phone type" do
+    xit "includes the department and phone type" do
       expect(page).to have_content("(650) 372-6200 TTY Information")
     end
 
@@ -55,7 +55,7 @@ feature "location details" do
       expect(page).to have_content("(650) 627-8244")
     end
 
-    it "specifies TTY numbers" do
+    xit "specifies TTY numbers" do
       expect(page).to have_content("(650) 372-6200 TTY")
     end
 
@@ -64,7 +64,7 @@ feature "location details" do
   context 'when service elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -108,7 +108,7 @@ feature "location details" do
       # the time is checked against the Travis CI server time. The time has been
       # removed from the test till this can be sorted.
       #expect(page).to have_content("Tuesday, 1 October 2013 at 3:18 PM")
-      expect(page).to have_content("Thursday, 7 November 2013 at")
+      expect(page).to have_content("Thursday, 17 April 2014 at")
     end
 
   end
@@ -116,7 +116,7 @@ feature "location details" do
   context 'when location elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -126,14 +126,6 @@ feature "location details" do
 
     it "includes accessibility info" do
       expect(page).to have_content("Disabled Parking")
-    end
-
-    it "includes ask for info" do
-      expect(page).to have_content("Dawn of Midi")
-    end
-
-    it "doesn't display ask for as an array" do
-      expect(page).to_not have_content("[James Brown, Dawn of Midi]")
     end
 
     # Contact is not included with view because we have an ask_for field already
@@ -163,7 +155,8 @@ feature "location details" do
 
     it "includes short description" do
       within ".short-desc" do
-        expect(page).to have_content("NOT A REAL ENTRY")
+        expect(page).
+          to have_content("This is an example of a short description")
       end
     end
 
@@ -173,32 +166,6 @@ feature "location details" do
 
     it "sets the page title to the location name" do
       expect(page).to have_title("San Maceo Agency | SMC-Connect")
-    end
-  end
-
-  context 'when farmers market with market match' do
-    before(:each) do
-      VCR.use_cassette('location_details/when_market_details_page_is_visited_directly') do
-       visit('/organizations/522dee234becffff2700000e')
-      end
-    end
-
-    # market match is not currently showing up on farmers' market entries
-    xit "includes Market Match" do
-      expect(page).to have_content("Market Match")
-    end
-
-    it "includes payment info" do
-      expect(page).to have_content("Payment methods accepted:")
-    end
-
-    it "includes info about payment types" do
-      expect(page).to have_content("SNAP")
-    end
-
-    it "includes products info" do
-      expect(page).to have_content("Products sold:")
-      expect(page).to have_content("Baked Goods")
     end
   end
 end

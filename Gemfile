@@ -66,9 +66,9 @@ group :test do
   gem "capybara"
   gem 'json'
   gem 'rack_session_access' # for getting access to the session from Capybara
-  gem 'poltergeist'
+  #gem 'poltergeist'
   #gem 'selenium-webdriver'
-  #gem 'capybara-webkit'
+  gem 'capybara-webkit'
   gem "vcr"
   gem 'webmock', "< 1.16.0"
   gem "email_spec"

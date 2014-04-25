@@ -1,21 +1,26 @@
 require 'spec_helper'
 
+<<<<<<< HEAD
 # Tests the results page pagination component. This only checks one of the three components on the page,
 # as all should be duplicates of each other.
 feature "results page pagination", :js=>true do
+=======
+feature "results page pagination" do
+>>>>>>> master
 
-  scenario 'with results that have no results', :vcr do
+  scenario 'when there are no results', :vcr do
     search_from_home(:keyword => 'asdfg')
     expect(page).not_to have_selector('.pagination')
   end
 
-  scenario 'with results that have one result', :vcr do
+  scenario 'when there is only one result', :vcr do
     search_for_maceo
     within('#floating-results-header .pagination') do
       expect(page).to have_content('1')
     end
   end
 
+<<<<<<< HEAD
   scenario 'on first page of results that have less than five entries', :vcr do
     search_from_home(:keyword=>'libraries')
     within("#floating-results-header .pagination") do
@@ -31,9 +36,22 @@ feature "results page pagination", :js=>true do
       expect(page).to have_selector('.prev')
       expect(page).to have_content('12')
     end
+=======
+  scenario 'on first page with less than 4 pages of results', :vcr do
+    search_from_home(:keyword=>'youth')
+    expect(page).to have_selector('.pagination')
+    expect(page).to have_content('Page: 1 2 3 >')
   end
 
-  scenario 'on first page of results that have more than five entries', :vcr do
+  scenario 'on last page with less than 4 pages of results', :vcr do
+    search_from_home(:keyword=>'youth')
+    go_to_page(3)
+    expect(page).to have_selector('.pagination')
+    expect(page).to have_content('Page: < 1 2 3')
+>>>>>>> master
+  end
+
+  scenario 'on first page with more than 5 pages of results', :vcr do
     search_from_home
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.next')
@@ -41,7 +59,7 @@ feature "results page pagination", :js=>true do
     end
   end
 
-  scenario 'on last page of results that have more than five entries', :vcr do
+  scenario 'on last page with more than 5 pages of results', :vcr do
     search_from_home
     go_to_page(20)
     expect(page).to have_content('571-589 of 589 results')
@@ -51,7 +69,7 @@ feature "results page pagination", :js=>true do
     end
   end
 
-  scenario 'on page less than three pages from beginning of results that have more than five entries', :vcr do
+  scenario 'less than 3 pages in with more than 5 pages of results', :vcr do
     search_from_home
     go_to_page(3)
     within('#floating-results-header .pagination') do
@@ -61,7 +79,7 @@ feature "results page pagination", :js=>true do
     end
   end
 
-  scenario 'on page more than three pages from beginning of results that have more than five entries', :vcr do
+  scenario 'more than 3 pages in with more than 5 pages of results', :vcr do
     search_from_home
     go_to_page(4)
     within('#floating-results-header .pagination') do
@@ -71,8 +89,9 @@ feature "results page pagination", :js=>true do
     end
   end
 
-  scenario 'on page less than three pages from end of results that have more than five entries', :vcr do
+  scenario 'less than 3 pages out with more than 5 pages of results', :vcr do
     search_from_home
+    go_to_page(22)
     go_to_page(20)
     go_to_page(18)
     within('#floating-results-header .pagination') do
@@ -82,7 +101,7 @@ feature "results page pagination", :js=>true do
     end
   end
 
-  scenario 'on page more than three pages from end of results that have more than five entries', :vcr do
+  scenario 'more than 3 pages out with more than 5 pages of results', :vcr do
     search_from_home
     go_to_page(20)
     go_to_page(17)

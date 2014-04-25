@@ -21,9 +21,20 @@ module Features
     end
 
     def search_for_maceo
-      visit('/organizations?utf8=✓&keyword=maceo')
+      visit('/organizations?keyword=maceo')
     end
 
+    def visit_test_location
+      visit('/organizations/sanmaceo-example-agency/san-maceo-agency')
+    end
+
+    def visit_location_with_no_address
+      visit('organizations/location-with-no-phone')
+    end
+
+    def search_for_location_without_address
+      visit('organizations?org_name=Location+with+no+phone')
+    end
 
     # helpers for filters
     def set_location_filter(options = {})
@@ -46,7 +57,7 @@ module Features
         within("##{name}-options") do
           find(".closed").click
           if field.present? && custom == true
-            find(".add .toggle").trigger('mousedown')
+            find(".toggle-group.add").click
             fill_in("#{name}-option-input", :with => field)
           elsif custom == false
             find(".toggle-group",:text=>field).trigger('mousedown')
@@ -82,11 +93,12 @@ module Features
       find(".require-loaded")
       within("##{name}-options") do
         # test clicking toggle functionality
-        expect(all(".current-option label").last).to have_content(val)
+        #expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
         expect(page).to have_selector(".open")
         expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
-        find(".options label",:text=>val).trigger("mousedown")
+        find(".options label",:text=>val).click
+        find(".open").click
         expect(all(".current-option label").last).to have_content(val)
       end
     end
@@ -122,17 +134,11 @@ module Features
 
     # navigation helpers
     def visit_details
-      page.find("#list-view").first('a').trigger('click')
+      page.find("#list-view").first('a').click
     end
 
     def looks_like_results
       expect(page).to have_content("SanMaceo Example Agency")
-      expect(page).to have_content("1 result")
-      expect(page).to have_title "1 result"
-    end
-
-    def looks_like_puente
-      expect(page).to have_content("Puente Resource Center")
       expect(page).to have_content("1 result")
       expect(page).to have_title "1 result"
     end
@@ -162,29 +168,6 @@ module Features
       expect(page).to have_link("Directions")
     end
 
-    def looks_like_market
-      expect(find("#detail-info .description a")).to have_content("more")
-      find("#detail-info .description a").click
-      expect(find("#detail-info .description a")).to have_content("less")
-
-      expect(page).to have_title "San Maceo Agency | SMC-Connect"
-
-      within ("#detail-info .payments-accepted") do
-        expect(page).not_to have_content("Women, Infants, and Children")
-        find(".popup-term", :text=>"WIC").trigger(:mousedown)
-        expect(page).to have_content("Women, Infants, and Children")
-      end
-      expect(page).to have_content("Works to control")
-      expect(page).to have_content("Profit and nonprofit")
-      expect(page).to have_content("Marin County")
-      expect(page).to have_content("Walk in")
-      expect(page).to have_content("permits and photocopying")
-      expect(page).to have_content("Russian")
-      expect(page).to have_content("Special parking")
-      expect(page).to have_link("Print")
-      expect(page).to have_link("Directions")
-    end
-
     def go_to_next_page
       first('.pagination').find_link('>').click
     end
@@ -195,15 +178,6 @@ module Features
 
     def go_to_page(page)
       first('.pagination').find_link(page).click
-    end
-
-    # webbrowser navigation using browser's JS history API
-    def go_back
-      page.evaluate_script("window.history.back()")
-    end
-
-    def go_forward
-      page.evaluate_script("window.history.forward()")
     end
 
     # helper to (hopefully) wait for page to load

@@ -3,7 +3,7 @@ class StatusController < ApplicationController
 
   def get_status
     # API checks
-    test_location = Ohanakapa.location("downtown-palo-alto-food-closet")
+    test_location = Ohanakapa.location("san-mateo-free-medical-clinic")
     test_search = Ohanakapa.search("search", :keyword => "maceo")
 
     if test_location.blank? || test_search.blank?
