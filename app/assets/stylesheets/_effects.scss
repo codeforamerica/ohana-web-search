@@ -1,0 +1,104 @@
+//=================================================================================
+// effects styles
+.hide
+{
+    display: none !important;
+    visibility: hidden;
+}
+
+.transparent
+{
+    @include opacity(0);
+}
+
+// fading styles
+.fade-in
+{
+    @include opacity(1);
+
+    z-index:9999 !important;
+    position:relative;
+
+    //@include transition(opacity $default_duration, z-index $default_duration);
+}
+
+.fade-out
+{
+    @include opacity(0);
+
+    z-index:0 !important;
+    position:relative;
+
+    //@include transition(opacity $default_duration, z-index $default_duration);
+}
+
+// delayed fading styles that trigger at a delay equal to 1/2 the duration of the fading styles
+.fade-in-delay
+{
+    @include opacity(1);
+
+    z-index:9998 !important;
+    position:relative;
+
+    //@include transition(opacity $default_duration, z-index $default_duration);
+    //@include transition-delay($short_duration);
+}
+
+.fade-out-delay
+{
+    @include opacity(0);
+
+    z-index:-9998 !important;
+    position:relative;
+
+    //@include transition(opacity $default_duration, z-index $default_duration);
+    //@include transition-delay($short_duration);
+}
+
+.flip
+{
+    @include rotateY(180deg);
+    @include transition(transform $default_duration);
+    @include backface-visibility( hidden );
+}
+
+.unflip
+{
+    @include rotateY(0deg);
+    @include transition(transform $default_duration);
+    @include backface-visibility( hidden );
+}
+
+.blur
+{
+    @include filter(blur(4px));
+    @include transition(filter $default_duration);
+}
+
+.unblur
+{
+    @include filter(blur(0px));
+    @include transition(filter $default_duration);
+}
+
+.slide-up
+{
+    z-index:-1 !important;
+    margin-top: -9999px !important;
+    position:absolute !important;
+
+    -webkit-transition: margin-top $default_duration, z-index $default_duration;
+    -moz-transition: margin-top $default_duration, z-index $default_duration;
+    transition: margin-top $default_duration, z-index $default_duration;
+}
+
+.slide-down
+{
+    z-index:-1 !important;
+    margin-top: 0px !important;
+    position:absolute !important;
+
+    -webkit-transition: margin-top $default_duration, z-index $default_duration;
+    -moz-transition: margin-top $default_duration, z-index $default_duration;
+    transition: margin-top $default_duration, z-index $default_duration;
+}

@@ -13,7 +13,7 @@ define(['util/util'],
     if(_header)
     {
       _offsetY = util.getOffset(_header).top;
-      _floatingContent = document.querySelector('#floating-results-header .floating-content');
+      _floatingContent = document.querySelectorAll('#floating-results-header .floating-content');
 
       _checkIfFloating();
 
@@ -42,21 +42,27 @@ define(['util/util'],
 
   function _checkIfFloating()
   {
+    var c;
     if (window.scrollY >= _offsetY)
     {
       // floating header
       _header.classList.add("floating");
-      _floatingContent.classList.remove('hide');
+      for (c in _floatingContent)
+        if (_floatingContent[c].hasOwnProperty("classList"))
+          _floatingContent[c].classList.remove('hide');
     }
     else
     {
       // reset header
       _header.classList.remove("floating");
-      _floatingContent.classList.add('hide');
+      for (c in _floatingContent)
+        if (_floatingContent[c].hasOwnProperty("classList"))
+          _floatingContent[c].classList.add('hide');
     }
   }
 
   return {
     init:init
   };
+
 });

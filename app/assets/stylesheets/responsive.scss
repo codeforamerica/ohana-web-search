@@ -10,37 +10,72 @@
   {
     #search-box
     {
-      > div
+      >div
       {
-        text-align:right;
+        text-align: left;
       }
 
-      input
+      .input-search-big
       {
-        @include border-radius(4px);
-        padding-right:10px;
-      }
+        width: 100%;
+        text-align: right;
 
-      button.big-btn
-      {
-        @include border-radius(4px);
-        border:1px solid $blue_darkest;
-        margin-top: 10px;
+        > input
+        {
+          @include border-radius(4px);
+          padding-right: 10px;
+        }
+
+        > button
+        {
+          position: relative;
+          @include border-radius(4px);
+          border: 1px solid darkest($blue);
+          background: light($green);
+          margin-top: 10px;
+
+          >span
+          {
+            text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+          }
+
+          &:hover
+          {
+            background: shade(light($green),5);
+
+            >span
+            {
+              color: darkest($purple);
+              text-shadow: none;
+            }
+
+            >.fa
+            {
+              color: darkest($purple);
+            }
+          }
+        }
       }
     }
   }
 
   .inside
   {
+
+    .input-search-small
+    {
+      width: 100%;
+    }
+
     #detail-info
     {
       > aside
       {
-        float:none;
-        margin-left:0;
-        width:100%;
+        float: none;
+        margin-left: 0;
+        width: 100%;
         @include single-box-shadow(none);
-        border:0;
+        border: 0;
       }
 
       .overview-box,
@@ -59,7 +94,11 @@
 
 // Tablet Portrait size to standard 960 (devices and browsers)
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-
+  .button-directions,
+      .button-map-zoom
+      {
+        border-left: 1px dotted $greyscale_light;
+      }
 }
 
 // All Mobile Sizes (devices and browser)
@@ -67,13 +106,14 @@
 {
   #content > header
   {
-    font-size:14px;
+    font-size: $font_size_95;
 
     h1
     {
       display: block;
       margin: 0 auto;
       width: 231px;
+      padding-top: 15px;
     }
 
     h2
@@ -82,8 +122,8 @@
       margin: 0 auto;
       width: 100%;
       text-align: center;
-      padding-left:0;
-      padding-right:0;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     nav
@@ -92,9 +132,9 @@
       margin: 0 auto;
       width: 100%;
       text-align: center;
-      float:none;
-      padding-left:0;
-      padding-right:0;
+      float: none;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -103,16 +143,16 @@
   {
     main
     {
-      position:static;
+      position: static;
     }
 
     #language-box
     {
-      text-align:center;
+      text-align: center;
 
       ul
       {
-        text-align:center;
+        text-align: center;
       }
     }
 
@@ -121,8 +161,8 @@
       p
       {
         font-size: 11px;
-        display:block;
-        text-align:center;
+        display: block;
+        text-align: center;
       }
     }
 
@@ -132,80 +172,71 @@
 
     #search-box
     {
-      position:static;
-      margin-left:0;
-      margin-top:0;
-      display:block;
-      width:auto;
+      position: static;
+      margin-left: 0;
+      margin-top: 0;
+      display: block;
+      width: auto;
 
       > div
       {
-        padding:20px;
+        padding: 20px;
         > section
         {
-          display:block;
-          margin:0;
+          display: block;
+          margin: 0;
         }
       }
 
       div
       {
-          display:block;
-          text-align:center;
+          display: block;
+          text-align: center;
       }
 
       label
       {
-          font-size: 20px;
-          font-family: $serif_font;
-          letter-spacing: 2px;
-          display:block;
-          width:auto;
-          margin-left:auto;
-          margin-right:auto;
+          display: none;
       }
 
-      input
+      .input-search-big
       {
-          height:40px;
-          font-size: 14px;
-          background:$white;
-          margin-bottom:10px;
-          margin-left:auto;
-          margin-right:auto;
-          width:100%;
-          @include box-sizing(border-box);
-          display:block;
-          position:static;
-          @include border-radius(0px);
-          padding-right:10px;
+        >input
+        {
+            height: 40px;
+            font-size: $font_size_95;
+            background: $white;
+            margin: 10px auto;
+            width: 100%;
+            @include box-sizing(border-box);
+            display: block;
+            @include border-radius(0px);
+            padding-right: 10px;
+        }
+
+        >button
+        {
+            width: 100%;
+            margin: 0;
+            margin-top: 10px;
+            @include border-radius(4px);
+            border: 1px solid darkest($blue);
+        }
       }
 
-      input[type='text'] {font-size:16px;}
 
-      button.big-btn
-      {
-          width:100%;
-          font-size: 16px;
-          margin:0;
-          margin-top:10px;
-          top:0;
-          left:0;
-          @include border-radius(4px);
-          border:1px solid $blue_darkest;
-      }
     }
 
 
     #category-box
     {
-      position:static;
-      margin-left:0;
-      margin-top:0;
-      display:block;
-      width:auto;
-      margin-top:8px;
-      padding:10px;
+      position: static;
+      margin-left: 0;
+      margin-top: 0;
+      display: block;
+      width: auto;
+      margin-top: 8px;
+      padding: 10px;
 
       > ul > li
       {
@@ -215,20 +246,20 @@
 
       > ul > li > ul > li
       {
-        font-size:14px;
+        font-size: $font_size_95;
       }
 
       > header
       {
-        margin-top:10px;
-        margin-left:10px;
-        color:$white_alpha70;
-        font-size:14px;
+        margin-top: 10px;
+        margin-left: 10px;
+        color: rgba($white,.7);
+        font-size: $font_size_95;
       }
 
       > nav
       {
-        margin-right:10px;
+        margin-right: 10px;
       }
     }
 
@@ -240,126 +271,128 @@
   {
     #results-container
     {
-      //display:table-header-group;
-      margin-left:0;
-      border-left:0;
+      margin-left: 0;
+      border-left: 0;
 
       > header > nav
       {
-        display:block;
-        padding:10px;
-        padding-top:0px;
+        display: block;
+        padding: 10px;
+        padding-top: 0px;
       }
     }
 
     .results-header
     {
-      text-align:left;
-      >div
+      text-align: center;
+
+      h1
       {
-       >p,>h1
-      {
-        display:none;
-      }
+        display: none;
       }
 
-      .floating-content
+      .left-column
       {
+        position: static;
+      }
 
-        .utility-links // back to search, directions, print
+      .right-column
+      {
+        position: static;
+      }
+
+      .static-content > *:last-child
+      {
+        margin-right: 0;
+      }
+
+      .button-print
+      {
+        display: none;
+      }
+
+      .button-directions,
+      .button-map-zoom
+      {
+        border-left: 1px dotted $greyscale_light;
+      }
+
+      .pagination
+      {
+        li
         {
-          >span
-          {
-            padding-left:0;
-          }
+          display: none;
         }
-      }
 
-      .utility-links // back to search, directions, print
-      {
-        >span
+        .next,.prev,.current
         {
-          border:0;
-        }
-
-        >span:first-child
-        {
-          border:0;
+          @include inline-block();
         }
       }
     }
 
     #search-container
     {
-      //display:table-footer-group;
-      float:none;
-      width:100%;
+      //display: table-footer-group;
+      float: none;
+      width: 100%;
       @include box-sizing(border-box);
 
       select
       {
-        height:auto;
+        height: auto;
       }
     }
 
     #search-box
     {
-
-      input
+      .input-search-small
       {
-          font-size: 14px;
-          background:$white;
-          margin-left:auto;
-          margin-right:auto;
-          width:100%;
-          @include box-sizing(border-box);
-          display:block;
-          position:static;
-          @include border-radius(0px);
+        width: 100%;
       }
     }
 
     #keyword-search-box
     {
-      padding-bottom:10px;
+      padding-bottom: 10px;
     }
 
     #results-entries
     {
 
       nav{
-        margin-top:15px;
-        margin-left:15px;
-        margin-right:15px;
+        margin-top: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
       }
 
       #search-summary-container
       {
-        background:$yellow_lightest;
-        border-bottom:1px solid $greyscale_midtone; // IE fallback
-        border-bottom:1px solid $black_alpha10;
+        background: lightest($yellow);
+        border-bottom: 1px solid $greyscale_midtone; // IE fallback
+        border-bottom: 1px solid rgba($black,.1);
       }
 
       #map-view-control
       {
-        padding-left:20px;
+        padding-left: 20px;
         width: 100%;
-        border-bottom:1px solid $greyscale_midtone; // IE fallback
-        border-bottom:1px solid $black_alpha10;
+        border-bottom: 1px solid $greyscale_midtone; // IE fallback
+        border-bottom: 1px solid rgba($black,.1);
       }
     }
 
     #map-canvas
     {
-      border-left:20px solid $greyscale_lightest;
-      border-right:20px solid $greyscale_lightest;
-      border-bottom:0;
-      border-top:0;
+      border-left: 20px solid $greyscale_lightest;
+      border-right: 20px solid $greyscale_lightest;
+      border-bottom: 0;
+      border-top: 0;
     }
 
     #detail-info
     {
-      margin:0px;
+      margin: 0px;
       @include border-radius(0px);
       @include single-box-shadow($white,0,0,0px);
       -ms-word-break: break-all;
@@ -369,30 +402,35 @@
 
       > aside
       {
-        float:clear;
-        width:100%;
+        float: clear;
+        width: 100%;
+
+        > section
+        {
+          @include border-radius(0px);
+        }
       }
 
       > section
       {
-        margin-right:auto;
+        margin-right: auto;
       }
 
       > * > section * > section
       {
-        margin:0;
+        margin: 0;
       }
 
       .map
       {
-        width:100%;
+        width: 100%;
         @include box-sizing(border-box);
       }
       #detail-map-canvas
       {
-        width:100%;
+        width: 100%;
         @include box-sizing(border-box);
-        border:0;
+        border: 0;
       }
     }
 
@@ -400,7 +438,7 @@
     {
       li:last-child
       {
-        margin-bottom:0px;
+        margin-bottom: 0px;
       }
     }
   }
@@ -409,7 +447,7 @@
   {
     table
     {
-      display:none;
+      display: none;
     }
   }
 }

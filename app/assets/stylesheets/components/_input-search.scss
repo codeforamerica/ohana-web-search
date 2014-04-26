@@ -1,0 +1,208 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+// Form input styles
+
+// search
+.input-search-small
+{
+  position:relative;
+  width:220px;
+
+  > input::input-placeholder
+  {
+    color: lightest($blue);
+    font-style: italic;
+  }
+
+  > input::-webkit-input-placeholder
+  {
+    color: lightest($blue);
+    font-style: italic;
+  }
+
+  > input:-moz-placeholder
+  {
+    color: lightest($blue);
+    font-style: italic;
+  }
+
+  > input::-moz-placeholder
+  {
+    color: lightest($blue);
+    font-style: italic;
+  }
+
+  > input:-ms-input-placeholder
+  {
+    color: lightest($blue);
+    font-style: italic;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration
+  {
+    display: none;
+  }
+
+  input:focus,
+  {
+    outline: none;
+  }
+
+  > input[type=search]
+  {
+    @include type-size(base-medium);
+    margin-left: 0px;
+    height: 40px;
+    padding: 3px;
+    padding-left: 36px;
+    padding-right: 6px;
+    width: 100%;
+    vertical-align: bottom;
+
+    border-collapse: collapse;
+    -webkit-appearance: none; // remove rounding styling of input fields on iOS
+    border: none;
+    background: none;
+    border-bottom: 2px solid darkest($blue);
+    @include box-sizing(border-box);
+    color: $white;
+  }
+
+  > button
+  {
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 10px;
+    @include box-sizing(border-box);
+    vertical-align: baseline;
+    font-family: $font_serif;
+    font-size: $font_size_110; // Medium font size
+    line-height: 0px;
+    height: 40px;
+    min-width: 34px;
+    border-collapse: collapse;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9998;
+
+    >span
+    {
+      @include inline-block();
+      vertical-align: baseline;
+      color: $black; // IE fallback
+      color: midtone($black, .5);
+      text-shadow: 1px 4px 6px $white, 0 0 0 $black, 1px 4px 6px $white;
+    }
+    >.fa
+    {
+      color: darkest($blue);
+    }
+
+    &:hover
+    {
+      >span
+      {
+        @include inline-block();
+        vertical-align: baseline;
+        color: darkest($purple);
+        text-shadow: none;
+      }
+      >.fa
+      {
+        color: dark($blue);
+      }
+    }
+  }
+}
+
+.input-search-big
+{
+  @extend .input-search-small;
+  width:440px;
+
+  > input::input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input::-webkit-input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input:-moz-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input::-moz-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input:-ms-input-placeholder
+  {
+    color: midtone($black,0.2);
+    font-style: italic;
+  }
+
+  > input[type=search]
+  {
+    height: 50px;
+    padding: 10px;
+    padding-right: 144px;
+    margin:0;
+    @include type-size(medium);
+    vertical-align:middle;
+    background: $white;
+    @include border-radius(4px);
+    border:1px solid darkest($blue,0.4);
+    color: $black;
+  }
+
+  > button
+  {
+    height: 50px;
+    letter-spacing: 1px;
+    min-width: 134px;
+    font-size: 24px;
+    right: 0;
+    left: auto;
+    border: 1px solid darkest($blue,0.4);
+    border-left: 1px solid darkest($blue,0.2);
+    background: light($green);
+    @include border-radius(0px 4px 4px 0px);
+
+    >span
+    {
+      text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+    }
+
+    &:hover
+    {
+      background: shade(light($green),5);
+
+      >span
+      {
+        text-shadow: none;
+      }
+
+      >.fa
+      {
+        color: darkest($purple);
+      }
+    }
+  }
+}

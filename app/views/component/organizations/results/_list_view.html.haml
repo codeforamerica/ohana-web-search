@@ -49,4 +49,5 @@
           - if org.key?(:short_desc)
             %p.short-desc
               = org[:short_desc]
-  = render :partial => 'component/organizations/results/header_summary', :locals => {:pages=>@pages}
+  %footer
+    = render :partial => 'component/organizations/results/pagination', :locals => {:pages=>@pages}

@@ -20,15 +20,15 @@
     // show links href values
     #app-footer a[href]:after {
         content: " (" attr(href) ")";
-        color:$black_alpha60;
-        font-size:12px;
+        color: rgba($black, .6);
+        font-size: $font_size_90;
     }
 
     /*
     abbr[title]:after {
         content: " (" attr(title) ")";
         color:$black_alpha60;
-        font-size:12px;
+        font-size: $font_size_90;
     }
     // Don't show links for images, or javascript/internal links
 
@@ -207,7 +207,7 @@
       {
         li
         {
-          border:1px solid $black_alpha40 !important;
+          border:1px solid rgba($black,.4) !important;
 
           // needed for FF to display result list item links
           a
