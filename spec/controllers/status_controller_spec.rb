@@ -8,7 +8,7 @@ describe StatusController do
       it "returns success" do
         get "get_status"
         body = JSON.parse(response.body)
-        body["status"].should == "ok"
+        expect(body["status"]).to eq("ok")
       end
     end
 
@@ -38,7 +38,7 @@ describe StatusController do
 
         get "get_status"
         body = JSON.parse(response.body)
-        body["status"].should == "API did not respond"
+        expect(body["status"]).to eq("API did not respond")
       end
     end
   end
