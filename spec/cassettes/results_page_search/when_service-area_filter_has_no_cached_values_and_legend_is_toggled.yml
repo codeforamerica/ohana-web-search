@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,21 +25,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:33:55 GMT
+      - Sun, 27 Apr 2014 04:51:29 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=&page=0&service_area=&utf8=%E2%9C%93>;
+        rel="last"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 22f2aa52-996b-490d-adb9-47e2bd2a7b8b
+      - 06b9522e-1f85-4c30-bbe5-787cb242ac77
       X-Runtime:
-      - '0.033210'
+      - '0.025235'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -51,104 +52,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:56 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&location=Custom%20Value&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:41:20 GMT
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 400 Bad Request
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - bde97d57-ef20-4d21-9570-b26a72a79917
-      X-Runtime:
-      - '0.062159'
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:41:20 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:41:20 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 82d50676-ff25-4950-aac8-0e73a68d7c4e
-      X-Runtime:
-      - '0.034509'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:41:20 GMT
-recorded_with: VCR 2.8.0
+    http_version: 
+  recorded_at: Sun, 27 Apr 2014 04:51:29 GMT
+recorded_with: VCR 2.9.0

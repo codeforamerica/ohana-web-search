@@ -108,7 +108,7 @@ feature "location details" do
       # the time is checked against the Travis CI server time. The time has been
       # removed from the test till this can be sorted.
       #expect(page).to have_content("Tuesday, 1 October 2013 at 3:18 PM")
-      expect(page).to have_content("Thursday, 17 April 2014 at")
+      expect(page).to have_content("Friday, 18 April 2014 at")
     end
 
   end
@@ -156,7 +156,7 @@ feature "location details" do
     it "includes short description" do
       within ".short-desc" do
         expect(page).
-          to have_content("This is an example of a short description")
+          to have_content("[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]")
       end
     end
 
