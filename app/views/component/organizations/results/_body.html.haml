@@ -8,18 +8,9 @@
   - if @orgs.present?
     - if @map_data.present?
       = render 'component/organizations/results/map_view'
-    - else
-      -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{@search_summary_plain}"}
-        = @search_summary_html
-
     = render 'component/organizations/results/list_view'
   - else
     %section.no-results
-      -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{@search_summary_plain}"}
-        = @search_summary_html
-
       %div.message
         %strong Unfortunately, your search returned no results.
         %em If you have trouble finding what you're looking for, try:

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,10 +25,10 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:45:49 GMT
+      - Sun, 27 Apr 2014 04:50:40 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=2&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=22&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=2&service_area=&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
@@ -41,9 +41,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 3539cb96-1f46-4e5e-920d-43e37932fd2f
+      - ab155257-cbe1-4ed4-8a23-393f1a287771
       X-Runtime:
-      - '0.027859'
+      - '0.036715'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -54,69 +54,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":23,"service_areas":["San Mateo County"],"updated_at":"2014-04-16T19:51:31.986-07:00"}],"hours":"Monday-Friday
-        10am-5pm","urls":["http://codeforamerica.org"],"emails":["eml@example.org"],"transportation":"SAMTRANS
-        stops within 1/2 mile.","short_desc":"This is a short description","url":"http://ohana-api-test.herokuapp.com/api/locations/22","kind":"Test","phones":[{"id":22,"location_id":22,"number":"7035551212","department":"CalFresh","extension":"x1223","vanity_number":"703555-ABCD"}],"contacts":[{"id":29,"location_id":22,"name":"Moncef","title":"Director"}],"id":"22","organization":{"id":8,"name":"Admin
-        Test Org","slug":"admin-test-org","created_at":"2014-04-16T19:51:31.573-07:00","updated_at":"2014-04-16T19:51:32.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-16T19:51:31.995-07:00","faxes":[{"id":21,"location_id":22,"number":"2025551212","department":"CalFresh"}],"address":{"id":21,"location_id":22,"street":"bozo","city":"fairfax","state":"va","zip":"12345"},"description":"This
-        is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
-        Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:45:49 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=1&service_area=&utf8=%E2%9C%93>;
-        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=21&service_area=&utf8=%E2%9C%93>;
-        rel="prev"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '22'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Previous-Page:
-      - '21'
-      X-Request-Id:
-      - 3eb84c52-ccaf-4415-9967-50d18b4c8537
-      X-Runtime:
-      - '0.041008'
-      X-Total-Count:
-      - '22'
-      X-Total-Pages:
-      - '22'
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[{"services":[{"id":2,"audience":"Second service and nonprofit businesses,
+      string: '[{"services":[{"id":23,"audience":"Second service and nonprofit businesses,
         the public, military facilities, schools and government entities","description":"[NOTE
         THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
         APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
@@ -133,7 +71,7 @@ http_interactions:
         wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
         Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
         County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"updated_at":"2014-04-16T19:48:31.094-07:00"},{"id":1,"audience":"Profit
+        World Cup"],"updated_at":"2014-04-18T12:49:47.850-07:00"},{"id":22,"audience":"Profit
         and nonprofit businesses, the public, military facilities, schools and government
         entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
         TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -151,17 +89,17 @@ http_interactions:
         wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
         Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
         County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"updated_at":"2014-04-16T19:48:30.962-07:00"}],"mail_address":{"id":1,"location_id":1,"attention":"Hella
+        World Cup"],"updated_at":"2014-04-18T12:49:47.791-07:00"}],"mail_address":{"id":21,"location_id":22,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"hours":"Monday-Friday,
         8-5; Saturday, 10-6; Sunday 11-5","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"transportation":"SAMTRANS
         stops within 1 block","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS
-        FOR TESTING PURPOSES OF THIS ALPHA APP]","url":"http://ohana-api-test.herokuapp.com/api/locations/1","phones":[{"id":1,"location_id":1,"number":"650
-        372-6200","department":"Information"},{"id":2,"location_id":1,"number":"650
-        372-6200","department":"Reservations"}],"contacts":[{"id":1,"location_id":1,"name":"Suzanne
-        Badenhoop","title":"Board President"}],"id":"1","languages":["Chinese (Cantonese)","Chinese
-        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"organization":{"id":1,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","created_at":"2014-04-16T19:48:29.197-07:00","updated_at":"2014-04-16T19:48:31.335-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"},"updated_at":"2014-04-16T19:48:31.128-07:00","faxes":[{"id":1,"location_id":1,"number":"650
-        627-8244"}],"address":{"id":1,"location_id":1,"street":"2013 Avenue of the
+        FOR TESTING PURPOSES OF THIS ALPHA APP]","url":"http://ohana-api-test.herokuapp.com/api/locations/22","phones":[{"id":21,"location_id":22,"number":"650
+        372-6200","department":"Information"},{"id":22,"location_id":22,"number":"650
+        372-6200","department":"Reservations"}],"contacts":[{"id":29,"location_id":22,"name":"Suzanne
+        Badenhoop","title":"Board President"}],"id":"22","languages":["Chinese (Cantonese)","Chinese
+        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"organization":{"id":8,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","created_at":"2014-04-18T12:49:47.008-07:00","updated_at":"2014-04-18T12:49:47.918-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-18T12:49:47.528-07:00","faxes":[{"id":21,"location_id":22,"number":"650
+        627-8244"}],"address":{"id":21,"location_id":22,"street":"2013 Avenue of the
         fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"description":"[NOTE
         THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
         APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
@@ -173,13 +111,13 @@ http_interactions:
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","name":"San Maceo
-        Agency","created_at":"2014-04-16T19:48:29.958-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
-        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397702909958],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
+        Agency","created_at":"2014-04-18T12:49:47.528-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397850587528],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Sun, 27 Apr 2014 04:50:40 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=18&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=22&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -202,12 +140,110 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:45:49 GMT
+      - Sun, 27 Apr 2014 04:50:41 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=1&service_area=&utf8=%E2%9C%93>;
-        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=17&service_area=&utf8=%E2%9C%93>;
-        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=19&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=1&service_area=&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=21&service_area=&utf8=%E2%9C%93>;
+        rel="prev"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '22'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Previous-Page:
+      - '21'
+      X-Request-Id:
+      - 1a167dc7-aeaf-4672-a412-10acb4cbb007
+      X-Runtime:
+      - '0.025470'
+      X-Total-Count:
+      - '22'
+      X-Total-Pages:
+      - '22'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"services":[{"id":1,"audience":"Older adults age 55 or over, ethnic
+        minorities and low-income persons","eligibility":"Age 55 or over for most
+        programs, age 60 or over for lunch program","fees":"$2.50 suggested donation
+        for lunch for age 60 or over, donations for other services appreciated. Cash
+        and checks accepted.","how_to_apply":"Walk in or apply by phone.","wait":"No
+        wait.","funding_sources":["City","County","Donations","Fees","Fundraising"],"service_areas":["Redwood
+        City"],"keywords":["ADULT PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered
+        Mea","COMMUNITY SERVICES","Group Support","Information and Referral","EDUCATION
+        SERVICES","English Language","RECREATION/LEISURE SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown
+        Bag Food Programs","Congregate Meals/Nutrition Sites","Senior Centers","Older
+        Adults"],"updated_at":"2014-04-18T12:31:54.284-07:00"}],"mail_address":{"id":1,"location_id":1,"attention":"Fair
+        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"hours":"Monday-Friday, 9-5","urls":["http://www.peninsulafamilyservice.org"],"emails":["cgonzalez@peninsulafamilyservice.org"],"transportation":"SAMTRANS
+        stops in front.","short_desc":"A multipurpose senior citizens'' center serving
+        the Redwood City area.","url":"http://ohana-api-test.herokuapp.com/api/locations/1","phones":[{"id":1,"location_id":1,"number":"650
+        780-7525"}],"contacts":[{"id":1,"location_id":1,"name":"Susan Houston","title":"Director
+        of Older Adult Services"},{"id":2,"location_id":1,"name":"Christina Gonzalez","title":"Center
+        Director"}],"id":"1","languages":["Filipino (Tagalog)","Spanish"],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","created_at":"2014-04-18T12:31:52.935-07:00","updated_at":"2014-04-18T12:31:57.779-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"},"updated_at":"2014-04-18T12:31:54.310-07:00","faxes":[{"id":1,"location_id":1,"number":"650
+        701-0856"}],"address":{"id":1,"location_id":1,"street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"description":"A walk-in center for older
+        adults that provides social services, wellness, recreational, educational
+        and creative activities including arts and crafts, computer classes and gardening
+        classes. Coffee and healthy breakfasts are available daily. A hot lunch is
+        served Tuesday-Friday for persons age 60 or over and spouse.        Provides
+        case management (including in-home assessments) and bilingual information
+        and referral about community services to persons age 60 or over on questions
+        of housing, employment, household help, recreation and social activities,
+        home delivered meals, health and counseling services and services to shut-ins.
+        Health insurance and legal counseling is available by appointment. Lectures
+        on a variety of health and fitness topics are held monthly in both English
+        and Spanish.  Provides a variety of physical fitness opportunities, including
+        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
+        toward older adults. Also provides free monthly blood pressure screenings,
+        quarterly blood glucose monitoring and health screenings by a visiting nurse.
+        Offers a Brown Bag Program in which low-income seniors can receive a bag of
+        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
+        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
+        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","name":"Fair
+        Oaks Adult Activity Center","created_at":"2014-04-18T12:31:53.696-07:00","slug":"fair-oaks-adult-activity-center","longitude":-122.213221,"latitude":37.477227,"coordinates":[-122.213221,37.477227],"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397849513696],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Sun, 27 Apr 2014 04:50:41 GMT
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=18&service_area=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 27 Apr 2014 04:50:41 GMT
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=1&service_area=&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=17&service_area=&utf8=%E2%9C%93>;
+        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=22&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=19&service_area=&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
@@ -222,9 +258,9 @@ http_interactions:
       X-Previous-Page:
       - '17'
       X-Request-Id:
-      - 450eb09c-06ae-45fd-892a-73d9e94393f3
+      - e85911de-6609-40ec-986b-0c5dfa77aecd
       X-Runtime:
-      - '0.029856'
+      - '0.034655'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -235,36 +271,31 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":6,"audience":"Parents, children, families with
-        problems of custody disputes, domestic violence or substance abuse, families
-        going through a separation or divorce","eligibility":"None","fees":"Vary according
-        to income ($5-$90). Cash, checks and credit cards accepted.","how_to_apply":"Apply
-        by phone.","wait":"No wait.","funding_sources":["County","Donations","Grants"],"service_areas":["San
-        Mateo County"],"keywords":["INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth
-        and Adjustment","LEGAL AND CRIMINAL JUSTICE SERVICES","Mediation","Parental
-        Visitation Monitoring","Divorce Counseling","Youth"],"updated_at":"2014-04-16T19:51:24.681-07:00"}],"mail_address":{"id":5,"location_id":5,"attention":"PFS
-        Family Visitation Center","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"hours":"Monday,
-        10-6; Tuesday-Friday, 10-8; Saturday, Sunday, 9:30-5:30","urls":["http://www.peninsulafamilyservice.org"],"emails":["kpesavento@peninsulafamilyservice.org"],"transportation":"SAMTRANS
-        stops within 1 block, CALTRAIN stops within 4 blocks.","short_desc":"Provides
-        supervised visitation services and a neutral site for parents in extremely
-        hostile divorces to carry out supervised exchanges of children.","url":"http://ohana-api-test.herokuapp.com/api/locations/5","phones":[{"id":6,"location_id":5,"number":"650
-        403-4300","extension":"4500"}],"contacts":[{"id":6,"location_id":5,"name":"Kimberly
-        Pesavento","title":"Director of Visitation"}],"id":"5","languages":["Spanish"],"organization":{"id":2,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","created_at":"2014-04-16T19:51:22.599-07:00","updated_at":"2014-04-16T19:51:25.176-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/2","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/2/locations"},"updated_at":"2014-04-16T19:51:24.690-07:00","faxes":[{"id":5,"location_id":5,"number":"650
+      string: '[{"services":[{"id":5,"audience":"Target group: Low-income working
+        families with children transitioning from welfare to work and poor or who
+        do not have access to conventional credit","eligibility":"Eligibility: Low-income
+        family with legal custody of a minor child or an involved parent of a dependent
+        minor child. Must reside and/or work in San Mateo County. Must be working
+        and have verifiable income and ability to pay off loan. No bankruptcies in
+        the past two years and unable to qualify for other funding sources. Loans
+        approved by loan committee.","fees":"$60 application fee. Cash or checks accepted.","how_to_apply":"Phone
+        for information.","funding_sources":["County","Grants","State"],"service_areas":["San
+        Mateo County"],"keywords":["COMMUNITY SERVICES","Speakers","Automobile Loans"],"updated_at":"2014-04-18T12:31:57.657-07:00"}],"mail_address":{"id":5,"location_id":5,"attention":"Economic
+        Self - Sufficiency Program","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"urls":["http://www.peninsulafamilyservice.org"],"emails":["waystowork@peninsulafamilyservice.org"],"transportation":"SAMTRANS
+        stops within 1 block. CALTRAIN stops within 6 blocks.","short_desc":"Makes
+        small loans to working families.","url":"http://ohana-api-test.herokuapp.com/api/locations/5","phones":[{"id":5,"location_id":5,"number":"650
+        403-4300","extension":"4100"}],"contacts":[{"id":6,"location_id":5,"name":"Joe
+        Bloom","title":"Financial Empowerment Programs Program Director"}],"id":"5","languages":["Hindi","Spanish"],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","created_at":"2014-04-18T12:31:52.935-07:00","updated_at":"2014-04-18T12:31:57.779-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"},"updated_at":"2014-04-18T12:31:57.680-07:00","faxes":[{"id":5,"location_id":5,"number":"650
         403-4303"}],"address":{"id":5,"location_id":5,"street":"24 Second Avenue","city":"San
-        Mateo","state":"CA","zip":"94401"},"description":"Provides supervised visitation
-        services and a neutral site for parents to carry out supervised exchanges
-        of children in a safe manner. Therapeutic visitation and other counseling
-        services available. Kids in the Middle is an education class for separating
-        or divorcing parents. The goal is to enable parents to focus on their children''s
-        needs while the family is going through separation, divorce or other transition.
-        The class explores the psychological aspects of divorce and its impact on
-        children, builds effective communication techniques and points out areas in
-        which outside help may be indicated. The fee is $50 for working parents, $15
-        for unemployed people. Classes are scheduled on Saturdays and Sundays and
-        held at various sites throughout the county. Call 650-403-4300 ext. 4500 to
-        register. Formerly known as Family Service Agency of San Mateo County, Family
-        Visitation Center.","name":"Family Visitation Center","created_at":"2014-04-16T19:51:24.425-07:00","slug":"family-visitation-center","longitude":-122.3263232,"latitude":37.5639394,"coordinates":[-122.3263232,37.5639394],"accessibility":["Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703084425],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:45:50 GMT
-recorded_with: VCR 2.8.0
+        Mateo","state":"CA","zip":"94401"},"description":"Provides fixed 8% short
+        term loans to eligible applicants for the purchase of a reliable, used autmobile.
+        Loans are up to $6,000 over 2 1/2 years (30 months). Funds must go towards
+        the entire purchase of the automobile. Peninsula Family Service originates
+        loans and collaborates with commercial partner banks to service the loans,
+        helping clients build credit histories. Formerly known as Family Service Agency
+        of San Mateo County, Ways to Work Family Loan Program.","name":"Economic Self
+        - Sufficiency Program","created_at":"2014-04-18T12:31:57.166-07:00","longitude":-122.3263232,"slug":"economic-self-sufficiency-program","latitude":37.5639394,"coordinates":[-122.3263232,37.5639394],"accessibility":["Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397849517166],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Sun, 27 Apr 2014 04:50:41 GMT
+recorded_with: VCR 2.9.0
