@@ -59,7 +59,7 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
       if (status === google.maps.GeocoderStatus.OK && results[0])
       {
         _locationValue.value = results[0].formatted_address;
-        document.getElementById('location-form').submit();
+        document.getElementById('search-form').submit();
       }
       else
       {

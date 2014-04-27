@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -25,10 +25,10 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 28 Apr 2014 18:48:15 GMT
+      - Tue, 29 Apr 2014 06:28:49 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=22&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&page=2&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=22&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&page=2&service_area=&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
@@ -41,9 +41,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - f2a9c583-caa2-430a-956e-0bfcc516ff2a
+      - 195f0256-cb53-467d-885c-e34c7df178a5
       X-Runtime:
-      - '0.033763'
+      - '0.043455'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -114,7 +114,7 @@ http_interactions:
         Agency","created_at":"2014-04-18T12:49:47.528-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
         Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397850587528],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Mon, 28 Apr 2014 18:48:15 GMT
+  recorded_at: Tue, 29 Apr 2014 06:28:48 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=94403&utf8=%E2%9C%93
@@ -140,7 +140,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 28 Apr 2014 18:48:16 GMT
+      - Tue, 29 Apr 2014 06:28:50 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=94403&page=6&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=94403&page=2&utf8=%E2%9C%93>;
@@ -156,15 +156,15 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 727d750f-dcea-4e6e-9b7e-4a002a2deebe
+      - 6ee7b558-7485-4e42-a258-7d6a6447b30e
       X-Runtime:
-      - '0.049486'
+      - '0.018741'
       X-Total-Count:
       - '6'
       X-Total-Pages:
       - '6'
-      Content-Length:
-      - '1014'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -185,5 +185,5 @@ http_interactions:
         dental care to those in need. Offers basic medical care for adults.","name":"San
         Mateo Free Medical Clinic","created_at":"2014-04-18T12:32:11.266-07:00","slug":"san-mateo-free-medical-clinic","longitude":-122.2931236,"latitude":37.5326941,"coordinates":[-122.2931236,37.5326941],"accessibility":["Elevator","Ramp","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[0.6741946265175476],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Mon, 28 Apr 2014 18:48:16 GMT
+  recorded_at: Tue, 29 Apr 2014 06:28:49 GMT
 recorded_with: VCR 2.9.0
