@@ -146,7 +146,7 @@ module Features
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
-      expect(page).to have_selector("#search-summary")
+      expect(page).to have_selector(".search-summary")
       expect(page).not_to have_selector('#map-canvas')
     end
 
