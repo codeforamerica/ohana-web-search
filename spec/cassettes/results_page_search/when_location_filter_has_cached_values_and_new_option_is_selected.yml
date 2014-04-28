@@ -25,136 +25,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:33:54 GMT
+      - Mon, 28 Apr 2014 18:47:42 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 22b56d2a-48f5-4684-a53f-f826646bbaa1
-      X-Runtime:
-      - '0.054990'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:54 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&location-option=&location-option-input=&org-name-option=&org-name-option-input=&org_name=&service-area-option=&service_area=&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 08:33:54 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location-option-input=&location-option=&location=&org-name-option-input=&org-name-option=&org_name=&page=22&service-area-option=&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location-option-input=&location-option=&location=&org-name-option-input=&org-name-option=&org_name=&page=2&service-area-option=&service_area=&utf8=%E2%9C%93>;
-        rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&page=0&service_area=&utf8=%E2%9C%93>;
+        rel="last"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 4c639900-8ebc-4251-8de7-1c14acc0f6df
+      - c596f95c-23fb-4cc3-b1a8-04b6efdaa1df
       X-Runtime:
-      - '0.029937'
-      X-Total-Count:
-      - '22'
-      X-Total-Pages:
-      - '22'
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[{"services":[{"id":23,"service_areas":["San Mateo County"],"updated_at":"2014-04-16T19:51:31.986-07:00"}],"hours":"Monday-Friday
-        10am-5pm","urls":["http://codeforamerica.org"],"emails":["eml@example.org"],"transportation":"SAMTRANS
-        stops within 1/2 mile.","short_desc":"This is a short description","url":"http://ohana-api-test.herokuapp.com/api/locations/22","kind":"Test","phones":[{"id":22,"location_id":22,"number":"7035551212","department":"CalFresh","extension":"x1223","vanity_number":"703555-ABCD"}],"contacts":[{"id":29,"location_id":22,"name":"Moncef","title":"Director"}],"id":"22","organization":{"id":8,"name":"Admin
-        Test Org","slug":"admin-test-org","created_at":"2014-04-16T19:51:31.573-07:00","updated_at":"2014-04-16T19:51:32.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-16T19:51:31.995-07:00","faxes":[{"id":21,"location_id":22,"number":"2025551212","department":"CalFresh"}],"address":{"id":21,"location_id":22,"street":"bozo","city":"fairfax","state":"va","zip":"12345"},"description":"This
-        is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
-        Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:55 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=fairfax,%20va&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 08:33:55 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 2b8e00a8-2314-4f2c-ad8a-55e58e802465
-      X-Runtime:
-      - '0.048380'
+      - '0.027565'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -166,8 +52,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:55 GMT
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:42 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&utf8=%E2%9C%93
@@ -193,7 +79,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:51:33 GMT
+      - Mon, 28 Apr 2014 18:47:43 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=22&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2&utf8=%E2%9C%93>;
@@ -209,9 +95,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 642df37b-db61-453f-b9f6-155a743b488a
+      - 7ad618b0-e454-4238-9074-485bd96a3cce
       X-Runtime:
-      - '0.026010'
+      - '0.129800'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -222,12 +108,119 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":23,"service_areas":["San Mateo County"],"updated_at":"2014-04-16T19:51:31.986-07:00"}],"hours":"Monday-Friday
-        10am-5pm","urls":["http://codeforamerica.org"],"emails":["eml@example.org"],"transportation":"SAMTRANS
-        stops within 1/2 mile.","short_desc":"This is a short description","url":"http://ohana-api-test.herokuapp.com/api/locations/22","kind":"Test","phones":[{"id":22,"location_id":22,"number":"7035551212","department":"CalFresh","extension":"x1223","vanity_number":"703555-ABCD"}],"contacts":[{"id":29,"location_id":22,"name":"Moncef","title":"Director"}],"id":"22","organization":{"id":8,"name":"Admin
-        Test Org","slug":"admin-test-org","created_at":"2014-04-16T19:51:31.573-07:00","updated_at":"2014-04-16T19:51:32.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-16T19:51:31.995-07:00","faxes":[{"id":21,"location_id":22,"number":"2025551212","department":"CalFresh"}],"address":{"id":21,"location_id":22,"street":"bozo","city":"fairfax","state":"va","zip":"12345"},"description":"This
-        is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
-        Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:51:34 GMT
-recorded_with: VCR 2.8.0
+      string: '[{"services":[{"id":23,"audience":"Second service and nonprofit businesses,
+        the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","how_to_apply":"Walk
+        in or apply by phone or mail","name":"hasdfasf","urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.850-07:00"},{"id":22,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","how_to_apply":"Walk in or apply by
+        phone or mail","name":"bazfoo","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.791-07:00"}],"mail_address":{"id":21,"location_id":22,"attention":"Hella
+        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"hours":"Monday-Friday,
+        8-5; Saturday, 10-6; Sunday 11-5","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"transportation":"SAMTRANS
+        stops within 1 block","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS
+        FOR TESTING PURPOSES OF THIS ALPHA APP]","url":"http://ohana-api-test.herokuapp.com/api/locations/22","phones":[{"id":21,"location_id":22,"number":"650
+        372-6200","department":"Information"},{"id":22,"location_id":22,"number":"650
+        372-6200","department":"Reservations"}],"contacts":[{"id":29,"location_id":22,"name":"Suzanne
+        Badenhoop","title":"Board President"}],"id":"22","languages":["Chinese (Cantonese)","Chinese
+        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"organization":{"id":8,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","created_at":"2014-04-18T12:49:47.008-07:00","updated_at":"2014-04-18T12:49:47.918-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-18T12:49:47.528-07:00","faxes":[{"id":21,"location_id":22,"number":"650
+        627-8244"}],"address":{"id":21,"location_id":22,"street":"2013 Avenue of the
+        fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","name":"San Maceo
+        Agency","created_at":"2014-04-18T12:49:47.528-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397850587528],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:44 GMT
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=fairfax,%20va&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 28 Apr 2014 18:47:44 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&location=fairfax%2C+va&page=0&utf8=%E2%9C%93>;
+        rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 638a1462-e122-43b8-8dbb-e323ea83b493
+      X-Runtime:
+      - '0.056629'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:44 GMT
+recorded_with: VCR 2.9.0

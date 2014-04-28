@@ -25,21 +25,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:34:15 GMT
+      - Mon, 28 Apr 2014 18:47:50 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&page=0&service_area=&utf8=%E2%9C%93>;
+        rel="last"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 97953d7e-ba94-42d7-bc78-d29736216751
+      - bab143da-bb69-42de-9217-fce3e7c9a35a
       X-Runtime:
-      - '0.166434'
+      - '0.052650'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -51,8 +52,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:34:15 GMT
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:50 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=Samaritan%20House&utf8=%E2%9C%93
@@ -78,7 +79,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:34:15 GMT
+      - Mon, 28 Apr 2014 18:47:51 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=Samaritan+House&page=6&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=Samaritan+House&page=2&utf8=%E2%9C%93>;
@@ -94,9 +95,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - aba576d4-e43c-4a72-a4dd-5c8357b7cd5e
+      - 72393207-6f66-487b-988c-852932c33dd2
       X-Runtime:
-      - '0.073010'
+      - '0.105774'
       X-Total-Count:
       - '6'
       X-Total-Pages:
@@ -107,27 +108,27 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":20,"eligibility":"Low-income person without access
+      string: '[{"services":[{"id":18,"eligibility":"Low-income person without access
         to health care","fees":"None.","how_to_apply":"Call for screening appointment.
         Medical visits are by appointment only.","wait":"Varies.","funding_sources":["Donations","Grants"],"service_areas":["Atherton","East
         Palo Alto","Menlo Park","Redwood City","San Carlos"],"keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics"],"updated_at":"2014-04-16T19:51:30.762-07:00"}],"mail_address":{"id":19,"location_id":19,"attention":"Redwood
+        Care","Community Clinics"],"updated_at":"2014-04-18T12:32:10.649-07:00"}],"mail_address":{"id":18,"location_id":18,"attention":"Redwood
         City Free Medical Clinic","street":"114 Fifth Avenue","city":"Redwood City","state":"CA","zip":"94063"},"hours":"Monday-Friday,
         9-12, 2-5","urls":["http://www.samaritanhouse.com"],"emails":["gracie@samaritanhouse.com"],"transportation":"SAMTRANS
         stops within 2 blocks.","short_desc":"Provides free medical care to those
-        in need.","url":"http://ohana-api-test.herokuapp.com/api/locations/19","phones":[{"id":20,"location_id":19,"number":"650
-        839-1447"}],"contacts":[{"id":27,"location_id":19,"name":"Sharon Petersen","title":"Administrator"}],"id":"19","languages":["Spanish"],"organization":{"id":6,"name":"Samaritan
-        House","slug":"samaritan-house","created_at":"2014-04-16T19:51:30.412-07:00","updated_at":"2014-04-16T19:51:31.275-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/6","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/6/locations"},"updated_at":"2014-04-16T19:51:30.771-07:00","faxes":[{"id":19,"location_id":19,"number":"650
-        839-1457"}],"address":{"id":19,"location_id":19,"street":"114 Fifth Avenue","city":"Redwood
+        in need.","url":"http://ohana-api-test.herokuapp.com/api/locations/18","phones":[{"id":18,"location_id":18,"number":"650
+        839-1447"}],"contacts":[{"id":26,"location_id":18,"name":"Sharon Petersen","title":"Administrator"}],"id":"18","languages":["Spanish"],"organization":{"id":5,"name":"Samaritan
+        House","slug":"samaritan-house","created_at":"2014-04-18T12:32:09.605-07:00","updated_at":"2014-04-18T12:32:12.060-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/5","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/5/locations"},"updated_at":"2014-04-18T12:32:10.666-07:00","faxes":[{"id":18,"location_id":18,"number":"650
+        839-1457"}],"address":{"id":18,"location_id":18,"street":"114 Fifth Avenue","city":"Redwood
         City","state":"CA","zip":"94063"},"description":"Provides free medical care
         to those in need. Offers basic medical exams for adults and tuberculosis screening.
         Assists the individual to access other services in the community. By appointment
         only, Project Smile provides a free dental exam, dental cleaning and oral
         hygiene instruction for children, age 3-12, of Samaritan House clients.","name":"Redwood
-        City Free Medical Clinic","created_at":"2014-04-16T19:51:30.465-07:00","slug":"redwood-city-free-medical-clinic","longitude":-122.207057,"latitude":37.468678,"coordinates":[-122.207057,37.468678],"accessibility":["Disabled
-        Restroom","Wheelchair"],"_score":0.03791304,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:34:16 GMT
+        City Free Medical Clinic","created_at":"2014-04-18T12:32:09.882-07:00","slug":"redwood-city-free-medical-clinic","longitude":-122.207057,"latitude":37.468678,"coordinates":[-122.207057,37.468678],"accessibility":["Disabled
+        Restroom","Wheelchair"],"_score":0.04292514,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:51 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan%20House
@@ -153,7 +154,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:34:15 GMT
+      - Mon, 28 Apr 2014 18:47:51 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan+House&page=2>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan+House&page=2>;
@@ -169,9 +170,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 90e32170-e147-4d51-b1ba-bb0ccd8fbb05
+      - e9c6da8b-5892-485a-b2a2-47ba8836d55c
       X-Runtime:
-      - '0.045309'
+      - '0.085782'
       X-Total-Count:
       - '2'
       X-Total-Pages:
@@ -182,127 +183,21 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":21,"eligibility":"Low-income person without access
+      string: '[{"services":[{"id":19,"eligibility":"Low-income person without access
         to health care","fees":"None.","how_to_apply":"Call for screening appointment
         (650-347-3648).","wait":"Varies.","funding_sources":["Donations","Grants"],"service_areas":["Belmont","Burlingame","Foster
         City","Millbrae","San Carlos","San Mateo"],"keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics"],"updated_at":"2014-04-16T19:51:31.202-07:00"}],"mail_address":{"id":20,"location_id":20,"attention":"San
+        Care","Community Clinics"],"updated_at":"2014-04-18T12:32:11.921-07:00"}],"mail_address":{"id":19,"location_id":19,"attention":"San
         Mateo Free Medical/Dental","street":"19 West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"hours":"Monday-Friday,
         9-12, 1-4","urls":["http://www.samaritanhouse.com"],"emails":["smcmed@samaritanhouse.com"],"transportation":"SAMTRANS
         stops within 1 block.","short_desc":"Provides free medical and dental care
-        to those in need. Offers basic medical care for adults.","url":"http://ohana-api-test.herokuapp.com/api/locations/20","phones":[{"id":21,"location_id":20,"number":"650
-        578-0400"}],"contacts":[{"id":28,"location_id":20,"name":"Sharon Petersen","title":"Administrator"}],"id":"20","languages":["Spanish"],"organization":{"id":6,"name":"Samaritan
-        House","slug":"samaritan-house","created_at":"2014-04-16T19:51:30.412-07:00","updated_at":"2014-04-16T19:51:31.275-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/6","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/6/locations"},"updated_at":"2014-04-16T19:51:31.212-07:00","faxes":[{"id":20,"location_id":20,"number":"650
-        578-0440"}],"address":{"id":20,"location_id":20,"street":"19 West 39th Avenue","city":"San
+        to those in need. Offers basic medical care for adults.","url":"http://ohana-api-test.herokuapp.com/api/locations/19","phones":[{"id":19,"location_id":19,"number":"650
+        578-0400"}],"contacts":[{"id":27,"location_id":19,"name":"Sharon Petersen","title":"Administrator"}],"id":"19","languages":["Spanish"],"organization":{"id":5,"name":"Samaritan
+        House","slug":"samaritan-house","created_at":"2014-04-18T12:32:09.605-07:00","updated_at":"2014-04-18T12:32:12.060-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/5","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/5/locations"},"updated_at":"2014-04-18T12:32:11.939-07:00","faxes":[{"id":19,"location_id":19,"number":"650
+        578-0440"}],"address":{"id":19,"location_id":19,"street":"19 West 39th Avenue","city":"San
         Mateo","state":"CA","zip":"94403"},"description":"Provides free medical and
         dental care to those in need. Offers basic medical care for adults.","name":"San
-        Mateo Free Medical Clinic","created_at":"2014-04-16T19:51:30.911-07:00","slug":"san-mateo-free-medical-clinic","longitude":-122.2931236,"latitude":37.5326941,"coordinates":[-122.2931236,37.5326941],"accessibility":["Elevator","Ramp","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703090911],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:34:16 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=Custom%20Value&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:41:16 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - dd8c891e-6354-4147-a1c4-b9871c5f0f6d
-      X-Runtime:
-      - '0.026882'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:41:17 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=Custom%20Value&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 10:18:45 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 762b2810-b795-477e-be1b-eb43578d60c5
-      X-Runtime:
-      - '0.027416'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 10:18:45 GMT
-recorded_with: VCR 2.8.0
+        Mateo Free Medical Clinic","created_at":"2014-04-18T12:32:11.266-07:00","slug":"san-mateo-free-medical-clinic","longitude":-122.2931236,"latitude":37.5326941,"coordinates":[-122.2931236,37.5326941],"accessibility":["Elevator","Ramp","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397849531266],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:52 GMT
+recorded_with: VCR 2.9.0
