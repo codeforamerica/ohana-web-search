@@ -4,6 +4,7 @@ feature "results page search", :js, :vcr do
 
   background do
     page.set_rack_session('aggregate_locations' => [])
+    page.set_rack_session('aggregate_org_names' => [])
     search_from_home(:keyword=>"asdfg")
   end
 
@@ -117,7 +118,7 @@ feature "results page search", :js, :vcr do
     fill_in('keyword', :with => "") # clear keyword
     find('#find-btn').click
     expect(page).to have_content("22 results")
-    set_filter("location","fairfax, va",false)
+    set_filter("location","fairfax, va",true)
     find('#find-btn').click
     expect(page).to have_content("No results within 5 miles of 'fairfax, va'")
     expect(all("#location-options .current-option label").last).to have_content("fairfax, va")
@@ -142,13 +143,13 @@ feature "results page search", :js, :vcr do
     within(".require-loaded") do
       within("#org-name-options") do
         find(".closed").click
-        find(".toggle-group", :text => "Samaritan House").click
+        find(".toggle-group", :text => "SanMaceo Example Agency").click
       end
     end
     find('#find-btn').click
 
-    expect(page).to have_content("2 results")
-    expect(all("#org-name-options .current-option label").last).to have_content("Samaritan House")
+    expect(page).to have_content("1 result")
+    expect(all("#org-name-options .current-option label").last).to have_content("SanMaceo Example Agency")
   end
 
   # user clicks filter links in results list

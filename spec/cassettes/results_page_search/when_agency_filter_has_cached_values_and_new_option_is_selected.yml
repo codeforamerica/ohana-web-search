@@ -25,21 +25,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:33:58 GMT
+      - Mon, 28 Apr 2014 18:47:54 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&page=0&service_area=&utf8=%E2%9C%93>;
+        rel="last"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 9d32b6d7-4b58-44b7-80e5-ba83169fae2d
+      - 309f8969-d9ac-406c-88be-eb61f898cbf9
       X-Runtime:
-      - '0.043813'
+      - '0.049621'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -51,8 +52,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:59 GMT
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:54 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&utf8=%E2%9C%93
@@ -78,7 +79,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 08:33:58 GMT
+      - Mon, 28 Apr 2014 18:47:54 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=22&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2&utf8=%E2%9C%93>;
@@ -94,124 +95,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 82e822f5-cf16-4638-b133-37d6909e8c15
+      - 069e6b76-409d-4bbd-9ac4-bb683ed107d0
       X-Runtime:
-      - '0.058307'
-      X-Total-Count:
-      - '22'
-      X-Total-Pages:
-      - '22'
-      Content-Length:
-      - '733'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[{"services":[{"id":23,"service_areas":["San Mateo County"],"updated_at":"2014-04-16T19:51:31.986-07:00"}],"hours":"Monday-Friday
-        10am-5pm","urls":["http://codeforamerica.org"],"emails":["eml@example.org"],"transportation":"SAMTRANS
-        stops within 1/2 mile.","short_desc":"This is a short description","url":"http://ohana-api-test.herokuapp.com/api/locations/22","kind":"Test","phones":[{"id":22,"location_id":22,"number":"7035551212","department":"CalFresh","extension":"x1223","vanity_number":"703555-ABCD"}],"contacts":[{"id":29,"location_id":22,"name":"Moncef","title":"Director"}],"id":"22","organization":{"id":8,"name":"Admin
-        Test Org","slug":"admin-test-org","created_at":"2014-04-16T19:51:31.573-07:00","updated_at":"2014-04-16T19:51:32.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-16T19:51:31.995-07:00","faxes":[{"id":21,"location_id":22,"number":"2025551212","department":"CalFresh"}],"address":{"id":21,"location_id":22,"street":"bozo","city":"fairfax","state":"va","zip":"12345"},"description":"This
-        is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
-        Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:33:59 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&org_name=Custom%20Value&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 08:51:20 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - e9fa7de0-8c4a-4adf-9761-bf19e58c6683
-      X-Runtime:
-      - '0.041207'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 08:51:21 GMT
-- request:
-    method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location=&location-option=&location-option-input=&org-name-option=&org-name-option-input=&org_name=&service-area-option=&service_area=&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 17 Apr 2014 09:38:28 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location-option-input=&location-option=&location=&org-name-option-input=&org-name-option=&org_name=&page=22&service-area-option=&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&location-option-input=&location-option=&location=&org-name-option-input=&org-name-option=&org_name=&page=2&service-area-option=&service_area=&utf8=%E2%9C%93>;
-        rel="next"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - c21af69c-88ad-44ce-8bbf-bc993a004065
-      X-Runtime:
-      - '0.029939'
+      - '0.042888'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -222,14 +108,67 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":23,"service_areas":["San Mateo County"],"updated_at":"2014-04-16T19:51:31.986-07:00"}],"hours":"Monday-Friday
-        10am-5pm","urls":["http://codeforamerica.org"],"emails":["eml@example.org"],"transportation":"SAMTRANS
-        stops within 1/2 mile.","short_desc":"This is a short description","url":"http://ohana-api-test.herokuapp.com/api/locations/22","kind":"Test","phones":[{"id":22,"location_id":22,"number":"7035551212","department":"CalFresh","extension":"x1223","vanity_number":"703555-ABCD"}],"contacts":[{"id":29,"location_id":22,"name":"Moncef","title":"Director"}],"id":"22","organization":{"id":8,"name":"Admin
-        Test Org","slug":"admin-test-org","created_at":"2014-04-16T19:51:31.573-07:00","updated_at":"2014-04-16T19:51:32.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-16T19:51:31.995-07:00","faxes":[{"id":21,"location_id":22,"number":"2025551212","department":"CalFresh"}],"address":{"id":21,"location_id":22,"street":"bozo","city":"fairfax","state":"va","zip":"12345"},"description":"This
-        is a description","name":"Admin Test Location","created_at":"2014-04-16T19:51:31.649-07:00","slug":"admin-test-location","longitude":-73.9395687,"latitude":42.8142432,"coordinates":[-73.9395687,42.8142432],"accessibility":["Elevator","Disabled
-        Restroom"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703091649],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:38:29 GMT
+      string: '[{"services":[{"id":23,"audience":"Second service and nonprofit businesses,
+        the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","how_to_apply":"Walk
+        in or apply by phone or mail","name":"hasdfasf","urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.850-07:00"},{"id":22,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","how_to_apply":"Walk in or apply by
+        phone or mail","name":"bazfoo","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.791-07:00"}],"mail_address":{"id":21,"location_id":22,"attention":"Hella
+        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"hours":"Monday-Friday,
+        8-5; Saturday, 10-6; Sunday 11-5","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"transportation":"SAMTRANS
+        stops within 1 block","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS
+        FOR TESTING PURPOSES OF THIS ALPHA APP]","url":"http://ohana-api-test.herokuapp.com/api/locations/22","phones":[{"id":21,"location_id":22,"number":"650
+        372-6200","department":"Information"},{"id":22,"location_id":22,"number":"650
+        372-6200","department":"Reservations"}],"contacts":[{"id":29,"location_id":22,"name":"Suzanne
+        Badenhoop","title":"Board President"}],"id":"22","languages":["Chinese (Cantonese)","Chinese
+        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"organization":{"id":8,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","created_at":"2014-04-18T12:49:47.008-07:00","updated_at":"2014-04-18T12:49:47.918-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-18T12:49:47.528-07:00","faxes":[{"id":21,"location_id":22,"number":"650
+        627-8244"}],"address":{"id":21,"location_id":22,"street":"2013 Avenue of the
+        fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","name":"San Maceo
+        Agency","created_at":"2014-04-18T12:49:47.528-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397850587528],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:55 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=3
@@ -255,7 +194,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:38:29 GMT
+      - Mon, 28 Apr 2014 18:47:55 GMT
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=1>;
         rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&page=2>;
@@ -275,9 +214,9 @@ http_interactions:
       X-Previous-Page:
       - '2'
       X-Request-Id:
-      - ab145ef3-ff9d-463e-9dcf-2f58daa6b1ea
+      - a0ce8629-f22c-42f2-b4d8-3f18a642cf69
       X-Runtime:
-      - '0.032959'
+      - '0.137943'
       X-Total-Count:
       - '22'
       X-Total-Pages:
@@ -288,26 +227,14 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":21,"eligibility":"Low-income person without access
-        to health care","fees":"None.","how_to_apply":"Call for screening appointment
-        (650-347-3648).","wait":"Varies.","funding_sources":["Donations","Grants"],"service_areas":["Belmont","Burlingame","Foster
-        City","Millbrae","San Carlos","San Mateo"],"keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics"],"updated_at":"2014-04-16T19:51:31.202-07:00"}],"mail_address":{"id":20,"location_id":20,"attention":"San
-        Mateo Free Medical/Dental","street":"19 West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"hours":"Monday-Friday,
-        9-12, 1-4","urls":["http://www.samaritanhouse.com"],"emails":["smcmed@samaritanhouse.com"],"transportation":"SAMTRANS
-        stops within 1 block.","short_desc":"Provides free medical and dental care
-        to those in need. Offers basic medical care for adults.","url":"http://ohana-api-test.herokuapp.com/api/locations/20","phones":[{"id":21,"location_id":20,"number":"650
-        578-0400"}],"contacts":[{"id":28,"location_id":20,"name":"Sharon Petersen","title":"Administrator"}],"id":"20","languages":["Spanish"],"organization":{"id":6,"name":"Samaritan
-        House","slug":"samaritan-house","created_at":"2014-04-16T19:51:30.412-07:00","updated_at":"2014-04-16T19:51:31.275-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/6","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/6/locations"},"updated_at":"2014-04-16T19:51:31.212-07:00","faxes":[{"id":20,"location_id":20,"number":"650
-        578-0440"}],"address":{"id":20,"location_id":20,"street":"19 West 39th Avenue","city":"San
-        Mateo","state":"CA","zip":"94403"},"description":"Provides free medical and
-        dental care to those in need. Offers basic medical care for adults.","name":"San
-        Mateo Free Medical Clinic","created_at":"2014-04-16T19:51:30.911-07:00","slug":"san-mateo-free-medical-clinic","longitude":-122.2931236,"latitude":37.5326941,"coordinates":[-122.2931236,37.5326941],"accessibility":["Elevator","Ramp","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703090911],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:38:29 GMT
+      string: '[{"id":"20","organization":{"id":6,"name":"Location with no phone","slug":"location-with-no-phone","created_at":"2014-04-18T12:32:12.124-07:00","updated_at":"2014-04-18T12:32:12.475-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/6","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/6/locations"},"services":[{"id":20,"updated_at":"2014-04-18T12:32:12.259-07:00"}],"updated_at":"2014-04-18T12:32:12.272-07:00","mail_address":{"id":20,"location_id":20,"attention":"","street":"puma","city":"fairfax","state":"VA","zip":"22031"},"description":"no
+        phone","name":"Location with no phone","created_at":"2014-04-18T12:32:12.179-07:00","slug":"location-with-no-phone","short_desc":"no
+        phone","url":"http://ohana-api-test.herokuapp.com/api/locations/20","kind":"Test","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397849532179],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:55 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan%20House&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=SanMaceo%20Example%20Agency.&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -330,50 +257,88 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 17 Apr 2014 09:40:14 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan+House&page=2&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&org_name=Samaritan+House&page=2&utf8=%E2%9C%93>;
-        rel="next"
+      - Mon, 28 Apr 2014 18:47:56 GMT
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
-      X-Next-Page:
-      - '2'
       X-Powered-By:
       - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 4bd2b25c-613f-401d-beb8-673c0fc639f2
+      - 2ad1e112-1408-432d-928e-a6007fe3c592
       X-Runtime:
-      - '0.044903'
+      - '0.078809'
       X-Total-Count:
-      - '2'
+      - '1'
       X-Total-Pages:
-      - '2'
-      Content-Length:
-      - '1015'
+      - '1'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":21,"eligibility":"Low-income person without access
-        to health care","fees":"None.","how_to_apply":"Call for screening appointment
-        (650-347-3648).","wait":"Varies.","funding_sources":["Donations","Grants"],"service_areas":["Belmont","Burlingame","Foster
-        City","Millbrae","San Carlos","San Mateo"],"keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics"],"updated_at":"2014-04-16T19:51:31.202-07:00"}],"mail_address":{"id":20,"location_id":20,"attention":"San
-        Mateo Free Medical/Dental","street":"19 West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"hours":"Monday-Friday,
-        9-12, 1-4","urls":["http://www.samaritanhouse.com"],"emails":["smcmed@samaritanhouse.com"],"transportation":"SAMTRANS
-        stops within 1 block.","short_desc":"Provides free medical and dental care
-        to those in need. Offers basic medical care for adults.","url":"http://ohana-api-test.herokuapp.com/api/locations/20","phones":[{"id":21,"location_id":20,"number":"650
-        578-0400"}],"contacts":[{"id":28,"location_id":20,"name":"Sharon Petersen","title":"Administrator"}],"id":"20","languages":["Spanish"],"organization":{"id":6,"name":"Samaritan
-        House","slug":"samaritan-house","created_at":"2014-04-16T19:51:30.412-07:00","updated_at":"2014-04-16T19:51:31.275-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/6","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/6/locations"},"updated_at":"2014-04-16T19:51:31.212-07:00","faxes":[{"id":20,"location_id":20,"number":"650
-        578-0440"}],"address":{"id":20,"location_id":20,"street":"19 West 39th Avenue","city":"San
-        Mateo","state":"CA","zip":"94403"},"description":"Provides free medical and
-        dental care to those in need. Offers basic medical care for adults.","name":"San
-        Mateo Free Medical Clinic","created_at":"2014-04-16T19:51:30.911-07:00","slug":"san-mateo-free-medical-clinic","longitude":-122.2931236,"latitude":37.5326941,"coordinates":[-122.2931236,37.5326941],"accessibility":["Elevator","Ramp","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397703090911],"highlight":null,"_explanation":null}]'
-    http_version:
-  recorded_at: Thu, 17 Apr 2014 09:40:15 GMT
-recorded_with: VCR 2.8.0
+      string: '[{"services":[{"id":23,"audience":"Second service and nonprofit businesses,
+        the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","how_to_apply":"Walk
+        in or apply by phone or mail","name":"hasdfasf","urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.850-07:00"},{"id":22,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","how_to_apply":"Walk in or apply by
+        phone or mail","name":"bazfoo","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","funding_sources":["City","County","Federal","State"],"service_areas":["San
+        Mateo County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"keywords":["Ruby on Rails/MongoDB/Redis","FIFA
+        World Cup"],"updated_at":"2014-04-18T12:49:47.791-07:00"}],"mail_address":{"id":21,"location_id":22,"attention":"Hella
+        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"hours":"Monday-Friday,
+        8-5; Saturday, 10-6; Sunday 11-5","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"transportation":"SAMTRANS
+        stops within 1 block","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS
+        FOR TESTING PURPOSES OF THIS ALPHA APP]","url":"http://ohana-api-test.herokuapp.com/api/locations/22","phones":[{"id":21,"location_id":22,"number":"650
+        372-6200","department":"Information"},{"id":22,"location_id":22,"number":"650
+        372-6200","department":"Reservations"}],"contacts":[{"id":29,"location_id":22,"name":"Suzanne
+        Badenhoop","title":"Board President"}],"id":"22","languages":["Chinese (Cantonese)","Chinese
+        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"organization":{"id":8,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","created_at":"2014-04-18T12:49:47.008-07:00","updated_at":"2014-04-18T12:49:47.918-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"},"updated_at":"2014-04-18T12:49:47.528-07:00","faxes":[{"id":21,"location_id":22,"number":"650
+        627-8244"}],"address":{"id":21,"location_id":22,"street":"2013 Avenue of the
+        fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","name":"San Maceo
+        Agency","created_at":"2014-04-18T12:49:47.528-07:00","slug":"san-maceo-agency","longitude":-73.1968254,"latitude":42.878036,"coordinates":[-73.1968254,42.878036],"accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1397850587528],"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Mon, 28 Apr 2014 18:47:56 GMT
+recorded_with: VCR 2.9.0
