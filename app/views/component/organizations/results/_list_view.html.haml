@@ -3,12 +3,12 @@
     - @orgs.each do |org|
 
       %li
-        %a{:href => org.organization.name == org.name ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
+        %a{ href: (org.organization.name == org.name) ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", title: "#{org.name}", name: "#{org.id}" }
           &nbsp;
-        %section.results-entry{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
+        %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
           -#
             - unless org.distance.blank?
-              %p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
+              %p.distance{ :title => "#{org.distance} miles", 'data-distance' => org.distance }
                 %span
                   == #{org.distance} mi
 
@@ -21,15 +21,15 @@
                       - service.categories.each do |cat|
                         - category = cat.name
                         %li
-                          %a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
+                          %a{ href: "/organizations?keyword=#{CGI::escape(category)}", title: "search for locations that provide #{category}" }
                             = category
             %hgroup
-              %h1{:class=>'name'}
-                %a{ :href => org.organization.name == org.name ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
+              %h1{ class: 'name' }
+                %a{ href: (org.organization.name == org.name) ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", title: "#{org.name}", name: "#{org.id}", itemprop: 'name' }
                   = superscript_ordinals(org.name)
               - if (org.organization.name) && (org.organization.name != org.name)
                 %h2.agency
-                  %a{:href=>"/organizations?org_name=#{CGI::escape(org.organization.name)}", :title=>"#{org.organization.name}"}
+                  %a{ href: "/organizations?org_name=#{CGI::escape(org.organization.name)}", title: "#{org.organization.name}" }
                     %span
                       = superscript_ordinals(org.organization.name)
 
@@ -38,16 +38,16 @@
               - org.phones.each do |hash|
                 - if hash["number"].present?
                   %li
-                    %i{:class=>"fa fa-phone-square"}
-                    %span{:itemprop=>"telephone"}
-                      = "#{format_phone(hash["number"])}"
+                    %i{ class: 'fa fa-phone-square' }
+                    %span{ itemprop: 'telephone' }
+                      = "#{format_phone(hash['number'])}"
 
           - if org.key?(:address)
             %p.address
-              = render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
+              = render :partial => 'component/detail/address', :locals => { org: org, lines: 1 }
 
           - if org.key?(:short_desc)
             %p.short-desc
               = org[:short_desc]
   %footer
-    = render :partial => 'component/organizations/results/pagination', :locals => {:pages=>@pages}
+    = render :partial => 'component/organizations/results/pagination', :locals => { pages: @pages }

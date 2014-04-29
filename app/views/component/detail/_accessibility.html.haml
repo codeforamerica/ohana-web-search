@@ -1,7 +1,7 @@
 - if org.key?(field)
-  %section{:class=>css_class_format(field.to_s)}
+  %section{ class: css_class_format(field.to_s) }
     - if defined? iconclass
-      %i{:class=>iconclass}
+      %i{ class: iconclass }
     %h1 #{stitle}:
     %ul
       - org[field].sort.each do |access|

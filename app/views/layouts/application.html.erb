@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->
+<!--[if IE 7]>         <html class='no-js lt-ie9 lt-ie8'> <![endif]-->
+<!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang='en' class='no-js'> <!--<![endif]-->
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <title><%= yield(:title) %></title>
 
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Find free food, housing, clothes, medical care, jobs, and other human services in San Mateo County." %>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="google" value="notranslate">
-    <meta http-equiv="Content-Language" content="en_US">
-    <meta name="google-translate-customization" content="569f6c621d1c9cc6-60a55f4caded4d41-gf5c25b4be2fe7541-1b"></meta>
+    <meta name='description' content='<%= content_for?(:description) ? yield(:description) : "Find free food, housing, clothes, medical care, jobs, and other human services in San Mateo County." %>'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta name='google' value='notranslate'>
+    <meta http-equiv='Content-Language' content='en_US'>
+    <meta name='google-translate-customization' content='569f6c621d1c9cc6-60a55f4caded4d41-gf5c25b4be2fe7541-1b'></meta>
     <%= csrf_meta_tags %>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
 
     <!--[if lt IE 9]>
     <%= javascript_include_tag 'selectivizr' %>
     <%= javascript_include_tag 'html5shiv-printshiv' %>
-    <script type="text/javascript">
+    <script type='text/javascript'>
       // patch to handle suppression of JS errors in IE
       window.onerror=function(){return true;};
     </script>
     <![endif]-->
 
     <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
-      <script type="text/javascript">
+      <script type='text/javascript'>
 
       var _gaq = _gaq || [];
 
-      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+      _gaq.push(['_setAccount', '<%= ENV["GOOGLE_ANALYTICS_ID"] %>']);
       _gaq.push(['_trackPageview']);
 
       (function() {
@@ -54,22 +54,22 @@
     <%= yield(:head) %>
     <%= yield :canonical %>
   </head>
-  <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
+  <body class='<%= controller_name == "home" ? "" : "inside " %><%= controller_name %> <%= action_name %>'>
 
-  <section id="content">
+  <section id='content'>
 
     <%= render 'component/status/alert' %>
 
-    <header id="content-header">
-      <h1 id="logo"><a href="/" target="_self"><img src="/assets/smc_connect_logo.png" width="231" height="42" alt="SMC-Connect" /></a></h1>
+    <header id='content-header'>
+      <h1 id='logo'><a href='/' target='_self'><img src='/assets/smc_connect_logo.png' width='231' height='42' alt='SMC-Connect' /></a></h1>
       <h2>Find San Mateo County community services</h2>
       <nav>
         <ul>
           <li>
-            <a title="Help" href="/about#about-box" id="about-btn" class="popup-trigger">About</a>
+            <a title='Help' href='/about#about-box' id='about-btn' class='popup-trigger'>About</a>
           </li>
-          <li><a title="Contribute" href="/about#contribute-box" id="contribute-btn" class="popup-trigger" target="_self">Contribute</a></li>
-          <li><a title="Feedback" href="/about#feedback-box" id="feedback-btn" class="popup-trigger" target="_self">Feedback</a></li>
+          <li><a title='Contribute' href='/about#contribute-box' id='contribute-btn' class='popup-trigger' target='_self'>Contribute</a></li>
+          <li><a title='Feedback' href='/about#feedback-box' id='feedback-btn' class='popup-trigger' target='_self'>Feedback</a></li>
         </ul>
       </nav>
       <div class='clearfix'>
@@ -77,39 +77,39 @@
     </header>
 
     <% # hide popups on /about because they are redundant to the content on that page %>
-    <% if controller_name != "about" %>
-    <aside id="popups">
-      <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/about' %></div>
-      <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/contribute' %></div>
-      <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/feedback' %></div>
+    <% if controller_name != 'about' %>
+    <aside id='popups'>
+      <div class='popup-container hide'><div class='arrow'><span></span></div><%= render 'component/about/about' %></div>
+      <div class='popup-container hide'><div class='arrow'><span></span></div><%= render 'component/about/contribute' %></div>
+      <div class='popup-container hide'><div class='arrow'><span></span></div><%= render 'component/about/feedback' %></div>
     </aside>
     <% end %>
 
-    <main class="main">
+    <main class='main'>
       <%= yield %>
     </main>
 
     <footer id='app-footer'>
 
-      <p id="hsa-logo">
-        <a href='http://www.co.sanmateo.ca.us/portal/site/humanservices' target='_blank' title='San Mateo County Human Services Agency'><img src="/assets/smc_hsa_logotype.png" width="200" height="38" alt="San Mateo County Human Services Agency" /></a>
+      <p id='hsa-logo'>
+        <a href='http://www.co.sanmateo.ca.us/portal/site/humanservices' target='_blank' title='San Mateo County Human Services Agency'><img src='/assets/smc_hsa_logotype.png' width='200' height='38' alt='San Mateo County Human Services Agency' /></a>
       </p>
 
       <p>A <a href='http://codeforamerica.org' target='_blank' title='Code for America'>Code for America</a> project <span class='cfaflag'></span> in partnership with the <a href='http://www.co.sanmateo.ca.us/portal/site/humanservices' target='_blank' title='San Mateo County Human Services agency'>San Mateo County Human Services Agency</a>
       </p>
 
       <p>
-        <i class="fa fa-bullhorn"></i> <a href="https://github.com/codeforamerica/ohana-web-search">Get this app</a> for your city or <a href="http://ohanapi.org">view project details</a>.
+        <i class='fa fa-bullhorn'></i> <a href='https://github.com/codeforamerica/ohana-web-search'>Get this app</a> for your city or <a href='http://ohanapi.org'>view project details</a>.
       </p>
 
       <p>
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
+        <div id='google_translate_element'></div>
+        <script type='text/javascript'>
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'af,ar,az,be,bg,bn,bs,ca,ceb,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,gu,hi,hmn,hr,ht,hu,hy,id,is,it,iw,ja,jv,ka,km,kn,ko,lo,lt,lv,mk,mr,ms,mt,nl,no,pl,pt,ro,ru,sk,sl,sq,sr,sv,sw,ta,te,th,tl,tr,uk,ur,vi,yi,zh-CN,zh-TW', autoDisplay: false}, 'google_translate_element');
         }
         </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type='text/javascript' src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
       </p>
 
     </footer>
