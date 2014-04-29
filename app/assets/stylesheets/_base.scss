@@ -707,9 +707,8 @@ sup
   background: midtone($blue); // IE fallback
   background: midtone($blue,.9);
   padding: 10px;
-  min-height: 38px;
   padding-right: 25px;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   text-align: right;
 
   ul
@@ -740,10 +739,10 @@ body { top: 0px !important; }
   background: midtone($blue); // IE fallback
   background: rgba(midtone($blue), .9);
   border-bottom: 2px solid dark($blue);
-  padding: 21px;
+  padding: 10px;
   padding-right: 25px;
   text-align: right;
-  min-height: 43px;
+  min-height: 40px;
 }
 
 //=================================================================================
@@ -917,6 +916,11 @@ body { top: 0px !important; }
 #geolocate-box
 {
   margin-top: 5px;
+}
+.home #geolocate-box
+{
+  position: absolute;
+  right: 0;
 }
 
 .inside fieldset
