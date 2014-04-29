@@ -1474,45 +1474,6 @@ body { top: 0px !important; }
 
 #results-entries
 {
-  #search-summary-container
-  {
-    @include background( linear-gradient(left,lightest($yellow),$white) );
-  }
-
-  #search-summary
-  {
-    font-family: $font_san_serif;
-    @include type-size(baseline);
-    padding: 10px;
-    padding-left: 20px;
-
-    strong
-    {
-      font-weight: bold;
-    }
-
-    div:first-child
-    {
-      margin-right: 20px;
-    }
-
-    div
-    {
-      @include inline-block();
-      .fa
-      {
-        color: $greyscale_midtone;
-      }
-      em
-      {
-        color: $greyscale_midtone;
-      }
-      em > strong
-      {
-        color: $black;
-      }
-    }
-  }
 
   > ul
   {
@@ -1897,13 +1858,6 @@ body { top: 0px !important; }
 #map-view
 {
   background: $white;
-  #search-summary
-  {
-    border-bottom: 0;
-    @include inline-block();
-    border-left: 1px solid $greyscale_light; // IE fallback
-    border-left: 1px solid rgba($black,.1);
-  }
 }
 
 #map-canvas
