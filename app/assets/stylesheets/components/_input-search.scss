@@ -96,7 +96,6 @@
     >span
     {
       @include inline-block();
-      vertical-align: baseline;
       color: $black; // IE fallback
       color: midtone($black, .5);
       text-shadow: 1px 4px 6px $white, 0 0 0 $black, 1px 4px 6px $white;
@@ -111,7 +110,6 @@
       >span
       {
         @include inline-block();
-        vertical-align: baseline;
         color: darkest($purple);
         text-shadow: none;
       }
@@ -188,6 +186,7 @@
     >span
     {
       text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+      line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
     }
 
     &:hover
