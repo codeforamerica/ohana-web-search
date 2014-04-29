@@ -2,7 +2,7 @@
   = service[:parent]
   %ul
     - service[:children].each do |child|
-      - child.include?("/") ? keyword = child.split("/").first : keyword = child
+      - child.include?('/') ? keyword = child.split("/").first : keyword = child
       %li
-        %a{ :href => "/organizations?keyword=#{u keyword}", "data-gaq" => "['_trackEvent', 'Home_Categories', 'Click', '#{child}']" }
+        %a{ :href => "/organizations?keyword=#{u keyword}", 'data-gaq' => "['_trackEvent', 'Home_Categories', 'Click', '#{child}']" }
           = child

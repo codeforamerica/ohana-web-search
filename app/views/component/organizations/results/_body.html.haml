@@ -10,14 +10,14 @@
       = render 'component/organizations/results/map_view'
     - else
       -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{@search_summary_plain}"}
+      %p#search-summary{ title: "#{@search_summary_plain}" }
         = @search_summary_html
 
     = render 'component/organizations/results/list_view'
   - else
     %section.no-results
       -# title attr. is used to retrieve content for document title in JS
-      %p#search-summary{:title=>"#{@search_summary_plain}"}
+      %p#search-summary{ title: "#{@search_summary_plain}" }
         = @search_summary_html
 
       %div.message
@@ -29,8 +29,8 @@
           %li
             Scrolling down & choosing a category of service.
           %li
-            %a{:href=>'/organizations'}
-              %i{:class=>'fa fa-eraser'}
+            %a{ href: '/organizations' }
+              %i{ class: 'fa fa-eraser' }
               Clearing all search filters.
     - cache ['taxonomy-list', *taxonomy_terms] do
       %section#category-box
@@ -38,10 +38,10 @@
           %ul
             - taxonomy_terms.keys.each do |parent|
               %li
-                %a{ :href => "/organizations?category=#{u parent}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{parent}']" }
+                %a{ :href => "/organizations?category=#{u parent}", 'data-gaq' => "['_trackEvent', 'Results_Categories', 'Click', '#{parent}']" }
                   = parent
                 %ul
                   - taxonomy_terms[parent].each do |child|
                     %li
-                      %a{ :href => "/organizations?category=#{u child}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{child}']" }
+                      %a{ :href => "/organizations?category=#{u child}", 'data-gaq' => "['_trackEvent', 'Results_Categories', 'Click', '#{child}']" }
                         = child

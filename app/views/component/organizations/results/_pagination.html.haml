@@ -2,11 +2,11 @@
   %ul
     - if pages[:prev_page].present?
       %li.prev><
-        = link_to( "<i class='fa fa-chevron-left' title='previous'></i>".html_safe,{:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self", :title=>"previous" )
+        = link_to( "<i class='fa fa-chevron-left' title='previous'></i>".html_safe, { page: pages[:prev_page] }.merge(@page_params), :target => '_self', :title => 'previous' )
 
     - if pages[:pages][0] != 1
       %li><
-        = link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
+        = link_to '1', { page: 1 }.merge(@page_params), :target => '_self'
     - if pages[:total_pages] > 1 && pages[:pages][1] != 2
       %li.collapsed><
         = "…"
@@ -18,7 +18,7 @@
           = pages[:current_page]
       - else
         %li><
-          = link_to page, {:page=>page}.merge(@page_params), :target=>"_self"
+          = link_to page, { page: page }.merge(@page_params), :target => '_self'
 
     - far_last_item = pages[:pages][pages[:pages].length-1]
     - near_last_item = pages[:pages][pages[:pages].length-2]
@@ -27,8 +27,8 @@
         = "…"
     - if far_last_item != pages[:total_pages]
       %li><
-        = link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
+        = link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target => '_self'
     - if pages[:next_page].present?
       %li.next><
-        = link_to( "<i class='fa fa-chevron-right' title='next'></i>".html_safe,{:page=>pages[:next_page]}.merge(@page_params), :target=>"_self", :title=>"next" )
+        = link_to( "<i class='fa fa-chevron-right' title='next'></i>".html_safe, { page: pages[:next_page] }.merge(@page_params), :target => '_self', :title => 'next' )
 

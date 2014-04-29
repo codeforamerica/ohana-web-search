@@ -1,29 +1,29 @@
-%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+%span{ itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
 
-  - if org.mail_address["attention"].present?
+  - if org.mail_address['attention'].present?
     %span.attention
-      = org.mail_address["attention"]
+      = org.mail_address['attention']
     %br
 
   - if org.key?(:mail_address)
     - if lines == 2
-      %span.street-address{:itemprop=>"streetAddress"}
-        = superscript_ordinals(org.mail_address["street"])
+      %span.street-address{ itemprop: 'streetAddress' }
+        = superscript_ordinals(org.mail_address['street'])
       %br
-    - elsif org.mail_address["city"].present? || org.mail_address["state"].present? || org.mail_address["zip"].present?
-      <span class="street-address" itemprop="streetAddress">#{superscript_ordinals(org.mail_address["street"])}</span>,
+    - elsif org.mail_address['city'].present? || org.mail_address['state'].present? || org.mail_address['zip'].present?
+      <span class='street-address' itemprop='streetAddress'>#{superscript_ordinals(org.mail_address['street'])}</span>,
     - else
-      %span.street-address{:itemprop=>"streetAddress"}
-        = superscript_ordinals(org.mail_address["street"])
+      %span.street-address{ itemprop: 'streetAddress' }
+        = superscript_ordinals(org.mail_address['street'])
 
-  - if org.mail_address["city"].present?
-    %span.city{:itemprop=>"addressLocality"}
-      = org.mail_address["city"] + ((org.mail_address["state"].present? || org.mail_address["zip"].present?) ? ", " : "")
+  - if org.mail_address['city'].present?
+    %span.city{ itemprop: 'addressLocality' }
+      = org.mail_address['city'] + ((org.mail_address['state'].present? || org.mail_address['zip'].present?) ? ', ' : '')
 
-  - if org.mail_address["state"].present?
-    %span.state{:itemprop=>"addressRegion"}
-      = org.mail_address["state"]
+  - if org.mail_address['state'].present?
+    %span.state{ itemprop: 'addressRegion' }
+      = org.mail_address['state']
 
-  - if org.mail_address["zip"].present?
-    %span.zipcode{:itemprop=>"postalCode"}
-      = org.mail_address["zip"]
+  - if org.mail_address['zip'].present?
+    %span.zipcode{ itemprop: 'postalCode' }
+      = org.mail_address['zip']

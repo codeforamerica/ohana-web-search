@@ -1,14 +1,14 @@
 = render 'component/organizations/detail/header'
 
-%section#detail-info{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
+%section#detail-info{ itemscope: '', itemtype: 'http://schema.org/Organization' }
 
   %header
     %hgroup
-      %h1.name{:title=>@org.name, :itemprop=>"name"}
+      %h1.name{ title: @org.name, itemprop: 'name' }
         = superscript_ordinals(@org.name)
       - if (@org.organization.name) && (@org.organization.name != @org.name)
         %h2.agency
-          %a{:href=>"/organizations?org_name=#{CGI::escape(@org.organization.name)}", :title=>"#{@org.organization.name}"}
+          %a{ href: "/organizations?org_name=#{CGI::escape(@org.organization.name)}", title: "#{@org.organization.name}" }
             %span
               = superscript_ordinals(@org.organization.name)
 
@@ -24,56 +24,56 @@
               %section
 
                 - if @org.key?(:ask_for)
-                  %section.ask-for{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
+                  %section.ask-for{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                     - @org.ask_for.each do |ask_for|
                       %div
-                        %i{:class=>"fa fa-user"}
+                        %i{ class: 'fa fa-user' }
                         %span
                           = ask_for
 
                 - if @org.key?(:emails)
-                  %section.emails{:itemprop=>"email"}
+                  %section.emails{ itemprop: 'email' }
                     - @org.emails.each do |email|
                       %div
-                        %i{:class=>"fa fa-laptop"}
-                        %a{:href=>("mailto:"+email)}
-                          %span{:itemprop=>"email"}
+                        %i{ class: 'fa fa-laptop' }
+                        %a{ href: "mailto:#{email}" }
+                          %span{ itemprop: 'email' }
                             = email
 
 
                 - if @org.key?(:phones)
-                  %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
+                  %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                     - @org.phones.each do |phone|
                       %div
-                        %i{:class=>"fa fa-phone-square"}
+                        %i{ class: 'fa fa-phone-square' }
                         %span
                           - if phone["number"]
-                            %span{:itemprop=>"telephone"}
+                            %span{ itemprop: 'telephone' }
                               = format_phone(phone["number"])
                           - if phone["type"]
                             %sup.phone-type
                               = phone["type"]
                           - if phone["department"]
                             %p
-                              %span{:itemprop=>"contactType"}
+                              %span{ itemprop: 'contactType' }
                                 = phone["department"]
 
                 - if @org.key?(:faxes)
                   %section.faxes
                     - @org.faxes.each do |fax|
                       %div
-                        %i{:class=>"fa fa-print fax"}
+                        %i{ class: 'fa fa-print fax' }
                         %span
                           - if fax.is_a?(String)
-                            %span{:itemprop=>"faxNumber"}
+                            %span{ itemprop: 'faxNumber' }
                               = format_phone(fax)
                           - elsif fax.is_a?(Sawyer::Resource)
                             - if fax["number"]
-                              %span{:itemprop=>"faxNumber"}
+                              %span{ itemprop: 'faxNumber' }
                                 = format_phone(fax["number"])
                             - if fax["department"]
                               %p
-                                %span{:itemprop=>"contactType"}
+                                %span{ itemprop: 'contactType' }
                                   = fax["department"]
 
           - if @org.key?(:urls)
@@ -85,9 +85,9 @@
                   %section.urls
                     - @org.urls.each do |url|
                       %div
-                        %i{:class=>"fa fa-external-link-square"}
-                        %a{:href=>url,:target=>"_blank"}
-                          %span{:itemprop=>"url"}
+                        %i{ class: 'fa fa-external-link-square' }
+                        %a{ href: url, target: '_blank' }
+                          %span{ itemprop: 'url' }
                             = format_url(url)
 
           - if @org.key?(:mail_address)
@@ -97,8 +97,8 @@
 
                 %section.mail-address
                   %div
-                    %i{:class=>"fa fa-envelope"}
-                    = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
+                    %i{ class: 'fa fa-envelope' }
+                    = render :partial => 'component/detail/mail_address', :locals => { org: @org, lines: 2 }
 
           -# has a physical address and the street address and zipcode differ from mailing address
           - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
@@ -108,17 +108,17 @@
                 - if @org.key?(:address)
                   %section.address
                     %div
-                      %i{:class=>"fa fa-home"}
-                      = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
+                      %i{ class: 'fa fa-home' }
+                      = render :partial => 'component/detail/address', :locals => { org: @org, lines: 2 }
 
       - if @aggregate_categories.present?
         %section#categories-box
           %h1 Service Categories
-          %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
-            %ul{:itemscope=>"", :itemtype=>"http://schema.org/ServiceType"}
+          %section.services{ itemscope: '', itemtype: 'http://schema.org/Service' }
+            %ul{ itemscope: '', itemtype: 'http://schema.org/ServiceType' }
               - @aggregate_categories.each do |category|
-                %li{:class=>"depth#{category.depth}"}
-                  %span{:itemprop=>"serviceType"}
+                %li{ class: "depth#{category.depth}"}
+                  %span{ itemprop: 'serviceType' }
                     -# Category links are disabled till there's a corresponding filter that can be toggled!
                       = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
                     = category.name
@@ -130,8 +130,8 @@
       %section.overview-box
         %section
 
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:short_desc}
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:description, :stitle=>"Description"}
+          = render :partial => 'component/detail/template', :locals => { org: @org, field: :short_desc }
+          = render :partial => 'component/detail/template', :locals => { org: @org, field: :description, stitle: 'Description' }
 
     - if @org.key?(:coordinates) || @org.key?(:transportation)
       %section.map-box
@@ -157,20 +157,20 @@
               %noscript
                 %style
                   -# hides map when JS is disabled
-                  = "#detail-map-view {display:none;}"
+                  = '#detail-map-view {display:none;}'
 
     - if @org.key?(:hours)
       %section.hours-box
         %h1 Service Hours
         %section
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:hours, :stitle=>nil, :icon=>"fa fa-clock-o"}
+          = render :partial => 'component/detail/template', :locals => { org: @org, field: :hours, stitle: nil, icon: 'fa fa-clock-o'}
 
     - if (@org.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
         %section
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:languages, :stitle=>"Languages Spoken"}
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:accessibility, :stitle=>"Accessibility Options"}
+          = render :partial => 'component/detail/template', :locals => { org: @org, field: :languages, stitle: 'Languages Spoken' }
+          = render :partial => 'component/detail/template', :locals => { org: @org, field: :accessibility, stitle: 'Accessibility Options' }
 
     - if (@org.fields & market_fields).any?
       %section.payment-box
@@ -179,7 +179,7 @@
         %div
           - if @org.key?(:payments) || @org.key?(:market_match)
             %section.payments-accepted
-              %i{:class=>"fa fa-money"}
+              %i{ class: 'fa fa-money' }
               %h1 Payment methods accepted:
               %ul
                 -if @org.key?(:payments)
@@ -202,7 +202,7 @@
 
           - if @org.key?(:products)
             %section.products-sold
-              %i{:class=>"fa fa-shopping-cart"}
+              %i{ class: 'fa fa-shopping-cart' }
               %h1 Products sold:
               %ul
                 - @org.products.sort.each do |product|
@@ -215,15 +215,15 @@
         %h1 Services
         - @org.services.each do |service|
 
-          %section.service{:itemscope =>"", :itemtype=> "http://schema.org/Service"}
+          %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
 
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:name}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:description}
-            = render :partial => "component/detail/urls", :locals => {:org=>service, :field=>:urls, :stitle=>"Homepage"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:fees, :stitle=>"Fees"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:audience, :stitle=>"Audience"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:eligibility, :stitle=>"Eligibility"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:how_to_apply, :stitle=>"How to Apply"}
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :name}
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :description}
+            = render :partial => 'component/detail/urls', :locals => { org: service, field: :urls, stitle: 'Homepage' }
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :fees, stitle: 'Fees' }
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :audience, stitle: 'Audience' }
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :eligibility, stitle: 'Eligibility' }
+            = render :partial => 'component/detail/template', :locals => { org: service, field: :how_to_apply, stitle: 'How to Apply' }
 
   / detail footer content
   - if @org.key?(:updated_at)
@@ -236,6 +236,6 @@
             %span
               = @org.updated_at.to_s(:full_date_and_time)
             %div
-              %a{ :href => "#{request.protocol}admin.#{request.domain}#{request.fullpath.split("?")[0]}", :target=>"_self" }
-                %i{ :class => "fa fa-pencil" }
+              %a{ href: "#{request.protocol}admin.#{request.domain}#{request.fullpath.split("?")[0]}", target: '_self' }
+                %i{ class: 'fa fa-pencil' }
                 Edit

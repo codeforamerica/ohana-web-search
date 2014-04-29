@@ -10,23 +10,23 @@
     %div.floating-content.hide><
 
       %span
-        %a{ :href => '#', :class=>"button-utility button-top"}
-          %i{ :class => "fa fa-chevron-up" }
+        %a{ href: '#', class: 'button-utility button-top' }
+          %i{ class: 'fa fa-chevron-up' }
           Top
 
     %span.utility-links
       %span><
-        %a{ :href => '#', :class=>"button-utility button-print", :onclick=>"window.print();return false;" }
-          %i{ :class => "fa fa-print" }
+        %a{ href: '#', class: 'button-utility button-print', onclick: 'window.print();return false;' }
+          %i{ class: 'fa fa-print' }
           Print
 
       - if org.key?(:coordinates)
         %span><
-          %a{:class=>"button-utility button-directions", :href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}",:target=>"_blank"}
-            %i{ :class=>"fa fa-external-link-square" }
+          %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}", target: '_blank' }
+            %i{ class: 'fa fa-external-link-square' }
             %span Directions
 
       %span
-        %a{:class=>"button-utility button-back", :href => "#{organizations_url(@search_params)}##{org.id}", :target=>"_self" }
-          %i{ :class => "fa fa-arrow-circle-left" }
+        %a{ class: 'button-utility button-back', href: "#{organizations_url(@search_params)}##{org.id}", target: '_self' }
+          %i{ class: 'fa fa-arrow-circle-left' }
           Back
