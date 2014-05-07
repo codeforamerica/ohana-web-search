@@ -1,6 +1,6 @@
 // manages results maps view
-define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback',
-         'domReady!'],function () {
+define(['domReady!',
+				'gInfoBox'],function (gInfoBox) {
   'use strict';
 
   // PRIVATE PROPERTIES
@@ -14,8 +14,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _markerBounds; // the bounds of the markers
 
   // constants for map button text content
-  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
-  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Zoom map";
+  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
+  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
 
   var _infoWindow; // info window to pop up on roll over
 
@@ -46,11 +46,29 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
           mapTypeControl: false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+        
+        var infoBoxOptions = {
+					disableAutoPan: false,
+					maxWidth: 0,
+					pixelOffset: new google.maps.Size(11, -17),
+					zIndex: null,
+					boxStyle: { 
+					 backgroundColor: "white",
+					 borderRadius: "4px",
+					 border: "1px solid #bdc3c7",
+					 padding: "3px 6px",
+					 opacity: 0.95
+					},
+					infoBoxClearance: new google.maps.Size(1, 1),
+					isHidden: false,
+					closeBoxMargin: "5px 2px 2px 2px",
+					pane: "floatPane",
+					enableEventPropagation: false
+				};
 
         _map = new google.maps.Map(_mapCanvas, mapOptions);
 
-        _infoWindow = new google.maps.InfoWindow();
-        _infoWindow.setOptions( {disableAutoPan : true} );
+        _infoWindow = new InfoBox(infoBoxOptions);
 
         _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
@@ -134,35 +152,40 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
         map: _map,
         title: markerData['name'],
         position: myLatlng,
-        icon: markerIcon
+        icon: markerIcon,
+        optimized: false
       });
 
       _markersArray.push(marker);
 
       var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
-      var content = "<h1>"+markerData['name']+"</h1>"+agency+
-      "<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
+      var content = "<h1 style='font-weight: bold;'>"+markerData['name']+"</h1>"+agency+
+      							"<p><a href='/organizations/"+marker.id+(window.location.search)+
+      							"'>Click to view details.</a></p>";
+      
       _makeInfoWindowEvent(_map, _infoWindow, content, marker);
-
-      google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 
       _markerBounds.extend(myLatlng);
 
     }
   }
 
-  // set the content in the info window
+  // make info window events associated with this marker
   function _makeInfoWindowEvent(map, infowindow, contentString, marker) {
+    // when user mouses over the marker, open the infoBox and update its contents
     google.maps.event.addListener(marker, 'mouseover', function() {
-      _infoWindow.setContent(contentString);
-      _infoWindow.open(map, marker);
+      setTimeout(function() { 
+      	_infoWindow.setContent(contentString);
+      	_infoWindow.open(map, marker); 
+      }, 200);
     });
-  }
-
-  // a location marker was clicked, perform a search for the organization details
-  function _markerClickedHandler(evt)
-  {
-    window.location.href = '/organizations/'+this.id+(window.location.search);
+      
+    // when user clicks the marker, open the infoBox and center the map on the marker
+    google.maps.event.addListener(marker, 'click', function() {
+      _infoWindow.setContent(contentString);
+      setTimeout(function() { _infoWindow.open(map, marker) }, 200);
+      map.panTo(marker.position);
+    });
   }
 
   // Triggers a resize event and refits the map to the bounds of the markers

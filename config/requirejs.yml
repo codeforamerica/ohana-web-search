@@ -14,6 +14,8 @@ paths:
   classList: 'polyfills/remy/classList'
   addEventListener: 'polyfills/addEventListener'
   trim: 'polyfills/trim'
+  gmaps: 'google/gmap'
+  gInfoBox: 'google/infobox'
 
 shim:
   'Modernizr':
@@ -24,6 +26,9 @@ shim:
   'checked':
     dep: ['jquery']
     exports: 'pfChecked'
+  'gInfoBox':
+    dep: ['gmaps']
+    exports: 'gInfoBox'
 
 # needs to always be set to true for IE support
 # see http://requirejs.org/docs/api.html#ieloadfail
