@@ -73,7 +73,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     {
       _mapCanvas.classList.remove('max');
       _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
-      console.log(_atMaxSize);
       _atMaxSize = false;
       _updateMarkers();
     }
@@ -81,7 +80,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     {
       _mapCanvas.classList.add('max');
       _mapViewControl.innerHTML = LARGER_MAP_TEXT;
-      console.log(_atMaxSize);
       _atMaxSize = true;
       _updateMarkers();
     }
@@ -92,9 +90,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
   function _updateMarkers()
   {
-   // console.log(_markerData.length,_markersArray.length);
-   // console.log(_markersArray);
-    _clearMarkers()
+
+    _clearMarkers();
     for(var i = 0; i < _markerData.length; i++)
     {
       _loadMarker(_markerData[i]);
@@ -123,7 +120,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     }
     else
     {
-      console.log("entered");
       // no entries found
       _clearMarkers();
     }
@@ -152,7 +148,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       }
       else
       {
-        var markerIcon = '/assets/markers/human_services_large.png'; 
+        markerIcon = '/assets/markers/human_services_large.png';
       }
 
       var marker = new google.maps.Marker({
