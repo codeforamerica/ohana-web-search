@@ -8,10 +8,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _mapCanvas; // the parent element of _map
   var _mapViewControl; // the element that controls the expanding/contracting of the map
   var _atMaxSize = false; // whether the map is at its max size or not
+  var location_list = null;
 
   var _markerData; // markers on the map
   var _markersArray = []; // array for storing markers
   var _markerBounds; // the bounds of the markers
+
 
   // constants for map button text content
   var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
@@ -71,17 +73,32 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     {
       _mapCanvas.classList.remove('max');
       _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
+      console.log(_atMaxSize);
       _atMaxSize = false;
+      _updateMarkers();
     }
     else
     {
       _mapCanvas.classList.add('max');
       _mapViewControl.innerHTML = LARGER_MAP_TEXT;
+      console.log(_atMaxSize);
       _atMaxSize = true;
+      _updateMarkers();
     }
     _refresh();
 
     evt.preventDefault();
+  }
+
+  function _updateMarkers()
+  {
+   // console.log(_markerData.length,_markersArray.length);
+   // console.log(_markersArray);
+    _clearMarkers()
+    for(var i = 0; i < _markerData.length; i++)
+    {
+      _loadMarker(_markerData[i]);
+    }
   }
 
   // loads markers
@@ -106,6 +123,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     }
     else
     {
+      console.log("entered");
       // no entries found
       _clearMarkers();
     }
@@ -120,14 +138,22 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     _markersArray = [];
   }
 
+  
+
   // load a single marker
   function _loadMarker(markerData)
   {
     if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
     {
       var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
-
-      var markerIcon = '/assets/markers/human_services.png';
+      if(!_atMaxSize)
+      {
+        var markerIcon = '/assets/markers/human_services_small.png';
+      }
+      else
+      {
+        var markerIcon = '/assets/markers/human_services_large.png'; 
+      }
 
       var marker = new google.maps.Marker({
         id: markerData['id'],
@@ -171,6 +197,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     google.maps.event.trigger(_map, "resize");
     if (_markersArray.length > 0)
       _map.fitBounds(_markerBounds);
+    
   }
 
   return {
