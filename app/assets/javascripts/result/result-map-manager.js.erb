@@ -1,181 +1,315 @@
 //= depend_on_asset 'markers/human_services.png'
-// manages results maps view
-define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback',
-         'domReady!'],function () {
+// Manages results maps view.
+define(['util/bitmask','domReady!',
+				'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (bitmask) {
   'use strict';
 
-  // PRIVATE PROPERTIES
-  var _map; // the map div that the Google map loads into
-  var _mapCanvas; // the parent element of _map
-  var _mapViewControl; // the element that controls the expanding/contracting of the map
-  var _atMaxSize = false; // whether the map is at its max size or not
+  require(['https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js'],
+    function() {
 
-  var _markerData; // markers on the map
-  var _markersArray = []; // array for storing markers
-  var _markerBounds; // the bounds of the markers
+    // PRIVATE PROPERTIES
+    // The <div> element that the Google map loads into.
+    var _map;
 
-  // constants for map button text content
-  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
-  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Zoom map";
+    // The parent HTML element of the map.
+    var _mapCanvas;
 
-  var _infoWindow; // info window to pop up on roll over
+    // The element that controls the expanding/contracting of the map.
+    var _mapViewControl;
 
-  // PUBLIC METHODS
-  function init()
-  {
-    var noResults = document.querySelector("#results-entries .no-results");
-    // only check for result map if the page isn't showing no results
-    if (!noResults)
+    // Whether the map is at its max size or not.
+    var _atMaxSize = false;
+
+    // Parsed JSON object of map marker data (positioning, label, etc.).
+    var _markerData;
+
+    // The collective map bounds of the markers.
+    var _markerBounds;
+
+    // "Constants" for map button text content.
+    var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
+    var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
+
+    // "Constant" for delay when showing/hiding the marker info box.
+    var DEFAULT_infoBox_DELAY = 400;
+
+    // The info box to pop up when rolling over a marker.
+    var _infoBox;
+
+    // A bitmask instance for tracking the different states of the infobox.
+    var _infoBoxState;
+
+    // The possible conditions that determine the infobox's behavior.
+    var SHOW_INFOBOX = 1;
+    var OVER_INFOBOX = 2;
+    var OVER_MARKER = 4;
+    var PIN_INFOBOX = 8;
+
+    // The timer for delaying the info box display.
+    var _infoBoxDelay;
+
+    // The marker that is currently clicked.
+    var _selectedMarker;
+
+    // The marker the cursor is currently over.
+    var _overMarker;
+
+    // The marker InfoBox content that is currently showing.
+    var _infoBoxContent;
+
+    // PUBLIC METHODS
+    function init()
     {
-      var mapContainer = document.getElementById('map-view');
-      if (mapContainer)
+      _infoBoxState = bitmask.create();
+
+      // Only check for result map if the page isn't showing the no search results view.
+      var noResults = document.querySelector("#results-entries .no-results");
+      if (!noResults)
       {
-        _mapCanvas = document.getElementById("map-canvas");
-        _mapViewControl = document.getElementById('map-view-control');
+        var mapContainer = document.getElementById('map-view');
+        if (mapContainer)
+        {
+          _mapCanvas = document.getElementById("map-canvas");
+          _mapViewControl = document.getElementById('map-view-control');
+          _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
+
+          var mapOptions = {
+            zoom: 15,
+            scrollwheel: false,
+            zoomControl: true,
+            panControl: false,
+            streetViewControl: false,
+            scaleControl: true,
+            scaleControlOptions: {
+              position: google.maps.ControlPosition.RIGHT_BOTTOM
+            },
+            mapTypeControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          };
+
+          _map = new google.maps.Map(_mapCanvas, mapOptions);
+
+          var infoBoxOptions = {
+  					disableAutoPan: false,
+  					maxWidth: 0,
+  					pixelOffset: new google.maps.Size(8, -8),
+  					zIndex: null,
+  					infoBoxClearance: new google.maps.Size(1, 1),
+  					isHidden: false,
+            closeBoxURL: '',
+  					pane: 'floatPane',
+  					enableEventPropagation: false
+  				};
+
+          _infoBox = new InfoBox(infoBoxOptions);
+
+          _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
+
+          _loadMarkers();
+          _refresh();
+        }
+        else
+        {
+          console.log("Warning: The result map container was not found!");
+        }
+      }
+    }
+
+    // Map view control was clicked. This control toggles the large and small maps.
+    function _mapViewControlClicked(evt) {
+      if (_atMaxSize)
+      {
+        _mapCanvas.classList.remove('max');
         _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
-
-        var mapOptions = {
-          zoom: 15,
-          scrollwheel: false,
-          zoomControl: true,
-          panControl: false,
-          streetViewControl: false,
-          scaleControl: true,
-          scaleControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_BOTTOM
-          },
-          mapTypeControl: false,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-
-        _map = new google.maps.Map(_mapCanvas, mapOptions);
-
-        _infoWindow = new google.maps.InfoWindow();
-        _infoWindow.setOptions( {disableAutoPan : true} );
-
-        _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
-
-        _loadMarkers();
-        _refresh();
+        _atMaxSize = false;
       }
       else
       {
-        console.log("Warning: The result map container was not found!");
+        _mapCanvas.classList.add('max');
+        _mapViewControl.innerHTML = LARGER_MAP_TEXT;
+        _atMaxSize = true;
       }
+      _refresh();
+
+      evt.preventDefault();
     }
-  }
 
-  // map view control clicked
-  function _mapViewControlClicked(evt)
-  {
-    if (_atMaxSize)
+    // Loads the map markers.
+    function _loadMarkers()
     {
-      _mapCanvas.classList.remove('max');
-      _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
-      _atMaxSize = false;
-    }
-    else
-    {
-      _mapCanvas.classList.add('max');
-      _mapViewControl.innerHTML = LARGER_MAP_TEXT;
-      _atMaxSize = true;
-    }
-    _refresh();
-
-    evt.preventDefault();
-  }
-
-  // loads markers
-  function _loadMarkers()
-  {
-    var locations = document.getElementById("map-locations");
-    if (locations)
-    {
-      _markerData = JSON.parse(locations.innerHTML);
-      locations.parentNode.removeChild(locations); // remove script element
-      _markerBounds = new google.maps.LatLngBounds();
-
-      _clearMarkers();
-
-      var dataLength = _markerData.length;
-      for(var m = 0; m<dataLength-1; m++)
+      var locations = document.getElementById("map-locations");
+      if (locations)
       {
-        _loadMarker( _markerData[m] );
+        // Load the map marker data from the JSON map data embedded in the DOM.
+        _markerData = JSON.parse(locations.innerHTML);
+
+        // Remove the script element from the DOM
+        locations.parentNode.removeChild(locations);
+        _markerBounds = new google.maps.LatLngBounds();
+
+        var index = _markerData.length-1;
+        var marker;
+        while(index>=0)
+        {
+          marker = _loadMarker( _markerData[index--] );
+        }
+
+        _overMarker = marker;
+
+        // Register events for info box interactivity.
+        google.maps.event.addListener(_infoBox, 'domready', function() {
+          var contentDiv = _mapCanvas.querySelector('.infoBox');
+          var buttonClose = contentDiv.querySelector('.button-close');
+          contentDiv.addEventListener('mousemove', _overInfoBoxHandler, false);
+          contentDiv.addEventListener('mouseleave', _leaveInfoBoxHandler, false);
+          buttonClose.addEventListener('mousedown', _closeInfoBoxHandler, false);
+        });
       }
-      var metadata = _markerData[dataLength-1];
-      var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
     }
-    else
+
+    function _overInfoBoxHandler(evt) {
+      _infoBoxState.turnOn(OVER_INFOBOX);
+      _updateInfoBoxState();
+    }
+
+    function _leaveInfoBoxHandler(evt) {
+      _infoBoxState.turnOff(OVER_INFOBOX);
+      _updateInfoBoxState();
+    }
+
+    function _closeInfoBoxHandler(evt) {
+      _infoBoxState.turnOff(OVER_INFOBOX);
+      _infoBoxState.turnOff(SHOW_INFOBOX);
+      _infoBoxState.turnOff(PIN_INFOBOX);
+      _updateInfoBoxState(0);
+    }
+
+    function _updateInfoBoxState(delay) {
+
+      // Clear any transitions in progress.
+      if (_infoBoxDelay) clearTimeout(_infoBoxDelay);
+
+      // If delay is not set use the default delay value.
+      var setDelay = delay !== undefined ? delay : DEFAULT_infoBox_DELAY;
+
+      if ( _infoBoxState.isOn(OVER_MARKER) ) {
+        if ( _infoBoxState.isOff(SHOW_INFOBOX) ) {
+          _openInfoBox(setDelay);
+        }
+        else if (_infoBox.getContent() !== _infoBoxContent ) {
+          _openInfoBox(setDelay);
+        }
+      }
+      else if ( _infoBoxState.isOff(PIN_INFOBOX) &&
+                _infoBoxState.isOff(OVER_INFOBOX) &&
+                _infoBoxState.isOff(OVER_MARKER) )  {
+        _closeInfoBox(setDelay);
+      }
+    }
+
+    // Load a single map marker.
+    // @returns [Object] A google.maps.Marker instance that was created.
+    function _loadMarker(markerData)
     {
-      // no entries found
-      _clearMarkers();
-    }
-  }
+      if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+      {
+        var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-  // clears all markers
-  function _clearMarkers()
-  {
-    for (var i = 0; i < _markersArray.length; i++ ) {
-      _markersArray[i].setMap(null);
-    }
-    _markersArray = [];
-  }
+        var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
-  // load a single marker
-  function _loadMarker(markerData)
-  {
-    if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+        var marker = new google.maps.Marker({
+          id: markerData['id'],
+          map: _map,
+          title: markerData['name'],
+          position: myLatlng,
+          icon: markerIcon,
+          optimized: false
+        });
+
+        var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
+        var content = "<div><div class='corner'></div><div class='button-close'></div><h1>"+
+                      markerData['name']+"</h1>"+agency+
+                      "<p><a href='/organizations/"+marker.id+(window.location.search)+
+                      "'>View more details…</a></p></div>";
+
+        _makeInfoBoxEvent(marker, content);
+
+        _markerBounds.extend(myLatlng);
+      }
+
+      return marker;
+    }
+
+    // Open the global info box after a delay.
+    // @param delay [Number] Delay in milliseconds before opening the info box.
+    // If not specified, the delay will be the DEFAULT_infoBox_DELAY value.
+    function _openInfoBox(delay)
     {
-      var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+      _infoBoxDelay = setTimeout(function() {
+        _infoBox.setContent(_infoBoxContent);
+        _infoBox.open(_map, _selectedMarker);
+        _infoBoxState.turnOn(SHOW_INFOBOX);
+      }, delay);
+    }
 
-      var markerIcon = "<%= asset_path('markers/human_services.png') %>";
+    // Open the global info box after a delay.
+    // @param delay [Number] Delay in milliseconds before closing the info box.
+    // If not specified, the delay will be the DEFAULT_infoBox_DELAY value.
+    function _closeInfoBox(delay)
+    {
+      _infoBoxDelay = setTimeout(function() {
+        _infoBox.close();
+        _infoBoxState.turnOff(SHOW_INFOBOX);
+      }, delay);
+    }
 
-      var marker = new google.maps.Marker({
-        id: markerData['id'],
-        map: _map,
-        title: markerData['name'],
-        position: myLatlng,
-        icon: markerIcon
+    // Make info box events associated with a map marker.
+    // @param marker [Object] The marker that triggered the opening of the info box.
+    // @param content [String] The text content of the info box.
+    function _makeInfoBoxEvent(marker, content) {
+
+      // When user mouses over the marker, open the infoBox and update its contents.
+      google.maps.event.addListener(marker, 'mouseover', function() {
+        if (_overMarker !== marker) _infoBoxState.turnOff(PIN_INFOBOX);
+        _overMarker = marker;
+        _infoBoxState.turnOn(OVER_MARKER);
+        _infoBoxContent = content;
+        _selectedMarker = marker;
+        _updateInfoBoxState();
+      });
+      google.maps.event.addListener(marker, 'mouseout', function() {
+        _infoBoxState.turnOff(OVER_MARKER);
+        _updateInfoBoxState();
       });
 
-      _markersArray.push(marker);
-
-      var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
-      var content = "<h1>"+markerData['name']+"</h1>"+agency+
-      "<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
-      _makeInfoWindowEvent(_map, _infoWindow, content, marker);
-
-      google.maps.event.addListener(marker, 'click', _markerClickedHandler);
-
-      _markerBounds.extend(myLatlng);
-
+      // When user clicks the marker, open the infoBox and center the map on the marker
+      google.maps.event.addListener(marker, 'click', function() {
+        if (_infoBoxState.isOn(PIN_INFOBOX))
+        {
+          _infoBoxState.turnOff(SHOW_INFOBOX);
+          _infoBoxState.turnOff(PIN_INFOBOX);
+          _infoBoxState.turnOff(OVER_MARKER);
+          _updateInfoBoxState(0);
+        }
+        else
+        {
+          _map.panTo(marker.position);
+          _infoBoxState.turnOn(PIN_INFOBOX);
+          _infoBoxState.turnOn(OVER_MARKER);
+          _updateInfoBoxState(0);
+        }
+      });
     }
-  }
 
-  // set the content in the info window
-  function _makeInfoWindowEvent(map, infowindow, contentString, marker) {
-    google.maps.event.addListener(marker, 'mouseover', function() {
-      _infoWindow.setContent(contentString);
-      _infoWindow.open(map, marker);
-    });
-  }
-
-  // a location marker was clicked, perform a search for the organization details
-  function _markerClickedHandler(evt)
-  {
-    window.location.href = '/organizations/'+this.id+(window.location.search);
-  }
-
-  // Triggers a resize event and refits the map to the bounds of the markers
-  function _refresh()
-  {
-    google.maps.event.trigger(_map, "resize");
-    if (_markersArray.length > 0)
+    // Triggers a resize event and refits the map to the bounds of the markers
+    function _refresh()
+    {
+      google.maps.event.trigger(_map, "resize");
       _map.fitBounds(_markerBounds);
-  }
+    }
 
-  return {
-    init:init
-  };
+    // Makes the module initialization self-executing once dependencies have loaded.
+    init();
+  });
 
 });
