@@ -4,8 +4,10 @@
       = hidden_field_tag 'location'
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
-      %div
-        = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
+      %div.input-search-small
+        %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+          %i{:class=>"fa fa-search"}
+        = search_field_tag :keyword, params[:keyword], :placeholder => "search for...", :list => "search-keywords"
         -#
           - cache ['keywords-list', *cip_keywords] do
             %datalist#search-keywords
@@ -14,19 +16,16 @@
                 %option{:value=>keyword}
                   = keyword
               <!--[if IE 8]> </select> <![endif]-->
-        %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
-          %i{:class=>"fa fa-search"}
 
 
     %ul#search-controls
       %li
-        %button.update-btn.small-btn{:type=>"submit"}
+        %button.update-btn.button-small{:type=>"submit"}
           %i{:class=>"fa fa-refresh"}
-          Refresh
+          Update results
       %li
-        %button#reset-btn.reset-btn.small-btn{:type=>"reset"}
+        %button#reset-btn.reset-btn.button-small{:type=>"reset"}
           %i{:class=>"fa fa-eraser"}
           Clear filters
 
     = render :partial => 'component/search/options'
-

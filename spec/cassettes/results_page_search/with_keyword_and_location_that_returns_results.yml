@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,12 +25,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:37:05 GMT
+      - Thu, 08 May 2014 04:26:19 GMT
       Etag:
       - '"8b83a9a26eccceef97ead37d06a62c6d"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&location=&page=23&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&location=&page=2&service_area=&utf8=%E2%9C%93>;
         rel="next"
       X-Current-Page:
       - '1'
@@ -37,13 +39,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 711ed071-391d-486a-b5d3-d3de59a41ff3
+      - 424d4b75-669c-401f-bda0-5a1c5e1b0115
       X-Runtime:
-      - '0.171692'
+      - '0.271431'
       X-Total-Count:
-      - '589'
+      - '678'
       X-Total-Pages:
-      - '20'
+      - '23'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -1072,10 +1074,10 @@ http_interactions:
         for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council","st-vincent-de-paul-county-wide-services"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:06 GMT
+  recorded_at: Thu, 08 May 2014 04:26:20 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=puente&kind=Human%20Services&location=94060&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=puente&kind=Human%20Services&location=94060&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -1084,6 +1086,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -1096,17 +1100,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:37:07 GMT
+      - Thu, 08 May 2014 04:26:21 GMT
       Etag:
-      - '"9601ea32134abc3707c0c817a1b9b52a"'
+      - '"d2a5036322272965ce254e3ca665aa45"'
       X-Current-Page:
       - '1'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - e3c6b4f6-3ecd-4ab8-b603-f8af6f9fb728
+      - 82f14e50-5df0-4d27-a60e-f4a912b8bbaa
       X-Runtime:
-      - '0.042705'
+      - '0.118171'
       X-Total-Count:
       - '1'
       X-Total-Pages:
@@ -1180,12 +1184,12 @@ http_interactions:
         & Immigration","oe_id":"111-01-02","parent_id":"52280f7a1edd37edff000138","rgt":634},{"_id":"52280f7b1edd37edff000142","_slugs":["understand-government-programs"],"depth":2,"lft":641,"name":"Understand
         Government Programs","oe_id":"111-01-06","parent_id":"52280f7a1edd37edff000138","rgt":642},{"_id":"52280f7b1edd37edff000143","_slugs":["workplace-rights-1"],"depth":2,"lft":643,"name":"Workplace
         Rights","oe_id":"111-01-07","parent_id":"52280f7a1edd37edff000138","rgt":644}]}],"organization":{"_id":"521d33241974fcdb2b001c28","_slugs":["puente-de-la-costa-sur"],"created_at":"2013-08-27T16:15:48-07:00","name":"Puente
-        de la Costa Sur","updated_at":"2013-10-01T12:14:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28/locations"},"slugs":["puente-resource-center"],"id":"521d33241974fcdb2b001c29","_score":4.8123784,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        de la Costa Sur","updated_at":"2013-10-01T12:14:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28/locations"},"slugs":["puente-resource-center"],"id":"521d33241974fcdb2b001c29","_score":4.8090324,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:07 GMT
+  recorded_at: Thu, 08 May 2014 04:26:21 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -1208,12 +1212,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:17 GMT
+      - Thu, 08 May 2014 06:12:23 GMT
       Etag:
       - '"8b83a9a26eccceef97ead37d06a62c6d"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&location=&page=20&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=&kind=Human+Services&location=&page=2&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
       X-Current-Page:
       - '1'
@@ -1222,9 +1226,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 02a6e6b7-0167-431b-aa1b-ceffc7592fc5
+      - 5d7bd4a9-36ad-4468-aa85-76723ac7c419
       X-Runtime:
-      - '0.173646'
+      - '0.239012'
       X-Total-Count:
       - '589'
       X-Total-Pages:
@@ -2257,7 +2261,7 @@ http_interactions:
         for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council","st-vincent-de-paul-county-wide-services"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:17 GMT
+  recorded_at: Thu, 08 May 2014 06:12:23 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=puente&kind=Human%20Services&location=94060&service_area=smc&utf8=%E2%9C%93
@@ -2283,17 +2287,17 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:18 GMT
+      - Thu, 08 May 2014 06:12:24 GMT
       Etag:
-      - '"9601ea32134abc3707c0c817a1b9b52a"'
+      - '"d2a5036322272965ce254e3ca665aa45"'
       X-Current-Page:
       - '1'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 62d5e10d-7977-44e1-9f15-e4f0c765086f
+      - b97dd593-0344-4f38-b7d1-44669c07f02b
       X-Runtime:
-      - '0.053374'
+      - '0.041298'
       X-Total-Count:
       - '1'
       X-Total-Pages:
@@ -2367,7 +2371,523 @@ http_interactions:
         & Immigration","oe_id":"111-01-02","parent_id":"52280f7a1edd37edff000138","rgt":634},{"_id":"52280f7b1edd37edff000142","_slugs":["understand-government-programs"],"depth":2,"lft":641,"name":"Understand
         Government Programs","oe_id":"111-01-06","parent_id":"52280f7a1edd37edff000138","rgt":642},{"_id":"52280f7b1edd37edff000143","_slugs":["workplace-rights-1"],"depth":2,"lft":643,"name":"Workplace
         Rights","oe_id":"111-01-07","parent_id":"52280f7a1edd37edff000138","rgt":644}]}],"organization":{"_id":"521d33241974fcdb2b001c28","_slugs":["puente-de-la-costa-sur"],"created_at":"2013-08-27T16:15:48-07:00","name":"Puente
-        de la Costa Sur","updated_at":"2013-10-01T12:14:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28/locations"},"slugs":["puente-resource-center"],"id":"521d33241974fcdb2b001c29","_score":4.8123784,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        de la Costa Sur","updated_at":"2013-10-01T12:14:40-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33241974fcdb2b001c28/locations"},"slugs":["puente-resource-center"],"id":"521d33241974fcdb2b001c29","_score":4.8090324,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:18 GMT
+  recorded_at: Thu, 08 May 2014 06:12:24 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=clinic&kind=Human%20Services&location=94403&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 08 May 2014 07:08:11 GMT
+      Etag:
+      - '"b8e7b382f8f1637e7217d27839c58b09"'
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - a246b888-1015-4418-9d27-e7822f15f174
+      X-Runtime:
+      - '0.099186'
+      X-Total-Count:
+      - '11'
+      X-Total-Pages:
+      - '1'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '61529'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"521d333c1974fcdb2b002062","_slugs":["san-mateo-free-medical-clinic"],"accessibility":["Elevator","Ramp","Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"19 West 39th Avenue","zip":"94403"},"contacts":[{"_id":"5321f9b85381cd3034000001","name":"Sharon
+        Petersen","title":"Operations Director"}],"coordinates":[-122.2931271,37.5326926],"created_at":"2013-08-27T16:16:12-07:00","description":"Provides
+        free  primary and specialty medical and dental services to uninsured, low-income
+        residents. \r\n\r\nWho is Treated? \r\nPatients of our clinics are the working
+        poor. They tend to earn just enough income to be ineligible for Medi-Cal coverage,
+        yet do not receive health insurance through their employers and cannot afford
+        to pay for \u201cout-of-pocket\u201d health insurance. Often these residents
+        are forced to seek treatment at local emergency rooms and become saddled with
+        medical bills that they are unable to pay. Samaritan House\u2019s Free Medical
+        Clinics fill this gap in healthcare access for the uninsured and save emergency
+        room resources for emergencies.\r\n\r\nProfessional Medical & Dental Volunteers\r\nThanks
+        to its innovative volunteer-based model of service, Samaritan House\u2019s
+        clinics are able to treat such a large number of patients with a very small
+        paid staff. Almost all of the medical and dental doctors and assistants are
+        volunteering their time free of charge. These individuals, either retired
+        or currently practicing medicine and dentistry, want to serve their community
+        in their limited spare time.","emails":["info@samaritanhousesanmateo.org"],"faxes":[{"number":"650
+        578-0440"}],"hours":"Monday-Friday, 9-12, 1-4","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"San
+        Mateo Free Medical/Dental","city":"San Mateo","state":"CA","street":"19 West
+        39th Avenue","zip":"94403"},"name":"San Mateo Free Medical Clinic","phones":[{"number":"650
+        578-0400","hours":"(Monday-Friday, 9-12, 1-4)"}],"short_desc":"Provides free
+        medical and dental care to those in need. Offers basic medical care for adults.","transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-03-13T11:32:24-07:00","urls":["http://www.samaritanhousesanmateo.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d333c1974fcdb2b002062","services":[{"_id":"521d333c1974fcdb2b002067","eligibility":"Low-income
+        person without access to health care","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        for screening appointment (650-347-3648).","keywords":["HEALTH SERVICES","Outpatient
+        Care","Community Clinics"],"service_areas":["Belmont","Burlingame","Foster
+        City","Millbrae","San Carlos","San Mateo"],"updated_at":"2014-03-13T11:32:25-07:00","wait":"Varies.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f671edd37edff000056","_slugs":["dental-care"],"depth":1,"lft":170,"name":"Dental
+        Care","oe_id":"106-02","parent_id":"52280f661edd37edff00004e","rgt":171},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000077","_slugs":["vision-tests"],"depth":3,"lft":234,"name":"Vision
+        Tests","oe_id":"106-06-04-06","parent_id":"52280f691edd37edff000071","rgt":235},{"_id":"52280f6a1edd37edff000079","_slugs":["personal-hygiene"],"depth":2,"lft":239,"name":"Personal
+        Hygiene","oe_id":"106-06-06","parent_id":"52280f691edd37edff00006d","rgt":240},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264}]}],"organization":{"_id":"521d333c1974fcdb2b00205d","_slugs":["samaritan-house-1"],"created_at":"2013-08-27T16:16:12-07:00","name":"Samaritan
+        House","updated_at":"2013-10-01T12:16:09-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d333c1974fcdb2b00205d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d333c1974fcdb2b00205d/locations"},"slugs":["san-mateo-free-medical-clinic"],"id":"521d333c1974fcdb2b002062","_score":1.9160196,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32d01974fcdb2b000564","_slugs":["fear-of-flying-clinic"],"accessibility":["Disabled
+        Parking","Elevator","Ramp","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"1777
+        Borel Place, Room 308","zip":"94402-3511"},"ask_for":["Fran Lawrence"],"contacts":[{"_id":"521d32d01974fcdb2b000565","name":"Jeanne
+        McElhatton","title":"Moderator"},{"_id":"521d32d01974fcdb2b000566","name":"Paula
+        Zimmerman","title":"Counselor"}],"coordinates":[-122.317795,37.549232],"created_at":"2013-08-27T16:14:24-07:00","description":"Offers
+        behavioral counseling, lectures, demonstrations and \"hands-on\" training
+        aboard a stationary aircraft. Training is held at San Francisco International
+        Airport on two consecutive weekends, Saturday and Sunday from 9 am to 5 pm.
+        The educators are licensed pilots, flight attendants, maintenance personnel,
+        air traffic controllers and licensed behavioral therapists.","emails":["office@fofc.com"],"faxes":[{"number":"650
+        341-1599"}],"kind":"Human Services","mail_address":{"attention":"Fear of Flying
+        Clinic","city":"San Mateo","state":"CA","street":"1777 Borel Place, Room 308","zip":"94402-3511"},"name":"Fear
+        of Flying Clinic","phones":[{"number":"650 341-1595"}],"short_desc":"Offers
+        intensive behavioral counseling to overcome the fear of flying.","transportation":"SAMTRANS
+        stops at the airport.","updated_at":"2013-11-07T12:42:57-08:00","urls":["http://www.fofc.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32d01974fcdb2b000564","services":[{"_id":"521d32d01974fcdb2b000569","audience":"Persons
+        with a fear of flying","eligibility":"None","fees":"$595, discounted to $545
+        if registered at least 3 weeks prior to clinic. Cash, checks and credit cards
+        accepted.","funding_sources":["Donations","Fees"],"how_to_apply":"Apply by
+        phone or mail.","keywords":["MENTAL HEALTH SERVICES","Individual/Group Counseling","Fear
+        of Flying"],"service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County"],"updated_at":"2013-09-23T15:25:48-07:00","wait":"Occasionally.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6a1edd37edff00007b","_slugs":["counseling-1"],"depth":3,"lft":242,"name":"Counseling","oe_id":"106-06-07-01","parent_id":"52280f6a1edd37edff00007a","rgt":243},{"_id":"52280f6b1edd37edff000081","_slugs":["specialized-therapy"],"depth":3,"lft":254,"name":"Specialized
+        Therapy","oe_id":"106-06-07-07","parent_id":"52280f6a1edd37edff00007a","rgt":255}]}],"organization":{"_id":"521d32d01974fcdb2b000563","_slugs":["fear-of-flying-clinic"],"created_at":"2013-08-27T16:14:24-07:00","name":"Fear
+        of Flying Clinic","updated_at":"2013-10-01T12:06:49-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000563","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32d01974fcdb2b000563/locations"},"slugs":["fear-of-flying-clinic"],"id":"521d32d01974fcdb2b000564","_score":1.0568967,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32e71974fcdb2b000bc1","_slugs":["samaritan-house"],"accessibility":["Elevator","Ramp","Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"4031 Pacific Blvd.","zip":"94403"},"coordinates":[-122.2881887,37.5308918],"created_at":"2013-08-27T16:14:47-07:00","description":"Samaritan
+        House is a core service center offering bilingual community workers who provide
+        case management, emergency services, information and referral, assistance
+        in filling out forms and help with interpretation and translation needs (Spanish).
+        \r\nServices include: \r\n-First and last month rental assistance and initial
+        security deposits for those who meet the financial criteria\r\n-Adult education
+        classes, including budgeting, financial literacy classes, English as a Second
+        Language (ESL), and Diabetes classes (English and Spanish)\r\n-Vouchers for
+        groceries and kids clothing/shoes\r\n\r\nThe Samaritan House Kitchen serves
+        a hot, nutritious meal Monday through Friday evenings, 5-6:30 pm, at a temporary
+        location at the Martin Luther King, Jr. Community Center, located at 725 Monte
+        Diablo Avenue in San Mateo. This program is intended to assist families or
+        individuals in San Mateo County who are experiencing financial difficulties.
+        \"To-go\" food boxes are available, and there is a mobile meals program for
+        house-bound and elderly individuals. \r\n\r\nSamaritan House Free Clinics
+        offer primary and specialty health care, including check-ups, prescriptions
+        and referrals. Service (by appointment only) is available weekdays; some evening
+        appointments may also be available. \r\n\r\nSafe Harbor Shelter is a 90-bed
+        facility serving male and female San Mateo County adults (over 18). Safe Harbor
+        offers meals, hygiene kits, comprehensive case management, nightly support
+        groups and other services. \r\n\r\nThe Worker Resource Center (650-344-1651)
+        provides a link for employers and day laborers with construction, painting,
+        hauling, moving and gardening skills. The Center is located at 400 East Fifth
+        Avenue, San Mateo, and is open Monday-Friday, 7 am-2 pm; Saturday, 7 am-1
+        pm; and Sunday, 7 am-12 noon. Samaritan House is part of the core network
+        of community-service agencies in San Mateo County.","emails":["info@samaritanhousesanmateo.org"],"faxes":[{"number":"650
+        347-6066","department":"Client Services"},{"number":"650 341-0526","department":"Administrative
+        Offices"}],"hours":"Call Client Services for an appointment - open M-F, 9-5pm
+        - closed Thur. 12-5","kind":"Human Services","languages":["Spanish","Tongan"],"mail_address":{"attention":"Samaritan
+        House","city":"San Mateo","state":"CA","street":"4031 Pacific Blvd.","zip":"94403"},"name":"Samaritan
+        House","phones":[{"number":"650 347-3648","department":"Client Services","hours":"(Monday,
+        Tuesday, Thursday, Friday, 9-12, 1-5; Wednesday, 9-12)"}],"short_desc":"A
+        core social service agency assisting the communities of central San Mateo
+        County.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2014-03-13T11:27:46-07:00","urls":["http://www.samaritanhousesanmateo.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32e71974fcdb2b000bc1","services":[{"_id":"521d32e71974fcdb2b000bc5","audience":"Families
+        or individuals seeking assistance for basic needs such as food, children''s
+        clothing, shelter, transportation, health needs, rental and utility-payment
+        assistance","description":"Samaritan House is a core service center offering
+        bilingual community workers who provide case management, emergency services,
+        information and referral, assistance in filling out forms and help with interpretation
+        and translation needs (Spanish). Services include: first and last month rental
+        assistance and initial security deposits for those who meet the financial
+        criteria; adult education classes, including budgeting, English as a Second
+        Language (ESL), and Diabetes classes (English and Spanish); vouchers for groceries
+        and kids clothing/shoes; maintains a lending library for children, and encourages
+        parents to read to their children. The Samaritan House Kitchen serves a hot,
+        nutritious meal Monday through Friday evenings, 5-6:30 pm, at Westside Church
+        of Christ, 603 Monte Diablo, San Mateo. This program is intended to assist
+        families or individuals in San Mateo County who are experiencing financial
+        difficulties. \"To-go\" food boxes are available, and there is a mobile meals
+        program for the homebound. Samaritan House Free Clinics offer primary and
+        specialty health care, including check-ups, prescriptions and referrals. Service
+        (by appointment only) is available weekdays; some evening appointments may
+        also be available. Samaritan House Free Clinics offer primary and specialty
+        health care, including check-ups, prescriptions and referrals. Service (by
+        appointment only) is available weekdays; some evening appointments may also
+        be available., Safe Harbor Shelter is a 90-bed facility serving male and female
+        San Mateo County adults. Safe Harbor offers meals, hygiene kits, comprehensive
+        case management, nightly support groups and other services. The Worker Resource
+        Center (650-344-1651) provides a link for employers and day laborers with
+        construction, painting, hauling, moving and gardening skills. The Center is
+        located at 400 East Fifth Avenue, San Mateo, and is open Monday-Friday, 7
+        am-2 pm; Saturday, 7 am-1 pm; and Sunday, 7 am-12 noon. Samaritan House is
+        part of the core network of community-service agencies in San Mateo County.","eligibility":"Resident
+        of area served","fees":"No fees.","funding_sources":["City","County","Donations","Federal","Grants","State"],"how_to_apply":"Walk
+        in (Monday, Wednesday or Friday) or inquire by phone to Client Services Office.","keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meal","COMMODITY
+        SERVICES","Clothing/Personal Items","COMMUNITY SERVICES","Information and
+        Referral","Interpretation/Translation","EMERGENCY SERVICES","Food Served/Soup
+        Kitchens","Shelter/Refuge","FINANCIAL ASSISTANCE SERVICES","Housing","HEALTH
+        SERVICES","Outpatient Care","LEGAL AND CRIMINAL JUSTICE SERVICES","Certificates/Forms
+        Assistance","Food Pantries","Soup Kitchens","Homeless Shelter","Housing Expense
+        Assistance","Transitional Housing/Shelter","Community Clinics","Language Interpretation","Comprehensive
+        Information and Referral","Emergency Housing","Safe Housing"],"service_areas":["Belmont","Burlingame","Foster
+        City","Hillsborough","Millbrae","San Carlos","San Mateo"],"updated_at":"2014-03-13T11:27:47-07:00","wait":"Less
+        than one week wait for appointment.","categories":[{"_id":"52280f5c1edd37edff000001","_slugs":["emergency"],"depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5d1edd37edff00000a","_slugs":["emergency-food"],"depth":1,"lft":18,"name":"Emergency
+        Food","oe_id":"101-03","parent_id":"52280f5c1edd37edff000001","rgt":19},{"_id":"52280f5d1edd37edff00000b","_slugs":["emergency-shelter-1"],"depth":1,"lft":20,"name":"Emergency
+        Shelter","oe_id":"101-04","parent_id":"52280f5c1edd37edff000001","rgt":21},{"_id":"52280f5e1edd37edff000011","_slugs":["food"],"depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5e1edd37edff000014","_slugs":["food-delivery"],"depth":1,"lft":38,"name":"Food
+        Delivery","oe_id":"102-03","parent_id":"52280f5e1edd37edff000011","rgt":39},{"_id":"52280f5e1edd37edff000015","_slugs":["food-pantry"],"depth":1,"lft":40,"name":"Food
+        Pantry","oe_id":"102-04","parent_id":"52280f5e1edd37edff000011","rgt":41},{"_id":"52280f5e1edd37edff000016","_slugs":["free-meals"],"depth":1,"lft":42,"name":"Free
+        Meals","oe_id":"102-05","parent_id":"52280f5e1edd37edff000011","rgt":43},{"_id":"52280f5f1edd37edff000017","_slugs":["help-pay-for-food"],"depth":1,"lft":44,"name":"Help
+        Pay for Food","oe_id":"102-06","parent_id":"52280f5e1edd37edff000011","rgt":49},{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f601edd37edff00001c","_slugs":["emergency-shelter"],"depth":1,"lft":54,"name":"Emergency
+        Shelter","oe_id":"103-01","parent_id":"52280f601edd37edff00001b","rgt":55},{"_id":"52280f601edd37edff00001e","_slugs":["help-pay-for-housing"],"depth":1,"lft":58,"name":"Help
+        Pay for Housing","oe_id":"103-03","parent_id":"52280f601edd37edff00001b","rgt":69},{"_id":"52280f611edd37edff000024","_slugs":["housing-advice"],"depth":1,"lft":70,"name":"Housing
+        Advice","oe_id":"103-04","parent_id":"52280f601edd37edff00001b","rgt":75},{"_id":"52280f621edd37edff000032","_slugs":["goods"],"depth":0,"lft":99,"name":"Goods","oe_id":"104","parent_id":null,"rgt":140},{"_id":"52280f631edd37edff000036","_slugs":["clothing"],"depth":1,"lft":106,"name":"Clothing","oe_id":"104-02","parent_id":"52280f621edd37edff000032","rgt":115},{"_id":"52280f631edd37edff00003a","_slugs":["clothing-vouchers"],"depth":2,"lft":113,"name":"Clothing
+        Vouchers","oe_id":"104-02-04","parent_id":"52280f631edd37edff000036","rgt":114},{"_id":"52280f651edd37edff000047","_slugs":["transit"],"depth":0,"lft":141,"name":"Transit","oe_id":"105","parent_id":null,"rgt":154},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff000060","_slugs":["nutrition"],"depth":2,"lft":189,"name":"Nutrition","oe_id":"106-04-04","parent_id":"52280f681edd37edff00005c","rgt":190},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6b1edd37edff000087","_slugs":["money"],"depth":0,"lft":269,"name":"Money","oe_id":"107","parent_id":null,"rgt":390},{"_id":"52280f6c1edd37edff000090","_slugs":["financial-assistance"],"depth":1,"lft":286,"name":"Financial
+        Assistance","oe_id":"107-02","parent_id":"52280f6b1edd37edff000087","rgt":349},{"_id":"52280f6d1edd37edff0000a0","_slugs":["help-pay-for-housing-1"],"depth":2,"lft":317,"name":"Help
+        Pay for Housing","oe_id":"107-02-04","parent_id":"52280f6c1edd37edff000090","rgt":328},{"_id":"52280f6d1edd37edff0000a1","_slugs":["cash-for-housing-3"],"depth":3,"lft":318,"name":"Cash
+        for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319},{"_id":"52280f6e1edd37edff0000ac","_slugs":["help-pay-for-transit"],"depth":2,"lft":341,"name":"Help
+        Pay for Transit","oe_id":"107-02-06","parent_id":"52280f6c1edd37edff000090","rgt":346},{"_id":"52280f6f1edd37edff0000b6","_slugs":["vouchers"],"depth":1,"lft":362,"name":"Vouchers","oe_id":"107-04","parent_id":"52280f6b1edd37edff000087","rgt":371},{"_id":"52280f6f1edd37edff0000b8","_slugs":["clothing-vouchers-1"],"depth":2,"lft":365,"name":"Clothing
+        Vouchers","oe_id":"107-04-02","parent_id":"52280f6f1edd37edff0000b6","rgt":366},{"_id":"52280f701edd37edff0000bb","_slugs":["financial-education-1"],"depth":1,"lft":372,"name":"Financial
+        Education","oe_id":"107-05","parent_id":"52280f6b1edd37edff000087","rgt":381},{"_id":"52280f711edd37edff0000c3","_slugs":["tax-preparation"],"depth":1,"lft":388,"name":"Tax
+        Preparation","oe_id":"107-07","parent_id":"52280f6b1edd37edff000087","rgt":389},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f731edd37edff0000dc","_slugs":["navigating-the-system"],"depth":1,"lft":438,"name":"Navigating
+        the System","oe_id":"108-05","parent_id":"52280f711edd37edff0000c4","rgt":449},{"_id":"52280f731edd37edff0000dd","_slugs":["help-fill-out-forms"],"depth":2,"lft":439,"name":"Help
+        Fill out Forms","oe_id":"108-05-01","parent_id":"52280f731edd37edff0000dc","rgt":440},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f751edd37edff0000fd","_slugs":["more-education"],"depth":1,"lft":504,"name":"More
+        Education","oe_id":"109-03","parent_id":"52280f751edd37edff0000f5","rgt":545},{"_id":"52280f761edd37edff000101","_slugs":["financial-education"],"depth":2,"lft":511,"name":"Financial
+        Education","oe_id":"109-03-04","parent_id":"52280f751edd37edff0000fd","rgt":518},{"_id":"52280f771edd37edff000107","_slugs":["health-education-1"],"depth":2,"lft":523,"name":"Health
+        Education","oe_id":"109-03-07","parent_id":"52280f751edd37edff0000fd","rgt":538},{"_id":"52280f771edd37edff00010a","_slugs":["nutrition-education"],"depth":3,"lft":528,"name":"Nutrition
+        Education","oe_id":"109-03-07-03","parent_id":"52280f771edd37edff000107","rgt":529},{"_id":"52280f781edd37edff000116","_slugs":["english-as-a-second-language-esl"],"depth":2,"lft":553,"name":"English
+        as a Second Language (ESL)","oe_id":"109-05-03","parent_id":"52280f781edd37edff000113","rgt":554},{"_id":"52280f7a1edd37edff000137","_slugs":["legal"],"depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7c1edd37edff000147","_slugs":["translation-and-interpretation"],"depth":1,"lft":652,"name":"Translation
+        & Interpretation","oe_id":"111-05","parent_id":"52280f7a1edd37edff000137","rgt":653}]}],"organization":{"_id":"521d32e71974fcdb2b000bc0","_slugs":["samaritan-house"],"created_at":"2013-08-27T16:14:47-07:00","name":"Samaritan
+        House","updated_at":"2013-10-01T12:09:12-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bc0","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32e71974fcdb2b000bc0/locations"},"slugs":["samaritan-house"],"id":"521d32e71974fcdb2b000bc1","_score":0.78508097,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021af","_slugs":["family-health-services-dot-child-health-services-dot-child-health-and-disability-prevention-program-chdp"],"accessibility":["Ramp","Disabled
+        Parking"],"address":{"city":"San Mateo","state":"CA","street":"2000 Alameda
+        de las Pulgas, Suite 200","zip":"94403"},"contacts":[{"_id":"521d334f1974fcdb2b0021b0","name":"Brian
+        J. Zamora","title":"Director, Family Health Services"}],"coordinates":[-122.3208839,37.5454495],"created_at":"2013-08-27T16:16:31-07:00","description":"Provides
+        information and referral to medical and dental providers for check-ups and
+        follow-up care for Medi-Cal eligible persons age 20 or under. Persons age
+        18 or under from low-income families are also eligible for health examinations.
+        Assistance with scheduling appointments and transportation is provided. Check-ups
+        are available through private physicians, hospital outpatient clinics, community
+        clinics and public health clinics.   The multidisciplinary staff collaborates
+        with a number of agencies to coordinate and enhance health services on behalf
+        of children. Outreach and advocacy are provided in such areas as childhood
+        lead poisoning prevention, immunization, asthma and the dental and nutritional
+        needs of children.","faxes":[{"number":"650 573-2859"}],"hours":"Monday-Friday,
+        8-5","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"SMCHS
+        Child Health and Disability Prev","city":"San Mateo","state":"CA","street":"2000
+        Alameda de las Pulgas, Suite 200","zip":"94403"},"name":"Family Health Services.,
+        Child Health Services., Child Health and Disability Prevention Program (CHDP)","phones":[{"number":"650
+        573-2877","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Provides referral
+        to medical and dental providers for Medi-Cal eligible children and adolescents.","transportation":"SAMTRANS
+        stops within 1 block of CHDP administrative office.","updated_at":"2013-11-07T12:46:14-08:00","urls":["http://www.smchealth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d334f1974fcdb2b0021af","services":[{"_id":"521d33601974fcdb2b002262","audience":"Medi-Cal
+        eligible children and youth age 20 or under. Other low-income individuals
+        age 18 or under","eligibility":"For periodic health screenings, must be age
+        20 or under and on Medi-Cal or age 18 or under meeting low-income guidelines
+        (200% of federal poverty level)","fees":"None to Medi-Cal eligible and other
+        limited income families for health assessments.","funding_sources":["County","Federal","State"],"how_to_apply":"Apply
+        by phone.","keywords":["FINANCIAL ASSISTANCE SERVICES","Health","HEALTH SERVICES","Education/Information","Health
+        Care Referrals","Youth","Low Income","Pediatrics","Checkups","Immunizations","Asthma"],"service_areas":["San
+        Mateo County"],"updated_at":"2013-11-11T00:45:53-08:00","wait":"No wait.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f671edd37edff000056","_slugs":["dental-care"],"depth":1,"lft":170,"name":"Dental
+        Care","oe_id":"106-02","parent_id":"52280f661edd37edff00004e","rgt":171},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236}]}],"organization":{"_id":"521d334e1974fcdb2b002175","_slugs":["san-mateo-county-health-system"],"created_at":"2013-08-27T16:16:30-07:00","name":"San
+        Mateo County Health System","updated_at":"2013-10-01T12:16:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175/locations"},"slugs":["family-health-services-dot-child-health-services-dot-child-health-and-disability-prevention-program-chdp"],"id":"521d334f1974fcdb2b0021af","_score":0.53479314,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33501974fcdb2b0021d0","_slugs":["community-health-dot-administration"],"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"225
+        - 37th Avenue","zip":"94403"},"ask_for":["Secretary"],"contacts":[{"_id":"521d33501974fcdb2b0021d1","name":"Brian
+        Zamora","title":"Director"},{"_id":"521d33501974fcdb2b0021d2","name":"John
+        Conley","title":"Deputy Director"},{"_id":"521d33501974fcdb2b0021d3","name":"Scott
+        Morrow","title":"Health Officer"},{"_id":"521d33501974fcdb2b0021d4","name":"Alvaro
+        Garza","title":"Deputy Health Officer"},{"_id":"521d33501974fcdb2b0021d5","name":"Brian
+        Zanova","title":"Family Health Director"}],"coordinates":[-122.3006094,37.5314294],"created_at":"2013-08-27T16:16:32-07:00","description":"Administers
+        the AIDS Program, Community Health Services, and Disease Prevention and Control
+        (all described separately). Provides preventive health services in the areas
+        of TB, HIV/AIDS and STD testing, chronic disease prevention, communicable
+        disease control, and public health nutrition. Programs in Family Health include
+        Public Health and Injury Prevention, Prenatal to Three Initiative, vital statistics,
+        public health education, maternal and child health (Family Planning, Child
+        Health Clinics, Child Health and Disability Prevention Program), public health
+        nursing and California Children Services (diagnosis, treatment and therapy).
+        A mobile clinic delivers health care to the more remote areas of the county.
+        Also, oversees Emergency Medical Services (ambulance first response, EMT and
+        Paramedic certification and registration), Environmental Health (Environmental
+        regulation over consumer protection and hazardous materials/waste), University
+        of Californa Conservative Extension, and Agriculture Commissioner Sealer of
+        Weights and Measures.","hours":"Monday-Friday, 7:30-5:30","kind":"Human Services","languages":["Chinese
+        (Mandarin)","Filipino (Tagalog)","French","Spanish"],"mail_address":{"attention":"SMCHS
+        Community Health","city":"San Mateo","state":"CA","street":"225 - 37th Avenue","zip":"94403"},"name":"Community
+        Health., Administration","phones":[{"number":"650 573-2757","hours":"(Monday-Friday,
+        8-5)"}],"short_desc":"Administers the programs of the Public Health Division.","transportation":"SAMTRANS
+        stops within 1 block, CALTRAIN within 2 blocks.","updated_at":"2013-10-01T12:16:46-07:00","urls":["http://www.smchealth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33501974fcdb2b0021d0","services":[{"_id":"521d33631974fcdb2b002269","audience":"High
+        risk children and adults, including those with special health problems who
+        have difficulty accessing and paying for health services. Communities with
+        public health needs","eligibility":"Vary according to program","fees":"Vary
+        according to income. Medi-Cal and private insurance accepted.","funding_sources":["County","Federal","Fees","State"],"how_to_apply":"Apply
+        by phone to appropriate clinic or office.","keywords":["Public Health"],"service_areas":["San
+        Mateo County"],"updated_at":"2013-11-11T00:45:51-08:00","wait":"No wait to
+        1 week.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
+        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","_slugs":["disease-management"],"depth":2,"lft":185,"name":"Disease
+        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f681edd37edff00005f","_slugs":["family-planning-1"],"depth":2,"lft":187,"name":"Family
+        Planning","oe_id":"106-04-03","parent_id":"52280f681edd37edff00005c","rgt":188},{"_id":"52280f681edd37edff000060","_slugs":["nutrition"],"depth":2,"lft":189,"name":"Nutrition","oe_id":"106-04-04","parent_id":"52280f681edd37edff00005c","rgt":190},{"_id":"52280f681edd37edff000061","_slugs":["parenting-education-2"],"depth":2,"lft":191,"name":"Parenting
+        Education","oe_id":"106-04-05","parent_id":"52280f681edd37edff00005c","rgt":192},{"_id":"52280f681edd37edff000062","_slugs":["sex-education"],"depth":2,"lft":193,"name":"Sex
+        Education","oe_id":"106-04-06","parent_id":"52280f681edd37edff00005c","rgt":194}]}],"organization":{"_id":"521d334e1974fcdb2b002175","_slugs":["san-mateo-county-health-system"],"created_at":"2013-08-27T16:16:30-07:00","name":"San
+        Mateo County Health System","updated_at":"2013-10-01T12:16:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175/locations"},"slugs":["community-health-dot-administration"],"id":"521d33501974fcdb2b0021d0","_score":0.37427726,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d33521974fcdb2b002200","_slugs":["community-health-dot-aids-program-prevention"],"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"city":"San Mateo","state":"CA","street":"225
+        - 37th Avenue","zip":"94403"},"ask_for":["Darryl Lampkin (HIV Counseling and
+        Testing Services)"],"contacts":[{"_id":"521d33521974fcdb2b002201","name":"Matt
+        Geltmaker, LCSW","title":"Director"}],"coordinates":[-122.3006094,37.5314294],"created_at":"2013-08-27T16:16:34-07:00","description":"Works
+        to prevent HIV infection in the community at large and cares for individuals
+        and families affected by HIV/AIDS. Services are delivered throughout San Mateo
+        County from sites in Daly City, East Palo Alto, Menlo Park and San Mateo as
+        well as via a mobile van. Also coordinates HIV testing at sites throughout
+        the county and through the mobile van.   Maintains a full-service HIV specialty
+        clinic offering medical services, assistance with obtaining benefits and other
+        services, psychiatric services, substance abuse counseling. Dental services
+        are provided to clients on a referral basis by an HIV dental specialist. Comprehensive
+        social services, including support groups, are available as well as housing
+        assistance and groceries by referral. Administers ADAP (AIDS Drug Assistance
+        Program) to assist with medication expenses.  Provides a full range of on-site
+        services such as social services, case management, health education and other
+        services for HIV/AIDS patients in the county. Partner Services assists clients
+        in notifying, anonymously if desired, sex and/or needle-sharing partners of
+        potential exposure to HIV or another STD. Provides support and counseling
+        to clients who wish to inform partners themselves, as well as confidential
+        testing and information for referred partners. (650-573-3401) The drop-in
+        STD clinic provides screening and treatment, prevention education and counseling
+        of sexually transmitted diseases at low-cost. No appointment necessary. Clients
+        are seen on a first-come, first-served basis. The STD Clinic is located in
+        the Edison Clinic and is open Tuesday and Thursday evenings from 4-7 pm. (650-573-2385).","faxes":[{"number":"650
+        573-2875"}],"kind":"Human Services","languages":["Filipino (Tagalog)","Portuguese","Spanish"],"mail_address":{"attention":"SMCHS
+        AIDS Program Prevention.","city":"San Mateo","state":"CA","street":"222 -
+        39th Avenue","zip":"94403"},"name":"Community Health., AIDS Program Prevention","phones":[{"number":"650
+        619-9125","department":"HIV Testing"}],"short_desc":"Provides educational
+        services, outreach, clinical services and a drop-in center for persons with
+        AIDS and HIV.","transportation":"SAMTRANS stops within 2 blocks, CALTRAIN
+        - Hillsdale Station within 6 blocks.","updated_at":"2013-11-07T12:44:20-08:00","urls":["http://www.smchealth.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33521974fcdb2b002200","services":[{"_id":"521d33691974fcdb2b002274","audience":"Individuals
+        and agencies needing information about AIDS or AIDS-related issues, people
+        with AIDS or HIV infection and their families","eligibility":"None for prevention
+        services. Proof of HIV+ status required for clinical services","fees":"Vary
+        according to income. Cash, checks, Medi-Cal, Medicare and private insurance
+        accepted.","funding_sources":["County","Donations","Federal","Grants","State"],"how_to_apply":"Walk
+        in or apply by phone for an appointment.","keywords":["HIV Testing","Nutrition
+        Assessment Services","Sexually Transmitted Disease Screening","Substance Abuse
+        Counseling"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:45:12-08:00","wait":"Varies
+        according to service."}],"organization":{"_id":"521d334e1974fcdb2b002175","_slugs":["san-mateo-county-health-system"],"created_at":"2013-08-27T16:16:30-07:00","name":"San
+        Mateo County Health System","updated_at":"2013-10-01T12:16:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175/locations"},"slugs":["community-health-dot-aids-program-prevention"],"id":"521d33521974fcdb2b002200","_score":0.35287198,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021bb","_slugs":["san-mateo-medical-center-dot-administration"],"accessibility":["Elevator","Interpreter
+        for the deaf","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"222 - 39th Avenue","zip":"94403-4364"},"ask_for":["Administrator"],"contacts":[{"_id":"521d334f1974fcdb2b0021bc","name":"Susan
+        Ehrlich","title":"Chief Executive Officer"}],"coordinates":[-122.300209,37.530902],"created_at":"2013-08-27T16:16:31-07:00","description":"Provides
+        general short-term acute care, including psychiatric care, to persons of all
+        ages. The Emergency Department is open 24 hours every day. Provides basic
+        and emergency medical care for indigent adults ineligible for Medi-Cal. The
+        hospital also operates a variety of specialty clinics and services.  Uninsured
+        county residents whose income is within 200% of the Federal Poverty Guidelines
+        are eligible to enroll in the WELL Program. Participants in the program pay
+        an annual fee and are responsible for co-payments charged at the time of service
+        ($5 for outpatient services, $25 for emergency services, $5 for prescriptions
+        and $550 for inpatient hospital stays). Patients are billed monthly for any
+        unpaid annual fees and co-payments.","kind":"Human Services","languages":["Interpreter"],"mail_address":{"attention":"San
+        Mateo Medical Center","city":"San Mateo","state":"CA","street":"222 - 39th
+        Avenue","zip":"94403-4364"},"name":"San Mateo Medical Center., Administration","phones":[{"number":"650
+        573-3939","department":"Administration","hours":"(Monday-Friday, 8-5)"}],"short_desc":"Provides
+        general short-term acute care, including psychiatric care, to persons of all
+        ages.","transportation":"SAMTRANS stops at the door. Shuttle service available
+        for patients unable to ride public transportation.","updated_at":"2013-10-05T14:24:39-07:00","url":"http://ohanapi.herokuapp.com/api/locations/521d334f1974fcdb2b0021bb","services":[{"_id":"521d33611974fcdb2b002265","eligibility":"None","fees":"Vary
+        according to service. WELL Program annual enrollment fees: $200 individual,
+        $300 family of 3, $50 each additional family member. Credit cards, Medi-Cal,
+        Medicare, WELL Program, private insurance, military insurance accepted.","funding_sources":["County","Fees"],"how_to_apply":"Apply
+        by phone for an appointment.","keywords":["HEALTH SERVICES","Inpatient Care","Outpatient
+        Care","MENTAL HEALTH SERVICES","Acute or Sub-acute Treatment","Hospitals","Administrative
+        Entities"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:21-08:00","wait":"No
+        wait.","categories":[{"_id":"52280f5c1edd37edff000001","_slugs":["emergency"],"depth":0,"lft":1,"name":"Emergency","oe_id":"101","parent_id":null,"rgt":32},{"_id":"52280f5e1edd37edff000010","_slugs":["psychiatric-emergency-services"],"depth":1,"lft":30,"name":"Psychiatric
+        Emergency Services","oe_id":"101-07","parent_id":"52280f5c1edd37edff000001","rgt":31},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6b1edd37edff000086","_slugs":["psychiatric-emergency-services-1"],"depth":2,"lft":265,"name":"Psychiatric
+        Emergency Services","oe_id":"106-06-08","parent_id":"52280f691edd37edff00006d","rgt":266},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d334e1974fcdb2b002175","_slugs":["san-mateo-county-health-system"],"created_at":"2013-08-27T16:16:30-07:00","name":"San
+        Mateo County Health System","updated_at":"2013-10-01T12:16:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175/locations"},"slugs":["san-mateo-medical-center-dot-administration"],"id":"521d334f1974fcdb2b0021bb","_score":0.30876297,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32c01974fcdb2b000169","_slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes","starvista"],"accessibility":["Disabled
+        Parking","Elevator","Disabled Restroom","Wheelchair"],"address":{"city":"San
+        Carlos","state":"CA","street":"610 Elm Street, Suite 212","zip":"94070"},"ask_for":["Intake
+        clinician"],"contacts":[{"_id":"53163e435286887bdf000004","name":"Sara Larios
+        Mitchell","title":"CEO"}],"coordinates":[-122.261743,37.50403],"created_at":"2013-08-27T16:14:08-07:00","description":"Dedicated
+        to enriching the lives of individuals and families by transforming challenges
+        into opportunities. Core values are reflected in the commitment to building
+        skills and enhancing strengths by collaborating with youth, adult and family
+        units as a whole to effect positive change. Provides a comprehensive array
+        of free or low-cost bilingual social services to residents of San Mateo County.
+        StarVista is also committed to an asset-based approach to youth development.
+        Many of the strongest youth programs are structured on the model of helping
+        youth develop assets that will make them well-adjusted, active participants
+        in their communities.   Programs include a 24-hour crisis, alcohol and drug
+        support hotline, and parent resources warmline; services for homeless and
+        runaway youth; substance abuse assessment and treatment (outpatient and day
+        treatment); residential services; diversion counseling; services for children
+        age 5 or under who have witnessed family violence (Healthy Homes Program);
+        parenting education and school-based counseling on public and private elementary,
+        middle and high school campuses; family/child/adult therapy in a clinic setting.","emails":["info@star-vista.org"],"hours":"Monday-Friday,
+        9-6; some programs are 24 hours daily or evenings/weekends","kind":"Human
+        Services","languages":["Chinese (Mandarin)","Filipino (Tagalog)","Spanish"],"mail_address":{"attention":"StarVista","city":"San
+        Carlos","state":"CA","street":"610 Elm Street, Suite 212","zip":"94070"},"name":"StarVista","phones":[{"number":"650
+        591-9623","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A family and community-focused
+        program that works with children, youth, adults, and families.","transportation":"SAMTRANS
+        stops within 1 block. CALTRAIN stops within 4 blocks.","updated_at":"2014-03-04T12:57:39-08:00","urls":["http://www.star-vista.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32c01974fcdb2b000169","services":[{"_id":"521d32c01974fcdb2b00016d","description":"Dedicated
+        to enriching the lives of individuals and families by transforming challenges
+        into opportunities. Core values are reflected in the commitment to building
+        skills and enhancing strengths by collaborating with youth, adult and family
+        units as a whole to effect positive change. Provides a comprehensive array
+        of free or low-cost bilingual social services to residents of San Mateo County.
+        StarVista is also committed to an asset-based approach to youth development.
+        Many of the strongest youth programs are structured on the model of helping
+        youth develop assets that will make them well-adjusted, active participants
+        in their communities.   Programs include a 24-hour crisis, alcohol and drug
+        support hotline, and parent resources warmline; services for homeless and
+        runaway youth; substance abuse assessment and treatment (outpatient and day
+        treatment); residential services; diversion counseling; services for children
+        age 5 or under who have witnessed family violence (Healthy Homes Program);
+        parenting education and school-based counseling on public and private elementary,
+        middle and high school campuses; family/child/adult therapy in a clinic setting.","eligibility":"Vary
+        according to service","fees":"Fees vary according to income. Medi-Cal accepted
+        through the county ACCESS program. Cash and checks accepted.","funding_sources":["City","County","Donations","Federal","Fees","Grants","School
+        district","State"],"keywords":["ALCOHOLISM SERVICES","Day Treatment","Residential
+        Care","CHILD PROTECTION AND CARE SERVICES","Crisis/Abuse Intervention/Hot","Individual/Group
+        Counseling","DRUG ABUSE SERVICES","EMERGENCY SERVICES","Telephone Assistance","FAMILY
+        PLANNING SERVICES","Education/Information","INDIVIDUAL AND FAMILY DEVELOPMENT
+        SERVICES","Growth and Adjustment","Diversion","Family Support","Juvenile Delinquency
+        Prevent","MENTAL HEALTH SERVICES","Diversion Programs","General Counseling
+        Services","Telephone Crisis Hotline","Youth","LIfe Counseling","Family Counseling","Family
+        Therapy","Child Therapy"],"service_areas":["San Mateo County"],"updated_at":"2014-03-04T12:57:40-08:00","wait":"Typically,
+        less than 1 week.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","_slugs":["addiction-and-recovery"],"depth":1,"lft":156,"name":"Addiction
+        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000053","_slugs":["outpatient-treatment"],"depth":2,"lft":163,"name":"Outpatient
+        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6a1edd37edff00007b","_slugs":["counseling-1"],"depth":3,"lft":242,"name":"Counseling","oe_id":"106-06-07-01","parent_id":"52280f6a1edd37edff00007a","rgt":243},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f741edd37edff0000e7","_slugs":["support-network"],"depth":1,"lft":460,"name":"Support
+        Network","oe_id":"108-07","parent_id":"52280f711edd37edff0000c4","rgt":487},{"_id":"52280f741edd37edff0000e8","_slugs":["counseling"],"depth":2,"lft":461,"name":"Counseling","oe_id":"108-07-01","parent_id":"52280f741edd37edff0000e7","rgt":462},{"_id":"52280f751edd37edff0000ee","_slugs":["peer-support"],"depth":2,"lft":473,"name":"Peer
+        Support","oe_id":"108-07-06","parent_id":"52280f741edd37edff0000e7","rgt":474},{"_id":"52280f751edd37edff0000f0","_slugs":["support-groups"],"depth":2,"lft":477,"name":"Support
+        Groups","oe_id":"108-07-08","parent_id":"52280f741edd37edff0000e7","rgt":484}]}],"organization":{"_id":"521d32c01974fcdb2b000168","_slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes","starvista-1"],"created_at":"2013-08-27T16:14:08-07:00","name":"StarVista","updated_at":"2014-03-04T10:36:15-08:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000168","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32c01974fcdb2b000168/locations"},"slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes","starvista"],"id":"521d32c01974fcdb2b000169","_score":0.23130672,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32ba1974fcdb2b000065","_slugs":["caminar"],"accessibility":["Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"1720 South Amphlett Blvd., Suite 123","zip":"94402"},"ask_for":["Peg
+        Morris (Executive Director) "],"contacts":[{"_id":"521d32ba1974fcdb2b000066","name":"Peg
+        Morris","title":"Executive Director"}],"coordinates":[-122.3012308,37.5578428],"created_at":"2013-08-27T16:14:02-07:00","description":"A
+        community-based psychosocial rehabilitation service for persons with serious
+        and persistent psychiatric disabilities and co-occurring disorders. Offers
+        case management, supported housing, residential treatment, supported education,
+        vocational assessment and job placement, and a community medication clinic.   Formerly
+        known as Caminar CLC (Community Living Centers).","faxes":[{"number":"650
+        578-8697"}],"hours":"24 hour facility","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Caminar","city":"San
+        Mateo","state":"CA","street":"1720 South Amphlett Blvd., Suite 123","zip":"94402"},"name":"Caminar","phones":[{"number":"650
+        578-8691","hours":"(Monday-Friday, 9-5)"}],"short_desc":"A community-based
+        psychosocial rehabiliation service for persons with serious and persistent
+        psychiatric disabilities.","transportation":"Varies according to program site.","updated_at":"2013-11-07T12:42:47-08:00","urls":["http://www.caminar.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32ba1974fcdb2b000065","services":[{"_id":"521d32ba1974fcdb2b000069","audience":"Persons
+        with serious and persistent mental illness and co-occurring disorders","eligibility":"Resident
+        of San Mateo County, age 18 or over, receiving County of San Mateo mental
+        health services","fees":"Vary according to income. No one denied service due
+        to inability to pay if authorized by County. Cash and private insurance accepted.","funding_sources":["County","Donations","Fees","Grants","State","United
+        Way"],"how_to_apply":"Referral is required by San Mateo County Behavioral
+        Health and Recovery Services Division .","keywords":["MENTAL HEALTH SERVICES","Case
+        Management","Out-of-Home Care","Job Search/Placement","Outpatient Mental Health
+        Facilities","Residential Treatment Facilities","Psychiatric Case Management"],"service_areas":["San
+        Mateo County"],"updated_at":"2013-11-11T00:46:44-08:00","wait":"Varies.","categories":[{"_id":"52280f601edd37edff00001b","_slugs":["housing"],"depth":0,"lft":53,"name":"Housing","oe_id":"103","parent_id":null,"rgt":98},{"_id":"52280f611edd37edff000027","_slugs":["residential-housing"],"depth":1,"lft":76,"name":"Residential
+        Housing","oe_id":"103-05","parent_id":"52280f601edd37edff00001b","rgt":97},{"_id":"52280f611edd37edff000028","_slugs":["housing-with-support"],"depth":2,"lft":77,"name":"Housing
+        with Support","oe_id":"103-05-01","parent_id":"52280f611edd37edff000027","rgt":78},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
+        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000075","_slugs":["mental-health-evaluation"],"depth":3,"lft":230,"name":"Mental
+        Health Evaluation","oe_id":"106-06-04-04","parent_id":"52280f691edd37edff000071","rgt":231},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
+        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6b1edd37edff000086","_slugs":["psychiatric-emergency-services-1"],"depth":2,"lft":265,"name":"Psychiatric
+        Emergency Services","oe_id":"106-06-08","parent_id":"52280f691edd37edff00006d","rgt":266},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","_slugs":["help-find-work-1"],"depth":1,"lft":584,"name":"Help
+        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f791edd37edff000126","_slugs":["job-placement"],"depth":2,"lft":585,"name":"Job
+        Placement","oe_id":"110-01-01","parent_id":"52280f791edd37edff000125","rgt":586},{"_id":"52280f7a1edd37edff000135","_slugs":["supported-employment-1"],"depth":1,"lft":616,"name":"Supported
+        Employment","oe_id":"110-04","parent_id":"52280f791edd37edff000124","rgt":617}]}],"organization":{"_id":"521d32ba1974fcdb2b000064","_slugs":["caminar"],"created_at":"2013-08-27T16:14:02-07:00","name":"Caminar","updated_at":"2013-10-01T12:04:56-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32ba1974fcdb2b000064/locations"},"slugs":["caminar"],"id":"521d32ba1974fcdb2b000065","_score":0.14703,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d334f1974fcdb2b0021b7","_slugs":["family-health-services-dot-public-health-nutrition-dot-women-infants-and-children-wic-program"],"accessibility":["Elevator","Wheelchair"],"address":{"city":"San
+        Mateo","state":"CA","street":"477 9th Avenue, Suite 110","zip":"94402"},"ask_for":["Call
+        the main office"],"contacts":[{"_id":"521d334f1974fcdb2b0021b8","name":"Eliana
+        C. Schultz, RD","title":"WIC Director"}],"coordinates":[-122.3171637,37.5624546],"created_at":"2013-08-27T16:16:31-07:00","description":"Offers
+        nutrition education and supplemental foods to women who are pregnant, post-partum
+        or breastfeeding, and children age 5 or under. Families may be low- or medium-income
+        and working families may also qualify. There are six WIC clinic sites in the
+        county (South San Francisco, East Palo Alto, Redwood City, Daly City, San
+        Mateo and Half Moon Bay). Supplemental food is made available through issuance
+        of coupons redeemable at most grocery stores for certain food items selected
+        to provide essential nutrients. Participation does not affect eligibility
+        for food stamps or other public assistance programs. Also assists in finding
+        health care and other community services. Formerly known as San Mateo County
+        Health Department, Public Health Division. Nutrition Programs. Women, Infants
+        and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
+        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"SMCHS
+        WIC Program","city":"San Mateo","state":"CA","street":"2000 Alameda de las
+        Pulgas, Suite 200","zip":"94403"},"name":"Family Health Services., Public
+        Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"number":"650
+        573-2168","hours":"(Monday-Friday, 8-12, 1-5)"}],"short_desc":"Offers nutrition
+        education and supplemental foods to low-income women who are pregnant, post-partum
+        or breastfeeding.","transportation":"SAMTRANS stops within 1 block.","updated_at":"2013-10-05T14:26:11-07:00","urls":["http://www.smchealth.org/wic"],"url":"http://ohanapi.herokuapp.com/api/locations/521d334f1974fcdb2b0021b7","services":[{"_id":"521d33611974fcdb2b002264","audience":"Pregnant
+        women, new mothers and children age 5 or under","eligibility":"Woman who is
+        pregnant, post-partum (within the first 6 months) or breastfeeding, child
+        age 5 or under who is at nutritional risk","fees":"None.","funding_sources":["Federal"],"how_to_apply":"Apply
+        by phone. Appointment necessary for application.","keywords":["Nutrition Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
+        Planning"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:23-08:00","wait":"2
+        week wait for new enrollees.","categories":[{"_id":"52280f5e1edd37edff000011","_slugs":["food"],"depth":0,"lft":33,"name":"Food","oe_id":"102","parent_id":null,"rgt":52},{"_id":"52280f5f1edd37edff000017","_slugs":["help-pay-for-food"],"depth":1,"lft":44,"name":"Help
+        Pay for Food","oe_id":"102-06","parent_id":"52280f5e1edd37edff000011","rgt":49},{"_id":"52280f5f1edd37edff000019","_slugs":["food-benefits"],"depth":2,"lft":47,"name":"Food
+        Benefits","oe_id":"102-06-02","parent_id":"52280f5f1edd37edff000017","rgt":48},{"_id":"52280f5f1edd37edff00001a","_slugs":["nutrition-1"],"depth":1,"lft":50,"name":"Nutrition","oe_id":"102-07","parent_id":"52280f5e1edd37edff000011","rgt":51},{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
+        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f6a1edd37edff000078","_slugs":["maternity-care"],"depth":2,"lft":237,"name":"Maternity
+        Care","oe_id":"106-06-05","parent_id":"52280f691edd37edff00006d","rgt":238},{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488}]}],"organization":{"_id":"521d334e1974fcdb2b002175","_slugs":["san-mateo-county-health-system"],"created_at":"2013-08-27T16:16:30-07:00","name":"San
+        Mateo County Health System","updated_at":"2013-10-01T12:16:34-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d334e1974fcdb2b002175/locations"},"slugs":["family-health-services-dot-public-health-nutrition-dot-women-infants-and-children-wic-program"],"id":"521d334f1974fcdb2b0021b7","_score":0.088217996,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null},{"_id":"521d32b91974fcdb2b000008","_slugs":["legal-aid-society-of-san-mateo-county"],"accessibility":["Wheelchair"],"address":{"city":"Redwood
+        City","state":"CA","street":"330 Twin Dolphin Drive, Suite 123","zip":"94065"},"ask_for":["Receptionist"],"contacts":[{"_id":"521d32b91974fcdb2b000009","name":"M.
+        Stacey Hawver","title":"Executive Director"},{"_id":"521d32b91974fcdb2b00000a","name":"Hope
+        Nakamura","title":"Directing Attorney"},{"_id":"521d32b91974fcdb2b00000b","name":"Tricia
+        Berke Vinson","title":"Directing Attorney"}],"coordinates":[-122.2584729,37.5210911],"created_at":"2013-08-27T16:14:01-07:00","description":"Provides
+        legal advice and counsel on civil matters to low income individuals, families
+        and groups. Civil cases include divorce, domestic violence, landlord/tenant
+        issues, government benefits, public housing problems, elder abuse and consumer
+        complaints (seniors). The Clients'' Rights Advocate and the Kids in Crisis
+        (KIC) Project help persons with disabilities with problems related to the
+        Americans with Disabilities Act, transit and para-transit, the Golden Gate
+        Regional Center, the San Mateo County Mental Health Division, Social Security
+        Administration, the Regional Center and California Children Services. The
+        Health Consumer Center assists people with problems or questions relating
+        to Medi-Cal, Healthy Families, Healthy Kids, Medicare, Well, and some private
+        insurance. The Teen Parent Project staff works with teen parents on such problems
+        as paternity, domestic violence, benefits and support. The Home Savers provides
+        advice and representation to individuals at risk of eviction. The Family Advocacy
+        Program (FAP), a collaboration with Lucille Packard Children''s Hospital,
+        helps pediatric patients with issues affecting their health. The Seniors Advocates
+        Program provides legal assistance for the elderly concerning elder abuse and
+        consumer issues. Advance Health Directive Clinics are also held several times
+        a year. Staff can visit homebound people.","emails":["jgoldstein@legalaidsmc.org"],"faxes":[{"number":"650
+        517-8973"}],"hours":"Monday-Friday, 9-12, 1-5","kind":"Human Services","languages":["French","Russian","Spanish"],"mail_address":{"attention":"Legal
+        Aid Society","city":"Redwood City","state":"CA","street":"330 Twin Dolphin
+        Drive, Suite 123","zip":"94065"},"name":"Legal Aid Society of San Mateo County","phones":[{"number":"800
+        381-8898"}],"short_desc":"Legal advice and counsel on civil matters for individuals,
+        families and groups whose incomes are below an established level.","transportation":"SAMTRANS
+        stops within 4 blocks.","updated_at":"2013-11-07T12:42:46-08:00","urls":["http://www.legalaidsmc.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b000008","services":[{"_id":"521d32b91974fcdb2b00000e","audience":"Low-income
+        residents of San Mateo County, persons with disabilities, seniors, teen parents","eligibility":"Low
+        income, disabled, or senior","fees":"None for attorney services. Donations
+        welcome.","funding_sources":["Donations","Federal","Grants","United Way"],"how_to_apply":"Apply
+        by phone for appointment and some clinics.","keywords":["Certificates/Forms
+        Assistance","Legal Counseling","Legal Representation","Landlord/Tenant Assistance","Low-Cost","Low
+        Cost"],"service_areas":["San Mateo County"],"updated_at":"2013-11-11T00:46:44-08:00","wait":"1
+        to 2 weeks. Emergencies seen immediately.","categories":[{"_id":"52280f7a1edd37edff000137","_slugs":["legal"],"depth":0,"lft":621,"name":"Legal","oe_id":"111","parent_id":null,"rgt":654},{"_id":"52280f7a1edd37edff000138","_slugs":["advocacy-and-legal-aid"],"depth":1,"lft":622,"name":"Advocacy
+        & Legal Aid","oe_id":"111-01","parent_id":"52280f7a1edd37edff000137","rgt":645},{"_id":"52280f7b1edd37edff00013f","_slugs":["discrimination-and-civil-rights"],"depth":2,"lft":635,"name":"Discrimination
+        & Civil Rights","oe_id":"111-01-03","parent_id":"52280f7a1edd37edff000138","rgt":636},{"_id":"52280f7c1edd37edff000146","_slugs":["representation"],"depth":1,"lft":650,"name":"Representation","oe_id":"111-04","parent_id":"52280f7a1edd37edff000137","rgt":651}]}],"organization":{"_id":"521d32b91974fcdb2b000007","_slugs":["legal-aid-society-of-san-mateo-county"],"created_at":"2013-08-27T16:14:01-07:00","name":"Legal
+        Aid Society of San Mateo County","updated_at":"2013-10-01T12:04:48-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b000007/locations"},"slugs":["legal-aid-society-of-san-mateo-county"],"id":"521d32b91974fcdb2b000008","_score":0.073515,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+    http_version: 
+  recorded_at: Thu, 08 May 2014 07:08:12 GMT
 recorded_with: VCR 2.8.0

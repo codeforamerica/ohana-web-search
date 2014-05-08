@@ -2,56 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:38:30 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 23f1c617-e788-459c-b90f-ebd57bdbb2ac
-      X-Runtime:
-      - '0.025764'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:30 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:33 GMT
+      - Thu, 08 May 2014 04:28:31 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -82,9 +33,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 622d352d-63bb-4623-8522-294dde856891
+      - 0f6c9c9b-507f-43a8-87f4-ecf182efa04c
       X-Runtime:
-      - '0.025456'
+      - '0.019670'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -99,53 +50,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:34 GMT
+  recorded_at: Thu, 08 May 2014 04:28:31 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 15 Apr 2014 07:55:56 GMT
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - be7a3f6e-ca22-4b6f-ab90-d244bf7cd36d
-      X-Runtime:
-      - '0.178902'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version: 
-  recorded_at: Tue, 15 Apr 2014 07:55:56 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -168,7 +76,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 15 Apr 2014 07:55:56 GMT
+      - Thu, 08 May 2014 06:13:46 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -176,9 +84,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5541aa43-183c-4568-85a7-fd49461b65ef
+      - 5ef2a143-e7df-4a99-a21c-b3ca2bdecdd9
       X-Runtime:
-      - '0.026495'
+      - '0.020185'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -193,5 +101,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 15 Apr 2014 07:55:56 GMT
+  recorded_at: Thu, 08 May 2014 06:13:46 GMT
 recorded_with: VCR 2.8.0

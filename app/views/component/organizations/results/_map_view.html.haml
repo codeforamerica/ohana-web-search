@@ -1,19 +1,7 @@
-- if @map_data.present?
-	%section#map-view
-		-# literal HTML is needed here to avoid haml introducing a space between the paragraphs
-		<div id='search-summary-container'><p id='map-view-control'></p><div id='search-summary' title="#{@search_summary_plain}">
-		<div>
-		= @search_summary_html
-		</div>
-		<div>
-		= @map_search_summary_html
-		</div>
-		</div>
-		</div>
-
-		%div#map-canvas
-		= render 'component/search/map_data'
-		%noscript
-			%style>
-				-# hides map when JS is disabled
-				= "#map-view {display:none;}"
+%section#map-view
+  %div#map-canvas
+  = render 'component/search/map_data'
+  %noscript
+    %style>
+      -# hides map when JS is disabled
+      = "#map-view {display:none !important;}"

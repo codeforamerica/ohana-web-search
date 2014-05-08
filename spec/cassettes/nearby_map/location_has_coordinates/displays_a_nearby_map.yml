@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c
+    uri: http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,15 +25,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:36:52 GMT
+      - Thu, 08 May 2014 04:29:06 GMT
       Etag:
       - '"43d484af781a077879cc2f7b16b6db6a"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - f4a273ce-1eb1-46ff-bbf1-682a7c3c674e
+      - 18686dd2-60ce-44c4-9b6b-3014996e7caf
       X-Runtime:
-      - '0.062890'
+      - '0.103227'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -71,79 +73,7 @@ http_interactions:
         weeks - 3 months for public hearings. Appointment encouraged.","updated_at":"2013-11-11T00:44:12-08:00"}],"organization":{"id":"521d32b91974fcdb2b00001b","name":"San
         Mateo County Local Agency Formation Commission (LAFCO)","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:36:52 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:36:52 GMT
-      Etag:
-      - '"43d484af781a077879cc2f7b16b6db6a"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 248da437-8302-4632-8e4b-5449771bfd65
-      X-Runtime:
-      - '0.049342'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '3041'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"521d32b91974fcdb2b00001c","accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"street":"455 County
-        Center, Second Floor","city":"Redwood City","state":"CA","zip":"94063-1646"},"ask_for":["Martha
-        Poyatos"],"contacts":[{"id":"521d32b91974fcdb2b00001d","name":"Martha Poyatos","title":"Executive
-        Officer"}],"coordinates":[-122.2802261,37.5636454],"description":"This Commission
-        convenes by authority of the Cortese-Knox-Hertzberg Local Government Reorganization
-        Act of 2000, Section 56000 Et Seq. of the Government Code. The seven commission
-        members are appointed by the Board of Supervisors, the mayors of cities, chair
-        of special district boards and the commission itself to represent the county,
-        cities, special districts and the general public.  The commission reviews
-        proposals for the incorporation of cities, annexation to cities, detachment
-        from cities, formation of districts, dissolution of districts, annexation
-        to and detachment from districts. Initiates and makes studies of existing
-        governmental agencies determining the maximum service area and service capabilities.
-        Public meetings are held every third Wednesday of every odd-numbered month
-        at the Redwood City Hall of Justice, Board of Supervisors'' Chamber, 2:30
-        pm.","emails":["mpoyatos@co.sanmateo.ca.us"],"faxes":[{"number":"650 363-4849"}],"hours":"Monday-Friday,
-        8-12, 1-5","kind":"Government","languages":["Spanish"],"mail_address":{"attention":"Local
-        Agency Formation Comm","street":"455 County Center, Second Floor","city":"Redwood
-        City","state":"CA","zip":"94063-1646"},"name":"San Mateo County Local Agency
-        Formation Commission (LAFCO)","phones":[{"number":"650 363-4224","hours":"(Monday-Friday,
-        8-12, 1-5)"}],"short_desc":"Reviews proposals for the incorporation, annexation
-        and dissolution of cities and districts.","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2013-11-07T12:42:46-08:00","urls":["http://www.sanmateolafco.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c","services":[{"id":"521d32b91974fcdb2b000020","eligibility":"None","fees":"Fees
-        vary according to type of proposal. Cash and checks accepted.","funding_sources":["City","County","Fees","Special
-        district"],"keywords":["ADMINISTRATION AND PLANNING SERVICES","Commissions,
-        Councils, or Boards","Planning/Coordinating/Advisory Groups"],"how_to_apply":"Apply
-        by petition or resolution of public agency.","service_areas":["San Mateo County"],"wait":"5
-        weeks - 3 months for public hearings. Appointment encouraged.","updated_at":"2013-11-11T00:44:12-08:00"}],"organization":{"id":"521d32b91974fcdb2b00001b","name":"San
-        Mateo County Local Agency Formation Commission (LAFCO)","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:36:52 GMT
+  recorded_at: Thu, 08 May 2014 04:29:06 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c?api_token=<API_TOKEN>
@@ -169,15 +99,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:45:16 GMT
+      - Thu, 08 May 2014 04:29:07 GMT
       Etag:
       - '"43d484af781a077879cc2f7b16b6db6a"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 6560383e-c302-4a90-80db-caee9cc46f76
+      - 5f267aec-975b-4865-80e2-1b6c7b327d0f
       X-Runtime:
-      - '0.067451'
+      - '0.119385'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -217,79 +147,5 @@ http_interactions:
         weeks - 3 months for public hearings. Appointment encouraged.","updated_at":"2013-11-11T00:44:12-08:00"}],"organization":{"id":"521d32b91974fcdb2b00001b","name":"San
         Mateo County Local Agency Formation Commission (LAFCO)","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:16 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c?api_token=<API_TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:45:16 GMT
-      Etag:
-      - '"43d484af781a077879cc2f7b16b6db6a"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 234fe655-18d1-403f-831d-0649d3b246e1
-      X-Runtime:
-      - '0.071215'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '3041'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"521d32b91974fcdb2b00001c","accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"street":"455 County
-        Center, Second Floor","city":"Redwood City","state":"CA","zip":"94063-1646"},"ask_for":["Martha
-        Poyatos"],"contacts":[{"id":"521d32b91974fcdb2b00001d","name":"Martha Poyatos","title":"Executive
-        Officer"}],"coordinates":[-122.2802261,37.5636454],"description":"This Commission
-        convenes by authority of the Cortese-Knox-Hertzberg Local Government Reorganization
-        Act of 2000, Section 56000 Et Seq. of the Government Code. The seven commission
-        members are appointed by the Board of Supervisors, the mayors of cities, chair
-        of special district boards and the commission itself to represent the county,
-        cities, special districts and the general public.  The commission reviews
-        proposals for the incorporation of cities, annexation to cities, detachment
-        from cities, formation of districts, dissolution of districts, annexation
-        to and detachment from districts. Initiates and makes studies of existing
-        governmental agencies determining the maximum service area and service capabilities.
-        Public meetings are held every third Wednesday of every odd-numbered month
-        at the Redwood City Hall of Justice, Board of Supervisors'' Chamber, 2:30
-        pm.","emails":["mpoyatos@co.sanmateo.ca.us"],"faxes":[{"number":"650 363-4849"}],"hours":"Monday-Friday,
-        8-12, 1-5","kind":"Government","languages":["Spanish"],"mail_address":{"attention":"Local
-        Agency Formation Comm","street":"455 County Center, Second Floor","city":"Redwood
-        City","state":"CA","zip":"94063-1646"},"name":"San Mateo County Local Agency
-        Formation Commission (LAFCO)","phones":[{"number":"650 363-4224","hours":"(Monday-Friday,
-        8-12, 1-5)"}],"short_desc":"Reviews proposals for the incorporation, annexation
-        and dissolution of cities and districts.","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2013-11-07T12:42:46-08:00","urls":["http://www.sanmateolafco.org"],"url":"http://ohanapi.herokuapp.com/api/locations/521d32b91974fcdb2b00001c","services":[{"id":"521d32b91974fcdb2b000020","eligibility":"None","fees":"Fees
-        vary according to type of proposal. Cash and checks accepted.","funding_sources":["City","County","Fees","Special
-        district"],"keywords":["ADMINISTRATION AND PLANNING SERVICES","Commissions,
-        Councils, or Boards","Planning/Coordinating/Advisory Groups"],"how_to_apply":"Apply
-        by petition or resolution of public agency.","service_areas":["San Mateo County"],"wait":"5
-        weeks - 3 months for public hearings. Appointment encouraged.","updated_at":"2013-11-11T00:44:12-08:00"}],"organization":{"id":"521d32b91974fcdb2b00001b","name":"San
-        Mateo County Local Agency Formation Commission (LAFCO)","slugs":["san-mateo-county-local-agency-formation-commission-lafco"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d32b91974fcdb2b00001b/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:16 GMT
+  recorded_at: Thu, 08 May 2014 04:29:07 GMT
 recorded_with: VCR 2.8.0

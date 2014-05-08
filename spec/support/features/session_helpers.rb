@@ -20,8 +20,14 @@ module Features
       find('#find-btn').click
     end
 
+    # Perform a search that returns 1 result
     def search_for_maceo
-      visit('/organizations?utf8=✓&keyword=maceo')
+      visit('/organizations?keyword=maceo')
+    end
+
+    # Perform a search that returns no results
+    def search_for_no_results
+      visit('/organizations?keyword=asdfdsggfdg')
     end
 
 
@@ -140,7 +146,6 @@ module Features
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
-      expect(page).to have_selector("#search-summary")
       expect(page).not_to have_selector('#map-canvas')
     end
 

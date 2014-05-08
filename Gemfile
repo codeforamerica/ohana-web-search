@@ -7,10 +7,10 @@ gem 'rails', '3.2.17'
 group :assets do
   gem 'html5shiv-rails' # needed for IE polyfill of sectioning content
   gem 'selectivizr-rails' # needed for IE polyfill of modern CSS selectors
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'font-awesome-sass' #font-awesome icons
-  gem 'compass-rails'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '>= 3.2.6'
+  gem 'font-awesome-sass', '>= 4.0.3.1' #font-awesome icons
+  gem 'compass-rails', '>= 1.1.7'
+  gem 'uglifier', '>= 2.5.0'
 end
 
 gem 'requirejs-rails', '0.9.1'
@@ -59,6 +59,7 @@ group :development do
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
   gem "letter_opener" # for mocking emails for sending
+  gem 'jshintrb' # for linting JS with `rake jshint`
 end
 
 group :test do

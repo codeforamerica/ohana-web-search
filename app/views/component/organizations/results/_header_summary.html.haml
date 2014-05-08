@@ -1,30 +1,22 @@
-%div.static-content
-	- unless pages[:total_pages] == 0
-		%span.pagination
-			Page:
-			- if pages[:prev_page].present?
-				%span.prev
-					= link_to "<", {:page=>pages[:prev_page]}.merge(@page_params), :target=>"_self"
+%div
+  %div.left-column
+    %span.static-content><
+      - if @map_data.present?
+        %a#map-view-control{ :href => '#', :class=>"button-utility button-map-zoom"}
+          %i{ :class => "fa fa-plus-square" }
+          Larger map
+    %p.search-summary
+      %span
+        = @search_summary_html
+      %span.map-summary.static-content
+        = @map_search_summary_html
 
-			- if pages[:pages][0] != 1
-				= link_to '1', {:page=>1}.merge(@page_params), :target=>"_self"
-			- if pages[:total_pages] > 1 && pages[:pages][1] != 2
-				= "..."
+  %div.right-column
+    %div.floating-content.hide><
+      %span
+        %a{ :href => '#', :class=>"button-utility button-top"}
+          %i{ :class => "fa fa-chevron-up" }
+          Top
 
-			- pages[:pages].each do |page|
-
-				- if page == pages[:current_page]
-					%span.current
-						= pages[:current_page]
-				- else
-					= link_to page, {:page=>page}.merge(@page_params), :target=>"_self"
-
-			- far_last_item = pages[:pages][pages[:pages].length-1]
-			- near_last_item = pages[:pages][pages[:pages].length-2]
-			- if near_last_item != far_last_item && far_last_item != pages[:total_pages]
-				= "..."
-			- if far_last_item != pages[:total_pages]
-				= link_to pages[:total_pages], {:page=>pages[:total_pages]}.merge(@page_params), :target=>"_self"
-			- if pages[:next_page].present?
-				%span.next
-					= link_to ">", {:page=>pages[:next_page]}.merge(@page_params), :target=>"_self"
+    - unless pages[:total_pages] == 0
+      = render :partial => 'component/organizations/results/pagination', :locals => {:pages=>@pages}

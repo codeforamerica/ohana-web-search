@@ -1,89 +1,69 @@
-require 'spec_helper'
+require "spec_helper"
 
-feature "homepage search", :js=>true do
+describe "Home page header elements" do
 
-  scenario 'with keyword that returns results', :vcr do
-    search_for_maceo
-    looks_like_results
-    expect(find_field("keyword").value).to eq("maceo")
-    expect(page).not_to have_content("1 result located!")
+  before(:each) do
+    visit "/"
   end
 
-  scenario 'with keyword that returns no results', :vcr do
-    search_from_home(:keyword => 'asdfg')
-    looks_like_no_results
-    expect(page).not_to have_content("No results located!")
+  it 'includes correct title' do
+    expect(page).to have_title "SMC-Connect"
   end
 
-    scenario "when searching for 'food stamps'", :vcr do
-    search_from_home(:keyword => 'food stamps')
-    expect(page).to have_content("Known federally as SNAP")
+  it 'includes utility links' do
+    expect(page).to have_content "About"
+    expect(page).to have_content "Contribute"
+    expect(page).to have_content "Feedback"
   end
 
-  scenario "when searching for 'health care reform'", :vcr do
-    search_from_home(:keyword => 'Health care reform')
-    expect(page).to have_content("Millions of Californians can choose")
+end
+
+describe "Home page content elements" do
+
+  before(:each) do
+    visit "/"
   end
 
-  scenario "when searching for 'market match'", :vcr do
-    search_from_home(:keyword => 'market match')
-    expect(page).to have_content("an extra $5 when they spend at least $10")
+  it 'includes english language status' do
+    expect(find("#language-box")).to have_content("English")
   end
 
-  scenario "when searching for 'sfmnp'", :vcr do
-    search_from_home(:keyword => 'SFMNP')
-    expect(page).to have_content("provides low-income seniors with coupons")
+  it 'includes general-services category links' do
+    within("#general-services") do
+      expect(page).to have_content "government assistance"
+    end
   end
 
-  scenario "when searching for 'wic'", :vcr do
-    search_from_home(:keyword => 'wic')
-    expect(page).to have_content("provides assistance for low-income")
+  it 'includes emergency-services category links' do
+    within("#emergency-services") do
+      expect(page).to have_content "reporting"
+    end
   end
 
-  scenario "when clicking a category", :vcr do
-    visit("/")
-    click_link("Health Insurance")
-    expect(page).to have_content("A project of the Tides Center")
+end
+
+describe "Home page footer elements" do
+
+  before(:each) do
+    visit "/"
   end
 
-  xscenario "when result has keyword matching top-level category", :vcr do
-    visit("/")
-    click_link("Market Match")
-    expect(page).to have_link("Food")
+  it "includes a link to ohanapi.org" do
+    within("#app-footer") do
+      expect(find_link('view project details')[:href]).to eq('http://ohanapi.org')
+    end
   end
 
-  # location is no longer displayed on homepage. Leaving this in case it's re-added.
-  xscenario 'with location that returns results', :vcr do
-    search_from_home(:location => '94060')
-    looks_like_puente
-    expect(find_field("location").value).to eq("94060")
-    expect(page).not_to have_content("1 result located!")
+  it "includes a link to codeforamerica.org" do
+    within("#app-footer") do
+      expect(find_link('Code for America')[:href]).to eq('http://codeforamerica.org')
+    end
   end
 
-  xscenario 'with location that returns no results', :vcr do
-    search_from_home(:location => 'asdfg')
-    looks_like_no_results
-    expect(page).not_to have_content("No results located!")
+  it "includes a link to the ohana-web-search GitHub repo" do
+    within("#app-footer") do
+      expect(find_link('Get this app')[:href]).
+        to eq('https://github.com/codeforamerica/ohana-web-search')
+    end
   end
-
-  xscenario 'with keyword and location that returns results', :vcr do
-    search_from_home(:keyword => "puente", :location => '94060')
-    looks_like_puente
-    expect(find_field("location").value).to eq("94060")
-    expect(page).not_to have_content("1 result located!")
-  end
-
-  xscenario 'with keyword and location that returns no results', :vcr do
-    search_from_home(:keyword => "sdaff", :location => '94403')
-    looks_like_no_results
-    expect(page).not_to have_content("No results located!")
-  end
-
-  scenario "when click Kind link", :vcr do
-    visit('/organizations?keyword=soccer')
-    page.first("a", text: "Other").click
-    expect(find("#list-view")).not_to have_content("Sports")
-    expect(page).to have_content("557 results")
-  end
-
 end

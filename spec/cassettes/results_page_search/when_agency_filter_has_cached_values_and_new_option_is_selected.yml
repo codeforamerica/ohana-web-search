@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:38:12 GMT
+      - Thu, 08 May 2014 04:27:42 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -31,9 +33,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - b9d0741d-b000-42a6-9068-83c21ce510c4
+      - 2c63c7f5-b45e-4900-9150-2d9de510f745
       X-Runtime:
-      - '0.042317'
+      - '0.020846'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -48,10 +50,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:12 GMT
+  recorded_at: Thu, 08 May 2014 04:27:42 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -60,6 +62,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -72,12 +76,12 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:38:13 GMT
+      - Thu, 08 May 2014 04:27:43 GMT
       Etag:
       - '"8b83a9a26eccceef97ead37d06a62c6d"'
       Link:
-      - <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&kind=Human+Services&page=20&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&kind=Human+Services&page=2&service_area=smc&utf8=%E2%9C%93>;
+      - <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human+Services&page=23&utf8=%E2%9C%93>;
+        rel="last", <http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human+Services&page=2&utf8=%E2%9C%93>;
         rel="next"
       X-Current-Page:
       - '1'
@@ -86,13 +90,13 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 4738168a-8352-4eca-8651-5aee2691e353
+      - 618d8548-bc87-455c-a025-520b82b4e48e
       X-Runtime:
-      - '0.185604'
+      - '0.401351'
       X-Total-Count:
-      - '589'
+      - '678'
       X-Total-Pages:
-      - '20'
+      - '23'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -1121,10 +1125,10 @@ http_interactions:
         for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council","st-vincent-de-paul-county-wide-services"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:13 GMT
+  recorded_at: Thu, 08 May 2014 04:27:45 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=San%20Mateo%20County%20Human%20Services%20Agency&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&org_name=San%20Mateo%20County%20Human%20Services%20Agency&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -1133,6 +1137,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -1145,7 +1151,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:38:15 GMT
+      - Thu, 08 May 2014 04:27:47 GMT
       Etag:
       - '"da284427f2a46d3f09619ebb0b3be205"'
       X-Current-Page:
@@ -1153,9 +1159,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - eea8c5cf-8bb2-4ebe-8905-0bdad05313c2
+      - 14c8f633-9101-4aaf-b6a1-d9d01121707b
       X-Runtime:
-      - '0.310587'
+      - '0.199760'
       X-Total-Count:
       - '11'
       X-Total-Pages:
@@ -1581,10 +1587,53 @@ http_interactions:
         Development","oe_id":"110-03-05","parent_id":"52280f7a1edd37edff00012d","rgt":610}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
         Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["jobs-for-youth"],"id":"521d33741974fcdb2b0022b7","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:15 GMT
+  recorded_at: Thu, 08 May 2014 04:27:47 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 08 May 2014 05:16:42 GMT
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - a6aa8649-24de-4b63-bd5d-08051130de4f
+      X-Runtime:
+      - '0.060334'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
+    http_version: 
+  recorded_at: Thu, 08 May 2014 05:16:42 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
     body:
       encoding: US-ASCII
       string: ''
@@ -1607,7 +1656,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:53 GMT
+      - Thu, 08 May 2014 05:16:42 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -1615,9 +1664,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - a9558e0e-87c5-4f2f-802d-70921594d62f
+      - d8011693-4734-4920-95e3-1f62cc829296
       X-Runtime:
-      - '0.026173'
+      - '0.030772'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -1632,7 +1681,58 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:53 GMT
+  recorded_at: Thu, 08 May 2014 05:16:42 GMT
+- request:
+    method: get
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 08 May 2014 06:14:25 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Current-Page:
+      - '1'
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - abf69905-c3d4-404b-aeb1-b2949b324090
+      X-Runtime:
+      - '0.024673'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 08 May 2014 06:14:25 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
@@ -1658,7 +1758,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:54 GMT
+      - Thu, 08 May 2014 06:14:26 GMT
       Etag:
       - '"8b83a9a26eccceef97ead37d06a62c6d"'
       Link:
@@ -1672,9 +1772,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 249e9c5d-7432-4d1d-8e8c-890c17574dbe
+      - 03ce41a7-04a1-40f5-aeb6-fb186c0bf0a4
       X-Runtime:
-      - '0.172133'
+      - '0.152520'
       X-Total-Count:
       - '589'
       X-Total-Pages:
@@ -2707,7 +2807,7 @@ http_interactions:
         for Housing","oe_id":"107-02-04-01","parent_id":"52280f6d1edd37edff0000a0","rgt":319}]}],"organization":{"_id":"521d338e1974fcdb2b002526","_slugs":["st-vincent-de-paul-society-1"],"created_at":"2013-08-27T16:17:34-07:00","name":"St.
         Vincent de Paul Society","updated_at":"2013-10-01T12:18:04-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d338e1974fcdb2b002526/locations"},"slugs":["san-mateo-county-district-council","st-vincent-de-paul-county-wide-services"],"id":"521d338e1974fcdb2b002527","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645454000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:54 GMT
+  recorded_at: Thu, 08 May 2014 06:14:26 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&org_name=San%20Mateo%20County%20Human%20Services%20Agency&service_area=smc&utf8=%E2%9C%93
@@ -2733,7 +2833,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:56 GMT
+      - Thu, 08 May 2014 06:19:48 GMT
       Etag:
       - '"da284427f2a46d3f09619ebb0b3be205"'
       X-Current-Page:
@@ -2741,9 +2841,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 85955f73-b04c-4c57-9135-098541bca380
+      - 1bb3a071-5aea-4bd6-a965-9b5e9d7714eb
       X-Runtime:
-      - '0.092355'
+      - '0.074132'
       X-Total-Count:
       - '11'
       X-Total-Pages:
@@ -3169,5 +3269,5 @@ http_interactions:
         Development","oe_id":"110-03-05","parent_id":"52280f7a1edd37edff00012d","rgt":610}]}],"organization":{"_id":"521d33741974fcdb2b002289","_slugs":["san-mateo-county-human-services-agency"],"created_at":"2013-08-27T16:17:08-07:00","name":"San
         Mateo County Human Services Agency","updated_at":"2013-10-01T12:16:59-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33741974fcdb2b002289/locations"},"slugs":["jobs-for-youth"],"id":"521d33741974fcdb2b0022b7","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645428000],"highlight":null,"_explanation":null}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:56 GMT
+  recorded_at: Thu, 08 May 2014 06:19:48 GMT
 recorded_with: VCR 2.8.0

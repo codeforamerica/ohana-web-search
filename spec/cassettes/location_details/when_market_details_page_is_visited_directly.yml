@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e
+    uri: http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,15 +25,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:37:14 GMT
+      - Thu, 08 May 2014 04:29:35 GMT
       Etag:
       - '"e67fc3d9d8e58d864779759f54c4cd45"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 63a81fc8-ae2c-4a83-8fd1-21e583e3eb18
+      - 822146f6-1165-4f6f-975c-57bf2f429078
       X-Runtime:
-      - '0.032437'
+      - '0.033096'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -48,56 +50,7 @@ http_interactions:
         Food","Soap"],"slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2013-10-01T12:18:54-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"id":"522dee234becffff2700000d","name":"Coastside
         Farmers'' Market of Pacifca","slugs":["coastside-farmers-market-of-pacifca"],"url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:14 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:37:14 GMT
-      Etag:
-      - '"e67fc3d9d8e58d864779759f54c4cd45"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - af6b202b-3116-4295-9072-75f452456ebd
-      X-Runtime:
-      - '0.033382'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '1089'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"522dee234becffff2700000e","address":{"street":"400 Old County
-        Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
-        - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November & December)","kind":"Farmers''
-        Markets","market_match":false,"name":"Coastside Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
-        Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
-        Food","Soap"],"slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2013-10-01T12:18:54-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"id":"522dee234becffff2700000d","name":"Coastside
-        Farmers'' Market of Pacifca","slugs":["coastside-farmers-market-of-pacifca"],"url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:14 GMT
+  recorded_at: Thu, 08 May 2014 04:29:35 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e?api_token=<API_TOKEN>
@@ -123,15 +76,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:45:50 GMT
+      - Thu, 08 May 2014 04:29:35 GMT
       Etag:
       - '"e67fc3d9d8e58d864779759f54c4cd45"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 14b812a8-e288-4f09-8eab-33c772a564fc
+      - 7e1164ac-dc48-49f0-b208-a4485e4c132f
       X-Runtime:
-      - '0.029787'
+      - '0.031251'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -148,56 +101,5 @@ http_interactions:
         Food","Soap"],"slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2013-10-01T12:18:54-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"id":"522dee234becffff2700000d","name":"Coastside
         Farmers'' Market of Pacifca","slugs":["coastside-farmers-market-of-pacifca"],"url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:50 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e?api_token=<API_TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:45:50 GMT
-      Etag:
-      - '"e67fc3d9d8e58d864779759f54c4cd45"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - a3a236bf-5517-4812-adbf-a1a7f71c1263
-      X-Runtime:
-      - '0.025343'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '1089'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"522dee234becffff2700000e","address":{"street":"400 Old County
-        Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
-        - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November & December)","kind":"Farmers''
-        Markets","market_match":false,"name":"Coastside Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
-        Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
-        Food","Soap"],"slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2013-10-01T12:18:54-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://ohanapi.herokuapp.com/api/locations/522dee234becffff2700000e","organization":{"id":"522dee234becffff2700000d","name":"Coastside
-        Farmers'' Market of Pacifca","slugs":["coastside-farmers-market-of-pacifca"],"url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/522dee234becffff2700000d/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:50 GMT
+  recorded_at: Thu, 08 May 2014 04:29:35 GMT
 recorded_with: VCR 2.8.0

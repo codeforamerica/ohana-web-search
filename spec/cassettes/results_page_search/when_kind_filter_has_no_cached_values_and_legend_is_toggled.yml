@@ -2,146 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:38:04 GMT
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 327e9a5d-4b75-45be-bcde-3da672ffc773
-      X-Runtime:
-      - '0.033407'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:04 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?keyword=asdfasg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:38:05 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 44da27c4-8b1e-43e5-8f33-d32e58f9b9d2
-      X-Runtime:
-      - '0.018183'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:05 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:38:06 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 5745e353-bcba-4179-b3e2-104bfa4ec8fe
-      X-Runtime:
-      - '0.021833'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:06 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -164,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:47:06 GMT
+      - Thu, 08 May 2014 04:27:59 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -172,9 +33,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5a5a4f3b-a745-4383-b680-699303f9b83f
+      - d3273573-2ad6-4c4c-978e-719dae75afa6
       X-Runtime:
-      - '0.028983'
+      - '0.025098'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -189,10 +50,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:47:06 GMT
+  recorded_at: Thu, 08 May 2014 04:27:59 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -215,7 +76,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 06:07:11 GMT
+      - Thu, 08 May 2014 06:13:54 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -223,9 +84,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - ddce416f-0961-4619-85ac-e7780d7bbb25
+      - 5af719d1-a331-4643-acd3-8275312520ae
       X-Runtime:
-      - '0.031691'
+      - '0.021512'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -240,7 +101,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 06:07:11 GMT
+  recorded_at: Thu, 08 May 2014 06:13:54 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
@@ -266,13 +127,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 22:30:41 GMT
+      - Thu, 08 May 2014 06:27:06 GMT
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 49ef0f98-66df-4923-b3de-17dbda2c9fde
+      - c2c32a39-a636-441b-81a2-5008f95d0e4a
       X-Runtime:
-      - '0.059107'
+      - '0.072051'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -283,7 +144,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 22:30:41 GMT
+  recorded_at: Thu, 08 May 2014 06:27:06 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
@@ -309,7 +170,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 22:30:41 GMT
+      - Thu, 08 May 2014 06:27:06 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       X-Current-Page:
@@ -317,9 +178,9 @@ http_interactions:
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - c1a89034-a233-4e27-91f0-06c2de56e3a6
+      - 565afcb9-3b4d-4434-9675-b90365dba6f5
       X-Runtime:
-      - '0.021746'
+      - '0.024567'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -334,7 +195,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 22:30:41 GMT
+  recorded_at: Thu, 08 May 2014 06:27:06 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
@@ -360,13 +221,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 22:33:21 GMT
+      - Thu, 08 May 2014 07:11:48 GMT
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 84607b3a-09a5-438b-b691-de8930ee9187
+      - 88221b23-ef09-4e04-9bf6-46e8c57403a2
       X-Runtime:
-      - '0.096156'
+      - '0.064794'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -377,5 +238,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 22:33:21 GMT
+  recorded_at: Thu, 08 May 2014 07:11:48 GMT
 recorded_with: VCR 2.8.0

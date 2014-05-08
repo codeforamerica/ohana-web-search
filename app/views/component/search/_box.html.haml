@@ -1,22 +1,25 @@
 = form_tag('/organizations', :method => :get, :id=>"search-form") do
   %section#search-box
     %div
-      %section#keyword-search-box>
-        %label{:for => "keyword"}
-          I need...
-        = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
+      %div
+        %section#keyword-search-box>
+          %label{:for => "keyword"}
+            I need...
+          %div.input-search-big
+            = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
 
-        -#
-          - cache ['keywords-list', *cip_keywords] do
-            %datalist#search-keywords
-              <!--[if IE 8]><select disabled style="display:none"><![endif]-->
-              - cip_keywords.each do |keyword|
-                %option{:value=>keyword}
-                  = keyword
-              <!--[if IE 8]> </select> <![endif]-->
-        = hidden_field_tag "service_area", "smc"
-        = hidden_field_tag "kind", "Human Services"
+            -#
+              - cache ['keywords-list', *cip_keywords] do
+                %datalist#search-keywords
+                  <!--[if IE 8]><select disabled style="display:none"><![endif]-->
+                  - cip_keywords.each do |keyword|
+                    %option{:value=>keyword}
+                      = keyword
+                  <!--[if IE 8]> </select> <![endif]-->
+            = hidden_field_tag "service_area", "smc"
+            = hidden_field_tag "kind", "Human Services"
 
-      %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
-        %i{:class=>"fa fa-search"}
-        %span Search
+            %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+              %i{:class=>"fa fa-search"}
+              %span Search
+        = render :partial => 'component/search/geolocate'

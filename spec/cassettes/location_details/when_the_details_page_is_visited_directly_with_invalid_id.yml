@@ -2,48 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/1234
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:37:12 GMT
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - e77a23f5-5aab-432e-9a72-157f9d21f7db
-      X-Runtime:
-      - '0.027395'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '76'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"Not Found","message":"The requested resource could not be
-        found."}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:12 GMT
-- request:
-    method: get
     uri: http://ohanapi.herokuapp.com/api/locations/1234?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
@@ -67,13 +25,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:45:49 GMT
+      - Thu, 08 May 2014 04:29:17 GMT
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 46ac6170-4b3d-4816-b47f-07f317f2f7f1
+      - 85a115fb-04cb-46b5-8ab3-90fb8242b54e
       X-Runtime:
-      - '0.007662'
+      - '0.009296'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -85,5 +43,5 @@ http_interactions:
       string: '{"error":"Not Found","message":"The requested resource could not be
         found."}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:50 GMT
+  recorded_at: Thu, 08 May 2014 04:29:17 GMT
 recorded_with: VCR 2.8.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581
+    uri: http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581?api_token=<API_TOKEN>
     body:
       encoding: US-ASCII
       string: ''
@@ -11,6 +11,8 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
+      X-Api-Token:
+      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,15 +25,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:36:53 GMT
+      - Thu, 08 May 2014 04:29:08 GMT
       Etag:
       - '"f29abbc2b38af41b148a0e38643ee2eb"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5ad7b2bd-d685-4750-86b6-1495fc28416b
+      - 6382bb03-06ac-4e2a-ad0e-5b5cd1bd8a3f
       X-Runtime:
-      - '0.042070'
+      - '0.125417'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -63,71 +65,7 @@ http_interactions:
         Crisis Intervention","Substance Abuse Referrals"],"how_to_apply":"Apply by
         phone.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-03-10T13:38:49-07:00"}],"organization":{"id":"521d33901974fcdb2b002568","name":"StarVista","slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes-1","starvista"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:36:53 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:36:53 GMT
-      Etag:
-      - '"f29abbc2b38af41b148a0e38643ee2eb"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 845d1376-7d38-41cb-9713-f64597b5a974
-      X-Runtime:
-      - '0.045078'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2519'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"521d33901974fcdb2b002581","contacts":[{"id":"531e22d6bad40623ec000002","name":"Julie
-        Kinloch, LCSW","title":"Program Manager"}],"description":"Provides information
-        about alcohol and drug recovery programs and referrals to community services.
-        Offers support for persons dealing with their own alcohol and drug issues
-        or for those whose lives have been affected by alcohol and drug abuse. All
-        services provided over the phone.   Formerly known as Youth and Family Enrichment
-        Services (YFES).","emails":["julie.kinloch@star-vista.org"],"hours":"24 hours
-        daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"StarVista/Alcohol
-        and Drug Helpline","street":"610 Elm Street, Suite 212","city":"San Carlos","state":"CA","zip":"94070"},"name":"Alcohol
-        and Drug Helpline","phones":[{"number":"650 573-3950","department":"Hotline","hours":"(24
-        hours daily)"}],"short_desc":"A 24-hour hotline offering information on alcohol
-        and drug treatment services.","slugs":["alcohol-and-drug-helpline-department-of-health-and-recovery-services","alcohol-and-drug-helpline"],"transportation":"Not
-        necessary for service.","updated_at":"2014-03-10T13:38:46-07:00","urls":["http://www.star-vista.org/what_we_do/alcohol_drugs/"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581","services":[{"id":"521d33921974fcdb2b00259d","audience":"People
-        who desire information or referrals for themselves or others regarding drug
-        and alcohol problems","description":"Provides information about alcohol and
-        drug recovery programs and referrals to community services. Offers support
-        for persons dealing with their own alcohol and drug issues or for those whose
-        lives have been affected by alcohol and drug abuse. All services provided
-        over the phone.   Formerly known as Youth and Family Enrichment Services (YFES).","eligibility":"None","fees":"None.","funding_sources":["County"],"keywords":["ALCOHOLISM
-        SERVICES","Crisis Intervention/Hotlines","DRUG ABUSE SERVICES","Telephone
-        Crisis Intervention","Substance Abuse Referrals"],"how_to_apply":"Apply by
-        phone.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-03-10T13:38:49-07:00"}],"organization":{"id":"521d33901974fcdb2b002568","name":"StarVista","slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes-1","starvista"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:36:53 GMT
+  recorded_at: Thu, 08 May 2014 04:29:08 GMT
 - request:
     method: get
     uri: http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581?api_token=<API_TOKEN>
@@ -153,15 +91,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:45:17 GMT
+      - Thu, 08 May 2014 04:29:08 GMT
       Etag:
       - '"f29abbc2b38af41b148a0e38643ee2eb"'
       X-Rack-Cache:
       - miss
       X-Request-Id:
-      - 5d306dc5-bd4a-4ef7-b050-60dcd7c6dedb
+      - 71ea4cc8-3335-4036-9652-de12c398766e
       X-Runtime:
-      - '0.052532'
+      - '0.116628'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -193,71 +131,5 @@ http_interactions:
         Crisis Intervention","Substance Abuse Referrals"],"how_to_apply":"Apply by
         phone.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-03-10T13:38:49-07:00"}],"organization":{"id":"521d33901974fcdb2b002568","name":"StarVista","slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes-1","starvista"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568/locations"}}'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:17 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581?api_token=<API_TOKEN>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:45:17 GMT
-      Etag:
-      - '"f29abbc2b38af41b148a0e38643ee2eb"'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 6afb76ed-0036-4bfe-a18c-693023f61416
-      X-Runtime:
-      - '0.064661'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2519'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":"521d33901974fcdb2b002581","contacts":[{"id":"531e22d6bad40623ec000002","name":"Julie
-        Kinloch, LCSW","title":"Program Manager"}],"description":"Provides information
-        about alcohol and drug recovery programs and referrals to community services.
-        Offers support for persons dealing with their own alcohol and drug issues
-        or for those whose lives have been affected by alcohol and drug abuse. All
-        services provided over the phone.   Formerly known as Youth and Family Enrichment
-        Services (YFES).","emails":["julie.kinloch@star-vista.org"],"hours":"24 hours
-        daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"StarVista/Alcohol
-        and Drug Helpline","street":"610 Elm Street, Suite 212","city":"San Carlos","state":"CA","zip":"94070"},"name":"Alcohol
-        and Drug Helpline","phones":[{"number":"650 573-3950","department":"Hotline","hours":"(24
-        hours daily)"}],"short_desc":"A 24-hour hotline offering information on alcohol
-        and drug treatment services.","slugs":["alcohol-and-drug-helpline-department-of-health-and-recovery-services","alcohol-and-drug-helpline"],"transportation":"Not
-        necessary for service.","updated_at":"2014-03-10T13:38:46-07:00","urls":["http://www.star-vista.org/what_we_do/alcohol_drugs/"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33901974fcdb2b002581","services":[{"id":"521d33921974fcdb2b00259d","audience":"People
-        who desire information or referrals for themselves or others regarding drug
-        and alcohol problems","description":"Provides information about alcohol and
-        drug recovery programs and referrals to community services. Offers support
-        for persons dealing with their own alcohol and drug issues or for those whose
-        lives have been affected by alcohol and drug abuse. All services provided
-        over the phone.   Formerly known as Youth and Family Enrichment Services (YFES).","eligibility":"None","fees":"None.","funding_sources":["County"],"keywords":["ALCOHOLISM
-        SERVICES","Crisis Intervention/Hotlines","DRUG ABUSE SERVICES","Telephone
-        Crisis Intervention","Substance Abuse Referrals"],"how_to_apply":"Apply by
-        phone.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-03-10T13:38:49-07:00"}],"organization":{"id":"521d33901974fcdb2b002568","name":"StarVista","slugs":["starvista-formerly-youth-and-family-enrichment-services-yfes-1","starvista"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33901974fcdb2b002568/locations"}}'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:45:17 GMT
+  recorded_at: Thu, 08 May 2014 04:29:08 GMT
 recorded_with: VCR 2.8.0
