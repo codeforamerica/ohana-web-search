@@ -118,7 +118,7 @@ feature "results page search", :js, :vcr do
     fill_in('keyword', :with => "") # clear keyword
     find('#find-btn').click
     expect(page).to have_content("22 results")
-    set_filter("location","fairfax, va",true)
+    set_filter("location","fairfax, va")
     find('#find-btn').click
     expect(page).to have_content("No results within 5 miles of 'fairfax, va'")
     expect(all("#location-options .current-option label").last).to have_content("fairfax, va")
@@ -167,7 +167,7 @@ feature "results page search", :js, :vcr do
   scenario 'when clicking the reset button' do
     expect(page).to have_content("No results")
     #find_button("Clear filters").click
-    all(".reset-btn").first.click
+    find(".reset-btn").click
     # check filter settings
     expect(find_field("keyword").value).to eq ""
     expect(all("#location-options .current-option label").last).to have_content("All")

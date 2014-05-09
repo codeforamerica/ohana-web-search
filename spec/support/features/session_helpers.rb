@@ -3,9 +3,7 @@ module Features
 
     # search helpers
     def search(options = {})
-      keyword = options[:keyword]
-      fill_in('keyword', :with => keyword)
-
+      fill_in 'keyword', :with => options[:keyword]
       if options[:location].present?
         set_location_filter(options)
       end
@@ -61,21 +59,20 @@ module Features
       set_filter("kind",options[:kind])
     end
 
-    # @param options [Object] the URL parameters object
-    # @param name [String] the CSS name of the field
-    # @oaram field [Symbol] the field to look up in the options object.
+    # @param name [String] the CSS name of the field.
+    # @oaram field [String] the value to select in the filter.
+    # @param custom [Boolean] is the value a custom value not in the list?
     def set_filter(name,field,custom=true)
-      within(".require-loaded") do
-        within("##{name}-options") do
-          find(".closed").click
-          if field.present? && custom == true
-            find(".toggle-group.add").click
-            fill_in("#{name}-option-input", :with => field)
-          elsif custom == false
-            find(".toggle-group",:text=>field).trigger('mousedown')
-          else
-            first("label").click
-          end
+      find(".require-loaded")
+      within("##{name}-options") do
+        find(".closed").click
+        if field.present? && custom == true
+          find(".toggle-group.add").click
+          fill_in("#{name}-option-input", :with => field)
+        elsif custom == false
+          find(".toggle-group",:text=>field).trigger('mousedown')
+        else
+          first("label").click
         end
       end
     end
