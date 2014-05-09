@@ -1,7 +1,5 @@
 %aside#search-container
   %section#search-box
-    = form_tag('/organizations', :method => :get, :id=>"location-form") do
-      = hidden_field_tag 'location'
     = form_tag('/organizations', :method => :get, :id=>"search-form")
     %section#keyword-search-box
       %div.input-search-small

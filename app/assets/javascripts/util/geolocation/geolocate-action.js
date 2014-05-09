@@ -1,36 +1,36 @@
-// manages geolocation button on homepage
-define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback','domReady!'], function (geo,alert) {
+// manages geolocation action, which can be associated with a button most likely
+define(['util/geolocation/geolocator','app/alert-manager','domReady!','async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (geo,alert) {
   'use strict';
 
   // PRIVATE PROPERTIES
-  var _locateBtn; // locate current location button
-  var _locationValue; // hidden field that contains location value
+  var _locateTarget; // locate current location button.
+  var _locateAction; // a callback function for the location is determined.
 
 
   // PUBLIC METHODS
-  function init()
+  function init(target,locateAction)
   {
     if (navigator.geolocation) // if geolocation is supported, show geolocate button
     {
-      _locateBtn = document.getElementById('locate-btn');
-      _locateBtn.addEventListener( "click" , _currLocationClicked , false );
-      _locationValue = document.getElementById('location');
-      _locateBtn.classList.remove('hide');
+      _locateTarget = document.getElementById(target);
+      _locateAction = locateAction;
+
+      _locateTarget.addEventListener( 'click' , _currLocationAction , false );
+      _locateTarget.classList.remove('hide');
     }
   }
 
-  // 'use current location' link clicked
-  function _currLocationClicked(evt)
+  // Target element was clicked.
+  function _currLocationAction(evt)
   {
     evt.preventDefault();
     _locateUser();
-    return false;
   }
 
-  // use geolocation to locate the user
+  // Use geolocation to locate the user.
   function _locateUser()
   {
-    // callback object to hand off to geo locator object
+    // Callback object to hand off to geo locator object.
     var callBack = {
       success:function(position)
       {
@@ -48,7 +48,7 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
     geo.locate(callBack);
   }
 
-  // reverse geocode the location based on lat/long and place in address field
+  // Reverse geocode the location based on lat/long and place in address field.
   function _reverseGeocodeLocation(lat,lng)
   {
     var geocoder = new google.maps.Geocoder();
@@ -58,8 +58,7 @@ define(['util/geolocation','app/alert-manager','async!https://maps.googleapis.co
     {
       if (status === google.maps.GeocoderStatus.OK && results[0])
       {
-        _locationValue.value = results[0].formatted_address;
-        document.getElementById('search-form').submit();
+        _locateAction(results[0].formatted_address);
       }
       else
       {
