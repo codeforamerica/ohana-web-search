@@ -2,17 +2,15 @@
 require(['app/popup-manager',
   'app/google-translate-manager',
   'app/google-analytics-manager',
-  'app/location-manager',
   'jquery',
-  'classList',
-  'addEventListener',
   'Modernizr',
-  'modernizrSelectors'],
+  'modernizrSelectors',
+  'classList',
+  'addEventListener'
+  ],
 
-  function (pm,goog,ga,location,$) {
+  function (pm,goog,ga,$,Modernizr) {
   'use strict';
-
-  document.body.classList.add("require-loaded");
 
   // Check if browser supports the :checked selector
   Modernizr.addTest('checkedselector',function(){
@@ -34,7 +32,5 @@ require(['app/popup-manager',
   if (Modernizr.boxshadow)
     pm.init();
   goog.init();
-
-  location.init();
 
 });
