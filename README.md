@@ -19,7 +19,7 @@ You can see a running version of the application at
 ## Stack Overview
 
 * Ruby version 2.1.1
-* Rails version 3.2.17
+* Rails version 4.0.4
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara and capybara-webkit
 
@@ -31,7 +31,7 @@ Please note that the instructions below have only been tested on OS X. If you ar
 
 ###Prerequisites
 
-#### Git, Ruby 2.1+, Rails 3.2.17+ (+ Homebrew on OS X)
+#### Git, Ruby 2.1+, Rails 4+ (+ Homebrew on OS X)
 **OS X**: [Set up a dev environment on OS X with Homebrew, Git, RVM, Ruby, and Rails](http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 **Windows**: Try [RailsInstaller](http://railsinstaller.org), along with some of these [tutorials](https://www.google.com/search?q=install+rails+on+windows) if you get stuck.
