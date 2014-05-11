@@ -13,31 +13,3 @@
   = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
 
   = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_placeholder=>"agency name", :add_input_type=>"TEXT"}
-
-
-
--#- if params[:category].present?
-  %fieldset#category-options
-    %legend Category of service...
-    - category = params[:category]
-    - new_params = @search_params.dup
-    - new_params.delete(:category)
-    %a{ :href => organizations_path(new_params) }
-      = category
-    = hidden_field_tag 'category',category
-    %div.search-check
-      %input{:type=>"checkbox",:id=>"category-checkbox"}
-      %label{:for=>"category-checkbox"}
-
-  -#- if params[:language].present?
-  %fieldset#language-options
-    %legend Language availability...
-    - language = params[:language]
-    - new_params = @search_params.dup
-    - new_params.delete(:language)
-    %a{ :href => organizations_path(new_params) }
-      = language
-    = hidden_field_tag 'language',language
-    %div.search-check
-      %input{:type=>"checkbox",:id=>"language-checkbox"}
-      %label{:for=>"language-checkbox"}
