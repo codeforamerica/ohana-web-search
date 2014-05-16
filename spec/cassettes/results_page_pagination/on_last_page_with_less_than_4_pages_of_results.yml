@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -11,8 +11,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,13 +23,13 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 May 2014 22:23:24 GMT
+      - Fri, 16 May 2014 07:48:13 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&page=3&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&page=2&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&page=3&per_page=1&service_area=&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&page=2&per_page=1&service_area=&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
       X-Current-Page:
@@ -39,37 +37,24 @@ http_interactions:
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.40
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - 4b602f61-bf99-4017-be02-845ee413f59d
+      - 1b6dd150-0441-4bde-92a3-0d40795a2146
       X-Runtime:
-      - '0.030128'
+      - '0.040945'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
       Content-Length:
-      - '1433'
+      - '1303'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":12,"audience":"Adults, parents, children in 1st-12th
-        grades in the Redwood City school districta","eligibility":"English-speaking
-        adult reading at or below 7th grade level or child in 1st-12th grade in the
-        Redwood City school districts","fees":"None.","how_to_apply":"Walk in or apply
-        by phone, email or webpage registration.","wait":"Depends on availability
-        of tutors for small groups and one-on-one.","funding_sources":["City","Donations","Federal","Grants","State"],"service_areas":["Redwood
-        City"],"keywords":["EDUCATION SERVICES","Adult","Alternative","Literacy","Literacy
-        Programs","Libraries","Public Libraries","Youth"],"updated_at":"2014-04-18T12:32:04.768-07:00"}],"mail_address":{"id":12,"location_id":12,"attention":"Project
-        Read","street":"1044 Middlefield Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"hours":"Monday-Thursday,
-        10-8:30; Friday, 10-5","urls":["http://www.projectreadredwoodcity.org"],"emails":["rclread@redwoodcity.org"],"transportation":"SAMTRANS
-        stops within 1 block.","short_desc":"Offers an intergenerational literacy
-        program for adults and youth seeking to improver literacy skills.","url":"http://ohana-api-test.herokuapp.com/api/locations/12","phones":[{"id":12,"location_id":12,"number":"650
-        780-7077"}],"contacts":[{"id":20,"location_id":12,"name":"Kathy Endaya","title":"Director"}],"id":"12","organization":{"id":3,"name":"Redwood
-        City Public Library","slug":"redwood-city-public-library","created_at":"2014-04-18T12:32:01.230-07:00","updated_at":"2014-04-18T12:32:05.849-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/3","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/3/locations"},"updated_at":"2014-04-18T12:32:04.803-07:00","faxes":[{"id":12,"location_id":12,"number":"650
-        780-7004"}],"address":{"id":12,"location_id":12,"street":"1044 Middlefield
-        Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"description":"Offers
+      string: '[{"id":12,"accessibility":["Elevator","Ramp","Disabled Restroom","Disabled
+        Parking"],"address":{"id":12,"street":"1044 Middlefield Road, 2nd Floor","city":"Redwood
+        City","state":"CA","zip":"94063"},"contacts":[{"id":20,"name":"Kathy Endaya","title":"Director"}],"coordinates":[-122.227409,37.4837662],"description":"Offers
         an intergenerational literacy program for youth and English-speaking adults
         seeking to improver literacy skills. Adult services include: adult one-to-one
         tutoring to improve basic skills in reading, writing and critical thinking;
@@ -79,13 +64,26 @@ http_interactions:
         in Partnership (FIP); Teen-to-Elementary Student Tutoring, Kids in Partnership
         (KIP); and computer-aided literacy. Redwood City Friends of Literacy is a
         fundraising board that helps to support and to fund Redwood City''s Project
-        Read. Call for more information about each service.","name":"Project Read","created_at":"2014-04-18T12:32:03.900-07:00","longitude":-122.227409,"slug":"project-read","latitude":37.4837662,"coordinates":[-122.227409,37.4837662],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking"],"_score":0.010318076,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+        Read. Call for more information about each service.","emails":["rclread@redwoodcity.org"],"faxes":[{"id":12,"number":"650
+        780-7004"}],"hours":"Monday-Thursday, 10-8:30; Friday, 10-5","mail_address":{"id":12,"attention":"Project
+        Read","street":"1044 Middlefield Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"name":"Project
+        Read","phones":[{"id":12,"number":"650 780-7077"}],"short_desc":"Offers an
+        intergenerational literacy program for adults and youth seeking to improver
+        literacy skills.","slug":"project-read","transportation":"SAMTRANS stops within
+        1 block.","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/12","services":[{"id":12,"audience":"Adults,
+        parents, children in 1st-12th grades in the Redwood City school districta","eligibility":"English-speaking
+        adult reading at or below 7th grade level or child in 1st-12th grade in the
+        Redwood City school districts","fees":"None.","funding_sources":["City","Donations","Federal","Grants","State"],"keywords":["EDUCATION
+        SERVICES","Adult","Alternative","Literacy","Literacy Programs","Libraries","Public
+        Libraries","Youth"],"how_to_apply":"Walk in or apply by phone, email or webpage
+        registration.","service_areas":["Redwood City"],"wait":"Depends on availability
+        of tutors for small groups and one-on-one.","updated_at":"2014-04-18T12:32:04.768-07:00"}],"organization":{"id":3,"name":"Redwood
+        City Public Library","slug":"redwood-city-public-library","url":"http://ohana-api-test.herokuapp.com/api/organizations/3","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/3/locations"}}]'
     http_version: 
-  recorded_at: Fri, 09 May 2014 22:23:24 GMT
+  recorded_at: Fri, 16 May 2014 07:48:13 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&page=3&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&page=3&service_area=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -94,8 +92,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -108,57 +104,64 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 09 May 2014 22:23:24 GMT
+      - Fri, 16 May 2014 07:48:13 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&page=1&service_area=&utf8=%E2%9C%93>;
-        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=youth&location=&page=2&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&page=1&per_page=1&service_area=&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&location=&page=2&per_page=1&service_area=&utf8=%E2%9C%93>;
         rel="prev"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
       X-Current-Page:
       - '3'
       X-Powered-By:
-      - Phusion Passenger 4.0.40
+      - Phusion Passenger 4.0.41
       X-Previous-Page:
       - '2'
       X-Request-Id:
-      - a264e0b0-a3d1-4cf4-bdd9-af3c748fcc16
+      - 06054e5a-fe30-4258-b618-cfd476187976
       X-Runtime:
-      - '0.022151'
+      - '0.039070'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
       Content-Length:
-      - '1262'
+      - '1455'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"services":[{"id":16,"eligibility":"None for emergency assistance","fees":"None
-        for emergency services. Vary for after school activities. Cash and checks
-        accepted.","how_to_apply":"Walk in. Written application, identification required
-        for emergency assistance.","wait":"No wait.","funding_sources":["Donations","Fees","Grants"],"service_areas":["Los
-        Altos","Mountain View","Sunnyvale"],"keywords":["COMMODITY SERVICES","Clothing/Personal
-        Items","CHILD PROTECTION AND CARE SERVICES","Day Care","COMMUNITY SERVICES","Information
-        and Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","FINANCIAL ASSISTANCE
-        SERVICES","Utilities","RECREATION/LEISURE SERVICES","Camping","Emergency Food","Clothing","Utility
-        Assistance","Youth Development"],"updated_at":"2014-04-18T12:32:08.629-07:00"}],"mail_address":{"id":16,"location_id":16,"attention":"Salvation
-        Army","street":"P.O. Box 61868","city":"Sunnyvale","state":"CA","zip":"94088"},"hours":"Monday-Friday,
-        9-4","emails":["william_nichols@usw.salvationarmy.org"],"transportation":"VTA
-        stops within 4 blocks.","short_desc":"Provides emergency assistance to persons
-        in immediate need and offers after school activities and summer day camp program.","url":"http://ohana-api-test.herokuapp.com/api/locations/16","phones":[{"id":16,"location_id":16,"number":"408
-        720-0420"}],"contacts":[{"id":24,"location_id":16,"name":"James Lee","title":"Commanding
-        Officer"}],"id":"16","languages":["Korean"],"organization":{"id":4,"name":"Salvation
-        Army","slug":"salvation-army","created_at":"2014-04-18T12:32:05.934-07:00","updated_at":"2014-04-18T12:32:09.483-07:00","url":"http://ohana-api-test.herokuapp.com/api/organizations/4","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/4/locations"},"updated_at":"2014-04-18T12:32:08.639-07:00","faxes":[{"id":15,"location_id":16,"number":"408
-        720-8075"}],"address":{"id":16,"location_id":16,"street":"1161 South Bernardo","city":"Sunnyvale","state":"CA","zip":"94087"},"description":"Provides
-        emergency assistance including food and clothing for persons in immediate
-        need. Provides PG\u0026E assistance through REACH program. Youth programs
-        offer tutoring, music and troops. Information on related resources is available.
-        Also provides rental assistance when funds are available.","name":"Sunnyvale
-        Corps","created_at":"2014-04-18T12:32:08.088-07:00","longitude":-122.0600024,"slug":"sunnyvale-corps","latitude":37.3569004,"coordinates":[-122.0600024,37.3569004],"_score":0.007738203,"_type":"location","_index":"production-ohana_api","_version":null,"sort":null,"highlight":null,"_explanation":null}]'
+      string: '[{"id":4,"accessibility":["Wheelchair"],"address":{"id":4,"street":"24
+        Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"contacts":[{"id":5,"name":"Kimberly
+        Pesavento","title":"Director of Visitation"}],"coordinates":[-122.3263232,37.5639394],"description":"Provides
+        supervised visitation services and a neutral site for parents to carry out
+        supervised exchanges of children in a safe manner. Therapeutic visitation
+        and other counseling services available. Kids in the Middle is an education
+        class for separating or divorcing parents. The goal is to enable parents to
+        focus on their children''s needs while the family is going through separation,
+        divorce or other transition. The class explores the psychological aspects
+        of divorce and its impact on children, builds effective communication techniques
+        and points out areas in which outside help may be indicated. The fee is $50
+        for working parents, $15 for unemployed people. Classes are scheduled on Saturdays
+        and Sundays and held at various sites throughout the county. Call 650-403-4300
+        ext. 4500 to register. Formerly known as Family Service Agency of San Mateo
+        County, Family Visitation Center.","emails":["kpesavento@peninsulafamilyservice.org"],"faxes":[{"id":4,"number":"650
+        403-4303"}],"hours":"Monday, 10-6; Tuesday-Friday, 10-8; Saturday, Sunday,
+        9:30-5:30","languages":["Spanish"],"mail_address":{"id":4,"attention":"PFS
+        Family Visitation Center","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"name":"Family
+        Visitation Center","phones":[{"id":4,"extension":"4500","number":"650 403-4300"}],"short_desc":"Provides
+        supervised visitation services and a neutral site for parents in extremely
+        hostile divorces to carry out supervised exchanges of children.","slug":"family-visitation-center","transportation":"SAMTRANS
+        stops within 1 block, CALTRAIN stops within 4 blocks.","updated_at":"2014-05-09T20:49:18.878-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/4","services":[{"id":4,"audience":"Parents,
+        children, families with problems of custody disputes, domestic violence or
+        substance abuse, families going through a separation or divorce","eligibility":"None","fees":"Vary
+        according to income ($5-$90). Cash, checks and credit cards accepted.","funding_sources":["County","Donations","Grants"],"keywords":["INDIVIDUAL
+        AND FAMILY DEVELOPMENT SERVICES","Growth and Adjustment","LEGAL AND CRIMINAL
+        JUSTICE SERVICES","Mediation","Parental Visitation Monitoring","Divorce Counseling","Youth"],"how_to_apply":"Apply
+        by phone.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-04-18T12:31:56.923-07:00"}],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
     http_version: 
-  recorded_at: Fri, 09 May 2014 22:23:24 GMT
+  recorded_at: Fri, 16 May 2014 07:48:13 GMT
 recorded_with: VCR 2.9.0
