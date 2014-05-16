@@ -140,23 +140,22 @@ feature "results page search", :js, :vcr do
     expect(page).to have_content("22 results")
     visit("/organizations?page=3")
 
-    within(".require-loaded") do
-      within("#org-name-options") do
-        find(".closed").click
-        find(".toggle-group", :text => "SanMaceo Example Agency").click
-      end
+    find(".require-loaded")
+    within("#org-name-options") do
+      find(".closed").click
+      find(".toggle-group", :text => "Peninsula Family Service").click
     end
     find('#find-btn').click
 
-    expect(page).to have_content("1 result")
-    expect(all("#org-name-options .current-option label").last).to have_content("SanMaceo Example Agency")
+    expect(page).to have_content("5 results")
+    expect(all("#org-name-options .current-option label").last).to have_content("Peninsula Family Service")
   end
 
   # user clicks filter links in results list
   scenario 'when clicking organization link in results' do
     search(:keyword => "Samaritan House")
     first("#list-view li").click_link("Samaritan House")
-    expect(page).to have_content("San Mateo Free Medical Clinic")
+    expect(page).to have_content("Redwood City Free Medical Clinic")
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")

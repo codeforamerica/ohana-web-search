@@ -38,6 +38,6 @@ feature "homepage search" do
   scenario "when clicking a category", :vcr do
     visit("/")
     click_link("Health Insurance")
-    expect(page).to have_content("Fair Oaks Adult Activity Center")
+    expect(page).to have_content("Little House")
   end
 end
