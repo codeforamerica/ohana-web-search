@@ -104,11 +104,7 @@ feature "location details" do
     end
 
     it "includes updated time" do
-      # TODO The presence of the time causes this test to fail on Travis CI because
-      # the time is checked against the Travis CI server time. The time has been
-      # removed from the test till this can be sorted.
-      #expect(page).to have_content("Tuesday, 1 October 2013 at 3:18 PM")
-      expect(page).to have_content("Friday, 16 May 2014 at")
+      expect(page).to have_content("Thursday, 22 May 2014 at 5:31 PM PDT")
     end
 
   end

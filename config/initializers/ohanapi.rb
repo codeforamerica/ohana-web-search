@@ -4,7 +4,7 @@ stack = Faraday::Builder.new do |builder|
   builder.adapter Faraday.default_adapter
 end
 Ohanakapa.configure do |config|
-  config.api_token = ENV["OHANA_API_TOKEN"]
+  config.api_token = ENV["OHANA_API_TOKEN"] unless Rails.env.test?
 
   if Rails.env.test?
     config.api_endpoint = "http://ohana-api-test.herokuapp.com/api"

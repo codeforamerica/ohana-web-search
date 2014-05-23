@@ -4,6 +4,7 @@ Coveralls.wear!('rails')
 # Don't put anything above this!
 
 ENV["RAILS_ENV"] ||= 'test'
+ENV['TZ'] = 'America/Los_Angeles'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
