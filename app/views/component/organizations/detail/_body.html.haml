@@ -50,9 +50,9 @@
                           - if phone["number"]
                             %span{:itemprop=>"telephone"}
                               = format_phone(phone["number"])
-                          - if phone["type"]
+                          - if phone['number_type']
                             %sup.phone-type
-                              = phone["type"]
+                              = phone['number_type']
                           - if phone["department"]
                             %p
                               %span{:itemprop=>"contactType"}
