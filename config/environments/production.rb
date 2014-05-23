@@ -35,7 +35,7 @@ HumanServicesFinder::Application.configure do
   # config/environments/development.rb and restart your server.
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
-  config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+  config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
     if ENV["CANONICAL_URL"].blank?
       raise "The CANONICAL_URL environment variable is not set on your"+
       " production server. It should be set to your app's domain name,"+
