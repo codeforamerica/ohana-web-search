@@ -9,7 +9,7 @@
     %div.toggle-group{:id=>"#{css_field}-toggle-group"}
       %div.toggle
         %div
-          %input{:type=>"radio",:id=>"#{field}", :checked=>true}
+          %input{type: 'radio', id: "#{css_field}-option", checked: true}
           %i{:class=>"fa fa-check"}
           %label{:for => "#{css_field}-option"}
       %label{:for => "#{css_field}-option"}
@@ -19,18 +19,15 @@
           - field_display = aggregate_field[i].is_a?(Hash) ? (aggregate_field[i][:name] if aggregate_field[i][:value] == field_value) : field_value
         = (field_value.blank? ? "All" : field_display)
 
-
-
   %div.options.available-options.hide
     %div.toggle-group{:id=>"#{css_field}-toggle-group-0"}
       %div.toggle
         %div
-          = radio_button_tag "", "", all_is_checked, {:id=>"#{css_field}-option-0"}
+          = radio_button_tag field, "", all_is_checked, {:id=>"#{css_field}-option-0"}
           %i{:class=>"fa fa-check"}
           %label{:for => "#{css_field}_option_0"}
       %label{:for => "#{css_field}-option-0",:id => "#{css_field}-option-label"}
         All
-
 
     -# This is a repeat of the loop that follows the add button.
     -# This is needed to check that another toggle is not checked.
@@ -49,7 +46,7 @@
           %div.toggle-group.add{:id=>"#{css_field}-toggle-group-1"}
             %div.toggle
               %div
-                %input{:type=>"radio",:name=>"",:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
+                %input{:type=>"radio",:name=>field,:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
                 %i{:class=>"fa fa-plus"}
                 %label{:for => "#{css_field}-option-1"}
             %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
@@ -62,7 +59,7 @@
           %div.toggle-group.add{:id=>"#{css_field}-toggle-group-1"}
             %div.toggle
               %div
-                %input{:type=>"radio",:name=>"",:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
+                %input{:type=>"radio",:name=>field,:id=>"#{css_field}-option-1",:checked=>(add_is_checked ? "checked" : false )}
                 %i{:class=>"fa fa-plus"}
                 %label{:for => "#{css_field}-option-1"}
             %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
@@ -88,7 +85,7 @@
         %label{:for => "#{css_field}-option-#{i+2}",:id => "#{css_field}-option-#{i+2}-label"}
           = field_display
 
-    = hidden_field_tag field, field_value
+    = hidden_field_tag field, field_value, id: "#{css_field}-hidden"
 
     - if css_field == "location"
       %div#geolocate-box

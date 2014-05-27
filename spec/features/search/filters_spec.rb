@@ -63,9 +63,8 @@ feature "results page search", :js do
 
     within("#location-options") do
       find(".closed").trigger('mousedown')
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
-      expect(find_field("location").value).to eq "San Mateo, CA"
+      expect(find_by_id("location").value).to eq "San Mateo, CA"
     end
   end
 
@@ -75,9 +74,8 @@ feature "results page search", :js do
 
     within("#org-name-options") do
       find(".closed").trigger('mousedown')
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
-      expect(find_field("org_name").value).to eq "United States Government"
+      expect(find_by_id("org_name").value).to eq "United States Government"
     end
   end
 
@@ -91,7 +89,6 @@ feature "results page search", :js do
     find(".require-loaded")
     within("#location-options") do
       find(".closed").click
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
       expect(page).not_to have_css("location")
     end
@@ -106,7 +103,6 @@ feature "results page search", :js do
     find(".require-loaded")
     within("#org-name-options") do
       find(".closed").click
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
       expect(page).not_to have_css("org_name")
     end
@@ -151,7 +147,6 @@ feature "results page search", :js do
   # user clicks filter links in results list
   scenario 'when clicking organization link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    expect(page).to have_content("St. Vincent de Paul Society")
     first("#list-view li").click_link("St. Vincent de Paul Society")
     expect(page).not_to have_content("Shelter Network")
     expect(page).to have_content("San Mateo Homeless Help Center")
@@ -165,7 +160,6 @@ feature "results page search", :js do
 
   scenario 'when clicking kind link in results', :vcr do
     search(:keyword => "St. Vincent de Paul Society")
-    expect(page).to have_content("St. Vincent de Paul Society")
     first("#list-view li").click_link("Human Services")
     expect(page).not_to have_content("Shelter Network")
     expect(page).to have_content("San Mateo County Human Services Agency")
@@ -179,7 +173,7 @@ feature "results page search", :js do
 
   scenario 'when clicking the reset button', :vcr do
     expect(page).to have_content("No results")
-    all(".reset-btn").first.click
+    find_by_id('reset-btn').click
 
     # check filter settings
     expect(find_field("keyword").value).to eq ""
