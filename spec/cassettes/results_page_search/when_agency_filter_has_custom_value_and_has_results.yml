@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,23 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:37:51 GMT
+      - Mon, 26 May 2014 22:14:09 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+        rel="last"
+      Status:
+      - 200 OK
       X-Request-Id:
-      - 81556521-e89d-41ad-a3b0-a5023ac02c5a
+      - 60219ff9-1fb6-432d-a549-04af3699eaf5
       X-Runtime:
-      - '0.037067'
+      - '1.140043'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
       - '2'
       Connection:
@@ -48,10 +47,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:51 GMT
+  recorded_at: Mon, 26 May 2014 22:14:10 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -72,179 +71,94 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:37:51 GMT
+      - Mon, 26 May 2014 22:14:12 GMT
       Etag:
-      - '"e458a74ecc21a222345aef1e6421cc2d"'
+      - '"6c00eeeeddbc6f07a7b48f433e45f878"'
+      Status:
+      - 200 OK
       X-Current-Page:
       - '1'
-      X-Rack-Cache:
-      - miss
       X-Request-Id:
-      - 140d3211-dbe3-4e5e-b6ef-818903696868
+      - 4faae8f7-824a-4d7a-a964-4ec365558080
       X-Runtime:
-      - '0.047317'
+      - '2.480390'
       X-Total-Count:
       - '6'
       X-Total-Pages:
       - '1'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
-      - '24997'
+      - '21378'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"521d33961974fcdb2b002605","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-hospice-care-center"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
-        Miranda Avenue, Building 100, Unit 4A","zip":"94304-1290"},"ask_for":["Social
-        worker"],"contacts":[{"_id":"521d33961974fcdb2b002606","name":"Sheila Kennedy,
-        MSW, LCSW","title":"Hospice Coordinator"}],"coordinates":[-122.1418139,37.403608],"created_at":"2013-08-27T16:17:42-07:00","description":"Provides
+      string: '[{"id":1661,"accessibility":["Elevator","Ramp","Disabled Restroom","Disabled
+        Parking","Wheelchair"],"address":{"id":1385,"street":"3801 Miranda Avenue,
+        Building 100, Unit 4A","city":"Palo Alto","state":"CA","zip":"94304-1290"},"ask_for":["Social
+        worker"],"contacts":[{"id":1961,"name":"Sheila Kennedy, MSW, LCSW","title":"Hospice
+        Coordinator"}],"coordinates":[-122.1418139,37.403608],"description":"Provides
         medical, nursing and end-of-life care to veterans and to members of the community
         connected with a community hospice when care can no longer be managed at home.
         The 25-bed facility offers symptom management, nursing care, social services,
-        psychological and bereavement services, spiritual counseling and massage.","emails":["sheila-kennedy@va.gov"],"faxes":[{"number":"650
+        psychological and bereavement services, spiritual counseling and massage.","emails":["sheila-kennedy@va.gov"],"faxes":[{"id":1071,"number":"650
         849-0260"}],"hours":"Monday-Friday, 7:30-4:30","kind":"Human Services","languages":["Filipino
-        (Tagalog)"],"mail_address":{"attention":"Hospice Care Center","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue, Building 100, Unit 4A","zip":"94304-1290"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Hospice Care Center","phones":[{"number":"650
-        849-0176","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Provides medical
-        and nursing care to veterans and to members of the community.","transportation":"SAMTRANS,
-        VTA stop in front.","updated_at":"2013-11-07T12:47:08-08:00","urls":["http://www.palo-alto.med.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","services":[{"_id":"521d339b1974fcdb2b00261f","audience":"Veterans
+        (Tagalog)"],"mail_address":{"id":1658,"attention":"Hospice Care Center","street":"3801
+        Miranda Avenue, Building 100, Unit 4A","city":"Palo Alto","state":"CA","zip":"94304-1290"},"name":"Veterans
+        Affairs Palo Alto Health Care System., Hospice Care Center","phones":[{"id":2427,"number":"650
+        849-0176"},{"id":2428,"department":"Information and Referral","number":"650
+        849-0550"}],"short_desc":"Provides medical and nursing care to veterans and
+        to members of the community.","slug":"veterans-affairs-palo-alto-health-care-system-hospice-care-center","slugs":["veterans-affairs-palo-alto-health-care-system-hospice-care-center"],"transportation":"SAMTRANS,
+        VTA stop in front.","updated_at":"2014-05-24T14:08:29.734-07:00","urls":["http://www.palo-alto.med.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1661","services":[{"id":1661,"audience":"Veterans
         with terminal diagnosis","eligibility":"Honorably discharged veteran facing
         life-threatening illness given top priority (6 months or less prognosis)","fees":"No
-        fee for veterans. $250 per day for non-veterans. Checks accepted.","funding_sources":["Federal"],"how_to_apply":"For
+        fee for veterans. $250 per day for non-veterans. Checks accepted.","funding_sources":["Federal"],"keywords":["HEALTH
+        SERVICES","Hospice","Hospice Care","Veterans"],"categories":[{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":215,"depth":1,"oe_id":"108-04","name":"End-of-Life
+        Care","parent_id":196,"slug":"end-of-life-care-108-04"},{"id":218,"depth":2,"oe_id":"108-04-03","name":"Hospice","parent_id":215,"slug":"hospice-108-04-03"}],"how_to_apply":"For
         veterans, anyone may initiate referral but physician must verify terminal
         status. For non-veterans, anyone may initiate referral, but a community hospice
-        must be involved.","keywords":["HEALTH SERVICES","Hospice","Hospice Care","Veterans"],"service_areas":["Alameda
-        County","Calaveras County","Monterey County","San Mateo County","Santa Clara
-        County","Stanislaus County","Tuolumne County","northern California"],"updated_at":"2013-09-15T20:56:19-07:00","wait":"Varies
-        depending on bed availability.","categories":[{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000d7","_slugs":["end-of-life-care-1"],"depth":1,"lft":428,"name":"End-of-Life
-        Care","oe_id":"108-04","parent_id":"52280f711edd37edff0000c4","rgt":437},{"_id":"52280f731edd37edff0000da","_slugs":["hospice-1"],"depth":2,"lft":433,"name":"Hospice","oe_id":"108-04-03","parent_id":"52280f721edd37edff0000d7","rgt":434}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-hospice-care-center"],"id":"521d33961974fcdb2b002605","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025dd","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-addiction-treatment-services-ats"],"accessibility":["Wheelchair"],"address":{"city":"Menlo
-        Park","state":"CA","street":"795 Willow Road, Building 321","zip":"94025"},"ask_for":["Intake
-        Consultation Team"],"contacts":[{"_id":"521d33951974fcdb2b0025de","name":"Paula
-        Wilbourne","title":"Director"}],"coordinates":[-122.1572991,37.4651746],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
-        services to veterans addicted to alcohol or other drugs and ready to become
-        abstinent. Provides inpatient medical treatment for withdrawal, a residential
-        therapeutic community and outpatient clinics in support of continuing abstinence
-        in Menlo Park and San Jose.","faxes":[{"number":"650 617-2618"}],"kind":"Human
-        Services","languages":["Interpreter"],"mail_address":{"attention":"VA PA Addiction
-        Treatment Services","city":"Menlo Park","state":"CA","street":"795 Willow
-        Road, Building 321","zip":"94025"},"name":"Veterans Affairs Palo Alto Health
-        Care System., Menlo Park Division., Addiction Treatment Services (ATS)","phones":[{"number":"866
-        717-1978"}],"short_desc":"Provides residential and outpatient programs to
-        help veterans with alcohol or other drug-related difficulties.","transportation":"SAMTRANS
-        stops in front.","updated_at":"2013-11-07T12:47:01-08:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","services":[{"_id":"521d33991974fcdb2b002615","audience":"Veterans
-        addicted to alcohol or other drugs","eligibility":"Veteran who meets eligibility
-        for benefits","fees":"Vary according to income.","funding_sources":["Federal"],"how_to_apply":"Phone
-        for information and/or to make an appointment.","keywords":["ALCOHOLISM SERVICES","Detoxification","Individual/Group
-        Counseling","Residential Care","DRUG ABUSE SERVICES","Drug-Free Treatment","Maintenance","Substance
-        Abuse Services","Veterans"],"service_areas":["Alameda County","Contra Costa
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County","Stanislaus County","Northern California"],"updated_at":"2013-10-06T18:04:35-07:00","wait":"2-3
-        weeks for inpatient programs. No wait for outpatient services.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","_slugs":["addiction-and-recovery"],"depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000051","_slugs":["detox"],"depth":2,"lft":159,"name":"Detox","oe_id":"106-01-02","parent_id":"52280f661edd37edff00004f","rgt":160},{"_id":"52280f661edd37edff000053","_slugs":["outpatient-treatment"],"depth":2,"lft":163,"name":"Outpatient
-        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-addiction-treatment-services-ats"],"id":"521d33951974fcdb2b0025dd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e9","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-home-based-primary-care-hbpc"],"contacts":[{"_id":"521d33951974fcdb2b0025ea","name":"Jon
-        D. Fuller, MD","title":"Medical Director"}],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
-        primary care to homebound veterans. Interdisciplinary team approach, composed
-        of a physician, nurse practitioner, social worker, dietitian, psychologist
-        and occupational therapist, works with the individual and his/her caregiver
-        to provide primary medical care and other services in the home to veterans
-        who are convalescing or have acute chronic or terminal illness. Services include
-        case management, skilled nursing care, rehabilitation, palliative care, emergency
-        and long-term planning, individual and family counseling, health education,
-        nutrition and diet consultation, evaluation for adaptive equipment and home
-        safety, referrals to VA and community resources.","faxes":[{"number":"650
-        849-0103"}],"hours":"Daily, 8-5. 24-hour on-call for all HBPC patients","kind":"Human
-        Services","mail_address":{"attention":"VA PA Home Based Primary Care (HBPC)","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue, 100/2C","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Home Based Primary Care (HBPC)","phones":[{"number":"650
-        849-0102","department":"(Daily, 8-5)"}],"short_desc":"Provides medical and
-        social services to homebound veterans.","transportation":"Not necessary for
-        service.","updated_at":"2013-11-07T12:47:03-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","services":[{"_id":"521d33991974fcdb2b002618","audience":"Veterans","eligibility":"Homebound
-        veteran living within 30 minutes of VA Palo Alto office or San Jose office
-        at highways 101 and 85. Must be willing to accept HBPC as primary care provider
-        and be enrolled in VA Palo Alto Health Care System","fees":"None to veterans
-        who meet either income criteria or specific service connected guidelines.
-        All other veterans may incur some copayment. Private insurance accepted.","funding_sources":["Federal"],"how_to_apply":"Apply
-        through primary care physician at VA Palo Alto Health Care System.","keywords":["HEALTH
-        SERVICES","Home Nursing","Individual/Group Counseling","Home Health Care","Veterans"],"service_areas":["Belmont","Burlingame","Cupertino","Fremont","Los
-        Altos","Los Altos Hills","Menlo Park","Morgan Hill","Mountain View","Palo
-        Alto","Redwood City","San Carlos","San Jose","San Mateo","Santa Clara","Saratoga","Union
-        City"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"7-30 days."}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-home-based-primary-care-hbpc"],"id":"521d33951974fcdb2b0025e9","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025f0","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-homeless-veterans-rehabilitation-program-dot-vocational-education-center"],"accessibility":["Disabled
-        Parking","Elevator","Ramp","Wheelchair"],"address":{"city":"Menlo Park","state":"CA","street":"795
-        Willow Road, 180-D","zip":"94025"},"contacts":[{"_id":"521d33951974fcdb2b0025f1","title":"Screening
-        Coordinator"}],"coordinates":[-122.1572991,37.4651746],"created_at":"2013-08-27T16:17:41-07:00","description":"A
+        must be involved.","service_areas":["Alameda County","Calaveras County","Monterey
+        County","San Mateo County","Santa Clara County","Stanislaus County","Tuolumne
+        County","Northern California"],"wait":"Varies depending on bed availability.","updated_at":"2014-05-24T14:07:59.188-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1656,"accessibility":["Disabled
+        Parking","Elevator","Ramp","Wheelchair"],"address":{"id":1380,"street":"795
+        Willow Road, 180-D","city":"Menlo Park","state":"CA","zip":"94025"},"coordinates":[-122.1572991,37.4651746],"description":"A
         6 month residential co-ed treatment program designed to provide homeless veterans
         with the skills necessary to function self-sufficiently in society. Residents
         attend skills training classes, participate in therapy and support groups
         and attend community meetings. A complete mental and physical evaluation is
         made and a treatment program developed to improve well-being. Vocational assessment
         and assistance with job search provided. Participants continue to attend some
-        meetings and activities for a time following discharge from the program.","faxes":[{"number":"650
+        meetings and activities for a time following discharge from the program.","faxes":[{"id":1066,"number":"650
         617-2619"}],"hours":"Monday-Friday, 9-12, 1-3; Screening: Monday-Friday, 9-12,
-        1-3","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Homeless
-        Veterans Rehab Prog","city":"Menlo Park","state":"CA","street":"795 Willow
-        Road, 180-D","zip":"94025"},"name":"Veterans Affairs Palo Alto Health Care
-        System., Menlo Park Division., Homeless Veterans Rehabilitation Program.,
-        Vocational Education Center","phones":[{"number":"800 848-7254","hours":"(Monday-Friday,
-        9-3)"}],"short_desc":"A residential treatment program designed to provide
-        homeless veterans with the skills necessary to function self-sufficiently
-        in society.","transportation":"SAMTRANS stops within 2 blocks.","updated_at":"2013-11-07T12:47:04-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","services":[{"_id":"521d339a1974fcdb2b00261a","audience":"Homeless
+        1-3","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1653,"attention":"Homeless
+        Veterans Rehab Prog","street":"795 Willow Road, 180-D","city":"Menlo Park","state":"CA","zip":"94025"},"name":"Veterans
+        Affairs Palo Alto Health Care System., Menlo Park Division., Homeless Veterans
+        Rehabilitation Program., Vocational Education Center","phones":[{"id":2421,"number":"800
+        848-7254"},{"id":2422,"number":"650 617-2751"}],"short_desc":"A residential
+        treatment program designed to provide homeless veterans with the skills necessary
+        to function self-sufficiently in society.","slug":"veterans-affairs-palo-alto-health-care-system-menlo-park-division-homeless-veterans-rehabilitation-program-vocational-education-center","slugs":["veterans-affairs-palo-alto-health-care-system-menlo-park-division-homeless-veterans-rehabilitation-program-vocational-education-center"],"transportation":"SAMTRANS
+        stops within 2 blocks.","updated_at":"2014-05-24T14:08:04.549-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1656","services":[{"id":1656,"audience":"Homeless
         veterans","eligibility":"Honorably discharged homeless veteran, medically
         and psychiatrically stable, willing and able to return to full-time work","fees":"For
         \"non-services connected\" NSC veterans: no fee for vets who make less than
         $25,000 per year, otherwise $5 per day charge. \"Service connected\" veterans:
-        no charge. Cash and checks accepted.","funding_sources":["Federal"],"how_to_apply":"Apply
-        by phone Monday-Friday, 9-12, 1-3.","keywords":["HOUSING SERVICES","Temporary","Transitional
-        Housing/Shelter","Veterans"],"service_areas":["Alameda County","Contra Costa
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County","Monterey County","Sacramento County","San Benito County","San Joaquin
-        County","Santa Cruz County","northern California"],"updated_at":"2013-10-06T18:06:14-07:00","wait":"2-8
-        weeks for inpatient admission.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000075","_slugs":["mental-health-evaluation"],"depth":3,"lft":230,"name":"Mental
-        Health Evaluation","oe_id":"106-06-04-04","parent_id":"52280f691edd37edff000071","rgt":231},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","_slugs":["help-find-work-1"],"depth":1,"lft":584,"name":"Help
-        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f7a1edd37edff00012d","_slugs":["skills-and-training-1"],"depth":1,"lft":600,"name":"Skills
-        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-homeless-veterans-rehabilitation-program-dot-vocational-education-center"],"id":"521d33951974fcdb2b0025f0","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025d5","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-ambulatory-care-service"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
-        Miranda Avenue","zip":"94304"},"ask_for":["Staff on duty in admitting/eligibility"],"contacts":[{"_id":"521d33951974fcdb2b0025d6","title":"Educational
-        Coordinator, Nursing Service"}],"coordinates":[-122.1418083,37.4036049],"created_at":"2013-08-27T16:17:41-07:00","description":"Primary
-        entry point for VA medical services in Palo Alto, including admission to the
-        hospital. Services are provided only to veterans, and preference is given
-        to those with service-connected illnesses or disabilities. On the first visit,
-        the veteran should arrive at the clinic with discharge papers and any appropriate
-        medical records. No appointment is necessary, but there may be a two hour
-        or longer wait. If the veteran is legally and medically eligible, he or she
-        will be given an appointment for general medical or speciality services. All
-        persons in need of immediate care will be seen right away. Emergency care
-        is provided 24 hours a day. Limited services are available at satellites in
-        San Jose and Monterey, as well as in the divisions at Menlo Park, Livermore,
-        Stockton and Modesto.","kind":"Human Services","languages":["Japanese","Spanish","Filipino
-        (Tagalog)"],"mail_address":{"attention":"VA PA Ambulatory Care Service","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Ambulatory Care Service","phones":[{"number":"650
-        493-5000","extensions":["22175"],"hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Outpatient
-        care for all honorably discharged veterans.","transportation":"SAMTRANS stops
-        in front.","updated_at":"2013-10-02T19:07:51-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","services":[{"_id":"521d33981974fcdb2b002613","audience":"Veterans
-        and employees","eligibility":"Honorably discharged veteran. Priority given
-        to service-connected or low-income veterans","fees":"None for service-connected
-        conditions. Co-payment (30% to 100%) for nonservice connected prescriptions
-        and nonservice connected veterans depending on income. Cash and checks accepted.","funding_sources":["Federal","Fees"],"how_to_apply":"Walk
-        in. Service discharge papers necessary for application. Means testing may
-        be required.","keywords":["Veteran Outpatient Clinics","Veterans"],"service_areas":["Monterey
-        County","San Benito County","San Mateo County","Santa Clara County","Santa
-        Cruz County","Castro Valley","Dublin","Fremont","Hayward","Newark","Pleasanton","San
-        Leandro","San Lorenzo","San Ramon","Union City"],"updated_at":"2013-08-27T16:17:44-07:00","wait":"2-6
-        weeks for scheduled clinic appointments, walk in for same day clinic."}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-ambulatory-care-service"],"id":"521d33951974fcdb2b0025d5","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025ec","_slugs":["veterans-affairs-san-francisco-health-care-system"],"accessibility":["Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"4150
-        Clement Street","zip":"94121"},"ask_for":["Call Telephone Linked Care (800-733-0502)"],"contacts":[{"_id":"521d33951974fcdb2b0025ed","name":"Sheila
-        M. Cullen","title":"Medical Center Director"}],"coordinates":[-122.5032335,37.781335],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
+        no charge. Cash and checks accepted.","funding_sources":["Federal"],"keywords":["HOUSING
+        SERVICES","Temporary","Transitional Housing/Shelter","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
+        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":117,"depth":3,"oe_id":"106-06-04-04","name":"Mental
+        Health Evaluation","parent_id":113,"slug":"mental-health-evaluation"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
+        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Apply
+        by phone Monday-Friday, 9-12, 1-3.","service_areas":["Alameda County","Contra
+        Costa County","Marin County","San Francisco County","San Mateo County","Santa
+        Clara County","Monterey County","Sacramento County","San Benito County","San
+        Joaquin County","Santa Cruz County","Northern California"],"wait":"2-8 weeks
+        for inpatient admission.","updated_at":"2014-05-24T14:07:59.125-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1655,"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1379,"street":"4150
+        Clement Street","city":"San Francisco","state":"CA","zip":"94121"},"ask_for":["Call
+        Telephone Linked Care (800-733-0502)"],"contacts":[{"id":1955,"name":"Sheila
+        M. Cullen","title":"Medical Center Director"}],"coordinates":[-122.5032335,37.781335],"description":"Provides
         general medical, surgical and psychiatric services for veterans. Inpatient
         and outpatient services include arthritic rheumatology, cardiology, dermatology,
         endocrinology, eye, ear, nose, and throat, gastrointestinal, hematology, hemodialysis,
@@ -258,253 +172,88 @@ http_interactions:
         Services include individual or group therapy, crisis intervention, couples
         or family therapy, vocational counseling, psychological testing, education
         classes, psychiatric social work and referral to medical practice clinics.","kind":"Human
-        Services","languages":["Chinese","Filipino (Tagalog)","Japanese","Russian","Spanish"],"mail_address":{"attention":"Veterans
-        Affairs San Francisco","city":"San Francisco","state":"CA","street":"4150
-        Clement Street","zip":"94121"},"name":"Veterans Affairs San Francisco Health
-        Care System","phones":[{"number":"415 221-4810","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"General
-        medical, psychiatric and surgical services for veterans.","transportation":"MUNI
-        - 38 Geary.","updated_at":"2013-10-01T12:18:33-07:00","urls":["http://www.sf.med.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","services":[{"_id":"521d339a1974fcdb2b002619","audience":"Veterans
+        Services","languages":["Chinese","Filipino (Tagalog)","Japanese","Russian","Spanish"],"mail_address":{"id":1652,"attention":"Veterans
+        Affairs San Francisco","street":"4150 Clement Street","city":"San Francisco","state":"CA","zip":"94121"},"name":"Veterans
+        Affairs San Francisco Health Care System","phones":[{"id":2419,"number":"415
+        221-4810"},{"id":2420,"number":"415 750-6908","number_type":"TTY"}],"short_desc":"General
+        medical, psychiatric and surgical services for veterans.","slug":"veterans-affairs-san-francisco-health-care-system","slugs":["veterans-affairs-san-francisco-health-care-system"],"transportation":"MUNI
+        - 38 Geary.","updated_at":"2014-05-24T14:08:29.634-07:00","urls":["http://www.sf.med.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1655","services":[{"id":1655,"audience":"Veterans
         of the U.S. Armed Forces","eligibility":"Veteran with other than dishonorable
         discharge, eligibility individually determined","fees":"Vary according to
-        eligibility category. Private insurance accepted.","funding_sources":["Federal"],"how_to_apply":"Walk
-        in during office hours.","keywords":["COMMODITY SERVICES","Assistive/Medical
-        Aids","HEALTH SERVICES","Dental","Inpatient Care","Outpatient Care","MENTAL
-        HEALTH SERVICES","Acute or Sub-acute Treatment","Individual/Group Counseling","Observation/Diagnosis","Hospitals","Veteran
-        Outpatient Clinics","Veterans"],"service_areas":["Del Norte County","Humboldt
-        County","Lake County","Marin County","Mendocino County","Napa County","San
-        Francisco County","San Mateo County","Sonoma County"],"updated_at":"2013-09-18T17:06:53-07:00","wait":"Varies
-        according to service.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","_slugs":["addiction-and-recovery"],"depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000051","_slugs":["detox"],"depth":2,"lft":159,"name":"Detox","oe_id":"106-01-02","parent_id":"52280f661edd37edff00004f","rgt":160},{"_id":"52280f661edd37edff000053","_slugs":["outpatient-treatment"],"depth":2,"lft":163,"name":"Outpatient
-        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164},{"_id":"52280f671edd37edff000056","_slugs":["dental-care"],"depth":1,"lft":170,"name":"Dental
-        Care","oe_id":"106-02","parent_id":"52280f661edd37edff00004e","rgt":171},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","_slugs":["disease-management"],"depth":2,"lft":185,"name":"Disease
-        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","_slugs":["assistive-technology-2"],"depth":2,"lft":219,"name":"Assistive
-        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6b1edd37edff000086","_slugs":["psychiatric-emergency-services-1"],"depth":2,"lft":265,"name":"Psychiatric
-        Emergency Services","oe_id":"106-06-08","parent_id":"52280f691edd37edff00006d","rgt":266},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff00012d","_slugs":["skills-and-training-1"],"depth":1,"lft":600,"name":"Skills
-        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-san-francisco-health-care-system"],"id":"521d33951974fcdb2b0025ec","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null}]'
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:37:51 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:47:16 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 8682de82-ade3-4b5f-909b-3dc16af14275
-      X-Runtime:
-      - '0.025041'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:47:16 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 02 Apr 2014 05:47:17 GMT
-      Etag:
-      - '"e458a74ecc21a222345aef1e6421cc2d"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 2a50b6f7-dbbd-465b-bab9-57ab8bc48c98
-      X-Runtime:
-      - '0.055794'
-      X-Total-Count:
-      - '6'
-      X-Total-Pages:
-      - '1'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '24997'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[{"_id":"521d33961974fcdb2b002605","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-hospice-care-center"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
-        Miranda Avenue, Building 100, Unit 4A","zip":"94304-1290"},"ask_for":["Social
-        worker"],"contacts":[{"_id":"521d33961974fcdb2b002606","name":"Sheila Kennedy,
-        MSW, LCSW","title":"Hospice Coordinator"}],"coordinates":[-122.1418139,37.403608],"created_at":"2013-08-27T16:17:42-07:00","description":"Provides
-        medical, nursing and end-of-life care to veterans and to members of the community
-        connected with a community hospice when care can no longer be managed at home.
-        The 25-bed facility offers symptom management, nursing care, social services,
-        psychological and bereavement services, spiritual counseling and massage.","emails":["sheila-kennedy@va.gov"],"faxes":[{"number":"650
-        849-0260"}],"hours":"Monday-Friday, 7:30-4:30","kind":"Human Services","languages":["Filipino
-        (Tagalog)"],"mail_address":{"attention":"Hospice Care Center","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue, Building 100, Unit 4A","zip":"94304-1290"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Hospice Care Center","phones":[{"number":"650
-        849-0176","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Provides medical
-        and nursing care to veterans and to members of the community.","transportation":"SAMTRANS,
-        VTA stop in front.","updated_at":"2013-11-07T12:47:08-08:00","urls":["http://www.palo-alto.med.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33961974fcdb2b002605","services":[{"_id":"521d339b1974fcdb2b00261f","audience":"Veterans
-        with terminal diagnosis","eligibility":"Honorably discharged veteran facing
-        life-threatening illness given top priority (6 months or less prognosis)","fees":"No
-        fee for veterans. $250 per day for non-veterans. Checks accepted.","funding_sources":["Federal"],"how_to_apply":"For
-        veterans, anyone may initiate referral but physician must verify terminal
-        status. For non-veterans, anyone may initiate referral, but a community hospice
-        must be involved.","keywords":["HEALTH SERVICES","Hospice","Hospice Care","Veterans"],"service_areas":["Alameda
-        County","Calaveras County","Monterey County","San Mateo County","Santa Clara
-        County","Stanislaus County","Tuolumne County","northern California"],"updated_at":"2013-09-15T20:56:19-07:00","wait":"Varies
-        depending on bed availability.","categories":[{"_id":"52280f711edd37edff0000c4","_slugs":["care"],"depth":0,"lft":391,"name":"Care","oe_id":"108","parent_id":null,"rgt":488},{"_id":"52280f721edd37edff0000d7","_slugs":["end-of-life-care-1"],"depth":1,"lft":428,"name":"End-of-Life
-        Care","oe_id":"108-04","parent_id":"52280f711edd37edff0000c4","rgt":437},{"_id":"52280f731edd37edff0000da","_slugs":["hospice-1"],"depth":2,"lft":433,"name":"Hospice","oe_id":"108-04-03","parent_id":"52280f721edd37edff0000d7","rgt":434}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-hospice-care-center"],"id":"521d33961974fcdb2b002605","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645462000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025dd","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-addiction-treatment-services-ats"],"accessibility":["Wheelchair"],"address":{"city":"Menlo
-        Park","state":"CA","street":"795 Willow Road, Building 321","zip":"94025"},"ask_for":["Intake
-        Consultation Team"],"contacts":[{"_id":"521d33951974fcdb2b0025de","name":"Paula
-        Wilbourne","title":"Director"}],"coordinates":[-122.1572991,37.4651746],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
-        services to veterans addicted to alcohol or other drugs and ready to become
-        abstinent. Provides inpatient medical treatment for withdrawal, a residential
-        therapeutic community and outpatient clinics in support of continuing abstinence
-        in Menlo Park and San Jose.","faxes":[{"number":"650 617-2618"}],"kind":"Human
-        Services","languages":["Interpreter"],"mail_address":{"attention":"VA PA Addiction
-        Treatment Services","city":"Menlo Park","state":"CA","street":"795 Willow
-        Road, Building 321","zip":"94025"},"name":"Veterans Affairs Palo Alto Health
-        Care System., Menlo Park Division., Addiction Treatment Services (ATS)","phones":[{"number":"866
-        717-1978"}],"short_desc":"Provides residential and outpatient programs to
-        help veterans with alcohol or other drug-related difficulties.","transportation":"SAMTRANS
-        stops in front.","updated_at":"2013-11-07T12:47:01-08:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025dd","services":[{"_id":"521d33991974fcdb2b002615","audience":"Veterans
-        addicted to alcohol or other drugs","eligibility":"Veteran who meets eligibility
-        for benefits","fees":"Vary according to income.","funding_sources":["Federal"],"how_to_apply":"Phone
-        for information and/or to make an appointment.","keywords":["ALCOHOLISM SERVICES","Detoxification","Individual/Group
-        Counseling","Residential Care","DRUG ABUSE SERVICES","Drug-Free Treatment","Maintenance","Substance
-        Abuse Services","Veterans"],"service_areas":["Alameda County","Contra Costa
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County","Stanislaus County","Northern California"],"updated_at":"2013-10-06T18:04:35-07:00","wait":"2-3
-        weeks for inpatient programs. No wait for outpatient services.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","_slugs":["addiction-and-recovery"],"depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000051","_slugs":["detox"],"depth":2,"lft":159,"name":"Detox","oe_id":"106-01-02","parent_id":"52280f661edd37edff00004f","rgt":160},{"_id":"52280f661edd37edff000053","_slugs":["outpatient-treatment"],"depth":2,"lft":163,"name":"Outpatient
-        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-addiction-treatment-services-ats"],"id":"521d33951974fcdb2b0025dd","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025e9","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-home-based-primary-care-hbpc"],"contacts":[{"_id":"521d33951974fcdb2b0025ea","name":"Jon
-        D. Fuller, MD","title":"Medical Director"}],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
-        primary care to homebound veterans. Interdisciplinary team approach, composed
-        of a physician, nurse practitioner, social worker, dietitian, psychologist
-        and occupational therapist, works with the individual and his/her caregiver
-        to provide primary medical care and other services in the home to veterans
-        who are convalescing or have acute chronic or terminal illness. Services include
+        eligibility category. Private insurance accepted.","funding_sources":["Federal"],"keywords":["COMMODITY
+        SERVICES","Assistive/Medical Aids","HEALTH SERVICES","Dental","Inpatient Care","Outpatient
+        Care","MENTAL HEALTH SERVICES","Acute or Sub-acute Treatment","Individual/Group
+        Counseling","Observation/Diagnosis","Hospitals","Veteran Outpatient Clinics","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
+        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":81,"depth":2,"oe_id":"106-01-02","name":"Detox","parent_id":79,"slug":"detox"},{"id":83,"depth":2,"oe_id":"106-01-04","name":"Outpatient
+        Treatment","parent_id":79,"slug":"outpatient-treatment"},{"id":86,"depth":1,"oe_id":"106-02","name":"Dental
+        Care","parent_id":78,"slug":"dental-care"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
+        Education","parent_id":78,"slug":"health-education"},{"id":94,"depth":2,"oe_id":"106-04-02","name":"Disease
+        Management","parent_id":92,"slug":"disease-management"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":111,"depth":2,"oe_id":"106-06-02","name":"Assistive
+        Technology","parent_id":109,"slug":"assistive-technology-106-06-02"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
+        \u0026 Treat","parent_id":109,"slug":"prevent-treat"},{"id":134,"depth":2,"oe_id":"106-06-08","name":"Psychiatric
+        Emergency Services","parent_id":109,"slug":"psychiatric-emergency-services-106-06-08"},{"id":245,"depth":0,"oe_id":"109","name":"Education","parent_id":null,"slug":"education"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
+        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Walk
+        in during office hours.","service_areas":["Del Norte County","Humboldt County","Lake
+        County","Marin County","Mendocino County","Napa County","San Francisco County","San
+        Mateo County","Sonoma County"],"wait":"Varies according to service.","updated_at":"2014-05-24T14:07:59.018-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1654,"contacts":[{"id":1954,"name":"Jon
+        D. Fuller, MD","title":"Medical Director"}],"description":"Provides primary
+        care to homebound veterans. Interdisciplinary team approach, composed of a
+        physician, nurse practitioner, social worker, dietitian, psychologist and
+        occupational therapist, works with the individual and his/her caregiver to
+        provide primary medical care and other services in the home to veterans who
+        are convalescing or have acute chronic or terminal illness. Services include
         case management, skilled nursing care, rehabilitation, palliative care, emergency
         and long-term planning, individual and family counseling, health education,
         nutrition and diet consultation, evaluation for adaptive equipment and home
-        safety, referrals to VA and community resources.","faxes":[{"number":"650
+        safety, referrals to VA and community resources.","faxes":[{"id":1065,"number":"650
         849-0103"}],"hours":"Daily, 8-5. 24-hour on-call for all HBPC patients","kind":"Human
-        Services","mail_address":{"attention":"VA PA Home Based Primary Care (HBPC)","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue, 100/2C","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Home Based Primary Care (HBPC)","phones":[{"number":"650
-        849-0102","department":"(Daily, 8-5)"}],"short_desc":"Provides medical and
-        social services to homebound veterans.","transportation":"Not necessary for
-        service.","updated_at":"2013-11-07T12:47:03-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025e9","services":[{"_id":"521d33991974fcdb2b002618","audience":"Veterans","eligibility":"Homebound
+        Services","mail_address":{"id":1651,"attention":"VA PA Home Based Primary
+        Care (HBPC)","street":"3801 Miranda Avenue, 100/2C","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Veterans
+        Affairs Palo Alto Health Care System., Home Based Primary Care (HBPC)","phones":[{"id":2418,"number":"650
+        849-0102"}],"short_desc":"Provides medical and social services to homebound
+        veterans.","slug":"veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc","slugs":["veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc"],"transportation":"Not
+        necessary for service.","updated_at":"2014-05-24T14:08:20.439-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1654","services":[{"id":1654,"audience":"Veterans","eligibility":"Homebound
         veteran living within 30 minutes of VA Palo Alto office or San Jose office
         at highways 101 and 85. Must be willing to accept HBPC as primary care provider
         and be enrolled in VA Palo Alto Health Care System","fees":"None to veterans
         who meet either income criteria or specific service connected guidelines.
-        All other veterans may incur some copayment. Private insurance accepted.","funding_sources":["Federal"],"how_to_apply":"Apply
-        through primary care physician at VA Palo Alto Health Care System.","keywords":["HEALTH
-        SERVICES","Home Nursing","Individual/Group Counseling","Home Health Care","Veterans"],"service_areas":["Belmont","Burlingame","Cupertino","Fremont","Los
+        All other veterans may incur some copayment. Private insurance accepted.","funding_sources":["Federal"],"keywords":["HEALTH
+        SERVICES","Home Nursing","Individual/Group Counseling","Home Health Care","Veterans"],"how_to_apply":"Apply
+        through primary care physician at VA Palo Alto Health Care System.","service_areas":["Belmont","Burlingame","Cupertino","Fremont","Los
         Altos","Los Altos Hills","Menlo Park","Morgan Hill","Mountain View","Palo
         Alto","Redwood City","San Carlos","San Jose","San Mateo","Santa Clara","Saratoga","Union
-        City"],"updated_at":"2013-08-27T16:17:45-07:00","wait":"7-30 days."}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-home-based-primary-care-hbpc"],"id":"521d33951974fcdb2b0025e9","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025f0","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-homeless-veterans-rehabilitation-program-dot-vocational-education-center"],"accessibility":["Disabled
-        Parking","Elevator","Ramp","Wheelchair"],"address":{"city":"Menlo Park","state":"CA","street":"795
-        Willow Road, 180-D","zip":"94025"},"contacts":[{"_id":"521d33951974fcdb2b0025f1","title":"Screening
-        Coordinator"}],"coordinates":[-122.1572991,37.4651746],"created_at":"2013-08-27T16:17:41-07:00","description":"A
-        6 month residential co-ed treatment program designed to provide homeless veterans
-        with the skills necessary to function self-sufficiently in society. Residents
-        attend skills training classes, participate in therapy and support groups
-        and attend community meetings. A complete mental and physical evaluation is
-        made and a treatment program developed to improve well-being. Vocational assessment
-        and assistance with job search provided. Participants continue to attend some
-        meetings and activities for a time following discharge from the program.","faxes":[{"number":"650
-        617-2619"}],"hours":"Monday-Friday, 9-12, 1-3; Screening: Monday-Friday, 9-12,
-        1-3","kind":"Human Services","languages":["Spanish"],"mail_address":{"attention":"Homeless
-        Veterans Rehab Prog","city":"Menlo Park","state":"CA","street":"795 Willow
-        Road, 180-D","zip":"94025"},"name":"Veterans Affairs Palo Alto Health Care
-        System., Menlo Park Division., Homeless Veterans Rehabilitation Program.,
-        Vocational Education Center","phones":[{"number":"800 848-7254","hours":"(Monday-Friday,
-        9-3)"}],"short_desc":"A residential treatment program designed to provide
-        homeless veterans with the skills necessary to function self-sufficiently
-        in society.","transportation":"SAMTRANS stops within 2 blocks.","updated_at":"2013-11-07T12:47:04-08:00","url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025f0","services":[{"_id":"521d339a1974fcdb2b00261a","audience":"Homeless
-        veterans","eligibility":"Honorably discharged homeless veteran, medically
-        and psychiatrically stable, willing and able to return to full-time work","fees":"For
-        \"non-services connected\" NSC veterans: no fee for vets who make less than
-        $25,000 per year, otherwise $5 per day charge. \"Service connected\" veterans:
-        no charge. Cash and checks accepted.","funding_sources":["Federal"],"how_to_apply":"Apply
-        by phone Monday-Friday, 9-12, 1-3.","keywords":["HOUSING SERVICES","Temporary","Transitional
-        Housing/Shelter","Veterans"],"service_areas":["Alameda County","Contra Costa
-        County","Marin County","San Francisco County","San Mateo County","Santa Clara
-        County","Monterey County","Sacramento County","San Benito County","San Joaquin
-        County","Santa Cruz County","northern California"],"updated_at":"2013-10-06T18:06:14-07:00","wait":"2-8
-        weeks for inpatient admission.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff000071","_slugs":["checkup-and-test"],"depth":2,"lft":223,"name":"Checkup
-        & Test","oe_id":"106-06-04","parent_id":"52280f691edd37edff00006d","rgt":236},{"_id":"52280f6a1edd37edff000075","_slugs":["mental-health-evaluation"],"depth":3,"lft":230,"name":"Mental
-        Health Evaluation","oe_id":"106-06-04-04","parent_id":"52280f691edd37edff000071","rgt":231},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f791edd37edff000125","_slugs":["help-find-work-1"],"depth":1,"lft":584,"name":"Help
-        Find Work","oe_id":"110-01","parent_id":"52280f791edd37edff000124","rgt":589},{"_id":"52280f7a1edd37edff00012d","_slugs":["skills-and-training-1"],"depth":1,"lft":600,"name":"Skills
-        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-menlo-park-division-dot-homeless-veterans-rehabilitation-program-dot-vocational-education-center"],"id":"521d33951974fcdb2b0025f0","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025d5","_slugs":["veterans-affairs-palo-alto-health-care-system-dot-ambulatory-care-service"],"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"Palo Alto","state":"CA","street":"3801
-        Miranda Avenue","zip":"94304"},"ask_for":["Staff on duty in admitting/eligibility"],"contacts":[{"_id":"521d33951974fcdb2b0025d6","title":"Educational
-        Coordinator, Nursing Service"}],"coordinates":[-122.1418083,37.4036049],"created_at":"2013-08-27T16:17:41-07:00","description":"Primary
+        City"],"wait":"7-30 days.","updated_at":"2014-05-24T14:07:18.737-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1651,"accessibility":["Wheelchair"],"address":{"id":1376,"street":"795
+        Willow Road, Building 321","city":"Menlo Park","state":"CA","zip":"94025"},"ask_for":["Intake
+        Consultation Team"],"contacts":[{"id":1951,"name":"Paula Wilbourne","title":"Director"}],"coordinates":[-122.1572991,37.4651746],"description":"Provides
+        services to veterans addicted to alcohol or other drugs and ready to become
+        abstinent. Provides inpatient medical treatment for withdrawal, a residential
+        therapeutic community and outpatient clinics in support of continuing abstinence
+        in Menlo Park and San Jose.","faxes":[{"id":1063,"number":"650 617-2618"}],"kind":"Human
+        Services","languages":["Interpreter"],"mail_address":{"id":1648,"attention":"VA
+        PA Addiction Treatment Services","street":"795 Willow Road, Building 321","city":"Menlo
+        Park","state":"CA","zip":"94025"},"name":"Veterans Affairs Palo Alto Health
+        Care System., Menlo Park Division., Addiction Treatment Services (ATS)","phones":[{"id":2414,"number":"866
+        717-1978"},{"id":2415,"extension":"22305","number":"650 493-5000"}],"short_desc":"Provides
+        residential and outpatient programs to help veterans with alcohol or other
+        drug-related difficulties.","slug":"veterans-affairs-palo-alto-health-care-system-menlo-park-division-addiction-treatment-services-ats","slugs":["veterans-affairs-palo-alto-health-care-system-menlo-park-division-addiction-treatment-services-ats"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:29.599-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1651","services":[{"id":1651,"audience":"Veterans
+        addicted to alcohol or other drugs","eligibility":"Veteran who meets eligibility
+        for benefits","fees":"Vary according to income.","funding_sources":["Federal"],"keywords":["ALCOHOLISM
+        SERVICES","Detoxification","Individual/Group Counseling","Residential Care","DRUG
+        ABUSE SERVICES","Drug-Free Treatment","Maintenance","Substance Abuse Services","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
+        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":81,"depth":2,"oe_id":"106-01-02","name":"Detox","parent_id":79,"slug":"detox"},{"id":83,"depth":2,"oe_id":"106-01-04","name":"Outpatient
+        Treatment","parent_id":79,"slug":"outpatient-treatment"}],"how_to_apply":"Phone
+        for information and/or to make an appointment.","service_areas":["Alameda
+        County","Contra Costa County","Marin County","San Francisco County","San Mateo
+        County","Santa Clara County","Stanislaus County","Northern California"],"wait":"2-3
+        weeks for inpatient programs. No wait for outpatient services.","updated_at":"2014-05-24T14:07:58.951-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1649,"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1374,"street":"3801
+        Miranda Avenue","city":"Palo Alto","state":"CA","zip":"94304"},"ask_for":["Staff
+        on duty in admitting/eligibility"],"coordinates":[-122.1418083,37.4036049],"description":"Primary
         entry point for VA medical services in Palo Alto, including admission to the
         hospital. Services are provided only to veterans, and preference is given
         to those with service-connected illnesses or disabilities. On the first visit,
@@ -516,66 +265,72 @@ http_interactions:
         is provided 24 hours a day. Limited services are available at satellites in
         San Jose and Monterey, as well as in the divisions at Menlo Park, Livermore,
         Stockton and Modesto.","kind":"Human Services","languages":["Japanese","Spanish","Filipino
-        (Tagalog)"],"mail_address":{"attention":"VA PA Ambulatory Care Service","city":"Palo
-        Alto","state":"CA","street":"3801 Miranda Avenue","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Ambulatory Care Service","phones":[{"number":"650
-        493-5000","extensions":["22175"],"hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"Outpatient
-        care for all honorably discharged veterans.","transportation":"SAMTRANS stops
-        in front.","updated_at":"2013-10-02T19:07:51-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025d5","services":[{"_id":"521d33981974fcdb2b002613","audience":"Veterans
+        (Tagalog)"],"mail_address":{"id":1646,"attention":"VA PA Ambulatory Care Service","street":"3801
+        Miranda Avenue","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Veterans
+        Affairs Palo Alto Health Care System., Ambulatory Care Service","phones":[{"id":2406,"extension":"22175","number":"650
+        493-5000"},{"id":2407,"extension":"22234","number":"650 493-5000"},{"id":2408,"number":"866
+        717-1978"},{"id":2409,"extension":"22305","number":"650 493-5000"}],"short_desc":"Outpatient
+        care for all honorably discharged veterans.","slug":"veterans-affairs-palo-alto-health-care-system-ambulatory-care-service","slugs":["veterans-affairs-palo-alto-health-care-system-ambulatory-care-service"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:29.582-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1649","services":[{"id":1649,"audience":"Veterans
         and employees","eligibility":"Honorably discharged veteran. Priority given
         to service-connected or low-income veterans","fees":"None for service-connected
         conditions. Co-payment (30% to 100%) for nonservice connected prescriptions
-        and nonservice connected veterans depending on income. Cash and checks accepted.","funding_sources":["Federal","Fees"],"how_to_apply":"Walk
-        in. Service discharge papers necessary for application. Means testing may
-        be required.","keywords":["Veteran Outpatient Clinics","Veterans"],"service_areas":["Monterey
+        and nonservice connected veterans depending on income. Cash and checks accepted.","funding_sources":["Federal","Fees"],"keywords":["Veteran
+        Outpatient Clinics","Veterans"],"how_to_apply":"Walk in. Service discharge
+        papers necessary for application. Means testing may be required.","service_areas":["Monterey
         County","San Benito County","San Mateo County","Santa Clara County","Santa
         Cruz County","Castro Valley","Dublin","Fremont","Hayward","Newark","Pleasanton","San
-        Leandro","San Lorenzo","San Ramon","Union City"],"updated_at":"2013-08-27T16:17:44-07:00","wait":"2-6
-        weeks for scheduled clinic appointments, walk in for same day clinic."}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-palo-alto-health-care-system-dot-ambulatory-care-service"],"id":"521d33951974fcdb2b0025d5","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null},{"_id":"521d33951974fcdb2b0025ec","_slugs":["veterans-affairs-san-francisco-health-care-system"],"accessibility":["Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"city":"San Francisco","state":"CA","street":"4150
-        Clement Street","zip":"94121"},"ask_for":["Call Telephone Linked Care (800-733-0502)"],"contacts":[{"_id":"521d33951974fcdb2b0025ed","name":"Sheila
-        M. Cullen","title":"Medical Center Director"}],"coordinates":[-122.5032335,37.781335],"created_at":"2013-08-27T16:17:41-07:00","description":"Provides
-        general medical, surgical and psychiatric services for veterans. Inpatient
-        and outpatient services include arthritic rheumatology, cardiology, dermatology,
-        endocrinology, eye, ear, nose, and throat, gastrointestinal, hematology, hemodialysis,
-        infectious disease, medical research, neurology, neurosurgery, nuclear medicine,
-        heart surgery, ophthalmology, orthopedic, plastic surgery, podiatry, psychiatric,
-        respiratory care, general surgery and social work. Offers limited dental care,
-        eye glasses and other prosthetics based on eligibility. Serves as an outpatient
-        treatment facility for veterans who are misusing alcohol, cocaine, heroin
-        or a combination of drugs, or are dually diagnosed. Treatment may include
-        methadone maintenance, naltrexone therapy, antabuse therapy or drug-free therapy.
-        Services include individual or group therapy, crisis intervention, couples
-        or family therapy, vocational counseling, psychological testing, education
-        classes, psychiatric social work and referral to medical practice clinics.","kind":"Human
-        Services","languages":["Chinese","Filipino (Tagalog)","Japanese","Russian","Spanish"],"mail_address":{"attention":"Veterans
-        Affairs San Francisco","city":"San Francisco","state":"CA","street":"4150
-        Clement Street","zip":"94121"},"name":"Veterans Affairs San Francisco Health
-        Care System","phones":[{"number":"415 221-4810","hours":"(Monday-Friday, 8-4:30)"}],"short_desc":"General
-        medical, psychiatric and surgical services for veterans.","transportation":"MUNI
-        - 38 Geary.","updated_at":"2013-10-01T12:18:33-07:00","urls":["http://www.sf.med.va.gov"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33951974fcdb2b0025ec","services":[{"_id":"521d339a1974fcdb2b002619","audience":"Veterans
-        of the U.S. Armed Forces","eligibility":"Veteran with other than dishonorable
-        discharge, eligibility individually determined","fees":"Vary according to
-        eligibility category. Private insurance accepted.","funding_sources":["Federal"],"how_to_apply":"Walk
-        in during office hours.","keywords":["COMMODITY SERVICES","Assistive/Medical
-        Aids","HEALTH SERVICES","Dental","Inpatient Care","Outpatient Care","MENTAL
-        HEALTH SERVICES","Acute or Sub-acute Treatment","Individual/Group Counseling","Observation/Diagnosis","Hospitals","Veteran
-        Outpatient Clinics","Veterans"],"service_areas":["Del Norte County","Humboldt
-        County","Lake County","Marin County","Mendocino County","Napa County","San
-        Francisco County","San Mateo County","Sonoma County"],"updated_at":"2013-09-18T17:06:53-07:00","wait":"Varies
-        according to service.","categories":[{"_id":"52280f661edd37edff00004e","_slugs":["health"],"depth":0,"lft":155,"name":"Health","oe_id":"106","parent_id":null,"rgt":268},{"_id":"52280f661edd37edff00004f","_slugs":["addiction-and-recovery"],"depth":1,"lft":156,"name":"Addiction
-        & Recovery","oe_id":"106-01","parent_id":"52280f661edd37edff00004e","rgt":169},{"_id":"52280f661edd37edff000051","_slugs":["detox"],"depth":2,"lft":159,"name":"Detox","oe_id":"106-01-02","parent_id":"52280f661edd37edff00004f","rgt":160},{"_id":"52280f661edd37edff000053","_slugs":["outpatient-treatment"],"depth":2,"lft":163,"name":"Outpatient
-        Treatment","oe_id":"106-01-04","parent_id":"52280f661edd37edff00004f","rgt":164},{"_id":"52280f671edd37edff000056","_slugs":["dental-care"],"depth":1,"lft":170,"name":"Dental
-        Care","oe_id":"106-02","parent_id":"52280f661edd37edff00004e","rgt":171},{"_id":"52280f681edd37edff00005c","_slugs":["health-education"],"depth":1,"lft":182,"name":"Health
-        Education","oe_id":"106-04","parent_id":"52280f661edd37edff00004e","rgt":199},{"_id":"52280f681edd37edff00005e","_slugs":["disease-management"],"depth":2,"lft":185,"name":"Disease
-        Management","oe_id":"106-04-02","parent_id":"52280f681edd37edff00005c","rgt":186},{"_id":"52280f691edd37edff00006d","_slugs":["medical-care"],"depth":1,"lft":216,"name":"Medical
-        Care","oe_id":"106-06","parent_id":"52280f661edd37edff00004e","rgt":267},{"_id":"52280f691edd37edff00006f","_slugs":["assistive-technology-2"],"depth":2,"lft":219,"name":"Assistive
-        Technology","oe_id":"106-06-02","parent_id":"52280f691edd37edff00006d","rgt":220},{"_id":"52280f6a1edd37edff00007a","_slugs":["prevent-and-treat"],"depth":2,"lft":241,"name":"Prevent
-        & Treat","oe_id":"106-06-07","parent_id":"52280f691edd37edff00006d","rgt":264},{"_id":"52280f6b1edd37edff000086","_slugs":["psychiatric-emergency-services-1"],"depth":2,"lft":265,"name":"Psychiatric
-        Emergency Services","oe_id":"106-06-08","parent_id":"52280f691edd37edff00006d","rgt":266},{"_id":"52280f751edd37edff0000f5","_slugs":["education"],"depth":0,"lft":489,"name":"Education","oe_id":"109","parent_id":null,"rgt":582},{"_id":"52280f791edd37edff000124","_slugs":["work"],"depth":0,"lft":583,"name":"Work","oe_id":"110","parent_id":null,"rgt":620},{"_id":"52280f7a1edd37edff00012d","_slugs":["skills-and-training-1"],"depth":1,"lft":600,"name":"Skills
-        & Training","oe_id":"110-03","parent_id":"52280f791edd37edff000124","rgt":615}]}],"organization":{"_id":"521d33941974fcdb2b0025be","_slugs":["united-states-government"],"created_at":"2013-08-27T16:17:40-07:00","name":"United
-        States Government","updated_at":"2013-10-01T12:18:25-07:00","url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d33941974fcdb2b0025be/locations"},"slugs":["veterans-affairs-san-francisco-health-care-system"],"id":"521d33951974fcdb2b0025ec","_score":null,"_type":"location","_index":"production-ohana_api","_version":null,"sort":[1377645461000],"highlight":null,"_explanation":null}]'
+        Leandro","San Lorenzo","San Ramon","Union City"],"wait":"2-6 weeks for scheduled
+        clinic appointments, walk in for same day clinic.","updated_at":"2014-05-24T14:07:18.672-07:00"}],"organization":{"id":1337,"name":"United
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}}]'
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:47:17 GMT
+  recorded_at: Mon, 26 May 2014 22:14:12 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 26 May 2014 22:24:40 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=Custom+Value&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+        rel="last"
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - c5f6cf4b-5ac4-4e8f-b670-f0067d8a12c5
+      X-Runtime:
+      - '0.103452'
+      X-Total-Count:
+      - '0'
+      X-Total-Pages:
+      - '0'
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 26 May 2014 22:24:40 GMT
 recorded_with: VCR 2.8.0

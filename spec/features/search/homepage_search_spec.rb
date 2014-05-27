@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "homepage search", :js=>true do
+feature "homepage search" do
 
   scenario 'with keyword that returns results', :vcr do
     search_for_maceo
@@ -43,7 +43,7 @@ feature "homepage search", :js=>true do
   scenario "when clicking a category", :vcr do
     visit("/")
     click_link("Health Insurance")
-    expect(page).to have_content("A project of the Tides Center")
+    expect(page).to have_content("Health Insurance TeleCenter")
   end
 
   xscenario "when result has keyword matching top-level category", :vcr do
@@ -51,39 +51,4 @@ feature "homepage search", :js=>true do
     click_link("Market Match")
     expect(page).to have_link("Food")
   end
-
-  # location is no longer displayed on homepage. Leaving this in case it's re-added.
-  xscenario 'with location that returns results', :vcr do
-    search_from_home(:location => '94060')
-    looks_like_puente
-    expect(find_field("location").value).to eq("94060")
-    expect(page).not_to have_content("1 result located!")
-  end
-
-  xscenario 'with location that returns no results', :vcr do
-    search_from_home(:location => 'asdfg')
-    looks_like_no_results
-    expect(page).not_to have_content("No results located!")
-  end
-
-  xscenario 'with keyword and location that returns results', :vcr do
-    search_from_home(:keyword => "puente", :location => '94060')
-    looks_like_puente
-    expect(find_field("location").value).to eq("94060")
-    expect(page).not_to have_content("1 result located!")
-  end
-
-  xscenario 'with keyword and location that returns no results', :vcr do
-    search_from_home(:keyword => "sdaff", :location => '94403')
-    looks_like_no_results
-    expect(page).not_to have_content("No results located!")
-  end
-
-  scenario "when click Kind link", :vcr do
-    visit('/organizations?keyword=soccer')
-    page.first("a", text: "Other").click
-    expect(find("#list-view")).not_to have_content("Sports")
-    expect(page).to have_content("557 results")
-  end
-
 end

@@ -1,73 +1,72 @@
 require 'spec_helper'
 
-feature "results page pagination", :js=>true do
+feature "results page pagination" do
 
-  scenario 'with results that have no results', :vcr do
-    search_from_home(:keyword => 'asdfg')
+  scenario 'when there are no results', :vcr do
+    search_from_home(keyword: 'asdfg')
     expect(page).not_to have_selector('.pagination')
   end
 
-  scenario 'with results that have one result', :vcr do
+  scenario 'when there is only one result', :vcr do
     search_for_maceo
     expect(page).to have_selector('.pagination')
     expect(page).to have_content('Page: 1')
   end
 
-  scenario 'on first page of results that have less than five entries', :vcr do
-    search_from_home(:keyword=>'libraries')
+  scenario 'on first page with less than 4 pages of results', :vcr do
+    search_from_home(keyword: 'health')
     expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: 1 2 >')
+    expect(page).to have_content('Page: 1 2 3 >')
   end
 
-  scenario 'on last page of results that have less than five entries', :vcr do
-    search_from_home(:keyword=>'libraries')
-    go_to_page(2)
-    expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: < 1 2')
-  end
-
-  scenario 'on first page of results that have more than five entries', :vcr do
-    search_from_home
-    expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: 1 2 3 4 5 ... 20 >')
-  end
-
-  scenario 'on last page of results that have more than five entries', :vcr do
-    search_from_home
-    go_to_page(20)
-    expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: < 1 ... 16 17 18 19 20')
-    expect(page).to have_content('571-589 of 589 results')
-  end
-
-  scenario 'on page less than three pages from beginning of results that have more than five entries', :vcr do
-    search_from_home
+  scenario 'on last page with less than 4 pages of results', :vcr do
+    search_from_home(keyword: 'health')
     go_to_page(3)
     expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: < 1 2 3 4 5 ... 20 >')
+    expect(page).to have_content('Page: < 1 2 3')
   end
 
-  scenario 'on page more than three pages from beginning of results that have more than five entries', :vcr do
-    search_from_home
+  scenario 'on first page with more than 5 pages of results', :vcr do
+    visit('/organizations')
+    expect(page).to have_selector('.pagination')
+    expect(page).to have_content('Page: 1 2 3 4 5 ... 12 >')
+  end
+
+  scenario 'on last page with more than 5 pages of results', :vcr do
+    visit('/organizations')
+    go_to_page(12)
+    expect(page).to have_selector('.pagination')
+    expect(page).to have_content('Page: < 1 ... 8 9 10 11 12')
+    expect(page).to have_content('331-339 of 339 results')
+  end
+
+  scenario 'less than 3 pages in with more than 5 pages of results', :vcr do
+    visit('/organizations')
+    go_to_page(3)
+    expect(page).to have_selector('.pagination')
+    expect(page).to have_content('Page: < 1 2 3 4 5 ... 12 >')
+  end
+
+  scenario 'more than 3 pages in with more than 5 pages of results', :vcr do
+    visit('/organizations')
     go_to_page(4)
     expect(page).to have_selector('.pagination')
-    expect(page).to have_content('Page: <  1 ... 2 3 4 5 6 ... 20 >')
+    expect(page).to have_content('Page: <  1 ... 2 3 4 5 6 ... 12 >')
   end
 
-  scenario 'on page less than three pages from end of results that have more than five entries', :vcr do
-    search_from_home
-    go_to_page(20)
-    go_to_page(18)
+  scenario 'less than 3 pages out with more than 5 pages of results', :vcr do
+    visit('/organizations')
+    go_to_page(12)
+    go_to_page(10)
     expect(page).to have_selector('.pagination')
-    expect(page).to have_content('<  1 ... 16 17 18 19 20 >')
+    expect(page).to have_content('<  1 ... 8 9 10 11 12 >')
   end
 
-  scenario 'on page more than three pages from end of results that have more than five entries', :vcr do
-    search_from_home
-    go_to_page(20)
-    go_to_page(17)
+  scenario 'more than 3 pages out with more than 5 pages of results', :vcr do
+    visit('/organizations')
+    go_to_page(12)
+    go_to_page(8)
     expect(page).to have_selector('.pagination')
-    expect(page).to have_content('<  1 ... 15 16 17 18 19 ... 20 >')
+    expect(page).to have_content('<  1 ... 6 7 8 9 10 ... 12 >')
   end
-
 end

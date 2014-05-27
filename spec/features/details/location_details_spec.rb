@@ -26,12 +26,12 @@ feature "location details" do
   end
 
   scenario "when the details page is visited directly", :vcr do
-    visit('/organizations/521d33a01974fcdb2b0026a9')
+    visit_test_location
     expect(page).to have_content("2013 Avenue of the fellows")
   end
 
   scenario "when the details page is visited directly with invalid id", :vcr do
-    visit('/organizations/1234')
+    visit('/organizations/12345')
     expect(page).to have_content("CalFresh")
     expect(page).to have_title "SMC-Connect"
   end
@@ -39,7 +39,7 @@ feature "location details" do
   context 'when phone elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -47,9 +47,8 @@ feature "location details" do
       expect(page).to have_content("Contact")
     end
 
-    it "includes the department, type, and phone hours" do
-      expect(page).to have_content("(650) 372-6200 TTY Information (Monday-Friday,
-        8-5)")
+    it "includes the department" do
+      expect(page).to have_content("(650) 372-6200 Reservations")
     end
 
     it "includes the Fax number" do
@@ -65,7 +64,7 @@ feature "location details" do
   context 'when service elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -105,11 +104,7 @@ feature "location details" do
     end
 
     it "includes updated time" do
-      # TODO The presence of the time causes this test to fail on Travis CI because
-      # the time is checked against the Travis CI server time. The time has been
-      # removed from the test till this can be sorted.
-      #expect(page).to have_content("Tuesday, 1 October 2013 at 3:18 PM")
-      expect(page).to have_content("Thursday, 7 November 2013 at")
+      expect(page).to have_content("Saturday, 24 May 2014 at 2:07 PM PDT")
     end
 
   end
@@ -117,7 +112,7 @@ feature "location details" do
   context 'when location elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit('/organizations/521d33a01974fcdb2b0026a9')
+       visit_test_location
       end
     end
 
@@ -180,12 +175,12 @@ feature "location details" do
   context 'when farmers market with market match' do
     before(:each) do
       VCR.use_cassette('location_details/when_market_details_page_is_visited_directly') do
-       visit('/organizations/522dee234becffff2700000e')
+       visit('/organizations/coastside-farmers-market-of-pacifca')
       end
     end
 
     # market match is not currently showing up on farmers' market entries
-    xit "includes Market Match" do
+    it "includes Market Match" do
       expect(page).to have_content("Market Match")
     end
 

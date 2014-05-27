@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,23 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:38:30 GMT
+      - Tue, 27 May 2014 00:00:20 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
-      - '1'
-      X-Rack-Cache:
-      - miss
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+        rel="last"
+      Status:
+      - 200 OK
       X-Request-Id:
-      - 23f1c617-e788-459c-b90f-ebd57bdbb2ac
+      - 1ceee2a7-72dc-4b2d-914b-871f200f5aff
       X-Runtime:
-      - '0.025764'
+      - '0.027756'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
       - '2'
       Connection:
@@ -48,10 +47,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:38:30 GMT
+  recorded_at: Tue, 27 May 2014 00:00:20 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=vincent&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -60,8 +59,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -74,124 +71,229 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Apr 2014 05:46:33 GMT
+      - Tue, 27 May 2014 00:00:21 GMT
       Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - '"d66522d77b804c33d739ae95c7d5515b"'
+      Status:
+      - 200 OK
       X-Current-Page:
       - '1'
-      X-Rack-Cache:
-      - miss
       X-Request-Id:
-      - 622d352d-63bb-4623-8522-294dde856891
+      - 91c138a0-9346-400c-a9c9-0c2f5a6c792e
       X-Runtime:
-      - '0.025456'
+      - '0.258308'
       X-Total-Count:
-      - '0'
+      - '4'
       X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Wed, 02 Apr 2014 05:46:34 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?action=index&api_token=<API_TOKEN>&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 15 Apr 2014 07:55:56 GMT
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - be7a3f6e-ca22-4b6f-ab90-d244bf7cd36d
-      X-Runtime:
-      - '0.178902'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Content-Length:
-      - '68'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"error":"bad request","description":"Invalid ZIP code or address."}'
-    http_version: 
-  recorded_at: Tue, 15 Apr 2014 07:55:56 GMT
-- request:
-    method: get
-    uri: http://ohanapi.herokuapp.com/api/search?api_token=<API_TOKEN>&keyword=asdfasg
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - "<API_TOKEN>"
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Tue, 15 Apr 2014 07:55:56 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      X-Current-Page:
       - '1'
-      X-Rack-Cache:
-      - miss
-      X-Request-Id:
-      - 5541aa43-183c-4568-85a7-fd49461b65ef
-      X-Runtime:
-      - '0.026495'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
       Content-Length:
-      - '2'
+      - '22368'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: "[]"
+      string: '[{"id":1618,"accessibility":["Wheelchair"],"address":{"id":1351,"street":"50
+        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Worker
+        on duty"],"contacts":[{"id":1910,"name":"Tom Cordell","title":"Manager, Homeless
+        Help Center"}],"coordinates":[-122.3250474,37.568272],"description":"Offers
+        homeless or low-income persons clean clothing, toiletries, mail, telephone,
+        laundry  service, DMV identification and transportation help (bus fare, gasoline,
+        etc.) Assists with work-related needs such as uniforms, work boots, union
+        dues and job referrals. Provides emergency medical assistance, substance abuse
+        center fees, and referrals to mental health  and other resources. Distributes
+        vouchers to county shelters or sleeping bags when shelters are full. A free
+        bag lunch and continental breakfast are served to homeless persons on weekdays,
+        10 am to 12  noon.  .","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
+        9:45 am - 11:45 am","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1615,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, San Mateo Homeless Help Center","phones":[{"id":2325,"number":"650
+        343-9251"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center"],"transportation":"SamTrans,
+        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:04.473-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1618","services":[{"id":1618,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Offers homeless
+        or low-income persons clean clothing, toiletries, mail, telephone, laundry  service,
+        DMV identification and transportation help (bus fare, gasoline, etc.) Assists
+        with work-related needs such as uniforms, work boots, union dues and job referrals.
+        Provides emergency medical assistance, substance abuse center fees, and referrals
+        to mental health  and other resources. Distributes vouchers to county shelters
+        or sleeping bags when shelters are full. A free bag lunch and continental
+        breakfast are served to homeless persons on weekdays, 10 am to 12  noon.  .","eligibility":"None","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
+        Vouchers","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
+        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
+        in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
+        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
+        Services","parent_id":66,"slug":"phone-services"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":182,"depth":1,"oe_id":"107-04","name":"Vouchers","parent_id":135,"slug":"vouchers"},{"id":186,"depth":2,"oe_id":"107-04-04","name":"Housing
+        Vouchers","parent_id":182,"slug":"housing-vouchers-107-04-04"}],"how_to_apply":"Walk
+        in.","service_areas":["Belmont","Burlingame","Foster City","Hillsborough","San
+        Carlos","San Mateo"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.217-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1617,"accessibility":["Wheelchair"],"address":{"id":1350,"street":"344
+        Grand Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Worker
+        on duty"],"contacts":[{"id":1908,"name":"Carolynn Ghiorso","title":"Conference
+        President"},{"id":1909,"name":"Lisa Collins","title":"Director"}],"coordinates":[-122.4110983,37.655626],"description":"Offers
+        homeless or low-income persons clean clothing, toiletries, mail and telephone
+        service, DMV identification, laundry facilities and transportation help (bus
+        fare, gasoline, etc.). Assists with work-related needs such as uniforms, work
+        boots, union dues and job referrals. Provides emergency medical assistance,
+        substance abuse center fees, and referrals to mental health and other resources.
+        Distributes vouchers to county shelters or sleeping bags when shelters are
+        full. A free lunch is served weekdays (10 am to noon) and breakfast Saturdays
+        (10-11) at Cafe St. Vincent.","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
+        10 am-12 noon; Saturday, 10-11","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1614,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, North County Homeless Help Center","phones":[{"id":2324,"number":"650
+        589-9039"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-north-county-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-north-county-homeless-help-center"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:04.347-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1617","services":[{"id":1617,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Offers homeless
+        or low-income persons clean clothing, toiletries, mail and telephone service,
+        DMV identification, laundry facilities and transportation help (bus fare,
+        gasoline, etc.). Assists with work-related needs such as uniforms, work boots,
+        union dues and job referrals. Provides emergency medical assistance, substance
+        abuse center fees, and referrals to mental health and other resources. Distributes
+        vouchers to county shelters or sleeping bags when shelters are full. A free
+        lunch is served weekdays (10 am to noon) and breakfast Saturdays (10-11) at
+        Cafe St. Vincent.","eligibility":"Homeless person or person without cooking
+        facilities","fees":"None.","funding_sources":["Donations"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMODITY SERVICES","Clothing/Personal
+        Items","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
+        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
+        in san mateo"],"categories":[{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
+        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
+        Services","parent_id":66,"slug":"phone-services"}],"how_to_apply":"Walk in.","service_areas":["Brisbane","Daly
+        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:58.122-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1616,"accessibility":["Wheelchair"],"address":{"id":1349,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Homeless
+        Desk"],"contacts":[{"id":1907,"name":"John Dempsey","title":"Conference President"}],"coordinates":[-122.213221,37.477227],"description":"Located
+        at the Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
+        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
+        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
+        also available for those who can show doctor''s orders for visits or to pick
+        up drug prescriptions.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1048,"number":"650
+        298-8184"}],"hours":"Monday-Friday, 1:15-2:15pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1613,"attention":"Redwood
+        City Area Conference","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, Redwood City Homeless Help Center","phones":[{"id":2323,"number":"650
+        780-7500"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:28.953-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1616","services":[{"id":1616,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Located at the
+        Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
+        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
+        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
+        also available for those who can show doctor''s orders for visits or to pick
+        up drug prescriptions.","eligibility":"Homeless person","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
+        Vouchers","Brown Bag Food Programs","Clothing Vouchers","Bathing Facilities","Laundry
+        Vouchers","Low Income","Homeless People","svdp","food in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":58,"depth":2,"oe_id":"104-02-04","name":"Clothing
+        Vouchers","parent_id":54,"slug":"clothing-vouchers"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Walk
+        in.","service_areas":["Atherton","East Palo Alto","Menlo Park","Portola Valley","Redwood
+        City","San Carlos","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.070-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1615,"accessibility":["Wheelchair"],"address":{"id":1348,"street":"50
+        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Volunteer
+        on duty"],"contacts":[{"id":1903,"name":"Lorraine Moriarty","title":"Executive
+        Director"},{"id":1904,"name":"Maritza Techioli","title":"Community Liaison"},{"id":1905,"name":"Jodie
+        Penner","title":"Director of Devel.","email":"jpenner@svdpsm.org"},{"id":1906,"name":"Janice
+        Kroll","title":"Development Asst","email":"jkroll@svdpsm.org"}],"coordinates":[-122.3250474,37.568272],"description":"Assists
+        families and individuals with emergencies such as shelter, food, clothing,
+        furniture, transportation and medicine through 34 small working groups called
+        conferences. St. Vincent de Paul members visit the home to assess needs and
+        offer service. Also supports those in recovery programs.     Three Homeless
+        Help Centers (described separately) provide weekday lunches, continental breakfasts,
+        clothing vouchers, laundry, toiletries, identification and transportation
+        assistance to individuals without a permanent address. The North County Homeless
+        Help Center and Cafe St. Vincent are located at 344 Grand Avenue, South San
+        Francisco (650-589-9039), open Monday through Saturday, 10 am-12 noon. The
+        Redwood City Homeless Help Center is housed in the Fair Oaks Community Center,
+        2600 Middlefield Road (650-780-7500), and is open 1-2 pm weekdays. The San
+        Mateo site is at 50 North B Street and is open 10 am-12 noon Monday through
+        Friday (650-343-9251). A meal is also served on Monday at 5 pm, at St. Francis
+        Church, 420 Bay Road, East Palo Alto. Peninsula Family Resource Center (PFRC)
+        arranges home visits for persons in need of rental and utilities assistance
+        (homelessness prevention), food, clothes, furniture and other material needs.
+        Call 650-343-4403 Monday-Friday, 10-12 and 1-4, to make arrangements. Also
+        coordinates summer camp scholarships for youth and holiday assistance programs.
+        Restorative Justice Ministry is a full-time jail ministry program that provides
+        spiritual guidance, religious services, tutoring, support and assistance to
+        those incarcerated in the San Mateo County jail facilities and to their families.
+        Jail/prison after care program provides post-release support. Contact the
+        SVdP Jail Chaplain at 650-366-9847. Catherine''s Center is a supportive residential
+        program for ten women at a time who were previously incarcerated. Five thrift
+        stores are located in San Mateo County: Daly City at 6256 Mission Street (650-992-9271);
+        Redwood City at 2406 El Camino Real (650-366-6367); San Bruno at 1600 El Camino
+        Real (650-588-5767); San Mateo at 40 North B Street (650-347-5101); South
+        San Francisco at 344 Grand Avenue (650-589-8445). Donations can be made at
+        store locations or call 650 871-6844 for donation or computer re-cycling pick-up.  For
+        vehicle donations call 800-937-7837.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1047,"number":"650
+        343-9495"}],"hours":"Emergency Helpline: Monday - Friday, 9-4","kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"id":1612,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services","phones":[{"id":2321,"department":"Directory
+        24 hours daily","number":"650 343-4405"},{"id":2322,"department":"Emergency
+        Helpline","number":"650 343-4403"}],"short_desc":"Coordinates the Society''s
+        county-wide emergency services and provides homeless services to persons in
+        the central county area.","slug":"st-vincent-de-paul-county-wide-services","slugs":["st-vincent-de-paul-county-wide-services"],"transportation":"SAMTRANS,
+        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:22.477-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1615","services":[{"id":1615,"audience":"Families
+        or individuals seeking emergency help for food, clothing, rental and utility
+        assistance. Homeless individuals in need of food, basic services and vouchers
+        for San Mateo County shelters","description":"Assists families and individuals
+        with emergencies such as shelter, food, clothing, furniture, transportation
+        and medicine through 34 small working groups called conferences. St. Vincent
+        de Paul members visit the home to assess needs and offer service. Also supports
+        those in recovery programs.     Three Homeless Help Centers (described separately)
+        provide weekday lunches, continental breakfasts, clothing vouchers, laundry,
+        toiletries, identification and transportation assistance to individuals without
+        a permanent address. The North County Homeless Help Center and Cafe St. Vincent
+        are located at 344 Grand Avenue, South San Francisco (650-589-9039), open
+        Monday through Saturday, 10 am-12 noon. The Redwood City Homeless Help Center
+        is housed in the Fair Oaks Community Center, 2600 Middlefield Road (650-780-7500),
+        and is open 1-2 pm weekdays. The San Mateo site is at 50 North B Street and
+        is open 10 am-12 noon Monday through Friday (650-343-9251). A meal is also
+        served on Monday at 5 pm, at St. Francis Church, 420 Bay Road, East Palo Alto.
+        Peninsula Family Resource Center (PFRC) arranges home visits for persons in
+        need of rental and utilities assistance (homelessness prevention), food, clothes,
+        furniture and other material needs. Call 650-343-4403 Monday-Friday, 10-12
+        and 1-4, to make arrangements. Also coordinates summer camp scholarships for
+        youth and holiday assistance programs. Restorative Justice Ministry is a full-time
+        jail ministry program that provides spiritual guidance, religious services,
+        tutoring, support and assistance to those incarcerated in the San Mateo County
+        jail facilities and to their families. Jail/prison after care program provides
+        post-release support. Contact the SVdP Jail Chaplain at 650-366-9847. Catherine''s
+        Center is a supportive residential program for ten women at a time who were
+        previously incarcerated. Five thrift stores are located in San Mateo County:
+        Daly City at 6256 Mission Street (650-992-9271); Redwood City at 2406 El Camino
+        Real (650-366-6367); San Bruno at 1600 El Camino Real (650-588-5767); San
+        Mateo at 40 North B Street (650-347-5101); South San Francisco at 344 Grand
+        Avenue (650-589-8445). Donations can be made at store locations or call 650
+        871-6844 for donation or computer re-cycling pick-up.  For vehicle donations
+        call 800-937-7837.","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants","Sales"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meal","COMMODITY
+        SERVICES","Clothing/Personal Items","Furniture/Appliances","EMERGENCY SERVICES","Food
+        Boxes/Food Vouchers","FINANCIAL ASSISTANCE SERVICES","Health","Housing","Utilities","RECREATION/LEISURE
+        SERVICES","Camperships","Soup Kitchens","Homeless Motel Vouchers","Housing
+        Expense Assistance","Clothing","Laundry Facilities","Thrift Shops","Utility
+        Assistance","Identification Cards","Prison Ministries","Emergency Medical
+        Care","Low Income","Homeless People","Religious Groups/Communities","svdp","food
+        in san mateo"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
+        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
+        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
+        Delivery","parent_id":17,"slug":"food-delivery"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
+        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
+        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
+        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
+        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
+        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"}],"how_to_apply":"Apply
+        by phone or visit a Homeless Help Center located in Redwood City, San Mateo
+        and South San Francisco.","service_areas":["San Mateo County"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:57.929-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}}]'
     http_version: 
-  recorded_at: Tue, 15 Apr 2014 07:55:56 GMT
+  recorded_at: Tue, 27 May 2014 00:00:21 GMT
 recorded_with: VCR 2.8.0

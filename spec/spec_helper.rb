@@ -1,13 +1,15 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require "rack_session_access/capybara"
 require 'coveralls'
 Coveralls.wear!('rails')
 
 ENV["RAILS_ENV"] ||= 'test'
+ENV['TZ'] = 'America/Los_Angeles'
+
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
 require 'capybara/poltergeist'
+require "rack_session_access/capybara"
 require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -66,7 +68,7 @@ require 'vcr'
 VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_hosts '127.0.0.1', 'localhost'
-  c.default_cassette_options = { :record => :new_episodes, :allow_playback_repeats => true }
+  c.default_cassette_options = { :record => :once }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
   c.filter_sensitive_data("<API_TOKEN>") do
@@ -82,7 +84,7 @@ def stub_get(url)
 end
 
 def ohanapi_url(url)
-  url =~ /^http/ ? url : "http://ohanapi.herokuapp.com/api#{url}"
+  url =~ /^http/ ? url : "http://smc-ohana-api-test.herokuapp.com/api#{url}"
 end
 
 def fixture_path
