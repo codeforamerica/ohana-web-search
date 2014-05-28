@@ -53,4 +53,7 @@ HumanServicesFinder::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # For use with the sprockets_better_errors gem.
+  # Remove this and the gem after upgrading to Rails 4.1+.
+  config.assets.raise_production_errors = true
 end

@@ -57,6 +57,8 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
+gem 'sprockets_better_errors'
+
 # dev and debugging tools
 group :development do
   gem 'quiet_assets', '>= 1.0.2'
