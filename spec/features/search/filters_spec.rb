@@ -64,7 +64,7 @@ feature "results page search", :js do
     within("#location-options") do
       find(".closed").trigger('mousedown')
       expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
-      expect(find_by_id("location").value).to eq "San Mateo, CA"
+      expect(find_by_id("location-option-input").value).to eq "San Mateo, CA"
     end
   end
 
@@ -75,7 +75,7 @@ feature "results page search", :js do
     within("#org-name-options") do
       find(".closed").trigger('mousedown')
       expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
-      expect(find_by_id("org_name").value).to eq "United States Government"
+      expect(find_by_id("org-name-option-input").value).to eq "United States Government"
     end
   end
 

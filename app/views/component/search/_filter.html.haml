@@ -52,7 +52,7 @@
             %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
               %span{:class=>(add_is_checked ? "hide" : "")}
                 Other...
-              = search_field_tag field, (add_is_checked ? params[field] : ""), :class=>(add_is_checked ? "" : "hide"),:list=>"#{css_field}-list",:placeholder=>"#{add_placeholder}"
+              = search_field_tag field, (add_is_checked ? params[field] : ""), id: "#{css_field}-option-input", :class=>(add_is_checked ? "" : "hide"),:list=>"#{css_field}-list",:placeholder=>"#{add_placeholder}"
       - elsif add_input_type == "SELECT"
         - add_is_checked = (all_is_checked == false && toggle_is_checked == false)
         %div.toggle-group-wrapper.add
@@ -65,7 +65,7 @@
             %label{:for => "#{css_field}-option-1",:id => "#{css_field}-option-1-label"}
               %span{:class=>(add_is_checked ? "hide" : "")}
                 Other...
-              = select_tag(field, options_for_select(list_values, selected: :option ))
+              = select_tag field, options_for_select(list_values, selected: :option ), id: "#{css_field}-option-input"
 
     - toggle_is_checked = false
     - length = aggregate_field.length-1
@@ -85,7 +85,7 @@
         %label{:for => "#{css_field}-option-#{i+2}",:id => "#{css_field}-option-#{i+2}-label"}
           = field_display
 
-    = hidden_field_tag field, field_value, id: "#{css_field}-hidden"
+    = hidden_field_tag field, field_value
 
     - if css_field == "location"
       %div#geolocate-box
