@@ -246,16 +246,11 @@ class OrganizationsController < ApplicationController
       end
     }
 
-    # cached service areas
-    @aggregate_service_areas = [{:name=>'San Mateo County, CA',:value=>'smc'}]
-
     # cached organization names
     @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
       org.organization.name if org.key?(:organization) && org.organization.name != org.name
     }
-
   end
-
 
   # Translate the page using the Google Translate API.
   # @param [String] text to translate

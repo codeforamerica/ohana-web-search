@@ -48,29 +48,21 @@ module Features
 
     # helpers for filters
     def set_location_filter(options = {})
-      set_filter("location",options[:location])
+      set_filter("location", "location", options[:location])
     end
 
-    def set_service_area_filter(options = {})
-      set_filter("service-area",options[:service_area])
-    end
-
-    def set_kind_filter(options = {})
-      set_filter("kind",options[:kind])
-    end
-
-    # @param name [String] the CSS name of the field.
-    # @oaram field [String] the value to select in the filter.
-    # @param custom [Boolean] is the value a custom value not in the list?
-    def set_filter(name,field,custom=true)
+    # @param fieldset [String] the CSS name of the fieldset
+    # @param field [String] the CSS name of the field
+    # @param value [String] the value to fill the field with.
+    def set_filter(fieldset, field, value, custom = true)
       find(".require-loaded")
-      within("##{name}-options") do
+      within("##{fieldset}-options") do
         find(".closed").click
         if field.present? && custom == true
-          find(".toggle-group.add").click
-          fill_in("#{name}-option-input", :with => field)
+          find(".add .toggle").trigger('mousedown')
+          fill_in("#{field}", :with => value)
         elsif custom == false
-          find(".toggle-group",:text=>field).trigger('mousedown')
+          find(".toggle-group",:text => value).trigger('mousedown')
         else
           first("label").click
         end
@@ -109,35 +101,6 @@ module Features
         find(".options label",:text=>val).click
         find(".open").click
         expect(all(".current-option label").last).to have_content(val)
-      end
-    end
-
-    # Opens the filter fieldset, sets a custom value, and closes the fieldset.
-    # @param name [String] The name of the filter field to test.
-    # @param val [String] The custom value that should be applied to the toggle.
-    def fill_filter_custom_field(name,val)
-      find(".require-loaded")
-      within("##{name}-options") do
-        # test adding custom value functionality
-        find(".closed").trigger("mousedown")
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
-        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-        fill_in("#{name}-option-input", :with => val)
-        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-      end
-    end
-
-    def test_filter_custom_value_no_results(name,field)
-      set_filter(name,field)
-      find('#find-btn').click
-
-      find(".require-loaded")
-      within("##{name}-options") do
-        find(".closed").trigger('mousedown')
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
-        expect(find_field("#{name}-option-input").value).to eq field
       end
     end
 

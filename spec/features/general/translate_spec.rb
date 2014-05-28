@@ -3,15 +3,22 @@ require 'spec_helper'
 feature 'page translation', :js do
 
   background do
-    #page.driver.remove_cookie("googtrans") # poltergeist
-    page.driver.browser.clear_cookies # webkit
+    # use this with poltergeist
+    page.driver.remove_cookie("googtrans")
+
+    # use this with webkit
+    # page.driver.browser.clear_cookies
   end
 
   context 'translation cookie is set to Spanish' do
     it "displays Spanish-language contents" do
-      #page.driver.set_cookie("googtrans","/en/es") # poltergeist
-      page.driver.browser.
-        set_cookie("googtrans=/en/es; path=/; domain=127.0.0.1") # webkit
+      # use this with poltergeist
+      page.driver.set_cookie("googtrans","/en/es")
+
+      # use this with webkit
+      # page.driver.browser.
+      #   set_cookie("googtrans=/en/es; path=/; domain=127.0.0.1")
+
       visit('/')
       within("#language-box") do
         all_links = all('a')
