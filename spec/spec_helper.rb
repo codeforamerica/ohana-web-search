@@ -8,12 +8,20 @@ ENV['TZ'] = 'America/Los_Angeles'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
+require 'capybara/poltergeist'
 require "rack_session_access/capybara"
 require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :js_errors => false)
+end
+
+Capybara.javascript_driver = :poltergeist
+Capybara.default_wait_time = 30
 
 RSpec.configure do |config|
 
@@ -33,9 +41,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
-  Capybara.javascript_driver = :webkit
-  Capybara.default_wait_time = 30
 end
 
 require 'vcr'

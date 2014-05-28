@@ -41,21 +41,8 @@ Please note that the instructions below have only been tested on OS X. If you ar
 * [RVM](http://rvm.io) is great, and this project uses it, but in any case, try to use the same ruby version as listed in the .ruby-version file. If you install it, it'll take care of making sure you have the right ruby, and let you focus on contributing to the app.
 * You need a Javascript runtime. We recommend Node.JS (if you have a good reason not to use it, [there are other options](https://github.com/sstephenson/execjs)). On Ubuntu, it's as simple as <code>sudo apt-get install nodejs</code>. On others, [check the official instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 
-#### Qt (required by capybara-webkit for integration tests)
-**OS X**
-
-On OS X, the easiest way to install Qt is with Homebrew:
-
-    brew update && brew install qt
-
-Note that if you already have Qt installed, and you see some messages referring to CoreText when running the specs, you'll need to reinstall Qt:
-
-    brew uninstall qt && brew update && brew install qt
-
-
-**Other**
-
-Follow the instructions in the [capybara-webkit Wiki](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit).
+#### PhantomJS
+[Installation instructions](https://github.com/jonleighton/poltergeist#installing-phantomjs) for Mac, Linux, and Windows.
 
 ### Clone the app on your local machine:
 

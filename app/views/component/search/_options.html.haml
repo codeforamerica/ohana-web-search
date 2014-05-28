@@ -10,6 +10,4 @@
             = city
         <!--[if IE 8]> </select> <![endif]-->
 
-  = render :partial => "component/search/filter", :locals => {:field=>"service_area", :legend=>"Service Area",:field_value=>params[:service_area], :aggregate_field=>@aggregate_service_areas}
-
   = render :partial => "component/search/filter", :locals => {:field=>"org_name", :legend=>"Agency Name",:field_value=>params[:org_name], :aggregate_field=>@aggregate_org_names, :add_placeholder=>"agency name", :add_input_type=>"TEXT"}

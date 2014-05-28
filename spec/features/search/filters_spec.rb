@@ -13,17 +13,12 @@ feature "results page search", :js, :vcr do
     test_filter_legend("location")
   end
 
-  scenario 'when service-area filter has no cached values and legend is toggled' do
-    test_filter_legend("service-area")
-  end
-
   scenario 'when agency filter has no cached values and legend is toggled' do
     test_filter_legend("org-name")
   end
 
   # test filter fieldset toggle toggling across all filters
   scenario 'when location filter has no cached values and toggle is toggled' do
-    find(".require-loaded")
     within("#location-options") do
       # Click on the "All" checkbox
       all(".current-option label").last.click
@@ -33,22 +28,7 @@ feature "results page search", :js, :vcr do
     end
   end
 
-  scenario 'when service-area filter has no cached values and toggle is toggled' do
-    find(".require-loaded")
-    within("#service-area-options") do
-      # Click on the "All" checkbox
-      # Search from home page does not use service_area filter
-      all(".current-option label").last.click
-      # Click on the "San Mateo County, CA" checkbox
-      find('label', :text => 'San Mateo County, CA').click
-      # Click on the "San Mateo County, CA" checkbox again
-      find('label', :text => 'San Mateo County, CA').click
-      expect(all(".current-option label").last).to have_content("San Mateo County, CA")
-    end
-  end
-
   scenario 'when agency filter has no cached values and toggle is toggled' do
-    find(".require-loaded")
     within("#org-name-options") do
       # Click on the "All" checkbox
       all(".current-option label").last.click
@@ -60,91 +40,83 @@ feature "results page search", :js, :vcr do
 
   # test adding custom value to filters that accept custom values
   scenario 'when location filter has no cached values and custom value is added' do
-    fill_filter_custom_field("location","Custom Value")
-    expect(all("#location-options .current-option label").last).to have_content("Custom Value")
+    fill_in('keyword', with: '')
+    set_filter("location", "location", "94403")
+    all(".toggle-group-wrapper.add label").first.trigger("mousedown")
+    expect(page).to have_content("6 results within 5 miles of '94403'")
   end
 
   scenario 'when agency filter has no cached values and custom value is added' do
-    fill_filter_custom_field("org-name","Custom Value")
-    expect(all("#org-name-options .current-option label").last).to have_content("Custom Value")
+    fill_in('keyword', with: '')
+    set_filter("org-name", "org_name", "Salvation Army")
+    all(".toggle-group-wrapper.add label").first.trigger("mousedown")
+    expect(page).to have_content("4 results")
   end
 
   # test adding custom value to filters and retrieving no results
   scenario 'when location filter has custom value and no results' do
-    test_filter_custom_value_no_results("location","San Mateo, CA")
+    set_filter("location", "location", "San Mateo, CA")
+    find('#find-btn').click
+
+    within("#location-options") do
+      find(".closed").trigger('mousedown')
+      expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
+      expect(find_by_id("location-option-input").value).to eq "San Mateo, CA"
+    end
   end
 
   scenario 'when agency filter has custom value and no results' do
-    test_filter_custom_value_no_results("org-name","United States Government")
+    set_filter("org-name", "org_name", "United States Government")
+    find('#find-btn').click
+
+    within("#org-name-options") do
+      find(".closed").trigger('mousedown')
+      expect(find(".available-options")).to have_css(".toggle-group", :count => 2)
+      expect(find_by_id("org-name-option-input").value).to eq "United States Government"
+    end
   end
 
   # test adding custom value to filters and retrieving results
   scenario 'when location filter has custom value and has results' do
-    name = "location"
-    field = "San Mateo, CA"
-    set_filter(name,field)
-    fill_in('keyword', :with => '') # clear keyword
-
+    set_filter("location", "location", "San Mateo, CA")
+    fill_in('keyword', :with => '')
     find('#find-btn').click
 
-    find(".require-loaded")
-    within("##{name}-options") do
+    within("#location-options") do
       find(".closed").click
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
-      expect(page).not_to have_css("##{name}-option-input")
+      expect(page).not_to have_css("location")
     end
   end
 
   scenario 'when agency filter has custom value and has results' do
-    name = "org-name"
-    field = "Samaritan House"
-    set_filter(name,field)
-    fill_in('keyword', :with => '') # clear keyword
-
+    set_filter("org-name", "org_name", "Salvation Army")
+    fill_in('keyword', :with => '')
     find('#find-btn').click
 
-    find(".require-loaded")
-    within("##{name}-options") do
+    within("#org-name-options") do
       find(".closed").click
-      expect(page).to have_selector(".open")
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
-      expect(page).not_to have_css("##{name}-option-input")
+      expect(page).not_to have_css("org_name")
     end
   end
 
   # test filter selection across all filters
   scenario 'when location filter has cached values and new option is selected' do
-    fill_in('keyword', :with => "") # clear keyword
+    fill_in('keyword', :with => "")
     find('#find-btn').click
-    expect(page).to have_content("22 results")
-    set_filter("location","fairfax, va")
+    set_filter("location", "location", "Redwood City, CA", false)
     find('#find-btn').click
-    expect(page).to have_content("No results within 5 miles of 'fairfax, va'")
-    expect(all("#location-options .current-option label").last).to have_content("fairfax, va")
-  end
-
-  scenario 'when service-area filter has cached values and new option is selected' do
-    fill_in('keyword', :with => '') # clear keyword
-    find('#find-btn').click
-    expect(page).to have_content("22 results")
-    set_filter("service-area","All",false)
-    find('#find-btn').click
-    expect(page).to have_content("22 results")
-    expect(all("#service-area-options .current-option label").last).to have_content("All")
+    expect(page).to have_content("12 results within 5 miles of 'Redwood City, CA'")
+    expect(all("#location-options .current-option label").last).to have_content("Redwood City, CA")
   end
 
   scenario 'when agency filter has cached values and new option is selected' do
-    fill_in('keyword', :with => '') # clear keyword
+    fill_in('keyword', :with => '')
     find('#find-btn').click
-    expect(page).to have_content("22 results")
     visit("/organizations?page=3")
 
-    find(".require-loaded")
-    within("#org-name-options") do
-      find(".closed").click
-      find(".toggle-group", :text => "Peninsula Family Service").click
-    end
+    set_filter("org-name", "org_name", "Peninsula Family Service", false)
     find('#find-btn').click
 
     expect(page).to have_content("5 results")
@@ -159,18 +131,16 @@ feature "results page search", :js, :vcr do
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")
-    expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#org-name-options .current-option label").last).to have_content("Samaritan House")
   end
 
   scenario 'when clicking the reset button' do
     expect(page).to have_content("No results")
-    #find_button("Clear filters").click
-    find(".reset-btn").click
+    find_by_id("reset-btn").click
+
     # check filter settings
     expect(find_field("keyword").value).to eq ""
     expect(all("#location-options .current-option label").last).to have_content("All")
-    expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#org-name-options .current-option label").last).to have_content("All")
 
     find('#find-btn').click

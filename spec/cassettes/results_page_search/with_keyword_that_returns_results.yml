@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&service_area=&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,10 +23,10 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 16 May 2014 08:53:23 GMT
+      - Wed, 28 May 2014 03:35:32 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&per_page=1&service_area=&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=2&per_page=1&service_area=&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&per_page=1&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=2&per_page=1&utf8=%E2%9C%93>;
         rel="next"
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.41
@@ -39,15 +39,15 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.41
       X-Request-Id:
-      - 73f98515-b3f5-4ee4-a7c2-c42ed1b41245
+      - 160a0099-f28e-4f45-a36b-54220862fb8d
       X-Runtime:
-      - '0.047277'
+      - '0.202758'
       X-Total-Count:
       - '22'
       X-Total-Pages:
       - '22'
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1807'
       Connection:
       - keep-alive
     body:
@@ -92,7 +92,7 @@ http_interactions:
         in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
         Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
     http_version: 
-  recorded_at: Fri, 16 May 2014 08:53:24 GMT
+  recorded_at: Wed, 28 May 2014 03:35:32 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo
@@ -116,7 +116,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 16 May 2014 08:53:24 GMT
+      - Wed, 28 May 2014 03:35:32 GMT
       Server:
       - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
@@ -126,9 +126,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.41
       X-Request-Id:
-      - d405d9ad-094b-4a07-a73c-543a2089c981
+      - fcd38788-993f-4c58-842e-4b31703db496
       X-Runtime:
-      - '0.049936'
+      - '0.058519'
       X-Total-Count:
       - '1'
       X-Total-Pages:
@@ -140,7 +140,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"id":22,"accessibility":["Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":21,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"contacts":[{"id":29,"name":"Suzanne
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"admin_emails":["foo@bar.com"],"contacts":[{"id":29,"name":"Suzanne
         Badenhoop","title":"Board President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
         THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
         APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
@@ -156,9 +156,10 @@ http_interactions:
         (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":21,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
         Maceo Agency","phones":[{"id":21,"department":"Information","number":"650
-        372-6200"},{"id":22,"department":"Reservations","number":"650 372-6200"}],"short_desc":"[NOTE
-        THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-09T20:49:19.003-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/22","services":[{"id":22,"audience":"Profit
+        372-6200","number_type":"TTY"},{"id":22,"department":"Reservations","number":"650
+        372-6200"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","transportation":"SAMTRANS
+        stops within 1 block","updated_at":"2014-05-22T17:31:08.727-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/22","services":[{"id":22,"audience":"Profit
         and nonprofit businesses, the public, military facilities, schools and government
         entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
         TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -197,5 +198,5 @@ http_interactions:
         wait to 2 weeks","updated_at":"2014-04-18T12:49:47.850-07:00"}],"organization":{"id":8,"name":"SanMaceo
         Example Agency.","slug":"sanmaceo-example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"}}]'
     http_version: 
-  recorded_at: Fri, 16 May 2014 08:53:24 GMT
+  recorded_at: Wed, 28 May 2014 03:35:32 GMT
 recorded_with: VCR 2.9.0
