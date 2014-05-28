@@ -21,35 +21,42 @@ module Features
     end
 
     def search_for_maceo
-      visit('/organizations?utf8=✓&keyword=maceo')
+      visit('/organizations?keyword=maceo')
     end
 
+    def search_for_human_services_in_smc
+      visit('/organizations?service_area=smc&kind=Human+Services')
+    end
+
+    def visit_test_location
+      visit('/organizations/sanmaceo-example-agency/san-maceo-agency')
+    end
+
+    def visit_location_with_no_address
+      visit('organizations/location-with-no-phone')
+    end
+
+    def search_for_location_without_address
+      visit('organizations?org_name=Location+with+no+phone')
+    end
 
     # helpers for filters
     def set_location_filter(options = {})
-      set_filter("location",options[:location])
+      set_filter("location", "location", options[:location])
     end
 
-    def set_service_area_filter(options = {})
-      set_filter("service-area",options[:service_area])
-    end
-
-    def set_kind_filter(options = {})
-      set_filter("kind",options[:kind])
-    end
-
-    # @param options [Object] the URL parameters object
-    # @param name [String] the CSS name of the field
-    # @oaram field [Symbol] the field to look up in the options object.
-    def set_filter(name,field,custom=true)
+    # @param fieldset [String] the CSS name of the fieldset
+    # @param field [String] the CSS name of the field
+    # @param value [String] the value to fill the field with.
+    def set_filter(fieldset, field, value, custom = true)
       within(".require-loaded") do
-        within("##{name}-options") do
+        within("##{fieldset}-options") do
           find(".closed").click
           if field.present? && custom == true
             find(".add .toggle").trigger('mousedown')
-            fill_in("#{name}-option-input", :with => field)
+            fill_in("#{field}", :with => value)
           elsif custom == false
-            find(".toggle-group",:text=>field).trigger('mousedown')
+            find(".toggle-group",:text => value).trigger('mousedown')
           else
             first("label").click
           end
@@ -91,35 +98,6 @@ module Features
       end
     end
 
-    # Opens the filter fieldset, sets a custom value, and closes the fieldset.
-    # @param name [String] The name of the filter field to test.
-    # @param val [String] The custom value that should be applied to the toggle.
-    def fill_filter_custom_field(name,val)
-      find(".require-loaded")
-      within("##{name}-options") do
-        # test adding custom value functionality
-        find(".closed").trigger("mousedown")
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
-        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-        fill_in("#{name}-option-input", :with => val)
-        all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-      end
-    end
-
-    def test_filter_custom_value_no_results(name,field)
-      set_filter(name,field)
-      find('#find-btn').click
-
-      find(".require-loaded")
-      within("##{name}-options") do
-        find(".closed").trigger('mousedown')
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>2)
-        expect(find_field("#{name}-option-input").value).to eq field
-      end
-    end
-
     # navigation helpers
     def visit_details
       page.find("#list-view").first('a').trigger('click')
@@ -127,12 +105,6 @@ module Features
 
     def looks_like_results
       expect(page).to have_content("SanMaceo Example Agency")
-      expect(page).to have_content("1 result")
-      expect(page).to have_title "1 result"
-    end
-
-    def looks_like_puente
-      expect(page).to have_content("Puente Resource Center")
       expect(page).to have_content("1 result")
       expect(page).to have_title "1 result"
     end
@@ -151,29 +123,6 @@ module Features
 
       expect(page).to have_title "San Maceo Agency | SMC-Connect"
 
-      expect(page).to have_content("Works to control")
-      expect(page).to have_content("Profit and nonprofit")
-      expect(page).to have_content("Marin County")
-      expect(page).to have_content("Walk in")
-      expect(page).to have_content("permits and photocopying")
-      expect(page).to have_content("Russian")
-      expect(page).to have_content("Special parking")
-      expect(page).to have_link("Print")
-      expect(page).to have_link("Directions")
-    end
-
-    def looks_like_market
-      expect(find("#detail-info .description a")).to have_content("more")
-      find("#detail-info .description a").click
-      expect(find("#detail-info .description a")).to have_content("less")
-
-      expect(page).to have_title "San Maceo Agency | SMC-Connect"
-
-      within ("#detail-info .payments-accepted") do
-        expect(page).not_to have_content("Women, Infants, and Children")
-        find(".popup-term", :text=>"WIC").trigger(:mousedown)
-        expect(page).to have_content("Women, Infants, and Children")
-      end
       expect(page).to have_content("Works to control")
       expect(page).to have_content("Profit and nonprofit")
       expect(page).to have_content("Marin County")

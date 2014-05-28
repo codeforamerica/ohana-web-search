@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "results page search", :js=>true do
+feature "results page search", :js do
 
   background do
     search_from_home
@@ -21,11 +21,11 @@ feature "results page search", :js=>true do
   scenario 'with location that returns results', :vcr do
     # The search from the background action leaves the keyword field
     # populated, so to do a location-only search, we have to clear it first.
-    search(:keyword => "", :location => '94060')
+    search(:keyword => "", :location => '94080')
     within("#location-options") do
-      expect(find(".current-option")).to have_content('94060')
+      expect(find(".current-option")).to have_content('94080')
     end
-    looks_like_puente
+    expect(page).to have_content("Magnolia Center")
   end
 
   scenario 'with location that returns no results', :vcr do
@@ -36,8 +36,8 @@ feature "results page search", :js=>true do
   end
 
   scenario 'with keyword and location that returns results', :vcr do
-    search(:keyword => "puente", :location => '94060')
-    looks_like_puente
+    search(:keyword => "senior", :location => '94080')
+    expect(page).to have_content("Magnolia Center")
   end
 
   scenario 'with keyword and location that returns no results', :vcr do
@@ -45,4 +45,9 @@ feature "results page search", :js=>true do
     looks_like_no_results
   end
 
+  scenario "when click Kind link", :vcr do
+    visit('/organizations?keyword=soccer')
+    page.first("a", text: "Other").click
+    expect(find("#list-view")).not_to have_content("Sports")
+  end
 end

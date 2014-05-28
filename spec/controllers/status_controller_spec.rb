@@ -22,18 +22,16 @@ describe StatusController do
       end
 
       it "returns API failure error" do
-        stub_request(:get, "http://ohanapi.herokuapp.com/api/locations/downtown-palo-alto-food-closet?api_token=#{ENV["OHANA_API_TOKEN"]}").
-          with(:headers => {'Accept'=>'application/vnd.ohanapi-v1+json',
+        stub_request(:get, "http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-free-medical-clinic").
+          with(:headers => { 'Accept'=>'application/vnd.ohanapi-v1+json',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0',
-            'X-Api-Token'=>"#{ENV["OHANA_API_TOKEN"]}"}).
+            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0' }).
           to_return(:status => 200, :body => "", :headers => {})
 
-        stub_request(:get, "http://ohanapi.herokuapp.com/api/search?api_token=#{ENV["OHANA_API_TOKEN"]}&keyword=maceo").
-          with(:headers => {'Accept'=>'application/vnd.ohanapi-v1+json',
+        stub_request(:get, "http://smc-ohana-api-test.herokuapp.com/api/search?keyword=ymca&kind=Human+Services&service_area=smc").
+          with(:headers => { 'Accept'=>'application/vnd.ohanapi-v1+json',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0',
-            'X-Api-Token'=>"#{ENV["OHANA_API_TOKEN"]}"}).
+            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0' }).
           to_return(:status => 200, :body => "", :headers => {})
 
         get "get_status"

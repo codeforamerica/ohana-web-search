@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d33a01974fcdb2b0026a9?api_token=<API_TOKEN>
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency
     body:
       encoding: US-ASCII
       string: ''
@@ -11,8 +11,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,34 +23,25 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 Oct 2013 20:21:06 GMT
+      - Mon, 26 May 2014 14:16:18 GMT
       Etag:
-      - '"6ea3e87e815e5fead12572d1ffbf3b76"'
+      - '"15c245b1b943f4a4ee76ffb3e0a96c92"'
       Status:
       - 200 OK
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4999'
       X-Request-Id:
-      - 0b8d9529b99e51f1ec870d8ddc47f632
+      - a989c242-c933-4227-8637-5b77206b4ff3
       X-Runtime:
-      - '0.027477'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - '0.117791'
       Content-Length:
-      - '5505'
+      - '5854'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":"521d33a01974fcdb2b0026a9","accessibility":["Disabled Parking","Disabled
-        Restroom","Wheelchair"],"address":{"street":"2013 Avenue of the fellows, Suite
-        100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James Brown","Dawn
-        of Midi"],"contacts":[{"id":"5225485915e87254b8000003","name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.111356,42.8918357],"description":"[NOTE THIS
+      string: '{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
+        Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
+        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
         IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
@@ -62,33 +51,13 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
-        627-8244"],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"attention":"Hella
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":1093,"number":"650
+        627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
+        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1686,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
-        Maceo Agency","phones":[{"number":"<%= number %>","hours":"(Monday-Friday,
-        8-5)","department":"Information","type":"TTY"},{"number":"<%= number %>","phone_hours":"(Monday-Friday,
-        8-5)","department":"Reservations"}],"short_desc":"[NOTE THIS IS NOT A REAL
-        ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2013-10-01T12:18:52-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33a01974fcdb2b0026a9","services":[{"id":"521d339f1974fcdb2b00273e","audience":"Profit
-        and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"bazfoo","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2013-09-14T18:28:56-07:00"},{"id":"521d339f1974fcdb2b00373e","audience":"Second
+        Maceo Agency","phones":[{"id":2465,"department":"Information","number":"<%= number %>","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"<%= number %>"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
+        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -102,17 +71,35 @@ http_interactions:
         orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
         egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
         Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"hasdfasf","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2013-09-14T18:29:25-07:00"}],"organization":{"id":"521d339f1974fcdb2b00273d","name":"SanMaceo
-        Example Agency.","slugs":["sanmaceo-example-agency"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d/locations"}}'
+        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
+        in or apply by phone or mail","name":"hasdfasf","service_areas":["San Mateo
+        County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.988-07:00"},{"id":1685,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
+        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
+        in or apply by phone or mail","name":"bazfoo","service_areas":["San Mateo
+        County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}'
     http_version:
-  recorded_at: Tue, 01 Oct 2013 20:21:05 GMT
+  recorded_at: Mon, 26 May 2014 14:16:18 GMT
 - request:
     method: get
-    uri: http://ohanapi.herokuapp.com/api/locations/521d33a01974fcdb2b0026a9?api_token=<API_TOKEN>
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency
     body:
       encoding: US-ASCII
       string: ''
@@ -121,8 +108,6 @@ http_interactions:
       - application/vnd.ohanapi-v1+json
       User-Agent:
       - Ohanakapa Ruby Gem 1.0.0
-      X-Api-Token:
-      - <API_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -135,34 +120,25 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 Oct 2013 20:21:06 GMT
+      - Mon, 26 May 2014 14:16:18 GMT
       Etag:
-      - '"6ea3e87e815e5fead12572d1ffbf3b76"'
+      - '"15c245b1b943f4a4ee76ffb3e0a96c92"'
       Status:
       - 200 OK
-      X-Rack-Cache:
-      - miss
-      X-Ratelimit-Limit:
-      - '5000'
-      X-Ratelimit-Remaining:
-      - '4998'
       X-Request-Id:
-      - 3bc0d46a12eea2fcc5e4e9cbfc4ecc5b
+      - 02bf84ce-3778-4c7a-8cce-9caf3a1d7eb2
       X-Runtime:
-      - '0.027321'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - '0.097441'
       Content-Length:
-      - '5505'
+      - '5854'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"id":"521d33a01974fcdb2b0026a9","accessibility":["Disabled Parking","Disabled
-        Restroom","Wheelchair"],"address":{"street":"2013 Avenue of the fellows, Suite
-        100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James Brown","Dawn
-        of Midi"],"contacts":[{"id":"5225485915e87254b8000003","name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.111356,42.8918357],"description":"[NOTE THIS
+      string: '{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
+        Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
+        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
         IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
@@ -172,33 +148,13 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":["650
-        627-8244"],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"attention":"Hella
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":1093,"number":"650
+        627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
+        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1686,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
-        Maceo Agency","phones":[{"number":"<%= number %>","hours":"(Monday-Friday,
-        8-5)","department":"Information","type":"TTY"},{"number":"<%= number %>","phone_hours":"(Monday-Friday,
-        8-5)","department":"Reservations"}],"short_desc":"[NOTE THIS IS NOT A REAL
-        ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2013-10-01T12:18:52-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohanapi.herokuapp.com/api/locations/521d33a01974fcdb2b0026a9","services":[{"id":"521d339f1974fcdb2b00273e","audience":"Profit
-        and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"bazfoo","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2013-09-14T18:28:56-07:00"},{"id":"521d339f1974fcdb2b00373e","audience":"Second
+        Maceo Agency","phones":[{"id":2465,"department":"Information","number":"<%= number %>","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"<%= number %>"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
+        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -212,12 +168,30 @@ http_interactions:
         orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
         egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
         Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"hasdfasf","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2013-09-14T18:29:25-07:00"}],"organization":{"id":"521d339f1974fcdb2b00273d","name":"SanMaceo
-        Example Agency.","slugs":["sanmaceo-example-agency"],"url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d","locations_url":"http://ohanapi.herokuapp.com/api/organizations/521d339f1974fcdb2b00273d/locations"}}'
+        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
+        in or apply by phone or mail","name":"hasdfasf","service_areas":["San Mateo
+        County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.988-07:00"},{"id":1685,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
+        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
+        in or apply by phone or mail","name":"bazfoo","service_areas":["San Mateo
+        County","Alameda County","Contra Costa County","Marin County","San Francisco
+        County","Santa Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}'
     http_version:
-  recorded_at: Tue, 01 Oct 2013 20:21:06 GMT
-recorded_with: VCR 2.5.0
+  recorded_at: Mon, 26 May 2014 14:16:18 GMT
+recorded_with: VCR 2.8.0

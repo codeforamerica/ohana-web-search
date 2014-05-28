@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/location-with-no-phone
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 26 May 2014 14:15:31 GMT
+      Etag:
+      - '"eafe787726f7ea5294b8991bf3f6d252"'
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - ee78e447-f534-49ca-843b-a84e30786097
+      X-Runtime:
+      - '0.068483'
+      Content-Length:
+      - '762'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":1712,"description":"no phone","kind":"Test","mail_address":{"id":1688,"attention":"","street":"puma","city":"fairfax","state":"VA","zip":"22031"},"name":"Location
+        with no phone","short_desc":"no phone","slug":"location-with-no-phone","slugs":["location-with-no-phone"],"updated_at":"2014-05-24T21:13:34.065-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1712","services":[{"id":1694,"description":"no
+        phone","updated_at":"2014-05-24T21:13:34.061-07:00"}],"organization":{"id":1367,"name":"Testing
+        org","slug":"testing-org","slugs":["testing-org"],"_slugs":["testing-org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367/locations"}}'
+    http_version: 
+  recorded_at: Mon, 26 May 2014 14:15:31 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/location-with-no-phone
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 26 May 2014 14:15:31 GMT
+      Etag:
+      - '"eafe787726f7ea5294b8991bf3f6d252"'
+      Status:
+      - 200 OK
+      X-Request-Id:
+      - 8b6da89c-d794-4f96-8d22-d85d68846403
+      X-Runtime:
+      - '0.049417'
+      Content-Length:
+      - '762'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":1712,"description":"no phone","kind":"Test","mail_address":{"id":1688,"attention":"","street":"puma","city":"fairfax","state":"VA","zip":"22031"},"name":"Location
+        with no phone","short_desc":"no phone","slug":"location-with-no-phone","slugs":["location-with-no-phone"],"updated_at":"2014-05-24T21:13:34.065-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1712","services":[{"id":1694,"description":"no
+        phone","updated_at":"2014-05-24T21:13:34.061-07:00"}],"organization":{"id":1367,"name":"Testing
+        org","slug":"testing-org","slugs":["testing-org"],"_slugs":["testing-org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367/locations"}}'
+    http_version: 
+  recorded_at: Mon, 26 May 2014 14:15:31 GMT
+recorded_with: VCR 2.8.0

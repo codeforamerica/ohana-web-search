@@ -2,31 +2,31 @@
   %section#search-box
     = form_tag('/organizations', :method => :get, :id=>"location-form") do
       = hidden_field_tag 'location'
-    = form_tag('/organizations', :method => :get, :id=>"search-form")
-    %section#keyword-search-box
-      %div
-        = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
-        -#
-          - cache ['keywords-list', *cip_keywords] do
-            %datalist#search-keywords
-              <!--[if IE 8]><select disabled style="display:none"><![endif]-->
-              - cip_keywords.each do |keyword|
-                %option{:value=>keyword}
-                  = keyword
-              <!--[if IE 8]> </select> <![endif]-->
-        %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
-          %i{:class=>"fa fa-search"}
+    = form_tag('/organizations', :method => :get, :id=>"search-form") do
+      %section#keyword-search-box
+        %div
+          = search_field_tag :keyword, params[:keyword], :placeholder => "enter a keyword (optional)", :list => "search-keywords"
+          -#
+            - cache ['keywords-list', *cip_keywords] do
+              %datalist#search-keywords
+                <!--[if IE 8]><select disabled style="display:none"><![endif]-->
+                - cip_keywords.each do |keyword|
+                  %option{:value=>keyword}
+                    = keyword
+                <!--[if IE 8]> </select> <![endif]-->
+          %button.big-btn{:type=>'submit',:id=>'find-btn', :title=>"Search"}
+            %i{:class=>"fa fa-search"}
 
 
-    %ul#search-controls
-      %li
-        %button.update-btn.small-btn{:type=>"submit"}
-          %i{:class=>"fa fa-refresh"}
-          Refresh
-      %li
-        %button#reset-btn.reset-btn.small-btn{:type=>"reset"}
-          %i{:class=>"fa fa-eraser"}
-          Clear filters
+      %ul#search-controls
+        %li
+          %button.update-btn.small-btn{:type=>"submit"}
+            %i{:class=>"fa fa-refresh"}
+            Refresh
+        %li
+          %button#reset-btn.reset-btn.small-btn{:type=>"reset"}
+            %i{:class=>"fa fa-eraser"}
+            Clear filters
 
-    = render :partial => 'component/search/options'
+      = render :partial => 'component/search/options'
 
