@@ -127,7 +127,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     {
       var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-      var markerIcon = '/assets/markers/human_services.png';
+      var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
       var marker = new google.maps.Marker({
         id: markerData['id'],
