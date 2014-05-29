@@ -16,6 +16,7 @@
 //
 //= require polyfills/selectivizr
 //= require polyfills/html5shiv-printshiv
+//= require polyfills/console
 //= require polyfills/trim
 //= require polyfills/remy/classList
 //= require polyfills/addEventListener
