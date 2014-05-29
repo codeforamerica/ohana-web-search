@@ -3,29 +3,28 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 gem 'rails', '~> 4.0.4'
 
-# front end
-# needed for IE polyfill of sectioning content
-gem 'html5shiv-rails', '>= 0.0.2'
+# FRONT END
 
-# needed for IE polyfill of modern CSS selectors
-gem 'selectivizr-rails', '>= 1.1.2'
-
-# Use SCSS for stylesheets
+# Use SCSS for stylesheets.
 gem 'sass-rails', '~> 4.0.2'
 
-#font-awesome icons
-gem 'font-awesome-sass', '>= 4.0.3.1'
-
-# Compass tools for use with SCSS
+# Compass tools for use with SCSS.
 gem 'compass-rails', '>= 1.1.7'
 
-# Use Uglifier as compressor for JavaScript assets
+# Font-awesome icons.
+gem 'font-awesome-sass', '>= 4.0.3.1'
+
+# Use Uglifier as compressor for JavaScript assets.
 gem 'uglifier', '>= 2.5.0'
 
+# For enabling requirejs-style AMD scripts in the asset pipeline.
 gem 'requirejs-rails', '>= 0.9.2'
+
+# For HAML HTML view templates.
 gem 'haml-rails', '>= 0.5.3'
 
-# server
+# SERVER
+
 gem 'unicorn', '>= 4.8.3'
 gem 'newrelic_rpm', '>= 3.8.0.218'
 gem 'ohanakapa', '~> 1.0'
@@ -39,13 +38,13 @@ gem 'memcachier'
 # Required for caching in production.
 gem 'kgio'
 
-# URL redirects
+# URL redirects.
 gem 'rack-rewrite', '>= 1.5.0'
 
-# For Google translation API
+# For Google translation API.
 gem 'google-api-client', '>= 0.7.1'
 
-# app config and ENV variables for heroku
+# App config and ENV variables for heroku.
 gem 'figaro', '>= 0.7.0'
 
 gem 'coveralls', '>= 0.7.0', require: false
@@ -57,22 +56,23 @@ group :production, :staging do
   gem 'rails_12factor'
 end
 
-gem 'sprockets_better_errors'
-
 # dev and debugging tools
 group :development do
+  # Adds better errors to sprockets asset pipeline in development environment.
+  gem 'sprockets_better_errors'
+
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 1.1.0'
   gem 'binding_of_caller', '>= 0.7.2', :platforms => [:mri_19, :rbx]
   gem 'metric_fu', '>= 4.11.0'
 
-  # for mocking emails for sending
+  # For mocking emails for sending.
   gem 'letter_opener', '>= 1.2.0'
 
-  # for linting JS with `rake jshint`
+  # For linting JS with `rake jshint`.
   gem 'jshintrb', '>= 0.2.4'
 
-  #for code documentation, run `yard --help` for list of commands
+  # For code documentation, run `yard --help` for list of commands.
   gem 'yard'
 end
 
@@ -81,7 +81,7 @@ group :test do
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
 
-  # for getting access to the session from Capybara
+  # For getting access to the session from Capybara.
   gem 'rack_session_access'
 
   gem 'poltergeist'

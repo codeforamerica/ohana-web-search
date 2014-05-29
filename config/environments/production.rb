@@ -76,6 +76,8 @@ HumanServicesFinder::Application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor  = :uglifier
+  # NOTE: If the sass-rails gem is included it will automatically
+  # be used for CSS compression if no css_compressor is specified.
   config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -123,8 +125,8 @@ HumanServicesFinder::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile << "*.js"
-  config.assets.precompile << %w(*.svg *.eot *.woff *.ttf) # fonts
-  config.assets.precompile << %w(html5shiv.js) #polyfill
+  # Include Internet Explorer polyfills.
+  config.assets.precompile << %w(vendor.js ie8.js ie9.js)
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised

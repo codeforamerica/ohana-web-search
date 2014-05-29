@@ -1,36 +1,22 @@
-// manages app initialization
-require(['app/popup-manager',
-  'app/google-translate-manager',
+// Manages the application initialization for most pages.
+// This script is called by the homepage, search result
+// and search details pages. It is not called by
+// the about page, because that page does not have popups to manage.
+require([
   'app/google-analytics-manager',
-  'jquery',
-  'Modernizr',
-  'modernizrSelectors',
-  'classList',
-  'addEventListener'
-  ],
-
-  function (pm,goog,ga,$,Modernizr) {
+  'app/google-translate-manager',
+  'app/popup-manager'
+],
+  function (ga,gt,pm) {
   'use strict';
 
-  // Check if browser supports the :checked selector
-  Modernizr.addTest('checkedselector',function(){
-    return selectorSupported(':checked');
-  });
+  // Initalize google analytics.
+  ga.init();
 
-  if (!Modernizr.checkedselector)
-  {
-    var radios = document.querySelectorAll("input[type=radio]");
-    for(var r=0; r< radios.length; r++)
-    {
-      radios[r].style.visibility = "inherit";
-    }
-  }
+  // Initialize the google translate.
+  gt.init();
 
-  ga.init(); // initalize google analytics
-
-  // if box-shadow CSS is supported, initialize the popups.
+  // If box-shadow CSS is supported, initialize the popups.
   if (Modernizr.boxshadow)
     pm.init();
-  goog.init();
-
 });

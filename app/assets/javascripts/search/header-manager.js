@@ -48,7 +48,7 @@ define(['util/util'],
       // floating header
       _header.classList.add("floating");
       for (c in _floatingContent)
-        if (_floatingContent[c].hasOwnProperty("classList"))
+        if (_floatingContent[c].classList)
           _floatingContent[c].classList.remove('hide');
     }
     else
@@ -56,7 +56,7 @@ define(['util/util'],
       // reset header
       _header.classList.remove("floating");
       for (c in _floatingContent)
-        if (_floatingContent[c].hasOwnProperty("classList"))
+        if (_floatingContent[c].classList)
           _floatingContent[c].classList.add('hide');
     }
   }

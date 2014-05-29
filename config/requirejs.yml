@@ -9,25 +9,10 @@ paths:
   domReady: 'requirejs/domReady'
   async: 'requirejs/async'
   enquire: 'enquire.min'
-  Modernizr: 'polyfills/modernizr.min'
-  modernizrSelectors: 'polyfills/modernizr.selectors'
-  classList: 'polyfills/remy/classList'
-  addEventListener: 'polyfills/addEventListener'
-  trim: 'polyfills/trim'
 
-shim:
-  'Modernizr':
-    exports: 'Modernizr'
-  'modernizrSelectors':
-    dep: ['Modernizr']
-    exports: 'ModernizrSelectors'
-  'checked':
-    dep: ['jquery']
-    exports: 'pfChecked'
-
-# needs to always be set to true for IE support
-# see http://requirejs.org/docs/api.html#ieloadfail
+# Needs to always be set to true for IE support.
+# See http://requirejs.org/docs/api.html#ieloadfail
 enforceDefine: true
 
-# amount of time to wait before timing out. 7 seconds is default.
+# Amount of time to wait before timing out. Default is 7 seconds.
 waitSeconds: 200
