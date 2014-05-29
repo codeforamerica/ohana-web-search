@@ -1,5 +1,5 @@
 // Manages behavior of feedback form
-define(['util/util','trim','jquery'],function(util,trim,$) {
+define(['util/util','jquery'],function(util,$) {
   'use strict';
 
   // PRIVATE PROPERTIES

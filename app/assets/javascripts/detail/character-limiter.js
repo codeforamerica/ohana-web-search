@@ -1,7 +1,7 @@
 // Manages limiting the characters of the description on the
 // details page and providing a more/less link to toggle
 // showing or hiding excess text.
-define(['trim'],function(trim) {
+define( function() {
   'use strict';
 
   // PRIVATE PROPERTIES

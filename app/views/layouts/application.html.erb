@@ -15,37 +15,64 @@
     <meta name="google-translate-customization" content="569f6c621d1c9cc6-60a55f4caded4d41-gf5c25b4be2fe7541-1b"></meta>
     <%= csrf_meta_tags %>
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <% # Place favicon.ico and apple-touch-icon.png in the root directory. %>
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
 
-    <!--[if lt IE 9]>
-    <%= javascript_include_tag 'selectivizr' %>
-    <%= javascript_include_tag 'html5shiv-printshiv' %>
+    <% # Include scripts that fall outside of the requirejs modular system (such as Modernizr). %>
+    <%= javascript_include_tag 'vendor' %>
+
+    <% # Include Internet Explorer polyfills for legacy system compatibility. %>
+    <!--[if lte IE 8]>  <%= javascript_include_tag 'ie8' %> <![endif]-->
+    <!--[if IE 9]>      <%= javascript_include_tag 'ie9' %> <![endif]-->
+
+    <!--[if lte IE 8]>
     <script type="text/javascript">
-      // patch to handle suppression of JS errors in IE
-      window.onerror=function(){return true;};
+      // Check if browser supports the :checked selector.
+      Modernizr.addTest('checkedselector', function() {
+        return selectorSupported(':checked');
+      });
+
+      // If the :checked selector is not supported, the radio buttons will not be
+      // styled correctly, so show the default radio buttons if :checked selector
+      // is not supported.
+      window.onload = function() {
+        if (!Modernizr.checkedselector) {
+          var radios = document.querySelectorAll("input[type=radio]");
+          for(var r=0; r< radios.length; r++) {
+            radios[r].style.visibility = "inherit";
+          }
+        }
+      }
+    </script>
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <script type="text/javascript">
+      // Hack to handle suppression of JS errors in IE.
+      // Normally JS errors would stop the page from loading,
+      // but this allows the page to continue loading.
+      window.onerror=function(){ return true; };
     </script>
     <![endif]-->
 
     <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
       <script type="text/javascript">
+        var _gaq = _gaq || [];
 
-      var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+        _gaq.push(['_trackPageview']);
 
-      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
-      _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-      if (window)
-        window._gaq = _gaq; // export as global
+        if (window)
+          window._gaq = _gaq; // export as global
       </script>
     <% end %>
 
@@ -76,7 +103,7 @@
       </div>
     </header>
 
-    <% # hide popups on /about because they are redundant to the content on that page %>
+    <% # Hide popups on /about because they are redundant to the content on that page. %>
     <% if controller_name != "about" %>
     <aside id="popups">
       <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/about' %></div>
