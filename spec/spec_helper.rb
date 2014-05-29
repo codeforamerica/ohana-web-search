@@ -50,35 +50,7 @@ VCR.configure do |c|
   c.default_cassette_options = { :record => :once }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
-  c.filter_sensitive_data("<API_TOKEN>") do
-    ENV['OHANA_API_TOKEN']
-  end
   c.filter_sensitive_data("<GOOGLE_TRANSLATE>") do
     ENV['GOOGLE_TRANSLATE_API_TOKEN']
   end
-end
-
-def stub_get(url)
-  stub_request(:get, ohanapi_url(url))
-end
-
-def ohanapi_url(url)
-  url =~ /^http/ ? url : "http://ohana-api-test.herokuapp.com/api#{url}"
-end
-
-def fixture_path
-  File.expand_path("../fixtures", __FILE__)
-end
-
-def fixture(file)
-  File.new(fixture_path + '/' + file)
-end
-
-def json_response(file)
-  {
-    :body => fixture(file),
-    :headers => {
-      :content_type => 'application/json; charset=utf-8'
-    }
-  }
 end
