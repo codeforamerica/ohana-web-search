@@ -1,5 +1,5 @@
 require(['app/app-init','home/home-init',
-				 'domReady!'], function(app) {
+         'domReady!'], function(app) {
   'use strict';
 
 });
