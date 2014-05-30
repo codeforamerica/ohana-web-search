@@ -7,14 +7,14 @@
   </div>
 
   <% # this is a server-side generated alert, which is not currently used, %>
-	<% # but it could be in the future, so keeping it around for now %>
-	<% flash.each do |name, msg| %>
-	  <% if msg.is_a?(String) %>
-	    <div class="alert alert-<%= name == :notice ? "valid" : "error" %>">
-	      <%= content_tag :p, msg, :id => "flash-alert-server-#{name}", :class => "alert-message" %>
-	      <a class="alert-close" data-dismiss="alert"><i class="fa fa-times-circle fa-2x"></i></a>
-	    </div>
-	  <% end %>
-	<% end %>
+  <% # but it could be in the future, so keeping it around for now %>
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name == :notice ? "valid" : "error" %>">
+        <%= content_tag :p, msg, :id => "flash-alert-server-#{name}", :class => "alert-message" %>
+        <a class="alert-close" data-dismiss="alert"><i class="fa fa-times-circle fa-2x"></i></a>
+      </div>
+    <% end %>
+  <% end %>
 
 </aside>
