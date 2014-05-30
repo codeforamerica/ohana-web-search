@@ -97,7 +97,6 @@ define(['util/util','jquery'],function(util,$) {
         success : _onSuccess,
         error   : _onError
       });
-
   }
 
   // on submitting success, clear out values and post success message.

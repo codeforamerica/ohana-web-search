@@ -20,7 +20,7 @@ define(['util/util'],
       // If window has a hash, offset the scrolling by the height of the floating header.
       // Also offset scrolling if search container is above search results (it's not floated)
       var scrollOffset;
-      if(window.location.hash )
+      if(window.location.hash)
       {
         scrollOffset = _header.offsetHeight;
         window.scrollTo(0,(window.scrollY-scrollOffset));

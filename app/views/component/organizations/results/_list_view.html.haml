@@ -6,23 +6,7 @@
         %a{:href => org.organization.name == org.name ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
           &nbsp;
         %section.results-entry{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
-          -#
-            - unless org.distance.blank?
-              %p.distance{:title=> "#{org.distance} miles","data-distance"=>org.distance}
-                %span
-                  == #{org.distance} mi
-
           %header
-            -#
-              - if org.key?(:services)
-                - org.services.each do |service|
-                  - if service.key?(:categories)
-                    %ul.category
-                      - service.categories.each do |cat|
-                        - category = cat.name
-                        %li
-                          %a{:href=>"/organizations?keyword=#{CGI::escape(category)}", :title=>"search for locations that provide #{category}"}
-                            = category
             %hgroup
               %h1{:class=>'name'}
                 %a{ :href => org.organization.name == org.name ? "#{location_path([org.slug], @search_params)}" : "#{location_path([org.organization.slug, org.slug], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
