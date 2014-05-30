@@ -3,8 +3,8 @@
 // color functions
 @function darkest($color,$opacity:"")
 {
-	@if type-of($opacity) == number{@return rgba(shade($color,50),$opacity)}
-	@return shade($color,50);
+  @if type-of($opacity) == number{@return rgba(shade($color,50),$opacity)}
+  @return shade($color,50);
 }
 @function dark($color,$opacity:"")
 {
