@@ -1,16 +1,16 @@
 %header#floating-results-header.results-header
 
-	%div.floating-content.hide
-		%h1
-			= @org.name
-		%span.utility-links
-			%span
-				%a{ :href => '#'}
-					%i{ :class => "fa fa-chevron-up" }
-					Top
+  %div.floating-content.hide
+    %h1
+      = @org.name
+    %span.utility-links
+      %span
+        %a{ :href => '#'}
+          %i{ :class => "fa fa-chevron-up" }
+          Top
 
-	= render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
+  = render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
 
 -# Persistent header duplicate needed to maintain layout when header floats
 %header#persistent-results-header.results-header.persistent
-	= render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
+  = render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
