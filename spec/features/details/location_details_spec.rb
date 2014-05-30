@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "location details" do
 
-  context "when the details page is visited via search results", :vcr, :js do
+  context "when the details page is visited via search results", :vcr do
     it "includes address elements" do
       search_for_maceo
       visit_details
@@ -14,7 +14,7 @@ feature "location details" do
     end
   end
 
-  context "when you return to the results page from details page", :vcr, :js do
+  context "when you return to the results page from details page", :js, :vcr do
     it 'displays the same search results' do
       search_for_maceo
       visit_details
@@ -31,7 +31,7 @@ feature "location details" do
   end
 
   scenario "when the details page is visited directly with invalid id", :vcr do
-    visit('/organizations/12345')
+    visit('/organizations/foobar')
     expect(page).to have_content("CalFresh")
     expect(page).to have_title "SMC-Connect"
   end
@@ -47,8 +47,8 @@ feature "location details" do
       expect(page).to have_content("Contact")
     end
 
-    it "includes the department" do
-      expect(page).to have_content("(650) 372-6200 Reservations")
+    it "includes the department and phone type" do
+      expect(page).to have_content("(650) 372-6200 TTY Information")
     end
 
     it "includes the Fax number" do
@@ -124,14 +124,6 @@ feature "location details" do
       expect(page).to have_content("Disabled Parking")
     end
 
-    it "includes ask for info" do
-      expect(page).to have_content("Dawn of Midi")
-    end
-
-    it "doesn't display ask for as an array" do
-      expect(page).to_not have_content("[James Brown, Dawn of Midi]")
-    end
-
     # Contact is not included with view because we have an ask_for field already
     xit "includes Contact info" do
       expect(page).to have_content("Suzanne Badenhoop")
@@ -159,7 +151,8 @@ feature "location details" do
 
     it "includes short description" do
       within ".short-desc" do
-        expect(page).to have_content("NOT A REAL ENTRY")
+        expect(page).
+          to have_content("[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]")
       end
     end
 

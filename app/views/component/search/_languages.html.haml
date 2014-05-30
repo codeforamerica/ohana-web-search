@@ -2,43 +2,43 @@
   %ul
     %li
       - if @current_lang == 'en'
-        %span{:lang=>"en",:class=>"notranslate"}
+        %a{:lang=>"en",:class=>"notranslate button-small"}
           English
       - else
-        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate"}
+        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate button-small"}
           English
     %li
       - if @current_lang == 'es'
-        %span{:lang=>"es",:class=>"notranslate"}
+        %a{:lang=>"es",:class=>"notranslate button-small"}
           Español
       - else
-        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate"}
+        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate button-small"}
           Español
     %li
       - if @current_lang == 'tl'
-        %span{:lang=>"tl",:class=>"notranslate"}
+        %a{:lang=>"tl",:class=>"notranslate button-small"}
           Tagalog
       - else
-        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate"}
+        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate button-small"}
           Tagalog
     %li
       - if @current_lang == 'zh-CN'
-        %span{:lang=>"zh-CN",:class=>"notranslate"}
+        %a{:lang=>"zh-CN",:class=>"notranslate button-small"}
           中文
       - else
-        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate"}
+        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate button-small"}
           中文
     %li
       - if @current_lang == 'ar'
-        %span{:lang=>"ar",:class=>"notranslate"}
+        %aa{:lang=>"ar",:class=>"notranslate button-small"}
           العربية
       - else
-        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate"}
+        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate button-small"}
           العربية
     %li
       - if @current_lang == 'ru'
-        %span{:lang=>"ru",:class=>"notranslate"}
+        %a{:lang=>"ru",:class=>"notranslate button-small"}
           Русский
       - else
-        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate"}
+        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate button-small"}
           Русский

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,18 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 18:23:12 GMT
+      - Fri, 30 May 2014 10:28:16 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 821bf7e1-5002-4cc5-8f51-5b7a3c4bf15e
+      - 1d2c7406-3750-404e-9817-8b5c0189d214
       X-Runtime:
-      - '0.040655'
+      - '0.031014'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -47,7 +51,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 18:23:13 GMT
+  recorded_at: Fri, 30 May 2014 10:28:16 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
@@ -71,18 +75,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 18:23:13 GMT
+      - Fri, 30 May 2014 10:28:16 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&org_name=United+States+Government&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 467c2d30-d382-40e9-bd0e-d2e755a7e5a8
+      - 5d51090e-97ba-4bb1-a7fa-40254174d372
       X-Runtime:
-      - '0.100502'
+      - '0.028803'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -95,5 +103,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 18:23:13 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:28:16 GMT
+recorded_with: VCR 2.9.2

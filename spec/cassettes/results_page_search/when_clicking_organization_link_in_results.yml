@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,18 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:14:46 GMT
+      - Fri, 30 May 2014 10:28:29 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=Custom+Value&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 6fed5281-07b5-4a6b-bc05-5e11c34bd94e
+      - fc627bb0-67b6-45cb-a096-968e654ca92e
       X-Runtime:
-      - '0.074305'
+      - '0.024564'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -47,10 +51,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:46 GMT
+  recorded_at: Fri, 30 May 2014 10:28:29 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=Samaritan%20House&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -71,525 +75,579 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:14:47 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
-        rel="last"
+      - Fri, 30 May 2014 10:28:29 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - f74e97f8-1b53-48c3-8f4d-dfe77fc43953
+      - 81252362-35c1-4f0a-bf5d-a0084d931f4c
       X-Runtime:
-      - '0.042008'
+      - '0.140321'
       X-Total-Count:
-      - '0'
+      - '3'
       X-Total-Pages:
-      - '0'
+      - '1'
       Content-Length:
+      - '4752'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOjEzODksImFjY2Vzc2liaWxpdHkiOlsiRGlzYWJsZWQgUmVzdHJv
+        b20iLCJXaGVlbGNoYWlyIl0sImFkZHJlc3MiOnsiaWQiOjExMjksInN0cmVl
+        dCI6IjExNCBGaWZ0aCBBdmVudWUiLCJjaXR5IjoiUmVkd29vZCBDaXR5Iiwi
+        c3RhdGUiOiJDQSIsInppcCI6Ijk0MDYzIn0sImNvbnRhY3RzIjpbeyJpZCI6
+        MTYyMCwibmFtZSI6IlNoYXJvbiBQZXRlcnNlbiIsInRpdGxlIjoiT3BlcmF0
+        aW9ucyBEaXJlY3RvciJ9XSwiY29vcmRpbmF0ZXMiOlstMTIyLjIwNzA1Nywz
+        Ny40Njg2NzhdLCJkZXNjcmlwdGlvbiI6IlByaW1hcnkgYW5kIHNwZWNpYWx0
+        eSBtZWRpY2FsIGFuZCBkZW50YWwgc2VydmljZXMgdG8gdW5pbnN1cmVkLCBs
+        b3ctaW5jb21lIHJlc2lkZW50cy5cclxuV2hvIGlzIFRyZWF0ZWQ/IFxyXG5Q
+        YXRpZW50cyBvZiBvdXIgY2xpbmljcyBhcmUgdGhlIHdvcmtpbmcgcG9vci4g
+        VGhleSB0ZW5kIHRvIGVhcm4ganVzdCBlbm91Z2ggaW5jb21lIHRvIGJlIGlu
+        ZWxpZ2libGUgZm9yIE1lZGktQ2FsIGNvdmVyYWdlLCB5ZXQgZG8gbm90IHJl
+        Y2VpdmUgaGVhbHRoIGluc3VyYW5jZSB0aHJvdWdoIHRoZWlyIGVtcGxveWVy
+        cyBhbmQgY2Fubm90IGFmZm9yZCB0byBwYXkgZm9yIOKAnG91dC1vZi1wb2Nr
+        ZXTigJ0gaGVhbHRoIGluc3VyYW5jZS4gT2Z0ZW4gdGhlc2UgcmVzaWRlbnRz
+        IGFyZSBmb3JjZWQgdG8gc2VlayB0cmVhdG1lbnQgYXQgbG9jYWwgZW1lcmdl
+        bmN5IHJvb21zIGFuZCBiZWNvbWUgc2FkZGxlZCB3aXRoIG1lZGljYWwgYmls
+        bHMgdGhhdCB0aGV5IGFyZSB1bmFibGUgdG8gcGF5LiBTYW1hcml0YW4gSG91
+        c2XigJlzIEZyZWUgTWVkaWNhbCBDbGluaWNzIGZpbGwgdGhpcyBnYXAgaW4g
+        aGVhbHRoY2FyZSBhY2Nlc3MgZm9yIHRoZSB1bmluc3VyZWQgYW5kIHNhdmUg
+        ZW1lcmdlbmN5IHJvb20gcmVzb3VyY2VzIGZvciBlbWVyZ2VuY2llcy5cclxu
+        XHJcblByb2Zlc3Npb25hbCBNZWRpY2FsIFx1MDAyNiBEZW50YWwgVm9sdW50
+        ZWVyc1xyXG5UaGFua3MgdG8gaXRzIGlubm92YXRpdmUgdm9sdW50ZWVyLWJh
+        c2VkIG1vZGVsIG9mIHNlcnZpY2UsIFNhbWFyaXRhbiBIb3VzZeKAmXMgY2xp
+        bmljcyBhcmUgYWJsZSB0byB0cmVhdCBzdWNoIGEgbGFyZ2UgbnVtYmVyIG9m
+        IHBhdGllbnRzIHdpdGggYSB2ZXJ5IHNtYWxsIHBhaWQgc3RhZmYuIEFsbW9z
+        dCBhbGwgb2YgdGhlIG1lZGljYWwgYW5kIGRlbnRhbCBkb2N0b3JzIGFuZCBh
+        c3Npc3RhbnRzIGFyZSB2b2x1bnRlZXJpbmcgdGhlaXIgdGltZSBmcmVlIG9m
+        IGNoYXJnZS4gVGhlc2UgaW5kaXZpZHVhbHMsIGVpdGhlciByZXRpcmVkIG9y
+        IGN1cnJlbnRseSBwcmFjdGljaW5nIG1lZGljaW5lIGFuZCBkZW50aXN0cnks
+        IHdhbnQgdG8gc2VydmUgdGhlaXIgY29tbXVuaXR5IGluIHRoZWlyIGxpbWl0
+        ZWQgc3BhcmUgdGltZS4iLCJlbWFpbHMiOlsiaW5mb0BzYW1hcml0YW5ob3Vz
+        ZXNhbm1hdGVvLm9yZyJdLCJmYXhlcyI6W3siaWQiOjg4MiwibnVtYmVyIjoi
+        NjUwIDgzOS0xNDU3In1dLCJob3VycyI6Ik1vbmRheS1GcmlkYXksIDktMTIs
+        IDItNSIsImtpbmQiOiJIdW1hbiBTZXJ2aWNlcyIsImxhbmd1YWdlcyI6WyJT
+        cGFuaXNoIl0sIm1haWxfYWRkcmVzcyI6eyJpZCI6MTM4NiwiYXR0ZW50aW9u
+        IjoiUmVkd29vZCBDaXR5IEZyZWUgTWVkaWNhbCBDbGluaWMiLCJzdHJlZXQi
+        OiIxMTQgRmlmdGggQXZlbnVlIiwiY2l0eSI6IlJlZHdvb2QgQ2l0eSIsInN0
+        YXRlIjoiQ0EiLCJ6aXAiOiI5NDA2MyJ9LCJuYW1lIjoiUmVkd29vZCBDaXR5
+        IEZyZWUgTWVkaWNhbCBDbGluaWMiLCJwaG9uZXMiOlt7ImlkIjoxOTAzLCJu
+        dW1iZXIiOiI2NTAgODM5LTE0NDcifV0sInNob3J0X2Rlc2MiOiJQcm92aWRl
+        cyBmcmVlIG1lZGljYWwgY2FyZSB0byB0aG9zZSBpbiBuZWVkLiIsInNsdWci
+        OiJyZWR3b29kLWNpdHktZnJlZS1tZWRpY2FsLWNsaW5pYyIsInNsdWdzIjpb
+        InJlZHdvb2QtY2l0eS1mcmVlLW1lZGljYWwtY2xpbmljIl0sInRyYW5zcG9y
+        dGF0aW9uIjoiU0FNVFJBTlMgc3RvcHMgd2l0aGluIDIgYmxvY2tzLiIsInVw
+        ZGF0ZWRfYXQiOiIyMDE0LTA1LTI0VDE0OjA4OjIwLjUxOS0wNzowMCIsInVy
+        bHMiOlsiaHR0cDovL3d3dy5zYW1hcml0YW5ob3VzZXNhbm1hdGVvLm9yZyJd
+        LCJ1cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5j
+        b20vYXBpL2xvY2F0aW9ucy8xMzg5Iiwic2VydmljZXMiOlt7ImlkIjoxMzg5
+        LCJkZXNjcmlwdGlvbiI6IlByb3ZpZGVzIGZyZWUgbWVkaWNhbCBjYXJlIHRv
+        IHRob3NlIGluIG5lZWQuIE9mZmVycyBiYXNpYyBtZWRpY2FsIGV4YW1zIGZv
+        ciBhZHVsdHMgYW5kIHR1YmVyY3Vsb3NpcyBzY3JlZW5pbmcuIEFzc2lzdHMg
+        dGhlIGluZGl2aWR1YWwgdG8gYWNjZXNzIG90aGVyIHNlcnZpY2VzIGluIHRo
+        ZSBjb21tdW5pdHkuIEJ5IGFwcG9pbnRtZW50IG9ubHksIFByb2plY3QgU21p
+        bGUgcHJvdmlkZXMgYSBmcmVlIGRlbnRhbCBleGFtLCBkZW50YWwgY2xlYW5p
+        bmcgYW5kIG9yYWwgaHlnaWVuZSBpbnN0cnVjdGlvbiBmb3IgY2hpbGRyZW4s
+        IGFnZSAzLTEyLCBvZiBTYW1hcml0YW4gSG91c2UgY2xpZW50cy4iLCJlbGln
+        aWJpbGl0eSI6Ikxvdy1pbmNvbWUgcGVyc29uIHdpdGhvdXQgYWNjZXNzIHRv
+        IGhlYWx0aCBjYXJlIiwiZmVlcyI6Ik5vbmUuIiwiZnVuZGluZ19zb3VyY2Vz
+        IjpbIkRvbmF0aW9ucyIsIkdyYW50cyJdLCJrZXl3b3JkcyI6WyJIRUFMVEgg
+        U0VSVklDRVMiLCJPdXRwYXRpZW50IENhcmUiLCJDb21tdW5pdHkgQ2xpbmlj
+        cyIsIkZyZWUgTWVkaWNhbCBDYXJlLVJlZHdvb2QgQ2l0eSIsIkZyZWUgRGVu
+        dGFsIEV4YW0iXSwiY2F0ZWdvcmllcyI6W3siaWQiOjEsImRlcHRoIjowLCJv
+        ZV9pZCI6IjEwMSIsIm5hbWUiOiJFbWVyZ2VuY3kiLCJwYXJlbnRfaWQiOm51
+        bGwsInNsdWciOiJlbWVyZ2VuY3kifSx7ImlkIjo3OCwiZGVwdGgiOjAsIm9l
+        X2lkIjoiMTA2IiwibmFtZSI6IkhlYWx0aCIsInBhcmVudF9pZCI6bnVsbCwi
+        c2x1ZyI6ImhlYWx0aCJ9LHsiaWQiOjg2LCJkZXB0aCI6MSwib2VfaWQiOiIx
+        MDYtMDIiLCJuYW1lIjoiRGVudGFsIENhcmUiLCJwYXJlbnRfaWQiOjc4LCJz
+        bHVnIjoiZGVudGFsLWNhcmUifSx7ImlkIjoxMDksImRlcHRoIjoxLCJvZV9p
+        ZCI6IjEwNi0wNiIsIm5hbWUiOiJNZWRpY2FsIENhcmUiLCJwYXJlbnRfaWQi
+        Ojc4LCJzbHVnIjoibWVkaWNhbC1jYXJlIn1dLCJob3dfdG9fYXBwbHkiOiJD
+        YWxsIGZvciBzY3JlZW5pbmcgYXBwb2ludG1lbnQuIE1lZGljYWwgdmlzaXRz
+        IGFyZSBieSBhcHBvaW50bWVudCBvbmx5LiIsInNlcnZpY2VfYXJlYXMiOlsi
+        QXRoZXJ0b24iLCJFYXN0IFBhbG8gQWx0byIsIk1lbmxvIFBhcmsiLCJSZWR3
+        b29kIENpdHkiLCJTYW4gQ2FybG9zIl0sIndhaXQiOiJWYXJpZXMuIiwidXBk
+        YXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6MDc6NTEuODc3LTA3OjAwIn1dLCJv
+        cmdhbml6YXRpb24iOnsiaWQiOjEzMDEsIm5hbWUiOiJTYW1hcml0YW4gSG91
+        c2UiLCJzbHVnIjoic2FtYXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4
+        ZS1hMGU4LWIyZjE1NGEwN2JlYyIsInNsdWdzIjpbInNhbWFyaXRhbi1ob3Vz
+        ZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRhMDdiZWMiXSwiX3Ns
+        dWdzIjpbInNhbWFyaXRhbi1ob3VzZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBl
+        OC1iMmYxNTRhMDdiZWMiXSwidXJsIjoiaHR0cDovL3NtYy1vaGFuYS1hcGkt
+        dGVzdC5oZXJva3VhcHAuY29tL2FwaS9vcmdhbml6YXRpb25zLzEzMDEiLCJs
+        b2NhdGlvbnNfdXJsIjoiaHR0cDovL3NtYy1vaGFuYS1hcGktdGVzdC5oZXJv
+        a3VhcHAuY29tL2FwaS9vcmdhbml6YXRpb25zLzEzMDEvbG9jYXRpb25zIn19
+        LHsiaWQiOjEzOTAsImFjY2Vzc2liaWxpdHkiOlsiRWxldmF0b3IiLCJSYW1w
+        IiwiV2hlZWxjaGFpciJdLCJhZGRyZXNzIjp7ImlkIjoxMTMwLCJzdHJlZXQi
+        OiIxOSBXZXN0IDM5dGggQXZlbnVlIiwiY2l0eSI6IlNhbiBNYXRlbyIsInN0
+        YXRlIjoiQ0EiLCJ6aXAiOiI5NDQwMyJ9LCJjb250YWN0cyI6W3siaWQiOjE2
+        MjEsIm5hbWUiOiJTaGFyb24gUGV0ZXJzZW4iLCJ0aXRsZSI6Ik9wZXJhdGlv
+        bnMgRGlyZWN0b3IifV0sImNvb3JkaW5hdGVzIjpbLTEyMi4yOTMxMjcxLDM3
+        LjUzMjY5MjZdLCJkZXNjcmlwdGlvbiI6IlByb3ZpZGVzIGZyZWUgIHByaW1h
+        cnkgYW5kIHNwZWNpYWx0eSBtZWRpY2FsIGFuZCBkZW50YWwgc2VydmljZXMg
+        dG8gdW5pbnN1cmVkLCBsb3ctaW5jb21lIHJlc2lkZW50cy4gXHJcblxyXG5X
+        aG8gaXMgVHJlYXRlZD8gXHJcblBhdGllbnRzIG9mIG91ciBjbGluaWNzIGFy
+        ZSB0aGUgd29ya2luZyBwb29yLiBUaGV5IHRlbmQgdG8gZWFybiBqdXN0IGVu
+        b3VnaCBpbmNvbWUgdG8gYmUgaW5lbGlnaWJsZSBmb3IgTWVkaS1DYWwgY292
+        ZXJhZ2UsIHlldCBkbyBub3QgcmVjZWl2ZSBoZWFsdGggaW5zdXJhbmNlIHRo
+        cm91Z2ggdGhlaXIgZW1wbG95ZXJzIGFuZCBjYW5ub3QgYWZmb3JkIHRvIHBh
+        eSBmb3Ig4oCcb3V0LW9mLXBvY2tldOKAnSBoZWFsdGggaW5zdXJhbmNlLiBP
+        ZnRlbiB0aGVzZSByZXNpZGVudHMgYXJlIGZvcmNlZCB0byBzZWVrIHRyZWF0
+        bWVudCBhdCBsb2NhbCBlbWVyZ2VuY3kgcm9vbXMgYW5kIGJlY29tZSBzYWRk
+        bGVkIHdpdGggbWVkaWNhbCBiaWxscyB0aGF0IHRoZXkgYXJlIHVuYWJsZSB0
+        byBwYXkuIFNhbWFyaXRhbiBIb3VzZeKAmXMgRnJlZSBNZWRpY2FsIENsaW5p
+        Y3MgZmlsbCB0aGlzIGdhcCBpbiBoZWFsdGhjYXJlIGFjY2VzcyBmb3IgdGhl
+        IHVuaW5zdXJlZCBhbmQgc2F2ZSBlbWVyZ2VuY3kgcm9vbSByZXNvdXJjZXMg
+        Zm9yIGVtZXJnZW5jaWVzLlxyXG5cclxuUHJvZmVzc2lvbmFsIE1lZGljYWwg
+        XHUwMDI2IERlbnRhbCBWb2x1bnRlZXJzXHJcblRoYW5rcyB0byBpdHMgaW5u
+        b3ZhdGl2ZSB2b2x1bnRlZXItYmFzZWQgbW9kZWwgb2Ygc2VydmljZSwgU2Ft
+        YXJpdGFuIEhvdXNl4oCZcyBjbGluaWNzIGFyZSBhYmxlIHRvIHRyZWF0IHN1
+        Y2ggYSBsYXJnZSBudW1iZXIgb2YgcGF0aWVudHMgd2l0aCBhIHZlcnkgc21h
+        bGwgcGFpZCBzdGFmZi4gQWxtb3N0IGFsbCBvZiB0aGUgbWVkaWNhbCBhbmQg
+        ZGVudGFsIGRvY3RvcnMgYW5kIGFzc2lzdGFudHMgYXJlIHZvbHVudGVlcmlu
+        ZyB0aGVpciB0aW1lIGZyZWUgb2YgY2hhcmdlLiBUaGVzZSBpbmRpdmlkdWFs
+        cywgZWl0aGVyIHJldGlyZWQgb3IgY3VycmVudGx5IHByYWN0aWNpbmcgbWVk
+        aWNpbmUgYW5kIGRlbnRpc3RyeSwgd2FudCB0byBzZXJ2ZSB0aGVpciBjb21t
+        dW5pdHkgaW4gdGhlaXIgbGltaXRlZCBzcGFyZSB0aW1lLiIsImVtYWlscyI6
+        WyJpbmZvQHNhbWFyaXRhbmhvdXNlc2FubWF0ZW8ub3JnIl0sImZheGVzIjpb
+        eyJpZCI6ODgzLCJudW1iZXIiOiI2NTAgNTc4LTA0NDAifV0sImhvdXJzIjoi
+        TW9uZGF5LUZyaWRheSwgOS0xMiwgMS00Iiwia2luZCI6Ikh1bWFuIFNlcnZp
+        Y2VzIiwibGFuZ3VhZ2VzIjpbIlNwYW5pc2giXSwibWFpbF9hZGRyZXNzIjp7
+        ImlkIjoxMzg3LCJhdHRlbnRpb24iOiJTYW4gTWF0ZW8gRnJlZSBNZWRpY2Fs
+        L0RlbnRhbCIsInN0cmVldCI6IjE5IFdlc3QgMzl0aCBBdmVudWUiLCJjaXR5
+        IjoiU2FuIE1hdGVvIiwic3RhdGUiOiJDQSIsInppcCI6Ijk0NDAzIn0sIm5h
+        bWUiOiJTYW4gTWF0ZW8gRnJlZSBNZWRpY2FsIENsaW5pYyIsInBob25lcyI6
+        W3siaWQiOjE5MDQsIm51bWJlciI6IjY1MCA1NzgtMDQwMCJ9XSwic2hvcnRf
+        ZGVzYyI6IlByb3ZpZGVzIGZyZWUgbWVkaWNhbCBhbmQgZGVudGFsIGNhcmUg
+        dG8gdGhvc2UgaW4gbmVlZC4gT2ZmZXJzIGJhc2ljIG1lZGljYWwgY2FyZSBm
+        b3IgYWR1bHRzLiIsInNsdWciOiJzYW4tbWF0ZW8tZnJlZS1tZWRpY2FsLWNs
+        aW5pYyIsInNsdWdzIjpbInNhbi1tYXRlby1mcmVlLW1lZGljYWwtY2xpbmlj
+        Il0sInRyYW5zcG9ydGF0aW9uIjoiU0FNVFJBTlMgc3RvcHMgd2l0aGluIDEg
+        YmxvY2suIiwidXBkYXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6MDg6MjAuNjI2
+        LTA3OjAwIiwidXJscyI6WyJodHRwOi8vd3d3LnNhbWFyaXRhbmhvdXNlc2Fu
+        bWF0ZW8ub3JnIl0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3Qu
+        aGVyb2t1YXBwLmNvbS9hcGkvbG9jYXRpb25zLzEzOTAiLCJzZXJ2aWNlcyI6
+        W3siaWQiOjEzOTAsImVsaWdpYmlsaXR5IjoiTG93LWluY29tZSBwZXJzb24g
+        d2l0aG91dCBhY2Nlc3MgdG8gaGVhbHRoIGNhcmUiLCJmZWVzIjoiTm9uZS4i
+        LCJmdW5kaW5nX3NvdXJjZXMiOlsiRG9uYXRpb25zIiwiR3JhbnRzIl0sImtl
+        eXdvcmRzIjpbIkhFQUxUSCBTRVJWSUNFUyIsIk91dHBhdGllbnQgQ2FyZSIs
+        IkNvbW11bml0eSBDbGluaWNzIl0sImNhdGVnb3JpZXMiOlt7ImlkIjo3OCwi
+        ZGVwdGgiOjAsIm9lX2lkIjoiMTA2IiwibmFtZSI6IkhlYWx0aCIsInBhcmVu
+        dF9pZCI6bnVsbCwic2x1ZyI6ImhlYWx0aCJ9LHsiaWQiOjg2LCJkZXB0aCI6
+        MSwib2VfaWQiOiIxMDYtMDIiLCJuYW1lIjoiRGVudGFsIENhcmUiLCJwYXJl
+        bnRfaWQiOjc4LCJzbHVnIjoiZGVudGFsLWNhcmUifSx7ImlkIjo5MiwiZGVw
+        dGgiOjEsIm9lX2lkIjoiMTA2LTA0IiwibmFtZSI6IkhlYWx0aCBFZHVjYXRp
+        b24iLCJwYXJlbnRfaWQiOjc4LCJzbHVnIjoiaGVhbHRoLWVkdWNhdGlvbiJ9
+        LHsiaWQiOjEwOSwiZGVwdGgiOjEsIm9lX2lkIjoiMTA2LTA2IiwibmFtZSI6
+        Ik1lZGljYWwgQ2FyZSIsInBhcmVudF9pZCI6NzgsInNsdWciOiJtZWRpY2Fs
+        LWNhcmUifSx7ImlkIjoxMTMsImRlcHRoIjoyLCJvZV9pZCI6IjEwNi0wNi0w
+        NCIsIm5hbWUiOiJDaGVja3VwIFx1MDAyNiBUZXN0IiwicGFyZW50X2lkIjox
+        MDksInNsdWciOiJjaGVja3VwLXRlc3QifSx7ImlkIjoxMTksImRlcHRoIjoz
+        LCJvZV9pZCI6IjEwNi0wNi0wNC0wNiIsIm5hbWUiOiJWaXNpb24gVGVzdHMi
+        LCJwYXJlbnRfaWQiOjExMywic2x1ZyI6InZpc2lvbi10ZXN0cyJ9LHsiaWQi
+        OjEyMSwiZGVwdGgiOjIsIm9lX2lkIjoiMTA2LTA2LTA2IiwibmFtZSI6IlBl
+        cnNvbmFsIEh5Z2llbmUiLCJwYXJlbnRfaWQiOjEwOSwic2x1ZyI6InBlcnNv
+        bmFsLWh5Z2llbmUifSx7ImlkIjoxMjIsImRlcHRoIjoyLCJvZV9pZCI6IjEw
+        Ni0wNi0wNyIsIm5hbWUiOiJQcmV2ZW50IFx1MDAyNiBUcmVhdCIsInBhcmVu
+        dF9pZCI6MTA5LCJzbHVnIjoicHJldmVudC10cmVhdCJ9XSwiaG93X3RvX2Fw
+        cGx5IjoiQ2FsbCBmb3Igc2NyZWVuaW5nIGFwcG9pbnRtZW50ICg2NTAtMzQ3
+        LTM2NDgpLiIsInNlcnZpY2VfYXJlYXMiOlsiQmVsbW9udCIsIkJ1cmxpbmdh
+        bWUiLCJGb3N0ZXIgQ2l0eSIsIk1pbGxicmFlIiwiU2FuIENhcmxvcyIsIlNh
+        biBNYXRlbyJdLCJ3YWl0IjoiVmFyaWVzLiIsInVwZGF0ZWRfYXQiOiIyMDE0
+        LTA1LTI0VDE0OjA3OjUxLjkzMC0wNzowMCJ9XSwib3JnYW5pemF0aW9uIjp7
+        ImlkIjoxMzAxLCJuYW1lIjoiU2FtYXJpdGFuIEhvdXNlIiwic2x1ZyI6InNh
+        bWFyaXRhbi1ob3VzZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRh
+        MDdiZWMiLCJzbHVncyI6WyJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDlj
+        ZC00OThlLWEwZTgtYjJmMTU0YTA3YmVjIl0sIl9zbHVncyI6WyJzYW1hcml0
+        YW4taG91c2UtNTdjZjE1ZWItMDljZC00OThlLWEwZTgtYjJmMTU0YTA3YmVj
+        Il0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBw
+        LmNvbS9hcGkvb3JnYW5pemF0aW9ucy8xMzAxIiwibG9jYXRpb25zX3VybCI6
+        Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkv
+        b3JnYW5pemF0aW9ucy8xMzAxL2xvY2F0aW9ucyJ9fSx7ImlkIjoxNjIxLCJh
+        Y2Nlc3NpYmlsaXR5IjpbIkVsZXZhdG9yIiwiRGlzYWJsZWQgUmVzdHJvb20i
+        LCJEaXNhYmxlZCBQYXJraW5nIiwiV2hlZWxjaGFpciJdLCJhZGRyZXNzIjp7
+        ImlkIjoxMzU0LCJzdHJlZXQiOiI3MjUgV2VsY2ggUm9hZCIsImNpdHkiOiJQ
+        YWxvIEFsdG8iLCJzdGF0ZSI6IkNBIiwiemlwIjoiOTQzMDQifSwiYXNrX2Zv
+        ciI6WyJDYWxsIHRvbGwtZnJlZSBudW1iZXIgZm9yIGluZm9ybWF0aW9uIl0s
+        ImNvbnRhY3RzIjpbeyJpZCI6MTkxNSwibmFtZSI6IkNocmlzdG9waGVyIERh
+        d2VzIiwidGl0bGUiOiJDaGllZiBFeGVjdXRpdmUgT2ZmaWNlciJ9XSwiY29v
+        cmRpbmF0ZXMiOlstMTIyLjE3NTA0OSwzNy40MzYzNTddLCJkZXNjcmlwdGlv
+        biI6Ik9wZXJhdGVzIHRoZSBjb21wcmVoZW5zaXZlIDI2NC1iZWQgTHVjaWxl
+        IFBhY2thcmQgQ2hpbGRyZW4ncyBIb3NwaXRhbCBhdCBTdGFuZm9yZCBwcm92
+        aWRpbmcgcGVkaWF0cmljIG1lZGljYWwgYW5kIHN1cmdpY2FsIHNlcnZpY2Vz
+        LiBUaGUgaG9zcGl0YWwgcHJvdmlkZXMgY2FyZGlvbG9neSBhbmQgaGVhcnQg
+        dHJhbnNwbGFudGF0aW9uIHNlcnZpY2VzLCBoZW1hdG9sb2d5L29uY29sb2d5
+        L2JvbmUgbWFycm93IHRyYW5zcGxhbnRhdGlvbiwgbGl2ZXIgYW5kIGtpZG5l
+        eSB0cmFuc3BsYW50YXRpb24sIGdlbmVyYWwgcGVkaWF0cmljIHN1cmdlcnkg
+        YW5kIG5lb25hdG9sb2d5LiBPdXRwYXRpZW50IGNsaW5pY3MgaW5jbHVkZSBw
+        cmltYXJ5IGNhcmUsIGFkb2xlc2NlbnQgbWVkaWNpbmUsIGJvbmUgbWFycm93
+        IHRyYW5zcGxhbnQsIGNhcmRpb2xvZ3ksIGNvbW11bml0eSBwZWRpYXRyaWMg
+        YWZ0ZXItaG91cnMsIGRlcm1hdG9sb2d5LCBkaWFiZXRlcywgZWF0aW5nIGRp
+        c29yZGVycywgZW5kb2NyaW5vbG9neSwgZ2FzdHJvZW50ZXJvbG9neSwgZ2Vu
+        ZXRpY3MsIGhlbWF0b2xvZ3ksIGhlbW9waGlsaWEsIGluZmFudCBkZXZlbG9w
+        bWVudCwgaW5mZWN0aW91cyBkaXNlYXNlLCBsaXZlciB0cmFuc3BsYW50LCBu
+        ZXVyb2xvZ3ksIG9uY29sb2d5LCBvcGh0aGFsbW9sb2d5LCBvcnRob3BlZGlj
+        cywgcGxhc3RpYyBzdXJnZXJ5LCBwc3ljaGlhdHJ5LCByZXNwaXJhdG9yeSBt
+        ZWRpY2luZSwgcmhldW1hdG9sb2d5LCBzcGluYSBiaWZpZGEsIHN1cmdlcnks
+        IGFuZCB1cm9sb2d5LiBUaGUgTW9tbXkgVmFuIGlzIGEgc3BlY2lhbCBtb2Jp
+        bGUgbWVkaWNhbCB1bml0IHByb3ZpZGluZyB3b21lbidzIGhlYWx0aCBjYXJl
+        IGluIEVhc3QgUGFsbyBBbHRvLiBNZWRpY2FsIHNlcnZpY2VzIGFyZSBmcmVl
+        IG9mIGNoYXJnZSBhbmQgYXZhaWxhYmxlIHRvIHdvbWVuIHdobyBkbyBub3Qg
+        aGF2ZSBhbnkgdHlwZSBvZiBtZWRpY2FsIGluc3VyYW5jZS4gUHJvdmlkZXMg
+        cHJlbmF0YWwgc2VydmljZXMsIHByZWduYW5jeSB0ZXN0aW5nLCBicmVhc3Qg
+        ZXhhbXMgYW5kIHJlZmVycmFsIGZvciBtYW1tb2dyYW1zLCBwYXAgc21lYXJz
+        LCBjb250cmFjZXB0aW9uLCBjaGVja2luZyBmb3IgZGlhYmV0ZXMgYW5kIGhp
+        Z2ggYmxvb2QgcHJlc3N1cmUsIGFuZCBwcmUtIGFuZCBwb3N0LW5hdGFsIGlu
+        Zm9ybWF0aW9uLiBUaGUgTW9tbXkgVmFuIGlzIGFsc28gbG9jYXRlZCBhdCB0
+        d28gU2FtYXJpdGFuIEhvdXNlIGxvY2F0aW9uczogNDAxIE5vcnRoIEh1bWJv
+        bGR0IFN0cmVldCwgU2FuIE1hdGVvIChNb25kYXlzLCA5LTMpIGFuZCAxMTQg
+        NXRoIEF2ZW51ZSwgUmVkd29vZCBDaXR5IChXZWRuZXNkYXlzLCA5LTMpLiBD
+        YWxsIDY1MC04MzktMTQ0Ny4gT3RoZXIgc2VydmljZXMgaW5jbHVkZSBzb2Np
+        YWwgc2VydmljZXMsIGludGVycHJldGVycywgY2hhcGxhaW5jeSwgcmVjcmVh
+        dGlvbiB0aGVyYXB5LCBwaHlzaWNhbCBhbmQgb2NjdXBhdGlvbmFsIHRoZXJh
+        cHksIG51dHJpdGlvbiwgcGhhcm1hY3ksIHJhZGlvbG9neSwgbGFib3JhdG9y
+        eSwgcmVoYWJpbGl0YXRpb24gZW5naW5lZXJpbmcgYW5kIGNvbW11bml0eSBv
+        dXRyZWFjaCBzZXJ2aWNlcy4gVGhlIFBhcmVudCBJbmZvcm1hdGlvbiBhbmQg
+        UmVmZXJyYWwgQ2VudGVyIChQSVJDKSBwcm92aWRlcyBpbmZvcm1hdGlvbiBv
+        biBjaGlsZCBoZWFsdGhjYXJlLiBQZWRpYXRyaWMgbnVyc2VzIGFyZSBhdmFp
+        bGFibGUgdG8gYW5zd2VyIHF1ZXN0aW9ucyBhYm91dCBhIHZhcmlldHkgb2Yg
+        Y2hpbGRyZW4ncyBoZWFsdGgsIGdyb3d0aCBhbmQgZGV2ZWxvcG1lbnQsIHNh
+        ZmV0eSBhbmQgYmVoYXZpb3IgaXNzdWVzLiBUaGV5IGNhbiBhbHNvIGhlbHAg
+        Y2hvb3NlIGEgcGh5c2ljaWFuIHdobyBtZWV0cyB0aGUgc3BlY2lhbCBuZWVk
+        cyBvZiB0aGUgY2hpbGQgYXMgd2VsbCBhcyBwcm92aWRlIGluZm9ybWF0aW9u
+        IGFib3V0IHJlc291cmNlcyBmb3IgY2hpbGRyZW4gaW4gYSBjb21tdW5pdHku
+        IFRyYW5zbGF0aW9uIHNlcnZpY2VzIGFyZSBhdmFpbGFibGUgdGhyb3VnaCB0
+        aGUgQVRcdTAwMjZUIExhbmd1YWdlIExpbmUuIENhbGwgNjUwLTQ5OC1LSURT
+        IG9yIDgwMC02OTAtMjI4Mi4gVGhlIFRlZW4gSGVhbHRoIFJlc291cmNlIExp
+        bmUgb2ZmZXJzIHJlbGlhYmxlLCBhY2Nlc3NpYmxlIGFuZCBjb25maWRlbnRp
+        YWwgaGVhbHRoIHJlY29tbWVuZGF0aW9ucy4gQWRvbGVzY2VudHMgd2l0aCBx
+        dWVzdGlvbnMgYWJvdXQgcmVsYXRpb25zaGlwcywgSElWL0FJRFMsIGVhdGlu
+        ZyBkaXNvcmRlcnMgb3Igb3RoZXIgaGVhbHRoIGlzc3VlcyBhcmUgaW52aXRl
+        ZCB0byBjYWxsIDg4OC03MTEtVEVFTi4gVGhlIEFkb2xlc2NlbnQgSGVhbHRo
+        IFZhbiBvZmZlcnMgY29tcHJlaGVuc2l2ZSBoZWFsdGggc2VydmljZXMgZm9y
+        IHVuaW5zdXJlZCBhbmQgaG9tZWxlc3MgeW91dGgsIDEyIHRvIDIxIHllYXJz
+        IG9mIGFnZS4gUGh5c2ljaWFucywgbnVyc2UgcHJhY3RpdGlvbmVycywgc29j
+        aWFsIHdvcmtlcnMsIG51dHJpdGlvbmlzdHMgYW5kIG51cnNlcyBmcm9tIEx1
+        Y2lsZSBQYWNrYXJkIENoaWxkcmVuJ3MgSG9zcGl0YWwgc3RhZmYgdGhlIEhl
+        YWx0aCBWYW4uIFNlcnZpY2VzIGluY2x1ZGUgaW1tdW5pemF0aW9ucywgcGh5
+        c2ljYWxzLCBwcmVnbmFuY3kgdGVzdHMsIHBlbHZpYyBleGFtcywgc2ljayBj
+        YXJlLCBISVYgY291bnNlbGluZyBhbmQgdGVzdGluZywgZmFtaWx5IHBsYW5u
+        aW5nIGFuZCBoZWFsdGggZWR1Y2F0aW9uLiBBbGwgc2VydmljZXMgYW5kIG1l
+        ZGljYXRpb25zIGFyZSBwcm92aWRlZCBhdCBubyBjaGFyZ2UgdG8gdGhlIHBh
+        dGllbnRzLiBWaXNpdHMgYXJlIG9uIGEgZmlyc3QtY29tZSwgZmlyc3Qtc2Vy
+        dmUgYmFzaXMuIFRoZSBsb2NhdGlvbiBvZiB0aGUgSGVhbHRoIFZhbiBtYXkg
+        Y2hhbmdlIHdpdGhvdXQgYWR2YW5jZSBub3RpY2UuIFRoZSBsb2NhdGlvbnMg
+        YXJlIDI4MDEgTWlzc2lvbiBTdHJlZXQgaW4gU2FuIEZyYW5jaXNjbyAoMXN0
+        IFR1ZXNkYXkgb2YgZWFjaCBtb250aCwgZnJvbSAyLTcpLCB0aGUgVGVuZGVy
+        bG9pbiBQbGF5Z3JvdW5kIGF0IDU3MCBFbGxpcyBTdHJlZXQgaW4gU2FuIEZy
+        YW5jaXNjbyAoMm5kIFR1ZXNkYXkgb2YgZWFjaCBtb250aCwgZnJvbSAyLTcp
+        LCBQZW5pbnN1bGEgSGlnaCBTY2hvb2wgYXQgMzAwIFBpZWRtb250IEF2ZW51
+        ZSBpbiBTYW4gQnJ1bm8gKDNyZCBUdWVzZGF5IG9mIGVhY2ggbW9udGgsIGZy
+        b20gOS0yKSwgUGhvZW5peCBIaWdoIFNjaG9vbCBhdCAxOTUwIE1pc3Npb24g
+        U3RyZWV0IGluIFNhbiBGcmFuY2lzY28gKDR0aCBUdWVzZGF5IG9mIGVhY2gg
+        bW9udGgsIGZyb20gOS0yKSBhbmQgQWx0YSBWaXN0YSBIaWdoIFNjaG9vbCBh
+        dCBCcnlhbnQgU3RyZWV0IGFuZCBUdXJtYW4gaW4gTW91bnRhaW4gVmlldyAo
+        MXN0IFRodXJzZGF5IG9mIGVhY2ggbW9udGgsIGZyb20gOS0yKS4gQ2FsbCA4
+        ODgtNzExLVRFRU4gKDgzMzYpLiIsImVtYWlscyI6WyJyZWZlcnJhbEBtZWRj
+        ZW50ZXIuc3RhbmZvcmQuZWR1Il0sImtpbmQiOiJIdW1hbiBTZXJ2aWNlcyIs
+        Imxhbmd1YWdlcyI6WyJJbnRlcnByZXRlciJdLCJtYWlsX2FkZHJlc3MiOnsi
+        aWQiOjE2MTgsImF0dGVudGlvbiI6IlBhY2thcmQgQ2hpbGRyZW4ncyBIb3Nw
+        aXRhbCIsInN0cmVldCI6IjcyNSBXZWxjaCBSb2FkIiwiY2l0eSI6IlBhbG8g
+        QWx0byIsInN0YXRlIjoiQ0EiLCJ6aXAiOiI5NDMwNCJ9LCJuYW1lIjoiTHVj
+        aWxlIFBhY2thcmQgQ2hpbGRyZW4ncyBIb3NwaXRhbCIsInBob25lcyI6W3si
+        aWQiOjIzMjgsImRlcGFydG1lbnQiOiIyNCBob3VycyBkYWlseSIsIm51bWJl
+        ciI6IjgwMCA3NTYtOTAwMCJ9LHsiaWQiOjIzMjksIm51bWJlciI6IjY1MC00
+        OTctODAwMCJ9LHsiaWQiOjIzMzAsIm51bWJlciI6IjgwMCA3NTYtOTAwMCJ9
+        LHsiaWQiOjIzMzEsIm51bWJlciI6IjY1MCA0OTctODAwMCJ9LHsiaWQiOjIz
+        MzIsImRlcGFydG1lbnQiOiJBZHZpY2UgTnVyc2UiLCJudW1iZXIiOiI2NTAg
+        NDk3LTg4MjAifSx7ImlkIjoyMzMzLCJkZXBhcnRtZW50IjoiUmVmZXJyYWwg
+        Q2VudGVyIiwibnVtYmVyIjoiODAwIDc1Ni05MDAwIn0seyJpZCI6MjMzNCwi
+        bnVtYmVyIjoiNjUwLTMyNi00OTc2IiwibnVtYmVyX3R5cGUiOiJUVFkifV0s
+        InNob3J0X2Rlc2MiOiJPcGVyYXRlcyBhIDIxNC1iZWQgaW5wYXRpZW50IGhv
+        c3BpdGFsIGZvciBjaGlsZHJlbi4iLCJzbHVnIjoibHVjaWxlLXBhY2thcmQt
+        Y2hpbGRyZW4tcy1ob3NwaXRhbCIsInNsdWdzIjpbImx1Y2lsZS1wYWNrYXJk
+        LWNoaWxkcmVuLXMtaG9zcGl0YWwiXSwidHJhbnNwb3J0YXRpb24iOiJTQU1U
+        UkFOUyBhbmQgQ0FMVFJBSU4gc3RvcCB3aXRoaW4gMS8yIG1pbGUgYW5kIGNv
+        bm5lY3Qgd2l0aCBTdGFuZm9yZCBVbml2ZXJzaXR5J3MgTWFyZ3Vlcml0ZSBz
+        aHV0dGxlIHNlcnZpY2UuIiwidXBkYXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6
+        MDg6MDUuNTI2LTA3OjAwIiwidXJscyI6WyJodHRwOi8vd3d3LmxwY2gub3Jn
+        Il0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBw
+        LmNvbS9hcGkvbG9jYXRpb25zLzE2MjEiLCJzZXJ2aWNlcyI6W3siaWQiOjE2
+        MjEsImF1ZGllbmNlIjoiQ2hpbGRyZW4sIHlvdXRoLCBwcmVnbmFudCB3b21l
+        biIsImVsaWdpYmlsaXR5IjoiQ2hpbGQgb3IgeW91dGggaW4gbmVlZCBvZiB0
+        aGUgaG9zcGl0YWwncyBzZXJ2aWNlcyIsImZlZXMiOiJWYXJ5IGFjY29yZGlu
+        ZyB0byBzZXJ2aWNlLiBDYXNoLCBNZWRpLUNhbCwgbWlsaXRhcnkgaW5zdXJh
+        bmNlLCBwcml2YXRlIGluc3VyYW5jZSBhY2NlcHRlZC4iLCJmdW5kaW5nX3Nv
+        dXJjZXMiOlsiRG9uYXRpb25zIiwiRmVlcyIsIkdyYW50cyJdLCJrZXl3b3Jk
+        cyI6WyJGQU1JTFkgUExBTk5JTkcgU0VSVklDRVMiLCJDb250cmFjZXB0aXZl
+        IEFzc2lzdGFuY2UiLCJFeHBlY3RhbnQvTmV3IFBhcmVudCBBc3Npc3RhbmNl
+        IiwiUHJlZ25hbmN5IFRlc3RpbmciLCJIRUFMVEggU0VSVklDRVMiLCJJbnBh
+        dGllbnQgQ2FyZSIsIk91dHBhdGllbnQgQ2FyZSIsIk1FTlRBTCBIRUFMVEgg
+        U0VSVklDRVMiLCJEYXkgVHJlYXRtZW50IiwiT2JzZXJ2YXRpb24vRGlhZ25v
+        c2lzIiwiSG9zcGl0YWxzIl0sImNhdGVnb3JpZXMiOlt7ImlkIjo3OCwiZGVw
+        dGgiOjAsIm9lX2lkIjoiMTA2IiwibmFtZSI6IkhlYWx0aCIsInBhcmVudF9p
+        ZCI6bnVsbCwic2x1ZyI6ImhlYWx0aCJ9LHsiaWQiOjkyLCJkZXB0aCI6MSwi
+        b2VfaWQiOiIxMDYtMDQiLCJuYW1lIjoiSGVhbHRoIEVkdWNhdGlvbiIsInBh
+        cmVudF9pZCI6NzgsInNsdWciOiJoZWFsdGgtZWR1Y2F0aW9uIn0seyJpZCI6
+        OTUsImRlcHRoIjoyLCJvZV9pZCI6IjEwNi0wNC0wMyIsIm5hbWUiOiJGYW1p
+        bHkgUGxhbm5pbmciLCJwYXJlbnRfaWQiOjkyLCJzbHVnIjoiZmFtaWx5LXBs
+        YW5uaW5nIn0seyJpZCI6MTA5LCJkZXB0aCI6MSwib2VfaWQiOiIxMDYtMDYi
+        LCJuYW1lIjoiTWVkaWNhbCBDYXJlIiwicGFyZW50X2lkIjo3OCwic2x1ZyI6
+        Im1lZGljYWwtY2FyZSJ9LHsiaWQiOjExMywiZGVwdGgiOjIsIm9lX2lkIjoi
+        MTA2LTA2LTA0IiwibmFtZSI6IkNoZWNrdXAgXHUwMDI2IFRlc3QiLCJwYXJl
+        bnRfaWQiOjEwOSwic2x1ZyI6ImNoZWNrdXAtdGVzdCJ9LHsiaWQiOjExOCwi
+        ZGVwdGgiOjMsIm9lX2lkIjoiMTA2LTA2LTA0LTA1IiwibmFtZSI6IlByZWdu
+        YW5jeSBUZXN0cyIsInBhcmVudF9pZCI6MTEzLCJzbHVnIjoicHJlZ25hbmN5
+        LXRlc3RzIn0seyJpZCI6MTIyLCJkZXB0aCI6Miwib2VfaWQiOiIxMDYtMDYt
+        MDciLCJuYW1lIjoiUHJldmVudCBcdTAwMjYgVHJlYXQiLCJwYXJlbnRfaWQi
+        OjEwOSwic2x1ZyI6InByZXZlbnQtdHJlYXQifSx7ImlkIjoxMjMsImRlcHRo
+        IjozLCJvZV9pZCI6IjEwNi0wNi0wNy0wMSIsIm5hbWUiOiJDb3Vuc2VsaW5n
+        IiwicGFyZW50X2lkIjoxMjIsInNsdWciOiJjb3Vuc2VsaW5nIn0seyJpZCI6
+        MTMwLCJkZXB0aCI6Mywib2VfaWQiOiIxMDYtMDYtMDctMDgiLCJuYW1lIjoi
+        VmFjY2luYXRpb25zIiwicGFyZW50X2lkIjoxMjIsInNsdWciOiJ2YWNjaW5h
+        dGlvbnMifV0sImhvd190b19hcHBseSI6IkFwcGx5IGJ5IHBob25lLiIsInNl
+        cnZpY2VfYXJlYXMiOlsiQWxhbWVkYSBDb3VudHkiLCJDb250cmEgQ29zdGEg
+        Q291bnR5IiwiTWFyaW4gQ291bnR5IiwiU2FuIEZyYW5jaXNjbyBDb3VudHki
+        LCJTYW4gTWF0ZW8gQ291bnR5IiwiU2FudGEgQ2xhcmEgQ291bnR5IiwiU2Fu
+        dGEgQ3J1eiBDb3VudHkiLCJOYXRpb253aWRlIl0sIndhaXQiOiJObyB3YWl0
+        LiIsInVwZGF0ZWRfYXQiOiIyMDE0LTA1LTI0VDE0OjA3OjU4LjM2Mi0wNzow
+        MCJ9XSwib3JnYW5pemF0aW9uIjp7ImlkIjoxMzM0LCJuYW1lIjoiU3RhbmZv
+        cmQgVW5pdmVyc2l0eSBNZWRpY2FsIENlbnRlciIsInNsdWciOiJzdGFuZm9y
+        ZC11bml2ZXJzaXR5LW1lZGljYWwtY2VudGVyIiwic2x1Z3MiOlsic3RhbmZv
+        cmQtdW5pdmVyc2l0eS1tZWRpY2FsLWNlbnRlciJdLCJfc2x1Z3MiOlsic3Rh
+        bmZvcmQtdW5pdmVyc2l0eS1tZWRpY2FsLWNlbnRlciJdLCJ1cmwiOiJodHRw
+        Oi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL29yZ2Fu
+        aXphdGlvbnMvMTMzNCIsImxvY2F0aW9uc191cmwiOiJodHRwOi8vc21jLW9o
+        YW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL29yZ2FuaXphdGlvbnMv
+        MTMzNC9sb2NhdGlvbnMifX1d
+    http_version: 
+  recorded_at: Fri, 30 May 2014 10:28:29 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Samaritan%20House
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 30 May 2014 10:28:30 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 8b8d19df-ca02-4a0e-aa78-4f5a523df6da
+      X-Runtime:
+      - '0.185737'
+      X-Total-Count:
       - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:47 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=St.%20Vincent%20de%20Paul%20Society&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 22:14:47 GMT
-      Etag:
-      - '"9e52fbe2bb425229c46b8075d0103766"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - d17d0918-52a0-4a98-bcb6-456a79a6e705
-      X-Runtime:
-      - '0.242276'
-      X-Total-Count:
-      - '4'
       X-Total-Pages:
       - '1'
       Content-Length:
-      - '22368'
+      - '2272'
       Connection:
       - keep-alive
     body:
-      encoding: UTF-8
-      string: '[{"id":1615,"accessibility":["Wheelchair"],"address":{"id":1348,"street":"50
-        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Volunteer
-        on duty"],"contacts":[{"id":1903,"name":"Lorraine Moriarty","title":"Executive
-        Director"},{"id":1904,"name":"Maritza Techioli","title":"Community Liaison"},{"id":1905,"name":"Jodie
-        Penner","title":"Director of Devel.","email":"jpenner@svdpsm.org"},{"id":1906,"name":"Janice
-        Kroll","title":"Development Asst","email":"jkroll@svdpsm.org"}],"coordinates":[-122.3250474,37.568272],"description":"Assists
-        families and individuals with emergencies such as shelter, food, clothing,
-        furniture, transportation and medicine through 34 small working groups called
-        conferences. St. Vincent de Paul members visit the home to assess needs and
-        offer service. Also supports those in recovery programs.     Three Homeless
-        Help Centers (described separately) provide weekday lunches, continental breakfasts,
-        clothing vouchers, laundry, toiletries, identification and transportation
-        assistance to individuals without a permanent address. The North County Homeless
-        Help Center and Cafe St. Vincent are located at 344 Grand Avenue, South San
-        Francisco (650-589-9039), open Monday through Saturday, 10 am-12 noon. The
-        Redwood City Homeless Help Center is housed in the Fair Oaks Community Center,
-        2600 Middlefield Road (650-780-7500), and is open 1-2 pm weekdays. The San
-        Mateo site is at 50 North B Street and is open 10 am-12 noon Monday through
-        Friday (650-343-9251). A meal is also served on Monday at 5 pm, at St. Francis
-        Church, 420 Bay Road, East Palo Alto. Peninsula Family Resource Center (PFRC)
-        arranges home visits for persons in need of rental and utilities assistance
-        (homelessness prevention), food, clothes, furniture and other material needs.
-        Call 650-343-4403 Monday-Friday, 10-12 and 1-4, to make arrangements. Also
-        coordinates summer camp scholarships for youth and holiday assistance programs.
-        Restorative Justice Ministry is a full-time jail ministry program that provides
-        spiritual guidance, religious services, tutoring, support and assistance to
-        those incarcerated in the San Mateo County jail facilities and to their families.
-        Jail/prison after care program provides post-release support. Contact the
-        SVdP Jail Chaplain at 650-366-9847. Catherine''s Center is a supportive residential
-        program for ten women at a time who were previously incarcerated. Five thrift
-        stores are located in San Mateo County: Daly City at 6256 Mission Street (650-992-9271);
-        Redwood City at 2406 El Camino Real (650-366-6367); San Bruno at 1600 El Camino
-        Real (650-588-5767); San Mateo at 40 North B Street (650-347-5101); South
-        San Francisco at 344 Grand Avenue (650-589-8445). Donations can be made at
-        store locations or call 650 871-6844 for donation or computer re-cycling pick-up.  For
-        vehicle donations call 800-937-7837.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1047,"number":"650
-        343-9495"}],"hours":"Emergency Helpline: Monday - Friday, 9-4","kind":"Human
-        Services","languages":["Spanish"],"mail_address":{"id":1612,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services","phones":[{"id":2321,"department":"Directory
-        24 hours daily","number":"650 343-4405"},{"id":2322,"department":"Emergency
-        Helpline","number":"650 343-4403"}],"short_desc":"Coordinates the Society''s
-        county-wide emergency services and provides homeless services to persons in
-        the central county area.","slug":"st-vincent-de-paul-county-wide-services","slugs":["st-vincent-de-paul-county-wide-services"],"transportation":"SAMTRANS,
-        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:22.477-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1615","services":[{"id":1615,"audience":"Families
-        or individuals seeking emergency help for food, clothing, rental and utility
-        assistance. Homeless individuals in need of food, basic services and vouchers
-        for San Mateo County shelters","description":"Assists families and individuals
-        with emergencies such as shelter, food, clothing, furniture, transportation
-        and medicine through 34 small working groups called conferences. St. Vincent
-        de Paul members visit the home to assess needs and offer service. Also supports
-        those in recovery programs.     Three Homeless Help Centers (described separately)
-        provide weekday lunches, continental breakfasts, clothing vouchers, laundry,
-        toiletries, identification and transportation assistance to individuals without
-        a permanent address. The North County Homeless Help Center and Cafe St. Vincent
-        are located at 344 Grand Avenue, South San Francisco (650-589-9039), open
-        Monday through Saturday, 10 am-12 noon. The Redwood City Homeless Help Center
-        is housed in the Fair Oaks Community Center, 2600 Middlefield Road (650-780-7500),
-        and is open 1-2 pm weekdays. The San Mateo site is at 50 North B Street and
-        is open 10 am-12 noon Monday through Friday (650-343-9251). A meal is also
-        served on Monday at 5 pm, at St. Francis Church, 420 Bay Road, East Palo Alto.
-        Peninsula Family Resource Center (PFRC) arranges home visits for persons in
-        need of rental and utilities assistance (homelessness prevention), food, clothes,
-        furniture and other material needs. Call 650-343-4403 Monday-Friday, 10-12
-        and 1-4, to make arrangements. Also coordinates summer camp scholarships for
-        youth and holiday assistance programs. Restorative Justice Ministry is a full-time
-        jail ministry program that provides spiritual guidance, religious services,
-        tutoring, support and assistance to those incarcerated in the San Mateo County
-        jail facilities and to their families. Jail/prison after care program provides
-        post-release support. Contact the SVdP Jail Chaplain at 650-366-9847. Catherine''s
-        Center is a supportive residential program for ten women at a time who were
-        previously incarcerated. Five thrift stores are located in San Mateo County:
-        Daly City at 6256 Mission Street (650-992-9271); Redwood City at 2406 El Camino
-        Real (650-366-6367); San Bruno at 1600 El Camino Real (650-588-5767); San
-        Mateo at 40 North B Street (650-347-5101); South San Francisco at 344 Grand
-        Avenue (650-589-8445). Donations can be made at store locations or call 650
-        871-6844 for donation or computer re-cycling pick-up.  For vehicle donations
-        call 800-937-7837.","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants","Sales"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meal","COMMODITY
-        SERVICES","Clothing/Personal Items","Furniture/Appliances","EMERGENCY SERVICES","Food
-        Boxes/Food Vouchers","FINANCIAL ASSISTANCE SERVICES","Health","Housing","Utilities","RECREATION/LEISURE
-        SERVICES","Camperships","Soup Kitchens","Homeless Motel Vouchers","Housing
-        Expense Assistance","Clothing","Laundry Facilities","Thrift Shops","Utility
-        Assistance","Identification Cards","Prison Ministries","Emergency Medical
-        Care","Low Income","Homeless People","Religious Groups/Communities","svdp","food
-        in san mateo"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
-        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
-        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
-        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
-        Delivery","parent_id":17,"slug":"food-delivery"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
-        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
-        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
-        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
-        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
-        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
-        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
-        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
-        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"}],"how_to_apply":"Apply
-        by phone or visit a Homeless Help Center located in Redwood City, San Mateo
-        and South San Francisco.","service_areas":["San Mateo County"],"wait":"No
-        wait.","updated_at":"2014-05-24T14:07:57.929-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1616,"accessibility":["Wheelchair"],"address":{"id":1349,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Homeless
-        Desk"],"contacts":[{"id":1907,"name":"John Dempsey","title":"Conference President"}],"coordinates":[-122.213221,37.477227],"description":"Located
-        at the Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
-        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
-        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
-        also available for those who can show doctor''s orders for visits or to pick
-        up drug prescriptions.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1048,"number":"650
-        298-8184"}],"hours":"Monday-Friday, 1:15-2:15pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1613,"attention":"Redwood
-        City Area Conference","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, Redwood City Homeless Help Center","phones":[{"id":2323,"number":"650
-        780-7500"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:28.953-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1616","services":[{"id":1616,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Located at the
-        Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
-        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
-        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
-        also available for those who can show doctor''s orders for visits or to pick
-        up drug prescriptions.","eligibility":"Homeless person","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
-        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
-        Vouchers","Brown Bag Food Programs","Clothing Vouchers","Bathing Facilities","Laundry
-        Vouchers","Low Income","Homeless People","svdp","food in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
-        Pantry","parent_id":17,"slug":"food-pantry"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":58,"depth":2,"oe_id":"104-02-04","name":"Clothing
-        Vouchers","parent_id":54,"slug":"clothing-vouchers"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Walk
-        in.","service_areas":["Atherton","East Palo Alto","Menlo Park","Portola Valley","Redwood
-        City","San Carlos","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.070-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1617,"accessibility":["Wheelchair"],"address":{"id":1350,"street":"344
-        Grand Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Worker
-        on duty"],"contacts":[{"id":1908,"name":"Carolynn Ghiorso","title":"Conference
-        President"},{"id":1909,"name":"Lisa Collins","title":"Director"}],"coordinates":[-122.4110983,37.655626],"description":"Offers
-        homeless or low-income persons clean clothing, toiletries, mail and telephone
-        service, DMV identification, laundry facilities and transportation help (bus
-        fare, gasoline, etc.). Assists with work-related needs such as uniforms, work
-        boots, union dues and job referrals. Provides emergency medical assistance,
-        substance abuse center fees, and referrals to mental health and other resources.
-        Distributes vouchers to county shelters or sleeping bags when shelters are
-        full. A free lunch is served weekdays (10 am to noon) and breakfast Saturdays
-        (10-11) at Cafe St. Vincent.","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
-        10 am-12 noon; Saturday, 10-11","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1614,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, North County Homeless Help Center","phones":[{"id":2324,"number":"650
-        589-9039"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-north-county-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-north-county-homeless-help-center"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T14:08:04.347-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1617","services":[{"id":1617,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Offers homeless
-        or low-income persons clean clothing, toiletries, mail and telephone service,
-        DMV identification, laundry facilities and transportation help (bus fare,
-        gasoline, etc.). Assists with work-related needs such as uniforms, work boots,
-        union dues and job referrals. Provides emergency medical assistance, substance
-        abuse center fees, and referrals to mental health and other resources. Distributes
-        vouchers to county shelters or sleeping bags when shelters are full. A free
-        lunch is served weekdays (10 am to noon) and breakfast Saturdays (10-11) at
-        Cafe St. Vincent.","eligibility":"Homeless person or person without cooking
-        facilities","fees":"None.","funding_sources":["Donations"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMODITY SERVICES","Clothing/Personal
-        Items","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
-        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
-        in san mateo"],"categories":[{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
-        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
-        Services","parent_id":66,"slug":"phone-services"}],"how_to_apply":"Walk in.","service_areas":["Brisbane","Daly
-        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"wait":"No
-        wait.","updated_at":"2014-05-24T14:07:58.122-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1618,"accessibility":["Wheelchair"],"address":{"id":1351,"street":"50
-        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Worker
-        on duty"],"contacts":[{"id":1910,"name":"Tom Cordell","title":"Manager, Homeless
-        Help Center"}],"coordinates":[-122.3250474,37.568272],"description":"Offers
-        homeless or low-income persons clean clothing, toiletries, mail, telephone,
-        laundry  service, DMV identification and transportation help (bus fare, gasoline,
-        etc.) Assists with work-related needs such as uniforms, work boots, union
-        dues and job referrals. Provides emergency medical assistance, substance abuse
-        center fees, and referrals to mental health  and other resources. Distributes
-        vouchers to county shelters or sleeping bags when shelters are full. A free
-        bag lunch and continental breakfast are served to homeless persons on weekdays,
-        10 am to 12  noon.  .","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
-        9:45 am - 11:45 am","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1615,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, San Mateo Homeless Help Center","phones":[{"id":2325,"number":"650
-        343-9251"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center"],"transportation":"SamTrans,
-        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:04.473-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1618","services":[{"id":1618,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Offers homeless
-        or low-income persons clean clothing, toiletries, mail, telephone, laundry  service,
-        DMV identification and transportation help (bus fare, gasoline, etc.) Assists
-        with work-related needs such as uniforms, work boots, union dues and job referrals.
-        Provides emergency medical assistance, substance abuse center fees, and referrals
-        to mental health  and other resources. Distributes vouchers to county shelters
-        or sleeping bags when shelters are full. A free bag lunch and continental
-        breakfast are served to homeless persons on weekdays, 10 am to 12  noon.  .","eligibility":"None","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
-        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
-        Vouchers","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
-        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
-        in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
-        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
-        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
-        Services","parent_id":66,"slug":"phone-services"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":182,"depth":1,"oe_id":"107-04","name":"Vouchers","parent_id":135,"slug":"vouchers"},{"id":186,"depth":2,"oe_id":"107-04-04","name":"Housing
-        Vouchers","parent_id":182,"slug":"housing-vouchers-107-04-04"}],"how_to_apply":"Walk
-        in.","service_areas":["Belmont","Burlingame","Foster City","Hillsborough","San
-        Carlos","San Mateo"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.217-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}}]'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOjEzOTAsImFjY2Vzc2liaWxpdHkiOlsiRWxldmF0b3IiLCJSYW1w
+        IiwiV2hlZWxjaGFpciJdLCJhZGRyZXNzIjp7ImlkIjoxMTMwLCJzdHJlZXQi
+        OiIxOSBXZXN0IDM5dGggQXZlbnVlIiwiY2l0eSI6IlNhbiBNYXRlbyIsInN0
+        YXRlIjoiQ0EiLCJ6aXAiOiI5NDQwMyJ9LCJjb250YWN0cyI6W3siaWQiOjE2
+        MjEsIm5hbWUiOiJTaGFyb24gUGV0ZXJzZW4iLCJ0aXRsZSI6Ik9wZXJhdGlv
+        bnMgRGlyZWN0b3IifV0sImNvb3JkaW5hdGVzIjpbLTEyMi4yOTMxMjcxLDM3
+        LjUzMjY5MjZdLCJkZXNjcmlwdGlvbiI6IlByb3ZpZGVzIGZyZWUgIHByaW1h
+        cnkgYW5kIHNwZWNpYWx0eSBtZWRpY2FsIGFuZCBkZW50YWwgc2VydmljZXMg
+        dG8gdW5pbnN1cmVkLCBsb3ctaW5jb21lIHJlc2lkZW50cy4gXHJcblxyXG5X
+        aG8gaXMgVHJlYXRlZD8gXHJcblBhdGllbnRzIG9mIG91ciBjbGluaWNzIGFy
+        ZSB0aGUgd29ya2luZyBwb29yLiBUaGV5IHRlbmQgdG8gZWFybiBqdXN0IGVu
+        b3VnaCBpbmNvbWUgdG8gYmUgaW5lbGlnaWJsZSBmb3IgTWVkaS1DYWwgY292
+        ZXJhZ2UsIHlldCBkbyBub3QgcmVjZWl2ZSBoZWFsdGggaW5zdXJhbmNlIHRo
+        cm91Z2ggdGhlaXIgZW1wbG95ZXJzIGFuZCBjYW5ub3QgYWZmb3JkIHRvIHBh
+        eSBmb3Ig4oCcb3V0LW9mLXBvY2tldOKAnSBoZWFsdGggaW5zdXJhbmNlLiBP
+        ZnRlbiB0aGVzZSByZXNpZGVudHMgYXJlIGZvcmNlZCB0byBzZWVrIHRyZWF0
+        bWVudCBhdCBsb2NhbCBlbWVyZ2VuY3kgcm9vbXMgYW5kIGJlY29tZSBzYWRk
+        bGVkIHdpdGggbWVkaWNhbCBiaWxscyB0aGF0IHRoZXkgYXJlIHVuYWJsZSB0
+        byBwYXkuIFNhbWFyaXRhbiBIb3VzZeKAmXMgRnJlZSBNZWRpY2FsIENsaW5p
+        Y3MgZmlsbCB0aGlzIGdhcCBpbiBoZWFsdGhjYXJlIGFjY2VzcyBmb3IgdGhl
+        IHVuaW5zdXJlZCBhbmQgc2F2ZSBlbWVyZ2VuY3kgcm9vbSByZXNvdXJjZXMg
+        Zm9yIGVtZXJnZW5jaWVzLlxyXG5cclxuUHJvZmVzc2lvbmFsIE1lZGljYWwg
+        XHUwMDI2IERlbnRhbCBWb2x1bnRlZXJzXHJcblRoYW5rcyB0byBpdHMgaW5u
+        b3ZhdGl2ZSB2b2x1bnRlZXItYmFzZWQgbW9kZWwgb2Ygc2VydmljZSwgU2Ft
+        YXJpdGFuIEhvdXNl4oCZcyBjbGluaWNzIGFyZSBhYmxlIHRvIHRyZWF0IHN1
+        Y2ggYSBsYXJnZSBudW1iZXIgb2YgcGF0aWVudHMgd2l0aCBhIHZlcnkgc21h
+        bGwgcGFpZCBzdGFmZi4gQWxtb3N0IGFsbCBvZiB0aGUgbWVkaWNhbCBhbmQg
+        ZGVudGFsIGRvY3RvcnMgYW5kIGFzc2lzdGFudHMgYXJlIHZvbHVudGVlcmlu
+        ZyB0aGVpciB0aW1lIGZyZWUgb2YgY2hhcmdlLiBUaGVzZSBpbmRpdmlkdWFs
+        cywgZWl0aGVyIHJldGlyZWQgb3IgY3VycmVudGx5IHByYWN0aWNpbmcgbWVk
+        aWNpbmUgYW5kIGRlbnRpc3RyeSwgd2FudCB0byBzZXJ2ZSB0aGVpciBjb21t
+        dW5pdHkgaW4gdGhlaXIgbGltaXRlZCBzcGFyZSB0aW1lLiIsImVtYWlscyI6
+        WyJpbmZvQHNhbWFyaXRhbmhvdXNlc2FubWF0ZW8ub3JnIl0sImZheGVzIjpb
+        eyJpZCI6ODgzLCJudW1iZXIiOiI2NTAgNTc4LTA0NDAifV0sImhvdXJzIjoi
+        TW9uZGF5LUZyaWRheSwgOS0xMiwgMS00Iiwia2luZCI6Ikh1bWFuIFNlcnZp
+        Y2VzIiwibGFuZ3VhZ2VzIjpbIlNwYW5pc2giXSwibWFpbF9hZGRyZXNzIjp7
+        ImlkIjoxMzg3LCJhdHRlbnRpb24iOiJTYW4gTWF0ZW8gRnJlZSBNZWRpY2Fs
+        L0RlbnRhbCIsInN0cmVldCI6IjE5IFdlc3QgMzl0aCBBdmVudWUiLCJjaXR5
+        IjoiU2FuIE1hdGVvIiwic3RhdGUiOiJDQSIsInppcCI6Ijk0NDAzIn0sIm5h
+        bWUiOiJTYW4gTWF0ZW8gRnJlZSBNZWRpY2FsIENsaW5pYyIsInBob25lcyI6
+        W3siaWQiOjE5MDQsIm51bWJlciI6IjY1MCA1NzgtMDQwMCJ9XSwic2hvcnRf
+        ZGVzYyI6IlByb3ZpZGVzIGZyZWUgbWVkaWNhbCBhbmQgZGVudGFsIGNhcmUg
+        dG8gdGhvc2UgaW4gbmVlZC4gT2ZmZXJzIGJhc2ljIG1lZGljYWwgY2FyZSBm
+        b3IgYWR1bHRzLiIsInNsdWciOiJzYW4tbWF0ZW8tZnJlZS1tZWRpY2FsLWNs
+        aW5pYyIsInNsdWdzIjpbInNhbi1tYXRlby1mcmVlLW1lZGljYWwtY2xpbmlj
+        Il0sInRyYW5zcG9ydGF0aW9uIjoiU0FNVFJBTlMgc3RvcHMgd2l0aGluIDEg
+        YmxvY2suIiwidXBkYXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6MDg6MjAuNjI2
+        LTA3OjAwIiwidXJscyI6WyJodHRwOi8vd3d3LnNhbWFyaXRhbmhvdXNlc2Fu
+        bWF0ZW8ub3JnIl0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3Qu
+        aGVyb2t1YXBwLmNvbS9hcGkvbG9jYXRpb25zLzEzOTAiLCJzZXJ2aWNlcyI6
+        W3siaWQiOjEzOTAsImVsaWdpYmlsaXR5IjoiTG93LWluY29tZSBwZXJzb24g
+        d2l0aG91dCBhY2Nlc3MgdG8gaGVhbHRoIGNhcmUiLCJmZWVzIjoiTm9uZS4i
+        LCJmdW5kaW5nX3NvdXJjZXMiOlsiRG9uYXRpb25zIiwiR3JhbnRzIl0sImtl
+        eXdvcmRzIjpbIkhFQUxUSCBTRVJWSUNFUyIsIk91dHBhdGllbnQgQ2FyZSIs
+        IkNvbW11bml0eSBDbGluaWNzIl0sImNhdGVnb3JpZXMiOlt7ImlkIjo3OCwi
+        ZGVwdGgiOjAsIm9lX2lkIjoiMTA2IiwibmFtZSI6IkhlYWx0aCIsInBhcmVu
+        dF9pZCI6bnVsbCwic2x1ZyI6ImhlYWx0aCJ9LHsiaWQiOjg2LCJkZXB0aCI6
+        MSwib2VfaWQiOiIxMDYtMDIiLCJuYW1lIjoiRGVudGFsIENhcmUiLCJwYXJl
+        bnRfaWQiOjc4LCJzbHVnIjoiZGVudGFsLWNhcmUifSx7ImlkIjo5MiwiZGVw
+        dGgiOjEsIm9lX2lkIjoiMTA2LTA0IiwibmFtZSI6IkhlYWx0aCBFZHVjYXRp
+        b24iLCJwYXJlbnRfaWQiOjc4LCJzbHVnIjoiaGVhbHRoLWVkdWNhdGlvbiJ9
+        LHsiaWQiOjEwOSwiZGVwdGgiOjEsIm9lX2lkIjoiMTA2LTA2IiwibmFtZSI6
+        Ik1lZGljYWwgQ2FyZSIsInBhcmVudF9pZCI6NzgsInNsdWciOiJtZWRpY2Fs
+        LWNhcmUifSx7ImlkIjoxMTMsImRlcHRoIjoyLCJvZV9pZCI6IjEwNi0wNi0w
+        NCIsIm5hbWUiOiJDaGVja3VwIFx1MDAyNiBUZXN0IiwicGFyZW50X2lkIjox
+        MDksInNsdWciOiJjaGVja3VwLXRlc3QifSx7ImlkIjoxMTksImRlcHRoIjoz
+        LCJvZV9pZCI6IjEwNi0wNi0wNC0wNiIsIm5hbWUiOiJWaXNpb24gVGVzdHMi
+        LCJwYXJlbnRfaWQiOjExMywic2x1ZyI6InZpc2lvbi10ZXN0cyJ9LHsiaWQi
+        OjEyMSwiZGVwdGgiOjIsIm9lX2lkIjoiMTA2LTA2LTA2IiwibmFtZSI6IlBl
+        cnNvbmFsIEh5Z2llbmUiLCJwYXJlbnRfaWQiOjEwOSwic2x1ZyI6InBlcnNv
+        bmFsLWh5Z2llbmUifSx7ImlkIjoxMjIsImRlcHRoIjoyLCJvZV9pZCI6IjEw
+        Ni0wNi0wNyIsIm5hbWUiOiJQcmV2ZW50IFx1MDAyNiBUcmVhdCIsInBhcmVu
+        dF9pZCI6MTA5LCJzbHVnIjoicHJldmVudC10cmVhdCJ9XSwiaG93X3RvX2Fw
+        cGx5IjoiQ2FsbCBmb3Igc2NyZWVuaW5nIGFwcG9pbnRtZW50ICg2NTAtMzQ3
+        LTM2NDgpLiIsInNlcnZpY2VfYXJlYXMiOlsiQmVsbW9udCIsIkJ1cmxpbmdh
+        bWUiLCJGb3N0ZXIgQ2l0eSIsIk1pbGxicmFlIiwiU2FuIENhcmxvcyIsIlNh
+        biBNYXRlbyJdLCJ3YWl0IjoiVmFyaWVzLiIsInVwZGF0ZWRfYXQiOiIyMDE0
+        LTA1LTI0VDE0OjA3OjUxLjkzMC0wNzowMCJ9XSwib3JnYW5pemF0aW9uIjp7
+        ImlkIjoxMzAxLCJuYW1lIjoiU2FtYXJpdGFuIEhvdXNlIiwic2x1ZyI6InNh
+        bWFyaXRhbi1ob3VzZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRh
+        MDdiZWMiLCJzbHVncyI6WyJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDlj
+        ZC00OThlLWEwZTgtYjJmMTU0YTA3YmVjIl0sIl9zbHVncyI6WyJzYW1hcml0
+        YW4taG91c2UtNTdjZjE1ZWItMDljZC00OThlLWEwZTgtYjJmMTU0YTA3YmVj
+        Il0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBw
+        LmNvbS9hcGkvb3JnYW5pemF0aW9ucy8xMzAxIiwibG9jYXRpb25zX3VybCI6
+        Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkv
+        b3JnYW5pemF0aW9ucy8xMzAxL2xvY2F0aW9ucyJ9fSx7ImlkIjoxMzg5LCJh
+        Y2Nlc3NpYmlsaXR5IjpbIkRpc2FibGVkIFJlc3Ryb29tIiwiV2hlZWxjaGFp
+        ciJdLCJhZGRyZXNzIjp7ImlkIjoxMTI5LCJzdHJlZXQiOiIxMTQgRmlmdGgg
+        QXZlbnVlIiwiY2l0eSI6IlJlZHdvb2QgQ2l0eSIsInN0YXRlIjoiQ0EiLCJ6
+        aXAiOiI5NDA2MyJ9LCJjb250YWN0cyI6W3siaWQiOjE2MjAsIm5hbWUiOiJT
+        aGFyb24gUGV0ZXJzZW4iLCJ0aXRsZSI6Ik9wZXJhdGlvbnMgRGlyZWN0b3Ii
+        fV0sImNvb3JkaW5hdGVzIjpbLTEyMi4yMDcwNTcsMzcuNDY4Njc4XSwiZGVz
+        Y3JpcHRpb24iOiJQcmltYXJ5IGFuZCBzcGVjaWFsdHkgbWVkaWNhbCBhbmQg
+        ZGVudGFsIHNlcnZpY2VzIHRvIHVuaW5zdXJlZCwgbG93LWluY29tZSByZXNp
+        ZGVudHMuXHJcbldobyBpcyBUcmVhdGVkPyBcclxuUGF0aWVudHMgb2Ygb3Vy
+        IGNsaW5pY3MgYXJlIHRoZSB3b3JraW5nIHBvb3IuIFRoZXkgdGVuZCB0byBl
+        YXJuIGp1c3QgZW5vdWdoIGluY29tZSB0byBiZSBpbmVsaWdpYmxlIGZvciBN
+        ZWRpLUNhbCBjb3ZlcmFnZSwgeWV0IGRvIG5vdCByZWNlaXZlIGhlYWx0aCBp
+        bnN1cmFuY2UgdGhyb3VnaCB0aGVpciBlbXBsb3llcnMgYW5kIGNhbm5vdCBh
+        ZmZvcmQgdG8gcGF5IGZvciDigJxvdXQtb2YtcG9ja2V04oCdIGhlYWx0aCBp
+        bnN1cmFuY2UuIE9mdGVuIHRoZXNlIHJlc2lkZW50cyBhcmUgZm9yY2VkIHRv
+        IHNlZWsgdHJlYXRtZW50IGF0IGxvY2FsIGVtZXJnZW5jeSByb29tcyBhbmQg
+        YmVjb21lIHNhZGRsZWQgd2l0aCBtZWRpY2FsIGJpbGxzIHRoYXQgdGhleSBh
+        cmUgdW5hYmxlIHRvIHBheS4gU2FtYXJpdGFuIEhvdXNl4oCZcyBGcmVlIE1l
+        ZGljYWwgQ2xpbmljcyBmaWxsIHRoaXMgZ2FwIGluIGhlYWx0aGNhcmUgYWNj
+        ZXNzIGZvciB0aGUgdW5pbnN1cmVkIGFuZCBzYXZlIGVtZXJnZW5jeSByb29t
+        IHJlc291cmNlcyBmb3IgZW1lcmdlbmNpZXMuXHJcblxyXG5Qcm9mZXNzaW9u
+        YWwgTWVkaWNhbCBcdTAwMjYgRGVudGFsIFZvbHVudGVlcnNcclxuVGhhbmtz
+        IHRvIGl0cyBpbm5vdmF0aXZlIHZvbHVudGVlci1iYXNlZCBtb2RlbCBvZiBz
+        ZXJ2aWNlLCBTYW1hcml0YW4gSG91c2XigJlzIGNsaW5pY3MgYXJlIGFibGUg
+        dG8gdHJlYXQgc3VjaCBhIGxhcmdlIG51bWJlciBvZiBwYXRpZW50cyB3aXRo
+        IGEgdmVyeSBzbWFsbCBwYWlkIHN0YWZmLiBBbG1vc3QgYWxsIG9mIHRoZSBt
+        ZWRpY2FsIGFuZCBkZW50YWwgZG9jdG9ycyBhbmQgYXNzaXN0YW50cyBhcmUg
+        dm9sdW50ZWVyaW5nIHRoZWlyIHRpbWUgZnJlZSBvZiBjaGFyZ2UuIFRoZXNl
+        IGluZGl2aWR1YWxzLCBlaXRoZXIgcmV0aXJlZCBvciBjdXJyZW50bHkgcHJh
+        Y3RpY2luZyBtZWRpY2luZSBhbmQgZGVudGlzdHJ5LCB3YW50IHRvIHNlcnZl
+        IHRoZWlyIGNvbW11bml0eSBpbiB0aGVpciBsaW1pdGVkIHNwYXJlIHRpbWUu
+        IiwiZW1haWxzIjpbImluZm9Ac2FtYXJpdGFuaG91c2VzYW5tYXRlby5vcmci
+        XSwiZmF4ZXMiOlt7ImlkIjo4ODIsIm51bWJlciI6IjY1MCA4MzktMTQ1NyJ9
+        XSwiaG91cnMiOiJNb25kYXktRnJpZGF5LCA5LTEyLCAyLTUiLCJraW5kIjoi
+        SHVtYW4gU2VydmljZXMiLCJsYW5ndWFnZXMiOlsiU3BhbmlzaCJdLCJtYWls
+        X2FkZHJlc3MiOnsiaWQiOjEzODYsImF0dGVudGlvbiI6IlJlZHdvb2QgQ2l0
+        eSBGcmVlIE1lZGljYWwgQ2xpbmljIiwic3RyZWV0IjoiMTE0IEZpZnRoIEF2
+        ZW51ZSIsImNpdHkiOiJSZWR3b29kIENpdHkiLCJzdGF0ZSI6IkNBIiwiemlw
+        IjoiOTQwNjMifSwibmFtZSI6IlJlZHdvb2QgQ2l0eSBGcmVlIE1lZGljYWwg
+        Q2xpbmljIiwicGhvbmVzIjpbeyJpZCI6MTkwMywibnVtYmVyIjoiNjUwIDgz
+        OS0xNDQ3In1dLCJzaG9ydF9kZXNjIjoiUHJvdmlkZXMgZnJlZSBtZWRpY2Fs
+        IGNhcmUgdG8gdGhvc2UgaW4gbmVlZC4iLCJzbHVnIjoicmVkd29vZC1jaXR5
+        LWZyZWUtbWVkaWNhbC1jbGluaWMiLCJzbHVncyI6WyJyZWR3b29kLWNpdHkt
+        ZnJlZS1tZWRpY2FsLWNsaW5pYyJdLCJ0cmFuc3BvcnRhdGlvbiI6IlNBTVRS
+        QU5TIHN0b3BzIHdpdGhpbiAyIGJsb2Nrcy4iLCJ1cGRhdGVkX2F0IjoiMjAx
+        NC0wNS0yNFQxNDowODoyMC41MTktMDc6MDAiLCJ1cmxzIjpbImh0dHA6Ly93
+        d3cuc2FtYXJpdGFuaG91c2VzYW5tYXRlby5vcmciXSwidXJsIjoiaHR0cDov
+        L3NtYy1vaGFuYS1hcGktdGVzdC5oZXJva3VhcHAuY29tL2FwaS9sb2NhdGlv
+        bnMvMTM4OSIsInNlcnZpY2VzIjpbeyJpZCI6MTM4OSwiZGVzY3JpcHRpb24i
+        OiJQcm92aWRlcyBmcmVlIG1lZGljYWwgY2FyZSB0byB0aG9zZSBpbiBuZWVk
+        LiBPZmZlcnMgYmFzaWMgbWVkaWNhbCBleGFtcyBmb3IgYWR1bHRzIGFuZCB0
+        dWJlcmN1bG9zaXMgc2NyZWVuaW5nLiBBc3Npc3RzIHRoZSBpbmRpdmlkdWFs
+        IHRvIGFjY2VzcyBvdGhlciBzZXJ2aWNlcyBpbiB0aGUgY29tbXVuaXR5LiBC
+        eSBhcHBvaW50bWVudCBvbmx5LCBQcm9qZWN0IFNtaWxlIHByb3ZpZGVzIGEg
+        ZnJlZSBkZW50YWwgZXhhbSwgZGVudGFsIGNsZWFuaW5nIGFuZCBvcmFsIGh5
+        Z2llbmUgaW5zdHJ1Y3Rpb24gZm9yIGNoaWxkcmVuLCBhZ2UgMy0xMiwgb2Yg
+        U2FtYXJpdGFuIEhvdXNlIGNsaWVudHMuIiwiZWxpZ2liaWxpdHkiOiJMb3ct
+        aW5jb21lIHBlcnNvbiB3aXRob3V0IGFjY2VzcyB0byBoZWFsdGggY2FyZSIs
+        ImZlZXMiOiJOb25lLiIsImZ1bmRpbmdfc291cmNlcyI6WyJEb25hdGlvbnMi
+        LCJHcmFudHMiXSwia2V5d29yZHMiOlsiSEVBTFRIIFNFUlZJQ0VTIiwiT3V0
+        cGF0aWVudCBDYXJlIiwiQ29tbXVuaXR5IENsaW5pY3MiLCJGcmVlIE1lZGlj
+        YWwgQ2FyZS1SZWR3b29kIENpdHkiLCJGcmVlIERlbnRhbCBFeGFtIl0sImNh
+        dGVnb3JpZXMiOlt7ImlkIjoxLCJkZXB0aCI6MCwib2VfaWQiOiIxMDEiLCJu
+        YW1lIjoiRW1lcmdlbmN5IiwicGFyZW50X2lkIjpudWxsLCJzbHVnIjoiZW1l
+        cmdlbmN5In0seyJpZCI6NzgsImRlcHRoIjowLCJvZV9pZCI6IjEwNiIsIm5h
+        bWUiOiJIZWFsdGgiLCJwYXJlbnRfaWQiOm51bGwsInNsdWciOiJoZWFsdGgi
+        fSx7ImlkIjo4NiwiZGVwdGgiOjEsIm9lX2lkIjoiMTA2LTAyIiwibmFtZSI6
+        IkRlbnRhbCBDYXJlIiwicGFyZW50X2lkIjo3OCwic2x1ZyI6ImRlbnRhbC1j
+        YXJlIn0seyJpZCI6MTA5LCJkZXB0aCI6MSwib2VfaWQiOiIxMDYtMDYiLCJu
+        YW1lIjoiTWVkaWNhbCBDYXJlIiwicGFyZW50X2lkIjo3OCwic2x1ZyI6Im1l
+        ZGljYWwtY2FyZSJ9XSwiaG93X3RvX2FwcGx5IjoiQ2FsbCBmb3Igc2NyZWVu
+        aW5nIGFwcG9pbnRtZW50LiBNZWRpY2FsIHZpc2l0cyBhcmUgYnkgYXBwb2lu
+        dG1lbnQgb25seS4iLCJzZXJ2aWNlX2FyZWFzIjpbIkF0aGVydG9uIiwiRWFz
+        dCBQYWxvIEFsdG8iLCJNZW5sbyBQYXJrIiwiUmVkd29vZCBDaXR5IiwiU2Fu
+        IENhcmxvcyJdLCJ3YWl0IjoiVmFyaWVzLiIsInVwZGF0ZWRfYXQiOiIyMDE0
+        LTA1LTI0VDE0OjA3OjUxLjg3Ny0wNzowMCJ9XSwib3JnYW5pemF0aW9uIjp7
+        ImlkIjoxMzAxLCJuYW1lIjoiU2FtYXJpdGFuIEhvdXNlIiwic2x1ZyI6InNh
+        bWFyaXRhbi1ob3VzZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRh
+        MDdiZWMiLCJzbHVncyI6WyJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDlj
+        ZC00OThlLWEwZTgtYjJmMTU0YTA3YmVjIl0sIl9zbHVncyI6WyJzYW1hcml0
+        YW4taG91c2UtNTdjZjE1ZWItMDljZC00OThlLWEwZTgtYjJmMTU0YTA3YmVj
+        Il0sInVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBw
+        LmNvbS9hcGkvb3JnYW5pemF0aW9ucy8xMzAxIiwibG9jYXRpb25zX3VybCI6
+        Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkv
+        b3JnYW5pemF0aW9ucy8xMzAxL2xvY2F0aW9ucyJ9fV0=
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:47 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=St.%20Vincent%20de%20Paul%20Society
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 22:14:48 GMT
-      Etag:
-      - '"d66522d77b804c33d739ae95c7d5515b"'
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - 948b96f7-5e5b-4f3f-9bbf-c21a22bc29fe
-      X-Runtime:
-      - '0.263328'
-      X-Total-Count:
-      - '4'
-      X-Total-Pages:
-      - '1'
-      Content-Length:
-      - '22368'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '[{"id":1618,"accessibility":["Wheelchair"],"address":{"id":1351,"street":"50
-        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Worker
-        on duty"],"contacts":[{"id":1910,"name":"Tom Cordell","title":"Manager, Homeless
-        Help Center"}],"coordinates":[-122.3250474,37.568272],"description":"Offers
-        homeless or low-income persons clean clothing, toiletries, mail, telephone,
-        laundry  service, DMV identification and transportation help (bus fare, gasoline,
-        etc.) Assists with work-related needs such as uniforms, work boots, union
-        dues and job referrals. Provides emergency medical assistance, substance abuse
-        center fees, and referrals to mental health  and other resources. Distributes
-        vouchers to county shelters or sleeping bags when shelters are full. A free
-        bag lunch and continental breakfast are served to homeless persons on weekdays,
-        10 am to 12  noon.  .","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
-        9:45 am - 11:45 am","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1615,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, San Mateo Homeless Help Center","phones":[{"id":2325,"number":"650
-        343-9251"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center"],"transportation":"SamTrans,
-        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:04.473-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1618","services":[{"id":1618,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Offers homeless
-        or low-income persons clean clothing, toiletries, mail, telephone, laundry  service,
-        DMV identification and transportation help (bus fare, gasoline, etc.) Assists
-        with work-related needs such as uniforms, work boots, union dues and job referrals.
-        Provides emergency medical assistance, substance abuse center fees, and referrals
-        to mental health  and other resources. Distributes vouchers to county shelters
-        or sleeping bags when shelters are full. A free bag lunch and continental
-        breakfast are served to homeless persons on weekdays, 10 am to 12  noon.  .","eligibility":"None","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
-        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
-        Vouchers","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
-        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
-        in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
-        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
-        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
-        Services","parent_id":66,"slug":"phone-services"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":182,"depth":1,"oe_id":"107-04","name":"Vouchers","parent_id":135,"slug":"vouchers"},{"id":186,"depth":2,"oe_id":"107-04-04","name":"Housing
-        Vouchers","parent_id":182,"slug":"housing-vouchers-107-04-04"}],"how_to_apply":"Walk
-        in.","service_areas":["Belmont","Burlingame","Foster City","Hillsborough","San
-        Carlos","San Mateo"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.217-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1617,"accessibility":["Wheelchair"],"address":{"id":1350,"street":"344
-        Grand Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Worker
-        on duty"],"contacts":[{"id":1908,"name":"Carolynn Ghiorso","title":"Conference
-        President"},{"id":1909,"name":"Lisa Collins","title":"Director"}],"coordinates":[-122.4110983,37.655626],"description":"Offers
-        homeless or low-income persons clean clothing, toiletries, mail and telephone
-        service, DMV identification, laundry facilities and transportation help (bus
-        fare, gasoline, etc.). Assists with work-related needs such as uniforms, work
-        boots, union dues and job referrals. Provides emergency medical assistance,
-        substance abuse center fees, and referrals to mental health and other resources.
-        Distributes vouchers to county shelters or sleeping bags when shelters are
-        full. A free lunch is served weekdays (10 am to noon) and breakfast Saturdays
-        (10-11) at Cafe St. Vincent.","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
-        10 am-12 noon; Saturday, 10-11","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1614,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, North County Homeless Help Center","phones":[{"id":2324,"number":"650
-        589-9039"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-north-county-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-north-county-homeless-help-center"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T14:08:04.347-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1617","services":[{"id":1617,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Offers homeless
-        or low-income persons clean clothing, toiletries, mail and telephone service,
-        DMV identification, laundry facilities and transportation help (bus fare,
-        gasoline, etc.). Assists with work-related needs such as uniforms, work boots,
-        union dues and job referrals. Provides emergency medical assistance, substance
-        abuse center fees, and referrals to mental health and other resources. Distributes
-        vouchers to county shelters or sleeping bags when shelters are full. A free
-        lunch is served weekdays (10 am to noon) and breakfast Saturdays (10-11) at
-        Cafe St. Vincent.","eligibility":"Homeless person or person without cooking
-        facilities","fees":"None.","funding_sources":["Donations"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMODITY SERVICES","Clothing/Personal
-        Items","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
-        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
-        in san mateo"],"categories":[{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
-        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
-        Services","parent_id":66,"slug":"phone-services"}],"how_to_apply":"Walk in.","service_areas":["Brisbane","Daly
-        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"wait":"No
-        wait.","updated_at":"2014-05-24T14:07:58.122-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1616,"accessibility":["Wheelchair"],"address":{"id":1349,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Homeless
-        Desk"],"contacts":[{"id":1907,"name":"John Dempsey","title":"Conference President"}],"coordinates":[-122.213221,37.477227],"description":"Located
-        at the Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
-        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
-        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
-        also available for those who can show doctor''s orders for visits or to pick
-        up drug prescriptions.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1048,"number":"650
-        298-8184"}],"hours":"Monday-Friday, 1:15-2:15pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1613,"attention":"Redwood
-        City Area Conference","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services, Redwood City Homeless Help Center","phones":[{"id":2323,"number":"650
-        780-7500"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:28.953-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1616","services":[{"id":1616,"audience":"Homeless
-        persons or persons without cooking facilities","description":"Located at the
-        Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
-        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
-        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
-        also available for those who can show doctor''s orders for visits or to pick
-        up drug prescriptions.","eligibility":"Homeless person","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
-        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
-        Vouchers","Brown Bag Food Programs","Clothing Vouchers","Bathing Facilities","Laundry
-        Vouchers","Low Income","Homeless People","svdp","food in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
-        Pantry","parent_id":17,"slug":"food-pantry"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":58,"depth":2,"oe_id":"104-02-04","name":"Clothing
-        Vouchers","parent_id":54,"slug":"clothing-vouchers"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Walk
-        in.","service_areas":["Atherton","East Palo Alto","Menlo Park","Portola Valley","Redwood
-        City","San Carlos","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.070-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1615,"accessibility":["Wheelchair"],"address":{"id":1348,"street":"50
-        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Volunteer
-        on duty"],"contacts":[{"id":1903,"name":"Lorraine Moriarty","title":"Executive
-        Director"},{"id":1904,"name":"Maritza Techioli","title":"Community Liaison"},{"id":1905,"name":"Jodie
-        Penner","title":"Director of Devel.","email":"jpenner@svdpsm.org"},{"id":1906,"name":"Janice
-        Kroll","title":"Development Asst","email":"jkroll@svdpsm.org"}],"coordinates":[-122.3250474,37.568272],"description":"Assists
-        families and individuals with emergencies such as shelter, food, clothing,
-        furniture, transportation and medicine through 34 small working groups called
-        conferences. St. Vincent de Paul members visit the home to assess needs and
-        offer service. Also supports those in recovery programs.     Three Homeless
-        Help Centers (described separately) provide weekday lunches, continental breakfasts,
-        clothing vouchers, laundry, toiletries, identification and transportation
-        assistance to individuals without a permanent address. The North County Homeless
-        Help Center and Cafe St. Vincent are located at 344 Grand Avenue, South San
-        Francisco (650-589-9039), open Monday through Saturday, 10 am-12 noon. The
-        Redwood City Homeless Help Center is housed in the Fair Oaks Community Center,
-        2600 Middlefield Road (650-780-7500), and is open 1-2 pm weekdays. The San
-        Mateo site is at 50 North B Street and is open 10 am-12 noon Monday through
-        Friday (650-343-9251). A meal is also served on Monday at 5 pm, at St. Francis
-        Church, 420 Bay Road, East Palo Alto. Peninsula Family Resource Center (PFRC)
-        arranges home visits for persons in need of rental and utilities assistance
-        (homelessness prevention), food, clothes, furniture and other material needs.
-        Call 650-343-4403 Monday-Friday, 10-12 and 1-4, to make arrangements. Also
-        coordinates summer camp scholarships for youth and holiday assistance programs.
-        Restorative Justice Ministry is a full-time jail ministry program that provides
-        spiritual guidance, religious services, tutoring, support and assistance to
-        those incarcerated in the San Mateo County jail facilities and to their families.
-        Jail/prison after care program provides post-release support. Contact the
-        SVdP Jail Chaplain at 650-366-9847. Catherine''s Center is a supportive residential
-        program for ten women at a time who were previously incarcerated. Five thrift
-        stores are located in San Mateo County: Daly City at 6256 Mission Street (650-992-9271);
-        Redwood City at 2406 El Camino Real (650-366-6367); San Bruno at 1600 El Camino
-        Real (650-588-5767); San Mateo at 40 North B Street (650-347-5101); South
-        San Francisco at 344 Grand Avenue (650-589-8445). Donations can be made at
-        store locations or call 650 871-6844 for donation or computer re-cycling pick-up.  For
-        vehicle donations call 800-937-7837.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1047,"number":"650
-        343-9495"}],"hours":"Emergency Helpline: Monday - Friday, 9-4","kind":"Human
-        Services","languages":["Spanish"],"mail_address":{"id":1612,"attention":"St.
-        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
-        Vincent de Paul County Wide Services","phones":[{"id":2321,"department":"Directory
-        24 hours daily","number":"650 343-4405"},{"id":2322,"department":"Emergency
-        Helpline","number":"650 343-4403"}],"short_desc":"Coordinates the Society''s
-        county-wide emergency services and provides homeless services to persons in
-        the central county area.","slug":"st-vincent-de-paul-county-wide-services","slugs":["st-vincent-de-paul-county-wide-services"],"transportation":"SAMTRANS,
-        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:22.477-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1615","services":[{"id":1615,"audience":"Families
-        or individuals seeking emergency help for food, clothing, rental and utility
-        assistance. Homeless individuals in need of food, basic services and vouchers
-        for San Mateo County shelters","description":"Assists families and individuals
-        with emergencies such as shelter, food, clothing, furniture, transportation
-        and medicine through 34 small working groups called conferences. St. Vincent
-        de Paul members visit the home to assess needs and offer service. Also supports
-        those in recovery programs.     Three Homeless Help Centers (described separately)
-        provide weekday lunches, continental breakfasts, clothing vouchers, laundry,
-        toiletries, identification and transportation assistance to individuals without
-        a permanent address. The North County Homeless Help Center and Cafe St. Vincent
-        are located at 344 Grand Avenue, South San Francisco (650-589-9039), open
-        Monday through Saturday, 10 am-12 noon. The Redwood City Homeless Help Center
-        is housed in the Fair Oaks Community Center, 2600 Middlefield Road (650-780-7500),
-        and is open 1-2 pm weekdays. The San Mateo site is at 50 North B Street and
-        is open 10 am-12 noon Monday through Friday (650-343-9251). A meal is also
-        served on Monday at 5 pm, at St. Francis Church, 420 Bay Road, East Palo Alto.
-        Peninsula Family Resource Center (PFRC) arranges home visits for persons in
-        need of rental and utilities assistance (homelessness prevention), food, clothes,
-        furniture and other material needs. Call 650-343-4403 Monday-Friday, 10-12
-        and 1-4, to make arrangements. Also coordinates summer camp scholarships for
-        youth and holiday assistance programs. Restorative Justice Ministry is a full-time
-        jail ministry program that provides spiritual guidance, religious services,
-        tutoring, support and assistance to those incarcerated in the San Mateo County
-        jail facilities and to their families. Jail/prison after care program provides
-        post-release support. Contact the SVdP Jail Chaplain at 650-366-9847. Catherine''s
-        Center is a supportive residential program for ten women at a time who were
-        previously incarcerated. Five thrift stores are located in San Mateo County:
-        Daly City at 6256 Mission Street (650-992-9271); Redwood City at 2406 El Camino
-        Real (650-366-6367); San Bruno at 1600 El Camino Real (650-588-5767); San
-        Mateo at 40 North B Street (650-347-5101); South San Francisco at 344 Grand
-        Avenue (650-589-8445). Donations can be made at store locations or call 650
-        871-6844 for donation or computer re-cycling pick-up.  For vehicle donations
-        call 800-937-7837.","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants","Sales"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meal","COMMODITY
-        SERVICES","Clothing/Personal Items","Furniture/Appliances","EMERGENCY SERVICES","Food
-        Boxes/Food Vouchers","FINANCIAL ASSISTANCE SERVICES","Health","Housing","Utilities","RECREATION/LEISURE
-        SERVICES","Camperships","Soup Kitchens","Homeless Motel Vouchers","Housing
-        Expense Assistance","Clothing","Laundry Facilities","Thrift Shops","Utility
-        Assistance","Identification Cards","Prison Ministries","Emergency Medical
-        Care","Low Income","Homeless People","Religious Groups/Communities","svdp","food
-        in san mateo"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
-        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
-        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
-        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
-        Delivery","parent_id":17,"slug":"food-delivery"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
-        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
-        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
-        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
-        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
-        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
-        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
-        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
-        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
-        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"}],"how_to_apply":"Apply
-        by phone or visit a Homeless Help Center located in Redwood City, San Mateo
-        and South San Francisco.","service_areas":["San Mateo County"],"wait":"No
-        wait.","updated_at":"2014-05-24T14:07:57.929-07:00"}],"organization":{"id":1332,"name":"St.
-        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}}]'
-    http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:48 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:28:30 GMT
+recorded_with: VCR 2.9.2

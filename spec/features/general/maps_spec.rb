@@ -15,6 +15,7 @@ feature 'search results map' do
       expect(page).not_to have_selector("#map-view")
     end
   end
+
 end
 
 feature 'detail view map' do
@@ -32,4 +33,5 @@ feature 'detail view map' do
       expect(page).to_not have_selector("#detail-map-view")
     end
   end
+
 end

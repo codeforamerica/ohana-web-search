@@ -1,63 +1,88 @@
 require 'spec_helper'
 
-feature "results page search", :js do
+feature "results page search", :js, :vcr do
 
   background do
     page.set_rack_session('aggregate_locations' => [])
-    search_from_home(keyword: 'asdfg')
+    page.set_rack_session('aggregate_org_names' => [])
+    search_from_home(:keyword=>"asdfg")
   end
 
   # test filter fieldset legend toggling across all filters
-  scenario 'when location filter has no cached values and legend is toggled', :vcr do
+  scenario 'when location filter has no cached values and legend is toggled' do
     test_filter_legend("location")
   end
 
-  scenario 'when service-area filter has no cached values and legend is toggled', :vcr do
-    test_filter_legend("service-area","San Mateo County, CA")
+  scenario 'when service-area filter has no cached values and legend is toggled' do
+    test_filter_legend("service-area", "San Mateo County, CA")
   end
 
-  scenario 'when kind filter has no cached values and legend is toggled', :vcr do
+  scenario 'when kind filter has no cached values and legend is toggled' do
     test_filter_legend("kind", "Human Services",13)
   end
 
-  scenario 'when agency filter has no cached values and legend is toggled', :vcr do
+  scenario 'when agency filter has no cached values and legend is toggled' do
     test_filter_legend("org-name")
   end
 
   # test filter fieldset toggle toggling across all filters
-  scenario 'when location filter has no cached values and toggle is toggled', :vcr do
-    test_filter_toggle("location")
+  scenario 'when location filter has no cached values and toggle is toggled' do
+    within("#location-options") do
+      # Click on the "All" checkbox
+      all(".current-option label").last.click
+      # Click on the "All" checkbox again
+      find(".options label",:text => "All").click
+      expect(all(".current-option label").last).to have_content("All")
+    end
   end
 
-  scenario 'when service-area filter has no cached values and toggle is toggled', :vcr do
-    test_filter_toggle("service-area","San Mateo County, CA")
+  scenario 'when service-area filter has no cached values and toggle is toggled' do
+    within("#service-area-options") do
+      # Click on the "All" checkbox
+      all(".current-option label").last.click
+      # Click on the "All" checkbox again
+      find(".options label",:text => "San Mateo County, CA").click
+      expect(all(".current-option label").last).to have_content("San Mateo County, CA")
+    end
   end
 
-  scenario 'when kind filter has no cached values and toggle is toggled', :vcr do
-    test_filter_toggle("kind", "Human Services",13)
+  scenario 'when kind filter has no cached values and toggle is toggled' do
+    within("#kind-options") do
+      # Click on the "All" checkbox
+      all(".current-option label").last.click
+      # Click on the "All" checkbox again
+      find(".options label",:text => "Human Services").click
+      expect(all(".current-option label").last).to have_content("Human Services")
+    end
   end
 
-  scenario 'when agency filter has no cached values and toggle is toggled', :vcr do
-    test_filter_toggle("org-name")
+  scenario 'when agency filter has no cached values and toggle is toggled' do
+    within("#org-name-options") do
+      # Click on the "All" checkbox
+      all(".current-option label").last.click
+      # Click on the "All" checkbox again
+      find(".options label",:text => "All").click
+      expect(all(".current-option label").last).to have_content("All")
+    end
   end
 
   # test adding custom value to filters that accept custom values
-  scenario 'when location filter has no cached values and custom value is added', :vcr do
+  scenario 'when location filter has no cached values and custom value is added' do
     fill_in('keyword', with: '')
     set_filter("location", "location", "94403")
     all(".toggle-group-wrapper.add label").first.trigger("mousedown")
     expect(page).to have_content("41 results within 5 miles of '94403'")
   end
 
-  scenario 'when agency filter has no cached values and custom value is added', :vcr do
+  scenario 'when agency filter has no cached values and custom value is added' do
     fill_in('keyword', with: '')
-    set_filter("org-name", "org_name", "vincent")
+    set_filter("org-name", "org_name", "Salvation Army")
     all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-    expect(page).to have_content("4 results")
+    expect(page).to have_content("3 results")
   end
 
   # test adding custom value to filters and retrieving no results
-  scenario 'when location filter has custom value and no results', :vcr do
+  scenario 'when location filter has custom value and no results' do
     set_filter("location", "location", "San Mateo, CA")
     find('#find-btn').click
 
@@ -68,7 +93,7 @@ feature "results page search", :js do
     end
   end
 
-  scenario 'when agency filter has custom value and no results', :vcr do
+  scenario 'when agency filter has custom value and no results' do
     set_filter("org-name", "org_name", "United States Government")
     find('#find-btn').click
 
@@ -80,13 +105,11 @@ feature "results page search", :js do
   end
 
   # test adding custom value to filters and retrieving results
-  scenario 'when location filter has custom value and has results', :vcr do
+  scenario 'when location filter has custom value and has results' do
     set_filter("location", "location", "San Mateo, CA")
-    fill_in('keyword', :with => '') # clear keyword
-
+    fill_in('keyword', :with => '')
     find('#find-btn').click
 
-    find(".require-loaded")
     within("#location-options") do
       find(".closed").click
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
@@ -94,13 +117,11 @@ feature "results page search", :js do
     end
   end
 
-  scenario 'when agency filter has custom value and has results', :vcr do
-    set_filter("org-name", "org_name", "United States Government")
-    fill_in('keyword', :with => '') # clear keyword
-
+  scenario 'when agency filter has custom value and has results' do
+    set_filter("org-name", "org_name", "Salvation Army")
+    fill_in('keyword', :with => '')
     find('#find-btn').click
 
-    find(".require-loaded")
     within("#org-name-options") do
       find(".closed").click
       expect(find(".available-options")).to have_css(".toggle-group", :count=>3)
@@ -109,13 +130,13 @@ feature "results page search", :js do
   end
 
   # test filter selection across all filters
-  scenario 'when location filter has cached values and new option is selected', :vcr do
-    fill_in('keyword', :with => '') # clear keyword
+  scenario 'when location filter has cached values and new option is selected' do
+    fill_in('keyword', :with => "")
     find('#find-btn').click
-    set_filter("location", "location", "San Mateo, CA", false)
+    set_filter("location", "location", "Redwood City, CA", false)
     find('#find-btn').click
-    expect(page).to have_content("40 results")
-    expect(all("#location-options .current-option label").last).to have_content("San Mateo, CA")
+    expect(page).to have_content("54 results within 5 miles of 'Redwood City, CA'")
+    expect(all("#location-options .current-option label").last).to have_content("Redwood City, CA")
   end
 
   scenario 'when service-area filter has cached values and new option is selected', :vcr do
@@ -134,46 +155,32 @@ feature "results page search", :js do
     expect(all("#kind-options .current-option label").last).to have_content("Other")
   end
 
-  scenario 'when agency filter has cached values and new option is selected', :vcr do
-    fill_in('keyword', :with => '') # clear keyword
+  scenario 'when agency filter has cached values and new option is selected' do
+    fill_in('keyword', :with => '')
     find('#find-btn').click
+    visit("/organizations?page=3")
     set_filter("org-name", "org_name", "San Mateo County Human Services Agency", false)
     find('#find-btn').click
-    expect(page).to have_content("11 results")
+    expect(page).to have_content("13 results")
     expect(all("#org-name-options .current-option label").last).to have_content("San Mateo County Human Services Agency")
   end
 
-
   # user clicks filter links in results list
-  scenario 'when clicking organization link in results', :vcr do
-    search(:keyword => "St. Vincent de Paul Society")
-    first("#list-view li").click_link("St. Vincent de Paul Society")
-    expect(page).not_to have_content("Shelter Network")
-    expect(page).to have_content("San Mateo Homeless Help Center")
+  scenario 'when clicking organization link in results' do
+    search(:keyword => "Samaritan House")
+    first("#list-view li").click_link("Samaritan House")
+    expect(page).to have_content("Redwood City Free Medical Clinic")
 
     # check filter settings
     expect(all("#location-options .current-option label").last).to have_content("All")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
     expect(all("#kind-options .current-option label").last).to have_content("All")
-    expect(all("#org-name-options .current-option label").last).to have_content("St. Vincent de Paul Society")
+    expect(all("#org-name-options .current-option label").last).to have_content("Samaritan House")
   end
 
-  scenario 'when clicking kind link in results', :vcr do
-    search(:keyword => "St. Vincent de Paul Society")
-    first("#list-view li").click_link("Human Services")
-    expect(page).not_to have_content("Shelter Network")
-    expect(page).to have_content("San Mateo County Human Services Agency")
-
-    # check filter settings
-    expect(all("#location-options .current-option label").last).to have_content("All")
-    expect(all("#service-area-options .current-option label").last).to have_content("All")
-    expect(all("#kind-options .current-option label").last).to have_content("Human Services")
-    expect(all("#org-name-options .current-option label").last).to have_content("All")
-  end
-
-  scenario 'when clicking the reset button', :vcr do
+  scenario 'when clicking the reset button' do
     expect(page).to have_content("No results")
-    find_by_id('reset-btn').click
+    find_by_id("reset-btn").click
 
     # check filter settings
     expect(find_field("keyword").value).to eq ""

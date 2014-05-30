@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,23 +23,25 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 14:15:37 GMT
-      Etag:
-      - '"1d636334f0e6ca15f22d53f78c591b0a"'
+      - Fri, 30 May 2014 10:31:40 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - b5617c59-b06e-4932-9995-cef0facbcc6d
+      - c19e25e7-6626-4457-8159-47d8b10fa338
       X-Runtime:
-      - '0.108410'
+      - '0.091455'
       X-Total-Count:
       - '2'
       X-Total-Pages:
       - '1'
-      Content-Length:
-      - '7196'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -112,5 +114,5 @@ http_interactions:
         Same day service if appropriate.","updated_at":"2014-05-24T14:07:53.415-07:00"}],"organization":{"id":1309,"name":"San
         Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}}]'
     http_version: 
-  recorded_at: Mon, 26 May 2014 14:15:37 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:31:40 GMT
+recorded_with: VCR 2.9.2

@@ -64,11 +64,6 @@
                             %p
                               %span{:itemprop=>"contactType"}
                                 = phone["department"]
-                          - if phone["hours"]
-                            %p.phone-hours
-                              %span
-                                = phone["hours"]
-
 
                 - if @org.key?(:faxes)
                   %section.faxes
@@ -162,11 +157,6 @@
 
           - if @org.key?(:coordinates)
             %section#detail-map-view.map
-              /%div#show-nearby-control
-              /  %img#show-nearby-control-icon.hide{:src=>'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5'}
-              /  %span#show-nearby-control-text
-              /    &nbsp;
-
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
                   = address(@org)
@@ -174,7 +164,6 @@
                   = @org.coordinates[1]
                 %span.hide#detail-map-canvas-lng
                   = @org.coordinates[0]
-              = render 'component/search/map_data'
               %noscript
                 %style
                   -# hides map when JS is disabled

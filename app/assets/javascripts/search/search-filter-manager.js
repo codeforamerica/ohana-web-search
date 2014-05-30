@@ -1,24 +1,24 @@
 // handles search filter toggle functionality
-define(['domReady!'],
-  function() {
+define(['util/geolocation/geolocate-action','domReady!'],
+  function(geo) {
   'use strict';
 
   // PRIVATE PROPERTIES
   var _fieldsets = {}; // set of all fieldsets
-
-  var _searchForm;
+  var _searchForm; // the form to submit
 
   // main module initialization
   function init()
   {
+    // Set up geolocation button
+    geo.init('locate-btn',_geolcationClicked);
+
     // capture form submission
     _searchForm = document.getElementById("search-form");
-    if (!_searchForm) console.log("search form DOM not found!");
     _searchForm.addEventListener("submit",_formSubmissionHandler,false);
 
-    // Hook all reset buttons on the page and listen for a click event
+    // Hook reset button on the page and listen for a click event
     var resetBtn = document.getElementById("reset-btn");
-    if (!resetBtn) console.log("reset link DOM not found!");
     resetBtn.addEventListener("click",_resetClicked,false);
 
     // initialize fieldsets
@@ -35,6 +35,15 @@ define(['domReady!'],
     }
   }
 
+  // The geolocation button was clicked in the location filter.
+  function _geolcationClicked(address)
+  {
+    document.getElementById('location-option-input').value = "";
+    document.getElementById('location').value = address;
+    triggerFormSubmission(_searchForm,'location-options');
+  }
+
+  // The clear filters button was clicked.
   function _resetClicked(evt)
   {
     for (var f in _fieldsets)
@@ -50,11 +59,11 @@ define(['domReady!'],
   // Handle form submission
   function _formSubmissionHandler(evt)
   {
-    _triggerFormSubmission(evt.target);
+    triggerFormSubmission(evt.target);
     evt.preventDefault();
   }
 
-  function _triggerFormSubmission(form)
+  function triggerFormSubmission(form, ignoreFilter)
   {
     var input;
 
@@ -62,6 +71,9 @@ define(['domReady!'],
     {
       if (_fieldsets.hasOwnProperty(f))
       {
+        if (f === ignoreFilter)
+          continue;
+
         input = _fieldsets[f].getSelectedToggle();
         if (input.isAddToggle())
           input = input.getAddInput();
@@ -220,8 +232,8 @@ define(['domReady!'],
 
       _legend = _fieldset.querySelector("legend");
 
-      _toggleGroupContainers    = _fieldset.querySelectorAll(".options");
-      _hidden                   = _fieldset.querySelector("input[type=hidden]");
+      _toggleGroupContainers     = _fieldset.querySelectorAll(".options");
+      _hidden                    = _fieldset.querySelector("input[type=hidden]");
 
       var container;
       var groups;
@@ -320,7 +332,7 @@ define(['domReady!'],
       if (_legend.className === 'open')
       {
         if (_queueUpdate)
-          _triggerFormSubmission(_searchForm);
+          triggerFormSubmission(_searchForm);
         _closeToggle();
       }
       else
@@ -422,10 +434,10 @@ define(['domReady!'],
       getHidden:getHidden,
       reset:reset
     };
-
   };
 
   return {
-    init:init
+    init:init,
+    triggerFormSubmission:triggerFormSubmission
   };
 });

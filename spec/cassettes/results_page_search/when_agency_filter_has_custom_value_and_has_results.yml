@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,18 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:14:09 GMT
+      - Fri, 30 May 2014 10:28:46 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 60219ff9-1fb6-432d-a549-04af3699eaf5
+      - b07fa50a-a4c4-45f7-a549-0206d4d1dacf
       X-Runtime:
-      - '1.140043'
+      - '0.040325'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -47,10 +51,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:10 GMT
+  recorded_at: Fri, 30 May 2014 10:28:46 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=United%20States%20Government&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=Salvation%20Army&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -71,266 +75,136 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:14:12 GMT
-      Etag:
-      - '"6c00eeeeddbc6f07a7b48f433e45f878"'
+      - Fri, 30 May 2014 10:28:47 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 4faae8f7-824a-4d7a-a964-4ec365558080
+      - d95f65b1-e261-4f65-ac20-b84787d71aed
       X-Runtime:
-      - '2.480390'
+      - '0.243109'
       X-Total-Count:
-      - '6'
+      - '3'
       X-Total-Pages:
       - '1'
       Content-Length:
-      - '21378'
+      - '3994'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":1661,"accessibility":["Elevator","Ramp","Disabled Restroom","Disabled
-        Parking","Wheelchair"],"address":{"id":1385,"street":"3801 Miranda Avenue,
-        Building 100, Unit 4A","city":"Palo Alto","state":"CA","zip":"94304-1290"},"ask_for":["Social
-        worker"],"contacts":[{"id":1961,"name":"Sheila Kennedy, MSW, LCSW","title":"Hospice
-        Coordinator"}],"coordinates":[-122.1418139,37.403608],"description":"Provides
-        medical, nursing and end-of-life care to veterans and to members of the community
-        connected with a community hospice when care can no longer be managed at home.
-        The 25-bed facility offers symptom management, nursing care, social services,
-        psychological and bereavement services, spiritual counseling and massage.","emails":["sheila-kennedy@va.gov"],"faxes":[{"id":1071,"number":"650
-        849-0260"}],"hours":"Monday-Friday, 7:30-4:30","kind":"Human Services","languages":["Filipino
-        (Tagalog)"],"mail_address":{"id":1658,"attention":"Hospice Care Center","street":"3801
-        Miranda Avenue, Building 100, Unit 4A","city":"Palo Alto","state":"CA","zip":"94304-1290"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Hospice Care Center","phones":[{"id":2427,"number":"650
-        849-0176"},{"id":2428,"department":"Information and Referral","number":"650
-        849-0550"}],"short_desc":"Provides medical and nursing care to veterans and
-        to members of the community.","slug":"veterans-affairs-palo-alto-health-care-system-hospice-care-center","slugs":["veterans-affairs-palo-alto-health-care-system-hospice-care-center"],"transportation":"SAMTRANS,
-        VTA stop in front.","updated_at":"2014-05-24T14:08:29.734-07:00","urls":["http://www.palo-alto.med.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1661","services":[{"id":1661,"audience":"Veterans
-        with terminal diagnosis","eligibility":"Honorably discharged veteran facing
-        life-threatening illness given top priority (6 months or less prognosis)","fees":"No
-        fee for veterans. $250 per day for non-veterans. Checks accepted.","funding_sources":["Federal"],"keywords":["HEALTH
-        SERVICES","Hospice","Hospice Care","Veterans"],"categories":[{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":215,"depth":1,"oe_id":"108-04","name":"End-of-Life
-        Care","parent_id":196,"slug":"end-of-life-care-108-04"},{"id":218,"depth":2,"oe_id":"108-04-03","name":"Hospice","parent_id":215,"slug":"hospice-108-04-03"}],"how_to_apply":"For
-        veterans, anyone may initiate referral but physician must verify terminal
-        status. For non-veterans, anyone may initiate referral, but a community hospice
-        must be involved.","service_areas":["Alameda County","Calaveras County","Monterey
-        County","San Mateo County","Santa Clara County","Stanislaus County","Tuolumne
-        County","Northern California"],"wait":"Varies depending on bed availability.","updated_at":"2014-05-24T14:07:59.188-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1656,"accessibility":["Disabled
-        Parking","Elevator","Ramp","Wheelchair"],"address":{"id":1380,"street":"795
-        Willow Road, 180-D","city":"Menlo Park","state":"CA","zip":"94025"},"coordinates":[-122.1572991,37.4651746],"description":"A
-        6 month residential co-ed treatment program designed to provide homeless veterans
-        with the skills necessary to function self-sufficiently in society. Residents
-        attend skills training classes, participate in therapy and support groups
-        and attend community meetings. A complete mental and physical evaluation is
-        made and a treatment program developed to improve well-being. Vocational assessment
-        and assistance with job search provided. Participants continue to attend some
-        meetings and activities for a time following discharge from the program.","faxes":[{"id":1066,"number":"650
-        617-2619"}],"hours":"Monday-Friday, 9-12, 1-3; Screening: Monday-Friday, 9-12,
-        1-3","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1653,"attention":"Homeless
-        Veterans Rehab Prog","street":"795 Willow Road, 180-D","city":"Menlo Park","state":"CA","zip":"94025"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Menlo Park Division., Homeless Veterans
-        Rehabilitation Program., Vocational Education Center","phones":[{"id":2421,"number":"800
-        848-7254"},{"id":2422,"number":"650 617-2751"}],"short_desc":"A residential
-        treatment program designed to provide homeless veterans with the skills necessary
-        to function self-sufficiently in society.","slug":"veterans-affairs-palo-alto-health-care-system-menlo-park-division-homeless-veterans-rehabilitation-program-vocational-education-center","slugs":["veterans-affairs-palo-alto-health-care-system-menlo-park-division-homeless-veterans-rehabilitation-program-vocational-education-center"],"transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2014-05-24T14:08:04.549-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1656","services":[{"id":1656,"audience":"Homeless
-        veterans","eligibility":"Honorably discharged homeless veteran, medically
-        and psychiatrically stable, willing and able to return to full-time work","fees":"For
-        \"non-services connected\" NSC veterans: no fee for vets who make less than
-        $25,000 per year, otherwise $5 per day charge. \"Service connected\" veterans:
-        no charge. Cash and checks accepted.","funding_sources":["Federal"],"keywords":["HOUSING
-        SERVICES","Temporary","Transitional Housing/Shelter","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
-        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":117,"depth":3,"oe_id":"106-06-04-04","name":"Mental
-        Health Evaluation","parent_id":113,"slug":"mental-health-evaluation"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
-        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
-        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Apply
-        by phone Monday-Friday, 9-12, 1-3.","service_areas":["Alameda County","Contra
+      string: '[{"id":1388,"accessibility":["Wheelchair"],"address":{"id":1128,"street":"409
+        South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Family
+        Services Caseworker "],"contacts":[{"id":1619,"name":"Kenneth Gibson","title":"Major"}],"coordinates":[-122.4228507,37.6445324],"description":"Provides
+        emergency food, clothing and furniture vouchers to low-income families in
+        times of crisis.   Administers Project REACH (Relief for Energy Assistance
+        through Community Help) funds to prevent energy shut-off through a one-time
+        payment. Offers a Saturday morning Homeless Feeding Program at 10:30, as well
+        as Sunday services and spiritual counseling. Provides Christmas toys and Back-to-School
+        clothes and supplies. Offers case management, advocacy and referrals to other
+        agencies.","faxes":[{"id":880,"number":"650 266-2594"},{"id":881,"number":"650
+        266-4594"}],"hours":"Monday-Thursday, 9-4:30","kind":"Human Services","mail_address":{"id":1385,"attention":"Salvation
+        Army","street":"409 South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"South
+        San Francisco Citadel Corps","phones":[{"id":1902,"number":"650 266-4591"}],"short_desc":"Provides
+        emergency food and clothing and furniture vouchers to low-income families
+        in times of crisis.","slug":"south-san-francisco-citadel-corps","slugs":["south-san-francisco-citadel-corps"],"transportation":"SAMTRANS
+        stops within 1 block, BART stops within 3 blocks.","updated_at":"2014-05-24T14:08:20.455-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1388","services":[{"id":1388,"eligibility":"Low-income
+        families","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","COMMUNITY SERVICES","Information and
+        Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","FINANCIAL ASSISTANCE
+        SERVICES","Utilities","Emergency Food","Food Pantries","Furniture","Clothing","Utility
+        Assistance","School Supplies","Case/Care Management","Holiday Programs","Pastoral
+        Counseling","Low Income","Salvation Army-South San Francisco"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
+        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
+        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":56,"depth":2,"oe_id":"104-02-02","name":"Clothes
+        for School","parent_id":54,"slug":"clothes-for-school"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"}],"how_to_apply":"Call
+        for information.","service_areas":["Brisbane","Colma","Daly City","Millbrae","Pacifica","San
+        Bruno","South San Francisco"],"updated_at":"2014-05-24T14:07:51.805-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}},{"id":1386,"accessibility":["Wheelchair"],"address":{"id":1126,"street":"1500
+        Valencia Street","city":"San Francisco","state":"CA","zip":"94110"},"ask_for":["Intake
+        coordinator"],"contacts":[{"id":1617,"name":"Jack Phillips","title":"Administrator"}],"coordinates":[-122.4203671,37.7488993],"description":"Provides
+        a long-term (6-12 month) residential rehabilitation program for men and women
+        with substance abuse and other problems. Residents receive individual counseling,
+        and drug and alcohol education. The spiritual side of recovery is addressed
+        through chapel services and Bible study as well as 12-step programs. Nicotine
+        cessation is a part of the program.   Residents must be physically able to
+        work, seeking treatment for substance abuse, sober long enough to pass urine
+        drug screen before entering and agreeable to participating in weekly 12-step
+        programs such as Alcoholics Anonymous or Narcotics Anonymous. Pinehurst Lodge
+        is a separate facility for women only. Transition houses for men and women
+        graduates also available.","faxes":[{"id":878,"number":"415 285-1391"}],"hours":"Monday-Friday,
+        8-4","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1383,"attention":"Adult
+        Rehabilitation Center","street":"1500 Valencia Street","city":"San Francisco","state":"CA","zip":"94110"},"name":"Adult
+        Rehabilitation Center","phones":[{"id":1899,"number":"415 643-8000"},{"id":1900,"number":"415
+        643-8028"}],"short_desc":"Long-term (6-12 month) residential treatment program
+        for men/women age 21-60.","slug":"adult-rehabilitation-center","slugs":["adult-rehabilitation-center"],"transportation":"MUNI
+        - 26 Valencia, Mission Street lines.","updated_at":"2014-05-24T14:08:20.251-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1386","services":[{"id":1386,"audience":"Adult
+        alcoholic/drug addictive men and women with social and spiritual problems","eligibility":"Age
+        21-60, detoxed, physically able and willing to participate in a work therapy
+        program","fees":"None.","funding_sources":["Donations","Sales"],"keywords":["ALCOHOLISM
+        SERVICES","Residential Care","DRUG ABUSE SERVICES","Recovery","Addiction"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
+        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":81,"depth":2,"oe_id":"106-01-02","name":"Detox","parent_id":79,"slug":"detox"},{"id":82,"depth":2,"oe_id":"106-01-03","name":"Halfway
+        Housing","parent_id":79,"slug":"halfway-housing"},{"id":84,"depth":2,"oe_id":"106-01-05","name":"Residential
+        Treatment","parent_id":79,"slug":"residential-treatment"},{"id":85,"depth":2,"oe_id":"106-01-06","name":"Sober
+        Living","parent_id":79,"slug":"sober-living-106-01-06"}],"how_to_apply":"Walk
+        in or through other agency referral.","service_areas":["Alameda County","Contra
         Costa County","Marin County","San Francisco County","San Mateo County","Santa
-        Clara County","Monterey County","Sacramento County","San Benito County","San
-        Joaquin County","Santa Cruz County","Northern California"],"wait":"2-8 weeks
-        for inpatient admission.","updated_at":"2014-05-24T14:07:59.125-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1655,"accessibility":["Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1379,"street":"4150
-        Clement Street","city":"San Francisco","state":"CA","zip":"94121"},"ask_for":["Call
-        Telephone Linked Care (800-733-0502)"],"contacts":[{"id":1955,"name":"Sheila
-        M. Cullen","title":"Medical Center Director"}],"coordinates":[-122.5032335,37.781335],"description":"Provides
-        general medical, surgical and psychiatric services for veterans. Inpatient
-        and outpatient services include arthritic rheumatology, cardiology, dermatology,
-        endocrinology, eye, ear, nose, and throat, gastrointestinal, hematology, hemodialysis,
-        infectious disease, medical research, neurology, neurosurgery, nuclear medicine,
-        heart surgery, ophthalmology, orthopedic, plastic surgery, podiatry, psychiatric,
-        respiratory care, general surgery and social work. Offers limited dental care,
-        eye glasses and other prosthetics based on eligibility. Serves as an outpatient
-        treatment facility for veterans who are misusing alcohol, cocaine, heroin
-        or a combination of drugs, or are dually diagnosed. Treatment may include
-        methadone maintenance, naltrexone therapy, antabuse therapy or drug-free therapy.
-        Services include individual or group therapy, crisis intervention, couples
-        or family therapy, vocational counseling, psychological testing, education
-        classes, psychiatric social work and referral to medical practice clinics.","kind":"Human
-        Services","languages":["Chinese","Filipino (Tagalog)","Japanese","Russian","Spanish"],"mail_address":{"id":1652,"attention":"Veterans
-        Affairs San Francisco","street":"4150 Clement Street","city":"San Francisco","state":"CA","zip":"94121"},"name":"Veterans
-        Affairs San Francisco Health Care System","phones":[{"id":2419,"number":"415
-        221-4810"},{"id":2420,"number":"415 750-6908","number_type":"TTY"}],"short_desc":"General
-        medical, psychiatric and surgical services for veterans.","slug":"veterans-affairs-san-francisco-health-care-system","slugs":["veterans-affairs-san-francisco-health-care-system"],"transportation":"MUNI
-        - 38 Geary.","updated_at":"2014-05-24T14:08:29.634-07:00","urls":["http://www.sf.med.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1655","services":[{"id":1655,"audience":"Veterans
-        of the U.S. Armed Forces","eligibility":"Veteran with other than dishonorable
-        discharge, eligibility individually determined","fees":"Vary according to
-        eligibility category. Private insurance accepted.","funding_sources":["Federal"],"keywords":["COMMODITY
-        SERVICES","Assistive/Medical Aids","HEALTH SERVICES","Dental","Inpatient Care","Outpatient
-        Care","MENTAL HEALTH SERVICES","Acute or Sub-acute Treatment","Individual/Group
-        Counseling","Observation/Diagnosis","Hospitals","Veteran Outpatient Clinics","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
-        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":81,"depth":2,"oe_id":"106-01-02","name":"Detox","parent_id":79,"slug":"detox"},{"id":83,"depth":2,"oe_id":"106-01-04","name":"Outpatient
-        Treatment","parent_id":79,"slug":"outpatient-treatment"},{"id":86,"depth":1,"oe_id":"106-02","name":"Dental
-        Care","parent_id":78,"slug":"dental-care"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
-        Education","parent_id":78,"slug":"health-education"},{"id":94,"depth":2,"oe_id":"106-04-02","name":"Disease
-        Management","parent_id":92,"slug":"disease-management"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":111,"depth":2,"oe_id":"106-06-02","name":"Assistive
-        Technology","parent_id":109,"slug":"assistive-technology-106-06-02"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
-        \u0026 Treat","parent_id":109,"slug":"prevent-treat"},{"id":134,"depth":2,"oe_id":"106-06-08","name":"Psychiatric
-        Emergency Services","parent_id":109,"slug":"psychiatric-emergency-services-106-06-08"},{"id":245,"depth":0,"oe_id":"109","name":"Education","parent_id":null,"slug":"education"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
-        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Walk
-        in during office hours.","service_areas":["Del Norte County","Humboldt County","Lake
-        County","Marin County","Mendocino County","Napa County","San Francisco County","San
-        Mateo County","Sonoma County"],"wait":"Varies according to service.","updated_at":"2014-05-24T14:07:59.018-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1654,"contacts":[{"id":1954,"name":"Jon
-        D. Fuller, MD","title":"Medical Director"}],"description":"Provides primary
-        care to homebound veterans. Interdisciplinary team approach, composed of a
-        physician, nurse practitioner, social worker, dietitian, psychologist and
-        occupational therapist, works with the individual and his/her caregiver to
-        provide primary medical care and other services in the home to veterans who
-        are convalescing or have acute chronic or terminal illness. Services include
-        case management, skilled nursing care, rehabilitation, palliative care, emergency
-        and long-term planning, individual and family counseling, health education,
-        nutrition and diet consultation, evaluation for adaptive equipment and home
-        safety, referrals to VA and community resources.","faxes":[{"id":1065,"number":"650
-        849-0103"}],"hours":"Daily, 8-5. 24-hour on-call for all HBPC patients","kind":"Human
-        Services","mail_address":{"id":1651,"attention":"VA PA Home Based Primary
-        Care (HBPC)","street":"3801 Miranda Avenue, 100/2C","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Home Based Primary Care (HBPC)","phones":[{"id":2418,"number":"650
-        849-0102"}],"short_desc":"Provides medical and social services to homebound
-        veterans.","slug":"veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc","slugs":["veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc"],"transportation":"Not
-        necessary for service.","updated_at":"2014-05-24T14:08:20.439-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1654","services":[{"id":1654,"audience":"Veterans","eligibility":"Homebound
-        veteran living within 30 minutes of VA Palo Alto office or San Jose office
-        at highways 101 and 85. Must be willing to accept HBPC as primary care provider
-        and be enrolled in VA Palo Alto Health Care System","fees":"None to veterans
-        who meet either income criteria or specific service connected guidelines.
-        All other veterans may incur some copayment. Private insurance accepted.","funding_sources":["Federal"],"keywords":["HEALTH
-        SERVICES","Home Nursing","Individual/Group Counseling","Home Health Care","Veterans"],"how_to_apply":"Apply
-        through primary care physician at VA Palo Alto Health Care System.","service_areas":["Belmont","Burlingame","Cupertino","Fremont","Los
-        Altos","Los Altos Hills","Menlo Park","Morgan Hill","Mountain View","Palo
-        Alto","Redwood City","San Carlos","San Jose","San Mateo","Santa Clara","Saratoga","Union
-        City"],"wait":"7-30 days.","updated_at":"2014-05-24T14:07:18.737-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1651,"accessibility":["Wheelchair"],"address":{"id":1376,"street":"795
-        Willow Road, Building 321","city":"Menlo Park","state":"CA","zip":"94025"},"ask_for":["Intake
-        Consultation Team"],"contacts":[{"id":1951,"name":"Paula Wilbourne","title":"Director"}],"coordinates":[-122.1572991,37.4651746],"description":"Provides
-        services to veterans addicted to alcohol or other drugs and ready to become
-        abstinent. Provides inpatient medical treatment for withdrawal, a residential
-        therapeutic community and outpatient clinics in support of continuing abstinence
-        in Menlo Park and San Jose.","faxes":[{"id":1063,"number":"650 617-2618"}],"kind":"Human
-        Services","languages":["Interpreter"],"mail_address":{"id":1648,"attention":"VA
-        PA Addiction Treatment Services","street":"795 Willow Road, Building 321","city":"Menlo
-        Park","state":"CA","zip":"94025"},"name":"Veterans Affairs Palo Alto Health
-        Care System., Menlo Park Division., Addiction Treatment Services (ATS)","phones":[{"id":2414,"number":"866
-        717-1978"},{"id":2415,"extension":"22305","number":"650 493-5000"}],"short_desc":"Provides
-        residential and outpatient programs to help veterans with alcohol or other
-        drug-related difficulties.","slug":"veterans-affairs-palo-alto-health-care-system-menlo-park-division-addiction-treatment-services-ats","slugs":["veterans-affairs-palo-alto-health-care-system-menlo-park-division-addiction-treatment-services-ats"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:29.599-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1651","services":[{"id":1651,"audience":"Veterans
-        addicted to alcohol or other drugs","eligibility":"Veteran who meets eligibility
-        for benefits","fees":"Vary according to income.","funding_sources":["Federal"],"keywords":["ALCOHOLISM
-        SERVICES","Detoxification","Individual/Group Counseling","Residential Care","DRUG
-        ABUSE SERVICES","Drug-Free Treatment","Maintenance","Substance Abuse Services","Veterans"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
-        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":81,"depth":2,"oe_id":"106-01-02","name":"Detox","parent_id":79,"slug":"detox"},{"id":83,"depth":2,"oe_id":"106-01-04","name":"Outpatient
-        Treatment","parent_id":79,"slug":"outpatient-treatment"}],"how_to_apply":"Phone
-        for information and/or to make an appointment.","service_areas":["Alameda
-        County","Contra Costa County","Marin County","San Francisco County","San Mateo
-        County","Santa Clara County","Stanislaus County","Northern California"],"wait":"2-3
-        weeks for inpatient programs. No wait for outpatient services.","updated_at":"2014-05-24T14:07:58.951-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1649,"accessibility":["Elevator","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1374,"street":"3801
-        Miranda Avenue","city":"Palo Alto","state":"CA","zip":"94304"},"ask_for":["Staff
-        on duty in admitting/eligibility"],"coordinates":[-122.1418083,37.4036049],"description":"Primary
-        entry point for VA medical services in Palo Alto, including admission to the
-        hospital. Services are provided only to veterans, and preference is given
-        to those with service-connected illnesses or disabilities. On the first visit,
-        the veteran should arrive at the clinic with discharge papers and any appropriate
-        medical records. No appointment is necessary, but there may be a two hour
-        or longer wait. If the veteran is legally and medically eligible, he or she
-        will be given an appointment for general medical or speciality services. All
-        persons in need of immediate care will be seen right away. Emergency care
-        is provided 24 hours a day. Limited services are available at satellites in
-        San Jose and Monterey, as well as in the divisions at Menlo Park, Livermore,
-        Stockton and Modesto.","kind":"Human Services","languages":["Japanese","Spanish","Filipino
-        (Tagalog)"],"mail_address":{"id":1646,"attention":"VA PA Ambulatory Care Service","street":"3801
-        Miranda Avenue","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Veterans
-        Affairs Palo Alto Health Care System., Ambulatory Care Service","phones":[{"id":2406,"extension":"22175","number":"650
-        493-5000"},{"id":2407,"extension":"22234","number":"650 493-5000"},{"id":2408,"number":"866
-        717-1978"},{"id":2409,"extension":"22305","number":"650 493-5000"}],"short_desc":"Outpatient
-        care for all honorably discharged veterans.","slug":"veterans-affairs-palo-alto-health-care-system-ambulatory-care-service","slugs":["veterans-affairs-palo-alto-health-care-system-ambulatory-care-service"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:29.582-07:00","urls":["http://www.paloalto.va.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1649","services":[{"id":1649,"audience":"Veterans
-        and employees","eligibility":"Honorably discharged veteran. Priority given
-        to service-connected or low-income veterans","fees":"None for service-connected
-        conditions. Co-payment (30% to 100%) for nonservice connected prescriptions
-        and nonservice connected veterans depending on income. Cash and checks accepted.","funding_sources":["Federal","Fees"],"keywords":["Veteran
-        Outpatient Clinics","Veterans"],"how_to_apply":"Walk in. Service discharge
-        papers necessary for application. Means testing may be required.","service_areas":["Monterey
-        County","San Benito County","San Mateo County","Santa Clara County","Santa
-        Cruz County","Castro Valley","Dublin","Fremont","Hayward","Newark","Pleasanton","San
-        Leandro","San Lorenzo","San Ramon","Union City"],"wait":"2-6 weeks for scheduled
-        clinic appointments, walk in for same day clinic.","updated_at":"2014-05-24T14:07:18.672-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}}]'
+        Clara County","Northern California"],"wait":"Varies according to available
+        beds for men and women. Women have a longer wait due to small number of beds
+        Statewide.","updated_at":"2014-05-24T14:07:51.693-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}},{"id":1385,"accessibility":["Wheelchair"],"address":{"id":1125,"street":"660
+        Veterans Blvd.","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Ivonne
+        Pierre"],"contacts":[{"id":1616,"name":"Andres Espinoza","title":"Captain,
+        Commanding Officer"}],"coordinates":[-122.2312963,37.4916424],"description":"Provides
+        food, clothing, bus tokens and shelter to individuals and families in times
+        of crisis from the Redwood City Corps office and community centers throughout
+        the county.   Administers Project REACH (Relief for Energy Assistance through
+        Community Help) funds to prevent energy shut-off through a one-time payment.
+        Counseling and translation services (English/Spanish) are available either
+        on a walk-in basis or by appointment. Rental assistance with available funds.
+        Another office (described separately) is located at 409 South Spruce Avenue,
+        South San Francisco (650-266-4591).","faxes":[{"id":877,"number":"650 364-1712"}],"kind":"Human
+        Services","languages":["Spanish"],"mail_address":{"id":1382,"attention":"Salvation
+        Army","street":"P.O. Box 1147","city":"Redwood City","state":"CA","zip":"94064"},"name":"Redwood
+        City Corps","phones":[{"id":1898,"number":"650 368-4643"}],"short_desc":"Provides
+        a variety of emergency services to low-income persons. Also sponsors recreational
+        and educational activities.","slug":"redwood-city-corps","slugs":["redwood-city-corps"],"transportation":"SAMTRANS
+        stops nearby.","updated_at":"2014-05-24T14:08:20.121-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1385","services":[{"id":1385,"audience":"Individuals
+        or families with low or no income and/or trying to obtain public assistance","eligibility":"None
+        for most services. For emergency assistance, must have low or no income and
+        be willing to apply for public assistance","fees":"None.","funding_sources":["Donations","Grants"],"keywords":["COMMUNITY
+        SERVICES","Interpretation/Translation","EMERGENCY SERVICES","Shelter/Refuge","FINANCIAL
+        ASSISTANCE SERVICES","Utilities","MENTAL HEALTH SERVICES","Individual/Group
+        Counseling","Food Pantries","Homeless Shelter","Rental Deposit Assistance","Utility
+        Service Payment Assistance","Salvation Army","Clothing Assistance","Counseling
+        Services"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
+        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
+        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":31,"depth":2,"oe_id":"103-03-01","name":"Cash
+        for Housing","parent_id":30,"slug":"cash-for-housing-103-03-01"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
+        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":72,"depth":1,"oe_id":"105-01","name":"Help
+        Pay for Transit","parent_id":71,"slug":"help-pay-for-transit"},{"id":73,"depth":2,"oe_id":"105-01-01","name":"Bus
+        Passes","parent_id":72,"slug":"bus-passes"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
+        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
+        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"},{"id":162,"depth":3,"oe_id":"107-02-04-02","name":"Cash
+        for Utilities","parent_id":160,"slug":"cash-for-utilities-107-02-04-02"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":231,"depth":1,"oe_id":"108-07","name":"Support
+        Network","parent_id":196,"slug":"support-network"},{"id":232,"depth":2,"oe_id":"108-07-01","name":"Counseling","parent_id":231,"slug":"counseling-108-07-01"},{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":327,"depth":1,"oe_id":"111-05","name":"Translation
+        \u0026 Interpretation","parent_id":311,"slug":"translation-interpretation"}],"how_to_apply":"Call
+        for appointment. Referral from human service professional preferred for emergency
+        assistance.","service_areas":["Atherton","Belmont","Burlingame","East Palo
+        Alto","Foster City","Menlo Park","Palo Alto","Portola Valley","Redwood City","San
+        Carlos","San Mateo","Woodside"],"wait":"Up to 20 minutes.","updated_at":"2014-05-24T14:07:51.548-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}}]'
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:12 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=Custom%20Value&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 22:24:40 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=Custom+Value&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
-        rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - c5f6cf4b-5ac4-4e8f-b670-f0067d8a12c5
-      X-Runtime:
-      - '0.103452'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Mon, 26 May 2014 22:24:40 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:28:48 GMT
+recorded_with: VCR 2.9.2
