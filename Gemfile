@@ -59,6 +59,9 @@ group :development do
   gem "binding_of_caller", ">= 0.7.1", :platforms => [:mri_19, :rbx]
   gem "metric_fu"
   gem "letter_opener" # for mocking emails for sending
+
+  # For linting JS with `rake jshint`.
+  gem 'jshintrb', '>= 0.2.4'
 end
 
 group :test do
