@@ -1,7 +1,8 @@
 %li
-  = service[:parent]
+  - # See config/homepage_links.yml for the source of the content that's filled in here.
+  = service[0]
   %ul
-    - service[:children].each do |child|
+    - Array(service[1]).each do |child|
       - child.include?("/") ? keyword = child.split("/").first : keyword = child
       %li
         %a{ :href => "/organizations?keyword=#{u keyword}", "data-gaq" => "['_trackEvent', 'Home_Categories', 'Click', '#{child}']" }

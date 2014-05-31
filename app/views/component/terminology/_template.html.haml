@@ -1,0 +1,8 @@
+%dl
+  %dt
+    = term['title']
+  %dd
+    = term['description']
+- if term['url'].present?
+  %p
+    = link_to "More info...", term['url'], :target => "_blank"

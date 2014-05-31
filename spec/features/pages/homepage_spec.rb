@@ -7,7 +7,7 @@ describe "Home page header elements" do
   end
 
   it 'includes correct title' do
-    expect(page).to have_title "SMC-Connect"
+    expect(page).to have_title "Ohana Web Search"
   end
 
   it 'includes utility links' do
@@ -30,13 +30,13 @@ describe "Home page content elements" do
 
   it 'includes general-services category links' do
     within("#general-services") do
-      expect(page).to have_content "government assistance"
+      expect(page).to have_content "Government Assistance"
     end
   end
 
   it 'includes emergency-services category links' do
     within("#emergency-services") do
-      expect(page).to have_content "reporting"
+      expect(page).to have_content "Reporting"
     end
   end
 

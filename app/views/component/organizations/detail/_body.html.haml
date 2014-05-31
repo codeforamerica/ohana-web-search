@@ -172,44 +172,6 @@
           = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:languages, :stitle=>"Languages Spoken"}
           = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:accessibility, :stitle=>"Accessibility Options"}
 
-    - if (@org.fields & market_fields).any?
-      %section.payment-box
-        %h1 Payment & Products
-
-        %div
-          - if @org.key?(:payments) || @org.key?(:market_match)
-            %section.payments-accepted
-              %i{:class=>"fa fa-money"}
-              %h1 Payment methods accepted:
-              %ul
-                -if @org.key?(:payments)
-                  -@org.payments.sort.each do |payment|
-                    %li
-                      %span.term-popup-container
-                        %span.popup.hide
-                          - dynamic_partial = "component/popup/#{payment.downcase}"
-                          = render :partial => "#{dynamic_partial}" rescue nil
-                        %span.popup-term
-                          = payment
-                - if @org.key?(:market_match)
-                  %li
-                    %span.term-popup-container
-                      %span.popup.hide
-                        = render :partial => 'component/popup/market_match' rescue nil
-                      %span.market-match.popup-term
-                        Market Match
-
-
-          - if @org.key?(:products)
-            %section.products-sold
-              %i{:class=>"fa fa-shopping-cart"}
-              %h1 Products sold:
-              %ul
-                - @org.products.sort.each do |product|
-                  %li
-                    %span
-                      = product
-
     - if @org.key?(:services)
       %section.services-box
         %h1 Services

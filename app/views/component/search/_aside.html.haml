@@ -6,15 +6,6 @@
           %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
             %i{:class=>"fa fa-search"}
           = search_field_tag :keyword, params[:keyword], :placeholder => "search for...", :list => "search-keywords"
-          -#
-            - cache ['keywords-list', *cip_keywords] do
-              %datalist#search-keywords
-                <!--[if IE 8]><select disabled style="display:none"><![endif]-->
-                - cip_keywords.each do |keyword|
-                  %option{:value=>keyword}
-                    = keyword
-                <!--[if IE 8]> </select> <![endif]-->
-
 
       %ul#search-controls
         %li

@@ -1,8 +1,6 @@
 class FeedbackMailer < ActionMailer::Base
 
-  default to: %w[anselm@codeforamerica.org
-              sophia@codeforamerica.org
-              moncef@codeforamerica.org]
+  default to: %w[ohanapi@codeforamerica.org]
 
   # Sends contents of feedback form via email, including user agent
   # @param params [Hash] Email attributes (from, message, user agent)
@@ -12,7 +10,7 @@ class FeedbackMailer < ActionMailer::Base
     from       = params[:from].blank? ? "anonymous@none.com" : params[:from]
     user_agent = params[:agent] || '[no user agent recorded]'
 
-    subject = "[SMC Connect Feedback] #{from}"
+    subject = "[Ohana Web Search Feedback] #{from}"
     body    = "#{message}\n\n----------\n#{user_agent}"
 
     mail(
