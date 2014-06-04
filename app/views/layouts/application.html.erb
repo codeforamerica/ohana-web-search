@@ -88,7 +88,7 @@
     <%= render 'component/status/alert' %>
 
     <header id="content-header">
-      <h1 id="logo"><a href="/" target="_self"><img src="<%= asset_path('app_logo.png') %>" alt="Ohana Web Search Logo" /></a></h1>
+      <h1 id="logo"><a href="/" target="_self"><img src="<%= asset_path(SETTINGS[:site_logo]) %>" alt="<%= SETTINGS[:site_title] %> Logo" /></a></h1>
       <h2>Find community services</h2>
       <nav>
         <ul>

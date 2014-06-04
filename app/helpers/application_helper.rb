@@ -1,14 +1,13 @@
 module ApplicationHelper
-
-  # Handles formatting of the page title by appending site name to end
-  # of a particular page's title.
+  # Appends the site title to the end of the page title.
+  # The site title is defined in config/settings.yml.
   # @param page_title [String] the page title from a particular view.
   def title(page_title)
-    default = "Ohana Web Search"
+    site_title = SETTINGS[:site_title]
     if page_title.present?
-      content_for :title, "#{page_title.to_str} | #{default}"
+      content_for :title, "#{page_title.to_s} | #{site_title}"
     else
-      content_for :title, default
+      content_for :title, site_title
     end
   end
 
@@ -23,80 +22,6 @@ module ApplicationHelper
   # More info: https://support.google.com/webmasters/answer/139066
   def canonical(url)
     content_for(:canonical, tag(:link, :rel => :canonical, :href => url)) if url
-  end
-
-  # Top level services and their children categories.
-  # Displayed on the home page.
-  # @return [Array] Array of hashes with parent and children describing titles and list items.
-  def service_terms
-    terms = YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }homepage_links.yml", __FILE__)))
-    terms['general']
-  end
-
-  # Top level services and their children categories.
-  # Displayed on the home page.
-  # @return [Array] Array of hashes with parent and children describing titles and list items.
-  def emergency_terms
-    terms = YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }homepage_links.yml", __FILE__)))
-    terms['priority']
-  end
-
-  # @return [Hash] Defines which query terms will display an info box
-  # on the results page for select keywords.
-  def info_box_terms
-    YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }terminology.yml", __FILE__)))
-  end
-
-  # @return [Hash] Returns a hash that should be fed into a `render` command
-  # that will corresponds to the info box partial in /app/views/component/terminology,
-  # or nil if no search keyword is present.
-  def dynamic_partial
-    if params[:keyword].present?
-      keyword = params[:keyword].downcase
-      # Create 2 arrays: one containing the search terms of the info_box_terms,
-      # and the other containing all the synonyms of those terms.
-      main_terms = info_box_terms.keys
-      synonyms = []
-      info_box_terms.select { |k,v| synonyms.push(v['synonyms']) }
-      synonyms.flatten!
-
-      # Check if the keyword matches any of the terms or synonyms.
-      if (main_terms + synonyms).include?(keyword)
-
-        # If the keyword matches a value, we find the corresponding key.
-        # The key is what the partial name corresponds to.
-        if synonyms.include?(keyword)
-          partial = info_box_terms.find { |k,v| v['synonyms'].include? keyword }.first
-        # Otherwise, it means the keyword matches a key
-        else
-          partial = keyword
-        end
-
-        # Grab the specific term details for filling a template partial.
-        term = info_box_terms[partial]
-
-        # Replace spaces in the key string with underscores to match
-        # the partial name (see app/views/components/terminology),
-        # and return the path to the partial for use in the view.
-        dynamic_partial = partial.tr(' ','_')
-
-        # Specify the path to the partial.
-        partial_path = 'component/terminology'
-
-        # If a partial with the specified name does not exist and the term
-        # contains a title, description, and link in the yaml file, use the
-        # template partial.
-        if !File.exist?("#{Rails.root.join('app','views',partial_path,'_'+dynamic_partial+'.html.haml')}") &&
-          info_box_terms[partial].key?('title') &&
-          info_box_terms[partial].key?('description') &&
-          info_box_terms[partial].key?('url')
-
-          dynamic_partial = 'template'
-        end
-
-        {:partial => "#{partial_path}/#{dynamic_partial}", :locals => {:term=>term}}
-      end
-    end
   end
 
   # List of Open Eligibility categories for when no search results are found.
@@ -208,5 +133,4 @@ module ApplicationHelper
         ]
     }
   end
-
 end

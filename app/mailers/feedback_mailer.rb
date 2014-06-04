@@ -1,6 +1,6 @@
 class FeedbackMailer < ActionMailer::Base
 
-  default to: %w[ohanapi@codeforamerica.org]
+  default to: SETTINGS.try(:[], :feedback_email).try(:[], 'to')
 
   # Sends contents of feedback form via email, including user agent
   # @param params [Hash] Email attributes (from, message, user agent)
@@ -9,14 +9,16 @@ class FeedbackMailer < ActionMailer::Base
     message    = params[:message] || '[no message entered]'
     from       = params[:from].blank? ? "anonymous@none.com" : params[:from]
     user_agent = params[:agent] || '[no user agent recorded]'
+    url        = ENV['DOMAIN_NAME']
+    site_title = SETTINGS[:site_title]
 
-    subject = "[Ohana Web Search Feedback] #{from}"
-    body    = "#{message}\n\n----------\n#{user_agent}"
+    subject = "[#{site_title} Feedback] #{from}"
+    body    = "#{message}\n\n----------\n#{user_agent}" \
+              "\n\nURL: #{url}"
 
     mail(
       from: from,
       subject: subject,
       body: body)
   end
-
 end
