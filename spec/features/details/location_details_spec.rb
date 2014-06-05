@@ -30,10 +30,12 @@ feature "location details" do
     expect(page).to have_content("2013 Avenue of the fellows")
   end
 
-  scenario "when the details page is visited directly with invalid id", :vcr do
-    visit('/organizations/foobar')
-    expect(page).to have_content("CalFresh")
-    expect(page).to have_title "SMC-Connect"
+  context "when the details page is visited directly with invalid id", :vcr do
+    it 'redirects to the homepage' do
+      visit('/organizations/foobar')
+      expect(page).to have_content("Government Assistance")
+      expect(page).to have_title "Ohana Web Search"
+    end
   end
 
   context 'when phone elements are present' do
@@ -160,8 +162,8 @@ feature "location details" do
       expect(page).to have_content("SAMTRANS stops within 1 block")
     end
 
-    it "sets the page title to the location name" do
-      expect(page).to have_title("San Maceo Agency | SMC-Connect")
+    it "sets the page title to the location name + site title" do
+      expect(page).to have_title("San Maceo Agency | Ohana Web Search")
     end
   end
 end

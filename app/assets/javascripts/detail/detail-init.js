@@ -1,25 +1,32 @@
-require(['detail/detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'],function (map,cl,tpm,header) {
+require([
+  'detail/detail-map-manager',
+  'detail/character-limiter',
+  'search/header-manager'
+], function (map,cl,header) {
   'use strict';
 
   map.init();
   cl.init();
-  tpm.init();
   header.init();
 
 }, function (err) {
   'use strict';
-  //The error callback
-  //The err object has a list of modules that failed
+  //The error callback.
+  //The `err` object has a list of modules that failed.
   var failedId = err.requireModules && err.requireModules[0];
   requirejs.undef(failedId);
 
   console.log("RequireJS threw an Error:",failedId,err.requireType);
 
-  // initialize no map loaded state
-  require(['detail/no-detail-map-manager','detail/character-limiter','detail/term-popup-manager','search/header-manager'], function (map,cl,tpm,header) {
+  // Initialize no map loaded state.
+  require([
+    'detail/no-detail-map-manager',
+    'detail/character-limiter',
+    'detail/term-popup-manager',
+    'search/header-manager'
+  ], function (map,cl,header) {
     map.init();
     cl.init();
-    tpm.init();
     header.init();
   });
 });

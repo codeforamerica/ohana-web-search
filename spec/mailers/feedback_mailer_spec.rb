@@ -11,8 +11,7 @@ describe FeedbackMailer do
     end
 
     it "should be delivered to the default email address(es)" do
-      recipients = "anselm@codeforamerica.org, sophia@codeforamerica.org,"
-      recipients << "moncef@codeforamerica.org"
+      recipients = %w(ohanapi@codeforamerica.org)
       expect(@email).to deliver_to(recipients)
     end
 
@@ -21,7 +20,7 @@ describe FeedbackMailer do
     end
 
     it "should have the correct subject" do
-      expect(@email).to have_subject("[SMC Connect Feedback] #{@params[:from]}")
+      expect(@email).to have_subject("[Ohana Web Search Feedback] #{@params[:from]}")
     end
   end
 
@@ -34,8 +33,7 @@ describe FeedbackMailer do
     end
 
     it "should be delivered to the default email address(es)" do
-      recipients = "anselm@codeforamerica.org, sophia@codeforamerica.org,"
-      recipients << "moncef@codeforamerica.org"
+     recipients = %w(ohanapi@codeforamerica.org)
       expect(@email).to deliver_to(recipients)
     end
 
@@ -44,8 +42,7 @@ describe FeedbackMailer do
     end
 
     it "should have the correct subject" do
-      expect(@email).to have_subject("[SMC Connect Feedback] anonymous@none.com")
+      expect(@email).to have_subject("[Ohana Web Search Feedback] anonymous@none.com")
     end
   end
-
 end

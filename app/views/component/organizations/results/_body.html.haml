@@ -1,9 +1,9 @@
 = render 'component/organizations/results/header'
 %section#results-entries
-  - if dynamic_partial
+  - if info_box_key_corresponding_to_keyword.present?
     %section#terminology
       %div
-        = render :partial => dynamic_partial
+        = render_info_box(info_box_key_corresponding_to_keyword)
 
   - if @orgs.present?
     - if @map_data.present?

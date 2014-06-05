@@ -17,12 +17,6 @@ module DetailFormatHelper
   end
 
   # List of fields that determine whether or not to show the
-  # Payments & Products section in the details view
-  def market_fields
-    [:payments,:market_match,:products]
-  end
-
-  # List of fields that determine whether or not to show the
   # Aside section in the details view
   def contact_details
     [:ask_for,:phones,:faxes,:emails,:urls,:address]

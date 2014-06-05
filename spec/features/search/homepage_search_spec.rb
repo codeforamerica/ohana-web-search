@@ -15,27 +15,7 @@ feature "homepage search" do
     expect(page).not_to have_content("No results located!")
   end
 
-    scenario "when searching for 'food stamps'", :vcr do
-    search_from_home(:keyword => 'food stamps')
-    expect(page).to have_content("Known federally as SNAP")
-  end
-
-  scenario "when searching for 'health care reform'", :vcr do
-    search_from_home(:keyword => 'Health care reform')
-    expect(page).to have_content("Millions of Californians can choose")
-  end
-
-  scenario "when searching for 'sfmnp'", :vcr do
-    search_from_home(:keyword => 'SFMNP')
-    expect(page).to have_content("provides low-income seniors with coupons")
-  end
-
-  scenario "when searching for 'wic'", :vcr do
-    search_from_home(:keyword => 'wic')
-    expect(page).to have_content("provides assistance for low-income")
-  end
-
-  scenario "when clicking a category", :vcr do
+  scenario "when clicking a general link", :vcr do
     visit("/")
     click_link("Health Insurance")
     expect(page).to have_content("Little House")

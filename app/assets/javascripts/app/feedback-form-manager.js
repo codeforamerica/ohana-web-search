@@ -82,6 +82,8 @@ define(['util/util','jquery'],function(util,$) {
   {
     var agent = '\nUser agent: ' + navigator.userAgent;
 
+    var csrfToken = $("meta[name='csrf-token']").attr("content");
+
     var transmission = {
       message: _commentInput.value,
       from: _emailInput.value,
@@ -89,6 +91,9 @@ define(['util/util','jquery'],function(util,$) {
     };
 
     $.ajax({
+        headers: {
+          'X-CSRF-Token': csrfToken
+        },
         url     : '/feedback',
         type    : 'POST',
         dataType: 'json',

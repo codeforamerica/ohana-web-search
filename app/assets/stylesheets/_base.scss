@@ -418,80 +418,6 @@ sup
   }
 }
 
-
-//=================================================================================
-// popup styles - not currently used
-
-.term-popup-container
-{
-  position: relative;
-
-  .popup
-  {
-    min-width: 150px;
-
-      @include border-radius(5px 5px 5px 0px);
-      background: $white;
-      border: 1px solid $greyscale_midtone; // IE fallback
-      border: 1px solid rgba($black, .4);
-      @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px );
-      color: $black;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: 9999;
-      cursor: default;
-      font-size: $font_size_90;
-      font-style: normal;
-
-    div
-    {
-        padding: 10px;
-        margin: 0;
-    }
-
-    dl
-    {
-      margin: 0;
-    }
-
-    dt
-    {
-      font-weight: bold;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black, .4);
-    }
-
-    dd
-    {
-      margin: 0;
-    }
-
-    .corner
-    {
-        border-radius: 0px 10px 0px 0px;
-        width: 10px;
-        height: 10px;
-        padding: 0;
-        margin: 0;
-        background: $greyscale_midtone; // IE fallback
-        background: rgba($black, .4);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-    }
-  }
-
-  .popup-term.active:hover
-  {
-    cursor: pointer;
-    color: dark($blue);
-    border-bottom: 1px solid $greyscale_midtone; // IE fallback
-    border-bottom: 1px solid rgba($black, .4);
-  }
-
-}
-
 //=================================================================================
 // content area is everything aside from the loading screen
 // this section sets up the header and footer, but not the main content area
@@ -573,11 +499,6 @@ sup
     background: $white;
     clear: both;
     border-top: 2px solid dark($blue);
-
-    #hsa-logo a
-    {
-      border-bottom: none;
-    }
 
     p
     {

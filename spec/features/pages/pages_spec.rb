@@ -5,7 +5,7 @@ feature 'Site Pages' do
 
   scenario 'when visiting about page directly' do
     visit ('/about')
-    expect(page).to have_title "About | SMC-Connect"
+    expect(page).to have_title "About | Ohana Web Search"
     expect(page).to have_content "Geocoding courtesy of Google"
     expect(page).to have_content "Anselm Bradford"
     expect(page).to have_content "Moncef Belyamani"
