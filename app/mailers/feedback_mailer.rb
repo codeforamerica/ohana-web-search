@@ -9,7 +9,7 @@ class FeedbackMailer < ActionMailer::Base
     message    = params[:message] || '[no message entered]'
     from       = params[:from].blank? ? "anonymous@none.com" : params[:from]
     user_agent = params[:agent] || '[no user agent recorded]'
-    url        = ENV['DOMAIN_NAME']
+    url        = ENV['CANONICAL_URL']
     site_title = SETTINGS[:site_title]
 
     subject = "[#{site_title} Feedback] #{from}"
