@@ -30,10 +30,8 @@
           %ul
             - taxonomy_terms.keys.each do |parent|
               %li
-                %a{ :href => "/organizations?category=#{u parent}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{parent}']" }
-                  = parent
+                = link_to parent, "/organizations?category=#{u parent}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{parent}"
                 %ul
                   - taxonomy_terms[parent].each do |child|
                     %li
-                      %a{ :href => "/organizations?category=#{u child}", "data-gaq" => "['_trackEvent', 'Results_Categories', 'Click', '#{child}']" }
-                        = child
+                      = link_to child, "/organizations?category=#{u child}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{child}"
