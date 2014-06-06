@@ -1,5 +1,5 @@
 // Manages behavior of feedback form
-define(['util/util','trim','jquery'],function(util,trim,$) {
+define(['util/util','jquery'],function(util,$) {
   'use strict';
 
   // PRIVATE PROPERTIES
@@ -42,7 +42,7 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
   function _sendBtnClicked(evt)
   {
     evt.preventDefault(); // stop the form from submitting
-    var emailCheck = new RegExp('.+@.+\..+','i');
+    var emailCheck = new RegExp('.+@.+\..+','i'); // jshint ignore:line
     var match = emailCheck.exec(_emailInput.value);
     if (match || _emailInput.value === '')
       _feedbackFormSend();
@@ -82,6 +82,8 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
   {
     var agent = '\nUser agent: ' + navigator.userAgent;
 
+    var csrfToken = $("meta[name='csrf-token']").attr("content");
+
     var transmission = {
       message: _commentInput.value,
       from: _emailInput.value,
@@ -89,6 +91,9 @@ define(['util/util','trim','jquery'],function(util,trim,$) {
     };
 
     $.ajax({
+       headers: {
+          'X-CSRF-Token': csrfToken
+        },
         url     : '/feedback',
         type    : 'POST',
         dataType: 'json',

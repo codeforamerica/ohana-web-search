@@ -136,7 +136,7 @@ class OrganizationsController < ApplicationController
   private
 
   # Used for generating data for the two Google maps used in the app:
-  # (1) The search results map and (2) nearby locations map on details view.
+  # The search results map and the map on the details view.
   # Method generates json for the maps that will be injected into a <script>
   # element in the view and then consumed by the map-manager or detail-map-manager
   # javascript. The map_data variable parses the object returned from the API

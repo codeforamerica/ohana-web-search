@@ -117,7 +117,6 @@ module ApplicationHelper
     ["Arts","Clinics","Education","Entertainment","Farmers' Markets","Government","Human Services","Libraries","Museums","Other","Parks","Sports"]
   end
 
-
   # List of Open Eligibility categories for when no search results are found.
   # @return [Array] Arrays of categories and sub-categories.
   # Only returns categories that have been associated with services since

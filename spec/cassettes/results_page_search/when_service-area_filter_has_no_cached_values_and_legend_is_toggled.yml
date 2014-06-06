@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&org_name=Custom%20Value&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,18 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:14:43 GMT
+      - Fri, 30 May 2014 10:28:17 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&org_name=Custom+Value&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - a23c558b-7a52-4be5-90af-5a0ae0fcd371
+      - 522bd253-0bc1-4d02-8130-5df3a48e3076
       X-Runtime:
-      - '0.081883'
+      - '0.027630'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -47,53 +51,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:43 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 22:14:44 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
-      Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
-        rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - eaaf2c4c-bc51-4b1a-8d5e-3181a02a7a5d
-      X-Runtime:
-      - '0.066890'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
-      Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Mon, 26 May 2014 22:14:44 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:28:17 GMT
+recorded_with: VCR 2.9.2

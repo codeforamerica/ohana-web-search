@@ -1,10 +1,10 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'coveralls'
 Coveralls.wear!('rails')
+# Don't put anything above this!
 
 ENV["RAILS_ENV"] ||= 'test'
 ENV['TZ'] = 'America/Los_Angeles'
-
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
@@ -43,6 +43,7 @@ end
 # this line: all('a').each { |a| puts a[:href] }
 
 Capybara.javascript_driver = :poltergeist
+Capybara.default_wait_time = 30
 
 RSpec.configure do |config|
 
@@ -71,35 +72,7 @@ VCR.configure do |c|
   c.default_cassette_options = { :record => :once }
   c.cassette_library_dir  = "spec/cassettes"
   c.hook_into :webmock
-  c.filter_sensitive_data("<API_TOKEN>") do
-    ENV['OHANA_API_TOKEN']
-  end
   c.filter_sensitive_data("<GOOGLE_TRANSLATE>") do
     ENV['GOOGLE_TRANSLATE_API_TOKEN']
   end
-end
-
-def stub_get(url)
-  stub_request(:get, ohanapi_url(url))
-end
-
-def ohanapi_url(url)
-  url =~ /^http/ ? url : "http://smc-ohana-api-test.herokuapp.com/api#{url}"
-end
-
-def fixture_path
-  File.expand_path("../fixtures", __FILE__)
-end
-
-def fixture(file)
-  File.new(fixture_path + '/' + file)
-end
-
-def json_response(file)
-  {
-    :body => fixture(file),
-    :headers => {
-      :content_type => 'application/json; charset=utf-8'
-    }
-  }
 end

@@ -9,37 +9,17 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _markersArray; // array for storing markers
   var _markerBounds; // the bounds of the markers
   var _locationMarker; // the location of the current org
-
-  //var _nearbyControl; // the show nearby locations button
   var _mapCanvas; // the details map div
-  //var _nearbyControlIcon; // icon in the nearby locations button
-  //var _nearbyControlTxt; // text in the nearby locations button
-
-  //var _nearbyShowing; //whether or not the nearby locations are showing
-
   var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
-
-  // constants for map button text content
-  //var NO_NEARBY = "NOTE: No nearby services at this location";
-  //var SHOW_NEARBY = "Show nearby services";
-  //var HIDE_NEARBY = "Hide nearby services";
 
   // PUBLIC METHODS
   function init()
   {
-    //_nearbyControl = document.getElementById("show-nearby-control");
     _mapCanvas = document.getElementById("detail-map-canvas");
-    //_nearbyShowing = false;
     _markersArray = [];
 
     if (_mapCanvas)
     {
-      //_nearbyControlIcon = document.getElementById("show-nearby-control-icon");
-      //_nearbyControlTxt = document.getElementById("show-nearby-control-text");
-
-      _loadData();
-      //_initControlText();
-
       var title = document.getElementById("detail-map-canvas-title");
       var lat = document.getElementById("detail-map-canvas-lat");
       var lng = document.getElementById("detail-map-canvas-lng");
@@ -73,6 +53,11 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
           position: latLng
         });
 
+      google.maps.event.addListener(_locationMarker, 'click', function() {
+        _infoWindow.setContent(title);
+        _infoWindow.open(_map, _locationMarker);
+      });
+
       _refresh();
     }
     else
@@ -80,137 +65,6 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       console.log("Warning: The detail map container was not found!");
     }
 
-  }
-
-  // nearby map control was clicked
-  // function _nearbyControlClicked(evt)
-  // {
-  //   if (_nearbyShowing)
-  //   {
-  //     _hideNearby();
-  //     _nearbyShowing = false;
-  //   }
-  //   else
-  //   {
-  //     _showNearby();
-  //     _nearbyShowing = true;
-  //   }
-  //   _refresh();
-  // }
-
-  // show the nearby markers
-  // function _showNearby()
-  // {
-  //   _loadMarkers();
- //    var metadata = _markerData[_markerData.length-1];
-  //   var summaryText = "<span>"+metadata.count+" nearby services located</span>";
-  //   _nearbyControlTxt.innerHTML = summaryText+" • "+HIDE_NEARBY;
-  // }
-
-  // // hides the nearby markers
-  // function _hideNearby()
-  // {
-  //   _clearMarkers();
-  //   _nearbyControlTxt.innerHTML = SHOW_NEARBY;
-  // }
-
-  // loads the data
-  function _loadData()
-  {
-    var nearby = document.getElementById("map-locations");
-    if (nearby)
-    {
-      _markerData = JSON.parse(nearby.innerHTML);
-      nearby.parentNode.removeChild(nearby); // remove script element
-    }
-  }
-
-  // initializes nearby map control
-  // function _initControlText()
-  // {
-  //   if (_markerData)
-  //     {
-  //       _nearbyControl.classList.add('hover');
-  //       _nearbyControl.addEventListener("click", _nearbyControlClicked, false);
-  //       _nearbyControlTxt.innerHTML = SHOW_NEARBY;
-  //       _nearbyControlIcon.classList.remove('hide');
-  //     }
-  //     else
-  //     {
-  //       _nearbyControlTxt.innerHTML = NO_NEARBY;
-  //     }
-  // }
-
-  // loads markers
-  function _loadMarkers()
-  {
-    if (_markerData)
-    {
-      _markerBounds = new google.maps.LatLngBounds();
-      _markerBounds.extend(_locationMarker.position);
-
-      _clearMarkers();
-
-      var dataLength = _markerData.length;
-      for(var m = 0; m<dataLength-1; m++)
-      {
-        _loadMarker( _markerData[m] );
-      }
-    }
-  }
-
-  // clears all markers
-  function _clearMarkers()
-  {
-    for (var i = 0; i < _markersArray.length; i++ ) {
-      _markersArray[i].setMap(null);
-    }
-    _markersArray = [];
-  }
-
-  // load a single marker
-  function _loadMarker(markerData)
-  {
-    if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
-    {
-      var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
-
-      //var markerIcon = 'http://mt.google.com/vt/icon/text='+markerData['name'].substring(0,1)+'&psize=16&font=fonts/arialuni_t.ttf&color=ff330000&name=icons/spotlight/spotlight-waypoint-a.png&ax=44&ay=48&scale=1';
-      var markerIcon = 'https://mts.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-a.png&scale=0.5';
-
-      var marker = new google.maps.Marker({
-        id: markerData['id'],
-        map: _map,
-        title: markerData['name'],
-        position: myLatlng,
-        icon: markerIcon
-      });
-
-      _markersArray.push(marker);
-
-      var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
-      var content = "<h1>"+markerData['name']+"</h1>"+agency+"<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
-      _makeInfoWindowEvent(_map, _infoWindow, content, marker);
-
-      google.maps.event.addListener(marker, 'click', _markerClickedHandler);
-
-      _markerBounds.extend(myLatlng);
-
-    }
-  }
-
-  // set the content in the info window
-  function _makeInfoWindowEvent(map, infowindow, contentString, marker) {
-    google.maps.event.addListener(marker, 'mouseover', function() {
-      _infoWindow.setContent(contentString);
-      _infoWindow.open(map, marker);
-    });
-  }
-
-  // a location marker was clicked, perform a search for the organization details
-  function _markerClickedHandler(evt)
-  {
-    window.location.href = '/organizations/'+this.id+(window.location.search);
   }
 
   // refresh the data
@@ -230,7 +84,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   return {
     init:init
   };
-}, function (err) {
+},
+function (err)
+{
   'use strict';
   //The error callback
   //The err object has a list of modules that failed

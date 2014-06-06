@@ -18,4 +18,5 @@ require(['result/result-map-manager','search/header-manager'], function (map,hea
     map.init();
     header.init();
   });
-});
+}
+);

@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+// buttons
+.button-small
+{
+  background:none;
+  border:none;
+
+  @include type-size(baseline);
+  font-family: $font_san_serif;
+  @include border-radius(4px);
+  @include box-sizing(border-box);
+  padding: 4px 6px;
+  cursor: pointer;
+  border: 1px solid darkest($blue,0);
+  color: light($black);
+
+  .fa
+  {
+    color: darkest($blue);
+  }
+}
+
+.button-small:hover
+{
+  background: light($blue);
+  border: 1px solid darkest($blue,0.2);
+  color: darkest($purple);
+
+  .fa
+  {
+    color: darkest($purple);
+  }
+}
+
+a.button-small,
+a.button-small:hover
+{
+  font-family: $font_san_serif;
+  text-decoration: none;
+}
+
+a.button-small:not([href])
+{
+  @extend .button-small:hover;
+  cursor:default;
+}
+
+
+.button-medium
+{
+  padding: 4px 6px;
+  cursor: pointer;
+  @include type-size(baseline);
+  letter-spacing: 0px;
+  font-family: $font_san_serif;
+  padding-left: 7px;
+  padding-right: 7px;
+  @include border-radius(4px);
+  background: light($green);
+  border: 1px solid darkest($blue); // IE Fallback
+  border: 1px solid darkest($blue,0.4);
+  color: light($black);
+
+  .fa
+  {
+    color: darkest($blue);
+  }
+}
+
+.button-medium:hover
+{
+  background: shade(light($green),5);
+  color: darkest($purple);
+
+  .fa
+  {
+    color: darkest($purple);
+  }
+}
+
+
+// Utility buttons appear in the floating header, which is above the search results and
+// the details page and is set in a fixed position when the page scrolls.
+.button-utility
+{
+  background:none;
+  text-decoration: none;
+  @include inline-block();
+  @include type-size(baseline);
+  letter-spacing: 1px;
+  color: darkest($purple);
+  @include box-sizing(border-box);
+  padding:10px;
+  margin:0px;
+  cursor:pointer;
+
+  .fa
+  {
+    color: darkest($blue);
+  }
+
+  &:hover
+  {
+    background: lightest($purple);
+
+    .fa
+    {
+      color: darkest($purple);
+    }
+  }
+}
+

@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+// pagination styles
+
+.pagination
+{
+  text-align: left;
+  @include inline-block();
+
+  > h1,ul,li
+  {
+    @include inline-block();
+  }
+
+  li
+  {
+    vertical-align: baseline;
+    @include type-size(baseline);
+    text-align:center;
+    padding:10px;
+    min-width:15px;
+  }
+
+  li.collapsed
+  {
+    background: lightest($purple,0.1);
+  }
+
+  li:not(.collapsed):not(.current)
+  {
+    @include single-box-shadow( lightest($purple,0.3) , 0, 0, 1px, 0, inset );
+
+    &:hover
+    {
+      background: lightest($purple);
+      cursor:pointer;
+    }
+  }
+
+  a
+  {
+    color: darkest($purple);
+    text-decoration: none;
+    border-bottom:none;
+  }
+
+  .current
+  {
+    color: $white !important;
+    background: light($purple);
+  }
+
+  .next,
+  .prev
+  {
+    background:dark($blue);
+    a
+    {
+      color:$white;
+      padding-left:3px;
+      padding-right:3px;
+      border-bottom:none;
+    }
+    a:hover
+    {
+      text-decoration: none !important;
+    }
+  }
+
+  .next:hover,
+  .prev:hover
+  {
+    background: light($purple) !important;
+  }
+}

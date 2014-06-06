@@ -1,4 +1,16 @@
-// manages results maps view
+//= depend_on_asset 'markers/arts.png'
+//= depend_on_asset 'markers/clinics.png'
+//= depend_on_asset 'markers/education.png'
+//= depend_on_asset 'markers/entertainment.png'
+//= depend_on_asset 'markers/farmers_markets.png'
+//= depend_on_asset 'markers/government.png'
+//= depend_on_asset 'markers/human_services.png'
+//= depend_on_asset 'markers/libraries.png'
+//= depend_on_asset 'markers/museums.png'
+//= depend_on_asset 'markers/parks.png'
+//= depend_on_asset 'markers/sports.png'
+//= depend_on_asset 'markers/other.png'
+// Manages results maps view.
 define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback',
          'domReady!'],function () {
   'use strict';
@@ -14,8 +26,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _markerBounds; // the bounds of the markers
 
   // constants for map button text content
-  var LARGER_MAP_TEXT = "<i class='fa fa-search-minus'></i> View small map";
-  var SMALLER_MAP_TEXT = "<i class='fa fa-search-plus'></i> View large map";
+  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
+  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Zoom map";
 
   var _infoWindow; // info window to pop up on roll over
 
@@ -80,6 +92,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       _atMaxSize = true;
     }
     _refresh();
+
+    evt.preventDefault();
   }
 
   // loads markers
@@ -127,31 +141,30 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
       var markerIcon;
 
-
       if (markerData['kind'] === "Arts")
-        markerIcon = '/assets/markers/arts.png';
+        markerIcon = "<%= asset_path('markers/arts.png') %>";
       else if (markerData['kind'] === "Clinics")
-        markerIcon = '/assets/markers/clinics.png';
+        markerIcon = "<%= asset_path('markers/clinics.png') %>";
       else if (markerData['kind'] === "Education")
-        markerIcon = '/assets/markers/education.png';
+        markerIcon = "<%= asset_path('markers/education.png') %>";
       else if (markerData['kind'] === "Entertainment")
-        markerIcon = '/assets/markers/entertainment.png';
+        markerIcon = "<%= asset_path('markers/entertainment.png') %>";
       else if (markerData['kind'] === "Farmers' Markets")
-        markerIcon = '/assets/markers/farmers_markets.png';
+        markerIcon = "<%= asset_path('markers/farmers_markets.png') %>";
       else if (markerData['kind'] === "Government")
-        markerIcon = '/assets/markers/government.png';
+        markerIcon = "<%= asset_path('markers/government.png') %>";
       else if (markerData['kind'] === "Human Services")
-        markerIcon = '/assets/markers/human_services.png';
+        markerIcon = "<%= asset_path('markers/human_services.png') %>";
       else if (markerData['kind'] === "Libraries")
-        markerIcon = '/assets/markers/libraries.png';
+        markerIcon = "<%= asset_path('markers/libraries.png') %>";
       else if (markerData['kind'] === "Museums")
-        markerIcon = '/assets/markers/museums.png';
+        markerIcon = "<%= asset_path('markers/museums.png') %>";
       else if (markerData['kind'] === "Parks")
-        markerIcon = '/assets/markers/parks.png';
+        markerIcon = "<%= asset_path('markers/parks.png') %>";
       else if (markerData['kind'] === "Sports")
-        markerIcon = '/assets/markers/sports.png';
+        markerIcon = "<%= asset_path('markers/sports.png') %>";
       else
-        markerIcon = '/assets/markers/other.png';
+        markerIcon = "<%= asset_path('markers/other.png') %>";
 
       var marker = new google.maps.Marker({
         id: markerData['id'],
@@ -164,7 +177,8 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       _markersArray.push(marker);
 
       var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
-      var content = "<h1>"+markerData['name']+"</h1>"+agency+"<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
+      var content = "<h1>"+markerData['name']+"</h1>"+agency+
+      "<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
       _makeInfoWindowEvent(_map, _infoWindow, content, marker);
 
       google.maps.event.addListener(marker, 'click', _markerClickedHandler);
@@ -199,4 +213,5 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   return {
     init:init
   };
+
 });

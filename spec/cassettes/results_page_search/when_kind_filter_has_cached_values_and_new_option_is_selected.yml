@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,18 +23,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 23:52:31 GMT
+      - Fri, 30 May 2014 10:28:26 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - f81c2fae-d4da-4bcd-ba52-df9c409efef4
+      - 245b3952-2ae1-4dd9-8165-35820c662974
       X-Runtime:
-      - '0.070926'
+      - '0.032143'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -47,7 +51,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 26 May 2014 23:52:31 GMT
+  recorded_at: Fri, 30 May 2014 10:28:26 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&service_area=smc&utf8=%E2%9C%93
@@ -71,29 +75,31 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 23:52:34 GMT
-      Etag:
-      - '"cd1c4795b2b9ef316dc32ac0ba6b11dd"'
+      - Fri, 30 May 2014 10:28:28 GMT
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Next-Page:
       - '2'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 42953230-428b-456f-8a41-a02490d02824
+      - 0f265e1b-94ee-4e0c-bf01-9293c00f26fc
       X-Runtime:
-      - '2.069412'
+      - '0.754744'
       X-Total-Count:
       - '35'
       X-Total-Pages:
       - '2'
-      Content-Length:
-      - '84902'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -145,7 +151,7 @@ http_interactions:
         355-3900"}],"short_desc":"Offers a number of counseling programs for youth
         age 3-18, including youth with questions about their sexuality. Also offers
         counseling for adults.","slug":"pacifica","slugs":["pacifica"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T21:10:58.717-07:00","urls":["http://www.youthservicebureaus.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1686","services":[{"id":1690,"audience":"Children,
+        stops within 1 block.","updated_at":"2014-05-29T12:36:08.974-07:00","urls":["http://www.youthservicebureaus.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1686","services":[{"id":1690,"audience":"Children,
         adolescents, families and individuals","eligibility":"None","fees":"Vary according
         to income. Cash, checks and Medi-Cal accepted.","funding_sources":["County","Donations","Fees","Grants","School
         district"],"keywords":["CHILD PROTECTION AND CARE SERVICES","Crisis/Abuse
@@ -157,7 +163,7 @@ http_interactions:
         Mental Health","parent_id":92,"slug":"understand-mental-health"},{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":312,"depth":1,"oe_id":"111-01","name":"Advocacy
         \u0026 Legal Aid","parent_id":311,"slug":"advocacy-legal-aid"}],"how_to_apply":"Apply
         by phone.","service_areas":["San Mateo County","Daly City","El Granada","Half
-        Moon Bay","Miramar","Montara","Moss Beach","Pacifica","San Bruno"],"wait":"Varies.","updated_at":"2014-05-24T21:10:58.713-07:00"}],"organization":{"id":1343,"name":"Youth
+        Moon Bay","Miramar","Montara","Moss Beach","Pacifica","San Bruno"],"wait":"Varies.","updated_at":"2014-05-29T12:36:08.964-07:00"}],"organization":{"id":1343,"name":"Youth
         Service Bureaus of the YMCA","slug":"youth-service-bureaus-of-the-ymca","slugs":["youth-service-bureaus-of-the-ymca"],"_slugs":["youth-service-bureaus-of-the-ymca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343/locations"}},{"id":1685,"accessibility":["Wheelchair"],"address":{"id":1409,"street":"1486
         Huntington Avenue, Suite 100","city":"South San Francisco","state":"CA","zip":"94080-5932"},"ask_for":["Intake
         coordinator"],"contacts":[{"id":1989,"name":"Erika Jennings, MFT","title":"Director
@@ -234,8 +240,9 @@ http_interactions:
         East Palo Alto, Menlo Park and Palo Alto via affiliated branches.","faxes":[{"id":1085,"number":"650
         858-0664"}],"kind":"Other","mail_address":{"id":1678,"attention":"YMCA of
         Silicon Valley","street":"755 Page Mill Road, Bldg. B","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Page
-        Mill Branch","phones":[{"id":2457,"number":"650 858-0661"}],"slug":"page-mill-branch","slugs":["page-mill-branch"],"transportation":"VTA
-        stops within 4 blocks.","updated_at":"2014-05-24T21:12:05.403-07:00","urls":["http://www.ymcasv.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1681","services":[{"id":1681,"eligibility":"None","fees":"Vary
+        Mill Branch","phones":[{"id":2457,"number":"650 858-0661"}],"short_desc":"Provides
+        health and physical fitness programs.","slug":"page-mill-branch","slugs":["page-mill-branch"],"transportation":"VTA
+        stops within 4 blocks.","updated_at":"2014-05-29T12:18:35.559-07:00","urls":["http://www.ymcasv.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1681","services":[{"id":1681,"eligibility":"None","fees":"Vary
         according to service and income ($65/month full year membership). Cash, checks
         and credit cards accepted.","funding_sources":["Donations","Fees","Membership
         dues"],"keywords":["RECREATION/LEISURE SERVICES","Sports/Games/Exercise","Y
@@ -244,7 +251,7 @@ http_interactions:
         Life Skills","parent_id":92,"slug":"daily-life-skills"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
         Care","parent_id":196,"slug":"daytime-care"}],"how_to_apply":"Walk in.","service_areas":["Atherton","East
         Palo Alto","Los Altos","Los Altos Hills","Menlo Park","Monte Vista","Mountain
-        View","Palo Alto","Stanford"],"wait":"No wait.","updated_at":"2014-05-24T19:15:53.516-07:00"}],"organization":{"id":1342,"name":"YMCA
+        View","Palo Alto","Stanford"],"wait":"No wait.","updated_at":"2014-05-29T12:18:35.553-07:00"}],"organization":{"id":1342,"name":"YMCA
         of Silicon Valley","slug":"ymca-of-silicon-valley","slugs":["ymca-of-silicon-valley"],"_slugs":["ymca-of-silicon-valley"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342/locations"}},{"id":1677,"accessibility":["Wheelchair"],"address":{"id":1401,"street":"16275
         Highway 9","city":"Boulder Creek","state":"CA","zip":"95006"},"ask_for":["Receptionist"],"coordinates":[-122.1347335,37.1628316],"description":"Provides
         camp and conference grounds/program, outdoor science school, local community
@@ -859,5 +866,5 @@ http_interactions:
         Shelter","Family Shelter"],"service_areas":["San Mateo County"],"updated_at":"2014-05-24T14:07:16.128-07:00"}],"organization":{"id":1308,"name":"San
         Mateo County District Attorney","slug":"san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc","slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"_slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308/locations"}}]'
     http_version: 
-  recorded_at: Mon, 26 May 2014 23:52:34 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:28:28 GMT
+recorded_with: VCR 2.9.2

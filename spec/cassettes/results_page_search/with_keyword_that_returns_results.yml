@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,29 +23,31 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:15:58 GMT
-      Etag:
-      - '"61be5a1692632b178a091aa9b3fbc439"'
+      - Fri, 30 May 2014 10:31:51 GMT
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&page=4&per_page=30&service_area=smc&utf8=%E2%9C%93>;
-        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&location=&page=4&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&kind=Human+Services&location=&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Next-Page:
       - '2'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - f6ed7aa7-88ff-40c9-944f-974321aa2e90
+      - a87a2db2-4800-4a57-8425-c27e1c6174e8
       X-Runtime:
-      - '1.985672'
+      - '0.520306'
       X-Total-Count:
       - '120'
       X-Total-Pages:
       - '4'
-      Content-Length:
-      - '112687'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -1058,7 +1060,7 @@ http_interactions:
         wait.","updated_at":"2014-05-24T14:07:57.929-07:00"}],"organization":{"id":1332,"name":"St.
         Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}}]'
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:15:58 GMT
+  recorded_at: Fri, 30 May 2014 10:31:51 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=maceo
@@ -1082,23 +1084,25 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 26 May 2014 22:15:59 GMT
-      Etag:
-      - '"e18dec8ef7d62294040539693fe88aa8"'
+      - Fri, 30 May 2014 10:31:51 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - b2ae5a87-79b0-4904-ad7e-6656f1c94a1e
+      - 87d53d72-1435-4466-a6ac-a585ad230970
       X-Runtime:
-      - '0.107381'
+      - '0.065435'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      Content-Length:
-      - '5856'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
@@ -1163,5 +1167,5 @@ http_interactions:
         wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
         Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}]'
     http_version: 
-  recorded_at: Mon, 26 May 2014 22:15:59 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Fri, 30 May 2014 10:31:51 GMT
+recorded_with: VCR 2.9.2

@@ -3,9 +3,7 @@ module Features
 
     # search helpers
     def search(options = {})
-      keyword = options[:keyword]
-      fill_in('keyword', :with => keyword)
-
+      fill_in 'keyword', :with => options[:keyword]
       if options[:location].present?
         set_location_filter(options)
       end
@@ -13,6 +11,8 @@ module Features
       find('#find-btn').click
     end
 
+    # Search from homepage.
+    # @param options [Object] Hash containing keyword to search for.
     def search_from_home(options = {})
       visit ("/")
       keyword = options[:keyword]
@@ -20,25 +20,36 @@ module Features
       find('#find-btn').click
     end
 
+    # Perform a search that returns 1 result
     def search_for_maceo
       visit('/organizations?keyword=maceo')
     end
 
-    def search_for_human_services_in_smc
-      visit('/organizations?service_area=smc&kind=Human+Services')
-    end
-
+    # Visit details page
     def visit_test_location
       visit('/organizations/sanmaceo-example-agency/san-maceo-agency')
     end
 
+    # Visit details page that has no address
     def visit_location_with_no_address
       visit('organizations/location-with-no-phone')
     end
 
+    # Perform search that returns 1 result that has no address
     def search_for_location_without_address
       visit('organizations?org_name=Location+with+no+phone')
     end
+
+    # Perform a search that returns no results
+    def search_for_no_results
+      visit('organizations?keyword=asdfdsggfdg')
+    end
+
+    # Clear filters and update results
+    def clear_filters_and_update
+      visit('/organizations')
+    end
+
 
     # helpers for filters
     def set_location_filter(options = {})
@@ -49,17 +60,16 @@ module Features
     # @param field [String] the CSS name of the field
     # @param value [String] the value to fill the field with.
     def set_filter(fieldset, field, value, custom = true)
-      within(".require-loaded") do
-        within("##{fieldset}-options") do
-          find(".closed").click
-          if field.present? && custom == true
-            find(".add .toggle").trigger('mousedown')
-            fill_in("#{field}", :with => value)
-          elsif custom == false
-            find(".toggle-group",:text => value).trigger('mousedown')
-          else
-            first("label").click
-          end
+      find(".require-loaded")
+      within("##{fieldset}-options") do
+        find(".closed").click
+        if field.present? && custom == true
+          find(".add .toggle").trigger('mousedown')
+          fill_in("#{field}", :with => value)
+        elsif custom == false
+          find(".toggle-group",:text => value).trigger('mousedown')
+        else
+          first("label").click
         end
       end
     end
@@ -89,18 +99,19 @@ module Features
       find(".require-loaded")
       within("##{name}-options") do
         # test clicking toggle functionality
-        expect(all(".current-option label").last).to have_content(val)
+        #expect(all(".current-option label").last).to have_content(val)
         all(".current-option label").last.trigger("mousedown")
         expect(page).to have_selector(".open")
         expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
-        find(".options label",:text=>val).trigger("mousedown")
+        find(".options label",:text=>val).click
+        find(".open").click
         expect(all(".current-option label").last).to have_content(val)
       end
     end
 
     # navigation helpers
     def visit_details
-      page.find("#list-view").first('a').trigger('click')
+      page.find("#list-view").first('a').click
     end
 
     def looks_like_results
@@ -112,7 +123,6 @@ module Features
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
-      expect(page).to have_selector("#search-summary")
       expect(page).not_to have_selector('#map-canvas')
     end
 
@@ -144,15 +154,6 @@ module Features
 
     def go_to_page(page)
       first('.pagination').find_link(page).click
-    end
-
-    # webbrowser navigation using browser's JS history API
-    def go_back
-      page.evaluate_script("window.history.back()")
-    end
-
-    def go_forward
-      page.evaluate_script("window.history.forward()")
     end
 
     # helper to (hopefully) wait for page to load
