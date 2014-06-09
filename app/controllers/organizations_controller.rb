@@ -71,7 +71,7 @@ class OrganizationsController < ApplicationController
     @search_params = request.params.except(:action, :id, :_, :controller)
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
-    # initializes map data for search results map
+    # Initializes map data for search results map.
     @map_data = generate_map_data(@orgs)
 
     # construct html and plain results summaries for use in display in the view (html)
@@ -96,7 +96,7 @@ class OrganizationsController < ApplicationController
 
     initialize_filter_data(@org) # intialize search filter data
 
-    # initializes map data
+    # Initializes map data.
     # Fetching nearby places is the most time-consuming activity in the app.
     # The API method needs to be optimized, but the app should not be
     # automatically fetching them every time you visit the details page.
@@ -138,22 +138,25 @@ class OrganizationsController < ApplicationController
   # Used for generating data for the two Google maps used in the app:
   # The search results map and the map on the details view.
   # Method generates json for the maps that will be injected into a <script>
-  # element in the view and then consumed by the map-manager or detail-map-manager
-  # javascript. The map_data variable parses the object returned from the API
-  # and retrieves all entries that have coordinates, and returns that as json,
-  # otherwise map_data ends up being nil and can be checked in the view with
-  # map_data.present?
+  # element in the view and then consumed by the map-manager or
+  # detail-map-manager javascript. The map_data variable parses the object
+  # returned from the API and retrieves all entries that have coordinates
+  # (latitude and longitude), and returns that as json, otherwise map_data
+  # ends up being nil and can be checked in the view with map_data.present?
   # @param data [Object] API response data
-  # @return [Object] JSON object containing id, name, and coordinates.
+  # @return [Object] JSON object containing id, name, latitude and longitude.
   # Or nil if there are no mappable entries.
   def generate_map_data(data)
 
-    return nil if data.blank? # return immediately if data is empty
+    # Return immediately if data is empty.
+    return nil if data.blank?
 
-    @total_map_count = data.count # total number of returned results
+    # Total number of returned results.
+    @total_map_count = data.count
     @current_map_count = 0
 
-    coords_list = Hash.new(0) # used for tracking coordinate frequencies
+    # For tracking the number of coordinates that are at the same position.
+    coords_list = Hash.new(0)
 
     map_data = data.reduce([]) do |result, o|
 
@@ -164,17 +167,21 @@ class OrganizationsController < ApplicationController
       #else
 
       if o.key?(:coordinates)
-        new_coords = o.coordinates
 
-        # increment coordinate tracking and offset position if greater than 1 occurrance
-        coords_list[new_coords.to_s] += 1
-        offset = (0.0001*(coords_list[new_coords.to_s]-1))
-        new_coords = [o.coordinates[0]-offset,o.coordinates[1]]
+        # Increment coordinate tracking and offset position if greater
+        # than 1 occurrance so that markers do not overlap each other.
+        latitude = o.latitude
+        longitude = o.longitude
+        coords_str = [latitude,longitude].to_s
+        coords_list[coords_str] += 1
+        offset = (0.0001*(coords_list[coords_str]-1))
+        latitude = latitude-offset
 
         details = {
           'id' => o.id,
           'name' => o.name,
-          'coordinates' => new_coords
+          'latitude' => latitude,
+          'longitude' => longitude
         }
 
         if o.organization.key?(:name) && o.organization.name != o.name
@@ -188,11 +195,11 @@ class OrganizationsController < ApplicationController
       result
     end
 
-    # set a count and total value that will show how many (count)
+    # Set a count and total value that will show how many (count)
     # of the data (total) were able to be located because they had coordinates.
     map_data.push({'count'=>@current_map_count,'total'=>@total_map_count})
 
-    # set map_data to nil if there are no entries
+    # Set map_data to nil if there are no entries.
     map_data = nil if (map_data[0]['count'] == 0)
     map_data = map_data.to_json.html_safe unless map_data.nil?
   end

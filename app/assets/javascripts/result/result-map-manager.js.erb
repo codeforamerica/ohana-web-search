@@ -124,9 +124,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   // load a single marker
   function _loadMarker(markerData)
   {
-    if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+    if (markerData['longitude'] && markerData['latitude'])
     {
-      var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+      var myLatlng = new google.maps.LatLng(markerData['latitude'],markerData['longitude']);
 
       var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
