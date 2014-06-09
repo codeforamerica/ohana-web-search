@@ -127,7 +127,8 @@ ul
 #category-box a,
 #detail-info a,
 .popup-container a,
-section.no-results .message a
+section.no-results .message a,
+footer a
 {
   text-decoration: none;
   color: $greyscale_midtone; // IE fallback
@@ -139,14 +140,15 @@ section.no-results .message a
 #category-box a:hover,
 #detail-info a:hover,
 .popup-container a:hover,
-section.no-results .message a:hover
+section.no-results .message a:hover,
+footer a:hover
 {
   color: dark($blue);
   border-bottom: 1px solid $greyscale_midtone;
   border-bottom: 1px solid rgba($black, .4);
 }
 
-// prevent selection of font awesome icons
+// Prevent selection of font awesome icons.
 .fa
 {
   -webkit-touch-callout: none;
@@ -164,7 +166,7 @@ section.no-results .message a:hover
 {
   a
   {
-    color: darkest($blue);
+    color: dark($blue);
   }
 }
 
@@ -499,10 +501,12 @@ sup
     background: $white;
     clear: both;
     border-top: 2px solid dark($blue);
+    padding-bottom: 20px;
 
-    p
+    >p,>div
     {
       padding: 20px;
+      padding-bottom: 0;
       font-size: $font_size_95;
       font-family: $font_san_serif;
       color: $greyscale_midtone;
@@ -518,7 +522,7 @@ sup
       background-repeat: no-repeat;
       padding-right: 10px;
       position: relative;
-      top: 2px;
+      top: -1px;
     }
   }
 }
