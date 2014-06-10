@@ -21,7 +21,7 @@
 
     <%= stylesheet_link_tag 'application', :media => 'all' %>
 
-    <% # Include scripts that fall outside of the requirejs modular system (such as Modernizr). %>
+    <% # Include scripts that fall outside of the RequireJS modular system (such as Modernizr). %>
     <%= javascript_include_tag 'vendor' %>
 
     <% # Include Internet Explorer polyfills for legacy system compatibility. %>
@@ -58,13 +58,17 @@
     </script>
     <![endif]-->
 
+    <% # Include Google Analytics (GA) page view tracker. See footer for additional GA script. %>
     <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
       <%= render 'component/google_analytics/page_tracking' %>
     <% end %>
 
-    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
+    <%= yield :head %>
 
-    <%= yield(:head) %>
+    <%
+    # Generate canonical link element for telling Google the preferred URL for content.
+    # Only used on the location details page.
+    %>
     <%= yield :canonical %>
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
@@ -123,9 +127,13 @@
 
   </section>
 
+  <% # Include Google Analytics (GA) tracker for link clicks. See header for additional GA script. %>
   <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
     <%= render 'component/google_analytics/event_tracking' %>
   <% end %>
+
+  <% # Include main RequireJS modules that run the majority of the site's JavaScript. %>
+  <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
 
   </body>
 </html>
