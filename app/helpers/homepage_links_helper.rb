@@ -46,7 +46,13 @@ module HomepageLinksHelper
         links.each do |link_text|
           keyword = set_keyword_from_link_text(link_text)
           concat(content_tag(:li) do
-            link_to link_text, "/organizations?keyword=#{u keyword}", { "data-gaq" => "['_trackEvent', 'Home_Categories', 'Click', '#{link_text}']" }
+            link_to(
+              link_text,
+              "/organizations?keyword=#{u keyword}",
+              'class' => 'links-to-track',
+              'data-ga-category' => 'Home_Categories',
+              'data-ga-label' => "#{link_text}"
+            )
           end)
         end
       end)

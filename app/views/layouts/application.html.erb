@@ -59,21 +59,7 @@
     <![endif]-->
 
     <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-
-        _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-        if (window)
-          window._gaq = _gaq; // export as global
-      </script>
+      <%= render 'component/google_analytics/page_tracking' %>
     <% end %>
 
     <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
@@ -136,5 +122,10 @@
     </footer>
 
   </section>
+
+  <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
+    <%= render 'component/google_analytics/event_tracking' %>
+  <% end %>
+
   </body>
 </html>
