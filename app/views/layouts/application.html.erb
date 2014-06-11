@@ -62,8 +62,6 @@
       <%= render 'component/google_analytics/page_tracking' %>
     <% end %>
 
-    <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
-
     <%= yield :head %>
     <%= yield :canonical %>
   </head>
@@ -126,6 +124,8 @@
   <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
     <%= render 'component/google_analytics/event_tracking' %>
   <% end %>
+
+  <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
 
   </body>
 </html>
