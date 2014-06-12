@@ -71,8 +71,8 @@ class OrganizationsController < ApplicationController
     @search_params = request.params.except(:action, :id, :_, :controller)
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
-    # Initializes map data for search results map.
-    @map_data = generate_map_data(@orgs)
+    # Total number of results that have coordinates.
+    @total_map_markers = @orgs.map { |org| org.try(:[], :coordinates) }.compact.size
 
     # construct html and plain results summaries for use in display in the view (html)
     # and for display in the page title (plain)
@@ -95,15 +95,6 @@ class OrganizationsController < ApplicationController
     @org = Organization.get(id)
 
     initialize_filter_data(@org) # intialize search filter data
-
-    # Initializes map data.
-    # Fetching nearby places is the most time-consuming activity in the app.
-    # The API method needs to be optimized, but the app should not be
-    # automatically fetching them every time you visit the details page.
-    # It should only fetch them if someone asks for them on the details page,
-    # and we should add a Google Analytics event to track how many times
-    # people click "Show nearby places".
-    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
@@ -134,75 +125,6 @@ class OrganizationsController < ApplicationController
   end
 
   private
-
-  # Used for generating data for the two Google maps used in the app:
-  # The search results map and the map on the details view.
-  # Method generates json for the maps that will be injected into a <script>
-  # element in the view and then consumed by the map-manager or
-  # detail-map-manager javascript. The map_data variable parses the object
-  # returned from the API and retrieves all entries that have coordinates
-  # (latitude and longitude), and returns that as json, otherwise map_data
-  # ends up being nil and can be checked in the view with map_data.present?
-  # @param data [Object] API response data
-  # @return [Object] JSON object containing id, name, latitude and longitude.
-  # Or nil if there are no mappable entries.
-  def generate_map_data(data)
-
-    # Return immediately if data is empty.
-    return nil if data.blank?
-
-    # Total number of returned results.
-    @total_map_count = data.count
-    @current_map_count = 0
-
-    # For tracking the number of coordinates that are at the same position.
-    coords_list = Hash.new(0)
-
-    map_data = data.reduce([]) do |result, o|
-
-      # Uncomment this section if it is desirable to hide the
-      # "San Maceo" test case from results list (521d33a01974fcdb2b0026a9)
-      #if o.name == "San Maceo Agency"
-      #  data.delete(o)
-      #else
-
-      if o.key?(:coordinates)
-
-        # Increment coordinate tracking and offset position if greater
-        # than 1 occurrance so that markers do not overlap each other.
-        latitude = o.latitude
-        longitude = o.longitude
-        coords_str = [latitude,longitude].to_s
-        coords_list[coords_str] += 1
-        offset = (0.0001*(coords_list[coords_str]-1))
-        latitude = latitude-offset
-
-        details = {
-          'id' => o.id,
-          'name' => o.name,
-          'latitude' => latitude,
-          'longitude' => longitude
-        }
-
-        if o.organization.key?(:name) && o.organization.name != o.name
-          details['agency'] = o.organization.name;
-        end
-
-        result << details
-        @current_map_count = @current_map_count+1
-      end
-
-      result
-    end
-
-    # Set a count and total value that will show how many (count)
-    # of the data (total) were able to be located because they had coordinates.
-    map_data.push({'count'=>@current_map_count,'total'=>@total_map_count})
-
-    # Set map_data to nil if there are no entries.
-    map_data = nil if (map_data[0]['count'] == 0)
-    map_data = map_data.to_json.html_safe unless map_data.nil?
-  end
 
   # Used for passing rendered HTML partials in a json response to requests made via ajax
   # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
