@@ -71,18 +71,17 @@ class OrganizationsController < ApplicationController
     @search_params = request.params.except(:action, :id, :_, :controller)
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
-    # Total number of results that have coordinates.
-    @total_map_markers = @orgs.map { |org| org.try(:[], :coordinates) }.compact.size
-
-    @array_for_maps = @orgs.map do |org|
+    array_for_maps = @orgs.map do |org|
+      next unless org.key?(:coordinates)
       {
-        latitude: org.try(:[], :latitude),
-        longitude: org.try(:[], :longitude),
+        latitude: org.latitude,
+        longitude: org.longitude,
         name: org.name,
         org_name: org.organization.name,
         slug: org.slug
       }
     end
+    @array_for_maps = array_for_maps.compact
 
     # construct html and plain results summaries for use in display in the view (html)
     # and for display in the page title (plain)

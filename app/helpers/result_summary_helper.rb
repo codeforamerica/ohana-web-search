@@ -49,10 +49,11 @@ module ResultSummaryHelper
   # @return [String] Result summary string for display on search results view.
   def format_map_summary
     total_results = @orgs.size
-    if @total_map_markers == total_results
+    total_map_markers = @array_for_maps.size
+    if total_map_markers == total_results
       summary = ""
     else
-      summary = " <i class='fa fa-map-marker'></i> <em><strong>#{@total_map_markers}</strong>/#{total_results} located on map</em>"
+      summary = " <i class='fa fa-map-marker'></i> <em><strong>#{total_map_markers}</strong>/#{total_results} located on map</em>"
     end
     summary.html_safe
   end
