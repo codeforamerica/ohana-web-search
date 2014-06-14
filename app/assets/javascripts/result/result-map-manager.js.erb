@@ -150,7 +150,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
       var marker = new google.maps.Marker({
-        id: markerData['id'],
+        slug: markerData['slug'],
         map: _map,
         title: markerData['name'],
         position: myLatLng,
@@ -159,7 +159,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
       _markersArray.push(marker);
 
-      var org_name = markerData['organization']['name'];
+      var org_name = markerData['org_name'];
       if (org_name != markerData['name']) {
         var agency = "<h2>"+org_name+"</h2>";
       }
@@ -201,7 +201,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   // a location marker was clicked, perform a search for the organization details
   function _markerClickedHandler(evt)
   {
-    window.location.href = '/organizations/'+this.id+(window.location.search);
+    window.location.href = '/organizations/'+this.slug+(window.location.search);
   }
 
   // Triggers a resize event and refits the map to the bounds of the markers

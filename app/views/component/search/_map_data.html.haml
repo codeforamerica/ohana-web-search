@@ -1,3 +1,2 @@
-- if @total_map_markers != 0
-  %script{:id=>"map-locations",:type=>"text/json"}
-    = raw(@orgs.to_json)
+%script{:id=>"map-locations",:type=>"text/json"}
+  = raw(@array_for_maps.to_json)

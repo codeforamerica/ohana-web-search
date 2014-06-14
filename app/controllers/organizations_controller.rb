@@ -74,6 +74,16 @@ class OrganizationsController < ApplicationController
     # Total number of results that have coordinates.
     @total_map_markers = @orgs.map { |org| org.try(:[], :coordinates) }.compact.size
 
+    @array_for_maps = @orgs.map do |org|
+      {
+        latitude: org.try(:[], :latitude),
+        longitude: org.try(:[], :longitude),
+        name: org.name,
+        org_name: org.organization.name,
+        slug: org.slug
+      }
+    end
+
     # construct html and plain results summaries for use in display in the view (html)
     # and for display in the page title (plain)
     @map_search_summary_html = format_map_summary
