@@ -14,6 +14,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _markersArray = []; // array for storing markers
   var _markerBounds; // the bounds of the markers
 
+  // Hash to keep track of markers with identical coordinates.
+  var _coordinatesHash = {};
+
   // constants for map button text content
   var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
   var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Zoom map";
@@ -98,12 +101,11 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       _clearMarkers();
 
       var dataLength = _markerData.length;
-      for(var m = 0; m<dataLength-1; m++)
+
+      for(var m = 0; m < dataLength; m++)
       {
         _loadMarker( _markerData[m] );
       }
-      var metadata = _markerData[dataLength-1];
-      var summaryText = "<span>"+metadata.count+" of "+metadata.total+" results located!</span>";
     }
     else
     {
@@ -124,32 +126,68 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   // load a single marker
   function _loadMarker(markerData)
   {
-    if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+    if (markerData['longitude'] && markerData['latitude'])
     {
-      var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+      var coordinatesStr, actualLat, actualLon, adjustedLat, adjustedLon;
+
+      actualLat = adjustedLat = markerData['latitude'];
+      actualLon = adjustedLon = markerData['longitude'];
+      coordinatesStr = actualLat + actualLon;
+
+      // If the current marker has the same coordinates as an existing marker,
+      // shift the current marker by a random amount up to 50 meters in any
+      // direction.
+      while (_coordinatesHash[coordinatesStr] != null) {
+        var adjustedCoordinates = _randomize(actualLat, actualLon, 10);
+        adjustedLat = adjustedCoordinates[0];
+        adjustedLon = adjustedCoordinates[1];
+        coordinatesStr = String(adjustedLat) + String(adjustedLon);
+      }
+      _coordinatesHash[coordinatesStr] = 1;
+
+      var myLatLng = new google.maps.LatLng(adjustedLat, adjustedLon);
 
       var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
       var marker = new google.maps.Marker({
-        id: markerData['id'],
+        slug: markerData['slug'],
         map: _map,
         title: markerData['name'],
-        position: myLatlng,
+        position: myLatLng,
         icon: markerIcon
       });
 
       _markersArray.push(marker);
 
-      var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
+      var orgName = markerData['org_name'];
+      if (orgName != markerData['name']) {
+        var agency = "<h2>"+orgName+"</h2>";
+      }
+
       var content = "<h1>"+markerData['name']+"</h1>"+agency+
       "<p>Click map <img src='"+markerIcon+"'/> to view details</a></p>";
       _makeInfoWindowEvent(_map, _infoWindow, content, marker);
 
       google.maps.event.addListener(marker, 'click', _markerClickedHandler);
 
-      _markerBounds.extend(myLatlng);
+      _markerBounds.extend(myLatLng);
 
     }
+  }
+
+  // returns a new Array of coordinates shifted at a random distance in meters
+  // between 0 and maxRandomDistance from the original coordinates.
+  function _randomize(Lat, Lng, maxRandomDistance) {
+    var dx = maxRandomDistance * _random();
+    var dy = maxRandomDistance * _random();
+    var Lat = parseFloat(Lat) + (180/Math.PI)*(dy/6378137);
+    var Lng = parseFloat(Lng) + (90/Math.PI)*(dx/6378137)/Math.cos(Lat);
+    return [Lat, Lng];
+  }
+
+  // returns a random value between -1 and 1
+  function _random() {
+    return (Math.random() * 2) - 1;
   }
 
   // set the content in the info window
@@ -163,7 +201,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   // a location marker was clicked, perform a search for the organization details
   function _markerClickedHandler(evt)
   {
-    window.location.href = '/organizations/'+this.id+(window.location.search);
+    window.location.href = '/organizations/'+this.slug+(window.location.search);
   }
 
   // Triggers a resize event and refits the map to the bounds of the markers

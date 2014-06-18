@@ -1,3 +1,2 @@
-- if @map_data.present?
- %script{:id=>"map-locations",:type=>"text/json"}
-  = @map_data
+%script{:id=>"map-locations",:type=>"text/json"}
+  = raw(@array_for_maps.to_json)
