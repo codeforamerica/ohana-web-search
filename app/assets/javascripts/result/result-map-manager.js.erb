@@ -15,7 +15,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _markerBounds; // the bounds of the markers
 
   // Hash to keep track of markers with identical coordinates.
-  var _coordinatesHash = [];
+  var _coordinatesHash = {};
 
   // constants for map button text content
   var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Unzoom map";
@@ -128,24 +128,24 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   {
     if (markerData['longitude'] && markerData['latitude'])
     {
-      var coordinates_str, actual_lat, actual_lon, adjusted_lat, adjusted_lon;
+      var coordinatesStr, actualLat, actualLon, adjustedLat, adjustedLon;
 
-      actual_lat = adjusted_lat = markerData['latitude'];
-      actual_lon = adjusted_lon = markerData['longitude'];
-      coordinates_str = actual_lat + actual_lon;
+      actualLat = adjustedLat = markerData['latitude'];
+      actualLon = adjustedLon = markerData['longitude'];
+      coordinatesStr = actualLat + actualLon;
 
       // If the current marker has the same coordinates as an existing marker,
       // shift the current marker by a random amount up to 50 meters in any
       // direction.
-      while (_coordinatesHash[coordinates_str] != null) {
-        var adjusted_coordinates = _randomize(actual_lat, actual_lon, 50);
-        adjusted_lat = adjusted_coordinates[0];
-        adjusted_lon = adjusted_coordinates[1];
-        coordinates_str = String(adjusted_lat) + String(adjusted_lon);
+      while (_coordinatesHash[coordinatesStr] != null) {
+        var adjustedCoordinates = _randomize(actualLat, actualLon, 10);
+        adjustedLat = adjustedCoordinates[0];
+        adjustedLon = adjustedCoordinates[1];
+        coordinatesStr = String(adjustedLat) + String(adjustedLon);
       }
-      _coordinatesHash[coordinates_str] = 1;
+      _coordinatesHash[coordinatesStr] = 1;
 
-      var myLatLng = new google.maps.LatLng(adjusted_lat, adjusted_lon);
+      var myLatLng = new google.maps.LatLng(adjustedLat, adjustedLon);
 
       var markerIcon = "<%= asset_path('markers/human_services.png') %>";
 
@@ -159,9 +159,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
 
       _markersArray.push(marker);
 
-      var org_name = markerData['org_name'];
-      if (org_name != markerData['name']) {
-        var agency = "<h2>"+org_name+"</h2>";
+      var orgName = markerData['org_name'];
+      if (orgName != markerData['name']) {
+        var agency = "<h2>"+orgName+"</h2>";
       }
 
       var content = "<h1>"+markerData['name']+"</h1>"+agency+
@@ -176,10 +176,10 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   }
 
   // returns a new Array of coordinates shifted at a random distance in meters
-  // between 0 and max_random_distance from the original coordinates.
-  function _randomize(Lat, Lng, max_random_distance) {
-    var dx = max_random_distance * _random();
-    var dy = max_random_distance * _random();
+  // between 0 and maxRandomDistance from the original coordinates.
+  function _randomize(Lat, Lng, maxRandomDistance) {
+    var dx = maxRandomDistance * _random();
+    var dy = maxRandomDistance * _random();
     var Lat = parseFloat(Lat) + (180/Math.PI)*(dy/6378137);
     var Lng = parseFloat(Lng) + (90/Math.PI)*(dx/6378137)/Math.cos(Lat);
     return [Lat, Lng];
