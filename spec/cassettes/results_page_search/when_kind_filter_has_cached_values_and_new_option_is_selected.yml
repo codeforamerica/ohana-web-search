@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,22 +23,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 30 May 2014 10:28:26 GMT
+      - Wed, 25 Jun 2014 05:46:52 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 245b3952-2ae1-4dd9-8165-35820c662974
+      - c15a0a00-912f-433b-80dc-21143212e505
       X-Runtime:
-      - '0.032143'
+      - '0.023377'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -51,7 +47,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:28:26 GMT
+  recorded_at: Wed, 25 Jun 2014 05:46:52 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&service_area=smc&utf8=%E2%9C%93
@@ -75,31 +71,29 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 30 May 2014 10:28:28 GMT
+      - Wed, 25 Jun 2014 05:46:53 GMT
+      Etag:
+      - '"5575ca4849010d48b081857a41b82924"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
       X-Next-Page:
       - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 0f265e1b-94ee-4e0c-bf01-9293c00f26fc
+      - e6956706-ac40-40d4-b635-296187af128d
       X-Runtime:
-      - '0.754744'
+      - '0.609584'
       X-Total-Count:
       - '35'
       X-Total-Pages:
       - '2'
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '86211'
       Connection:
       - keep-alive
     body:
@@ -114,7 +108,7 @@ http_interactions:
         all parties, a treatment recommendation is made. Treatment consists of case
         management, weekly group therapy, parent groups, family therapy and referral
         to other resources as necessary.","emails":["ejennings@ymcasf.org"],"faxes":[{"id":1092,"number":"650
-        877-8643"}],"kind":"Other","languages":["Spanish"],"mail_address":{"id":1685,"attention":"Juvenile
+        877-8643"}],"kind":"Other","languages":["Spanish"],"latitude":37.6444129,"longitude":-122.4221521,"mail_address":{"id":1685,"attention":"Juvenile
         Sexual Response Program","street":"1486 Huntington Avenue, Suite 100","city":"South
         San Francisco","state":"CA","zip":"94080-5932"},"name":"South San Francisco.,
         Juvenile Sexual Responsibility Program","phones":[{"id":2464,"number":"650
@@ -146,7 +140,7 @@ http_interactions:
         of the Laguna Salada schools and Terra Nova, Oceana and Jefferson high schools
         to provide individual and group counseling, crisis intervention and consultation.
         Children''s groups are held several times a year.","faxes":[{"id":1090,"number":"650
-        355-2850"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Other","mail_address":{"id":1683,"attention":"Pacifica
+        355-2850"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Other","latitude":37.6491073,"longitude":-122.489409,"mail_address":{"id":1683,"attention":"Pacifica
         Youth Service Bureau","street":"435 Edgemar Avenue","city":"Pacifica","state":"CA","zip":"94044-6879"},"name":"Pacifica","phones":[{"id":2462,"number":"650
         355-3900"}],"short_desc":"Offers a number of counseling programs for youth
         age 3-18, including youth with questions about their sexuality. Also offers
@@ -176,7 +170,7 @@ http_interactions:
         agencies. The Juvenile Sexual Responsibility Program (described separately)
         provides assessment and treatment for juveniles age 12-17 who have committed
         a sexual offense. Formerly known as North Peninsula Family Alternatives (NPFA).","faxes":[{"id":1089,"number":"650
-        877-8643"}],"hours":"Monday-Thursday, 4-8","kind":"Other","languages":["Spanish"],"mail_address":{"id":1682,"attention":"of
+        877-8643"}],"hours":"Monday-Thursday, 4-8","kind":"Other","languages":["Spanish"],"latitude":37.6444129,"longitude":-122.4221521,"mail_address":{"id":1682,"attention":"of
         SSF","street":"1486 Huntington Avenue, Suite 100","city":"South San Francisco","state":"CA","zip":"94080-5932"},"name":"South
         San Francisco","phones":[{"id":2461,"number":"650 877-8642"}],"short_desc":"Provides
         individual and family counseling in an attempt to divert juveniles from criminal
@@ -210,7 +204,7 @@ http_interactions:
         college scholarships, civic engagement and youth fitness programs. Financial
         aid and scholarships are available.","faxes":[{"id":1087,"number":"650 856-7783"}],"hours":"Monday-Thursday,
         6:30 am-9:45 pm; Friday, 6:30 am-7:45 pm; Saturday, 7-5:45; Sunday, 9-8:45
-        pm","kind":"Other","languages":["Persian (Farsi)","Spanish","Chinese (Mandarin)","Russian"],"mail_address":{"id":1680,"attention":"YMCA
+        pm","kind":"Other","languages":["Persian (Farsi)","Spanish","Chinese (Mandarin)","Russian"],"latitude":37.428448,"longitude":-122.116555,"mail_address":{"id":1680,"attention":"YMCA
         of Silicon Valley","street":"3412 Ross Road","city":"Palo Alto","state":"CA","zip":"94303"},"name":"Palo
         Alto Family YMCA","phones":[{"id":2459,"number":"650 856-9622"}],"short_desc":"Provides
         health and fitness classes, residential and day camp programs, and extended
@@ -238,8 +232,8 @@ http_interactions:
         training, wellness and fitness training classes, aerobic dance (50 classes
         per week), volunteer opportunities, youth sports, aquatics and day camp in
         East Palo Alto, Menlo Park and Palo Alto via affiliated branches.","faxes":[{"id":1085,"number":"650
-        858-0664"}],"kind":"Other","mail_address":{"id":1678,"attention":"YMCA of
-        Silicon Valley","street":"755 Page Mill Road, Bldg. B","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Page
+        858-0664"}],"kind":"Other","latitude":37.419901,"longitude":-122.14243,"mail_address":{"id":1678,"attention":"YMCA
+        of Silicon Valley","street":"755 Page Mill Road, Bldg. B","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Page
         Mill Branch","phones":[{"id":2457,"number":"650 858-0661"}],"short_desc":"Provides
         health and physical fitness programs.","slug":"page-mill-branch","slugs":["page-mill-branch"],"transportation":"VTA
         stops within 4 blocks.","updated_at":"2014-05-29T12:18:35.559-07:00","urls":["http://www.ymcasv.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1681","services":[{"id":1681,"eligibility":"None","fees":"Vary
@@ -256,7 +250,7 @@ http_interactions:
         Highway 9","city":"Boulder Creek","state":"CA","zip":"95006"},"ask_for":["Receptionist"],"coordinates":[-122.1347335,37.1628316],"description":"Provides
         camp and conference grounds/program, outdoor science school, local community
         activities, aquatics, resident and travel camping, leadership development
-        and child care for Boulder Creek and Redwood elementary schools.","kind":"Other","mail_address":{"id":1674,"attention":"YMCA
+        and child care for Boulder Creek and Redwood elementary schools.","kind":"Other","latitude":37.1628316,"longitude":-122.1347335,"mail_address":{"id":1674,"attention":"YMCA
         of Silicon Valley","street":"16275 Highway 9","city":"Boulder Creek","state":"CA","zip":"95006"},"name":"Camp
         Campbell","phones":[{"id":2453,"number":"831 338-2128"}],"short_desc":"Provides
         activities for youth and adults including camping, aquatics, community activities,
@@ -291,7 +285,7 @@ http_interactions:
         day camp for children age 5-14, Monday-Friday, 7:30-6. Call for dates. Offers
         a free program for cancer survivors, \"Living Strong, Living Well\".","faxes":[{"id":1082,"number":"650
         368-1140"}],"hours":"Monday-Thursday, 5:30 am-10 pm; Friday, 5:30 am-8 pm;
-        Saturday, 7-6; Sunday, 9-5","kind":"Other","languages":["Spanish"],"mail_address":{"id":1671,"attention":"YMCA
+        Saturday, 7-6; Sunday, 9-5","kind":"Other","languages":["Spanish"],"latitude":37.4702031,"longitude":-122.2268014,"mail_address":{"id":1671,"attention":"YMCA
         of Silicon Valley","street":"1445 Hudson Street","city":"Redwood City","state":"CA","zip":"94061"},"name":"Sequoia
         Branch","phones":[{"id":2450,"number":"650 368-4168"}],"short_desc":"Provides
         social and recreational programs for all ages.","slug":"sequoia-branch","slugs":["sequoia-branch"],"transportation":"SAMTRANS
@@ -327,7 +321,7 @@ http_interactions:
         is available for parents while they workout.","faxes":[{"id":1081,"number":"415
         759-9630"}],"hours":"Monday-Friday, 5 am-10 pm; Saturday, Sunday 7 am-8 pm;
         Senior Program, Monday-Friday, 7:30-3:30","kind":"Other","languages":["Chinese
-        (Mandarin)","Russian","Spanish"],"mail_address":{"id":1670,"attention":"Stonestown
+        (Mandarin)","Russian","Spanish"],"latitude":37.730927,"longitude":-122.4766884,"mail_address":{"id":1670,"attention":"Stonestown
         Family YMCA","street":"333 Eucalyptus Drive","city":"San Francisco","state":"CA","zip":"94132"},"name":"Stonestown
         Family YMCA","phones":[{"id":2449,"number":"415 242-7100"}],"short_desc":"Athletic/fitness
         programs for youth/adults, drop-in senior center, meal site, day camp, after
@@ -355,7 +349,7 @@ http_interactions:
         community development, day and resident camps, YMCA Camp Jones Gulch overnight
         camp in La Honda (described separately), swimming and aquatics, licensed child
         care and senior centers. See branch office descriptions for specific programs.","emails":["info@ymcasf.org"],"faxes":[{"id":1080,"number":"415
-        777-6915"}],"hours":"Vary","kind":"Other","mail_address":{"id":1669,"attention":"Association
+        777-6915"}],"hours":"Vary","kind":"Other","latitude":37.786148,"longitude":-122.398881,"mail_address":{"id":1669,"attention":"Association
         Office","street":"631 Howard Street, Suite 500","city":"San Francisco","state":"CA","zip":"94105"},"name":"Association
         Office","phones":[{"id":2448,"number":"415 777-9622"}],"short_desc":"Administers
         all the programs and services of the YMCA branch sites.","slug":"association-office","slugs":["association-office"],"transportation":"Varies
@@ -386,7 +380,7 @@ http_interactions:
         riding (in season), ropes course and sports equipment. Individuals who wish
         to attend the summer YMCA resident camp should make reservations through Camp
         Jones Gulch directly (650-747-1200).","emails":["info@campjonesgulch.org"],"faxes":[{"id":1079,"number":"650
-        747-0986"}],"hours":"Monday-Friday, 8:30-5:30","kind":"Other","languages":["Spanish"],"mail_address":{"id":1668,"attention":"Camp
+        747-0986"}],"hours":"Monday-Friday, 8:30-5:30","kind":"Other","languages":["Spanish"],"latitude":37.2996271,"longitude":-122.2657347,"mail_address":{"id":1668,"attention":"Camp
         Jones Gulch","street":"11000 Pescadero Creek Road","city":"La Honda","state":"CA","zip":"94020"},"name":"Camp
         Jones Gulch","phones":[{"id":2447,"number":"650 747-1200"}],"slug":"camp-jones-gulch","slugs":["camp-jones-gulch"],"transportation":"Bus
         service during summer months.","updated_at":"2014-05-24T14:07:18.949-07:00","urls":["http://www.campjonesgulch.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1671","services":[{"id":1671,"audience":"Groups
@@ -413,7 +407,7 @@ http_interactions:
         day camps, swim lessons, aqua aerobics, sports programs and outdoor excursions.
         Complimentary babysitting is included in all family memberships.","emails":["rfischer@ymcasf.org"],"faxes":[{"id":1078,"number":"650
         286-0128"}],"hours":"Monday-Friday, 5:30 am-10 pm; Saturday, 7 am-7 pm; Sunday,
-        8-7","kind":"Other","languages":["Spanish"],"mail_address":{"id":1667,"attention":"Peninsula
+        8-7","kind":"Other","languages":["Spanish"],"latitude":37.5531079,"longitude":-122.301389,"mail_address":{"id":1667,"attention":"Peninsula
         Family YMCA","street":"1877 South Grant Street","city":"San Mateo","state":"CA","zip":"94402"},"name":"Peninsula
         Family YMCA","phones":[{"id":2446,"number":"650 286-9622"}],"short_desc":"Provides
         social, physical education and recreational activities for all ages.","slug":"peninsula-family-ymca","slugs":["peninsula-family-ymca"],"transportation":"SAMTRANS
@@ -444,7 +438,7 @@ http_interactions:
         outreach clinics from San Luis Obispo to the Oregon border provide care to
         children who otherwise might not have access to the services.","hours":"Monday-Friday,
         8-5; Emergency, 24 hours daily; clinic hours vary","kind":"Other","languages":["Chinese
-        (Cantonese)","Russian","Spanish","Interpreter"],"mail_address":{"id":1666,"attention":"UCSF
+        (Cantonese)","Russian","Spanish","Interpreter"],"latitude":37.7632367,"longitude":-122.4576884,"mail_address":{"id":1666,"attention":"UCSF
         Medical Center","street":"505 Parnassus Avenue","city":"San Francisco","state":"CA","zip":"94143-0296"},"name":"Medical
         Center","phones":[{"id":2444,"department":"24 hours daily","number":"415 476-1000"},{"id":2445,"department":"Administration","number":"415
         353-2733"}],"slug":"medical-center","slugs":["medical-center"],"transportation":"MUNI
@@ -470,12 +464,13 @@ http_interactions:
         social workers, psychologists, nutritionist and teacher. Patients are self-referred
         or referred by a physician.","faxes":[{"id":1077,"number":"415 353-2680"}],"hours":"Mon.-Fri.,
         9-6:30, Sat., 9-11:45; Teen Clinic: Mon.-Fri., 1-5","kind":"Other","languages":["Chinese
-        (Cantonese)","Spanish"],"mail_address":{"id":1665,"attention":"UCSF Primary
-        Care Pediatrics","street":"400 Parnassus Avenue, 2nd Floor","city":"San Francisco","state":"CA","zip":"94143"},"name":"Primary
-        Care Pediatrics Practice","phones":[{"id":2441,"department":"24 hours daily","number":"415
-        353-2000"},{"id":2442,"department":"Teen Clinic","number":"415 353-2002"},{"id":2443,"department":"Emergency
-        Room 24 hours daily","number":"415 476-1037"}],"short_desc":"Provides ongoing
-        health care for children and adolescents age 18 or under.","slug":"primary-care-pediatrics-practice","slugs":["primary-care-pediatrics-practice"],"transportation":"MUNI
+        (Cantonese)","Spanish"],"latitude":37.7638681,"longitude":-122.4583942,"mail_address":{"id":1665,"attention":"UCSF
+        Primary Care Pediatrics","street":"400 Parnassus Avenue, 2nd Floor","city":"San
+        Francisco","state":"CA","zip":"94143"},"name":"Primary Care Pediatrics Practice","phones":[{"id":2441,"department":"24
+        hours daily","number":"415 353-2000"},{"id":2442,"department":"Teen Clinic","number":"415
+        353-2002"},{"id":2443,"department":"Emergency Room 24 hours daily","number":"415
+        476-1037"}],"short_desc":"Provides ongoing health care for children and adolescents
+        age 18 or under.","slug":"primary-care-pediatrics-practice","slugs":["primary-care-pediatrics-practice"],"transportation":"MUNI
         - 6 Parnassus, N Judah, 43 Masonic, 66 Quintara.","updated_at":"2014-05-24T14:07:18.912-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1668","services":[{"id":1668,"audience":"Infants,
         children, youth","eligibility":"Age 21 or under","fees":"Vary according to
         service. Medi-Cal, private insurance, many HMOs and cash accepted.","funding_sources":["Fees","State"],"keywords":["EMERGENCY
@@ -494,7 +489,7 @@ http_interactions:
         on aging in California, and has an extensive Web site including an electronic
         library. Email ddriver@berkeley.edu to be added to email list.   The center
         is located in room 535 of University Hall.","emails":["desiowens@berkeley.edu"],"faxes":[{"id":1075,"number":"510
-        642-1197"}],"kind":"Other","mail_address":{"id":1662,"attention":"Resource
+        642-1197"}],"kind":"Other","latitude":37.8663982,"longitude":-122.3057746,"mail_address":{"id":1662,"attention":"Resource
         Ctr on Aging","street":"140 Warren Hall","city":"Berkeley","state":"CA","zip":"94720"},"name":"Resource
         Center on Aging","phones":[{"id":2437,"number":"510 643-6427"}],"short_desc":"Information,
         newsletter, library on gerontology for professionals, faculty and public.","slug":"resource-center-on-aging","slugs":["resource-center-on-aging"],"transportation":"AC
@@ -520,7 +515,7 @@ http_interactions:
         camps are held during the summer. The 4,000-square-foot Conference Center
         is used for seminars, meetings and educational forums, and is available for
         use by outside groups.","emails":["elkusranch@ucdavis.edu"],"faxes":[{"id":1074,"number":"650
-        712-3153"}],"hours":"Monday-Friday, 8-5; some weekends","kind":"Other","languages":["Spanish"],"mail_address":{"id":1661,"attention":"Elkus
+        712-3153"}],"hours":"Monday-Friday, 8-5; some weekends","kind":"Other","languages":["Spanish"],"latitude":37.4124145,"longitude":-122.3934241,"mail_address":{"id":1661,"attention":"Elkus
         Youth Ranch","street":"80 Stone Pine Road, #100","city":"Half Moon Bay","state":"CA","zip":"94019"},"name":"Elkus
         Youth Ranch","phones":[{"id":2431,"department":"Main Office","number":"650
         726-9059"},{"id":2432,"department":"Nutrition Education Office","number":"650
@@ -548,7 +543,7 @@ http_interactions:
         or the family or friends of a veteran can call to have VA programs explained
         and for direct referral to these programs.","faxes":[{"id":1070,"number":"650
         849-0116"}],"hours":"Monday-Friday, 8-4","kind":"Other","languages":["Chinese","Filipino
-        (Tagalog)","Japanese","Spanish"],"mail_address":{"id":1657,"attention":"Ambulatory
+        (Tagalog)","Japanese","Spanish"],"latitude":37.4036049,"longitude":-122.1418083,"mail_address":{"id":1657,"attention":"Ambulatory
         Care Service","street":"3801 Miranda Avenue (11C)","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Veterans
         Affairs Palo Alto Health Care System., Ambulatory Care Service., Veterans
         Affairs Information and Referral Service (VAIRS)","phones":[{"id":2426,"number":"800
@@ -580,7 +575,7 @@ http_interactions:
         on Wednesdays, and on Mondays at the Community Church, 2201 University Avenue
         in East Palo Alto. It also stops at the Mariano Castro School, 505 Escuela
         Avenue, Mountain View, on Tuesdays. Call 800-690-2282 for times and details.","hours":"Monday-Friday,
-        9-5; 24-hour answering service on Advice Nurse line","kind":"Other","languages":["Spanish"],"mail_address":{"id":1620,"attention":"Children''s
+        9-5; 24-hour answering service on Advice Nurse line","kind":"Other","languages":["Spanish"],"latitude":37.4377199,"longitude":-122.1743652,"mail_address":{"id":1620,"attention":"Children''s
         Ambulatory Care Ctr","street":"730 Welch Road","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Lucile
         Packard Children''s Hospital., Stanford Children''s Ambulatory Care Center","phones":[{"id":2342,"number":"650
         497-8000"},{"id":2343,"department":"Advice Nurse","number":"650 497-8820"},{"id":2344,"department":"Referral
@@ -617,7 +612,7 @@ http_interactions:
         and developing new ones. Meets the second Monday of each month, 12 noon, at
         the South San Francisco Elks Lodge. Activities include golf, bowling, tennis,
         computers and travel activities. General monthly meeting features a served
-        luncheon followed by a guest speaker on topics of general interest to seniors.","emails":["bobski2@yahoo.com"],"kind":"Other","mail_address":{"id":1602,"attention":"North
+        luncheon followed by a guest speaker on topics of general interest to seniors.","emails":["bobski2@yahoo.com"],"kind":"Other","latitude":37.689217,"longitude":-122.456244,"mail_address":{"id":1602,"attention":"North
         Peninsula Chapter #91","street":"824 Lausanne Avenue","city":"Daly City","state":"CA","zip":"94014"},"name":"North
         Peninsula Chapter #91","phones":[{"id":2310,"number":"650 992-1256"}],"short_desc":"A
         club for retired men.","slug":"north-peninsula-chapter-91","slugs":["north-peninsula-chapter-91"],"updated_at":"2014-05-24T14:07:18.134-07:00","urls":["http://www.sirinc.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1605","services":[{"id":1605,"audience":"Retirees","eligibility":"Retired
@@ -634,7 +629,7 @@ http_interactions:
         at the Elks Lodge, 229 West 20th Avenue, San Mateo. Special events throughout
         the year include Ladies Day, dances and parties, golf, bowling, bocce ball
         and various travel opportunities.","emails":["paulstrongarm@sbcglobal.net"],"faxes":[{"id":1040,"number":"650
-        369-3802"}],"kind":"Other","mail_address":{"id":1601,"attention":"Bayshore
+        369-3802"}],"kind":"Other","latitude":37.546596,"longitude":-122.313053,"mail_address":{"id":1601,"attention":"Bayshore
         Anniv Chapter #118","street":"172 Camellia Avenue","city":"Redwood City","state":"CA","zip":"94061"},"name":"Bayshore
         Silver Anniversary Chapter #118","phones":[{"id":2309,"number":"650 364-5678"}],"short_desc":"An
         organization for retired men.","slug":"bayshore-silver-anniversary-chapter-118","slugs":["bayshore-silver-anniversary-chapter-118"],"transportation":"SAMTRANS
@@ -646,7 +641,7 @@ http_interactions:
         Wilkinson","title":"Secretary"}],"coordinates":[-122.2432597,37.457367],"description":"An
         organization for retired men, assisting them in maintaining old friendships
         and developing new ones. Meets at the San Mateo Elks Lodge, 229 West 20th
-        Avenue, San Mateo, the first Tuesday each month at noon.  .","emails":["wilkinson@sbcglobal.net"],"kind":"Other","mail_address":{"id":1600,"attention":"El
+        Avenue, San Mateo, the first Tuesday each month at noon.  .","emails":["wilkinson@sbcglobal.net"],"kind":"Other","latitude":37.457367,"longitude":-122.2432597,"mail_address":{"id":1600,"attention":"El
         Camino Branch #16","street":"3003 Goodwin Avenue","city":"Redwood City","state":"CA","zip":"94061"},"name":"El
         Camino Branch #16","phones":[{"id":2308,"number":"650 368-3914"}],"short_desc":"An
         organization for retired men.","slug":"el-camino-branch-16","slugs":["el-camino-branch-16"],"transportation":"SAMTRANS
@@ -685,7 +680,7 @@ http_interactions:
         the applicant has attended a regular meeting as a guest of a sponsor. There
         are no fees or dues, but donations are requested to cover expenses. The group
         meets for lunch on the first Wednesday of every month, 12 noon, at the Fremont
-        Hills Country Club, 12889 Viscaino Place, Los Altos Hills.","emails":["jchalkwfc@aol.com"],"kind":"Other","mail_address":{"id":1597,"attention":"Sons
+        Hills Country Club, 12889 Viscaino Place, Los Altos Hills.","emails":["jchalkwfc@aol.com"],"kind":"Other","latitude":37.339492,"longitude":-122.072466,"mail_address":{"id":1597,"attention":"Sons
         in Retirement (SIR)","street":"570 Pinecrest Drive","city":"Los Altos","state":"CA","zip":"94024"},"name":"Branch
         #51","phones":[{"id":2305,"number":"650 967-7588"}],"slug":"branch-51","slugs":["branch-51"],"updated_at":"2014-05-24T14:07:18.074-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1600","services":[{"id":1600,"eligibility":"Retired
         man","fees":"None, but donations welcome.","service_areas":["Atherton","Los
@@ -704,7 +699,7 @@ http_interactions:
         and Vascular Institute is designated as a  2009 Blue Distinction Center for
         Cardiac Care by Blue Cross and Blue Shield of California. Sequoia also provides
         stroke care, emergency services, and birth center services.","faxes":[{"id":1032,"number":"650
-        367-5100"}],"kind":"Other","languages":["Interpreter Service"],"mail_address":{"id":1582,"attention":"Sequoia
+        367-5100"}],"kind":"Other","languages":["Interpreter Service"],"latitude":37.4802306,"longitude":-122.254411,"mail_address":{"id":1582,"attention":"Sequoia
         Hospital","street":"170 Alameda de las Pulgas","city":"Redwood City","state":"CA","zip":"94062-2799"},"name":"Administration","phones":[{"id":2277,"number":"650
         369-5811"}],"short_desc":"General inpatient medical care for all ages.","slug":"administration-170-alameda-de-las-pulgas","slugs":["administration-170-alameda-de-las-pulgas"],"transportation":"SAMTRANS
         stops in front.","updated_at":"2014-05-24T14:07:17.905-07:00","urls":["http://www.sequoiahospital.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1585","services":[{"id":1585,"audience":"Sequoia
@@ -734,7 +729,7 @@ http_interactions:
         policies adopted by landlords in apartment complexes and approaching cities
         for local policy solutions. Interested community members can call for ways
         to become involved. Formerly a program of the San Mateo County Human Services
-        Agency.","emails":["dsmith1@smcgov.org"],"hours":"Monday-Friday, 9-5","kind":"Other","languages":["Spanish"],"mail_address":{"id":1483,"attention":"SMCHS
+        Agency.","emails":["dsmith1@smcgov.org"],"hours":"Monday-Friday, 9-5","kind":"Other","languages":["Spanish"],"latitude":37.5454495,"longitude":-122.3208839,"mail_address":{"id":1483,"attention":"SMCHS
         Tobacco Prevention Program","street":"2000 Alameda de las Pulgas","city":"San
         Mateo","state":"CA","zip":"94403"},"name":"Community Health., Tobacco Prevention
         Program","phones":[{"id":2073,"department":"Office","number":"650 573-2012"},{"id":2074,"department":"General
@@ -757,7 +752,7 @@ http_interactions:
         and family members, including wellness centers and peer run organizations;
         express and resolve any concerns or problems about your inidividual rights,
         including filing a grievance about the services you receive from a BHRS provider.","emails":["ofca@smcgov.org"],"hours":"Monday-Friday,
-        9-5","kind":"Other","languages":["Interpreter"],"mail_address":{"id":1466,"attention":"SMCHS
+        9-5","kind":"Other","languages":["Interpreter"],"latitude":37.5449282,"longitude":-122.3222348,"mail_address":{"id":1466,"attention":"SMCHS
         Consumer/Family Affairs","street":"1950 Alameda de las Pulgas","city":"San
         Mateo","state":"CA","zip":"94403"},"name":"Behavioral Health and Recovery
         Services., Office of Consumer and Family Affairs","phones":[{"id":2044,"number":"800
@@ -788,7 +783,7 @@ http_interactions:
         Following evaluation, therapy is provided. Audiology hearing assessments are
         offered Tuesdays and Thursdays.","emails":["dchiu@co.sanmateo.ca.us"],"faxes":[{"id":930,"number":"650
         573-3491"}],"hours":"Monday-Friday, 8-4:30","kind":"Other","languages":["Chinese
-        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Samoan","Spanish","Tongan"],"mail_address":{"id":1458,"attention":"SMCHS
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Samoan","Spanish","Tongan"],"latitude":37.530902,"longitude":-122.300209,"mail_address":{"id":1458,"attention":"SMCHS
         Rehabilitation Services","street":"222 - 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"name":"Hospital
         and Clinics Division., San Mateo County Health Center., Rehabilitation Services","phones":[{"id":2031,"number":"650
         573-2472"}],"short_desc":"Provides therapy for speech and language disorders,
@@ -832,7 +827,7 @@ http_interactions:
         practitioner services for well child care. The Dental clinic handles emergency
         extractions, fillings and gum treatment. The Ron Robinson Senior Care Center
         provides comprehensive care and case management to the frail elderly.","hours":"Monday-Friday,
-        8-6","kind":"Other","languages":["Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1448,"attention":"San
+        8-6","kind":"Other","languages":["Filipino (Tagalog)","Russian","Spanish"],"latitude":37.530902,"longitude":-122.300209,"mail_address":{"id":1448,"attention":"San
         Mateo Medical Center","street":"222 - 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"name":"San
         Mateo Medical Center., Main Campus Clinics.","phones":[{"id":2003,"number":"650
         573-2222"},{"id":2004,"department":"Administration","number":"650 573-3939"},{"id":2005,"department":"Switchboard
@@ -855,7 +850,7 @@ http_interactions:
         evaluates the problems presented.  Offers resource and referral assistance.
         Interprets the rules, regulations and policies of the District Attorney''s
         Office to clients. Another office is located in the Northern Court Building,
-        1050 Mission Road, South San Francisco, 94080.","hours":"Monday-Friday, 8-5","kind":"Other","languages":["Spanish"],"mail_address":{"id":1438,"attention":"SMCDA
+        1050 Mission Road, South San Francisco, 94080.","hours":"Monday-Friday, 8-5","kind":"Other","languages":["Spanish"],"latitude":37.4881077,"longitude":-122.2309704,"mail_address":{"id":1438,"attention":"SMCDA
         DVV Advocate","street":"400 County Center, 4th Floor","city":"Redwood City","state":"CA","zip":"94063"},"name":"Domestic
         Violence Victim Advocate","phones":[{"id":1970,"department":"Redwood City","number":"650
         599-7330"},{"id":1971,"department":"South San Francisco","number":"650 877-5797"}],"short_desc":"Assists
@@ -866,5 +861,5 @@ http_interactions:
         Shelter","Family Shelter"],"service_areas":["San Mateo County"],"updated_at":"2014-05-24T14:07:16.128-07:00"}],"organization":{"id":1308,"name":"San
         Mateo County District Attorney","slug":"san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc","slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"_slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:28:28 GMT
+  recorded_at: Wed, 25 Jun 2014 05:46:53 GMT
 recorded_with: VCR 2.9.2

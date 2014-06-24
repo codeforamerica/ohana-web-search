@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,22 +23,18 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 30 May 2014 10:28:31 GMT
+      - Wed, 25 Jun 2014 05:47:00 GMT
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&kind=Human+Services&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
       Status:
       - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 8e1d83eb-a82f-48c5-a920-ef4805aed843
+      - 2fa67e1f-d9c8-45b2-89dd-4dd7cf4e998f
       X-Runtime:
-      - '0.026435'
+      - '0.027291'
       X-Total-Count:
       - '0'
       X-Total-Pages:
@@ -51,10 +47,10 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:28:31 GMT
+  recorded_at: Wed, 25 Jun 2014 05:47:00 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Human%20Services&org_name=Salvation%20Army&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Salvation%20Army&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -75,25 +71,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 30 May 2014 10:28:31 GMT
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - Wed, 25 Jun 2014 05:47:01 GMT
+      Etag:
+      - '"f7f371b8b568806392145a10551178eb"'
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - 5b9285b9-6b3d-4980-af6c-7e874b0546ce
+      - bce03f6b-4250-400b-923a-ad36cb145596
       X-Runtime:
-      - '0.211098'
+      - '0.238706'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '1'
       Content-Length:
-      - '4000'
+      - '12567'
       Connection:
       - keep-alive
     body:
@@ -108,7 +102,7 @@ http_interactions:
         as Sunday services and spiritual counseling. Provides Christmas toys and Back-to-School
         clothes and supplies. Offers case management, advocacy and referrals to other
         agencies.","faxes":[{"id":880,"number":"650 266-2594"},{"id":881,"number":"650
-        266-4594"}],"hours":"Monday-Thursday, 9-4:30","kind":"Human Services","mail_address":{"id":1385,"attention":"Salvation
+        266-4594"}],"hours":"Monday-Thursday, 9-4:30","kind":"Human Services","latitude":37.6445324,"longitude":-122.4228507,"mail_address":{"id":1385,"attention":"Salvation
         Army","street":"409 South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"South
         San Francisco Citadel Corps","phones":[{"id":1902,"number":"650 266-4591"}],"short_desc":"Provides
         emergency food and clothing and furniture vouchers to low-income families
@@ -141,7 +135,7 @@ http_interactions:
         programs such as Alcoholics Anonymous or Narcotics Anonymous. Pinehurst Lodge
         is a separate facility for women only. Transition houses for men and women
         graduates also available.","faxes":[{"id":878,"number":"415 285-1391"}],"hours":"Monday-Friday,
-        8-4","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1383,"attention":"Adult
+        8-4","kind":"Human Services","languages":["Spanish"],"latitude":37.7488993,"longitude":-122.4203671,"mail_address":{"id":1383,"attention":"Adult
         Rehabilitation Center","street":"1500 Valencia Street","city":"San Francisco","state":"CA","zip":"94110"},"name":"Adult
         Rehabilitation Center","phones":[{"id":1899,"number":"415 643-8000"},{"id":1900,"number":"415
         643-8028"}],"short_desc":"Long-term (6-12 month) residential treatment program
@@ -172,7 +166,7 @@ http_interactions:
         on a walk-in basis or by appointment. Rental assistance with available funds.
         Another office (described separately) is located at 409 South Spruce Avenue,
         South San Francisco (650-266-4591).","faxes":[{"id":877,"number":"650 364-1712"}],"kind":"Human
-        Services","languages":["Spanish"],"mail_address":{"id":1382,"attention":"Salvation
+        Services","languages":["Spanish"],"latitude":37.4916424,"longitude":-122.2312963,"mail_address":{"id":1382,"attention":"Salvation
         Army","street":"P.O. Box 1147","city":"Redwood City","state":"CA","zip":"94064"},"name":"Redwood
         City Corps","phones":[{"id":1898,"number":"650 368-4643"}],"short_desc":"Provides
         a variety of emergency services to low-income persons. Also sponsors recreational
@@ -206,5 +200,5 @@ http_interactions:
         Carlos","San Mateo","Woodside"],"wait":"Up to 20 minutes.","updated_at":"2014-05-24T14:07:51.548-07:00"}],"organization":{"id":1300,"name":"Salvation
         Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:28:32 GMT
+  recorded_at: Wed, 25 Jun 2014 05:47:01 GMT
 recorded_with: VCR 2.9.2

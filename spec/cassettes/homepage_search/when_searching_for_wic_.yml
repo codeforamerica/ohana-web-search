@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&kind=Human%20Services&location=&service_area=smc&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&location=&service_area=smc&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -23,25 +23,23 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 30 May 2014 10:31:40 GMT
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - Wed, 25 Jun 2014 05:46:33 GMT
+      Etag:
+      - '"3394f75e15735b97349219a2939c962b"'
       Status:
       - 200 OK
       X-Current-Page:
       - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
       X-Request-Id:
-      - c19e25e7-6626-4457-8159-47d8b10fa338
+      - 5f384ff5-4a7d-44f3-9c00-bbb2efef1605
       X-Runtime:
-      - '0.091455'
+      - '0.096643'
       X-Total-Count:
-      - '2'
+      - '3'
       X-Total-Pages:
       - '1'
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '11086'
       Connection:
       - keep-alive
     body:
@@ -61,7 +59,7 @@ http_interactions:
         health care and other community services. Formerly known as San Mateo County
         Health Department, Public Health Division. Nutrition Programs. Women, Infants
         and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
-        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1452,"attention":"SMCHS
+        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"latitude":37.5624546,"longitude":-122.3171637,"mail_address":{"id":1452,"attention":"SMCHS
         WIC Program","street":"2000 Alameda de las Pulgas, Suite 200","city":"San
         Mateo","state":"CA","zip":"94403"},"name":"Family Health Services., Public
         Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"id":2012,"number":"650
@@ -96,8 +94,8 @@ http_interactions:
         8:30 to 5. Adult dental care is provided on an emergency basis only.  Formerly
         known as the North County Community Health Center.","faxes":[{"id":940,"number":"650
         301-8626"}],"kind":"Human Services","languages":["Hindi","Spanish","Filipino
-        (Tagalog)"],"mail_address":{"id":1469,"attention":"Daly City Clinic","street":"380
-        - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"name":"San
+        (Tagalog)"],"latitude":37.6911172,"longitude":-122.4740805,"mail_address":{"id":1469,"attention":"Daly
+        City Clinic","street":"380 - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"name":"San
         Mateo Medical Center., Daly City Clinic","phones":[{"id":2050,"number":"650
         301-8600"}],"short_desc":"Outpatient clinic offering general family medical
         services in the northern part of the county.","slug":"san-mateo-medical-center-daly-city-clinic","slugs":["san-mateo-medical-center-daly-city-clinic"],"transportation":"SAMTRANS
@@ -112,7 +110,37 @@ http_interactions:
         Management","parent_id":92,"slug":"disease-management"}],"how_to_apply":"Apply
         by phone for appointment.","service_areas":["San Mateo County"],"wait":"Varies.
         Same day service if appropriate.","updated_at":"2014-05-24T14:07:53.415-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1484,"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1223,"street":"306
+        Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Receptionist","charge
+        nurse at 650-877-7073"],"contacts":[{"id":1742,"name":"Cathy Lehmkuhl","title":"Clinic
+        Manager"},{"id":1743,"name":"Jonathan Lee","title":"Medical Director"}],"coordinates":[-122.415633,37.656645],"description":"Offers
+        adult primary care and pediatric care, immunizations, HIV testing and counseling,
+        family planning and mental health services. Also provides nutrition counseling,
+        WIC services (Women, Infants and Children Program) and optometry and podiatry
+        services.","faxes":[{"id":953,"number":"650 616-0015"}],"hours":"Adults: Monday-Friday,
+        8-5; Pediatrics: Monday, 8 am-8:30 pm; Tuesday, Wednesday, 8 am-9 pm; Thursday,
+        Friday, 8-5","kind":"Clinics","languages":["Chinese","Filipino (Tagalog)","Spanish"],"latitude":37.656645,"longitude":-122.415633,"mail_address":{"id":1481,"attention":"SMMC
+        SSF Clinic","street":"306 Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"San
+        Mateo Medical Center., South San Francisco Clinic","phones":[{"id":2067,"department":"Adults","number":"650
+        877-7070"},{"id":2068,"department":"Pediatrics","number":"650 877-7027"}],"short_desc":"Offers
+        adult and pediatric care.","slug":"san-mateo-medical-center-south-san-francisco-clinic","slugs":["san-mateo-medical-center-south-san-francisco-clinic"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:07:53.907-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1484","services":[{"id":1484,"eligibility":"San
+        Mateo County resident","fees":"Vary according to income. ACE Program, cash,
+        Medi-Cal, Medicare, some private insurance, as well as Healthy Kids accepted.","funding_sources":["County","State"],"keywords":["HEALTH
+        SERVICES","Outpatient Care","Community Clinics","Youth","Immunizations","Disease
+        Prevention","TB Control","Hepatitis Control","Infant Care","Maternity Care","STD
+        Treatment","Pediatrics"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
+        Education","parent_id":78,"slug":"health-education"},{"id":95,"depth":2,"oe_id":"106-04-03","name":"Family
+        Planning","parent_id":92,"slug":"family-planning"},{"id":96,"depth":2,"oe_id":"106-04-04","name":"Nutrition","parent_id":92,"slug":"nutrition-106-04-04"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
+        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":117,"depth":3,"oe_id":"106-06-04-04","name":"Mental
+        Health Evaluation","parent_id":113,"slug":"mental-health-evaluation"},{"id":119,"depth":3,"oe_id":"106-06-04-06","name":"Vision
+        Tests","parent_id":113,"slug":"vision-tests"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
+        \u0026 Treat","parent_id":109,"slug":"prevent-treat"},{"id":123,"depth":3,"oe_id":"106-06-07-01","name":"Counseling","parent_id":122,"slug":"counseling"},{"id":130,"depth":3,"oe_id":"106-06-07-08","name":"Vaccinations","parent_id":122,"slug":"vaccinations"}],"how_to_apply":"Call
+        for an appointment.","service_areas":["San Mateo County"],"wait":"Varies.
+        Same day appointment if appropriate.","updated_at":"2014-05-24T14:07:53.904-07:00"}],"organization":{"id":1309,"name":"San
         Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:31:40 GMT
+  recorded_at: Wed, 25 Jun 2014 05:46:33 GMT
 recorded_with: VCR 2.9.2
