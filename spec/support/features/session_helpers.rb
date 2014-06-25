@@ -5,7 +5,7 @@ module Features
     def search(options = {})
       fill_in 'keyword', :with => options[:keyword]
       if options[:location].present?
-        set_location_filter(options)
+        set_custom_value("location", "location", options[:location])
       end
 
       find('#find-btn').click
@@ -45,63 +45,24 @@ module Features
       visit('/organizations?keyword=asdfdsggfdg')
     end
 
-
-    # helpers for filters
-    def set_location_filter(options = {})
-      set_filter("location", "location", options[:location])
+    # @param fieldset [String] the CSS name of the fieldset.
+    # @param field [String] the CSS name of the field.
+    # @param value [String] the checkbox to click.
+    def select_existing_filter_option(fieldset, field, value)
+      # Expand the filter
+      find(:xpath, "//*[@id='#{fieldset}-options']/legend").click
+      find('.toggle-group', text: value).trigger('mousedown')
     end
 
-    # @param fieldset [String] the CSS name of the fieldset
-    # @param field [String] the CSS name of the field
+    # @param fieldset [String] the CSS name of the fieldset.
+    # @param field [String] the CSS name of the field.
     # @param value [String] the value to fill the field with.
-    def set_filter(fieldset, field, value, custom = true)
-      find(".require-loaded")
-      within("##{fieldset}-options") do
-        find(".closed").click
-        if field.present? && custom == true
-          find(".add .toggle").trigger('mousedown')
-          fill_in("#{field}", :with => value)
-        elsif custom == false
-          find(".toggle-group",:text => value).trigger('mousedown')
-        else
-          first("label").click
-        end
-      end
-    end
-
-    # Tests opening and closing the fieldset by clicking the legend.
-    # @param name [String] The name of the filter field to test.
-    # @param val [String] The value that should be showing in the current toggle.
-    # @param count [Number] The amount of toggle that should be showing.
-    def test_filter_legend(name,val="All",count=2)
-      find(".require-loaded")
-      within("##{name}-options") do
-        # test clicking legend functionality
-        expect(all(".current-option label").last).to have_content(val)
-        find(".closed").trigger("mousedown")
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
-        find(".open").trigger("mousedown")
-        expect(all(".current-option label").last).to have_content(val)
-      end
-    end
-
-    # Tests opening and closing the fieldset by clicking the current toggle.
-    # @param name [String] The name of the filter field to test.
-    # @param val [String] The value that should be showing in the current toggle.
-    # @param count [Number] The amount of toggle that should be showing.
-    def test_filter_toggle(name,val="All",count=2)
-      find(".require-loaded")
-      within("##{name}-options") do
-        # test clicking toggle functionality
-        #expect(all(".current-option label").last).to have_content(val)
-        all(".current-option label").last.trigger("mousedown")
-        expect(page).to have_selector(".open")
-        expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
-        find(".options label",:text=>val).click
-        find(".open").click
-        expect(all(".current-option label").last).to have_content(val)
-      end
+    def set_custom_value(fieldset, field, value)
+      # Expand the filter
+      find(:xpath, "//*[@id='#{fieldset}-toggle-group']/label").click
+      # Click the '+' button to enable the input field
+      find(:xpath, "//*[@id='#{fieldset}-toggle-group-1']/div/div/i").click
+      fill_in("#{field}", with: value)
     end
 
     # navigation helpers
