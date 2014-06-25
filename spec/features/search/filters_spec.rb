@@ -18,7 +18,7 @@ feature "results page search", :js, :vcr do
   end
 
   scenario 'when kind filter has no cached values and legend is toggled' do
-    test_filter_legend("kind", "Human Services",13)
+    test_filter_legend("kind", "All", 13)
   end
 
   scenario 'when agency filter has no cached values and legend is toggled' do
@@ -46,13 +46,13 @@ feature "results page search", :js, :vcr do
     end
   end
 
-  scenario 'when kind filter has no cached values and toggle is toggled' do
+  scenario 'when clicking Kind checkbox that is already checked' do
     within("#kind-options") do
       # Click on the "All" checkbox
       all(".current-option label").last.click
       # Click on the "All" checkbox again
-      find(".options label",:text => "Human Services").click
-      expect(all(".current-option label").last).to have_content("Human Services")
+      find(".options label",:text => "All").click
+      expect(all(".current-option label").last).to have_content("All")
     end
   end
 
@@ -71,7 +71,7 @@ feature "results page search", :js, :vcr do
     fill_in('keyword', with: '')
     set_filter("location", "location", "94403")
     all(".toggle-group-wrapper.add label").first.trigger("mousedown")
-    expect(page).to have_content("41 results within 5 miles of '94403'")
+    expect(page).to have_content("91 results within 5 miles of '94403'")
   end
 
   scenario 'when agency filter has no cached values and custom value is added' do
@@ -135,7 +135,7 @@ feature "results page search", :js, :vcr do
     find('#find-btn').click
     set_filter("location", "location", "Redwood City, CA", false)
     find('#find-btn').click
-    expect(page).to have_content("54 results within 5 miles of 'Redwood City, CA'")
+    expect(page).to have_content("110 results within 5 miles of 'Redwood City, CA'")
     expect(all("#location-options .current-option label").last).to have_content("Redwood City, CA")
   end
 
@@ -143,7 +143,7 @@ feature "results page search", :js, :vcr do
     fill_in('keyword', :with => '') # clear keyword
     set_filter("service-area", "service_area", "All", false)
     find('#find-btn').click
-    expect(page).to have_content("130 results")
+    expect(page).to have_content("339 results")
     expect(all("#service-area-options .current-option label").last).to have_content("All")
   end
 
