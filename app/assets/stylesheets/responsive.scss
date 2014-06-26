@@ -30,28 +30,28 @@
         {
           position: relative;
           @include border-radius(4px);
-          border: 1px solid darkest($blue);
-          background: light($green);
+          border: 1px solid $primary_darkest;
+          background: $secondaryA_light;
           margin-top: 10px;
 
           >span
           {
-            text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+            text-shadow: 1px 4px 6px $secondaryA_light, 0 0 0 $black, 1px 4px 6px $secondaryA_light;
           }
 
           &:hover
           {
-            background: shade(light($green),5);
+            background: shade($secondaryA_light,5);
 
             >span
             {
-              color: darkest($purple);
+              color: $complementA_darkest;
               text-shadow: none;
             }
 
             >.fa
             {
-              color: darkest($purple);
+              color: $complementA_darkest;
             }
           }
         }
@@ -228,7 +228,7 @@
             margin: 0;
             margin-top: 10px;
             @include border-radius(4px);
-            border: 1px solid darkest($blue);
+            border: 1px solid $primary_darkest;
         }
       }
 

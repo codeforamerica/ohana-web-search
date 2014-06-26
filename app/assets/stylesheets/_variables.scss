@@ -14,19 +14,32 @@ $greyscale_lightest: rgb(252,252,252);
 $white: rgb(255,255,255);
 
 // primary
-$blue: rgb(137,209,226);
+$primary: rgb(137,209,226);            // used 18 times w/ no alpha, 1 time w/ alpha
+$primary_dark: shade($primary, 25);    // used 19 times w/ no alpha
+$primary_darkest: shade($primary, 50); // used 24 times w/ no alpha, 6 times w/ alpha
+$primary_light: tint($primary, 25);    // used  7 times w/ no alpha
+$primary_lightest: tint($primary, 50); // used 14 times w/ no alpha, 1 time w/ alpha
 
 // secondary A
-$green: rgb(209,249,148);
+$secondaryA: rgb(209,249,148);               // used  1 time (in alert _alert.scss:62)
+$secondaryA_light: tint($secondaryA, 25);    // used 11 times
+$secondaryA_lightest: tint($secondaryA, 50); // used  6 times
+$secondaryA_darkest: shade($secondaryA, 50); // used  4 times
 
 // secondary B
-$yellow: rgb(255,200,56);
+$secondaryB: rgb(255,200,56);                // used 2 times
+$secondaryB_light: tint($secondaryB, 25);    // used 1 time
+$secondaryB_lightest: tint($secondaryB, 50); // used 1 time
 
 // complementaryA
-$purple: rgb(242,144,191);
+$complementA: rgb(242,144,191);
+$complementA_darkest: shade($complementA, 50); // used 19 times
+$complementA_light: tint($complementA, 25);    // used  2 times
+$complementA_lightest: tint($complementA, 50); // used  6 times w/ no alpha, 4 times w/ alpha
 
 // complementaryB
-$red: rgb(255,10,50); // alert-error color
+$complementB: rgb(255,10,50);               // used 1 time, for alert error
+$complementB_dark: shade($complementB, 25); // used 1 time, for map load error
 
 //animation settings
 $default_duration: 50ms;

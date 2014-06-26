@@ -25,23 +25,23 @@
 
   li.collapsed
   {
-    background: lightest($purple,0.1);
+    background: rgba($complementA_lightest,0.1);
   }
 
   li:not(.collapsed):not(.current)
   {
-    @include single-box-shadow( lightest($purple,0.3) , 0, 0, 1px, 0, inset );
+    @include single-box-shadow( rgba($complementA_lightest,0.3) , 0, 0, 1px, 0, inset );
 
     &:hover
     {
-      background: lightest($purple);
+      background: $complementA_lightest;
       cursor:pointer;
     }
   }
 
   a
   {
-    color: darkest($purple);
+    color: $complementA_darkest;
     text-decoration: none;
     border-bottom:none;
   }
@@ -49,13 +49,13 @@
   .current
   {
     color: $white !important;
-    background: light($purple);
+    background: $complementA_light;
   }
 
   .next,
   .prev
   {
-    background:dark($blue);
+    background:$primary_dark;
     a
     {
       color:$white;
@@ -72,6 +72,6 @@
   .next:hover,
   .prev:hover
   {
-    background: light($purple) !important;
+    background: $complementA_light !important;
   }
 }
