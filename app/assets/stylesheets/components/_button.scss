@@ -14,24 +14,24 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid darkest($blue,0);
+  border: 1px solid rgba($primary_darkest, 0);
   color: light($black);
 
   .fa
   {
-    color: darkest($blue);
+    color: $primary_darkest;
   }
 }
 
 .button-small:hover
 {
-  background: light($blue);
-  border: 1px solid darkest($blue,0.2);
-  color: darkest($purple);
+  background: $primary_light;
+  border: 1px solid rgba($primary_darkest, 0.2);
+  color: $complementA_darkest;
 
   .fa
   {
-    color: darkest($purple);
+    color: $complementA_darkest;
   }
 }
 
@@ -59,25 +59,25 @@ a.button-small:not([href])
   padding-left: 7px;
   padding-right: 7px;
   @include border-radius(4px);
-  background: light($green);
-  border: 1px solid darkest($blue); // IE Fallback
-  border: 1px solid darkest($blue,0.4);
+  background: $secondaryA_light;
+  border: 1px solid $primary_darkest; // IE Fallback
+  border: 1px solid rgba($primary_darkest, 0.4);
   color: light($black);
 
   .fa
   {
-    color: darkest($blue);
+    color: $primary_darkest;
   }
 }
 
 .button-medium:hover
 {
-  background: shade(light($green),5);
-  color: darkest($purple);
+  background: shade($secondaryA_light,5);
+  color: $complementA_darkest;
 
   .fa
   {
-    color: darkest($purple);
+    color: $complementA_darkest;
   }
 }
 
@@ -91,7 +91,7 @@ a.button-small:not([href])
   @include inline-block();
   @include type-size(baseline);
   letter-spacing: 1px;
-  color: darkest($purple);
+  color: $complementA_darkest;
   @include box-sizing(border-box);
   padding:10px;
   margin:0px;
@@ -99,16 +99,16 @@ a.button-small:not([href])
 
   .fa
   {
-    color: darkest($blue);
+    color: $primary_darkest;
   }
 
   &:hover
   {
-    background: lightest($purple);
+    background: $complementA_lightest;
 
     .fa
     {
-      color: darkest($purple);
+      color: $complementA_darkest;
     }
   }
 }
