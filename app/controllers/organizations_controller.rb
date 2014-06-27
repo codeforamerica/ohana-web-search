@@ -108,15 +108,8 @@ class OrganizationsController < ApplicationController
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
 
-    if @org.key?(:services)
-      @aggregate_categories = []
-      @org.services.each do |service|
-        if service.key?(:categories) && service.categories.length > 0
-          service.categories.each do |category|
-            @aggregate_categories.push(category)
-          end
-        end
-      end
+    if @org[:services].present?
+      @categories = @org.services.map { |s| s[:categories] }.flatten.compact
     end
 
     # To disable or remove the Result list button on details page
@@ -163,7 +156,7 @@ class OrganizationsController < ApplicationController
       #  data.delete(o)
       #else
 
-      if o.key?(:coordinates)
+      if o[:coordinates].present?
         new_coords = o.coordinates
 
         # increment coordinate tracking and offset position if greater than 1 occurrance
@@ -177,7 +170,7 @@ class OrganizationsController < ApplicationController
           'coordinates' => new_coords
         }
 
-        if o.organization.key?(:name) && o.organization.name != o.name
+        if o.organization.name != o.name
           details['agency'] = o.organization.name;
         end
 
@@ -239,16 +232,13 @@ class OrganizationsController < ApplicationController
 
   def initialize_filter_data(collection)
     # cached locations
-    @aggregate_locations = cache_filter_values(collection,'aggregate_locations'){|org|
-      if org.key?(:address)
-        val = org.address['city']
-        val += ", #{org.address['state']}" if org.address['state'].present?
-      end
-    }
+    @aggregate_locations = cache_filter_values(collection,'aggregate_locations') do |org|
+      "#{org.address.city}, #{org.address.state}" if org[:address].present?
+    end
 
     # cached organization names
     @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
-      org.organization.name if org.key?(:organization) && org.organization.name != org.name
+      org.organization.name if org.organization.name != org.name
     }
   end
 

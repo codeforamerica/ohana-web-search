@@ -1,13 +1,12 @@
-- if org.key?(:urls)
+- if org[:urls].present?
   %section{:class=>'urls'}
     - if defined? iconclass
       %i{:class=>iconclass}
     - if defined? stitle
       - if stitle.present?
         %h1 #{stitle}:
-    - if org[:urls].kind_of?(Array)
       %ul
-        - org[:urls].sort.each do |url|
+        - org.urls.sort.each do |url|
           %li
             %span
               %a{:href=>url,:target=>"_blank"}

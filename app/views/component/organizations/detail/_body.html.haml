@@ -13,7 +13,7 @@
               = superscript_ordinals(@org.organization.name)
 
   / detail sidebar content
-  - if (@org.fields & contact_details).any? || @org.key?(:services)
+  - if (@org.fields & contact_details).any? || @org[:services].present?
     %aside
       - if (@org.fields & contact_details).any?
         %section#contact-info
@@ -23,15 +23,7 @@
               %h1 Contact
               %section
 
-                - if @org.key?(:ask_for)
-                  %section.ask-for{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
-                    - @org.ask_for.each do |ask_for|
-                      %div
-                        %i{:class=>"fa fa-user"}
-                        %span
-                          = ask_for
-
-                - if @org.key?(:emails)
+                - if @org[:emails].present?
                   %section.emails{:itemprop=>"email"}
                     - @org.emails.each do |email|
                       %div
@@ -41,7 +33,7 @@
                             = email
 
 
-                - if @org.key?(:phones)
+                - if @org[:phones].present?
                   %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
                     - @org.phones.each do |phone|
                       %div
@@ -58,7 +50,7 @@
                               %span{:itemprop=>"contactType"}
                                 = phone["department"]
 
-                - if @org.key?(:faxes)
+                - if @org[:faxes].present?
                   %section.faxes
                     - @org.faxes.each do |fax|
                       %div
@@ -76,47 +68,42 @@
                                 %span{:itemprop=>"contactType"}
                                   = fax["department"]
 
-          - if @org.key?(:urls)
+          - if @org[:urls].present?
             %section.urls-box
               %h1 Homepage
               %section
+                %section.urls
+                  - @org.urls.each do |url|
+                    %div
+                      %i{:class=>"fa fa-external-link-square"}
+                      %a{:href=>url,:target=>"_blank"}
+                        %span{:itemprop=>"url"}
+                          = format_url(url)
 
-                - if @org.key?(:urls)
-                  %section.urls
-                    - @org.urls.each do |url|
-                      %div
-                        %i{:class=>"fa fa-external-link-square"}
-                        %a{:href=>url,:target=>"_blank"}
-                          %span{:itemprop=>"url"}
-                            = format_url(url)
-
-          - if @org.key?(:mail_address)
-            %section.address-box
-              %h1 Mailing Address
-              %section
-
-                %section.mail-address
-                  %div
-                    %i{:class=>"fa fa-envelope"}
-                    = render :partial => "component/detail/mail_address", :locals => {:org=>@org,:lines=>2}
-
-          -# has a physical address and the street address and zipcode differ from mailing address
-          - if @org.key?(:address) && !(@org.key?(:mail_address) && (@org.address.street == @org.mail_address.street && @org.address.zip == @org.mail_address.zip))
+          - if @org[:address].present?
             %section.address-box
               %h1 Physical Address
               %section
-                - if @org.key?(:address)
-                  %section.address
-                    %div
-                      %i{:class=>"fa fa-home"}
-                      = render :partial => "component/detail/address", :locals => {:org=>@org,:lines=>2}
+                %section.address
+                  %div
+                    %i{:class=>"fa fa-home"}
+                    = render "component/detail/address", org: @org, lines: 2
 
-      - if @aggregate_categories.present?
+          - if @org[:mail_address].present?
+            %section.address-box
+              %h1 Mailing Address
+              %section
+                %section.mail-address
+                  %div
+                    %i{:class=>"fa fa-envelope"}
+                    = render "component/detail/mail_address", org: @org
+
+      - if @categories.present?
         %section#categories-box
           %h1 Service Categories
           %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
             %ul{:itemscope=>"", :itemtype=>"http://schema.org/ServiceType"}
-              - @aggregate_categories.each do |category|
+              - @categories.each do |category|
                 %li{:class=>"depth#{category.depth}"}
                   %span{:itemprop=>"serviceType"}
                     -# Category links are disabled till there's a corresponding filter that can be toggled!
@@ -126,26 +113,26 @@
   / main detail content
   %section
 
-    - if (@org.key?(:short_desc) || @org.key?(:description))
+    - if @org[:short_desc].present? || @org[:description].present?
       %section.overview-box
         %section
 
           = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:short_desc}
           = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:description, :stitle=>"Description"}
 
-    - if @org.key?(:coordinates) || @org.key?(:transportation)
+    - if @org[:coordinates].present? || @org[:transportation].present?
       %section.map-box
         %h1 Location
 
         %div
 
-          - if @org.key?(:transportation)
+          - if @org[:transportation].present?
             %section.transportation-availability
               %h1 Public Transit:
               %span
                 = @org.transportation
 
-          - if @org.key?(:coordinates)
+          - if @org[:coordinates].present?
             %section#detail-map-view.map
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title
@@ -159,7 +146,7 @@
                   -# hides map when JS is disabled
                   = "#detail-map-view {display:none;}"
 
-    - if @org.key?(:hours)
+    - if @org[:hours].present?
       %section.hours-box
         %h1 Service Hours
         %section
@@ -169,10 +156,10 @@
       %section.service-opt-box
         %h1 Service Options
         %section
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:languages, :stitle=>"Languages Spoken"}
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:accessibility, :stitle=>"Accessibility Options"}
+          = render "component/detail/languages", org: @org
+          = render "component/detail/accessibility", org: @org
 
-    - if @org.key?(:services)
+    - if @org[:services].present?
       %section.services-box
         %h1 Services
         - @org.services.each do |service|
@@ -188,7 +175,7 @@
             = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:how_to_apply, :stitle=>"How to Apply"}
 
   / detail footer content
-  - if @org.key?(:updated_at)
+  - if @org[:updated_at].present?
     %footer
       %section.metadata
         %section
