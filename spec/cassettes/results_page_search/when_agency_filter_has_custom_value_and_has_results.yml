@@ -21,37 +21,41 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Wed, 28 May 2014 03:34:28 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Mon, 30 Jun 2014 18:48:21 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&location=&page=0&utf8=%E2%9C%93>;
         rel="last"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - 7a7cee13-4f6a-4919-b0f8-229d882eabba
+      - e527d6ac-f45a-4158-ab90-9b2e11d1f854
       X-Runtime:
-      - '0.017833'
+      - '0.033283'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      Content-Length:
-      - '2'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 28 May 2014 03:34:28 GMT
+  recorded_at: Mon, 30 Jun 2014 18:48:21 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Salvation%20Army&utf8=%E2%9C%93
@@ -73,40 +77,44 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Wed, 28 May 2014 03:34:29 GMT
+      - Mon, 30 Jun 2014 18:48:22 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Salvation+Army&page=4&per_page=1&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Salvation+Army&page=2&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?org_name=Salvation+Army&page=4&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?org_name=Salvation+Army&page=2&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
       - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - 6a9ee700-7044-4320-9a41-fc3cf2c14a84
+      - 5f97af23-d34d-4b18-927d-b81df6c270d2
       X-Runtime:
-      - '0.095117'
+      - '0.041615'
       X-Total-Count:
       - '4'
       X-Total-Pages:
       - '4'
+      X-Xss-Protection:
+      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":14,"accessibility":["Wheelchair"],"address":{"id":14,"street":"660
-        Veterans Blvd.","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":22,"name":"Andres
-        Espinoza","title":"Captain, Commanding Officer"}],"coordinates":[-122.231539,37.49144],"description":"Provides
+      string: '[{"id":14,"admin_emails":[],"coordinates":[-122.231539,37.49144],"description":"Provides
         food, clothing, bus tokens and shelter to individuals and families in times
         of crisis from the Redwood City Corps office and community centers throughout
         the county.   Administers Project REACH (Relief for Energy Assistance through
@@ -114,23 +122,12 @@ http_interactions:
         Counseling and translation services (English/Spanish) are available either
         on a walk-in basis or by appointment. Rental assistance with available funds.
         Another office (described separately) is located at 409 South Spruce Avenue,
-        South San Francisco (650-266-4591).","faxes":[{"id":13,"number":"650 364-1712"}],"languages":["Spanish"],"mail_address":{"id":14,"attention":"Salvation
-        Army","street":"P.O. Box 1147","city":"Redwood City","state":"CA","zip":"94064"},"name":"Redwood
-        City Corps","phones":[{"id":14,"number":"650 368-4643"}],"short_desc":"Provides
-        a variety of emergency services to low-income persons. Also sponsors recreational
-        and educational activities.","slug":"redwood-city-corps","transportation":"SAMTRANS
-        stops nearby.","updated_at":"2014-05-09T20:49:18.943-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/14","services":[{"id":14,"audience":"Individuals
-        or families with low or no income and/or trying to obtain public assistance","eligibility":"None
-        for most services. For emergency assistance, must have low or no income and
-        be willing to apply for public assistance","fees":"None.","funding_sources":["Donations","Grants"],"keywords":["COMMUNITY
-        SERVICES","Interpretation/Translation","EMERGENCY SERVICES","Shelter/Refuge","FINANCIAL
-        ASSISTANCE SERVICES","Utilities","MENTAL HEALTH SERVICES","Individual/Group
-        Counseling","Food Pantries","Homeless Shelter","Rental Deposit Assistance","Utility
-        Service Payment Assistance"],"how_to_apply":"Call for appointment. Referral
-        from human service professional preferred for emergency assistance.","service_areas":["Atherton","Belmont","Burlingame","East
-        Palo Alto","Foster City","Menlo Park","Palo Alto","Portola Valley","Redwood
-        City","San Carlos","San Mateo","Woodside"],"wait":"Up to 20 minutes.","updated_at":"2014-04-18T12:32:06.596-07:00"}],"organization":{"id":4,"name":"Salvation
-        Army","slug":"salvation-army","url":"http://ohana-api-test.herokuapp.com/api/organizations/4","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/4/locations"}}]'
+        South San Francisco (650-266-4591).","latitude":37.49144,"longitude":-122.231539,"name":"Redwood
+        City Corps","short_desc":"Provides a variety of emergency services to low-income
+        persons. Also sponsors recreational and educational activities.","slug":"redwood-city-corps","updated_at":"2014-05-09T20:49:18.943-07:00","urls":["http://www.tsagoldenstate.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/redwood-city-corps/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/redwood-city-corps/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/redwood-city-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/redwood-city-corps","address":{"id":14,"street":"660
+        Veterans Blvd.","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":4,"name":"Salvation
+        Army","slug":"salvation-army","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":14,"department":null,"extension":null,"number":"650
+        368-4643","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 28 May 2014 03:34:28 GMT
-recorded_with: VCR 2.9.0
+  recorded_at: Mon, 30 Jun 2014 18:48:22 GMT
+recorded_with: VCR 2.9.2
