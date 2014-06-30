@@ -12,12 +12,12 @@ install the following tools manually:
 
 - [Build tools][build-tools]
 - [Ruby with RVM][ruby]
-- [PhantomJS][phantomjs] (only used for running the tests)
+- [Qt][qt] (only used for running the tests)
 - [Node.js][node] (Linux only)
 
 [build-tools]: https://github.com/codeforamerica/howto/blob/master/Build-Tools.md
 [ruby]: https://github.com/codeforamerica/howto/blob/master/Ruby.md
-[phantomjs]: https://github.com/jonleighton/poltergeist#installing-phantomjs
+[qt]: https://github.com/codeforamerica/ohana-web-search/wiki/Installing-Qt
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
 
 

@@ -20,7 +20,7 @@
           %i{ :class => "fa fa-print" }
           Print
 
-      - if org.key?(:coordinates)
+      - if org[:coordinates].present?
         %span><
           %a{:class=>"button-utility button-directions", :href=>"https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}",:target=>"_blank"}
             %i{ :class=>"fa fa-external-link-square" }

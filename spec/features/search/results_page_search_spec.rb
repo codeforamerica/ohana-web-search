@@ -27,8 +27,6 @@ feature "results page search" do
   end
 
   scenario 'with location that returns no results', :js, :vcr do
-    # The search from the background action leaves the keyword field
-    # populated, so to do a location-only search, we have to clear it first.
     search(:keyword => "", :location => 'asdfg')
     looks_like_no_results
   end

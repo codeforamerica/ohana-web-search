@@ -109,6 +109,8 @@
         <i class="fa fa-bullhorn"></i> <a href="https://github.com/codeforamerica/ohana-web-search">Get this app</a> for your city or <a href="http://ohanapi.org">view project details</a>.
       </p>
 
+      <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
+
       <div id="google_translate_element"></div>
       <script type="text/javascript">
       function googleTranslateElementInit() {
@@ -124,8 +126,5 @@
   <% if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present? %>
     <%= render 'component/google_analytics/event_tracking' %>
   <% end %>
-
-  <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
-
   </body>
 </html>

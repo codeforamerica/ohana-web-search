@@ -17,20 +17,18 @@
                     %span
                       = superscript_ordinals(org.organization.name)
 
-          - if org.key?(:phones)
+          - if org[:phones].present?
             %ul.phones
-              - org.phones.each do |hash|
-                - if hash["number"].present?
-                  %li
-                    %i{:class=>"fa fa-phone-square"}
-                    %span{:itemprop=>"telephone"}
-                      = "#{format_phone(hash["number"])}"
+              %li
+                %i{:class=>"fa fa-phone-square"}
+                %span{:itemprop=>"telephone"}
+                  = "#{format_phone(org.phones.first.number)}"
 
-          - if org.key?(:address)
+          - if org[:address].present?
             %p.address
-              = render :partial => "component/detail/address", :locals => {:org=>org,:lines=>1}
+              = render "component/detail/address", org: org, lines: 1
 
-          - if org.key?(:short_desc)
+          - if org[:short_desc].present?
             %p.short-desc
               = org[:short_desc]
   %footer
