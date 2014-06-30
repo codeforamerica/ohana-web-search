@@ -1,10 +1,10 @@
-- if org.key?(field)
-  %section{:class=>css_class_format(field.to_s)}
+- if org[:languages].present?
+  %section{:class=>css_class_format('languages')}
     - if defined? iconclass
       %i{:class=>iconclass}
-    %h1 #{stitle}:
+    %h1 Languages Spoken:
     %ul
-      - org[field].sort.each do |lang|
+      - org.languages.sort.each do |lang|
         %li
           %span
             -# Disables languages link till there's a corresponding filter that can be toggled!

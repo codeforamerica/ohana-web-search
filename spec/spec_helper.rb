@@ -8,7 +8,7 @@ ENV['TZ'] = 'America/Los_Angeles'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
-require 'capybara/poltergeist'
+# require 'capybara/poltergeist'
 require "rack_session_access/capybara"
 require 'webmock/rspec'
 
@@ -16,11 +16,11 @@ require 'webmock/rspec'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, :js_errors => false)
-end
+# Capybara.register_driver :poltergeist do |app|
+#   Capybara::Poltergeist::Driver.new(app, :js_errors => false)
+# end
 
-Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :webkit
 Capybara.default_wait_time = 30
 
 RSpec.configure do |config|

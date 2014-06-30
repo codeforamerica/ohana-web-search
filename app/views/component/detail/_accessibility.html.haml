@@ -1,10 +1,10 @@
-- if org.key?(field)
-  %section{:class=>css_class_format(field.to_s)}
+- if org[:accessibility].present?
+  %section{:class=>css_class_format('accessibility')}
     - if defined? iconclass
       %i{:class=>iconclass}
-    %h1 #{stitle}:
+    %h1 Accessibility Options:
     %ul
-      - org[field].sort.each do |access|
+      - org.accessibility.sort.each do |accessibility_option|
         %li
           %span
-            = access
+            = accessibility_option
