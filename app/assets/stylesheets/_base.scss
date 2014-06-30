@@ -1800,7 +1800,7 @@ body { top: 0px !important; }
     background-color: $white;
     @include border-radius(0px 4px 4px 4px);
     @include single-box-shadow(midtone($black,0.4), 0px, 0px, 5px);
-    border: 1px solid dark($blue);
+    border: 1px solid $primary-dark;
     padding: 3px 6px;
     opacity: 0.95;
 
@@ -1832,7 +1832,7 @@ body { top: 0px !important; }
     }
     a:hover
     {
-      color: dark($blue);
+      color: $primary-dark;
       border-bottom: 1px solid $greyscale_midtone;
       border-bottom: 1px solid rgba($black, .4);
       text-decoration: none;
@@ -1842,7 +1842,7 @@ body { top: 0px !important; }
     {
       text-align: center;
       margin-top: 4px;
-      border-top: 1px solid midtone($blue,0.5);
+      border-top: 1px solid midtone($primary,0.5);
       font-size: $font_size_90;
       margin-bottom: 2px;
     }
@@ -1873,7 +1873,7 @@ body { top: 0px !important; }
 
   .infoBox:hover a
   {
-    color: dark($blue);
+    color: $primary-dark;
   }
 }
 #map-canvas.max
