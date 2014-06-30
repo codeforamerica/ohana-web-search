@@ -12,31 +12,31 @@
 
   > input::input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary_text_lightest;
     font-style: italic;
   }
 
   > input::-webkit-input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary_text_lightest;
     font-style: italic;
   }
 
   > input:-moz-placeholder
   {
-    color: $primary_lightest;
+    color: $primary_text_lightest;
     font-style: italic;
   }
 
   > input::-moz-placeholder
   {
-    color: $primary_lightest;
+    color: $primary_text_lightest;
     font-style: italic;
   }
 
   > input:-ms-input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary_text_lightest;
     font-style: italic;
   }
 
@@ -68,7 +68,7 @@
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
     border: none;
     background: none;
-    border-bottom: 2px solid $primary_darkest;
+    border-bottom: 2px solid $primary_border_dark;
     @include box-sizing(border-box);
     color: $white;
   }
@@ -102,7 +102,7 @@
     }
     >.fa
     {
-      color: $primary_darkest;
+      color: $primary_text_darkest;
     }
 
     &:hover
@@ -110,12 +110,12 @@
       >span
       {
         @include inline-block();
-        color: $complementA_darkest;
+        color: $complementA;
         text-shadow: none;
       }
       >.fa
       {
-        color: $primary_dark;
+        color: $primary_text_dark;
       }
     }
   }
@@ -166,7 +166,7 @@
     vertical-align:middle;
     background: $white;
     @include border-radius(4px);
-    border:1px solid rgba($primary_darkest, 0.4);
+    border:1px solid rgba($primary_border_dark, 0.4);
     color: $black;
   }
 
@@ -178,20 +178,20 @@
     font-size: 24px;
     right: 0;
     left: auto;
-    border: 1px solid rgba($primary_darkest, 0.4);
-    border-left: 1px solid rgba($primary_darkest, 0.2);
-    background: $secondaryA_light;
+    border: 1px solid rgba($primary_border_dark, 0.4);
+    border-left: 1px solid rgba($primary_border_dark, 0.2);
+    background: $accentA_light;
     @include border-radius(0px 4px 4px 0px);
 
     >span
     {
-      text-shadow: 1px 4px 6px $secondaryA_light, 0 0 0 $black, 1px 4px 6px $secondaryA_light;
+      text-shadow: 1px 4px 6px $accentA_light, 0 0 0 $black, 1px 4px 6px $accentA_light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
     }
 
     &:hover
     {
-      background: shade($secondaryA_light,5);
+      background: shade($accentA_light,5);
 
       >span
       {
@@ -200,7 +200,7 @@
 
       >.fa
       {
-        color: $complementA_darkest;
+        color: $complementA;
       }
     }
   }

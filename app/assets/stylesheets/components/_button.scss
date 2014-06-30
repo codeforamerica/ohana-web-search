@@ -14,24 +14,24 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid rgba($primary_darkest, 0);
+  border: 1px solid rgba($primary_border_dark, 0);
   color: light($black);
 
   .fa
   {
-    color: $primary_darkest;
+    color: $primary_text_darkest;
   }
 }
 
 .button-small:hover
 {
-  background: $primary_light;
-  border: 1px solid rgba($primary_darkest, 0.2);
-  color: $complementA_darkest;
+  background: $primary_bg_light;
+  border: 1px solid rgba($primary_border_dark, 0.2);
+  color: $complementA;
 
   .fa
   {
-    color: $complementA_darkest;
+    color: $complementA;
   }
 }
 
@@ -59,25 +59,25 @@ a.button-small:not([href])
   padding-left: 7px;
   padding-right: 7px;
   @include border-radius(4px);
-  background: $secondaryA_light;
-  border: 1px solid $primary_darkest; // IE Fallback
-  border: 1px solid rgba($primary_darkest, 0.4);
+  background: $accentA_light;
+  border: 1px solid $primary_border_dark; // IE Fallback
+  border: 1px solid rgba($primary_border_dark, 0.4);
   color: light($black);
 
   .fa
   {
-    color: $primary_darkest;
+    color: $primary_text_darkest;
   }
 }
 
 .button-medium:hover
 {
-  background: shade($secondaryA_light,5);
-  color: $complementA_darkest;
+  background: shade($accentA_light,5);
+  color: $complementA;
 
   .fa
   {
-    color: $complementA_darkest;
+    color: $complementA;
   }
 }
 
@@ -91,7 +91,7 @@ a.button-small:not([href])
   @include inline-block();
   @include type-size(baseline);
   letter-spacing: 1px;
-  color: $complementA_darkest;
+  color: $complementA;
   @include box-sizing(border-box);
   padding:10px;
   margin:0px;
@@ -99,16 +99,16 @@ a.button-small:not([href])
 
   .fa
   {
-    color: $primary_darkest;
+    color: $primary_text_darkest;
   }
 
   &:hover
   {
-    background: $complementA_lightest;
+    background: $complementB;
 
     .fa
     {
-      color: $complementA_darkest;
+      color: $complementA;
     }
   }
 }

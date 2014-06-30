@@ -20,26 +20,46 @@ $primary_darkest: shade($primary, 50); // used 24 times w/ no alpha, 6 times w/ 
 $primary_light: tint($primary, 25);    // used  7 times w/ no alpha
 $primary_lightest: tint($primary, 50); // used 14 times w/ no alpha, 1 time w/ alpha
 
-// secondary A
-$secondaryA: rgb(209,249,148);               // used  1 time (in alert _alert.scss:62)
-$secondaryA_light: tint($secondaryA, 25);    // used 11 times
-$secondaryA_lightest: tint($secondaryA, 50); // used  6 times
-$secondaryA_darkest: shade($secondaryA, 50); // used  4 times
+
+// text colors
+$primary_text: $primary;                   // used 2 times
+$primary_text_lightest: $primary_lightest; // used 5 times (only in placeholder text)
+$primary_text_dark: $primary_dark;         // used 6 times
+$primary_text_darkest: $primary_darkest;   // used 7 times
+
+// background colors
+$primary_bg: $primary;                // used  7 times
+$primary_bg_light: $primary_lightest; // used 13 times
+$primary_bg_dark: $primary_dark;      // used  4 times
+
+// Border colors
+$primary_border: $primary;              // used  8 times
+$primary_border_dark: $primary_dark;    // used 26 times
+$primary_border_light: $primary_light;  // used  4 times
+
+// accents
+$accentA_base: rgb(209,249,148);           // used  4 times (mostly for gradients)
+$accentA_light: tint($accentA_base, 25);   // used 14 times
+$accentA_dark: shade($accentA_base, 50);   // used  4 times
+$accentB: rgb(255,200,56);                 // used  4 times
+
+//$secondaryA_light: tint($secondaryA, 25);     // used 11 times
+//$secondaryA_lightest: tint($secondaryA, 50);  // used  6 times
+// $secondaryA_darkest: shade($secondaryA, 50); // used  4 times
 
 // secondary B
-$secondaryB: rgb(255,200,56);                // used 2 times
-$secondaryB_light: tint($secondaryB, 25);    // used 1 time
-$secondaryB_lightest: tint($secondaryB, 50); // used 1 time
+// $secondaryB: rgb(255,200,56);                // used 2 times
+// $secondaryB_light: tint($secondaryB, 25);    // used 1 time
+// $secondaryB_lightest: tint($secondaryB, 50); // used 1 time
 
-// complementaryA
-$complementA: rgb(242,144,191);                // used  0 times
-$complementA_darkest: shade($complementA, 50); // used 19 times
-$complementA_light: tint($complementA, 25);    // used  2 times
-$complementA_lightest: tint($complementA, 50); // used  6 times w/ no alpha, 4 times w/ alpha
+// complements
+$complement_base: rgb(242,144,191);        // used  0 times
+$complementA: shade($complement_base, 50); // used 19 times
+$complementB: tint($complement_base, 50);  // used  8 times w/ no alpha, 4 times w/ alpha
 
-// complementaryB
-$complementB: rgb(255,10,50);               // used 1 time, for alert error
-$complementB_dark: shade($complementB, 25); // used 1 time, for map load error
+// error color
+$error_color: rgb(255,10,50);               // used 1 time, for alert error
+$error_color_dark: shade($error_color, 25); // used 1 time, for map load error
 
 //animation settings
 $default_duration: 50ms;

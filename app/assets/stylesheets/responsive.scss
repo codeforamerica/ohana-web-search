@@ -30,28 +30,28 @@
         {
           position: relative;
           @include border-radius(4px);
-          border: 1px solid $primary_darkest;
-          background: $secondaryA_light;
+          border: 1px solid $primary_border_dark;
+          background: $accentA_light;
           margin-top: 10px;
 
           >span
           {
-            text-shadow: 1px 4px 6px $secondaryA_light, 0 0 0 $black, 1px 4px 6px $secondaryA_light;
+            text-shadow: 1px 4px 6px $accentA_light, 0 0 0 $black, 1px 4px 6px $accentA_light;
           }
 
           &:hover
           {
-            background: shade($secondaryA_light,5);
+            background: shade($accentA_light,5);
 
             >span
             {
-              color: $complementA_darkest;
+              color: $complementA;
               text-shadow: none;
             }
 
             >.fa
             {
-              color: $complementA_darkest;
+              color: $complementA;
             }
           }
         }
@@ -228,7 +228,7 @@
             margin: 0;
             margin-top: 10px;
             @include border-radius(4px);
-            border: 1px solid $primary_darkest;
+            border: 1px solid $primary_border_dark;
         }
       }
 
