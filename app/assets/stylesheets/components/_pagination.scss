@@ -25,23 +25,23 @@
 
   li.collapsed
   {
-    background: rgba($complementA_lightest,0.1);
+    background: rgba($complementB,0.1);
   }
 
   li:not(.collapsed):not(.current)
   {
-    @include single-box-shadow( rgba($complementA_lightest,0.3) , 0, 0, 1px, 0, inset );
+    @include single-box-shadow( rgba($complementB,0.3) , 0, 0, 1px, 0, inset );
 
     &:hover
     {
-      background: $complementA_lightest;
+      background: $complementB;
       cursor:pointer;
     }
   }
 
   a
   {
-    color: $complementA_darkest;
+    color: $complementA;
     text-decoration: none;
     border-bottom:none;
   }
@@ -49,13 +49,13 @@
   .current
   {
     color: $white !important;
-    background: $complementA_light;
+    background: $complementB;
   }
 
   .next,
   .prev
   {
-    background:$primary_dark;
+    background:$primary_bg_dark;
     a
     {
       color:$white;
@@ -72,6 +72,6 @@
   .next:hover,
   .prev:hover
   {
-    background: $complementA_light !important;
+    background: $complementB !important;
   }
 }
