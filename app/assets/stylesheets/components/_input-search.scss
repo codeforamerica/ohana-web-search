@@ -116,6 +116,7 @@
       >.fa
       {
         color: $primary_text_dark;
+        // color: $btn-hover-color;
       }
     }
   }
@@ -166,7 +167,7 @@
     vertical-align:middle;
     background: $white;
     @include border-radius(4px);
-    border:1px solid rgba($primary_border_dark, 0.4);
+    border:1px solid rgba($search-bg, 0.4);
     color: $black;
   }
 
@@ -178,29 +179,33 @@
     font-size: 24px;
     right: 0;
     left: auto;
-    border: 1px solid rgba($primary_border_dark, 0.4);
-    border-left: 1px solid rgba($primary_border_dark, 0.2);
-    background: $accentA_light;
+    border: 1px solid rgba($search-bg, 0.4);
+    border-left: 1px solid rgba($search-bg, 0.2);
+    background: $btn-bg;
     @include border-radius(0px 4px 4px 0px);
 
     >span
     {
+      // This code is very similar to the rule for .input-search-small > button > span
+      // Can we refactor?
       text-shadow: 1px 4px 6px $accentA_light, 0 0 0 $black, 1px 4px 6px $accentA_light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
+      color: $btn-color;
     }
 
     &:hover
     {
-      background: shade($accentA_light,5);
+      background: $btn-hover-bg;
 
       >span
       {
         text-shadow: none;
+        color: $btn-hover-color;
       }
 
       >.fa
       {
-        color: $complementA;
+        color: $btn-hover-color;
       }
     }
   }
