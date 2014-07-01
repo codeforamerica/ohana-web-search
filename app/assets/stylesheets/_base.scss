@@ -968,13 +968,13 @@ body { top: 0px !important; }
 
   .toggle-group > .toggle > div input[type=radio]:checked + .fa
   {
-    color: $black;
+    color: $checkbox-color;
   }
 
   .toggle-group >.toggle >div input[type=radio]:checked ~ label
   {
-    background-color: $accentA_light; // IE fallback
-    @include background( linear-gradient(top, $accentA_light, $accentA_base) );
+    background-color: $checkbox-bg; // IE fallback
+    @include background( linear-gradient(top, tint($checkbox-bg, 25), $checkbox-bg) );
     border: 1px solid $primary_border_dark;
     @include box-shadow( inset 0px 0px 0px $primary_darkest, inset 0px 0px 1px $primary_dark );
   }
