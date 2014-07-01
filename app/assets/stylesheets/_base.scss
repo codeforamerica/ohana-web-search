@@ -254,7 +254,7 @@ sup
     position: absolute;
 
     width: 300px;
-    background: $white;
+    background: $popup-bg;
     overflow-y: auto;
     @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px);
     @include border-radius(10px);
@@ -376,27 +376,30 @@ sup
     padding: 5px;
     width: 228px;
     display: block;
-    border: 1px solid $accentA_dark;
+    border: 1px solid rgba($greyscale_dark, .4);
+    @include border-radius(3px);
   }
 
   button
   {
     width: 100%;
-    background-color: $accentA_dark;
-    color: $accentA_light;
+    background-color: $btn-bg;
+    color: $btn-color;
     cursor: pointer;
   }
 
   button:hover
   {
-    background-color: $primary_bg_dark;
+    background-color: $btn-hover-bg;
+    color: $btn-hover-color;
   }
 
   button[disabled]
   {
-    background-color: $greyscale_light;
-    color: $greyscale_dark;
+    background-color: $btn-disabled-bg;
+    color: $btn-disabled-color;
     cursor: default;
+    border-color: $btn-disabled-bg;
   }
 
   #feedback-status
@@ -630,8 +633,10 @@ sup
 // language box styles on homepage
 #language-box
 {
-  background: $primary_bg; // IE fallback
-  background: rgba($primary_bg,0.9);
+  // background: $primary_bg; // IE fallback
+  // background: rgba($primary_bg,0.9);
+  background: $search-bg; // IE fallback
+  background: rgba($search-bg,0.9);
   padding: 10px;
   padding-right: 25px;
   padding-bottom: 20px;
@@ -662,8 +667,8 @@ body { top: 0px !important; }
 // help box styles on homepage
 #help-box
 {
-  background: $primary_bg; // IE fallback
-  background: rgba($primary_bg, .9);
+  background: $search-bg; // IE fallback
+  background: rgba($search-bg, .9);
   border-bottom: 2px solid $primary_border_dark;
   padding: 10px;
   padding-right: 25px;
