@@ -1,7 +1,7 @@
 //=================================================================================
 // CONSTANTS
 
-//color scheme
+// color palette
 
 // greyscale
 $black: rgb(0,0,0);
@@ -22,15 +22,23 @@ $primary_lightest: tint($primary, 50); // used 14 times w/ no alpha, 1 time w/ a
 
 
 // text colors
-$primary_text: $primary;                   // used 2 times
+$primary_text: $primary;                   // used 2 times (being used for the little up or down
+                                           //               arrows in the collapsible elemnts in 
+                                           //               the sidebar)
 $primary_text_lightest: $primary_lightest; // used 5 times (only in placeholder text)
 $primary_text_dark: $primary_dark;         // used 6 times
 $primary_text_darkest: $primary_darkest;   // used 7 times
 
 // background colors
-$primary_bg: $primary;                // used  7 times
+$primary_bg: $primary;                // used  6 times (used in gradients, with transparency
+                                      //                on the home page, and as bg for search
+                                      //                input)
 $primary_bg_light: $primary_lightest; // used 13 times
-$primary_bg_dark: $primary_dark;      // used  4 times
+$primary_bg_sort_of_light: $primary_light; // used 1 time
+$primary_bg_dark: $primary_dark;      // used  4 times (twice in feedback form hover state,)
+                                      //                once commented out, and once for a 
+                                      //                map control that isn't actually used,
+                                      //                AFAK)
 
 // Border colors
 $primary_border: $primary;              // used  8 times
@@ -60,6 +68,16 @@ $complementB: tint($complement_base, 50);  // used  8 times w/ no alpha, 4 times
 // error color
 $error_color: rgb(255,10,50);               // used 1 time, for alert error
 $error_color_dark: shade($error_color, 25); // used 1 time, for map load error
+
+
+
+// Color settings for specific kinds of things.
+
+
+
+
+
+
 
 //animation settings
 $default_duration: 50ms;
