@@ -177,13 +177,13 @@ footer a:hover
     a
     {
       //color: rgba($primary_text_darkest, 0.6);
-      color: $primary_text_dark;
+      color: $banner-link;
       text-decoration: none;
     }
 
     a:hover
     {
-      color: $complementA;
+      color: $banner-link-hover;
     }
   }
 }
@@ -404,9 +404,9 @@ sup
 
   #feedback-status
   {
-    border: 1px solid $black;
-    color: $black;
-    background: $complementB;
+    border: 1px solid $alert-border-color;
+    color: $alert-color;
+    background: $alert-bg;
     font-family: $font_san_serif;
     padding: 10px;
     margin-top: 10px;
@@ -610,12 +610,14 @@ sup
     cursor: default;
   }
 
+  // this looks almost identical to line 405ish.
+  // candidate for refactoring?
   #feedback-status
   {
     width: 218px;
-    border: 1px solid $black;
-    color: $black;
-    background: $complementB;
+    border: 1px solid $alert-border-color;
+    color: $alert-color;
+    background: $alert-bg;
     font-family: $font_san_serif;
     padding: 10px;
     margin-top: 10px;
@@ -1229,7 +1231,7 @@ body { top: 0px !important; }
 
 #emergency-services
 {
-  border: 1px solid $complementB !important;
+  border: 1px solid $search-list-important-border !important;
   background: $white;
   z-index: 9997;
 
@@ -1731,7 +1733,7 @@ body { top: 0px !important; }
 
       .fa
       {
-        color: $complementA;
+        color: $main-highlight;
       }
 
       li
@@ -1781,7 +1783,7 @@ body { top: 0px !important; }
     {
       @include type-size(baseline);
       margin-left: 20px;
-      color: $complementA;
+      color: $main-highlight;
     }
   }
 
@@ -2023,7 +2025,7 @@ body { top: 0px !important; }
         @include type-size(baseline);
         font-weight: bold;
         background: $white; // IE fallback
-        background: rgba($complementB, .2);
+        background: $main-header-bg;
         padding-left: 5px;
         padding-right: 5px;
         @include border-radius(5px);
@@ -2042,8 +2044,8 @@ body { top: 0px !important; }
     list-style-type: square;
     li
     {
-      color: $complementB; // IE fallback
-      color: rgba($complementB, .4);
+      color: $list-mark-color; // IE fallback
+      color: rgba($list-mark-color, .4);
       span
       {
         color: $black;
@@ -2128,7 +2130,7 @@ body { top: 0px !important; }
           > .fa
           {
             width: 23px;
-            color: $complementA;
+            color: $main-highlight;
           }
 
           >.fax:after,
@@ -2202,7 +2204,7 @@ body { top: 0px !important; }
      // stylize services summary
     .short-desc
     {
-      color: $complementA;
+      color: $main-highlight;
       //background: $accentA_light;
       @include border-radius(5px);
       text-align: center;
@@ -2245,7 +2247,7 @@ body { top: 0px !important; }
       padding-bottom: 0px;
       margin-left: 0;
       font-size: 24px;
-      border-left: 20px solid $complementA;
+      border-left: 20px solid $main-highlight;
     }
   }
 
