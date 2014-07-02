@@ -25,7 +25,7 @@
 
   li.collapsed
   {
-    background: rgba($complementB,0.1);
+    background: $pagination-disabled-bg;
   }
 
   li:not(.collapsed):not(.current)
@@ -34,31 +34,31 @@
 
     &:hover
     {
-      background: $complementB;
+      background: $pagination-hover-bg !important;
       cursor:pointer;
     }
   }
 
   a
   {
-    color: $complementA;
+    color: $pagination-color;
     text-decoration: none;
     border-bottom:none;
   }
 
   .current
   {
-    color: $white !important;
-    background: $complementB;
+    color: $pagination-active-color !important;
+    background: $pagination-active-bg;
   }
 
   .next,
   .prev
   {
-    background:$primary_bg_dark;
+    background:$pagination-next-bg;
     a
     {
-      color:$white;
+      color:$pagination-next-color;
       padding-left:3px;
       padding-right:3px;
       border-bottom:none;
@@ -69,9 +69,4 @@
     }
   }
 
-  .next:hover,
-  .prev:hover
-  {
-    background: $complementB !important;
-  }
 }
