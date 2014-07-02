@@ -1193,7 +1193,7 @@ body { top: 0px !important; }
     @include border-radius(4px);
     margin: 10px;
     vertical-align: top;
-    border: 1px solid $primary_border_light;
+    border: 1px solid $search-list-border;
 
     > ul
     {
@@ -1216,11 +1216,11 @@ body { top: 0px !important; }
             margin-left: 20px;
             padding-left: 10px;
             font-size: $font_size_100;
-            border-left: 6px solid $primary_border_light;
+            border-left: 6px solid $search-listitem-border;
           }
           > li:nth-child(odd)
           {
-            border-left: 6px solid $primary_border;
+            border-left: 6px solid tint($search-listitem-border, 25);
           }
         }
 
@@ -1243,11 +1243,11 @@ body { top: 0px !important; }
       {
         > li
         {
-          border-left: 6px solid $accentB !important;
+          border-left: 6px solid $search-listitem-important-border !important;
         }
         > li:nth-child(odd)
         {
-          border-left: 6px solid $accentB !important;
+          border-left: 6px solid tint($search-listitem-important-border, 25) !important;
         }
       }
 
