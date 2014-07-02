@@ -74,6 +74,10 @@ group :development do
 
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'
+
+  # live reloading of browser
+  gem 'guard-livereload'
+  gem 'rack-livereload'
 end
 
 group :test do
