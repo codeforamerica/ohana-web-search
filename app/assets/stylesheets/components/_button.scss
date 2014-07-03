@@ -5,7 +5,7 @@
 // buttons
 .button-small
 {
-  background:none;
+  background: $button-small-bg;
   border:none;
 
   @include type-size(baseline);
@@ -14,24 +14,24 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid rgba($primary_border_dark, 0);
-  color: $search-text-color;
+  border: 1px solid rgba($primary_dark, 0);
+  color: $button-small-color;
 
   .fa
   {
-    color: $search-legend-color;
+    color: $button-small-fa-color;
   }
 }
 
 .button-small:hover
 {
-  background: $button-sidebar-bg-hover;
-  border: 1px solid rgba($primary_border_dark, 0.2);
-  color: $search-hover-color;
+  background: $button-small-bg-hover;
+  border: 1px solid rgba($primary_dark, 0.2);
+  color: $button-small-hover-color;
 
   .fa
   {
-    color: $search-hover-color;
+    color: $button-small-hover-color;
   }
 }
 
@@ -61,13 +61,13 @@ a.button-small:not([href])
   padding-right: 7px;
   @include border-radius(4px);
   background: $accentA_light;
-  border: 1px solid $primary_border_dark; // IE Fallback
-  border: 1px solid rgba($primary_border_dark, 0.4);
+  border: 1px solid $primary_dark; // IE Fallback
+  border: 1px solid rgba($primary_dark, 0.4);
   color: light($black);
 
   .fa
   {
-    color: $primary_text_darkest;
+    color: $primary_darkest;
   }
 }
 
@@ -88,7 +88,7 @@ a.button-small:not([href])
 // the details page and is set in a fixed position when the page scrolls.
 .button-utility
 {
-  background:none;
+  background:$button-utility-bg;
   text-decoration: none;
   @include inline-block();
   @include type-size(baseline);
