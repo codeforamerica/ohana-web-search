@@ -16,6 +16,7 @@
 
   li
   {
+    background: $pagination-bg;
     vertical-align: baseline;
     @include type-size(baseline);
     text-align:center;
@@ -25,6 +26,7 @@
 
   li.collapsed
   {
+    color: $pagination-disabled-color;
     background: $pagination-disabled-bg;
   }
 
@@ -36,6 +38,9 @@
     {
       background: $pagination-hover-bg;
       cursor:pointer;
+      a {
+        color: $pagination-hover-color
+      }
     }
   }
 

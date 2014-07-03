@@ -1,7 +1,10 @@
 //=================================================================================
+//
 // CONSTANTS
+//
+//=================================================================================
 
-// color palette
+// COLOR PALETTE
 
 // greyscale
 $black: rgb(0,0,0);
@@ -20,138 +23,137 @@ $primary_darkest: shade($primary, 50);
 $primary_light: tint($primary, 25);
 $primary_lightest: tint($primary, 50);
 
-
-// text colors
-$primary_text: $primary;                   // used 2 times (being used for the little up or down
-                                           //               arrows in the collapsible elemnts in 
-                                           //               the sidebar)
-$primary_text_lightest: $primary_lightest; // used 5 times (only in placeholder text)
-$primary_text_dark: $primary_dark;         // used 6 times
-$primary_text_darkest: $primary_darkest;   // used 7 times
-
-// background colors
-$primary_bg: $primary;                // used  6 times (used in gradients, with transparency
-                                      //                on the home page, and as bg for search
-                                      //                input)
-$primary_bg_light: $primary_lightest; // used 13 times
-$primary_bg_sort_of_light: $primary_light; // used 1 time
-$primary_bg_dark: $primary_dark;      // used  4 times (twice in feedback form hover state,)
-                                      //                once commented out, and once for a 
-                                      //                map control that isn't actually used,
-                                      //                AFAK)
-
-// Border colors
-$primary_border: $primary;              // used  8 times
-$primary_border_dark: $primary_dark;    // used 26 times
-$primary_border_light: $primary_light;  // used  4 times
-
 // accents
-$accentA_base: rgb(209,249,148);           // used  4 times (mostly for gradients)
-$accentA_light: tint($accentA_base, 25);   // used 14 times
-$accentA_dark: shade($accentA_base, 50);   // used  4 times
-$accentB: rgb(255,200,56);                 // used  4 times
-
-//$secondaryA_light: tint($secondaryA, 25);     // used 11 times
-//$secondaryA_lightest: tint($secondaryA, 50);  // used  6 times
-// $secondaryA_darkest: shade($secondaryA, 50); // used  4 times
-
-// secondary B
-// $secondaryB: rgb(255,200,56);                // used 2 times
-// $secondaryB_light: tint($secondaryB, 25);    // used 1 time
-// $secondaryB_lightest: tint($secondaryB, 50); // used 1 time
+$accentA_base: rgb(209,249,148);
+$accentA_light: tint($accentA_base, 25);
+$accentA_dark: shade($accentA_base, 50);
+$accentB: rgb(255,200,56);
 
 // complements
-$complement_base: rgb(242,144,191);        // used  0 times
-$complementA: shade($complement_base, 50); // used 19 times
-$complementB: tint($complement_base, 50);  // used  8 times w/ no alpha, 4 times w/ alpha
-
-// error color
-$error_color: rgb(255,10,50);               // used 1 time, for alert error
-$error_color_dark: shade($error_color, 25); // used 1 time, for map load error
+$complement_base: rgb(242,144,191);
+$complementA: shade($complement_base, 50);
+$complementB: tint($complement_base, 50);
 
 
+// SEMANTIC COLOR VARIABLES
+//
+// Where possible, we named the variable based on the "role" of the element
+// it is used for, as defined by WAI-ARIA
+// http://www.w3.org/TR/wai-aria/rdf_model.html
+//
+// In some cases, such as pagination, that was not possible. In these cases
+// the variable names are patterned on Twitter Bootstrap.
+// http://getbootstrap.com/customize/
 
-// Color settings for specific kinds of things.
+
+// typography
+//
+$text-accent: $primary_dark;
+$text-accent-hover: $complementA;
+
 
 // buttons
-$button-bg: $accentA_light;
-$button-color: rgba($black,.5);
-$button-hover-bg: shade($accentA_light,5);
-$button-hover-color: $complementA;
-$button-disabled-bg: tint($greyscale_light, 60);
-$button-disabled-color: $greyscale_light;
-$button-sidebar-bg-hover: $primary;
-$button-utility-color: $complementA;
+//
+$button-color:               rgba($black,.5);
+$button-hover-color:         $complementA;
+$button-bg:                  $accentA_light;
+$button-hover-bg:            shade($accentA_light,5);
+
+$button-disabled-color:      $greyscale_light;
+$button-disabled-bg:         tint($greyscale_light, 60);
+
+$button-small-color:         tint($black, 25);
+$button-small-fa-color:      $primary_darkest;
+$button-small-hover-color:   $complementA;
+$button-small-bg:            none;
+$button-small-bg-hover:      $primary;
+
+$button-utility-color:       $complementA;
+$button-utility-fa-color:    $primary_darkest;
 $button-utility-hover-color: $complementA;
-$button-utility-fa-color: $primary_text_darkest;
-$button-utility-bg-hover: $complementB;
+$button-utility-bg:          none;
+$button-utility-bg-hover:    $complementB;
 
 // forms
-$input-border-color: rgba($primary_dark, 0.4);
-$checkbox-bg: $accentA_light;
-$checkbox-color: $black;
+//
+$input-border-color:  rgba($primary_dark, 0.4);
+$checkbox-bg:         $accentA_light;
+$checkbox-color:      $black;
 
 // search
-$search-bg: $primary;
-$search-options-bg: $primary_lightest;
-$search-highlight: $black;
-$search-list-border: $primary_light;
-$search-listitem-border: $primary;
-$search-list-important-border: $complementB;
-$search-listitem-important-border: $accentB;
-$search-border-color: $primary;
-$search-text-color: tint($black, 25);
-$search-legend-color: shade($primary, 50);
-$search-legend-color-hover: $complementA;
-$search-hover-color: $complementA;
+//
+// home page
+$search-bg:                         $primary;
+
+// sidebar
+$search-sidebar-bg:                 $primary_lightest;
+$search-border-color:               $primary;
+$search-text-color:                 tint($black, 25);
+$search-accent-color:               shade($primary, 50);
+$search-accent-hover:               $text-accent-hover;
+
+
+// boxes of search terms on the home page.
+$search-list-border:                $primary_light;
+$search-listitem-border:            $primary;
+$search-list-important-border:      $complementB;
+$search-listitem-important-border:  $accentB;
+
 
 
 // pagination
-$pagination-color: $complementA;
-// $pagination-hover-color: orange;
-$pagination-active-color: $white;
-// $pagination-disabled-color: orange;
-$pagination-next-color: $white;
-// $pagination-bg: orange;
-$pagination-hover-bg: $complementB;
-$pagination-active-bg: tint($complement_base, 25);
-$pagination-disabled-bg: rgba($complementB, 0.1);
-$pagination-next-bg: $primary_dark;
-$pagination-next-hover-bg: tint($complement_base, 25);
-$pagination-next-hover-color: $white;
-$pagination-border: $complementB;
-// $pagination-hover-border: orange;
-// $pagination-active-border: orange;
-// $pagination-disabled-border: orange;
-// $pagination-next-border: orange;
+//
+$pagination-color:              $complementA;
+$pagination-hover-color:        $complementA;
+$pagination-bg:                 none;
+$pagination-hover-bg:           $complementB;
+$pagination-border:             $complementB;
+
+$pagination-active-color:       $white;
+$pagination-active-bg:          tint($complement_base, 25);
+
+$pagination-disabled-color:     $greyscale_dark;
+$pagination-disabled-bg:        rgba($complementB, 0.1);
+
+$pagination-next-color:         $white;
+$pagination-next-hover-color:   $white;
+$pagination-next-bg:            $primary_dark;
+$pagination-next-hover-bg:      tint($complement_base, 25);
+
+$pagination-highlight:          $black;
 
 
 // banner
+//
 $banner-link: $primary_dark;
 $banner-link-hover: $complementA;
 
 // main
+//
 $main-highlight: $complementA;
-$accent-text: $accentB;
 $main-header-bg: rgba($complementB, 0.2);
 $main-header-color: $black;
-$list-mark-color: $complementB;
-$border-color: $primary_dark;
+$main-list-mark-color: $complementB;
+$main-border-color: $primary_dark;
 
 // alert
+//
 $alert-color: $black;
 $alert-bg: $complementB;
 $alert-border-color: $black;
 
-
 // popups
+//
 $popup-bg: $white;
 
 
+
 // things that don't appear to be in use
+//
 $terminology-border: $complementA;
 
 
+// END SEMANTIC COLOR VARIABLES
 
 
 
