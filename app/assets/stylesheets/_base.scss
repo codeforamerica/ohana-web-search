@@ -206,7 +206,7 @@ sup
     overflow-x: hidden;
     background: $white;
     z-index: 9998;
-    @include single-box-shadow($primary_darkest, 0px, 2px, 10px);
+    @include single-box-shadow(darkest($primary), 0px, 2px, 10px);
     @include box-sizing(border-box);
     padding: 5px;
 
@@ -762,7 +762,7 @@ body { top: 0px !important; }
 
     color: $black; // IE fallback
     color: rgba($black, .7);
-    text-shadow: 1px 4px 6px $primary_lightest, 0 0 0 $black, 1px 4px 6px $primary_lightest;
+    text-shadow: 1px 4px 6px lightest($primary), 0 0 0 $black, 1px 4px 6px lightest($primary);
   }
 
   .input-search-big
@@ -800,7 +800,7 @@ body { top: 0px !important; }
     >legend.closed:hover:before,
     >legend.closed:hover::before
     {
-      color: $sidebar-legend-color-hover;
+      color: $search-legend-color-hover;
     }
 
     >legend.open:before,
@@ -978,7 +978,7 @@ body { top: 0px !important; }
     background-color: $checkbox-bg; // IE fallback
     @include background( linear-gradient(top, tint($checkbox-bg, 25), $checkbox-bg) );
     border: 1px solid $primary_border_dark;
-    @include box-shadow( inset 0px 0px 0px $primary_darkest, inset 0px 0px 1px $primary_dark );
+    @include box-shadow( inset 0px 0px 0px darkest($primary), inset 0px 0px 1px dark($primary) );
   }
 
   .toggle-group >.toggle >div input[type=radio]:checked ~ label:before,
@@ -1001,7 +1001,7 @@ body { top: 0px !important; }
   @include inline-block();
   position: relative;
 
-  @include box-shadow( inset 0px 1px 0px $primary_dark, inset 0px 1px 1px $primary_darkest );
+  @include box-shadow( inset 0px 1px 0px dark($primary), inset 0px 1px 1px darkest($primary) );
   border: 1px solid $primary_border_dark;
   @include border-radius(3px);
   cursor: pointer;
@@ -1174,7 +1174,7 @@ body { top: 0px !important; }
 
     legend
     {
-      color: $sidebar-legend-color;
+      color: $search-legend-color;
       font-size: 14px;
     }
   }
@@ -1516,6 +1516,7 @@ body { top: 0px !important; }
 
 //=================================================================================
 // Results - terminology view
+// IN USE?
 #terminology
 {
   border-bottom: 1px solid $greyscale_midtone; // IE fallback
@@ -1524,7 +1525,7 @@ body { top: 0px !important; }
   div
   {
     background: $greyscale_lightest;
-    border: 2px solid $complementA;
+    border: 2px solid $terminology-border;
     padding: 30px;
     margin: 20px;
     @include border-radius(4px);
@@ -2273,10 +2274,11 @@ body { top: 0px !important; }
     }
   }
 
+  // Not sure if this is really in use anywhere?
   #show-nearby-control.hover:hover
   {
     background: $primary_bg_dark;
-    color: $accentB;
+    color: $accent-text;
     cursor: pointer;
   }
 

@@ -14,11 +14,11 @@ $greyscale_lightest: rgb(252,252,252);
 $white: rgb(255,255,255);
 
 // primary
-$primary: rgb(137,209,226);            // used 18 times w/ no alpha, 1 time w/ alpha
-$primary_dark: shade($primary, 25);    // used 19 times w/ no alpha
-$primary_darkest: shade($primary, 50); // used 24 times w/ no alpha, 6 times w/ alpha
-$primary_light: tint($primary, 25);    // used  7 times w/ no alpha
-$primary_lightest: tint($primary, 50); // used 14 times w/ no alpha, 1 time w/ alpha
+$primary: rgb(137,209,226);
+$primary_dark: shade($primary, 25);
+$primary_darkest: shade($primary, 50);
+$primary_light: tint($primary, 25);
+$primary_lightest: tint($primary, 50);
 
 
 // text colors
@@ -100,15 +100,11 @@ $search-listitem-border: $primary;
 $search-list-important-border: $complementB;
 $search-listitem-important-border: $accentB;
 $search-border-color: $primary;
+$search-text-color: tint($black, 25);
+$search-legend-color: shade($primary, 50);
+$search-legend-color-hover: $complementA;
+$search-hover-color: $complementA;
 
-
-
-$popup-bg: $white;
-
-$sidebar-text-color: tint($black, 25);
-$sidebar-legend-color: shade($primary, 50);
-$sidebar-legend-color-hover: $complementA;
-$sidebar-hover-color: $complementA;
 
 // pagination
 $pagination-color: $complementA;
@@ -123,7 +119,7 @@ $pagination-disabled-bg: rgba($complementB, 0.1);
 $pagination-next-bg: $primary_dark;
 $pagination-next-hover-bg: tint($complement_base, 25);
 $pagination-next-hover-color: $white;
-// $pagination-border: orange;
+$pagination-border: $complementB;
 // $pagination-hover-border: orange;
 // $pagination-active-border: orange;
 // $pagination-disabled-border: orange;
@@ -136,6 +132,7 @@ $banner-link-hover: $complementA;
 
 // main
 $main-highlight: $complementA;
+$accent-text: $accentB;
 $main-header-bg: rgba($complementB, 0.2);
 $main-header-color: $black;
 $list-mark-color: $complementB;
@@ -147,6 +144,12 @@ $alert-bg: $complementB;
 $alert-border-color: $black;
 
 
+// popups
+$popup-bg: $white;
+
+
+// things that don't appear to be in use
+$terminology-border: $complementA;
 
 
 
