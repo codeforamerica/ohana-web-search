@@ -242,9 +242,9 @@ define(['util/bitmask','domReady!',
     // @returns [Object] A google.maps.Marker instance that was created.
     function _loadMarker(markerData)
     {
-      if (markerData['coordinates'] && markerData['coordinates'][0] && markerData['coordinates'][1])
+      if (markerData['latitude'] && markerData['longitude'])
       {
-        var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
+        var myLatLng = new google.maps.LatLng(markerData['latitude'], markerData['longitude']);
 
         var markerIcon;
         if (_atMaxSize)
@@ -257,25 +257,28 @@ define(['util/bitmask','domReady!',
         }
 
         var marker = new google.maps.Marker({
-          id: markerData['id'],
           map: _map,
           title: '',
-          position: myLatlng,
+          position: myLatLng,
           icon: markerIcon,
           optimized: false
         });
 
         _markerList.push(marker);
 
-        var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
-        var content = "<div><div class='corner'></div><div class='button-close'></div><h1>"+
-                      markerData['name']+"</h1>"+agency+
-                      "<p><a href='/organizations/"+marker.id+(window.location.search)+
+        var mainName = markerData['name'];
+        var orgName = markerData['org_name'];
+        if (orgName != markerData['name']) {
+         var agency = "<h2>"+orgName+"</h2>";
+        }
+        var content = "<div><div class='button-close'></div>"+
+                      "<h1>"+mainName+"</h1>"+agency+
+                      "<p><a href='/organizations/"+marker.slug+(window.location.search)+
                       "'>View more details…</a></p></div>";
 
         _makeInfoBoxEvent(marker, content);
 
-        _markerBounds.extend(myLatlng);
+        _markerBounds.extend(myLatLng);
       }
 
       return marker;
