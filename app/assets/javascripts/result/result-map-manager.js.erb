@@ -1,5 +1,5 @@
-//= depend_on_asset 'markers/human_services_large.png'
-//= depend_on_asset 'markers/human_services_small.png'
+//= depend_on_asset 'markers/marker_large.png'
+//= depend_on_asset 'markers/marker_small.png'
 // Manages results maps view.
 define(['util/bitmask','domReady!',
 				'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (bitmask) {
@@ -34,8 +34,8 @@ define(['util/bitmask','domReady!',
     var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
     var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
 
-    var LARGE_MARKER_URL = "<%= asset_path('markers/human_services_large.png') %>";
-    var SMALL_MARKER_URL = "<%= asset_path('markers/human_services_small.png') %>";
+    var LARGE_MARKER_URL = "<%= asset_path('markers/marker_large.png') %>";
+    var SMALL_MARKER_URL = "<%= asset_path('markers/marker_small.png') %>";
 
     // "Constant" for delay when showing/hiding the marker info box.
     var DEFAULT_infoBox_DELAY = 400;
@@ -238,8 +238,7 @@ define(['util/bitmask','domReady!',
         var markerIcon;
         if (_atMaxSize)
         {
-          markerIcon = new google.maps.MarkerImage("http://domain/path/sprite.png", new google.maps.Size(12, 20), new google.maps.Point(100, 34));
-          //markerIcon = LARGE_MARKER_URL;
+          markerIcon = LARGE_MARKER_URL;
         }
         else
         {
@@ -249,7 +248,7 @@ define(['util/bitmask','domReady!',
         var marker = new google.maps.Marker({
           id: markerData['id'],
           map: _map,
-          title: markerData['name'],
+          title: '',
           position: myLatlng,
           icon: markerIcon,
           optimized: false

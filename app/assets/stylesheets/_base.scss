@@ -1803,10 +1803,12 @@ body { top: 0px !important; }
     border: 1px solid dark($blue);
     padding: 3px 6px;
     opacity: 0.95;
+
+    // This is the corner triangle in the upper-left of the infobox.
     @include background(
       linear-gradient(-270deg, $white 1px, rgba(255,255,255,0) 2px),
       linear-gradient($white 1px, rgba(255,255,255,0) 2px),
-      linear-gradient(135deg, dark($blue) 6px, $white 7px)
+      linear-gradient(135deg, dark($purple) 6px, $white 7px)
       );
 
     > div
