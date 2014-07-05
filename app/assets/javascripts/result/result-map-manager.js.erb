@@ -1,4 +1,5 @@
-//= depend_on_asset 'markers/human_services.png'
+//= depend_on_asset 'markers/human_services_large.png'
+//= depend_on_asset 'markers/human_services_small.png'
 // Manages results maps view.
 define(['util/bitmask','domReady!',
 				'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (bitmask) {
@@ -26,9 +27,15 @@ define(['util/bitmask','domReady!',
     // The collective map bounds of the markers.
     var _markerBounds;
 
+    // Array of markers on the map.
+    var _markerList = [];
+
     // "Constants" for map button text content.
     var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
     var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
+
+    var LARGE_MARKER_URL = "<%= asset_path('markers/human_services_large.png') %>";
+    var SMALL_MARKER_URL = "<%= asset_path('markers/human_services_small.png') %>";
 
     // "Constant" for delay when showing/hiding the marker info box.
     var DEFAULT_infoBox_DELAY = 400;
@@ -92,7 +99,7 @@ define(['util/bitmask','domReady!',
           var infoBoxOptions = {
   					disableAutoPan: false,
   					maxWidth: 0,
-  					pixelOffset: new google.maps.Size(8, -8),
+  					pixelOffset: new google.maps.Size(7, -7),
   					zIndex: null,
   					infoBoxClearance: new google.maps.Size(1, 1),
   					isHidden: false,
@@ -122,12 +129,14 @@ define(['util/bitmask','domReady!',
         _mapCanvas.classList.remove('max');
         _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
         _atMaxSize = false;
+        _updateMarkerSizes();
       }
       else
       {
         _mapCanvas.classList.add('max');
         _mapViewControl.innerHTML = LARGER_MAP_TEXT;
         _atMaxSize = true;
+        _updateMarkerSizes();
       }
       _refresh();
 
@@ -207,6 +216,17 @@ define(['util/bitmask','domReady!',
       }
     }
 
+    // Updates the marker icons to the size set for the map.
+    function _updateMarkerSizes() {
+      var index = _markerList.length-1;
+      while(index>=0) {
+        if (_atMaxSize)
+          _markerList[index--].setIcon(LARGE_MARKER_URL);
+        else
+          _markerList[index--].setIcon(SMALL_MARKER_URL);
+      }
+    }
+
     // Load a single map marker.
     // @returns [Object] A google.maps.Marker instance that was created.
     function _loadMarker(markerData)
@@ -215,7 +235,16 @@ define(['util/bitmask','domReady!',
       {
         var myLatlng = new google.maps.LatLng(markerData['coordinates'][1],markerData['coordinates'][0]);
 
-        var markerIcon = "<%= asset_path('markers/human_services.png') %>";
+        var markerIcon;
+        if (_atMaxSize)
+        {
+          markerIcon = new google.maps.MarkerImage("http://domain/path/sprite.png", new google.maps.Size(12, 20), new google.maps.Point(100, 34));
+          //markerIcon = LARGE_MARKER_URL;
+        }
+        else
+        {
+          markerIcon = SMALL_MARKER_URL;
+        }
 
         var marker = new google.maps.Marker({
           id: markerData['id'],
@@ -225,6 +254,8 @@ define(['util/bitmask','domReady!',
           icon: markerIcon,
           optimized: false
         });
+
+        _markerList.push(marker);
 
         var agency = markerData['agency'] ? "<h2>"+markerData['agency']+"</h2>" : "";
         var content = "<div><div class='corner'></div><div class='button-close'></div><h1>"+
