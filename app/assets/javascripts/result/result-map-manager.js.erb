@@ -80,6 +80,18 @@ define(['util/bitmask','domReady!',
           _mapViewControl = document.getElementById('map-view-control');
           _mapViewControl.innerHTML = SMALLER_MAP_TEXT;
 
+          // Turns off Google Points-Of-Interest (POI) markers so the user
+          // doesn't click a POI and get an infowindow popped up.
+          var poiStyles =[
+              {
+                  featureType: "poi",
+                  elementType: "labels",
+                  stylers: [
+                        { visibility: "off" }
+                  ]
+              }
+          ];
+
           var mapOptions = {
             zoom: 15,
             scrollwheel: false,
@@ -91,7 +103,8 @@ define(['util/bitmask','domReady!',
               position: google.maps.ControlPosition.RIGHT_BOTTOM
             },
             mapTypeControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: poiStyles
           };
 
           _map = new google.maps.Map(_mapCanvas, mapOptions);
