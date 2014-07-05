@@ -111,13 +111,11 @@ define(['util/bitmask','domReady!',
 
           var infoBoxOptions = {
   					disableAutoPan: false,
-  					maxWidth: 0,
   					pixelOffset: new google.maps.Size(7, -7),
   					zIndex: null,
   					infoBoxClearance: new google.maps.Size(1, 1),
   					isHidden: false,
             closeBoxURL: '',
-  					pane: 'floatPane',
   					enableEventPropagation: false
   				};
 
@@ -314,11 +312,7 @@ define(['util/bitmask','domReady!',
       // When user mouses over the marker, open the infoBox and update its contents.
       google.maps.event.addListener(marker, 'mouseover', function() {
         if (_overMarker !== marker) _infoBoxState.turnOff(PIN_INFOBOX);
-        _overMarker = marker;
-        _infoBoxState.turnOn(OVER_MARKER);
-        _infoBoxContent = content;
-        _selectedMarker = marker;
-        _updateInfoBoxState();
+        _registerMarker(marker,content);
       });
       google.maps.event.addListener(marker, 'mouseout', function() {
         _infoBoxState.turnOff(OVER_MARKER);
@@ -327,6 +321,12 @@ define(['util/bitmask','domReady!',
 
       // When user clicks the marker, open the infoBox and center the map on the marker
       google.maps.event.addListener(marker, 'click', function() {
+
+        // Touch displays don't know they're over a marker till it's tapped,
+        // so manually register the state as being over the marker in this case.
+        if (_infoBoxState.isOff(OVER_MARKER)) _registerMarker(marker,content);
+
+        // Toggle between pinning the infobox and closing it.
         if (_infoBoxState.isOn(PIN_INFOBOX))
         {
           _infoBoxState.turnOff(SHOW_INFOBOX);
@@ -342,6 +342,15 @@ define(['util/bitmask','domReady!',
           _updateInfoBoxState(0);
         }
       });
+    }
+
+    function _registerMarker(marker, content)
+    {
+      _overMarker = marker;
+      _infoBoxState.turnOn(OVER_MARKER);
+      _infoBoxContent = content;
+      _selectedMarker = marker;
+      _updateInfoBoxState();
     }
 
     // Triggers a resize event and refits the map to the bounds of the markers
