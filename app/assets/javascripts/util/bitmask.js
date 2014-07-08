@@ -22,7 +22,7 @@ define(function() {
     }
 
     function isOn(state) {
-      return (_bitmask & state);
+      return !!(_bitmask & state);
     }
 
     function isOff(state) {

@@ -177,6 +177,6 @@ feature "results page search", :js, :vcr do
     expect(all("#org-name-options .current-option label").last).to have_content("All")
 
     find('#find-btn').click
-    expect(page).to have_content("22 results")
+    expect(page).to have_content("24 results")
   end
 end

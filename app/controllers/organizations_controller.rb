@@ -72,7 +72,7 @@ class OrganizationsController < ApplicationController
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
     array_for_maps = @orgs.map do |org|
-      next unless org.key?(:coordinates)
+      next unless org.coordinates.present?
       {
         latitude: org.latitude,
         longitude: org.longitude,

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,41 +21,44 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:04:32 GMT
+      - Wed, 16 Jul 2014 08:16:46 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&per_page=1&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=2&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=24&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=2&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
       - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - 168d9539-f3a1-4bc3-8ebc-e760a337845e
+      - 87549607-6eb3-4777-90f3-453e8fd12ee6
       X-Runtime:
-      - '0.050103'
+      - '0.031824'
       X-Total-Count:
-      - '22'
+      - '24'
       X-Total-Pages:
-      - '22'
+      - '24'
+      X-Xss-Protection:
+      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":1,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":1,"name":"Susan
-        Houston","title":"Director of Older Adult Services"},{"id":2,"name":"Christina
-        Gonzalez","title":"Center Director"}],"coordinates":[-122.213221,37.477227],"description":"A
+      string: '[{"id":1,"admin_emails":[],"coordinates":[-122.213221,37.477227],"description":"A
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
@@ -74,28 +77,17 @@ http_interactions:
         groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
         Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":1,"number":"650
-        701-0856"}],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)","Spanish"],"latitude":37.477227,"longitude":-122.213221,"mail_address":{"id":1,"attention":"Fair
-        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
-        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1,"number":"650
-        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
-        the Redwood City area.","slug":"fair-oaks-adult-activity-center","transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/1","services":[{"id":1,"audience":"Older
-        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
-        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
-        suggested donation for lunch for age 60 or over, donations for other services
-        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
-        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
-        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
-        Meals/Nutrition Sites","Senior Centers","Older Adults"],"how_to_apply":"Walk
-        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
+        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
+        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
+        780-7525","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:04:32 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:46 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=24&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -103,7 +95,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -114,100 +106,52 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:04:32 GMT
+      - Wed, 16 Jul 2014 08:16:46 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=1&per_page=1&utf8=%E2%9C%93>;
-        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=21&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=1&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=23&utf8=%E2%9C%93>;
         rel="prev"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
-      - '22'
+      - '24'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Previous-Page:
-      - '21'
+      - '23'
       X-Request-Id:
-      - e8085de2-c9cd-49be-a331-f8b76fec38d5
+      - 3301c80d-bdb5-421e-8bd0-0307e0271929
       X-Runtime:
-      - '0.051830'
+      - '0.037346'
       X-Total-Count:
-      - '22'
+      - '24'
       X-Total-Pages:
-      - '22'
-      Transfer-Encoding:
-      - chunked
+      - '24'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '438'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":22,"accessibility":["Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":21,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"admin_emails":["foo@bar.com"],"contacts":[{"id":29,"name":"Suzanne
-        Badenhoop","title":"Board President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":21,"number":"650
-        627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"latitude":42.878036,"longitude":-73.1968254,"mail_address":{"id":21,"attention":"Hella
-        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
-        Maceo Agency","phones":[{"id":21,"department":"Information","number":"650
-        372-6200","number_type":"TTY"},{"id":22,"department":"Reservations","number":"650
-        372-6200"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-22T17:31:08.727-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/22","services":[{"id":22,"audience":"Profit
-        and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"bazfoo","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.791-07:00"},{"id":23,"audience":"Second
-        service and nonprofit businesses, the public, military facilities, schools
-        and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
-        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
-        by phone or mail","name":"hasdfasf","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.850-07:00"}],"organization":{"id":8,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"}}]'
+      string: '[{"id":143,"admin_emails":["moncef@samaritanhouse.com"],"coordinates":[-73.9814578,42.8140012],"description":"new
+        description","latitude":42.8140012,"longitude":-73.9814578,"name":"new samaritan
+        house location","short_desc":null,"slug":"new-samaritan-house-location-modularity","updated_at":"2014-07-15T13:20:11.634-07:00","urls":["http://www.samaritanhouse.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/new-samaritan-house-location-modularity/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/new-samaritan-house-location-modularity/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/new-samaritan-house-location-modularity/services","url":"http://ohana-api-test.herokuapp.com/api/locations/new-samaritan-house-location-modularity","address":{"id":148,"street":"modularity","city":"utopia","state":"XX","zip":"12345"},"organization":{"id":5,"name":"Samaritan
+        House","slug":"samaritan-house","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[]}]'
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:04:32 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:46 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=18&utf8=%E2%9C%93
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=20&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -215,7 +159,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -226,59 +170,50 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:04:32 GMT
+      - Wed, 16 Jul 2014 08:16:46 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=1&per_page=1&utf8=%E2%9C%93>;
-        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=17&per_page=1&utf8=%E2%9C%93>;
-        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&per_page=1&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=19&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=1&utf8=%E2%9C%93>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=19&utf8=%E2%9C%93>;
+        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=24&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=21&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
-      - '18'
+      - '20'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Next-Page:
-      - '19'
+      - '21'
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Previous-Page:
-      - '17'
+      - '19'
       X-Request-Id:
-      - eaae1ae1-2cd1-47db-acc1-f20bc7796d0e
+      - da6ffae9-112b-4b03-ae32-5181143b0da7
       X-Runtime:
-      - '0.050292'
+      - '0.028383'
       X-Total-Count:
-      - '22'
+      - '24'
       X-Total-Pages:
-      - '22'
-      Transfer-Encoding:
-      - chunked
+      - '24'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '330'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":18,"accessibility":["Disabled Restroom","Wheelchair"],"address":{"id":18,"street":"114
-        Fifth Avenue","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":26,"name":"Sharon
-        Petersen","title":"Administrator"}],"coordinates":[-122.207057,37.468678],"description":"Provides
-        free medical care to those in need. Offers basic medical exams for adults
-        and tuberculosis screening. Assists the individual to access other services
-        in the community. By appointment only, Project Smile provides a free dental
-        exam, dental cleaning and oral hygiene instruction for children, age 3-12,
-        of Samaritan House clients.","emails":["gracie@samaritanhouse.com"],"faxes":[{"id":18,"number":"650
-        839-1457"}],"hours":"Monday-Friday, 9-12, 2-5","languages":["Spanish"],"latitude":37.468678,"longitude":-122.207057,"mail_address":{"id":18,"attention":"Redwood
-        City Free Medical Clinic","street":"114 Fifth Avenue","city":"Redwood City","state":"CA","zip":"94063"},"name":"Redwood
-        City Free Medical Clinic","phones":[{"id":18,"number":"650 839-1447"}],"short_desc":"Provides
-        free medical care to those in need.","slug":"redwood-city-free-medical-clinic","transportation":"SAMTRANS
-        stops within 2 blocks.","updated_at":"2014-05-09T20:49:18.967-07:00","urls":["http://www.samaritanhouse.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/18","services":[{"id":18,"eligibility":"Low-income
-        person without access to health care","fees":"None.","funding_sources":["Donations","Grants"],"keywords":["HEALTH
-        SERVICES","Outpatient Care","Community Clinics"],"how_to_apply":"Call for
-        screening appointment. Medical visits are by appointment only.","service_areas":["Atherton","East
-        Palo Alto","Menlo Park","Redwood City","San Carlos"],"wait":"Varies.","updated_at":"2014-04-18T12:32:10.649-07:00"}],"organization":{"id":5,"name":"Samaritan
-        House","slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/5","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/5/locations"}}]'
+      string: '[{"id":20,"admin_emails":[],"coordinates":null,"description":"no phone","latitude":null,"longitude":null,"name":"Location
+        with no phone","short_desc":"no phone","slug":"location-with-no-phone","updated_at":"2014-07-15T12:59:51.308-07:00","urls":[],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/services","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","address":null,"organization":{"id":6,"name":"Location
+        with no phone","slug":"location-with-no-phone","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/location-with-no-phone","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/location-with-no-phone/locations"},"phones":[]}]'
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:04:32 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:46 GMT
 recorded_with: VCR 2.9.2

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,37 +21,41 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:03:31 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 16 Jul 2014 08:16:29 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&location=&page=0&utf8=%E2%9C%93>;
         rel="last"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - f4db6ac2-c500-461f-a4a9-9e5c3b40f2d5
+      - ccd5da9b-690e-45d9-9f72-0534f885c6dd
       X-Runtime:
-      - '0.019051'
+      - '0.016951'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      X-Xss-Protection:
+      - 1; mode=block
       Content-Length:
-      - '2'
+      - '34'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:03:31 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:29 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&utf8=%E2%9C%93
@@ -62,7 +66,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -73,41 +77,43 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:03:31 GMT
+      - Wed, 16 Jul 2014 08:16:29 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=22&per_page=1&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=1&utf8=%E2%9C%93>;
-        rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?page=24&utf8=%E2%9C%93>; rel="last",
+        <http://ohana-api-test.herokuapp.com/api/search?page=2&utf8=%E2%9C%93>; rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
       - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - d5913f97-2eae-42ff-add3-9434cb3eddb8
+      - 94bfd9c3-3332-4128-afbc-34bd2f9d3c65
       X-Runtime:
-      - '0.052684'
+      - '0.042587'
       X-Total-Count:
-      - '22'
+      - '24'
       X-Total-Pages:
-      - '22'
-      Transfer-Encoding:
-      - chunked
+      - '24'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1255'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":1,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":1,"name":"Susan
-        Houston","title":"Director of Older Adult Services"},{"id":2,"name":"Christina
-        Gonzalez","title":"Center Director"}],"coordinates":[-122.213221,37.477227],"description":"A
+      string: '[{"id":1,"admin_emails":[],"coordinates":[-122.213221,37.477227],"description":"A
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
@@ -126,25 +132,14 @@ http_interactions:
         groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
         Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":1,"number":"650
-        701-0856"}],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)","Spanish"],"latitude":37.477227,"longitude":-122.213221,"mail_address":{"id":1,"attention":"Fair
-        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
-        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1,"number":"650
-        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
-        the Redwood City area.","slug":"fair-oaks-adult-activity-center","transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/1","services":[{"id":1,"audience":"Older
-        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
-        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
-        suggested donation for lunch for age 60 or over, donations for other services
-        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
-        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
-        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
-        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
-        Meals/Nutrition Sites","Senior Centers","Older Adults"],"how_to_apply":"Walk
-        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
+        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
+        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
+        780-7525","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:03:31 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:30 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood%20City,%20CA&utf8=%E2%9C%93
@@ -155,7 +150,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -166,42 +161,44 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Mon, 09 Jun 2014 22:03:32 GMT
+      - Wed, 16 Jul 2014 08:16:30 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood+City%2C+CA&page=12&per_page=1&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood+City%2C+CA&page=2&per_page=1&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?location=Redwood+City%2C+CA&page=12&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?location=Redwood+City%2C+CA&page=2&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
       X-Current-Page:
       - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - 18ee00c3-0007-4cdb-87b1-b44a88270f87
+      - 234fa99c-b7e2-4de8-9ae5-237fb88b77d7
       X-Runtime:
-      - '0.175727'
+      - '0.238656'
       X-Total-Count:
       - '12'
       X-Total-Pages:
       - '12'
+      X-Xss-Protection:
+      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":10,"accessibility":["Elevator","Information on tape or in Braille","Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"id":10,"street":"1044
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":16,"name":"Dave
-        Genesy","title":"Library Director"},{"id":17,"name":"Maria Kramer","title":"Library
-        Division Manager"}],"coordinates":[-122.227409,37.4837662],"description":"Provides
+      string: '[{"id":10,"admin_emails":[],"coordinates":[-122.227409,37.4837662],"description":"Provides
         general reading and media materials, literacy and homework assistance, and
         programs for all ages. Provides public computers, wireless connectivity, a
         children''s room, teen center, and a local history collection. The library
@@ -210,18 +207,12 @@ http_interactions:
         10-5. The Schaberg Branch (650-780-7010) is located at 2140 Euclid Avenue
         and is open Tuesday-Thursday, 1-6; Saturday, 10-3. The Redwood Shores Branch
         (650-780-5740) is located at 399 Marine Parkway and is open Monday-Thursday,
-        10-8; Saturday, 10-5; Sunday 12-5.","emails":["rclinfo@redwoodcity.org"],"faxes":[{"id":10,"number":"650
-        780-7069"}],"hours":"Monday-Thursday, 10-9; Friday, Saturday, 10-5; Sunday,
-        12-5","languages":["Spanish"],"latitude":37.4837662,"longitude":-122.227409,"mail_address":{"id":10,"attention":"Main
-        Library","street":"1044 Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"name":"Main
-        Library","phones":[{"id":10,"department":"Circulation","number":"650 780-7018"}],"short_desc":"Provides
-        general reference and reading materials to adults, teenagers and children.","slug":"main-library","transportation":"SAMTRANS
-        stops within 1 block; CALTRAIN stops within 1 block.","updated_at":"2014-05-09T20:49:18.920-07:00","urls":["http://www.redwoodcity.org/library"],"url":"http://ohana-api-test.herokuapp.com/api/locations/10","services":[{"id":10,"eligibility":"Resident
-        of California to obtain a card","fees":"None.","funding_sources":["City"],"keywords":["EDUCATION
-        SERVICES","Library","Libraries","Public Libraries"],"how_to_apply":"Walk in.
-        Proof of California residency to receive a library card.","service_areas":["San
-        Mateo County"],"wait":"No wait.","updated_at":"2014-04-18T12:32:03.016-07:00"}],"organization":{"id":3,"name":"Redwood
-        City Public Library","slug":"redwood-city-public-library","url":"http://ohana-api-test.herokuapp.com/api/organizations/3","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/3/locations"}}]'
+        10-8; Saturday, 10-5; Sunday 12-5.","latitude":37.4837662,"longitude":-122.227409,"name":"Main
+        Library","short_desc":"Provides general reference and reading materials to
+        adults, teenagers and children.","slug":"main-library","updated_at":"2014-05-09T20:49:18.920-07:00","urls":["http://www.redwoodcity.org/library"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":10,"street":"1044
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":3,"name":"Redwood
+        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":10,"department":"Circulation","extension":null,"number":"650
+        780-7018","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 09 Jun 2014 22:03:32 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:30 GMT
 recorded_with: VCR 2.9.2
