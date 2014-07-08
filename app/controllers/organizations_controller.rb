@@ -78,7 +78,9 @@ class OrganizationsController < ApplicationController
         longitude: org.longitude,
         name: org.name,
         org_name: org.organization.name,
-        slug: org.slug
+        slug: org.slug,
+        street_address: org.address.street,
+        city: org.address.city
       }
     end
     @array_for_maps = array_for_maps.compact

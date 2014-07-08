@@ -1804,13 +1804,6 @@ body { top: 0px !important; }
     padding: 3px 6px;
     opacity: 0.95;
 
-    // This is the corner triangle in the upper-left of the infobox.
-    @include background(
-      linear-gradient(-270deg, $white 1px, rgba(255,255,255,0) 2px),
-      linear-gradient($white 1px, rgba(255,255,255,0) 2px),
-      linear-gradient(135deg, dark($purple) 6px, $white 7px)
-      );
-
     > div
     {
       position: relative;
@@ -1820,12 +1813,13 @@ body { top: 0px !important; }
     {
       font-weight: bold;
       font-size: $font_size_95;
-      margin-right: 20px;
+      margin-left: 20px;
     }
 
     h2
     {
       font-size: $font_size_95;
+      margin-left: 20px;
     }
 
     a
@@ -1858,7 +1852,7 @@ body { top: 0px !important; }
       color: $greyscale_midtone; // IE Fallback
       color: rgba($black, .5);
       position: absolute;
-      right: 0px;
+      left: 0px;
       top: -10px;
       font-size: $font_size_120;
       font-family: $font_serif;

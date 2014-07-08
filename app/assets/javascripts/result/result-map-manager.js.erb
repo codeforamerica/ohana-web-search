@@ -1,11 +1,13 @@
 //= depend_on_asset 'markers/marker_large.png'
 //= depend_on_asset 'markers/marker_small.png'
+//= depend_on_asset 'markers/marker_large_spiderfied.png'
+//= depend_on_asset 'markers/marker_small_spiderfied.png'
 // Manages search results view Google Map.
 define(['util/bitmask','domReady!',
 				'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'], function (bitmask) {
   'use strict';
 
-  require(['https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js'],
+  require(['spiderfier','https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js'],
     function() {
 
     // PRIVATE PROPERTIES
@@ -37,11 +39,18 @@ define(['util/bitmask','domReady!',
     var LARGE_MARKER_URL = "<%= asset_path('markers/marker_large.png') %>";
     var SMALL_MARKER_URL = "<%= asset_path('markers/marker_small.png') %>";
 
-    // "Constant" for delay when showing/hiding the marker info box.
-    var DEFAULT_infoBox_DELAY = 400;
+    var LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/marker_large_spiderfied.png') %>";
+    var SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/marker_small_spiderfied.png') %>";
+
+    // The spiderfier layer for handling overlapping markers.
+    // See https://github.com/jawj/OverlappingMarkerSpiderfier
+    var _spiderfier;
 
     // The info box to pop up when rolling over a marker.
     var _infoBox;
+
+    // "Constant" for delay when showing/hiding the marker info box.
+    var DEFAULT_INFOBOX_DELAY = 400;
 
     // A bitmask instance for tracking the different states of the infobox.
     var _infoBoxState;
@@ -51,6 +60,7 @@ define(['util/bitmask','domReady!',
     var OVER_INFOBOX = 2;
     var OVER_MARKER = 4;
     var PIN_INFOBOX = 8;
+    var HAS_SPIDERFIED = 16;
 
     // The timer for delaying the info box display.
     var _infoBoxDelay;
@@ -107,20 +117,27 @@ define(['util/bitmask','domReady!',
             styles: poiStyles
           };
 
-          _map = new google.maps.Map(_mapCanvas, mapOptions);
+          var spiderfierOptions = {
+            legWeight: 2,
+            keepSpiderfied: true,
+            nearbyDistance: 40
+          };
 
           var infoBoxOptions = {
-  					disableAutoPan: false,
-  					pixelOffset: new google.maps.Size(7, -7),
-  					zIndex: null,
-  					infoBoxClearance: new google.maps.Size(1, 1),
-  					isHidden: false,
+            disableAutoPan: false,
+            pixelOffset: new google.maps.Size(7, -7),
+            zIndex: null,
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
             closeBoxURL: '',
-  					enableEventPropagation: false
-  				};
+            enableEventPropagation: false
+          };
 
+          _map = new google.maps.Map(_mapCanvas, mapOptions);
+          _spiderfier = new OverlappingMarkerSpiderfier(_map, spiderfierOptions);
           _infoBox = new InfoBox(infoBoxOptions);
 
+          google.maps.event.addListener(_map, 'idle', _mapIdle);
           _mapViewControl.addEventListener('click', _mapViewControlClicked, false);
 
           _loadMarkers();
@@ -130,6 +147,39 @@ define(['util/bitmask','domReady!',
         {
           console.log("Warning: The result map container was not found!");
         }
+      }
+    }
+
+    // Event handler for when the map is idle. This is used by the spiderfier
+    // to style the map markers that will spiderfy when clicked.
+    function _mapIdle() {
+      _styleSpiderfiedMarkers();
+      google.maps.event.addListener(_map, 'zoom_changed', _mapZoomed);
+      // Remove idle listeners as they aren't needed after the spiderfied markers
+      // are styled for the first time.
+      google.maps.event.clearListeners(_map, 'idle');
+    }
+
+    // Event handler for when the map is zoomed. This is used by the spiderfier
+    // to handle style changes to the map markers that will spiderfy when clicked.
+    function _mapZoomed() {
+      _styleSpiderfiedMarkers();
+    }
+
+    // Run through the markers and set them to a spiderfied large or small
+    // appearance based on the size of the map.
+    function _styleSpiderfiedMarkers() {
+      var markers = _spiderfier.getMarkers();
+      var index = markers.length-1;
+      while(index>=0) {
+        if (_atMaxSize) markers[index--].setIcon(LARGE_MARKER_URL);
+        else            markers[index--].setIcon(SMALL_MARKER_URL);
+      }
+      markers = _spiderfier.markersNearAnyOtherMarker();
+      index = markers.length-1;
+      while(index>=0) {
+        if (_atMaxSize) markers[index--].setIcon(LARGE_SPIDERFY_MARKER_URL);
+        else            markers[index--].setIcon(SMALL_SPIDERFY_MARKER_URL);
       }
     }
 
@@ -210,7 +260,7 @@ define(['util/bitmask','domReady!',
       if (_infoBoxDelay) clearTimeout(_infoBoxDelay);
 
       // If delay is not set use the default delay value.
-      var setDelay = delay !== undefined ? delay : DEFAULT_infoBox_DELAY;
+      var setDelay = delay !== undefined ? delay : DEFAULT_INFOBOX_DELAY;
 
       if ( _infoBoxState.isOn(OVER_MARKER) ) {
         if ( _infoBoxState.isOff(SHOW_INFOBOX) ) {
@@ -258,22 +308,23 @@ define(['util/bitmask','domReady!',
 
         var marker = new google.maps.Marker({
           map: _map,
-          title: '',
           position: myLatLng,
           icon: markerIcon,
           optimized: false
         });
 
         _markerList.push(marker);
+        _spiderfier.addMarker(marker);
 
-        var mainName = markerData['name'];
-        var orgName = markerData['org_name'];
-        if (orgName != markerData['name']) {
+        var mainName = markerData.name;
+        var orgName = markerData.org_name;
+        if (orgName != markerData.name) {
          var agency = "<h2>"+orgName+"</h2>";
         }
         var content = "<div><div class='button-close'></div>"+
                       "<h1>"+mainName+"</h1>"+agency+
-                      "<p><a href='/organizations/"+marker.slug+(window.location.search)+
+                      "<p>"+markerData.street_address+", "+markerData.city+"</p>"+
+                      "<p><a href='/organizations/"+markerData.slug+(window.location.search)+
                       "'>View more details…</a></p></div>";
 
         _makeInfoBoxEvent(marker, content);
@@ -286,7 +337,7 @@ define(['util/bitmask','domReady!',
 
     // Open the global info box after a delay.
     // @param delay [Number] Delay in milliseconds before opening the info box.
-    // If not specified, the delay will be the DEFAULT_infoBox_DELAY value.
+    // If not specified, the delay will be the DEFAULT_INFOBOX_DELAY value.
     function _openInfoBox(delay)
     {
       _infoBoxDelay = setTimeout(function() {
@@ -298,7 +349,7 @@ define(['util/bitmask','domReady!',
 
     // Open the global info box after a delay.
     // @param delay [Number] Delay in milliseconds before closing the info box.
-    // If not specified, the delay will be the DEFAULT_infoBox_DELAY value.
+    // If not specified, the delay will be the DEFAULT_INFOBOX_DELAY value.
     function _closeInfoBox(delay)
     {
       _infoBoxDelay = setTimeout(function() {
@@ -312,41 +363,72 @@ define(['util/bitmask','domReady!',
     // @param content [String] The text content of the info box.
     function _makeInfoBoxEvent(marker, content) {
 
-      // When user mouses over the marker, open the infoBox and update its contents.
       google.maps.event.addListener(marker, 'mouseover', function() {
-        if (_overMarker !== marker) _infoBoxState.turnOff(PIN_INFOBOX);
-        _registerMarker(marker,content);
+        if (marker.getIcon() !== SMALL_SPIDERFY_MARKER_URL) {
+          if (_overMarker !== marker) _infoBoxState.turnOff(PIN_INFOBOX);
+          _registerMarker(marker,content);
+        }
       });
+
       google.maps.event.addListener(marker, 'mouseout', function() {
         _infoBoxState.turnOff(OVER_MARKER);
         _updateInfoBoxState();
       });
 
-      // When user clicks the marker, open the infoBox and center the map on the marker
+      // Change marker icon appearances when the markers spiderfy.
+      _spiderfier.addListener('spiderfy', function(spiderfied,unspiderfied){
+        _infoBoxState.turnOn(HAS_SPIDERFIED);
+        var index = spiderfied.length-1;
+        while(index>=0) {
+          if (_atMaxSize) spiderfied[index--].setIcon(LARGE_MARKER_URL);
+          else spiderfied[index--].setIcon(SMALL_MARKER_URL);
+        }
+      });
+
+      // Change marker icon appearances when the markers unspiderfy.
+      _spiderfier.addListener('unspiderfy', function(spiderfied,unspiderfied){
+        var index = spiderfied.length-1;
+        while(index>=0) {
+          if (_atMaxSize) spiderfied[index--].setIcon(LARGE_SPIDERFY_MARKER_URL);
+          else spiderfied[index--].setIcon(SMALL_SPIDERFY_MARKER_URL);
+        }
+      });
+
+      // When user clicks the marker, open the infoBox and center the map on the marker.
+      // Unless the user clicked a marker that just spiderfied.
       google.maps.event.addListener(marker, 'click', function() {
 
-        // Touch displays don't know they're over a marker till it's tapped,
-        // so manually register the state as being over the marker in this case.
-        if (_infoBoxState.isOff(OVER_MARKER)) _registerMarker(marker,content);
+        if (_infoBoxState.isOff(HAS_SPIDERFIED)) {
 
-        // Toggle between pinning the infobox and closing it.
-        if (_infoBoxState.isOn(PIN_INFOBOX))
-        {
-          _infoBoxState.turnOff(SHOW_INFOBOX);
-          _infoBoxState.turnOff(PIN_INFOBOX);
-          _infoBoxState.turnOff(OVER_MARKER);
-          _updateInfoBoxState(0);
+          // Touch displays don't know they're over a marker till it's tapped,
+          // so manually register the state as being over the marker in this case.
+          if (_infoBoxState.isOff(OVER_MARKER)) _registerMarker(marker,content);
+
+          // Toggle between pinning the infobox and closing it.
+          if (_infoBoxState.isOn(PIN_INFOBOX))
+          {
+            _infoBoxState.turnOff(SHOW_INFOBOX);
+            _infoBoxState.turnOff(PIN_INFOBOX);
+            _infoBoxState.turnOff(OVER_MARKER);
+            _updateInfoBoxState(0);
+          }
+          else
+          {
+            _map.panTo(marker.position);
+            _infoBoxState.turnOn(PIN_INFOBOX);
+            _infoBoxState.turnOn(OVER_MARKER);
+            _updateInfoBoxState(0);
+          }
         }
-        else
-        {
-          _map.panTo(marker.position);
-          _infoBoxState.turnOn(PIN_INFOBOX);
-          _infoBoxState.turnOn(OVER_MARKER);
-          _updateInfoBoxState(0);
+        else {
+          _infoBoxState.turnOff(HAS_SPIDERFIED)
         }
       });
     }
 
+    // Register a marker as having been clicked.
+    // @param marker [Object] The marker that was clicked.
+    // @param content [String] The text content of the infobox for this marker.
     function _registerMarker(marker, content)
     {
       _overMarker = marker;
