@@ -14,7 +14,7 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid rgba($primary_dark, 0);
+  border: 1px solid rgba($primary-dark, 0);
   color: $button-small-color;
 
   .fa
@@ -26,7 +26,7 @@
 .button-small:hover
 {
   background: $button-small-bg-hover;
-  border: 1px solid rgba($primary_dark, 0.2);
+  border: 1px solid rgba($primary-dark, 0.2);
   color: $button-small-hover-color;
 
   .fa
@@ -60,21 +60,21 @@ a.button-small:not([href])
   padding-left: 7px;
   padding-right: 7px;
   @include border-radius(4px);
-  background: $accentA_light;
-  border: 1px solid $primary_dark; // IE Fallback
-  border: 1px solid rgba($primary_dark, 0.4);
+  background: $accentA-light;
+  border: 1px solid $primary-dark; // IE Fallback
+  border: 1px solid rgba($primary-dark, 0.4);
   color: light($black);
 
   .fa
   {
-    color: $primary_darkest;
+    color: $primary-darkest;
   }
 }
 
 // IN USE?
 .button-medium:hover
 {
-  background: shade($accentA_light,5);
+  background: shade($accentA-light,5);
   color: $button-hover-color;
 
   .fa

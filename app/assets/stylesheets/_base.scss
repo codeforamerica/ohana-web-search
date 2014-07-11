@@ -143,7 +143,7 @@ footer a
 section.no-results .message a:hover,
 footer a:hover
 {
-  color: $primary_dark;
+  color: $primary-dark;
   border-bottom: 1px solid $greyscale_midtone;
   border-bottom: 1px solid rgba($black, .4);
 }
@@ -166,7 +166,7 @@ footer a:hover
 {
   a
   {
-    color: $primary_dark;
+    color: $primary-dark;
   }
 }
 
@@ -176,7 +176,7 @@ footer a:hover
   {
     a
     {
-      //color: rgba($primary_darkest, 0.6);
+      //color: rgba($primary-darkest, 0.6);
       color: $banner-link;
       text-decoration: none;
     }
@@ -223,12 +223,12 @@ sup
 
     li:hover
     {
-      background: $primary_lightest;
+      background: $primary-lightest;
     }
 
     li.highlight
     {
-      background: $primary_lightest;
+      background: $primary-lightest;
     }
   }
 }
@@ -349,7 +349,7 @@ sup
   {
     font-weight: bold;
     font-size: $font_size_110;
-    border-bottom: 6px solid $accentA_light;
+    border-bottom: 6px solid $accentA-light;
     padding-bottom: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -504,7 +504,7 @@ sup
     text-align: center;
     background: $white;
     clear: both;
-    border-top: 2px solid $primary_dark;
+    border-top: 2px solid $primary-dark;
     padding-bottom: 20px;
 
     >p,>div
@@ -587,20 +587,20 @@ sup
     padding: 5px;
     width: 228px;
     display: block;
-    border: 1px solid $accentA_dark;
+    border: 1px solid $accentA-dark;
   }
 
   button
   {
     width: 240px;
-    background-color: $accentA_dark;
-    color: $accentA_light;
+    background-color: $accentA-dark;
+    color: $accentA-light;
     cursor: pointer;
   }
 
   button:hover
   {
-    background-color: $primary_dark;
+    background-color: $primary-dark;
   }
 
   button[disabled]
@@ -628,7 +628,7 @@ sup
 
 .inside .main
 {
-  background-color: $primary_lightest;
+  background-color: $primary-lightest;
 }
 
 //=================================================================================
@@ -705,7 +705,7 @@ body { top: 0px !important; }
     font-size: $font_size_95;
     margin: 0;
     color: $black;
-    border: 2px solid $primary_dark;
+    border: 2px solid $primary-dark;
     padding: 10px;
     margin-top: 10px;
     letter-spacing: 1px;
@@ -742,10 +742,10 @@ body { top: 0px !important; }
   {
     padding: 80px;
     text-align: center;
-    background: $primary_lightest;
-    @include background( radial-gradient( $primary_lightest 10%, $primary) );
-    border-top: 1px solid $primary_light;
-    border-bottom: 1px solid $primary_light;
+    background: $primary-lightest;
+    @include background( radial-gradient( $primary-lightest 10%, $primary) );
+    border-top: 1px solid $primary-light;
+    border-bottom: 1px solid $primary-light;
     vertical-align: bottom;
 
     > *
@@ -906,7 +906,7 @@ body { top: 0px !important; }
     top: 0px;
     left: 0px;
 
-    border: 1px solid $primary_dark;
+    border: 1px solid $primary-dark;
     @include box-sizing(border-box);
     background-color: $white; // IE fallback
     @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
@@ -977,7 +977,7 @@ body { top: 0px !important; }
   {
     background-color: $checkbox-bg; // IE fallback
     @include background( linear-gradient(top, tint($checkbox-bg, 25), $checkbox-bg) );
-    border: 1px solid $primary_dark;
+    border: 1px solid $primary-dark;
     @include box-shadow( inset 0px 0px 0px darkest($primary), inset 0px 0px 1px dark($primary) );
   }
 
@@ -997,12 +997,12 @@ body { top: 0px !important; }
 .search-check {
   width: 41px;
   height: 20px;
-  @include background( linear-gradient(top,$primary,$primary_lightest) );
+  @include background( linear-gradient(top,$primary,$primary-lightest) );
   @include inline-block();
   position: relative;
 
   @include box-shadow( inset 0px 1px 0px dark($primary), inset 0px 1px 1px darkest($primary) );
-  border: 1px solid $primary_dark;
+  border: 1px solid $primary-dark;
   @include border-radius(3px);
   cursor: pointer;
 }
@@ -1022,7 +1022,7 @@ body { top: 0px !important; }
   top: -1px;
   left: -1px;
 
-  border: 1px solid $primary_dark;
+  border: 1px solid $primary-dark;
   @include box-sizing(border-box);
   @include background( linear-gradient(top,$greyscale_lightest,$white) );
   overflow: hidden;
@@ -1035,7 +1035,7 @@ body { top: 0px !important; }
   @include opacity(0.3);
   content: '🔍';
   font-size: $font_size_90;
-  color: $primary_darkest;
+  color: $primary-darkest;
   position: absolute;
   width: 9px;
   height: 5px;
@@ -1060,19 +1060,19 @@ body { top: 0px !important; }
   left: 4px;
   top: -5px;
 
-  border-right: 3px solid rgba($primary_dark, .3);
+  border-right: 3px solid rgba($primary-dark, .3);
 
   @include rotate(45deg);
 }
 
 .search-check input[type=checkbox]:checked + label
 {
-  @include background( linear-gradient(top,$accentA_light,$accentA_base) );
+  @include background( linear-gradient(top,$accentA-light,$accentA-base) );
 }
 
 .search-check input[type=checkbox]:indeterminate + label
 {
-  @include background( linear-gradient(top,$accentA_light,$accentA_base) );
+  @include background( linear-gradient(top,$accentA-light,$accentA-base) );
 }
 
 .search-check input[type=checkbox]:checked + label:before,
@@ -1115,7 +1115,7 @@ body { top: 0px !important; }
   left: 4px;
   top: -5px;
 
-  border-right: 3px solid $primary_dark;
+  border-right: 3px solid $primary-dark;
 
   @include rotate(45deg);
 }
@@ -1126,7 +1126,7 @@ body { top: 0px !important; }
   content: '🔍';
   font-family: $icon_font;
   font-size: $font_size_90;
-  color: $primary_darkest;
+  color: $primary-darkest;
   position: absolute;
   width: 9px;
   height: 5px;
@@ -1152,8 +1152,8 @@ body { top: 0px !important; }
 
 .search-check input[type=checkbox]:checked + label
 {
-  @include background( linear-gradient(top,$accentA_light,$accentA_base) );
-  border: 1px solid $primary_dark;
+  @include background( linear-gradient(top,$accentA-light,$accentA-base) );
+  border: 1px solid $primary-dark;
 }
 */
 
@@ -1193,7 +1193,7 @@ body { top: 0px !important; }
     @include border-radius(4px);
     margin: 10px;
     vertical-align: top;
-    border: 1px solid $search-list-border;
+    border: 1px solid $list-search-border;
 
     > ul
     {
@@ -1216,11 +1216,11 @@ body { top: 0px !important; }
             margin-left: 20px;
             padding-left: 10px;
             font-size: $font_size_100;
-            border-left: 6px solid $search-listitem-border;
+            border-left: 6px solid $listitem-search-border;
           }
           > li:nth-child(odd)
           {
-            border-left: 6px solid tint($search-listitem-border, 25);
+            border-left: 6px solid tint($listitem-search-border, 25);
           }
         }
 
@@ -1231,7 +1231,7 @@ body { top: 0px !important; }
 
 #emergency-services
 {
-  border: 1px solid $search-list-important-border !important;
+  border: 1px solid $list-search-important-border !important;
   background: $white;
   z-index: 9997;
 
@@ -1243,11 +1243,11 @@ body { top: 0px !important; }
       {
         > li
         {
-          border-left: 6px solid $search-listitem-important-border !important;
+          border-left: 6px solid $listitem-search-important-border !important;
         }
         > li:nth-child(odd)
         {
-          border-left: 6px solid tint($search-listitem-important-border, 25) !important;
+          border-left: 6px solid tint($listitem-search-important-border, 25) !important;
         }
       }
 
@@ -1407,7 +1407,7 @@ body { top: 0px !important; }
   -webkit-backface-visibility: hidden;
   width: 100%;
   @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
-  border-bottom: 1px solid $primary_dark !important;
+  border-bottom: 1px solid $primary-dark !important;
 }
 
 #results-entries
@@ -1489,7 +1489,7 @@ body { top: 0px !important; }
   button:hover
   {
     cursor: pointer;
-    background: $primary_dark;
+    background: $primary-dark;
 
     @include transition(color $default_duration);
     @include transition(background $default_duration);
@@ -1617,8 +1617,8 @@ body { top: 0px !important; }
 
     >li:hover
     {
-      background: $primary_lightest; // IE fallback
-      background: rgba($primary_lightest,.5);
+      background: $primary-lightest; // IE fallback
+      background: rgba($primary-lightest,.5);
       h1
       {
         padding-bottom: 5px;
@@ -1746,7 +1746,7 @@ body { top: 0px !important; }
 
     .kind
     {
-      color: $primary_dark;
+      color: $primary-dark;
       font-size: 14px;
 
       a:hover
@@ -1918,13 +1918,13 @@ body { top: 0px !important; }
     padding: 10px;
     border-bottom: 1px solid $greyscale_light; // IE fallback
     border-bottom: 1px solid midtone($black, .1);
-    background: $primary_lightest; // IE fallback
-    background: rgba($primary_lightest,.1);
+    background: $primary-lightest; // IE fallback
+    background: rgba($primary-lightest,.1);
     @include border-radius(4px 4px 0px 0px);
 
     .kind // kind
     {
-      color: $primary_dark;
+      color: $primary-dark;
       @include type-size(baseline);
     }
 
@@ -2206,7 +2206,7 @@ body { top: 0px !important; }
     .short-desc
     {
       color: $main-highlight;
-      //background: $accentA_light;
+      //background: $accentA-light;
       @include border-radius(5px);
       text-align: center;
       font-family: $font_san_serif;
@@ -2257,11 +2257,11 @@ body { top: 0px !important; }
   {
     display: block;
     width: 100%;
-    background: $primary_lightest;
+    background: $primary-lightest;
     padding: 5px;
     font-size: $font_size_95;
     font-family: $font_san_serif;
-    border: 2px solid $primary_dark;
+    border: 2px solid $primary-dark;
     border-bottom: 0;
     text-align: center;
     @include border-radius(4px 4px 0px 0px);
@@ -2277,8 +2277,8 @@ body { top: 0px !important; }
   // Not sure if this is really in use anywhere?
   #show-nearby-control.hover:hover
   {
-    background: $primary_dark;
-    color: $text-accent;
+    background: $primary-dark;
+    color: $text-accent-color;
     cursor: pointer;
   }
 
@@ -2293,8 +2293,8 @@ body { top: 0px !important; }
     height: 400px;
     width: 100%;
     @include box-sizing(border-box);
-    border: 2px solid $primary_dark;
-    //border-top: 1px solid $primary_dark;
+    border: 2px solid $primary-dark;
+    //border-top: 1px solid $primary-dark;
 
     // error message text if map doesn't load
     > span

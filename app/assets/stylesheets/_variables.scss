@@ -25,14 +25,14 @@ $primary-lightest: tint($primary, 50);
 
 // accents
 $accentA-base: rgb(209,249,148);
-$accentA-light: tint($accentA_base, 25);
-$accentA-dark: shade($accentA_base, 50);
+$accentA-light: tint($accentA-base, 25);
+$accentA-dark: shade($accentA-base, 50);
 $accentB: rgb(255,200,56);
 
 // complements
-$complement_base: rgb(242,144,191);
-$complementA: shade($complement_base, 50);
-$complementB: tint($complement_base, 50);
+$complement-base: rgb(242,144,191);
+$complementA: shade($complement-base, 50);
+$complementB: tint($complement-base, 50);
 
 
 // SEMANTIC COLOR VARIABLES
@@ -71,37 +71,37 @@ $complementB: tint($complement_base, 50);
 
 // typography
 //
-// TODO Where is $text-color?
-$text-accent: $primary_dark;
-$text-accent-hover: $complementA;
+// TODO $text-color (this is probably a greyscale value)
+$text-accent-color: $primary-dark;
+$text-accent-hover-color: $complementA;
 
 
 // buttons
 //
 $button-color:               rgba($black,.5);
 $button-hover-color:         $complementA;
-$button-bg:                  $accentA_light;
-$button-hover-bg:            shade($accentA_light,5);
+$button-bg:                  $accentA-light;
+$button-hover-bg:            shade($accentA-light,5);
 
 $button-disabled-color:      $greyscale_light;
 $button-disabled-bg:         tint($greyscale_light, 60);
 
 $button-small-color:         tint($black, 25);
-$button-small-fa-color:      $primary_darkest;
+$button-small-fa-color:      $primary-darkest;
 $button-small-hover-color:   $complementA;
 $button-small-bg:            none;
 $button-small-bg-hover:      $primary;
 
 $button-utility-color:       $complementA;
-$button-utility-fa-color:    $primary_darkest;
+$button-utility-fa-color:    $primary-darkest;
 $button-utility-hover-color: $complementA;
 $button-utility-bg:          none;
 $button-utility-bg-hover:    $complementB;
 
 // forms
 //
-$input-border-color:  rgba($primary_dark, 0.4);
-$checkbox-bg:         $accentA_light;
+$input-border-color:  rgba($primary-dark, 0.4);
+$checkbox-bg:         $accentA-light;
 $checkbox-color:      $black;
 
 // search
@@ -110,18 +110,18 @@ $checkbox-color:      $black;
 $search-bg:                         $primary;
 
 // sidebar
-$search-sidebar-bg:                 $primary_lightest;
+$search-sidebar-bg:                 $primary-lightest;
 $search-border-color:               $primary;
 $search-text-color:                 tint($black, 25);
 $search-accent-color:               shade($primary, 50);
-$search-accent-hover:               $text-accent-hover;
+$search-accent-hover:               $text-accent-hover-color;
 
 
 // boxes of search terms on the home page.
-$search-list-border:                $primary_light;
-$search-listitem-border:            $primary;
-$search-list-important-border:      $complementB;
-$search-listitem-important-border:  $accentB;
+$list-search-border:                $primary-light;
+$listitem-search-border:            $primary;
+$list-search-important-border:      $complementB;
+$listitem-search-important-border:  $accentB;
 
 
 
@@ -134,22 +134,22 @@ $pagination-hover-bg:           $complementB;
 $pagination-border:             $complementB;
 
 $pagination-active-color:       $white;
-$pagination-active-bg:          tint($complement_base, 25);
+$pagination-active-bg:          tint($complement-base, 25);
 
 $pagination-disabled-color:     $greyscale_dark;
 $pagination-disabled-bg:        rgba($complementB, 0.1);
 
 $pagination-next-color:         $white;
 $pagination-next-hover-color:   $white;
-$pagination-next-bg:            $primary_dark;
-$pagination-next-hover-bg:      tint($complement_base, 25);
+$pagination-next-bg:            $primary-dark;
+$pagination-next-hover-bg:      tint($complement-base, 25);
 
 $pagination-highlight:          $black;
 
 
 // banner
 //
-$banner-link: $primary_dark;
+$banner-link: $primary-dark;
 $banner-link-hover: $complementA;
 
 // main
@@ -158,10 +158,11 @@ $main-highlight: $complementA;
 $main-header-bg: rgba($complementB, 0.2);
 $main-header-color: $black;
 $main-list-mark-color: $complementB;
-$main-border-color: $primary_dark;
+$main-border-color: $primary-dark;
 
 // alert
 //
+// TODO Different kinds of alerts, e.g. alert-warning, alert-info, etc.
 $alert-color: $black;
 $alert-bg: $complementB;
 $alert-border-color: $black;
