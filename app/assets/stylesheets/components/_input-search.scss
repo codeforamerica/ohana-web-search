@@ -12,31 +12,31 @@
 
   > input::input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input::-webkit-input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input:-moz-placeholder
   {
-    color: $primary_lightest;
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input::-moz-placeholder
   {
-    color: $primary_lightest;
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input:-ms-input-placeholder
   {
-    color: $primary_lightest;
+    color: $primary-lightest;
     font-style: italic;
   }
 
@@ -68,7 +68,7 @@
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
     border: none;
     background: none;
-    border-bottom: 2px solid $primary_dark;
+    border-bottom: 2px solid $primary-dark;
     @include box-sizing(border-box);
     color: $white;
   }
@@ -103,7 +103,7 @@
     }
     >.fa
     {
-      color: $primary_darkest;
+      color: $primary-darkest;
     }
 
     &:hover
@@ -117,7 +117,7 @@
       }
       >.fa
       {
-        color: $primary_dark;
+        color: $primary-dark;
         // color: $button-hover-color;
       }
     }
@@ -190,7 +190,7 @@
     {
       // This code is very similar to the rule for .input-search-small > button > span
       // Can we refactor?
-      text-shadow: 1px 4px 6px $accentA_light, 0 0 0 $black, 1px 4px 6px $accentA_light;
+      text-shadow: 1px 4px 6px $accentA-light, 0 0 0 $black, 1px 4px 6px $accentA-light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
       color: $button-color;
     }
