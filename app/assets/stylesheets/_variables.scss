@@ -18,15 +18,15 @@ $white: rgb(255,255,255);
 
 // primary
 $primary: rgb(137,209,226);
-$primary_dark: shade($primary, 25);
-$primary_darkest: shade($primary, 50);
-$primary_light: tint($primary, 25);
-$primary_lightest: tint($primary, 50);
+$primary-dark: shade($primary, 25);
+$primary-darkest: shade($primary, 50);
+$primary-light: tint($primary, 25);
+$primary-lightest: tint($primary, 50);
 
 // accents
-$accentA_base: rgb(209,249,148);
-$accentA_light: tint($accentA_base, 25);
-$accentA_dark: shade($accentA_base, 50);
+$accentA-base: rgb(209,249,148);
+$accentA-light: tint($accentA_base, 25);
+$accentA-dark: shade($accentA_base, 50);
 $accentB: rgb(255,200,56);
 
 // complements
@@ -51,13 +51,27 @@ $complementB: tint($complement_base, 50);
 // Others describe "landmark roles", for example anything starting 
 // with $search, $banner, or $main.
 //
-// Where a widget needs to look different within a particular landmark,
-// it will be described with a variable like $banner-link, i.e. the
-// name of the landmark role comes first.
+// Variables should have the shortest possible name that will uniquely identify them
+// following this structure:
+// 
+//     [widget]-[landmark | structure]-[non-WAI-ARIA qualifier]-[state]-rule
+//     ... where:
+//
+//     [widget] =                  the specific widget. This would usually be present, but could be [optional] 
+//                                 in cases where the variable was applying a style (such as a background color)
+//                                 to the containing landmark area.
+//     [landmark | structure] =    the [optional] landmark or document structure the widget appears in.
+//     [non-WAI-ARIA qualifier] =  an [optional] descriptive qualifier for differentiating this variable, 
+//                                 which is not covered succinctly in WAI-ARIA. See note below*
+//     [state] =                   the [optional] CSS pseudo-class being set (e.g. hover, active, etc.)
+//     rule =                      the CSS rule being set (e.g. background-color, color, etc.)
+
+
 
 
 // typography
 //
+// TODO Where is $text-color?
 $text-accent: $primary_dark;
 $text-accent-hover: $complementA;
 
