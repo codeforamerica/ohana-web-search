@@ -21,44 +21,41 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:47:33 GMT
+      - Wed, 25 Jun 2014 04:20:37 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=22&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&page=2&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=22&per_page=1&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=&page=2&per_page=1&utf8=%E2%9C%93>;
         rel="next"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Current-Page:
       - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - 498d326b-d922-4881-a830-e8d6b5db4e31
+      - d81df9a5-6f74-40dc-be03-b4862a12cf81
       X-Runtime:
-      - '0.023141'
+      - '0.061492'
       X-Total-Count:
       - '22'
       X-Total-Pages:
       - '22'
-      X-Xss-Protection:
-      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":1,"admin_emails":[],"coordinates":[-122.213221,37.477227],"description":"A
+      string: '[{"id":1,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":1,"name":"Susan
+        Houston","title":"Director of Older Adult Services"},{"id":2,"name":"Christina
+        Gonzalez","title":"Center Director"}],"coordinates":[-122.213221,37.477227],"description":"A
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
@@ -77,14 +74,25 @@ http_interactions:
         groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
         Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":null,"vanity_number":null}]}]'
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":1,"number":"650
+        701-0856"}],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)","Spanish"],"latitude":37.477227,"longitude":-122.213221,"mail_address":{"id":1,"attention":"Fair
+        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1,"number":"650
+        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
+        the Redwood City area.","slug":"fair-oaks-adult-activity-center","transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/1","services":[{"id":1,"audience":"Older
+        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
+        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
+        suggested donation for lunch for age 60 or over, donations for other services
+        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
+        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
+        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
+        Meals/Nutrition Sites","Senior Centers","Older Adults"],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:47:33 GMT
+  recorded_at: Wed, 25 Jun 2014 04:20:37 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=asdfg&utf8=%E2%9C%93
@@ -106,39 +114,35 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:47:33 GMT
+      - Wed, 25 Jun 2014 04:20:37 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?location=asdfg&page=0&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=asdfg&page=0&per_page=1&utf8=%E2%9C%93>;
         rel="last"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - 085b0cbc-bbdc-4fa9-a3a6-3e6f2e8206f6
+      - c446344c-0e3d-43d3-930e-1f95ad2a1166
       X-Runtime:
-      - '0.157958'
+      - '0.099634'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
       Content-Length:
-      - '28'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:47:33 GMT
+  recorded_at: Wed, 25 Jun 2014 04:20:37 GMT
 recorded_with: VCR 2.9.2

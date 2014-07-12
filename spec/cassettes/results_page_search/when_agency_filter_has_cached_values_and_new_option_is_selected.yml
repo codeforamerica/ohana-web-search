@@ -21,41 +21,37 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:48:29 GMT
+      - Wed, 28 May 2014 03:34:29 GMT
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&location=&page=0&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=1&utf8=%E2%9C%93>;
         rel="last"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - d912fa98-bc58-4927-a9fb-05ff0df06655
+      - 7187c516-a9c6-457a-b368-958a95d6603d
       X-Runtime:
-      - '0.023514'
+      - '0.041708'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
       Content-Length:
-      - '34'
+      - '2'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:48:29 GMT
+  recorded_at: Wed, 28 May 2014 03:34:29 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&utf8=%E2%9C%93
@@ -77,43 +73,41 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:48:29 GMT
+      - Wed, 28 May 2014 03:34:30 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=22&utf8=%E2%9C%93>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?page=2&utf8=%E2%9C%93>; rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=22&per_page=1&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=1&utf8=%E2%9C%93>;
+        rel="next"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Current-Page:
       - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - b0bb41fc-2534-441b-9b56-fdb99acb984f
+      - 1c4160ef-8f0f-48e7-903a-f18d028450cd
       X-Runtime:
-      - '0.116318'
+      - '0.229880'
       X-Total-Count:
       - '22'
       X-Total-Pages:
       - '22'
-      X-Xss-Protection:
-      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":1,"admin_emails":[],"coordinates":[-122.213221,37.477227],"description":"A
+      string: '[{"id":1,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":1,"name":"Susan
+        Houston","title":"Director of Older Adult Services"},{"id":2,"name":"Christina
+        Gonzalez","title":"Center Director"}],"coordinates":[-122.213221,37.477227],"description":"A
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
@@ -132,14 +126,25 @@ http_interactions:
         groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
         Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":null,"vanity_number":null}]}]'
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":1,"number":"650
+        701-0856"}],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"id":1,"attention":"Fair
+        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1,"number":"650
+        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
+        the Redwood City area.","slug":"fair-oaks-adult-activity-center","transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/1","services":[{"id":1,"audience":"Older
+        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
+        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
+        suggested donation for lunch for age 60 or over, donations for other services
+        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
+        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
+        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
+        Meals/Nutrition Sites","Senior Centers","Older Adults"],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:48:29 GMT
+  recorded_at: Wed, 28 May 2014 03:34:29 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=3
@@ -161,46 +166,44 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:48:30 GMT
+      - Wed, 28 May 2014 03:34:30 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=1>; rel="first", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
-        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?page=4>; rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=1&per_page=1>;
+        rel="first", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=1>;
+        rel="prev", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=22&per_page=1>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=4&per_page=1>;
+        rel="next"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Current-Page:
       - '3'
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Next-Page:
       - '4'
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Previous-Page:
       - '2'
       X-Request-Id:
-      - ba0f1e48-21be-4159-a0f5-f09c71356408
+      - ff6199b9-7663-4ece-8120-6764c1d9ec4c
       X-Runtime:
-      - '0.165158'
+      - '0.085046'
       X-Total-Count:
       - '22'
       X-Total-Pages:
       - '22'
-      X-Xss-Protection:
-      - 1; mode=block
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":3,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Offers
+      string: '[{"id":3,"address":{"id":3,"street":"24 Second Avenue","city":"San
+        Mateo","state":"CA","zip":"94403"},"contacts":[{"id":4,"name":"Howard Lader,
+        LCSW","title":"Manager, Senior Peer Counseling"}],"coordinates":[-122.3263232,37.5639394],"description":"Offers
         supportive counseling services to San Mateo County residents age 55 or over.
         Volunteer counselors are selected and professionally trained to help their
         peers face the challenges and concerns of growing older.  Training provides
@@ -211,12 +214,111 @@ http_interactions:
         training seminars. Peer counseling services are provided in English, Spanish,
         Chinese (Cantonese and Mandarin), Tagalog, and to the lesbian, gay, bisexual,
         transgender older adult community. Formerly known as Family Service Agency
-        of San Mateo County, Senior Peer Counseling.","latitude":37.5639394,"longitude":-122.3263232,"name":"Senior
-        Peer Counseling","short_desc":"Offers supportive counseling services to older
-        persons.","slug":"senior-peer-counseling","updated_at":"2014-05-09T20:49:18.871-07:00","urls":[],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/senior-peer-counseling/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/senior-peer-counseling/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/senior-peer-counseling/services","url":"http://ohana-api-test.herokuapp.com/api/locations/senior-peer-counseling","address":{"id":3,"street":"24
-        Second Avenue","city":"San Mateo","state":"CA","zip":"94403"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":3,"department":"English","extension":null,"number":"650
-        403-4300","number_type":null,"vanity_number":null}]}]'
+        of San Mateo County, Senior Peer Counseling.","faxes":[{"id":3,"number":"650
+        403-4303"}],"hours":"Any time that is convenient for the client and peer counselor","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Spanish"],"mail_address":{"id":3,"attention":"PFS
+        Senior Peer Counseling","street":"24 Second Avenue","city":"San Mateo","state":"CA","zip":"94403"},"name":"Senior
+        Peer Counseling","phones":[{"id":3,"department":"English","number":"650 403-4300"}],"short_desc":"Offers
+        supportive counseling services to older persons.","slug":"senior-peer-counseling","transportation":"Service
+        is provided in person''s home or at a mutually agreed upon location.","updated_at":"2014-05-09T20:49:18.871-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/3","services":[{"id":3,"audience":"Older
+        adults age 55 or over who can benefit from counseling","eligibility":"Resident
+        of San Mateo County age 55 or over","fees":"None.","funding_sources":["County","Donations","Grants"],"keywords":["Geriatric
+        Counseling","Older Adults","Gay, Lesbian, Bisexual, Transgender Individuals"],"how_to_apply":"Phone
+        for information (403-4300 Ext. 4322).","service_areas":["San Mateo County"],"wait":"Varies.","updated_at":"2014-04-18T12:31:56.008-07:00"}],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:48:30 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 28 May 2014 03:34:29 GMT
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Peninsula%20Family%20Service&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 28 May 2014 03:34:30 GMT
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Peninsula+Family+Service&page=5&per_page=1&utf8=%E2%9C%93>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Peninsula+Family+Service&page=2&per_page=1&utf8=%E2%9C%93>;
+        rel="next"
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 0c1e34e7-97f3-45f2-9bba-7df747f96994
+      X-Runtime:
+      - '0.091522'
+      X-Total-Count:
+      - '5'
+      X-Total-Pages:
+      - '5'
+      Content-Length:
+      - '1813'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"contacts":[{"id":1,"name":"Susan
+        Houston","title":"Director of Older Adult Services"},{"id":2,"name":"Christina
+        Gonzalez","title":"Center Director"}],"coordinates":[-122.213221,37.477227],"description":"A
+        walk-in center for older adults that provides social services, wellness, recreational,
+        educational and creative activities including arts and crafts, computer classes
+        and gardening classes. Coffee and healthy breakfasts are available daily.
+        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.        Provides
+        case management (including in-home assessments) and bilingual information
+        and referral about community services to persons age 60 or over on questions
+        of housing, employment, household help, recreation and social activities,
+        home delivered meals, health and counseling services and services to shut-ins.
+        Health insurance and legal counseling is available by appointment. Lectures
+        on a variety of health and fitness topics are held monthly in both English
+        and Spanish.  Provides a variety of physical fitness opportunities, including
+        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
+        toward older adults. Also provides free monthly blood pressure screenings,
+        quarterly blood glucose monitoring and health screenings by a visiting nurse.
+        Offers a Brown Bag Program in which low-income seniors can receive a bag of
+        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
+        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
+        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":1,"number":"650
+        701-0856"}],"hours":"Monday-Friday, 9-5","languages":["Filipino (Tagalog)","Spanish"],"mail_address":{"id":1,"attention":"Fair
+        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1,"number":"650
+        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
+        the Redwood City area.","slug":"fair-oaks-adult-activity-center","transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/1","services":[{"id":1,"audience":"Older
+        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
+        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
+        suggested donation for lunch for age 60 or over, donations for other services
+        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
+        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
+        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
+        Meals/Nutrition Sites","Senior Centers","Older Adults"],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-04-18T12:31:54.284-07:00"}],"organization":{"id":1,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/1","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/1/locations"}}]'
+    http_version: 
+  recorded_at: Wed, 28 May 2014 03:34:30 GMT
+recorded_with: VCR 2.9.0

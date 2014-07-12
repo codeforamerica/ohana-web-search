@@ -21,38 +21,34 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:52:23 GMT
+      - Fri, 16 May 2014 07:48:16 GMT
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Current-Page:
       - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - 71b4af41-3679-424d-8f47-f22c68bf494a
+      - 06604b63-c50e-4dee-8742-d110fc8aa114
       X-Runtime:
-      - '0.038380'
+      - '0.055566'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1022'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":22,"admin_emails":["foo@bar.com"],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+      string: '[{"id":22,"accessibility":["Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":21,"street":"2013
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"contacts":[{"id":29,"name":"Suzanne
+        Badenhoop","title":"Board President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
         THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
         APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
@@ -62,13 +58,51 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":42.878036,"longitude":-73.1968254,"name":"San
-        Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","updated_at":"2014-05-22T17:31:08.727-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":21,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"organization":{"id":8,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":21,"department":"Information","extension":null,"number":"650
-        372-6200","number_type":"TTY","vanity_number":null},{"id":22,"department":"Reservations","extension":null,"number":"650
-        372-6200","number_type":null,"vanity_number":null}]}]'
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":21,"number":"650
+        627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","languages":["Chinese
+        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":21,"attention":"Hella
+        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
+        Maceo Agency","phones":[{"id":21,"department":"Information","number":"650
+        372-6200"},{"id":22,"department":"Reservations","number":"650 372-6200"}],"short_desc":"[NOTE
+        THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","transportation":"SAMTRANS
+        stops within 1 block","updated_at":"2014-05-09T20:49:19.003-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/22","services":[{"id":22,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
+        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
+        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
+        by phone or mail","name":"bazfoo","service_areas":["San Mateo County","Alameda
+        County","Contra Costa County","Marin County","San Francisco County","Santa
+        Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.791-07:00"},{"id":23,"audience":"Second
+        service and nonprofit businesses, the public, military facilities, schools
+        and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
+        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
+        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
+        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
+        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
+        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
+        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
+        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
+        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
+        on Rails/MongoDB/Redis","FIFA World Cup"],"how_to_apply":"Walk in or apply
+        by phone or mail","name":"hasdfasf","service_areas":["San Mateo County","Alameda
+        County","Contra Costa County","Marin County","San Francisco County","Santa
+        Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
+        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.850-07:00"}],"organization":{"id":8,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/8","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/8/locations"}}]'
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:52:23 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 16 May 2014 07:48:16 GMT
+recorded_with: VCR 2.9.0

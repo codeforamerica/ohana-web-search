@@ -21,55 +21,61 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Date:
-      - Mon, 30 Jun 2014 18:52:12 GMT
+      - Wed, 04 Jun 2014 06:10:11 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=5>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=food&page=5&per_page=1>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=food&page=2&per_page=1>;
+        rel="next"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - nginx/1.4.7 + Phusion Passenger 4.0.41
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Current-Page:
       - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Next-Page:
       - '2'
       X-Powered-By:
-      - Phusion Passenger 4.0.45
+      - Phusion Passenger 4.0.41
       X-Request-Id:
-      - b2ea7aaa-6799-46c4-b4f3-95aad74d98c7
+      - 5d4d828c-4d98-4025-9ea0-6e26de553718
       X-Runtime:
-      - '0.085214'
+      - '0.041297'
       X-Total-Count:
       - '5'
       X-Total-Pages:
       - '5'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '1204'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"id":17,"admin_emails":[],"coordinates":[-122.4224905,37.6445898],"description":"Provides
+      string: '[{"id":17,"accessibility":["Wheelchair"],"address":{"id":17,"street":"409
+        South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"contacts":[{"id":25,"name":"Kenneth
+        Gibson","title":"Major"}],"coordinates":[-122.4224905,37.6445898],"description":"Provides
         emergency food, clothing and furniture vouchers to low-income families in
         times of crisis.   Administers Project REACH (Relief for Energy Assistance
         through Community Help) funds to prevent energy shut-off through a one-time
         payment. Offers a Saturday morning Homeless Feeding Program at 10:30, as well
         as Sunday services and spiritual counseling. Provides Christmas toys and Back-to-School
         clothes and supplies. Offers case management, advocacy and referrals to other
-        agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
-        Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
-        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","updated_at":"2014-05-09T20:49:18.961-07:00","urls":["http://www.tsagoldenstate.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"street":"409
-        South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"organization":{"id":4,"name":"Salvation
-        Army","slug":"salvation-army","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":17,"department":null,"extension":null,"number":"650
-        266-4591","number_type":null,"vanity_number":null}]}]'
+        agencies.","faxes":[{"id":16,"number":"650 266-2594"},{"id":17,"number":"650
+        266-4594"}],"hours":"Monday-Thursday, 9-4:30","mail_address":{"id":17,"attention":"Salvation
+        Army","street":"409 South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"South
+        San Francisco Citadel Corps","phones":[{"id":17,"number":"650 266-4591"}],"short_desc":"Provides
+        emergency food and clothing and furniture vouchers to low-income families
+        in times of crisis.","slug":"south-san-francisco-citadel-corps","transportation":"SAMTRANS
+        stops within 1 block, BART stops within 3 blocks.","updated_at":"2014-05-09T20:49:18.961-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/17","services":[{"id":17,"eligibility":"Low-income
+        families","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","COMMUNITY SERVICES","Information and
+        Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","FINANCIAL ASSISTANCE
+        SERVICES","Utilities","Emergency Food","Food Pantries","Furniture","Clothing","Utility
+        Assistance","School Supplies","Case/Care Management","Holiday Programs","Pastoral
+        Counseling","Low Income"],"how_to_apply":"Call for information.","service_areas":["Brisbane","Colma","Daly
+        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"updated_at":"2014-04-18T12:32:09.357-07:00"}],"organization":{"id":4,"name":"Salvation
+        Army","slug":"salvation-army","url":"http://ohana-api-test.herokuapp.com/api/organizations/4","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/4/locations"}}]'
     http_version: 
-  recorded_at: Mon, 30 Jun 2014 18:52:12 GMT
+  recorded_at: Wed, 04 Jun 2014 06:10:11 GMT
 recorded_with: VCR 2.9.2
