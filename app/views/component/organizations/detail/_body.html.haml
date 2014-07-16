@@ -185,6 +185,6 @@
             %span
               = @org.updated_at.to_s(:full_date_and_time)
             %div
-              %a{ :href => "#{request.protocol}admin.#{request.domain}#{request.fullpath.split("?")[0]}", :target=>"_self" }
-                %i{ :class => "fa fa-pencil" }
+              = link_to "#{SETTINGS[:admin_site]}/locations/#{@org.slug}" do
+                %i{ class: 'fa fa-pencil' }
                 Edit
