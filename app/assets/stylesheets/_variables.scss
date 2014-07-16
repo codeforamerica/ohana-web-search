@@ -1,7 +1,10 @@
 //=================================================================================
+//
 // CONSTANTS
+//
+//=================================================================================
 
-//color scheme
+// COLOR PALETTE
 
 // greyscale
 $black: rgb(0,0,0);
@@ -14,19 +17,171 @@ $greyscale_lightest: rgb(252,252,252);
 $white: rgb(255,255,255);
 
 // primary
-$blue: rgb(137,209,226);
+$primary: rgb(137,209,226);
+$primary-dark: shade($primary, 25);
+$primary-darkest: shade($primary, 50);
+$primary-light: tint($primary, 25);
+$primary-lightest: tint($primary, 50);
 
-// secondary A
-$green: rgb(209,249,148);
+// accents
+$accentA-base: rgb(209,249,148);
+$accentA-light: tint($accentA-base, 25);
+$accentA-dark: shade($accentA-base, 50);
+$accentB: rgb(255,200,56);
 
-// secondary B
-$yellow: rgb(255,200,56);
+// complements
+$complement-base: rgb(242,144,191);
+$complementA: shade($complement-base, 50);
+$complementB: tint($complement-base, 50);
 
-// complementaryA
-$purple: rgb(242,144,191);
 
-// complementaryB
-$red: rgb(255,10,50); // alert-error color
+// SEMANTIC COLOR VARIABLES
+//
+// Where possible, we named the variable based on the "role" of the element
+// it is used for, as defined by WAI-ARIA
+// http://www.w3.org/TR/wai-aria/rdf_model.html
+//
+// In some cases, such as pagination, that was not possible. In these cases
+// the variable names are patterned on Twitter Bootstrap.
+// http://getbootstrap.com/customize/
+//
+// Some of the variables describe what ARIA refers to as "widget roles",
+// for example $button-color or $link-color.
+//
+// Others describe "landmark roles", for example anything starting 
+// with $search, $banner, or $main.
+//
+// Variables should have the shortest possible name that will uniquely identify them
+// following this structure:
+// 
+//     [widget]-[landmark | structure]-[non-WAI-ARIA qualifier]-[state]-rule
+//     ... where:
+//
+//     [widget] =                  the specific widget. This would usually be present, but could be [optional] 
+//                                 in cases where the variable was applying a style (such as a background color)
+//                                 to the containing landmark area.
+//     [landmark | structure] =    the [optional] landmark or document structure the widget appears in.
+//     [non-WAI-ARIA qualifier] =  an [optional] descriptive qualifier for differentiating this variable, 
+//                                 which is not covered succinctly in WAI-ARIA. See note below*
+//     [state] =                   the [optional] CSS pseudo-class being set (e.g. hover, active, etc.)
+//     rule =                      the CSS rule being set (e.g. background-color, color, etc.)
+
+
+
+
+// typography
+//
+// TODO $text-color (this is probably a greyscale value)
+$text-accent-color: $primary-dark;
+$text-accent-hover-color: $complementA;
+
+
+// buttons
+//
+$button-color:               rgba($black,.5);
+$button-hover-color:         $complementA;
+$button-bg:                  $accentA-light;
+$button-hover-bg:            shade($accentA-light,5);
+
+$button-disabled-color:      $greyscale_light;
+$button-disabled-bg:         tint($greyscale_light, 60);
+
+$button-small-color:         tint($black, 25);
+$button-small-fa-color:      $primary-darkest;
+$button-small-hover-color:   $complementA;
+$button-small-bg:            none;
+$button-small-bg-hover:      $primary;
+
+$button-utility-color:       $complementA;
+$button-utility-fa-color:    $primary-darkest;
+$button-utility-hover-color: $complementA;
+$button-utility-bg:          none;
+$button-utility-bg-hover:    $complementB;
+
+// forms
+//
+$input-border-color:  rgba($primary-dark, 0.4);
+$checkbox-bg:         $accentA-light;
+$checkbox-color:      $black;
+
+// search
+//
+// home page
+$search-bg:                         $primary;
+
+// sidebar
+$search-sidebar-bg:                 $primary-lightest;
+$search-border-color:               $primary;
+$search-text-color:                 tint($black, 25);
+$search-accent-color:               shade($primary, 50);
+$search-accent-hover:               $text-accent-hover-color;
+
+
+// boxes of search terms on the home page.
+$list-search-border:                $primary-light;
+$listitem-search-border:            $primary;
+$list-search-important-border:      $complementB;
+$listitem-search-important-border:  $accentB;
+
+
+
+// pagination
+//
+$pagination-color:              $complementA;
+$pagination-hover-color:        $complementA;
+$pagination-bg:                 none;
+$pagination-hover-bg:           $complementB;
+$pagination-border:             $complementB;
+
+$pagination-active-color:       $white;
+$pagination-active-bg:          tint($complement-base, 25);
+
+$pagination-disabled-color:     $greyscale_dark;
+$pagination-disabled-bg:        rgba($complementB, 0.1);
+
+$pagination-next-color:         $white;
+$pagination-next-hover-color:   $white;
+$pagination-next-bg:            $primary-dark;
+$pagination-next-hover-bg:      tint($complement-base, 25);
+
+$pagination-highlight:          $black;
+
+
+// banner
+//
+$banner-link: $primary-dark;
+$banner-link-hover: $complementA;
+
+// main
+//
+$main-highlight: $complementA;
+$main-header-bg: rgba($complementB, 0.2);
+$main-header-color: $black;
+$main-list-mark-color: $complementB;
+$main-border-color: $primary-dark;
+
+// alert
+//
+// TODO Different kinds of alerts, e.g. alert-warning, alert-info, etc.
+$alert-color: $black;
+$alert-bg: $complementB;
+$alert-border-color: $black;
+
+// popups
+//
+$popup-bg: $white;
+
+
+
+// things that don't appear to be in use
+//
+$terminology-border: $complementA;
+
+
+// END SEMANTIC COLOR VARIABLES
+
+
+
 
 //animation settings
 $default_duration: 50ms;

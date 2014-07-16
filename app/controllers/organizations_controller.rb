@@ -44,8 +44,8 @@ class OrganizationsController < ApplicationController
 
     @pages[:total_pages]   = headers["X-Total-Pages"].to_i
     @pages[:current_page]  = headers["X-Current-Page"].to_i
-    @pages[:prev_page]  = headers["X-Previous-Page"].to_i
-    @pages[:next_page]  = headers["X-Next-Page"].to_i
+    @pages[:prev_page]     = headers["X-Previous-Page"].to_i
+    @pages[:next_page]     = headers["X-Next-Page"].to_i
 
     @pages[:prev_page] = nil if @pages[:prev_page] == 0
     @pages[:next_page] = nil if @pages[:next_page] == 0

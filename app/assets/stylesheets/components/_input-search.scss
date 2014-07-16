@@ -12,31 +12,31 @@
 
   > input::input-placeholder
   {
-    color: lightest($blue);
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input::-webkit-input-placeholder
   {
-    color: lightest($blue);
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input:-moz-placeholder
   {
-    color: lightest($blue);
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input::-moz-placeholder
   {
-    color: lightest($blue);
+    color: $primary-lightest;
     font-style: italic;
   }
 
   > input:-ms-input-placeholder
   {
-    color: lightest($blue);
+    color: $primary-lightest;
     font-style: italic;
   }
 
@@ -68,7 +68,7 @@
     -webkit-appearance: none; // remove rounding styling of input fields on iOS
     border: none;
     background: none;
-    border-bottom: 2px solid darkest($blue);
+    border-bottom: 2px solid $primary-dark;
     @include box-sizing(border-box);
     color: $white;
   }
@@ -93,6 +93,7 @@
     top: 0;
     z-index: 9998;
 
+    // IN USE?
     >span
     {
       @include inline-block();
@@ -102,20 +103,22 @@
     }
     >.fa
     {
-      color: darkest($blue);
+      color: $primary-darkest;
     }
 
     &:hover
     {
+      // IN USE?
       >span
       {
         @include inline-block();
-        color: darkest($purple);
+        color: $button-utility-color;
         text-shadow: none;
       }
       >.fa
       {
-        color: dark($blue);
+        color: $primary-dark;
+        // color: $button-hover-color;
       }
     }
   }
@@ -166,7 +169,7 @@
     vertical-align:middle;
     background: $white;
     @include border-radius(4px);
-    border:1px solid darkest($blue,0.4);
+    border:1px solid rgba($search-bg, 0.4);
     color: $black;
   }
 
@@ -178,29 +181,33 @@
     font-size: 24px;
     right: 0;
     left: auto;
-    border: 1px solid darkest($blue,0.4);
-    border-left: 1px solid darkest($blue,0.2);
-    background: light($green);
+    border: 1px solid rgba($search-bg, 0.4);
+    border-left: 1px solid rgba($search-bg, 0.2);
+    background: $button-bg;
     @include border-radius(0px 4px 4px 0px);
 
     >span
     {
-      text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+      // This code is very similar to the rule for .input-search-small > button > span
+      // Can we refactor?
+      text-shadow: 1px 4px 6px $accentA-light, 0 0 0 $black, 1px 4px 6px $accentA-light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
+      color: $button-color;
     }
 
     &:hover
     {
-      background: shade(light($green),5);
+      background: $button-hover-bg;
 
       >span
       {
         text-shadow: none;
+        color: $button-hover-color;
       }
 
       >.fa
       {
-        color: darkest($purple);
+        color: $button-hover-color;
       }
     }
   }

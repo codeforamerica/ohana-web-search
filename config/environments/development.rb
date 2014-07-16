@@ -56,4 +56,7 @@ HumanServicesFinder::Application.configure do
   # For use with the sprockets_better_errors gem.
   # Remove this and the gem after upgrading to Rails 4.1+.
   config.assets.raise_production_errors = true
+
+  # livereload the browser
+  config.middleware.use Rack::LiveReload
 end
