@@ -4,6 +4,17 @@
 # Note that any changes to this file will need an app restart to
 # take effect.
 #
+#
+##########################
+#
+# ADMIN SITE SETTINGS
+#
+##########################
+# When viewing the details page for a location, there is an 'Edit' link
+# at the bottom of the page that takes you to the corresponding location
+# in the admin interface. Below, specify the URL for your Admin site.
+admin_site: http://ohana-api-demo.herokuapp.com/admin
+
 ##########################
 #
 # FEEDBACK EMAIL SETTINGS
@@ -231,6 +242,8 @@ site_title: Ohana Web Search
 #
 ###########################################
 test:
+  admin_site: http://ohana-api-demo.herokuapp.com/admin
+
   feedback_email:
     to:
       - ohanapi@codeforamerica.org
