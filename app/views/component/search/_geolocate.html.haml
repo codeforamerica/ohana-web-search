@@ -1,5 +1,4 @@
 %div#geolocate-box
-  = hidden_field_tag 'location'
-  %button#locate-btn.hide.button-small{:type=>'submit'}
-    %i{ :class=>"fa fa-map-marker" }
+  = button_tag(id: 'locate-btn', class: 'button-small', type: 'submit', data: { disable_with: 'Please wait...' }) do
+    %i{ class: 'fa fa-map-marker' }
     Services near me

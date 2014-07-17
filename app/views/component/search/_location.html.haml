@@ -1,0 +1,4 @@
+= field_set_tag nil, id: 'location-options' do
+  = label_tag 'location', 'Near Address'
+  = search_field_tag :location, params[:location], placeholder: 'Enter a ZIP code or address', list: 'search-location'
+  = render 'component/search/geolocate'

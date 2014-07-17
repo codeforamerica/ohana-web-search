@@ -81,9 +81,6 @@ group :test do
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
 
-  # For getting access to the session from Capybara.
-  gem 'rack_session_access'
-
   # gem 'poltergeist'
   gem 'capybara-webkit'
   gem 'vcr', '>= 2.9.0'
