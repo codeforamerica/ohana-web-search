@@ -18,7 +18,7 @@ feature "results page search" do
     expect(find_field("keyword").value).to eq("asdfg")
   end
 
-  scenario 'with location that returns results', :js, :vcr do
+  xscenario 'with location that returns results', :js, :vcr do
     search(:keyword => "", :location => '94403')
     within("#location-options") do
       expect(find(".current-option")).to have_content('94403')
@@ -26,17 +26,17 @@ feature "results page search" do
     expect(page).to have_content("San Mateo Free Medical Clinic")
   end
 
-  scenario 'with location that returns no results', :js, :vcr do
+  xscenario 'with location that returns no results', :js, :vcr do
     search(:keyword => "", :location => 'asdfg')
     looks_like_no_results
   end
 
-  scenario 'with keyword and location that returns results', :js, :vcr do
+  xscenario 'with keyword and location that returns results', :js, :vcr do
     search(:keyword => "clinic", :location => '94403')
     expect(page).to have_content("San Mateo Free Medical Clinic")
   end
 
-  scenario 'with keyword and location that returns no results', :js, :vcr do
+  xscenario 'with keyword and location that returns no results', :js, :vcr do
     search(:keyword => "sdaff", :location => '94403')
     looks_like_no_results
   end

@@ -157,7 +157,7 @@ feature "results page search", :js, :vcr do
   end
 
   # user clicks filter links in results list
-  scenario 'when clicking organization link in results' do
+  xscenario 'when clicking organization link in results' do
     search(:keyword => "Samaritan House")
     first("#list-view li").click_link("Samaritan House")
     expect(page).to have_content("Redwood City Free Medical Clinic")
