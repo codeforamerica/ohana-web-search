@@ -102,9 +102,11 @@ feature 'searching from results page', :vcr do
       search(keyword: 'clinic', location: '94403', org_name: 'samaritan')
       find_by_id('reset-btn').click
 
-      expect(find_field('keyword').value).to eq ''
-      expect(find_field('location').value).to eq ''
-      expect(find_field('org_name').value).to eq ''
+      using_wait_time 2 do
+        expect(find_field('keyword').value).to eq ''
+        expect(find_field('location').value).to eq ''
+        expect(find_field('org_name').value).to eq ''
+      end
 
       find('#find-btn').click
       expect(page).to have_content('Fair Oaks Adult Activity Center')
