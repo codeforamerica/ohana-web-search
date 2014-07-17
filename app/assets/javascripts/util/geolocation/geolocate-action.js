@@ -24,6 +24,8 @@ define(['util/geolocation/geolocator','app/alert-manager','domReady!','async!htt
   function _currLocationAction(evt)
   {
     evt.preventDefault();
+    evt.target.textContent = 'Please wait...';
+    evt.target.disabled = true;
     _locateUser();
   }
 
