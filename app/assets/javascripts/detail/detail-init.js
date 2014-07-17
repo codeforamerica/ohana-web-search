@@ -22,7 +22,6 @@ require([
   require([
     'detail/no-detail-map-manager',
     'detail/character-limiter',
-    'detail/term-popup-manager',
     'search/header-manager'
   ], function (map,cl,header) {
     map.init();

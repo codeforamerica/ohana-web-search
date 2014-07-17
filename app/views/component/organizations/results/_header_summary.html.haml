@@ -1,15 +1,15 @@
 %div
   %div.left-column
     %span.static-content><
-      - if @map_data.present?
+      - if @array_for_maps.size != 0
         %a#map-view-control{ :href => '#', :class=>"button-utility button-map-zoom"}
           %i{ :class => "fa fa-plus-square" }
-          Zoom map
+          Larger map
     %p.search-summary
       %span
         = @search_summary_html
       %span.map-summary.static-content
-        = @map_search_summary_html
+        = @map_search_summary_html if @array_for_maps.size != 0
 
   %div.right-column
     %div.floating-content.hide><

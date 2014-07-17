@@ -138,9 +138,9 @@
                 %span.hide#detail-map-canvas-title
                   = address(@org)
                 %span.hide#detail-map-canvas-lat
-                  = @org.coordinates[1]
+                  = @org.latitude
                 %span.hide#detail-map-canvas-lng
-                  = @org.coordinates[0]
+                  = @org.longitude
               %noscript
                 %style
                   -# hides map when JS is disabled
