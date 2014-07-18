@@ -1,4 +1,4 @@
 %div#geolocate-box
-  = button_tag(id: 'locate-btn', class: 'button-small', type: 'submit', data: { disable_with: 'Please wait...' }) do
+  = button_tag(id: 'locate-btn', class: 'button-small', type: 'submit') do
     %i{ class: 'fa fa-map-marker' }
-    Services near me
+    %span= t('buttons.services_near_me')

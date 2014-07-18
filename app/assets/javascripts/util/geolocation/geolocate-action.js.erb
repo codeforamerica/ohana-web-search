@@ -16,7 +16,6 @@ define(['util/geolocation/geolocator','app/alert-manager','domReady!','async!htt
       _locateAction = locateAction;
 
       _locateTarget.addEventListener( 'click' , _currLocationAction , false );
-      _locateTarget.classList.remove('hide');
     }
   }
 
@@ -24,6 +23,8 @@ define(['util/geolocation/geolocator','app/alert-manager','domReady!','async!htt
   function _currLocationAction(evt)
   {
     evt.preventDefault();
+    _locateTarget.querySelector('span').innerHTML = "<%= I18n.t('buttons.during_geolocation') %>";
+    _locateTarget.setAttribute('disabled','disabled')
     _locateUser();
   }
 
