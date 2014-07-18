@@ -23,7 +23,8 @@ define(['util/geolocation/geolocator','app/alert-manager','domReady!','async!htt
   function _currLocationAction(evt)
   {
     evt.preventDefault();
-    _locateTarget.querySelector('span').innerHTML = "<%= I18n.t('buttons.during_geolocation') %>";
+    var waitText = _locateTarget.getAttribute('data-wait-text');
+    _locateTarget.querySelector('span').innerHTML = waitText;
     _locateTarget.setAttribute('disabled','disabled')
     _locateUser();
   }
