@@ -7,15 +7,16 @@
             %i{ class: 'fa fa-search' }
           = search_field_tag :keyword, params[:keyword], placeholder: 'search for...', list: 'search-keywords'
 
+      %section#search-options
+        = render 'component/search/location'
+        = render 'component/search/agency'
+
       %ul#search-controls
         %li
           = button_tag(class: 'update-btn button-small', type:'submit') do
             %i{ class: 'fa fa-refresh' }
-            Update results
+            Update search results
         %li
           = button_tag(id: 'reset-btn', class: 'reset-btn button-small', type: 'reset') do
-            %i{ class: 'fa fa-eraser' }
-            Clear filters
-      %section#search-options
-        = render 'component/search/location'
-        = render 'component/search/agency'
+            %i{ class: 'fa fa-times-circle' }
+            Clear search

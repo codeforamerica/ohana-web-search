@@ -5,12 +5,13 @@
 // buttons
 .button-small
 {
-  background:none;
-  border:none;
+  background: none;
+  border: none;
+  margin: 0;
 
-  @include type-size(baseline);
   font-family: $font_san_serif;
-  @include border-radius(4px);
+  @include type-size(baseline);
+  @include rounded-except(none);
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
@@ -32,6 +33,20 @@
   .fa
   {
     color: darkest($purple);
+  }
+}
+
+.button-small[disabled],
+.button-small[disabled]:hover
+{
+  border:1px solid rgba(0,0,0,0);
+  background: none;
+  color: lightest($black);
+  cursor: default;
+
+  .fa
+  {
+    color: lightest($black);
   }
 }
 
@@ -58,7 +73,7 @@ a.button-small:not([href])
   font-family: $font_san_serif;
   padding-left: 7px;
   padding-right: 7px;
-  @include border-radius(4px);
+  @include rounded-except(none);
   background: light($green);
   border: 1px solid darkest($blue); // IE Fallback
   border: 1px solid darkest($blue,0.4);
@@ -112,4 +127,3 @@ a.button-small:not([href])
     }
   }
 }
-
