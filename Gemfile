@@ -49,6 +49,9 @@ gem 'figaro', '>= 0.7.0'
 
 gem 'coveralls', '>= 0.7.0', require: false
 
+# Pagination
+gem 'kaminari'
+
 group :production, :staging do
   # rails_12factor runs only in production to suppress logging in rspec output.
   # Per advice of http://stackoverflow.com/questions/18132920/how-to-suppress-noise-from-requests-when-running-rspec-feature-specs

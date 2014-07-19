@@ -20,4 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "<i class='fa fa-chevron-left' title='previous'></i>"
+      next: "<i class='fa fa-chevron-right' title='next'></i>"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found."
+          one: "Displaying <strong>1</strong> %{entry_name}"
+          other: "Displaying <strong>all %{count}</strong> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying <strong>%{first} - %{last}</strong> of <strong>%{total}</strong> %{entry_name}"

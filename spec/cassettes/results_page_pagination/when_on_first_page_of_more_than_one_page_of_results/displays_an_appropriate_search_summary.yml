@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 19 Jul 2014 22:07:22 GMT
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
+        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="next"
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Current-Page:
+      - '1'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      X-Request-Id:
+      - cc3e78a6-4797-472b-8879-4f57b6df31c5
+      X-Runtime:
+      - '0.036338'
+      X-Total-Count:
+      - '3'
+      X-Total-Pages:
+      - '3'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '913'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":12,"admin_emails":[],"coordinates":[-122.227409,37.4837662],"description":"Offers
+        an intergenerational literacy program for youth and English-speaking adults
+        seeking to improver literacy skills. Adult services include: adult one-to-one
+        tutoring to improve basic skills in reading, writing and critical thinking;
+        Families for Literacy (FFL), a home-based family literacy program for parents
+        who want to be able to read to their young children; and small group/English
+        as a Second Language (ESL). Youth services include: Youth Tutoring, Families
+        in Partnership (FIP); Teen-to-Elementary Student Tutoring, Kids in Partnership
+        (KIP); and computer-aided literacy. Redwood City Friends of Literacy is a
+        fundraising board that helps to support and to fund Redwood City''s Project
+        Read. Call for more information about each service.","latitude":37.4837662,"longitude":-122.227409,"name":"Project
+        Read","short_desc":"Offers an intergenerational literacy program for adults
+        and youth seeking to improver literacy skills.","slug":"project-read","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/services","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"street":"1044
+        Middlefield Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":3,"name":"Redwood
+        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
+        780-7077","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Sat, 19 Jul 2014 22:07:21 GMT
+recorded_with: VCR 2.9.2
