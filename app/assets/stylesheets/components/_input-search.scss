@@ -90,7 +90,8 @@
 .input-search-big
 {
   @include input-placeholder(midtone($black,0.2), italic);
-  width:440px;
+  position: relative;
+  width: 440px;
 
   input:focus
   {
@@ -119,32 +120,31 @@
 
   > button
   {
-    cursor: pointer;
-    background: none;
-    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: $layer-8;
+    height: 50px;
+    min-width: 134px;
     margin: 0;
     margin-left: 5px;
     padding: 10px;
-    @include box-sizing(border-box);
-    vertical-align: baseline;
-    font-family: $font_serif;
-    line-height: 0px;
     border-collapse: collapse;
-    position: absolute;
-    top: 0;
-    z-index: $layer-8;
+    @include box-sizing(border-box);
+    @include rounded-except(left);
 
-
-    height: 50px;
-    letter-spacing: 1px;
-    min-width: 134px;
-    font-size: $font_size_115;
-    right: 0;
-    left: auto;
     border: 1px solid darkest($blue,0.4);
     border-left: 1px solid darkest($blue,0.2);
     background: light($green);
-    @include rounded-except(left);
+
+    font-size: $font_size_115;
+    vertical-align: baseline;
+    font-family: $font_serif;
+    line-height: 0px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
 
     >span
     {
@@ -171,7 +171,7 @@
 
       >.fa
       {
-        color: darkest($purple);
+        color: dark($blue);
       }
     }
   }
@@ -188,40 +188,50 @@
     color: rgba($black, 0.5);
   }
 
-  > button
+  > .filter-input-group
   {
-    font-size: $font_size_110;
-    position: absolute;
-    left: 11px;
-    top: 25px;
-    z-index: $layer-8;
-    border: none;
-    background: none;
-    color: darkest($purple);
-    width: 30px;
-    text-align: center;
-  }
+    > button
+    {
+      font-size: $font_size_110;
+      position: absolute;
+      z-index: $layer-8;
+      margin-left: 3px;
+      padding: 0;
+      border: none;
+      background: none;
+      color: darkest($purple);
+      width: 30px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
 
-  > input
-  {
-    width: 100%;
-    height: 40px;
-    padding-left: 35px;
-    @include box-sizing(border-box);
-    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
-    @include rounded-except(none);
-    border: none;
-    border-bottom: 1px solid rgba($white,0.7);
-    border-collapse: collapse;
-    -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
-    font-size: $font_size_95;
-    background: midtone($blue);
-    color: $white;
-  }
+      &:hover
+      {
+        color: dark($purple);
+      }
+    }
 
-  input:focus
-  {
-    outline: none;
+    > input
+    {
+      width: 100%;
+      height: 40px;
+      padding-left: 35px;
+      @include box-sizing(border-box);
+      @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+      @include rounded-except(none);
+      border: none;
+      border-bottom: 1px solid rgba($white,0.7);
+      border-collapse: collapse;
+      -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
+      font-size: $font_size_95;
+      background: midtone($blue);
+      color: $white;
+    }
+
+    > input:focus
+    {
+      outline: none;
+    }
   }
 }
 
