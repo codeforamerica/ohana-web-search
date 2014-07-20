@@ -5,7 +5,7 @@
         %div.input-search-small
           = button_tag(type: 'submit', id: 'find-btn', title: 'Search') do
             %i{ class: 'fa fa-search' }
-          = search_field_tag :keyword, params[:keyword], placeholder: 'search for...', list: 'search-keywords'
+          = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.results_page_keyword_search'), list: 'search-keywords'
 
       %section#search-options
         = render 'component/search/location'
@@ -15,8 +15,8 @@
         %li
           = button_tag(class: 'update-btn button-small', type:'submit') do
             %i{ class: 'fa fa-refresh' }
-            Update search results
+            = t('buttons.update_search_results')
         %li
           = button_tag(id: 'reset-btn', class: 'reset-btn button-small', type: 'reset') do
             %i{ class: 'fa fa-times-circle' }
-            Clear search
+            = t('buttons.clear_search_fields')

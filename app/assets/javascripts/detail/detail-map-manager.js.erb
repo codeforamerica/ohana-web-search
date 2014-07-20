@@ -1,4 +1,5 @@
-// manages results maps view
+//= depend_on_asset 'markers/marker_large.png'
+// Manages location detail view Google Map.
 define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback','util/util',
          'domReady!'],function(util) {
   'use strict';
@@ -47,10 +48,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       };
       _map = new google.maps.Map(document.getElementById("detail-map-canvas"), mapOptions);
 
+
       _locationMarker = new google.maps.Marker({
           map: _map,
           title: title,
-          position: latLng
+          position: latLng,
+          icon: "<%= asset_path('markers/marker_large.png') %>"
         });
 
       google.maps.event.addListener(_locationMarker, 'click', function() {

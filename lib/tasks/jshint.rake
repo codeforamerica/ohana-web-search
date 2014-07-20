@@ -7,7 +7,7 @@ begin
     # Custom options are below, uncomment the line
     # above for the default set of options.
     t.options = {
-      :bitwise => true,
+      :bitwise => false,
       :curly => false,
       :eqeqeq => true,
       :forin => true,

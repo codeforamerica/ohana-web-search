@@ -37,16 +37,16 @@ feature "results page pagination" do
     search_from_home
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…22')
+      expect(page).to have_content('12345…24')
     end
   end
 
   scenario 'on last page with more than 5 pages of results', :vcr do
     search_from_home
-    go_to_page(22)
+    go_to_page(24)
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.prev')
-      expect(page).to have_content('1…1819202122')
+      expect(page).to have_content('1…2021222324')
     end
   end
 
@@ -56,7 +56,7 @@ feature "results page pagination" do
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.prev')
       expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…22')
+      expect(page).to have_content('12345…24')
     end
   end
 
@@ -66,29 +66,29 @@ feature "results page pagination" do
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.prev')
       expect(page).to have_selector('.next')
-      expect(page).to have_content('1…23456…22')
+      expect(page).to have_content('1…23456…24')
     end
   end
 
   scenario 'less than 3 pages out with more than 5 pages of results', :vcr do
     search_from_home
+    go_to_page(24)
     go_to_page(22)
-    go_to_page(20)
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.prev')
       expect(page).to have_selector('.next')
-      expect(page).to have_content('1…1819202122')
+      expect(page).to have_content('1…2021222324')
     end
   end
 
   scenario 'more than 3 pages out with more than 5 pages of results', :vcr do
     search_from_home
-    go_to_page(22)
-    go_to_page(18)
+    go_to_page(24)
+    go_to_page(20)
     within('#floating-results-header .pagination') do
       expect(page).to have_selector('.prev')
       expect(page).to have_selector('.next')
-      expect(page).to have_content('1…1617181920…22')
+      expect(page).to have_content('1…1819202122…24')
     end
   end
 

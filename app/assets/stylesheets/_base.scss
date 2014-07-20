@@ -1649,6 +1649,87 @@ body { top: 0px !important; }
 {
   height: 150px;
   border-bottom: 1px solid midtone($blue);
+
+  .infoBox
+  {
+    background-color: $white;
+    @include border-radius(0px 4px 4px 4px);
+    @include single-box-shadow(midtone($black,0.4), 0px, 0px, 5px);
+    border: 1px solid dark($blue);
+    padding: 3px 6px;
+    opacity: 0.95;
+
+    > div
+    {
+      position: relative;
+    }
+
+    h1
+    {
+      font-weight: bold;
+      font-size: $font_size_95;
+      margin-left: 20px;
+    }
+
+    h2
+    {
+      font-size: $font_size_95;
+      margin-left: 20px;
+    }
+
+    a
+    {
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black, .6);
+      cursor: pointer;
+      border-bottom: 1px solid $white;
+      @include inline-block();
+    }
+    a:hover
+    {
+      color: dark($blue);
+      border-bottom: 1px solid $greyscale_midtone;
+      border-bottom: 1px solid rgba($black, .4);
+      text-decoration: none;
+    }
+
+    p
+    {
+      text-align: center;
+      margin-top: 4px;
+      border-top: 1px solid midtone($blue,0.5);
+      font-size: $font_size_90;
+      margin-bottom: 2px;
+    }
+
+    .button-close
+    {
+      color: $greyscale_midtone; // IE Fallback
+      color: rgba($black, .5);
+      position: absolute;
+      left: 0px;
+      top: -10px;
+      font-size: $font_size_120;
+      font-family: $font_serif;
+    }
+
+    .button-close:after,
+    .button-close::after
+    {
+      content: "×";
+    }
+
+    .button-close:hover
+    {
+      color: $black;
+      cursor: pointer;
+    }
+  }
+
+  .infoBox:hover a
+  {
+    color: dark($blue);
+  }
 }
 #map-canvas.max
 {
