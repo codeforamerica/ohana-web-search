@@ -1,4 +1,4 @@
 %div#geolocate-box
-  = button_tag(id: 'locate-btn', class: "button-small #{context_class = context_class || ''}", type: 'submit', data: { wait_text: t('buttons.during_geolocation') }) do
+  = button_tag(id: 'locate-btn', class: "button-small #{context_class}", type: 'submit', data: { wait_text: t('buttons.during_geolocation') }) do
     %i{ class: 'fa fa-globe' }
     %span= t('buttons.services_near_me')
