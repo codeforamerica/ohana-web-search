@@ -90,7 +90,8 @@
 .input-search-big
 {
   @include input-placeholder(midtone($black,0.2), italic);
-  width:440px;
+  position: relative;
+  width: 440px;
 
   input:focus
   {
@@ -119,32 +120,31 @@
 
   > button
   {
-    cursor: pointer;
-    background: none;
-    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: $layer-8;
+    height: 50px;
+    min-width: 134px;
     margin: 0;
     margin-left: 5px;
     padding: 10px;
-    @include box-sizing(border-box);
-    vertical-align: baseline;
-    font-family: $font_serif;
-    line-height: 0px;
     border-collapse: collapse;
-    position: absolute;
-    top: 0;
-    z-index: $layer-8;
+    @include box-sizing(border-box);
+    @include rounded-except(left);
 
-
-    height: 50px;
-    letter-spacing: 1px;
-    min-width: 134px;
-    font-size: $font_size_115;
-    right: 0;
-    left: auto;
     border: 1px solid darkest($blue,0.4);
     border-left: 1px solid darkest($blue,0.2);
     background: light($green);
-    @include rounded-except(left);
+
+    font-size: $font_size_115;
+    vertical-align: baseline;
+    font-family: $font_serif;
+    line-height: 0px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
 
     >span
     {
