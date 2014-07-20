@@ -98,7 +98,7 @@ feature 'searching from results page', :vcr do
   end
 
   context 'when clicking the reset button' do
-    it 'clears out all the search input fields', :js do
+    xit 'clears out all the search input fields', :js do
       search(keyword: 'clinic', location: '94403', org_name: 'samaritan')
       find_by_id('reset-btn').click
 
