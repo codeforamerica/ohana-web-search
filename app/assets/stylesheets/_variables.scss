@@ -28,11 +28,20 @@ $purple: rgb(242,144,191);
 // complementaryB
 $red: rgb(255,10,50); // alert-error color
 
-//animation settings
-$default_duration: 50ms;
+// Animation settings.
+$animation-duration-slow: 100ms;
+$animation-duration-base: 50ms;
+$animation-duration-fast: 25ms;
 
-// styles
-$border_radius_base: 6px;
+// Positioning settings.
+// The default border radius for rounded corners.
+$border-radius-base: 4px;
+
+// The stacking order layers (used with z-index).
+$layer-10: 10000;
+$layer-9: 9000;
+$layer-8: 8000;
+$layer-7: 8000;
 
 // fonts
 $font_serif: 'Libre Baskerville', serif;
@@ -42,7 +51,8 @@ $font_san_serif: 'Quattrocento Sans', sans-serif;
 // instead of labels (small, medium, large) to allow easy insertion
 // of additional intermediate sizes. 100 is the baseline.
 // The font sizing mixins in _mixins.scss provide mapping of human-readable labels to font sizes.
-// For actual font size rhythm calculations, see http://modularscale.com/
+// For actual font size rhythm calculations, see http://modularscale.com.
+// The settings are rounded values of a 16px baseline at a 3:4 perfect forth ratio.
 
 // tiny
 $font_size_80: 9px;
@@ -66,6 +76,10 @@ $font_leading_105: 1;
 
 // medium
 $font_size_110: 21px;
+$font_leading_110: 1.25;
+
+// medium-large
+$font_size_115: 24px;
 $font_leading_110: 1.25;
 
 // large
