@@ -188,40 +188,42 @@
     color: rgba($black, 0.5);
   }
 
-  > button
+  > .filter-input-group
   {
-    font-size: $font_size_110;
-    position: absolute;
-    left: 11px;
-    top: 25px;
-    z-index: $layer-8;
-    border: none;
-    background: none;
-    color: darkest($purple);
-    width: 30px;
-    text-align: center;
-  }
+    > button
+    {
+      font-size: $font_size_110;
+      position: absolute;
+      z-index: $layer-8;
+      border: none;
+      background: none;
+      color: darkest($purple);
+      width: 30px;
+      height: 40px;
+      text-align: center;
+      }
 
-  > input
-  {
-    width: 100%;
-    height: 40px;
-    padding-left: 35px;
-    @include box-sizing(border-box);
-    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
-    @include rounded-except(none);
-    border: none;
-    border-bottom: 1px solid rgba($white,0.7);
-    border-collapse: collapse;
-    -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
-    font-size: $font_size_95;
-    background: midtone($blue);
-    color: $white;
-  }
+    > input
+    {
+      width: 100%;
+      height: 40px;
+      padding-left: 35px;
+      @include box-sizing(border-box);
+      @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+      @include rounded-except(none);
+      border: none;
+      border-bottom: 1px solid rgba($white,0.7);
+      border-collapse: collapse;
+      -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
+      font-size: $font_size_95;
+      background: midtone($blue);
+      color: $white;
+    }
 
-  input:focus
-  {
-    outline: none;
+    > input:focus
+    {
+      outline: none;
+    }
   }
 }
 

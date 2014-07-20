@@ -1,6 +1,7 @@
 = field_set_tag nil, id: 'location-options', class: 'input-search-filter input-search-filter-option' do
   = label_tag 'location', 'Address search'
-  = button_tag do
-    = content_tag :i, '', class: 'fa fa-map-marker'
-  = search_field_tag :location, params[:location], placeholder: 'address or ZIP code...', list: 'search-location'
+  = content_tag :div, '', class: 'filter-input-group' do
+    = button_tag do
+      = content_tag :i, '', class: 'fa fa-map-marker'
+    = search_field_tag :location, params[:location], placeholder: 'address or ZIP code...', list: 'search-location'
   = render 'component/search/geolocate', context_class: 'input-search-filter-option'
