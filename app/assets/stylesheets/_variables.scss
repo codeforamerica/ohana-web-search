@@ -45,38 +45,47 @@ $complementB: tint($complement-base, 50);
 // the variable names are patterned on Twitter Bootstrap.
 // http://getbootstrap.com/customize/
 //
-// Some of the variables describe what ARIA refers to as "widget roles",
+// Some of the variables describe what ARIA refers to as "widget roles,"
 // for example $button-color or $link-color.
 //
-// Others describe "landmark roles", for example anything starting 
+// Others describe "landmark roles," for example anything starting
 // with $search, $banner, or $main.
 //
 // Variables should have the shortest possible name that will uniquely identify them
 // following this structure:
-// 
+//
 //     [widget]-[landmark | structure]-[non-WAI-ARIA qualifier]-[state]-rule
 //     ... where:
 //
-//     [widget] =                  the specific widget. This would usually be present, but could be [optional] 
-//                                 in cases where the variable was applying a style (such as a background color)
-//                                 to the containing landmark area.
-//     [landmark | structure] =    the [optional] landmark or document structure the widget appears in.
-//     [non-WAI-ARIA qualifier] =  an [optional] descriptive qualifier for differentiating this variable, 
-//                                 which is not covered succinctly in WAI-ARIA. See note below*
-//     [state] =                   the [optional] CSS pseudo-class being set (e.g. hover, active, etc.)
-//     rule =                      the CSS rule being set (e.g. background-color, color, etc.)
+//     [widget] =                 The specific widget. This would usually be
+//                                present, but could be [optional]
+//                                in cases where the variable was applying a
+//                                style (such as a background color)
+//                                to the containing landmark area.
+//
+//     [landmark | structure]   = The [optional] landmark or document structure
+//                                the widget appears in.
+//
+//     [non-WAI-ARIA qualifier] = An [optional] descriptive qualifier for
+//                                differentiating this variable,
+//                                which is not covered succinctly in WAI-ARIA.
+//                                (e.g. a Twitter Bootstrap-style name might be used.)
+//
+//     [state] =                  The [optional] CSS pseudo-class being set
+//                                (e.g. hover, active, etc.)
+//
+//     rule =                     The CSS rule being set
+//                                (e.g. background-color, color, etc.)
 
 
-
-
-// typography
+// Typography.
 //
 // TODO $text-color (this is probably a greyscale value)
 $text-accent-color: $primary-dark;
 $text-accent-hover-color: $complementA;
 
 
-// buttons
+// Buttons.
 //
 $button-color:               rgba($black,.5);
 $button-hover-color:         $complementA;
@@ -98,18 +107,18 @@ $button-utility-hover-color: $complementA;
 $button-utility-bg:          none;
 $button-utility-bg-hover:    $complementB;
 
-// forms
+// Forms.
 //
 $input-border-color:  rgba($primary-dark, 0.4);
 $checkbox-bg:         $accentA-light;
 $checkbox-color:      $black;
 
-// search
+// Search.
 //
-// home page
+// Home page.
 $search-bg:                         $primary;
 
-// sidebar
+// Sidebar.
 $search-sidebar-bg:                 $primary-lightest;
 $search-border-color:               $primary;
 $search-text-color:                 tint($black, 25);
@@ -117,7 +126,7 @@ $search-accent-color:               shade($primary, 50);
 $search-accent-hover:               $text-accent-hover-color;
 
 
-// boxes of search terms on the home page.
+// Boxes of search terms on the home page.
 $list-search-border:                $primary-light;
 $listitem-search-border:            $primary;
 $list-search-important-border:      $complementB;
@@ -160,21 +169,18 @@ $main-header-color: $black;
 $main-list-mark-color: $complementB;
 $main-border-color: $primary-dark;
 
-// alert
+// Alert
 //
 // TODO Different kinds of alerts, e.g. alert-warning, alert-info, etc.
 $alert-color: $black;
 $alert-bg: $complementB;
 $alert-border-color: $black;
 
-// popups
+// Popups
 //
 $popup-bg: $white;
 
-
-
-// things that don't appear to be in use
-//
+// Terminology info box — appears for select keywords above the search results.
 $terminology-border: $complementA;
 
 
@@ -182,21 +188,21 @@ $terminology-border: $complementA;
 
 
 
-
-//animation settings
+// Animation settings
 $default_duration: 50ms;
 
-// styles
+// Styles
 $border_radius_base: 6px;
 
-// fonts
+// Fonts
 $font_serif: 'Libre Baskerville', serif;
 $font_san_serif: 'Quattrocento Sans', sans-serif;
 
 // Font sizes. Relative numbered names (-80,-90,-100,-110...) are used
 // instead of labels (small, medium, large) to allow easy insertion
 // of additional intermediate sizes. 100 is the baseline.
-// The font sizing mixins in _mixins.scss provide mapping of human-readable labels to font sizes.
+// The font sizing mixins in _mixins.scss provide mapping of human-readable
+// labels to font sizes.
 // For actual font size rhythm calculations, see http://modularscale.com/
 
 // tiny
