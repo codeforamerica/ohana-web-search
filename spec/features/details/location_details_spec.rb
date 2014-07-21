@@ -166,4 +166,18 @@ feature "location details" do
       expect(page).to have_title("San Maceo Agency | Ohana Web Search")
     end
   end
+
+  describe 'Edit link' do
+    before(:each) do
+      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
+       visit_test_location
+      end
+    end
+
+    it 'points to the corresponding location in the admin site' do
+      admin_site = 'http://ohana-api-demo.herokuapp.com/admin'
+      expect(page).
+        to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
+    end
+  end
 end

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
+      - Ohanakapa Ruby Gem 1.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,35 +21,38 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Date:
-      - Wed, 04 Jun 2014 06:10:11 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 16 Jul 2014 08:16:57 GMT
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic&page=0&per_page=1>;
-        rel="last"
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=wic&page=0>; rel="last"
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.41
+      - nginx/1.6.0 + Phusion Passenger 4.0.45
       Status:
       - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.45
       X-Request-Id:
-      - 8113610a-2869-4162-af57-5ad30da81b58
+      - a64705c3-8c67-47d6-b1fe-1024b7f5d5f1
       X-Runtime:
-      - '0.015700'
+      - '0.025354'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      X-Xss-Protection:
+      - 1; mode=block
       Content-Length:
-      - '2'
+      - '28'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 04 Jun 2014 06:10:11 GMT
+  recorded_at: Wed, 16 Jul 2014 08:16:58 GMT
 recorded_with: VCR 2.9.2

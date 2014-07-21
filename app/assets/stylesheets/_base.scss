@@ -421,8 +421,8 @@ sup
 }
 
 //=================================================================================
-// content area is everything aside from the loading screen
-// this section sets up the header and footer, but not the main content area
+// Content area is everything aside from the loading screen.
+// This section sets up the header and footer, but not the main content area.
 #content
 {
   background: $white;
@@ -437,7 +437,7 @@ sup
     font-family: $font_san_serif;
   }
 
-  // logo/header area
+  // Logo/header area.
   > header
   {
     position: relative;
@@ -460,9 +460,9 @@ sup
 
     h1
     {
-        font-size: 20px;
+        font-size: $font_size_110;
         @include inline-block();
-        margin-left: 10px;
+        margin-left: 13px;
         padding-top: 4px;
         padding-bottom: 3px;
     }
@@ -503,7 +503,8 @@ sup
     border-top: 2px solid dark($blue);
     padding-bottom: 20px;
 
-    >p,>div
+    >p,
+    >div
     {
       padding: 20px;
       padding-bottom: 0;
@@ -517,7 +518,7 @@ sup
       width: 30px;
       height: 10px;
       @include inline-block();
-      // the CfA flag appears below
+      // The CfA flag appears below.
       background-image: url('data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
       background-repeat: no-repeat;
       padding-right: 10px;
@@ -529,10 +530,10 @@ sup
 
 
 //=================================================================================
-// main content box - everything below the header area
-// the main content area sets up the table display styling for positioning
+// Main content box - everything below the header area.
+// The main content area sets up the table display styling for positioning
 // the search box in the middle of the screen and laying out the search box and
-// content as a two column layout on inside pages
+// content as a two column layout on inside pages.
 
 .main
 {
@@ -774,73 +775,21 @@ body { top: 0px !important; }
   {
     text-align: left;
   }
-
-  fieldset
-  {
-    >legend
-    {
-      font-size: $font_size_100;
-      font-family: $font_san_serif;
-      font-weight: bold;
-      cursor: pointer;
-      @include inline-block();
-    }
-
-    >legend:hover,
-    >legend.open:hover:before,
-    >legend.open:hover::before,
-    >legend.closed:hover:before,
-    >legend.closed:hover::before
-    {
-      color: darkest($purple);
-    }
-
-    >legend.open:before,
-    >legend.open::before
-    {
-      content: "▲ ";
-      color: midtone($blue);
-      font-size: $font_size_90;
-    }
-
-    >legend.closed:before,
-    >legend.closed::before
-    {
-      content: "▼ ";
-      color: midtone($blue);
-      font-size: $font_size_90;
-    }
-
-    input[type=search]
-    {
-      width: 100%;
-      padding: 3px;
-      font-size: $font_size_90;
-      height: 22px;
-      vertical-align: top;
-      @include box-sizing(border-box)
-    }
-  }
 }
 
 .inside #keyword-search-box
 {
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 0px;
   background: midtone($blue);
 }
 
 #search-controls
 {
-  padding: 5px;
   margin: 10px;
-  border-bottom: 1px solid midtone($blue);
 }
 
 #geolocate-box
 {
-  margin-top: 5px;
+  text-align: right;
 }
 .home #geolocate-box
 {
@@ -1073,96 +1022,17 @@ body { top: 0px !important; }
   border: none;
 }
 
-
-/*
-
-.search-check {
-  width: 20px;
-  position: relative;
-  @include inline-block();
-}
-
-.search-check label {
-  cursor: pointer;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 0;
-  border-radius: 4px;
-  display: block;
-
-  border: 1px solid $greyscale_light;
-  //@include box-shadow( inset 0px 1px 0px rgba($black, .5), 0px 1px 1px $white_alpha40 );
-  @include background( linear-gradient(top,$greyscale_lightest,$white) );
-  overflow: hidden;
-}
-
-.search-check label:before
-{
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 34px;
-  position: absolute;
-  left: 4px;
-  top: -5px;
-
-  border-right: 3px solid darkest($blue)_alpha30;
-
-  @include rotate(45deg);
-}
-
-.search-check label:after
-{
-  @include opacity(0.3);
-  content: '🔍';
-  font-family: $icon_font;
-  font-size: $font_size_90;
-  color: darkest($blue);
-  position: absolute;
-  width: 9px;
-  height: 5px;
-  //background: transparent;
-  top: 2px;
-  left: 4px;
-}
-
-.search-check label:hover::after
-{
-  @include opacity(0.3);
-}
-
-.search-check label:hover::before,
-.search-check input[type=checkbox]:checked + label::before
-{
-  border: none;
-}
-
-.search-check input[type=checkbox]:checked + label:after {
-  @include opacity(1);
-}
-
-.search-check input[type=checkbox]:checked + label
-{
-  @include background( linear-gradient(top,lightest($green),midtone($green)) );
-  border: 1px solid darkest($blue);
-}
-*/
-
-
 #search-options
 {
-  margin-bottom: 25px;
   font-family: $font_san_serif;
 
   fieldset
   {
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid midtone($blue);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    padding-top: 10px;
 
     legend
     {
@@ -1393,8 +1263,6 @@ body { top: 0px !important; }
 
 .results-header.floating
 {
-  position: fixed;
-  top: 0;
   -webkit-backface-visibility: hidden;
   width: 100%;
   @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
@@ -1750,19 +1618,6 @@ body { top: 0px !important; }
       padding-left: 20px;
       margin-left: 8px;
     }
-    .arts{background: url('/assets/markers/arts.png') no-repeat;}
-    .clinics{background: url('/assets/markers/clinics.png') no-repeat;}
-    .education{background: url('/assets/markers/education.png') no-repeat;}
-    .entertainment{background: url('/assets/markers/entertainment.png') no-repeat;}
-    .farmers-markets{background: url('/assets/markers/farmers_markets.png') no-repeat;}
-    .government{background: url('/assets/markers/government.png') no-repeat;}
-    .human-services{background: url('/assets/markers/human_services.png') no-repeat;}
-    .libraries{background: url('/assets/markers/libraries.png') no-repeat;}
-    .museums{background: url('/assets/markers/museums.png') no-repeat;}
-    .parks{background: url('/assets/markers/parks.png') no-repeat;}
-    .sports{background: url('/assets/markers/sports.png') no-repeat;}
-    .other{background: url('/assets/markers/other.png') no-repeat;}
-
 
     .address
     {
@@ -1794,6 +1649,87 @@ body { top: 0px !important; }
 {
   height: 150px;
   border-bottom: 1px solid midtone($blue);
+
+  .infoBox
+  {
+    background-color: $white;
+    @include border-radius(0px 4px 4px 4px);
+    @include single-box-shadow(midtone($black,0.4), 0px, 0px, 5px);
+    border: 1px solid dark($blue);
+    padding: 3px 6px;
+    opacity: 0.95;
+
+    > div
+    {
+      position: relative;
+    }
+
+    h1
+    {
+      font-weight: bold;
+      font-size: $font_size_95;
+      margin-left: 20px;
+    }
+
+    h2
+    {
+      font-size: $font_size_95;
+      margin-left: 20px;
+    }
+
+    a
+    {
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black, .6);
+      cursor: pointer;
+      border-bottom: 1px solid $white;
+      @include inline-block();
+    }
+    a:hover
+    {
+      color: dark($blue);
+      border-bottom: 1px solid $greyscale_midtone;
+      border-bottom: 1px solid rgba($black, .4);
+      text-decoration: none;
+    }
+
+    p
+    {
+      text-align: center;
+      margin-top: 4px;
+      border-top: 1px solid midtone($blue,0.5);
+      font-size: $font_size_90;
+      margin-bottom: 2px;
+    }
+
+    .button-close
+    {
+      color: $greyscale_midtone; // IE Fallback
+      color: rgba($black, .5);
+      position: absolute;
+      left: 0px;
+      top: -10px;
+      font-size: $font_size_120;
+      font-family: $font_serif;
+    }
+
+    .button-close:after,
+    .button-close::after
+    {
+      content: "×";
+    }
+
+    .button-close:hover
+    {
+      color: $black;
+      cursor: pointer;
+    }
+  }
+
+  .infoBox:hover a
+  {
+    color: dark($blue);
+  }
 }
 #map-canvas.max
 {
@@ -1842,19 +1778,6 @@ body { top: 0px !important; }
       padding-left: 20px;
       margin-left: 0px;
     }
-    .arts{background: url('/assets/markers/arts.png') no-repeat;}
-    .clinics{background: url('/assets/markers/clinics.png') no-repeat;}
-    .education{background: url('/assets/markers/education.png') no-repeat;}
-    .entertainment{background: url('/assets/markers/entertainment.png') no-repeat;}
-    .farmers-markets{background: url('/assets/markers/farmers_markets.png') no-repeat;}
-    .government{background: url('/assets/markers/government.png') no-repeat;}
-    .human-services{background: url('/assets/markers/human_services.png') no-repeat;}
-    .libraries{background: url('/assets/markers/libraries.png') no-repeat;}
-    .museums{background: url('/assets/markers/museums.png') no-repeat;}
-    .parks{background: url('/assets/markers/parks.png') no-repeat;}
-    .sports{background: url('/assets/markers/sports.png') no-repeat;}
-    .other{background: url('/assets/markers/other.png') no-repeat;}
-
 
     a
     {
@@ -2013,10 +1936,6 @@ body { top: 0px !important; }
         padding: 35px;
         padding-top: 0px;
         padding-bottom: 20px;
-
-        .depth1{margin-left: 10px;}
-        .depth2{margin-left: 20px;}
-        .depth3{margin-left: 30px;}
       }
 
       > section > section > section
@@ -2041,6 +1960,8 @@ body { top: 0px !important; }
           {
             width: 23px;
             color: darkest($purple);
+            text-align: center;
+            margin-right: 4px;
           }
 
           >.fax:after,

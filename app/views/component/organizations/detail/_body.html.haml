@@ -86,7 +86,7 @@
               %section
                 %section.address
                   %div
-                    %i{:class=>"fa fa-home"}
+                    %i{:class=>"fa fa-map-marker"}
                     = render "component/detail/address", org: @org, lines: 2
 
           - if @org[:mail_address].present?
@@ -138,9 +138,9 @@
                 %span.hide#detail-map-canvas-title
                   = address(@org)
                 %span.hide#detail-map-canvas-lat
-                  = @org.coordinates[1]
+                  = @org.latitude
                 %span.hide#detail-map-canvas-lng
-                  = @org.coordinates[0]
+                  = @org.longitude
               %noscript
                 %style
                   -# hides map when JS is disabled
@@ -185,6 +185,6 @@
             %span
               = @org.updated_at.to_s(:full_date_and_time)
             %div
-              %a{ :href => "#{request.protocol}admin.#{request.domain}#{request.fullpath.split("?")[0]}", :target=>"_self" }
-                %i{ :class => "fa fa-pencil" }
+              = link_to "#{SETTINGS[:admin_site]}/locations/#{@org.slug}" do
+                %i{ class: 'fa fa-pencil' }
                 Edit
