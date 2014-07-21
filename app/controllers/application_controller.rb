@@ -37,23 +37,6 @@ class ApplicationController < ActionController::Base
       cookies.delete(:googtrans, :domain => ".www.#{ENV['DOMAIN_NAME']}")
 
       # set translation cookie
-
-      # The "DOMAIN_NAME" environment variable should be set
-      # to your app's domain name, without the subdomain.
-      # If you're on Heroku, that means setting it to "herokuapp.com".
-      # If you have a custom domain name, like "www.smc-connect.org", that
-      # means setting it to "smc-connect.org".
-
-      # In development, it should only be set to a 2-level domain name,
-      # like "lvh.me", or "myapp.dev" if you're using Pow. You can set it in
-      # config/application.yml.
-
-      # Translation won't work with "localhost", so please open the site
-      # locally via http://lvh.me:{port number}
-
-      # Read more about lvh.me here:
-      # http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme
-      # Pow should work too if you prefer that: http://pow.cx/
       cookies[:googtrans] = {
         value: "/en/#{@current_lang}",
         domain: "#{ENV['DOMAIN_NAME']}"
