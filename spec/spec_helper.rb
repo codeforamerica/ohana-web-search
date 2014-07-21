@@ -9,7 +9,6 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'email_spec'
 # require 'capybara/poltergeist'
-require "rack_session_access/capybara"
 require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,

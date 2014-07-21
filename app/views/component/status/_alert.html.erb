@@ -1,13 +1,13 @@
-<aside id="alert-box" class="alert-container floating <%= flash.count > 0 ? "" : "hide" %>">
+<aside id="alert-box" class="alert-container floating layer-10 <%= flash.count > 0 ? "" : "hide" %>">
 
-  <% # One hard-coded alert box is needed for client-side alerts %>
+  <% # One hard-coded alert box is needed for client-side alerts. %>
   <div class='alert alert-error'>
     <p id="flash-alert-client-message" class="alert-message"></p>
     <a class='alert-close' data-dismiss="alert"><i class="fa fa-times-circle fa-2x"></i></a>
   </div>
 
-  <% # this is a server-side generated alert, which is not currently used, %>
-  <% # but it could be in the future, so keeping it around for now %>
+  <% # This is a server-side generated alert, which is not currently used, %>
+  <% # but it could be in the future, so keeping it around for now. %>
   <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
       <div class="alert alert-<%= name == :notice ? "valid" : "error" %>">
