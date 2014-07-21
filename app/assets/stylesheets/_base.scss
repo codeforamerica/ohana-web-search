@@ -466,9 +466,9 @@ sup
 
     h1
     {
-        font-size: 20px;
+        font-size: $font_size_110;
         @include inline-block();
-        margin-left: 10px;
+        margin-left: 13px;
         padding-top: 4px;
         padding-bottom: 3px;
     }
@@ -509,7 +509,8 @@ sup
     border-top: 2px solid $primary-dark;
     padding-bottom: 20px;
 
-    >p,>div
+    >p,
+    >div
     {
       padding: 20px;
       padding-bottom: 0;
@@ -790,52 +791,6 @@ body { top: 0px !important; }
     text-align: left;
   }
 
-  fieldset
-  {
-    >legend
-    {
-      font-size: $font_size_100;
-      font-family: $font_san_serif;
-      font-weight: bold;
-      cursor: pointer;
-      @include inline-block();
-    }
-
-    >legend:hover,
-    >legend.open:hover:before,
-    >legend.open:hover::before,
-    >legend.closed:hover:before,
-    >legend.closed:hover::before
-    {
-      color: $search-accent-hover;
-    }
-
-    >legend.open:before,
-    >legend.open::before
-    {
-      content: "▲ ";
-      color: $primary;
-      font-size: $font_size_90;
-    }
-
-    >legend.closed:before,
-    >legend.closed::before
-    {
-      content: "▼ ";
-      color: $primary;
-      font-size: $font_size_90;
-    }
-
-    input[type=search]
-    {
-      width: 100%;
-      padding: 3px;
-      font-size: $font_size_90;
-      height: 22px;
-      vertical-align: top;
-      @include box-sizing(border-box)
-    }
-  }
 }
 
 .inside #keyword-search-box
@@ -848,14 +803,12 @@ body { top: 0px !important; }
 
 #search-controls
 {
-  padding: 5px;
   margin: 10px;
-  border-bottom: 1px solid $search-border-color;
 }
 
 #geolocate-box
 {
-  margin-top: 5px;
+  text-align: right;
 }
 .home #geolocate-box
 {
@@ -1089,17 +1042,15 @@ body { top: 0px !important; }
 
 #search-options
 {
-  margin-bottom: 25px;
   font-family: $font_san_serif;
 
   fieldset
   {
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid $search-border-color;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    padding-top: 10px;
 
     legend
     {
@@ -1331,8 +1282,6 @@ body { top: 0px !important; }
 
 .results-header.floating
 {
-  position: fixed;
-  top: 0;
   -webkit-backface-visibility: hidden;
   width: 100%;
   @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
@@ -1957,10 +1906,6 @@ body { top: 0px !important; }
         padding: 35px;
         padding-top: 0px;
         padding-bottom: 20px;
-
-        .depth1{margin-left: 10px;}
-        .depth2{margin-left: 20px;}
-        .depth3{margin-left: 30px;}
       }
 
       > section > section > section
@@ -1985,6 +1930,10 @@ body { top: 0px !important; }
           {
             width: 23px;
             color: $main-highlight;
+            // NOTE this might need a new named variable?
+            // color: darkest($purple);
+            text-align: center;
+            margin-right: 4px;
           }
 
           >.fax:after,

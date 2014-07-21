@@ -89,6 +89,7 @@ $text-accent-hover-color: $complementA;
 //
 $button-color:               rgba($black,.5);
 $button-hover-color:         $complementA;
+$button-fa-color:            $primary-darkest;
 $button-bg:                  $accentA-light;
 $button-hover-bg:            shade($accentA-light,5);
 
@@ -98,7 +99,7 @@ $button-disabled-bg:         tint($greyscale_light, 60);
 $button-small-color:         tint($black, 25);
 $button-small-fa-color:      $primary-darkest;
 $button-small-hover-color:   $complementA;
-$button-small-bg:            none;
+$button-small-bg:            $primary-light;
 $button-small-bg-hover:      $primary;
 
 $button-utility-color:       $complementA;
@@ -109,9 +110,10 @@ $button-utility-bg-hover:    $complementB;
 
 // Forms.
 //
-$input-border-color:  rgba($primary-dark, 0.4);
+$input-border-color:  $primary-dark;
 $checkbox-bg:         $accentA-light;
 $checkbox-color:      $black;
+$input-fa-color:      $primary-darkest;
 
 // Search.
 //
@@ -124,6 +126,10 @@ $search-border-color:               $primary;
 $search-text-color:                 tint($black, 25);
 $search-accent-color:               shade($primary, 50);
 $search-accent-hover:               $text-accent-hover-color;
+$search-button-color:               $complementA;
+$search-button-hover-color:         shade($complement-base, 25);
+$search-button-hover-background:    $primary-light;
+$search-button-fa-hover-color:      $complementA;
 
 
 // Boxes of search terms on the home page.
@@ -188,11 +194,20 @@ $terminology-border: $complementA;
 
 
 
-// Animation settings
-$default_duration: 50ms;
+// Animation settings.
+$animation-duration-slow: 100ms;
+$animation-duration-base: 50ms;
+$animation-duration-fast: 25ms;
 
-// Styles
-$border_radius_base: 6px;
+// Positioning settings.
+// The default border radius for rounded corners.
+$border-radius-base: 4px;
+
+// The stacking order layers (used with z-index).
+$layer-10: 10000;
+$layer-9: 9000;
+$layer-8: 8000;
+$layer-7: 8000;
 
 // Fonts
 $font_serif: 'Libre Baskerville', serif;
@@ -201,9 +216,9 @@ $font_san_serif: 'Quattrocento Sans', sans-serif;
 // Font sizes. Relative numbered names (-80,-90,-100,-110...) are used
 // instead of labels (small, medium, large) to allow easy insertion
 // of additional intermediate sizes. 100 is the baseline.
-// The font sizing mixins in _mixins.scss provide mapping of human-readable
-// labels to font sizes.
-// For actual font size rhythm calculations, see http://modularscale.com/
+// The font sizing mixins in _mixins.scss provide mapping of human-readable labels to font sizes.
+// For actual font size rhythm calculations, see http://modularscale.com.
+// The settings are rounded values of a 16px baseline at a 3:4 perfect forth ratio.
 
 // tiny
 $font_size_80: 9px;
@@ -227,6 +242,10 @@ $font_leading_105: 1;
 
 // medium
 $font_size_110: 21px;
+$font_leading_110: 1.25;
+
+// medium-large
+$font_size_115: 24px;
 $font_leading_110: 1.25;
 
 // large

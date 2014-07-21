@@ -2,12 +2,18 @@
    Component styles
    ========================================================================== */
 
-// Form input styles
+// Form input styles.
 
-// search
+// Search
+// Reset webkit added styles.
+@include reset-input-webkit();
+
 .input-search-small
 {
+  @include input-placeholder(rgba($white, 0.6), italic);
   position:relative;
+/*
+<<<<<<< HEAD
   width:220px;
 
   > input::input-placeholder
@@ -21,7 +27,6 @@
     color: $primary-lightest;
     font-style: italic;
   }
-
   > input:-moz-placeholder
   {
     color: $primary-lightest;
@@ -39,36 +44,32 @@
     color: $primary-lightest;
     font-style: italic;
   }
+=======
+>>>>>>> master
+*/
 
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration
-  {
-    display: none;
-  }
-
-  input:focus,
+  input:focus
   {
     outline: none;
   }
 
-  > input[type=search]
+  > input
   {
     font-size: $font_size_105;
     margin-left: 0px;
-    height: 40px;
+    height: 45px;
     padding: 3px;
-    padding-left: 36px;
+    padding-left: 45px;
     padding-right: 6px;
     width: 100%;
     vertical-align: bottom;
 
     border-collapse: collapse;
-    -webkit-appearance: none; // remove rounding styling of input fields on iOS
     border: none;
     background: none;
     border-bottom: 2px solid $primary-dark;
+    // NOTE this can probably go... it appears to have been taken out during the sidebar cleanup.
+    // @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
     @include box-sizing(border-box);
     color: $white;
   }
@@ -79,6 +80,7 @@
     background: none;
     border: none;
     margin: 0;
+    margin-left: 5px;
     padding: 10px;
     @include box-sizing(border-box);
     vertical-align: baseline;
@@ -91,7 +93,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 9998;
+    z-index: $layer-8;
 
     // IN USE?
     >span
@@ -126,41 +128,24 @@
 
 .input-search-big
 {
-  @extend .input-search-small;
-  width:440px;
+  @include input-placeholder(midtone($black,0.2), italic);
+  position: relative;
+  width: 440px;
 
-  > input::input-placeholder
+  input:focus
   {
-    color: midtone($black,0.2);
-    font-style: italic;
+    outline: none;
   }
 
-  > input::-webkit-input-placeholder
+  > input
   {
-    color: midtone($black,0.2);
-    font-style: italic;
-  }
+    padding-left: 45px;
+    width: 100%;
 
-  > input:-moz-placeholder
-  {
-    color: midtone($black,0.2);
-    font-style: italic;
-  }
+    border-collapse: collapse;
+    @include box-sizing(border-box);
+    @include rounded-except(none);
 
-  > input::-moz-placeholder
-  {
-    color: midtone($black,0.2);
-    font-style: italic;
-  }
-
-  > input:-ms-input-placeholder
-  {
-    color: midtone($black,0.2);
-    font-style: italic;
-  }
-
-  > input[type=search]
-  {
     height: 50px;
     padding: 10px;
     padding-right: 144px;
@@ -169,30 +154,51 @@
     vertical-align:middle;
     background: $white;
     @include border-radius(4px);
-    border:1px solid rgba($search-bg, 0.4);
+    border:1px solid rgba($input-border-color, 0.4);
     color: $black;
   }
 
   > button
   {
-    height: 50px;
-    letter-spacing: 1px;
-    min-width: 134px;
-    font-size: 24px;
+    position: absolute;
+    top: 0;
     right: 0;
     left: auto;
-    border: 1px solid rgba($search-bg, 0.4);
-    border-left: 1px solid rgba($search-bg, 0.2);
+    z-index: $layer-8;
+    height: 50px;
+    min-width: 134px;
+    margin: 0;
+    margin-left: 5px;
+    padding: 10px;
+    border-collapse: collapse;
+    @include box-sizing(border-box);
+    @include rounded-except(left);
+
+    border: 1px solid rgba($input-border-color,0.4);
+    border-left: 1px solid rgba($input-border-color,0.2);
     background: $button-bg;
-    @include border-radius(0px 4px 4px 0px);
+
+    font-size: $font_size_115;
+    vertical-align: baseline;
+    font-family: $font_serif;
+    line-height: 0px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
 
     >span
     {
-      // This code is very similar to the rule for .input-search-small > button > span
-      // Can we refactor?
+      @include inline-block();
+      color: $black; // IE fallback
+      color: midtone($black, .5);
       text-shadow: 1px 4px 6px $accentA-light, 0 0 0 $black, 1px 4px 6px $accentA-light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
       color: $button-color;
+    }
+
+    >.fa
+    {
+      color: $button-fa-color;
     }
 
     &:hover
@@ -207,7 +213,108 @@
 
       >.fa
       {
-        color: $button-hover-color;
+        color: $button-fa-color;
+      }
+    }
+  }
+}
+
+.input-search-filter
+{
+  @include input-placeholder(rgba($white, 0.6), italic);
+  position: relative;
+
+  > label
+  {
+    font-size: $font_size_90;
+    color: rgba($black, 0.5);
+  }
+
+  > .filter-input-group
+  {
+    > button
+    {
+      font-size: $font_size_110;
+      position: absolute;
+      z-index: $layer-8;
+      margin-left: 3px;
+      padding: 0;
+      border: none;
+      background: none;
+      color: $search-button-color;
+      width: 30px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover
+      {
+        color: $search-button-hover-color;
+      }
+    }
+
+    > input
+    {
+      width: 100%;
+      height: 40px;
+      padding-left: 35px;
+      @include box-sizing(border-box);
+      @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+      @include rounded-except(none);
+      border: none;
+      border-bottom: 1px solid rgba($white,0.7);
+      border-collapse: collapse;
+      -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
+      font-size: $font_size_95;
+      background: $primary;
+      color: $white;
+    }
+
+    > input:focus
+    {
+      outline: none;
+    }
+  }
+}
+
+.input-search-filter.input-search-filter-option
+{
+  > input
+  {
+    @include rounded-except(lower-right);
+  }
+
+  .input-search-filter-option
+  {
+    top: -1px;
+    font-size: $font_size_95;
+    border: none;
+    margin: 0;
+    background: rgba($white, 0.3);
+    border: 1px solid rgba($white, 0);
+    cursor: pointer;
+    @include rounded-except(top);
+
+    >span
+    {
+      color: $black; // IE fallback
+      color: midtone($black, 0.5);
+    }
+
+    >.fa
+    {
+      color: $input-fa-color;
+    }
+
+    &:hover
+    {
+      background: $search-button-hover-background;
+      border: 1px solid rgba($input-border-color,0.2);
+      border-top: 1px solid rgba($white, 0.3);
+
+      .fa
+      {
+        color: $search-button-fa-hover-color;
       }
     }
   }

@@ -6,11 +6,11 @@
 .button-small
 {
   background: $button-small-bg;
-  border:none;
+  border: none;
 
-  @include type-size(baseline);
   font-family: $font_san_serif;
-  @include border-radius(4px);
+  @include type-size(baseline);
+  @include rounded-except(none);
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
@@ -35,6 +35,20 @@
   }
 }
 
+.button-small[disabled],
+.button-small[disabled]:hover
+{
+  border:1px solid rgba(0,0,0,0);
+  background: none;
+  color: lightest($black);
+  cursor: default;
+
+  .fa
+  {
+    color: lightest($black);
+  }
+}
+
 a.button-small,
 a.button-small:hover
 {
@@ -49,7 +63,6 @@ a.button-small:not([href])
 }
 
 
-// IN USE?
 .button-medium
 {
   padding: 4px 6px;
@@ -59,10 +72,10 @@ a.button-small:not([href])
   font-family: $font_san_serif;
   padding-left: 7px;
   padding-right: 7px;
-  @include border-radius(4px);
   background: $accentA-light;
   border: 1px solid $primary-dark; // IE Fallback
   border: 1px solid rgba($primary-dark, 0.4);
+  @include rounded-except(none);
   color: light($black);
 
   .fa
@@ -115,4 +128,3 @@ a.button-small:not([href])
     }
   }
 }
-

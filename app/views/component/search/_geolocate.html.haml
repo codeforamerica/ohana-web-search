@@ -1,5 +1,4 @@
 %div#geolocate-box
-  = hidden_field_tag 'location'
-  %button#locate-btn.hide.button-small{:type=>'submit'}
-    %i{ :class=>"fa fa-map-marker" }
-    Services near me
+  = button_tag(id: 'locate-btn', class: "button-small #{context_class}", type: 'submit', data: { wait_text: t('buttons.during_geolocation') }) do
+    %i{ class: 'fa fa-globe' }
+    %span= t('buttons.services_near_me')
