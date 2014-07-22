@@ -12,41 +12,6 @@
 {
   @include input-placeholder(rgba($white, 0.6), italic);
   position:relative;
-/*
-<<<<<<< HEAD
-  width:220px;
-
-  > input::input-placeholder
-  {
-    color: $primary-lightest;
-    font-style: italic;
-  }
-
-  > input::-webkit-input-placeholder
-  {
-    color: $primary-lightest;
-    font-style: italic;
-  }
-  > input:-moz-placeholder
-  {
-    color: $primary-lightest;
-    font-style: italic;
-  }
-
-  > input::-moz-placeholder
-  {
-    color: $primary-lightest;
-    font-style: italic;
-  }
-
-  > input:-ms-input-placeholder
-  {
-    color: $primary-lightest;
-    font-style: italic;
-  }
-=======
->>>>>>> master
-*/
 
   input:focus
   {
@@ -67,9 +32,8 @@
     border-collapse: collapse;
     border: none;
     background: none;
-    border-bottom: 2px solid $primary-dark;
-    // NOTE this can probably go... it appears to have been taken out during the sidebar cleanup.
-    // @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+    border-bottom: 1px solid $primary-dark;
+    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
     @include box-sizing(border-box);
     color: $white;
   }
@@ -85,7 +49,7 @@
     @include box-sizing(border-box);
     vertical-align: baseline;
     font-family: $font_serif;
-    font-size: $font_size_110; // Medium font size
+    font-size: $font_size_110;
     line-height: 0px;
     height: 40px;
     min-width: 34px;
@@ -95,14 +59,6 @@
     top: 0;
     z-index: $layer-8;
 
-    // IN USE?
-    >span
-    {
-      @include inline-block();
-      color: $black; // IE fallback
-      color: midtone($black, .5);
-      text-shadow: 1px 4px 6px $white, 0 0 0 $black, 1px 4px 6px $white;
-    }
     >.fa
     {
       color: $primary-darkest;
@@ -110,13 +66,6 @@
 
     &:hover
     {
-      // IN USE?
-      >span
-      {
-        @include inline-block();
-        color: $button-utility-color;
-        text-shadow: none;
-      }
       >.fa
       {
         color: $primary-dark;
