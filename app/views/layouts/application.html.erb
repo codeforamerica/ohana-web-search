@@ -62,6 +62,7 @@
       <%= render 'component/google_analytics/page_tracking' %>
     <% end %>
 
+    <%= yield :head %>
     <%= yield :canonical %>
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
@@ -110,10 +111,10 @@
 
       <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
 
-      <div id="google_translate_element"></div>
+      <div id="google-translate-element"></div>
       <script type="text/javascript">
       function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'af,ar,az,be,bg,bn,bs,ca,ceb,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,gu,hi,hmn,hr,ht,hu,hy,id,is,it,iw,ja,jv,ka,km,kn,ko,lo,lt,lv,mk,mr,ms,mt,nl,no,pl,pt,ro,ru,sk,sl,sq,sr,sv,sw,ta,te,th,tl,tr,uk,ur,vi,yi,zh-CN,zh-TW', autoDisplay: false}, 'google_translate_element');
+        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'af,ar,az,be,bg,bn,bs,ca,ceb,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,gu,hi,hmn,hr,ht,hu,hy,id,is,it,iw,ja,jv,ka,km,kn,ko,lo,lt,lv,mk,mr,ms,mt,nl,no,pl,pt,ro,ru,sk,sl,sq,sr,sv,sw,ta,te,th,tl,tr,uk,ur,vi,yi,zh-CN,zh-TW', autoDisplay: false}, 'google-translate-element');
       }
       </script>
       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
