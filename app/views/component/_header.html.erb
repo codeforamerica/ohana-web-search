@@ -1,0 +1,25 @@
+<header id="content-header">
+  <h1 id="logo"><a href="/" target="_self"><img src="<%= asset_path(SETTINGS[:site_logo]) %>" alt="<%= SETTINGS[:site_title] %> Logo" /></a></h1>
+  <h2>Find community services</h2>
+  <nav>
+    <ul>
+      <li>
+        <a title="Help" href="/about#about-box" id="about-btn" class="popup-trigger">About</a>
+      </li>
+      <li><a title="Contribute" href="/about#contribute-box" id="contribute-btn" class="popup-trigger" target="_self">Contribute</a></li>
+      <li><a title="Feedback" href="/about#feedback-box" id="feedback-btn" class="popup-trigger" target="_self">Feedback</a></li>
+    </ul>
+  </nav>
+  <div class='clearfix'>
+  </div>
+</header>
+
+<% # Hide popups on /about because they are redundant to the content on that page. %>
+<% if controller_name != "about" %>
+<aside id="popups">
+  <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/about' %></div>
+  <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/contribute' %></div>
+  <div class="popup-container hide"><div class="arrow"><span></span></div><%= render 'component/about/feedback' %></div>
+</aside>
+<% end %>
+
