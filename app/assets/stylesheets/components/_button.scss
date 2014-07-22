@@ -5,9 +5,8 @@
 // buttons
 .button-small
 {
-  background: none;
+  background: $button-small-bg;
   border: none;
-  margin: 0;
 
   font-family: $font_san_serif;
   @include type-size(baseline);
@@ -15,24 +14,24 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid darkest($blue,0);
-  color: light($black);
+  border: 1px solid rgba(0,0,0,0);
+  color: $button-small-color;
 
   .fa
   {
-    color: darkest($blue);
+    color: $button-small-fa-color;
   }
 }
 
 .button-small:hover
 {
-  background: light($blue);
-  border: 1px solid darkest($blue,0.2);
-  color: darkest($purple);
+  background: $button-small-bg-hover;
+  border: 1px solid rgba($primary-darkest, 0.2);
+  color: $button-small-hover-color;
 
   .fa
   {
-    color: darkest($purple);
+    color: $button-small-hover-color;
   }
 }
 
@@ -73,26 +72,27 @@ a.button-small:not([href])
   font-family: $font_san_serif;
   padding-left: 7px;
   padding-right: 7px;
+  background: $accentA-light;
+  border: 1px solid $primary-dark; // IE Fallback
+  border: 1px solid rgba($primary-dark, 0.4);
   @include rounded-except(none);
-  background: light($green);
-  border: 1px solid darkest($blue); // IE Fallback
-  border: 1px solid darkest($blue,0.4);
   color: light($black);
 
   .fa
   {
-    color: darkest($blue);
+    color: $primary-darkest;
   }
 }
 
+// IN USE?
 .button-medium:hover
 {
-  background: shade(light($green),5);
-  color: darkest($purple);
+  background: shade($accentA-light,5);
+  color: $button-hover-color;
 
   .fa
   {
-    color: darkest($purple);
+    color: $button-hover-color;
   }
 }
 
@@ -101,12 +101,12 @@ a.button-small:not([href])
 // the details page and is set in a fixed position when the page scrolls.
 .button-utility
 {
-  background:none;
+  background:$button-utility-bg;
   text-decoration: none;
   @include inline-block();
   @include type-size(baseline);
   letter-spacing: 1px;
-  color: darkest($purple);
+  color: $button-utility-color;
   @include box-sizing(border-box);
   padding:10px;
   margin:0px;
@@ -114,16 +114,17 @@ a.button-small:not([href])
 
   .fa
   {
-    color: darkest($blue);
+    color: $button-utility-fa-color;
   }
 
   &:hover
   {
-    background: lightest($purple);
+    background: $button-utility-bg-hover;
+    color: $button-utility-hover-color !important;
 
     .fa
     {
-      color: darkest($purple);
+      color: $button-utility-hover-color;
     }
   }
 }

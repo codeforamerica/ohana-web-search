@@ -4,7 +4,7 @@
 
 // Form input styles.
 
-// Search
+// Search.
 // Reset webkit added styles.
 @include reset-input-webkit();
 
@@ -32,7 +32,7 @@
     border-collapse: collapse;
     border: none;
     background: none;
-    border-bottom: 1px solid darkest($blue);
+    border-bottom: 1px solid $primary-dark;
     @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
     @include box-sizing(border-box);
     color: $white;
@@ -49,7 +49,7 @@
     @include box-sizing(border-box);
     vertical-align: baseline;
     font-family: $font_serif;
-    font-size: $font_size_110; // Medium font size
+    font-size: $font_size_110;
     line-height: 0px;
     height: 40px;
     min-width: 34px;
@@ -59,29 +59,17 @@
     top: 0;
     z-index: $layer-8;
 
-    >span
-    {
-      @include inline-block();
-      color: $black; // IE fallback
-      color: midtone($black, .5);
-      text-shadow: 1px 4px 6px $white, 0 0 0 $black, 1px 4px 6px $white;
-    }
     >.fa
     {
-      color: darkest($blue);
+      color: $primary-darkest;
     }
 
     &:hover
     {
-      >span
-      {
-        @include inline-block();
-        color: darkest($purple);
-        text-shadow: none;
-      }
       >.fa
       {
-        color: dark($blue);
+        color: $primary-dark;
+        // color: $button-hover-color;
       }
     }
   }
@@ -114,7 +102,8 @@
     font-size: $font_size_110;
     vertical-align:middle;
     background: $white;
-    border:1px solid darkest($blue,0.4);
+    @include border-radius(4px);
+    border:1px solid rgba($input-border-color, 0.4);
     color: $black;
   }
 
@@ -134,9 +123,9 @@
     @include box-sizing(border-box);
     @include rounded-except(left);
 
-    border: 1px solid darkest($blue,0.4);
-    border-left: 1px solid darkest($blue,0.2);
-    background: light($green);
+    border: 1px solid rgba($input-border-color,0.4);
+    border-left: 1px solid rgba($input-border-color,0.2);
+    background: $button-bg;
 
     font-size: $font_size_115;
     vertical-align: baseline;
@@ -151,27 +140,29 @@
       @include inline-block();
       color: $black; // IE fallback
       color: midtone($black, .5);
-      text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+      text-shadow: 1px 4px 6px $accentA-light, 0 0 0 $black, 1px 4px 6px $accentA-light;
       line-height: 20px; // Needed by Opera to handle vertical-align:middle properly
+      color: $button-color;
     }
 
     >.fa
     {
-      color: darkest($blue);
+      color: $button-fa-color;
     }
 
     &:hover
     {
-      background: shade(light($green),5);
+      background: $button-hover-bg;
 
       >span
       {
         text-shadow: none;
+        color: $button-hover-color;
       }
 
       >.fa
       {
-        color: dark($blue);
+        color: $button-fa-color;
       }
     }
   }
@@ -199,7 +190,7 @@
       padding: 0;
       border: none;
       background: none;
-      color: darkest($purple);
+      color: $search-button-color;
       width: 30px;
       height: 40px;
       text-align: center;
@@ -207,7 +198,7 @@
 
       &:hover
       {
-        color: dark($purple);
+        color: $search-button-hover-color;
       }
     }
 
@@ -224,7 +215,7 @@
       border-collapse: collapse;
       -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
       font-size: $font_size_95;
-      background: midtone($blue);
+      background: $primary;
       color: $white;
     }
 
@@ -237,7 +228,7 @@
 
 .input-search-filter.input-search-filter-option
 {
-  > input
+  > .filter-input-group > input
   {
     @include rounded-except(lower-right);
   }
@@ -261,19 +252,18 @@
 
     >.fa
     {
-      color: darkest($blue);
+      color: $input-fa-color;
     }
 
     &:hover
     {
-      background: light($blue);
-      border: 1px solid darkest($blue,0.2);
+      background: $search-button-hover-background;
+      border: 1px solid rgba($input-border-color,0.2);
       border-top: 1px solid rgba($white, 0.3);
-      color: darkest($purple);
 
       .fa
       {
-        color: darkest($purple);
+        color: $search-button-fa-hover-color;
       }
     }
   }

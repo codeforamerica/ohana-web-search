@@ -34,7 +34,7 @@ define(['util/util'],function(util) {
     if (_timeoutCount++ < 20)
     {
       setTimeout(function(){
-        _languages = document.querySelector('#google_translate_element select');
+        _languages = document.querySelector('#google-translate-element select');
         if (!_languages) _checkForGoog();
         else _hookDropDown();
       },1000);
