@@ -6,7 +6,7 @@
 
 // COLOR PALETTE
 
-// greyscale
+// Greyscale.
 $black: rgb(0,0,0);
 
 $greyscale_dark: rgb(87,87,87);
@@ -16,23 +16,26 @@ $greyscale_lightest: rgb(252,252,252);
 
 $white: rgb(255,255,255);
 
-// primary
+// Primary.
 $primary: rgb(137,209,226);
 $primary-dark: shade($primary, 25);
 $primary-darkest: shade($primary, 50);
 $primary-light: tint($primary, 25);
 $primary-lightest: tint($primary, 50);
 
-// accents
+// Accents.
 $accentA-base: rgb(209,249,148);
 $accentA-light: tint($accentA-base, 25);
 $accentA-dark: shade($accentA-base, 50);
 $accentB: rgb(255,200,56);
 
-// complements
+// Complements.
 $complement-base: rgb(242,144,191);
 $complementA: shade($complement-base, 50);
 $complementB: tint($complement-base, 50);
+
+// Notification colors.
+$alert-error-base: rgb(255,10,50);
 
 
 // SEMANTIC COLOR VARIABLES
@@ -83,26 +86,44 @@ $complementB: tint($complement-base, 50);
 // Typography.
 //
 // TODO $text-color (this is probably a greyscale value)
-$text-accent-color: $primary-dark;
-$text-accent-hover-color: $complementA;
+$text-accent-color:                 $primary-dark;
+$text-accent-hover-color:           $complementA;
+
+
+// Banner (Header)
+//
+// "Popups" in the upper-left of the header area.
+//
+$menubutton-popup-color:            $primary-dark;
+$menubutton-popup-hover-color:      $complementA;
+
+// Buttons inside the popups.
+$button-popup-color:                rgba($black,.5);
+$button-popup-hover-color:          $complementA;
+$button-popup-fa-color:             $primary-darkest;
+$button-popup-bg:                   $accentA-light;
+$button-popup-hover-bg:             shade($accentA-light,5);
+
+$button-popup-disabled-color:       $greyscale_light;
+$button-popup-disabled-bg:          tint($greyscale_light, 60);
 
 
 // Buttons.
 //
-$button-color:               rgba($black,.5);
-$button-hover-color:         $complementA;
-$button-fa-color:            $primary-darkest;
-$button-bg:                  $accentA-light;
-$button-hover-bg:            shade($accentA-light,5);
+$button-color:                rgba($black,.5);
+$button-hover-color:          $complementA;
+$button-fa-color:             $primary-darkest;
+$button-bg:                   $accentA-light;
+$button-hover-bg:             shade($accentA-light,5);
 
-$button-disabled-color:      $greyscale_light;
-$button-disabled-bg:         tint($greyscale_light, 60);
+$button-disabled-color:       $greyscale_light;
+$button-disabled-bg:          tint($greyscale_light, 60);
 
 $button-small-color:         tint($black, 25);
 $button-small-fa-color:      $primary-darkest;
 $button-small-hover-color:   $complementA;
-$button-small-bg:            $primary-light;
-$button-small-bg-hover:      $primary;
+$button-small-bg:            none;
+$button-small-bg-hover:      $primary-light;
 
 $button-utility-color:       $complementA;
 $button-utility-fa-color:    $primary-darkest;
@@ -113,8 +134,6 @@ $button-utility-bg-hover:    $complementB;
 // Forms.
 //
 $input-border-color:  $primary-dark;
-$checkbox-bg:         $accentA-light;
-$checkbox-color:      $black;
 $input-fa-color:      $primary-darkest;
 
 // Search.
@@ -141,7 +160,6 @@ $list-search-important-border:      $complementB;
 $listitem-search-important-border:  $accentB;
 
 
-
 // Pagination.
 //
 $pagination-color:              $complementA;
@@ -164,11 +182,6 @@ $pagination-next-hover-bg:      tint($complement-base, 25);
 $pagination-highlight:          $black;
 
 
-// Banner
-//
-$banner-link: $primary-dark;
-$banner-link-hover: $complementA;
-
 // Main
 //
 $main-highlight: $complementA;
@@ -179,9 +192,8 @@ $main-border-color: $primary-dark;
 
 // Alert
 //
-// TODO Different kinds of alerts, e.g. alert-warning, alert-info, etc.
 $alert-color: $black;
-$alert-bg: $complementB;
+$alert-bg: $alert-error-base;
 $alert-border-color: $black;
 
 // Popups
