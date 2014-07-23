@@ -19,9 +19,10 @@
     background: $pagination-bg;
     vertical-align: baseline;
     @include type-size(baseline);
-    text-align:center;
-    padding:10px;
-    min-width:15px;
+    text-align: center;
+    min-width: 35px;
+    min-height: 44px;
+    line-height: 44px;
   }
 
   li.collapsed
@@ -48,7 +49,11 @@
   {
     color: $pagination-color;
     text-decoration: none;
-    border-bottom:none;
+    border-bottom: none;
+    display: block;
+    min-width: 35px;
+    min-height: 44px;
+    line-height: 44px;
   }
 
   .current
@@ -64,8 +69,6 @@
     a
     {
       color:$pagination-next-color;
-      padding-left:3px;
-      padding-right:3px;
       border-bottom:none;
     }
     a:hover
