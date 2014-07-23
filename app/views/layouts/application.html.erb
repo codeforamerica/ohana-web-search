@@ -62,7 +62,6 @@
       <%= render 'component/google_analytics/page_tracking' %>
     <% end %>
 
-    <%= yield :head %>
     <%= yield :canonical %>
   </head>
   <body class="<%= controller_name == 'home' ? '' : 'inside ' %><%= controller_name %> <%= action_name %>">
