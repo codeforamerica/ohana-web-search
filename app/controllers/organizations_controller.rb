@@ -1,6 +1,6 @@
-require 'google/api_client'
-
 class OrganizationsController < ApplicationController
+  include CurrentLanguage
+
   before_filter :check_location_id, only: :show
 
   include ActionView::Helpers::TextHelper
@@ -8,13 +8,9 @@ class OrganizationsController < ApplicationController
 
   # search results view
   def index
-
-    # translate search keyword to current language if other than english
-    if params[:keyword].present? && @current_lang != 'en'
-      original_word = params[:keyword]
-      translated_word = translate(params[:keyword],@current_lang,'en',false)
-      params[:keyword] = translated_word[0].translatedText if translated_word.present?
-    end
+    translator = KeywordTranslator.new(
+      params[:keyword], current_language, 'en', 'text')
+    params[:keyword] = translator.translated_keyword
 
     # initialize query. Content may be blank if no results were found.
     begin
@@ -30,7 +26,10 @@ class OrganizationsController < ApplicationController
         @orgs = Ohanakapa.search("search", keyword: "asdfasg")
       end
     end
-    params[:keyword] = original_word if original_word.present?
+
+    # Populate the keyword search field with the original term
+    # as typed by the user, not the translated word.
+    params[:keyword] = translator.original_keyword
 
     headers = Ohanakapa.last_response.headers
 
@@ -151,28 +150,4 @@ class OrganizationsController < ApplicationController
     id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
   end
-
-  # Translate the page using the Google Translate API.
-  # @param [String] text to translate
-  # @param [String] target language code to translate into
-  def translate(text, source, target, is_html)
-
-    client = Google::APIClient.new(:key => ENV['GOOGLE_TRANSLATE_API_TOKEN'], :authorization => nil)
-    translate = client.discovered_api('translate', 'v2')
-    html_or_plain = is_html ? "html" : "text"
-
-    params = {
-        'format' => html_or_plain,
-        'source' => source,
-        'target' => target,
-        'q' => text
-      }
-
-    result = client.execute(
-      :api_method => translate.translations.list,
-      :parameters => params
-    )
-    result.data.translations
-  end
-
 end

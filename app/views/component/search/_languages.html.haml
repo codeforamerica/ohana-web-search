@@ -1,44 +1,20 @@
 %section#language-box
   %ul
     %li
-      - if @current_lang == 'en'
-        %a{:lang=>"en",:class=>"notranslate button-small"}
-          English
-      - else
-        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate button-small"}
-          English
+      = link_to_unless(@current_lang == 'en', 'English', '?translate=en', lang: 'en', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')
     %li
-      - if @current_lang == 'es'
-        %a{:lang=>"es",:class=>"notranslate button-small"}
-          Español
-      - else
-        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate button-small"}
-          Español
+      = link_to_unless(@current_lang == 'es', 'Español', '?translate=es', lang: 'es', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')
     %li
-      - if @current_lang == 'tl'
-        %a{:lang=>"tl",:class=>"notranslate button-small"}
-          Tagalog
-      - else
-        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate button-small"}
-          Tagalog
+      = link_to_unless(@current_lang == 'tl', 'Tagalog', '?translate=tl', lang: 'tl', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')
     %li
-      - if @current_lang == 'zh-CN'
-        %a{:lang=>"zh-CN",:class=>"notranslate button-small"}
-          中文
-      - else
-        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate button-small"}
-          中文
+      = link_to_unless(@current_lang == 'zh-CN', '中文', '?translate=zh-CN', lang: 'zh-CN', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')
     %li
-      - if @current_lang == 'ar'
-        %aa{:lang=>"ar",:class=>"notranslate button-small"}
-          العربية
-      - else
-        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate button-small"}
-          العربية
+      = link_to_unless(@current_lang == 'ar', 'العربية', '?translate=ar', lang: 'ar', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')
     %li
-      - if @current_lang == 'ru'
-        %a{:lang=>"ru",:class=>"notranslate button-small"}
-          Русский
-      - else
-        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate button-small"}
-          Русский
+      = link_to_unless(@current_lang == 'ru', 'Русский', '?translate=ru', lang: 'ru', class: 'notranslate button-small') do |language|
+        = content_tag(:span, language, class: 'translate-active button-small')

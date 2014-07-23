@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,43 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Thu, 17 Jul 2014 01:22:39 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=24>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
-        rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - b41785d9-c6c4-49fb-b2cf-d7cb965a0965
-      X-Runtime:
-      - '0.018995'
-      X-Total-Count:
-      - '24'
-      X-Total-Pages:
-      - '24'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1249'
       Connection:
       - keep-alive
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Date:
+      - Wed, 23 Jul 2014 23:25:31 GMT
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      X-Runtime:
+      - '0.030246'
+      X-Request-Id:
+      - 42724545-2c0d-4f26-bf18-1a93aa9f8fd8
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Next-Page:
+      - '2'
+      X-Current-Page:
+      - '1'
+      X-Total-Pages:
+      - '24'
+      X-Total-Count:
+      - '24'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=24>; rel="last",
+        <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1,"admin_emails":[],"coordinates":[-122.213221,37.477227],"description":"A
@@ -83,7 +85,7 @@ http_interactions:
         Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
         780-7525","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 17 Jul 2014 01:22:39 GMT
+  recorded_at: Wed, 23 Jul 2014 23:25:31 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=94403&org_name=&utf8=%E2%9C%93
@@ -102,44 +104,46 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Date:
+      - Wed, 23 Jul 2014 23:25:31 GMT
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      X-Runtime:
+      - '0.130845'
+      X-Request-Id:
+      - a37aa85c-4674-4b40-a3ab-f3ef2538298a
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Thu, 17 Jul 2014 01:22:39 GMT
+      X-Next-Page:
+      - '2'
+      X-Current-Page:
+      - '1'
+      X-Total-Pages:
+      - '6'
+      X-Total-Count:
+      - '6'
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=6&utf8=%E2%9C%93>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=2&utf8=%E2%9C%93>;
         rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
       X-Content-Type-Options:
       - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 13177293-362d-434c-9a90-46c3f411c96d
-      X-Runtime:
-      - '0.080223'
-      X-Total-Count:
-      - '6'
-      X-Total-Pages:
-      - '6'
       X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '559'
-      Connection:
-      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      Status:
+      - 200 OK
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":19,"admin_emails":[],"coordinates":[-122.2931236,37.5326941],"description":"Provides
@@ -151,5 +155,5 @@ http_interactions:
         House","slug":"samaritan-house","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":19,"department":null,"extension":null,"number":"650
         578-0400","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 17 Jul 2014 01:22:39 GMT
+  recorded_at: Wed, 23 Jul 2014 23:25:35 GMT
 recorded_with: VCR 2.9.2
