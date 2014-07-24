@@ -6,7 +6,7 @@ Kaminari.configure do |config|
   config.default_per_page = Rails.env.test? ? 1 : 30
 
   config.window = 2
-  # config.outer_window = 0
+  config.outer_window = 1
   # config.left = 0
   # config.right = 0
 end

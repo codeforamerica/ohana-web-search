@@ -76,8 +76,8 @@ feature 'results page pagination', :vcr do
       go_to_page(2)
     end
 
-    it 'includes a link to the first page' do
-      expect(page).to have_selector('.first')
+    it 'does not include a link to the first page' do
+      expect(page).not_to have_selector('.first')
     end
 
     it 'includes a link to the next page' do
@@ -88,8 +88,8 @@ feature 'results page pagination', :vcr do
       expect(page).to have_selector('.prev')
     end
 
-    it 'includes a link to the last page' do
-      expect(page).to have_selector('.last')
+    it 'does not include a link to the last page' do
+      expect(page).not_to have_selector('.last')
     end
   end
 

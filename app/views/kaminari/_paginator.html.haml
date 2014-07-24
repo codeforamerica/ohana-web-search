@@ -9,8 +9,6 @@
   %nav.pagination
     %ul
       - unless current_page.first?
-        %li.first><
-          = first_page_tag
         %li.prev><
           = prev_page_tag
       - each_page do |page|
@@ -23,5 +21,3 @@
       - unless current_page.last?
         %li.next><
           = next_page_tag
-        %li.last><
-          = last_page_tag
