@@ -1,95 +1,111 @@
 require 'spec_helper'
 
-# Tests the results page pagination component. This only checks one of the three components on the page,
-# as all should be duplicates of each other.
-feature "results page pagination" do
+feature 'results page pagination', :vcr do
 
-  scenario 'when there are no results', :vcr do
-    search_from_home(:keyword => 'asdfg')
-    expect(page).not_to have_selector('.pagination')
-  end
+  context 'when there are no results' do
+    before { visit '/organizations?keyword=asdfg' }
 
-  scenario 'when there is only one result', :vcr do
-    search_for_maceo
-    within('#floating-results-header .pagination') do
-      expect(page).to have_content('1')
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('No results found')
+      end
     end
   end
 
-  scenario 'on first page with less than 4 pages of results', :vcr do
-    search_from_home(:keyword=>'youth')
-    within('#floating-results-header .pagination') do
+  context 'when there is only one result' do
+    before { visit '/organizations?keyword=maceo' }
+
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying 1 result')
+      end
+    end
+  end
+
+  context 'when there is only one page of results but more than 1 result' do
+    before { visit '/organizations?keyword=youth&per_page=5' }
+
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'does not include a link to the next page' do
+      expect(page).not_to have_selector('.next')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying all 3 results')
+      end
+    end
+  end
+
+  context 'when on first page of more than one page of results' do
+    before { visit '/organizations?keyword=youth' }
+
+    it 'includes pagination' do
+      expect(page).to have_selector('.pagination')
+    end
+
+    it 'does not include a link to the first page' do
+      expect(page).not_to have_selector('.first')
+    end
+
+    it 'includes a link to the next page' do
       expect(page).to have_selector('.next')
-      expect(page).to have_content('123')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying 1 - 1 of 3 results')
+      end
     end
   end
 
-  scenario 'on last page with less than 4 pages of results', :vcr do
-    search_from_home(:keyword=>'youth')
-    go_to_page(3)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_content('123')
+  context 'when past first page of results but not last page' do
+    before(:each) do
+      visit '/organizations?keyword=youth'
+      go_to_page(2)
     end
-  end
 
-  scenario 'on first page with more than 5 pages of results', :vcr do
-    search_from_home
-    within('#floating-results-header .pagination') do
+    it 'does not include a link to the first page' do
+      expect(page).not_to have_selector('.first')
+    end
+
+    it 'includes a link to the next page' do
       expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…24')
     end
-  end
 
-  scenario 'on last page with more than 5 pages of results', :vcr do
-    search_from_home
-    go_to_page(24)
-    within('#floating-results-header .pagination') do
+    it 'includes a link to the previous page' do
       expect(page).to have_selector('.prev')
-      expect(page).to have_content('1…2021222324')
+    end
+
+    it 'does not include a link to the last page' do
+      expect(page).not_to have_selector('.last')
     end
   end
 
-  scenario 'less than 3 pages in with more than 5 pages of results', :vcr do
-    search_from_home
-    go_to_page(3)
-    within('#floating-results-header .pagination') do
+  context 'when on last page of results' do
+    before { visit '/organizations?keyword=youth&page=3' }
+
+    it 'does not include a link to the next page' do
+      expect(page).not_to have_selector('.next')
+    end
+
+    it 'includes a link to the previous page' do
       expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…24')
+    end
+
+    it 'does not include a link to the last page' do
+      expect(page).not_to have_selector('.last')
     end
   end
-
-  scenario 'more than 3 pages in with more than 5 pages of results', :vcr do
-    search_from_home
-    go_to_page(4)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…23456…24')
-    end
-  end
-
-  scenario 'less than 3 pages out with more than 5 pages of results', :vcr do
-    search_from_home
-    go_to_page(24)
-    go_to_page(22)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…2021222324')
-    end
-  end
-
-  scenario 'more than 3 pages out with more than 5 pages of results', :vcr do
-    search_from_home
-    go_to_page(24)
-    go_to_page(20)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…1819202122…24')
-    end
-  end
-
 end

@@ -32,4 +32,4 @@
             %p.short-desc
               = org[:short_desc]
   %footer
-    = render :partial => 'component/organizations/results/pagination', :locals => {:pages=>@pages}
+    = paginate @locations_array

@@ -29,12 +29,12 @@ feature 'searching from results page', :vcr do
     end
 
     it 'displays the number of results' do
-      expect(page).to have_content("Displaying 1 result matching 'maceo'")
+      expect(page).to have_content('Displaying 1 result')
     end
 
     it 'includes the results info in the page title' do
       expect(page).
-        to have_title "Displaying 1 result matching 'maceo' | Ohana Web Search"
+        to have_title 'Search results for: maceo | Ohana Web Search'
     end
 
     it 'populates the keyword field with the search term' do
