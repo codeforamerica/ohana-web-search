@@ -32,8 +32,6 @@ class OrganizationsController < ApplicationController
     end
     params[:keyword] = original_word if original_word.present?
 
-    initialize_filter_data(@orgs) # intialize search filter data
-
     @locations_array = Paginator.new(Ohanakapa.last_response, params).results
 
     # The parameters to use to provide a link to the location
@@ -72,7 +70,14 @@ class OrganizationsController < ApplicationController
     id = params[:id].split("/")[-1]
     @org = Organization.get(id)
 
-    initialize_filter_data(@org) # intialize search filter data
+    # initializes map data
+    # Fetching nearby places is the most time-consuming activity in the app.
+    # The API method needs to be optimized, but the app should not be
+    # automatically fetching them every time you visit the details page.
+    # It should only fetch them if someone asks for them on the details page,
+    # and we should add a Google Analytics event to track how many times
+    # people click "Show nearby places".
+    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
 
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
@@ -113,40 +118,6 @@ class OrganizationsController < ApplicationController
   def check_location_id
     id = params[:id].split("/")[-1]
     redirect_to root_path unless Organization.get(id)
-  end
-
-  # Cache filter values.
-  # @param collection [Object]
-  # @param key [String] The key name in the cache for the aggregated values.
-  # @param block [Block] block to call for accessing a particular caller value.
-  # @return [Array] The aggregated values.
-  def cache_filter_values(collection, key, &block)
-    aggregate = session[key] || []
-
-    if collection.respond_to?('each')
-      collection.each { |org|
-        val = block.call(org)
-        aggregate.pop if aggregate.length >= 5 && aggregate.include?(val) == false
-        aggregate.unshift( val ) if val.present?
-        break if aggregate.length >= 5
-      }
-      aggregate.uniq!
-      session[key] = aggregate
-    end
-
-    aggregate
-  end
-
-  def initialize_filter_data(collection)
-    # cached locations
-    @aggregate_locations = cache_filter_values(collection,'aggregate_locations') do |org|
-      "#{org.address.city}, #{org.address.state}" if org[:address].present?
-    end
-
-    # cached organization names
-    @aggregate_org_names = cache_filter_values(collection,'aggregate_org_names'){|org|
-      org.organization.name if org.organization.name != org.name
-    }
   end
 
   # Translate the page using the Google Translate API.

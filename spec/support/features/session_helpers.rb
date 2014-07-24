@@ -3,20 +3,17 @@ module Features
 
     # search helpers
     def search(options = {})
-      fill_in 'keyword', :with => options[:keyword]
-      if options[:location].present?
-        set_custom_value("location", "location", options[:location])
-      end
-
+      fill_in 'keyword', with: options[:keyword]
+      fill_in 'location', with: options[:location]
+      fill_in 'org_name', with: options[:org_name]
       find('#find-btn').click
     end
 
     # Search from homepage.
     # @param options [Object] Hash containing keyword to search for.
     def search_from_home(options = {})
-      visit ("/")
-      keyword = options[:keyword]
-      fill_in('keyword', :with => keyword)
+      visit ('/')
+      fill_in 'keyword', with: options[:keyword]
       find('#find-btn').click
     end
 
@@ -45,26 +42,6 @@ module Features
       visit('/organizations?keyword=asdfdsggfdg')
     end
 
-    # @param fieldset [String] the CSS name of the fieldset.
-    # @param field [String] the CSS name of the field.
-    # @param value [String] the checkbox to click.
-    def select_existing_filter_option(fieldset, field, value)
-      # Expand the filter
-      find(:xpath, "//*[@id='#{fieldset}-options']/legend").click
-      find('.toggle-group', text: value).trigger('mousedown')
-    end
-
-    # @param fieldset [String] the CSS name of the fieldset.
-    # @param field [String] the CSS name of the field.
-    # @param value [String] the value to fill the field with.
-    def set_custom_value(fieldset, field, value)
-      # Expand the filter
-      find(:xpath, "//*[@id='#{fieldset}-toggle-group']/label").click
-      # Click the '+' button to enable the input field
-      find(:xpath, "//*[@id='#{fieldset}-toggle-group-1']/div/div/i").click
-      fill_in("#{field}", with: value)
-    end
-
     # navigation helpers
     def visit_details
       page.find("#list-view").first('a').click
@@ -73,7 +50,7 @@ module Features
     def looks_like_results
       expect(page).to have_content("SanMaceo Example Agency")
       expect(page).to have_content("1 result")
-      expect(page).to have_title "1 result"
+      expect(page).to have_title "Search results for: maceo"
     end
 
     def looks_like_no_results
@@ -116,7 +93,5 @@ module Features
     def delay
       sleep(2)
     end
-
-
   end
 end

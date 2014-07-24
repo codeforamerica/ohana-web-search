@@ -16,51 +16,59 @@
 
   li
   {
+    background: $pagination-bg;
     vertical-align: baseline;
     @include type-size(baseline);
-    text-align:center;
-    padding:10px;
-    min-width:15px;
+    text-align: center;
+    min-width: 35px;
+    min-height: 44px;
+    line-height: 44px;
   }
 
   li.collapsed
   {
-    background: lightest($purple,0.1);
+    color: $pagination-disabled-color;
+    background: $pagination-disabled-bg;
   }
 
   li:not(.collapsed):not(.current)
   {
-    @include single-box-shadow( lightest($purple,0.3) , 0, 0, 1px, 0, inset );
+    @include single-box-shadow( rgba($pagination-border,0.3) , 0, 0, 1px, 0, inset );
 
     &:hover
     {
-      background: lightest($purple);
+      background: $pagination-hover-bg;
       cursor:pointer;
+      a {
+        color: $pagination-hover-color
+      }
     }
   }
 
   a
   {
-    color: darkest($purple);
+    color: $pagination-color;
     text-decoration: none;
-    border-bottom:none;
+    border-bottom: none;
+    display: block;
+    min-width: 35px;
+    min-height: 44px;
+    line-height: 44px;
   }
 
   .current
   {
-    color: $white !important;
-    background: light($purple);
+    color: $pagination-active-color !important;
+    background: $pagination-active-bg;
   }
 
   .next,
   .prev
   {
-    background:dark($blue);
+    background:$pagination-next-bg;
     a
     {
-      color:$white;
-      padding-left:3px;
-      padding-right:3px;
+      color:$pagination-next-color;
       border-bottom:none;
     }
     a:hover
@@ -68,10 +76,12 @@
       text-decoration: none !important;
     }
   }
-
   .next:hover,
-  .prev:hover
-  {
-    background: light($purple) !important;
+  .prev:hover {
+    a {
+      color: $pagination-next-hover-color !important;
+    }
+    background: $pagination-next-hover-bg !important;
   }
+
 }

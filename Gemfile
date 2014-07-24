@@ -45,7 +45,7 @@ gem 'rack-rewrite', '>= 1.5.0'
 gem 'google-api-client', '>= 0.7.1'
 
 # App config and ENV variables for heroku.
-gem 'figaro', '>= 0.7.0'
+gem 'figaro', '~> 1.0.0.rc1'
 
 gem 'coveralls', '>= 0.7.0', require: false
 
@@ -61,9 +61,6 @@ end
 
 # dev and debugging tools
 group :development do
-  # Adds better errors to sprockets asset pipeline in development environment.
-  gem 'sprockets_better_errors'
-
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 1.1.0'
   gem 'binding_of_caller', '>= 0.7.2', :platforms => [:mri_19, :rbx]
@@ -83,9 +80,6 @@ group :test do
   #gem 'launchy', '>= 2.2.0'
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
-
-  # For getting access to the session from Capybara.
-  gem 'rack_session_access'
 
   # gem 'poltergeist'
   gem 'capybara-webkit'

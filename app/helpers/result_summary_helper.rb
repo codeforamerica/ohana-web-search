@@ -2,8 +2,9 @@ module ResultSummaryHelper
   extend ActionView::Helpers::TextHelper
 
   def search_results_page_title
-    title = page_entries_info @locations_array, entry_name: 'result'
-    title.gsub('<strong>', '').gsub('</strong>', '')
+    params = request.query_parameters.reject { |k, v| k == 'utf8' || v.blank? }
+    title = "Search results for: #{params.values.join(', ')}"
+    title.html_safe
   end
 
   # Formats map result summary text

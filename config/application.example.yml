@@ -1,12 +1,12 @@
+# First, copy this file to a new one called "application.yml" in the same
+# config directory.
+
 # This file is used by the "figaro" gem to allow you to store and use
 # environment variables in the app without having to set them via the
 # command line each time you run the app in development.
-
 # Read more about figaro here: https://github.com/laserlemon/figaro
 
-# First, rename this file to "application.yml". It should already be listed in
-# .gitignore, but if not, make sure to add it there to keep your sensitive info
-# (such as API keys and passwords) secret!
+# Note that changes to this file will require a server restart to take effect.
 
 # Each entry sets a local environment variable and overrides ENV variables
 # in the Unix shell. For example, setting:
@@ -15,15 +15,32 @@
 # ENV["OHANA_API_ENDPOINT"] in the app. See config/initializers/ohanapi.rb
 # for a usage example.
 
-# Add application configuration variables here, as shown below.
-
+# Set this to the URL for your instance of the Ohana API.
+# This environment variable is required.
 OHANA_API_ENDPOINT: http://ohana-api-demo.herokuapp.com/api
+
+# This setting is used for the Google translation feature.
+# The "DOMAIN_NAME" environment variable should be set to your app's
+# domain name, without the "www" subdomain, unless you're using a Heroku
+# domain, in which case you should set it to your full Heroku domain name,
+# such as "ohana-web-search-demo.herokuapp.com".
+# If you have a custom domain name, like "www.smc-connect.org", that
+# means setting it to "smc-connect.org".
+#
+# In development, it should only be set to a 2-level domain name,
+# like "lvh.me", or "myapp.dev" if you're using Pow.
+# Translation won't work with "localhost", so please open the site
+# locally via http://lvh.me:{port number}
+#
+# Read more about lvh.me here:
+# http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme
+# Pow should work too if you prefer that: http://pow.cx/
 DOMAIN_NAME: lvh.me
 
 # If you choose to turn on rate limiting in your instance of Ohana API,
-# obtain an API Token for this app, then replace "changeme" with the
-# actual token below to test that the token works in development.
-OHANA_API_TOKEN: changeme
+# obtain an API Token for this app from the developer portal of the API,
+# then replace "changeme" with the actual token below.
+# OHANA_API_TOKEN: changeme
 
 # If you would like your users to be able to type in search keywords
 # in the language of their choice, you will need to sign up for a paid
@@ -31,4 +48,14 @@ OHANA_API_TOKEN: changeme
 # https://developers.google.com/translate/v2/pricing
 # Once you obtain your API Token, enter it below to test the translation
 # in development.
-#GOOGLE_TRANSLATE_API_TOKEN: Your_API_Token
+# GOOGLE_TRANSLATE_API_TOKEN: Your_API_Token
+
+###############################################################################
+#
+# SETTINGS FOR TESTS. PLEASE DO NOT MODIFY UNLESS YOU KNOW WHAT YOU ARE DOING.
+#
+###############################################################################
+
+test:
+  OHANA_API_ENDPOINT: http://ohana-api-test.herokuapp.com/api
+  OHANA_API_TOKEN: ~
