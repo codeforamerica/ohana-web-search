@@ -70,15 +70,6 @@ class OrganizationsController < ApplicationController
     id = params[:id].split("/")[-1]
     @org = Organization.get(id)
 
-    # initializes map data
-    # Fetching nearby places is the most time-consuming activity in the app.
-    # The API method needs to be optimized, but the app should not be
-    # automatically fetching them every time you visit the details page.
-    # It should only fetch them if someone asks for them on the details page,
-    # and we should add a Google Analytics event to track how many times
-    # people click "Show nearby places".
-    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
-
     # The parameters to use to provide a link back to search results
     @search_params = request.params.except(:action, :id, :_, :controller)
 
@@ -101,17 +92,6 @@ class OrganizationsController < ApplicationController
   end
 
   private
-
-  # Used for passing rendered HTML partials in a json response to requests made via ajax
-  # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
-  # execute a block with a different format (ex: an html partial while in an ajax request)
-  def with_format(format, &block)
-    old_formats = formats
-    self.formats = [format]
-    block.call
-    self.formats = old_formats
-    nil
-  end
 
   # If the location id is invalid, redirect to home page
   # and display an alert (TODO), or do something else.
