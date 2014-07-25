@@ -52,10 +52,10 @@ References:
   var selectorEngines = {
     "NW"                : "*.Dom.select",
     "MooTools"              : "$$",
-    "DOMAssistant"            : "*.$", 
+    "DOMAssistant"            : "*.$",
     "Prototype"              : "$$",
     "YAHOO"                : "*.util.Selector.query",
-    "Sizzle"              : "*", 
+    "Sizzle"              : "*",
     "jQuery"              : "*",
     "dojo"                : "*.query"
   };
@@ -73,7 +73,7 @@ References:
   var RE_PSEUDO_STRUCTURAL        = /^:(empty|(first|last|only|nth(-last)?)-(child|of-type))$/;
   var RE_PSEUDO_ELEMENTS          = /:(:first-(?:line|letter))/g;
   var RE_SELECTOR_GROUP          = /(^|})\s*([^\{]*?[\[:][^{]+)/g;
-  var RE_SELECTOR_PARSE          = /([ +~>])|(:[a-z-]+(?:\(.*?\)+)?)|(\[.*?\])/g; 
+  var RE_SELECTOR_PARSE          = /([ +~>])|(:[a-z-]+(?:\(.*?\)+)?)|(\[.*?\])/g;
   var RE_LIBRARY_INCOMPATIBLE_PSEUDOS    = /(:not\()?:(hover|enabled|disabled|focus|checked|target|active|visited|first-line|first-letter)\)?/g;
   var RE_PATCH_CLASS_NAME_REPLACE      = /[^\w-]/g;
 
@@ -102,12 +102,12 @@ References:
   // creates one or more patches for each matched selector.
   function patchStyleSheet( cssText ) {
     return cssText.replace(RE_PSEUDO_ELEMENTS, PLACEHOLDER_STRING).
-      replace(RE_SELECTOR_GROUP, function(m, prefix, selectorText) {  
+      replace(RE_SELECTOR_GROUP, function(m, prefix, selectorText) {
           var selectorGroups = selectorText.split(",");
           for (var c = 0, cs = selectorGroups.length; c < cs; c++) {
             var selector = normalizeSelectorWhitespace(selectorGroups[c]) + SPACE_STRING;
             var patches = [];
-            selectorGroups[c] = selector.replace(RE_SELECTOR_PARSE, 
+            selectorGroups[c] = selector.replace(RE_SELECTOR_PARSE,
               function(match, combinator, pseudo, attribute, index) {
                 if (combinator) {
                   if (patches.length>0) {
@@ -134,7 +134,7 @@ References:
   // --[ patchAttribute() ]-----------------------------------------------
   // returns a patch for an attribute selector.
   function patchAttribute( attr ) {
-    return (!BROKEN_ATTR_IMPLEMENTATIONS || BROKEN_ATTR_IMPLEMENTATIONS.test(attr)) ? 
+    return (!BROKEN_ATTR_IMPLEMENTATIONS || BROKEN_ATTR_IMPLEMENTATIONS.test(attr)) ?
       { className: createClassName(attr), applyClass: true } : null;
   };
 
@@ -173,7 +173,7 @@ References:
           // :target is only supported in IE8
           if (ieVersion == 8) {
             applyClass = function(e) {
-              var handler = function() { 
+              var handler = function() {
                 var hash = location.hash;
                 var hashID = hash.slice(1);
                 return isNegated ? (hash == EMPTY_STRING || e.id != hashID) : (hash != EMPTY_STRING && e.id == hashID);
@@ -354,7 +354,7 @@ References:
   };
 
   // --[ toggleClass() ]--------------------------------------------------
-  // adds / removes a className from a string of classNames. Used to 
+  // adds / removes a className from a string of classNames. Used to
   // manage multiple class changes without forcing a DOM redraw
   function toggleClass( classList, className, on ) {
     var re = RegExp("(^|\\s)" + className + "(\\s|$)");
