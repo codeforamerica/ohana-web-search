@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "info box", :vcr do
+feature 'info box', :vcr do
 
   scenario "with keyword that doesn't match info box synonym" do
     visit('/organizations?keyword=food')
@@ -17,7 +17,7 @@ feature "info box", :vcr do
     it 'displays the title in a <dt> tag' do
       within('#terminology') do
         expect(page).to have_xpath('//dl/dt')
-        expect(page.first('dt').text).to eq "Women, Infants, and Children"
+        expect(page.first('dt').text).to eq 'Women, Infants, and Children'
       end
     end
 
@@ -44,7 +44,7 @@ feature "info box", :vcr do
   end
 
   scenario 'with keyword that matches synonym from custom info box' do
-    search_from_home(:keyword => 'health care reform')
+    search_from_home(keyword: 'health care reform')
     expect(page).to have_selector('#terminology')
     within('#terminology') do
       expect(page).to have_selector('table')

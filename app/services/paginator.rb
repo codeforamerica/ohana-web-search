@@ -11,7 +11,7 @@ class Paginator
   end
 
   def total_count
-    headers["X-Total-Count"].to_i
+    headers['X-Total-Count'].to_i
   end
 
   def results

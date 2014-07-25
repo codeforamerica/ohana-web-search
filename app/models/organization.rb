@@ -1,5 +1,4 @@
 class Organization
-
   # Calls the search endpoint of the Ohana API
   #
   # If params doesn't include at least one of keyword, location,
@@ -43,5 +42,4 @@ class Organization
       return false
     end
   end
-
 end

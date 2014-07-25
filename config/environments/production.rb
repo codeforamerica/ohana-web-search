@@ -36,18 +36,18 @@ HumanServicesFinder::Application.configure do
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
   config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
-    if ENV["CANONICAL_URL"].blank?
-      raise "The CANONICAL_URL environment variable is not set on your"+
-      " production server. It should be set to your app's domain name,"+
-      " without the protocol. For example: www.smc-connect.org, or"+
-      " flying-tiger.herokuapp.com. If you're using Heroku, you can set it"+
-      " like this: \"heroku config:set CANONICAL_URL=your_domain_name\". See"+
-      " config/environments/production.rb in the source code for more details."
+    if ENV['CANONICAL_URL'].blank?
+      fail 'The CANONICAL_URL environment variable is not set on your' \
+      ' production server. It should be set to your app\'s domain name,' \
+      ' without the protocol. For example: www.smc-connect.org, or' \
+      ' flying-tiger.herokuapp.com. If you\'re using Heroku, you can set it' \
+      ' like this: "heroku config:set CANONICAL_URL=your_domain_name". See' \
+      ' config/environments/production.rb in the source code for more details.'
     else
-      canonical_url = ENV["CANONICAL_URL"]
+      canonical_url = ENV['CANONICAL_URL']
 
-      r301 %r{.*}, "http://#{canonical_url}$&",
-        :if => Proc.new { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
+      r301 %r{.*}, 'http://#{canonical_url}$&',
+           if: proc { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
     end
   end
 
@@ -109,15 +109,15 @@ HumanServicesFinder::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  #config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store
-  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
-                              :value_max_bytes => 10485760)
+  client = Dalli::Client.new(ENV['MEMCACHIER_SERVERS'],
+                             value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
-    :metastore    => client,
-    :entitystore  => client
+    metastore:     client,
+    entitystore:   client
   }
-  config.static_cache_control = "public, max-age=2592000"
+  config.static_cache_control = 'public, max-age=2592000'
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -130,22 +130,22 @@ HumanServicesFinder::Application.configure do
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  config.action_mailer.default_url_options = { :host => 'ohana.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'ohana.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['MANDRILL_USERNAME'],
-    :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
-    :authentication => :plain
+    port:           '587',
+    address:        'smtp.mandrillapp.com',
+    user_name:      ENV['MANDRILL_USERNAME'],
+    password:       ENV['MANDRILL_APIKEY'],
+    domain:         'heroku.com',
+    authentication: :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

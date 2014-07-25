@@ -1,7 +1,7 @@
 class OrganizationsController < ApplicationController
   include CurrentLanguage
 
-  before_filter :check_location_id, only: :show
+  before_action :check_location_id, only: :show
 
   include ActionView::Helpers::TextHelper
   include ResultSummaryHelper
@@ -14,16 +14,16 @@ class OrganizationsController < ApplicationController
 
     # initialize query. Content may be blank if no results were found.
     begin
-      @orgs = Ohanakapa.search("search", params)
+      @orgs = Ohanakapa.search('search', params)
     rescue Ohanakapa::ServiceUnavailable
       redirect_to "#{root_url}",
-        alert: "Sorry, we are experiencing issues with search.
-          Please try again later." and return
+                  alert: 'Sorry, we are experiencing issues with search.
+                         Please try again later.' && return
     rescue Ohanakapa::BadRequest => e
-      if e.to_s.include?("missing")
+      if e.to_s.include?('missing')
         @orgs = Ohanakapa.locations(params)
       else
-        @orgs = Ohanakapa.search("search", keyword: "asdfasg")
+        @orgs = Ohanakapa.search('search', keyword: 'asdfasg')
       end
     end
 
@@ -55,7 +55,7 @@ class OrganizationsController < ApplicationController
     # and for display in the page title (plain)
     @map_search_summary_html = format_map_summary
 
-    expires_in 30.minutes, :public => true
+    expires_in 30.minutes, public: true
     if stale?(etag: @orgs, public: true)
       respond_to do |format|
         format.html # index.html.haml
@@ -66,7 +66,7 @@ class OrganizationsController < ApplicationController
   # organization details view
   def show
     # retrieve specific organization's details
-    id = params[:id].split("/")[-1]
+    id = params[:id].split('/')[-1]
     @org = Organization.get(id)
 
     # The parameters to use to provide a link back to search results
@@ -78,16 +78,15 @@ class OrganizationsController < ApplicationController
 
     # To disable or remove the Result list button on details page
     # when visiting location directly
-    #@referer = request.env['HTTP_REFERER']
+    # @referer = request.env['HTTP_REFERER']
 
     # respond to direct and ajax requests
-    expires_in 30.minutes, :public => true
+    expires_in 30.minutes, public: true
     if stale?(etag: @org, public: true)
       respond_to do |format|
-        format.html #show.html.haml
+        format.html # show.html.haml
       end
     end
-
   end
 
   private
@@ -95,7 +94,7 @@ class OrganizationsController < ApplicationController
   # If the location id is invalid, redirect to home page
   # and display an alert (TODO), or do something else.
   def check_location_id
-    id = params[:id].split("/")[-1]
+    id = params[:id].split('/')[-1]
     redirect_to root_path unless Organization.get(id)
   end
 end
