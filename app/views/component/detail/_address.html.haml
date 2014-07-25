@@ -1,19 +1,19 @@
-%span{:itemscope=>"",:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+%span{ itemscope: '', itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
   - if lines == 2
-    %span.street-address{:itemprop=>"streetAddress"}
+    %span.street-address{ itemprop: 'streetAddress' }
       = superscript_ordinals(org.address.street)
     %br
   - else
-    %span.street-address{:itemprop=>"streetAddress"}><
+    %span.street-address{ itemprop: 'streetAddress' }><
       = superscript_ordinals(org.address.street)
     = ','
 
-  %span.city{:itemprop=>"addressLocality"}<
+  %span.city{ itemprop: 'addressLocality' }<
     = org.address.city
   = ','
 
-  %span.state{:itemprop=>"addressRegion"}>
+  %span.state{ itemprop: 'addressRegion' }>
     = org.address.state
 
-  %span.zipcode{:itemprop=>"postalCode"}
+  %span.zipcode{ itemprop: 'postalCode' }
     = org.address.zip

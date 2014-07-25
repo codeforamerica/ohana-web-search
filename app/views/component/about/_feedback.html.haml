@@ -10,21 +10,21 @@
       %p#feedback-status.hide
         Submit feedback!
       %p
-        %label{:for=>'comment'}
+        %label{ for: 'comment' }
           Comment:
-        %textarea{:name=>"comment", :id=>"comment", :placeholder=>"enter your comment, question, etc.", :rows=>"4", :required=>""}
+        %textarea{ name: 'comment', id: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: ''}
       %p
-        %label{:for=>'email'}
+        %label{ for: 'email' }
           Email:
-        %input{:name=>"email", :id=>"email", :type=>"email", :placeholder=>"your email address (optional)", :pattern=>"/.+@.+\..+/i"}
+        %input{ name: 'email', id: 'email', type: 'email', placeholder: 'your email address (optional)', pattern: '/.+@.+\..+/i' }
 
       %p
-        %button{:type=>"submit",:id=>"feedback-form-btn",:disabled=>'disabled'}
+        %button{ type: 'submit', id: 'feedback-form-btn', disabled: 'disabled' }
           Send!
 
     %noscript
       %style
-        -# hides map when JS is disabled
-        = "#feedback-form {display:none;}"
-      = link_to "Visit this form","http://ohanapi.org/#contribute",:target=>"_blank"
+        -# Hides ajax-enabled feedback form when JavaScript is disabled.
+        = '#feedback-form { display: none; }'
+      = link_to 'Visit this form', 'http://ohanapi.org/#contribute', target: '_blank'
       to submit comments.

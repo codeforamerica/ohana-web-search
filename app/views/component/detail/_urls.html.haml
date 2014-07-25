@@ -1,7 +1,7 @@
 - if org[:urls].present?
   %section{:class=>'urls'}
     - if defined? iconclass
-      %i{:class=>iconclass}
+      %i{ class: iconclass }
     - if defined? stitle
       - if stitle.present?
         %h1 #{stitle}:
@@ -9,6 +9,6 @@
         - org.urls.sort.each do |url|
           %li
             %span
-              %a{:href=>url,:target=>"_blank"}
-                %span{:itemprop=>"url"}
+              %a{ href: url, target: '_blank' }
+                %span{ itemprop: 'url' }
                   = format_url(url)

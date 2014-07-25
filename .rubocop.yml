@@ -1,0 +1,27 @@
+AllCops:
+  Include:
+    - 'Gemfile'
+    - 'Rakefile'
+  Exclude:
+    - 'bin/*'
+    - 'db/seeds.rb'
+    - 'config/initializers/generators.rb'
+
+# Allow dots at the end of lines when chaining methods
+# that span multiple lines
+DotPosition:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+MethodLength:
+  CountComments: false
+  Max: 15
+
+ClassLength:
+  CountComments: false
+  Max: 100

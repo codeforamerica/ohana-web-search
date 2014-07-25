@@ -1,6 +1,6 @@
 module Features
+  # Collection of convenience Methods for tests.
   module SessionHelpers
-
     # search helpers
     def search(options = {})
       fill_in 'keyword', with: options[:keyword]
@@ -12,7 +12,7 @@ module Features
     # Search from homepage.
     # @param options [Object] Hash containing keyword to search for.
     def search_from_home(options = {})
-      visit ('/')
+      visit('/')
       fill_in 'keyword', with: options[:keyword]
       find('#find-btn').click
     end
@@ -44,37 +44,35 @@ module Features
 
     # navigation helpers
     def visit_details
-      page.find("#list-view").first('a').click
+      page.find('#list-view').first('a').click
     end
 
     def looks_like_results
-      expect(page).to have_content("SanMaceo Example Agency")
-      expect(page).to have_content("1 result")
-      expect(page).to have_title "Search results for: maceo"
+      expect(page).to have_content('SanMaceo Example Agency')
+      expect(page).to have_content('1 result')
+      expect(page).to have_title 'Search results for: maceo'
     end
 
     def looks_like_no_results
-      expect(page).to have_selector(".no-results")
-      expect(page).to have_content("your search returned no results.")
+      expect(page).to have_selector('.no-results')
+      expect(page).to have_content('your search returned no results.')
       expect(page).not_to have_selector('#map-canvas')
     end
 
     def looks_like_location
-      expect(find("#detail-info .description a")).to have_content("more")
-      find("#detail-info .description a").click
-      expect(find("#detail-info .description a")).to have_content("less")
-
-      expect(page).to have_title "San Maceo Agency | SMC-Connect"
-
-      expect(page).to have_content("Works to control")
-      expect(page).to have_content("Profit and nonprofit")
-      expect(page).to have_content("Marin County")
-      expect(page).to have_content("Walk in")
-      expect(page).to have_content("permits and photocopying")
-      expect(page).to have_content("Russian")
-      expect(page).to have_content("Special parking")
-      expect(page).to have_link("Print")
-      expect(page).to have_link("Directions")
+      expect(find('#detail-info .description a')).to have_content('more')
+      find('#detail-info .description a').click
+      expect(find('#detail-info .description a')).to have_content('less')
+      expect(page).to have_title 'San Maceo Agency | SMC-Connect'
+      expect(page).to have_content('Works to control')
+      expect(page).to have_content('Profit and nonprofit')
+      expect(page).to have_content('Marin County')
+      expect(page).to have_content('Walk in')
+      expect(page).to have_content('permits and photocopying')
+      expect(page).to have_content('Russian')
+      expect(page).to have_content('Special parking')
+      expect(page).to have_link('Print')
+      expect(page).to have_link('Directions')
     end
 
     def go_to_next_page

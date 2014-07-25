@@ -1,6 +1,6 @@
 %header#floating-results-header.results-header
-  = render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
+  = render partial: 'component/organizations/detail/header_summary', locals: { org: @org }
 
--# Persistent header duplicate needed to maintain layout when header floats
+-# Persistent header duplicate needed to maintain layout when header floats.
 %header#persistent-results-header.results-header.persistent
-  = render :partial => 'component/organizations/detail/header_summary', :locals => {:org => @org}
+  = render partial: 'component/organizations/detail/header_summary', locals: { org: @org }

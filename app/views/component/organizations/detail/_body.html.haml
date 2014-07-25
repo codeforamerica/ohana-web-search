@@ -1,14 +1,14 @@
 = render 'component/organizations/detail/header'
 
-%section#detail-info{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
+%section#detail-info{ itemscope: '', itemtype: 'http://schema.org/Organization' }
 
   %header
     %hgroup
-      %h1.name{:title=>@org.name, :itemprop=>"name"}
+      %h1.name{ title: @org.name, itemprop: 'name' }
         = superscript_ordinals(@org.name)
       - if (@org.organization.name) && (@org.organization.name != @org.name)
         %h2.agency
-          %a{:href=>"/organizations?org_name=#{CGI::escape(@org.organization.name)}", :title=>"#{@org.organization.name}"}
+          %a{ href: "/organizations?org_name=#{CGI::escape(@org.organization.name)}", title: "#{@org.organization.name}" }
             %span
               = superscript_ordinals(@org.organization.name)
 
@@ -24,49 +24,49 @@
               %section
 
                 - if @org[:emails].present?
-                  %section.emails{:itemprop=>"email"}
+                  %section.emails{ itemprop: 'email' }
                     - @org.emails.each do |email|
                       %div
-                        %i{:class=>"fa fa-laptop"}
-                        %a{:href=>("mailto:"+email)}
-                          %span{:itemprop=>"email"}
+                        %i{ class: 'fa fa-laptop' }
+                        %a{ href: "mailto:#{email}" }
+                          %span{ itemprop: 'email' }
                             = email
 
 
                 - if @org[:phones].present?
-                  %section.phones{:itemscope=>"", :itemtype=>"http://schema.org/ContactPoint"}
+                  %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                     - @org.phones.each do |phone|
                       %div
-                        %i{:class=>"fa fa-phone-square"}
+                        %i{ class: 'fa fa-phone-square' }
                         %span
-                          - if phone["number"]
-                            %span{:itemprop=>"telephone"}
-                              = format_phone(phone["number"])
+                          - if phone['number']
+                            %span{ itemprop: 'telephone' }
+                              = format_phone(phone['number'])
                           - if phone['number_type']
                             %sup.phone-type
                               = phone['number_type']
-                          - if phone["department"]
+                          - if phone['department']
                             %p
-                              %span{:itemprop=>"contactType"}
-                                = phone["department"]
+                              %span{ itemprop: 'contactType' }
+                                = phone['department']
 
                 - if @org[:faxes].present?
                   %section.faxes
                     - @org.faxes.each do |fax|
                       %div
-                        %i{:class=>"fa fa-print fax"}
+                        %i{ class: 'fa fa-print fax' }
                         %span
                           - if fax.is_a?(String)
-                            %span{:itemprop=>"faxNumber"}
+                            %span{ itemprop: 'faxNumber' }
                               = format_phone(fax)
                           - elsif fax.is_a?(Sawyer::Resource)
                             - if fax["number"]
-                              %span{:itemprop=>"faxNumber"}
-                                = format_phone(fax["number"])
-                            - if fax["department"]
+                              %span{ itemprop: 'faxNumber' }
+                                = format_phone(fax['number'])
+                            - if fax['department']
                               %p
-                                %span{:itemprop=>"contactType"}
-                                  = fax["department"]
+                                %span{ itemprop: 'contactType' }
+                                  = fax['department']
 
           - if @org[:urls].present?
             %section.urls-box
@@ -75,9 +75,9 @@
                 %section.urls
                   - @org.urls.each do |url|
                     %div
-                      %i{:class=>"fa fa-external-link-square"}
-                      %a{:href=>url,:target=>"_blank"}
-                        %span{:itemprop=>"url"}
+                      %i{ class: 'fa fa-external-link-square' }
+                      %a{ href: url, target: '_blank' }
+                        %span{ itemprop: 'url' }
                           = format_url(url)
 
           - if @org[:address].present?
@@ -86,8 +86,8 @@
               %section
                 %section.address
                   %div
-                    %i{:class=>"fa fa-map-marker"}
-                    = render "component/detail/address", org: @org, lines: 2
+                    %i{ class: 'fa fa-map-marker' }
+                    = render 'component/detail/address', org: @org, lines: 2
 
           - if @org[:mail_address].present?
             %section.address-box
@@ -95,30 +95,30 @@
               %section
                 %section.mail-address
                   %div
-                    %i{:class=>"fa fa-envelope"}
-                    = render "component/detail/mail_address", org: @org
+                    %i{ class: 'fa fa-envelope' }
+                    = render 'component/detail/mail_address', org: @org
 
       - if @categories.present?
         %section#categories-box
           %h1 Service Categories
-          %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
-            %ul{:itemscope=>"", :itemtype=>"http://schema.org/ServiceType"}
+          %section.services{ itemscope: '', itemtype: 'http://schema.org/Service' }
+            %ul{ itemscope: '', itemtype: 'http://schema.org/ServiceType' }
               - @categories.each do |category|
-                %li{:class=>"depth#{category.depth}"}
-                  %span{:itemprop=>"serviceType"}
+                %li{ class: "depth#{category.depth}" }
+                  %span{ itemprop: 'serviceType' }
                     -# Category links are disabled till there's a corresponding filter that can be toggled!
                       = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
                     = category.name
 
-  / main detail content
+  / Main detail content.
   %section
 
     - if @org[:short_desc].present? || @org[:description].present?
       %section.overview-box
         %section
 
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:short_desc}
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:description, :stitle=>"Description"}
+          = render partial: 'component/detail/template', locals: { org: @org, field: :short_desc }
+          = render partial: 'component/detail/template', locals: { org: @org, field: :description, stitle: 'Description' }
 
     - if @org[:coordinates].present? || @org[:transportation].present?
       %section.map-box
@@ -143,36 +143,36 @@
                   = @org.longitude
               %noscript
                 %style
-                  -# hides map when JS is disabled
-                  = "#detail-map-view {display:none;}"
+                  -# Hides map when JavaScript is disabled.
+                  = '#detail-map-view {display:none;}'
 
     - if @org[:hours].present?
       %section.hours-box
         %h1 Service Hours
         %section
-          = render :partial => "component/detail/template", :locals => {:org=>@org, :field=>:hours, :stitle=>nil, :icon=>"fa fa-clock-o"}
+          = render partial: 'component/detail/template', locals: { org: @org, field: :hours, stitle: nil, icon: 'fa fa-clock-o' }
 
     - if (@org.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
         %section
-          = render "component/detail/languages", org: @org
-          = render "component/detail/accessibility", org: @org
+          = render 'component/detail/languages', org: @org
+          = render 'component/detail/accessibility', org: @org
 
     - if @org[:services].present?
       %section.services-box
         %h1 Services
         - @org.services.each do |service|
 
-          %section.service{:itemscope =>"", :itemtype=> "http://schema.org/Service"}
+          %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
 
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:name}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:description}
-            = render :partial => "component/detail/urls", :locals => {:org=>service, :field=>:urls, :stitle=>"Homepage"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:fees, :stitle=>"Fees"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:audience, :stitle=>"Audience"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:eligibility, :stitle=>"Eligibility"}
-            = render :partial => "component/detail/template", :locals => {:org=>service, :field=>:how_to_apply, :stitle=>"How to Apply"}
+            = render partial: 'component/detail/template', locals: { org: service, field: :name}
+            = render partial: 'component/detail/template', locals: { org: service, field: :description}
+            = render partial: 'component/detail/urls', locals: { org: service, field: :urls, stitle: 'Homepage' }
+            = render partial: 'component/detail/template', locals: { org: service, field: :fees, stitle: 'Fees' }
+            = render partial: 'component/detail/template', locals: { org: service, field: :audience, stitle: 'Audience' }
+            = render partial: 'component/detail/template', locals: { org: service, field: :eligibility, stitle: 'Eligibility' }
+            = render partial: 'component/detail/template', locals: { org: service, field: :how_to_apply, stitle: 'How to Apply' }
 
   / detail footer content
   - if @org[:updated_at].present?

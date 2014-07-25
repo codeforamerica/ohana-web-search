@@ -1,38 +1,37 @@
 module DetailFormatHelper
-
   # Formats ruby field names in CSS convention format
   # by converting underscore or space delimiting to dash delimiting
   # @param name [String] string to format as
   # @return [String] formatted CSS class name
   def css_class_format(name)
-    val = name.downcase.sub '_','-'
-    val.sub ' ','-'
+    val = name.downcase.sub '_', '-'
+    val.sub ' ', '-'
   end
 
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields
-    [:audience,:service_areas,:how_to_apply,:fees,
-      :eligibility,:languages,:accessibility]
+    [:audience, :service_areas, :how_to_apply, :fees,
+     :eligibility, :languages, :accessibility]
   end
 
   # List of fields that determine whether or not to show the
   # Aside section in the details view
   def contact_details
-    [:phones,:faxes,:emails,:urls,:address]
+    [:phones, :faxes, :emails, :urls, :address]
   end
 
   # List of fields that determine whether or not to show the
   # Contact section in the details view
   def contact_fields
-    [:phones,:faxes,:emails]
+    [:phones, :faxes, :emails]
   end
 
   # Formats address for use in map URLs, image title attributes, etc.
   # @param org [Object] a JSON object
   # @return [String] return comma separated address.
   def address(org)
-    "#{org.address["street"]}, #{org.address["city"]}, #{org.address["state"]} #{org.address["zip"]}"
+    "#{org.address['street']}, #{org.address['city']}, #{org.address['state']} #{org.address['zip']}"
   end
 
   # Format phone number as (XXX) XXX-XXXX
@@ -42,7 +41,7 @@ module DetailFormatHelper
   def format_phone(number)
     result = number.gsub(/[^\d]/, '')
     if result.length == 10
-      result = "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
+      "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
     else
       number
     end
@@ -52,7 +51,7 @@ module DetailFormatHelper
   # @param number [String] a url
   # @return [String] The url without http:// or https://
   def format_url(url)
-    url.gsub(/^(https?:\/\/)/, '')
+    url.gsub(%r{^(https?:\/\/)}, '')
   end
 
   # Adds <sup>XX</sup> around ordinals in string
@@ -77,6 +76,6 @@ module DetailFormatHelper
   # the tags is controlled by us.
   def superscript_ordinals(string)
     string = html_escape(string).to_str
-    string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/){ content_tag(:sup, $&) }.html_safe
+    string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, $&) }.html_safe
   end
 end
