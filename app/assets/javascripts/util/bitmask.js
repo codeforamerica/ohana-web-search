@@ -1,7 +1,7 @@
 // Used for a creating and managing a bitmask of binary settings.
 // Bitmask bits can be flipped on or off to create a very compact
 // list of toggleable settings that are stored in one integer.
-define(function() {
+define(function () {
   'use strict';
 
   var _bitmask = 0;

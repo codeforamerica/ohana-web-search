@@ -1,5 +1,6 @@
 // manages homepage scripts
-require(['util/geolocation/geolocate-action'], function(geo) {
+require(['util/geolocation/geolocate-action'],
+  function (geo) {
   'use strict';
 
   // Initialize the geolocation button on the homepage.
@@ -10,5 +11,5 @@ require(['util/geolocation/geolocate-action'], function(geo) {
     document.getElementById('search-form').submit();
   }
   // Parameters are: button ID, and callback function (see above).
-  geo.init('locate-btn',locateAction);
+  geo.init('locate-btn', locateAction);
 });
