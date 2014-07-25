@@ -25,8 +25,7 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   }
 
   // Check if the page is currently translated using Google Translation
-  function _isTranslated()
-  {
+  function _isTranslated() {
     var translate = util.getQueryParams()['translate'];
     if (translate && translate !== "en") return true;
     var googtrans = util.getCookie("googtrans");
@@ -38,8 +37,7 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   // PRIVATE METHODS
 
   // adds hooks for triggering popups present on the page
-  function _addPopups()
-  {
+  function _addPopups() {
     _popups = document.querySelectorAll(".popup-trigger");
 
     var curr;
@@ -52,16 +50,14 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   }
 
   // removes popups and hooks
-  function _removePopups()
-  {
+  function _removePopups() {
     _closeLastPopup();
     _lastPopup = null;
     _lastTrigger = null;
     _popups = document.querySelectorAll(".popup-trigger");
 
     var curr;
-    for (var p=0; p < _popups.length; p++)
-    {
+    for (var p=0; p < _popups.length; p++) {
       curr = _popups[p];
       curr.removeEventListener("click", _popupHandler, false);
       curr.classList.remove('active');
@@ -69,8 +65,7 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   }
 
   // handler for when a popup link triggers a popup
-  function _popupHandler(evt)
-  {
+  function _popupHandler(evt) {
     evt.preventDefault();
 
     var trigger = evt.target;
@@ -83,16 +78,14 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   }
 
   // handler for when the page is resized
-  function _resizeHandler(evt)
-  {
+  function _resizeHandler(evt) {
     _show(_lastPopup,_lastTrigger);
   }
 
   // show a popup
   // @param popup Reference to the popup HTML to show
   // @param trigger Reference to the link trigger HTML
-  function _show(popup,trigger)
-  {
+  function _show(popup,trigger) {
     _lastTrigger = trigger;
 
     var container = popup.parentNode;
@@ -120,28 +113,23 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
     popup.style.top = (offsetY+popupOffset.top)+"px";
 
     var cssWidth = util.getStyle(popup,"width");
-    if ( (offsetX+Number(cssWidth.substring(0,cssWidth.length-2))) > winDim.width)
-    {
+    if ( (offsetX+Number(cssWidth.substring(0,cssWidth.length-2))) > winDim.width) {
       popup.style.right = "10px";
-    }
-    else
-    {
+    } else {
       popup.style.left = (offsetX)+"px";
     }
 
-    if (_lastPopup && _lastPopup !== popup) _lastPopup.parentNode.classList.add("hide");
+    if (_lastPopup && _lastPopup !== popup)
+      _lastPopup.parentNode.classList.add("hide");
     _lastPopup = popup;
     _lastPopup.parentNode.classList.toggle("hide");
 
     // set height to default in order to check against window height effectively
     popup.style.height = "auto";
     var padding = 20; // padding set on article > div
-    if ( (offsetY+popup.offsetHeight+padding) > winDim.height)
-    {
+    if ( (offsetY+popup.offsetHeight+padding) > winDim.height) {
       popup.style.height = (winDim.height-offsetY-padding)+"px";
-    }
-    else
-    {
+    } else {
       popup.style.height = "auto";
     }
 
@@ -157,15 +145,14 @@ define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,fee
   {
     var el = evt.target;
     if (el.classList.contains('close-button'))
-    {
       _closeLastPopup();
-    }
   }
 
   // close the last opened popup
   function _closeLastPopup()
   {
-    if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
+    if (_lastPopup)
+      _lastPopup.parentNode.classList.add("hide");
     document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
     window.removeEventListener("resize", _resizeHandler, true);
     feedback.hide();

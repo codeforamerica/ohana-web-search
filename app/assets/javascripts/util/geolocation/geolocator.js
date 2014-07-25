@@ -5,32 +5,26 @@ define(function() {
   // function to run on success or failure, new instance should be passed into geo.locate()
   var _callBack;
 
-  function locate(pCallBack)
-  {
+  function locate(pCallBack) {
     _callBack = pCallBack;
 
     // modernizr should pick this up, but just in case...
-    if (navigator.geolocation)
-    {
+    if (navigator.geolocation) {
       // Request a position whose age is not greater than 10 minutes old.
       navigator.geolocation.getCurrentPosition(_success,_error,{maximumAge:600000});
-    }
-    else{
+    } else {
       _callBack.error({message:"Geolocation is not supported."});
     }
   }
 
   // location successfully found
-  function _success(position)
-  {
+  function _success(position) {
     _callBack.success(position);
   }
 
   // error retrieving location
-  function _error(error)
-  {
-    switch(error.code)
-    {
+  function _error(error) {
+    switch(error.code) {
     case error.PERMISSION_DENIED:
       error.message = "User denied the request for Geolocation.";
       break;

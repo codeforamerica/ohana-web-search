@@ -6,8 +6,7 @@ define(function() {
 
   var _bitmask = 0;
 
-  function create()
-  {
+  function create() {
     return new BitMask();
   }
 

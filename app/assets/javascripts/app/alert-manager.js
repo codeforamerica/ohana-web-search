@@ -11,8 +11,7 @@ define(function() {
   var _closeBtn; // DOM element for the alert's close button
 
   // PUBLIC METHODS
-  function init()
-  {
+  function init() {
     _alert = document.querySelector('#alert-box');
     _content = _alert.querySelector('.alert-message');
     _closeBtn = _alert.querySelector('.alert-close');
@@ -20,23 +19,20 @@ define(function() {
   }
 
   // PRIVATE METHODS
-  function show(message)
-  {
+  function show(message) {
     if (!_alert) init(); // lazy initialization
     _alert.classList.remove('hide');
     _content.innerHTML = message;
   }
 
   // Hiding the alert box clears its content and hides it using CSS
-  function hide()
-  {
+  function hide() {
     _alert.classList.add('hide');
     _content.innerHTML = '';
   }
 
   // Closing the alert box hides the HTML
-  function _closeBtnClicked(evt)
-  {
+  function _closeBtnClicked(evt) {
     hide();
   }
 

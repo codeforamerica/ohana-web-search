@@ -14,13 +14,11 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   var _infoWindow = new google.maps.InfoWindow(); // info window to pop up on roll over
 
   // PUBLIC METHODS
-  function init()
-  {
+  function init() {
     _mapCanvas = document.getElementById("detail-map-canvas");
     _markersArray = [];
 
-    if (_mapCanvas)
-    {
+    if (_mapCanvas) {
       var title = document.getElementById("detail-map-canvas-title");
       var lat = document.getElementById("detail-map-canvas-lat");
       var lng = document.getElementById("detail-map-canvas-lng");
@@ -62,9 +60,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
       });
 
       _refresh();
-    }
-    else
-    {
+    } else {
       console.log("Warning: The detail map container was not found!");
     }
 
@@ -73,12 +69,9 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
   // refresh the data
   function _refresh()
   {
-    if (_markersArray.length > 0)
-    {
+    if (_markersArray.length > 0) {
       _map.fitBounds(_markerBounds);
-    }
-    else
-    {
+    } else {
       _map.setZoom(16);
       _map.setCenter(_locationMarker.getPosition());
     }
@@ -88,8 +81,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!call
     init:init
   };
 },
-function (err)
-{
+function (err) {
   'use strict';
   //The error callback
   //The err object has a list of modules that failed
