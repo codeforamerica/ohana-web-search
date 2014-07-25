@@ -14,23 +14,20 @@ define( function() {
   var lesstext = "less";
 
   // PUBLIC METHODS
-  function init()
-  {
+  function init() {
     desc = document.querySelector("#detail-info .description span");
 
     // if description exists
     if (desc) {
       fulltext = desc.innerHTML;
 
-      if(fulltext.length > showChar) {
+      if(fulltext.length > showChar)
         _showLess(null);
-      }
     }
   }
 
   // show more text
-  function _showMore(evt)
-  {
+  function _showMore(evt) {
     var target = evt.target;
     desc.innerHTML = fulltext;
 
@@ -44,21 +41,18 @@ define( function() {
   }
 
   // show less text
-  function _showLess(evt)
-  {
+  function _showLess(evt) {
     fulltext = fulltext.trim();
     var c = fulltext.substr(0, showChar);
     var h = fulltext.substr(showChar-1, fulltext.length - showChar);
 
     // if truncated content is less than softLimit, remove truncation
-    if (h.length < softLimit)
-    {
+    if (h.length < softLimit) {
       c+= h;
       h = "";
     }
 
-    if (h.length > 0)
-    {
+    if (h.length > 0) {
       var lnk = document.createElement("a");
       lnk.innerHTML = moretext;
 

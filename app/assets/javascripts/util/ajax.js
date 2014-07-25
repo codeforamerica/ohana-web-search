@@ -2,10 +2,8 @@
 define(['jquery'],function($) {
   'use strict';
 
-  function request(query,callback)
-  {
-    if (callback)
-    {
+  function request(query,callback) {
+    if (callback) {
       $.ajax({
         beforeSend: function (request)
         {
@@ -14,9 +12,7 @@ define(['jquery'],function($) {
         cache: true,
         url: query
       }).done(callback.done).fail(callback.fail);
-    }
-    else
-    {
+    } else {
       $.ajax({
         beforeSend: function (request)
         {
@@ -29,13 +25,11 @@ define(['jquery'],function($) {
   }
 
   // default callbacks
-  function _success(evt)
-  {
+  function _success(evt) {
     console.log('success',evt);
   }
 
-  function _failure(evt)
-  {
+  function _failure(evt) {
     console.log('error',evt);
   }
 

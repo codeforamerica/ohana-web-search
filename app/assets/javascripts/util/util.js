@@ -5,17 +5,15 @@ define(function() {
   // (from http://stackoverflow.com/questions/3426979/javascript-checking-if-an-object-has-no-properties-or-if-a-map-associative-arra)
   function isEmpty(map) {
     for(var key in map) {
-      if (map.hasOwnProperty(key)) {
+      if (map.hasOwnProperty(key))
         return false;
-      }
     }
     return true;
   }
 
   // detects whether a particular event is supported
   // (from http://stackoverflow.com/questions/2877393/detecting-support-for-a-given-javascript-event)
-  function isEventSupported(eventName)
-  {
+  function isEventSupported(eventName) {
     var TAGNAMES = {'select':'input',
                     'change':'input',
                     'submit':'form',
@@ -26,8 +24,7 @@ define(function() {
     var el = document.createElement(TAGNAMES[eventName] || 'div');
     eventName = 'on' + eventName;
     var isSupported = (eventName in el);
-    if (!isSupported)
-    {
+    if (!isSupported) {
       el.setAttribute(eventName, 'return;');
       isSupported = typeof el[eventName] === 'function';
     }
@@ -37,11 +34,9 @@ define(function() {
 
   // return the client window dimensions.
   // (from http://stackoverflow.com/questions/3333329/javascript-get-browser-height)
-  function getWindowRect()
-  {
+  function getWindowRect() {
     var myWidth = 0, myHeight = 0;
-    if( typeof( window.innerWidth ) === 'number' )
-    {
+    if( typeof( window.innerWidth ) === 'number' ) {
       //Non-IE
       myWidth = window.innerWidth;
       myHeight = window.innerHeight;
@@ -61,8 +56,7 @@ define(function() {
   // get left and top offset of an element
   // (from http://stackoverflow.com/questions/8111094/cross-browser-javascript-function-to-find-actual-position-of-an-element-in-page)
   // @return [Object] with top and left properties
-  function getOffset( element )
-  {
+  function getOffset( element ) {
     var body = document.body,
     win = document.defaultView,
     docElem = document.documentElement,
@@ -84,8 +78,7 @@ define(function() {
 
   // @return [Object] browser-appropriate requestanimationframe implementation
   // @example util.requestAnimationFrame()(_animate_callback);
-  function requestAnimationFrame()
-  {
+  function requestAnimationFrame() {
     return window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     window.oRequestAnimationFrame ||
@@ -128,26 +121,21 @@ define(function() {
   // insert parameters in the URL
   // @param params [Object] (optional)
   // @return [String] the appended URL query string
-  function queryString(params)
-  {
-    if (params)
-    {
+  function queryString(params) {
+    if (params) {
       var url = document.location.search.substr(1).split('&');
       var urlobj = {};
       var param,key,val;
 
-      for (var p=0;p<url.length;p++)
-      {
+      for (var p=0;p<url.length;p++) {
         param = url[p].split('=');
         key = param[0];
         val = param[1];
         urlobj[key] = val;
       }
 
-      for (key in params)
-      {
-        if (params.hasOwnProperty(key))
-        {
+      for (key in params) {
+        if (params.hasOwnProperty(key)) {
           urlobj[key] = params[key];
         }
       }
@@ -166,9 +154,7 @@ define(function() {
       str = '?'+str.substring(0, str.length-1);
 
       return str;
-    }
-    else
-    {
+    } else {
       return document.location.search;
     }
   }
@@ -177,17 +163,14 @@ define(function() {
   // (from http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter)
   // @param [String] the query string parameter
   // @return [Object] query string as object
-  function getQueryParams(qs)
-  {
+  function getQueryParams(qs) {
     if (!qs) qs = document.location.search;
     qs = qs.split("+").join(" ");
 
     var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
 
     while ( (tokens = re.exec(qs)) )
-    {
       params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-    }
 
     return params;
   }
@@ -195,8 +178,7 @@ define(function() {
   // Check if a URL parameter is present
   // (from http://stackoverflow.com/questions/1314383/how-to-check-if-a-querystring-value-is-present-via-javascript)
   // @param [String] The parameter to check for the existence of.
-  function isURLParamPresent(param)
-  {
+  function isURLParamPresent(param) {
     var url = window.location.href;
     if(url.indexOf('?' + param + '=') !== -1)
       return true;

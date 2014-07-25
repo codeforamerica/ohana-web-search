@@ -7,8 +7,7 @@ define(['util/util'],function(util) {
   var _timeoutCount = 0;
 
   // PUBLIC METHODS
-  function init()
-  {
+  function init() {
     _deleteTranslateCookies();
     _checkForGoog();
   }
@@ -28,32 +27,26 @@ define(['util/util'],function(util) {
   }
 
   // Polling check for Google Translate drop-down to be initialized
-  function _checkForGoog()
-  {
+  function _checkForGoog() {
     // timeout check set to 20 seconds
-    if (_timeoutCount++ < 20)
-    {
+    if (_timeoutCount++ < 20) {
       setTimeout(function(){
         _languages = document.querySelector('#google-translate-element select');
         if (!_languages) _checkForGoog();
         else _hookDropDown();
       },1000);
-    }
-    else
-    {
+    } else {
       console.log("Timeout while initializing Google Translate drop-down!");
     }
   }
 
   // Hook in a change event to the language drop-down menu so the page reloads
   // and is appended a translate query string when the drop-down menu is changed.
-  function _hookDropDown()
-  {
+  function _hookDropDown() {
     _languages.addEventListener('change',_langUpdated,false);
   }
 
-  function _langUpdated(evt)
-  {
+  function _langUpdated(evt) {
     document.location.search = util.queryString({"translate":_languages.options[_languages.selectedIndex].value});
   }
 

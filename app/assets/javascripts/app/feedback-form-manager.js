@@ -20,27 +20,23 @@ define(['util/util','jquery'],function(util,$) {
     _commentInput = document.querySelector('#feedback-box #comment');
     _emailInput = document.querySelector('#feedback-box #email');
 
-    if (util.isEventSupported('input'))
-    {
+    if (util.isEventSupported('input')) {
       _commentInput.addEventListener('input', _onFeedbackFormInput);
       _emailInput.addEventListener('input', _onFeedbackFormInput);
     }
-    else
-    {
+    else {
       _sendBtn.disabled = '';
     }
   }
 
   // the form is being hidden, hide the feedback status
-  function hide()
-  {
+  function hide() {
     _feedbackStatus.classList.add('hide');
     _updateFeedbackForm();
   }
 
   // PRIVATE PROPERTIES
-  function _sendBtnClicked(evt)
-  {
+  function _sendBtnClicked(evt) {
     evt.preventDefault(); // stop the form from submitting
     var emailCheck = new RegExp('.+@.+\..+','i'); // jshint ignore:line
     var match = emailCheck.exec(_emailInput.value);
@@ -51,8 +47,7 @@ define(['util/util','jquery'],function(util,$) {
     return false;
   }
 
-  function _onFeedbackFormInput(evt)
-  {
+  function _onFeedbackFormInput(evt) {
     _updateFeedbackForm();
   }
 
@@ -60,12 +55,9 @@ define(['util/util','jquery'],function(util,$) {
     var message = _commentInput.value;
     message = message.trim();
 
-    if (util.isEventSupported('input'))
-    {
+    if (util.isEventSupported('input')) {
       return message.length > 0;
-    }
-    else
-    {
+    } else {
       return true;
     }
   }
@@ -105,8 +97,7 @@ define(['util/util','jquery'],function(util,$) {
   }
 
   // on submitting success, clear out values and post success message.
-  function _onSuccess(data)
-  {
+  function _onSuccess(data) {
     _feedbackStatus.innerHTML = "Thanks for the feedback!";
     _feedbackStatus.classList.remove('hide');
     _commentInput.value = '';
@@ -114,8 +105,7 @@ define(['util/util','jquery'],function(util,$) {
   }
 
   // on submitting error, clear out values and post failure message.
-  function _onError(xhr, err)
-  {
+  function _onError(xhr, err) {
     _feedbackStatus.innerHTML = "Error sending feedback, please <a href='/'>reload</a> and try again!";
     _feedbackStatus.classList.remove('hide');
     _commentInput.value = '';
@@ -124,8 +114,7 @@ define(['util/util','jquery'],function(util,$) {
   }
 
   // incorrect email address. Show error message.
-  function _incorrectEmailAddress()
-  {
+  function _incorrectEmailAddress() {
     _feedbackStatus.innerHTML = "Your email address appears to be formatted incorrectly, please try again!";
     _feedbackStatus.classList.remove('hide');
     _emailInput.value = '';

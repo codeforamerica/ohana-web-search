@@ -5,8 +5,7 @@ require(['util/geolocation/geolocate-action'], function(geo) {
   // Initialize the geolocation button on the homepage.
   // locateAction is the callback function for when the
   // address is found.
-  function locateAction(address)
-  {
+  function locateAction(address) {
     document.getElementById('location').value = address;
     document.getElementById('search-form').submit();
   }

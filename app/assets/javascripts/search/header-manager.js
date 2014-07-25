@@ -7,11 +7,9 @@ define(['util/util'],
   var _offsetY;
   var _floatingContent;
 
-  function init()
-  {
+  function init() {
     _header = document.getElementById("floating-results-header");
-    if(_header)
-    {
+    if (_header) {
       _offsetY = util.getOffset(_header).top;
       _floatingContent = document.querySelectorAll('#floating-results-header .floating-content');
 
@@ -20,13 +18,10 @@ define(['util/util'],
       // If window has a hash, offset the scrolling by the height of the floating header.
       // Also offset scrolling if search container is above search results (it's not floated)
       var scrollOffset;
-      if(window.location.hash)
-      {
+      if(window.location.hash) {
         scrollOffset = _header.offsetHeight;
         window.scrollTo(0,(window.scrollY-scrollOffset));
-      }
-      else if( (util.getStyle(document.getElementById('search-container'),"float") === "none") )
-      {
+      } else if( (util.getStyle(document.getElementById('search-container'), "float") === "none") ) {
         scrollOffset = util.getOffset(document.getElementById("persistent-results-header")).top;
         window.scrollTo(0,scrollOffset-1);
       }
@@ -43,16 +38,13 @@ define(['util/util'],
   function _checkIfFloating()
   {
     var c;
-    if (window.scrollY >= _offsetY)
-    {
+    if (window.scrollY >= _offsetY) {
       // floating header
       _header.classList.add("floating");
       for (c in _floatingContent)
         if (_floatingContent[c].classList)
           _floatingContent[c].classList.remove('hide');
-    }
-    else
-    {
+    } else {
       // reset header
       _header.classList.remove("floating");
       for (c in _floatingContent)

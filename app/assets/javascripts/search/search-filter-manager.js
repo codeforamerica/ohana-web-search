@@ -7,8 +7,7 @@ define(['util/geolocation/geolocate-action','domReady!'],
   var _searchForm; // the form to submit
 
   // main module initialization
-  function init()
-  {
+  function init() {
     // Set up geolocation button
     geo.init('locate-btn',_geolocationClicked);
 
@@ -21,15 +20,13 @@ define(['util/geolocation/geolocate-action','domReady!'],
   }
 
   // The geolocation button was clicked in the location filter.
-  function _geolocationClicked(address)
-  {
+  function _geolocationClicked(address) {
     document.getElementById('location').value = address;
     _searchForm.submit();
   }
 
   // The clear filters button was clicked.
-  function _resetClicked(evt)
-  {
+  function _resetClicked(evt) {
     document.getElementById('keyword').value = '';
     document.getElementById('location').value = '';
     document.getElementById('org_name').value = '';

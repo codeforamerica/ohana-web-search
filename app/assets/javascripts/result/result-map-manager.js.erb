@@ -83,8 +83,7 @@ define(['util/bitmask',
   var _infoBoxContent;
 
   // PUBLIC METHODS
-  function init()
-  {
+  function init() {
     _infoBoxState = bitmask.create();
 
     // Turn off assumption that touch is being used initially, this is turned on
@@ -226,9 +225,7 @@ define(['util/bitmask',
           _infoBoxState.turnOff(SHOW_INFOBOX);
         });
 
-      }
-      else
-      {
+      } else {
         console.log("Warning: The result map container was not found!");
       }
     }
@@ -390,7 +387,8 @@ define(['util/bitmask',
       var mainName = markerData.name;
       var orgName = markerData.org_name;
       var agency = "";
-      if (orgName != markerData.name) { agency = "<h2>"+orgName+"</h2>"; }
+      if (orgName != markerData.name)
+        agency = "<h2>"+orgName+"</h2>";
 
       var content = "<div><div class='button-close'></div>"+
                     "<h1>"+mainName+"</h1>"+agency+
@@ -503,7 +501,8 @@ define(['util/bitmask',
 
       // Touch displays don't know they're over a marker till it's tapped,
       // so manually register the state as being over the marker in this case.
-      if (_infoBoxState.isOn(IS_TOUCH)) _registerMarker(marker, content);
+      if (_infoBoxState.isOn(IS_TOUCH))
+        _registerMarker(marker, content);
 
       if (_infoBoxState.isOn(HAS_SPIDERFIED)) {
         _infoBoxState.turnOff(HAS_SPIDERFIED);
