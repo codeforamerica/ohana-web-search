@@ -15,10 +15,7 @@ module GoogleTranslator
   end
 
   def delete_translation_cookies
-    cookies.delete(:googtrans, :domain => "#{ENV['DOMAIN_NAME']}")
-    cookies.delete(:googtrans, :domain => ".#{ENV['DOMAIN_NAME']}")
-    cookies.delete(:googtrans, :domain => "www.#{ENV['DOMAIN_NAME']}")
-    cookies.delete(:googtrans, :domain => ".www.#{ENV['DOMAIN_NAME']}")
+    cookies.delete(:googtrans, domain: :all)
   end
 
   def translation_requested?
