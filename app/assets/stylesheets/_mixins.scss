@@ -36,3 +36,52 @@
     @include adjust-font-size-to($font_size_130);
   }
 }
+
+@mixin input-placeholder($color, $font-style)
+{
+  input::input-placeholder
+  {
+    color: $color;
+    font-style: $font-style;
+  }
+
+  input::-webkit-input-placeholder
+  {
+    color: $color;
+    font-style: $font-style;
+  }
+
+  input:-moz-placeholder
+  {
+    color: $color;
+    font-style: $font-style;
+  }
+
+  input::-moz-placeholder
+  {
+    color: $color;
+    font-style: $font-style;
+  }
+
+  input:-ms-input-placeholder
+  {
+    color: $color;
+    font-style: $font-style;
+  }
+}
+
+// Turns off proprietary default webkit styling of search input fields.
+@mixin reset-input-webkit()
+{
+  input[type=search]::-webkit-search-cancel-button,
+  input[type=search]::-webkit-search-decoration,
+  input[type=search]::-webkit-search-results-button,
+  input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
+  input[type=search] {
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-box-sizing:content-box;
+  }
+}
