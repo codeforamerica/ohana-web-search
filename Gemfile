@@ -6,13 +6,13 @@ gem 'rails', '~> 4.1.4'
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.2'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '>= 2.0.0'
+gem 'compass-rails', '~> 2.0.0'
 
 # Font-awesome icons.
-gem 'font-awesome-sass', '>= 4.1.0'
+gem 'font-awesome-sass', '~> 4.1.0'
 
 # Use Uglifier as compressor for JavaScript assets.
 gem 'uglifier', '>= 2.5.3'
@@ -26,13 +26,13 @@ gem 'haml-rails', '>= 0.5.3'
 # SERVER
 
 gem 'unicorn', '>= 4.8.3'
-gem 'newrelic_rpm', '>= 3.9.0.229'
+gem 'newrelic_rpm', '>= 3.8.0.218'
 gem 'ohanakapa', '~> 1.1.1'
-gem 'faraday-http-cache', '>= 0.4.1'
+gem 'faraday-http-cache', '>= 0.4.0'
 
 # Caching
 gem 'rack-cache', '>= 1.2'
-gem 'dalli', '~> 2.7.2'
+gem 'dalli', '~> 2.7.1'
 gem 'memcachier'
 
 # Required for caching in production.
@@ -59,7 +59,7 @@ end
 
 # dev and debugging tools
 group :development do
-  gem 'quiet_assets', '>= 1.0.3'
+  gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 1.1.0'
   gem 'binding_of_caller', '>= 0.7.2', platforms: [:mri_19, :rbx]
 
@@ -70,28 +70,28 @@ group :development do
   gem 'jshintrb', '>= 0.2.4'
 
   # For code documentation, run `yard --help` for list of commands.
-  gem 'yard', '~> 0.8.7.4'
+  gem 'yard'
 end
 
 group :test do
 
 
   # gem 'launchy', '>= 2.2.0'
-  gem 'capybara', '>= 2.4.1'
+  gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
 
   # gem 'poltergeist'
   gem 'capybara-webkit'
-  gem 'vcr', '>= 2.9.2'
+  gem 'vcr', '>= 2.9.0'
   gem 'webmock', '>= 1.18.0'
   gem 'email_spec', '>= 1.6.0'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
-  gem 'rubocop', '~> 0.24.1'
+  gem 'rubocop'
 end
 
 group :development, :test do
   # Enable teaspoon to use JasmineJS for performing unit testing on JS code.
   # gem 'teaspoon'
-  gem 'rspec-rails', '>= 3.0.0.beta2'
+  gem 'rspec-rails', '>= 2.14.2'
 end
