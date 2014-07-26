@@ -18,7 +18,7 @@ gem 'font-awesome-sass', '~> 4.1.0'
 gem 'uglifier', '>= 2.5.3'
 
 # For enabling requirejs-style AMD scripts in the asset pipeline.
-gem 'requirejs-rails', '>= 0.9.3'
+gem 'requirejs-rails', '~> 0.9.3'
 
 # For HAML HTML view templates.
 gem 'haml-rails', '>= 0.5.3'
@@ -42,7 +42,7 @@ gem 'kgio'
 gem 'rack-rewrite', '>= 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '>= 0.7.1'
+gem 'google-api-client', '~> 0.7.1'
 
 # App config and ENV variables for heroku.
 gem 'figaro', '~> 1.0.0.rc1'
@@ -74,7 +74,6 @@ group :development do
 end
 
 group :test do
-
 
   # gem 'launchy', '>= 2.2.0'
   gem 'capybara', '>= 2.2.1'
