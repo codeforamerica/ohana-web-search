@@ -15,7 +15,7 @@ gem 'compass-rails', '~> 2.0.0'
 gem 'font-awesome-sass', '~> 4.1.0'
 
 # Use Uglifier as compressor for JavaScript assets.
-gem 'uglifier', '>= 2.5.3'
+gem 'uglifier', '>= 2.5.0'
 
 # For enabling requirejs-style AMD scripts in the asset pipeline.
 gem 'requirejs-rails', '~> 0.9.3'
@@ -74,7 +74,6 @@ group :development do
 end
 
 group :test do
-
   # gem 'launchy', '>= 2.2.0'
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
@@ -82,8 +81,8 @@ group :test do
   # gem 'poltergeist'
   gem 'capybara-webkit'
   gem 'vcr', '>= 2.9.0'
-  gem 'webmock', '>= 1.18.0'
-  gem 'email_spec', '>= 1.6.0'
+  gem 'webmock', '>= 1.17.4'
+  gem 'email_spec', '>= 1.5.0'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
   gem 'rubocop'
