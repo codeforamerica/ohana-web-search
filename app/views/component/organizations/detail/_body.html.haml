@@ -102,13 +102,23 @@
         %section#categories-box
           %h1 Service Categories
           %section.services{ itemscope: '', itemtype: 'http://schema.org/Service' }
-            %ul{ itemscope: '', itemtype: 'http://schema.org/ServiceType' }
+            %ul{ itemscope: '', itemtype: 'http://schema.org/serviceType' }
               - @categories.each do |category|
-                %li{ class: "depth#{category.depth}" }
+                %li{ class: "hierarchy-depth-#{category.depth}" }
                   %span{ itemprop: 'serviceType' }
                     -# Category links are disabled till there's a corresponding filter that can be toggled!
-                      = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
+                      = link_to category.name, organizations_path(@search_params.merge(category: category.name))
                     = category.name
+
+      - if @keywords.present?
+        %section#keywords-box
+          %h1 Keyword Tags
+          %section.keywords
+            %ul
+              - @keywords.each do |keyword|
+                %li
+                  %span
+                    = link_to keyword, organizations_path(@search_params.merge(keyword: keyword))
 
   / Main detail content.
   %section
@@ -118,7 +128,7 @@
         %section
 
           = render partial: 'component/detail/template', locals: { org: @org, field: :short_desc }
-          = render partial: 'component/detail/template', locals: { org: @org, field: :description, stitle: 'Description' }
+          = render partial: 'component/detail/template', locals: { org: @org, field: :description, stitle: 'Location Description' }
 
     - if @org[:coordinates].present? || @org[:transportation].present?
       %section.map-box
@@ -167,14 +177,16 @@
           %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
 
             = render partial: 'component/detail/template', locals: { org: service, field: :name}
-            = render partial: 'component/detail/template', locals: { org: service, field: :description}
+            = render partial: 'component/detail/template', locals: { org: service, field: :description, stitle: 'Service Description'}
             = render partial: 'component/detail/urls', locals: { org: service, field: :urls, stitle: 'Homepage' }
             = render partial: 'component/detail/template', locals: { org: service, field: :fees, stitle: 'Fees' }
             = render partial: 'component/detail/template', locals: { org: service, field: :audience, stitle: 'Audience' }
             = render partial: 'component/detail/template', locals: { org: service, field: :eligibility, stitle: 'Eligibility' }
             = render partial: 'component/detail/template', locals: { org: service, field: :how_to_apply, stitle: 'How to Apply' }
+            = render partial: 'component/detail/template', locals: { org: service, field: :wait, stitle: 'Service Wait Estimate' }
+            = render partial: 'component/detail/service_areas', locals: { org: service, field: :service_areas, stitle: 'Service Areas' }
 
-  / detail footer content
+  / Detail footer content.
   - if @org[:updated_at].present?
     %footer
       %section.metadata

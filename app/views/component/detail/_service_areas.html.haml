@@ -1,0 +1,10 @@
+- if @service_areas.present?
+  %section{ class: 'service-areas' }
+    - if defined? stitle
+      - if stitle.present?
+        %h1 #{stitle}:
+    %ul
+      - @service_areas.sort.each do |f|
+        %li
+          %span
+            = f
