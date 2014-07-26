@@ -18,38 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:59 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 9590665a-222f-42b7-b5aa-bd115f7fc61e
-      X-Runtime:
-      - '0.043780'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1022'
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 66d9529f-f62b-4482-8adc-5290c2ba87c9
+      X-Runtime:
+      - '0.028389'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:55 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":22,"admin_emails":["foo@bar.com"],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
@@ -70,5 +72,5 @@ http_interactions:
         372-6200","number_type":"TTY","vanity_number":null},{"id":22,"department":"Reservations","extension":null,"number":"650
         372-6200","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:16:59 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:55 GMT
 recorded_with: VCR 2.9.2

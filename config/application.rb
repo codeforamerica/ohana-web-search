@@ -15,7 +15,7 @@ SETTINGS.symbolize_keys!
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module HumanServicesFinder
+module OhanaWebSearch
   class Application < Rails::Application
     # Don't generate RSpec tests for views and helpers.
     config.generators do |g|

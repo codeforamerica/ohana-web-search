@@ -28,7 +28,6 @@ RSpec.configure do |config|
   config.include DetailFormatHelper
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
-  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of

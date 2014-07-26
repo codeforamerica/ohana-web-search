@@ -18,38 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:22 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Request-Id:
-      - 8617a47f-e25e-4dd6-b65b-50ff5c483298
-      X-Runtime:
-      - '0.052958'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f7475fc7-58f1-4980-a9cf-e30b1e9c48bf
+      X-Runtime:
+      - '0.029469'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:41 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":12,"admin_emails":[],"coordinates":[-122.227409,37.4837662],"description":"Offers
@@ -96,5 +98,5 @@ http_interactions:
         Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 22:07:21 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:42 GMT
 recorded_with: VCR 2.9.2

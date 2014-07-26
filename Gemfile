@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '~> 4.0.4'
+gem 'rails', '~> 4.1.4'
 
 # FRONT END
 
@@ -9,16 +9,16 @@ gem 'rails', '~> 4.0.4'
 gem 'sass-rails', '~> 4.0.2'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '>= 1.1.7'
+gem 'compass-rails', '~> 2.0.0'
 
 # Font-awesome icons.
-gem 'font-awesome-sass', '>= 4.0.3.1'
+gem 'font-awesome-sass', '~> 4.1.0'
 
 # Use Uglifier as compressor for JavaScript assets.
 gem 'uglifier', '>= 2.5.0'
 
 # For enabling requirejs-style AMD scripts in the asset pipeline.
-gem 'requirejs-rails', '>= 0.9.2'
+gem 'requirejs-rails', '~> 0.9.3'
 
 # For HAML HTML view templates.
 gem 'haml-rails', '>= 0.5.3'
@@ -42,7 +42,7 @@ gem 'kgio'
 gem 'rack-rewrite', '>= 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '>= 0.7.1'
+gem 'google-api-client', '~> 0.7.1'
 
 # App config and ENV variables for heroku.
 gem 'figaro', '~> 1.0.0.rc1'
@@ -50,7 +50,7 @@ gem 'figaro', '~> 1.0.0.rc1'
 gem 'coveralls', '>= 0.7.0', require: false
 
 # Handles logic behind Pagination UI component.
-gem 'kaminari'
+gem 'kaminari', '~> 0.16.1'
 
 group :production, :staging do
   # Enables serving assets in production and setting logger to standard out.

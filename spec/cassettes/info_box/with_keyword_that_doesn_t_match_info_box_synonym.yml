@@ -18,43 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:47 GMT
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      X-Runtime:
+      - '0.022473'
+      X-Request-Id:
+      - a1a12a3d-34c2-426c-a459-d2b2904da5b3
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:57 GMT
+      X-Next-Page:
+      - '2'
+      X-Current-Page:
+      - '1'
+      X-Total-Pages:
+      - '5'
+      X-Total-Count:
+      - '5'
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=5>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
       X-Content-Type-Options:
       - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 2877c3b5-09d3-48c1-a51a-29fc1851337d
-      X-Runtime:
-      - '0.031579'
-      X-Total-Count:
-      - '5'
-      X-Total-Pages:
-      - '5'
       X-Xss-Protection:
       - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Status:
+      - 200 OK
       Transfer-Encoding:
       - chunked
-      Connection:
-      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
@@ -79,5 +81,5 @@ http_interactions:
         Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
         326-2025","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:16:57 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:47 GMT
 recorded_with: VCR 2.9.2

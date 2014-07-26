@@ -18,43 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:21 GMT
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Request-Id:
-      - 021b499f-0899-46fc-b5f4-38757c288297
-      X-Runtime:
-      - '0.041473'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4de99bf8-c985-41c6-bc02-e86872e59243
+      X-Runtime:
+      - '0.023035'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:46 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":12,"admin_emails":[],"coordinates":[-122.227409,37.4837662],"description":"Offers
@@ -74,7 +76,7 @@ http_interactions:
         City Public Library","slug":"redwood-city-public-library","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
         780-7077","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 22:07:20 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:46 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=youth&page=2
@@ -93,47 +95,49 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:21 GMT
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="prev",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '2'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '3'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Previous-Page:
-      - '1'
-      X-Request-Id:
-      - 8f6f4a9e-f370-49ad-ac2f-ac50903fa635
-      X-Runtime:
-      - '0.039364'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '2'
+      X-Next-Page:
+      - '3'
+      X-Previous-Page:
+      - '1'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eedc7933-25b9-48db-abe1-1ca7ac87499d
+      X-Runtime:
+      - '0.024255'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:46 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":16,"admin_emails":[],"coordinates":[-122.0600024,37.3569004],"description":"Provides
@@ -147,5 +151,5 @@ http_interactions:
         Army","slug":"salvation-army","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":16,"department":null,"extension":null,"number":"408
         720-0420","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 22:07:20 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:46 GMT
 recorded_with: VCR 2.9.2
