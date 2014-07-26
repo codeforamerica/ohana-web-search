@@ -18,43 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:13:46 GMT
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="prev"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '3'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Previous-Page:
-      - '2'
-      X-Request-Id:
-      - 89ac4a7f-7bb2-4d35-9a20-ce72281794bc
-      X-Runtime:
-      - '0.033942'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '3'
+      X-Previous-Page:
+      - '2'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - eb484c1b-1841-48e6-b322-e4fc9779db21
+      X-Runtime:
+      - '0.026208'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:43 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":4,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Provides
@@ -77,5 +79,5 @@ http_interactions:
         Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Sat, 19 Jul 2014 22:13:45 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:43 GMT
 recorded_with: VCR 2.9.2

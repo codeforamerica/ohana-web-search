@@ -18,44 +18,46 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:15 GMT
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
         rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - f0c32872-7d28-4959-855a-465393c93ef6
-      X-Runtime:
-      - '0.040068'
       X-Total-Count:
       - '2'
       X-Total-Pages:
       - '2'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1160'
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1c38eb49-b910-48fd-9443-6674778b2559
+      X-Runtime:
+      - '0.041177'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 07:18:39 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
@@ -80,5 +82,5 @@ http_interactions:
         Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
         326-2025","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:16:15 GMT
+  recorded_at: Sat, 26 Jul 2014 07:18:39 GMT
 recorded_with: VCR 2.9.2
