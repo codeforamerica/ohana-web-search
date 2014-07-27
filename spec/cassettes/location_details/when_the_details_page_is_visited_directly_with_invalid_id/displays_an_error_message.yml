@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/locations/foobar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 404 Not Found
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7f7739b8-bda5-4a9b-97fe-6d161e1f2f0b
+      X-Runtime:
+      - '0.108225'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Sat, 26 Jul 2014 04:48:18 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"status":404,"message":"The requested resource could not be found.","documentation_url":"http://ohana-api-test.herokuapp.com/docs"}'
+    http_version: 
+  recorded_at: Sat, 26 Jul 2014 04:48:18 GMT
+recorded_with: VCR 2.9.2
