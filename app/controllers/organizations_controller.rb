@@ -47,7 +47,7 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-    id = params[:id].split("/")[-1]
+    id = params[:id].split('/')[-1]
     @org = Organization.get(id)
 
     # The parameters to use to provide a link back to search results

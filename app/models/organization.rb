@@ -4,7 +4,7 @@ class Organization
   # @param params [Hash] Search options.
   # @return [Array] Array of locations.
   def self.search(params = {})
-    Ohanakapa.search("search", params)
+    Ohanakapa.search('search', params)
   end
 
   # Calls the locations/{id} endpoint of the Ohana API.

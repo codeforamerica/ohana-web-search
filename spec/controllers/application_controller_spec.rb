@@ -18,7 +18,7 @@ describe ApplicationController do
   context 'when Faraday::ConnectionFailed is raised' do
     controller do
       def index
-        raise Faraday::ConnectionFailed, nil, nil
+        fail Faraday::ConnectionFailed, nil, nil
       end
     end
 
@@ -28,7 +28,7 @@ describe ApplicationController do
   context 'when Ohanakapa::ServiceUnavailable is raised' do
     controller do
       def index
-        raise Ohanakapa::ServiceUnavailable, nil, nil
+        fail Ohanakapa::ServiceUnavailable, nil, nil
       end
     end
 
@@ -38,7 +38,7 @@ describe ApplicationController do
   context 'when Ohanakapa::InternalServerError is raised' do
     controller do
       def index
-        raise Ohanakapa::InternalServerError, nil, nil
+        fail Ohanakapa::InternalServerError, nil, nil
       end
     end
 
