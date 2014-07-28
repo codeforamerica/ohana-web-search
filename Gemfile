@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '~> 4.0.4'
+gem 'rails', '~> 4.1.4'
 
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.3'
 
 # Compass tools for use with SCSS.
 gem 'compass-rails', '>= 1.1.7'
