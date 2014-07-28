@@ -1,5 +1,4 @@
 class Organization
-
   # Calls the search endpoint of the Ohana API.
   #
   # @param params [Hash] Search options.

@@ -13,9 +13,11 @@ module ResultSummaryHelper
     total_results = @orgs.size
     total_map_markers = @array_for_maps.size
     if total_map_markers == total_results
-      summary = ""
+      summary = ''
     else
-      summary = " <i class='fa fa-map-marker'></i> <em><strong>#{total_map_markers}</strong>/#{total_results} located on map</em>"
+      summary = " <i class='fa fa-map-marker'></i> <em>"\
+                "<strong>#{total_map_markers}</strong>/#{total_results} "\
+                'located on map</em>'
     end
     summary.html_safe
   end

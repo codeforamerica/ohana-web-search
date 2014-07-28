@@ -39,18 +39,24 @@ Clone it on your computer and navigate to the project's directory:
 
 ### Set up the environment variables & customizable settings
 
-Inside the `config` folder, you will find a file named `application.example.yml`.
-Copy its contents to a new file called `application.yml`.
+#### Configure environment variables
+1. __Add an environment variables file__. Inside the `config` folder, you will find a file named `application.example.yml`.
+Copy its contents to a new file called `application.yml` in the same directory.
 
-By default, the app is configured to point to the demo API at
+2. __Set API URL the app feeds from__. By default, the app is configured to point to the demo API at
 `http://ohana-api-demo.herokuapp.com/api`. To point to your own instance of
-Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml`.
+Ohana API, change the value of `OHANA_API_ENDPOINT` in your `application.yml` file.
 
-Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API, or any v2.0.0 Ohana API.
+  _Note that if you had previously installed this repo locally, you will need to update your `application.yml` to point to the new demo API, or any v2.0.0 Ohana API._
 
+#### Adjust customizable settings
 Inside the `config` folder, you will also find a file called `settings.yml`.
 In that file, there are many settings you can customize. Please read through
 the instructions in that file carefully.
+
+#### Customizing the map marker graphics
+The root `graphics` folder contains source files for images in the application. In this directory you can find an Adobe Illustrator source file for the Google map marker graphics. With this file you can adjust the map marker appearance by making changes and exporting and overwriting the files in `/app/assets/images/markers`. The Google map appears on the search results and location details pages.
+
 
 ### Run the app
 Start the app locally on port 4000:

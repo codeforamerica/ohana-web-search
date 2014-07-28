@@ -33,7 +33,7 @@ Follow the instructions in [INSTALL.md][install].
 [install]: https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md
 
 ## Adjusting the number of results per page
-The Ohana API now supports the ability to set the number of results you want returned per page via the `per_page` parameter (with a maximum of 100). So, if you want to test the layout of the results page with a certain number of results, just add something like `&per_page=5` to the end of the URL.
+The Ohana API now supports the ability to set the number of results you want returned per page via the `per_page` parameter (with a maximum value of 100). If you want to view a different number of results per page, add `&per_page=1` or similar to the end of the URL.
 
 ## Running the tests
 To test locally, you can run tests with this simple command:

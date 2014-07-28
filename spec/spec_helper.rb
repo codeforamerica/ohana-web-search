@@ -3,9 +3,9 @@ require 'coveralls'
 Coveralls.wear!('rails')
 # Don't put anything above this!
 
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 ENV['TZ'] = 'America/Los_Angeles'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'email_spec'
 # require 'capybara/poltergeist'
@@ -13,7 +13,7 @@ require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Capybara.register_driver :poltergeist do |app|
 #   Capybara::Poltergeist::Driver.new(app, :js_errors => false)
@@ -39,17 +39,17 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = "random"
+  config.order = 'random'
 end
 
 require 'vcr'
 VCR.configure do |c|
   c.configure_rspec_metadata!
   c.ignore_hosts '127.0.0.1', 'localhost'
-  c.default_cassette_options = { :record => :once }
-  c.cassette_library_dir  = "spec/cassettes"
+  c.default_cassette_options = { record: :once }
+  c.cassette_library_dir  = 'spec/cassettes'
   c.hook_into :webmock
-  c.filter_sensitive_data("<GOOGLE_TRANSLATE>") do
+  c.filter_sensitive_data('<GOOGLE_TRANSLATE>') do
     ENV['GOOGLE_TRANSLATE_API_TOKEN']
   end
 end

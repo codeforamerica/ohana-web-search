@@ -1,26 +1,23 @@
 // handles ajax functionality
-define(['jquery'],function($) {
+define(['jquery'],
+  function ($) {
   'use strict';
 
-  function request(query,callback)
-  {
-    if (callback)
-    {
+  function request(query, callback) {
+    if (callback) {
       $.ajax({
         beforeSend: function (request)
         {
-          request.setRequestHeader("Accept", "application/json");
+          request.setRequestHeader('Accept', 'application/json');
         },
         cache: true,
         url: query
       }).done(callback.done).fail(callback.fail);
-    }
-    else
-    {
+    } else {
       $.ajax({
         beforeSend: function (request)
         {
-          request.setRequestHeader("Accept", "application/json");
+          request.setRequestHeader('Accept', 'application/json');
         },
         cache: true,
         url: query
@@ -29,14 +26,12 @@ define(['jquery'],function($) {
   }
 
   // default callbacks
-  function _success(evt)
-  {
-    console.log('success',evt);
+  function _success(evt) {
+    console.log('success', evt);
   }
 
-  function _failure(evt)
-  {
-    console.log('error',evt);
+  function _failure(evt) {
+    console.log('error', evt);
   }
 
   return {

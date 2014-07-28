@@ -8,12 +8,14 @@ feature 'searching from results page', :vcr do
     before { search(keyword: 'maceo') }
 
     it 'displays the name of the agency as a link' do
-      expect(page).to have_link("SanMaceo Example Agency")
+      expect(page).to have_link('SanMaceo Example Agency')
     end
 
     it 'displays the name of the location as a link' do
-      location_url = '/organizations/sanmaceo-example-agency/san-maceo-agency?keyword=maceo&location=&org_name=&utf8=%E2%9C%93'
-      expect(page).to have_link('San Maceo Agency', href: location_url )
+      location_url = '/organizations/sanmaceo-example-agency/' \
+                     'san-maceo-agency?keyword=maceo&' \
+                     'location=&org_name=&utf8=%E2%9C%93'
+      expect(page).to have_link('San Maceo Agency', href: location_url)
     end
 
     it 'displays the location phone number' do
@@ -55,7 +57,7 @@ feature 'searching from results page', :vcr do
     end
 
     it 'includes the .no-results selector' do
-      expect(page).to have_selector(".no-results")
+      expect(page).to have_selector('.no-results')
     end
   end
 

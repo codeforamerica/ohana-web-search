@@ -2,7 +2,7 @@ HumanServicesFinder::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   config.middleware.use '::Rack::Auth::Basic' do |u, p|
-    [u, p] == [ENV["STAGING_USER"], ENV["STAGING_PASSWORD"]]
+    [u, p] == [ENV['STAGING_USER'], ENV['STAGING_PASSWORD']]
   end
 
   # Code is not reloaded between requests.
@@ -63,43 +63,43 @@ HumanServicesFinder::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  #config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store
-  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
-                              :value_max_bytes => 10485760)
+  client = Dalli::Client.new(ENV['MEMCACHIER_SERVERS'],
+                             value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
-    :metastore    => client,
-    :entitystore  => client
+    metastore:     client,
+    entitystore:   client
   }
-  config.static_cache_control = "public, max-age=2592000"
+  config.static_cache_control = 'public, max-age=2592000'
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  #config.assets.precompile << "*.js"
+  # config.assets.precompile << "*.js"
   # Include Internet Explorer polyfills.
   config.assets.precompile << %w( vendor.js ie8.js ie9.js )
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
-  config.action_mailer.default_url_options = { :host => 'ohana.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'ohana.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    :port =>           '587',
-    :address =>        'smtp.mandrillapp.com',
-    :user_name =>      ENV['MANDRILL_USERNAME'],
-    :password =>       ENV['MANDRILL_APIKEY'],
-    :domain =>         'heroku.com',
-    :authentication => :plain
+    port:           '587',
+    address:        'smtp.mandrillapp.com',
+    user_name:      ENV['MANDRILL_USERNAME'],
+    password:       ENV['MANDRILL_APIKEY'],
+    domain:         'heroku.com',
+    authentication: :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

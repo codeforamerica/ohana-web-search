@@ -38,7 +38,7 @@ class OrganizationsController < ApplicationController
     # and for display in the page title (plain)
     @map_search_summary_html = format_map_summary
 
-    # expires_in 30.minutes, :public => true
+    # expires_in 30.minutes, public: true
     if stale?(etag: @orgs, public: true)
       respond_to do |format|
         format.html
@@ -57,7 +57,7 @@ class OrganizationsController < ApplicationController
       @categories = @org.services.map { |s| s[:categories] }.flatten.compact
     end
 
-    # expires_in 30.minutes, :public => true
+    # expires_in 30.minutes, public: true
     if stale?(etag: @org, public: true)
       respond_to do |format|
         format.html

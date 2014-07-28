@@ -24,7 +24,7 @@ module HomepageLinksHelper
   #
   # @param link_text [String] A link text from the bottom half of homepage.
   # @return [String]
-  def set_keyword_from_link_text(link_text)
+  def keyword_from_link_text(link_text)
     ['/', '('].each do |char|
       link_text = link_text.split(char).first.strip if link_text.include?(char)
     end
@@ -44,7 +44,7 @@ module HomepageLinksHelper
       concat(header)
       concat(content_tag(:ul) do
         links.each do |link_text|
-          keyword = set_keyword_from_link_text(link_text)
+          keyword = keyword_from_link_text(link_text)
           concat(content_tag(:li) do
             link_to(
               link_text,
