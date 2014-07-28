@@ -33,8 +33,24 @@ feature 'location details' do
   context 'when the details page is visited directly with invalid id', :vcr do
     it 'redirects to the homepage' do
       visit('/organizations/foobar')
-      expect(page).to have_content('Government Assistance')
-      expect(page).to have_title 'Ohana Web Search'
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'displays an error message' do
+      visit('/organizations/foobar')
+      expect(page).to have_content('Sorry, that page does not exist')
+    end
+  end
+
+  context 'when URL to details page contains quote at the end', :vcr do
+    it 'redirects to the homepage' do
+      visit("/organizations/foobar'")
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'displays an error message' do
+      visit("/organizations/foobar'")
+      expect(page).to have_content('Please remove the single quote')
     end
   end
 

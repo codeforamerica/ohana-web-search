@@ -40,7 +40,9 @@ define(['util/geolocation/geolocator',
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alert.show('Your location could not be determined!');
+        alert.show("Your location could not be determined!");
+        var regularText = _locateTarget.getAttribute('data-regular-text');
+        _locateTarget.querySelector('span').innerHTML = regularText;
       }
     };
 

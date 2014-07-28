@@ -114,4 +114,12 @@ feature 'searching from results page', :vcr do
       expect(page).to have_content('Fair Oaks Adult Activity Center')
     end
   end
+
+  context 'when search contains invalid parameters' do
+    it 'displays a helpful error message' do
+      visit '/organizations?location=94403&radius=foo'
+      expect(page).
+        to have_content('That search was improperly formatted.')
+    end
+  end
 end
