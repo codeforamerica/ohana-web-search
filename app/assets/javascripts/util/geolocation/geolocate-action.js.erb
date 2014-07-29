@@ -1,10 +1,11 @@
 // Manages geolocation action, which can be associated with a button.
-define(['util/geolocation/geolocator',
-        'app/alert-manager',
-        'domReady!',
-        'async!https://maps.googleapis.com/maps/api/' +
-        'js?v=3.exp&sensor=false!callback'],
-        function (geo, alert) {
+define([
+  'util/geolocation/geolocator',
+  'app/alert-manager',
+  'domReady!',
+  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+],
+function (geo, alert) {
   'use strict';
 
   var _locateTarget; // locate current location button.
