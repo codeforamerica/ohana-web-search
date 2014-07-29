@@ -1,6 +1,8 @@
 // handles ajax functionality
-define(['jquery'],
-  function ($) {
+define([
+  'jquery'
+],
+function ($) {
   'use strict';
 
   function request(query, callback) {

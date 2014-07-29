@@ -3,11 +3,12 @@
 //= depend_on_asset 'markers/marker_large_spiderfied.png'
 //= depend_on_asset 'markers/marker_small_spiderfied.png'
 // Manages search results view Google Map.
-define(['util/bitmask',
-        'domReady!',
-        'async!https://maps.googleapis.com/maps/api/' +
-        'js?v=3.exp&sensor=false!callback'],
-        function (bitmask) {
+define([
+  'util/bitmask',
+  'domReady!',
+  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+],
+function (bitmask) {
   'use strict';
 
   // The <div> element that the Google map loads into.

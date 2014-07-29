@@ -1,19 +1,23 @@
-// handles search filter functionality
-define(['util/geolocation/geolocate-action', 'domReady!'],
-  function (geo) {
+// Handles search filter functionality.
+define([
+  'util/geolocation/geolocate-action',
+  'domReady!'
+],
+function (geo) {
   'use strict';
 
-  var _searchForm; // the form to submit
+  // The form to submit.
+  var _searchForm;
 
-  // main module initialization
+  // Main module initialization.
   function init() {
-    // Set up geolocation button
+    // Set up geolocation button.
     geo.init('locate-btn', _geolocationClicked);
 
-    // capture form submission
+    // Capture form submission.
     _searchForm = document.getElementById('search-form');
 
-    // Hook reset button on the page and listen for a click event
+    // Hook reset button on the page and listen for a click event.
     var resetBtn = document.getElementById('reset-btn');
     resetBtn.addEventListener('click', _resetClicked,false);
   }

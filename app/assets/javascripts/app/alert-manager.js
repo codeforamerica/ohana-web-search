@@ -2,7 +2,8 @@
 // The alert messages appear as a bar at the top of the screen when
 // unexpected events occur, such as when geolocation could not determine
 // the location of the user.
-define(function () {
+define(
+function () {
   'use strict';
 
   var _alert; // DOM element for the alert container.
