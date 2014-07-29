@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'searching from results page', :vcr do
 
-  before { visit('/organizations') }
+  before { visit('/locations') }
 
   context 'when search returns results' do
     before { search(keyword: 'maceo') }
@@ -12,7 +12,7 @@ feature 'searching from results page', :vcr do
     end
 
     it 'displays the name of the location as a link' do
-      location_url = '/organizations/sanmaceo-example-agency/' \
+      location_url = '/locations/sanmaceo-example-agency/' \
                      'san-maceo-agency?keyword=maceo&' \
                      'location=&org_name=&utf8=%E2%9C%93'
       expect(page).to have_link('San Maceo Agency', href: location_url)
@@ -117,7 +117,7 @@ feature 'searching from results page', :vcr do
 
   context 'when search contains invalid parameters' do
     it 'displays a helpful error message' do
-      visit '/organizations?location=94403&radius=foo'
+      visit '/locations?location=94403&radius=foo'
       expect(page).
         to have_content('That search was improperly formatted.')
     end

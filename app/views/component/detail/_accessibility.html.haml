@@ -1,10 +1,10 @@
-- if org[:accessibility].present?
+- if location[:accessibility].present?
   %section{:class=>css_class_format('accessibility')}
     - if defined? iconclass
       %i{:class=>iconclass}
     %h1 Accessibility Options:
     %ul
-      - org.accessibility.sort.each do |accessibility_option|
+      - location.accessibility.sort.each do |accessibility_option|
         %li
           %span
             = accessibility_option

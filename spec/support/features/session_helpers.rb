@@ -19,27 +19,27 @@ module Features
 
     # Perform a search that returns 1 result
     def search_for_maceo
-      visit('/organizations?keyword=maceo')
+      visit('/locations?keyword=maceo')
     end
 
     # Visit details page
     def visit_test_location
-      visit('/organizations/sanmaceo-example-agency/san-maceo-agency')
+      visit('/locations/sanmaceo-example-agency/san-maceo-agency')
     end
 
     # Perform search that returns 1 result that has no address
     def search_for_location_without_address
-      visit('organizations?org_name=Location+with+no+phone')
+      visit('locations?org_name=Location+with+no+phone')
     end
 
     # Visit details page that has no address
     def visit_location_with_no_address
-      visit('organizations/location-with-no-phone')
+      visit('locations/location-with-no-phone')
     end
 
     # Perform a search that returns no results
     def search_for_no_results
-      visit('/organizations?keyword=asdfdsggfdg')
+      visit('/locations?keyword=asdfdsggfdg')
     end
 
     # navigation helpers

@@ -1,18 +1,18 @@
-- if org[field].present?
+- if service[field].present?
   %section{:class=>css_class_format(field.to_s)}
     - if defined? iconclass
       %i{ class: iconclass }
     - if defined? stitle
       - if stitle.present?
         %h1 #{stitle}:
-    - if org[field].kind_of?(Array)
+    - if service[field].kind_of?(Array)
       %ul
-        - org[field].sort.each do |f|
+        - service[field].sort.each do |f|
           %li
             %span
               - if f.kind_of?(Array)
                 %ul
-                  - org[field].sort.each do |sf|
+                  - service[field].sort.each do |sf|
                     %li
                       %span
                         = sf
@@ -20,4 +20,4 @@
                 = f
     - else
       %span
-        = org[field]
+        = service[field]
