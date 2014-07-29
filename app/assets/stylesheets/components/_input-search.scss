@@ -25,7 +25,7 @@
     height: 45px;
     padding: 3px;
     padding-left: 45px;
-    padding-right: 6px;
+    padding-right: 25px;
     width: 100%;
     vertical-align: bottom;
 
@@ -38,7 +38,7 @@
     color: $white;
   }
 
-  > button
+  > .button-icon
   {
     cursor: pointer;
     background: none;
@@ -107,7 +107,7 @@
     color: $black;
   }
 
-  > button
+  > .button-icon
   {
     position: absolute;
     top: 0;
@@ -181,7 +181,7 @@
 
   > .filter-input-group
   {
-    > button
+    > .button-icon
     {
       font-size: $font_size_110;
       position: absolute;
@@ -266,5 +266,48 @@
         color: $search-button-fa-hover-color;
       }
     }
+  }
+}
+
+// Clearable input fields have a (x) that can be clicked for clearing the
+// field's content.
+.clearable
+{
+  position: relative;
+
+  &:hover
+  {
+    .button-close {
+      color: rgba($black, .4);
+    }
+  }
+
+  .button-close
+  {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    margin-top: -15px;
+
+    color: $greyscale_midtone; // IE Fallback
+    color: rgba($black, .1);
+    font-size: $font_size_110;
+
+    border-collapse: collapse;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .button-close:after,
+  .button-close::after
+  {
+    content: "×";
+  }
+
+  .button-close:hover
+  {
+    color: $black;
+    cursor: pointer;
   }
 }

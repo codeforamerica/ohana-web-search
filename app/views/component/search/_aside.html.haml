@@ -2,10 +2,10 @@
   %section#search-box
     = form_tag('/organizations', method: :get, id: 'search-form') do
       %section#keyword-search-box
-        %div.input-search-small
-          = button_tag(type: 'submit', name: nil, id: 'find-btn', title: 'Search') do
+        %div.input-search-small.clearable
+          = button_tag(type: 'submit', name: nil, id: 'find-btn', class: 'button-icon', title: 'Search') do
             %i{ class: 'fa fa-search' }
-          = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.results_page_keyword_search'), list: 'search-keywords'
+          = search_field_tag :keyword, params[:keyword], autocomplete: 'off', placeholder: t('placeholders.results_page_keyword_search')
 
       %section#search-options
         = render 'component/search/location'
@@ -13,10 +13,10 @@
 
       %ul#search-controls
         %li
-          = button_tag(type:'submit', name: nil, class: 'update-btn button-small') do
+          = button_tag(type:'submit', name: nil, class: 'button-small update-btn') do
             %i{ class: 'fa fa-refresh' }
             = t('buttons.update_search_results')
         %li
-          = button_tag(type: 'reset', name: nil, id: 'reset-btn', class: 'reset-btn button-small') do
+          = button_tag(type: 'reset', name: nil, id: 'reset-btn', class: 'button-small reset-btn') do
             %i{ class: 'fa fa-times-circle' }
             = t('buttons.clear_search_fields')
