@@ -57,6 +57,11 @@ the instructions in that file carefully.
 #### Customizing the map marker graphics
 The root `graphics` folder contains source files for images in the application. In this directory you can find an Adobe Illustrator source file for the Google map marker graphics. With this file you can adjust the map marker appearance by making changes and exporting and overwriting the files in `/app/assets/images/markers`. The Google map appears on the search results and location details pages.
 
+#### Adding JavaScript code
+Ohana Web Search doesn't use the default `application.js` manifest file for loading JavaScript files that may be
+found in a default Rails install. Instead it uses a modular JavaScript pattern through the [requirejs-rails gem](https://github.com/jwhitley/requirejs-rails). More information about this setup can be found in the modified
+[application.js][applicationjs] file and the [RequireJS configuration][requirejsconfig] file.
+
 
 ### Run the app
 Start the app locally on port 4000:
@@ -70,3 +75,5 @@ The `-p` option allows you to specify which port you want to run the server on. 
 Please make sure you are using `lvh.me` instead of `localhost` to be able to test the translation feature. Read more about [lvh.me](http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme).
 
 [admin]: https://github.com/codeforamerica/ohana-api-admin
+[applicationjs]: https://github.com/codeforamerica/ohana-web-search/blob/master/app/assets/javascripts/application.js
+[requirejsconfig]: https://github.com/codeforamerica/ohana-web-search/blob/master/config/requirejs.yml
