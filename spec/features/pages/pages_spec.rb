@@ -1,6 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-# checks for correct page titles of site pages
 feature 'Site Pages' do
 
   scenario 'when visiting about page directly' do
@@ -18,5 +17,4 @@ feature 'Site Pages' do
     search_for_maceo
     looks_like_results
   end
-
 end

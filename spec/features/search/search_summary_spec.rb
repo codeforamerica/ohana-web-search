@@ -1,6 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-# Checks for the search results summary
 feature 'Search summary' do
 
   scenario 'when visiting search results page that has results', :vcr do

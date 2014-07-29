@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe FeedbackMailer do
   context 'with an email address filled out' do
