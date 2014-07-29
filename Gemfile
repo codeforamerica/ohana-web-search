@@ -89,7 +89,5 @@ group :test do
 end
 
 group :development, :test do
-  # Enable teaspoon to use JasmineJS for performing unit testing on JS code.
-  # gem 'teaspoon'
   gem 'rspec-rails', '>= 2.14.2'
 end
