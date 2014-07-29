@@ -5,7 +5,9 @@ Coveralls.wear!('rails')
 
 ENV['RAILS_ENV'] ||= 'test'
 ENV['TZ'] = 'America/Los_Angeles'
+
 require File.expand_path('../../config/environment', __FILE__)
+require 'spec_helper'
 require 'rspec/rails'
 require 'email_spec'
 
@@ -13,28 +15,16 @@ require 'email_spec'
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-require 'capybara/rails'
-# require 'capybara/poltergeist'
-# Capybara.register_driver :poltergeist do |app|
-#   Capybara::Poltergeist::Driver.new(app, :js_errors => false)
-# end
-Capybara.configure do |config|
-  config.javascript_driver = :webkit
-  config.default_wait_time = 30
-end
-
 RSpec.configure do |config|
-  # Session helpers - For Capybara.
+  # Helper methods for use with Capybara feature specs.
   config.include Features::SessionHelpers, type: :feature
+
   config.include DetailFormatHelper
-  config.include(EmailSpec::Helpers)
-  config.include(EmailSpec::Matchers)
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
 
-  # If true, the base class of anonymous controllers will be inferred
-  # automatically. This will be the default behavior in future versions of
-  # rspec-rails.
-  config.infer_base_class_for_anonymous_controllers = false
-
-  # Automatically add type metadata to specs based on their filesystem location.
+  # rspec-rails 3+ will no longer automatically infer an example group's spec
+  # type from the file location. You can explicitly opt in to this feature by
+  # uncommenting the setting below.
   config.infer_spec_type_from_file_location!
 end
