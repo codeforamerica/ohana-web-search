@@ -6,7 +6,7 @@ module Features
       fill_in 'keyword', with: options[:keyword]
       fill_in 'location', with: options[:location]
       fill_in 'org_name', with: options[:org_name]
-      find('#find-btn').click
+      find('#button-search').click
     end
 
     # Search from homepage.
@@ -14,7 +14,7 @@ module Features
     def search_from_home(options = {})
       visit('/')
       fill_in 'keyword', with: options[:keyword]
-      find('#find-btn').click
+      find('#button-search').click
     end
 
     # Perform a search that returns 1 result

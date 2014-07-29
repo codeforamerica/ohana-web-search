@@ -102,7 +102,7 @@ feature 'searching from results page', :vcr do
   context 'when clicking the reset button' do
     xit 'clears out all the search input fields', :js do
       search(keyword: 'clinic', location: '94403', org_name: 'samaritan')
-      find_by_id('reset-btn').click
+      find_by_id('button-reset').click
 
       using_wait_time 5 do
         expect(find_field('keyword').value).to eq ''
@@ -110,7 +110,7 @@ feature 'searching from results page', :vcr do
         expect(find_field('org_name').value).to eq ''
       end
 
-      find('#find-btn').click
+      find('#button-search').click
       expect(page).to have_content('Fair Oaks Adult Activity Center')
     end
   end

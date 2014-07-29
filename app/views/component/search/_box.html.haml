@@ -1,4 +1,4 @@
-= form_tag('/organizations', method: :get, id: 'search-form') do
+= form_tag('/organizations', method: :get, id: 'form-search') do
   %section#search-box
     %div
       %div
@@ -7,7 +7,7 @@
           %div.input-search-big
             = search_field_tag :keyword, params[:keyword], autocomplete: 'off', placeholder: t('placeholders.homepage_keyword_search')
 
-            = button_tag(type: 'submit', name: nil, id: 'find-btn', class: 'button-icon', title: 'Search') do
+            = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Search') do
               %i{ class: 'fa fa-search' }
               %span
                 = t('buttons.homepage_search')
