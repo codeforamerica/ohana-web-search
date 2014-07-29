@@ -1,4 +1,4 @@
-HumanServicesFinder::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   config.middleware.use '::Rack::Auth::Basic' do |u, p|
@@ -40,8 +40,7 @@ HumanServicesFinder::Application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
-  # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  # `config.assets.version` and `config.assets.precompile` have moved to config/initializers/assets.rb
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -75,12 +74,6 @@ HumanServicesFinder::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
-
-  # Precompile additional assets.
-  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile << "*.js"
-  # Include Internet Explorer polyfills.
-  config.assets.precompile << %w( vendor.js ie8.js ie9.js )
 
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised

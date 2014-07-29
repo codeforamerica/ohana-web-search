@@ -1,4 +1,4 @@
-HumanServicesFinder::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Thanks to the "rack-rewrite" gem, the code in lines 38-52 will redirect all
@@ -55,7 +55,7 @@ HumanServicesFinder::Application.configure do
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
-  # your application in memory, allowing both thread web servers
+  # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
@@ -86,8 +86,7 @@ HumanServicesFinder::Application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
-  # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  # `config.assets.version` and `config.assets.precompile` have moved to config/initializers/assets.rb
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -122,12 +121,6 @@ HumanServicesFinder::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Precompile additional assets.
-  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile << "*.js"
-  # Include Internet Explorer polyfills.
-  config.assets.precompile << %w(vendor.js ie8.js ie9.js)
-
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.default_url_options = { host: 'ohana.herokuapp.com' }
@@ -149,7 +142,7 @@ HumanServicesFinder::Application.configure do
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation can not be found).
+  # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
@@ -161,4 +154,6 @@ HumanServicesFinder::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
 end
