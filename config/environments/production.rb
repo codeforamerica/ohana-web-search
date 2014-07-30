@@ -1,7 +1,7 @@
-HumanServicesFinder::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Thanks to the "rack-rewrite" gem, the code in lines 38-43 will redirect all
+  # Thanks to the "rack-rewrite" gem, the code in lines 38-52 will redirect all
   # URLs that don't come from the domain specified in the canonica_url variable
   # to the canonical URL equivalent. Full URLs are preserved
   # (i.e. including path and parameters).
@@ -9,7 +9,7 @@ HumanServicesFinder::Application.configure do
   # This is necessary if search engines have been indexing your site while it
   # was hosted on herokuapp.com, and you later set up a custom domain name.
   # Adding a custom domain on Heroku does not automatically redirect the heroku
-  # domain to your custome domain, which leaves your site accessible via two
+  # domain to your custom domain, which leaves your site accessible via two
   # different domain names, which major search engines consider duplicate
   # content and can count against you.
   # By setting up this permanent redirect (via the HTTP 301 status code),
@@ -31,7 +31,7 @@ HumanServicesFinder::Application.configure do
   # locally by running this command from the directory of your app:
   # export CANONICAL_URL=smc-connect.org
   #
-  # Then copy and paste lines 38-43 from this file into
+  # Then copy and paste lines 38-52 from this file into
   # config/environments/development.rb and restart your server.
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
@@ -46,8 +46,8 @@ HumanServicesFinder::Application.configure do
     else
       canonical_url = ENV['CANONICAL_URL']
 
-      r301 %r{.*}, 'http://#{canonical_url}$&',
-           if: proc { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" }
+      r301(/.*/, "http://#{canonical_url}$&",
+           if: proc { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" })
     end
   end
 
@@ -55,7 +55,7 @@ HumanServicesFinder::Application.configure do
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
-  # your application in memory, allowing both thread web servers
+  # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
@@ -86,8 +86,7 @@ HumanServicesFinder::Application.configure do
   # Generate digests for assets URLs.
   config.assets.digest = true
 
-  # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.0'
+  # `config.assets.version` and `config.assets.precompile` have moved to config/initializers/assets.rb
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -122,12 +121,6 @@ HumanServicesFinder::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Precompile additional assets.
-  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-  # config.assets.precompile << "*.js"
-  # Include Internet Explorer polyfills.
-  config.assets.precompile << %w(vendor.js ie8.js ie9.js)
-
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.default_url_options = { host: 'ohana.herokuapp.com' }
@@ -149,7 +142,7 @@ HumanServicesFinder::Application.configure do
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
-  # the I18n.default_locale when a translation can not be found).
+  # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners.
@@ -160,5 +153,4 @@ HumanServicesFinder::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
 end

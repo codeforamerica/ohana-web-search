@@ -1,31 +1,14 @@
 class OrganizationsController < ApplicationController
   include CurrentLanguage
-
-  before_action :check_location_id, only: :show
-
   include ActionView::Helpers::TextHelper
   include ResultSummaryHelper
 
-  # search results view
   def index
     translator = KeywordTranslator.new(
       params[:keyword], current_language, 'en', 'text')
     params[:keyword] = translator.translated_keyword
 
-    # initialize query. Content may be blank if no results were found.
-    begin
-      @orgs = Ohanakapa.search('search', params)
-    rescue Ohanakapa::ServiceUnavailable
-      redirect_to "#{root_url}",
-                  alert: 'Sorry, we are experiencing issues with search.
-                         Please try again later.' && return
-    rescue Ohanakapa::BadRequest => e
-      if e.to_s.include?('missing')
-        @orgs = Ohanakapa.locations(params)
-      else
-        @orgs = Ohanakapa.search('search', keyword: 'asdfasg')
-      end
-    end
+    @orgs = Organization.search(params)
 
     # Populate the keyword search field with the original term
     # as typed by the user, not the translated word.
@@ -55,17 +38,15 @@ class OrganizationsController < ApplicationController
     # and for display in the page title (plain)
     @map_search_summary_html = format_map_summary
 
-    expires_in 30.minutes, public: true
+    # expires_in 30.minutes, public: true
     if stale?(etag: @orgs, public: true)
       respond_to do |format|
-        format.html # index.html.haml
+        format.html
       end
     end
   end
 
-  # organization details view
   def show
-    # retrieve specific organization's details
     id = params[:id].split('/')[-1]
     @org = Organization.get(id)
 
@@ -77,25 +58,11 @@ class OrganizationsController < ApplicationController
       @keywords = @org.services.map { |s| s[:keywords] }.flatten.compact.uniq
     end
 
-    # To disable or remove the Result list button on details page
-    # when visiting location directly
-    # @referer = request.env['HTTP_REFERER']
-
-    # respond to direct and ajax requests
-    expires_in 30.minutes, public: true
+    # expires_in 30.minutes, public: true
     if stale?(etag: @org, public: true)
       respond_to do |format|
-        format.html # show.html.haml
+        format.html
       end
     end
-  end
-
-  private
-
-  # If the location id is invalid, redirect to home page
-  # and display an alert (TODO), or do something else.
-  def check_location_id
-    id = params[:id].split('/')[-1]
-    redirect_to root_path unless Organization.get(id)
   end
 end

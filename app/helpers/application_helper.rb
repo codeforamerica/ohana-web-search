@@ -123,7 +123,7 @@ module ApplicationHelper
          'Computer Class', 'GED/High-School Equivalency', 'Interview Training',
          'Resume Development', 'Skills Assessment', 'Specialized Training',
          'Supported Employment', 'Workplace Rights'
-      ],
+        ],
       'Legal' =>
         ['Advocacy & Legal Aid', 'Adoption & Foster Care',
          'Adoption & Foster Placement', 'Adoption Planning',

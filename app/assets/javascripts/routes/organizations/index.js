@@ -1,9 +1,9 @@
-require(['app/app-init',
-         'search/search-init',
-         'result/result-init',
-         'domReady!'],
-  function () {
+// Manages initialization of scripts for the search results page.
+require([
+  'app/app-init',
+  'search/search-init',
+  'result/result-init'
+],
+function () {
   'use strict';
-  // This class is added so the tests know the async scripts are loaded.
-  document.body.classList.add('require-loaded');
 });

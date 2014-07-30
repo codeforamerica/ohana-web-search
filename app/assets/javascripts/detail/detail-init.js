@@ -2,14 +2,16 @@ require([
   'detail/detail-map-manager',
   'detail/character-limiter',
   'search/header-manager'
-], function (map, cl, header) {
+],
+function (map, cl, header) {
   'use strict';
 
   map.init();
   cl.init();
   header.init();
 
-}, function (err) {
+},
+function (err) {
   'use strict';
   //The error callback.
   //The `err` object has a list of modules that failed.
@@ -23,7 +25,8 @@ require([
     'detail/no-detail-map-manager',
     'detail/character-limiter',
     'search/header-manager'
-  ], function (map,cl,header) {
+  ],
+  function (map,cl,header) {
 
     map.init();
     cl.init();

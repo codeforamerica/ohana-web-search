@@ -1,9 +1,10 @@
 //= depend_on_asset 'markers/marker_large.png'
 // Manages location detail view Google Map.
-define(['async!https://maps.googleapis.com/maps/api/' +
-        'js?v=3.exp&sensor=false!callback',
-        'domReady!'],
-        function () {
+define([
+  'domReady!',
+  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+],
+function () {
   'use strict';
 
   var _map;

@@ -1,7 +1,9 @@
 bundler_args: "--without development:production"
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+install: bin/wad
+script: bundle exec rspec
 language: ruby
 rvm:
 - 2.1.1
@@ -17,4 +19,6 @@ notifications:
   webhooks: http://cfa-project-monitor.herokuapp.com/projects/67f80d53-afb0-4344-bd40-2644f55a4462/status
 env:
   global:
-    - OHANA_API_ENDPOINT=http://ohana-api-test.herokuapp.com/api
+  - S3_BUCKET_NAME=gems-for-travis
+  - OHANA_API_ENDPOINT=http://ohana-api-test.herokuapp.com/api
+  - secure: TbS1XZyUYTYm9YjW2ATWk8LHaVwWQO5Onm81hkWM/FZasUfk2gbVOMuXTag+2Wif5cBd2dhVFaLZmROdqaXk1U52m/s6snfWNqJa1olEA0GEWFLwimvouAsUpl4JB1jKTiIN81MUdBv4espLYD/f5sbM5/a4ZoYPUXutfI+YItg=

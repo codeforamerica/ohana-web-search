@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '~> 4.0.4'
+gem 'rails', '~> 4.1.4'
 
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.3'
 
 # Compass tools for use with SCSS.
 gem 'compass-rails', '>= 1.1.7'
@@ -47,8 +47,6 @@ gem 'google-api-client', '>= 0.7.1'
 # App config and ENV variables for heroku.
 gem 'figaro', '~> 1.0.0.rc1'
 
-gem 'coveralls', '>= 0.7.0', require: false
-
 # Handles logic behind Pagination UI component.
 gem 'kaminari'
 
@@ -74,7 +72,7 @@ group :development do
 end
 
 group :test do
-  # gem 'launchy', '>= 2.2.0'
+  gem 'coveralls', require: false
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
 
@@ -89,7 +87,5 @@ group :test do
 end
 
 group :development, :test do
-  # Enable teaspoon to use JasmineJS for performing unit testing on JS code.
-  # gem 'teaspoon'
-  gem 'rspec-rails', '>= 2.14.2'
+  gem 'rspec-rails', '~> 3.0.0'
 end

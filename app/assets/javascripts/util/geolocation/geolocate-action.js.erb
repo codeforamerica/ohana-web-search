@@ -1,10 +1,11 @@
 // Manages geolocation action, which can be associated with a button.
-define(['util/geolocation/geolocator',
-        'app/alert-manager',
-        'domReady!',
-        'async!https://maps.googleapis.com/maps/api/' +
-        'js?v=3.exp&sensor=false!callback'],
-        function (geo, alert) {
+define([
+  'util/geolocation/geolocator',
+  'app/alert-manager',
+  'domReady!',
+  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+],
+function (geo, alert) {
   'use strict';
 
   var _locateTarget; // locate current location button.
@@ -40,7 +41,9 @@ define(['util/geolocation/geolocator',
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alert.show('Your location could not be determined!');
+        alert.show("Your location could not be determined!");
+        var regularText = _locateTarget.getAttribute('data-regular-text');
+        _locateTarget.querySelector('span').innerHTML = regularText;
       }
     };
 

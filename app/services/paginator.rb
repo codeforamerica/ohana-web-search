@@ -1,13 +1,10 @@
 class Paginator
   attr_reader :response, :params
+  delegate :headers, to: :response
 
   def initialize(response, params)
     @response = response
     @params = params
-  end
-
-  def headers
-    response.headers
   end
 
   def total_count

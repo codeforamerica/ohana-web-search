@@ -1,4 +1,5 @@
-define(function () {
+define(
+function () {
   'use strict';
 
   // Check if any object is empty of parameters.

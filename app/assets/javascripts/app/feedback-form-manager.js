@@ -1,6 +1,9 @@
-// Manages behavior of feedback form
-define(['util/util', 'jquery'],
-  function (util, $) {
+// Manages behavior of feedback form.
+define([
+  'util/util',
+  'jquery'
+],
+function (util, $) {
   'use strict';
 
   var _sendBtn;
