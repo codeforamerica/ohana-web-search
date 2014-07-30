@@ -55,6 +55,7 @@ class OrganizationsController < ApplicationController
 
     if @org[:services].present?
       @categories = @org.services.map { |s| s[:categories] }.flatten.compact
+      @keywords = @org.services.map { |s| s[:keywords] }.flatten.compact.uniq
     end
 
     # expires_in 30.minutes, public: true

@@ -1,7 +1,7 @@
 - if org[:languages].present?
-  %section{:class=>css_class_format('languages')}
+  %section{ class: css_class_format('languages') }
     - if defined? iconclass
-      %i{:class=>iconclass}
+      %i{ class: iconclass }
     %h1 Languages Spoken:
     %ul
       - org.languages.sort.each do |lang|

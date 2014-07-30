@@ -5,16 +5,16 @@
       = org.mail_address.attention
     %br
 
-  %span.street-address{:itemprop=>"streetAddress"}
+  %span.street-address{ itemprop: 'streetAddress' }
     = superscript_ordinals(org.mail_address.street)
   %br
 
-  %span.city{:itemprop=>"addressLocality"}><
+  %span.city{ itemprop: 'addressLocality' }><
     = org.mail_address.city
   = ','
 
-  %span.state{:itemprop=>"addressRegion"}
+  %span.state{ itemprop: 'addressRegion' }
     = org.mail_address.state
 
-  %span.zipcode{:itemprop=>"postalCode"}
+  %span.zipcode{ itemprop: 'postalCode' }
     = org.mail_address.zip
