@@ -3,5 +3,5 @@
   = content_tag :div, '', class: 'filter-input-group clearable' do
     = button_tag(type: 'submit', name: nil, class: 'button-icon') do
       = content_tag :i, '', class: 'fa fa-map-marker'
-    = search_field_tag :location, params[:location], autocomplete: 'off', placeholder: t('placeholders.address_search')
+    = search_field_tag :location, params[:location], placeholder: t('placeholders.address_search')
   = render 'component/search/geolocate', context_class: 'input-search-filter-option'
