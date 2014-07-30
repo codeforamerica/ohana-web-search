@@ -7,7 +7,7 @@ require([
   'app/popup-manager',
   'app/alert-manager'
 ],
-  function (gt, pm, alert) {
+function (gt, pm, alert) {
   'use strict';
 
   // Initialize the google translate manager.
