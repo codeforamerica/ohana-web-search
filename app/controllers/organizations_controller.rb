@@ -75,7 +75,6 @@ class OrganizationsController < ApplicationController
     if @org[:services].present?
       @categories = @org.services.map { |s| s[:categories] }.flatten.compact
       @keywords = @org.services.map { |s| s[:keywords] }.flatten.compact.uniq
-      @service_areas = @org.services.map { |s| s[:service_areas] }.flatten.compact.uniq
     end
 
     # To disable or remove the Result list button on details page

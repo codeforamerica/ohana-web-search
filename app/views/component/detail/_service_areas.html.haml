@@ -1,10 +1,8 @@
-- if @service_areas.present?
+- if service[:service_areas].present?
   %section{ class: 'service-areas' }
-    - if defined? stitle
-      - if stitle.present?
-        %h1 #{stitle}:
+    %h1= t('service_fields.service_areas')
     %ul
-      - @service_areas.sort.each do |f|
+      - service.service_areas.sort.each do |f|
         %li
           %span
             = f
