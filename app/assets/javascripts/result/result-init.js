@@ -1,11 +1,15 @@
-require(['result/result-map-manager', 'search/header-manager'],
-  function (map, header) {
+require([
+  'result/result-map-manager',
+  'search/header-manager'
+],
+function (map, header) {
   'use strict';
 
   map.init();
   header.init();
 
-}, function (err) {
+},
+function (err) {
   'use strict';
   //The error callback.
   //The err object has a list of modules that failed.

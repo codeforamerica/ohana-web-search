@@ -1,6 +1,9 @@
-// manages behavior of popups
-define(['util/util', 'app/feedback-form-manager'],
-  function (util, feedback) {
+// Manages behavior of popups.
+define([
+  'util/util',
+  'app/feedback-form-manager'
+],
+function (util, feedback) {
   'use strict';
 
   // List of popups on the page.

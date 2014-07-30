@@ -1,6 +1,8 @@
-// manages homepage scripts
-require(['util/geolocation/geolocate-action'],
-  function (geo) {
+// Manages home page script initialization.
+require([
+  'util/geolocation/geolocate-action'
+],
+function (geo) {
   'use strict';
 
   // Initialize the geolocation button on the homepage.

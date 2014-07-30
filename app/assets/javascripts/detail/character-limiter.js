@@ -1,7 +1,8 @@
 // Manages limiting the characters of the _description on the
 // details page and providing a more/less link to toggle
 // showing or hiding excess text.
-define( function () {
+define(
+function () {
   'use strict';
 
   // 'Constants'

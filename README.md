@@ -1,7 +1,6 @@
 #Ohana Web Search
 
-[![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search)
-[![Stories in Ready](https://badge.waffle.io/codeforamerica/ohana-web-search.png?label=ready)](https://waffle.io/codeforamerica/ohana-web-search)
+[![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search?branch=master) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search) [![Code Climate](https://codeclimate.com/github/codeforamerica/ohana-web-search.png)](https://codeclimate.com/github/codeforamerica/ohana-web-search)
 
 Ohana Web Search is one of two Rails apps that come out of the box with the [Ohana API](https://github.com/codeforamerica/ohana-api) platform. The other app is an [admin interface](https://github.com/codeforamerica/ohana-api-admin) that allows people to update the data. Both apps also serve as examples of what can be built on top of the social services data that the Ohana API exposes.
 

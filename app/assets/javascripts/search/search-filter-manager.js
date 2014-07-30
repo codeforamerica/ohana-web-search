@@ -1,4 +1,4 @@
-// handles search filter functionality
+// Handles search filter functionality.
 define([
   'util/geolocation/geolocate-action',
   'domReady!'
@@ -9,7 +9,7 @@ function (geo) {
   // The form to submit.
   var _searchForm;
 
-  // main module initialization
+  // Main module initialization.
   function init() {
     // Set up geolocation button.
     geo.init('button-geolocate', _geolocationClicked);

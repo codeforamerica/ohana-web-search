@@ -108,19 +108,12 @@ feature 'location details' do
       expect(page).to have_content('Walk in or apply by phone or mail')
     end
 
-    # Wait time not included in the view.
-    # Till we have a consistent meaning for wait time
-    # it's best left out of the front-end view
-    xit 'includes wait info' do
+    it 'includes wait estimate info' do
       expect(page).to have_content('No wait to 2 weeks')
     end
 
-    # Service areas not included in view.
-    # Best to leave this out of the view, this is data that could easily be
-    # wrong and it's better that the client contact the agency and ask for
-    # services and be referred accordingly vs. going off this list.
-    xit 'includes service areas' do
-      expect(page).to have_content('Marin County')
+    it 'includes service areas info' do
+      expect(page).to have_content('San Mateo County')
     end
 
     it 'includes updated time' do
@@ -137,8 +130,27 @@ feature 'location details' do
       end
     end
 
-    it 'includes URLs' do
-      expect(page).to have_link('www.smchealth.org')
+    it 'includes short description' do
+      within '.short-desc' do
+        expect(page).
+          to have_content('[NOTE THIS IS NOT A REAL ENTRY--')
+      end
+    end
+
+    it 'includes description' do
+      expect(page).to have_content('Lorem ipsum')
+    end
+
+    it 'includes transporation info' do
+      expect(page).to have_content('SAMTRANS stops within 1 block')
+    end
+
+    it 'includes hours info' do
+      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    end
+
+    it 'includes languages info' do
+      expect(page).to have_content('Chinese (Cantonese)')
     end
 
     it 'includes accessibility info' do
@@ -154,36 +166,26 @@ feature 'location details' do
       expect(page).to have_link('sanmaceo@co.sanmaceo.ca.us')
     end
 
-    it 'includes hours info' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    it 'includes URLs' do
+      expect(page).to have_link('www.smchealth.org')
     end
 
-    it 'includes languages info' do
-      expect(page).to have_content('Chinese (Cantonese)')
+    it 'includes Physical Address info' do
+      expect(page).to have_content('Avenue of the fellows')
     end
 
     it 'includes Mailing Address info' do
       expect(page).to have_content('Hella Fellas')
     end
 
-    it 'includes description' do
-      expect(page).to have_content('Lorem ipsum')
-    end
-
-    it 'includes short description' do
-      within '.short-desc' do
-        expect(page).
-          to have_content('[NOTE THIS IS NOT A REAL ENTRY--')
-      end
-    end
-
-    it 'includes transporation info' do
-      expect(page).to have_content('SAMTRANS stops within 1 block')
+    xit 'includes keywords' do
+      expect(page).to have_link('Ruby on Rails/MongoDB/Redis')
     end
 
     it 'sets the page title to the location name + site title' do
       expect(page).to have_title('San Maceo Agency | Ohana Web Search')
     end
+
   end
 
   describe 'Edit link' do

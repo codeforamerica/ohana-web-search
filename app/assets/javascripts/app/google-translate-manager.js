@@ -1,6 +1,8 @@
 // Manages behavior of google translate drop-down.
-define(['util/util'],
-  function (util) {
+define([
+  'util/util'
+],
+function (util) {
   'use strict';
 
   var _languages;
