@@ -10,8 +10,8 @@ function (geo) {
   // address is found.
   function locateAction(address) {
     document.getElementById('location').value = address;
-    document.getElementById('search-form').submit();
+    document.getElementById('form-search').submit();
   }
   // Parameters are: button ID, and callback function (see above).
-  geo.init('locate-btn', locateAction);
+  geo.init('button-geolocate', locateAction);
 });

@@ -44,7 +44,7 @@ feature 'page translation', :js do
     xit 'displays a Spanish-language contents' do
       visit('/')
       find_link('Español').click
-      find(:css, '#find-btn').click
+      find(:css, '#button-search').click
       delay # give Google Translate a chance to translate page
       expect(page).to have_content('Mostrando')
     end

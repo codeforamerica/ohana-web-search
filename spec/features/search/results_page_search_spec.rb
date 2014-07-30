@@ -102,7 +102,7 @@ feature 'searching from results page', :vcr do
   context 'when clicking the reset button' do
     xit 'clears out all the search input fields', :js do
       search(keyword: 'clinic', location: '94403', org_name: 'samaritan')
-      find_by_id('reset-btn').click
+      find_by_id('button-reset').click
 
       using_wait_time 5 do
         expect(find_field('keyword').value).to eq ''
@@ -110,7 +110,7 @@ feature 'searching from results page', :vcr do
         expect(find_field('org_name').value).to eq ''
       end
 
-      find('#find-btn').click
+      find('#button-search').click
       expect(page).to have_content('Fair Oaks Adult Activity Center')
     end
   end
@@ -120,6 +120,30 @@ feature 'searching from results page', :vcr do
       visit '/organizations?location=94403&radius=foo'
       expect(page).
         to have_content('That search was improperly formatted.')
+    end
+  end
+
+  context 'when clicking the clear button for keyword', :js do
+    it 'clears the contents of the keyword field' do
+      search(keyword: 'clinic')
+      find('#keyword-search-box').find('.button-close').click
+      expect(find_field('keyword').value).to eq ''
+    end
+  end
+
+  context 'when clicking the clear button for location', :js do
+    it 'clears the contents of the location field' do
+      search(location: '94403')
+      find('#location-options').find('.button-close').click
+      expect(find_field('location').value).to eq ''
+    end
+  end
+
+  context 'when clicking the clear button for agency', :js do
+    it 'clears the contents of the agency field' do
+      search(org_name: 'samaritan')
+      find('#org-name-options').find('.button-close').click
+      expect(find_field('org_name').value).to eq ''
     end
   end
 end

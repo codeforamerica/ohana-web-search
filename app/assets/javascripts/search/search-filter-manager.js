@@ -12,14 +12,14 @@ function (geo) {
   // Main module initialization.
   function init() {
     // Set up geolocation button.
-    geo.init('locate-btn', _geolocationClicked);
+    geo.init('button-geolocate', _geolocationClicked);
 
     // Capture form submission.
-    _searchForm = document.getElementById('search-form');
+    _searchForm = document.getElementById('form-search');
 
     // Hook reset button on the page and listen for a click event.
-    var resetBtn = document.getElementById('reset-btn');
-    resetBtn.addEventListener('click', _resetClicked,false);
+    var resetButton = document.getElementById('button-reset');
+    resetButton.addEventListener('click', _resetClicked,false);
   }
 
   // The geolocation button was clicked in the location filter.
