@@ -44,7 +44,7 @@
 //
 // // ModuleA
 // require([
-//   'path/to/moduleB'
+//   'path/to/moduleB',
 //   'path/to/moduleC'
 // ],
 // function (moduleB, moduleC) {
