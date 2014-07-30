@@ -40,22 +40,35 @@ To submit a code change to the project for review by the team:
 
 1. **Setup:** Make sure you have the [prerequisites installed][prerequisites]
 on your computer.
-1. **Fork:** [Fork this repository and clone it on your computer][fork].
-2. **Install Dependencies:** From the root directory of the app, run `bundle`.
-3. **Branch:** [Create a topic branch][branch] for the one specific issue
+
+2. **Fork:** [Fork this repository and clone it on your computer][fork].
+
+3. **Install Dependencies:** From the root directory of the app, run `bundle`.
+
+4. **Branch:** [Create a topic branch][branch] for the one specific issue
 you're addressing.
-4. **Write Specs:** Add specs for your unimplemented feature or bug fix in the
+
+5. **Write Specs:** Add specs for your unimplemented feature or bug fix in the
 `/spec/` directory.
-5. **Test to fail:** Run `rspec`. If your specs pass, return to **step 3**.
-In the spirit of Test-Driven Development, you want to write a failing test
-first, then implement the feature or bug fix to make the test pass.
-6. **Implement:** Implement your feature or bug fix. Please follow the
+
+6. **Test to fail:** Run `spring rspec`. If your specs pass, return to
+**step 5**. In the spirit of Test-Driven Development, you want to write a
+failing test first, then implement the feature or bug fix to make the test
+pass.
+
+7. **Implement:** Implement your feature or bug fix. Please follow the
 [community-driven Ruby Style Guide][style_guide]*.
-7. **Test to pass:** Run `rspec`. If your specs fail, return to **step 5**.
-8. _(If applicable)_ **Clean up JavaScript code:** Run `rake jshint` to check
+
+8. **Test to pass:** Run `script/test` to run the test suite in addition to the
+style checkers. If your specs fail and/or style offenses are reported, return
+to **step 7**.
+
+9. _(If applicable)_ **Clean up JavaScript code:** Run `rake jshint` to check
 JavaScript code quality.
-9. **Commit changes:** Add, commit, and push your changes.
-10. **Pull request:** [Submit a pull request][pr] to send your changes to this
+
+10. **Commit changes:** Add, commit, and push your changes.
+
+11. **Pull request:** [Submit a pull request][pr] to send your changes to this
 repository for review.
 
 _*If you use Sublime Text, please make sure to set your tab indentation to 2
@@ -65,9 +78,9 @@ plugin and set it to [Trim On Save][trim_on_save]._
 [donate]: http://codeforamerica.org/support-us/
 [issue_tracker]: https://github.com/codeforamerica/ohana-web-search/issues
 [issue_search]: https://github.com/codeforamerica/ohana-web-search/search?ref=cmdform&type=Issues
-[prerequisites]: https://github.com/codeforamerica/ohana-web-search#prerequisites
+[prerequisites]: https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md#install-prerequisites
 [fork]: http://help.github.com/fork-a-repo/
-[branch]: https://help.github.com/articles/fork-a-repo#create-branches
+[branch]: https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
 [style_guide]: https://github.com/bbatsov/ruby-style-guide
 [pr]: http://help.github.com/send-pull-requests/
 [trailing_spaces]: https://github.com/SublimeText/TrailingSpaces
