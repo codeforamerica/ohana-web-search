@@ -47,8 +47,6 @@ gem 'google-api-client', '>= 0.7.1'
 # App config and ENV variables for heroku.
 gem 'figaro', '~> 1.0.0.rc1'
 
-gem 'coveralls', '>= 0.7.0', require: false
-
 # Handles logic behind Pagination UI component.
 gem 'kaminari'
 
@@ -74,7 +72,7 @@ group :development do
 end
 
 group :test do
-  # gem 'launchy', '>= 2.2.0'
+  gem 'coveralls', require: false
   gem 'capybara', '>= 2.2.1'
   gem 'json', '>= 1.8.1'
 
