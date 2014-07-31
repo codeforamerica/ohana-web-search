@@ -59,6 +59,10 @@ feature 'searching from results page', :vcr do
     it 'includes the .no-results selector' do
       expect(page).to have_selector('.no-results')
     end
+
+    it 'includes the homepage links' do
+      expect(page).to have_link 'Health Insurance'
+    end
   end
 
   it 'allows searching for a location' do
