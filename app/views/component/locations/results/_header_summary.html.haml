@@ -1,16 +1,16 @@
 %div
   %div.left-column
     %span.static-content><
-      - if @array_for_maps.size != 0
+      - if @search.map_data.size != 0
         %a#map-view-control{ :href => '#', :class=>"button-utility button-map-zoom"}
           %i{ :class => "fa fa-plus-square" }
           Larger map
     %p.search-summary
       %span
-        = page_entries_info @locations_array, entry_name: 'result'
+        = page_entries_info @search.results, entry_name: 'result'
 
       %span.map-summary.static-content
-        = @map_search_summary_html if @array_for_maps.size != 0
+        = map_summary if @search.map_data.size != 0
 
   %div.right-column
     %div.floating-content.hide><
@@ -19,4 +19,4 @@
           %i{ class: 'fa fa-chevron-up' }
           Top
 
-    = paginate @locations_array
+    = paginate @search.results

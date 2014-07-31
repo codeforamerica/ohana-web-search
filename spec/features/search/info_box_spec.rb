@@ -3,12 +3,12 @@ require 'rails_helper'
 feature 'info box', :vcr do
 
   scenario "with keyword that doesn't match info box synonym" do
-    visit('/organizations?keyword=food')
+    visit('/locations?keyword=food')
     expect(page).not_to have_selector('#terminology')
   end
 
   context 'with keyword that matches info box synonym' do
-    before(:each) { visit('/organizations?keyword=wic') }
+    before(:each) { visit('/locations?keyword=wic') }
 
     it 'displays section with a #terminology id' do
       expect(page).to have_selector('#terminology')
@@ -38,7 +38,7 @@ feature 'info box', :vcr do
 
   context 'when info box does not have an url' do
     it 'does not display the More info link' do
-      visit('/organizations?keyword=snap')
+      visit('/locations?keyword=snap')
       expect(page).not_to have_link('More info...')
     end
   end

@@ -1,5 +1,4 @@
 class Paginator
-  attr_reader :response, :params
   delegate :headers, to: :response
 
   def initialize(response, params)
@@ -16,4 +15,8 @@ class Paginator
             page(params[:page]).
             per(params[:per_page])
   end
+
+  private
+
+  attr_reader :response, :params
 end

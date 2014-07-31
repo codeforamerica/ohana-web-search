@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   # Read more about routing: http://guides.rubyonrails.org/routing.html
 
   root to: 'home#index'
-  resources :organizations, only: [:index]
-  get 'organizations/*id/' => 'organizations#show', :as => 'location'
+  resources :locations, only: [:index]
+  get 'locations/*id/' => 'locations#show', as: 'location'
   get '/about' => 'about#index'
   post '/feedback' => 'about#index'
   get '.well-known/status' => 'status#status'

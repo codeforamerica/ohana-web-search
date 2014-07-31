@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'results page pagination', :vcr do
 
   context 'when there are no results' do
-    before { visit '/organizations?keyword=asdfg' }
+    before { visit '/locations?keyword=asdfg' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
@@ -17,7 +17,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when there is only one result' do
-    before { visit '/organizations?keyword=maceo' }
+    before { visit '/locations?keyword=maceo' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
@@ -31,7 +31,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when there is only one page of results but more than 1 result' do
-    before { visit '/organizations?keyword=youth&per_page=5' }
+    before { visit '/locations?keyword=youth&per_page=5' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
@@ -49,7 +49,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when on first page of more than one page of results' do
-    before { visit '/organizations?keyword=youth' }
+    before { visit '/locations?keyword=youth' }
 
     it 'includes pagination' do
       expect(page).to have_selector('.pagination')
@@ -72,7 +72,7 @@ feature 'results page pagination', :vcr do
 
   context 'when past first page of results but not last page' do
     before(:each) do
-      visit '/organizations?keyword=youth'
+      visit '/locations?keyword=youth'
       go_to_page(2)
     end
 
@@ -94,7 +94,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when on last page of results' do
-    before { visit '/organizations?keyword=youth&page=3' }
+    before { visit '/locations?keyword=youth&page=3' }
 
     it 'does not include a link to the next page' do
       expect(page).not_to have_selector('.next')

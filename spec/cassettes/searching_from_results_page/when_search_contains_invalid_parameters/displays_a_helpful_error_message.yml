@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -84,11 +84,11 @@ http_interactions:
         Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
         Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
         780-7525","number_type":null,"vanity_number":null}]}]'
-    http_version: 
+    http_version:
   recorded_at: Sun, 27 Jul 2014 21:21:29 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=&location=94403&radius=foo
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&radius=foo
     body:
       encoding: US-ASCII
       string: ''
@@ -136,6 +136,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"status":400,"error":"Argument Error","description":"Radius must be
         a Float between 0.1 and 50."}'
-    http_version: 
+    http_version:
   recorded_at: Sun, 27 Jul 2014 21:21:29 GMT
 recorded_with: VCR 2.9.2

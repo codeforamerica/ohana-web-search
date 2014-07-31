@@ -17,7 +17,7 @@ module ApplicationHelper
   # results, we can use the <link> element with the 'rel=canonical' attribute.
 
   # This helper allows us to set the canonical URL for the details page in the
-  # view. See app/views/organizations/show.html.haml
+  # view. See app/views/locations/show.html.haml
   #
   # More info: https://support.google.com/webmasters/answer/139066
   def canonical(url)

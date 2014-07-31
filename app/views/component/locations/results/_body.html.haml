@@ -1,15 +1,15 @@
-= render 'component/organizations/results/header'
+= render 'component/locations/results/header'
 %section#results-entries
   - if info_box_key_corresponding_to_keyword.present?
     %section#terminology
       %div
         = render_info_box(info_box_key_corresponding_to_keyword)
 
-  - if @orgs.present?
-    - if @array_for_maps.size != 0
-      = render 'component/organizations/results/map_view'
+  - if @search.locations.present?
+    - if @search.map_data.size != 0
+      = render 'component/locations/results/map_view'
 
-    = render 'component/organizations/results/list_view'
+    = render 'component/locations/results/list_view'
   - else
     %section.no-results
       %div.message
@@ -21,7 +21,7 @@
           %li
             Scrolling down & choosing a category of service.
           %li
-            %a{:href=>'/organizations'}
+            %a{:href=>'/locations'}
               %i{:class=>'fa fa-times-circle'}
               Clearing all search filters.
     - cache ['taxonomy-list', *taxonomy_terms] do
@@ -30,8 +30,8 @@
           %ul
             - taxonomy_terms.keys.each do |parent|
               %li
-                = link_to parent, "/organizations?category=#{u parent}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{parent}"
+                = link_to parent, "/locations?category=#{u parent}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{parent}"
                 %ul
                   - taxonomy_terms[parent].each do |child|
                     %li
-                      = link_to child, "/organizations?category=#{u child}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{child}"
+                      = link_to child, "/locations?category=#{u child}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{child}"

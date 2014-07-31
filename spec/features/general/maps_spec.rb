@@ -4,7 +4,7 @@ feature 'search results map' do
 
   context 'results have entries that have coordinates', :vcr do
     it 'displays a results list map' do
-      visit('/organizations/')
+      visit('/locations/')
       expect(page).to have_selector('#map-view')
     end
   end

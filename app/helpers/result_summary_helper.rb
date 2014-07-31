@@ -9,9 +9,9 @@ module ResultSummaryHelper
 
   # Formats map result summary text
   # @return [String] Result summary string for display on search results view.
-  def format_map_summary
-    total_results = @orgs.size
-    total_map_markers = @array_for_maps.size
+  def map_summary
+    total_results = @search.locations.size
+    total_map_markers = @search.map_data.size
     if total_map_markers == total_results
       summary = ''
     else

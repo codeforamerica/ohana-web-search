@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe OrganizationsController do
+describe LocationsController do
 
   describe "GET 'index'" do
     it 'returns 200 status code' do
@@ -10,5 +10,4 @@ describe OrganizationsController do
       end
     end
   end
-
 end

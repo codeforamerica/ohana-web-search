@@ -1,13 +1,4 @@
 module DetailFormatHelper
-  # Formats ruby field names in CSS convention format
-  # by converting underscore or space delimiting to dash delimiting
-  # @param name [String] string to format as
-  # @return [String] formatted CSS class name
-  def css_class_format(name)
-    val = name.downcase.sub '_', '-'
-    val.sub ' ', '-'
-  end
-
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields
@@ -28,10 +19,10 @@ module DetailFormatHelper
   end
 
   # Formats address for use in map URLs, image title attributes, etc.
-  # @param org [Object] a JSON object
+  # @param location [Object] a JSON object
   # @return [String] return comma separated address.
-  def address(org)
-    "#{org.address['street']}, #{org.address['city']}, #{org.address['state']} #{org.address['zip']}"
+  def address(location)
+    "#{location.address['street']}, #{location.address['city']}, #{location.address['state']} #{location.address['zip']}"
   end
 
   # Format phone number as (XXX) XXX-XXXX

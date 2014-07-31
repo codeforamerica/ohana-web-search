@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Thanks to the "rack-rewrite" gem, the code in lines 38-52 will redirect all
+  # Thanks to the "rack-rewrite" gem, the code in lines 38-53 will redirect all
   # URLs that don't come from the domain specified in the canonica_url variable
   # to the canonical URL equivalent. Full URLs are preserved
   # (i.e. including path and parameters).
@@ -31,7 +31,7 @@ Rails.application.configure do
   # locally by running this command from the directory of your app:
   # export CANONICAL_URL=smc-connect.org
   #
-  # Then copy and paste lines 38-52 from this file into
+  # Then copy and paste lines 38-53 from this file into
   # config/environments/development.rb and restart your server.
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
@@ -46,8 +46,9 @@ Rails.application.configure do
     else
       canonical_url = ENV['CANONICAL_URL']
 
+      r301(/\/organizations(.*)/, '/locations$1')
       r301(/.*/, "http://#{canonical_url}$&",
-           if: proc { |rack_env| rack_env['SERVER_NAME'] != "#{canonical_url}" })
+           if: proc { |rack_env| rack_env['SERVER_NAME'] != canonical_url })
     end
   end
 

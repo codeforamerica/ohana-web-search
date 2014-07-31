@@ -1,10 +1,8 @@
-- if org[:accessibility].present?
-  %section{ class: css_class_format('accessibility') }
-    - if defined? iconclass
-      %i{ class: iconclass }
-    %h1 Accessibility Options:
+- if location[:accessibility].present?
+  %section{ class: 'accessibility' }
+    %h1= t('location_fields.accessibility')
     %ul
-      - org.accessibility.sort.each do |accessibility_option|
+      - location.accessibility.sort.each do |accessibility_option|
         %li
           %span
             = accessibility_option

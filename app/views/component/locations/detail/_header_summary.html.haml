@@ -3,7 +3,7 @@
 
     %div.floating-content.hide
       %h1
-        = @org.name
+        = @location.name
 
   %div.right-column
 
@@ -20,13 +20,13 @@
           %i{ class: 'fa fa-print' }
           Print
 
-      - if org[:coordinates].present?
+      - if location[:coordinates].present?
         %span><
-          %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{address(org)}", target: '_blank' }
+          %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{address(location)}", target: '_blank' }
             %i{ class: 'fa fa-external-link-square' }
             %span Directions
 
       %span
-        %a{ class: 'button-utility button-back', href: "#{organizations_url(@search_params)}##{org.id}", target: '_self' }
+        %a{ class: 'button-utility button-back', href: "#{locations_url(request.query_parameters)}##{location.id}", target: '_self' }
           %i{ class: 'fa fa-arrow-circle-left' }
           Back
