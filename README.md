@@ -37,24 +37,16 @@ The Ohana API now supports the ability to set the number of results you want ret
 ## Running the tests
 To test locally, you can run tests with this simple command:
 
-    rspec
+    script/test
 
 To configure the way RSpec displays test results, create a file called `.rspec` in the root directory, and add the following to it:
 
     --color
-    --format documentation
+    --format progress
 
 The `--color` option allows you to see passing tests in green and failing ones in red. Otherwise, by default, you would just see a series of dots for passing tests, and the letter "F" for failing ones.
 
-Parameters for the `--format` option are: `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the RSpec website](https://www.relishapp.com/rspec/rspec-core/v/2-0/docs/configuration/read-command-line-configuration-options-from-files).
-
-For faster tests (optional):
-
-    gem install zeus
-    zeus start #in a separate Terminal window or tab
-    zeus rspec spec
-
-Read more about [Zeus](https://github.com/burke/zeus).
+Parameters for the `--format` option are: `progress` (default - shows a series of dots), `documentation`, `html`, or `textmate`. [More information can be found on the RSpec website](https://www.relishapp.com/rspec/rspec-core/v/3-0/docs/configuration/read-command-line-configuration-options-from-files).
 
 To see the actual tests, browse through the [spec](https://github.com/codeforamerica/ohana-web-search/tree/master/spec) directory.
 

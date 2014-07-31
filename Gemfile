@@ -69,6 +69,10 @@ group :development do
 
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'
+
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'listen', '~> 1.0'
 end
 
 group :test do
@@ -81,6 +85,7 @@ group :test do
   gem 'vcr', '>= 2.9.0'
   gem 'webmock', '>= 1.17.4'
   gem 'email_spec', '>= 1.5.0'
+  gem 'haml-lint'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
   gem 'rubocop'
