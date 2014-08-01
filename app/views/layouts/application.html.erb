@@ -13,8 +13,8 @@
     <meta name = 'google' value = 'notranslate'>
     <meta http-equiv = 'Content-Language' content = 'en_US'>
 
-    <% if ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_ID'].present? %>
-      <meta name = 'google-translate-customization' content = '<%= ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_ID'] %>'></meta>
+    <% if ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'].present? %>
+      <meta name = 'google-translate-customization' content = '<%= ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'] %>'></meta>
     <% end %>
 
     <%= csrf_meta_tags %>
@@ -114,13 +114,13 @@
 
       <%= requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub( "/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe %>
 
-      <div id = 'google-translate-element'></div>
-      <script type = 'text/javascript'>
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
       function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'af,ar,az,be,bg,bn,bs,ca,ceb,cs,da,de,el,en,es,et,eu,fa,fi,fr,ga,gl,gu,hi,hmn,hr,ht,hu,hy,id,is,it,iw,ja,jv,ka,km,kn,ko,lo,lt,lv,mk,mr,ms,mt,nl,no,pl,pt,ro,ru,sk,sl,sq,sr,sv,sw,ta,te,th,tl,tr,uk,ur,vi,yi,zh-CN,zh-TW', autoDisplay: false}, 'google-translate-element');
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
       }
       </script>
-      <script type = 'text/javascript' src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     </footer>
 
