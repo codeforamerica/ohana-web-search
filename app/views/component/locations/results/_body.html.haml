@@ -13,25 +13,15 @@
   - else
     %section.no-results
       %div.message
-        %strong Unfortunately, your search returned no results.
-        %em If you have trouble finding what you're looking for, try:
+        %strong= t('no_results.main')
+        %em= t('no_results.secondary')
         %ul
           %li
-            Searching with a single keyword.
+            = t('no_results.options.one')
           %li
-            Scrolling down & choosing a category of service.
+            = t('no_results.options.two')
           %li
-            %a{:href=>'/locations'}
-              %i{:class=>'fa fa-times-circle'}
-              Clearing all search filters.
-    - cache ['taxonomy-list', *taxonomy_terms] do
-      %section#category-box
-        %section
-          %ul
-            - taxonomy_terms.keys.each do |parent|
-              %li
-                = link_to parent, "/locations?category=#{u parent}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{parent}"
-                %ul
-                  - taxonomy_terms[parent].each do |child|
-                    %li
-                      = link_to child, "/locations?category=#{u child}", 'class' => 'links-to-track', 'data-ga-category' => 'Results_Categories', 'data-ga-label' => "#{child}"
+            %a{ href: '/locations' }
+              = t('no_results.options.browse_all')
+
+    = render 'home/homepage_links'
