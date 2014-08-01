@@ -13,17 +13,26 @@
               = superscript_ordinals(@location.organization.name)
 
   / detail sidebar content
-  - if (@location.fields & contact_details).any? || @location[:services].present?
+  - if (@location.fields & location_contact_details).any? || @location[:services].present?
     %aside
-      - if (@location.fields & contact_details).any?
+      - if (@location.fields & location_contact_details).any?
         %section#contact-info
 
-          - if (@location.fields & contact_fields).any?
+          - if (@location.fields & location_contact_fields).any?
             %section.contact-box
-              %h1 Contact
+              %h1 General Contact Info
               %section
 
-                - if @location[:emails].present?
+                - if @location.urls.present?
+                  %section.urls
+                    - @location.urls.each do |url|
+                      %div
+                        %i{ class: 'fa fa-external-link-square' }
+                        %a{ href: url, target: '_blank' }
+                          %span{ itemprop: 'url' }
+                            = format_url(url)
+
+                - if @location.emails.present?
                   %section.emails{ itemprop: 'email' }
                     - @location.emails.each do |email|
                       %div
@@ -32,25 +41,26 @@
                           %span{ itemprop: 'email' }
                             = email
 
-
-                - if @location[:phones].present?
+                - if @location.phones.present?
                   %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                     - @location.phones.each do |phone|
                       %div
                         %i{ class: 'fa fa-phone-square' }
                         %span
-                          - if phone['number']
+                          - if phone.number
                             %span{ itemprop: 'telephone' }
-                              = format_phone(phone['number'])
-                          - if phone['number_type']
+                              = format_phone(phone.number)
+                          - if phone.extension.present?
+                            %sup.phone-extension
+                              = phone.extension
+                          - if phone.number_type
                             %sup.phone-type
-                              = phone['number_type']
-                          - if phone['department']
-                            %p
-                              %span{ itemprop: 'contactType' }
-                                = phone['department']
+                              = phone.number_type
+                          - if phone.department
+                            %p.phone-department{ itemprop: 'contactType' }
+                              = phone.department
 
-                - if @location[:faxes].present?
+                - if @location.faxes.present?
                   %section.faxes
                     - @location.faxes.each do |fax|
                       %div
@@ -62,25 +72,59 @@
                           - elsif fax.is_a?(Sawyer::Resource)
                             - if fax["number"]
                               %span{ itemprop: 'faxNumber' }
-                                = format_phone(fax['number'])
-                            - if fax['department']
+                                = format_phone(fax.number)
+                            - if fax.department
+                              %p.fax-department{ itemprop: 'contactType' }
+                                = fax.department
+
+          - if @location.contacts.present?
+            - @location.contacts.each do |contact|
+              %section.contact-box
+                %h1 Specific Contact
+                %section
+                  - if contact.name.present?
+                    %section.contact-name
+                      = contact.name
+                    %section.contact-title
+                      = contact.title
+
+                  - if contact.email.present?
+                    %section.emails{ itemprop: 'email' }
+                      %div
+                        %i{ class: 'fa fa-laptop' }
+                        %a{ href: "mailto:#{contact.email}" }
+                          %span{ itemprop: 'email' }
+                            = contact.email
+
+                  - if contact.phone.present?
+                    %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+                      %div
+                        %i{ class: 'fa fa-phone-square' }
+                        %span
+                          %span{ itemprop: 'telephone' }
+                            = format_phone(contact.phone)
+                          - if contact.extension.present?
+                            %sup.phone-extension
+                              = contact.extension
+
+                  - if contact.fax.present?
+                    %section.faxes
+                      %div
+                        %i{ class: 'fa fa-print fax' }
+                        %span
+                          - if contact.fax.is_a?(String)
+                            %span{ itemprop: 'faxNumber' }
+                              = format_phone(contact.fax)
+                          - elsif fax.is_a?(Sawyer::Resource)
+                            - if contact.fax.number
+                              %span{ itemprop: 'faxNumber' }
+                                = format_phone(contact.fax.number)
+                            - if contact.fax.department
                               %p
-                                %span{ itemprop: 'contactType' }
-                                  = fax['department']
+                                %span.fax-department{ itemprop: 'contactType' }
+                                  = contact.fax.department
 
-          - if @location[:urls].present?
-            %section.urls-box
-              %h1 Homepage
-              %section
-                %section.urls
-                  - @location.urls.each do |url|
-                    %div
-                      %i{ class: 'fa fa-external-link-square' }
-                      %a{ href: url, target: '_blank' }
-                        %span{ itemprop: 'url' }
-                          = format_url(url)
-
-          - if @location[:address].present?
+          - if @location.address.present?
             %section.address-box
               %h1 Physical Address
               %section
@@ -89,7 +133,7 @@
                     %i{ class: 'fa fa-map-marker' }
                     = render 'component/detail/address', location: @location, lines: 2
 
-          - if @location[:mail_address].present?
+          - if @location.mail_address.present?
             %section.address-box
               %h1 Mailing Address
               %section
@@ -115,13 +159,13 @@
   / Main detail content.
   %section
 
-    - if @location[:short_desc].present? || @location[:description].present?
+    - if @location.short_desc.present? || @location.description.present?
       %section.overview-box
         %section
           = render 'component/detail/location_short_desc', location: @location
           = render 'component/detail/location_description', location: @location
 
-    - if @location[:coordinates].present? || @location[:transportation].present?
+    - if @location.coordinates.present? || @location.transportation.present?
       %section.map-box
         %h1 Location
 

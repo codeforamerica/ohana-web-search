@@ -63,7 +63,7 @@ feature 'location details' do
     end
 
     it 'includes the Contact header' do
-      expect(page).to have_content('Contact')
+      expect(page).to have_content('General Contact Info')
     end
 
     it 'includes the department and phone type' do
@@ -157,9 +157,12 @@ feature 'location details' do
       expect(page).to have_content('Disabled Parking')
     end
 
-    # Contact is not included because we have an ask_for field already
-    xit 'includes Contact info' do
+    it 'includes contact name' do
       expect(page).to have_content('Suzanne Badenhoop')
+    end
+
+    it 'includes contact title' do
+      expect(page).to have_content('Board President')
     end
 
     it 'includes email info' do
