@@ -111,18 +111,8 @@
                     %section.faxes
                       %div
                         %i{ class: 'fa fa-print fax' }
-                        %span
-                          - if contact.fax.is_a?(String)
-                            %span{ itemprop: 'faxNumber' }
-                              = format_phone(contact.fax)
-                          - elsif fax.is_a?(Sawyer::Resource)
-                            - if contact.fax.number
-                              %span{ itemprop: 'faxNumber' }
-                                = format_phone(contact.fax.number)
-                            - if contact.fax.department
-                              %p
-                                %span.fax-department{ itemprop: 'contactType' }
-                                  = contact.fax.department
+                        %span{ itemprop: 'faxNumber' }
+                          = format_phone(contact.fax)
 
           - if @location.address.present?
             %section.address-box
