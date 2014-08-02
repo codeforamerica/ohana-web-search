@@ -24,14 +24,14 @@ module DetailFormatHelper
 
   # List of fields that determine whether or not to show the
   # Aside section in the details view
-  def contact_details
-    [:ask_for,:phones,:faxes,:emails,:urls,:address]
+  def location_contact_details
+    [:phones, :faxes, :emails, :urls, :address, :mail_address, :contacts]
   end
 
   # List of fields that determine whether or not to show the
   # Contact section in the details view
-  def contact_fields
-    [:ask_for,:phones,:faxes,:emails]
+  def location_contact_fields
+    [:urls, :emails, :phones, :faxes]
   end
 
   # Formats address for use in map URLs, image title attributes, etc.
