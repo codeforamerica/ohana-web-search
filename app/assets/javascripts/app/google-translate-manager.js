@@ -33,7 +33,7 @@ function (util) {
     if (_timeoutCount++ < 20) {
       setTimeout( function () {
         var query = '#google-translate-element select';
-        _languages =document.querySelector(query);
+        _languages = document.querySelector(query);
         if (!_languages) _checkForGoogleInitialization();
         else _hookDropDown();
       }, 1000);
