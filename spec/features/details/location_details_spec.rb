@@ -104,7 +104,7 @@ feature "location details" do
     end
 
     it "includes updated time" do
-      expect(page).to have_content("Saturday, 24 May 2014 at 2:07 PM PDT")
+      expect(page).to have_content("Saturday, 2 August 2014 at 7:30 PM PDT")
     end
 
   end
@@ -122,14 +122,6 @@ feature "location details" do
 
     it "includes accessibility info" do
       expect(page).to have_content("Disabled Parking")
-    end
-
-    it 'includes contact name' do
-        expect(page).to have_content('Suzanne Badenhoop')
-    end
-
-    it 'includes contact title' do
-      expect(page).to have_content('Board President')
     end
 
     it "includes email info" do
@@ -165,6 +157,40 @@ feature "location details" do
 
     it "sets the page title to the location name" do
       expect(page).to have_title("San Maceo Agency | SMC-Connect")
+    end
+  end
+
+  context 'when Contact elements are present' do
+    before(:each) do
+      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
+       visit_test_location
+      end
+    end
+
+    it 'includes contact name' do
+        expect(page).to have_content('Suzanne Badenhoop')
+    end
+
+    it 'includes contact title' do
+      expect(page).to have_content('Board President')
+    end
+
+    it 'includes contact phone' do
+      expect(page).to have_content('(123) 456-7890')
+    end
+
+    it 'includes contact fax' do
+      expect(page).to have_content('(202) 555-1212')
+    end
+
+    it 'includes contact email' do
+      expect(page).to have_content('suzanne@example.org')
+    end
+
+    # The test API is not exposing the extension field.
+    # This will be fixed later, then we can enable this test.
+    xit 'includes contact extension' do
+      expect(page).to have_content('x1200')
     end
   end
 
