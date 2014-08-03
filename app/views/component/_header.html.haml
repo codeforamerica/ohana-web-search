@@ -1,0 +1,30 @@
+%header#content-header
+  %h1#logo
+    %a{ href: '/', target: '_self' }
+      %img{ src: "#{asset_path(SETTINGS[:site_logo])}", alt: "#{SETTINGS[:site_title]} Logo" }
+  %h2 Find community services
+  %nav
+    %ul
+      %li
+        %a#about-btn.popup-trigger{ title: 'Help',  href: '/about#about-box' } About
+      %li
+        %a#contribute-btn.popup-trigger{ title: 'Contribute', href: '/about#contribute-box', target: '_self' } Contribute
+      %li
+        %a#feedback-btn.popup-trigger{ title: 'Feedback', href: '/about#feedback-box', target: '_self' } Feedback
+  .clearfix
+
+-# Hide popups on /about because they are redundant to the content on that page.
+- if controller_name != 'about'
+  %aside#popups
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/about'
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/contribute'
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/feedback'
