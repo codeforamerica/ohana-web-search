@@ -52,6 +52,7 @@
                     %i{ class: 'fa fa-phone-square' }
                     %span
                       %span{ itemprop: 'telephone' }
+                      - if phone['number'].present?
                         = format_phone(phone['number'])
                       - if phone['extension'].present?
                         %sup.phone-extension
