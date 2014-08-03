@@ -62,8 +62,8 @@ feature 'location details' do
       end
     end
 
-    it 'includes the Contact header' do
-      expect(page).to have_content('Contact')
+    it 'includes the section header' do
+      expect(page).to have_content('General Contact Info')
     end
 
     it 'includes the department and phone type' do
@@ -117,7 +117,7 @@ feature 'location details' do
     end
 
     it 'includes updated time' do
-      expect(page).to have_content('Thursday, 22 May 2014 at 5:31 PM PDT')
+      expect(page).to have_content('Saturday, 2 August 2014 at 8:51 PM PDT')
     end
 
   end
@@ -157,11 +157,6 @@ feature 'location details' do
       expect(page).to have_content('Disabled Parking')
     end
 
-    # Contact is not included because we have an ask_for field already
-    xit 'includes Contact info' do
-      expect(page).to have_content('Suzanne Badenhoop')
-    end
-
     it 'includes email info' do
       expect(page).to have_link('sanmaceo@co.sanmaceo.ca.us')
     end
@@ -185,7 +180,42 @@ feature 'location details' do
     it 'sets the page title to the location name + site title' do
       expect(page).to have_title('San Maceo Agency | Ohana Web Search')
     end
+  end
 
+  context 'when Contact elements are present' do
+    before(:each) do
+      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
+        visit_test_location
+      end
+    end
+
+    it 'includes the contact section header' do
+      expect(page).to have_content('Specific Contact')
+    end
+
+    it 'includes contact name' do
+      expect(page).to have_content('Suzanne Badenhoop')
+    end
+
+    it 'includes contact title' do
+      expect(page).to have_content('Board President')
+    end
+
+    it 'includes contact email' do
+      expect(page).to have_content('suzanne@example.com')
+    end
+
+    it 'includes contact phone' do
+      expect(page).to have_content('(123) 456-7890')
+    end
+
+    it 'includes contact phone extension' do
+      expect(page).to have_content('x1200')
+    end
+
+    it 'includes contact fax' do
+      expect(page).to have_content('(202) 555-1212')
+    end
   end
 
   describe 'Edit link' do

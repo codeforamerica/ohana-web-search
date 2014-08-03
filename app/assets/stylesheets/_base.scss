@@ -1691,6 +1691,16 @@ body { top: 0px !important; }
         color: $black;
         padding-bottom: 20px;
 
+        > div > span
+        {
+          padding-bottom: 20px;
+        }
+
+        > div:last-child > span
+        {
+          padding-bottom: 0;
+        }
+
         > div
         {
           display: table-row;
@@ -1726,6 +1736,21 @@ body { top: 0px !important; }
         padding-bottom: 0px;
       }
     }
+
+    .contact-name
+    {
+      padding-bottom: 0;
+    }
+
+    .contact-title,
+    .phone-department,
+    .fax-department
+    {
+      font-size: $font_size_95;
+      line-height: $font_size_95;
+      color: $complementA;
+    }
+
   }
 
   // Adjust margin of main content to fit aside.
