@@ -55,7 +55,7 @@
                         = format_phone(phone['number'])
                       - if phone['extension'].present?
                         %sup.phone-extension
-                          = phone.extension
+                          = phone['extension']
                       - if phone['number_type']
                         %sup.phone-type
                           = phone['number_type']
@@ -70,7 +70,7 @@
                     %i{ class: 'fa fa-print fax' }
                     %span
                       %span{ itemprop: 'faxNumber' }
-                        = format_phone(fax.number)
+                        = format_phone(fax['number'])
                       - if fax['department']
                         %p.fax-department{ itemprop: 'contactType' }
                           = fax['department']
@@ -81,15 +81,15 @@
             %h1 Specific Contact
             %section
               %section.contact-name
-                = contact.name
+                = contact['name']
               %section.contact-title
-                = contact.title
+                = contact['title']
 
               - if contact['email'].present?
                 %section.emails{ itemprop: 'email' }
                   %div
                     %i{ class: 'fa fa-laptop' }
-                    %a{ href: "mailto:#{contact.email}" }
+                    %a{ href: "mailto:#{contact['email']}" }
                       %span{ itemprop: 'email' }
                         = contact['email']
 
@@ -99,7 +99,7 @@
                     %i{ class: 'fa fa-phone-square' }
                     %span
                       %span{ itemprop: 'telephone' }
-                        = format_phone(contact.phone)
+                        = format_phone(contact['phone'])
                       - if contact['extension'].present?
                         %sup.phone-extension
                           = contact['extension']
@@ -109,7 +109,7 @@
                   %div
                     %i{ class: 'fa fa-print fax' }
                     %span{ itemprop: 'faxNumber' }
-                      = format_phone(contact.fax)
+                      = format_phone(contact['fax'])
 
       - if @org.key?(:address)
         %section.address-box
