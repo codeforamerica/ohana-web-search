@@ -131,7 +131,7 @@
                 = render 'component/detail/mail_address', org: @org
 
 
-    - if @aggregate_categories.present?
+    - if @categories.present?
       %section#categories-box
         %h1 Service Categories
         - if @org.key?(:kind) && @org.kind == 'Government'
@@ -139,11 +139,11 @@
         - else
           %section.services{:itemscope=>"", :itemtype=>"http://schema.org/Service"}
             %ul{:itemscope=>"", :itemtype=>"http://schema.org/ServiceType"}
-              - @aggregate_categories.each do |category|
+              - @categories.each do |category|
                 %li{:class=>"depth#{category.depth}"}
                   %span{:itemprop=>"serviceType"}
                     -# Category links are disabled till there's a corresponding filter that can be toggled!
-                      = link_to category.name, organizations_path(@search_params.merge(:category => category.name))
+                      = link_to category.name, organizations_path(request.query_parameters.merge(category: category.name))
                     = category.name
 
   / main detail content
@@ -165,7 +165,7 @@
               %span
                 = @org.transportation
 
-          - if @org.key?(:coordinates)
+          - if @org[:coordinates].present?
             %section#detail-map-view.map
               %div#detail-map-canvas
                 %span.hide#detail-map-canvas-title

@@ -18,32 +18,36 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 14:16:18 GMT
-      Etag:
-      - '"15c245b1b943f4a4ee76ffb3e0a96c92"'
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - a989c242-c933-4227-8637-5b77206b4ff3
-      X-Runtime:
-      - '0.117791'
-      Content-Length:
-      - '5854'
+      Server:
+      - Cowboy
       Connection:
       - keep-alive
+      Date:
+      - Wed, 06 Aug 2014 18:10:28 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5973'
+      Etag:
+      - '"6b5a68d75de381b2c3f5568dbff4ec2e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6b6f6b51-de1a-4d2d-8f3a-dbac56eab6ed
+      X-Runtime:
+      - '0.270225'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
         Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
         Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        President","phone":"123-456-7890","email":"suzanne@example.org","fax":"202-555-1212"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -53,11 +57,12 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":1093,"number":"650
         627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1686,"attention":"Hella
+        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"latitude":42.878036,"longitude":-73.1968254,"mail_address":{"id":1686,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
-        Maceo Agency","phones":[{"id":2465,"department":"Information","number":"<%= number %>","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"<%= number %>"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        Maceo Agency","phones":[{"id":2465,"department":"Information","number":"<%= number %>","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"650
+        372-6200"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
         PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
+        stops within 1 block","updated_at":"2014-08-02T19:30:41.599-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -96,102 +101,5 @@ http_interactions:
         wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
         Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}'
     http_version:
-  recorded_at: Mon, 26 May 2014 14:16:18 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 26 May 2014 14:16:18 GMT
-      Etag:
-      - '"15c245b1b943f4a4ee76ffb3e0a96c92"'
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 02bf84ce-3778-4c7a-8cce-9caf3a1d7eb2
-      X-Runtime:
-      - '0.097441'
-      Content-Length:
-      - '5854'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
-        Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":1093,"number":"650
-        627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1686,"attention":"Hella
-        Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
-        Maceo Agency","phones":[{"id":2465,"department":"Information","number":"<%= number %>","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"<%= number %>"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
-        service and nonprofit businesses, the public, military facilities, schools
-        and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
-        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
-        in or apply by phone or mail","name":"hasdfasf","service_areas":["San Mateo
-        County","Alameda County","Contra Costa County","Marin County","San Francisco
-        County","Santa Clara County"],"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.988-07:00"},{"id":1685,"audience":"Profit
-        and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"keywords":["Ruby
-        on Rails/MongoDB/Redis","FIFA World Cup"],"categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311,"slug":"mediation"}],"how_to_apply":"Walk
-        in or apply by phone or mail","name":"bazfoo","service_areas":["San Mateo
-        County","Alameda County","Contra Costa County","Marin County","San Francisco
-        County","Santa Clara County"],"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}'
-    http_version:
-  recorded_at: Mon, 26 May 2014 14:16:18 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Wed, 06 Aug 2014 18:10:28 GMT
+recorded_with: VCR 2.9.2

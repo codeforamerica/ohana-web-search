@@ -7,9 +7,9 @@
           Zoom map
     %p.search-summary
       %span
-        = @search_summary_html
+        = format_summary(request.query_parameters)
       %span.map-summary.static-content
-        = @map_search_summary_html
+        = format_map_summary
 
   %div.right-column
     %div.floating-content.hide><

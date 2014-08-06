@@ -18,38 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Fri, 30 May 2014 10:31:45 GMT
+      - Wed, 06 Aug 2014 17:59:32 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=12&per_page=30>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=30>;
         rel="next"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - ce0dca6f-c768-4e56-b068-737ad62c7282
-      X-Runtime:
-      - '0.495927'
       X-Total-Count:
       - '339'
       X-Total-Pages:
       - '12'
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '55202'
+      Etag:
+      - '"d2fc200ca212d9b1e3ada01c430186d8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 974c7f75-f502-47c9-ac72-5314f12618ae
+      X-Runtime:
+      - '1.193087'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
@@ -59,9 +61,9 @@ http_interactions:
         CalFresh, CalWORKs and General Assistance and Children and Family Services.","faxes":[{"id":1096,"number":"650
         364-5684"}],"hours":"Monday-Friday, 8:00am-5:00pm; 24 hours a day, call 1-800-223-8383
         for case status; 24 hours a day, call (650) 802-7922 to report child abuse","kind":"Human
-        Services","mail_address":{"id":1689,"attention":"","street":"2500 Middlefield
-        Rd.","city":"Redwood City","state":"CA","zip":"94063"},"name":"Redwood City
-        Office","phones":[{"id":2470,"department":"Economic Self-Sufficiency","number":"800-223-8383"},{"id":2471,"department":"Children
+        Services","latitude":37.4773738,"longitude":-122.2141324,"mail_address":{"id":1689,"attention":"","street":"2500
+        Middlefield Rd.","city":"Redwood City","state":"CA","zip":"94063"},"name":"Redwood
+        City Office","phones":[{"id":2470,"department":"Economic Self-Sufficiency","number":"800-223-8383"},{"id":2471,"department":"Children
         and Family Services","number":"650-802-7922"}],"short_desc":"Provides social
         services eligibility determination and assistance for Health Coverage, CalFresh,
         CalWORKs and General Assistance and Children and Family Services.","slug":"redwood-city-office-2500-middlefield-rd","slugs":["redwood-city-office-2500-middlefield-rd"],"transportation":"SamTrans
@@ -91,103 +93,104 @@ http_interactions:
         their needs.","updated_at":"2014-05-24T14:08:00.352-07:00"}],"organization":{"id":1310,"name":"San
         Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1710,"address":{"id":1434,"street":"748
         Tennis Dr","city":"South San Francisco","state":"CA","zip":"94080"},"coordinates":[-122.4253156,37.6552314],"hours":"May
-        - October Saturday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"South
+        - October Saturday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","latitude":37.6552314,"longitude":-122.4253156,"market_match":true,"name":"South
         San Francisco Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Flowers","Herbs","Vegetables","Jams","Nuts","Prepared Food"],"slug":"south-san-francisco-farmers-market","slugs":["south-san-francisco-farmers-market"],"updated_at":"2014-05-24T14:06:56.906-07:00","urls":["http://pcfma.com/market_home.php?market_id=37"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1710","organization":{"id":1365,"name":"South
         San Francisco Farmers Market","slug":"south-san-francisco-farmers-market","slugs":["south-san-francisco-farmers-market"],"_slugs":["south-san-francisco-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1365","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1365/locations"}},{"id":1709,"address":{"id":1433,"street":"West
         Valley College, 14000 Fruitvale Avenue","city":"Saratoga","state":"CA","zip":"95070"},"coordinates":[-122.0111089,37.2654921],"hours":"January
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Saratoga
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","latitude":37.2654921,"longitude":-122.0111089,"market_match":false,"name":"Saratoga
         Farmers'' Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Nursery","Nuts","Plants","Poultry","Prepared
         Food","Soap"],"slug":"saratoga-farmers-market","slugs":["saratoga-farmers-market"],"updated_at":"2014-05-24T14:06:56.877-07:00","urls":["http://cafarmersmkts.com/markets/category/saratoga"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1709","organization":{"id":1364,"name":"Saratoga
         Farmers'' Market","slug":"saratoga-farmers-market","slugs":["saratoga-farmers-market"],"_slugs":["saratoga-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1364","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1364/locations"}},{"id":1708,"address":{"id":1432,"street":"1700
         West Hillsdale Boulevard","city":"San Mateo","state":"CA","zip":"94401"},"coordinates":[-122.335123,37.5350511],"hours":"January
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"San
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","latitude":37.5350511,"longitude":-122.335123,"market_match":true,"name":"San
         Mateo Farmers'' Market","payments":["Credit","WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
         Food","Soap","Wine"],"slug":"san-mateo-farmers-market","slugs":["san-mateo-farmers-market"],"updated_at":"2014-05-24T14:06:56.846-07:00","urls":["http://www.pcfma.com/sanmateo"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1708","organization":{"id":1363,"name":"San
         Mateo Farmers'' Market","slug":"san-mateo-farmers-market","slugs":["san-mateo-farmers-market"],"_slugs":["san-mateo-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1363","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1363/locations"}},{"id":1707,"address":{"id":1431,"street":"850
         Winslow Street","city":"Redwood City","state":"CA","zip":"94063"},"coordinates":[-122.2300105,37.4854442],"hours":"April
-        - November Saturday 8:00 AM to 12:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Redwood
+        - November Saturday 8:00 AM to 12:00 PM","kind":"Farmers'' Markets","latitude":37.4854442,"longitude":-122.2300105,"market_match":false,"name":"Redwood
         City Kiwanis Farmers Market","payments":["WICcash"],"products":["Baked Goods","Crafts","Flowers","Eggs","Seafood","Vegetables","Honey","Nuts"],"slug":"redwood-city-kiwanis-farmers-market-850-winslow-street","slugs":["redwood-city-kiwanis-farmers-market-850-winslow-street"],"updated_at":"2014-05-24T14:06:56.810-07:00","urls":["http://www.rwcfm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1707","organization":{"id":1362,"name":"Redwood
         City Kiwanis Farmers Market","slug":"redwood-city-kiwanis-farmers-market-5b71d713-b60b-4469-97bd-5098face4a44","slugs":["redwood-city-kiwanis-farmers-market-5b71d713-b60b-4469-97bd-5098face4a44"],"_slugs":["redwood-city-kiwanis-farmers-market-5b71d713-b60b-4469-97bd-5098face4a44"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1362","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1362/locations"}},{"id":1706,"address":{"id":1430,"street":"800
         Foster City Blvd.","city":"Foster City","state":"CA","zip":"94404"},"coordinates":[-122.2671307,37.5578841],"hours":"May
-        - October Wednesday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"PJCC
+        - October Wednesday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","latitude":37.5578841,"longitude":-122.2671307,"market_match":false,"name":"PJCC
         Farmers'' Market at Foster City","payments":["WIC","WICcash","SFMNP","SNAP"],"products":["Vegetables","Plants"],"slug":"pjcc-farmers-market-at-foster-city","slugs":["pjcc-farmers-market-at-foster-city"],"updated_at":"2014-05-24T14:06:56.776-07:00","urls":["http://www.urbantable.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1706","organization":{"id":1361,"name":"PJCC
         Farmers'' Market at Foster City","slug":"pjcc-farmers-market-at-foster-city","slugs":["pjcc-farmers-market-at-foster-city"],"_slugs":["pjcc-farmers-market-at-foster-city"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1361","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1361/locations"}},{"id":1705,"address":{"id":1429,"street":"8875
         La Honda Road","city":"La Honda","state":"CA","zip":"94020"},"coordinates":[-122.2743951,37.3180168],"hours":"May
-        - November Tuesday 3:00 PM to 7:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Pescadero
+        - November Tuesday 3:00 PM to 7:00 PM","kind":"Farmers'' Markets","latitude":37.3180168,"longitude":-122.2743951,"market_match":false,"name":"Pescadero
         Grown","payments":["Credit","WIC","SFMNP","SNAP"],"products":["Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Jams","Meat","Nursery","Plants","Poultry"],"slug":"pescadero-grown","slugs":["pescadero-grown"],"updated_at":"2014-05-29T12:29:53.065-07:00","urls":["http://Www.pescaderogrown.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1705","organization":{"id":1360,"name":"Pescadero
         Grown","slug":"pescadero-grown","slugs":["pescadero-grown"],"_slugs":["pescadero-grown"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1360","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1360/locations"}},{"id":1704,"address":{"id":1428,"street":"200
         Broadway","city":"Millbrae","state":"CA","zip":"94030"},"coordinates":[-122.3905851,37.5999172],"hours":"January
-        - December Saturday 8:00 am to 1:00 pm","kind":"Farmers'' Markets","market_match":false,"name":"Millbrae
+        - December Saturday 8:00 am to 1:00 pm","kind":"Farmers'' Markets","latitude":37.5999172,"longitude":-122.3905851,"market_match":false,"name":"Millbrae
         Farmers Market","payments":["WIC","SFMNP"],"products":["Baked Goods","Flowers","Seafood","Herbs","Vegetables","Honey","Nuts","Plants"],"slug":"millbrae-farmers-market","slugs":["millbrae-farmers-market"],"updated_at":"2014-05-24T14:06:56.717-07:00","urls":["http://www.millbrae.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1704","organization":{"id":1359,"name":"Millbrae
         Farmers Market","slug":"millbrae-farmers-market","slugs":["millbrae-farmers-market"],"_slugs":["millbrae-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1359","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1359/locations"}},{"id":1703,"address":{"id":1427,"street":"Chestnut
         \u0026 Menlo Avenues","city":"Menlo Park","state":"CA","zip":"94025"},"coordinates":[-122.1834629,37.450915],"hours":"January
         - December Sunday 9:00 AM to 1:00 PM, (Open on all holidays that fall on Sundays,
-        except Christmas)","kind":"Farmers'' Markets","market_match":false,"name":"Menlo
+        except Christmas)","kind":"Farmers'' Markets","latitude":37.450915,"longitude":-122.1834629,"market_match":false,"name":"Menlo
         Park Farmers'' Market","payments":["Credit"],"products":["Baked Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Soap"],"slug":"menlo-park-farmers-market","slugs":["menlo-park-farmers-market"],"updated_at":"2014-05-24T14:06:56.681-07:00","urls":["http://localharvest.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1703","organization":{"id":1358,"name":"Menlo
         Park Farmers'' Market","slug":"menlo-park-farmers-market","slugs":["menlo-park-farmers-market"],"_slugs":["menlo-park-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1358","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1358/locations"}},{"id":1702,"address":{"id":1426,"street":"State
         Street and Second Street","city":"Los Altos","state":"CA","zip":"94022"},"coordinates":[-122.1173552,37.3791761],"hours":"May
-        - September Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Los
+        - September Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","latitude":37.3791761,"longitude":-122.1173552,"market_match":false,"name":"Los
         Altos Farmers Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Flowers","Eggs","Herbs","Vegetables","Jams","Meat","Nuts","Prepared
         Food","Soap"],"slug":"los-altos-farmers-market","slugs":["los-altos-farmers-market"],"updated_at":"2014-05-24T14:06:56.645-07:00","urls":["http://cafarmersmkts.com/markets/category/los-altos-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1702","organization":{"id":1357,"name":"Los
         Altos Farmers Market","slug":"los-altos-farmers-market","slugs":["los-altos-farmers-market"],"_slugs":["los-altos-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1357","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1357/locations"}},{"id":1701,"address":{"id":1425,"street":"1200
         El Camino Real","city":"South San Francisco","state":"CA","zip":"94080"},"coordinates":[-122.4393303,37.6591467],"hours":"May
-        7 - October 15 Tuesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"Kaiser
+        7 - October 15 Tuesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","latitude":37.6591467,"longitude":-122.4393303,"market_match":true,"name":"Kaiser
         Permanente South San Francisco Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Flowers","Vegetables","Prepared Food"],"slug":"kaiser-permanente-south-san-francisco-farmers-market","slugs":["kaiser-permanente-south-san-francisco-farmers-market"],"updated_at":"2014-05-24T14:06:56.610-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=26"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1701","organization":{"id":1356,"name":"Kaiser
         Permanente South San Francisco Farmers'' Market","slug":"kaiser-permanente-south-san-francisco-farmers-market","slugs":["kaiser-permanente-south-san-francisco-farmers-market"],"_slugs":["kaiser-permanente-south-san-francisco-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1356","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1356/locations"}},{"id":1700,"address":{"id":1424,"street":"1150
         Veterans Blvd.","city":"Redwood City","state":"CA","zip":"94063"},"coordinates":[-122.2232169,37.4889742],"hours":"May
-        1 - September 25 Wednesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Kaiser
+        1 - September 25 Wednesday 10:00 AM to 2:00 PM","kind":"Farmers'' Markets","latitude":37.4889742,"longitude":-122.2232169,"market_match":false,"name":"Kaiser
         Permanente Redwood City Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Vegetables"],"slug":"kaiser-permanente-redwood-city-farmers-market","slugs":["kaiser-permanente-redwood-city-farmers-market"],"updated_at":"2014-05-24T14:06:56.571-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=39"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1700","organization":{"id":1355,"name":"Kaiser
         Permanente Redwood City Farmers'' Market","slug":"kaiser-permanente-redwood-city-farmers-market","slugs":["kaiser-permanente-redwood-city-farmers-market"],"_slugs":["kaiser-permanente-redwood-city-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1355","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1355/locations"}},{"id":1699,"address":{"id":1423,"street":"700
         Block, Laurel Street","city":"San Carlos","state":"CA","zip":"94070"},"coordinates":[-122.259756,37.5048839],"hours":"May
-        2 - September 12 Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Hot
+        2 - September 12 Thursday 4:00 PM to 8:00 PM","kind":"Farmers'' Markets","latitude":37.5048839,"longitude":-122.259756,"market_match":false,"name":"Hot
         Harvest Nights San Carlos Farmers'' Market","products":["Baked Goods","Flowers","Seafood","Vegetables","Prepared
         Food"],"slug":"hot-harvest-nights-san-carlos-farmers-market","slugs":["hot-harvest-nights-san-carlos-farmers-market"],"updated_at":"2014-05-24T14:06:56.540-07:00","urls":["https://www.sancarloschamber.org/textpages/farmers_market.aspx"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1699","organization":{"id":1354,"name":"Hot
         Harvest Nights San Carlos Farmers'' Market","slug":"hot-harvest-nights-san-carlos-farmers-market","slugs":["hot-harvest-nights-san-carlos-farmers-market"],"_slugs":["hot-harvest-nights-san-carlos-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1354","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1354/locations"}},{"id":1698,"address":{"id":1422,"street":"1798-A
         Bay Road","city":"East Palo Alto","state":"CA","zip":"94303"},"coordinates":[-122.1348305,37.4716766],"hours":"January
-        - December Wednesday 12:00 PM to 3:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"East
+        - December Wednesday 12:00 PM to 3:00 PM","kind":"Farmers'' Markets","latitude":37.4716766,"longitude":-122.1348305,"market_match":false,"name":"East
         Palo Alto Community Farmers Market","payments":["Credit","WIC","SNAP"],"products":["Flowers","Vegetables"],"slug":"east-palo-alto-community-farmers-market","slugs":["east-palo-alto-community-farmers-market"],"updated_at":"2014-05-24T14:06:56.508-07:00","urls":["http://www.collectiveroots.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1698","organization":{"id":1353,"name":"East
         Palo Alto Community Farmers Market","slug":"east-palo-alto-community-farmers-market","slugs":["east-palo-alto-community-farmers-market"],"_slugs":["east-palo-alto-community-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1353","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1353/locations"}},{"id":1697,"address":{"id":1421,"street":"133
         Serramonte Center","city":"Daly City","state":"CA","zip":"94015"},"coordinates":[-122.471026,37.6704999],"hours":"January
         - December Thursday 9:00 AM to 1:00 PM, Saturday 9:00 AM to 1:00 PM","kind":"Farmers''
-        Markets","market_match":false,"name":"Daly City Farmers'' Market at Serramonte
-        Center","payments":["WIC","SFMNP"],"products":["Baked Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Nursery","Nuts","Prepared
+        Markets","latitude":37.6704999,"longitude":-122.471026,"market_match":false,"name":"Daly
+        City Farmers'' Market at Serramonte Center","payments":["WIC","SFMNP"],"products":["Baked
+        Goods","Flowers","Eggs","Seafood","Herbs","Vegetables","Nursery","Nuts","Prepared
         Food","Soap"],"slug":"daly-city-farmers-market-at-serramonte-center","slugs":["daly-city-farmers-market-at-serramonte-center"],"updated_at":"2014-05-24T14:06:56.474-07:00","urls":["http://cafarmersmkts.com/markets/category/daly-city"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1697","organization":{"id":1352,"name":"Daly
         City Farmers'' Market at Serramonte Center","slug":"daly-city-farmers-market-at-serramonte-center","slugs":["daly-city-farmers-market-at-serramonte-center"],"_slugs":["daly-city-farmers-market-at-serramonte-center"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1352","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1352/locations"}},{"id":1696,"address":{"id":1420,"street":"1700
         W. Hillsdale Blvd.","city":"San Mateo","state":"CA","zip":"94402"},"coordinates":[-122.335123,37.5350511],"hours":"January
-        - December Saturday 9:00 am to 1:00 pm","kind":"Farmers'' Markets","market_match":true,"name":"College
+        - December Saturday 9:00 am to 1:00 pm","kind":"Farmers'' Markets","latitude":37.5350511,"longitude":-122.335123,"market_match":true,"name":"College
         of San Mateo Certified Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Flowers","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nuts","Plants","Prepared
         Food","Soap"],"slug":"college-of-san-mateo-certified-farmers-market","slugs":["college-of-san-mateo-certified-farmers-market"],"updated_at":"2014-05-24T14:06:56.439-07:00","urls":["http://pcfma.com/market_home.php?market_id=15"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1696","organization":{"id":1351,"name":"College
         of San Mateo Certified Farmers'' Market","slug":"college-of-san-mateo-certified-farmers-market","slugs":["college-of-san-mateo-certified-farmers-market"],"_slugs":["college-of-san-mateo-certified-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1351","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1351/locations"}},{"id":1695,"address":{"id":1419,"street":"400
         Old County Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
         - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November \u0026
-        December)","kind":"Farmers'' Markets","market_match":false,"name":"Coastside
+        December)","kind":"Farmers'' Markets","latitude":37.6100031,"longitude":-122.4945456,"market_match":false,"name":"Coastside
         Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
         Food","Soap"],"slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2014-05-24T14:06:56.407-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1695","organization":{"id":1350,"name":"Coastside
         Farmers'' Market of Pacifca","slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"_slugs":["coastside-farmers-market-of-pacifca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350/locations"}},{"id":1694,"address":{"id":1418,"street":"225
         Cabrillo Hwy S","city":"Half Moon Bay","state":"CA","zip":"94019"},"coordinates":[-122.43267,37.464756],"hours":"May
-        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Coastside
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","latitude":37.464756,"longitude":-122.43267,"market_match":false,"name":"Coastside
         Farmers'' Market in Half Moon Bay","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
         Food","Soap"],"slug":"coastside-farmers-market-in-half-moon-bay","slugs":["coastside-farmers-market-in-half-moon-bay"],"updated_at":"2014-05-24T14:06:56.371-07:00","urls":["http://www.coastsidefarmersmarket.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1694","organization":{"id":1349,"name":"Coastside
         Farmers'' Market in Half Moon Bay","slug":"coastside-farmers-market-in-half-moon-bay","slugs":["coastside-farmers-market-in-half-moon-bay"],"_slugs":["coastside-farmers-market-in-half-moon-bay"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1349","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1349/locations"}},{"id":1693,"address":{"id":1417,"street":"Howard
         Ave. \u0026 Park","city":"Burlingame","state":"CA","zip":"94010"},"coordinates":[-122.3456787,37.5772448],"hours":"April
         - December Sunday 9:00 AM to 1:30 PM, May - mid-September Thursday 4:00 PM
-        to 8:00 PM","kind":"Farmers'' Markets","market_match":false,"name":"Burlingame
+        to 8:00 PM","kind":"Farmers'' Markets","latitude":37.5772448,"longitude":-122.3456787,"market_match":false,"name":"Burlingame
         Fresh Market Farmers Market","slug":"burlingame-fresh-market-farmers-market","slugs":["burlingame-fresh-market-farmers-market"],"updated_at":"2014-05-24T14:06:56.335-07:00","urls":["http://www.burlingamechamber.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1693","organization":{"id":1348,"name":"Burlingame
         Fresh Market Farmers Market","slug":"burlingame-fresh-market-farmers-market","slugs":["burlingame-fresh-market-farmers-market"],"_slugs":["burlingame-fresh-market-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1348","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1348/locations"}},{"id":1692,"address":{"id":1416,"street":"1201
         El Camino Real","city":"Belmont","state":"CA","zip":"94002"},"coordinates":[-122.2743709,37.519226],"hours":"January
-        - December Sunday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","market_match":true,"name":"Belmont
+        - December Sunday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","latitude":37.519226,"longitude":-122.2743709,"market_match":true,"name":"Belmont
         Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Meat","Nursery","Nuts","Poultry","Prepared
         Food"],"slug":"belmont-farmers-market","slugs":["belmont-farmers-market"],"updated_at":"2014-05-24T14:06:56.299-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=2"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1692","organization":{"id":1347,"name":"Belmont
         Farmers'' Market","slug":"belmont-farmers-market","slugs":["belmont-farmers-market"],"_slugs":["belmont-farmers-market"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1347","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1347/locations"}},{"id":1691,"address":{"id":1415,"street":"194
         W 25th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"coordinates":[-122.309978,37.543641],"hours":"May
-        - October Tuesday 4:00 PM to 7:30 PM","kind":"Farmers'' Markets","market_match":true,"name":"25th
+        - October Tuesday 4:00 PM to 7:30 PM","kind":"Farmers'' Markets","latitude":37.543641,"longitude":-122.309978,"market_match":true,"name":"25th
         Avenue Farmers'' Market","payments":["WIC","SFMNP","SNAP"],"products":["Baked
         Goods","Flowers","Seafood","Vegetables","Honey","Meat","Nursery","Nuts","Plants","Prepared
         Food"],"slug":"25th-avenue-farmers-market","slugs":["25th-avenue-farmers-market"],"updated_at":"2014-05-24T14:06:56.266-07:00","urls":["http://www.pcfma.com/market_home.php?market_id=40"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1691","organization":{"id":1346,"name":"25th
@@ -201,7 +204,7 @@ http_interactions:
         all parties, a treatment recommendation is made. Treatment consists of case
         management, weekly group therapy, parent groups, family therapy and referral
         to other resources as necessary.","emails":["ejennings@ymcasf.org"],"faxes":[{"id":1092,"number":"650
-        877-8643"}],"kind":"Other","languages":["Spanish"],"mail_address":{"id":1685,"attention":"Juvenile
+        877-8643"}],"kind":"Other","languages":["Spanish"],"latitude":37.6444129,"longitude":-122.4221521,"mail_address":{"id":1685,"attention":"Juvenile
         Sexual Response Program","street":"1486 Huntington Avenue, Suite 100","city":"South
         San Francisco","state":"CA","zip":"94080-5932"},"name":"South San Francisco.,
         Juvenile Sexual Responsibility Program","phones":[{"id":2464,"number":"650
@@ -238,7 +241,7 @@ http_interactions:
         offered at 19 schools throughout San Mateo County. Programs include Violence
         Prevention, School Safety Advocates, Girls United, case management and individual
         and group counseling. Formerly known as Project FOCYS.","emails":["ejennings@ymcasf.org"],"faxes":[{"id":1091,"number":"650
-        349-1103"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1684,"attention":"of
+        349-1103"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Human Services","languages":["Spanish"],"latitude":37.5591732,"longitude":-122.3022248,"mail_address":{"id":1684,"attention":"of
         San Mateo","street":"1670 South Amphlett Blvd, Suite 115","city":"San Mateo","state":"CA","zip":"94402"},"name":"San
         Mateo","phones":[{"id":2463,"number":"650 349-7969"}],"short_desc":"Counseling
         program offering services to families of children who are having behavior
@@ -263,7 +266,7 @@ http_interactions:
         of the Laguna Salada schools and Terra Nova, Oceana and Jefferson high schools
         to provide individual and group counseling, crisis intervention and consultation.
         Children''s groups are held several times a year.","faxes":[{"id":1090,"number":"650
-        355-2850"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Other","mail_address":{"id":1683,"attention":"Pacifica
+        355-2850"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Other","latitude":37.6491073,"longitude":-122.489409,"mail_address":{"id":1683,"attention":"Pacifica
         Youth Service Bureau","street":"435 Edgemar Avenue","city":"Pacifica","state":"CA","zip":"94044-6879"},"name":"Pacifica","phones":[{"id":2462,"number":"650
         355-3900"}],"short_desc":"Offers a number of counseling programs for youth
         age 3-18, including youth with questions about their sexuality. Also offers
@@ -293,7 +296,7 @@ http_interactions:
         agencies. The Juvenile Sexual Responsibility Program (described separately)
         provides assessment and treatment for juveniles age 12-17 who have committed
         a sexual offense. Formerly known as North Peninsula Family Alternatives (NPFA).","faxes":[{"id":1089,"number":"650
-        877-8643"}],"hours":"Monday-Thursday, 4-8","kind":"Other","languages":["Spanish"],"mail_address":{"id":1682,"attention":"of
+        877-8643"}],"hours":"Monday-Thursday, 4-8","kind":"Other","languages":["Spanish"],"latitude":37.6444129,"longitude":-122.4221521,"mail_address":{"id":1682,"attention":"of
         SSF","street":"1486 Huntington Avenue, Suite 100","city":"South San Francisco","state":"CA","zip":"94080-5932"},"name":"South
         San Francisco","phones":[{"id":2461,"number":"650 877-8642"}],"short_desc":"Provides
         individual and family counseling in an attempt to divert juveniles from criminal
@@ -322,7 +325,7 @@ http_interactions:
         Day camp for children (seasonal), youth basketball, youth soccer, kids'' club,
         Childwatch, climbing walls and teen social center are also offered.","faxes":[{"id":1088,"number":"650
         687-5380"}],"hours":"Monday-Thursday, 6 am-9:30 pm; Friday, 6 am-8 pm; Saturday,
-        7 am-5 pm","kind":"Sports","languages":["Spanish"],"mail_address":{"id":1681,"attention":"East
+        7 am-5 pm","kind":"Sports","languages":["Spanish"],"latitude":37.4656323,"longitude":-122.1425461,"mail_address":{"id":1681,"attention":"East
         Palo Alto Family YMCA","street":"550 Bell Street","city":"East Palo Alto","state":"CA","zip":"94303"},"name":"East
         Palo Alto Family YMCA","phones":[{"id":2460,"number":"650 328-9622"}],"short_desc":"Provides
         social, recreational and health and fitness services for persons of all ages.","slug":"east-palo-alto-family-ymca","slugs":["east-palo-alto-family-ymca"],"transportation":"SAMTRANS
@@ -348,7 +351,7 @@ http_interactions:
         college scholarships, civic engagement and youth fitness programs. Financial
         aid and scholarships are available.","faxes":[{"id":1087,"number":"650 856-7783"}],"hours":"Monday-Thursday,
         6:30 am-9:45 pm; Friday, 6:30 am-7:45 pm; Saturday, 7-5:45; Sunday, 9-8:45
-        pm","kind":"Other","languages":["Persian (Farsi)","Spanish","Chinese (Mandarin)","Russian"],"mail_address":{"id":1680,"attention":"YMCA
+        pm","kind":"Other","languages":["Persian (Farsi)","Spanish","Chinese (Mandarin)","Russian"],"latitude":37.428448,"longitude":-122.116555,"mail_address":{"id":1680,"attention":"YMCA
         of Silicon Valley","street":"3412 Ross Road","city":"Palo Alto","state":"CA","zip":"94303"},"name":"Palo
         Alto Family YMCA","phones":[{"id":2459,"number":"650 856-9622"}],"short_desc":"Provides
         health and fitness classes, residential and day camp programs, and extended
@@ -371,7 +374,7 @@ http_interactions:
         Grant Road","city":"Mountain View","state":"CA","zip":"94040"},"coordinates":[-122.0787752,37.370588],"description":"Provides
         health and physical fitness programs and facilities, family programs, youth
         sports, aquatic programs, after-school childcare and a summer day camp. Senior
-        programming is also available.","faxes":[{"id":1086,"number":"650 969-1053"}],"kind":"Sports","languages":["Spanish"],"mail_address":{"id":1679,"attention":"YMCA
+        programming is also available.","faxes":[{"id":1086,"number":"650 969-1053"}],"kind":"Sports","languages":["Spanish"],"latitude":37.370588,"longitude":-122.0787752,"mail_address":{"id":1679,"attention":"YMCA
         of Silicon Valley","street":"2400 Grant Road","city":"Mountain View","state":"CA","zip":"94040"},"name":"El
         Camino Branch","phones":[{"id":2458,"number":"650 969-9622"}],"short_desc":"Health
         and physical fitness programs, sports and aquatics, child care and senior
@@ -390,8 +393,8 @@ http_interactions:
         training, wellness and fitness training classes, aerobic dance (50 classes
         per week), volunteer opportunities, youth sports, aquatics and day camp in
         East Palo Alto, Menlo Park and Palo Alto via affiliated branches.","faxes":[{"id":1085,"number":"650
-        858-0664"}],"kind":"Other","mail_address":{"id":1678,"attention":"YMCA of
-        Silicon Valley","street":"755 Page Mill Road, Bldg. B","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Page
+        858-0664"}],"kind":"Other","latitude":37.419901,"longitude":-122.14243,"mail_address":{"id":1678,"attention":"YMCA
+        of Silicon Valley","street":"755 Page Mill Road, Bldg. B","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Page
         Mill Branch","phones":[{"id":2457,"number":"650 858-0661"}],"short_desc":"Provides
         health and physical fitness programs.","slug":"page-mill-branch","slugs":["page-mill-branch"],"transportation":"VTA
         stops within 4 blocks.","updated_at":"2014-05-29T12:18:35.559-07:00","urls":["http://www.ymcasv.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1681","services":[{"id":1681,"eligibility":"None","fees":"Vary
@@ -415,7 +418,7 @@ http_interactions:
         children and teens in the Alum Rock School District. Some activities and programs
         offered free or at low cost for the entire family.","emails":["dking@scvymca.org"],"hours":"Monday-Friday,
         5:30 am-10 pm; Saturday, 6:30 am-6 pm; Sunday, 7:30 am-6 pm","kind":"Other","languages":["Chinese
-        (Mandarin)","German","Portuguese","Spanish","Vietnamese"],"mail_address":{"id":1677,"attention":"YMCA
+        (Mandarin)","German","Portuguese","Spanish","Vietnamese"],"latitude":37.3429724,"longitude":-121.8079431,"mail_address":{"id":1677,"attention":"YMCA
         of Silicon Valley","street":"1975 South White Road","city":"San Jose","state":"CA","zip":"95148"},"name":"East
         Valley Branch","phones":[{"id":2456,"number":"408 715-6500"}],"short_desc":"Provides
         activities for adults, youth and families including sports, child care, youth
@@ -435,5 +438,5 @@ http_interactions:
         Creek"],"wait":"No wait.","updated_at":"2014-05-24T14:07:59.739-07:00"}],"organization":{"id":1342,"name":"YMCA
         of Silicon Valley","slug":"ymca-of-silicon-valley","slugs":["ymca-of-silicon-valley"],"_slugs":["ymca-of-silicon-valley"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:31:45 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:33 GMT
 recorded_with: VCR 2.9.2

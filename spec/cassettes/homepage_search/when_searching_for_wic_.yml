@@ -18,30 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:33 GMT
-      Etag:
-      - '"3394f75e15735b97349219a2939c962b"'
+      - Wed, 06 Aug 2014 17:59:45 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - 5f384ff5-4a7d-44f3-9c00-bbb2efef1605
-      X-Runtime:
-      - '0.096643'
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
       Content-Length:
       - '11086'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"3394f75e15735b97349219a2939c962b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f45ca447-d35b-46ad-9c77-2f3e40048194
+      X-Runtime:
+      - '0.098316'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1455,"accessibility":["Elevator","Wheelchair"],"address":{"id":1195,"street":"477
@@ -142,5 +146,5 @@ http_interactions:
         Same day appointment if appropriate.","updated_at":"2014-05-24T14:07:53.904-07:00"}],"organization":{"id":1309,"name":"San
         Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:33 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:45 GMT
 recorded_with: VCR 2.9.2

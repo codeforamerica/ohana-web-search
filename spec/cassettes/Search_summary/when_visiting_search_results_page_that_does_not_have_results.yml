@@ -18,38 +18,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Fri, 30 May 2014 10:31:03 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:59:37 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfdsggfdg&page=0&per_page=30>;
         rel="last"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 29c85163-b847-473b-99a8-930af8430f25
-      X-Runtime:
-      - '0.024823'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 51e13db0-3c94-49d2-876c-df74bee8beeb
+      X-Runtime:
+      - '0.036479'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:31:03 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:37 GMT
 recorded_with: VCR 2.9.2

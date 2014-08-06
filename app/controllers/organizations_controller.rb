@@ -1,12 +1,6 @@
 require 'google/api_client'
 
 class OrganizationsController < ApplicationController
-  before_filter :check_location_id, only: :show
-
-  include ActionView::Helpers::TextHelper
-  include ResultSummaryHelper
-
-  # search results view
   def index
 
     # translate search keyword to current language if other than english
@@ -16,24 +10,11 @@ class OrganizationsController < ApplicationController
       params[:keyword] = translated_word[0].translatedText if translated_word.present?
     end
 
-    # initialize query. Content may be blank if no results were found.
-    begin
-      @orgs = Ohanakapa.search("search", params)
-    rescue Ohanakapa::ServiceUnavailable
-      redirect_to "#{root_url}",
-        alert: "Sorry, we are experiencing issues with search.
-          Please try again later." and return
-    rescue Ohanakapa::BadRequest => e
-      if e.to_s.include?("missing")
-        @orgs = Ohanakapa.locations(params)
-      else
-        @orgs = Ohanakapa.search("search", keyword: "asdfasg")
-      end
-    end
+    @orgs = Organization.search(params)
+
     params[:keyword] = original_word if original_word.present?
 
     initialize_filter_data(@orgs) # intialize search filter data
-
 
     headers = Ohanakapa.last_response.headers
 
@@ -67,70 +48,22 @@ class OrganizationsController < ApplicationController
       @pages[:pages].push(n)
     end
 
-    # The parameters to use to provide a link to the location
-    @search_params = request.params.except(:action, :id, :_, :controller)
     @page_params = request.params.include?(:page) ? request.params.except(:page) : request.params
 
     # initializes map data for search results map
     @map_data = generate_map_data(@orgs)
-
-    # construct html and plain results summaries for use in display in the view (html)
-    # and for display in the page title (plain)
-    @map_search_summary_html = format_map_summary
-    @search_summary_html = format_summary(params)
-    @search_summary_plain = @search_summary_html.gsub('<strong>', '').gsub('</strong>', '')
-
-    expires_in 30.minutes, :public => true
-    if stale?(etag: @orgs, public: true)
-      respond_to do |format|
-        format.html # index.html.haml
-      end
-    end
   end
 
   # organization details view
   def show
-    # retrieve specific organization's details
-    id = params[:id].split("/")[-1]
+    id = params[:id].split('/')[-1]
     @org = Organization.get(id)
 
     initialize_filter_data(@org) # intialize search filter data
 
-    # initializes map data
-    # Fetching nearby places is the most time-consuming activity in the app.
-    # The API method needs to be optimized, but the app should not be
-    # automatically fetching them every time you visit the details page.
-    # It should only fetch them if someone asks for them on the details page,
-    # and we should add a Google Analytics event to track how many times
-    # people click "Show nearby places".
-    #@map_data = generate_map_data(Ohanakapa.nearby(params[:id],:radius=>0.5))
-
-    # The parameters to use to provide a link back to search results
-    @search_params = request.params.except(:action, :id, :_, :controller)
-
     if @org.key?(:services)
-      @aggregate_categories = []
-      @org.services.each do |service|
-        if service.key?(:categories) && service.categories.length > 0
-          service.categories.each do |category|
-            @aggregate_categories.push(category)
-          end
-        end
-      end
+      @categories = @org.services.map { |s| s[:categories] }.flatten.compact.uniq
     end
-
-    # To disable or remove the Result list button on details page
-    # when visiting location directly
-    #@referer = request.env['HTTP_REFERER']
-
-    # respond to direct and ajax requests
-    expires_in 30.minutes, :public => true
-    if stale?(etag: @org, public: true)
-      respond_to do |format|
-        format.html #show.html.haml
-      end
-    end
-
   end
 
   private
@@ -163,7 +96,7 @@ class OrganizationsController < ApplicationController
       #  data.delete(o)
       #else
 
-      if o.key?(:coordinates)
+      if o[:coordinates].present?
         new_coords = o.coordinates
 
         # increment coordinate tracking and offset position if greater than 1 occurrance
@@ -198,24 +131,6 @@ class OrganizationsController < ApplicationController
     # set map_data to nil if there are no entries
     map_data = nil if (map_data[0]['count'] == 0)
     map_data = map_data.to_json.html_safe unless map_data.nil?
-  end
-
-  # Used for passing rendered HTML partials in a json response to requests made via ajax
-  # from http://stackoverflow.com/questions/4810584/rails-3-how-to-render-a-partial-as-a-json-response
-  # execute a block with a different format (ex: an html partial while in an ajax request)
-  def with_format(format, &block)
-    old_formats = formats
-    self.formats = [format]
-    block.call
-    self.formats = old_formats
-    nil
-  end
-
-  # If the location id is invalid, redirect to home page
-  # and display an alert (TODO), or do something else.
-  def check_location_id
-    id = params[:id].split("/")[-1]
-    redirect_to root_path unless Organization.get(id)
   end
 
   # Cache filter values.

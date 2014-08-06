@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:36 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:10 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 0ea266d6-8820-4eea-9fe7-21d97a93dd03
-      X-Runtime:
-      - '0.027392'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0f0013c1-8cf1-4c74-8b05-a4ce9d5c1297
+      X-Runtime:
+      - '0.026855'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:36 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:10 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&utf8=%E2%9C%93
@@ -66,36 +70,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:36 GMT
-      Etag:
-      - '"d2fc200ca212d9b1e3ada01c430186d8"'
+      - Wed, 06 Aug 2014 17:58:11 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=12&per_page=30&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=30&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - 6bc4cc63-b505-4bec-aa95-9842f21870cf
-      X-Runtime:
-      - '0.425610'
       X-Total-Count:
       - '339'
       X-Total-Pages:
       - '12'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
       - '55202'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d2fc200ca212d9b1e3ada01c430186d8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f518a5ea-c280-4167-b217-c64f0d673258
+      X-Runtime:
+      - '0.517531'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
@@ -482,5 +490,5 @@ http_interactions:
         Creek"],"wait":"No wait.","updated_at":"2014-05-24T14:07:59.739-07:00"}],"organization":{"id":1342,"name":"YMCA
         of Silicon Valley","slug":"ymca-of-silicon-valley","slugs":["ymca-of-silicon-valley"],"_slugs":["ymca-of-silicon-valley"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1342/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:36 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:11 GMT
 recorded_with: VCR 2.9.2

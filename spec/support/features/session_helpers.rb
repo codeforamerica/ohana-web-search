@@ -115,9 +115,9 @@ module Features
     end
 
     def looks_like_results
-      expect(page).to have_content("SanMaceo Example Agency")
-      expect(page).to have_content("1 result")
-      expect(page).to have_title "1 result"
+      expect(page).to have_content('SanMaceo Example Agency')
+      expect(page).to have_content('1 result')
+      expect(page).to have_title 'Search results for: keyword: maceo'
     end
 
     def looks_like_no_results

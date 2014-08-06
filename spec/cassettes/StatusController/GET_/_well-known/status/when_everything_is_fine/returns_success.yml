@@ -18,26 +18,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 30 May 2014 10:32:05 GMT
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - a28a9ff6-4746-4619-82d3-9eec948c7b5b
-      X-Runtime:
-      - '0.056843'
-      Content-Length:
-      - '1782'
+      - Cowboy
       Connection:
       - keep-alive
+      Date:
+      - Wed, 06 Aug 2014 17:59:40 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3869'
+      Etag:
+      - '"87cd760ec21518d3d9819512e4b1ca73"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6fc4017b-19e2-453d-96a5-f21532226c97
+      X-Runtime:
+      - '0.046199'
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -76,7 +78,8 @@ http_interactions:
         c2FubWF0ZW8ub3JnIl0sImZheGVzIjpbeyJpZCI6ODgyLCJudW1iZXIiOiI2
         NTAgODM5LTE0NTcifV0sImhvdXJzIjoiTW9uZGF5LUZyaWRheSwgOS0xMiwg
         Mi01Iiwia2luZCI6Ikh1bWFuIFNlcnZpY2VzIiwibGFuZ3VhZ2VzIjpbIlNw
-        YW5pc2giXSwibWFpbF9hZGRyZXNzIjp7ImlkIjoxMzg2LCJhdHRlbnRpb24i
+        YW5pc2giXSwibGF0aXR1ZGUiOjM3LjQ2ODY3OCwibG9uZ2l0dWRlIjotMTIy
+        LjIwNzA1NywibWFpbF9hZGRyZXNzIjp7ImlkIjoxMzg2LCJhdHRlbnRpb24i
         OiJSZWR3b29kIENpdHkgRnJlZSBNZWRpY2FsIENsaW5pYyIsInN0cmVldCI6
         IjExNCBGaWZ0aCBBdmVudWUiLCJjaXR5IjoiUmVkd29vZCBDaXR5Iiwic3Rh
         dGUiOiJDQSIsInppcCI6Ijk0MDYzIn0sIm5hbWUiOiJSZWR3b29kIENpdHkg
@@ -127,7 +130,7 @@ http_interactions:
         Y2F0aW9uc191cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9r
         dWFwcC5jb20vYXBpL29yZ2FuaXphdGlvbnMvMTMwMS9sb2NhdGlvbnMifX0=
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:32:05 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:40 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?keyword=ymca&kind=Human%20Services&service_area=smc
@@ -146,32 +149,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 30 May 2014 10:32:05 GMT
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 06 Aug 2014 17:59:40 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 39edbeb9-b6cb-413b-8b2a-da3003e5477e
-      X-Runtime:
-      - '0.077986'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3476'
+      Etag:
+      - '"dfb72d68aa348c1bfd382fe989958c43"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4be5f6d6-976b-4b8d-9c3b-2c75807890f1
+      X-Runtime:
+      - '0.075909'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1687,"accessibility":["Wheelchair"],"address":{"id":1411,"street":"1670
@@ -189,7 +194,7 @@ http_interactions:
         offered at 19 schools throughout San Mateo County. Programs include Violence
         Prevention, School Safety Advocates, Girls United, case management and individual
         and group counseling. Formerly known as Project FOCYS.","emails":["ejennings@ymcasf.org"],"faxes":[{"id":1091,"number":"650
-        349-1103"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1684,"attention":"of
+        349-1103"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Human Services","languages":["Spanish"],"latitude":37.5591732,"longitude":-122.3022248,"mail_address":{"id":1684,"attention":"of
         San Mateo","street":"1670 South Amphlett Blvd, Suite 115","city":"San Mateo","state":"CA","zip":"94402"},"name":"San
         Mateo","phones":[{"id":2463,"number":"650 349-7969"}],"short_desc":"Counseling
         program offering services to families of children who are having behavior
@@ -206,5 +211,5 @@ http_interactions:
         Mateo County"],"wait":"Varies.","updated_at":"2014-05-24T14:08:00.187-07:00"}],"organization":{"id":1343,"name":"Youth
         Service Bureaus of the YMCA","slug":"youth-service-bureaus-of-the-ymca","slugs":["youth-service-bureaus-of-the-ymca"],"_slugs":["youth-service-bureaus-of-the-ymca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:32:06 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:40 GMT
 recorded_with: VCR 2.9.2

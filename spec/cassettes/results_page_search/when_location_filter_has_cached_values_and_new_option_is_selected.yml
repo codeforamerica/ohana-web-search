@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:40 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:35 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 692aa24b-92c3-4f1d-878f-13902cc74426
-      X-Runtime:
-      - '0.022951'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 129d088c-cb4c-4215-8539-aaf48167701a
+      X-Runtime:
+      - '0.021904'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:40 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:35 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&service_area=smc&utf8=%E2%9C%93
@@ -66,36 +70,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:41 GMT
-      Etag:
-      - '"81abbad4a590859c9e498fd66bd89bfb"'
+      - Wed, 06 Aug 2014 17:58:36 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=9&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - fb5cca57-3358-436f-93d9-5c6ca7d0fc8f
-      X-Runtime:
-      - '0.495356'
       X-Total-Count:
       - '268'
       X-Total-Pages:
       - '9'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
-      - '95339'
-      Connection:
-      - keep-alive
+      - '95358'
+      Etag:
+      - '"8a48486e49cc9c319f63f7f156da01fa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fe6ca7b7-3a45-49a0-9007-d9056655d47f
+      X-Runtime:
+      - '0.496500'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
@@ -862,12 +870,12 @@ http_interactions:
         County","Marin County","Mendocino County","Napa County","San Francisco County","San
         Mateo County","Sonoma County"],"wait":"Varies according to service.","updated_at":"2014-05-24T14:07:59.018-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1654,"contacts":[{"id":1954,"name":"Jon
-        D. Fuller, MD","title":"Medical Director"}],"description":"Provides primary
-        care to homebound veterans. Interdisciplinary team approach, composed of a
-        physician, nurse practitioner, social worker, dietitian, psychologist and
-        occupational therapist, works with the individual and his/her caregiver to
-        provide primary medical care and other services in the home to veterans who
-        are convalescing or have acute chronic or terminal illness. Services include
+        D. Fuller, MD","title":"Medical Director"}],"coordinates":null,"description":"Provides
+        primary care to homebound veterans. Interdisciplinary team approach, composed
+        of a physician, nurse practitioner, social worker, dietitian, psychologist
+        and occupational therapist, works with the individual and his/her caregiver
+        to provide primary medical care and other services in the home to veterans
+        who are convalescing or have acute chronic or terminal illness. Services include
         case management, skilled nursing care, rehabilitation, palliative care, emergency
         and long-term planning, individual and family counseling, health education,
         nutrition and diet consultation, evaluation for adaptive equipment and home
@@ -932,7 +940,7 @@ http_interactions:
         County","Nationwide"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.713-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:41 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:36 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood%20City,%20CA&service_area=smc&utf8=%E2%9C%93
@@ -951,36 +959,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:42 GMT
-      Etag:
-      - '"af7b77a22c34cb877c925787b0c6dc8e"'
+      - Wed, 06 Aug 2014 17:58:37 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood+City%2C+CA&page=4&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=Redwood+City%2C+CA&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - 83009216-8533-467e-bf2f-7d227623a288
-      X-Runtime:
-      - '0.659932'
       X-Total-Count:
       - '110'
       X-Total-Pages:
       - '4'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
       - '101064'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"af7b77a22c34cb877c925787b0c6dc8e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ad59bc43-1d98-4563-8d55-7d9c0e9acd38
+      X-Runtime:
+      - '0.492970'
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -3231,5 +3243,5 @@ http_interactions:
         c191cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5j
         b20vYXBpL29yZ2FuaXphdGlvbnMvMTMyNi9sb2NhdGlvbnMifX1d
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:42 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:37 GMT
 recorded_with: VCR 2.9.2

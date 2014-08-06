@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:47 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:18 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 798c88e3-46d2-406a-8bf9-e3cc03a8c399
-      X-Runtime:
-      - '0.030033'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2913c211-3b80-436c-bebc-9c86dd30789e
+      X-Runtime:
+      - '0.030009'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:47 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:18 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=San%20Mateo,%20CA&service_area=smc&utf8=%E2%9C%93
@@ -66,34 +70,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:48 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:19 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=San+Mateo%2C+CA&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - c83ce763-ad0b-4c78-b729-696bfcd26488
-      X-Runtime:
-      - '0.031147'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5debc0b7-3445-4526-ab98-5d4a3b9636db
+      X-Runtime:
+      - '0.080298'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:48 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:19 GMT
 recorded_with: VCR 2.9.2

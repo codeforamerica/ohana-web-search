@@ -18,40 +18,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 30 May 2014 10:31:03 GMT
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 06 Aug 2014 17:59:37 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 8235b39b-5291-4811-a222-ff1aa31ef66d
-      X-Runtime:
-      - '0.067228'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5975'
+      Etag:
+      - '"a2846a520e24410915fc32031304ee3c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7d42ffb0-2f39-4584-89aa-7362952a99f5
+      X-Runtime:
+      - '0.070388'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
         Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
         Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        President","phone":"123-456-7890","email":"suzanne@example.org","fax":"202-555-1212"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -61,13 +63,13 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"faxes":[{"id":1093,"number":"650
         627-8244"}],"hours":"Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5","kind":"Test","languages":["Chinese
-        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"mail_address":{"id":1686,"attention":"Hella
+        (Cantonese)","Chinese (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"latitude":42.878036,"longitude":-73.1968254,"mail_address":{"id":1686,"attention":"Hella
         Fellas","street":"2013 Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"name":"San
         Maceo Agency","phones":[{"id":2465,"department":"Information","number":"650
         372-6200","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"650
         372-6200"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
         PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
+        stops within 1 block","updated_at":"2014-08-02T19:30:41.599-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -106,5 +108,5 @@ http_interactions:
         wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
         Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}]'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:31:03 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:37 GMT
 recorded_with: VCR 2.9.2

@@ -18,84 +18,37 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 30 May 2014 10:30:50 GMT
       Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 8b871d5d-4db1-4969-8023-4c046c543d5d
-      X-Runtime:
-      - '0.049600'
-      Content-Length:
-      - '575'
+      - Cowboy
       Connection:
       - keep-alive
+      Date:
+      - Wed, 06 Aug 2014 17:59:21 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1223'
+      Etag:
+      - '"ad0ddae228d99eedaa94408fd8c49d9e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7cf1afec-a00d-454e-8b22-0caed37769ea
+      X-Runtime:
+      - '0.167068'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"id":1695,"address":{"id":1419,"street":"400 Old County Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
         - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November \u0026
-        December)","kind":"Farmers'' Markets","market_match":false,"name":"Coastside
+        December)","kind":"Farmers'' Markets","latitude":37.6100031,"longitude":-122.4945456,"market_match":false,"name":"Coastside
         Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
         Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
         Food","Soap"],"slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2014-05-24T14:06:56.407-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1695","organization":{"id":1350,"name":"Coastside
         Farmers'' Market of Pacifca","slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"_slugs":["coastside-farmers-market-of-pacifca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350/locations"}}'
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:30:50 GMT
-- request:
-    method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/coastside-farmers-market-of-pacifca
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/vnd.ohanapi-v1+json
-      User-Agent:
-      - Ohanakapa Ruby Gem 1.0.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
-      Date:
-      - Fri, 30 May 2014 10:30:50 GMT
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - 71a9f8f3-704c-4399-bdfb-b4cf932150d0
-      X-Runtime:
-      - '0.066833'
-      Content-Length:
-      - '581'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"id":1695,"address":{"id":1419,"street":"400 Old County Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
-        - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November \u0026
-        December)","kind":"Farmers'' Markets","market_match":false,"name":"Coastside
-        Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
-        Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
-        Food","Soap"],"slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2014-05-24T14:06:56.407-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1695","organization":{"id":1350,"name":"Coastside
-        Farmers'' Market of Pacifca","slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"_slugs":["coastside-farmers-market-of-pacifca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350/locations"}}'
-    http_version: 
-  recorded_at: Fri, 30 May 2014 10:30:50 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:21 GMT
 recorded_with: VCR 2.9.2
