@@ -56,4 +56,20 @@ feature "results page search", :vcr do
         to have_content('That search was improperly formatted.')
     end
   end
+
+  context 'when a search parameter has no value' do
+    it 'is not included in the page title' do
+      visit('/organizations?location=94403&keyword=')
+      expect(page).
+        to have_title('Search results for: location: 94403 | SMC-Connect')
+    end
+  end
+
+  context 'when multiple search parameters have values' do
+    it 'they are all included in the page title' do
+      visit('/organizations?location=94403&keyword=foo')
+      expect(page).
+        to have_title('location: 94403, keyword: foo | SMC-Connect')
+    end
+  end
 end
