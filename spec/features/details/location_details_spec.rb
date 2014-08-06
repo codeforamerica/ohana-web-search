@@ -30,10 +30,28 @@ feature "location details" do
     expect(page).to have_content("2013 Avenue of the fellows")
   end
 
-  scenario "when the details page is visited directly with invalid id", :vcr do
-    visit('/organizations/foobar')
-    expect(page).to have_content("CalFresh")
-    expect(page).to have_title "SMC-Connect"
+  context 'when the details page is visited directly with invalid id', :vcr do
+    it 'redirects to the homepage' do
+      visit('/organizations/foobar')
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'displays an error message' do
+      visit('/organizations/foobar')
+      expect(page).to have_content('Sorry, that page does not exist')
+    end
+  end
+
+  context 'when URL to details page contains quote at the end', :vcr do
+    it 'redirects to the homepage' do
+      visit("/organizations/foobar'")
+      expect(current_path).to eq(root_path)
+    end
+
+    it 'displays an error message' do
+      visit("/organizations/foobar'")
+      expect(page).to have_content('Please remove the single quote')
+    end
   end
 
   context 'when phone elements are present' do

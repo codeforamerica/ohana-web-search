@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:52 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:31 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - c15a0a00-912f-433b-80dc-21143212e505
-      X-Runtime:
-      - '0.023377'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3a97652f-f0cf-496d-997b-79f9219c5cf3
+      X-Runtime:
+      - '0.024391'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:52 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:31 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&service_area=smc&utf8=%E2%9C%93
@@ -66,36 +70,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:53 GMT
-      Etag:
-      - '"5575ca4849010d48b081857a41b82924"'
+      - Wed, 06 Aug 2014 17:58:32 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&kind=Other&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - e6956706-ac40-40d4-b635-296187af128d
-      X-Runtime:
-      - '0.609584'
       X-Total-Count:
       - '35'
       X-Total-Pages:
       - '2'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
-      - '86211'
-      Connection:
-      - keep-alive
+      - '86268'
+      Etag:
+      - '"d95667399bf353a0b0fd43b605257d0d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 659723f3-1748-40dd-afa6-cae9da1d4155
+      X-Runtime:
+      - '0.660690'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1688,"accessibility":["Wheelchair"],"address":{"id":1412,"street":"1486
@@ -591,10 +599,10 @@ http_interactions:
         County","Santa Clara County","Northern California"],"wait":"Varies.","updated_at":"2014-05-24T14:07:18.358-07:00"}],"organization":{"id":1334,"name":"Stanford
         University Medical Center","slug":"stanford-university-medical-center","slugs":["stanford-university-medical-center"],"_slugs":["stanford-university-medical-center"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1334","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1334/locations"}},{"id":1606,"accessibility":["Wheelchair"],"ask_for":["Joe
         Sheehan"],"contacts":[{"id":1891,"name":"John Narayan, Dr.","title":"Big Sir"},{"id":1892,"name":"Joe
-        Sheehan","title":"Secretary"}],"description":"An organization for retired
-        men, assisting them in maintaining old friendships and developing new ones.
-        Activities include golf, bowling, bridge, tennis, bocci ball, computers and
-        travel. Meets the first Thursday of every month, 11-1:30, at the San Mateo
+        Sheehan","title":"Secretary"}],"coordinates":null,"description":"An organization
+        for retired men, assisting them in maintaining old friendships and developing
+        new ones. Activities include golf, bowling, bridge, tennis, bocci ball, computers
+        and travel. Meets the first Thursday of every month, 11-1:30, at the San Mateo
         Elks'' Lodge for lunch. Visit our Web site for our monthly newsletter and
         to learn more about Branch 142.","emails":["jsheehan2005@yahoo.com"],"kind":"Other","mail_address":{"id":1603,"attention":"Crystal
         Springs Chapter #142","street":"949 Elm Street","city":"San Carlos","state":"CA","zip":"94070"},"name":"Crystal
@@ -651,9 +659,10 @@ http_interactions:
         Moon Bay","Menlo Park","Redwood City","San Carlos"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.106-07:00"}],"organization":{"id":1328,"name":"Sons
         in Retirement (SIR)","slug":"sons-in-retirement-sir","slugs":["sons-in-retirement-sir"],"_slugs":["sons-in-retirement-sir"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1328","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1328/locations"}},{"id":1602,"accessibility":["Wheelchair"],"contacts":[{"id":1886,"name":"Bill
         Wilkinson","title":"Secretary"},{"id":1887,"name":"Tom Rich","title":"Big
-        Sir"}],"description":"An organization for retired men, assisting them in maintaining
-        old friendships and developing new ones. Meets at the San Mateo Elks, 229
-        West 20th Avenue, San Mateo, on the first Tuesday of every month at 12 noon.","emails":["w-j.wilkinson@sbc.glabal.net"],"kind":"Other","mail_address":{"id":1599,"attention":"El
+        Sir"}],"coordinates":null,"description":"An organization for retired men,
+        assisting them in maintaining old friendships and developing new ones. Meets
+        at the San Mateo Elks, 229 West 20th Avenue, San Mateo, on the first Tuesday
+        of every month at 12 noon.","emails":["w-j.wilkinson@sbc.glabal.net"],"kind":"Other","mail_address":{"id":1599,"attention":"El
         Camino Chapter #16","street":"1751 Kentucky Street","city":"Redwood City","state":"CA","zip":"94061"},"name":"El
         Camino Chapter #16","phones":[{"id":2307,"number":"650 368-3914"}],"short_desc":"An
         organization for retired men.","slug":"el-camino-chapter-16","slugs":["el-camino-chapter-16"],"updated_at":"2014-05-24T14:07:18.099-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1602","services":[{"id":1602,"audience":"Retired
@@ -662,10 +671,10 @@ http_interactions:
         Valley","Redwood City","San Carlos","San Mateo"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.095-07:00"}],"organization":{"id":1328,"name":"Sons
         in Retirement (SIR)","slug":"sons-in-retirement-sir","slugs":["sons-in-retirement-sir"],"_slugs":["sons-in-retirement-sir"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1328","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1328/locations"}},{"id":1601,"ask_for":["Rich
         Arietta"],"contacts":[{"id":1885,"name":"Richard Arietta","title":"Membership
-        Chairman"}],"description":"An organization for retired men, assisting them
-        in maintaining old friendships and developing new ones. Meets at the Elks
-        Lodge, 229 West 20th Avenue, San Mateo, on the second Wednesday of every month
-        at 12 noon.","emails":["richarietta@hotmail.com"],"kind":"Other","mail_address":{"id":1598,"attention":"Damion
+        Chairman"}],"coordinates":null,"description":"An organization for retired
+        men, assisting them in maintaining old friendships and developing new ones.
+        Meets at the Elks Lodge, 229 West 20th Avenue, San Mateo, on the second Wednesday
+        of every month at 12 noon.","emails":["richarietta@hotmail.com"],"kind":"Other","mail_address":{"id":1598,"attention":"Damion
         Reynolds Branch #1","street":"779 Prairie Creek Drive","city":"Pacifica","state":"CA","zip":"94044-3824"},"name":"Damion
         Reynolds Branch #1","phones":[{"id":2306,"number":"650 359-4858"}],"short_desc":"An
         organization for retired men.","slug":"damion-reynolds-branch-1","slugs":["damion-reynolds-branch-1"],"updated_at":"2014-05-24T14:07:18.086-07:00","urls":["http://www.sir1.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1601","services":[{"id":1601,"audience":"Retired
@@ -861,5 +870,5 @@ http_interactions:
         Shelter","Family Shelter"],"service_areas":["San Mateo County"],"updated_at":"2014-05-24T14:07:16.128-07:00"}],"organization":{"id":1308,"name":"San
         Mateo County District Attorney","slug":"san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc","slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"_slugs":["san-mateo-county-district-attorney-afb19919-3798-479c-9a65-cdf57ecf08dc"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1308/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:53 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:32 GMT
 recorded_with: VCR 2.9.2

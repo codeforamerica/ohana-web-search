@@ -56,4 +56,11 @@ module ResultSummaryHelper
     summary.html_safe
   end
 
+  def search_results_page_title
+    search_terms = request.query_parameters.
+                          except(:utf8, :service_area).
+                          map { |k, v| "#{k}: #{v}" }.join(', ')
+    title = "Search results for: #{search_terms}"
+    title.html_safe
+  end
 end

@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:37 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:20 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 0e2f9fba-75b0-4d9a-b14e-3b2b42c1a463
-      X-Runtime:
-      - '0.030152'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a9f76286-1042-49cf-a87e-769dd90542cd
+      X-Runtime:
+      - '0.027727'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:37 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:20 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=94403&service_area=smc&utf8=%E2%9C%93
@@ -66,36 +70,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:38 GMT
-      Etag:
-      - '"8ef29b51ff7191fa02b7145f92fe298c"'
+      - Wed, 06 Aug 2014 17:58:21 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=94403&page=4&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&location=94403&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - 24c6ec73-8169-44b3-869a-e82936725575
-      X-Runtime:
-      - '0.545206'
       X-Total-Count:
       - '91'
       X-Total-Pages:
       - '4'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
       - '109769'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"8ef29b51ff7191fa02b7145f92fe298c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8b31b157-f2f5-4f3d-beba-ed13d49f70ad
+      X-Runtime:
+      - '0.541174'
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -2540,5 +2548,5 @@ http_interactions:
         YXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkvb3JnYW5pemF0aW9ucy8xMzA5
         L2xvY2F0aW9ucyJ9fV0=
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:38 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:21 GMT
 recorded_with: VCR 2.9.2

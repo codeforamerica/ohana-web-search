@@ -3,7 +3,7 @@
     - @orgs.each do |org|
 
       %li
-        %a{:href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}"}
+        %a{:href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], request.query_parameters)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], request.query_parameters)}", :title=>"#{org.name}", :name=>"#{org.id}"}
           &nbsp;
         %section.results-entry{:itemscope=>"", :itemtype=>"http://schema.org/Organization"}
           %header
@@ -15,7 +15,7 @@
                     = org.kind
             %hgroup
               %h1{:class=>'name'}
-                %a{ :href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], @search_params)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], @search_params)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
+                %a{ :href => org.organization.name == org.name ? "#{location_path([org.slugs[-1]], request.query_parameters)}" : "#{location_path([org.organization._slugs[-1], org.slugs[-1]], request.query_parameters)}", :title=>"#{org.name}", :name=>"#{org.id}", :itemprop=>"name"}
                   = superscript_ordinals(org.name)
               - if (org.organization.name) && (org.organization.name != org.name)
                 %h2.agency

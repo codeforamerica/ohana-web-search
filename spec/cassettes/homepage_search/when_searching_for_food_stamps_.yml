@@ -18,30 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:32 GMT
-      Etag:
-      - '"b96bd2f7007ace85659bdff7a5c2f5d4"'
+      - Wed, 06 Aug 2014 17:59:48 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - 920b0cca-8128-429d-9dfb-4341cda0a21f
-      X-Runtime:
-      - '0.150959'
       X-Total-Count:
       - '5'
       X-Total-Pages:
       - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
       Content-Length:
       - '18457'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"b96bd2f7007ace85659bdff7a5c2f5d4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 15d6cb30-3997-46fa-bd69-a142aa3f16f0
+      X-Runtime:
+      - '0.896208'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1496,"accessibility":["Interpreter for the deaf","Disabled Parking","Elevator","Ramp","Disabled
@@ -204,5 +208,5 @@ http_interactions:
         County","Nationwide"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.713-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:32 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:48 GMT
 recorded_with: VCR 2.9.2

@@ -18,38 +18,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Fri, 30 May 2014 10:31:44 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:59:33 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Location+with+no+phone&page=0&per_page=30>;
         rel="last"
-      Server:
-      - nginx/1.4.7 + Phusion Passenger 4.0.40
-      Status:
-      - 200 OK
-      X-Powered-By:
-      - Phusion Passenger 4.0.40
-      X-Request-Id:
-      - f3156db1-c019-49f0-8551-95067c9580a6
-      X-Runtime:
-      - '0.159253'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 89b436ff-76c4-411d-941a-cbc8ed777d18
+      X-Runtime:
+      - '0.099244'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 30 May 2014 10:31:44 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:33 GMT
 recorded_with: VCR 2.9.2

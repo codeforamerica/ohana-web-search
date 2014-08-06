@@ -18,38 +18,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:11 GMT
-      Etag:
-      - '"5a241c5fc46f100d11681c9b5cedf68c"'
+      - Wed, 06 Aug 2014 17:58:47 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - 5f030b31-b793-457f-a903-9a6d0e20a64d
-      X-Runtime:
-      - '0.089269'
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
       Content-Length:
-      - '5901'
-      Connection:
-      - keep-alive
+      - '5975'
+      Etag:
+      - '"a2846a520e24410915fc32031304ee3c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ad5caf9b-9c76-4459-8f4f-3ba6283bf6f7
+      X-Runtime:
+      - '0.051094'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1689,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"address":{"id":1413,"street":"2013
         Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"ask_for":["James
         Brown","Dawn of Midi"],"contacts":[{"id":1993,"name":"Suzanne Badenhoop","title":"Board
-        President"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        President","phone":"123-456-7890","email":"suzanne@example.org","fax":"202-555-1212"}],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -65,7 +69,7 @@ http_interactions:
         372-6200","number_type":"TTY"},{"id":2466,"department":"Reservations","number":"650
         372-6200"}],"short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
         PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-05-24T14:07:59.992-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
+        stops within 1 block","updated_at":"2014-08-02T19:30:41.599-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1689","services":[{"id":1686,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -104,5 +108,5 @@ http_interactions:
         wait to 2 weeks","updated_at":"2014-05-24T14:07:59.956-07:00"}],"organization":{"id":1344,"name":"SanMaceo
         Example Agency.","slug":"sanmaceo-example-agency","slugs":["sanmaceo-example-agency"],"_slugs":["sanmaceo-example-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1344/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:11 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:47 GMT
 recorded_with: VCR 2.9.2

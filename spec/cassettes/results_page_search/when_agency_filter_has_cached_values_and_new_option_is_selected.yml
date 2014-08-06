@@ -18,36 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:55 GMT
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      - Wed, 06 Aug 2014 17:58:12 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfg&location=&page=0&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last"
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 39a83689-fafc-40c8-8722-44423f3da6ef
-      X-Runtime:
-      - '0.023779'
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
+      Content-Type:
+      - application/json
       Content-Length:
       - '2'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f7754c14-dbf9-400e-a21e-38424092375e
+      X-Runtime:
+      - '0.022145'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:55 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:12 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&service_area=smc&utf8=%E2%9C%93
@@ -66,36 +70,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:56 GMT
-      Etag:
-      - '"81abbad4a590859c9e498fd66bd89bfb"'
+      - Wed, 06 Aug 2014 17:58:13 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=9&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=30&service_area=smc&utf8=%E2%9C%93>;
         rel="next"
-      Status:
-      - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
-      X-Request-Id:
-      - 41b00db9-7205-4bd7-84a6-0cd3e8a66cb1
-      X-Runtime:
-      - '0.512239'
       X-Total-Count:
       - '268'
       X-Total-Pages:
       - '9'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
       Content-Length:
-      - '95339'
-      Connection:
-      - keep-alive
+      - '95358'
+      Etag:
+      - '"8a48486e49cc9c319f63f7f156da01fa"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0a6b0a35-4a2b-419a-8b42-6d543c184fa2
+      X-Runtime:
+      - '0.575406'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
@@ -862,12 +870,12 @@ http_interactions:
         County","Marin County","Mendocino County","Napa County","San Francisco County","San
         Mateo County","Sonoma County"],"wait":"Varies according to service.","updated_at":"2014-05-24T14:07:59.018-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1654,"contacts":[{"id":1954,"name":"Jon
-        D. Fuller, MD","title":"Medical Director"}],"description":"Provides primary
-        care to homebound veterans. Interdisciplinary team approach, composed of a
-        physician, nurse practitioner, social worker, dietitian, psychologist and
-        occupational therapist, works with the individual and his/her caregiver to
-        provide primary medical care and other services in the home to veterans who
-        are convalescing or have acute chronic or terminal illness. Services include
+        D. Fuller, MD","title":"Medical Director"}],"coordinates":null,"description":"Provides
+        primary care to homebound veterans. Interdisciplinary team approach, composed
+        of a physician, nurse practitioner, social worker, dietitian, psychologist
+        and occupational therapist, works with the individual and his/her caregiver
+        to provide primary medical care and other services in the home to veterans
+        who are convalescing or have acute chronic or terminal illness. Services include
         case management, skilled nursing care, rehabilitation, palliative care, emergency
         and long-term planning, individual and family counseling, health education,
         nutrition and diet consultation, evaluation for adaptive equipment and home
@@ -932,7 +940,7 @@ http_interactions:
         County","Nationwide"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.713-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:56 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:13 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=3
@@ -951,40 +959,44 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:57 GMT
-      Etag:
-      - '"edaaf32a437361e0cb4070ae314d1803"'
+      - Wed, 06 Aug 2014 17:58:14 GMT
+      Status:
+      - 200 OK
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=1&per_page=30>;
         rel="first", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=2&per_page=30>;
         rel="prev", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=12&per_page=30>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&page=4&per_page=30>;
         rel="next"
-      Status:
-      - 200 OK
+      X-Total-Count:
+      - '339'
+      X-Total-Pages:
+      - '12'
       X-Current-Page:
       - '3'
       X-Next-Page:
       - '4'
       X-Previous-Page:
       - '2'
-      X-Request-Id:
-      - e611dc76-0ec2-4cc8-9ff8-ac85fc4f488f
-      X-Runtime:
-      - '0.642568'
-      X-Total-Count:
-      - '339'
-      X-Total-Pages:
-      - '12'
+      Content-Type:
+      - application/json
       Content-Length:
-      - '100206'
-      Connection:
-      - keep-alive
+      - '100358'
+      Etag:
+      - '"eeff308fbdb54cf0a6884b52b5d545f5"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 62ff3ccd-1d9d-4768-a328-94cc6f8fba72
+      X-Runtime:
+      - '0.454852'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1649,"accessibility":["Elevator","Ramp","Disabled Restroom","Disabled
@@ -1103,9 +1115,9 @@ http_interactions:
         in or call the toll-free number for assistance.","service_areas":["Marin County","San
         Francisco County","San Mateo County"],"wait":"Varies according to service.","updated_at":"2014-05-24T14:07:18.637-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1645,"ask_for":["Hotline
-        (202-606-2525)"],"description":"A 24-hour federal job assistance line with
-        information on vacancies in the federal government, application procedures
-        and details on such topics as veterans'' employment programs.","hours":"24
+        (202-606-2525)"],"coordinates":null,"description":"A 24-hour federal job assistance
+        line with information on vacancies in the federal government, application
+        procedures and details on such topics as veterans'' employment programs.","hours":"24
         hours daily","kind":"Government","mail_address":{"id":1642,"attention":"U.S.
         Office of Personnel Management","street":"1900 E Street, NW","city":"Washington","state":"DC","zip":"20415-1000"},"name":"Office
         of Personnel Management., Federal Job Information Center","phones":[{"id":2396,"number":"703
@@ -1119,7 +1131,7 @@ http_interactions:
         or visit website.","service_areas":["Alameda County","Contra Costa County","Marin
         County","San Francisco County","San Mateo County","Santa Clara County"],"wait":"No
         wait.","updated_at":"2014-05-24T14:07:18.627-07:00"}],"organization":{"id":1337,"name":"United
-        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1644,"description":"Maintains
+        States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1644,"coordinates":null,"description":"Maintains
         information on all federal government departments, offices, services and benefits.
         Answers questions about federal departments and activities or puts the inquirer
         in direct contact with an agency for help with government-related questions
@@ -1136,11 +1148,11 @@ http_interactions:
         County","San Francisco County","San Mateo County","Santa Clara County","Nationwide"],"wait":"No
         wait.","updated_at":"2014-05-24T14:07:18.613-07:00"}],"organization":{"id":1337,"name":"United
         States Government","slug":"united-states-government","slugs":["united-states-government"],"_slugs":["united-states-government"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1337/locations"}},{"id":1643,"ask_for":["Receptionist"],"contacts":[{"id":1947,"name":"Devin
-        Derham-Burk","title":"Chapter 13 Trustee"}],"description":"Chapter 13 is a
-        form of bankruptcy. Under this plan the debtor pays back debts within three
-        to five years while late charges, usually interest charges, levies, garnishments,
-        wage attachments, unauthorized repossessions and home foreclosures are stopped.","faxes":[{"id":1060,"number":"408
-        354-5513"}],"kind":"Other","languages":["Spanish"],"mail_address":{"id":1640,"attention":"Trustee
+        Derham-Burk","title":"Chapter 13 Trustee"}],"coordinates":null,"description":"Chapter
+        13 is a form of bankruptcy. Under this plan the debtor pays back debts within
+        three to five years while late charges, usually interest charges, levies,
+        garnishments, wage attachments, unauthorized repossessions and home foreclosures
+        are stopped.","faxes":[{"id":1060,"number":"408 354-5513"}],"kind":"Other","languages":["Spanish"],"mail_address":{"id":1640,"attention":"Trustee
         for Chapter 13","street":"P.O. Box 50013","city":"San Jose","state":"CA","zip":"95150-0013"},"name":"Northern
         California Bankruptcy Court., Trustee for Chapter 13","phones":[{"id":2392,"department":"Debtors","number":"408
         354-1345"},{"id":2393,"department":"Creditors","number":"408 354-8151"}],"short_desc":"Information
@@ -1372,11 +1384,11 @@ http_interactions:
         Menlo-Atherton High School in Atherton.","eligibility":"None","fees":"None.","funding_sources":["County","Donations"],"keywords":["ORGANIZATIONAL
         SUPPORT SERVICES","Staff Training","Technical Assistance","Youth Development","Youth","Adolescents"],"service_areas":["San
         Mateo County"],"wait":"Varies.","updated_at":"2014-05-24T14:07:18.526-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1636,"contacts":[{"id":1935,"name":"Julie
-        Kinloch, LCSW","title":"Program Manager"}],"description":"Provides support
-        and referrals to parents as an alternative to child abuse. Offers information
-        and referrals to community services related to parental support and child
-        abuse prevention.","emails":["julie.kinloch@star-vista.org"],"hours":"24 hours
-        daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1633,"attention":"StarVista/Parent
+        Kinloch, LCSW","title":"Program Manager"}],"coordinates":null,"description":"Provides
+        support and referrals to parents as an alternative to child abuse. Offers
+        information and referrals to community services related to parental support
+        and child abuse prevention.","emails":["julie.kinloch@star-vista.org"],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1633,"attention":"StarVista/Parent
         Support Line","street":"610 Elm Street, Suite 212","city":"San Carlos","state":"CA","zip":"94070"},"name":"Parent
         Support Line","phones":[{"id":2363,"department":"Parent Support Line 24 hours
         daily","number":"888 220-7575"},{"id":2364,"department":"Office line","number":"650
@@ -1447,13 +1459,13 @@ http_interactions:
         Counseling","Individual Counseling","Substance Abuse Day Treatment","Youth","Adolescents"],"how_to_apply":"Apply
         by phone for intake interview.","service_areas":["San Mateo County"],"wait":"No
         wait for intake/assessment.","updated_at":"2014-05-24T14:07:18.492-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1633,"contacts":[{"id":1932,"name":"Sabina
-        LaCosse","title":"Program Manager"}],"description":"A transitional living
-        program for homeless teenagers in San Mateo County. Youth can stay in the
-        program for up to 18 months. Support services assist youth with schools and
-        jobs while teaching them independent living skills. Youth are provided with
-        individual and group therapy, and case management to move towards their goals
-        and successfully transition to independence. Aftercare services are available
-        when residents leave the program.","emails":["sabina.lacosse@star-vista.org"],"faxes":[{"id":1056,"number":"650
+        LaCosse","title":"Program Manager"}],"coordinates":null,"description":"A transitional
+        living program for homeless teenagers in San Mateo County. Youth can stay
+        in the program for up to 18 months. Support services assist youth with schools
+        and jobs while teaching them independent living skills. Youth are provided
+        with individual and group therapy, and case management to move towards their
+        goals and successfully transition to independence. Aftercare services are
+        available when residents leave the program.","emails":["sabina.lacosse@star-vista.org"],"faxes":[{"id":1056,"number":"650
         369-4584"}],"hours":"Monday-Friday, Anytime; Saturday, Sunday, Anytime","kind":"Human
         Services","languages":["Spanish"],"mail_address":{"id":1630,"attention":"StarVista/Daybreak
         Program","street":"610 Elm St","city":"San Carlos","state":"CA","zip":"94070"},"name":"Daybreak","phones":[{"id":2360,"number":"650
@@ -1470,13 +1482,13 @@ http_interactions:
         PROTECTION AND CARE SERVICES","Out-Of-Home Care","HOUSING SERVICES","Temporary","Transitional
         Housing/Shelter","Group Counseling","Individual Counseling","Youth","Adolescents"],"how_to_apply":"Call
         for information.","service_areas":["San Mateo County"],"wait":"Varies.","updated_at":"2014-05-24T14:07:18.477-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1632,"contacts":[{"id":1931,"name":"Julie
-        Kinloch, LCSW","title":"Program Manager"}],"description":"Provides information
-        about alcohol and drug recovery programs and referrals to community services.
-        Offers support for persons dealing with their own alcohol and drug issues
-        or for those whose lives have been affected by alcohol and drug abuse. All
-        services provided over the phone.   Formerly known as Youth and Family Enrichment
-        Services (YFES).","emails":["julie.kinloch@star-vista.org"],"hours":"24 hours
-        daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1629,"attention":"StarVista/Alcohol
+        Kinloch, LCSW","title":"Program Manager"}],"coordinates":null,"description":"Provides
+        information about alcohol and drug recovery programs and referrals to community
+        services. Offers support for persons dealing with their own alcohol and drug
+        issues or for those whose lives have been affected by alcohol and drug abuse.
+        All services provided over the phone.   Formerly known as Youth and Family
+        Enrichment Services (YFES).","emails":["julie.kinloch@star-vista.org"],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1629,"attention":"StarVista/Alcohol
         and Drug Helpline","street":"610 Elm Street, Suite 212","city":"San Carlos","state":"CA","zip":"94070"},"name":"Alcohol
         and Drug Helpline","phones":[{"id":2358,"department":"Hotline 24 hours daily","number":"650
         573-3950"},{"id":2359,"department":"Office","number":"650 595-8165"}],"short_desc":"A
@@ -1585,19 +1597,19 @@ http_interactions:
         Abuse Education/Prevention"],"how_to_apply":"Apply by phone for an appointment
         or information.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.428-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1628,"accessibility":["Wheelchair"],"ask_for":["Staff
         on duty"],"contacts":[{"id":1926,"name":"Julie Macecevic, PhD","title":"Program
-        Manager"}],"description":"An up to thirty-day temporary housing and counseling
-        service for youth, age 10-17, who are experiencing family problems or have
-        run away from home. The co-ed residential program is licensed for up to six
-        youths, and provides a neutral place for parents and youth to come together
-        to work out problems. Services include short-term crisis intervention; a 24-hour
-        Emergency Overnight shelter for youth age 10-17; family, individual and group
-        counseling; and a 24-hour crisis/support phone line. After returning home,
-        youth and family are offered additional counseling sessions. The program is
-        voluntary and the youth are expected to comply with house rules and participate
-        in services offered. A youth and his or her parent or guardian must consent
-        to placement. The program does not accept youth who are chemically addicted
-        or severely emotionally ill.  Formerly known as Youth and Family Enrichment
-        Services (YFES).","emails":["julie.macecevic@star-vista.org"],"faxes":[{"id":1053,"number":"650
+        Manager"}],"coordinates":null,"description":"An up to thirty-day temporary
+        housing and counseling service for youth, age 10-17, who are experiencing
+        family problems or have run away from home. The co-ed residential program
+        is licensed for up to six youths, and provides a neutral place for parents
+        and youth to come together to work out problems. Services include short-term
+        crisis intervention; a 24-hour Emergency Overnight shelter for youth age 10-17;
+        family, individual and group counseling; and a 24-hour crisis/support phone
+        line. After returning home, youth and family are offered additional counseling
+        sessions. The program is voluntary and the youth are expected to comply with
+        house rules and participate in services offered. A youth and his or her parent
+        or guardian must consent to placement. The program does not accept youth who
+        are chemically addicted or severely emotionally ill.  Formerly known as Youth
+        and Family Enrichment Services (YFES).","emails":["julie.macecevic@star-vista.org"],"faxes":[{"id":1053,"number":"650
         367-6828"}],"hours":"24 hour facility","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1625,"attention":"StarVista/Your
         House South","street":"394 Sequoia Avenue","city":"Redwood City","state":"CA","zip":"94061-3444"},"name":"Your
         House South","phones":[{"id":2354,"department":"24 hours daily","number":"650
@@ -1652,12 +1664,12 @@ http_interactions:
         Groups","parent_id":231,"slug":"support-groups"}],"how_to_apply":"Apply by
         phone for intake interview.","service_areas":["San Mateo County"],"updated_at":"2014-05-24T14:07:58.614-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1626,"ask_for":["Person
         on Duty"],"contacts":[{"id":1924,"name":"Julie Kinloch, LCSW","title":"Program
-        Director"}],"description":"A 24-hour phone service for people who need assistance
-        coping with a crisis involving themselves or someone close to them. Issues
-        may include suicide, rape, sexual abuse, child abuse, grief, alcohol/drug
-        abuse or any personal crisis. Also refers people to other community agencies
-        for help.","emails":["julie.kinloch@star-vista.org"],"hours":"24 hours daily","kind":"Human
-        Services","languages":["Spanish"],"mail_address":{"id":1623,"attention":"StarVista/Crisis
+        Director"}],"coordinates":null,"description":"A 24-hour phone service for
+        people who need assistance coping with a crisis involving themselves or someone
+        close to them. Issues may include suicide, rape, sexual abuse, child abuse,
+        grief, alcohol/drug abuse or any personal crisis. Also refers people to other
+        community agencies for help.","emails":["julie.kinloch@star-vista.org"],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1623,"attention":"StarVista/Crisis
         Line","street":"610 Elm Street, Suite 212","city":"San Carlos","state":"CA","zip":"94070"},"name":"Crisis
         Intervention and Suicide Prevention Center","phones":[{"id":2348,"department":"24
         hours daily","number":"800-273-8255","vanity_number":"800 273-TALK"},{"id":2349,"number":"650
@@ -1894,7 +1906,7 @@ http_interactions:
         City","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:18.320-07:00"}],"organization":{"id":1333,"name":"Stanford
         Hospital and Clinics","slug":"stanford-hospital-and-clinics-980c1b98-6567-4c20-951a-860d8241c92d","slugs":["stanford-hospital-and-clinics-980c1b98-6567-4c20-951a-860d8241c92d"],"_slugs":["stanford-hospital-and-clinics-980c1b98-6567-4c20-951a-860d8241c92d"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1333","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1333/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:57 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:14 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=San%20Mateo%20County%20Human%20Services%20Agency&utf8=%E2%9C%93
@@ -1913,30 +1925,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:58 GMT
-      Etag:
-      - '"dd897accfa784067212367597a741ef3"'
+      - Wed, 06 Aug 2014 17:58:15 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - 7713f220-6742-4bd5-a2a8-f5bda002a5ca
-      X-Runtime:
-      - '0.468518'
       X-Total-Count:
       - '13'
       X-Total-Pages:
       - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
       Content-Length:
       - '50784'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"dd897accfa784067212367597a741ef3"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 805acb6e-0586-44a8-9d34-a692e5fb6e20
+      X-Runtime:
+      - '0.443796'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
@@ -2389,5 +2405,5 @@ http_interactions:
         County"],"wait":"Varies.","updated_at":"2014-05-24T14:07:16.745-07:00"}],"organization":{"id":1310,"name":"San
         Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}}]'
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:58 GMT
+  recorded_at: Wed, 06 Aug 2014 17:58:15 GMT
 recorded_with: VCR 2.9.2

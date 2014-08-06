@@ -18,30 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
       Date:
-      - Wed, 25 Jun 2014 05:46:32 GMT
-      Etag:
-      - '"66388c0831d8ef38430c915d7aff17a2"'
+      - Wed, 06 Aug 2014 17:59:42 GMT
       Status:
       - 200 OK
-      X-Current-Page:
-      - '1'
-      X-Request-Id:
-      - af8e5bcd-8f2f-42fc-bf9e-1452338b7647
-      X-Runtime:
-      - '0.336582'
       X-Total-Count:
       - '15'
       X-Total-Pages:
       - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json
       Content-Length:
       - '62891'
-      Connection:
-      - keep-alive
+      Etag:
+      - '"66388c0831d8ef38430c915d7aff17a2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8820cccf-18bd-4671-bb2a-b647dd4c6a55
+      X-Runtime:
+      - '0.559324'
+      Via:
+      - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -1444,5 +1448,5 @@ http_interactions:
         Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkvb3JnYW5p
         emF0aW9ucy8xMzM0L2xvY2F0aW9ucyJ9fV0=
     http_version: 
-  recorded_at: Wed, 25 Jun 2014 05:46:32 GMT
+  recorded_at: Wed, 06 Aug 2014 17:59:42 GMT
 recorded_with: VCR 2.9.2
