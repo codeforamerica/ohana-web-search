@@ -25,13 +25,13 @@ describe StatusController do
         stub_request(:get, "http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-free-medical-clinic").
           with(:headers => { 'Accept'=>'application/vnd.ohanapi-v1+json',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0' }).
+            'User-Agent'=>'Ohanakapa Ruby Gem 1.1.1' }).
           to_return(:status => 200, :body => "", :headers => {})
 
         stub_request(:get, "http://smc-ohana-api-test.herokuapp.com/api/search?keyword=ymca&kind=Human+Services&service_area=smc").
           with(:headers => { 'Accept'=>'application/vnd.ohanapi-v1+json',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'User-Agent'=>'Ohanakapa Ruby Gem 1.0.0' }).
+            'User-Agent'=>'Ohanakapa Ruby Gem 1.1.1' }).
           to_return(:status => 200, :body => "", :headers => {})
 
         get "get_status"

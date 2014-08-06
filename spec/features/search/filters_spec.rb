@@ -178,7 +178,7 @@ feature "results page search", :js, :vcr do
     expect(all("#org-name-options .current-option label").last).to have_content("Samaritan House")
   end
 
-  scenario 'when clicking the reset button' do
+  xscenario 'when clicking the reset button' do
     expect(page).to have_content("No results")
     find_by_id("reset-btn").click
 
