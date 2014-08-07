@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '~> 4.0.4'
+gem 'rails', '~> 4.1.4'
 
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.3'
 
 # Compass tools for use with SCSS.
 gem 'compass-rails', '>= 1.1.7'
@@ -61,9 +61,6 @@ end
 
 # dev and debugging tools
 group :development do
-  # Adds better errors to sprockets asset pipeline in development environment.
-  gem 'sprockets_better_errors'
-
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 1.1.0'
   gem 'binding_of_caller', '>= 0.7.2', :platforms => [:mri_19, :rbx]
