@@ -1,17 +1,15 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-# require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-#require "active_resource/railtie"
 require "sprockets/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module HumanServicesFinder
+module OhanaWebSearch
   class Application < Rails::Application
 
     # don't generate RSpec tests for views and helpers
