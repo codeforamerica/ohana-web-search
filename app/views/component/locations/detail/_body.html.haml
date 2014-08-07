@@ -8,7 +8,7 @@
         = superscript_ordinals(@location.name)
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
-          %a{ href: "/locations?org_name=#{CGI::escape(@location.organization.name)}", title: "#{@location.organization.name}" }
+          = link_to(locations_path(org_name: @location.organization.name), title: @location.organization.name) do
             %span
               = superscript_ordinals(@location.organization.name)
 
@@ -159,7 +159,7 @@
 
           - if @location[:coordinates].present?
             %section#detail-map-view.map
-              %div#detail-map-canvas
+              #detail-map-canvas
                 %span.hide#detail-map-canvas-title
                   = address(@location)
                 %span.hide#detail-map-canvas-lat

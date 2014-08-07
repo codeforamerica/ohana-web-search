@@ -2,7 +2,7 @@
   %section#search-box
     = form_tag('/locations', method: :get, id: 'form-search') do
       %section#keyword-search-box
-        %div.input-search-small.clearable
+        .input-search-small.clearable
           = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Search') do
             %i{ class: 'fa fa-search' }
           = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.results_page_keyword_search')
@@ -13,7 +13,7 @@
 
       %ul#search-controls
         %li
-          = button_tag(type:'submit', name: nil, class: 'button-small') do
+          = button_tag(type: 'submit', name: nil, class: 'button-small') do
             %i{ class: 'fa fa-refresh' }
             = t('buttons.update_search_results')
         %li
