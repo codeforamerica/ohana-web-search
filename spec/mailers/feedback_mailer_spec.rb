@@ -11,9 +11,7 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(anselm@codeforamerica.org
-                      sophia@codeforamerica.org
-                      moncef@codeforamerica.org
+      recipients = %w(ohanapi@codeforamerica.org
                       echan@co.sanmateo.ca.us
                       everducci@co.sanmateo.ca.us)
       expect(@email).to deliver_to(recipients)
@@ -24,7 +22,7 @@ describe FeedbackMailer do
     end
 
     it 'has the correct subject' do
-      expect(@email).to have_subject("[SMC Connect Feedback] #{@params[:from]}")
+      expect(@email).to have_subject("[SMC-Connect Feedback] #{@params[:from]}")
     end
   end
 
@@ -37,9 +35,7 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(anselm@codeforamerica.org
-                      sophia@codeforamerica.org
-                      moncef@codeforamerica.org
+      recipients = %w(ohanapi@codeforamerica.org
                       echan@co.sanmateo.ca.us
                       everducci@co.sanmateo.ca.us)
       expect(@email).to deliver_to(recipients)
@@ -51,7 +47,7 @@ describe FeedbackMailer do
 
     it 'has the correct subject' do
       expect(@email).
-        to have_subject('[SMC Connect Feedback] anonymous@none.com')
+        to have_subject('[SMC-Connect Feedback] anonymous@none.com')
     end
   end
 end

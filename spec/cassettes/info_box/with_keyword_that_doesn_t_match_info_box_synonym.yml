@@ -1,0 +1,1170 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=food
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 12 Aug 2014 07:26:13 GMT
+      Status:
+      - 200 OK
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=food&page=2&per_page=30>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=food&page=2&per_page=30>;
+        rel="next"
+      X-Total-Count:
+      - '33'
+      X-Total-Pages:
+      - '2'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '125544'
+      Etag:
+      - '"46fe2b47467e01aaaf453d72ef0772a7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b479a4ec-d57e-4d73-bd73-e2567e7903d4
+      X-Runtime:
+      - '1.853617'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1713,"accessibility":["Disabled Parking","Ramp","Disabled Restroom","TTY","Wheelchair","Wheelchair-accessible
+        van"],"address":{"id":1436,"street":"2500 Middlefield Rd.","city":"Redwood
+        City","state":"CA","zip":"94063"},"coordinates":[-122.2141324,37.4773738],"description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","faxes":[{"id":1096,"number":"650
+        364-5684"}],"hours":"Monday-Friday, 8:00am-5:00pm; 24 hours a day, call 1-800-223-8383
+        for case status; 24 hours a day, call (650) 802-7922 to report child abuse","kind":"Human
+        Services","latitude":37.4773738,"longitude":-122.2141324,"mail_address":{"id":1689,"attention":"","street":"2500
+        Middlefield Rd.","city":"Redwood City","state":"CA","zip":"94063"},"name":"Redwood
+        City Office","phones":[{"id":2470,"department":"Economic Self-Sufficiency","number":"800-223-8383"},{"id":2471,"department":"Children
+        and Family Services","number":"650-802-7922"}],"short_desc":"Provides social
+        services eligibility determination and assistance for Health Coverage, CalFresh,
+        CalWORKs and General Assistance and Children and Family Services.","slug":"redwood-city-office-2500-middlefield-rd","slugs":["redwood-city-office-2500-middlefield-rd"],"transportation":"SamTrans
+        stops in front on the building, and CalTrain is located within one mile of
+        the office location.","updated_at":"2014-05-24T14:08:31.443-07:00","urls":["http://www.smchsa.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1713","services":[{"id":1695,"audience":"San
+        Mateo County residents seeking social service assistance.","description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","eligibility":"Determined
+        based on eligibility regulations and unique family or individual household
+        composition and resource levels.","fees":"None.","keywords":["Health Insurance","Food","Cash
+        Aid","Welfare","Obamacare","Medical Assistance","Social Services"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":220,"depth":1,"oe_id":"108-05","name":"Navigating
+        the System","parent_id":196,"slug":"navigating-the-system"},{"id":221,"depth":2,"oe_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":220,"slug":"help-fill-out-forms"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"}],"how_to_apply":"There
+        are four ways to apply for social services: 1) Mail: Request an application
+        by phone by calling the Human Services Agency at 1-800-223-8383 or pick one
+        up at any Human Services Agency office. 2) Website:  Complete and submit an
+        application online at www.mybenefitscalwin.org or www.coveredca.com 3) Call
+        the Human Services Agency at 800-223-8383 to speak to a representative who
+        can answer your questions or help you apply by phone. 4) In person:  Visit
+        one of the Human Services Agency offices to apply in person or pick up an
+        application.  View all our centers here: http://www.smc-connect.org/organizations?org_name=San+Mateo+County+Human+Services+Agency","service_areas":["San
+        Mateo County"],"wait":"Based on method of application and daily customer volume.
+        Our goal is to serve all residents with the best and fastest service to meet
+        their needs.","updated_at":"2014-05-24T14:08:00.352-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1493,"accessibility":["Disabled
+        Parking","Elevator","Ramp","Disabled Restroom","Wheelchair"],"address":{"id":1232,"street":"550
+        Quarry Road","city":"San Carlos","state":"CA","zip":"94070"},"ask_for":["Carmen
+        O''Keefe"],"contacts":[{"id":1750,"name":"Carmen O''Keefe","title":"Vocational
+        Rehabilitation Program Manager"},{"id":1751,"name":"Wendy Jordan","title":"Vocational
+        Couseling Supervisor"},{"id":1752,"name":"Judy Downing","title":"Social Security
+        Benefits Couseling"},{"id":1753,"name":"Joe Hennen","title":"Medicare, Part
+        D"},{"id":1754,"name":"Gretchen Glynn","title":"Marketing Manager"}],"coordinates":[-122.2671065,37.5175545],"description":"A
+        vocational rehabilitation center for any employable county resident who is
+        disabled or economically disadvantaged who wishes to enter, re-enter or remain
+        in the labor market. Referrals are accepted from county agencies, the State
+        Department of Rehabilitation and private treatment providers. Services include
+        vocational evaluation, work adjustment training, vocational testing, vocational
+        social security benefits counseling, Medi Care Part D counseling, job placement,
+        and supported employment services. The Workcenter bids competitively for outside
+        contracts from industry - packaging, assembly, sorting, collating, etc. A
+        food service program provides training in culinary arts, hot lunches for the
+        workforce and catering in the public and private nonprofit sector. Provides
+        a Workfare component using the Workcenter to help GA (General Assistance)clients
+        earn their GA grants by working two days a week. GA clients must participate
+        in an intensive program to maintain their eligibility and to get them back
+        into the labor force. Provides vocational counseling, assessment and training,
+        skills and interest inventories,and case management in a structured transitional
+        work environment, job search, job placement and job coaching services as well
+        as information, referral and advocacy to persons with barriers to employment
+        including mental health, General Assistance, CalWORKs, alcohol and other drug
+        abuse issues, and the currently or formerly incarcerated.","faxes":[{"id":957,"number":"650
+        596-5162"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Filipino (Tagalog)","Spanish"],"latitude":37.5175545,"longitude":-122.2671065,"mail_address":{"id":1490,"attention":"Vocational
+        Rehabilitation Services","street":"550 Quarry Road","city":"San Carlos","state":"CA","zip":"94070"},"name":"Vocational
+        Rehabilitation Services (VRS) Workcenter","phones":[{"id":2082,"number":"650
+        802-6482"}],"short_desc":"Provides job training, placement or employment for
+        any employable county resident collecting General Assistance or undergoing
+        psychiatric treatment.","slug":"vocational-rehabilitation-services-vrs-workcenter","slugs":["vocational-rehabilitation-services-vrs-workcenter"],"transportation":"SAMTRANS
+        stops within 3 blocks.","updated_at":"2014-05-24T14:08:31.372-07:00","urls":["http://www.smchsavrs.org","http://www.smchsa.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1493","services":[{"id":1493,"audience":"Individuals
+        with barriers to employment (primarily mental health) who are not working
+        but want to obtain assistance with going back to work","description":"A vocational
+        rehabilitation center for any employable county resident who is disabled or
+        economically disadvantaged who wishes to enter, re-enter or remain in the
+        labor market. Referrals are accepted from county agencies, the State Department
+        of Rehabilitation and private treatment providers. Services include vocational
+        evaluation, work adjustment training, vocational testing, vocational social
+        security benefits counseling, Medi Care Part D counseling, job placement,
+        and supported employment services. The Workcenter bids competitively for outside
+        contracts from industry - packaging, assembly, sorting, collating, etc. A
+        food service program provides training in culinary arts, hot lunches for the
+        workforce and catering in the public and private nonprofit sector. Provides
+        a Workfare component using the Workcenter to help GA (General Assistance)clients
+        earn their GA grants by working two days a week. GA clients must participate
+        in an intensive program to maintain their eligibility and to get them back
+        into the labor force. Provides vocational counseling, assessment and training,
+        skills and interest inventories,and case management in a structured transitional
+        work environment, job search, job placement and job coaching services as well
+        as information, referral and advocacy to persons with barriers to employment
+        including mental health, General Assistance, CalWORKs, alcohol and other drug
+        abuse issues, and the currently or formerly incarcerated.","eligibility":"County
+        resident disabled or economically disadvantaged","fees":"None.","keywords":["EMPLOYMENT/TRAINING
+        SERVICES","Job Counseling/Testing","Job Information/Placement/Referral","Job
+        Training","General Relief","Job Search/Placement","Vocational Rehabilitation"],"categories":[{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":294,"depth":2,"oe_id":"110-01-01","name":"Job
+        Placement","parent_id":293,"slug":"job-placement"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
+        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"},{"id":305,"depth":2,"oe_id":"110-03-04","name":"Interview
+        Training","parent_id":301,"slug":"interview-training-110-03-04"},{"id":306,"depth":2,"oe_id":"110-03-05","name":"Resume
+        Development","parent_id":301,"slug":"resume-development-110-03-05"},{"id":307,"depth":2,"oe_id":"110-03-06","name":"Skills
+        Assessment","parent_id":301,"slug":"skills-assessment-110-03-06"}],"how_to_apply":"Referral
+        from therapist, California State Department of Rehabilitation or eligibility
+        worker required.","service_areas":["San Mateo County"],"wait":"1 week to 10
+        days.","updated_at":"2014-05-24T14:07:54.484-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1494,"accessibility":["Disabled
+        Parking","Ramp","Disabled Restroom","Wheelchair"],"address":{"id":1233,"street":"400
+        Harbor Blvd., Bldg. B","city":"Belmont","state":"CA","zip":"94002-4047"},"ask_for":["Receptionist"],"contacts":[{"id":1755,"name":"Jackie
+        Coombs","title":"CAPI Supervisor"}],"coordinates":[-122.268615,37.5201137],"description":"Processes
+        applications for Cash Assistance Program for Immigrants (CAPI) recipients
+        who are low-income, aged, blind or disabled legal permanent resident immigrants.","kind":"Human
+        Services","languages":["Chinese (Cantonese)","Chinese (Mandarin)","Filipino
+        (Tagalog)","French","Hindi","Persian (Farsi)","Spanish","Tamil","Vietnamese"],"latitude":37.5201137,"longitude":-122.268615,"mail_address":{"id":1491,"attention":"Belmont
+        Harbor Park","street":"400 Harbor Blvd., Bldg. B","city":"Belmont","state":"CA","zip":"94002-4047"},"name":"Central
+        Region., Belmont Harbor Park","phones":[{"id":2083,"number":"800 648-0954"}],"short_desc":"Processes
+        applications for Cash Assistance Program for Immigrants (CAPI).","slug":"central-region-belmont-harbor-park","slugs":["central-region-belmont-harbor-park"],"transportation":"SAMTRANS
+        stops within 3 blocks.","updated_at":"2014-05-24T14:08:31.303-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1494","services":[{"id":1494,"eligibility":"Low-income,
+        aged, blind or disabled legal permanent resident immigrant","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["FINANCIAL
+        ASSISTANCE SERVICES","General Support","Cash Assistance Program for Immigrants","CalWORKs","CalFRESH","Job
+        Information Center"],"categories":[{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":148,"depth":2,"oe_id":"107-02-02","name":"Help
+        Pay for Food","parent_id":144,"slug":"help-pay-for-food-107-02-02"},{"id":149,"depth":3,"oe_id":"107-02-02-01","name":"Food
+        Benefits","parent_id":148,"slug":"food-benefits-107-02-02-01"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":180,"depth":2,"oe_id":"107-03-04","name":"Understand
+        Government Programs","parent_id":176,"slug":"understand-government-programs"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"}],"how_to_apply":"Apply
+        by phone for an appointment.","service_areas":["San Mateo County"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:54.572-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1497,"accessibility":["Disabled
+        Parking","Ramp","Wheelchair"],"address":{"id":1236,"street":"1487 Huntington
+        Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"contacts":[{"id":1758,"name":"Jerry
+        Lindner","title":"Regional Program Manager"}],"coordinates":[-122.421524,37.644686],"description":"Processes
+        applications for financial assistance programs such as CalWORKS, Medi-Cal,
+        CalFresh (Food Stamps), General Assistance and child care.   To get the process
+        started, applicants are encouraged to apply online at https://www.mybenefitscalwin.org/.","faxes":[{"id":960,"number":"650
+        877-5606"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
+        (Mandarin)","Filipino (Tagalog)","Spanish"],"latitude":37.644686,"longitude":-122.421524,"mail_address":{"id":1494,"attention":"South
+        San Francisco Services Ctr","street":"1487 Huntington Avenue","city":"South
+        San Francisco","state":"CA","zip":"94080"},"name":"Northern Region., South
+        San Francisco Services Center","phones":[{"id":2091,"number":"650 877-5608"}],"short_desc":"Processes
+        applications for financial assistance programs such as CalWORKS, Medi-Cal
+        and Food Stamps.","slug":"northern-region-south-san-francisco-services-center","slugs":["northern-region-south-san-francisco-services-center"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:31.059-07:00","urls":["https://www.mybenefitscalwin.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1497","services":[{"id":1497,"eligibility":"Vary
+        according to program","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["EMERGENCY
+        SERVICES","Financial Assistance","Health","General Relief","TANF","Child Care
+        Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Child Welfare","Calworks","Welfare"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
+        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
+        Benefits","parent_id":23,"slug":"food-benefits"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":145,"depth":2,"oe_id":"107-02-01","name":"Help
+        Pay for Childcare","parent_id":144,"slug":"help-pay-for-childcare"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":180,"depth":2,"oe_id":"107-03-04","name":"Understand
+        Government Programs","parent_id":176,"slug":"understand-government-programs"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":220,"depth":1,"oe_id":"108-05","name":"Navigating
+        the System","parent_id":196,"slug":"navigating-the-system"},{"id":221,"depth":2,"oe_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":220,"slug":"help-fill-out-forms"}],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["San Bruno","South San Francisco"],"wait":"First
+        come, first served basis.","updated_at":"2014-05-24T14:07:54.885-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1496,"accessibility":["Interpreter
+        for the deaf","Disabled Parking","Elevator","Ramp","Disabled Restroom","Wheelchair"],"address":{"id":1235,"street":"2415
+        University Avenue, 3rd Floor","city":"East Palo Alto","state":"CA","zip":"94303"},"ask_for":["Receptionist"],"contacts":[{"id":1757,"name":"Elaine
+        Azzopardi","title":"Regional Program Manager"}],"coordinates":[-122.140106,37.472276],"description":"Processes
+        applications for financial assistance programs such as Temporary Assistance
+        for Needy Families (TANF), CalWORKS, food stamps and Medi-Cal.   Applicants
+        are assessed and directed to the most appropriate program to achieve self
+        sufficiency. Most adults on TANF immediately enter a Work First component.
+        Families and individuals with either acute or long-standing barriers to self
+        sufficiency are served by the Family Self-Sufficiency Team which provides
+        case management and specialty services through an assigned primary case manager.
+        Translation services are provided free to clients and include translation
+        of written documents and oral interpretation of services by appointment. Child
+        welfare services are also provided in family maintenance, family reunification
+        and long-term placement programs.","faxes":[{"id":959,"number":"650 325-5327"}],"hours":"Monday-Friday,
+        8-5","kind":"Human Services","languages":["Chinese","Spanish"],"latitude":37.472276,"longitude":-122.140106,"mail_address":{"id":1493,"attention":"East
+        Palo Alto Services Center","street":"2415 University Avenue, 3rd Floor","city":"East
+        Palo Alto","state":"CA","zip":"94303"},"name":"Southern Region., East Palo
+        Alto Services Center","phones":[{"id":2090,"number":"650 363-4218"}],"short_desc":"Processes
+        applications for financial assistance programs for residents of East Palo
+        Alto and Menlo Park.","slug":"southern-region-east-palo-alto-services-center","slugs":["southern-region-east-palo-alto-services-center"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:31.147-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1496","services":[{"id":1496,"eligibility":"Vary
+        according to program","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Case Management","EMERGENCY SERVICES","Financial
+        Assistance","FINANCIAL ASSISTANCE SERVICES","Food","Health","General Relief","TANF","Child
+        Care Subsidies","Medicaid","Food Stamps/SNAP","CalFresh","Child Welfare","CalWORKs","Welfare"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
+        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
+        Benefits","parent_id":23,"slug":"food-benefits"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":148,"depth":2,"oe_id":"107-02-02","name":"Help
+        Pay for Food","parent_id":144,"slug":"help-pay-for-food-107-02-02"},{"id":149,"depth":3,"oe_id":"107-02-02-01","name":"Food
+        Benefits","parent_id":148,"slug":"food-benefits-107-02-02-01"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"}],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["East Palo Alto","Menlo Park"],"wait":"First
+        come, first served basis for walk-in applicants.","updated_at":"2014-05-24T14:07:54.782-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1499,"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"id":1238,"street":"271
+        - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"id":1760,"name":"Darla
+        Munson","title":"Regional Manager"}],"coordinates":[-122.4741901,37.6896347],"description":"Offers
+        comprehensive employment services for job seekers and employers.   Employer
+        services include screening and referral of job-ready workers, up to 50% reimbursement
+        of wages for new employees during the on-the-job training period, and space
+        and resources necessary for recruitment. Offers a job bank to persons age
+        16 or over. Offers information on job openings, company profiles and training
+        information in government, nonprofit agencies, corporations and private industry.
+        Offers access to the Internet and the use of computers, phones and fax machines.
+        Also offers information and referral services to other community resources
+        as needed by clients. Accepts applications for public assistance programs:
+        CalWorks, CalFresh, General Assistance and Medi-Cal. Determines eligibility
+        of needy individuals and families seeking public assistance benefits. Serves
+        low-income clients in need of health insurance (Medi-Cal), nutritional food
+        supplements (CalFresh), and temporary financial assistance (CalWorks and General
+        Assistance).","emails":["dmunson@co.sanmateo.ca.us"],"faxes":[{"id":962,"number":"650
+        301-8455"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Filipino
+        (Tagalog)","Spanish"],"latitude":37.6896347,"longitude":-122.4741901,"mail_address":{"id":1496,"attention":"PeninsulaWorks
+        Daly City","street":"271 - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"name":"Northern
+        Region., PeninsulaWorks Daly City","phones":[{"id":2093,"number":"650 301-8440"}],"short_desc":"Offers
+        comprehensive employment services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","slugs":["northern-region-peninsulaworks-daly-city"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:31.023-07:00","urls":["http://www.peninsulaworks.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1499","services":[{"id":1499,"audience":"Persons
+        in need of Public Assistance benefits. Persons in need of employment and/or
+        training services, job seekers and employers","eligibility":"Vary according
+        to program. No requirements to use job information center or to take workshops","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["Employment","Job
+        Placement","Job Training","Prejob Guidance","Job Finding Assistance","General
+        Relief","TANF","Child Care Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Youth","Adolescents"],"categories":[{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":294,"depth":2,"oe_id":"110-01-01","name":"Job
+        Placement","parent_id":293,"slug":"job-placement"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
+        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Walk
+        in to use job information center and/or apply for Public Assistance Programs.","service_areas":["Brisbane","Colma","Daly
+        City","Pacifica","San Bruno","South San Francisco"],"wait":"No wait.","updated_at":"2014-05-24T14:07:54.979-07:00"}],"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1379,"address":{"id":1119,"street":"800
+        Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"ask_for":["Julie
+        Arelino"],"contacts":[{"id":1605,"name":"Marilyn Baker-Venturini","title":"Director"},{"id":1606,"name":"Graciela
+        Hernandez","title":"Assistant Manager"},{"id":1607,"name":"Julie Avelino","title":"Assessment
+        Specialist"}],"coordinates":[-122.1805905,37.4480204],"description":"Delivers
+        a hot meal to the home of persons age 60 or over who are primarily homebound
+        and unable to prepare their own meals, and have no one to prepare meals. Also,
+        delivers a hot meal to the home of disabled individuals ages 18-59. Meals
+        are delivered between 9 am-1:30 pm, Monday-Friday. Special diets are accommodated:
+        low fat, low sodium, and low sugar.","emails":["mbaker-venturini@peninsulavolunteers.org"],"faxes":[{"id":872,"number":"650
+        326-9547"}],"hours":"Delivery times: Monday-Friday, 9-1:30","kind":"Human
+        Services","languages":["Spanish"],"latitude":37.4480204,"longitude":-122.1805905,"mail_address":{"id":1376,"attention":"Meals
+        on Wheels - South County","street":"800 Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"name":"Meals
+        on Wheels - South County","phones":[{"id":1891,"number":"650 323-2022"}],"short_desc":"Will
+        deliver a hot meal to the home of persons age 60 or over who are homebound
+        and unable to prepare their own meals. Can provide special diets.","slug":"meals-on-wheels-south-county","slugs":["meals-on-wheels-south-county"],"transportation":"Not
+        necessary for service.","updated_at":"2014-05-24T14:08:20.007-07:00","urls":["http://www.peninsulavolunteers.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1379","services":[{"id":1379,"audience":"Senior
+        citizens age 60 or over, disabled individuals age 18-59","eligibility":"Homebound
+        person unable to cook or shop","fees":"Suggested donation of $4.25 per meal
+        for seniors 60 or over. Mandatory charge of $2 per meal for disabled individuals
+        ages 18-59.","funding_sources":["County","Donations"],"keywords":["ADULT PROTECTION
+        AND CARE SERVICES","Meal Sites/Home-delivered Meals","HEALTH SERVICES","Nutrition","Home
+        Delivered Meals","Older Adults","Disabilities Issues","Senior Food Assistance","Hot
+        Meals"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Apply
+        by phone.","service_areas":["Atherton","Belmont","East Palo Alto","Menlo Park","Portola
+        Valley","Redwood City","San Carlos","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:51.381-07:00"}],"organization":{"id":1298,"name":"Peninsula
+        Volunteers","slug":"peninsula-volunteers","slugs":["peninsula-volunteers"],"_slugs":["peninsula-volunteers"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1298","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1298/locations"}},{"id":1576,"accessibility":["Wheelchair"],"address":{"id":1312,"street":"333
+        West Julian Street","city":"San Jose","state":"CA","zip":"95110"},"contacts":[{"id":1857,"name":"Mary
+        Cummins","title":"Program Manager"}],"coordinates":[-121.8998508,37.3371147],"description":"Serves
+        hot lunches Mondays through Fridays, and some Saturdays and Sundays, for seniors
+        age 60 or over and spouse of any age at any one of 36 sites throughout the
+        county. Also operates a weekly frozen Home Delivered Meal program (Santa Clara
+        County Meals on Wheels).","faxes":[{"id":1026,"number":"408 975-4830"}],"hours":"Office:
+        Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese (Cantonese)","Spanish","Vietnamese"],"latitude":37.3371147,"longitude":-121.8998508,"mail_address":{"id":1573,"attention":"Senior
+        Nutrition Program","street":"333 West Julian Street","city":"San Jose","state":"CA","zip":"95110"},"name":"Department
+        of Aging and Adult Services., Senior Nutrition Program","phones":[{"id":2266,"number":"408
+        975-4860"}],"short_desc":"Serves hot lunches for seniors at 34 sites and operates
+        home delivered meal program.","slug":"department-of-aging-and-adult-services-senior-nutrition-program","slugs":["department-of-aging-and-adult-services-senior-nutrition-program"],"transportation":"Varies
+        according to nutrition site.","updated_at":"2014-05-24T14:08:24.261-07:00","urls":["http://www.santaclaracounty.org/ssa/seniornutrition"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1576","services":[{"id":1576,"audience":"Seniors","eligibility":"Age
+        60 or over and spouse of any age","fees":"None. Donations accepted. Cash accepted.","funding_sources":["City","County","Donations","Federal","State"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","Congregate
+        Meals/Nutrition Sites","Senior Care","Senior Nutrition","Free Food","Free
+        Meals"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
+        Delivery","parent_id":17,"slug":"food-delivery"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"}],"how_to_apply":"Apply by phone
+        for home delivered meal program (Meals on Wheels). No application required
+        for nutrition meal sites.","service_areas":["Santa Clara County"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:56.014-07:00"}],"organization":{"id":1320,"name":"Santa
+        Clara County Social Services Agency","slug":"santa-clara-county-social-services-agency","slugs":["santa-clara-county-social-services-agency"],"_slugs":["santa-clara-county-social-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1320","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1320/locations"}},{"id":1618,"accessibility":["Wheelchair"],"address":{"id":1351,"street":"50
+        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Worker
+        on duty"],"contacts":[{"id":1910,"name":"Tom Cordell","title":"Manager, Homeless
+        Help Center"}],"coordinates":[-122.3250474,37.568272],"description":"Offers
+        homeless or low-income persons clean clothing, toiletries, mail, telephone,
+        laundry  service, DMV identification and transportation help (bus fare, gasoline,
+        etc.) Assists with work-related needs such as uniforms, work boots, union
+        dues and job referrals. Provides emergency medical assistance, substance abuse
+        center fees, and referrals to mental health  and other resources. Distributes
+        vouchers to county shelters or sleeping bags when shelters are full. A free
+        bag lunch and continental breakfast are served to homeless persons on weekdays,
+        10 am to 12  noon.  .","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
+        9:45 am - 11:45 am","kind":"Human Services","languages":["Spanish"],"latitude":37.568272,"longitude":-122.3250474,"mail_address":{"id":1615,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, San Mateo Homeless Help Center","phones":[{"id":2325,"number":"650
+        343-9251"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center"],"transportation":"SamTrans,
+        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:04.473-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1618","services":[{"id":1618,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Offers homeless
+        or low-income persons clean clothing, toiletries, mail, telephone, laundry  service,
+        DMV identification and transportation help (bus fare, gasoline, etc.) Assists
+        with work-related needs such as uniforms, work boots, union dues and job referrals.
+        Provides emergency medical assistance, substance abuse center fees, and referrals
+        to mental health  and other resources. Distributes vouchers to county shelters
+        or sleeping bags when shelters are full. A free bag lunch and continental
+        breakfast are served to homeless persons on weekdays, 10 am to 12  noon.  .","eligibility":"None","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
+        Vouchers","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
+        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
+        in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
+        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
+        Services","parent_id":66,"slug":"phone-services"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":182,"depth":1,"oe_id":"107-04","name":"Vouchers","parent_id":135,"slug":"vouchers"},{"id":186,"depth":2,"oe_id":"107-04-04","name":"Housing
+        Vouchers","parent_id":182,"slug":"housing-vouchers-107-04-04"}],"how_to_apply":"Walk
+        in.","service_areas":["Belmont","Burlingame","Foster City","Hillsborough","San
+        Carlos","San Mateo"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.217-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1616,"accessibility":["Wheelchair"],"address":{"id":1349,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Homeless
+        Desk"],"contacts":[{"id":1907,"name":"John Dempsey","title":"Conference President"}],"coordinates":[-122.213221,37.477227],"description":"Located
+        at the Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
+        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
+        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
+        also available for those who can show doctor''s orders for visits or to pick
+        up drug prescriptions.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1048,"number":"650
+        298-8184"}],"hours":"Monday-Friday, 1:15-2:15pm","kind":"Human Services","languages":["Spanish"],"latitude":37.477227,"longitude":-122.213221,"mail_address":{"id":1613,"attention":"Redwood
+        City Area Conference","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, Redwood City Homeless Help Center","phones":[{"id":2323,"number":"650
+        780-7500"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-redwood-city-homeless-help-center"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:28.953-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1616","services":[{"id":1616,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Located at the
+        Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
+        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
+        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
+        also available for those who can show doctor''s orders for visits or to pick
+        up drug prescriptions.","eligibility":"Homeless person","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","EMERGENCY SERVICES","Food Boxes/Food
+        Vouchers","Brown Bag Food Programs","Clothing Vouchers","Bathing Facilities","Laundry
+        Vouchers","Low Income","Homeless People","svdp","food in san mateo"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":58,"depth":2,"oe_id":"104-02-04","name":"Clothing
+        Vouchers","parent_id":54,"slug":"clothing-vouchers"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Walk
+        in.","service_areas":["Atherton","East Palo Alto","Menlo Park","Portola Valley","Redwood
+        City","San Carlos","Woodside"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.070-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1455,"accessibility":["Elevator","Wheelchair"],"address":{"id":1195,"street":"477
+        9th Avenue, Suite 110","city":"San Mateo","state":"CA","zip":"94402"},"ask_for":["Call
+        the main office"],"contacts":[{"id":1702,"name":"Eliana C. Schultz, RD","title":"WIC
+        Director"}],"coordinates":[-122.3171637,37.5624546],"description":"Offers
+        nutrition education and supplemental foods to women who are pregnant, post-partum
+        or breastfeeding, and children age 5 or under. Families may be low- or medium-income
+        and working families may also qualify. There are six WIC clinic sites in the
+        county (South San Francisco, East Palo Alto, Redwood City, Daly City, San
+        Mateo and Half Moon Bay). Supplemental food is made available through issuance
+        of coupons redeemable at most grocery stores for certain food items selected
+        to provide essential nutrients. Participation does not affect eligibility
+        for food stamps or other public assistance programs. Also assists in finding
+        health care and other community services. Formerly known as San Mateo County
+        Health Department, Public Health Division. Nutrition Programs. Women, Infants
+        and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
+        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"latitude":37.5624546,"longitude":-122.3171637,"mail_address":{"id":1452,"attention":"SMCHS
+        WIC Program","street":"2000 Alameda de las Pulgas, Suite 200","city":"San
+        Mateo","state":"CA","zip":"94403"},"name":"Family Health Services., Public
+        Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"id":2012,"number":"650
+        573-2168"},{"id":2013,"department":"Breastfeeding Helpline","number":"800
+        205-0333"}],"short_desc":"Offers nutrition education and supplemental foods
+        to low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","slugs":["family-health-services-public-health-nutrition-women-infants-and-children-wic-program"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:24.716-07:00","urls":["http://www.smchealth.org/wic"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1455","services":[{"id":1455,"audience":"Pregnant
+        women, new mothers and children age 5 or under","eligibility":"Woman who is
+        pregnant, post-partum (within the first 6 months) or breastfeeding, child
+        age 5 or under who is at nutritional risk","fees":"None.","funding_sources":["Federal"],"keywords":["Nutrition
+        Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
+        Planning"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
+        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
+        Benefits","parent_id":23,"slug":"food-benefits"},{"id":26,"depth":1,"oe_id":"102-07","name":"Nutrition","parent_id":17,"slug":"nutrition"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":120,"depth":2,"oe_id":"106-06-05","name":"Maternity
+        Care","parent_id":109,"slug":"maternity-care"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Apply
+        by phone. Appointment necessary for application.","service_areas":["San Mateo
+        County"],"wait":"2 week wait for new enrollees.","updated_at":"2014-05-24T14:07:52.947-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1584,"accessibility":["Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1320,"street":"50
+        East 5th Avenue","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Iris
+        Rong"],"contacts":[{"id":1865,"name":"Iris Rong","title":"Program Coordinator"}],"coordinates":[-122.3236403,37.5622127],"description":"Provides
+        educational and recreational activities to seniors age 55 or over. Offers
+        hot nutritious Western and Chinese lunches Monday through Friday to seniors
+        age 60 or over.   Can arrange for home-delivered meals for homebound seniors
+        and adults with disabilities. Grocery bags from Second Harvest Food Bank for
+        low-income seniors are distributed every Friday, 2-3 pm. Social and case management
+        services are offered to residents of San Mateo age 60 or over and adults with
+        disabilities. Computers available on Mondays and Tuesdays for browsing on
+        the Internet.","emails":["iris@selfhelpelderly.org"],"faxes":[{"id":1031,"number":"650
+        342-8935"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)"],"latitude":37.5622127,"longitude":-122.3236403,"mail_address":{"id":1581,"attention":"Self-Help
+        for the Elderly","street":"50 East 5th Avenue","city":"San Mateo","state":"CA","zip":"94401"},"name":"San
+        Mateo Center","phones":[{"id":2276,"number":"650 342-0822"}],"short_desc":"Provides
+        educational, recreation and supportive services for seniors age 55 or over.","slug":"san-mateo-center","slugs":["san-mateo-center"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:28.702-07:00","urls":["http://www.selfhelpelderly.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1584","services":[{"id":1584,"audience":"Seniors","eligibility":"Age
+        55 or over for activities; age 60 or over for meals","fees":"Suggested donation
+        $2 per meal. Cash and checks accepted.","funding_sources":["County","Donations","Federal"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Case Management","In-Home Supportive","Meal
+        Sites/Home-delivered Mea","COMMUNITY SERVICES","Group Support","Information
+        and Referral","Interpretation/Translation","HEALTH SERVICES","Education/Information","RECREATION/LEISURE
+        SERVICES","Special Events/Entertainment","Senior Centers","Older Adults"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
+        Delivery","parent_id":17,"slug":"food-delivery"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"}],"how_to_apply":"Walk in or apply
+        by phone.","service_areas":["San Mateo County"],"wait":"No wait for existing
+        programs. May refer for other services.","updated_at":"2014-05-24T14:07:56.468-07:00"}],"organization":{"id":1322,"name":"Self-Help
+        for the Elderly","slug":"self-help-for-the-elderly","slugs":["self-help-for-the-elderly"],"_slugs":["self-help-for-the-elderly"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1322","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1322/locations"}},{"id":1480,"address":{"id":1219,"street":"2000
+        Alameda de Las Pulgas, Suite 200","city":"San Mateo","state":"CA","zip":"94403"},"contacts":[{"id":1738,"name":"Ronell
+        Reyna","title":"Family Health Program Manager"}],"coordinates":[-122.3208839,37.5454495],"description":"Home
+        visiting program offering case management services to Medi-Cal clients who
+        are either pregnant or have children up to age 5. Services include health
+        screenings and linkages to resources/services, information on growth and development,
+        referrals to recovery programs related to drug, alcohol and tobacco use, nutrition
+        counseling, parenting classes and drop-in support groups. Public health nurses,
+        community workers, social workers, nutrition staff and mental health specialists
+        work together as a team. The toll-free line serves as a family resource line
+        as well as an information line to nutrition and parent support.","emails":["rreyna@co.sanmateo.ca.us"],"faxes":[{"id":949,"number":"650
+        341-0674"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Filipino
+        (Tagalog)","Spanish"],"latitude":37.5454495,"longitude":-122.3208839,"mail_address":{"id":1477,"attention":"SMCHS
+        Prenatal to Three Initiative","street":"2000 Alameda de Las Pulgas, Suite
+        200","city":"San Mateo","state":"CA","zip":"94403"},"name":"Family Health
+        Services., Prenatal to Three Initiative","phones":[{"id":2061,"department":"Direct
+        line","number":"650 573-2502"},{"id":2062,"department":"Family Health Services
+        Resource Line","number":"888 840-0889"}],"short_desc":"Psycho-social, nutrition
+        and health education assessment and intervention for Medi-Cal recipients and
+        low-income persons and their children age 3 or under.","slug":"family-health-services-prenatal-to-three-initiative","slugs":["family-health-services-prenatal-to-three-initiative"],"transportation":"Staff
+        makes home visits. For parent support groups, varies according to meeting
+        location.","updated_at":"2014-05-24T14:08:26.246-07:00","urls":["http://www.prenatalto3.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1480","services":[{"id":1480,"audience":"Medi-Cal
+        recipients who are pregnant or have a child age 5 or under","eligibility":"Vary
+        according to program","fees":"None.","funding_sources":["County","Federal","Grants","State"],"keywords":["FAMILY
+        PLANNING SERVICES","Expectant/New Parent Assistance","HEALTH SERVICES","Mother/Infant
+        Care","Nutrition","Parenting Education","Youth","Infants/Toddlers","Newborns","Pediatrics","Neonatal","Perinatal","Teen
+        Pregnancy"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":26,"depth":1,"oe_id":"102-07","name":"Nutrition","parent_id":17,"slug":"nutrition"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
+        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":115,"depth":3,"oe_id":"106-06-04-02","name":"Disease
+        Screening","parent_id":113,"slug":"disease-screening"},{"id":118,"depth":3,"oe_id":"106-06-04-05","name":"Pregnancy
+        Tests","parent_id":113,"slug":"pregnancy-tests"},{"id":120,"depth":2,"oe_id":"106-06-05","name":"Maternity
+        Care","parent_id":109,"slug":"maternity-care"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
+        \u0026 Treat","parent_id":109,"slug":"prevent-treat"}],"how_to_apply":"Call
+        or fax referral information or write for information. An appointment will
+        be scheduled.","service_areas":["San Mateo County"],"wait":"During pregnancy,
+        referred families offered visit within 1 month. After delivery of baby, home
+        visit offered within 1 week of referral.","updated_at":"2014-05-24T14:07:53.787-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1583,"address":{"id":1319,"street":"1050
+        St. Elizabeth Drive","city":"San Jose","state":"CA","zip":"95126"},"ask_for":["Virginia
+        Chan"],"contacts":[{"id":1864,"name":"Virginia Chan","title":"Program Manager"}],"coordinates":[-121.9158556,37.305106],"description":"Provides
+        educational classes, recreational activities, social services and a Chinese-style
+        noon meal for seniors age 60 or over at five sites in Santa Clara County.
+        Also offers interpretation and translation services, information and referral,
+        transportation, senior day care and residential care services for elderly
+        persons.   In north county, activities are held at Cupertino location at 540
+        South Stelling Road. One site in San Jose is host to activities. Call for
+        a schedule.","faxes":[{"id":1030,"number":"408 971-2653"}],"hours":"Monday-Friday,
+        9-1","kind":"Human Services","languages":["Chinese (Cantonese)","Chinese (Mandarin)"],"latitude":37.305106,"longitude":-121.9158556,"mail_address":{"id":1580,"attention":"Self-Help
+        for the Elderly","street":"1050 St. Elizabeth Drive","city":"San Jose","state":"CA","zip":"95126"},"name":"Santa
+        Clara County","phones":[{"id":2275,"number":"408 961-7076"}],"short_desc":"Provides
+        recreation, information and referral services, and a noon meal for seniors
+        age 60 or over at sites in Cupertino, Palo Alto and San Jose.","slug":"santa-clara-county","slugs":["santa-clara-county"],"transportation":"Varies
+        according to location of service.","updated_at":"2014-05-24T14:08:28.634-07:00","urls":["http://selfhelpelderly.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1583","services":[{"id":1583,"audience":"Seniors","eligibility":"Age
+        50 or over","fees":"$2.50 suggested donation for meal, $5 for non-senior.
+        Other fees vary according to service. Cash accepted.","funding_sources":["City","County","Donations","Grants","United
+        Way Silicon Valley"],"keywords":["ADULT PROTECTION AND CARE SERVICES","Meal
+        Sites/Home-delivered Meals","COMMUNITY SERVICES","Information and Referral","RECREATION/LEISURE
+        SERVICES","Special Events/Entertainment"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
+        Care","parent_id":196,"slug":"daytime-care"},{"id":204,"depth":2,"oe_id":"108-03-01","name":"Adult
+        Daycare","parent_id":203,"slug":"adult-daycare"},{"id":213,"depth":2,"oe_id":"108-03-06","name":"Recreation","parent_id":203,"slug":"recreation"},{"id":226,"depth":1,"oe_id":"108-06","name":"Residential
+        Care","parent_id":196,"slug":"residential-care"},{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":327,"depth":1,"oe_id":"111-05","name":"Translation
+        \u0026 Interpretation","parent_id":311,"slug":"translation-interpretation"}],"how_to_apply":"Walk
+        in. Register 10:30 am on the same day.","service_areas":["Santa Clara County"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:56.399-07:00"}],"organization":{"id":1322,"name":"Self-Help
+        for the Elderly","slug":"self-help-for-the-elderly","slugs":["self-help-for-the-elderly"],"_slugs":["self-help-for-the-elderly"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1322","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1322/locations"}},{"id":1612,"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"id":1345,"street":"601
+        Grand Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Joseph
+        Hunziker"],"contacts":[{"id":1900,"name":"Joseph Hunziker","title":"Recreation
+        Supervisor, Senior Services and Adult Day Care Coordinator"}],"coordinates":[-122.4198725,37.657129],"description":"Offers
+        structured and adaptive recreation, education and social programs designed
+        to maintain and support capabilities of frail or older adults in order for
+        them to remain in their homes. The program includes reminiscing, current event
+        discussions, music, art, karaoke, exercise, Bingo, and entertainment. Individualized
+        goals may include activities to improve existing motor skills or memory improvement.
+        Participants receive a morning snack, hot lunch, and afternoon refreshments.
+        The program provides ongoing support to the family and referral to community
+        resources. By participating, it eases families'' constant responsibility for
+        caregiving.","emails":["joe.hunziker@ssf.net"],"kind":"Human Services","languages":["Chinese
+        (Cantonese)","Filipino (Tagalog)","Spanish"],"latitude":37.657129,"longitude":-122.4198725,"mail_address":{"id":1609,"attention":"South
+        SF Adult Day","street":"P.O. Box 711","city":"South San Francisco","state":"CA","zip":"94083-0711"},"name":"Adult
+        Day Program","phones":[{"id":2317,"number":"650 829-3824"}],"short_desc":"A
+        day program for frail and/or impaired older adults in northern San Mateo county.","slug":"adult-day-program","slugs":["adult-day-program"],"transportation":"South
+        San Francisco Senior Center van - South San Francisco residents only. Redi-Wheels
+        on space available basis.","updated_at":"2014-05-24T14:08:29.109-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1612","services":[{"id":1612,"audience":"Older
+        adults with disabilities","eligibility":"Meet program requirements","fees":"$48
+        per day for full day program, based on ability to pay. Multipurpose Senior
+        Services Program (MSSP), Family Caregiver Alliance (FCA), cash and vouchers
+        accepted.","funding_sources":["City","County","Grants"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Adult Day Care","Adult Day Programs","Older
+        Adults"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
+        Care","parent_id":196,"slug":"daytime-care"},{"id":204,"depth":2,"oe_id":"108-03-01","name":"Adult
+        Daycare","parent_id":203,"slug":"adult-daycare"},{"id":213,"depth":2,"oe_id":"108-03-06","name":"Recreation","parent_id":203,"slug":"recreation"},{"id":214,"depth":2,"oe_id":"108-03-07","name":"Relief
+        for Caregivers","parent_id":203,"slug":"relief-for-caregivers"}],"how_to_apply":"Apply
+        by phone for intake interview appointment.","service_areas":["Daly City","Pacifica","San
+        Bruno","South San Francisco"],"wait":"No wait.","updated_at":"2014-05-24T14:07:57.612-07:00"}],"organization":{"id":1330,"name":"South
+        San Francisco Senior Services","slug":"south-san-francisco-senior-services","slugs":["south-san-francisco-senior-services"],"_slugs":["south-san-francisco-senior-services"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1330","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1330/locations"}},{"id":1613,"accessibility":["Disabled
+        Parking"],"address":{"id":1346,"street":"825 Southwood Drive. Baden High School","city":"South
+        San Francisco","state":"CA","zip":"94080"},"ask_for":["Meredith Holden"],"contacts":[{"id":1901,"name":"Meredith
+        Holden","title":"Teacher/Coordinator"}],"coordinates":[-122.4361654,37.649868],"description":"Provides
+        a program for pregnant and/or parenting high school students which promotes
+        high school graduation and the birth of healthy babies. Offers a class on
+        the Baden High School campus on the topics of pregnancy, parenting, child
+        development, health, nutrition, exercise, and career development. Students
+        also receive information on available health resources and social services
+        within the community. Students enrolled in the TAPP class either attend Baden
+        High School or South San Francisco Adult Education. All pregnant/parenting
+        students in the South San Francisco Unified School District may receive TAPP
+        services regardless of their school site. Services include free childcare,
+        transportation, and individualized support materials. Referrals are made by
+        counselors, teachers, or administrators in the South San Francisco Unified
+        School District.","emails":["mholden@ssfusd.org"],"faxes":[{"id":1045,"number":"650
+        737-9315"}],"hours":"Monday-Friday, 11:07-12:30 (TAPP class hours)","kind":"Human
+        Services","languages":["Spanish"],"latitude":37.649868,"longitude":-122.4361654,"mail_address":{"id":1610,"attention":"SSFUSD
+        TAPP","street":"Baden High School","city":"South San Francisco","state":"CA","zip":"94080"},"name":"Teen-Age
+        Parent Program (TAPP)","phones":[{"id":2318,"department":"Baden High School","number":"650
+        877-8769"},{"id":2319,"department":"TAPP","number":"650 877-8791"}],"short_desc":"Provides
+        a program for pregnant or parenting high school teenagers who wish to continue
+        their education.","slug":"teen-age-parent-program-tapp","slugs":["teen-age-parent-program-tapp"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:21.809-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1613","services":[{"id":1613,"audience":"Teenage
+        pregnant or parenting students","eligibility":"Pregnant or parenting student
+        in the South San Francisco Unified High School District","funding_sources":["County","State"],"keywords":["EDUCATION
+        SERVICES","Alternative","Pupil Support/Tutoring","FAMILY PLANNING SERVICES","Expectant/New
+        Parent Assistance","High School Districts","School Based Teen Parent/Pregnant
+        Teen Programs","Child Care Providers","Youth","Adolescents","Teenage Parents"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":26,"depth":1,"oe_id":"102-07","name":"Nutrition","parent_id":17,"slug":"nutrition"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
+        Education","parent_id":78,"slug":"health-education"},{"id":97,"depth":2,"oe_id":"106-04-05","name":"Parenting
+        Education","parent_id":92,"slug":"parenting-education"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
+        Care","parent_id":196,"slug":"daytime-care"},{"id":206,"depth":2,"oe_id":"108-03-03","name":"Childcare","parent_id":203,"slug":"childcare"},{"id":214,"depth":2,"oe_id":"108-03-07","name":"Relief
+        for Caregivers","parent_id":203,"slug":"relief-for-caregivers"},{"id":220,"depth":1,"oe_id":"108-05","name":"Navigating
+        the System","parent_id":196,"slug":"navigating-the-system"},{"id":245,"depth":0,"oe_id":"109","name":"Education","parent_id":null,"slug":"education"},{"id":253,"depth":1,"oe_id":"109-03","name":"More
+        Education","parent_id":245,"slug":"more-education"},{"id":263,"depth":2,"oe_id":"109-03-07","name":"Health
+        Education","parent_id":253,"slug":"health-education-109-03-07"}],"how_to_apply":"Referral
+        from school district. Call teacher directly: 650-877-8791.","service_areas":["South
+        San Francisco"],"updated_at":"2014-05-24T14:07:57.696-07:00"}],"organization":{"id":1331,"name":"South
+        San Francisco Unified School District","slug":"south-san-francisco-unified-school-district","slugs":["south-san-francisco-unified-school-district"],"_slugs":["south-san-francisco-unified-school-district"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1331","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1331/locations"}},{"id":1635,"accessibility":["Wheelchair"],"address":{"id":1364,"street":"826
+        Mahler Rd.","city":"Burlingame","state":"CA","zip":"94010"},"contacts":[{"id":1934,"name":"Janel
+        Guinane, ASW","title":"Program Manager"}],"coordinates":[-122.3671317,37.597429],"description":"Provides
+        a drop-off and counseling center for persons who have been arrested for driving
+        under the influence, or being intoxicated in public, or drug abuse. Provides
+        a safe alternative to jail, and includes sleeping facilities, a lounge area
+        and a snack, as well as counseling and education. Program participants can
+        stay up to 18 hours and must be brought in by a police officer or referred
+        from a designated hospital. Facilities include a microwave oven, washer/dryer
+        and donated clothing.","faxes":[{"id":1058,"number":"650 689-5697"}],"hours":"24
+        hours daily","kind":"Human Services","languages":["Spanish"],"latitude":37.597429,"longitude":-122.3671317,"mail_address":{"id":1632,"attention":"StarVista/First
+        Chance Program","street":"826 Mahler Rd","city":"Burlingame","state":"CA","zip":"94010"},"name":"First
+        Chance Program","phones":[{"id":2362,"number":"650 689-5597"}],"short_desc":"A
+        police drop-off center and jail alternative for persons who have been arrested
+        for driving under the influence or being intoxicated in public.","slug":"first-chance-program","slugs":["first-chance-program"],"transportation":"Not
+        necessary for service.","updated_at":"2014-05-24T14:08:29.511-07:00","urls":["http://www.star-vista.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1635","services":[{"id":1635,"audience":"Persons
+        arrested for DUI or public intoxication, and those under the influence of
+        drugs","description":"Provides a drop-off and counseling center for persons
+        who have been arrested for driving under the influence, or being intoxicated
+        in public, or drug abuse. Provides a safe alternative to jail, and includes
+        sleeping facilities, a lounge area and a snack, as well as counseling and
+        education. Program participants can stay up to 18 hours and must be brought
+        in by a police officer or referred from a designated hospital. Facilities
+        include a microwave oven, washer/dryer and donated clothing.","eligibility":"Must
+        be brought to the facility by police","fees":"None.","funding_sources":["City","County"],"keywords":["ALCOHOLISM
+        SERVICES","Community Information","Driving While Intoxicated","DRUG ABUSE
+        SERVICES","Public Inebriate Transportation","Substance Abuse Issues"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":79,"depth":1,"oe_id":"106-01","name":"Addiction
+        \u0026 Recovery","parent_id":78,"slug":"addiction-recovery"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":121,"depth":2,"oe_id":"106-06-06","name":"Personal
+        Hygiene","parent_id":109,"slug":"personal-hygiene"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":231,"depth":1,"oe_id":"108-07","name":"Support
+        Network","parent_id":196,"slug":"support-network"}],"how_to_apply":"Must be
+        brought in by police.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.824-07:00"}],"organization":{"id":1335,"name":"StarVista","slug":"starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4","slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"_slugs":["starvista-ddc2f156-107a-4f57-9f4b-4d7d653044a4"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1335/locations"}},{"id":1574,"accessibility":["Wheelchair"],"address":{"id":1310,"street":"100
+        Moffett Blvd.","city":"Mountain View","state":"CA","zip":"94043"},"contacts":[{"id":1855,"name":"Guillermo
+        Caceres","title":"Program Manager"}],"coordinates":[-122.0776193,37.3966257],"description":"CalWORKs
+        is the name in California for the federal cash assistance Temporary Assistance
+        for Needy Families (TANF) Program. It is a time-limited public assistance
+        program to help meet the needs of families and/or children when the child
+        is deprived of parental support because one or both of the child''s parents
+        are absent, deceased, incapacitated or unemployed. The program helps parents
+        prepare for work and find jobs. Its goal is to strengthen the access of low-income
+        parents to the resources necessary to support their children and become self-sufficient
+        by providing employment and supportive services including child care, transportation,
+        payment for work- or training-related expenses, job referral, retention and
+        advancement assistance. Income and resource limits must be met to be eligible.   The
+        Food Stamp Program is for low-income and public assistance households that
+        meet an established-need standard for Food Stamp eligibility. SSI/SSP recipients
+        are not eligible receive Food Stamps but elderly immigrants who receive CAPI
+        are eligible for Food Stamps. The Medi-Cal program pays for health care for
+        eligible and needy low-income residents of California: families meeting the
+        CalWORKs deprivation criteria, pregnant women, children age 21 or under, refugees
+        in their first eight months of residence in the U.S., severely disabled persons
+        and persons age 65 or over. The Refugee Resettlement Program and Refugee Cash
+        Assistance program provides cash and medical assistance and funds for refugees.
+        It also funds employment and training services. Refugee families with children
+        who meet the income and property limits may be eligible for CalWORKs. Adult
+        refugees without children may be eligible to receive Refugee Cash Assistance
+        during their first eight months of residence in the U.S.","faxes":[{"id":1025,"number":"650
+        940-1831"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
+        (Cantonese)","Chinese (Mandarin)","Russian","Spanish","Vietnamese"],"latitude":37.3966257,"longitude":-122.0776193,"mail_address":{"id":1571,"attention":"North
+        County District Office","street":"100 Moffett Blvd.","city":"Mountain View","state":"CA","zip":"94043"},"name":"Department
+        of Employment and Benefit Services., North County District Office","phones":[{"id":2257,"number":"650
+        988-6100"},{"id":2258,"number":"650 988-6193","number_type":"TTY"}],"short_desc":"Public
+        assistance programs for Calworks, Medi-Cal, Food Stamps and Refugee Cash Assistance.","slug":"department-of-employment-and-benefit-services-north-county-district-office","slugs":["department-of-employment-and-benefit-services-north-county-district-office"],"transportation":"CALTRAIN,
+        VTA stop within 1 block.","updated_at":"2014-05-24T14:08:28.348-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1574","services":[{"id":1574,"audience":"Low-income
+        individuals and families with dependent children","eligibility":"Vary according
+        to program","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["FINANCIAL
+        ASSISTANCE SERVICES","Food","General Support","Health","Food Stamp","Temporary
+        Aid","CAPI","SSI","TANF","CalFresh"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
+        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
+        Benefits","parent_id":23,"slug":"food-benefits"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":101,"depth":1,"oe_id":"106-05","name":"Help
+        Pay for Healthcare","parent_id":78,"slug":"help-pay-for-healthcare"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":148,"depth":2,"oe_id":"107-02-02","name":"Help
+        Pay for Food","parent_id":144,"slug":"help-pay-for-food-107-02-02"},{"id":149,"depth":3,"oe_id":"107-02-02-01","name":"Food
+        Benefits","parent_id":148,"slug":"food-benefits-107-02-02-01"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
+        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
+        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
+        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":296,"depth":1,"oe_id":"110-02","name":"Help
+        Pay for Work Expenses","parent_id":292,"slug":"help-pay-for-work-expenses-110-02"}],"how_to_apply":"Call
+        for information or walk in.","service_areas":["Cupertino","Los Altos","Mountain
+        View","Palo Alto","Sunnyvale"],"wait":"Varies.","updated_at":"2014-05-24T14:07:55.843-07:00"}],"organization":{"id":1320,"name":"Santa
+        Clara County Social Services Agency","slug":"santa-clara-county-social-services-agency","slugs":["santa-clara-county-social-services-agency"],"_slugs":["santa-clara-county-social-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1320","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1320/locations"}},{"id":1615,"accessibility":["Wheelchair"],"address":{"id":1348,"street":"50
+        North B Street","city":"San Mateo","state":"CA","zip":"94401"},"ask_for":["Volunteer
+        on duty"],"contacts":[{"id":1903,"name":"Lorraine Moriarty","title":"Executive
+        Director"},{"id":1904,"name":"Maritza Techioli","title":"Community Liaison"},{"id":1905,"name":"Jodie
+        Penner","title":"Director of Devel.","email":"jpenner@svdpsm.org"},{"id":1906,"name":"Janice
+        Kroll","title":"Development Asst","email":"jkroll@svdpsm.org"}],"coordinates":[-122.3250474,37.568272],"description":"Assists
+        families and individuals with emergencies such as shelter, food, clothing,
+        furniture, transportation and medicine through 34 small working groups called
+        conferences. St. Vincent de Paul members visit the home to assess needs and
+        offer service. Also supports those in recovery programs.     Three Homeless
+        Help Centers (described separately) provide weekday lunches, continental breakfasts,
+        clothing vouchers, laundry, toiletries, identification and transportation
+        assistance to individuals without a permanent address. The North County Homeless
+        Help Center and Cafe St. Vincent are located at 344 Grand Avenue, South San
+        Francisco (650-589-9039), open Monday through Saturday, 10 am-12 noon. The
+        Redwood City Homeless Help Center is housed in the Fair Oaks Community Center,
+        2600 Middlefield Road (650-780-7500), and is open 1-2 pm weekdays. The San
+        Mateo site is at 50 North B Street and is open 10 am-12 noon Monday through
+        Friday (650-343-9251). A meal is also served on Monday at 5 pm, at St. Francis
+        Church, 420 Bay Road, East Palo Alto. Peninsula Family Resource Center (PFRC)
+        arranges home visits for persons in need of rental and utilities assistance
+        (homelessness prevention), food, clothes, furniture and other material needs.
+        Call 650-343-4403 Monday-Friday, 10-12 and 1-4, to make arrangements. Also
+        coordinates summer camp scholarships for youth and holiday assistance programs.
+        Restorative Justice Ministry is a full-time jail ministry program that provides
+        spiritual guidance, religious services, tutoring, support and assistance to
+        those incarcerated in the San Mateo County jail facilities and to their families.
+        Jail/prison after care program provides post-release support. Contact the
+        SVdP Jail Chaplain at 650-366-9847. Catherine''s Center is a supportive residential
+        program for ten women at a time who were previously incarcerated. Five thrift
+        stores are located in San Mateo County: Daly City at 6256 Mission Street (650-992-9271);
+        Redwood City at 2406 El Camino Real (650-366-6367); San Bruno at 1600 El Camino
+        Real (650-588-5767); San Mateo at 40 North B Street (650-347-5101); South
+        San Francisco at 344 Grand Avenue (650-589-8445). Donations can be made at
+        store locations or call 650 871-6844 for donation or computer re-cycling pick-up.  For
+        vehicle donations call 800-937-7837.","emails":["svdpinfo@yahoo.com"],"faxes":[{"id":1047,"number":"650
+        343-9495"}],"hours":"Emergency Helpline: Monday - Friday, 9-4","kind":"Human
+        Services","languages":["Spanish"],"latitude":37.568272,"longitude":-122.3250474,"mail_address":{"id":1612,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services","phones":[{"id":2321,"department":"Directory
+        24 hours daily","number":"650 343-4405"},{"id":2322,"department":"Emergency
+        Helpline","number":"650 343-4403"}],"short_desc":"Coordinates the Society''s
+        county-wide emergency services and provides homeless services to persons in
+        the central county area.","slug":"st-vincent-de-paul-county-wide-services","slugs":["st-vincent-de-paul-county-wide-services"],"transportation":"SAMTRANS,
+        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:08:22.477-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1615","services":[{"id":1615,"audience":"Families
+        or individuals seeking emergency help for food, clothing, rental and utility
+        assistance. Homeless individuals in need of food, basic services and vouchers
+        for San Mateo County shelters","description":"Assists families and individuals
+        with emergencies such as shelter, food, clothing, furniture, transportation
+        and medicine through 34 small working groups called conferences. St. Vincent
+        de Paul members visit the home to assess needs and offer service. Also supports
+        those in recovery programs.     Three Homeless Help Centers (described separately)
+        provide weekday lunches, continental breakfasts, clothing vouchers, laundry,
+        toiletries, identification and transportation assistance to individuals without
+        a permanent address. The North County Homeless Help Center and Cafe St. Vincent
+        are located at 344 Grand Avenue, South San Francisco (650-589-9039), open
+        Monday through Saturday, 10 am-12 noon. The Redwood City Homeless Help Center
+        is housed in the Fair Oaks Community Center, 2600 Middlefield Road (650-780-7500),
+        and is open 1-2 pm weekdays. The San Mateo site is at 50 North B Street and
+        is open 10 am-12 noon Monday through Friday (650-343-9251). A meal is also
+        served on Monday at 5 pm, at St. Francis Church, 420 Bay Road, East Palo Alto.
+        Peninsula Family Resource Center (PFRC) arranges home visits for persons in
+        need of rental and utilities assistance (homelessness prevention), food, clothes,
+        furniture and other material needs. Call 650-343-4403 Monday-Friday, 10-12
+        and 1-4, to make arrangements. Also coordinates summer camp scholarships for
+        youth and holiday assistance programs. Restorative Justice Ministry is a full-time
+        jail ministry program that provides spiritual guidance, religious services,
+        tutoring, support and assistance to those incarcerated in the San Mateo County
+        jail facilities and to their families. Jail/prison after care program provides
+        post-release support. Contact the SVdP Jail Chaplain at 650-366-9847. Catherine''s
+        Center is a supportive residential program for ten women at a time who were
+        previously incarcerated. Five thrift stores are located in San Mateo County:
+        Daly City at 6256 Mission Street (650-992-9271); Redwood City at 2406 El Camino
+        Real (650-366-6367); San Bruno at 1600 El Camino Real (650-588-5767); San
+        Mateo at 40 North B Street (650-347-5101); South San Francisco at 344 Grand
+        Avenue (650-589-8445). Donations can be made at store locations or call 650
+        871-6844 for donation or computer re-cycling pick-up.  For vehicle donations
+        call 800-937-7837.","eligibility":"None","fees":"None.","funding_sources":["Donations","Grants","Sales"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Meal","COMMODITY
+        SERVICES","Clothing/Personal Items","Furniture/Appliances","EMERGENCY SERVICES","Food
+        Boxes/Food Vouchers","FINANCIAL ASSISTANCE SERVICES","Health","Housing","Utilities","RECREATION/LEISURE
+        SERVICES","Camperships","Soup Kitchens","Homeless Motel Vouchers","Housing
+        Expense Assistance","Clothing","Laundry Facilities","Thrift Shops","Utility
+        Assistance","Identification Cards","Prison Ministries","Emergency Medical
+        Care","Low Income","Homeless People","Religious Groups/Communities","svdp","food
+        in san mateo"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
+        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
+        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":20,"depth":1,"oe_id":"102-03","name":"Food
+        Delivery","parent_id":17,"slug":"food-delivery"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
+        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
+        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
+        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
+        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
+        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"}],"how_to_apply":"Apply
+        by phone or visit a Homeless Help Center located in Redwood City, San Mateo
+        and South San Francisco.","service_areas":["San Mateo County"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:57.929-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1385,"accessibility":["Wheelchair"],"address":{"id":1125,"street":"660
+        Veterans Blvd.","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Ivonne
+        Pierre"],"contacts":[{"id":1616,"name":"Andres Espinoza","title":"Captain,
+        Commanding Officer"}],"coordinates":[-122.2312963,37.4916424],"description":"Provides
+        food, clothing, bus tokens and shelter to individuals and families in times
+        of crisis from the Redwood City Corps office and community centers throughout
+        the county.   Administers Project REACH (Relief for Energy Assistance through
+        Community Help) funds to prevent energy shut-off through a one-time payment.
+        Counseling and translation services (English/Spanish) are available either
+        on a walk-in basis or by appointment. Rental assistance with available funds.
+        Another office (described separately) is located at 409 South Spruce Avenue,
+        South San Francisco (650-266-4591).","faxes":[{"id":877,"number":"650 364-1712"}],"kind":"Human
+        Services","languages":["Spanish"],"latitude":37.4916424,"longitude":-122.2312963,"mail_address":{"id":1382,"attention":"Salvation
+        Army","street":"P.O. Box 1147","city":"Redwood City","state":"CA","zip":"94064"},"name":"Redwood
+        City Corps","phones":[{"id":1898,"number":"650 368-4643"}],"short_desc":"Provides
+        a variety of emergency services to low-income persons. Also sponsors recreational
+        and educational activities.","slug":"redwood-city-corps","slugs":["redwood-city-corps"],"transportation":"SAMTRANS
+        stops nearby.","updated_at":"2014-05-24T14:08:20.121-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1385","services":[{"id":1385,"audience":"Individuals
+        or families with low or no income and/or trying to obtain public assistance","eligibility":"None
+        for most services. For emergency assistance, must have low or no income and
+        be willing to apply for public assistance","fees":"None.","funding_sources":["Donations","Grants"],"keywords":["COMMUNITY
+        SERVICES","Interpretation/Translation","EMERGENCY SERVICES","Shelter/Refuge","FINANCIAL
+        ASSISTANCE SERVICES","Utilities","MENTAL HEALTH SERVICES","Individual/Group
+        Counseling","Food Pantries","Homeless Shelter","Rental Deposit Assistance","Utility
+        Service Payment Assistance","Salvation Army","Clothing Assistance","Counseling
+        Services"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":27,"depth":0,"oe_id":"103","name":"Housing","parent_id":null,"slug":"housing"},{"id":28,"depth":1,"oe_id":"103-01","name":"Emergency
+        Shelter","parent_id":27,"slug":"emergency-shelter-103-01"},{"id":30,"depth":1,"oe_id":"103-03","name":"Help
+        Pay for Housing","parent_id":27,"slug":"help-pay-for-housing"},{"id":31,"depth":2,"oe_id":"103-03-01","name":"Cash
+        for Housing","parent_id":30,"slug":"cash-for-housing-103-03-01"},{"id":32,"depth":2,"oe_id":"103-03-02","name":"Cash
+        for Utilities","parent_id":30,"slug":"cash-for-utilities-103-03-02"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":72,"depth":1,"oe_id":"105-01","name":"Help
+        Pay for Transit","parent_id":71,"slug":"help-pay-for-transit"},{"id":73,"depth":2,"oe_id":"105-01-01","name":"Bus
+        Passes","parent_id":72,"slug":"bus-passes"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
+        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":160,"depth":2,"oe_id":"107-02-04","name":"Help
+        Pay for Housing","parent_id":144,"slug":"help-pay-for-housing-107-02-04"},{"id":161,"depth":3,"oe_id":"107-02-04-01","name":"Cash
+        for Housing","parent_id":160,"slug":"cash-for-housing-107-02-04-01"},{"id":162,"depth":3,"oe_id":"107-02-04-02","name":"Cash
+        for Utilities","parent_id":160,"slug":"cash-for-utilities-107-02-04-02"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":231,"depth":1,"oe_id":"108-07","name":"Support
+        Network","parent_id":196,"slug":"support-network"},{"id":232,"depth":2,"oe_id":"108-07-01","name":"Counseling","parent_id":231,"slug":"counseling-108-07-01"},{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null,"slug":"legal"},{"id":327,"depth":1,"oe_id":"111-05","name":"Translation
+        \u0026 Interpretation","parent_id":311,"slug":"translation-interpretation"}],"how_to_apply":"Call
+        for appointment. Referral from human service professional preferred for emergency
+        assistance.","service_areas":["Atherton","Belmont","Burlingame","East Palo
+        Alto","Foster City","Menlo Park","Palo Alto","Portola Valley","Redwood City","San
+        Carlos","San Mateo","Woodside"],"wait":"Up to 20 minutes.","updated_at":"2014-05-24T14:07:51.548-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}},{"id":1387,"address":{"id":1127,"street":"1161
+        South Bernardo","city":"Sunnyvale","state":"CA","zip":"94087"},"contacts":[{"id":1618,"name":"James
+        Lee","title":"Commanding Officer"}],"coordinates":[-122.060102,37.356967],"description":"Provides
+        emergency assistance including food and clothing for persons in immediate
+        need. Provides PG\u0026E assistance through REACH program. Youth programs
+        offer tutoring, music and troops. Information on related resources is available.
+        Also provides rental assistance when funds are available.","emails":["william_nichols@usw.salvationarmy.org"],"faxes":[{"id":879,"number":"408
+        720-8075"}],"hours":"Monday-Friday, 9-4","kind":"Human Services","languages":["Korean"],"latitude":37.356967,"longitude":-122.060102,"mail_address":{"id":1384,"attention":"Salvation
+        Army","street":"P.O. Box 61868","city":"Sunnyvale","state":"CA","zip":"94088"},"name":"Sunnyvale
+        Corps","phones":[{"id":1901,"number":"408 720-0420"}],"short_desc":"Provides
+        emergency assistance to persons in immediate need and offers after school
+        activities and summer day camp program.","slug":"sunnyvale-corps","slugs":["sunnyvale-corps"],"transportation":"VTA
+        stops within 4 blocks.","updated_at":"2014-05-24T14:08:20.295-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1387","services":[{"id":1387,"eligibility":"None
+        for emergency assistance","fees":"None for emergency services. Vary for after
+        school activities. Cash and checks accepted.","funding_sources":["Donations","Fees","Grants"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","CHILD PROTECTION AND CARE SERVICES","Day
+        Care","COMMUNITY SERVICES","Information and Referral","EMERGENCY SERVICES","Food
+        Boxes/Food Vouchers","FINANCIAL ASSISTANCE SERVICES","Utilities","RECREATION/LEISURE
+        SERVICES","Camping","Emergency Food","Clothing","Utility Assistance","Youth
+        Development"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"}],"how_to_apply":"Walk in. Written
+        application, identification required for emergency assistance.","service_areas":["Los
+        Altos","Mountain View","Sunnyvale"],"wait":"No wait.","updated_at":"2014-05-24T14:07:51.749-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}},{"id":1388,"accessibility":["Wheelchair"],"address":{"id":1128,"street":"409
+        South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Family
+        Services Caseworker "],"contacts":[{"id":1619,"name":"Kenneth Gibson","title":"Major"}],"coordinates":[-122.4228507,37.6445324],"description":"Provides
+        emergency food, clothing and furniture vouchers to low-income families in
+        times of crisis.   Administers Project REACH (Relief for Energy Assistance
+        through Community Help) funds to prevent energy shut-off through a one-time
+        payment. Offers a Saturday morning Homeless Feeding Program at 10:30, as well
+        as Sunday services and spiritual counseling. Provides Christmas toys and Back-to-School
+        clothes and supplies. Offers case management, advocacy and referrals to other
+        agencies.","faxes":[{"id":880,"number":"650 266-2594"},{"id":881,"number":"650
+        266-4594"}],"hours":"Monday-Thursday, 9-4:30","kind":"Human Services","latitude":37.6445324,"longitude":-122.4228507,"mail_address":{"id":1385,"attention":"Salvation
+        Army","street":"409 South Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"South
+        San Francisco Citadel Corps","phones":[{"id":1902,"number":"650 266-4591"}],"short_desc":"Provides
+        emergency food and clothing and furniture vouchers to low-income families
+        in times of crisis.","slug":"south-san-francisco-citadel-corps","slugs":["south-san-francisco-citadel-corps"],"transportation":"SAMTRANS
+        stops within 1 block, BART stops within 3 blocks.","updated_at":"2014-05-24T14:08:20.455-07:00","urls":["http://www.tsagoldenstate.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1388","services":[{"id":1388,"eligibility":"Low-income
+        families","fees":"None.","funding_sources":["Donations"],"keywords":["COMMODITY
+        SERVICES","Clothing/Personal Items","COMMUNITY SERVICES","Information and
+        Referral","EMERGENCY SERVICES","Food Boxes/Food Vouchers","FINANCIAL ASSISTANCE
+        SERVICES","Utilities","Emergency Food","Food Pantries","Furniture","Clothing","Utility
+        Assistance","School Supplies","Case/Care Management","Holiday Programs","Pastoral
+        Counseling","Low Income","Salvation Army-South San Francisco"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":10,"depth":1,"oe_id":"101-03","name":"Emergency
+        Food","parent_id":1,"slug":"emergency-food"},{"id":11,"depth":1,"oe_id":"101-04","name":"Emergency
+        Shelter","parent_id":1,"slug":"emergency-shelter"},{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":19,"depth":1,"oe_id":"102-02","name":"Emergency
+        Food","parent_id":17,"slug":"emergency-food-102-02"},{"id":22,"depth":1,"oe_id":"102-05","name":"Free
+        Meals","parent_id":17,"slug":"free-meals"},{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":56,"depth":2,"oe_id":"104-02-02","name":"Clothes
+        for School","parent_id":54,"slug":"clothes-for-school"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":62,"depth":2,"oe_id":"104-03-03","name":"Furniture","parent_id":59,"slug":"furniture"}],"how_to_apply":"Call
+        for information.","service_areas":["Brisbane","Colma","Daly City","Millbrae","Pacifica","San
+        Bruno","South San Francisco"],"updated_at":"2014-05-24T14:07:51.805-07:00"}],"organization":{"id":1300,"name":"Salvation
+        Army","slug":"salvation-army","slugs":["salvation-army"],"_slugs":["salvation-army"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1300/locations"}},{"id":1377,"accessibility":["Disabled
+        Parking","Wheelchair"],"address":{"id":1117,"street":"800 Middle Avenue","city":"Menlo
+        Park","state":"CA","zip":"94025-9881"},"ask_for":["Peter Olson"],"contacts":[{"id":1601,"name":"Peter
+        Olson","title":"Little House Director"},{"id":1602,"name":"Bart Charlow","title":"Executive
+        Director, Peninsula Volunteers"}],"coordinates":[-122.1805905,37.4480204],"description":"A
+        multipurpose center offering a wide variety of recreational, education and
+        cultural activities. Lifelong learning courses cover topics such as music,
+        art, languages, etc., are hosted at this location. Little House offers a large
+        variety of classes including arts and crafts, jewelry, languages, current
+        events, lapidary, woodwork, painting, and fitness courses (yoga, strength
+        straining, tai chi). There are monthly art and cultural lectures, movie showings,
+        and a computer center. Recreation activities include mah jong, pinochle, ballroom
+        dancing, bridge, trips and tours. Partners with the Sequoia Adult Education
+        Program. The Alzheimer''s Cafe, open the third Tuesday of every month from
+        2:00 - 4:00 pm, is a place that brings together people liviing with dementia,
+        their families, and their caregivers. Free and no registration is needed.
+        The Little House Community Service Desk offers information and referrals regarding
+        social service issues, such as housing, food, transportation, health insurance
+        counseling, and estate planning. Massage, podiatry, and acupuncture are available
+        by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
+        according to selection.","emails":["polson@peninsulavolunteers.org"],"faxes":[{"id":870,"number":"650
+        326-9547"}],"hours":"Monday-Thursday, 8 am-9 pm; Friday, 8-5","kind":"Human
+        Services","languages":["Filipino (Tagalog)","Spanish"],"latitude":37.4480204,"longitude":-122.1805905,"mail_address":{"id":1374,"attention":"Little
+        House","street":"800 Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"name":"Little
+        House","phones":[{"id":1887,"number":"650 326-2025"},{"id":1888,"department":"Peninsula
+        Volunteers","number":"650 326-0665"}],"short_desc":"A multipurpose senior
+        citizens'' center.","slug":"little-house","slugs":["little-house"],"transportation":"SAMTRANS
+        stops within 3 blocks, RediWheels and Menlo Park Shuttle stop at door.","updated_at":"2014-05-24T14:08:19.696-07:00","urls":["http://www.penvol.org/littlehouse"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1377","services":[{"id":1377,"audience":"Any
+        age","eligibility":"None","fees":"$55 per year membership dues. Classes have
+        fees. Discounts are available for members. Cash, checks and credit cards accepted.","funding_sources":["Fees","Fundraising","Grants","Membership
+        dues"],"keywords":["ADULT PROTECTION AND CARE SERVICES","In-Home Supportive","Meal
+        Sites/Home-delivered Meals","COMMUNITY SERVICES","Group Support","Information
+        and Referral","EDUCATION SERVICES","Adult","HEALTH SERVICES","Education/Information","Family
+        Support","Individual/Group Counseling","Screening/Immunization","RECREATION/LEISURE
+        SERVICES","Sports/Games/Exercise","Community Adult Schools","Senior Centers","Older
+        Adults","Disabled"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":231,"depth":1,"oe_id":"108-07","name":"Support
+        Network","parent_id":196,"slug":"support-network"},{"id":235,"depth":2,"oe_id":"108-07-04","name":"In-Home
+        Support","parent_id":231,"slug":"in-home-support-108-07-04"}],"how_to_apply":"Walk
+        in or apply by phone for membership application.","service_areas":["San Mateo
+        County","Santa Clara County"],"wait":"No wait.","updated_at":"2014-05-24T14:07:51.284-07:00"}],"organization":{"id":1298,"name":"Peninsula
+        Volunteers","slug":"peninsula-volunteers","slugs":["peninsula-volunteers"],"_slugs":["peninsula-volunteers"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1298","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1298/locations"}},{"id":1466,"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1206,"street":"225
+        - 37th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"contacts":[{"id":1722,"name":"Lisa
+        Mancini","title":"Director"}],"coordinates":[-122.3006094,37.5314294],"description":"Provides
+        a continuum of services for older adults and adults with disabilities. Centralized
+        Intake serves as the single point of entry to adult services within Aging
+        and Adult Services and provides referrals to community-based social support
+        programs.   Adult Protective Services is a function of Centralized Intake.
+        The TIES Line, a 24-hour toll-free telephone line, receives reports of suspected
+        dependent adult and older adult abuse and neglect. The Centralized Intake
+        Unit, which consists of a multi-disciplinary staff of social workers, public
+        health nurses and deputy public guardians, conducts comprehensive assessments
+        of the client and the allegations, provides information and referral, access
+        and advocacy to county-operated and/or community-based programs as part of
+        the service plan that is developed. Centralized Intake has a 24-Hour Response
+        Program. A social worker receives telephone calls from the community, assesses
+        the client-related matter over the telephone, makes a home visit if appropriate,
+        and may provide short-term emergency protection such as shelter, food, or
+        protective supervision until a long-term plan is developed by an assigned
+        case manager. The Centralized Intake''s Representative Payee Program serves
+        individuals who are not conserved, but who need assistance in managing their
+        public benefits. In-Home Supportive Services provides assistance with personal
+        and domestic services for financially-eligible older adults, individuals who
+        are blind and disabled, and children who, without these services, would be
+        unable to remain safely in their homes. Public Guardianship/Conservatorship,
+        appointed by and under the authority and direction of the Superior Court,
+        assists frail elderly individuals and persons with substantial physical and/or
+        mental disabilities who are unable to provide for their own personal needs,
+        manage their financial resources, or resist fraud and undue influence. Multipurpose
+        Senior Services Program (MSSP) is a comprehensive case management program
+        that serves persons age 65 or over who need nursing home level care and are
+        currently eligible for Medi-Cal with no share of cost. The goal of the program
+        is to arrange for and monitor the use of community services to prevent premature
+        placement. The AIDS Case Management Program provides comprehensive home and
+        community-based services to persons with AIDS or symptomatic HIV. The program
+        uses an interdisciplinary core case management team consisting of a nurse
+        case manager and a social work case manager working with the client to determine
+        needed services. The Area Agency on Aging (650-573-2700) administers funding
+        for a variety of programs, advocates on behalf of older persons and provides
+        long-range planning, coordination, and program development for programs and
+        services for older adults. The New Beginning Coalition (650-573-3527) is a
+        broad-based group of providers and consumers that works in partnership with
+        Aging and Adult Services and other organizations to improve the quality of
+        life of older persons and adults with disabilities. Other programs include
+        the Commission on Aging and the Commission on Disabilities (described separately).","emails":["lmancini@smcgov.org"],"faxes":[{"id":935,"number":"650
+        573-2310"}],"hours":"Person on-call at all times","kind":"Human Services","languages":["Aramaic","Arabic","Chinese
+        (Cantonese)","Chinese (Mandarin)","Chinese (Taiwanese)","Filipino (Tagalog)","Polish","Russian","Spanish","Vietnamese"],"latitude":37.5314294,"longitude":-122.3006094,"mail_address":{"id":1463,"attention":"SMCHS
+        Aging and Adult Services","street":"225 - 37th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"name":"Aging
+        and Adult Services","phones":[{"id":2039,"department":"(24 hours daily for
+        emergencies and reports of abuse)","number":"800 675-8437","vanity_number":"800
+        675-TIES"},{"id":2040,"number":"650 573-3900"},{"id":2041,"number":"711","number_type":"TTY"}],"short_desc":"Provides
+        a continuum of services for frail, older adults or adults with chronically
+        disabling illnesses.","slug":"aging-and-adult-services","slugs":["aging-and-adult-services"],"transportation":"SAMTRANS
+        stops within 1 block, CALTRAIN within 6 blocks.","updated_at":"2014-05-24T14:08:25.517-07:00","urls":["http://www.smchealth.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1466","services":[{"id":1466,"audience":"Adults
+        with disabilities age 18 or over and older adults age 60 or over","eligibility":"Resident
+        of San Mateo County","fees":"Vary according to income for fee-based services.
+        No charge for information. Medi-Cal accepted.","funding_sources":["County","Donations","Federal","Fees","Grants","State"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Case Management","Community Information","Crisis/Abuse
+        Intervention/Hot","Guardianship/Conservatorship","Individual/Group Counseling","In-Home
+        Supportive","Investigation/Intervention","Senior Out-Of-Home Care Place","DEVELOPMENTAL
+        DISABILITIES SERVICES","Out-Of-Home Care Placement","HANDICAP SERVICES","MENTAL
+        HEALTH SERVICES","Out-of-Home Care Placement","Older Adults","Disabilities
+        Issues"],"categories":[{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
+        Care","parent_id":196,"slug":"daytime-care"},{"id":204,"depth":2,"oe_id":"108-03-01","name":"Adult
+        Daycare","parent_id":203,"slug":"adult-daycare"}],"how_to_apply":"Walk in
+        or apply by phone or mail.","service_areas":["San Mateo County"],"wait":"Varies
+        according to service.","updated_at":"2014-05-24T14:07:53.294-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1372,"accessibility":["Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1112,"street":"2600
+        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Christina
+        Gonzalez"],"contacts":[{"id":1596,"name":"Susan Houston","title":"Director
+        of Older Adult Services"},{"id":1597,"name":"Christina Gonzalez","title":"Center
+        Director"}],"coordinates":[-122.213221,37.477227],"description":"A walk-in
+        center for older adults that provides social services, wellness, recreational,
+        educational and creative activities including arts and crafts, computer classes
+        and gardening classes. Coffee and healthy breakfasts are available daily.
+        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.        Provides
+        case management (including in-home assessments) and bilingual information
+        and referral about community services to persons age 60 or over on questions
+        of housing, employment, household help, recreation and social activities,
+        home delivered meals, health and counseling services and services to shut-ins.
+        Health insurance and legal counseling is available by appointment. Lectures
+        on a variety of health and fitness topics are held monthly in both English
+        and Spanish.  Provides a variety of physical fitness opportunities, including
+        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
+        toward older adults. Also provides free monthly blood pressure screenings,
+        quarterly blood glucose monitoring and health screenings by a visiting nurse.
+        Offers a Brown Bag Program in which low-income seniors can receive a bag of
+        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
+        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
+        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","emails":["cgonzalez@peninsulafamilyservice.org"],"faxes":[{"id":865,"number":"650
+        701-0856"}],"hours":"Monday-Friday, 9-5","kind":"Human Services","languages":["Filipino
+        (Tagalog)","Spanish"],"latitude":37.477227,"longitude":-122.213221,"mail_address":{"id":1369,"attention":"Fair
+        Oaks Intergenerational Center","street":"2600 Middlefield Road","city":"Redwood
+        City","state":"CA","zip":"94063"},"name":"Fair Oaks Adult Activity Center","phones":[{"id":1850,"number":"650
+        780-7525"}],"short_desc":"A multipurpose senior citizens'' center serving
+        the Redwood City area.","slug":"fair-oaks-adult-activity-center","slugs":["fair-oaks-adult-activity-center"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:19.166-07:00","urls":["http://www.peninsulafamilyservice.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1372","services":[{"id":1372,"audience":"Older
+        adults age 55 or over, ethnic minorities and low-income persons","eligibility":"Age
+        55 or over for most programs, age 60 or over for lunch program","fees":"$2.50
+        suggested donation for lunch for age 60 or over, donations for other services
+        appreciated. Cash and checks accepted.","funding_sources":["City","County","Donations","Fees","Fundraising"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMUNITY SERVICES","Group
+        Support","Information and Referral","EDUCATION SERVICES","English Language","RECREATION/LEISURE
+        SERVICES","Arts and Crafts","Sports/Games/Exercise","Brown Bag Food Programs","Congregate
+        Meals/Nutrition Sites","Senior Centers","Older Adults","Senior Support","Hot
+        Meal-Seniors"],"categories":[{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":203,"depth":1,"oe_id":"108-03","name":"Daytime
+        Care","parent_id":196,"slug":"daytime-care"},{"id":204,"depth":2,"oe_id":"108-03-01","name":"Adult
+        Daycare","parent_id":203,"slug":"adult-daycare"},{"id":213,"depth":2,"oe_id":"108-03-06","name":"Recreation","parent_id":203,"slug":"recreation"}],"how_to_apply":"Walk
+        in or apply by phone.","service_areas":["Redwood City"],"wait":"No wait.","updated_at":"2014-05-24T14:07:51.155-07:00"}],"organization":{"id":1297,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"_slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1297","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1297/locations"}},{"id":1617,"accessibility":["Wheelchair"],"address":{"id":1350,"street":"344
+        Grand Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Worker
+        on duty"],"contacts":[{"id":1908,"name":"Carolynn Ghiorso","title":"Conference
+        President"},{"id":1909,"name":"Lisa Collins","title":"Director"}],"coordinates":[-122.4110983,37.655626],"description":"Offers
+        homeless or low-income persons clean clothing, toiletries, mail and telephone
+        service, DMV identification, laundry facilities and transportation help (bus
+        fare, gasoline, etc.). Assists with work-related needs such as uniforms, work
+        boots, union dues and job referrals. Provides emergency medical assistance,
+        substance abuse center fees, and referrals to mental health and other resources.
+        Distributes vouchers to county shelters or sleeping bags when shelters are
+        full. A free lunch is served weekdays (10 am to noon) and breakfast Saturdays
+        (10-11) at Cafe St. Vincent.","emails":["svdpinfo@yahoo.com"],"hours":"Monday-Friday,
+        10 am-12 noon; Saturday, 10-11","kind":"Human Services","languages":["Spanish"],"latitude":37.655626,"longitude":-122.4110983,"mail_address":{"id":1614,"attention":"St.
+        Vincent de Paul Society","street":"50 North B Street","city":"San Mateo","state":"CA","zip":"94401"},"name":"St.
+        Vincent de Paul County Wide Services, North County Homeless Help Center","phones":[{"id":2324,"number":"650
+        589-9039"}],"short_desc":"Food, clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-north-county-homeless-help-center","slugs":["st-vincent-de-paul-county-wide-services-north-county-homeless-help-center"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:04.347-07:00","urls":["http://svdpsm.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1617","services":[{"id":1617,"audience":"Homeless
+        persons or persons without cooking facilities","description":"Offers homeless
+        or low-income persons clean clothing, toiletries, mail and telephone service,
+        DMV identification, laundry facilities and transportation help (bus fare,
+        gasoline, etc.). Assists with work-related needs such as uniforms, work boots,
+        union dues and job referrals. Provides emergency medical assistance, substance
+        abuse center fees, and referrals to mental health and other resources. Distributes
+        vouchers to county shelters or sleeping bags when shelters are full. A free
+        lunch is served weekdays (10 am to noon) and breakfast Saturdays (10-11) at
+        Cafe St. Vincent.","eligibility":"Homeless person or person without cooking
+        facilities","fees":"None.","funding_sources":["Donations"],"keywords":["ADULT
+        PROTECTION AND CARE SERVICES","Meal Sites/Home-delivered Mea","COMMODITY SERVICES","Clothing/Personal
+        Items","Soup Kitchens","Homeless Motel Vouchers","Clothing","Laundry Facilities","Identification
+        Cards","Emergency Medical Care","Low Income","Homeless People","svdp","food
+        in san mateo"],"categories":[{"id":50,"depth":0,"oe_id":"104","name":"Goods","parent_id":null,"slug":"goods"},{"id":54,"depth":1,"oe_id":"104-02","name":"Clothing","parent_id":50,"slug":"clothing"},{"id":59,"depth":1,"oe_id":"104-03","name":"Home
+        Goods","parent_id":50,"slug":"home-goods"},{"id":63,"depth":2,"oe_id":"104-03-04","name":"Personal
+        Care Items","parent_id":59,"slug":"personal-care-items"},{"id":66,"depth":1,"oe_id":"104-05","name":"Technology","parent_id":50,"slug":"technology"},{"id":69,"depth":2,"oe_id":"104-05-03","name":"Phone
+        Services","parent_id":66,"slug":"phone-services"}],"how_to_apply":"Walk in.","service_areas":["Brisbane","Daly
+        City","Millbrae","Pacifica","San Bruno","South San Francisco"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:58.122-07:00"}],"organization":{"id":1332,"name":"St.
+        Vincent de Paul Society","slug":"st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c","slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"_slugs":["st-vincent-de-paul-society-4058d02a-3ca4-4328-82e4-e3fa3a4a6b5c"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1332/locations"}},{"id":1559,"accessibility":["Elevator","Disabled
+        Restroom","Wheelchair"],"address":{"id":1295,"street":"2635 Homestead Road","city":"Santa
+        Clara","state":"CA","zip":"95051"},"ask_for":["Jane Botsford (Adult Services)","Ben
+        Blight (Circulation)","Julie Passalacqua (City Librarian)","Julie Passalacqua
+        (Youth and Extension Services)","Shanti Bhaskaran (Literacy Supervisor)"],"contacts":[{"id":1842,"name":"Julie
+        Passalacqua","title":"City Librarian"}],"coordinates":[-121.9737925,37.3406964],"description":"Offers
+        check out of books, ebooks, periodicals, microforms, DVDs, compact discs,
+        CD-ROMs, books on CD and pamphlets. Also, offers outreach, adults and children''s
+        programs, reference for children and adults, copy machines and a genealogy
+        collection.","emails":["library@santaclaraca.gov"],"faxes":[{"id":1012,"number":"408
+        247-9657"}],"hours":"Monday, Tuesday, 10-8; Wednesday-Friday 10-6; Saturday,
+        10-5; Sunday, 1-5","kind":"Libraries","languages":["Chinese","Hindi","Japanese","Spanish","Vietnamese"],"latitude":37.3406964,"longitude":-121.9737925,"mail_address":{"id":1556,"attention":"Central
+        Library","street":"2635 Homestead Road","city":"Santa Clara","state":"CA","zip":"95051"},"name":"Central
+        Library","phones":[{"id":2228,"department":"Reference","number":"408 615-2900"},{"id":2229,"department":"Circulation","number":"408
+        615-2970"},{"id":2230,"department":"Children''s","number":"408 615-2916"},{"id":2231,"department":"Administration","number":"408
+        615-2930"},{"id":2232,"department":"Dial-a-story","number":"408 241-1611"},{"id":2233,"number":"408
+        246-2507","number_type":"TTY"}],"slug":"central-library","slugs":["central-library"],"transportation":"VTA
+        stops within 1 block.","updated_at":"2014-05-24T14:07:55.572-07:00","urls":["http://www.library.santaclaraca.gov"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1559","services":[{"id":1559,"eligibility":"Resident
+        of North America to obtain a library card","fees":"None for card.","funding_sources":["City","State"],"keywords":["EDUCATION
+        SERVICES","Library","Libraries","Public Libraries"],"categories":[{"id":1,"depth":0,"oe_id":"101","name":"Emergency","parent_id":null,"slug":"emergency"},{"id":21,"depth":1,"oe_id":"102-04","name":"Food
+        Pantry","parent_id":17,"slug":"food-pantry"},{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null,"slug":"transit"},{"id":75,"depth":1,"oe_id":"105-02","name":"Transportation","parent_id":71,"slug":"transportation"},{"id":77,"depth":2,"oe_id":"105-02-02","name":"Transportation
+        for School","parent_id":75,"slug":"transportation-for-school"},{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":310,"depth":1,"oe_id":"110-05","name":"Workplace
+        Rights","parent_id":292,"slug":"workplace-rights"}],"how_to_apply":"Walk in.
+        Proof of residency in North America and current government-issued photo ID
+        required to receive a library card. Parental permission required for children
+        age 16 or under to obtain a library card.","service_areas":["Santa Clara"],"wait":"No
+        wait.","updated_at":"2014-05-24T14:07:55.569-07:00"}],"organization":{"id":1316,"name":"Santa
+        Clara City Library","slug":"santa-clara-city-library","slugs":["santa-clara-city-library"],"_slugs":["santa-clara-city-library"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1316","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1316/locations"}},{"id":1566,"accessibility":["Wheelchair"],"address":{"id":1302,"street":"10800
+        Torre Avenue","city":"Cupertino","state":"CA","zip":"95014"},"ask_for":["Library
+        staff"],"contacts":[{"id":1847,"name":"Ja-lih Lee","title":"Community Librarian"}],"coordinates":[-122.028503,37.317718],"description":"Offers
+        complete public library services for children, young adults and adults. Collection
+        includes books, magazines, audio and video cassettes, CDs, CD-ROM, DVDs and
+        various computer information services. Materials are available in many languages,
+        especially Chinese. Reference service available. Internet access is available.","faxes":[{"id":1017,"number":"408
+        252-8749"}],"hours":"Monday, Tuesday, 1-9; Wednesday, Thursday, 10-9; Friday,
+        Saturday, 10-6; Sunday, 12-6","kind":"Libraries","languages":["Chinese (Mandarin)","Filipino
+        (Tagalog)"],"latitude":37.317718,"longitude":-122.028503,"mail_address":{"id":1563,"attention":"Cupertino
+        Library","street":"10800 Torre Avenue","city":"Cupertino","state":"CA","zip":"95014"},"name":"Cupertino
+        Library","phones":[{"id":2246,"number":"408 446-1677"},{"id":2247,"number":"408
+        364-1528","number_type":"TTY"}],"short_desc":"Provides basic library service.","slug":"cupertino-library","slugs":["cupertino-library"],"transportation":"VTA
+        stops within 1 block.","updated_at":"2014-05-24T14:07:55.762-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1566","services":[{"id":1566,"eligibility":"Resident
+        of California to obtain a library card","fees":"None except for overdue and
+        lost items. Cash and checks accepted.","funding_sources":["County","Federal","State"],"keywords":["EDUCATION
+        SERVICES","Library","Libraries","Public Libraries"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"}],"how_to_apply":"Walk
+        in. Proof of residency in California required to receive a library card.","service_areas":["Santa
+        Clara County"],"wait":"No wait.","updated_at":"2014-05-24T14:07:55.759-07:00"}],"organization":{"id":1319,"name":"Santa
+        Clara County Library","slug":"santa-clara-county-library","slugs":["santa-clara-county-library"],"_slugs":["santa-clara-county-library"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1319","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1319/locations"}},{"id":1445,"accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"address":{"id":1185,"street":"2000
+        Alameda de las Pulgas, Suite 100","city":"San Mateo","state":"CA","zip":"94403"},"ask_for":["Receptionist"],"contacts":[{"id":1681,"name":"Dean
+        Peterson","title":"Director"}],"coordinates":[-122.3208839,37.5454495],"description":"Works
+        to control environmental hazards and pollutants that are harmful to health.
+        Handles complaints about quality of water supplies, wells, water pollution,
+        public swimming pools, rodent and insect control, hazardous materials/waste,
+        health hazards or unsanitary conditions in places where food is sold, problems
+        concerning garbage and housing problems involving health hazards. Provides
+        permits to install septic tanks and construct wells.   Businesses storing
+        hazardous materials and/or wastes, operating underground fuel tanks, serving
+        food, operating swimming pools or water purveyors are inspected. Household
+        hazardous wastes from residents are collected by appointment.","emails":["envhealth@co.sanmateo.ca.us"],"faxes":[{"id":919,"number":"650
+        627-8244"}],"kind":"Government","languages":["Chinese (Cantonese)","Chinese
+        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"latitude":37.5454495,"longitude":-122.3208839,"mail_address":{"id":1442,"attention":"SMCHS
+        Environmental Health Services","street":"2000 Alameda de las Pulgas, Suite
+        100","city":"San Mateo","state":"CA","zip":"94403"},"name":"Community Health.,
+        Environmental Health Services Division","phones":[{"id":1975,"number":"650
+        372-6200"},{"id":1976,"department":"Appointment Line 24 hours daily","number":"650
+        363-4718"},{"id":1977,"department":"Environmental Health","number":"650 372-6200"},{"id":1978,"department":"Coordinator","number":"650
+        655-6202"},{"id":1979,"department":"Recycling Locations","number":"800 253-2687","vanity_number":"800-CLEANUP"}],"short_desc":"Works
+        to control environmental hazards and pollutants that are harmful to health.","slug":"community-health-environmental-health-services-division","slugs":["community-health-environmental-health-services-division"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:07:16.182-07:00","urls":["http://www.smchealth.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1445","services":[{"id":1445,"audience":"Profit
+        and nonprofit businesses, the public, military facilities, schools and government
+        entities","eligibility":"None","fees":"None, except for permits and photocopying.
+        Cash, checks and credit cards accepted.","funding_sources":["Fees","Grants","State"],"keywords":["Public
+        Health Information/Inspection/Remediation","Environmental Hazards Information"],"how_to_apply":"Walk
+        in or apply by phone or mail.","service_areas":["San Mateo County"],"wait":"No
+        wait to 2 weeks.","updated_at":"2014-05-24T14:07:16.179-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1548,"accessibility":["Elevator","Ramp","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1284,"street":"400
+        County Center, 5th Floor","city":"Redwood City","state":"CA","zip":"94063"},"ask_for":["Officer
+        of the day"],"contacts":[{"id":1831,"name":"Michael Stauffer","title":"Deputy
+        Chief Probation Officer"},{"id":1832,"name":"Regina Wilson-Henry","title":"Director,
+        Supervision Services"},{"id":1833,"name":"Cindy Perry","title":"Director,
+        Court Services"}],"coordinates":[-122.2309704,37.4881077],"description":"Conducts
+        presentence investigation, submits reports and recommendations to the court
+        and supervises adult probationers. Probationers who need housing or food may
+        obtain a voucher in an emergency. Individuals placed on formal probation or
+        referred for formal investigation residing in other geographical locations
+        are served through the northern office in South San Francisco. Provides a
+        community speaker for agencies requiring department and/or criminal justice
+        information. Limited or conditional access to department statistical data
+        can be made available to authorized researchers or criminal justice students.","faxes":[{"id":1005,"number":"650
+        363-4829"}],"hours":"Office hours: Monday-Friday, 8-5; 24-hour emergency response","kind":"Government","languages":["Spanish","Interpreter"],"latitude":37.4881077,"longitude":-122.2309704,"mail_address":{"id":1545,"attention":"Adult
+        Services","street":"400 County Center, 5th Floor","city":"Redwood City","state":"CA","zip":"94063"},"name":"Adult
+        Services","phones":[{"id":2208,"number":"650 363-4244"}],"short_desc":"Conducts
+        presentence investigations, reports to the court, supervises probationers
+        who live in the southern part of the county.","slug":"adult-services","slugs":["adult-services"],"transportation":"SAMTRANS,
+        CALTRAIN stop within 1 block.","updated_at":"2014-05-24T14:07:17.438-07:00","urls":["http://www.co.sanmateo.ca.us"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1548","services":[{"id":1548,"audience":"Adult
+        criminal offenders, victims of violent crimes and domestic violence, criminal
+        justice researchers and students","eligibility":"Court referral","fees":"Court
+        directed. Checks accepted.","funding_sources":["County","Donations","Grants"],"keywords":["COMMUNITY
+        SERVICES","Speakers","LEGAL AND CRIMINAL JUSTICE SERVICES","Diversion","Probation"],"how_to_apply":"Court
+        referral necessary for application. Researchers and students should contact
+        Deputy Chief.","service_areas":["San Mateo County"],"wait":"No wait.","updated_at":"2014-05-24T14:07:17.434-07:00"}],"organization":{"id":1314,"name":"San
+        Mateo County Probation Department","slug":"san-mateo-county-probation-department","slugs":["san-mateo-county-probation-department"],"_slugs":["san-mateo-county-probation-department"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1314","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1314/locations"}}]'
+    http_version: 
+  recorded_at: Tue, 12 Aug 2014 07:26:13 GMT
+recorded_with: VCR 2.9.2
