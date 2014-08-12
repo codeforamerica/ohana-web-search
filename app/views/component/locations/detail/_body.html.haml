@@ -4,11 +4,11 @@
 
   %header
     %hgroup
-      %h1.name{ title: @location.name, itemprop: 'name' }
+      %h1.name{ itemprop: 'name' }
         = superscript_ordinals(@location.name)
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
-          = link_to(locations_path(org_name: @location.organization.name), title: @location.organization.name) do
+          = link_to(locations_path(org_name: @location.organization.name)) do
             %span
               = superscript_ordinals(@location.organization.name)
 
