@@ -8,13 +8,21 @@ define([
 function (geo, alert) {
   'use strict';
 
-  var _locateTarget; // locate current location button.
-  var _locateAction; // a callback function for the location is determined.
+
+  // Locate current geolocation button.
+  var _locateTarget;
+
+  // The text in the geolocation button.
+  var _locateTargetTextContainer;
+
+  // A callback function for when the location is determined.
+  var _locateAction;
 
   function init(target, locateAction) {
     // If geolocation is supported, show geolocate button.
     if (navigator.geolocation) {
       _locateTarget = document.getElementById(target);
+      _locateTargetTextContainer = _locateTarget.querySelector('span');
       _locateAction = locateAction;
 
       _locateTarget.addEventListener('click', _currLocationAction, false);
@@ -24,9 +32,7 @@ function (geo, alert) {
   // Target element was clicked.
   function _currLocationAction(evt) {
     evt.preventDefault();
-    var waitText = _locateTarget.getAttribute('data-wait-text');
-    _locateTarget.querySelector('span').innerHTML = waitText;
-    _locateTarget.setAttribute('disabled', 'disabled');
+    _locateTargetBusy();
     _locateUser();
   }
 
@@ -42,8 +48,7 @@ function (geo, alert) {
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
         alert.show("Your location could not be determined!");
-        var regularText = _locateTarget.getAttribute('data-regular-text');
-        _locateTarget.querySelector('span').innerHTML = regularText;
+        _locateTargetReady();
       }
     };
 
@@ -61,8 +66,23 @@ function (geo, alert) {
       } else {
         //console.log("Geocoder failed due to: " + status);
         alert.show('Your location could not be determined!');
+        _locateTargetReady();
       }
     });
+  }
+
+  // Set content of button to busy state.
+  function _locateTargetBusy() {
+    var waitText = _locateTarget.getAttribute('data-wait-text');
+    _locateTargetTextContainer.innerHTML = waitText;
+    _locateTarget.setAttribute('disabled', 'disabled');
+  }
+
+  // Set content of button to ready state.
+  function _locateTargetReady() {
+    var regularText = _locateTarget.getAttribute('data-regular-text');
+    _locateTargetTextContainer.innerHTML = regularText;
+    _locateTarget.removeAttribute('disabled');
   }
 
   return {

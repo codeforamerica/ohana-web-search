@@ -266,6 +266,19 @@
         color: $search-button-fa-hover-color;
       }
     }
+
+    // Prevent hover state appearance when 'disabled' attribute is present.
+    &[disabled]
+    {
+      background: rgba($white, 0.3);
+      border: 1px solid rgba($white, 0);
+      cursor: auto;
+
+      .fa
+      {
+        color: $input-fa-color;
+      }
+    }
   }
 }
 
