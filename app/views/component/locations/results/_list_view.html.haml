@@ -9,11 +9,11 @@
           %header
             %hgroup
               %h1{ class: 'name' }
-                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", title: "#{location.name}", name: "#{location.id}", itemprop: 'name' }
+                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
                   = superscript_ordinals(location.name)
               - if (location.organization.name) && (location.organization.name != location.name)
                 %h2.agency
-                  = link_to(locations_path(org_name: location.organization.name), title: location.organization.name) do
+                  = link_to(locations_path(org_name: location.organization.name)) do
                     %span
                       = superscript_ordinals(location.organization.name)
 
