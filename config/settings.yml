@@ -1,9 +1,20 @@
 # Please maintain alphabetical order for the top-level settings.
 # This makes it easier to find a particular section in this file.
-#
+
 # Note that any changes to this file will need an app restart to
 # take effect.
 #
+#
+##########################
+#
+# ADMIN SITE SETTINGS
+#
+##########################
+# When viewing the details page for a location, there is an 'Edit' link
+# at the bottom of the page that takes you to the corresponding location
+# in the admin interface. Below, specify the URL for your Admin site.
+admin_site: http://admin.smc-connect.org
+
 ##########################
 #
 # FEEDBACK EMAIL SETTINGS
@@ -63,7 +74,7 @@ homepage_links:
       - Medi-Cal
       - Medicare
       - SFMNP/Food Vouchers For Seniors
-      - WIC/Women, Infants, & Children
+      - 'WIC/Women, Infants, & Children'
 
     Children, Teens, & Families:
       - Abuse Prevention
@@ -164,15 +175,15 @@ info_box_terms:
   wic:
     synonyms:
       - wic
-      - women, infants, and children
-      - women, infants, & children
+      - 'women, infants, and children'
+      - 'women, infants, & children'
       - assistance for mothers
-    title: Women, Infants, and Children
+    title: 'Women, Infants, and Children'
     description:
-      Women, Infants, and Children (WIC)
+      'Women, Infants, and Children (WIC)
       provides assistance for low-income pregnant, breastfeeding, and
       non-breastfeeding postpartum women, and to eligible infants and
-      children up to age 5..
+      children up to age 5.'
     url: http://www.fns.usda.gov/wic
 
   sfmnp:
@@ -184,10 +195,10 @@ info_box_terms:
       - food vouchers
     title: Senior Farmers' Market Nutrition Program
     description:
-      Senior Farmers' Market Nutrition Program (SFMNP)
+      "Senior Farmers' Market Nutrition Program (SFMNP)
       provides low-income seniors with coupons that can be exchanged for eligible
       foods at farmers' markets, roadside stands, and community-supported
-      agriculture programs.
+      agriculture programs."
     url: http://www.fns.usda.gov/sfmnp
 
   calfresh:
@@ -197,9 +208,9 @@ info_box_terms:
       - calfresh
     title: CalFresh
     description:
-      Known federally as SNAP (Supplemental Nutrition Assistance Program),
+      'Known federally as SNAP (Supplemental Nutrition Assistance Program),
       CalFresh offers nutrition assistance to eligible,
-      low income individuals and families and provides economic benefits to communities.
+      low income individuals and families and provides economic benefits to communities.'
     url: http://www.calfresh.ca.gov
 
   market_match:
@@ -207,8 +218,8 @@ info_box_terms:
       - market match
     title: Market Match
     description:
-      Market Match offers farmers’ market customers an extra $5 when they spend at
-      least $10 on their CalFresh EBT card at participating farmer's markets.
+      "Market Match offers farmers’ market customers an extra $5 when they spend at
+      least $10 on their CalFresh EBT card at participating farmer's markets."
     url: http://www.pcfma.com/pcfma_marketmatch.php
 
   custom_info_box:
@@ -216,6 +227,29 @@ info_box_terms:
       - health care reform
       - aca
     custom: component/info_box/health_care_reform_template
+
+###################################################################
+#
+#                LANGUAGE LINKS SETTINGS
+#
+###################################################################
+
+# This represents the 6 most common languages in your community.
+# The languages will appear at the top of the home page, and
+# clicking on each language will translate the text on the entire
+# site into that language using Google Translate.
+# The format should be 'Language:code', as shown below.
+# To see a list of all supported languages and codes, read the
+# "Language reference" section in the Google Translate documentation:
+# https://developers.google.com/translate/v2/using_rest
+
+language_links:
+  - 'English:en'
+  - 'Español:es'
+  - 'Tagalog:tl'
+  - '中文:zh-CN'
+  - 'العربية:ar'
+  - 'Русский:ru'
 
 ######################
 #
@@ -268,15 +302,15 @@ test:
     wic:
       synonyms:
         - wic
-        - women, infants, and children
-        - women, infants, & children
+        - 'women, infants, and children'
+        - 'women, infants, & children'
         - assistance for mothers
-      title: Women, Infants, and Children
+      title: 'Women, Infants, and Children'
       description:
-        Women, Infants, and Children (WIC)
+        'Women, Infants, and Children (WIC)
         provides assistance for low-income pregnant, breastfeeding, and
         non-breastfeeding postpartum women, and to eligible infants and
-        children up to age 5..
+        children up to age 5.'
       url: http://www.fns.usda.gov/wic
     sfmnp:
       synonyms:
@@ -287,10 +321,10 @@ test:
         - food vouchers
       title: Senior Farmers' Market Nutrition Program
       description:
-        Senior Farmers' Market Nutrition Program (SFMNP)
+        "Senior Farmers' Market Nutrition Program (SFMNP)
         provides low-income seniors with coupons that can be exchanged for eligible
         foods at farmers' markets, roadside stands, and community-supported
-        agriculture programs.
+        agriculture programs."
     calfresh:
       synonyms:
         - food stamps
@@ -302,12 +336,20 @@ test:
         - market match
       title: Market Match
       description:
-        Market Match offers farmers’ market customers an extra $5 when they spend at
-        least $10 on their CalFresh EBT card at participating farmer's markets.
+        "Market Match offers farmers’ market customers an extra $5 when they spend at
+        least $10 on their CalFresh EBT card at participating farmer's markets."
     custom_info_box:
       synonyms:
         - health care reform
         - aca
       custom: component/info_box/example_custom_template
+
+  language_links:
+    - 'English:en'
+    - 'Español:es'
+    - 'Tagalog:tl'
+    - '中文:zh-CN'
+    - 'العربية:ar'
+    - 'Русский:ru'
 
   site_title: SMC-Connect

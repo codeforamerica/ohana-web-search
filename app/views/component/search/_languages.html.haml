@@ -1,44 +1,5 @@
 %section#language-box
   %ul
-    %li
-      - if @current_lang == 'en'
-        %a{:lang=>"en",:class=>"notranslate button-small"}
-          English
-      - else
-        %a{:href=>"?translate=en",:lang=>"en",:class=>"notranslate button-small"}
-          English
-    %li
-      - if @current_lang == 'es'
-        %a{:lang=>"es",:class=>"notranslate button-small"}
-          Español
-      - else
-        %a{:href=>"?translate=es",:lang=>"es",:class=>"notranslate button-small"}
-          Español
-    %li
-      - if @current_lang == 'tl'
-        %a{:lang=>"tl",:class=>"notranslate button-small"}
-          Tagalog
-      - else
-        %a{:href=>"?translate=tl",:lang=>"fi",:class=>"notranslate button-small"}
-          Tagalog
-    %li
-      - if @current_lang == 'zh-CN'
-        %a{:lang=>"zh-CN",:class=>"notranslate button-small"}
-          中文
-      - else
-        %a{:href=>"?translate=zh-CN",:lang=>"zh",:class=>"notranslate button-small"}
-          中文
-    %li
-      - if @current_lang == 'ar'
-        %aa{:lang=>"ar",:class=>"notranslate button-small"}
-          العربية
-      - else
-        %a{:href=>"?translate=ar",:lang=>"ar",:class=>"notranslate button-small"}
-          العربية
-    %li
-      - if @current_lang == 'ru'
-        %a{:lang=>"ru",:class=>"notranslate button-small"}
-          Русский
-      - else
-        %a{:href=>"?translate=ru",:lang=>"ru",:class=>"notranslate button-small"}
-          Русский
+    - SETTINGS[:language_links].each do |language_plus_code|
+      %li
+        = language_link_tag language_plus_code
