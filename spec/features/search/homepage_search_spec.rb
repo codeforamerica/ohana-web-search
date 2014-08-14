@@ -40,7 +40,7 @@ feature "homepage search" do
     expect(page).to have_content("provides assistance for low-income")
   end
 
-  scenario "when clicking a category", :vcr do
+  scenario "when clicking a general link", :vcr do
     visit("/")
     click_link("Health Insurance")
     expect(page).to have_content("Health Insurance TeleCenter")

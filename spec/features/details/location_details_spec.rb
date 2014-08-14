@@ -193,28 +193,44 @@ feature "location details" do
       expect(page).to have_content('Board President')
     end
 
+    it 'includes contact email' do
+      expect(page).to have_content('suzanne@example.org')
+    end
+
     it 'includes contact phone' do
       expect(page).to have_content('(123) 456-7890')
+    end
+
+    # The test API is not exposing the extension field.
+    # This will be fixed later, then we can enable this test.
+    xit 'includes contact phone extension' do
+      expect(page).to have_content('x1200')
     end
 
     it 'includes contact fax' do
       expect(page).to have_content('(202) 555-1212')
     end
+  end
 
-    it 'includes contact email' do
-      expect(page).to have_content('suzanne@example.org')
+  describe 'Edit link' do
+    before(:each) do
+      cassette = 'location_details/when_the_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit_test_location
+      end
     end
 
-    # The test API is not exposing the extension field.
-    # This will be fixed later, then we can enable this test.
-    xit 'includes contact extension' do
-      expect(page).to have_content('x1200')
+    it 'points to the corresponding location in the admin site' do
+      admin_site = 'http://admin.smc-connect.org'
+      expect(page).
+        to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
     end
   end
 
   context 'when farmers market with market match' do
     before(:each) do
-      VCR.use_cassette('location_details/when_market_details_page_is_visited_directly') do
+      cassette = 'location_details/when_market_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
        visit('/organizations/coastside-farmers-market-of-pacifca')
       end
     end

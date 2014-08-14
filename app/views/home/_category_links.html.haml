@@ -1,7 +1,0 @@
-%li
-  = service[:parent]
-  %ul
-    - service[:children].each do |child|
-      - child.include?("/") ? keyword = child.split("/").first : keyword = child
-      %li
-        = link_to child, "/organizations?keyword=#{u keyword}", 'onclick' => "ga('send', 'event', 'Home_Categories', 'click', '#{child}');"

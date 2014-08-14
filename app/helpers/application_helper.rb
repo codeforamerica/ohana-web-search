@@ -1,14 +1,14 @@
 module ApplicationHelper
 
-  # Handles formatting of the page title by appending site name to end
-  # of a particular page's title.
+  # Appends the site title to the end of the page title.
+  # The site title is defined in config/settings.yml.
   # @param page_title [String] the page title from a particular view.
   def title(page_title)
-    default = "SMC-Connect"
+    site_title = SETTINGS[:site_title]
     if page_title.present?
-      content_for :title, "#{page_title.to_str} | #{default}"
+      content_for :title, "#{page_title.to_s} | #{site_title}"
     else
-      content_for :title, default
+      content_for :title, site_title
     end
   end
 
@@ -226,5 +226,4 @@ module ApplicationHelper
         ]
     }
   end
-
 end

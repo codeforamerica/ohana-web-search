@@ -82,7 +82,7 @@ define(['util/util','jquery'],function(util,$) {
   {
     var agent = '\nUser agent: ' + navigator.userAgent;
 
-    var csrfToken = $("meta[name='csrf-token']").attr("content");
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
     var transmission = {
       message: _commentInput.value,

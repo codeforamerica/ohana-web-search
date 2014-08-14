@@ -1,9 +1,5 @@
 class FeedbackMailer < ActionMailer::Base
-  default to: %w(anselm@codeforamerica.org
-                 sophia@codeforamerica.org
-                 moncef@codeforamerica.org
-                 echan@co.sanmateo.ca.us
-                 everducci@co.sanmateo.ca.us)
+  default to: SETTINGS.try(:[], :feedback_email).try(:[], 'to')
 
   # Sends contents of feedback form via email, including user agent
   # @param params [Hash] Email attributes (from, message, user agent)
@@ -12,9 +8,12 @@ class FeedbackMailer < ActionMailer::Base
     message    = params[:message] || '[no message entered]'
     from       = params[:from].blank? ? 'anonymous@none.com' : params[:from]
     user_agent = params[:agent] || '[no user agent recorded]'
+    url        = ENV['DOMAIN_NAME']
+    site_title = SETTINGS[:site_title]
 
-    subject = "[SMC Connect Feedback] #{from}"
-    body    = "#{message}\n\n----------\n#{user_agent}"
+    subject = "[#{site_title} Feedback] #{from}"
+    body    = "#{message}\n\n----------\n#{user_agent}" \
+              "\n\nURL: #{url}"
 
     mail(
       from: from,

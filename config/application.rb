@@ -5,6 +5,10 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
 
+SETTINGS = YAML.load(File.read(File.expand_path('../settings.yml', __FILE__)))
+SETTINGS.merge! SETTINGS.fetch(Rails.env, {})
+SETTINGS.symbolize_keys!
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
