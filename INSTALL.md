@@ -42,7 +42,7 @@ Clone it on your computer and navigate to the project's directory:
 Inside the `config` folder, you will find a file named `application.example.yml`.
 Copy its contents to a new file called `application.yml`.
 
-By default, the app is configured to point to the demo API at
+By default, the app is configured to point to the San Mateo County, CA, API at
 `http://ohanapi.herokuapp.com/api`.
 
 Inside the `config` folder, you will also find a file called `settings.yml`.

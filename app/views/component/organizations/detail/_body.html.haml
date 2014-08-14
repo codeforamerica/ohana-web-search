@@ -256,6 +256,6 @@
             %span
               = @org.updated_at.to_s(:full_date_and_time)
             %div
-              = link_to "#{SETTINGS[:admin_site]}/locations/#{@org.slug}" do
+              = link_to "#{SETTINGS[:admin_site]}/locations/#{@org.slugs.last}" do
                 %i{ class: 'fa fa-pencil' }
                 Edit
