@@ -42,14 +42,14 @@ echo "Setting CANONICAL_URL"
 heroku config:set CANONICAL_URL=$APP_NAME.herokuapp.com --app $APP_NAME
 
 echo "Setting DOMAIN_NAME"
-heroku config:set DOMAIN_NAME=herokuapp.com --app $APP_NAME
+heroku config:set DOMAIN_NAME=$APP_NAME.herokuapp.com --app $APP_NAME
 
 echo "Setting OHANA_API_ENDPOINT"
 heroku config:set OHANA_API_ENDPOINT=$OHANA_API_ENDPOINT --app $APP_NAME
 
 echo "Setting SECRET_TOKEN"
-token2=$(cat /dev/random | LC_CTYPE=C tr -dc "[:alnum:]" | head -c 128)
-heroku config:set SECRET_TOKEN=$token2 --app $APP_NAME
+token=$(python -c 'import uuid; print uuid.uuid4()')
+heroku config:set SECRET_TOKEN=$token --app $APP_NAME
 
 echo "Getting ready to install add-ons for $APP_NAME"
 

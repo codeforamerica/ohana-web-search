@@ -21,116 +21,127 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:28:35 GMT
+      - Fri, 15 Aug 2014 21:07:54 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
-      - application/json
-      Content-Length:
-      - '3869'
+      - application/json; charset=utf-8
       Etag:
-      - '"87cd760ec21518d3d9819512e4b1ca73"'
+      - '"3c2656df36efbdaf7b45d695268d3681"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e5dd6ef1-da22-4ebc-b633-6c53d30b85c0
+      - 6ba6ba8e-bc4c-43a4-8d3f-b5b9be7f38f9
       X-Runtime:
-      - '0.201716'
+      - '0.196043'
       Via:
       - 1.1 vegur
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpZCI6MTM4OSwiYWNjZXNzaWJpbGl0eSI6WyJEaXNhYmxlZCBSZXN0cm9v
-        bSIsIldoZWVsY2hhaXIiXSwiYWRkcmVzcyI6eyJpZCI6MTEyOSwic3RyZWV0
-        IjoiMTE0IEZpZnRoIEF2ZW51ZSIsImNpdHkiOiJSZWR3b29kIENpdHkiLCJz
-        dGF0ZSI6IkNBIiwiemlwIjoiOTQwNjMifSwiY29udGFjdHMiOlt7ImlkIjox
-        NjIwLCJuYW1lIjoiU2hhcm9uIFBldGVyc2VuIiwidGl0bGUiOiJPcGVyYXRp
-        b25zIERpcmVjdG9yIn1dLCJjb29yZGluYXRlcyI6Wy0xMjIuMjA3MDU3LDM3
-        LjQ2ODY3OF0sImRlc2NyaXB0aW9uIjoiUHJpbWFyeSBhbmQgc3BlY2lhbHR5
-        IG1lZGljYWwgYW5kIGRlbnRhbCBzZXJ2aWNlcyB0byB1bmluc3VyZWQsIGxv
-        dy1pbmNvbWUgcmVzaWRlbnRzLlxyXG5XaG8gaXMgVHJlYXRlZD8gXHJcblBh
-        dGllbnRzIG9mIG91ciBjbGluaWNzIGFyZSB0aGUgd29ya2luZyBwb29yLiBU
-        aGV5IHRlbmQgdG8gZWFybiBqdXN0IGVub3VnaCBpbmNvbWUgdG8gYmUgaW5l
-        bGlnaWJsZSBmb3IgTWVkaS1DYWwgY292ZXJhZ2UsIHlldCBkbyBub3QgcmVj
-        ZWl2ZSBoZWFsdGggaW5zdXJhbmNlIHRocm91Z2ggdGhlaXIgZW1wbG95ZXJz
-        IGFuZCBjYW5ub3QgYWZmb3JkIHRvIHBheSBmb3Ig4oCcb3V0LW9mLXBvY2tl
-        dOKAnSBoZWFsdGggaW5zdXJhbmNlLiBPZnRlbiB0aGVzZSByZXNpZGVudHMg
-        YXJlIGZvcmNlZCB0byBzZWVrIHRyZWF0bWVudCBhdCBsb2NhbCBlbWVyZ2Vu
-        Y3kgcm9vbXMgYW5kIGJlY29tZSBzYWRkbGVkIHdpdGggbWVkaWNhbCBiaWxs
-        cyB0aGF0IHRoZXkgYXJlIHVuYWJsZSB0byBwYXkuIFNhbWFyaXRhbiBIb3Vz
-        ZeKAmXMgRnJlZSBNZWRpY2FsIENsaW5pY3MgZmlsbCB0aGlzIGdhcCBpbiBo
-        ZWFsdGhjYXJlIGFjY2VzcyBmb3IgdGhlIHVuaW5zdXJlZCBhbmQgc2F2ZSBl
-        bWVyZ2VuY3kgcm9vbSByZXNvdXJjZXMgZm9yIGVtZXJnZW5jaWVzLlxyXG5c
-        clxuUHJvZmVzc2lvbmFsIE1lZGljYWwgXHUwMDI2IERlbnRhbCBWb2x1bnRl
-        ZXJzXHJcblRoYW5rcyB0byBpdHMgaW5ub3ZhdGl2ZSB2b2x1bnRlZXItYmFz
-        ZWQgbW9kZWwgb2Ygc2VydmljZSwgU2FtYXJpdGFuIEhvdXNl4oCZcyBjbGlu
-        aWNzIGFyZSBhYmxlIHRvIHRyZWF0IHN1Y2ggYSBsYXJnZSBudW1iZXIgb2Yg
-        cGF0aWVudHMgd2l0aCBhIHZlcnkgc21hbGwgcGFpZCBzdGFmZi4gQWxtb3N0
-        IGFsbCBvZiB0aGUgbWVkaWNhbCBhbmQgZGVudGFsIGRvY3RvcnMgYW5kIGFz
-        c2lzdGFudHMgYXJlIHZvbHVudGVlcmluZyB0aGVpciB0aW1lIGZyZWUgb2Yg
-        Y2hhcmdlLiBUaGVzZSBpbmRpdmlkdWFscywgZWl0aGVyIHJldGlyZWQgb3Ig
-        Y3VycmVudGx5IHByYWN0aWNpbmcgbWVkaWNpbmUgYW5kIGRlbnRpc3RyeSwg
-        d2FudCB0byBzZXJ2ZSB0aGVpciBjb21tdW5pdHkgaW4gdGhlaXIgbGltaXRl
-        ZCBzcGFyZSB0aW1lLiIsImVtYWlscyI6WyJpbmZvQHNhbWFyaXRhbmhvdXNl
-        c2FubWF0ZW8ub3JnIl0sImZheGVzIjpbeyJpZCI6ODgyLCJudW1iZXIiOiI2
-        NTAgODM5LTE0NTcifV0sImhvdXJzIjoiTW9uZGF5LUZyaWRheSwgOS0xMiwg
-        Mi01Iiwia2luZCI6Ikh1bWFuIFNlcnZpY2VzIiwibGFuZ3VhZ2VzIjpbIlNw
-        YW5pc2giXSwibGF0aXR1ZGUiOjM3LjQ2ODY3OCwibG9uZ2l0dWRlIjotMTIy
-        LjIwNzA1NywibWFpbF9hZGRyZXNzIjp7ImlkIjoxMzg2LCJhdHRlbnRpb24i
-        OiJSZWR3b29kIENpdHkgRnJlZSBNZWRpY2FsIENsaW5pYyIsInN0cmVldCI6
-        IjExNCBGaWZ0aCBBdmVudWUiLCJjaXR5IjoiUmVkd29vZCBDaXR5Iiwic3Rh
-        dGUiOiJDQSIsInppcCI6Ijk0MDYzIn0sIm5hbWUiOiJSZWR3b29kIENpdHkg
-        RnJlZSBNZWRpY2FsIENsaW5pYyIsInBob25lcyI6W3siaWQiOjE5MDMsIm51
-        bWJlciI6IjY1MCA4MzktMTQ0NyJ9XSwic2hvcnRfZGVzYyI6IlByb3ZpZGVz
-        IGZyZWUgbWVkaWNhbCBjYXJlIHRvIHRob3NlIGluIG5lZWQuIiwic2x1ZyI6
-        InJlZHdvb2QtY2l0eS1mcmVlLW1lZGljYWwtY2xpbmljIiwic2x1Z3MiOlsi
-        cmVkd29vZC1jaXR5LWZyZWUtbWVkaWNhbC1jbGluaWMiXSwidHJhbnNwb3J0
-        YXRpb24iOiJTQU1UUkFOUyBzdG9wcyB3aXRoaW4gMiBibG9ja3MuIiwidXBk
-        YXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6MDg6MjAuNTE5LTA3OjAwIiwidXJs
-        cyI6WyJodHRwOi8vd3d3LnNhbWFyaXRhbmhvdXNlc2FubWF0ZW8ub3JnIl0s
-        InVybCI6Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNv
-        bS9hcGkvbG9jYXRpb25zLzEzODkiLCJzZXJ2aWNlcyI6W3siaWQiOjEzODks
-        ImRlc2NyaXB0aW9uIjoiUHJvdmlkZXMgZnJlZSBtZWRpY2FsIGNhcmUgdG8g
-        dGhvc2UgaW4gbmVlZC4gT2ZmZXJzIGJhc2ljIG1lZGljYWwgZXhhbXMgZm9y
-        IGFkdWx0cyBhbmQgdHViZXJjdWxvc2lzIHNjcmVlbmluZy4gQXNzaXN0cyB0
-        aGUgaW5kaXZpZHVhbCB0byBhY2Nlc3Mgb3RoZXIgc2VydmljZXMgaW4gdGhl
-        IGNvbW11bml0eS4gQnkgYXBwb2ludG1lbnQgb25seSwgUHJvamVjdCBTbWls
-        ZSBwcm92aWRlcyBhIGZyZWUgZGVudGFsIGV4YW0sIGRlbnRhbCBjbGVhbmlu
-        ZyBhbmQgb3JhbCBoeWdpZW5lIGluc3RydWN0aW9uIGZvciBjaGlsZHJlbiwg
-        YWdlIDMtMTIsIG9mIFNhbWFyaXRhbiBIb3VzZSBjbGllbnRzLiIsImVsaWdp
-        YmlsaXR5IjoiTG93LWluY29tZSBwZXJzb24gd2l0aG91dCBhY2Nlc3MgdG8g
-        aGVhbHRoIGNhcmUiLCJmZWVzIjoiTm9uZS4iLCJmdW5kaW5nX3NvdXJjZXMi
-        OlsiRG9uYXRpb25zIiwiR3JhbnRzIl0sImtleXdvcmRzIjpbIkhFQUxUSCBT
-        RVJWSUNFUyIsIk91dHBhdGllbnQgQ2FyZSIsIkNvbW11bml0eSBDbGluaWNz
-        IiwiRnJlZSBNZWRpY2FsIENhcmUtUmVkd29vZCBDaXR5IiwiRnJlZSBEZW50
-        YWwgRXhhbSJdLCJjYXRlZ29yaWVzIjpbeyJpZCI6MSwiZGVwdGgiOjAsIm9l
-        X2lkIjoiMTAxIiwibmFtZSI6IkVtZXJnZW5jeSIsInBhcmVudF9pZCI6bnVs
-        bCwic2x1ZyI6ImVtZXJnZW5jeSJ9LHsiaWQiOjc4LCJkZXB0aCI6MCwib2Vf
-        aWQiOiIxMDYiLCJuYW1lIjoiSGVhbHRoIiwicGFyZW50X2lkIjpudWxsLCJz
-        bHVnIjoiaGVhbHRoIn0seyJpZCI6ODYsImRlcHRoIjoxLCJvZV9pZCI6IjEw
-        Ni0wMiIsIm5hbWUiOiJEZW50YWwgQ2FyZSIsInBhcmVudF9pZCI6NzgsInNs
-        dWciOiJkZW50YWwtY2FyZSJ9LHsiaWQiOjEwOSwiZGVwdGgiOjEsIm9lX2lk
-        IjoiMTA2LTA2IiwibmFtZSI6Ik1lZGljYWwgQ2FyZSIsInBhcmVudF9pZCI6
-        NzgsInNsdWciOiJtZWRpY2FsLWNhcmUifV0sImhvd190b19hcHBseSI6IkNh
-        bGwgZm9yIHNjcmVlbmluZyBhcHBvaW50bWVudC4gTWVkaWNhbCB2aXNpdHMg
-        YXJlIGJ5IGFwcG9pbnRtZW50IG9ubHkuIiwic2VydmljZV9hcmVhcyI6WyJB
-        dGhlcnRvbiIsIkVhc3QgUGFsbyBBbHRvIiwiTWVubG8gUGFyayIsIlJlZHdv
-        b2QgQ2l0eSIsIlNhbiBDYXJsb3MiXSwid2FpdCI6IlZhcmllcy4iLCJ1cGRh
-        dGVkX2F0IjoiMjAxNC0wNS0yNFQxNDowNzo1MS44NzctMDc6MDAifV0sIm9y
-        Z2FuaXphdGlvbiI6eyJpZCI6MTMwMSwibmFtZSI6IlNhbWFyaXRhbiBIb3Vz
-        ZSIsInNsdWciOiJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDljZC00OThl
-        LWEwZTgtYjJmMTU0YTA3YmVjIiwic2x1Z3MiOlsic2FtYXJpdGFuLWhvdXNl
-        LTU3Y2YxNWViLTA5Y2QtNDk4ZS1hMGU4LWIyZjE1NGEwN2JlYyJdLCJfc2x1
-        Z3MiOlsic2FtYXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4ZS1hMGU4
-        LWIyZjE1NGEwN2JlYyJdLCJ1cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10
-        ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL29yZ2FuaXphdGlvbnMvMTMwMSIsImxv
-        Y2F0aW9uc191cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9r
-        dWFwcC5jb20vYXBpL29yZ2FuaXphdGlvbnMvMTMwMS9sb2NhdGlvbnMifX0=
+        bSIsIldoZWVsY2hhaXIiXSwiYWRtaW5fZW1haWxzIjpbXSwiY29vcmRpbmF0
+        ZXMiOlstMTIyLjIwNzA1NywzNy40Njg2NzhdLCJkZXNjcmlwdGlvbiI6IlBy
+        aW1hcnkgYW5kIHNwZWNpYWx0eSBtZWRpY2FsIGFuZCBkZW50YWwgc2Vydmlj
+        ZXMgdG8gdW5pbnN1cmVkLCBsb3ctaW5jb21lIHJlc2lkZW50cy5cclxuV2hv
+        IGlzIFRyZWF0ZWQ/IFxyXG5QYXRpZW50cyBvZiBvdXIgY2xpbmljcyBhcmUg
+        dGhlIHdvcmtpbmcgcG9vci4gVGhleSB0ZW5kIHRvIGVhcm4ganVzdCBlbm91
+        Z2ggaW5jb21lIHRvIGJlIGluZWxpZ2libGUgZm9yIE1lZGktQ2FsIGNvdmVy
+        YWdlLCB5ZXQgZG8gbm90IHJlY2VpdmUgaGVhbHRoIGluc3VyYW5jZSB0aHJv
+        dWdoIHRoZWlyIGVtcGxveWVycyBhbmQgY2Fubm90IGFmZm9yZCB0byBwYXkg
+        Zm9yIOKAnG91dC1vZi1wb2NrZXTigJ0gaGVhbHRoIGluc3VyYW5jZS4gT2Z0
+        ZW4gdGhlc2UgcmVzaWRlbnRzIGFyZSBmb3JjZWQgdG8gc2VlayB0cmVhdG1l
+        bnQgYXQgbG9jYWwgZW1lcmdlbmN5IHJvb21zIGFuZCBiZWNvbWUgc2FkZGxl
+        ZCB3aXRoIG1lZGljYWwgYmlsbHMgdGhhdCB0aGV5IGFyZSB1bmFibGUgdG8g
+        cGF5LiBTYW1hcml0YW4gSG91c2XigJlzIEZyZWUgTWVkaWNhbCBDbGluaWNz
+        IGZpbGwgdGhpcyBnYXAgaW4gaGVhbHRoY2FyZSBhY2Nlc3MgZm9yIHRoZSB1
+        bmluc3VyZWQgYW5kIHNhdmUgZW1lcmdlbmN5IHJvb20gcmVzb3VyY2VzIGZv
+        ciBlbWVyZ2VuY2llcy5cclxuXHJcblByb2Zlc3Npb25hbCBNZWRpY2FsIFx1
+        MDAyNiBEZW50YWwgVm9sdW50ZWVyc1xyXG5UaGFua3MgdG8gaXRzIGlubm92
+        YXRpdmUgdm9sdW50ZWVyLWJhc2VkIG1vZGVsIG9mIHNlcnZpY2UsIFNhbWFy
+        aXRhbiBIb3VzZeKAmXMgY2xpbmljcyBhcmUgYWJsZSB0byB0cmVhdCBzdWNo
+        IGEgbGFyZ2UgbnVtYmVyIG9mIHBhdGllbnRzIHdpdGggYSB2ZXJ5IHNtYWxs
+        IHBhaWQgc3RhZmYuIEFsbW9zdCBhbGwgb2YgdGhlIG1lZGljYWwgYW5kIGRl
+        bnRhbCBkb2N0b3JzIGFuZCBhc3Npc3RhbnRzIGFyZSB2b2x1bnRlZXJpbmcg
+        dGhlaXIgdGltZSBmcmVlIG9mIGNoYXJnZS4gVGhlc2UgaW5kaXZpZHVhbHMs
+        IGVpdGhlciByZXRpcmVkIG9yIGN1cnJlbnRseSBwcmFjdGljaW5nIG1lZGlj
+        aW5lIGFuZCBkZW50aXN0cnksIHdhbnQgdG8gc2VydmUgdGhlaXIgY29tbXVu
+        aXR5IGluIHRoZWlyIGxpbWl0ZWQgc3BhcmUgdGltZS4iLCJlbWFpbHMiOlsi
+        aW5mb0BzYW1hcml0YW5ob3VzZXNhbm1hdGVvLm9yZyJdLCJob3VycyI6Ik1v
+        bmRheS1GcmlkYXksIDktMTIsIDItNSIsImtpbmQiOiJIdW1hbiBTZXJ2aWNl
+        cyIsImxhbmd1YWdlcyI6WyJTcGFuaXNoIl0sImxhdGl0dWRlIjozNy40Njg2
+        NzgsImxvbmdpdHVkZSI6LTEyMi4yMDcwNTcsIm5hbWUiOiJSZWR3b29kIENp
+        dHkgRnJlZSBNZWRpY2FsIENsaW5pYyIsInNob3J0X2Rlc2MiOiJQcm92aWRl
+        cyBmcmVlIG1lZGljYWwgY2FyZSB0byB0aG9zZSBpbiBuZWVkLiIsInNsdWci
+        OiJyZWR3b29kLWNpdHktZnJlZS1tZWRpY2FsLWNsaW5pYyIsInNsdWdzIjpb
+        InJlZHdvb2QtY2l0eS1mcmVlLW1lZGljYWwtY2xpbmljIl0sInRyYW5zcG9y
+        dGF0aW9uIjoiU0FNVFJBTlMgc3RvcHMgd2l0aGluIDIgYmxvY2tzLiIsInVw
+        ZGF0ZWRfYXQiOiIyMDE0LTA1LTI0VDE0OjA4OjIwLjUxOS0wNzowMCIsInVy
+        bHMiOlsiaHR0cDovL3d3dy5zYW1hcml0YW5ob3VzZXNhbm1hdGVvLm9yZyJd
+        LCJ1cmwiOiJodHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5j
+        b20vYXBpL2xvY2F0aW9ucy9yZWR3b29kLWNpdHktZnJlZS1tZWRpY2FsLWNs
+        aW5pYyIsImFkZHJlc3MiOnsiaWQiOjExMjksInN0cmVldCI6IjExNCBGaWZ0
+        aCBBdmVudWUiLCJjaXR5IjoiUmVkd29vZCBDaXR5Iiwic3RhdGUiOiJDQSIs
+        InppcCI6Ijk0MDYzIn0sImNvbnRhY3RzIjpbeyJlbWFpbCI6bnVsbCwiZXh0
+        ZW5zaW9uIjpudWxsLCJmYXgiOm51bGwsImlkIjoxNjIwLCJuYW1lIjoiU2hh
+        cm9uIFBldGVyc2VuIiwicGhvbmUiOm51bGwsInRpdGxlIjoiT3BlcmF0aW9u
+        cyBEaXJlY3RvciJ9XSwiZmF4ZXMiOlt7ImlkIjo4ODIsIm51bWJlciI6IjY1
+        MCA4MzktMTQ1NyIsImRlcGFydG1lbnQiOm51bGx9XSwibWFpbF9hZGRyZXNz
+        Ijp7ImlkIjoxMzg2LCJhdHRlbnRpb24iOiJSZWR3b29kIENpdHkgRnJlZSBN
+        ZWRpY2FsIENsaW5pYyIsInN0cmVldCI6IjExNCBGaWZ0aCBBdmVudWUiLCJj
+        aXR5IjoiUmVkd29vZCBDaXR5Iiwic3RhdGUiOiJDQSIsInppcCI6Ijk0MDYz
+        In0sInBob25lcyI6W3siaWQiOjE5MDMsImRlcGFydG1lbnQiOm51bGwsImV4
+        dGVuc2lvbiI6bnVsbCwibnVtYmVyIjoiNjUwIDgzOS0xNDQ3IiwibnVtYmVy
+        X3R5cGUiOm51bGwsInZhbml0eV9udW1iZXIiOm51bGx9XSwic2VydmljZXMi
+        Olt7ImlkIjoxMzg5LCJhdWRpZW5jZSI6bnVsbCwiZGVzY3JpcHRpb24iOiJQ
+        cm92aWRlcyBmcmVlIG1lZGljYWwgY2FyZSB0byB0aG9zZSBpbiBuZWVkLiBP
+        ZmZlcnMgYmFzaWMgbWVkaWNhbCBleGFtcyBmb3IgYWR1bHRzIGFuZCB0dWJl
+        cmN1bG9zaXMgc2NyZWVuaW5nLiBBc3Npc3RzIHRoZSBpbmRpdmlkdWFsIHRv
+        IGFjY2VzcyBvdGhlciBzZXJ2aWNlcyBpbiB0aGUgY29tbXVuaXR5LiBCeSBh
+        cHBvaW50bWVudCBvbmx5LCBQcm9qZWN0IFNtaWxlIHByb3ZpZGVzIGEgZnJl
+        ZSBkZW50YWwgZXhhbSwgZGVudGFsIGNsZWFuaW5nIGFuZCBvcmFsIGh5Z2ll
+        bmUgaW5zdHJ1Y3Rpb24gZm9yIGNoaWxkcmVuLCBhZ2UgMy0xMiwgb2YgU2Ft
+        YXJpdGFuIEhvdXNlIGNsaWVudHMuIiwiZWxpZ2liaWxpdHkiOiJMb3ctaW5j
+        b21lIHBlcnNvbiB3aXRob3V0IGFjY2VzcyB0byBoZWFsdGggY2FyZSIsImZl
+        ZXMiOiJOb25lLiIsImZ1bmRpbmdfc291cmNlcyI6WyJEb25hdGlvbnMiLCJH
+        cmFudHMiXSwiaG93X3RvX2FwcGx5IjoiQ2FsbCBmb3Igc2NyZWVuaW5nIGFw
+        cG9pbnRtZW50LiBNZWRpY2FsIHZpc2l0cyBhcmUgYnkgYXBwb2ludG1lbnQg
+        b25seS4iLCJrZXl3b3JkcyI6WyJIRUFMVEggU0VSVklDRVMiLCJPdXRwYXRp
+        ZW50IENhcmUiLCJDb21tdW5pdHkgQ2xpbmljcyIsIkZyZWUgTWVkaWNhbCBD
+        YXJlLVJlZHdvb2QgQ2l0eSIsIkZyZWUgRGVudGFsIEV4YW0iXSwibmFtZSI6
+        bnVsbCwic2VydmljZV9hcmVhcyI6WyJBdGhlcnRvbiIsIkVhc3QgUGFsbyBB
+        bHRvIiwiTWVubG8gUGFyayIsIlJlZHdvb2QgQ2l0eSIsIlNhbiBDYXJsb3Mi
+        XSwic2hvcnRfZGVzYyI6bnVsbCwidXJscyI6W10sIndhaXQiOiJWYXJpZXMu
+        IiwidXBkYXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6MDc6NTEuODc3LTA3OjAw
+        IiwiY2F0ZWdvcmllcyI6W3siaWQiOjEsImRlcHRoIjowLCJvZV9pZCI6IjEw
+        MSIsIm5hbWUiOiJFbWVyZ2VuY3kiLCJwYXJlbnRfaWQiOm51bGx9LHsiaWQi
+        Ojc4LCJkZXB0aCI6MCwib2VfaWQiOiIxMDYiLCJuYW1lIjoiSGVhbHRoIiwi
+        cGFyZW50X2lkIjpudWxsfSx7ImlkIjo4NiwiZGVwdGgiOjEsIm9lX2lkIjoi
+        MTA2LTAyIiwibmFtZSI6IkRlbnRhbCBDYXJlIiwicGFyZW50X2lkIjo3OH0s
+        eyJpZCI6MTA5LCJkZXB0aCI6MSwib2VfaWQiOiIxMDYtMDYiLCJuYW1lIjoi
+        TWVkaWNhbCBDYXJlIiwicGFyZW50X2lkIjo3OH1dfV0sIm9yZ2FuaXphdGlv
+        biI6eyJpZCI6MTMwMSwibmFtZSI6IlNhbWFyaXRhbiBIb3VzZSIsInNsdWci
+        OiJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDljZC00OThlLWEwZTgtYjJm
+        MTU0YTA3YmVjIiwiX3NsdWdzIjpbInNhbWFyaXRhbi1ob3VzZS01N2NmMTVl
+        Yi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRhMDdiZWMiXSwic2x1Z3MiOlsic2Ft
+        YXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4ZS1hMGU4LWIyZjE1NGEw
+        N2JlYyJdLCJ1cmxzIjpbXSwidXJsIjoiaHR0cDovL3NtYy1vaGFuYS1hcGkt
+        dGVzdC5oZXJva3VhcHAuY29tL2FwaS9vcmdhbml6YXRpb25zL3NhbWFyaXRh
+        bi1ob3VzZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRhMDdiZWMi
+        LCJsb2NhdGlvbnNfdXJsIjoiaHR0cDovL3NtYy1vaGFuYS1hcGktdGVzdC5o
+        ZXJva3VhcHAuY29tL2FwaS9vcmdhbml6YXRpb25zL3NhbWFyaXRhbi1ob3Vz
+        ZS01N2NmMTVlYi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRhMDdiZWMvbG9jYXRp
+        b25zIn19
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:28:35 GMT
+  recorded_at: Fri, 15 Aug 2014 21:07:54 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?keyword=ymca&kind=Human%20Services&service_area=smc
@@ -152,11 +163,17 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:28:35 GMT
+      - Fri, 15 Aug 2014 21:07:54 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Total-Count:
       - '1'
       X-Total-Pages:
@@ -164,52 +181,38 @@ http_interactions:
       X-Current-Page:
       - '1'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '3476'
+      - application/json; charset=utf-8
       Etag:
-      - '"dfb72d68aa348c1bfd382fe989958c43"'
+      - '"bff56fc7ca76fb4e671ecc6d5aede503"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 871e4018-dbaf-4915-8cd0-0b91f74df377
+      - eba4ee8f-e887-46e1-907e-263dbd5b1f19
       X-Runtime:
-      - '0.170035'
+      - '0.052358'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1687,"accessibility":["Wheelchair"],"address":{"id":1411,"street":"1670
-        South Amphlett Blvd, Suite 115","city":"San Mateo","state":"CA","zip":"94402"},"ask_for":["Intake
-        coordinator"],"contacts":[{"id":1991,"name":"Erika Jennings, MFT","title":"Clinical
-        Director"}],"coordinates":[-122.3022248,37.5591732],"description":"The Youth
-        Service Bureau (YSB) of the YMCA offers individual, family, couples and group
-        counseling. Offers services to families of children age 3-18 who may be struggling
-        with a variety of issues including emotional and behavioral problems, drugs
-        and alcohol, anger management, sexual identity, abuse and neglect, parenting
-        and school and social problems. Serves as a juvenile diversion and risk prevention
-        program for youth referred by the Probation Department, police departments,
-        or other community agencies. Also houses Building Futures which is a therapeutic
-        mentoring program for youth ages 6-14. YSB on-campus couseling services are
-        offered at 19 schools throughout San Mateo County. Programs include Violence
-        Prevention, School Safety Advocates, Girls United, case management and individual
-        and group counseling. Formerly known as Project FOCYS.","emails":["ejennings@ymcasf.org"],"faxes":[{"id":1091,"number":"650
-        349-1103"}],"hours":"Monday-Wednesday, 4 pm-8 pm","kind":"Human Services","languages":["Spanish"],"latitude":37.5591732,"longitude":-122.3022248,"mail_address":{"id":1684,"attention":"of
-        San Mateo","street":"1670 South Amphlett Blvd, Suite 115","city":"San Mateo","state":"CA","zip":"94402"},"name":"San
-        Mateo","phones":[{"id":2463,"number":"650 349-7969"}],"short_desc":"Counseling
-        program offering services to families of children who are having behavior
-        problems in the community. Also individual and couples counseling.","slug":"san-mateo","slugs":["san-mateo"],"updated_at":"2014-05-24T14:08:29.769-07:00","urls":["http://youthservicebureaus.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1687","services":[{"id":1691,"audience":"Youth
-        and families, adults, adult and couples","eligibility":"Resident of area served","fees":"Vary
-        according to income. Cash, checks, Medi-Cal and Victims of Crime Assistance
-        accepted.","funding_sources":["City","County","Donations","Fees","Grants","State"],"keywords":["CHILD
-        PROTECTION AND CARE SERVICES","Crisis/Abuse Intervention/Hot","Individual/Group
-        Counseling","INDIVIDUAL AND FAMILY DEVELOPMENT SERVICES","Growth and Adjustment","Parent
-        Groups","LEGAL AND CRIMINAL JUSTICE SERVICES","Diversion","Juvenile Delinquency
-        Prevent","Diversion Programs","Y Facilities","Youth","YMCA"],"categories":[{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":231,"depth":1,"oe_id":"108-07","name":"Support
-        Network","parent_id":196,"slug":"support-network"},{"id":232,"depth":2,"oe_id":"108-07-01","name":"Counseling","parent_id":231,"slug":"counseling-108-07-01"}],"how_to_apply":"Apply
-        by phone. School-based services referred by school personnel or police department.","service_areas":["San
-        Mateo County"],"wait":"Varies.","updated_at":"2014-05-24T14:08:00.187-07:00"}],"organization":{"id":1343,"name":"Youth
-        Service Bureaus of the YMCA","slug":"youth-service-bureaus-of-the-ymca","slugs":["youth-service-bureaus-of-the-ymca"],"_slugs":["youth-service-bureaus-of-the-ymca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1343/locations"}}]'
+      string: '[{"id":1687,"admin_emails":[],"coordinates":[-122.3022248,37.5591732],"description":"The
+        Youth Service Bureau (YSB) of the YMCA offers individual, family, couples
+        and group counseling. Offers services to families of children age 3-18 who
+        may be struggling with a variety of issues including emotional and behavioral
+        problems, drugs and alcohol, anger management, sexual identity, abuse and
+        neglect, parenting and school and social problems. Serves as a juvenile diversion
+        and risk prevention program for youth referred by the Probation Department,
+        police departments, or other community agencies. Also houses Building Futures
+        which is a therapeutic mentoring program for youth ages 6-14. YSB on-campus
+        couseling services are offered at 19 schools throughout San Mateo County.
+        Programs include Violence Prevention, School Safety Advocates, Girls United,
+        case management and individual and group counseling. Formerly known as Project
+        FOCYS.","kind":"Human Services","latitude":37.5591732,"longitude":-122.3022248,"name":"San
+        Mateo","short_desc":"Counseling program offering services to families of children
+        who are having behavior problems in the community. Also individual and couples
+        counseling.","slug":"san-mateo","slugs":["san-mateo"],"updated_at":"2014-05-24T14:08:29.769-07:00","urls":["http://youthservicebureaus.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo","address":{"id":1411,"street":"1670
+        South Amphlett Blvd, Suite 115","city":"San Mateo","state":"CA","zip":"94402"},"organization":{"id":1343,"name":"Youth
+        Service Bureaus of the YMCA","slug":"youth-service-bureaus-of-the-ymca","_slugs":["youth-service-bureaus-of-the-ymca"],"slugs":["youth-service-bureaus-of-the-ymca"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/youth-service-bureaus-of-the-ymca","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/youth-service-bureaus-of-the-ymca/locations"},"phones":[{"id":2463,"department":null,"extension":null,"number":"650
+        349-7969","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:28:35 GMT
+  recorded_at: Fri, 15 Aug 2014 21:07:54 GMT
 recorded_with: VCR 2.9.2

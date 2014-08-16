@@ -62,13 +62,13 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  #config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store
   client = Dalli::Client.new(ENV['MEMCACHIER_SERVERS'],
-                              :value_max_bytes => 10_485_760)
+                             value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
-    metastore:   client,
-    entitystore: client
+    metastore:     client,
+    entitystore:   client
   }
   config.static_cache_control = 'public, max-age=2592000'
 

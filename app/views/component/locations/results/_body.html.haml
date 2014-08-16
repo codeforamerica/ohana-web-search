@@ -1,0 +1,27 @@
+= render 'component/locations/results/header'
+%section#results-entries
+  - if info_box_key_corresponding_to_keyword.present?
+    %section#terminology
+      %div
+        = render_info_box(info_box_key_corresponding_to_keyword)
+
+  - if @search.locations.present?
+    - if @search.map_data.size != 0
+      = render 'component/locations/results/map_view'
+
+    = render 'component/locations/results/list_view'
+  - else
+    %section.no-results
+      .message
+        %strong= t('no_results.main')
+        %em= t('no_results.secondary')
+        %ul
+          %li
+            = t('no_results.options.one')
+          %li
+            = t('no_results.options.two')
+          %li
+            %a{ href: '/locations' }
+              = t('no_results.options.browse_all')
+
+    = render 'home/homepage_links'

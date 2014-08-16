@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 15 Aug 2014 21:08:06 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Total-Count:
+      - '343'
+      X-Total-Pages:
+      - '343'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4b1c4b8a-e1c2-4e02-b3a0-d7b7900780a0
+      X-Runtime:
+      - '0.029644'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
+        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 15 Aug 2014 21:08:06 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 15 Aug 2014 21:08:06 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&page=99>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&page=2>;
+        rel="next"
+      X-Total-Count:
+      - '99'
+      X-Total-Pages:
+      - '99'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"d12e3703841ba8debc11a346d8397340"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 990e5f7d-5fcb-4e72-b2e0-215e9115e040
+      X-Runtime:
+      - '0.039732'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1407,"admin_emails":[],"coordinates":[-122.3048749,37.5336608],"description":"Provides
+        general reading materials and reference services to adults, teenagers and
+        children. Loans cassette tapes (chidlren''s only), CDs and large print materials.
+        Also offers programs for adults and school-age children, a summer reading
+        program for children and weekly preschool and PJ story hours. Services to
+        homebound persons can be arranged through this library.   Has copies of agendas
+        and minutes of the San Mateo City Council, San Mateo City Planning Commission,
+        County Board of Supervisors, County Board of Education, local environmental
+        impact reports and other government documents relevant to the city and county
+        of San Mateo. This library participates in the Peninsula Library System and
+        offers access to its computerized catalog and other shared on-line databases.
+        Also has 12 Internet accessible computers and free wireless.","kind":"Libraries","latitude":37.5336608,"longitude":-122.3048749,"name":"Hillsdale
+        Community Library","short_desc":"Provides general reading materials and reference
+        services to adults, teenagers and children.","slug":"hillsdale-community-library","slugs":["hillsdale-community-library"],"updated_at":"2014-05-24T14:07:15.661-07:00","urls":["http://smplibrary.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/hillsdale-community-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/hillsdale-community-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/hillsdale-community-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/hillsdale-community-library","address":{"id":1147,"street":"205
+        West Hillsdale Blvd.","city":"San Mateo","state":"CA","zip":"94403-4217"},"organization":{"id":1303,"name":"San
+        Mateo City Public Library","slug":"san-mateo-city-public-library","_slugs":["san-mateo-city-public-library"],"slugs":["san-mateo-city-public-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library/locations"},"phones":[{"id":1922,"department":"24-hour
+        recorded message","extension":null,"number":"650 522-7880","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 15 Aug 2014 21:08:06 GMT
+recorded_with: VCR 2.9.2

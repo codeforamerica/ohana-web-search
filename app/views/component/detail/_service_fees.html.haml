@@ -1,0 +1,5 @@
+- if service[:fees].present?
+  %section{ class: 'fees' }
+    %h1= t('service_fields.fees')
+    %span
+      = service.fees

@@ -1,9 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'sprockets/railtie'
 
 SETTINGS = YAML.load(File.read(File.expand_path('../settings.yml', __FILE__)))
 SETTINGS.merge! SETTINGS.fetch(Rails.env, {})
@@ -15,8 +15,7 @@ Bundler.require(*Rails.groups)
 
 module OhanaWebSearch
   class Application < Rails::Application
-
-    # don't generate RSpec tests for views and helpers
+    # Don't generate RSpec tests for views and helpers.
     config.generators do |g|
 
       g.test_framework :rspec

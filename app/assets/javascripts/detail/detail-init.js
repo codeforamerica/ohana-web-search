@@ -3,7 +3,8 @@ require([
   'detail/character-limiter',
   'detail/term-popup-manager',
   'search/header-manager'
-], function (map, cl, tpm, header) {
+],
+function (map, cl, tpm, header) {
   'use strict';
 
   map.init();
@@ -11,14 +12,15 @@ require([
   tpm.init();
   header.init();
 
-}, function (err) {
+},
+function (err) {
   'use strict';
   //The error callback.
-  //The err object has a list of modules that failed.
+  //The `err` object has a list of modules that failed.
   var failedId = err.requireModules && err.requireModules[0];
   requirejs.undef(failedId);
 
-  console.log("RequireJS threw an Error:",failedId,err.requireType);
+  console.log('RequireJS threw an Error:', failedId, err.requireType);
 
   // Initialize no map loaded state.
   require([
@@ -26,7 +28,8 @@ require([
     'detail/character-limiter',
     'detail/term-popup-manager',
     'search/header-manager'
-  ], function (map, cl, tpm, header) {
+  ],
+  function (map, cl, tpm, header) {
 
     map.init();
     cl.init();

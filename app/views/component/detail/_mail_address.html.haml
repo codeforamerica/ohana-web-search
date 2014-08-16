@@ -1,20 +1,20 @@
-%span{:itemtype=>"http://schema.org/PostalAddress",:itemprop=>"address"}
+%span{ itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
 
-  - if org.mail_address["attention"].present?
+  - if location.mail_address[:attention].present?
     %span.attention
-      = org.mail_address["attention"]
+      = location.mail_address.attention
     %br
 
   %span.street-address{ itemprop: 'streetAddress' }
-    = superscript_ordinals(org.mail_address.street)
+    = superscript_ordinals(location.mail_address.street)
   %br
 
   %span.city{ itemprop: 'addressLocality' }><
-    = org.mail_address.city
+    = location.mail_address.city
   = ','
 
   %span.state{ itemprop: 'addressRegion' }
-    = org.mail_address.state
+    = location.mail_address.state
 
   %span.zipcode{ itemprop: 'postalCode' }
-    = org.mail_address.zip
+    = location.mail_address.zip

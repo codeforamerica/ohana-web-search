@@ -37,9 +37,8 @@ module InfoBoxHelper
   # @return [String]
   def info_box_key_corresponding_to_keyword
     keyword = params[:keyword].try(:downcase)
-    if synonyms.include?(keyword)
-      info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
-    end
+    return unless synonyms.include?(keyword)
+    info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
   end
 
   # @return [HTML]
@@ -62,6 +61,7 @@ module InfoBoxHelper
   # "custom" key points to. Otherwise, render the default description list
   # template defined in the method above.
   def render_info_box(info_box_key)
+    return if info_box_key == 'wiccash' || info_box_key == 'credit'
     info_box = info_box_hash[info_box_key]
 
     if info_box['custom'].present?

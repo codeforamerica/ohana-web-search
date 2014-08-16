@@ -1,0 +1,5 @@
+- if @location[:description].present?
+  %section{ class: 'description' }
+    %h1= "#{t('location_fields.description')}:"
+    %span
+      = location.description

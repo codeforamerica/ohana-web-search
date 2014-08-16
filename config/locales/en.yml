@@ -20,8 +20,82 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  about:
+    header: 'Locate San Mateo County Services'
+    description: >
+      Retrieve detailed information about the services available
+      in San Mateo County, California.
+
+  branding:
+    description: >
+      Find free food, housing, clothes, medical care, jobs, and
+      other human services in San Mateo County, California.
+    header: 'Find San Mateo County community services'
+
+  buttons:
+    clear_search_fields: 'Clear search fields'
+    during_geolocation: 'Please wait...'
+    homepage_search: 'Search'
+    services_near_me: 'Services near me'
+    update_search_results: 'Update search results'
+
   errors:
-    api_down: 'Sorry, we are experiencing issues with search. Please try again later.'
+    api_down: >
+      Sorry, we are experiencing issues with search. Please try again later.
     bad_search: 'That search was improperly formatted. Please try a new search.'
     not_found: 'Sorry, that page does not exist. Please try a new search.'
-    remove_quote: 'Please remove the single quote from the end of the URL and try again.'
+    remove_quote: >
+      Please remove the single quote from the end of the URL and try again.
+
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found."
+          one: "Displaying <strong>1</strong> %{entry_name}"
+          other: "Displaying <strong>all %{count}</strong> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying <strong>%{first} - %{last}</strong> of <strong>%{total}</strong> %{entry_name}"
+
+  labels:
+    address_search: 'Address search'
+    agency_search: 'Organization name search'
+    homepage_search: 'I need...'
+
+  location_fields:
+    accessibility: 'Accessibility Options:'
+    description: 'Description'
+    languages: 'Languages Spoken:'
+
+  no_results:
+    main: 'Unfortunately, your search returned no results.'
+    secondary: "If you have trouble finding what you're looking for, try:"
+    options:
+      one: 'Searching with a single keyword.'
+      two: 'Scrolling down and clicking one of the links.'
+      browse_all: 'Browsing all locations.'
+
+  placeholders:
+    address_search: 'address or ZIP code'
+    agency_search: 'full or partial name...'
+    homepage_keyword_search: 'what are you looking for?'
+    results_page_keyword_search: 'search for...'
+
+  service_fields:
+    audience: 'Audience:'
+    description: 'Service Description:'
+    eligibility: 'Eligibility:'
+    fees: 'Fees:'
+    how_to_apply: 'How to Apply:'
+    keywords: 'Keyword Tags'
+    service_areas: 'Service Areas:'
+    urls: 'Homepage:'
+    wait: 'Service Wait Estimate:'
+
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "<i class='fa fa-chevron-left'></i>"
+      next: "<i class='fa fa-chevron-right'></i>"
+      truncate: "&hellip;"

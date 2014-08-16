@@ -1,40 +1,40 @@
 %article#about-box
-  %div.close-button
+  .close-button
   %div
-    %h1 Locate San Mateo County Services
+    %h1= t('about.header')
     %p
-      Retrieve detailed information about the services available in San Mateo County, California.
+      = t('about.description')
 
     %p
       This project is part of the development of the
-      =link_to("Ohana API", "http://ohanapi.org", :target=> "_blank")+","
+      = link_to('Ohana API', 'http://ohanapi.org', target: '_blank') + ','
       an open source database of community services.
 
     %footer
       %p
         Developed by the 2013
-        = link_to "San Mateo County, CA,", "http://codeforamerica.org/2013-partners/san-mateo-county/", :target=>"_blank"
+        = link_to 'San Mateo County, CA,', 'http://codeforamerica.org/2013-partners/san-mateo-county/', target: '_blank'
         team of
-        = link_to "Code for America", "http://codeforamerica.org", :target=>"_blank"
+        = link_to 'Code for America', 'http://codeforamerica.org', target: '_blank'
         fellows.
 
       %p
         %em
           Development team:
         %br
-        = link_to "Anselm Bradford", "http://twitter.com/anselmbradford"
+        = link_to 'Anselm Bradford', 'http://twitter.com/anselmbradford'
         |
-        = link_to "Moncef Belyamani", "http://twitter.com/monfresh"
+        = link_to 'Moncef Belyamani', 'http://twitter.com/monfresh'
         |
-        = link_to "Sophia Parafina", "http://twitter.com/spara"
+        = link_to 'Sophia Parafina', 'http://twitter.com/spara'
 
       %p
         Geocoding courtesy of Google.
 
       %p
-        %a{:href=>"http://www.flickr.com/photos/walkingsf/5658102643/", :target=>"_blank" }
+        %a{ href: 'http://www.flickr.com/photos/walkingsf/5658102643/', target: '_blank' }
           Map photo
         by Eric Fischer
         %br
-        %a{:href=>"http://creativecommons.org/licenses/by-nc/2.0/", :target=>"_blank"}
+        %a{ href: 'http://creativecommons.org/licenses/by-nc/2.0/', target: '_blank' }
           Attribution-NonCommercial License

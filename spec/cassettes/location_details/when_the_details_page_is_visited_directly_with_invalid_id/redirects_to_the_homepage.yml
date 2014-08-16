@@ -21,27 +21,30 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:26:18 GMT
+      - Fri, 15 Aug 2014 21:08:14 GMT
       Status:
       - 404 Not Found
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
-      - application/json
-      Content-Length:
-      - '76'
+      - application/json; charset=utf-8
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f85136ee-9e3c-4dd4-a264-e45505c43e3e
+      - 7033fff0-fd72-4a57-9058-423b9f0e0db9
       X-Runtime:
-      - '0.071977'
+      - '0.024081'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"error":"Not Found","message":"The requested resource could not be
-        found."}'
+      string: '{"status":404,"message":"The requested resource could not be found.","documentation_url":"http://smc-ohana-api-test.herokuapp.com/docs"}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:26:18 GMT
+  recorded_at: Fri, 15 Aug 2014 21:08:14 GMT
 recorded_with: VCR 2.9.2

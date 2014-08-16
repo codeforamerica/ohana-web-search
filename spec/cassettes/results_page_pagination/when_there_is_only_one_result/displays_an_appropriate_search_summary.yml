@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=maceo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 15 Aug 2014 21:08:18 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"fe71343a7f7898054943d9b7677956ed"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 403b6364-2fd0-4450-bc2a-b8eb9430f96e
+      X-Runtime:
+      - '0.027776'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1689,"admin_emails":[],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":42.878036,"longitude":-73.1968254,"name":"San
+        Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"updated_at":"2014-08-15T14:06:28.664-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":1413,"street":"2013
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"organization":{"id":1344,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","_slugs":["sanmaceo-example-agency"],"slugs":["sanmaceo-example-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":2465,"department":"Information","extension":null,"number":"650
+        372-6200","number_type":"TTY","vanity_number":null},{"id":2466,"department":"Reservations","extension":null,"number":"650
+        372-6200","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 15 Aug 2014 21:08:18 GMT
+recorded_with: VCR 2.9.2

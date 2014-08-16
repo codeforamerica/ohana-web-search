@@ -73,15 +73,62 @@
 // Turns off proprietary default webkit styling of search input fields.
 @mixin reset-input-webkit()
 {
+  // Turns off iOS input rounding.
   input[type=search]::-webkit-search-cancel-button,
   input[type=search]::-webkit-search-decoration,
   input[type=search]::-webkit-search-results-button,
   input[type=search]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
   }
   input[type=search] {
     -webkit-appearance: none;
     border-radius: 0;
-    -webkit-box-sizing:content-box;
+    -webkit-box-sizing: content-box;
+  }
+}
+
+// These are classes that apply rounding to one or more corners.
+// The "except" set will square off (non-round) the corners specified.
+// They are intended for UI components that positioned adjacent to another
+// component.
+// Unfortunately SCSS Compass mixins can't be used here because they don't
+// support the "!important" directive.
+@mixin rounded-except($corner)
+{
+  @if $corner == "none"
+  {
+    @include border-radius($border-radius-base);
+  }
+  @if $corner == "left"
+  {
+    @include border-radius(0px $border-radius-base $border-radius-base 0px);
+  }
+  @if $corner == "top"
+  {
+    @include border-radius(0px 0px $border-radius-base $border-radius-base);
+  }
+  @if $corner == "right"
+  {
+    @include border-radius($border-radius-base 0px 0px $border-radius-base);
+  }
+  @if $corner == "bottom"
+  {
+    @include border-radius($border-radius-base $border-radius-base 0px 0px);
+  }
+  @if $corner == "upper-left"
+  {
+    @include border-radius(0px $border-radius-base $border-radius-base $border-radius-base);
+  }
+  @if $corner == "upper-right"
+  {
+    @include border-radius($border-radius-base 0px $border-radius-base $border-radius-base);
+  }
+  @if $corner == "lower-right"
+  {
+    @include border-radius($border-radius-base $border-radius-base 0px $border-radius-base);
+  }
+  @if $corner == "lower-left"
+  {
+    @include border-radius($border-radius-base $border-radius-base $border-radius-base 0px);
   }
 }

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfdsggfdg
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=asdfdsggfdg
     body:
       encoding: US-ASCII
       string: ''
@@ -21,35 +21,39 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:28:38 GMT
+      - Fri, 15 Aug 2014 21:08:09 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=asdfdsggfdg&page=0&per_page=30>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=asdfdsggfdg&page=0>;
         rel="last"
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '2'
+      - application/json; charset=utf-8
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - badd80f6-36c3-4931-a1fc-41304a4821da
+      - f6e223e2-ba2c-4987-8980-4ffec6349c69
       X-Runtime:
-      - '0.029928'
+      - '0.015587'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:28:38 GMT
+  recorded_at: Fri, 15 Aug 2014 21:08:09 GMT
 recorded_with: VCR 2.9.2

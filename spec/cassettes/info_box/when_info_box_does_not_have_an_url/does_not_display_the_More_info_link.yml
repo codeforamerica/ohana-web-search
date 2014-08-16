@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=snap
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=zoo
     body:
       encoding: US-ASCII
       string: ''
@@ -21,96 +21,38 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:26:16 GMT
+      - Sat, 16 Aug 2014 05:01:15 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=zoo&page=0>; rel="last"
       X-Total-Count:
-      - '2'
+      - '0'
       X-Total-Pages:
-      - '1'
-      X-Current-Page:
-      - '1'
+      - '0'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '7533'
+      - application/json; charset=utf-8
       Etag:
-      - '"5aa9c644e6f6d9e847177be7b16f26cb"'
+      - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6ff72e76-145e-47b1-b92e-9a2919a15351
+      - 83366ba0-f3aa-45a1-ad1e-cd84fd9c752f
       X-Runtime:
-      - '0.187710'
+      - '0.103632'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1497,"accessibility":["Disabled Parking","Ramp","Wheelchair"],"address":{"id":1236,"street":"1487
-        Huntington Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"contacts":[{"id":1758,"name":"Jerry
-        Lindner","title":"Regional Program Manager"}],"coordinates":[-122.421524,37.644686],"description":"Processes
-        applications for financial assistance programs such as CalWORKS, Medi-Cal,
-        CalFresh (Food Stamps), General Assistance and child care.   To get the process
-        started, applicants are encouraged to apply online at https://www.mybenefitscalwin.org/.","faxes":[{"id":960,"number":"650
-        877-5606"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Chinese
-        (Mandarin)","Filipino (Tagalog)","Spanish"],"latitude":37.644686,"longitude":-122.421524,"mail_address":{"id":1494,"attention":"South
-        San Francisco Services Ctr","street":"1487 Huntington Avenue","city":"South
-        San Francisco","state":"CA","zip":"94080"},"name":"Northern Region., South
-        San Francisco Services Center","phones":[{"id":2091,"number":"650 877-5608"}],"short_desc":"Processes
-        applications for financial assistance programs such as CalWORKS, Medi-Cal
-        and Food Stamps.","slug":"northern-region-south-san-francisco-services-center","slugs":["northern-region-south-san-francisco-services-center"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:31.059-07:00","urls":["https://www.mybenefitscalwin.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1497","services":[{"id":1497,"eligibility":"Vary
-        according to program","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["EMERGENCY
-        SERVICES","Financial Assistance","Health","General Relief","TANF","Child Care
-        Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Child Welfare","Calworks","Welfare"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
-        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
-        Benefits","parent_id":23,"slug":"food-benefits"},{"id":135,"depth":0,"oe_id":"107","name":"Money","parent_id":null,"slug":"money"},{"id":144,"depth":1,"oe_id":"107-02","name":"Financial
-        Assistance","parent_id":135,"slug":"financial-assistance"},{"id":145,"depth":2,"oe_id":"107-02-01","name":"Help
-        Pay for Childcare","parent_id":144,"slug":"help-pay-for-childcare"},{"id":176,"depth":1,"oe_id":"107-03","name":"Government
-        Benefits","parent_id":135,"slug":"government-benefits"},{"id":178,"depth":2,"oe_id":"107-03-02","name":"Food
-        Benefits","parent_id":176,"slug":"food-benefits-107-03-02"},{"id":180,"depth":2,"oe_id":"107-03-04","name":"Understand
-        Government Programs","parent_id":176,"slug":"understand-government-programs"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"},{"id":220,"depth":1,"oe_id":"108-05","name":"Navigating
-        the System","parent_id":196,"slug":"navigating-the-system"},{"id":221,"depth":2,"oe_id":"108-05-01","name":"Help
-        Fill out Forms","parent_id":220,"slug":"help-fill-out-forms"}],"how_to_apply":"Walk
-        in or apply by phone.","service_areas":["San Bruno","South San Francisco"],"wait":"First
-        come, first served basis.","updated_at":"2014-05-24T14:07:54.885-07:00"}],"organization":{"id":1310,"name":"San
-        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}},{"id":1499,"accessibility":["Disabled
-        Parking","Disabled Restroom","Wheelchair"],"address":{"id":1238,"street":"271
-        - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"id":1760,"name":"Darla
-        Munson","title":"Regional Manager"}],"coordinates":[-122.4741901,37.6896347],"description":"Offers
-        comprehensive employment services for job seekers and employers.   Employer
-        services include screening and referral of job-ready workers, up to 50% reimbursement
-        of wages for new employees during the on-the-job training period, and space
-        and resources necessary for recruitment. Offers a job bank to persons age
-        16 or over. Offers information on job openings, company profiles and training
-        information in government, nonprofit agencies, corporations and private industry.
-        Offers access to the Internet and the use of computers, phones and fax machines.
-        Also offers information and referral services to other community resources
-        as needed by clients. Accepts applications for public assistance programs:
-        CalWorks, CalFresh, General Assistance and Medi-Cal. Determines eligibility
-        of needy individuals and families seeking public assistance benefits. Serves
-        low-income clients in need of health insurance (Medi-Cal), nutritional food
-        supplements (CalFresh), and temporary financial assistance (CalWorks and General
-        Assistance).","emails":["dmunson@co.sanmateo.ca.us"],"faxes":[{"id":962,"number":"650
-        301-8455"}],"hours":"Monday-Friday, 8-5","kind":"Human Services","languages":["Filipino
-        (Tagalog)","Spanish"],"latitude":37.6896347,"longitude":-122.4741901,"mail_address":{"id":1496,"attention":"PeninsulaWorks
-        Daly City","street":"271 - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"name":"Northern
-        Region., PeninsulaWorks Daly City","phones":[{"id":2093,"number":"650 301-8440"}],"short_desc":"Offers
-        comprehensive employment services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","slugs":["northern-region-peninsulaworks-daly-city"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T14:08:31.023-07:00","urls":["http://www.peninsulaworks.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1499","services":[{"id":1499,"audience":"Persons
-        in need of Public Assistance benefits. Persons in need of employment and/or
-        training services, job seekers and employers","eligibility":"Vary according
-        to program. No requirements to use job information center or to take workshops","fees":"None.","funding_sources":["County","Federal","State"],"keywords":["Employment","Job
-        Placement","Job Training","Prejob Guidance","Job Finding Assistance","General
-        Relief","TANF","Child Care Subsidies","Medicaid","Food Stamps","SNAP","CalFresh","Youth","Adolescents"],"categories":[{"id":292,"depth":0,"oe_id":"110","name":"Work","parent_id":null,"slug":"work"},{"id":293,"depth":1,"oe_id":"110-01","name":"Help
-        Find Work","parent_id":292,"slug":"help-find-work-110-01"},{"id":294,"depth":2,"oe_id":"110-01-01","name":"Job
-        Placement","parent_id":293,"slug":"job-placement"},{"id":301,"depth":1,"oe_id":"110-03","name":"Skills
-        \u0026 Training","parent_id":292,"slug":"skills-training-110-03"}],"how_to_apply":"Walk
-        in to use job information center and/or apply for Public Assistance Programs.","service_areas":["Brisbane","Colma","Daly
-        City","Pacifica","San Bruno","South San Francisco"],"wait":"No wait.","updated_at":"2014-05-24T14:07:54.979-07:00"}],"organization":{"id":1310,"name":"San
-        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","slugs":["san-mateo-county-human-services-agency"],"_slugs":["san-mateo-county-human-services-agency"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1310/locations"}}]'
+      string: "[]"
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:26:16 GMT
+  recorded_at: Sat, 16 Aug 2014 05:01:15 GMT
 recorded_with: VCR 2.9.2

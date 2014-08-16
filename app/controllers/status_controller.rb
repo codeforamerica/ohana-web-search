@@ -1,7 +1,7 @@
 class StatusController < ApplicationController
   respond_to :json
 
-  def get_status
+  def status
     # API checks
     test_location = Ohanakapa.location('redwood-city-free-medical-clinic')
     test_search = Ohanakapa.search(
@@ -18,7 +18,7 @@ class StatusController < ApplicationController
       {
         'status' => status,
         'updated' => Time.now.to_i,
-        'dependencies' => ['Ohanakapa','Ohana API','Mandrill','MemCachier']
+        'dependencies' => ['Ohanakapa', 'Ohana API', 'Mandrill', 'MemCachier']
       }
   end
 end

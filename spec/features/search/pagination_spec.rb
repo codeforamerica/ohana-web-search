@@ -1,100 +1,111 @@
-require 'spec_helper'
+require 'rails_helper'
 
-# Tests the results page pagination component. This only checks one of the three components on the page,
-# as all should be duplicates of each other.
-feature "results page pagination" do
+feature 'results page pagination', :vcr do
 
-  scenario 'when there are no results', :vcr do
-    search_from_home(:keyword => 'asdfg')
-    expect(page).not_to have_selector('.pagination')
-  end
+  context 'when there are no results' do
+    before { visit '/locations?keyword=asdfg' }
 
-  scenario 'when there is only one result', :vcr do
-    search_for_maceo
-    within('#floating-results-header .pagination') do
-      expect(page).to have_content('1')
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('No results found')
+      end
     end
   end
 
-  scenario 'on first page with less than 4 pages of results', :vcr do
-    search_from_home(:keyword=>'family')
-    within('#floating-results-header .pagination') do
+  context 'when there is only one result' do
+    before { visit '/locations?keyword=maceo' }
+
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying 1 result')
+      end
+    end
+  end
+
+  context 'when there is only one page of results but more than 1 result' do
+    before { visit '/locations?keyword=yoga&per_page=5' }
+
+    it 'does not include pagination' do
+      expect(page).not_to have_selector('.pagination')
+    end
+
+    it 'does not include a link to the next page' do
+      expect(page).not_to have_selector('.next')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying all 5 results')
+      end
+    end
+  end
+
+  context 'when on first page of more than one page of results' do
+    before { visit '/locations?keyword=youth' }
+
+    it 'includes pagination' do
+      expect(page).to have_selector('.pagination')
+    end
+
+    it 'does not include a link to the first page' do
+      expect(page).not_to have_selector('.first')
+    end
+
+    it 'includes a link to the next page' do
       expect(page).to have_selector('.next')
-      expect(page).to have_content('123')
+    end
+
+    it 'displays an appropriate search summary' do
+      within('#persistent-results-header .search-summary') do
+        expect(page).to have_content('Displaying 1 - 1 of 92 results')
+      end
     end
   end
 
-  scenario 'on last page with less than 4 pages of results', :vcr do
-    search_from_home(:keyword=>'family')
-    go_to_page(3)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_content('123')
+  context 'when past first page of results but not last page' do
+    before(:each) do
+      visit '/locations?keyword=youth'
+      go_to_page(2)
     end
-  end
 
-  scenario 'on first page with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    within('#floating-results-header .pagination') do
+    it 'does not include a link to the first page' do
+      expect(page).not_to have_selector('.first')
+    end
+
+    it 'includes a link to the next page' do
       expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…12')
+    end
+
+    it 'includes a link to the previous page' do
+      expect(page).to have_selector('.prev')
+    end
+
+    it 'does not include a link to the last page' do
+      expect(page).not_to have_selector('.last')
     end
   end
 
-  scenario 'on last page with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    go_to_page(12)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_content('1…89101112')
-    end
-  end
+  context 'when on last page of results' do
+    before { visit '/locations?keyword=yoga&page=5' }
 
-  scenario 'less than 3 pages in with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    go_to_page(3)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('12345…12')
+    it 'does not include a link to the next page' do
+      expect(page).not_to have_selector('.next')
     end
-  end
 
-  scenario 'more than 3 pages in with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    go_to_page(4)
-    within('#floating-results-header .pagination') do
+    it 'includes a link to the previous page' do
       expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…23456…12')
     end
-  end
 
-  scenario 'less than 3 pages out with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    go_to_page(12)
-    go_to_page(10)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…89101112')
-    end
-  end
-
-  scenario 'more than 3 pages out with more than 5 pages of results', :vcr do
-    search_from_home
-    clear_filters_and_update
-    go_to_page(12)
-    go_to_page(8)
-    within('#floating-results-header .pagination') do
-      expect(page).to have_selector('.prev')
-      expect(page).to have_selector('.next')
-      expect(page).to have_content('1…678910…12')
+    it 'does not include a link to the last page' do
+      expect(page).not_to have_selector('.last')
     end
   end
 end

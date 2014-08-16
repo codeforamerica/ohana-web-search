@@ -1,0 +1,34 @@
+%div
+  - if @location.key?(:payments) || @location.key?(:market_match)
+    %section.payments-accepted
+      %i{ class: 'fa fa-money' }
+      %h1 Payment methods accepted:
+      %ul
+        - if @location[:payments].present?
+          - @location.payments.each do |payment|
+            %li
+              %span.term-popup-container
+                %span.popup.hide
+                  %div
+                    = render_info_box(payment.downcase)
+                    .corner
+                %span.popup-term
+                  = payment
+        - if @location[:market_match]
+          %li
+            %span.term-popup-container
+              %span.popup.hide
+                %div
+                  = render_info_box('market_match')
+                  .corner
+              %span.market-match.popup-term
+                Market Match
+    - if @location.key?(:products)
+      %section.products-sold
+        %i{ class: 'fa fa-shopping-cart' }
+        %h1 Products sold:
+        %ul
+          - @location.products.sort.each do |product|
+            %li
+              %span
+                = product

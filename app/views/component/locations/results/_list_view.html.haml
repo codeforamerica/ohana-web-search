@@ -1,0 +1,38 @@
+%section#list-view
+  %ul
+    - @search.locations.each do |location|
+
+      %li
+        %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slugs.last], request.query_parameters)}" : "#{location_path([location.organization._slugs.last, location.slugs.last], request.query_parameters)}", title: "#{location.name}", name: "#{location.id}" }
+          &nbsp;
+        %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
+          %header
+            %section
+              %p.kind
+                = link_to location.kind, locations_path(kind: location.kind), title: "All locations of type #{location.kind}", class: "kind icon #{location.kind.parameterize}"
+            %hgroup
+              %h1{ class: 'name' }
+                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slugs.last], request.query_parameters)}" : "#{location_path([location.organization._slugs.last, location.slugs.last], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
+                  = superscript_ordinals(location.name)
+              - if (location.organization.name) && (location.organization.name != location.name)
+                %h2.agency
+                  = link_to(locations_path(org_name: location.organization.name)) do
+                    %span
+                      = superscript_ordinals(location.organization.name)
+
+          - if location[:phones].present?
+            %ul.phones
+              %li
+                %i{ class: 'fa fa-phone-square' }
+                %span{ itemprop: 'telephone' }
+                  = "#{format_phone(location.phones.first.number)}"
+
+          - if location[:address].present?
+            %p.address
+              = render 'component/detail/address', location: location, lines: 1
+
+          - if location[:short_desc].present?
+            %p.short-desc
+              = location[:short_desc]
+  %footer
+    = paginate @search.results

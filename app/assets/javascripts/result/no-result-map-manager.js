@@ -1,16 +1,19 @@
-// manages page appearance when Google Maps can't be loaded
-define(['app/alert-manager'],function (alert) {
+// Manages page appearance when Google Maps can't be loaded.
+define([
+  'app/alert-manager'
+],
+function (alert) {
   'use strict';
 
-  // PUBLIC METHODS
-  function init()
-  {
-    console.log("Map failed to load! Hiding map HTML code.");
+  function init() {
+    console.log('Map failed to load! Hiding map HTML code.');
 
-    var mapContainer = document.getElementById('map-view');
-    mapContainer.className = 'hide';
+    document.getElementById('map-view').className = 'hide';
+    document.getElementById('map-view-control').className = 'hide';
 
-    alert.show("Oops! Map failed to load. Try reloading the page or <a href='/about/#feedback-box'>send us a message</a>.");
+    var message = 'Oops! Map failed to load. Try reloading the page or ' +
+                  '<a href="/about/#feedback-box">send us a message</a>.';
+    alert.show(message);
   }
 
   return {

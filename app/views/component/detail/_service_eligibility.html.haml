@@ -1,0 +1,5 @@
+- if service[:eligibility].present?
+  %section{ class: 'eligibility' }
+    %h1= t('service_fields.eligibility')
+    %span
+      = service.eligibility

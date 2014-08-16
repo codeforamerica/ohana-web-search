@@ -48,7 +48,7 @@ module HomepageLinksHelper
           concat(content_tag(:li) do
             link_to(
               link_text,
-              "/organizations?keyword=#{u keyword}",
+              locations_path(keyword: keyword),
               'class' => 'links-to-track',
               'data-ga-category' => 'Home_Categories',
               'data-ga-label' => "#{link_text}"

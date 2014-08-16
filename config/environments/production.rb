@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Thanks to the "rack-rewrite" gem, the code in lines 38-43 will redirect all
+  # Thanks to the "rack-rewrite" gem, the code in lines 38-53 will redirect all
   # URLs that don't come from the domain specified in the canonica_url variable
   # to the canonical URL equivalent. Full URLs are preserved
   # (i.e. including path and parameters).
@@ -9,7 +9,7 @@ Rails.application.configure do
   # This is necessary if search engines have been indexing your site while it
   # was hosted on herokuapp.com, and you later set up a custom domain name.
   # Adding a custom domain on Heroku does not automatically redirect the heroku
-  # domain to your custome domain, which leaves your site accessible via two
+  # domain to your custom domain, which leaves your site accessible via two
   # different domain names, which major search engines consider duplicate
   # content and can count against you.
   # By setting up this permanent redirect (via the HTTP 301 status code),
@@ -31,7 +31,7 @@ Rails.application.configure do
   # locally by running this command from the directory of your app:
   # export CANONICAL_URL=smc-connect.org
   #
-  # Then copy and paste lines 38-43 from this file into
+  # Then copy and paste lines 38-53 from this file into
   # config/environments/development.rb and restart your server.
   # Don't forget to remove the redirection code from development.rb
   # when you're done testing.
@@ -46,8 +46,9 @@ Rails.application.configure do
     else
       canonical_url = ENV['CANONICAL_URL']
 
-      r301 %r{.*}, "http://#{canonical_url}$&",
-        if: proc { |rack_env| rack_env['SERVER_NAME'] != canonical_url }
+      r301(/\/organizations(.*)/, '/locations$1')
+      r301(/.*/, "http://#{canonical_url}$&",
+           if: proc { |rack_env| rack_env['SERVER_NAME'] != canonical_url })
     end
   end
 
@@ -109,10 +110,10 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  #config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store
   client = Dalli::Client.new(ENV['MEMCACHIER_SERVERS'],
-                              value_max_bytes: 10_485_760)
+                             value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
     metastore:   client,
     entitystore: client

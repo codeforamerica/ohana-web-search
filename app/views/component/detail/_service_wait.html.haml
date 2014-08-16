@@ -1,0 +1,5 @@
+- if service[:wait].present?
+  %section{ class: 'wait' }
+    %h1= t('service_fields.wait')
+    %span
+      = service.wait

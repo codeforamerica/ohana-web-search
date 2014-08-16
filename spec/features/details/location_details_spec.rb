@@ -1,192 +1,204 @@
-require 'spec_helper'
+require 'rails_helper'
 
-feature "location details" do
+feature 'location details' do
 
-  context "when the details page is visited via search results", :vcr do
-    it "includes address elements" do
+  context 'when the details page is visited via search results', :vcr do
+    it 'includes address elements' do
       search_for_maceo
       visit_details
-      expect(page).to have_content("Mailing Address")
-      expect(page).to have_content("Physical Address")
-      expect(page).to have_content("2013 Avenue of the fellows")
-      expect(page).to have_content("90210")
-      expect(page).to have_content("05201")
+      expect(page).to have_content('Mailing Address')
+      expect(page).to have_content('Physical Address')
+      expect(page).to have_content('2013 Avenue of the fellows')
+      expect(page).to have_content('90210')
+      expect(page).to have_content('05201')
     end
   end
 
-  context "when you return to the results page from details page", :js, :vcr do
+  context 'when you return to the results page from details page', :js, :vcr do
     it 'displays the same search results' do
       search_for_maceo
       visit_details
-      find_link("maceo@parker.com")
-      find_link("a", :text=>"Back").click
-      expect(page).to have_selector("#list-view")
-      expect(page.find(".agency")).to have_link("SanMaceo Example Agency.")
+      find_link('maceo@parker.com')
+      find_link('a', text: 'Back').click
+      expect(page).to have_selector('#list-view')
+      expect(page.find('.agency')).to have_link('SanMaceo Example Agency.')
     end
   end
 
-  scenario "when the details page is visited directly", :vcr do
+  scenario 'when the details page is visited directly', :vcr do
     visit_test_location
-    expect(page).to have_content("2013 Avenue of the fellows")
+    expect(page).to have_content('2013 Avenue of the fellows')
   end
 
   context 'when the details page is visited directly with invalid id', :vcr do
     it 'redirects to the homepage' do
-      visit('/organizations/foobar')
+      visit('/locations/foobar')
       expect(current_path).to eq(root_path)
     end
 
     it 'displays an error message' do
-      visit('/organizations/foobar')
+      visit('/locations/foobar')
       expect(page).to have_content('Sorry, that page does not exist')
     end
   end
 
   context 'when URL to details page contains quote at the end', :vcr do
     it 'redirects to the homepage' do
-      visit("/organizations/foobar'")
+      visit("/locations/foobar'")
       expect(current_path).to eq(root_path)
     end
 
     it 'displays an error message' do
-      visit("/organizations/foobar'")
+      visit("/locations/foobar'")
       expect(page).to have_content('Please remove the single quote')
     end
   end
 
   context 'when phone elements are present' do
     before(:each) do
-      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit_test_location
+      cassette = 'location_details/when_the_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit_test_location
       end
     end
 
-    it "includes the Contact header" do
-      expect(page).to have_content("General Contact Info")
+    it 'includes the section header' do
+      expect(page).to have_content('General Contact Info')
     end
 
-    it "includes the department and phone type" do
-      expect(page).to have_content("(650) 372-6200 TTY Information")
+    it 'includes the department and phone type' do
+      expect(page).to have_content('(650) 372-6200 TTY Information')
     end
 
-    it "includes the Fax number" do
-      expect(page).to have_content("(650) 627-8244")
+    it 'includes the Fax number' do
+      expect(page).to have_content('(650) 627-8244')
     end
 
-    it "specifies TTY numbers" do
-      expect(page).to have_content("(650) 372-6200 TTY")
+    it 'specifies TTY numbers' do
+      expect(page).to have_content('(650) 372-6200 TTY')
     end
 
   end
 
   context 'when service elements are present' do
     before(:each) do
-      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit_test_location
+      cassette = 'location_details/when_the_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit_test_location
       end
     end
 
-    it "includes eligibility info" do
-      expect(page).to have_content("None")
+    it 'includes eligibility info' do
+      expect(page).to have_content('None')
     end
 
-    it "includes audience info" do
-      expect(page).to have_content("Profit and nonprofit businesses, the public, military facilities, schools and government entities")
+    it 'includes audience info' do
+      expect(page).to have_content('Profit and nonprofit businesses')
     end
 
-    it "includes fees info" do
-      expect(page).to have_content("permits and photocopying")
+    it 'includes fees info' do
+      expect(page).to have_content('permits and photocopying')
     end
 
-    it "includes hours info" do
-      expect(page).to have_content("Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5")
+    it 'includes hours info' do
+      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
     end
 
-    it "includes how to apply info" do
-      expect(page).to have_content("Walk in or apply by phone or mail")
+    it 'includes how to apply info' do
+      expect(page).to have_content('Walk in or apply by phone or mail')
     end
 
-    # Wait time not included in the view.
-    # Till we have a consistent meaning for wait time
-    # it's best left out of the front-end view
-    xit "includes wait info" do
-      expect(page).to have_content("No wait to 2 weeks")
+    it 'includes wait estimate info' do
+      expect(page).to have_content('No wait to 2 weeks')
     end
 
-    # Service areas not included in view.
-    # Best to leave this out of the view, this is data that could easily be wrong and
-    # it's better that the client contact the agency and ask for services and
-    # be referred accordingly vs. going off this list.
-    xit "includes service areas" do
-      expect(page).to have_content("Marin County")
+    it 'includes service areas info' do
+      expect(page).to have_content('San Mateo County')
     end
 
-    it "includes updated time" do
-      expect(page).to have_content("Saturday, 2 August 2014 at 7:30 PM PDT")
+    it 'includes updated time' do
+      expect(page).to have_content('Friday, 15 August 2014 at 2:06 PM PDT')
     end
 
   end
 
   context 'when location elements are present' do
     before(:each) do
-      VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit_test_location
+      cassette = 'location_details/when_the_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit_test_location
       end
     end
 
-    it "includes URLs" do
-      expect(page).to have_link("www.smchealth.org")
-    end
-
-    it "includes accessibility info" do
-      expect(page).to have_content("Disabled Parking")
-    end
-
-    it "includes email info" do
-      expect(page).to have_link("sanmaceo@co.sanmaceo.ca.us")
-    end
-
-    it "includes hours info" do
-      expect(page).to have_content("Monday-Friday, 8-5; Saturday, 10-6; Sunday 11-5")
-    end
-
-    it "includes languages info" do
-      expect(page).to have_content("Chinese (Cantonese)")
-    end
-
-    it "includes Mailing Address info" do
-      expect(page).to have_content("Hella Fellas")
-    end
-
-    it "includes description" do
-      expect(page).to have_content("Lorem ipsum")
-    end
-
-    it "includes short description" do
-      within ".short-desc" do
+    it 'includes short description' do
+      within '.short-desc' do
         expect(page).
-          to have_content("[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]")
+          to have_content('[NOTE THIS IS NOT A REAL ENTRY--')
       end
     end
 
-    it "includes transporation info" do
-      expect(page).to have_content("SAMTRANS stops within 1 block")
+    it 'includes description' do
+      expect(page).to have_content('Lorem ipsum')
     end
 
-    it "sets the page title to the location name" do
-      expect(page).to have_title("San Maceo Agency | SMC-Connect")
+    it 'includes transporation info' do
+      expect(page).to have_content('SAMTRANS stops within 1 block')
+    end
+
+    it 'includes hours info' do
+      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    end
+
+    it 'includes languages info' do
+      expect(page).to have_content('Chinese (Cantonese)')
+    end
+
+    it 'includes accessibility info' do
+      expect(page).to have_content('Disabled Parking')
+    end
+
+    it 'includes email info' do
+      expect(page).to have_link('sanmaceo@co.sanmaceo.ca.us')
+    end
+
+    it 'includes URLs' do
+      expect(page).to have_link('www.smchealth.org')
+    end
+
+    it 'includes Physical Address info' do
+      expect(page).to have_content('Avenue of the fellows')
+    end
+
+    it 'includes Mailing Address info' do
+      expect(page).to have_content('Hella Fellas')
+    end
+
+    xit 'includes keywords' do
+      expect(page).to have_link('Ruby on Rails/MongoDB/Redis')
+    end
+
+    it 'sets the page title to the location name + site title' do
+      expect(page).to have_title('San Maceo Agency | SMC-Connect')
+    end
+
+    it 'includes a link to other locations of the same Kind' do
+      expect(page).to have_link 'Other', href: locations_path(kind: 'Other')
     end
   end
 
   context 'when Contact elements are present' do
     before(:each) do
       VCR.use_cassette('location_details/when_the_details_page_is_visited_directly') do
-       visit_test_location
+        visit_test_location
       end
     end
 
+    it 'includes the contact section header' do
+      expect(page).to have_content('Specific Contact')
+    end
+
     it 'includes contact name' do
-        expect(page).to have_content('Suzanne Badenhoop')
+      expect(page).to have_content('Suzanne Badenhoop')
     end
 
     it 'includes contact title' do
@@ -201,14 +213,38 @@ feature "location details" do
       expect(page).to have_content('(123) 456-7890')
     end
 
-    # The test API is not exposing the extension field.
-    # This will be fixed later, then we can enable this test.
-    xit 'includes contact phone extension' do
+    it 'includes contact phone extension' do
       expect(page).to have_content('x1200')
     end
 
     it 'includes contact fax' do
       expect(page).to have_content('(202) 555-1212')
+    end
+  end
+
+  context 'when farmers market with market match' do
+    before(:each) do
+      cassette = 'location_details/when_market_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit('/locations/san-mateo-farmers-market')
+      end
+    end
+
+    it 'includes Market Match' do
+      expect(page).to have_content('Market Match')
+    end
+
+    it 'includes payment info' do
+      expect(page).to have_content('Payment methods accepted:')
+    end
+
+    it 'includes info about payment types' do
+      expect(page).to have_content('Credit')
+    end
+
+    it 'includes products info' do
+      expect(page).to have_content('Products sold:')
+      expect(page).to have_content('Baked Goods')
     end
   end
 
@@ -224,33 +260,6 @@ feature "location details" do
       admin_site = 'http://admin.smc-connect.org'
       expect(page).
         to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
-    end
-  end
-
-  context 'when farmers market with market match' do
-    before(:each) do
-      cassette = 'location_details/when_market_details_page_is_visited_directly'
-      VCR.use_cassette(cassette) do
-       visit('/organizations/coastside-farmers-market-of-pacifca')
-      end
-    end
-
-    # market match is not currently showing up on farmers' market entries
-    it "includes Market Match" do
-      expect(page).to have_content("Market Match")
-    end
-
-    it "includes payment info" do
-      expect(page).to have_content("Payment methods accepted:")
-    end
-
-    it "includes info about payment types" do
-      expect(page).to have_content("SNAP")
-    end
-
-    it "includes products info" do
-      expect(page).to have_content("Products sold:")
-      expect(page).to have_content("Baked Goods")
     end
   end
 end
