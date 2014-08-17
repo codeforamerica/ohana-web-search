@@ -7,6 +7,12 @@ feature 'search results map' do
       visit('/locations/')
       expect(page).to have_selector('#map-view')
     end
+
+    it 'displays different markers for each kind of location' do
+      visit('/locations')
+      expect(page).
+        to have_xpath("//img[@src=\"/assets/markers/libraries.png\"]")
+    end
   end
 
   context 'none of the results have coordinates', :vcr do

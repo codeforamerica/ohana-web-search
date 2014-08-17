@@ -11,6 +11,7 @@ class Search
     @locations.map do |location|
       next unless location[:coordinates].present?
       {
+        kind: location.kind,
         latitude: location.coordinates.last,
         longitude: location.coordinates.first,
         name: location.name,
