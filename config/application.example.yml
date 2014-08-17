@@ -17,7 +17,7 @@
 
 # Set this to the URL for your instance of the Ohana API.
 # This environment variable is required.
-OHANA_API_ENDPOINT: http://api.smc-connect.org
+OHANA_API_ENDPOINT: http://ohanapi.herokuapp.com/api
 
 # This setting is used for the Google translation feature.
 # The "DOMAIN_NAME" environment variable should be set to your app's
@@ -61,6 +61,15 @@ DOMAIN_NAME: lvh.me
 # https://translate.google.com/manager/website/suggestions
 # and clicking "Get Code" when prompted.
 # GOOGLE_TRANSLATE_CUSTOMIZATION_CODE: Your_Website_Code_from_Google
+
+# Required in production and to precompile assets locally.
+# See lines 4-53 in config/environments/production.rb for more details.
+CANONICAL_URL: lvh.me
+
+# Required in production and to precompile assets locally.
+# Set it to a random value by running `rake secret` from the command line.
+# This environment variable is used in config/initializers/secret_token.rb.
+SECRET_TOKEN: changeme
 
 ###############################################################################
 #
