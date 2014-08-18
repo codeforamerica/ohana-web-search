@@ -2,8 +2,10 @@ module ResultSummaryHelper
   extend ActionView::Helpers::TextHelper
 
   def search_results_page_title
-    params = request.query_parameters.reject { |k, v| k == 'utf8' || v.blank? }
-    title = "Search results for: #{params.values.join(', ')}"
+    search_terms = request.query_parameters.except(:utf8).
+                          map { |k, v| "#{k}: #{v}" unless v.blank? }.
+                          compact.join(', ')
+    title = "Search results for: #{search_terms}"
     title.html_safe
   end
 

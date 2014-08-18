@@ -36,7 +36,7 @@ feature 'searching from results page', :vcr do
 
     it 'includes the results info in the page title' do
       expect(page).
-        to have_title 'Search results for: maceo | Ohana Web Search'
+        to have_title 'Search results for: keyword: maceo | Ohana Web Search'
     end
 
     it 'populates the keyword field with the search term' do
@@ -100,6 +100,22 @@ feature 'searching from results page', :vcr do
       search(keyword: 'Samaritan House')
       first('#list-view li').click_link('Samaritan House')
       expect(page).to have_link('Redwood City Free Medical Clinic')
+    end
+  end
+
+  context 'when a search parameter has no value' do
+    it 'is not included in the page title' do
+      visit('/locations?location=94403&keyword=')
+      expect(page).
+        to have_title('Search results for: location: 94403 | Ohana Web Search')
+    end
+  end
+
+  context 'when multiple search parameters have values' do
+    it 'they are all included in the page title' do
+      visit('/locations?location=94403&keyword=foo')
+      expect(page).
+        to have_title('location: 94403, keyword: foo | Ohana Web Search')
     end
   end
 
