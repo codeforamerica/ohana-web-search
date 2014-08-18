@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'locations/*id/' => 'locations#show', as: 'location'
   get '/about' => 'about#index'
   post '/feedback' => 'about#index'
-  get '.well-known/status' => 'status#status'
+  get '.well-known/status' => 'status#check_status'
 end

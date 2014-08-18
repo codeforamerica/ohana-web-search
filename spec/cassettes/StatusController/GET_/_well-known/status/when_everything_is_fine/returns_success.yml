@@ -18,32 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:13 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 898ac8d0-97a0-4cb5-a377-66600edbacc3
-      X-Runtime:
-      - '0.047355'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '947'
       Connection:
       - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c95088c5-10d6-4007-86db-7486c7ae5717
+      X-Runtime:
+      - '0.416803'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Mon, 18 Aug 2014 18:54:42 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"id":19,"accessibility":["Elevator","Ramp","Wheelchair"],"admin_emails":[],"coordinates":[-122.2931236,37.5326941],"description":"Provides
@@ -64,10 +66,10 @@ http_interactions:
         Care","Community Clinics"],"name":"San Mateo Free Medical Clinic","service_areas":["Belmont"],"short_desc":null,"urls":[],"wait":"Varies.","updated_at":"2014-07-15T13:20:13.302-07:00","categories":[]}],"organization":{"id":5,"name":"Samaritan
         House","slug":"samaritan-house","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"}}'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:16:13 GMT
+  recorded_at: Mon, 18 Aug 2014 18:54:41 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?keyword=maceo
+    uri: http://ohana-api-test.herokuapp.com/api/search?keyword=food
     body:
       encoding: US-ASCII
       string: ''
@@ -83,57 +85,68 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:13 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 9fb63ac0-7e2b-4b86-91f6-47f88739ed52
-      X-Runtime:
-      - '0.034030'
-      X-Total-Count:
-      - '1'
-      X-Total-Pages:
-      - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
       Connection:
       - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=5>; rel="last",
+        <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
+      X-Total-Count:
+      - '5'
+      X-Total-Pages:
+      - '5'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c99493f0-2487-4d94-bc69-3b388f9e0cfd
+      X-Runtime:
+      - '0.044791'
+      X-Powered-By:
+      - Phusion Passenger 4.0.46
+      Date:
+      - Mon, 18 Aug 2014 18:54:42 GMT
+      Server:
+      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":22,"admin_emails":["foo@bar.com"],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":42.878036,"longitude":-73.1968254,"name":"San
-        Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","updated_at":"2014-05-22T17:31:08.727-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":21,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"organization":{"id":8,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":21,"department":"Information","extension":null,"number":"650
-        372-6200","number_type":"TTY","vanity_number":null},{"id":22,"department":"Reservations","extension":null,"number":"650
-        372-6200","number_type":null,"vanity_number":null}]}]'
+      string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
+        multipurpose center offering a wide variety of recreational, education and
+        cultural activities. Lifelong learning courses cover topics such as music,
+        art, languages, etc., are hosted at this location. Little House offers a large
+        variety of classes including arts and crafts, jewelry, languages, current
+        events, lapidary, woodwork, painting, and fitness courses (yoga, strength
+        straining, tai chi). There are monthly art and cultural lectures, movie showings,
+        and a computer center. Recreation activities include mah jong, pinochle, ballroom
+        dancing, bridge, trips and tours. Partners with the Sequoia Adult Education
+        Program. The Alzheimer''s Cafe, open the third Tuesday of every month from
+        2:00 - 4:00 pm, is a place that brings together people liviing with dementia,
+        their families, and their caregivers. Free and no registration is needed.
+        The Little House Community Service Desk offers information and referrals regarding
+        social service issues, such as housing, food, transportation, health insurance
+        counseling, and estate planning. Massage, podiatry, and acupuncture are available
+        by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
+        according to selection.","latitude":37.4480204,"longitude":-122.1805905,"name":"Little
+        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2014-07-15T12:51:52.581-07:00","urls":["http://www.penvol.org/littlehouse"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/services","url":"http://ohana-api-test.herokuapp.com/api/locations/little-house","address":{"id":6,"street":"800
+        Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"organization":{"id":2,"name":"Peninsula
+        Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
+        326-2025","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:16:13 GMT
+  recorded_at: Mon, 18 Aug 2014 18:54:42 GMT
 recorded_with: VCR 2.9.2

@@ -6,9 +6,9 @@ describe StatusController do
 
     context 'when everything is fine', :vcr do
       it 'returns success' do
-        get 'status'
+        get 'check_status'
         body = JSON.parse(response.body)
-        expect(body['status']).to eq('ok')
+        expect(body['status']).to eq('OK')
       end
     end
 
@@ -33,16 +33,16 @@ describe StatusController do
 
         stub_request(:get,
                      'http://ohana-api-test.herokuapp.com/api/' \
-                     'search?keyword=maceo').
+                     'search?keyword=food').
           with(headers: { 'Accept' => 'application/vnd.ohanapi-v1+json',
                           'Accept-Encoding' =>
                           'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
                           'User-Agent' => 'Ohanakapa Ruby Gem 1.1.1' }).
           to_return(status: 200, body: '', headers: {})
 
-        get 'status'
+        get 'check_status'
         body = JSON.parse(response.body)
-        expect(body['status']).to eq('API did not respond')
+        expect(body['status']).to eq('NOT OK')
       end
     end
   end
