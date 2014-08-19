@@ -24,24 +24,6 @@
   = javascript_include_tag 'ie8'
 /[if IE 9]
   = javascript_include_tag 'ie9'
-/[if lte IE 8]
-  :javascript
-    // Check if browser supports the :checked selector.
-    Modernizr.addTest('checkedselector', function() {
-      return selectorSupported(':checked');
-    });
-
-    // If the :checked selector is not supported, the radio buttons will
-    // not be styled correctly, so show the default radio buttons if
-    // :checked selector is not supported.
-    window.onload = function() {
-      if (!Modernizr.checkedselector) {
-        var radios = document.querySelectorAll("input[type=radio]");
-        for(var r = 0; r < radios.length; r++) {
-          radios[r].style.visibility = "inherit";
-        }
-      }
-    }
 
 /[if lte IE 9]
   :javascript
