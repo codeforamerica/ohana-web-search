@@ -25,11 +25,17 @@ You can see a running version of the application at
 ## Deploying to Heroku
 See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).
 
-## Local Installation
+## Local Installation (for developers)
 
 Follow the instructions in [INSTALL.md][install].
 
 [install]: https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md
+
+## Customization
+
+Follow the instructions in [CUSTOMIZE.md][customize].
+
+[customize]: https://github.com/codeforamerica/ohana-web-search/blob/master/CUSTOMIZE.md
 
 ## Adjusting the number of results per page
 The Ohana API now supports the ability to set the number of results you want returned per page via the `per_page` parameter (with a maximum value of 100). If you want to view a different number of results per page, add `&per_page=1` or similar to the end of the URL.
