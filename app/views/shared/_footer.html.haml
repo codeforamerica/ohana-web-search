@@ -7,15 +7,13 @@
     developed in partnership with the
     %a{ href: 'http://www.co.sanmateo.ca.us/portal/site/humanservices', target: '_blank' } San Mateo County Human Services Agency
     and a
-    %a{ href: 'http://www.knightfoundation.org/grants/201447979/', target: '_blank' } grant from the Knight Foundation
-    \.
+    #{link_to 'grant from the Knight Foundation', 'http://www.knightfoundation.org/grants/201447979/', target: '_blank'}.
 
   %p
     %i.fa.fa-bullhorn
     %a{ href: 'https://github.com/codeforamerica/ohana-web-search' } Get this app
     for your city or
-    %a{ href: 'http://ohanapi.org' } view project details
-    \.
+    #{link_to 'view project details', 'http://ohanapi.org'}.
 
   -# This line needs to go ABOVE the Google Translate code, or it can take too long to load (see issue #462)
   = requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub("/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe
