@@ -9,17 +9,21 @@ class Search
 
   def map_data
     @locations.map do |location|
-      next unless location.coordinates.present?
-      {
-        latitude: location.latitude,
-        longitude: location.longitude,
-        name: location.name,
-        org_name: location.organization.name,
-        slug: location.slug,
-        street_address: location.address.street,
-        city: location.address.city
-      }
+      next if location.coordinates.blank?
+      hash_for(location)
     end.compact
+  end
+
+  def hash_for(location)
+    {
+      latitude: location.latitude,
+      longitude: location.longitude,
+      name: location.name,
+      org_name: location.organization.name,
+      slug: location.slug,
+      street_address: location.address.street,
+      city: location.address.city
+    }
   end
 
   def results

@@ -37,9 +37,8 @@ module InfoBoxHelper
   # @return [String]
   def info_box_key_corresponding_to_keyword
     keyword = params[:keyword].try(:downcase)
-    if synonyms.include?(keyword)
-      info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
-    end
+    return unless synonyms.include?(keyword)
+    info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
   end
 
   # @return [HTML]
