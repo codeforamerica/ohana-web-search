@@ -12,7 +12,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails', '>= 1.1.7'
 
 # Font-awesome icons.
-gem 'font-awesome-sass', '>= 4.0.3.1'
+gem 'font-awesome-rails'
 
 # Use Uglifier as compressor for JavaScript assets.
 gem 'uglifier', '>= 2.5.0'
