@@ -231,5 +231,11 @@ feature 'location details' do
       expect(page).
         to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
     end
+
+    it 'includes rel=nofollow' do
+      within '.updated-at' do
+        expect(find(:rel, 'nofollow')).to be_present
+      end
+    end
   end
 end
