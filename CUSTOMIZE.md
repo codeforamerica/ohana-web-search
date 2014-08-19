@@ -29,6 +29,16 @@ In that file, you can customize much of the user-facing text on the website.
 Most of the text should be ready to go, but there is one specific setting
 you should customize: the [location](https://github.com/codeforamerica/ohana-web-search/blob/master/config/locales/en.yml#L28) value under `branding`.
 
+## Pagination
+The pagination of search results is handled by the [Kaminari](https://github.com/amatsuda/kaminari) gem.
+To configure the functionality, make changes in [kaminari_config.rb](https://github.com/codeforamerica/ohana-web-search/blob/master/config/initializers/kaminari_config.rb).
+To change the informational text about the search results, visit the [page_entries_info](https://github.com/codeforamerica/ohana-web-search/blob/master/config/locales/en.yml#L46-55) section in `en.yml`.
+To change the labels for the navigation buttons, visit the [pagination](https://github.com/codeforamerica/ohana-web-search/blob/master/config/locales/en.yml#L98-103) section in `en.yml`. To change the markup, make changes to the partials in [app/views/kaminari](https://github.com/codeforamerica/ohana-web-search/tree/master/app/views/kaminari).
+
+To test the pagination feature, you might find it handy to force a particular
+number of results per page by adding the `per_page` parameter to the end of the
+URL. For example: [http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5](http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5)
+
 ## Map marker graphics
 The root `graphics` folder contains source files for images in the application. In this directory, you can find an Adobe Illustrator source file for the Google map marker graphics. With this file you can adjust the map marker appearance by making changes and exporting and overwriting the files in `/app/assets/images/markers`. The Google map appears on the search results and location details pages.
 

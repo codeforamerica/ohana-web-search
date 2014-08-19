@@ -37,9 +37,6 @@ Follow the instructions in [CUSTOMIZE.md][customize].
 
 [customize]: https://github.com/codeforamerica/ohana-web-search/blob/master/CUSTOMIZE.md
 
-## Adjusting the number of results per page
-The Ohana API now supports the ability to set the number of results you want returned per page via the `per_page` parameter (with a maximum value of 100). If you want to view a different number of results per page, add `&per_page=1` or similar to the end of the URL.
-
 ## Running the tests
 To test locally, you can run tests with this simple command:
 
