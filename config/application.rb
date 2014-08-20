@@ -33,9 +33,6 @@ module OhanaWebSearch
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # Precompile additional assets.
-    config.assets.precompile += %w(vendor ie8 ie9)
-
     # Tell Internet Explorer to use compatibility mode.
     # 'edge' mode tells Internet Explorer to display content in the highest mode available.
     # 'chrome' mode is for when Internet Explorer has the Google Chrome Frame plug-in installed.
