@@ -20,4 +20,3 @@
 //= require polyfills/trim
 //= require polyfills/remy/classList
 //= require polyfills/addEventListener
-//= require polyfills/modernizr.selectors
