@@ -320,12 +320,9 @@ function (bitmask, markerManager) {
     var markers = _spiderfier.getMarkers();
     var index = markers.length - 1;
     var marker;
-    while(index>=0) {
+    while(index >= 0) {
       marker = markers[index--];
-      if (_atMaxSize)
-        marker.setIcon(marker.largeIconUrl);
-      else
-        marker.setIcon(marker.smallIconUrl);
+      marker.setIcon(marker.manager.getIcon());
     }
   }
 
@@ -538,7 +535,7 @@ function (bitmask, markerManager) {
   // @return [Boolean] true if the marker is spiderfied, false otherwise.
   function _isSpiderfyMarker(marker) {
     var manager = marker.manager;
-    return manager.isOn(manager.SPIDERFIED_ICON)
+    return manager.isOn(manager.SPIDERFIED_ICON);
   }
 
   // Register a marker as having been clicked.
