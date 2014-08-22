@@ -1,12 +1,13 @@
-//= depend_on_asset 'markers/marker_large.png'
 // Manages location detail view Google Map.
 define([
+  'util/map/marker_manager',
   'domReady!',
   'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
 ],
-function () {
+function (markerManager) {
   'use strict';
 
+  // The <div> element that the Google map loads into.
   var _map;
 
   // The location of the current location.
@@ -22,13 +23,19 @@ function () {
     _mapCanvas = document.getElementById('detail-map-canvas');
 
     if (_mapCanvas) {
-      var title = document.getElementById('detail-map-canvas-title');
-      var lat = document.getElementById('detail-map-canvas-lat');
-      var lng = document.getElementById('detail-map-canvas-lng');
+      var titleElm = document.getElementById('detail-map-canvas-title');
+      var latElm = document.getElementById('detail-map-canvas-lat');
+      var lngElm = document.getElementById('detail-map-canvas-lng');
 
-      title = title.innerHTML;
-      lat = lat.innerHTML;
-      lng = lng.innerHTML;
+      // Retrieve marker data from embedded HTML values.
+      var title = titleElm.innerHTML.trim();
+      var lat = latElm.innerHTML.trim();
+      var lng = lngElm.innerHTML.trim();
+
+      // Remove embedded values from the DOM.
+      titleElm.parentNode.removeChild(titleElm);
+      latElm.parentNode.removeChild(latElm);
+      lngElm.parentNode.removeChild(lngElm);
 
       var latLng = new google.maps.LatLng(lat, lng);
 
@@ -50,11 +57,14 @@ function () {
       _map = new google.maps.Map(document.getElementById('detail-map-canvas'),
                                  mapOptions);
 
+      var markerProxy = markerManager.create(markerManager.GENERIC);
+      markerProxy.turnOn(markerProxy.LARGE_ICON);
+
       var locationOptions = {
           map: _map,
           title: title,
           position: latLng,
-          icon: "<%= asset_path('markers/marker_large.png') %>"
+          icon: markerProxy.getIcon()
         };
       _locationMarker = new google.maps.Marker(locationOptions);
 
