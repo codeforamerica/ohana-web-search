@@ -165,6 +165,8 @@
                 %span.hide#detail-map-canvas-lng
                   -# Change this to @location.longitude for new API
                   = @location.coordinates.first
+                %span.hide#detail-map-canvas-kind
+                  = @location.kind
               %noscript
                 %style
                   -# Hides map when JavaScript is disabled.

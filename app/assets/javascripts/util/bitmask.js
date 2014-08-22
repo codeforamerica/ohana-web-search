@@ -29,11 +29,16 @@ function () {
       return !(_bitmask & state);
     }
 
+    function reset() {
+      _bitmask = 0;
+    }
+
     return {
       turnOn:turnOn,
       turnOff:turnOff,
       isOn:isOn,
-      isOff:isOff
+      isOff:isOff,
+      reset:reset
     };
   }
 

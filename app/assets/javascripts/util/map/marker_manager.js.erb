@@ -1,0 +1,304 @@
+//= depend_on_asset 'markers/arts_marker_large.png'
+//= depend_on_asset 'markers/arts_marker_small.png'
+//= depend_on_asset 'markers/arts_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/arts_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/clinics_marker_large.png'
+//= depend_on_asset 'markers/clinics_marker_small.png'
+//= depend_on_asset 'markers/clinics_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/clinics_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/education_marker_large.png'
+//= depend_on_asset 'markers/education_marker_small.png'
+//= depend_on_asset 'markers/education_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/education_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/entertainment_marker_large.png'
+//= depend_on_asset 'markers/entertainment_marker_small.png'
+//= depend_on_asset 'markers/entertainment_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/entertainment_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/farmers_markets_marker_large.png'
+//= depend_on_asset 'markers/farmers_markets_marker_small.png'
+//= depend_on_asset 'markers/farmers_markets_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/farmers_markets_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/government_marker_large.png'
+//= depend_on_asset 'markers/government_marker_small.png'
+//= depend_on_asset 'markers/government_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/government_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/human_services_marker_large.png'
+//= depend_on_asset 'markers/human_services_marker_small.png'
+//= depend_on_asset 'markers/human_services_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/human_services_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/libraries_marker_large.png'
+//= depend_on_asset 'markers/libraries_marker_small.png'
+//= depend_on_asset 'markers/libraries_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/libraries_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/museums_marker_large.png'
+//= depend_on_asset 'markers/museums_marker_small.png'
+//= depend_on_asset 'markers/museums_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/museums_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/other_marker_large.png'
+//= depend_on_asset 'markers/other_marker_small.png'
+//= depend_on_asset 'markers/other_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/other_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/parks_marker_large.png'
+//= depend_on_asset 'markers/parks_marker_small.png'
+//= depend_on_asset 'markers/parks_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/parks_marker_small_spiderfied.png'
+//= depend_on_asset 'markers/sports_marker_large.png'
+//= depend_on_asset 'markers/sports_marker_small.png'
+//= depend_on_asset 'markers/sports_marker_large_spiderfied.png'
+//= depend_on_asset 'markers/sports_marker_small_spiderfied.png'
+
+// Used for managing which map marker should be shown.
+define([
+  'util/bitmask'
+],
+function (bitmask) {
+  'use strict';
+
+  // 'Constants' for the kind labels returned by the Ohana API.
+  var ARTS              = 'Arts';
+  var CLINICS           = 'Clinics';
+  var EDUCATION         = 'Education';
+  var ENTERTAINMENT     = 'Entertainment';
+  var FARMERS_MARKETS   = "Farmers' Markets";
+  var GOVERNMENT        = 'Government';
+  var HUMAN_SERVICES    = 'Human Services';
+  var LIBRARIES         = 'Libraries';
+  var MUSEUMS           = 'Museums';
+  var OTHER             = 'Other';
+  var PARKS             = 'Parks';
+  var SPORTS            = 'Sports';
+
+  // 'Constants' for different map kind markers.
+  var ARTS_LARGE_MARKER_URL = "<%= asset_path('markers/arts_marker_large.png') %>";
+  var ARTS_SMALL_MARKER_URL = "<%= asset_path('markers/arts_marker_small.png') %>";
+  var ARTS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/arts_marker_large_spiderfied.png') %>";
+  var ARTS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/arts_marker_small_spiderfied.png') %>";
+
+  var CLINICS_LARGE_MARKER_URL = "<%= asset_path('markers/clinics_marker_large.png') %>";
+  var CLINICS_SMALL_MARKER_URL = "<%= asset_path('markers/clinics_marker_small.png') %>";
+  var CLINICS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/clinics_marker_large_spiderfied.png') %>";
+  var CLINICS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/clinics_marker_small_spiderfied.png') %>";
+
+  var EDUCATION_LARGE_MARKER_URL = "<%= asset_path('markers/education_marker_large.png') %>";
+  var EDUCATION_SMALL_MARKER_URL = "<%= asset_path('markers/education_marker_small.png') %>";
+  var EDUCATION_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/education_marker_large_spiderfied.png') %>";
+  var EDUCATION_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/education_marker_small_spiderfied.png') %>";
+
+  var ENTERTAINMENT_LARGE_MARKER_URL = "<%= asset_path('markers/entertainment_marker_large.png') %>";
+  var ENTERTAINMENT_SMALL_MARKER_URL = "<%= asset_path('markers/entertainment_marker_small.png') %>";
+  var ENTERTAINMENT_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/entertainment_marker_large_spiderfied.png') %>";
+  var ENTERTAINMENT_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/entertainment_marker_small_spiderfied.png') %>";
+
+  var FARMERS_MARKETS_LARGE_MARKER_URL = "<%= asset_path('markers/farmers_markets_marker_large.png') %>";
+  var FARMERS_MARKETS_SMALL_MARKER_URL = "<%= asset_path('markers/farmers_markets_marker_small.png') %>";
+  var FARMERS_MARKETS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/farmers_markets_marker_large_spiderfied.png') %>";
+  var FARMERS_MARKETS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/farmers_markets_marker_small_spiderfied.png') %>";
+
+  var GOVERNMENT_LARGE_MARKER_URL = "<%= asset_path('markers/government_marker_large.png') %>";
+  var GOVERNMENT_SMALL_MARKER_URL = "<%= asset_path('markers/government_marker_small.png') %>";
+  var GOVERNMENT_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/government_marker_large_spiderfied.png') %>";
+  var GOVERNMENT_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/government_marker_small_spiderfied.png') %>";
+
+  var HUMAN_SERVICES_LARGE_MARKER_URL = "<%= asset_path('markers/human_services_marker_large.png') %>";
+  var HUMAN_SERVICES_SMALL_MARKER_URL = "<%= asset_path('markers/human_services_marker_small.png') %>";
+  var HUMAN_SERVICES_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/human_services_marker_large_spiderfied.png') %>";
+  var HUMAN_SERVICES_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/human_services_marker_small_spiderfied.png') %>";
+
+  var LIBRARIES_LARGE_MARKER_URL = "<%= asset_path('markers/libraries_marker_large.png') %>";
+  var LIBRARIES_SMALL_MARKER_URL = "<%= asset_path('markers/libraries_marker_small.png') %>";
+  var LIBRARIES_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/libraries_marker_large_spiderfied.png') %>";
+  var LIBRARIES_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/libraries_marker_small_spiderfied.png') %>";
+
+  var MUSEUMS_LARGE_MARKER_URL = "<%= asset_path('markers/museums_marker_large.png') %>";
+  var MUSEUMS_SMALL_MARKER_URL = "<%= asset_path('markers/museums_marker_small.png') %>";
+  var MUSEUMS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/museums_marker_large_spiderfied.png') %>";
+  var MUSEUMS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/museums_marker_small_spiderfied.png') %>";
+
+  var OTHER_LARGE_MARKER_URL = "<%= asset_path('markers/other_marker_large.png') %>";
+  var OTHER_SMALL_MARKER_URL = "<%= asset_path('markers/other_marker_small.png') %>";
+  var OTHER_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/other_marker_large_spiderfied.png') %>";
+  var OTHER_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/other_marker_small_spiderfied.png') %>";
+
+  var PARKS_LARGE_MARKER_URL = "<%= asset_path('markers/parks_marker_large.png') %>";
+  var PARKS_SMALL_MARKER_URL = "<%= asset_path('markers/parks_marker_small.png') %>";
+  var PARKS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/parks_marker_large_spiderfied.png') %>";
+  var PARKS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/parks_marker_small_spiderfied.png') %>";
+
+  var SPORTS_LARGE_MARKER_URL = "<%= asset_path('markers/sports_marker_large.png') %>";
+  var SPORTS_SMALL_MARKER_URL = "<%= asset_path('markers/sports_marker_small.png') %>";
+  var SPORTS_LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/sports_marker_large_spiderfied.png') %>";
+  var SPORTS_SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/sports_marker_small_spiderfied.png') %>";
+
+  function create(kind) {
+    var marker = new Marker();
+    if (kind) marker.setIcon(kind);
+    return marker;
+  }
+
+  function Marker() {
+
+    // The possible states of the icon.
+    var SMALL_ICON = 1
+    var LARGE_ICON = 2;
+    var SPIDERFIED_ICON = 4;
+    var UNSPIDERFIED_ICON = 8;
+
+    // A bitmask instance for tracking the four states of the icon appearance.
+    var _iconState = bitmask.create();
+    _iconState.turnOn(SMALL_ICON | UNSPIDERFIED_ICON);
+
+    // The kind set on this marker.
+    var _kind;
+
+    var LARGE_MARKER_URL;
+    var SMALL_MARKER_URL;
+    var LARGE_SPIDERFY_MARKER_URL;
+    var SMALL_SPIDERFY_MARKER_URL;
+
+    function setIcon(kind) {
+      _kind = kind;
+
+      switch (kind) {
+        case ARTS :
+          LARGE_MARKER_URL          = ARTS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = ARTS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = ARTS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = ARTS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case CLINICS :
+          LARGE_MARKER_URL          = CLINICS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = CLINICS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = CLINICS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = CLINICS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case EDUCATION :
+          LARGE_MARKER_URL          = EDUCATION_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = EDUCATION_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = EDUCATION_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = EDUCATION_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case ENTERTAINMENT :
+          LARGE_MARKER_URL          = ENTERTAINMENT_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = ENTERTAINMENT_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = ENTERTAINMENT_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = ENTERTAINMENT_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case FARMERS_MARKETS :
+          LARGE_MARKER_URL          = FARMERS_MARKETS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = FARMERS_MARKETS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = FARMERS_MARKETS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = FARMERS_MARKETS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case GOVERNMENT :
+          LARGE_MARKER_URL          = GOVERNMENT_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = GOVERNMENT_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = GOVERNMENT_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = GOVERNMENT_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case HUMAN_SERVICES :
+          LARGE_MARKER_URL          = HUMAN_SERVICES_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = HUMAN_SERVICES_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = HUMAN_SERVICES_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = HUMAN_SERVICES_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case LIBRARIES :
+          LARGE_MARKER_URL          = LIBRARIES_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = LIBRARIES_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = LIBRARIES_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = LIBRARIES_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case MUSEUMS :
+          LARGE_MARKER_URL          = MUSEUMS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = MUSEUMS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = MUSEUMS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = MUSEUMS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case OTHER :
+          LARGE_MARKER_URL          = OTHER_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = OTHER_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = OTHER_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = OTHER_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case PARKS :
+          LARGE_MARKER_URL          = PARKS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = PARKS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = PARKS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = PARKS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+        case SPORTS :
+          LARGE_MARKER_URL          = SPORTS_LARGE_MARKER_URL;
+          SMALL_MARKER_URL          = SPORTS_SMALL_MARKER_URL;
+          LARGE_SPIDERFY_MARKER_URL = SPORTS_LARGE_SPIDERFY_MARKER_URL;
+          SMALL_SPIDERFY_MARKER_URL = SPORTS_SMALL_SPIDERFY_MARKER_URL;
+        break;
+      }
+    }
+
+    // @return [String] The URL for the marker. If the state isn't set the
+    // icon defaults to the large, unspiderfied marker.
+    function getIcon() {
+      if (!_kind) setIcon(OTHER);
+
+      if (_iconState.isOn(SMALL_ICON) && _iconState.isOn(UNSPIDERFIED_ICON))
+        return SMALL_MARKER_URL;
+      else if (_iconState.isOn(SMALL_ICON) && _iconState.isOn(SPIDERFIED_ICON))
+        return SMALL_SPIDERFY_MARKER_URL;
+      else if (_iconState.isOn(LARGE_ICON) && _iconState.isOn(SPIDERFIED_ICON))
+        return LARGE_SPIDERFY_MARKER_URL;
+      else
+        return LARGE_MARKER_URL;
+    }
+
+    // @param state [Number] Check whether the icon is large, small,
+    // spiderfied, or not.
+    function isOn(state) {
+      return _iconState.isOn(state);
+    }
+
+    // @param state [Number] Check whether the icon is NOT large, small,
+    // spiderfied, or not.
+    function isOff(state) {
+      return _iconState.isOff(state);
+    }
+
+    // @param state [Number] Set whether the icon is large, small,
+    // spiderfied, or not.
+    function turnOn(state) {
+      _toggleState(state);
+      _iconState.turnOn(state);
+    }
+
+    // @param state [Number] Set whether the icon is NOT large, small,
+    // spiderfied, or not.
+    function turnOff(state) {
+      _toggleState(state);
+      _iconState.turnOff(state);
+    }
+
+    // @param state [Number] If a particular state is turned on,
+    // turn off the opposite.
+    function _toggleState(state) {
+      if (state & SMALL_ICON)         _iconState.turnOff(LARGE_ICON);
+      if (state & LARGE_ICON)         _iconState.turnOff(SMALL_ICON);
+      if (state & SPIDERFIED_ICON)    _iconState.turnOff(UNSPIDERFIED_ICON);
+      if (state & UNSPIDERFIED_ICON)  _iconState.turnOff(SPIDERFIED_ICON);
+    }
+
+    return {
+      setIcon:setIcon,
+      getIcon:getIcon,
+      isOn:isOn,
+      isOff:isOff,
+      turnOn:turnOn,
+      turnOff:turnOff,
+      SMALL_ICON:SMALL_ICON,
+      LARGE_ICON:LARGE_ICON,
+      SPIDERFIED_ICON:SPIDERFIED_ICON,
+      UNSPIDERFIED_ICON:UNSPIDERFIED_ICON
+    };
+  }
+
+  return {
+    create:create
+  };
+});
