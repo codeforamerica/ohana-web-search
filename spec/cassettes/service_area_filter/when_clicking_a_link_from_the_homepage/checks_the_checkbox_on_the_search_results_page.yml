@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=CalFresh&service_area=smc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 22 Aug 2014 15:46:14 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=5&service_area=smc>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=2&service_area=smc>;
+        rel="next"
+      X-Total-Count:
+      - '5'
+      X-Total-Pages:
+      - '5'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"19f5edefeb84bd7fb8f36bad19dd519b"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e6bfc59e-890e-48bb-960b-e4546dd7e829
+      X-Runtime:
+      - '0.037227'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1499,"admin_emails":[],"coordinates":[-122.4741901,37.6896347],"description":"Offers
+        comprehensive employment services for job seekers and employers.   Employer
+        services include screening and referral of job-ready workers, up to 50% reimbursement
+        of wages for new employees during the on-the-job training period, and space
+        and resources necessary for recruitment. Offers a job bank to persons age
+        16 or over. Offers information on job openings, company profiles and training
+        information in government, nonprofit agencies, corporations and private industry.
+        Offers access to the Internet and the use of computers, phones and fax machines.
+        Also offers information and referral services to other community resources
+        as needed by clients. Accepts applications for public assistance programs:
+        CalWorks, CalFresh, General Assistance and Medi-Cal. Determines eligibility
+        of needy individuals and families seeking public assistance benefits. Serves
+        low-income clients in need of health insurance (Medi-Cal), nutritional food
+        supplements (CalFresh), and temporary financial assistance (CalWorks and General
+        Assistance).","kind":"Human Services","latitude":37.6896347,"longitude":-122.4741901,"name":"Northern
+        Region., PeninsulaWorks Daly City","short_desc":"Offers comprehensive employment
+        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","slugs":["northern-region-peninsulaworks-daly-city"],"updated_at":"2014-05-24T14:08:31.023-07:00","urls":["http://www.peninsulaworks.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"street":"271
+        - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","_slugs":["san-mateo-county-human-services-agency"],"slugs":["san-mateo-county-human-services-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
+        301-8440","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 22 Aug 2014 15:46:14 GMT
+recorded_with: VCR 2.9.2

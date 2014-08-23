@@ -48,7 +48,7 @@ module HomepageLinksHelper
           concat(content_tag(:li) do
             link_to(
               link_text,
-              locations_path(keyword: keyword),
+              locations_path(keyword: keyword, service_area: 'smc'),
               'class' => 'links-to-track',
               'data-ga-category' => 'Home_Categories',
               'data-ga-label' => "#{link_text}"

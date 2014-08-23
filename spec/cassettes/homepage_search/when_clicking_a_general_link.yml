@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=Health%20Insurance
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=Health%20Insurance&service_area=smc
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 15 Aug 2014 21:07:53 GMT
+      - Sat, 23 Aug 2014 00:38:54 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,8 +33,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=15>;
-        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=15&service_area=smc>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2&service_area=smc>;
         rel="next"
       X-Total-Count:
       - '15'
@@ -51,9 +51,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 07d96d31-7b02-42f5-9cb1-88fc9940869e
+      - 9386abf0-e36f-45c5-b79d-a500f69898b6
       X-Runtime:
-      - '0.040968'
+      - '0.609856'
       Via:
       - 1.1 vegur
     body:
@@ -67,5 +67,5 @@ http_interactions:
         Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","_slugs":["san-mateo-county-human-services-agency"],"slugs":["san-mateo-county-human-services-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2102,"department":null,"extension":null,"number":"800
         223-8383","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 15 Aug 2014 21:07:53 GMT
+  recorded_at: Sat, 23 Aug 2014 00:38:54 GMT
 recorded_with: VCR 2.9.2
