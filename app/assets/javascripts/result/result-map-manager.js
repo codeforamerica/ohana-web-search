@@ -1,27 +1,11 @@
-//= depend_on_asset 'markers/arts.png'
-//= depend_on_asset 'markers/clinics.png'
-//= depend_on_asset 'markers/education.png'
-//= depend_on_asset 'markers/entertainment.png'
-//= depend_on_asset 'markers/farmers_markets.png'
-//= depend_on_asset 'markers/government.png'
-//= depend_on_asset 'markers/human_services.png'
-//= depend_on_asset 'markers/libraries.png'
-//= depend_on_asset 'markers/museums.png'
-//= depend_on_asset 'markers/parks.png'
-//= depend_on_asset 'markers/sports.png'
-//= depend_on_asset 'markers/other.png'
-//= depend_on_asset 'markers/marker_large.png'
-//= depend_on_asset 'markers/marker_small.png'
-//= depend_on_asset 'markers/marker_large_spiderfied.png'
-//= depend_on_asset 'markers/marker_small_spiderfied.png'
-
 // Manages search results view Google Map.
 define([
   'util/bitmask',
+  'util/map/marker_manager',
   'domReady!',
   'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
 ],
-function (bitmask) {
+function (bitmask, markerManager) {
   'use strict';
 
   // The <div> element that the Google map loads into.
@@ -46,11 +30,13 @@ function (bitmask) {
   var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
   var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
 
-  var LARGE_MARKER_URL = "<%= asset_path('markers/marker_large.png') %>";
-  var SMALL_MARKER_URL = "<%= asset_path('markers/marker_small.png') %>";
+  // Default 'constants' that get set to the specific marker kinds
+  // listed above at runtime.
+  var LARGE_MARKER_URL;
+  var SMALL_MARKER_URL;
+  var LARGE_SPIDERFY_MARKER_URL;
+  var SMALL_SPIDERFY_MARKER_URL;
 
-  var LARGE_SPIDERFY_MARKER_URL = "<%= asset_path('markers/marker_large_spiderfied.png') %>";
-  var SMALL_SPIDERFY_MARKER_URL = "<%= asset_path('markers/marker_small_spiderfied.png') %>";
 
   // The spiderfier layer for handling overlapping markers.
   // See https://github.com/jawj/OverlappingMarkerSpiderfier
@@ -317,25 +303,26 @@ function (bitmask) {
   // @param useSpiderfied [Boolean] true if the spiderfied marker should
   // be used, false otherwise.
   function _setIcon(marker, useSpiderfied) {
+    var manager = marker.manager;
     if (useSpiderfied) {
-      if (_atMaxSize) marker.setIcon(LARGE_SPIDERFY_MARKER_URL);
-      else            marker.setIcon(SMALL_SPIDERFY_MARKER_URL);
+      if (_atMaxSize) manager.turnOn(manager.LARGE_ICON | manager.SPIDERFIED_ICON);
+      else            manager.turnOn(manager.SMALL_ICON | manager.SPIDERFIED_ICON);
     }
     else {
-      if (_atMaxSize) marker.setIcon(LARGE_MARKER_URL);
-      else            marker.setIcon(SMALL_MARKER_URL);
+      if (_atMaxSize) manager.turnOn(manager.LARGE_ICON | manager.UNSPIDERFIED_ICON);
+      else            manager.turnOn(manager.SMALL_ICON | manager.UNSPIDERFIED_ICON);
     }
+    marker.setIcon(manager.getIcon());
   }
 
   // Updates the marker icons to the size set for the map.
   function _updateMarkerSizes() {
     var markers = _spiderfier.getMarkers();
     var index = markers.length - 1;
-    while(index>=0) {
-      if (_atMaxSize)
-        markers[index--].setIcon(LARGE_MARKER_URL);
-      else
-        markers[index--].setIcon(SMALL_MARKER_URL);
+    var marker;
+    while(index >= 0) {
+      marker = markers[index--];
+      marker.setIcon(marker.manager.getIcon());
     }
   }
 
@@ -371,7 +358,7 @@ function (bitmask) {
       var index = _markerData.length - 1;
       var marker;
       while(index >= 0) {
-        marker = _loadMarker( _markerData[index--] );
+        marker = _loadMarker(_markerData[index--]);
       }
 
       _overMarker = marker;
@@ -385,43 +372,19 @@ function (bitmask) {
       var myLatLng = new google.maps.LatLng(markerData['latitude'],
                                             markerData['longitude']);
 
-      var markerIcon;
-
-      if (markerData['kind'] === "Arts")
-        markerIcon = "<%= asset_path('markers/arts.png') %>";
-      else if (markerData['kind'] === "Clinics")
-        markerIcon = "<%= asset_path('markers/clinics.png') %>";
-      else if (markerData['kind'] === "Education")
-        markerIcon = "<%= asset_path('markers/education.png') %>";
-      else if (markerData['kind'] === "Entertainment")
-        markerIcon = "<%= asset_path('markers/entertainment.png') %>";
-      else if (markerData['kind'] === "Farmers' Markets")
-        markerIcon = "<%= asset_path('markers/farmers_markets.png') %>";
-      else if (markerData['kind'] === "Government")
-        markerIcon = "<%= asset_path('markers/government.png') %>";
-      else if (markerData['kind'] === "Human Services")
-        markerIcon = "<%= asset_path('markers/human_services.png') %>";
-      else if (markerData['kind'] === "Libraries")
-        markerIcon = "<%= asset_path('markers/libraries.png') %>";
-      else if (markerData['kind'] === "Museums")
-        markerIcon = "<%= asset_path('markers/museums.png') %>";
-      else if (markerData['kind'] === "Parks")
-        markerIcon = "<%= asset_path('markers/parks.png') %>";
-      else if (markerData['kind'] === "Sports")
-        markerIcon = "<%= asset_path('markers/sports.png') %>";
-      else
-        markerIcon = "<%= asset_path('markers/other.png') %>";
+      var markerProxy = markerManager.create(markerData.kind);
 
       if (_atMaxSize)
-        markerIcon = LARGE_MARKER_URL;
+        markerProxy.turnOn(markerProxy.LARGE_ICON);
       else
-        markerIcon = SMALL_MARKER_URL;
+        markerProxy.turnOn(markerProxy.SMALL_ICON);
 
       var markerOptions = {
         map: _map,
         position: myLatLng,
-        icon: markerIcon,
-        optimized: false
+        icon: markerProxy.getIcon(),
+        optimized: false,
+        manager: markerProxy
       };
       var marker = new google.maps.Marker(markerOptions);
 
@@ -571,10 +534,8 @@ function (bitmask) {
   // @param marker [Object] a map marker.
   // @return [Boolean] true if the marker is spiderfied, false otherwise.
   function _isSpiderfyMarker(marker) {
-    if (_atMaxSize)
-      return (marker.getIcon() === LARGE_SPIDERFY_MARKER_URL);
-    else
-      return (marker.getIcon() === SMALL_SPIDERFY_MARKER_URL);
+    var manager = marker.manager;
+    return manager.isOn(manager.SPIDERFIED_ICON);
   }
 
   // Register a marker as having been clicked.
