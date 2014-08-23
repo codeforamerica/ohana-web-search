@@ -25,7 +25,8 @@
               %li
                 %i{ class: 'fa fa-phone-square' }
                 %span{ itemprop: 'telephone' }
-                  = "#{format_phone(location.phones.first.number)}"
+                  - if location.phones.first[:number]
+                    = "#{format_phone(location.phones.first.number)}"
 
           - if location[:address].present?
             %p.address

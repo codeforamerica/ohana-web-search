@@ -43,20 +43,21 @@
             - if @location[:phones].present?
               %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                 - @location.phones.each do |phone|
-                  %div
-                    %i{ class: 'fa fa-phone-square' }
-                    %span
-                      %span{ itemprop: 'telephone' }
-                        = format_phone(phone.number)
-                      - if phone[:extension].present?
-                        %sup.phone-extension
-                          = phone.extension
-                      - if phone[:number_type]
-                        %sup.phone-type
-                          = phone.number_type
-                      - if phone[:department]
-                        %p.phone-department{ itemprop: 'contactType' }
-                          = phone.department
+                  - if phone[:number].present?
+                    %div
+                      %i{ class: 'fa fa-phone-square' }
+                      %span
+                        %span{ itemprop: 'telephone' }
+                          = format_phone(phone.number)
+                        - if phone[:extension].present?
+                          %sup.phone-extension
+                            = phone.extension
+                        - if phone[:number_type]
+                          %sup.phone-type
+                            = phone.number_type
+                        - if phone[:department]
+                          %p.phone-department{ itemprop: 'contactType' }
+                            = phone.department
 
             - if @location[:faxes].present?
               %section.faxes
