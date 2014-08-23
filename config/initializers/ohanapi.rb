@@ -1,5 +1,7 @@
-stack = Faraday::Builder.new do |builder|
-  builder.use Faraday::HttpCache
+cache_store = ActiveSupport::Cache.lookup_store(:dalli_store)
+
+stack = Faraday::RackBuilder.new do |builder|
+  builder.use Faraday::HttpCache, store: cache_store, serializer: Marshal
   builder.use Ohanakapa::Response::RaiseError
   builder.adapter Faraday.default_adapter
 end

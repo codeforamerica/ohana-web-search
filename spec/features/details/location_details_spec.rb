@@ -48,9 +48,9 @@ feature 'location details' do
       expect(current_path).to eq(root_path)
     end
 
-    it 'displays an error message' do
+    it 'displays a not found error message' do
       visit("/locations/foobar'")
-      expect(page).to have_content('Please remove the single quote')
+      expect(page).to have_content('Sorry, that page does not exist')
     end
   end
 
@@ -260,6 +260,12 @@ feature 'location details' do
       admin_site = 'http://admin.smc-connect.org'
       expect(page).
         to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
+    end
+
+    it 'includes rel=nofollow' do
+      within '.updated-at' do
+        expect(find(:rel, 'nofollow')).to be_present
+      end
     end
   end
 end

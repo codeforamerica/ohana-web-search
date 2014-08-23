@@ -15,7 +15,8 @@
 # ENV["OHANA_API_ENDPOINT"] in the app. See config/initializers/ohanapi.rb
 # for a usage example.
 
-# Set this to the URL for your instance of the Ohana API.
+# Set this to the URL for your instance of the Ohana API:
+# https://github.com/codeforamerica/ohana-api
 # This environment variable is required.
 OHANA_API_ENDPOINT: http://ohanapi.herokuapp.com/api
 
@@ -50,7 +51,7 @@ DOMAIN_NAME: lvh.me
 # in development.
 # GOOGLE_TRANSLATE_API_TOKEN: Your_API_Token
 
-# To allow users to customize the translations on your site include a
+# To allow users to customize the translations on your site, include a
 # Google Translate Customization website code. This code is used to verify
 # ownership for the Google Website Translator so that custom translations are
 # saved for the site. The tag appears in the HTML head and looks like this:
@@ -71,6 +72,25 @@ CANONICAL_URL: lvh.me
 # This environment variable is used in config/initializers/secret_token.rb.
 SECRET_TOKEN: changeme
 
+# If you have a Google Analytics account you want to use to track visits
+# to this app, set your ID and domain name below.
+# An example ID is 'UA-40905632-1', and an example domain is 'smc-connect.org'.
+# Note that you must have a Universal Analytics property for tracking to work.
+# https://support.google.com/analytics/answer/4457764?hl=en
+# GOOGLE_ANALYTICS_ID:
+# GOOGLE_ANALYTICS_DOMAIN:
+
+# When you visit a location, for example,
+# http://ohana-web-search-demo.herokuapp.com/locations/salvation-army/sunnyvale-corps,
+# the 'Last updated' time that is displayed at the bottom right of the page is
+# set to UTC by default. If you would like to set it to a more appropriate
+# time zone where most of your visitors live, you can set the 'TZ' environment
+# variable to one of the accepted values:
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
+# For example, to set the time zone to Eastern Time, you would set the 'TZ'
+# value below to 'America/New_York'.
+# TZ:
+
 ###############################################################################
 #
 # SETTINGS FOR TESTS. PLEASE DO NOT MODIFY UNLESS YOU KNOW WHAT YOU ARE DOING.
@@ -80,3 +100,4 @@ SECRET_TOKEN: changeme
 test:
   OHANA_API_ENDPOINT: http://smc-ohana-api-test.herokuapp.com/api
   OHANA_API_TOKEN: ~
+  DOMAIN_NAME: lvh.me

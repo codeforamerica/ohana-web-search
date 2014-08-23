@@ -2,7 +2,7 @@
   %h1#logo
     %a{ href: '/', target: '_self' }
       = image_tag(SETTINGS[:site_logo], size: '231x42', alt: "#{SETTINGS[:site_title]} Logo")
-  %h2= t('branding.header')
+  %h2= t('branding.header', location: t('branding.location'))
   %nav
     %ul
       %li

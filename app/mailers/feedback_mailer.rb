@@ -1,23 +1,14 @@
 class FeedbackMailer < ActionMailer::Base
   default to: SETTINGS.try(:[], :feedback_email).try(:[], 'to')
 
-  # Sends contents of feedback form via email, including user agent
+  # Prepares email based on contents of feedback form.
+  # See app/views/feedback_mailer/feedback_email.html.haml for the email body.
   # @param params [Hash] Email attributes (from, message, user agent)
-  # @return [Object] Email object
-  def send_feedback(params = {})
-    message    = params[:message] || '[no message entered]'
-    from       = params[:from].blank? ? 'anonymous@none.com' : params[:from]
-    user_agent = params[:agent] || '[no user agent recorded]'
-    url        = ENV['DOMAIN_NAME']
-    site_title = SETTINGS[:site_title]
+  def feedback_email(params = {})
+    @message    = params[:message] || '[no message entered]'
+    from        = params[:from].blank? ? 'anonymous@none.com' : params[:from]
+    @user_agent = params[:agent] || '[no user agent recorded]'
 
-    subject = "[#{site_title} Feedback] #{from}"
-    body    = "#{message}\n\n----------\n#{user_agent}" \
-              "\n\nURL: #{url}"
-
-    mail(
-      from: from,
-      subject: subject,
-      body: body)
+    mail(from: from, subject: "[#{SETTINGS[:site_title]} Feedback] #{from}")
   end
 end

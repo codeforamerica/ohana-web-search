@@ -3,28 +3,29 @@ In the spirit of open source software, **everyone** is encouraged to help
 improve this project.
 
 ### Ways *you* can contribute:
-* by installing and testing the software
-* by reporting bugs
-* by suggesting new features
-* by suggesting labels for our issues
-* by writing or editing documentation
-* by writing test specifications
-* by writing code (**no patch is too small**: fix typos, add comments, clean up
-  inconsistent whitespace)
-* by refactoring code
-* by closing [issues][issue_tracker]
-* by reviewing patches
+* by [installing and testing the software][install_instructions]
+* by [using the issue tracker][issue_tracker] for...
+  * reporting bugs
+  * suggesting new features
+  * suggesting labels for our issues
+* by improving the code through:
+  * writing or editing documentation
+  * writing test specifications
+  * refactoring the code (**no patch is too small**: fix typos, add comments,
+  clean up inconsistent whitespace).
+  * reviewing [open Pull Requests][open_prs]
 * by [donating to Code for America][donate]
 
 ### Reporting a bug or other issue
-We use the [GitHub issue tracker][issue_tracker] to track bugs and feature
+We use the GitHub issue tracker to track bugs and feature
 requests. To submit a bug report or feature request:
 
-1. [Browse][issue_tracker] or [search][issue_search] our issues to make sure
-it hasn't already been submitted.
+1. **[Browse][issue_tracker] or [search][issue_search] our issues** to make
+sure your issue hasn't already been submitted.
 
-2. When submitting a bug report, it's helpful to include any details that may
-be necessary to reproduce the bug, including:
+2. **[Submit an issue][new_issue]**.
+If you're submitting a bug report, it's helpful to include any details that
+may be necessary to reproduce the bug, including:
 
     - a screenshot
     - your operating system (Windows 7, Mac OSX 10.9.2, etc.)
@@ -75,11 +76,13 @@ _*If you use Sublime Text, please make sure to set your tab indentation to 2
 spaces. We also highly recommend you use the [TrailingSpaces][trailing_spaces]
 plugin and set it to [Trim On Save][trim_on_save]._
 
+[install_instructions]: https://github.com/smcgov/SMC-Connect/blob/master/INSTALL.md
+[open_prs]: https://github.com/smcgov/SMC-Connect/pulls?q=is%3Aopen+is%3Apr
 [donate]: http://codeforamerica.org/support-us/
 [issue_tracker]: https://github.com/smcgov/SMC-Connect/issues
 [issue_search]: https://github.com/smcgov/SMC-Connect/search?ref=cmdform&type=Issues
-[prerequisites]: https://github.com/smcgov/SMC-Connect#prerequisites
-
+[prerequisites]: https://github.com/smcgov/SMC-Connect/blob/master/INSTALL.md#install-prerequisites
+[new_issue]: https://github.com/smcgov/SMC-Connect/issues/new
 [fork]: http://help.github.com/fork-a-repo/
 [branch]: https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
 [style_guide]: https://github.com/bbatsov/ruby-style-guide

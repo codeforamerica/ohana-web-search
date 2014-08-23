@@ -18,10 +18,15 @@ You can see a running version of the application at
 * Template Engines: HAML
 * Testing Frameworks: RSpec, Capybara and Poltergeist
 
-## Local Installation
+## Local Installation (for developers)
 Follow the instructions in [INSTALL.md][install].
 
 [install]: https://github.com/smcgov/SMC-Connect/blob/master/INSTALL.md
+
+## Customization
+Follow the instructions in [CUSTOMIZE.md][customize].
+
+[customize]: https://github.com/smcgov/SMC-Connect/blob/master/CUSTOMIZE.md
 
 ## Running the tests
 To test locally, you can run tests with this simple command:

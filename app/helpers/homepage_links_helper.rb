@@ -37,25 +37,37 @@ module HomepageLinksHelper
   # @param link_group [Hash] Key: String header, Value: Array of link texts.
   # @return [HTML]
   def display_homepage_links(link_group)
-    header = link_group.first
-    links = link_group.second
-
     content_tag(:li) do
-      concat(header)
+      concat(header_for(link_group))
       concat(content_tag(:ul) do
-        links.each do |link_text|
-          keyword = keyword_from_link_text(link_text)
-          concat(content_tag(:li) do
-            link_to(
-              link_text,
-              locations_path(keyword: keyword, service_area: 'smc'),
-              'class' => 'links-to-track',
-              'data-ga-category' => 'Home_Categories',
-              'data-ga-label' => "#{link_text}"
-            )
-          end)
-        end
+        list_of_links(links_for(link_group))
       end)
     end
+  end
+
+  def header_for(link_group)
+    link_group.first
+  end
+
+  def links_for(link_group)
+    link_group.second
+  end
+
+  def list_of_links(links)
+    links.each do |link_text|
+      concat(content_tag(:li) do
+        link_to_keyword(keyword_from_link_text(link_text), link_text)
+      end)
+    end
+  end
+
+  def link_to_keyword(keyword, link_text)
+    link_to(
+      link_text,
+      locations_path(keyword: keyword, service_area: 'smc'),
+      'class' => 'links-to-track',
+      'data-ga-category' => 'Home_Categories',
+      'data-ga-label' => "#{link_text}"
+    )
   end
 end

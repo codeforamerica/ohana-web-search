@@ -13,14 +13,34 @@ class LocationsController < ApplicationController
     # Populate the keyword search field with the original term
     # as typed by the user, not the translated word.
     params[:keyword] = translator.original_keyword
+
+    fresh_when(cache_settings(locations))
   end
 
   def show
     id = params[:id].split('/').last
     @location = Location.get(id)
+
     if @location[:services].present?
       @categories = @location.services.map { |s| s[:categories] }.flatten.
                                                                  compact.uniq
     end
+
+    fresh_when last_modified: @location.updated_at, public: true
+  end
+
+  private
+
+  def cache_settings(locations)
+    return default_cache_settings(locations) if locations.blank?
+    default_cache_settings(locations).except(:etag)
+  end
+
+  def default_cache_settings(locations)
+    {
+      last_modified: locations.max_by(&:updated_at).try(:updated_at),
+      etag: locations,
+      public: true
+    }
   end
 end

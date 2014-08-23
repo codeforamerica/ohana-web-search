@@ -59,22 +59,6 @@ module Features
       expect(page).not_to have_selector('#map-canvas')
     end
 
-    def looks_like_location
-      expect(find('#detail-info .description a')).to have_content('more')
-      find('#detail-info .description a').click
-      expect(find('#detail-info .description a')).to have_content('less')
-      expect(page).to have_title 'San Maceo Agency | SMC-Connect'
-      expect(page).to have_content('Works to control')
-      expect(page).to have_content('Profit and nonprofit')
-      expect(page).to have_content('Marin County')
-      expect(page).to have_content('Walk in')
-      expect(page).to have_content('permits and photocopying')
-      expect(page).to have_content('Russian')
-      expect(page).to have_content('Special parking')
-      expect(page).to have_link('Print')
-      expect(page).to have_link('Directions')
-    end
-
     def go_to_next_page
       first('.pagination').find_link('>').click
     end
