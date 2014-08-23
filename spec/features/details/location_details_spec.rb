@@ -48,9 +48,9 @@ feature 'location details' do
       expect(current_path).to eq(root_path)
     end
 
-    it 'displays an error message' do
+    it 'displays a not found error message' do
       visit("/locations/foobar'")
-      expect(page).to have_content('Please remove the single quote')
+      expect(page).to have_content('Sorry, that page does not exist')
     end
   end
 

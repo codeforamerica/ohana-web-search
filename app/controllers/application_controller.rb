@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
     rescue_from Ohanakapa::InternalServerError, with: :render_api_down
     rescue_from Ohanakapa::BadRequest, with: :render_bad_search
     rescue_from Ohanakapa::NotFound, with: :render_not_found
-    rescue_from URITemplate::RFC6570::Invalid, with: :render_remove_quote
   end
 
   private
@@ -24,10 +23,6 @@ class ApplicationController < ActionController::Base
 
   def render_not_found
     redirect_to path, alert: t('errors.not_found')
-  end
-
-  def render_remove_quote
-    redirect_to path, alert: t('errors.remove_quote')
   end
 
   def path
