@@ -1,11 +1,11 @@
 // Manages search results view Google Map.
 define([
-  'util/bitmask',
+  'util/BitMask',
   'util/map/marker-manager',
   'domReady!',
   'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
 ],
-function (bitmask, markerManager) {
+function (BitMask, markerManager) {
   'use strict';
 
   // The <div> element that the Google map loads into.
@@ -75,7 +75,7 @@ function (bitmask, markerManager) {
   var _infoBoxContent;
 
   function init() {
-    _infoBoxState = bitmask.create();
+    _infoBoxState = BitMask.create();
 
     // Turn off assumption that touch is being used initially, this is turned
     // on if a touch event is registered.

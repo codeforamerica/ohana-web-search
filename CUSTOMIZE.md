@@ -29,6 +29,19 @@ In that file, you can customize much of the user-facing text on the website.
 Most of the text should be ready to go, but there is one specific setting
 you should customize: the [location](https://github.com/codeforamerica/ohana-web-search/blob/master/config/locales/en.yml#L28) value under `branding`.
 
+## Language Translation Services
+The application uses Google Translate for free language translation of the site. The Google Website Translator Gadget appears in the footer of the site and provides free translation of the site into dozens of languages. By default, six major language translation links are provided (in their native script) on the upper-right of the homepage. A number of aspects related to translation can be customized:
+
+- **Homepage language links**. The language translation links on the homepage can be added, removed, and edited in `config/settings.yml`.
+
+- **Support for saving custom translations**. If you want to make edits to the Google provided translations of a live site you can add a `GOOGLE_TRANSLATE_CUSTOMIZATION_CODE` in `config/application.yml`. Follow the directions in that file for obtaining the proper code for your site.
+
+- **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, you can enable language detection by adding a `GOOGLE_TRANSLATE_API_TOKEN` in `config/application.yml`. Follow the directions in that file for obtaining an API token.
+**NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
+
+- **Change the gadget layout**. If you want to change the Google Website Translator Gadget's layout, two of the layouts provided by Google are supported: InlineLayout.VERTICAL and InlineLayout.HORIZONTAL. One or the other
+can be set in `assets/javascripts/application.js`.
+
 ## Pagination
 The pagination of search results is handled by the [Kaminari](https://github.com/amatsuda/kaminari) gem.
 To configure the functionality, make changes in [kaminari_config.rb](https://github.com/codeforamerica/ohana-web-search/blob/master/config/initializers/kaminari_config.rb).
