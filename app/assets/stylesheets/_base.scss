@@ -636,17 +636,42 @@ sup
 }
 
 //=================================================================================
-// language box styles on homepage
-#language-box
+// Google Translate widget styles.
+
+// The container for the Google Translate widget.
+#google-translate-container
 {
-  // background: $primary; // IE fallback
-  // background: rgba($primary,0.9);
+  padding-bottom: 20px;
+}
+
+// Hides the Google Translate translation banner at the top of the page.
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
+
+//=================================================================================
+// Area above the search box, which holds the language translation links box.
+.home .search-utilities
+{
   background: $search-bg; // IE fallback
-  background: rgba($search-bg,0.9);
+  background: rgba($search-bg, 0.9);
+  min-height: 40px;
   padding: 10px;
   padding-right: 25px;
-  padding-bottom: 20px;
   text-align: right;
+}
+
+// Area below the search box, which could hold settings, but doesn't currently.
+.home #search-bottom-utilities
+{
+  border-bottom: 2px solid $main-border-color;
+}
+
+
+//=================================================================================
+// Language translation links on the upper-right homepage.
+.home #language-box
+{
+  padding-bottom: 10px;
 
   ul
   {
@@ -659,27 +684,6 @@ sup
       margin-top: 10px;
     }
   }
-}
-
-#google-translate-element
-{
-  padding-bottom: 20px;
-}
-
-.goog-te-banner-frame.skiptranslate {display: none !important;}
-body { top: 0px !important; }
-
-//=================================================================================
-// Help box styles on homepage.
-#help-box
-{
-  background: $search-bg; // IE fallback
-  background: rgba($search-bg, .9);
-  border-bottom: 2px solid $main-border-color;
-  padding: 10px;
-  padding-right: 25px;
-  text-align: right;
-  min-height: 40px;
 }
 
 //=================================================================================
