@@ -1,0 +1,7 @@
+= field_set_tag nil, id: 'kind-options', class: 'input-search-filter' do
+  %legend= 'Kind of Organization'
+  %p
+  - kind_options.each do |kind_option|
+    = check_box_tag css_id_for(kind_option), kind_option, kind_selected?(kind_option), name: 'kind[]'
+    = label_tag css_id_for(kind_option), kind_option
+    %br
