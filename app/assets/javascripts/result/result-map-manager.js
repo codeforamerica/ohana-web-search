@@ -1,7 +1,7 @@
 // Manages search results view Google Map.
 define([
   'util/bitmask',
-  'util/map/marker_manager',
+  'util/map/marker-manager',
   'domReady!',
   'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
 ],
