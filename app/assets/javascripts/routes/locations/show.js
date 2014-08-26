@@ -2,7 +2,8 @@
 require([
   'app/app-init',
   'search/search-init',
-  'detail/detail-init'
+  'detail/detail-init',
+  'application'
 ],
 function () {
   'use strict';
