@@ -6,11 +6,19 @@ define(
 function () {
   'use strict';
 
-  var _alertContainer; // DOM element for the alert container.
-  var _alert;
-  var _content; // DOM element for the alert's content.
-  var _closeBtn; // DOM element for the alert's close button.
+  // HTML element for the alert container.
+  var _alertContainer;
 
+  // HTML element for the alert box (inside the container).
+  var _alert;
+
+  // HTML element for the alert's content.
+  var _content;
+
+  // HTML element for the alert's close button.
+  var _closeBtn;
+
+  // 'Constants' for the types of alerts that can be displayed.
   var type = { VALID:1, ERROR:2, WARNING:4, INFO:8 };
 
   function init() {
@@ -19,6 +27,9 @@ function () {
     _content = _alertContainer.querySelector('.alert-message');
     _closeBtn = _alertContainer.querySelector('.alert-close');
     _closeBtn.addEventListener('click', _closeBtnClicked, false);
+
+    // Set default type to an error alert.
+    _alert.classList.add('alert-error');
   }
 
   // @param aType [Number] The type of alert.
