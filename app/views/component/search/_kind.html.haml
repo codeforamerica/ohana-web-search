@@ -1,9 +1,9 @@
-= field_set_tag nil, id: 'kind-options', class: "input-search-filter" do
+= field_set_tag nil, id: 'kind-options', class: 'input-search-filter' do
   %legend= 'Filter Organization by Kind'
-  %section{ class: "toggle-container #{params[:kind].present? ? 'active' : ''}" }
+  %section{ class: section_class_for(params[:kind]) }
     - kind_options.each do |kind_option|
-      %div.toggle-group
-        %div.toggle
+      .toggle-group
+        .toggle
           %div
             = check_box_tag css_id_for(kind_option), kind_option, kind_selected?(kind_option), name: 'kind[]'
             %i.fa.fa-check

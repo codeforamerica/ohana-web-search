@@ -1,5 +1,5 @@
 module SearchHelper
-  def all_service_areas?
+  def only_smc_areas?
     return true if params[:service_area] == 'smc'
     false
   end
@@ -19,5 +19,10 @@ module SearchHelper
 
   def css_id_for(kind_option)
     "kind-#{kind_option.parameterize}"
+  end
+
+  def section_class_for(params)
+    return 'toggle-container active' if params.present?
+    'toggle-container'
   end
 end
