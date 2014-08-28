@@ -1,4 +1,4 @@
-// Handles checkbox filters that subtractively refine the search results.
+// Handles freeform text input search filters.
 define(
 function () {
   'use strict';
@@ -48,7 +48,6 @@ function () {
       });
 
       input.addEventListener('change', function (evt) {
-        console.log('changes');
         _checkClearButtonVisibility(input, buttonClear);
         _events['change'].call();
       });
