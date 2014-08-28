@@ -1,6 +1,6 @@
-= field_set_tag nil, id: 'kind-options', class: "input-search-filter #{params[:kind].present? ? 'active' : ''}" do
+= field_set_tag nil, id: 'kind-options', class: "input-search-filter" do
   %legend= 'Filter Organization by Kind'
-  %section.toggle-container
+  %section{ class: "toggle-container #{params[:kind].present? ? 'active' : ''}" }
     - kind_options.each do |kind_option|
       %div.toggle-group
         %div.toggle
