@@ -119,10 +119,10 @@
 
   .toggle-group > .toggle > div input[type=checkbox]:checked ~ label
   {
-    background-color: lightest($complement-base); // IE fallback
-    @include background( linear-gradient(top, lightest($complement-base), midtone($complement-base)) );
-    border: 1px solid darkest($accentA-base);
-    @include box-shadow( inset 0px 0px 0px darkest($accentA-base), inset 0px 0px 1px dark($accentA-base) );
+    background-color: lightest($accentA-base); // IE fallback
+    @include background( linear-gradient(top, lightest($accentA-base), midtone($accentA-base)) );
+    border: 1px solid darkest($primary);
+    @include box-shadow( inset 0px 0px 0px darkest($primary), inset 0px 0px 1px dark($primary) );
   }
 
   .toggle-group > .toggle > div input[type=checkbox]:checked ~ label:before,
@@ -139,5 +139,3 @@
   }
 
 }
-
-
