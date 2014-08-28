@@ -1,3 +1,10 @@
 = field_set_tag nil, id: 'service-area-options', class: 'input-search-filter' do
-  = label_tag 'service_area', 'Uncheck to include additional Bay Area services'
-  = check_box_tag 'service_area', 'smc', all_service_areas?
+  %legend= 'Include additional Bay Area services'
+  %section.toggle-container
+    %div.toggle-group.inverted
+      %div.toggle
+        %div
+          = check_box_tag 'service_area', 'smc', all_service_areas?
+          %i.fa.fa-check
+          = label_tag 'service_area', ''
+      = label_tag 'service_area', 'Widen service area'

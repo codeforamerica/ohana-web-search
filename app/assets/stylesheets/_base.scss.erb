@@ -910,16 +910,18 @@ body { top: 0px !important; }
   fieldset
   {
     padding: 10px;
+    padding-bottom: 0;
     margin-top: 0px;
     margin-bottom: 0px;
-    padding-bottom: 0;
-    padding-top: 10px;
+  }
 
-    legend
-    {
-      color: $search-accent-color;
-      font-size: 14px;
-    }
+  legend
+  {
+    /* For some reason the legend is positioned inside the margin of its fieldset,
+    so this offset is necessary to give it the same appearance as a label placed as
+    the first element in the fieldset. */
+    position: relative;
+    top: 10px;
   }
 }
 

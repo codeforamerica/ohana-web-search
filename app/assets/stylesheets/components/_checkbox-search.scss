@@ -1,0 +1,143 @@
+.input-search-filter
+{
+  > legend
+  {
+    font-size: $font_size_90;
+    color: rgba($black, 0.5);
+  }
+
+  .toggle-container
+  {
+    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+    @include rounded-except(none);
+    padding: 10px;
+    background: rgba($black, 0.05);
+  }
+
+  .toggle-group
+  {
+    display: table-row;
+    cursor: pointer;
+
+    > .toggle
+    {
+      display: table-cell;
+      vertical-align: top;
+      width: 30px;
+      height: 18px;
+    }
+
+    .toggle + label
+    {
+      padding-bottom: 3px;
+      padding-top: 3px;
+      font-size: $font_size_100;
+      cursor: pointer;
+      @include inline-block();
+      vertical-align: middle;
+    }
+
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]
+  {
+    visibility: hidden;
+  }
+
+  .toggle-group > .toggle > div label
+  {
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    border: 1px solid dark($accentA-base);
+    @include box-sizing(border-box);
+    background-color: $white; // IE fallback
+    @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
+    @include border-radius(3px);
+    overflow: hidden;
+  }
+
+  .toggle-group.add > .toggle > div label
+  {
+    background-color: $white; // IE fallback
+    @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
+  }
+
+  .toggle-group-wrapper
+  {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-bottom: 2px;
+    //border-bottom: 1px solid $white;
+    //border-top: 1px solid $white;
+    border: 2px dotted midtone($accentA-base);
+    @include border-radius(4px);
+    //background: $greyscale_lightest;
+  }
+
+  .toggle-group > .toggle > div
+  {
+    @include box-sizing(border-box);
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-group > .toggle > div > .fa
+  {
+    position: absolute;
+    z-index: 9998;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -8px;
+    line-height: 19px;
+    color: rgba($black, .1);
+    @include box-sizing(border-box);
+    pointer-events: none;
+  }
+
+  .toggle-group:hover > .toggle > div > .fa
+  {
+    color: rgba($black, .6);
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]:checked + .fa
+  {
+    color: $black;
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]:checked ~ label
+  {
+    background-color: lightest($complement-base); // IE fallback
+    @include background( linear-gradient(top, lightest($complement-base), midtone($complement-base)) );
+    border: 1px solid darkest($accentA-base);
+    @include box-shadow( inset 0px 0px 0px darkest($accentA-base), inset 0px 0px 1px dark($accentA-base) );
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]:checked ~ label:before,
+  .toggle-group > .toggle > div input[type=checkbox]:checked ~ label::before
+  {
+    border: none;
+  }
+
+  // Inverted checkboxes look checked when their value is absent
+  // and unchecked when their value is present.
+  .inverted
+  {
+    /* TODO */
+  }
+
+}
+
+
