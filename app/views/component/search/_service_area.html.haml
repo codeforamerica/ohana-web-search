@@ -1,7 +1,7 @@
 = field_set_tag nil, id: 'service-area-options', class: 'input-search-filter' do
   %legend= 'Include additional Bay Area services'
-  %section.toggle-container
-    %div.toggle-group.inverted
+  %section{ class: "toggle-container #{params[:service_area].present? ? 'active' : ''}"}
+    %div.toggle-group
       %div.toggle
         %div
           = check_box_tag 'service_area', 'smc', all_service_areas?

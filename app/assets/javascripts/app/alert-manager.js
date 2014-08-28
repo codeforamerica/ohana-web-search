@@ -6,26 +6,49 @@ define(
 function () {
   'use strict';
 
-  var _alert; // DOM element for the alert container.
+  var _alertContainer; // DOM element for the alert container.
+  var _alert;
   var _content; // DOM element for the alert's content.
   var _closeBtn; // DOM element for the alert's close button.
 
+  var type = { VALID:1, ERROR:2, WARNING:4, INFO:8 };
+
   function init() {
-    _alert = document.querySelector('#alert-box');
-    _content = _alert.querySelector('.alert-message');
-    _closeBtn = _alert.querySelector('.alert-close');
+    _alertContainer = document.querySelector('#alert-box');
+    _alert = _alertContainer.querySelector('.alert');
+    _content = _alertContainer.querySelector('.alert-message');
+    _closeBtn = _alertContainer.querySelector('.alert-close');
     _closeBtn.addEventListener('click', _closeBtnClicked, false);
   }
 
-  function show(message) {
-    if (!_alert) init(); // lazy initialization
-    _alert.classList.remove('hide');
+  // @param aType [Number] The type of alert.
+  // May be type.VALID, type.ERROR, type.WARNING, or type.INFO.
+  function setType(aType) {
+    _alert.classList.remove('alert-valid');
+    _alert.classList.remove('alert-error');
+    _alert.classList.remove('alert-warning');
+    _alert.classList.remove('alert-info');
+
+    if (aType === type.VALID) _alert.classList.add('alert-valid');
+    else if (aType === type.ERROR) _alert.classList.add('alert-error');
+    else if (aType === type.WARNING) _alert.classList.add('alert-warning');
+    else if (aType === type.INFO) _alert.classList.add('alert-info');
+  }
+
+  // @param message [String] Message to display in alert box.
+  // @param aType [Number] The type of alert.
+  // May be type.VALID, type.ERROR, type.WARNING, or type.INFO.
+  function show(message, aType) {
+    // Lazy initialization of alert.
+    if (!_alertContainer) init();
+    if (aType) setType(aType);
+    _alertContainer.classList.remove('hide');
     _content.innerHTML = message;
   }
 
-  // Hiding the alert box clears its content and hides it using CSS
+  // Hiding the alert box clears its content and hides it using CSS.
   function hide() {
-    _alert.classList.add('hide');
+    _alertContainer.classList.add('hide');
     _content.innerHTML = '';
   }
 
@@ -37,6 +60,7 @@ function () {
   return {
     init:init,
     show:show,
-    hide:hide
+    hide:hide,
+    type:type
   };
 });

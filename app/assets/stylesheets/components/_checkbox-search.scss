@@ -35,8 +35,15 @@
       cursor: pointer;
       @include inline-block();
       vertical-align: middle;
+      color: rgba($black, .6);
     }
+  }
 
+  .toggle-container.active
+  {
+    .toggle + label {
+      color: $black;
+    }
   }
 
   .toggle-group > .toggle > div input[type=checkbox]
@@ -59,7 +66,7 @@
     @include box-sizing(border-box);
     background-color: $white; // IE fallback
     @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
-    @include border-radius(3px);
+    @include rounded-except(none);
     overflow: hidden;
   }
 
@@ -76,11 +83,8 @@
     margin-bottom: 5px;
     padding: 5px;
     padding-bottom: 2px;
-    //border-bottom: 1px solid $white;
-    //border-top: 1px solid $white;
     border: 2px dotted midtone($accentA-base);
-    @include border-radius(4px);
-    //background: $greyscale_lightest;
+    @include rounded-except(none);
   }
 
   .toggle-group > .toggle > div
@@ -109,7 +113,14 @@
 
   .toggle-group:hover > .toggle > div > .fa
   {
-    color: rgba($black, .6);
+    color: rgba($black, .3);
+  }
+
+  .toggle-container.active
+  {
+    .toggle-group:hover > .toggle > div > .fa {
+      color: rgba($black, .6);
+    }
   }
 
   .toggle-group > .toggle > div input[type=checkbox]:checked + .fa
@@ -130,12 +141,4 @@
   {
     border: none;
   }
-
-  // Inverted checkboxes look checked when their value is absent
-  // and unchecked when their value is present.
-  .inverted
-  {
-    /* TODO */
-  }
-
 }
