@@ -9,10 +9,10 @@ describe 'service area filter', :vcr do
       expect(current_url).to include('service_area=smc')
     end
 
-    it 'unchecks the checkbox on the search results page' do
+    it 'checks the checkbox on the search results page' do
       visit '/'
       click_link 'CalFresh'
-      expect(find('#service_area')).to_not be_checked
+      expect(find('#service_area')).to be_checked
     end
   end
 
@@ -23,7 +23,7 @@ describe 'service area filter', :vcr do
     end
   end
 
-  context 'when checking the service area checkbox' do
+  context 'when unchecking the service area checkbox' do
     it 'includes all service areas' do
       visit '/locations?service_area=smc'
       uncheck 'service_area'
@@ -32,7 +32,7 @@ describe 'service area filter', :vcr do
     end
   end
 
-  context 'when checking then unchecking service area checkbox' do
+  context 'when unchecking then checking service area checkbox' do
     it 'restricts service areas' do
       visit '/locations?service_area=smc'
       uncheck 'service_area'

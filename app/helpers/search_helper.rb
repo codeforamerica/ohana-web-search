@@ -1,7 +1,7 @@
 module SearchHelper
   def all_service_areas?
-    return false if params[:service_area] == 'smc'
-    true
+    return true if params[:service_area] == 'smc'
+    false
   end
 
   def kind_options

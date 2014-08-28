@@ -14,7 +14,7 @@ feature 'searching from results page', :vcr do
     it 'displays the name of the location as a link' do
       location_url = '/locations/sanmaceo-example-agency/' \
                      'san-maceo-agency?keyword=maceo&' \
-                     'location=&org_name=&service_area=smc&utf8=%E2%9C%93'
+                     'location=&org_name=&utf8=%E2%9C%93'
       expect(page).to have_link('San Maceo Agency', href: location_url)
     end
 
