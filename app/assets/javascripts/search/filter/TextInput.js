@@ -15,6 +15,8 @@ function () {
 
     if (_container) _initCloseButton();
 
+    // @param event [String] The event name to listen for. Supports 'change'.
+    // @param callback [Function] The function called when the event has fired.
     function addEventListener(event, callback) {
       _events[event] = callback;
     }
