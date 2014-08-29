@@ -1,5 +1,7 @@
 class AboutController < ApplicationController
   respond_to :html, :json
+  include CurrentLanguage
+  before_action :set_current_lang
 
   def index
     # Send an email based on the contents of the feedback form when submitted.

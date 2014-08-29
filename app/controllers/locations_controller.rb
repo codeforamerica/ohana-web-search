@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
-  include CurrentLanguage
   include Cacheable
+  include CurrentLanguage
+  before_action :set_current_lang
 
   def index
     translator = KeywordTranslator.new(

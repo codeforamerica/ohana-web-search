@@ -22,7 +22,7 @@ describe 'Home page content elements' do
   end
 
   it 'includes english language status' do
-    expect(find('#language-box')).to have_content('English')
+    expect(find('#search-top-utilities .language-box')).to have_content('English')
   end
 
   it 'displays headers for the general links' do
@@ -73,6 +73,12 @@ describe 'Home page footer elements' do
     within('#app-footer') do
       expect(find_link('Get this app')[:href]).
         to eq('https://github.com/codeforamerica/ohana-web-search')
+    end
+  end
+
+  it 'includes english language status' do
+    within('#app-footer') do
+      expect(find('.language-box')).to have_content('English')
     end
   end
 end

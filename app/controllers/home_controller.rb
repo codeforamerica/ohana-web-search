@@ -1,7 +1,4 @@
 class HomeController < ApplicationController
   include CurrentLanguage
-
-  def index
-    @current_lang = current_language
-  end
+  before_action :set_current_lang
 end
