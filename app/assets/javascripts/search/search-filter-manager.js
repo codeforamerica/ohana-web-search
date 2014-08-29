@@ -19,18 +19,13 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
     // Set up text input filters
     var keyword = TextInput.create('keyword-search-box');
-    keyword.addEventListener('change', _showNotice);
     var location = TextInput.create('location-options');
-    location.addEventListener('change', _showNotice);
     var agency = TextInput.create('org-name-options');
-    agency.addEventListener('change', _showNotice);
 
     // Set up checkbox filters
     var kind = CheckboxSubtractive.create('kind-options');
-    kind.addEventListener('change', _showNotice);
 
     var serviceArea = CheckboxSubtractive.create('service-area-options');
-    serviceArea.addEventListener('change', _showNotice);
 
     // Capture form submission.
     _searchForm = document.getElementById('form-search');
@@ -55,14 +50,6 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
     evt.preventDefault();
     evt.target.blur();
   }
-
-  function _showNotice() {
-    var notice = "<a id='update-results' style='cursor:pointer;'>Update search results</a>";
-    alert.show(notice, alert.type.INFO);
-    var trigger = document.getElementById('update-results');
-    trigger.onclick = function(){ _searchForm.submit(); };
-  }
-
 
   return {
     init:init
