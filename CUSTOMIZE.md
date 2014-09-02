@@ -59,11 +59,11 @@ Once your site is serving your own data from your own instance of Ohana API, and
 ```
 
 ## Caching
-To improve the performance of the app, you can configure two types of caching: one is caching the API requests via `Faraday::HttpCache` in [config/initializers/ohanapi.rb](https://github.com/codeforamerica/ohana-web-search/blob/master/config/initializers/ohanapi.rb), and the other is caching the entire results page and/or location details page.
+Depending on how many visitors your app gets, you might want to improve the performance of the app by configuring two types of caching: one is caching the API requests via `Faraday::HttpCache` in [config/initializers/ohanapi.rb](https://github.com/codeforamerica/ohana-web-search/blob/master/config/initializers/ohanapi.rb), and the other is caching the entire results page and/or location details page.
 
 API request caching is turned on by default, and will prevent the app from making the same API request for a [period of time specified by the API](https://github.com/codeforamerica/ohana-api/blob/master/config/application.example.yml#L82-89). By default, that is set to 5 minutes. That means that if a location's info has changed on the API side, if Ohana Web Search had already requested that same location, the latest data changes won't appear in Ohana Web Search until 5 minutes have passed since the first request was made.
 
-As for page caching, it is disabled by default. To turn it on, you will need to set the `ENABLE_CACHING` environment variable on your production server to `true`. If you're using Heroku, you can set it like this:
+As for page caching, it is disabled by default. If you determine that you need to cache pages, you can turn it on by setting the `ENABLE_CACHING` environment variable on your production server to `true`. If you're using Heroku, you can set it like this:
 ```
 $ heroku config:set ENABLE_CACHING=true -a your_heroku_app_name
 ```
@@ -95,3 +95,11 @@ To update the `updated_at` field, follow these steps:
    ```
    > quit
    ```
+
+Note that this is only one caching solution. For other caching strategies, visit the following resources:
+
+[https://devcenter.heroku.com/articles/http-caching-ruby-rails](https://devcenter.heroku.com/articles/http-caching-ruby-rails)
+
+[https://devcenter.heroku.com/articles/caching-strategies](https://devcenter.heroku.com/articles/caching-strategies)
+
+[http://railscasts.com/episodes/321-http-caching](http://railscasts.com/episodes/321-http-caching)
