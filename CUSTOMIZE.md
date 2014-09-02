@@ -57,3 +57,41 @@ Once your site is serving your own data from your own instance of Ohana API, and
 # User-agent: *
 # Disallow: /
 ```
+
+## Caching
+To improve the performance of the app, you can configure two types of caching: one is caching the API requests via `Faraday::HttpCache` in [config/initializers/ohanapi.rb](https://github.com/codeforamerica/ohana-web-search/blob/master/config/initializers/ohanapi.rb), and the other is caching the entire results page and/or location details page.
+
+API request caching is turned on by default, and will prevent the app from making the same API request for a [period of time specified by the API](https://github.com/codeforamerica/ohana-api/blob/master/config/application.example.yml#L82-89). By default, that is set to 5 minutes. That means that if a location's info has changed on the API side, if Ohana Web Search had already requested that same location, the latest data changes won't appear in Ohana Web Search until 5 minutes have passed since the first request was made.
+
+As for page caching, it is disabled by default. To turn it on, you will need to set the `ENABLE_CACHING` environment variable on your production server to `true`. If you're using Heroku, you can set it like this:
+```
+$ heroku config:set ENABLE_CACHING=true -a your_heroku_app_name
+```
+
+When page caching is enabled, it will store the page in Memcached via the [MemCachier add-on on Heroku](https://addons.heroku.com/memcachier) (by default) so that the next time any browser requests that same page, it will be served from cache instead of the server. In addition to the app storing the page in Memcached, most modern browsers will also store the page in their cache, and will send an `If-Modified-Since` date in the Request Headers to ask the server if a newer version exists.
+
+Because the `If-Modified-Since` date is based on the `updated_at` field returned by the API, any changes you make to the page will not appear on the website as long as the `updated_at` field hasn't changed, and as long as the browser is still fetching the page from its cache. In order to invalidate the cache for your site visitors, you'll need to flush the MemCachier cache, and update the `updated_at` field for all of the locations in the API.
+
+To flush the MemCachier cache on Heroku, run the following command:
+
+    heroku run -a your_app_name rails runner -e production Rails.cache.clear
+
+To update the `updated_at` field, follow these steps:
+
+1. Run the Rails console for your instance of the Ohana API (not Ohana Web Search) on Heroku:
+
+   ```
+   $ heroku run rails c -a your_api_app_name
+   ```
+
+2. Update all locations:
+
+   ```
+   > Location.find_each(&:touch)
+   ```
+
+3. Quit the console:
+
+   ```
+   > quit
+   ```
