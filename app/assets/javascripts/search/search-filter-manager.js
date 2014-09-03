@@ -1,9 +1,11 @@
 // Handles search filter functionality.
 define([
+  'search/filter/TextInput',
   'util/geolocation/geolocate-action',
+  'app/alert-manager',
   'domReady!'
 ],
-function (geo) {
+function (TextInput, geo, alert) {
   'use strict';
 
   // The form to submit.
@@ -11,8 +13,14 @@ function (geo) {
 
   // Main module initialization.
   function init() {
+
     // Set up geolocation button.
     geo.init('button-geolocate', _geolocationClicked);
+
+    // Set up text input filters
+    var keyword = TextInput.create('keyword-search-box');
+    var location = TextInput.create('location-options');
+    var agency = TextInput.create('org-name-options');
 
     // Capture form submission.
     _searchForm = document.getElementById('form-search');
@@ -30,9 +38,9 @@ function (geo) {
 
   // The clear filters button was clicked.
   function _resetClicked(evt) {
-    document.getElementById('keyword').value = '';
-    document.getElementById('location').value = '';
-    document.getElementById('org_name').value = '';
+    keyword.reset();
+    location.reset();
+    agency.reset();
 
     evt.preventDefault();
     evt.target.blur();

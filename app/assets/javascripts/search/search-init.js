@@ -1,11 +1,9 @@
 // Manages search initialization.
 require([
-  'search/search-filter-manager',
-  'search/input-manager'
+  'search/search-filter-manager'
 ],
-function (filter, input) {
+function (filter) {
   'use strict';
 
   filter.init();
-  input.init();
 });
