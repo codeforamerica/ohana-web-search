@@ -49,7 +49,7 @@ function (geo, alert) {
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alert.show("Your location could not be determined!");
+        alert.show("Your location could not be determined!", alert.type.ERROR);
         _locateTargetReady();
       }
     };
@@ -67,7 +67,7 @@ function (geo, alert) {
         _locateAction(results[0].formatted_address);
       } else {
         //console.log("Geocoder failed due to: " + status);
-        alert.show('Your location could not be determined!');
+        alert.show('Your location could not be determined!', alert.type.ERROR);
         _locateTargetReady();
       }
     });
