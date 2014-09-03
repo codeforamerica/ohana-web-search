@@ -802,12 +802,19 @@ body { top: 0px !important; }
 
 #geolocate-box
 {
-  text-align: right;
-}
-.home #geolocate-box
-{
   position: absolute;
   right: 0;
+}
+
+.inside #geolocate-box
+{
+  right: 10px;
+  top: 9px;
+  // Fixed max-height and overflow adjustment needed to
+  // handle a 1-pixel layout difference between Chrome and Firefox.
+  @include box-sizing(border-box);
+  max-height: 23px;
+  overflow: hidden;
 }
 
 #search-options
