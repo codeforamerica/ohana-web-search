@@ -22,6 +22,8 @@ function (geo, alert) {
     // If geolocation is supported, show geolocate button.
     if (navigator.geolocation) {
       _locateTarget = document.getElementById(target);
+      console.log(_locateTarget);
+      _locateTarget.classList.remove('hide');
       _locateTargetTextContainer = _locateTarget.querySelector('span');
       _locateAction = locateAction;
 
