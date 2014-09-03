@@ -13,8 +13,8 @@ You can see a running version of the application at
 [http://smc-connect.org](http://smc-connect.org).
 
 ## Stack Overview
-* Ruby version 2.1.1
-* Rails version 4.1.4
+* Ruby version 2.1.2
+* Rails version 4.1.5
 * Template Engines: HAML
 * Testing Frameworks: RSpec, Capybara and Poltergeist
 

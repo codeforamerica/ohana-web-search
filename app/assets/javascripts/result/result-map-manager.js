@@ -37,7 +37,6 @@ function (bitmask, markerManager) {
   var LARGE_SPIDERFY_MARKER_URL;
   var SMALL_SPIDERFY_MARKER_URL;
 
-
   // The spiderfier layer for handling overlapping markers.
   // See https://github.com/jawj/OverlappingMarkerSpiderfier
   var _spiderfier;

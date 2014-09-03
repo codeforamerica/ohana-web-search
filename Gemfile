@@ -9,7 +9,7 @@ gem 'rails', '~> 4.1.4'
 gem 'sass-rails', '~> 4.0.3'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '>= 1.1.7'
+gem 'compass-rails', '~> 2.0.0'
 
 # Font-awesome icons.
 gem 'font-awesome-rails'
