@@ -14,6 +14,7 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
   // Main module initialization.
   function init() {
+
     // Set up geolocation button.
     geo.init('button-geolocate', _geolocationClicked);
 
@@ -24,8 +25,10 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
     // Set up checkbox filters
     var kind = CheckboxSubtractive.create('kind-options');
+    kind.addEventListener('change', _showNotice);
 
     var serviceArea = CheckboxSubtractive.create('service-area-options');
+    serviceArea.addEventListener('change', _showNotice);
 
     // Capture form submission.
     _searchForm = document.getElementById('form-search');
@@ -49,6 +52,15 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
     evt.preventDefault();
     evt.target.blur();
+  }
+
+  function _showNotice() {
+    var notice = "<a id='update-results' style='cursor:pointer;'>" +
+                 "<i class='fa fa-refresh'></i> Update search results!" +
+                 '</a>';
+    alert.show(notice, alert.type.INFO);
+    var trigger = document.getElementById('update-results');
+    trigger.onclick = function(){ _searchForm.submit(); };
   }
 
   return {
