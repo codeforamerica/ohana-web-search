@@ -231,19 +231,22 @@
 {
   > .filter-input-group > input
   {
-    @include rounded-except(lower-right);
+    @include rounded-except(upper-right);
   }
 
   .input-search-filter-option
   {
-    top: -1px;
     font-size: $font_size_95;
     border: none;
     margin: 0;
+    padding: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 23px;
     background: rgba($white, 0.3);
     border: 1px solid rgba($white, 0);
     cursor: pointer;
-    @include rounded-except(top);
+    @include rounded-except(bottom);
 
     >span
     {
@@ -260,7 +263,7 @@
     {
       background: $search-button-hover-background;
       border: 1px solid rgba($input-border-color,0.2);
-      border-top: 1px solid rgba($white, 0.3);
+      border-bottom: 1px solid rgba($white, 0.3);
 
       .fa
       {
