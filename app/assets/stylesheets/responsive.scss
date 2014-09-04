@@ -30,28 +30,28 @@
         {
           position: relative;
           @include border-radius(4px);
-          border: 1px solid darkest($blue);
-          background: light($green);
+          border: 1px solid $primary-dark;
+          background: $accentA-light;
           margin-top: 10px;
 
           >span
           {
-            text-shadow: 1px 4px 6px light($green), 0 0 0 $black, 1px 4px 6px light($green);
+            text-shadow: 1px 4px 6px $accentA-light, 0 0 0 $black, 1px 4px 6px $accentA-light;
           }
 
           &:hover
           {
-            background: shade(light($green),5);
+            background: shade($accentA-light,5);
 
             >span
             {
-              color: darkest($purple);
+              color: $button-small-color;
               text-shadow: none;
             }
 
             >.fa
             {
-              color: darkest($purple);
+              color: $button-small-color;
             }
           }
         }
@@ -112,8 +112,8 @@
     {
       display: block;
       margin: 0 auto;
-      width: 231px;
       padding-top: 15px;
+      text-align: center;
     }
 
     h2
@@ -228,7 +228,7 @@
             margin: 0;
             margin-top: 10px;
             @include border-radius(4px);
-            border: 1px solid darkest($blue);
+            border: 1px solid $primary-dark;
         }
       }
 
@@ -358,11 +358,6 @@
       {
         width: 100%;
       }
-    }
-
-    #keyword-search-box
-    {
-      padding-bottom: 10px;
     }
 
     #results-entries

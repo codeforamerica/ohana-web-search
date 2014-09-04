@@ -1,0 +1,238 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:17:45 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Total-Count:
+      - '343'
+      X-Total-Pages:
+      - '343'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5a3ceeb6-7f8c-4fa5-a0a2-0d36871fd563
+      X-Runtime:
+      - '0.020158'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
+        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:17:45 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=soccer
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:17:46 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=soccer&page=3>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=soccer&page=2>;
+        rel="next"
+      X-Total-Count:
+      - '3'
+      X-Total-Pages:
+      - '3'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"91cec380a4d60cf2f573b5e9570a7890"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 225cff22-65a0-42fb-8a1f-6679faa9a9b4
+      X-Runtime:
+      - '0.115637'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1673,"admin_emails":[],"coordinates":[-122.4766884,37.730927],"description":"Offers
+        licensed elementary school-age childcare at several sites, preschool, youth
+        activities, residential camp, day camp and special interest activities including
+        programming for children of single parents and family nights. Also offers
+        mentoring, counseling and tutoring services.   The Seniors Drop-In Center
+        provides information and referral, recreational and cultural activities, health
+        screening, blood pressure check-ups, adaptive exercise for stroke survivors,
+        travel program, annual tax preparation assistance, Christmas Day party and
+        companionship for single seniors, and hot lunch served weekdays at 11:45 am.
+        The Senior Program is at 3150 - 20th Avenue, San Francisco. The branch is
+        also a full facility fitness center with an approach to total wellness offering
+        aerobics, swimming, youth sports, stretching and toning, strength training,
+        basketball, martial arts, yoga, tai chi, water aerobics, pilates, dance, youth
+        dance and soccer. Childcare is available for parents while they workout.","kind":"Other","latitude":37.730927,"longitude":-122.4766884,"name":"Stonestown
+        Family YMCA","short_desc":"Athletic/fitness programs for youth/adults, drop-in
+        senior center, meal site, day camp, after school care for children.","slug":"stonestown-family-ymca","slugs":["stonestown-family-ymca"],"updated_at":"2014-05-24T14:07:59.341-07:00","urls":["http://www.ymcasf.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca","address":{"id":1397,"street":"333
+        Eucalyptus Drive","city":"San Francisco","state":"CA","zip":"94132"},"organization":{"id":1341,"name":"YMCA
+        of San Francisco","slug":"ymca-of-san-francisco","_slugs":["ymca-of-san-francisco"],"slugs":["ymca-of-san-francisco"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco/locations"},"phones":[{"id":2449,"department":null,"extension":null,"number":"415
+        242-7100","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:17:46 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&kind=Other
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:17:47 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=46>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=2>;
+        rel="next"
+      X-Total-Count:
+      - '46'
+      X-Total-Pages:
+      - '46'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"3791e46654238b883b59487eb975bec4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5c4118a1-9a1c-4a21-8ba7-aeca5e8bb04d
+      X-Runtime:
+      - '0.022572'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1373,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Provides
+        training and job placement to eligible people age 55 or over who meet certain
+        income qualifications. An income of 125% of poverty level or less is required
+        for subsidized employment and training. (No income requirements for job matchup
+        program.) If a person seems likely to be qualified after a preliminary phone
+        call or visit, he or she must complete an application at this office. Staff
+        will locate appropriate placements for applicants, provide orientation and
+        on-the-job training and assist with finding a job outside the program. Any
+        county resident, regardless of income, age 55 or over has access to the program,
+        job developers and the job bank. Also provides referrals to classroom training.
+        Formerly known as Family Service Agency of San Mateo County, Senior Employment
+        Services.","kind":"Other","latitude":37.5639394,"longitude":-122.3263232,"name":"Second
+        Career Employment Program","short_desc":"Provides training and job placement
+        to eligible persons age 55 or over. All persons age 55 or over have access
+        to information in the program''s job bank.","slug":"second-career-employment-program","slugs":["second-career-employment-program"],"updated_at":"2014-05-24T14:07:51.207-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program","address":{"id":1113,"street":"24
+        Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"organization":{"id":1297,"name":"Peninsula
+        Family Service","slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","_slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731/locations"},"phones":[{"id":1851,"department":null,"extension":null,"number":"650
+        403-4300","number_type":null,"vanity_number":null},{"id":1852,"department":null,"extension":"4385","number":"650
+        403-4300","number_type":null,"vanity_number":null},{"id":1853,"department":null,"extension":"4322
+        (English)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1854,"department":null,"extension":"4392
+        (Cantonese or Mandarin)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1855,"department":null,"extension":"4363
+        (Filipino)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1856,"department":null,"extension":"4322
+        (LGBT (Lesbian, Gay, Bisexual, Transgender) community)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1857,"department":null,"extension":"4321
+        (Spanish / La Esperanza Vive)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1858,"department":null,"extension":"4500","number":"650
+        403-4300","number_type":null,"vanity_number":null},{"id":1859,"department":null,"extension":"4100","number":"650
+        403-4300","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:17:47 GMT
+recorded_with: VCR 2.9.2

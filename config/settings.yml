@@ -73,8 +73,8 @@ homepage_links:
       - Health Insurance
       - Medi-Cal
       - Medicare
-      - SFMNP/Food Vouchers For Seniors
-      - 'WIC/Women, Infants, & Children'
+      - SFMNP (Food vouchers for seniors)
+      - 'WIC (Women, Infants, & Children)'
 
     Children, Teens, & Families:
       - Abuse Prevention
@@ -172,35 +172,6 @@ homepage_links:
 #       - aca
 #     custom: component/info_box/example_custom_template
 info_box_terms:
-  wic:
-    synonyms:
-      - wic
-      - 'women, infants, and children'
-      - 'women, infants, & children'
-      - assistance for mothers
-    title: 'Women, Infants, and Children'
-    description:
-      'Women, Infants, and Children (WIC)
-      provides assistance for low-income pregnant, breastfeeding, and
-      non-breastfeeding postpartum women, and to eligible infants and
-      children up to age 5.'
-    url: http://www.fns.usda.gov/wic
-
-  sfmnp:
-    synonyms:
-      - sfmnp
-      - senior farmers' market nutrition program
-      - senior farmers market nutrition program
-      - food vouchers for seniors
-      - food vouchers
-    title: Senior Farmers' Market Nutrition Program
-    description:
-      "Senior Farmers' Market Nutrition Program (SFMNP)
-      provides low-income seniors with coupons that can be exchanged for eligible
-      foods at farmers' markets, roadside stands, and community-supported
-      agriculture programs."
-    url: http://www.fns.usda.gov/sfmnp
-
   calfresh:
     synonyms:
       - snap
@@ -221,6 +192,47 @@ info_box_terms:
       "Market Match offers farmers’ market customers an extra $5 when they spend at
       least $10 on their CalFresh EBT card at participating farmer's markets."
     url: http://www.pcfma.com/pcfma_marketmatch.php
+
+  sfmnp:
+    synonyms:
+      - sfmnp
+      - senior farmers' market nutrition program
+      - senior farmers market nutrition program
+      - food vouchers for seniors
+      - food vouchers
+    title: Senior Farmers' Market Nutrition Program
+    description:
+      "Senior Farmers' Market Nutrition Program (SFMNP)
+      provides low-income seniors with coupons that can be exchanged for eligible
+      foods at farmers' markets, roadside stands, and community-supported
+      agriculture programs."
+    url: http://www.fns.usda.gov/sfmnp
+
+  snap:
+    synonyms:
+      - snap
+      - food stamps
+      - calfresh
+    title: SNAP
+    description: >
+      Supplemental Nutrition Assistance Program offers nutrition assistance to
+      eligible, low-income individuals and families, and provides economic
+      benefits to communities.
+    url: http://www.fns.usda.gov/snap/
+
+  wic:
+    synonyms:
+      - wic
+      - 'women, infants, and children'
+      - 'women, infants, & children'
+      - assistance for mothers
+    title: 'Women, Infants, and Children'
+    description:
+      'Women, Infants, and Children (WIC)
+      provides assistance for low-income pregnant, breastfeeding, and
+      non-breastfeeding postpartum women, and to eligible infants and
+      children up to age 5.'
+    url: http://www.fns.usda.gov/wic
 
   custom_info_box:
     synonyms:
@@ -284,6 +296,8 @@ site_title: SMC-Connect
 #
 ###########################################
 test:
+  admin_site: http://admin.smc-connect.org
+
   feedback_email:
     to:
       - ohanapi@codeforamerica.org
@@ -293,25 +307,40 @@ test:
   homepage_links:
     general:
       Government Assistance:
+        - CalFresh
         - Health Insurance
     emergency:
       Reporting:
         - Domestic Violence
 
   info_box_terms:
-    wic:
+    calfresh:
       synonyms:
-        - wic
-        - 'women, infants, and children'
-        - 'women, infants, & children'
-        - assistance for mothers
-      title: 'Women, Infants, and Children'
+        - snap
+        - food stamps
+        - calfresh
+      title: CalFresh
       description:
-        'Women, Infants, and Children (WIC)
-        provides assistance for low-income pregnant, breastfeeding, and
-        non-breastfeeding postpartum women, and to eligible infants and
-        children up to age 5.'
-      url: http://www.fns.usda.gov/wic
+        'Known federally as SNAP (Supplemental Nutrition Assistance Program),
+        CalFresh offers nutrition assistance to eligible,
+        low income individuals and families and provides economic benefits to communities.'
+      url: http://www.calfresh.ca.gov
+
+    custom_info_box:
+      synonyms:
+        - health care reform
+        - aca
+      custom: component/info_box/health_care_reform_template
+
+    market_match:
+      synonyms:
+        - market match
+      title: Market Match
+      description:
+        "Market Match offers farmers’ market customers an extra $5 when they spend at
+        least $10 on their CalFresh EBT card at participating farmer's markets."
+      url: http://www.pcfma.com/pcfma_marketmatch.php
+
     sfmnp:
       synonyms:
         - sfmnp
@@ -325,24 +354,39 @@ test:
         provides low-income seniors with coupons that can be exchanged for eligible
         foods at farmers' markets, roadside stands, and community-supported
         agriculture programs."
-    calfresh:
+      url: http://www.fns.usda.gov/sfmnp
+
+    snap:
       synonyms:
+        - snap
         - food stamps
         - calfresh
-      title: CalFresh
-      description: Known federally as SNAP
-    market_match:
+      title: SNAP
+      description: >
+        Supplemental Nutrition Assistance Program offers nutrition assistance to
+        eligible, low-income individuals and families, and provides economic
+        benefits to communities.
+      url: http://www.fns.usda.gov/snap/
+
+    wic:
       synonyms:
-        - market match
-      title: Market Match
+        - wic
+        - 'women, infants, and children'
+        - 'women, infants, & children'
+        - assistance for mothers
+      title: 'Women, Infants, and Children'
       description:
-        "Market Match offers farmers’ market customers an extra $5 when they spend at
-        least $10 on their CalFresh EBT card at participating farmer's markets."
-    custom_info_box:
+        'Women, Infants, and Children (WIC)
+        provides assistance for low-income pregnant, breastfeeding, and
+        non-breastfeeding postpartum women, and to eligible infants and
+        children up to age 5.'
+      url: http://www.fns.usda.gov/wic
+
+    zoo:
       synonyms:
-        - health care reform
-        - aca
-      custom: component/info_box/example_custom_template
+        - zoo
+      title: SMC Zoo
+      description: Bees and birds and flowers
 
   language_links:
     - 'English:en'

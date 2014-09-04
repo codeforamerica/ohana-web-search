@@ -1,9 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'sprockets/railtie'
 
 SETTINGS = YAML.load(File.read(File.expand_path('../settings.yml', __FILE__)))
 SETTINGS.merge! SETTINGS.fetch(Rails.env, {})
@@ -15,8 +15,7 @@ Bundler.require(*Rails.groups)
 
 module OhanaWebSearch
   class Application < Rails::Application
-
-    # don't generate RSpec tests for views and helpers
+    # Don't generate RSpec tests for views and helpers.
     config.generators do |g|
 
       g.test_framework :rspec
@@ -31,9 +30,6 @@ module OhanaWebSearch
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # Precompile additional assets.
-    config.assets.precompile += %w(vendor ie8 ie9)
 
     # Tell Internet Explorer to use compatibility mode.
     # 'edge' mode tells Internet Explorer to display content in the highest mode available.

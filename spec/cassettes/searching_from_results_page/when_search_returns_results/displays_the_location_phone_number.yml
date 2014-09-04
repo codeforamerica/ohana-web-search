@@ -1,0 +1,144 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:05 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Total-Count:
+      - '343'
+      X-Total-Pages:
+      - '343'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3c5311c9-f271-4c34-8dc1-aa71e5976c33
+      X-Runtime:
+      - '0.021269'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
+        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:05 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=maceo&location=&org_name=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:06 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Total-Count:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      X-Current-Page:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"fe71343a7f7898054943d9b7677956ed"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 501d9f43-b18c-4033-a09d-dbf3c447361d
+      X-Runtime:
+      - '0.022478'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1689,"admin_emails":[],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":42.878036,"longitude":-73.1968254,"name":"San
+        Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","slugs":["san-maceo-agency"],"updated_at":"2014-08-15T14:06:28.664-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":1413,"street":"2013
+        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"organization":{"id":1344,"name":"SanMaceo
+        Example Agency.","slug":"sanmaceo-example-agency","_slugs":["sanmaceo-example-agency"],"slugs":["sanmaceo-example-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":2465,"department":"Information","extension":null,"number":"650
+        372-6200","number_type":"TTY","vanity_number":null},{"id":2466,"department":"Reservations","extension":null,"number":"650
+        372-6200","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:06 GMT
+recorded_with: VCR 2.9.2

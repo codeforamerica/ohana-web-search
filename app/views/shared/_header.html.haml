@@ -1,0 +1,30 @@
+%header#content-header
+  %h1#logo
+    %a{ href: '/', target: '_self' }
+      = image_tag(SETTINGS[:site_logo], size: '231x42', alt: "#{SETTINGS[:site_title]} Logo")
+  %h2= t('branding.header', location: t('branding.location'))
+  %nav
+    %ul
+      %li
+        %a#about-btn.popup-trigger{ href: '/about#about-box' } About
+      %li
+        %a#contribute-btn.popup-trigger{ href: '/about#contribute-box', target: '_self' } Contribute
+      %li
+        %a#feedback-btn.popup-trigger{ href: '/about#feedback-box', target: '_self' } Feedback
+  .clearfix
+
+-# Hide popups on /about because they are redundant to the content on that page.
+- if controller_name != 'about'
+  %aside#popups
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/about'
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/contribute'
+    .popup-container.hide
+      .arrow
+        %span
+      = render 'component/about/feedback'

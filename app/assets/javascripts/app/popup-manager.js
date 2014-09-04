@@ -1,173 +1,167 @@
-// manages behavior of popups
-define(['util/util','app/feedback-form-manager'/*,'enquire'*/],function(util,feedback/*enquire*/) {
+// Manages behavior of popups.
+define([
+  'util/util',
+  'app/feedback-form-manager'
+],
+function (util, feedback) {
   'use strict';
 
-  // PRIVATE PROPERTIES
-  var _popups; // array of popups on the page
-  var _lastPopup; // the last popup to be shown
+  // List of popups on the page.
+  var _popups;
+
+  // The last popup to be shown.
+  var _lastPopup;
   var _lastTrigger;
 
-  // PUBLIC METHODS
-  function init()
-  {
-    if (!_isTranslated())
-    {
+  // Padding set on article > div.
+  var PADDING = 20;
+
+  function init() {
+    if (!_isTranslated()) {
       _addPopups();
       feedback.init();
-      // try/catch added to ignore IE errors
-      /*
-      window.enquire.register("screen and (max-width: 767px)", {
-          match   : _removePopups,
-          unmatch : _addPopups
-      });
-      */
     }
   }
 
-  // Check if the page is currently translated using Google Translation
-  function _isTranslated()
-  {
-    var translate = util.getQueryParams()['translate'];
-    if (translate && translate !== "en") return true;
-    var googtrans = util.getCookie("googtrans");
-    if (googtrans && googtrans !== "/en/en") return true;
+  // Check if the page is currently translated using Google Translation.
+  function _isTranslated() {
+    var translate = util.getQueryParams().translate;
+    if (translate && translate !== 'en')
+      return true;
+    var googtrans = util.getCookie('googtrans');
+    if (googtrans && googtrans !== '/en/en')
+      return true;
     return false;
   }
 
-
-  // PRIVATE METHODS
-
-  // adds hooks for triggering popups present on the page
-  function _addPopups()
-  {
-    _popups = document.querySelectorAll(".popup-trigger");
+  // Adds hooks for triggering popups present on the page.
+  function _addPopups() {
+    _popups = document.querySelectorAll('.popup-trigger');
 
     var curr;
-    for (var p=0; p < _popups.length; p++)
+    for (var p = 0, len = _popups.length; p < len; p++)
     {
       curr = _popups[p];
-      curr.addEventListener("click", _popupHandler, false);
+      curr.addEventListener('click', _popupHandler, false);
       curr.classList.add('active');
     }
   }
 
-  // removes popups and hooks
-  function _removePopups()
-  {
+  // Removes popups and hooks.
+  /* Upcomment the following to provide a method to remove the popups.
+  function _removePopups() {
     _closeLastPopup();
     _lastPopup = null;
     _lastTrigger = null;
-    _popups = document.querySelectorAll(".popup-trigger");
+    _popups = document.querySelectorAll('.popup-trigger');
 
     var curr;
-    for (var p=0; p < _popups.length; p++)
-    {
+    for (var p = 0, len = _popups.length; p < len; p++) {
       curr = _popups[p];
-      curr.removeEventListener("click", _popupHandler, false);
+      curr.removeEventListener('click', _popupHandler, false);
       curr.classList.remove('active');
     }
   }
+  */
 
-  // handler for when a popup link triggers a popup
-  function _popupHandler(evt)
-  {
+  // Handler for when a popup link triggers a popup.
+  function _popupHandler(evt) {
     evt.preventDefault();
 
     var trigger = evt.target;
-    var thisPopup = document.querySelector( trigger.hash );
+    var thisPopup = document.querySelector(trigger.hash);
 
     _show(thisPopup,trigger);
-    window.addEventListener("resize", _resizeHandler, true);
+    window.addEventListener('resize', _resizeHandler, true);
 
     return false;
   }
 
-  // handler for when the page is resized
-  function _resizeHandler(evt)
-  {
-    _show(_lastPopup,_lastTrigger);
+  // Handler for when the page is resized.
+  function _resizeHandler() {
+    _show(_lastPopup, _lastTrigger);
   }
 
-  // show a popup
-  // @param popup Reference to the popup HTML to show
-  // @param trigger Reference to the link trigger HTML
-  function _show(popup,trigger)
-  {
+  // Show a popup.
+  // @param popup Reference to the popup HTML to show.
+  // @param trigger Reference to the link trigger HTML.
+  function _show(popup, trigger) {
     _lastTrigger = trigger;
 
     var container = popup.parentNode;
     var arrow = container.children[0];
 
-    // get the window dimensions
+    // Get the window dimensions.
     var winDim = util.getWindowRect();
 
-    // find the position offset values of the link that triggered the popup
+    // Find the position offset values of the link that triggered the popup.
     var offset = util.getOffset(trigger);
-    var offsetY = (offset.top+trigger.offsetHeight);
-    var offsetX = (offset.left);
+    var offsetY = offset.top+trigger.offsetHeight;
+    var offsetX = offset.left;
 
-    // offset needed for CSS adjustments of rotating arrow inside a masking box
-    // to move popup up/down, adjust the arrowOffset.top value, which will
-    // cascade down to the popupOffset
-    var arrowOffset = {'top':-6,'left':-14};
-    var popupOffset = {'top':15+arrowOffset.top};
+    // Offset needed for CSS adjustments of rotating arrow.
+    // To move popup up/down, adjust the arrowOffset.top value, which will
+    // cascade down to the popupOffset.
+    var arrowOffset = { 'top': -6, 'left': -14 };
+    var popupOffset = { 'top': 15 + arrowOffset.top };
 
-    // position the arrow relative to the triggering link
-    arrow.style.top = (offsetY+arrowOffset.top)+"px";
-    arrow.style.left = (offsetX+arrowOffset.left+(trigger.offsetWidth/2))+"px";
+    // Position the arrow relative to the triggering link.
+    arrow.style.top = (offsetY + arrowOffset.top) + 'px';
+    arrow.style.left = (offsetX +
+                        arrowOffset.left +
+                        (trigger.offsetWidth/2)) + 'px';
 
-    // position the popup relative to the window
-    popup.style.top = (offsetY+popupOffset.top)+"px";
+    // Position the popup relative to the window.
+    popup.style.top = (offsetY + popupOffset.top) + 'px';
 
-    var cssWidth = util.getStyle(popup,"width");
-    if ( (offsetX+Number(cssWidth.substring(0,cssWidth.length-2))) > winDim.width)
-    {
-      popup.style.right = "10px";
+    var cssWidth = util.getStyle(popup, 'width');
+    var offsetWidth = offsetX +
+                      Number(cssWidth.substring(0, cssWidth.length - 2));
+
+    if (offsetWidth > winDim.width) {
+      popup.style.right = '10px';
+    } else {
+      popup.style.left = offsetX + 'px';
     }
-    else
-    {
-      popup.style.left = (offsetX)+"px";
-    }
 
-    if (_lastPopup && _lastPopup !== popup) _lastPopup.parentNode.classList.add("hide");
+    if (_lastPopup && _lastPopup !== popup)
+      _lastPopup.parentNode.classList.add('hide');
     _lastPopup = popup;
-    _lastPopup.parentNode.classList.toggle("hide");
+    _lastPopup.parentNode.classList.toggle('hide');
 
-    // set height to default in order to check against window height effectively
-    popup.style.height = "auto";
-    var padding = 20; // padding set on article > div
-    if ( (offsetY+popup.offsetHeight+padding) > winDim.height)
-    {
-      popup.style.height = (winDim.height-offsetY-padding)+"px";
-    }
-    else
-    {
-      popup.style.height = "auto";
+    // Set height to default in order to check against window height.
+    popup.style.height = 'auto';
+
+    var padding = PADDING;
+    if ( (offsetY + popup.offsetHeight + padding) > winDim.height) {
+      popup.style.height = (winDim.height - offsetY - padding) + 'px';
+    } else {
+      popup.style.height = 'auto';
     }
 
-    popup.style.zIndex = "9999";
-    arrow.style.zIndex = "10000";
+    popup.style.zIndex = '9999';
+    arrow.style.zIndex = '10000';
 
-    // attach to content element, as document directly doesn't work correctly on Mobile Safari
-    document.getElementById("content").addEventListener("mousedown", _closeHandler, true);
+    // Attach to content element, as document directly doesn't work correctly
+    // on Mobile Safari.
+    var content = document.getElementById('content');
+    content.addEventListener('mousedown', _closeHandler, true);
   }
 
-  // handler for closing the popup
-  function _closeHandler(evt)
-  {
+  // Handler for closing the popup.
+  function _closeHandler(evt) {
     var el = evt.target;
     if (el.classList.contains('close-button'))
-    {
       _closeLastPopup();
-    }
   }
 
-  // close the last opened popup
-  function _closeLastPopup()
-  {
-    if (_lastPopup) _lastPopup.parentNode.classList.add("hide");
-    document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
-    window.removeEventListener("resize", _resizeHandler, true);
+  // Close the last opened popup.
+  function _closeLastPopup() {
+    if (_lastPopup)
+      _lastPopup.parentNode.classList.add('hide');
+    var content = document.getElementById('content');
+    content.removeEventListener('mousedown', _closeHandler, true);
+    window.removeEventListener('resize', _resizeHandler, true);
     feedback.hide();
   }
 

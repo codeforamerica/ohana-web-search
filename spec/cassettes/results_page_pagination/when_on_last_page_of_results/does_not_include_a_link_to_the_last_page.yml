@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=yoga&page=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:45 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=yoga&page=1>;
+        rel="first", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=yoga&page=4>;
+        rel="prev"
+      X-Total-Count:
+      - '5'
+      X-Total-Pages:
+      - '5'
+      X-Current-Page:
+      - '5'
+      X-Previous-Page:
+      - '4'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"d952c24212c0927bf79b5be70cca59ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 97f6df62-17a1-4c79-b343-96f112ba1de4
+      X-Runtime:
+      - '0.022894'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1674,"admin_emails":[],"coordinates":[-122.2268014,37.4702031],"description":"Provides
+        social and recreational services for persons age three months or over. Services
+        include a full aquatic program (in an indoor heated pool), fitness activities,
+        active older adults programs and community programs. The Aspire Adaptive Swim
+        Program is offered for developmentally or physically disabled persons of all
+        ages. The arthritis water exercise is sanctioned by the Arthritis Foundation.  Sequoia
+        offers group exercise, Zumba, yoga, Pilates and Tai-Chi,  weight training
+        equipment and fitness equipment. Personal trainers are available to help with
+        individualized programs. Youth programs include swim lessons, basketball,
+        martial arts, soccer, dance, preschool sports program, Mommy \u0026 Me water
+        classes and more. Youth leadership opportunities are available as well as
+        adult and youth  volunteer opportunities. Offers summer and intersessions
+        day camp for children age 5-14, Monday-Friday, 7:30-6. Call for dates. Offers
+        a free program for cancer survivors, \"Living Strong, Living Well\".","kind":"Other","latitude":37.4702031,"longitude":-122.2268014,"name":"Sequoia
+        Branch","short_desc":"Provides social and recreational programs for all ages.","slug":"sequoia-branch","slugs":["sequoia-branch"],"updated_at":"2014-05-24T14:07:59.396-07:00","urls":["http://www.ymcasv.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/sequoia-branch/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/sequoia-branch/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/sequoia-branch/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/sequoia-branch","address":{"id":1398,"street":"1445
+        Hudson Street","city":"Redwood City","state":"CA","zip":"94061"},"organization":{"id":1342,"name":"YMCA
+        of Silicon Valley","slug":"ymca-of-silicon-valley","_slugs":["ymca-of-silicon-valley"],"slugs":["ymca-of-silicon-valley"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-silicon-valley","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-silicon-valley/locations"},"phones":[{"id":2450,"department":null,"extension":null,"number":"650
+        368-4168","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:45 GMT
+recorded_with: VCR 2.9.2

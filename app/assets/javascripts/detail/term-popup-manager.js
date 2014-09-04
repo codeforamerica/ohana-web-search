@@ -9,15 +9,15 @@ define(function() {
   // PUBLIC METHODS
   function init()
   {
-    popups = document.querySelectorAll(".term-popup-container");
+    popups = document.querySelectorAll('.term-popup-container');
 
-    for (var p=0; p < popups.length; p++)
+    for (var p = 0; p < popups.length; p++)
     {
       var popup = popups[p].firstElementChild;
       var term = popups[p].lastElementChild;
       if ((/\S/.test(popup.textContent)))
       {
-        term.addEventListener("mousedown", _popupHandler, false);
+        term.addEventListener('mousedown', _popupHandler, false);
         term.classList.add('active');
       }
     }
@@ -27,20 +27,20 @@ define(function() {
   function _popupHandler(evt)
   {
     var thisPopup = (evt.target).parentElement.firstElementChild;
-    if (lastPopup && lastPopup !== thisPopup) lastPopup.classList.add("hide");
+    if (lastPopup && lastPopup !== thisPopup) lastPopup.classList.add('hide');
     lastPopup = thisPopup;
-    lastPopup.classList.toggle("hide");
-    lastPopup.style.top = (lastPopup.offsetHeight*-1)+"px";
-    document.getElementById("content").addEventListener("mousedown", _closeHandler, true);
+    lastPopup.classList.toggle('hide');
+    lastPopup.style.top = (lastPopup.offsetHeight * -1) + 'px';
+    document.getElementById('content').addEventListener('mousedown', _closeHandler, true);
   }
 
   function _closeHandler(evt)
   {
-    if (evt.target.attributes["href"] === undefined && !evt.target.classList.contains("popup-term"))
+    if (evt.target.attributes['href'] === undefined && !evt.target.classList.contains('popup-term'))
     {
-      lastPopup.classList.add("hide");
-      document.removeEventListener("mousedown", _closeHandler, true);
-      document.getElementById("content").removeEventListener("mousedown", _closeHandler, true);
+      lastPopup.classList.add('hide');
+      document.removeEventListener('mousedown', _closeHandler, true);
+      document.getElementById('content').removeEventListener('mousedown', _closeHandler, true);
     }
   }
 

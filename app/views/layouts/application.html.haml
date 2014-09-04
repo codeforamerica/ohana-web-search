@@ -1,0 +1,19 @@
+!!!
+/[if lt IE 7] <html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+/[if IE 7]    <html class='no-js lt-ie9 lt-ie8'>
+/[if IE 8]    <html class='no-js lt-ie9'>
+<!--[if gt IE 8]><!-->
+%html.no-js{ lang: 'en' }
+  <!--<![endif]-->
+  %head
+    = render 'shared/head'
+
+  %body{class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}"}
+    %section#content
+      = render 'shared/alert'
+      = render 'shared/header'
+      %main.main= yield
+      = render 'shared/footer'
+
+    - if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present?
+      = render 'shared/google_analytics/event_tracking'

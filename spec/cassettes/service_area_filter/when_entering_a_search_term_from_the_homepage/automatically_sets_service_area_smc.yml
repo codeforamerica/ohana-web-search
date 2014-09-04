@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=food&location=&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:18 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=food&location=&page=27&service_area=smc&utf8=%E2%9C%93>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=food&location=&page=2&service_area=smc&utf8=%E2%9C%93>;
+        rel="next"
+      X-Total-Count:
+      - '27'
+      X-Total-Pages:
+      - '27'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"72b1a207372759400d27904930354b14"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4b853d69-5601-4cf4-8ba4-65437ae2ad87
+      X-Runtime:
+      - '0.062181'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1713,"admin_emails":[],"coordinates":[-122.2141324,37.4773738],"description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","kind":"Human
+        Services","latitude":37.4773738,"longitude":-122.2141324,"name":"Redwood City
+        Office","short_desc":"Provides social services eligibility determination and
+        assistance for Health Coverage, CalFresh, CalWORKs and General Assistance
+        and Children and Family Services.","slug":"redwood-city-office-2500-middlefield-rd","slugs":["redwood-city-office-2500-middlefield-rd"],"updated_at":"2014-05-24T14:08:31.443-07:00","urls":["http://www.smchsa.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-office-2500-middlefield-rd/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-office-2500-middlefield-rd/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-office-2500-middlefield-rd/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-office-2500-middlefield-rd","address":{"id":1436,"street":"2500
+        Middlefield Rd.","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1310,"name":"San
+        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","_slugs":["san-mateo-county-human-services-agency"],"slugs":["san-mateo-county-human-services-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2470,"department":"Economic
+        Self-Sufficiency","extension":null,"number":"800-223-8383","number_type":null,"vanity_number":null},{"id":2471,"department":"Children
+        and Family Services","extension":null,"number":"650-802-7922","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:18 GMT
+recorded_with: VCR 2.9.2

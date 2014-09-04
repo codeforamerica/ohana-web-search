@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:17:58 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Total-Count:
+      - '343'
+      X-Total-Pages:
+      - '343'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 07284100-4aba-4fd2-8393-13db64853080
+      X-Runtime:
+      - '0.020483'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
+        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:17:58 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=clinic&location=&org_name=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:01 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=clinic&location=&org_name=&page=42&utf8=%E2%9C%93>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=clinic&location=&org_name=&page=2&utf8=%E2%9C%93>;
+        rel="next"
+      X-Total-Count:
+      - '42'
+      X-Total-Pages:
+      - '42'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"c397695b2c4383557ec5d1c088878de4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2370c5ab-6d37-4859-8b81-9b5f5b901a5a
+      X-Runtime:
+      - '0.233783'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1622,"admin_emails":[],"coordinates":[-122.180129,37.4343609],"description":"Assists
+        persons needing medical care to determine the appropriate clinic and set up
+        an appointment. Many clinics require referral from another doctor. These include
+        (but are not limited to) allergy, cardiology, chest, gastrointestinal, genetic
+        counseling, neurology, oncology, orthopedic, sleep disorders and diagnostic.
+        Persons not having a personal physician can be examined in the general medical
+        clinic and are directed to a specialty clinic if appropriate.   Specialty
+        clinics include dermatology, eye, internal medicine and psychiatric outpatient,
+        among others.","kind":"Human Services","latitude":37.4343609,"longitude":-122.180129,"name":"Stanford
+        Hospital and Clinics., Clinic Information","short_desc":"Assists persons needing
+        medical care to determine the appropriate clinic and set up an appointment.","slug":"stanford-hospital-and-clinics-clinic-information","slugs":["stanford-hospital-and-clinics-clinic-information"],"updated_at":"2014-05-24T14:08:29.200-07:00","urls":[],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stanford-hospital-and-clinics-clinic-information/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stanford-hospital-and-clinics-clinic-information/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stanford-hospital-and-clinics-clinic-information/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stanford-hospital-and-clinics-clinic-information","address":{"id":1355,"street":"300
+        Pasteur Drive","city":"Stanford","state":"CA","zip":"94305"},"organization":{"id":1334,"name":"Stanford
+        University Medical Center","slug":"stanford-university-medical-center","_slugs":["stanford-university-medical-center"],"slugs":["stanford-university-medical-center"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/stanford-university-medical-center","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/stanford-university-medical-center/locations"},"phones":[{"id":2335,"department":"24
+        hours daily","extension":null,"number":"800 756-9000","number_type":null,"vanity_number":null},{"id":2336,"department":null,"extension":null,"number":"650-497-8000","number_type":null,"vanity_number":null},{"id":2337,"department":null,"extension":null,"number":"800
+        756-9000","number_type":null,"vanity_number":null},{"id":2338,"department":null,"extension":null,"number":"650
+        497-8000","number_type":null,"vanity_number":null},{"id":2339,"department":"Advice
+        Nurse","extension":null,"number":"650 497-8820","number_type":null,"vanity_number":null},{"id":2340,"department":"Referral
+        Center","extension":null,"number":"800 756-9000","number_type":null,"vanity_number":null},{"id":2341,"department":null,"extension":null,"number":"650-326-4976","number_type":"TTY","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:01 GMT
+recorded_with: VCR 2.9.2

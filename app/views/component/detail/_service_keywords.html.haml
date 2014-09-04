@@ -1,0 +1,9 @@
+- if @keywords.present?
+  %section#keywords-box
+    %h1= t('service_fields.keywords')
+    %section.keywords
+      %ul
+        - @keywords.each do |keyword|
+          %li
+            %span
+              = link_to keyword, locations_path(request.query_parameters.merge(keyword: keyword))

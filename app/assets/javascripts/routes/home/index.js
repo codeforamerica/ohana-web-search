@@ -1,6 +1,9 @@
-require(['app/app-init','home/home-init',
-         'domReady!'], function(app,home) {
+// Manages initialization of scripts for the home page.
+require([
+  'app/app-init',
+  'home/home-init',
+  'application'
+],
+function () {
   'use strict';
-  // This class is added so the tests know the async scripts are loaded
-  document.body.classList.add("require-loaded");
 });

@@ -73,15 +73,273 @@
 // Turns off proprietary default webkit styling of search input fields.
 @mixin reset-input-webkit()
 {
+  // Turns off iOS input rounding.
   input[type=search]::-webkit-search-cancel-button,
   input[type=search]::-webkit-search-decoration,
   input[type=search]::-webkit-search-results-button,
   input[type=search]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
   }
   input[type=search] {
     -webkit-appearance: none;
     border-radius: 0;
-    -webkit-box-sizing:content-box;
+    -webkit-box-sizing: content-box;
+  }
+}
+
+// These are classes that apply rounding to one or more corners.
+// The "except" set will square off (non-round) the corners specified.
+// They are intended for UI components that positioned adjacent to another
+// component.
+// Unfortunately SCSS Compass mixins can't be used here because they don't
+// support the "!important" directive.
+@mixin rounded-except($corner)
+{
+  @if $corner == "none"
+  {
+    @include border-radius($border-radius-base);
+  }
+  @if $corner == "left"
+  {
+    @include border-radius(0px $border-radius-base $border-radius-base 0px);
+  }
+  @if $corner == "top"
+  {
+    @include border-radius(0px 0px $border-radius-base $border-radius-base);
+  }
+  @if $corner == "right"
+  {
+    @include border-radius($border-radius-base 0px 0px $border-radius-base);
+  }
+  @if $corner == "bottom"
+  {
+    @include border-radius($border-radius-base $border-radius-base 0px 0px);
+  }
+  @if $corner == "upper-left"
+  {
+    @include border-radius(0px $border-radius-base $border-radius-base $border-radius-base);
+  }
+  @if $corner == "upper-right"
+  {
+    @include border-radius($border-radius-base 0px $border-radius-base $border-radius-base);
+  }
+  @if $corner == "lower-right"
+  {
+    @include border-radius($border-radius-base $border-radius-base 0px $border-radius-base);
+  }
+  @if $corner == "lower-left"
+  {
+    @include border-radius($border-radius-base $border-radius-base $border-radius-base 0px);
+  }
+}
+
+
+@mixin toggle-container($is-inverted:'')
+{
+  .toggle-container
+  {
+    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+    @include rounded-except(none);
+    padding: 10px;
+    background: rgba($black, 0.05);
+  }
+
+  .toggle-group
+  {
+    display: table-row;
+    cursor: pointer;
+
+    > .toggle
+    {
+      display: table-cell;
+      vertical-align: top;
+      width: 30px;
+      height: 18px;
+    }
+
+    .toggle + label
+    {
+      padding-bottom: 3px;
+      padding-top: 3px;
+      font-size: $font_size_100;
+      cursor: pointer;
+      @include inline-block();
+      vertical-align: middle;
+
+      @if $is-inverted == 'inverted' {
+        @include toggle-out('label', 'active');
+      }
+      @else {
+        @include toggle-out('label');
+      }
+    }
+  }
+
+  // Hide the browser's default checkboxes.
+  .toggle-group > .toggle > div input[type=checkbox]
+  {
+    visibility: hidden;
+  }
+
+  .toggle-group > .toggle > div label
+  {
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    @if $is-inverted == 'inverted' {
+      @include toggle-out-checked('toggle');
+    }
+    @else {
+      @include toggle-out('toggle');
+    }
+  }
+
+  .toggle-group-wrapper
+  {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    padding: 5px;
+    padding-bottom: 2px;
+    border: 2px dotted midtone($accentA-base);
+    @include rounded-except(none);
+  }
+
+  .toggle-group > .toggle > div
+  {
+    @include box-sizing(border-box);
+    width: 24px;
+    height: 24px;
+  }
+
+  .toggle-group > .toggle > div > .fa
+  {
+    position: absolute;
+    z-index: 9998;
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -8px;
+    line-height: 19px;
+    @include box-sizing(border-box);
+    pointer-events: none;
+
+    @if $is-inverted == 'inverted' {
+      @include toggle-out-checked('icon')
+    }
+    @else {
+      @include toggle-out('icon')
+    }
+  }
+
+  .toggle-group:hover > .toggle > div > .fa
+  {
+    @if $is-inverted == 'inverted' {
+      @include toggle-over-checked('icon')
+    }
+    @else {
+      @include toggle-over('icon')
+    }
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]:checked + .fa
+  {
+    @if $is-inverted == 'inverted' {
+      @include toggle-out('icon')
+    }
+    @else {
+      @include toggle-out-checked('icon')
+    }
+  }
+
+  .toggle-group > .toggle > div input[type=checkbox]:checked ~ label
+  {
+    @if $is-inverted == 'inverted' {
+      @include toggle-out('toggle')
+    }
+    @else {
+      @include toggle-out-checked('toggle')
+    }
+  }
+
+  .toggle-container.active
+  {
+    .toggle + label {
+      @if $is-inverted == 'inverted' {
+        @include toggle-out('label');
+      }
+      @else {
+        @include toggle-out('label', 'active');
+      }
+    }
+
+    .toggle-group:hover > .toggle > div > .fa {
+      @if $is-inverted == 'inverted' {
+        @include toggle-over('icon');
+      }
+      @else {
+        @include toggle-over('icon', 'active');
+      }
+    }
+  }
+}
+
+@mixin toggle-over($component, $state:'')
+{
+  @if $component == 'icon' {
+    color: rgba($black, .3);
+    @if $state == 'active' {
+      color: rgba($black, .6);
+    }
+  }
+}
+
+@mixin toggle-out($component, $state:'')
+{
+  @if $component == 'label' {
+    color: rgba($black, .6);
+    @if $state == 'active' {
+      color: $black;
+    }
+  }
+  @else if $component == 'toggle' {
+    border: 1px solid dark($accentA-base);
+    @include box-sizing(border-box);
+    background-color: $white; // IE fallback
+    @include background( linear-gradient(top, rgba($white,.8), rgba($white,.6)) );
+    @include rounded-except(none);
+    overflow: hidden;
+  }
+  @else if $component == 'icon' {
+    color: rgba($black, .1);
+  }
+}
+
+@mixin toggle-over-checked($component)
+{
+  @if $component == 'icon' {
+    color: rgba($black, .6);
+  }
+}
+
+@mixin toggle-out-checked($component)
+{
+  @if $component == 'toggle' {
+    background-color: lightest($accentA-base); // IE fallback
+    @include background( linear-gradient(top, lightest($accentA-base), midtone($accentA-base)) );
+    border: 1px solid darkest($primary);
+    @include box-shadow( inset 0px 0px 0px darkest($primary), inset 0px 0px 1px dark($primary) );
+  }
+  @else if $component == 'icon' {
+    color: $black;
   }
 }

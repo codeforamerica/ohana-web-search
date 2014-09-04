@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Location%20with%20no%20phone
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&org_name=Location%20with%20no%20phone
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,35 +21,39 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:28:37 GMT
+      - Thu, 28 Aug 2014 17:18:33 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&org_name=Location+with+no+phone&page=0&per_page=30>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&org_name=Location+with+no+phone&page=0>;
         rel="last"
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '2'
+      - application/json; charset=utf-8
       Etag:
       - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 99fb4a32-aab5-4d01-ab29-4fcc73be302b
+      - 2d07dcaa-69cf-4d91-8b1d-9b45e3c8f6cd
       X-Runtime:
-      - '0.148801'
+      - '0.080046'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:28:37 GMT
+  recorded_at: Thu, 28 Aug 2014 17:18:33 GMT
 recorded_with: VCR 2.9.2

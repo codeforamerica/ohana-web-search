@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/coastside-farmers-market-of-pacifca
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo-farmers-market
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,34 +21,38 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:26:17 GMT
+      - Thu, 28 Aug 2014 17:18:25 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Content-Type:
-      - application/json
-      Content-Length:
-      - '1223'
+      - application/json; charset=utf-8
       Etag:
-      - '"ad0ddae228d99eedaa94408fd8c49d9e"'
+      - '"00d321ca34a4de3201615c3ee302c19b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 34609ed3-f2a2-4276-ae49-a2b81f59e87f
+      - 5c5ffd5e-2351-4d0e-9bef-6756aecb1e5e
       X-Runtime:
-      - '0.148525'
+      - '0.024920'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":1695,"address":{"id":1419,"street":"400 Old County Road","city":"Pacifica","state":"CA","zip":"94044"},"coordinates":[-122.4945456,37.6100031],"hours":"May
-        - December Wednesday 2:30 PM to 6:30 PM, (CLOSES @ 6:00 in November \u0026
-        December)","kind":"Farmers'' Markets","latitude":37.6100031,"longitude":-122.4945456,"market_match":false,"name":"Coastside
-        Farmers'' Market of Pacifca","payments":["Credit","WICcash","SFMNP","SNAP"],"products":["Baked
-        Goods","Cheese","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Poultry","Prepared
-        Food","Soap"],"slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"updated_at":"2014-05-24T14:06:56.407-07:00","urls":["http://www.coastsidefarmersmarket.org/"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1695","organization":{"id":1350,"name":"Coastside
-        Farmers'' Market of Pacifca","slug":"coastside-farmers-market-of-pacifca","slugs":["coastside-farmers-market-of-pacifca"],"_slugs":["coastside-farmers-market-of-pacifca"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1350/locations"}}'
+      string: '{"id":1708,"accessibility":[],"admin_emails":[],"coordinates":[-122.335123,37.5350511],"description":null,"emails":[],"hours":"January
+        - December Saturday 9:00 AM to 1:00 PM","kind":"Farmers'' Markets","languages":[],"latitude":37.5350511,"longitude":-122.335123,"market_match":true,"name":"San
+        Mateo Farmers'' Market","payments":["Credit","WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap","Wine"],"short_desc":null,"slug":"san-mateo-farmers-market","slugs":["san-mateo-farmers-market"],"transportation":null,"updated_at":"2014-05-24T14:06:56.846-07:00","urls":["http://www.pcfma.com/sanmateo"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo-farmers-market","address":{"id":1432,"street":"1700
+        West Hillsdale Boulevard","city":"San Mateo","state":"CA","zip":"94401"},"contacts":[],"faxes":[],"mail_address":null,"phones":[],"services":[],"organization":{"id":1363,"name":"San
+        Mateo Farmers'' Market","slug":"san-mateo-farmers-market","_slugs":["san-mateo-farmers-market"],"slugs":["san-mateo-farmers-market"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-farmers-market","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-farmers-market/locations"}}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:26:17 GMT
+  recorded_at: Thu, 28 Aug 2014 17:18:25 GMT
 recorded_with: VCR 2.9.2

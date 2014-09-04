@@ -10,42 +10,35 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 200
-      message: OK
+      code: 500
+      message: Internal Server Error
     headers:
       Server:
       - Cowboy
       Connection:
       - keep-alive
       Date:
-      - Tue, 12 Aug 2014 07:28:33 GMT
+      - Thu, 28 Aug 2014 17:18:32 GMT
       Status:
-      - 200 OK
+      - 500 Internal Server Error
       Content-Type:
-      - application/json
+      - application/json; charset=utf-8
       Content-Length:
-      - '781'
-      Etag:
-      - '"e9d03c2b93292798b1cbe31d3c3559bc"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - '48'
       X-Request-Id:
-      - 2f04576c-ac7a-4758-99a7-b90b89c044ec
+      - 9a62db49-b68c-498f-951c-d89c33a32324
       X-Runtime:
-      - '0.104563'
+      - '0.011256'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":1712,"coordinates":null,"description":"no phone","kind":"Test","mail_address":{"id":1688,"attention":"","street":"puma","city":"fairfax","state":"VA","zip":"22031"},"name":"Location
-        with no phone","short_desc":"no phone","slug":"location-with-no-phone","slugs":["location-with-no-phone"],"updated_at":"2014-05-29T12:35:21.202-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1712","services":[{"id":1694,"description":"no
-        phone","updated_at":"2014-05-29T12:35:21.187-07:00"}],"organization":{"id":1367,"name":"Testing
-        org","slug":"testing-org","slugs":["testing-org"],"_slugs":["testing-org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1367/locations"}}'
+      string: '{"status":"500","error":"Internal Server Error"}'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:28:33 GMT
+  recorded_at: Thu, 28 Aug 2014 17:18:32 GMT
 recorded_with: VCR 2.9.2

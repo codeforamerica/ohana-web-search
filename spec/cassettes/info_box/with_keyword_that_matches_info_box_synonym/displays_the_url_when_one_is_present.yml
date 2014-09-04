@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=wic
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,37 +21,43 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Tue, 12 Aug 2014 07:26:14 GMT
+      - Thu, 28 Aug 2014 17:18:27 GMT
       Status:
       - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=3>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=2>; rel="next"
       X-Total-Count:
       - '3'
       X-Total-Pages:
-      - '1'
+      - '3'
       X-Current-Page:
       - '1'
+      X-Next-Page:
+      - '2'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '11086'
+      - application/json; charset=utf-8
       Etag:
-      - '"3394f75e15735b97349219a2939c962b"'
+      - '"d55d5291c5be6705bc50ac37ad5331d7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0a02091b-14e4-47f6-a34b-68fab626abf3
+      - 08f404f8-a519-44fa-87b4-4ceeff8aab7a
       X-Runtime:
-      - '0.268160'
+      - '0.023110'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1455,"accessibility":["Elevator","Wheelchair"],"address":{"id":1195,"street":"477
-        9th Avenue, Suite 110","city":"San Mateo","state":"CA","zip":"94402"},"ask_for":["Call
-        the main office"],"contacts":[{"id":1702,"name":"Eliana C. Schultz, RD","title":"WIC
-        Director"}],"coordinates":[-122.3171637,37.5624546],"description":"Offers
+      string: '[{"id":1455,"admin_emails":[],"coordinates":[-122.3171637,37.5624546],"description":"Offers
         nutrition education and supplemental foods to women who are pregnant, post-partum
         or breastfeeding, and children age 5 or under. Families may be low- or medium-income
         and working families may also qualify. There are six WIC clinic sites in the
@@ -62,89 +68,14 @@ http_interactions:
         for food stamps or other public assistance programs. Also assists in finding
         health care and other community services. Formerly known as San Mateo County
         Health Department, Public Health Division. Nutrition Programs. Women, Infants
-        and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
-        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"latitude":37.5624546,"longitude":-122.3171637,"mail_address":{"id":1452,"attention":"SMCHS
-        WIC Program","street":"2000 Alameda de las Pulgas, Suite 200","city":"San
-        Mateo","state":"CA","zip":"94403"},"name":"Family Health Services., Public
-        Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"id":2012,"number":"650
-        573-2168"},{"id":2013,"department":"Breastfeeding Helpline","number":"800
-        205-0333"}],"short_desc":"Offers nutrition education and supplemental foods
-        to low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","slugs":["family-health-services-public-health-nutrition-women-infants-and-children-wic-program"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T14:08:24.716-07:00","urls":["http://www.smchealth.org/wic"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1455","services":[{"id":1455,"audience":"Pregnant
-        women, new mothers and children age 5 or under","eligibility":"Woman who is
-        pregnant, post-partum (within the first 6 months) or breastfeeding, child
-        age 5 or under who is at nutritional risk","fees":"None.","funding_sources":["Federal"],"keywords":["Nutrition
-        Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
-        Planning"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
-        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
-        Benefits","parent_id":23,"slug":"food-benefits"},{"id":26,"depth":1,"oe_id":"102-07","name":"Nutrition","parent_id":17,"slug":"nutrition"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":120,"depth":2,"oe_id":"106-06-05","name":"Maternity
-        Care","parent_id":109,"slug":"maternity-care"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Apply
-        by phone. Appointment necessary for application.","service_areas":["San Mateo
-        County"],"wait":"2 week wait for new enrollees.","updated_at":"2014-05-24T14:07:52.947-07:00"}],"organization":{"id":1309,"name":"San
-        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1472,"accessibility":["Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1212,"street":"380
-        - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"id":1728,"name":"Cathy
-        Lehmkuhl","title":"Clinic Manager"},{"id":1729,"name":"Jonathan Lee, Dr.","title":"Medical
-        Director"}],"coordinates":[-122.4740805,37.6911172],"description":"Offers
-        general family medical services for San Mateo County residents including non-emergency
-        urgent care. Located in the Mike Nevin Health Center Building at 380 - 90th
-        Street, Daly City. Services include well baby clinic, immunization, HIV testing
-        and counseling, AIDS clinic, adult primary care, senior care services, tuberculosis
-        clinic, and nutrition and family planning services. Podiatry clinic is also
-        provided. Women, Infants and Children Program (WIC) and mental health services
-        are also located at this site. Dental services, including both prevention
-        and treatment, are available for children age 18 or under Monday through Friday,
-        8:30 to 5. Adult dental care is provided on an emergency basis only.  Formerly
-        known as the North County Community Health Center.","faxes":[{"id":940,"number":"650
-        301-8626"}],"kind":"Human Services","languages":["Hindi","Spanish","Filipino
-        (Tagalog)"],"latitude":37.6911172,"longitude":-122.4740805,"mail_address":{"id":1469,"attention":"Daly
-        City Clinic","street":"380 - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"name":"San
-        Mateo Medical Center., Daly City Clinic","phones":[{"id":2050,"number":"650
-        301-8600"}],"short_desc":"Outpatient clinic offering general family medical
-        services in the northern part of the county.","slug":"san-mateo-medical-center-daly-city-clinic","slugs":["san-mateo-medical-center-daly-city-clinic"],"transportation":"SAMTRANS
-        stops in front.","updated_at":"2014-05-24T14:08:25.718-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1472","services":[{"id":1472,"audience":"Residents
-        of northern San Mateo County","eligibility":"San Mateo County resident","fees":"Vary
-        according to income. Cash, Healthy Family, Healthy Kids, Medi-Cal, Medicare,
-        private insurance, WELL Program accepted.","funding_sources":["County","State"],"keywords":["HEALTH
-        SERVICES","Dental","Outpatient Care","HIV Testing","Community Clinics","Dental
-        Care","Youth","Family Medicine","Infant Care","Immunizartions","Asthma"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":86,"depth":1,"oe_id":"106-02","name":"Dental
-        Care","parent_id":78,"slug":"dental-care"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
-        Education","parent_id":78,"slug":"health-education"},{"id":94,"depth":2,"oe_id":"106-04-02","name":"Disease
-        Management","parent_id":92,"slug":"disease-management"}],"how_to_apply":"Apply
-        by phone for appointment.","service_areas":["San Mateo County"],"wait":"Varies.
-        Same day service if appropriate.","updated_at":"2014-05-24T14:07:53.415-07:00"}],"organization":{"id":1309,"name":"San
-        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1484,"accessibility":["Ramp","Disabled
-        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1223,"street":"306
-        Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"ask_for":["Receptionist","charge
-        nurse at 650-877-7073"],"contacts":[{"id":1742,"name":"Cathy Lehmkuhl","title":"Clinic
-        Manager"},{"id":1743,"name":"Jonathan Lee","title":"Medical Director"}],"coordinates":[-122.415633,37.656645],"description":"Offers
-        adult primary care and pediatric care, immunizations, HIV testing and counseling,
-        family planning and mental health services. Also provides nutrition counseling,
-        WIC services (Women, Infants and Children Program) and optometry and podiatry
-        services.","faxes":[{"id":953,"number":"650 616-0015"}],"hours":"Adults: Monday-Friday,
-        8-5; Pediatrics: Monday, 8 am-8:30 pm; Tuesday, Wednesday, 8 am-9 pm; Thursday,
-        Friday, 8-5","kind":"Clinics","languages":["Chinese","Filipino (Tagalog)","Spanish"],"latitude":37.656645,"longitude":-122.415633,"mail_address":{"id":1481,"attention":"SMMC
-        SSF Clinic","street":"306 Spruce Avenue","city":"South San Francisco","state":"CA","zip":"94080"},"name":"San
-        Mateo Medical Center., South San Francisco Clinic","phones":[{"id":2067,"department":"Adults","number":"650
-        877-7070"},{"id":2068,"department":"Pediatrics","number":"650 877-7027"}],"short_desc":"Offers
-        adult and pediatric care.","slug":"san-mateo-medical-center-south-san-francisco-clinic","slugs":["san-mateo-medical-center-south-san-francisco-clinic"],"transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-05-24T14:07:53.907-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1484","services":[{"id":1484,"eligibility":"San
-        Mateo County resident","fees":"Vary according to income. ACE Program, cash,
-        Medi-Cal, Medicare, some private insurance, as well as Healthy Kids accepted.","funding_sources":["County","State"],"keywords":["HEALTH
-        SERVICES","Outpatient Care","Community Clinics","Youth","Immunizations","Disease
-        Prevention","TB Control","Hepatitis Control","Infant Care","Maternity Care","STD
-        Treatment","Pediatrics"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
-        Education","parent_id":78,"slug":"health-education"},{"id":95,"depth":2,"oe_id":"106-04-03","name":"Family
-        Planning","parent_id":92,"slug":"family-planning"},{"id":96,"depth":2,"oe_id":"106-04-04","name":"Nutrition","parent_id":92,"slug":"nutrition-106-04-04"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
-        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
-        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":117,"depth":3,"oe_id":"106-06-04-04","name":"Mental
-        Health Evaluation","parent_id":113,"slug":"mental-health-evaluation"},{"id":119,"depth":3,"oe_id":"106-06-04-06","name":"Vision
-        Tests","parent_id":113,"slug":"vision-tests"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
-        \u0026 Treat","parent_id":109,"slug":"prevent-treat"},{"id":123,"depth":3,"oe_id":"106-06-07-01","name":"Counseling","parent_id":122,"slug":"counseling"},{"id":130,"depth":3,"oe_id":"106-06-07-08","name":"Vaccinations","parent_id":122,"slug":"vaccinations"}],"how_to_apply":"Call
-        for an appointment.","service_areas":["San Mateo County"],"wait":"Varies.
-        Same day appointment if appropriate.","updated_at":"2014-05-24T14:07:53.904-07:00"}],"organization":{"id":1309,"name":"San
-        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}}]'
+        and Children (WIC) Program.","kind":"Human Services","latitude":37.5624546,"longitude":-122.3171637,"name":"Family
+        Health Services., Public Health Nutrition., Women, Infants and Children (WIC)
+        Program","short_desc":"Offers nutrition education and supplemental foods to
+        low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","slugs":["family-health-services-public-health-nutrition-women-infants-and-children-wic-program"],"updated_at":"2014-05-24T14:08:24.716-07:00","urls":["http://www.smchealth.org/wic"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program","address":{"id":1195,"street":"477
+        9th Avenue, Suite 110","city":"San Mateo","state":"CA","zip":"94402"},"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","_slugs":["san-mateo-county-health-system"],"slugs":["san-mateo-county-health-system"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2012,"department":null,"extension":null,"number":"650
+        573-2168","number_type":null,"vanity_number":null},{"id":2013,"department":"Breastfeeding
+        Helpline","extension":null,"number":"800 205-0333","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Tue, 12 Aug 2014 07:26:14 GMT
+  recorded_at: Thu, 28 Aug 2014 17:18:28 GMT
 recorded_with: VCR 2.9.2

@@ -1,0 +1,23 @@
+-#  The container tag
+-#  available local variables
+-#    current_page:  a page object for the currently displayed page
+-#    total_pages:   total number of pages
+-#    per_page:      number of items to fetch per page
+-#    remote:        data-remote
+-#    paginator:     the paginator that renders the pagination tags inside
+= paginator.render do
+  %nav.pagination
+    %ul
+      - unless current_page.first?
+        %li.prev><
+          = prev_page_tag
+      - each_page do |page|
+        - if page.left_outer? || page.right_outer? || page.inside_window?
+          %li{ class: "page#{' current' if page.current?}" }><
+            = page_tag page
+        - elsif !page.was_truncated?
+          %li.collapsed><
+            = gap_tag
+      - unless current_page.last?
+        %li.next><
+          = next_page_tag

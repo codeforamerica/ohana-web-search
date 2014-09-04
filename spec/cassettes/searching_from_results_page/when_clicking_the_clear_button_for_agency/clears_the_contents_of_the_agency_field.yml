@@ -1,0 +1,195 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:02 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      X-Total-Count:
+      - '343'
+      X-Total-Pages:
+      - '343'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a3711e17-0c10-49be-8ed6-ee4224d1c3cd
+      X-Runtime:
+      - '0.020279'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
+        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:02 GMT
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=&org_name=samaritan&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 28 Aug 2014 17:18:02 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=samaritan&page=2&utf8=%E2%9C%93>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=samaritan&page=2&utf8=%E2%9C%93>;
+        rel="next"
+      X-Total-Count:
+      - '2'
+      X-Total-Pages:
+      - '2'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"11e1b5c90b82cab5c731697055a7d1ca"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ceee2028-76a5-4bee-b91c-3093d2a2f550
+      X-Runtime:
+      - '0.109444'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOjEzODksImFkbWluX2VtYWlscyI6W10sImNvb3JkaW5hdGVzIjpb
+        LTEyMi4yMDcwNTcsMzcuNDY4Njc4XSwiZGVzY3JpcHRpb24iOiJQcmltYXJ5
+        IGFuZCBzcGVjaWFsdHkgbWVkaWNhbCBhbmQgZGVudGFsIHNlcnZpY2VzIHRv
+        IHVuaW5zdXJlZCwgbG93LWluY29tZSByZXNpZGVudHMuXHJcbldobyBpcyBU
+        cmVhdGVkPyBcclxuUGF0aWVudHMgb2Ygb3VyIGNsaW5pY3MgYXJlIHRoZSB3
+        b3JraW5nIHBvb3IuIFRoZXkgdGVuZCB0byBlYXJuIGp1c3QgZW5vdWdoIGlu
+        Y29tZSB0byBiZSBpbmVsaWdpYmxlIGZvciBNZWRpLUNhbCBjb3ZlcmFnZSwg
+        eWV0IGRvIG5vdCByZWNlaXZlIGhlYWx0aCBpbnN1cmFuY2UgdGhyb3VnaCB0
+        aGVpciBlbXBsb3llcnMgYW5kIGNhbm5vdCBhZmZvcmQgdG8gcGF5IGZvciDi
+        gJxvdXQtb2YtcG9ja2V04oCdIGhlYWx0aCBpbnN1cmFuY2UuIE9mdGVuIHRo
+        ZXNlIHJlc2lkZW50cyBhcmUgZm9yY2VkIHRvIHNlZWsgdHJlYXRtZW50IGF0
+        IGxvY2FsIGVtZXJnZW5jeSByb29tcyBhbmQgYmVjb21lIHNhZGRsZWQgd2l0
+        aCBtZWRpY2FsIGJpbGxzIHRoYXQgdGhleSBhcmUgdW5hYmxlIHRvIHBheS4g
+        U2FtYXJpdGFuIEhvdXNl4oCZcyBGcmVlIE1lZGljYWwgQ2xpbmljcyBmaWxs
+        IHRoaXMgZ2FwIGluIGhlYWx0aGNhcmUgYWNjZXNzIGZvciB0aGUgdW5pbnN1
+        cmVkIGFuZCBzYXZlIGVtZXJnZW5jeSByb29tIHJlc291cmNlcyBmb3IgZW1l
+        cmdlbmNpZXMuXHJcblxyXG5Qcm9mZXNzaW9uYWwgTWVkaWNhbCBcdTAwMjYg
+        RGVudGFsIFZvbHVudGVlcnNcclxuVGhhbmtzIHRvIGl0cyBpbm5vdmF0aXZl
+        IHZvbHVudGVlci1iYXNlZCBtb2RlbCBvZiBzZXJ2aWNlLCBTYW1hcml0YW4g
+        SG91c2XigJlzIGNsaW5pY3MgYXJlIGFibGUgdG8gdHJlYXQgc3VjaCBhIGxh
+        cmdlIG51bWJlciBvZiBwYXRpZW50cyB3aXRoIGEgdmVyeSBzbWFsbCBwYWlk
+        IHN0YWZmLiBBbG1vc3QgYWxsIG9mIHRoZSBtZWRpY2FsIGFuZCBkZW50YWwg
+        ZG9jdG9ycyBhbmQgYXNzaXN0YW50cyBhcmUgdm9sdW50ZWVyaW5nIHRoZWly
+        IHRpbWUgZnJlZSBvZiBjaGFyZ2UuIFRoZXNlIGluZGl2aWR1YWxzLCBlaXRo
+        ZXIgcmV0aXJlZCBvciBjdXJyZW50bHkgcHJhY3RpY2luZyBtZWRpY2luZSBh
+        bmQgZGVudGlzdHJ5LCB3YW50IHRvIHNlcnZlIHRoZWlyIGNvbW11bml0eSBp
+        biB0aGVpciBsaW1pdGVkIHNwYXJlIHRpbWUuIiwia2luZCI6Ikh1bWFuIFNl
+        cnZpY2VzIiwibGF0aXR1ZGUiOjM3LjQ2ODY3OCwibG9uZ2l0dWRlIjotMTIy
+        LjIwNzA1NywibmFtZSI6IlJlZHdvb2QgQ2l0eSBGcmVlIE1lZGljYWwgQ2xp
+        bmljIiwic2hvcnRfZGVzYyI6IlByb3ZpZGVzIGZyZWUgbWVkaWNhbCBjYXJl
+        IHRvIHRob3NlIGluIG5lZWQuIiwic2x1ZyI6InJlZHdvb2QtY2l0eS1mcmVl
+        LW1lZGljYWwtY2xpbmljIiwic2x1Z3MiOlsicmVkd29vZC1jaXR5LWZyZWUt
+        bWVkaWNhbC1jbGluaWMiXSwidXBkYXRlZF9hdCI6IjIwMTQtMDUtMjRUMTQ6
+        MDg6MjAuNTE5LTA3OjAwIiwidXJscyI6WyJodHRwOi8vd3d3LnNhbWFyaXRh
+        bmhvdXNlc2FubWF0ZW8ub3JnIl0sImNvbnRhY3RzX3VybCI6Imh0dHA6Ly9z
+        bWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkvbG9jYXRpb25z
+        L3JlZHdvb2QtY2l0eS1mcmVlLW1lZGljYWwtY2xpbmljL2NvbnRhY3RzIiwi
+        ZmF4ZXNfdXJsIjoiaHR0cDovL3NtYy1vaGFuYS1hcGktdGVzdC5oZXJva3Vh
+        cHAuY29tL2FwaS9sb2NhdGlvbnMvcmVkd29vZC1jaXR5LWZyZWUtbWVkaWNh
+        bC1jbGluaWMvZmF4ZXMiLCJzZXJ2aWNlc191cmwiOiJodHRwOi8vc21jLW9o
+        YW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL2xvY2F0aW9ucy9yZWR3
+        b29kLWNpdHktZnJlZS1tZWRpY2FsLWNsaW5pYy9zZXJ2aWNlcyIsInVybCI6
+        Imh0dHA6Ly9zbWMtb2hhbmEtYXBpLXRlc3QuaGVyb2t1YXBwLmNvbS9hcGkv
+        bG9jYXRpb25zL3JlZHdvb2QtY2l0eS1mcmVlLW1lZGljYWwtY2xpbmljIiwi
+        YWRkcmVzcyI6eyJpZCI6MTEyOSwic3RyZWV0IjoiMTE0IEZpZnRoIEF2ZW51
+        ZSIsImNpdHkiOiJSZWR3b29kIENpdHkiLCJzdGF0ZSI6IkNBIiwiemlwIjoi
+        OTQwNjMifSwib3JnYW5pemF0aW9uIjp7ImlkIjoxMzAxLCJuYW1lIjoiU2Ft
+        YXJpdGFuIEhvdXNlIiwic2x1ZyI6InNhbWFyaXRhbi1ob3VzZS01N2NmMTVl
+        Yi0wOWNkLTQ5OGUtYTBlOC1iMmYxNTRhMDdiZWMiLCJfc2x1Z3MiOlsic2Ft
+        YXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4ZS1hMGU4LWIyZjE1NGEw
+        N2JlYyJdLCJzbHVncyI6WyJzYW1hcml0YW4taG91c2UtNTdjZjE1ZWItMDlj
+        ZC00OThlLWEwZTgtYjJmMTU0YTA3YmVjIl0sInVybHMiOltdLCJ1cmwiOiJo
+        dHRwOi8vc21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL29y
+        Z2FuaXphdGlvbnMvc2FtYXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4
+        ZS1hMGU4LWIyZjE1NGEwN2JlYyIsImxvY2F0aW9uc191cmwiOiJodHRwOi8v
+        c21jLW9oYW5hLWFwaS10ZXN0Lmhlcm9rdWFwcC5jb20vYXBpL29yZ2FuaXph
+        dGlvbnMvc2FtYXJpdGFuLWhvdXNlLTU3Y2YxNWViLTA5Y2QtNDk4ZS1hMGU4
+        LWIyZjE1NGEwN2JlYy9sb2NhdGlvbnMifSwicGhvbmVzIjpbeyJpZCI6MTkw
+        MywiZGVwYXJ0bWVudCI6bnVsbCwiZXh0ZW5zaW9uIjpudWxsLCJudW1iZXIi
+        OiI2NTAgODM5LTE0NDciLCJudW1iZXJfdHlwZSI6bnVsbCwidmFuaXR5X251
+        bWJlciI6bnVsbH1dfV0=
+    http_version: 
+  recorded_at: Thu, 28 Aug 2014 17:18:02 GMT
+recorded_with: VCR 2.9.2

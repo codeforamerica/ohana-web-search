@@ -1,25 +1,16 @@
-= form_tag('/organizations', :method => :get, :id=>"search-form") do
+= form_tag('/locations', method: :get, id: 'form-search') do
   %section#search-box
     %div
       %div
         %section#keyword-search-box>
-          %label{:for => "keyword"}
-            I need...
-          %div.input-search-big
-            = search_field_tag :keyword, params[:keyword], :placeholder => "what are you looking for?", :list => "search-keywords"
+          = label_tag 'keyword', t('labels.homepage_search')
+          .input-search-big
+            = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.homepage_keyword_search')
 
-            -#
-              - cache ['keywords-list', *cip_keywords] do
-                %datalist#search-keywords
-                  <!--[if IE 8]><select disabled style="display:none"><![endif]-->
-                  - cip_keywords.each do |keyword|
-                    %option{:value=>keyword}
-                      = keyword
-                  <!--[if IE 8]> </select> <![endif]-->
-
-            = hidden_field_tag "service_area", "smc"
-
-            %button{:type=>'submit',:id=>'find-btn', :title=>"Search"}
-              %i{:class=>"fa fa-search"}
-              %span Search
-        = render :partial => 'component/search/geolocate'
+            = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Search') do
+              %i{ class: 'fa fa-search' }
+              %span
+                = t('buttons.homepage_search')
+        = hidden_field_tag 'location'
+        = hidden_field_tag 'service_area', 'smc'
+        = render 'component/search/geolocate', context_class: nil

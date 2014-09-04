@@ -1,9 +1,12 @@
 //=================================================================================
+//
 // CONSTANTS
+//
+//=================================================================================
 
-//color scheme
+// COLOR PALETTE
 
-// greyscale
+// Greyscale.
 $black: rgb(0,0,0);
 
 $greyscale_dark: rgb(87,87,87);
@@ -13,28 +16,214 @@ $greyscale_lightest: rgb(252,252,252);
 
 $white: rgb(255,255,255);
 
-// primary
-$blue: rgb(137,209,226);
+// Primary.
+$primary: rgb(137,209,226);
+$primary-dark: shade($primary, 25);
+$primary-darkest: shade($primary, 50);
+$primary-light: tint($primary, 25);
+$primary-lightest: tint($primary, 50);
 
-// secondary A
-$green: rgb(209,249,148);
+// Accents.
+$accentA-base: rgb(209,249,148);
+$accentA-light: tint($accentA-base, 25);
+$accentA-dark: shade($accentA-base, 50);
+$accentB: rgb(255,200,56);
 
-// secondary B
-$yellow: rgb(255,200,56);
+// Complements.
+$complement-base: rgb(242,144,191);
+$complementA: shade($complement-base, 50);
+$complementB: tint($complement-base, 50);
 
-// complementaryA
-$purple: rgb(242,144,191);
+// Notification colors.
+$alert-error-base: rgb(255,10,50);
 
-// complementaryB
-$red: rgb(255,10,50); // alert-error color
 
-//animation settings
-$default_duration: 50ms;
+// SEMANTIC COLOR VARIABLES
+//
+// Where possible, we named the variable based on the "role" of the element
+// it is used for, as defined by WAI-ARIA
+// http://www.w3.org/TR/wai-aria/rdf_model.html
+//
+// In some cases, such as pagination, that was not possible. In these cases
+// the variable names are patterned on Twitter Bootstrap.
+// http://getbootstrap.com/customize/
+//
+// Some of the variables describe what ARIA refers to as "widget roles,"
+// for example $button-color or $link-color.
+//
+// Others describe "landmark roles," for example anything starting
+// with $search, $banner, or $main.
+//
+// Variables should have the shortest possible name that will uniquely identify them
+// following this structure:
+//
+//     [widget]-[landmark | structure]-[non-WAI-ARIA qualifier]-[state]-rule
+//     ... where:
+//
+//     [widget] =                 The specific widget. This would usually be
+//                                present, but could be [optional]
+//                                in cases where the variable was applying a
+//                                style (such as a background color)
+//                                to the containing landmark area.
+//                                See examples at
+//                                http://www.w3.org/TR/wai-aria-practices/#aria_ex
+//
+//     [landmark | structure]   = The [optional] landmark or document structure
+//                                the widget appears in.
+//
+//     [non-WAI-ARIA qualifier] = An [optional] descriptive qualifier for
+//                                differentiating this variable,
+//                                which is not covered succinctly in WAI-ARIA.
+//                                (e.g. a Twitter Bootstrap-style name might be used.)
+//
+//     [state] =                  The [optional] CSS pseudo-class being set
+//                                (e.g. hover, active, etc.)
+//
+//     rule =                     The CSS rule being set
+//                                (e.g. background-color, color, etc.)
 
-// styles
-$border_radius_base: 6px;
 
-// fonts
+// Typography.
+//
+// TODO $text-color (this is probably a greyscale value)
+$text-accent-color:                 $primary-dark;
+$text-accent-hover-color:           $complementA;
+
+
+// Banner (Header)
+//
+// "Popups" in the upper-left of the header area.
+//
+$menubutton-popup-color:            $primary-dark;
+$menubutton-popup-hover-color:      $complementA;
+
+// Buttons inside the popups.
+$button-popup-color:                rgba($black,.5);
+$button-popup-hover-color:          $complementA;
+$button-popup-fa-color:             $primary-darkest;
+$button-popup-bg:                   $accentA-light;
+$button-popup-hover-bg:             shade($accentA-light,5);
+
+$button-popup-disabled-color:       $greyscale_light;
+$button-popup-disabled-bg:          tint($greyscale_light, 60);
+
+
+// Buttons.
+//
+$button-color:                rgba($black,.5);
+$button-hover-color:          $complementA;
+$button-fa-color:             $primary-darkest;
+$button-bg:                   $accentA-light;
+$button-hover-bg:             shade($accentA-light,5);
+
+$button-disabled-color:       $greyscale_light;
+$button-disabled-bg:          tint($greyscale_light, 60);
+
+$button-small-color:         tint($black, 25);
+$button-small-fa-color:      $primary-darkest;
+$button-small-hover-color:   $complementA;
+$button-small-bg:            none;
+$button-small-bg-hover:      $primary-light;
+
+$button-utility-color:       $complementA;
+$button-utility-fa-color:    $primary-darkest;
+$button-utility-hover-color: $complementA;
+$button-utility-bg:          none;
+$button-utility-bg-hover:    $complementB;
+
+// Forms.
+//
+$input-border-color:  $primary-dark;
+$input-fa-color:      $primary-darkest;
+
+// Search.
+//
+// Home page.
+$search-bg:                         $primary;
+
+// Sidebar.
+$search-sidebar-bg:                 $primary-lightest;
+$search-border-color:               $primary;
+$search-text-color:                 tint($black, 25);
+$search-accent-color:               shade($primary, 50);
+$search-accent-hover:               $text-accent-hover-color;
+$search-button-color:               $complementA;
+$search-button-hover-color:         shade($complement-base, 25);
+$search-button-hover-background:    $primary-light;
+$search-button-fa-hover-color:      $complementA;
+
+
+// Boxes of search terms on the home page.
+$list-search-border:                $primary-light;
+$listitem-search-border:            $primary;
+$list-search-important-border:      $complementB;
+$listitem-search-important-border:  $accentB;
+
+
+// Pagination.
+//
+$pagination-color:              $complementA;
+$pagination-hover-color:        $complementA;
+$pagination-bg:                 none;
+$pagination-hover-bg:           $complementB;
+$pagination-border:             $complementB;
+
+$pagination-active-color:       $white;
+$pagination-active-bg:          tint($complement-base, 25);
+
+$pagination-disabled-color:     $greyscale_dark;
+$pagination-disabled-bg:        rgba($complementB, 0.1);
+
+$pagination-next-color:         $white;
+$pagination-next-hover-color:   $white;
+$pagination-next-bg:            $primary-dark;
+$pagination-next-hover-bg:      tint($complement-base, 25);
+
+$pagination-highlight:          $black;
+
+
+// Main
+//
+$main-highlight: $complementA;
+$main-header-bg: rgba($complementB, 0.2);
+$main-header-color: $black;
+$main-list-mark-color: $complementB;
+$main-border-color: $primary-dark;
+
+// Alert
+//
+$alert-color: $black;
+$alert-bg: $alert-error-base;
+$alert-border-color: $black;
+
+// Popups
+//
+$popup-bg: $white;
+
+// Terminology info box — appears for select keywords above the search results.
+$terminology-border: $complementA;
+
+
+// END SEMANTIC COLOR VARIABLES
+
+
+
+// Animation settings.
+$animation-duration-slow: 100ms;
+$animation-duration-base: 50ms;
+$animation-duration-fast: 25ms;
+
+// Positioning settings.
+// The default border radius for rounded corners.
+$border-radius-base: 4px;
+
+// The stacking order layers (used with z-index).
+$layer-10: 10000;
+$layer-9: 9000;
+$layer-8: 8000;
+$layer-7: 8000;
+
+// Fonts
 $font_serif: 'Libre Baskerville', serif;
 $font_san_serif: 'Quattrocento Sans', sans-serif;
 
@@ -42,7 +231,8 @@ $font_san_serif: 'Quattrocento Sans', sans-serif;
 // instead of labels (small, medium, large) to allow easy insertion
 // of additional intermediate sizes. 100 is the baseline.
 // The font sizing mixins in _mixins.scss provide mapping of human-readable labels to font sizes.
-// For actual font size rhythm calculations, see http://modularscale.com/
+// For actual font size rhythm calculations, see http://modularscale.com.
+// The settings are rounded values of a 16px baseline at a 3:4 perfect forth ratio.
 
 // tiny
 $font_size_80: 9px;
@@ -66,6 +256,10 @@ $font_leading_105: 1;
 
 // medium
 $font_size_110: 21px;
+$font_leading_110: 1.25;
+
+// medium-large
+$font_size_115: 24px;
 $font_leading_110: 1.25;
 
 // large
