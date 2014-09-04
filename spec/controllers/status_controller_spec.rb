@@ -8,7 +8,7 @@ describe StatusController do
       it 'returns success' do
         get 'check_status'
         body = JSON.parse(response.body)
-        expect(body['status']).to eq('OK')
+        expect(body['status']).to eq('ok')
       end
     end
 
