@@ -1,4 +1,4 @@
-// Manages behavior of Google Translate widget.
+// Manages behavior of the Google Website Translator Gadget.
 define([
   'util/translation/layout/DropDownLayout'
 ],
@@ -20,7 +20,7 @@ function (DropDownLayout) {
   var InlineLayout = { VERTICAL:VERTICAL, HORIZONTAL:HORIZONTAL };
 
   // The id of the element on the page that will contain
-  // the Google Translate widget.
+  // the Google Website Translator Gadget.
   var GOOGLE_TRANSLATE_ELEMENT_ID = 'google-translate-container';
 
   function init(layoutType) {
@@ -45,7 +45,7 @@ function (DropDownLayout) {
     window.GoogleTranslate = GoogleTranslate;
   }
 
-  // Initialize the Google Translate Widget.
+  // Initialize the Google Website Translator Gadget.
   function _googleTranslateElementInit() {
     var opts = {
       pageLanguage: 'en',
@@ -55,12 +55,12 @@ function (DropDownLayout) {
 
     new google.translate.TranslateElement( opts, GOOGLE_TRANSLATE_ELEMENT_ID );
 
-    // Activate hooks to manipulate Google Translate Widget through
+    // Activate hooks to manipulate Google Website Translator Gadget through
     // the URL 'translate' parameter.
     _layout.activate();
   }
 
-  // @return [Object] Return the inline Google Translate widget
+  // @return [Object] Return the inline Google Website Translator Gadget
   // layouts supplied by Google.
   function _getGoogleLayout() {
     if (_layoutType === VERTICAL)
@@ -69,8 +69,8 @@ function (DropDownLayout) {
       return google.translate.TranslateElement.InlineLayout.HORIZONTAL;
   }
 
-  // Removes the Google Translate cookies by setting their expiration date
-  // into the past.
+  // Removes the Google Website Translator cookies by setting their expiration
+  // date into the past.
   function _deleteTranslateCookies() {
    var cookies, cookie, eqPos, name;
     cookies = document.cookie.split('; ');

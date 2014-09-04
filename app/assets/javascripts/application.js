@@ -76,7 +76,7 @@ function (googleTranslate) {
   'use strict';
 
   // The Google translate manager handles loading of the
-  // Google Translate widget at the bottom of the page's body.
+  // Google Website Translator Gadget at the bottom of the page's body.
   // The layout settings passed in as an argument to the initialization
   // method can be set to:
   // InlineLayout.VERTICAL, InlineLayout.HORIZONTAL,
