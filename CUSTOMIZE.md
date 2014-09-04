@@ -34,12 +34,13 @@ The application uses Google Translate for free language translation of the site.
 
 - **Homepage language links**. The language translation links on the homepage can be added, removed, and edited in `config/settings.yml`.
 
-- **Support for saving custom translations**. If you want to make edits to the Google provided translations of a live site you can add a `GOOGLE_TRANSLATE_CUSTOMIZATION_CODE` in `config/application.yml`.
+- **Support for saving custom translations**. If you want to make edits to the Google provided translations of a live site you can add a `GOOGLE_TRANSLATE_CUSTOMIZATION_CODE` in `config/application.yml`. Get the correct
+customization code for your site from [Google's Website Translator Manager](https://translate.google.com/manager/website).
 
 - **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, you can enable language detection by adding a `GOOGLE_TRANSLATE_API_TOKEN` in `config/application.yml`.
 **NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
 
-- **Change the widget layout**. If you want to change the Google Translation Widget's layout, two of the layouts provided by Google are supported: InlineLayout.VERTICAL and InlineLayout.HORIZONTAL. One or the other
+- **Change the widget layout**. If you want to change the Google Translate Widget's layout, two of the layouts provided by Google are supported: InlineLayout.VERTICAL and InlineLayout.HORIZONTAL. One or the other
 can be set in `assets/javascripts/application.js`.
 
 ## Pagination
