@@ -19,7 +19,8 @@ function (DropDownLayout) {
   var HORIZONTAL = 1;
   var InlineLayout = { VERTICAL:VERTICAL, HORIZONTAL:HORIZONTAL };
 
-  // The id of the element on the page that
+  // The id of the element on the page that will contain
+  // the Google Translate widget.
   var GOOGLE_TRANSLATE_ELEMENT_ID = 'google-translate-container';
 
   function init(layoutType) {
