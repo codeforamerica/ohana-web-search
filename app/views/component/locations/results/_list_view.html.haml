@@ -3,7 +3,7 @@
     - @search.locations.each do |location|
 
       %li
-        %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slugs.last], request.query_parameters)}" : "#{location_path([location.organization._slugs.last, location.slugs.last], request.query_parameters)}", title: "#{location.name}", name: "#{location.id}" }
+        %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", title: "#{location.name}", name: "#{location.id}" }
           &nbsp;
         %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
           %header
@@ -12,7 +12,7 @@
                 = link_to location.kind, locations_path(kind: location.kind), title: "All locations of type #{location.kind}", class: "kind icon #{location.kind.parameterize}"
             %hgroup
               %h1{ class: 'name' }
-                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slugs.last], request.query_parameters)}" : "#{location_path([location.organization._slugs.last, location.slugs.last], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
+                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
                   = superscript_ordinals(location.name)
               - if (location.organization.name) && (location.organization.name != location.name)
                 %h2.agency

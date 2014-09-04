@@ -17,11 +17,11 @@ class Search
   def hash_for(location)
     {
       kind: location.kind,
-      latitude: location.coordinates.last,
-      longitude: location.coordinates.first,
+      latitude: location.latitude,
+      longitude: location.longitude,
       name: location.name,
       org_name: location.organization.name,
-      slug: location.slugs.last,
+      slug: location.slug,
       street_address: location.address.street,
       city: location.address.city
     }

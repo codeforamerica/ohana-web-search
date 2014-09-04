@@ -161,11 +161,9 @@
                 %span.hide#detail-map-canvas-title
                   = address(@location)
                 %span.hide#detail-map-canvas-lat
-                  -# Change this to @location.latitude for new API
-                  = @location.coordinates.last
+                  = @location.latitude
                 %span.hide#detail-map-canvas-lng
-                  -# Change this to @location.longitude for new API
-                  = @location.coordinates.first
+                  = @location.longitude
                 %span.hide#detail-map-canvas-kind
                   = @location.kind
               %noscript
@@ -218,6 +216,6 @@
             %span
               = @location.updated_at.to_s(:full_date_and_time)
             %div
-              = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slugs.last}", rel: 'nofollow' do
+              = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
                 %i{ class: 'fa fa-pencil' }
                 Edit
