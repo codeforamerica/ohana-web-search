@@ -5,9 +5,9 @@
 
 // Used for managing which map marker should be shown.
 define([
-  'util/bitmask'
+  'util/BitMask'
 ],
-function (bitmask) {
+function (BitMask) {
   'use strict';
 
   // 'Constants' for the kind labels returned by the Ohana API.
@@ -34,7 +34,7 @@ function (bitmask) {
     var UNSPIDERFIED_ICON = 8;
 
     // A bitmask instance for tracking the four states of the icon appearance.
-    var _iconState = bitmask.create();
+    var _iconState = BitMask.create();
     _iconState.turnOn(SMALL_ICON | UNSPIDERFIED_ICON);
 
     // The kind set on this marker.
