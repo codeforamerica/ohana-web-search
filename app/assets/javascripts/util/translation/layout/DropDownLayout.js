@@ -1,6 +1,6 @@
 // Manages behavior of posting changes to the URL for
 // inlinelayout.VERTICAL and inlinelayout.HORIZONTAL
-// Google Translate Widget layouts.
+// Google Website Translator Gadget layouts.
 define([
   'util/util'
 ],
@@ -16,7 +16,7 @@ function (util) {
     // The HTML element that contain the language options.
     var _languages;
 
-    // The ID of the Google Translate widget HTML container.
+    // The ID of the Google Website Translator Gadget HTML container.
     var _googleTranslateElmID;
 
     function init(id) {
@@ -34,7 +34,7 @@ function (util) {
       var query = '#'+_googleTranslateElmID + ' select';
       var elm = document.querySelector(query);
       if (!elm)
-        throw new Error('Google Translate Widget HTML container not found!');
+        throw new Error('Google Website Translator Gadget HTML not found!');
       return elm;
     }
 
