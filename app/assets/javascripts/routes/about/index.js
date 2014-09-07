@@ -3,7 +3,7 @@ require([
   'app/feedback-form-manager',
   'application'
 ],
-function (gt, feedback) {
+function (feedback) {
   'use strict';
 
   // Initialize the feedback form.
