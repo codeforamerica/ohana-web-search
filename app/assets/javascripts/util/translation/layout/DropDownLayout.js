@@ -35,7 +35,7 @@ function (util) {
       var elm = document.querySelector(query);
       if (!elm)
         throw new Error('Google Translate Widget HTML container not found!');
-      return elm
+      return elm;
     }
 
     // Hook in a change event to the language drop-down menu so the page reloads

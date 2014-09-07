@@ -9,12 +9,6 @@ function () {
 
   function TextInput(id) {
 
-    var _events = {};
-
-    var _container = document.querySelector('#' + id + ' .clearable');
-
-    if (_container) _initCloseButton();
-
     // @param event [String] The event name to listen for. Supports 'change'.
     // @param callback [Function] The function called when the event has fired.
     function addEventListener(event, callback) {
@@ -42,7 +36,7 @@ function () {
         input.value = '';
         buttonClear.classList.add('hide');
         input.focus();
-        _events['change'].call();
+        _events.change.call();
       });
 
       input.addEventListener('keyup', function (evt) {
@@ -51,7 +45,7 @@ function () {
 
       input.addEventListener('change', function (evt) {
         _checkClearButtonVisibility(input, buttonClear);
-        _events['change'].call();
+        _events.change.call();
       });
     }
 
@@ -64,10 +58,15 @@ function () {
         buttonClear.classList.remove('hide');
     }
 
+    // Initialize TextInput instance.
+    var _events = {};
+    var _container = document.querySelector('#' + id + ' .clearable');
+    if (_container) _initCloseButton();
+
     return {
       reset:reset,
       addEventListener:addEventListener
-    }
+    };
   }
 
   return {

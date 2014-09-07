@@ -2,9 +2,9 @@
   .left-column
     %span.static-content><
       - if @search.map_data.size != 0
-        %a#map-view-control{ :href => '#', :class=>"button-utility button-map-zoom"}
-          %i{ :class => "fa fa-plus-square" }
-          Larger map
+        %a#map-size-control.button-utility.button-map-zoom{ href:'#', disabled: 'disabled'}
+          %i{ class: 'fa fa-refresh fa-spin' }
+          Loading map...
     %p.search-summary
       %span
         = page_entries_info @search.results, entry_name: 'result'
@@ -15,7 +15,7 @@
   .right-column
     .floating-content.hide><
       %span
-        %a{ href: '#', class: 'button-utility button-top' }
+        %a.button-utility.button-top{ href: '#' }
           %i{ class: 'fa fa-chevron-up' }
           Top
 

@@ -9,7 +9,7 @@ function (alert) {
     console.log('Map failed to load! Hiding map HTML code.');
 
     document.getElementById('map-view').className = 'hide';
-    document.getElementById('map-view-control').className = 'hide';
+    document.getElementById('map-size-control').className = 'hide';
 
     var message = 'Oops! Map failed to load. Try reloading the page or ' +
                   '<a href="/about/#feedback-box">send us a message</a>.';
