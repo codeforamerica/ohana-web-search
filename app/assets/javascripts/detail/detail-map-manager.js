@@ -1,10 +1,10 @@
 // Manages location detail view Google Map.
 define([
-  'util/map/marker_manager',
-  'domReady!',
-  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+  'util/map/marker-manager',
+  'util/map/google-maps-loader',
+  'domReady!'
 ],
-function (markerManager) {
+function (markerManager, googleMaps) {
   'use strict';
 
   // The <div> element that the Google map loads into.
@@ -17,12 +17,17 @@ function (markerManager) {
   var _mapCanvas;
 
   // The info window to pop up on click.
-  var _infoWindow = new google.maps.InfoWindow();
+  var _infoWindow;
 
   function init() {
+    googleMaps.load(_renderMap);
+  }
+
+  function _renderMap() {
     _mapCanvas = document.getElementById('detail-map-canvas');
 
     if (_mapCanvas) {
+      _infoWindow = new google.maps.InfoWindow();
       var titleElm = document.getElementById('detail-map-canvas-title');
       var latElm = document.getElementById('detail-map-canvas-lat');
       var lngElm = document.getElementById('detail-map-canvas-lng');

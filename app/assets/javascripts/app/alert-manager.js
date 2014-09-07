@@ -63,7 +63,7 @@ function () {
     _content.innerHTML = '';
   }
 
-  // Closing the alert box hides the HTML
+  // Closing the alert box hides the HTML.
   function _closeBtnClicked() {
     hide();
   }

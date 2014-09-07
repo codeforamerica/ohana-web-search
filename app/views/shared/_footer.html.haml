@@ -20,15 +20,4 @@
 
   = requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub("/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe
 
-  #google-translate-element
-  :javascript
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'en',
-          autoDisplay: false
-        },
-        'google-translate-element'
-      );
-    }
-  %script{ type: 'text/javascript', src: '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit' }
+  #google-translate-container
