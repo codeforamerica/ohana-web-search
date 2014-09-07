@@ -146,7 +146,7 @@ feature 'searching from results page', :vcr do
   context 'when clicking the clear button for keyword', :js do
     it 'clears the contents of the keyword field' do
       search(keyword: 'clinic')
-      find('#keyword-search-box').find('.button-close').click
+      find('#keyword-search-box').find('.button-clear').click
       expect(find_field('keyword').value).to eq ''
     end
   end
@@ -154,7 +154,7 @@ feature 'searching from results page', :vcr do
   context 'when clicking the clear button for location', :js do
     it 'clears the contents of the location field' do
       search(location: '94403')
-      find('#location-options').find('.button-close').click
+      find('#location-options').find('.button-clear').click
       expect(find_field('location').value).to eq ''
     end
   end
@@ -162,7 +162,7 @@ feature 'searching from results page', :vcr do
   context 'when clicking the clear button for agency', :js do
     it 'clears the contents of the agency field' do
       search(org_name: 'samaritan')
-      find('#org-name-options').find('.button-close').click
+      find('#org-name-options').find('.button-clear').click
       expect(find_field('org_name').value).to eq ''
     end
   end
