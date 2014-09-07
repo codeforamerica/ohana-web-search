@@ -47,13 +47,13 @@ function (DropDownLayout) {
 
   // Initialize the Google Website Translator Gadget.
   function _googleTranslateElementInit() {
-    var opts = {
+    var gadgetOptions = {
       pageLanguage: 'en',
       layout: _getGoogleLayout(),
       autoDisplay: false
     };
-
-    new google.translate.TranslateElement( opts, GOOGLE_TRANSLATE_ELEMENT_ID );
+    new google.translate.TranslateElement( gadgetOptions,
+                                           GOOGLE_TRANSLATE_ELEMENT_ID );
 
     // Activate hooks to manipulate Google Website Translator Gadget through
     // the URL 'translate' parameter.
@@ -72,7 +72,7 @@ function (DropDownLayout) {
   // Removes the Google Website Translator cookies by setting their expiration
   // date into the past.
   function _deleteTranslateCookies() {
-   var cookies, cookie, eqPos, name;
+    var cookies, cookie, eqPos, name;
     cookies = document.cookie.split('; ');
     for (var i = 0, len = cookies.length; i < len; i++) {
       cookie = cookies[i];
