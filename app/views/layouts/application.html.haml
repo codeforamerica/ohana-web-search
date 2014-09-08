@@ -8,12 +8,14 @@
   %head
     = render 'shared/head'
 
-  %body{class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}"}
+  %body{ class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}" }
     %section#content
       = render 'shared/alert'
       = render 'shared/header'
       %main.main= yield
       = render 'shared/footer'
+
+    = requirejs_include_tag("routes/#{controller_name}/#{action_name}")
 
     - if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present?
       = render 'shared/google_analytics/event_tracking'

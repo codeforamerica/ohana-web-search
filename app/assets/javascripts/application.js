@@ -70,10 +70,15 @@
 //
 require([
   'util/translation/google-translate-manager',
+  'util/browser-upgrade-notice',
   'domReady!'
 ],
-function (googleTranslate) {
+function (googleTranslate, browserUpgradeNotice) {
   'use strict';
+
+  // Show a browser upgrade notice on IE8 and below.
+  if (document.documentElement.classList.contains('lt-ie9'))
+    browserUpgradeNotice.show();
 
   // The Google translate manager handles loading of the
   // Google Website Translator Gadget at the bottom of the page's body.

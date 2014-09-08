@@ -15,5 +15,4 @@
 // about supported directives.
 //
 //= require polyfills/selectivizr
-//= require polyfills/html5shiv-printshiv
 //= require polyfills/remy/classList
