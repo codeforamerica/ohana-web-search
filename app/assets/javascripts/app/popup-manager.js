@@ -17,21 +17,8 @@ function (util, feedback) {
   var PADDING = 20;
 
   function init() {
-    if (!_isTranslated()) {
-      _addPopups();
-      feedback.init();
-    }
-  }
-
-  // Check if the page is currently translated using Google Translation.
-  function _isTranslated() {
-    var translate = util.getQueryParams().translate;
-    if (translate && translate !== 'en')
-      return true;
-    var googtrans = util.getCookie('googtrans');
-    if (googtrans && googtrans !== '/en/en')
-      return true;
-    return false;
+    _addPopups();
+    feedback.init();
   }
 
   // Adds hooks for triggering popups present on the page.
