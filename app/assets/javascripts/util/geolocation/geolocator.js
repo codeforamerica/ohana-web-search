@@ -9,12 +9,13 @@ define(function () {
     _callBack = pCallBack;
 
     // Modernizr should pick this up, but just in case...
-    if (navigator.geolocation) {
+    var geolocator = navigator.geolocation;
+    if (geolocator) {
       var geoOptions = {
         maximumAge: 600000
       };
       // Request a position whose age is not greater than 10 minutes old.
-      navigator.geolocation.getCurrentPosition(_success, _error, geoOptions);
+      geolocator.getCurrentPosition(_success, _error, geoOptions);
     } else {
       var message = {
         message: 'Geolocation is not supported.'

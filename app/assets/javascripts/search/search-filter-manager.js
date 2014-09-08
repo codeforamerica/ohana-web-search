@@ -9,6 +9,13 @@ define([
 function (TextInput, CheckboxSubtractive, geo, alert) {
   'use strict';
 
+  // The search filters.
+  var _keyword;
+  var _location;
+  var _agency;
+  var _kind;
+  var _serviceArea;
+
   // The form to submit.
   var _searchForm;
 
@@ -19,16 +26,16 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
     geo.init('button-geolocate', _geolocationClicked);
 
     // Set up text input filters
-    var keyword = TextInput.create('keyword-search-box');
-    var location = TextInput.create('location-options');
-    var agency = TextInput.create('org-name-options');
+    _keyword = TextInput.create('keyword-search-box');
+    _location = TextInput.create('location-options');
+    _agency = TextInput.create('org-name-options');
 
     // Set up checkbox filters
-    var kind = CheckboxSubtractive.create('kind-options');
-    kind.addEventListener('change', _showNotice);
+    _kind = CheckboxSubtractive.create('kind-options');
+    _kind.addEventListener('change', _showNotice);
 
-    var serviceArea = CheckboxSubtractive.create('service-area-options');
-    serviceArea.addEventListener('change', _showNotice);
+    _serviceArea = CheckboxSubtractive.create('service-area-options');
+    _serviceArea.addEventListener('change', _showNotice);
 
     // Capture form submission.
     _searchForm = document.getElementById('form-search');
@@ -46,9 +53,9 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
   // The clear filters button was clicked.
   function _resetClicked(evt) {
-    keyword.reset();
-    location.reset();
-    agency.reset();
+    _keyword.reset();
+    _location.reset();
+    _agency.reset();
 
     evt.preventDefault();
     evt.target.blur();

@@ -2,10 +2,10 @@
 define([
   'util/geolocation/geolocator',
   'app/alert-manager',
-  'domReady!',
-  'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false!callback'
+  'util/map/google-maps-loader',
+  'domReady!'
 ],
-function (geo, alert) {
+function (geo, alert, googleMaps) {
   'use strict';
 
 
@@ -44,11 +44,14 @@ function (geo, alert) {
       success: function(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
-        _reverseGeocodeLocation(latitude, longitude);
+
+        googleMaps.load(function() {
+          _reverseGeocodeLocation(latitude, longitude);
+        });
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alert.show("Your location could not be determined!", alert.type.ERROR);
+        alert.show('Your location could not be determined!', alert.type.ERROR);
         _locateTargetReady();
       }
     };

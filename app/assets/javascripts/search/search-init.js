@@ -2,7 +2,7 @@
 require([
   'search/search-filter-manager'
 ],
-function (filter, input) {
+function (filter) {
   'use strict';
 
   filter.init();

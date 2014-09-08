@@ -9,11 +9,17 @@ function () {
 
   function TextInput(id) {
 
+    // The events this input broadcasts.
     var _events = {};
 
+    // The container HTML element for this text input.
     var _container = document.querySelector('#' + id + ' .clearable');
 
-    if (_container) _initCloseButton();
+    // The clear text button (x) HTML.
+    var _buttonClear;
+
+    // The actual text input to clear.
+    var _input;
 
     // @param event [String] The event name to listen for. Supports 'change'.
     // @param callback [Function] The function called when the event has fired.
@@ -22,52 +28,70 @@ function () {
     }
 
     function reset() {
-      var closeButton = _container.querySelector('.button-close');
-      closeButton.classList.add('hide');
+      _buttonClear.classList.add('hide');
+      _input.value = '';
     }
 
     function _initCloseButton() {
       // Retrieve first and only input element.
-      var input = _container.getElementsByTagName('input')[0];
+      // Throw an error if it isn't found.
+      _input = _container.getElementsByTagName('input')[0];
+      if (!_input) _throwInitializationError();
 
       // Create a clear button dynamically.
-      var buttonClear = document.createElement('button');
-      buttonClear.className = 'button-close';
-      if (input.value === '')
-        buttonClear.className += ' hide';
-      _container.appendChild(buttonClear);
+      _buttonClear = document.createElement('button');
+      _buttonClear.className = 'button-clear';
+      if (_input.value === '')
+        _buttonClear.className += ' hide';
+      _container.appendChild(_buttonClear);
 
-      buttonClear.addEventListener('click', function (evt) {
+      _buttonClear.addEventListener('click', function (evt) {
         evt.preventDefault();
-        input.value = '';
-        buttonClear.classList.add('hide');
-        input.focus();
-        _events['change'].call();
+        reset();
+        _input.focus();
+        _broadcastEvent('change');
       });
 
-      input.addEventListener('keyup', function (evt) {
-        _checkClearButtonVisibility(input, buttonClear);
+      _input.addEventListener('keyup', function (evt) {
+        _setClearButtonVisibility();
       });
 
-      input.addEventListener('change', function (evt) {
-        _checkClearButtonVisibility(input, buttonClear);
-        _events['change'].call();
+      _input.addEventListener('change', function (evt) {
+        _setClearButtonVisibility();
+        _broadcastEvent('change');
       });
     }
 
-    // @param input [Object] The input field where a search is entered.
-    // @param buttonClear [Object] The clear button for clearing the form.
-    function _checkClearButtonVisibility(input, buttonClear) {
-      if (input.value === '')
-        buttonClear.classList.add('hide');
+    // Hide the clear button if there isn't any input text,
+    // otherwise show it.
+    function _setClearButtonVisibility() {
+      if (_input.value === '')
+        _buttonClear.classList.add('hide');
       else
-        buttonClear.classList.remove('hide');
+        _buttonClear.classList.remove('hide');
     }
+
+    // @param evt [String] The type of event to broadcast.
+    // Supports 'change'.
+    function _broadcastEvent(evt) {
+      if (_events[evt])
+        _events[evt].call();
+    }
+
+    function _throwInitializationError() {
+      var message = 'A clearable Text Input with id "' +
+                    id + '" was not initialized!';
+      throw new Error(message);
+    }
+
+    // Initialize TextInput instance.
+    if (_container) _initCloseButton();
+    else _throwInitializationError();
 
     return {
       reset:reset,
       addEventListener:addEventListener
-    }
+    };
   }
 
   return {
