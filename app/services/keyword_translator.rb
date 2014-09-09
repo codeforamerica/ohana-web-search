@@ -16,7 +16,12 @@ class KeywordTranslator
 
   def client
     return if api_key.nil? || current_language == target
-    Google::APIClient.new(key: api_key, authorization: nil)
+    Google::APIClient.new(
+      key: api_key,
+      authorization: nil,
+      application_name: 'smc-connect',
+      application_version: '1.0.0'
+    )
   end
 
   def translate_api
@@ -45,7 +50,7 @@ class KeywordTranslator
   end
 
   def translated_keyword
-    return keyword if translations.nil?
+    return keyword if translations.blank?
     translations.first.translatedText
   end
 
