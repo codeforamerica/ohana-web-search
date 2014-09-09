@@ -6,6 +6,9 @@ define(
 function () {
   'use strict';
 
+  // The events the alert broadcasts.
+  var _events = {};
+
   // HTML element for the alert container.
   var _alertContainer;
 
@@ -59,6 +62,7 @@ function () {
 
   // Hiding the alert box clears its content and hides it using CSS.
   function hide() {
+    _broadcastEvent('close');
     _alertContainer.classList.add('hide');
     _content.innerHTML = '';
   }
@@ -68,10 +72,24 @@ function () {
     hide();
   }
 
+  // @param evt [String] The type of event to broadcast.
+  // Supports 'close'.
+  function _broadcastEvent(evt) {
+    if (_events[evt])
+      _events[evt].call();
+  }
+
+  // @param event [String] The event name to listen for. Supports 'close'.
+  // @param callback [Function] The function called when the event has fired.
+  function addEventListener(event, callback) {
+    _events[event] = callback;
+  }
+
   return {
     init:init,
     show:show,
     hide:hide,
-    type:type
+    type:type,
+    addEventListener:addEventListener
   };
 });
