@@ -14,8 +14,10 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Polyfills for CSS3 selectors in IE6-8
 //= require polyfills/selectivizr
-//= require polyfills/html5shiv-printshiv
+//
+// Polyfills for commonly included missing methods.
 //= require polyfills/console
 //= require polyfills/trim
 //= require polyfills/remy/classList
