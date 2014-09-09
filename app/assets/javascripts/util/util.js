@@ -2,18 +2,6 @@ define(
 function () {
   'use strict';
 
-  // Check if any object is empty of parameters.
-  // (from http://stackoverflow.com/questions/3426979/
-  // javascript-checking-if-an-object-has-no-properties-or-if-a-map-
-  // associative-arra)
-  function isEmpty(map) {
-    for(var key in map) {
-      if (map.hasOwnProperty(key))
-        return false;
-    }
-    return true;
-  }
-
   // Detects whether a particular event is supported.
   // (from http://stackoverflow.com/questions/2877393/
   // detecting-support-for-a-given-javascript-event)
@@ -96,16 +84,6 @@ function () {
       left: box.left + scrollLeft - clientLeft
     };
   }
-
-  // @return [Object] Browser-appropriate requestanimationframe implementation.
-  // @example util.requestAnimationFrame()(_animate_callback);
-  function requestAnimationFrame() {
-    return window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame;
-  }
-
 
   // Get computed style
   // (from http://stackoverflow.com/questions/2664045/
@@ -197,19 +175,6 @@ function () {
     return params;
   }
 
-  // Check if a URL parameter is present.
-  // (from http://stackoverflow.com/questions/1314383/
-  // how-to-check-if-a-querystring-value-is-present-via-javascript)
-  // @param [String] The parameter to check for the existence of.
-  function isURLParamPresent(param) {
-    var url = window.location.href;
-    if (url.indexOf('?' + param + '=') !== -1)
-      return true;
-    else if (url.indexOf('&' + param + '=') !== -1)
-      return true;
-    return false;
-  }
-
   // Retrieve a cookie value by name.
   // @param [String] the name of the cookie.
   // @return [String] the cookie value.
@@ -220,15 +185,12 @@ function () {
 
 
   return {
-    isEmpty:isEmpty,
     isEventSupported:isEventSupported,
     getWindowRect:getWindowRect,
     getOffset:getOffset,
-    requestAnimationFrame:requestAnimationFrame,
     getStyle:getStyle,
     queryString:queryString,
     getQueryParams:getQueryParams,
-    isURLParamPresent:isURLParamPresent,
     getCookie:getCookie
   };
 });
