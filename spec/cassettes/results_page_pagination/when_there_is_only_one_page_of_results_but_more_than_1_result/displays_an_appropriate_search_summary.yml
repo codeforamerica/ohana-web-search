@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&per_page=5
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&per_page=5
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,38 +18,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:22 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Request-Id:
-      - 8617a47f-e25e-4dd6-b65b-50ff5c483298
-      X-Runtime:
-      - '0.052958'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Date:
+      - Tue, 09 Sep 2014 23:23:52 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 6cc2ffa9-4759-4f77-bb22-4aacbc28756f
+      X-Runtime:
+      - '0.041406'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":12,"admin_emails":[],"coordinates":[-122.227409,37.4837662],"description":"Offers
@@ -64,18 +68,18 @@ http_interactions:
         fundraising board that helps to support and to fund Redwood City''s Project
         Read. Call for more information about each service.","latitude":37.4837662,"longitude":-122.227409,"name":"Project
         Read","short_desc":"Offers an intergenerational literacy program for adults
-        and youth seeking to improver literacy skills.","slug":"project-read","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/services","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"street":"1044
+        and youth seeking to improver literacy skills.","slug":"project-read","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/services","url":"https://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"street":"1044
         Middlefield Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":3,"name":"Redwood
-        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
+        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
         780-7077","number_type":null,"vanity_number":null}]},{"id":16,"admin_emails":[],"coordinates":[-122.0600024,37.3569004],"description":"Provides
         emergency assistance including food and clothing for persons in immediate
         need. Provides PG\u0026E assistance through REACH program. Youth programs
         offer tutoring, music and troops. Information on related resources is available.
         Also provides rental assistance when funds are available.","latitude":37.3569004,"longitude":-122.0600024,"name":"Sunnyvale
         Corps","short_desc":"Provides emergency assistance to persons in immediate
-        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","updated_at":"2014-05-09T20:49:18.955-07:00","urls":[],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"street":"1161
+        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","updated_at":"2014-05-09T20:49:18.955-07:00","urls":[],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/services","url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"street":"1161
         South Bernardo","city":"Sunnyvale","state":"CA","zip":"94087"},"organization":{"id":4,"name":"Salvation
-        Army","slug":"salvation-army","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":16,"department":null,"extension":null,"number":"408
+        Army","slug":"salvation-army","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":16,"department":null,"extension":null,"number":"408
         720-0420","number_type":null,"vanity_number":null}]},{"id":4,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Provides
         supervised visitation services and a neutral site for parents to carry out
         supervised exchanges of children in a safe manner. Therapeutic visitation
@@ -91,10 +95,10 @@ http_interactions:
         County, Family Visitation Center.","latitude":37.5639394,"longitude":-122.3263232,"name":"Family
         Visitation Center","short_desc":"Provides supervised visitation services and
         a neutral site for parents in extremely hostile divorces to carry out supervised
-        exchanges of children.","slug":"family-visitation-center","updated_at":"2014-05-09T20:49:18.878-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"street":"24
+        exchanges of children.","slug":"family-visitation-center","updated_at":"2014-05-09T20:49:18.878-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/services","url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"street":"24
         Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
+        Family Service","slug":"peninsula-family-service","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Sat, 19 Jul 2014 22:07:21 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:52 GMT
 recorded_with: VCR 2.9.2

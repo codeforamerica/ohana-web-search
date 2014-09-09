@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -20,41 +20,43 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
-      Date:
-      - Thu, 24 Jul 2014 01:17:46 GMT
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Runtime:
-      - '0.032016'
-      X-Request-Id:
-      - 62782456-229c-472c-9bd3-29fccb8df1b0
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Next-Page:
-      - '2'
-      X-Current-Page:
-      - '1'
-      X-Total-Pages:
-      - '3'
-      X-Total-Count:
-      - '3'
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="next"
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Status:
-      - 200 OK
-      Transfer-Encoding:
-      - chunked
       Content-Type:
       - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="next"
+      X-Total-Count:
+      - '3'
+      X-Total-Pages:
+      - '3'
+      X-Current-Page:
+      - '1'
+      X-Next-Page:
+      - '2'
+      Date:
+      - Tue, 09 Sep 2014 23:23:53 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - dfc78504-da13-4e25-8b66-76509ffd2db0
+      X-Runtime:
+      - '0.023863'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
       Via:
       - 1.1 vegur
     body:
@@ -71,15 +73,15 @@ http_interactions:
         fundraising board that helps to support and to fund Redwood City''s Project
         Read. Call for more information about each service.","latitude":37.4837662,"longitude":-122.227409,"name":"Project
         Read","short_desc":"Offers an intergenerational literacy program for adults
-        and youth seeking to improver literacy skills.","slug":"project-read","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/project-read/services","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"street":"1044
+        and youth seeking to improver literacy skills.","slug":"project-read","updated_at":"2014-05-09T20:49:18.932-07:00","urls":["http://www.projectreadredwoodcity.org"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/project-read/services","url":"https://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"street":"1044
         Middlefield Road, 2nd Floor","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":3,"name":"Redwood
-        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
+        City Public Library","slug":"redwood-city-public-library","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":12,"department":null,"extension":null,"number":"650
         780-7077","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Thu, 24 Jul 2014 01:17:46 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:53 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=2
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -87,7 +89,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -97,45 +99,47 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
-      Date:
-      - Thu, 24 Jul 2014 01:17:46 GMT
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Runtime:
-      - '0.027696'
-      X-Request-Id:
-      - 72bbc283-8384-4858-8468-f34a30d879d7
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Previous-Page:
-      - '1'
-      X-Next-Page:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="prev",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="next"
+      X-Total-Count:
+      - '3'
+      X-Total-Pages:
       - '3'
       X-Current-Page:
       - '2'
-      X-Total-Pages:
+      X-Next-Page:
       - '3'
-      X-Total-Count:
-      - '3'
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="prev",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="next"
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      Status:
-      - 200 OK
-      Transfer-Encoding:
-      - chunked
-      Content-Type:
-      - application/json; charset=utf-8
+      X-Previous-Page:
+      - '1'
+      Date:
+      - Tue, 09 Sep 2014 23:23:53 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - b5722bb8-60d3-4ca8-bf75-4a7072b277cb
+      X-Runtime:
+      - '0.024275'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
       Via:
       - 1.1 vegur
     body:
@@ -146,10 +150,10 @@ http_interactions:
         offer tutoring, music and troops. Information on related resources is available.
         Also provides rental assistance when funds are available.","latitude":37.3569004,"longitude":-122.0600024,"name":"Sunnyvale
         Corps","short_desc":"Provides emergency assistance to persons in immediate
-        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","updated_at":"2014-05-09T20:49:18.955-07:00","urls":[],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"street":"1161
+        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","updated_at":"2014-05-09T20:49:18.955-07:00","urls":[],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps/services","url":"https://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"street":"1161
         South Bernardo","city":"Sunnyvale","state":"CA","zip":"94087"},"organization":{"id":4,"name":"Salvation
-        Army","slug":"salvation-army","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":16,"department":null,"extension":null,"number":"408
+        Army","slug":"salvation-army","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":16,"department":null,"extension":null,"number":"408
         720-0420","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Thu, 24 Jul 2014 01:17:46 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:54 GMT
 recorded_with: VCR 2.9.2

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=maceo
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=maceo
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,38 +18,42 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:22 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Request-Id:
-      - e3db5d2a-eeb7-4ff4-8d5e-61faa8dd33cf
-      X-Runtime:
-      - '0.038986'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       X-Total-Count:
       - '1'
       X-Total-Pages:
       - '1'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1022'
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '1'
+      Date:
+      - Tue, 09 Sep 2014 23:23:50 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 7e077b65-4a69-40d5-83cf-29daee4911a7
+      X-Runtime:
+      - '0.025736'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":22,"admin_emails":["foo@bar.com"],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
@@ -64,11 +68,11 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":42.878036,"longitude":-73.1968254,"name":"San
         Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","updated_at":"2014-05-22T17:31:08.727-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":21,"street":"2013
+        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","updated_at":"2014-08-02T20:51:59.592-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency/services","url":"https://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":21,"street":"2013
         Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"organization":{"id":8,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":21,"department":"Information","extension":null,"number":"650
+        Example Agency.","slug":"sanmaceo-example-agency","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"},"phones":[{"id":21,"department":"Information","extension":null,"number":"650
         372-6200","number_type":"TTY","vanity_number":null},{"id":22,"department":"Reservations","extension":null,"number":"650
         372-6200","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Sat, 19 Jul 2014 22:07:21 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:50 GMT
 recorded_with: VCR 2.9.2
