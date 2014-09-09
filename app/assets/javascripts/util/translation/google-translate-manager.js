@@ -54,9 +54,7 @@ function (util, cookie, DropDownLayout) {
   // Returns false if the page is not translated and is in English.
   function isTranslated() {
     var googtrans = cookie.read('googtrans');
-    if (googtrans && decodeURIComponent(googtrans) === '/en/en')
-      return true;
-    return false;
+    return (googtrans && decodeURIComponent(googtrans) !== '/en/en')
   }
 
   // Initialize the Google Website Translator Gadget.
