@@ -32,7 +32,7 @@ function () {
       _input.value = '';
     }
 
-    function _initCloseButton() {
+    function _initClearButton() {
       // Retrieve first and only input element.
       // Throw an error if it isn't found.
       _input = _container.getElementsByTagName('input')[0];
@@ -85,7 +85,7 @@ function () {
     }
 
     // Initialize TextInput instance.
-    if (_container) _initCloseButton();
+    if (_container) _initClearButton();
     else _throwInitializationError();
 
     return {
