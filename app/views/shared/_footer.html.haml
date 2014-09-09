@@ -15,7 +15,4 @@
     for your city or
     #{link_to 'view project details', 'http://ohanapi.org'}.
 
-  -# This line needs to go ABOVE the Google Translate code, or it can take too long to load (see issue #462)
-  = requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub("/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe
-
   #google-translate-container
