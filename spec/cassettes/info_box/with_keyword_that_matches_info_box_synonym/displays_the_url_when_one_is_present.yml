@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,41 +18,45 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:16:57 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=wic&page=0>; rel="last"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - a64705c3-8c67-47d6-b1fe-1024b7f5d5f1
-      X-Runtime:
-      - '0.025354'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <https://ohana-api-test.herokuapp.com/api/search?keyword=wic&page=0>; rel="last"
       X-Total-Count:
       - '0'
       X-Total-Pages:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '28'
-      Connection:
-      - keep-alive
+      Date:
+      - Tue, 09 Sep 2014 23:22:51 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 380bf934-5b47-48a5-b972-c9cba70c6641
+      X-Runtime:
+      - '0.012807'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Wed, 16 Jul 2014 08:16:58 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:22:51 GMT
 recorded_with: VCR 2.9.2

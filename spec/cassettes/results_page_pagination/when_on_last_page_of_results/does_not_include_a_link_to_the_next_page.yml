@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=3
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=3
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,43 +18,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:13:46 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="prev"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      Transfer-Encoding:
+      - chunked
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '3'
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Previous-Page:
-      - '2'
-      X-Request-Id:
-      - 89ac4a7f-7bb2-4d35-9a20-ce72281794bc
-      X-Runtime:
-      - '0.033942'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="prev"
       X-Total-Count:
       - '3'
       X-Total-Pages:
       - '3'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Current-Page:
+      - '3'
+      X-Previous-Page:
+      - '2'
+      Date:
+      - Tue, 09 Sep 2014 23:23:52 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - d3654cce-cd73-42a0-b3de-7ad66f8d81e1
+      X-Runtime:
+      - '0.030432'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
+      Server:
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":4,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Provides
@@ -72,10 +76,10 @@ http_interactions:
         County, Family Visitation Center.","latitude":37.5639394,"longitude":-122.3263232,"name":"Family
         Visitation Center","short_desc":"Provides supervised visitation services and
         a neutral site for parents in extremely hostile divorces to carry out supervised
-        exchanges of children.","slug":"family-visitation-center","updated_at":"2014-05-09T20:49:18.878-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"street":"24
+        exchanges of children.","slug":"family-visitation-center","updated_at":"2014-05-09T20:49:18.878-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center/services","url":"https://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"street":"24
         Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
+        Family Service","slug":"peninsula-family-service","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":4,"department":null,"extension":"4500","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Sat, 19 Jul 2014 22:13:45 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:52 GMT
 recorded_with: VCR 2.9.2

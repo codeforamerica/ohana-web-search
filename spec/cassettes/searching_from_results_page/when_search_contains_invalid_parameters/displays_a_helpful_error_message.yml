@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -26,6 +26,8 @@ http_interactions:
       - chunked
       Status:
       - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -33,8 +35,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=24>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <https://ohana-api-test.herokuapp.com/api/search?keyword=&page=24>; rel="last",
+        <https://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '24'
       X-Total-Pages:
@@ -43,18 +45,18 @@ http_interactions:
       - '1'
       X-Next-Page:
       - '2'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4eb972bd-ff31-4507-a4ac-4b98a25f02d6
-      X-Runtime:
-      - '0.486978'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
       Date:
-      - Sun, 27 Jul 2014 21:21:28 GMT
+      - Tue, 09 Sep 2014 23:23:47 GMT
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - a7673e32-492a-4f53-aad1-b9c317e7c064
+      X-Runtime:
+      - '0.023402'
+      X-Powered-By:
+      - Phusion Passenger 4.0.50
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
       Via:
       - 1.1 vegur
     body:
@@ -80,15 +82,15 @@ http_interactions:
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
         Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
         Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
+        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"https://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"https://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"https://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"https://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
         Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
+        Family Service","slug":"peninsula-family-service","urls":[],"url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"https://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
         780-7525","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Sun, 27 Jul 2014 21:21:29 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:47 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&radius=foo
+    uri: https://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&radius=foo
     body:
       encoding: US-ASCII
       string: ''
@@ -96,7 +98,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -112,6 +114,8 @@ http_interactions:
       - chunked
       Status:
       - 400 Bad Request
+      Strict-Transport-Security:
+      - max-age=31536000
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -121,21 +125,21 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 1f34f28b-f871-4112-a94a-5fc5840a020f
+      - 9fabdd07-52e2-40e5-a49f-62e4994e3b23
       X-Runtime:
-      - '0.088150'
+      - '0.060667'
       X-Powered-By:
-      - Phusion Passenger 4.0.46
+      - Phusion Passenger 4.0.50
       Date:
-      - Sun, 27 Jul 2014 21:21:29 GMT
+      - Tue, 09 Sep 2014 23:23:47 GMT
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - nginx/1.6.1 + Phusion Passenger 4.0.50
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"status":400,"error":"Argument Error","description":"Radius must be
         a Float between 0.1 and 50."}'
-    http_version:
-  recorded_at: Sun, 27 Jul 2014 21:21:29 GMT
+    http_version: 
+  recorded_at: Tue, 09 Sep 2014 23:23:47 GMT
 recorded_with: VCR 2.9.2
