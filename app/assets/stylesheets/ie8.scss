@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Internet Explorer version 8 and earlier.
+   ========================================================================== */
+
+// NOTE: Depends on HTML5 Boilerplate lt-ie9 class added through Internet Explorer
+// conditional comments in the head of the page.
+html.lt-ie9
+{
+  // Adjustments for popups in header.
+  #popups
+  {
+    .popup-container > article
+    {
+      padding: 10px;
+      @include box-sizing(border-box);
+      border: 1px solid $black;
+    }
+
+    .arrow
+    {
+      display: none;
+    }
+
+    .close-button:after
+    {
+      color: $greyscale_midtone;
+      content: "×";
+    }
+  }
+
+  // Adjustments for alert box component.
+  .alert
+  {
+    border: 1px solid $black;
+
+    // Since IE8 doesn't support rbga() notation, make alert links
+    // lines thicker on roll-over.
+    a
+    {
+      color:$white;
+      border-bottom:1px solid $white;
+      text-decoration: none;
+    }
+
+    a:hover
+    {
+      color:$white;
+      border-bottom:2px solid $white;
+    }
+  }
+
+  // Adjustments location details
+  #detail-info
+  {
+    // The < and > around the "more"
+    // button on the description are not included
+    // because IE8 doesn't support :last-child
+    // .description a:last-child:after
+    // .description a:last-child:before
+
+    .fax:after
+    {
+      content: "FAX";
+      font-size: 10px;
+      font-family: $font_san_serif;
+      @include inline-block();
+    }
+  }
+
+  // Adjustments for search result list.
+  #list-view
+  {
+    .results-entry
+    {
+      > header
+      {
+        >hgroup
+        {
+          h1.name > a:after
+          {
+            content: " more...";
+            font-size: $font_size_90;
+            font-family: $font_san_serif;
+            color: $greyscale_midtone; // IE fallback
+            color: rgba($black,.4);
+          }
+
+          h1.name > a:hover:after
+          {
+            color: $black;
+            border-right: 0;
+            border-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // Clearable search input fields.
+  .clearable
+  {
+    .button-clear:after
+    {
+      content: "×";
+    }
+  }
+
+  // Search results map infobox.
+  #map-canvas
+  {
+    .infoBox
+    {
+      .button-close:after
+      {
+        content: "×";
+      }
+    }
+  }
+}

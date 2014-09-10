@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  include GoogleTranslator
   include CurrentLanguage
 
   def index

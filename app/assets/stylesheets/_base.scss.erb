@@ -342,7 +342,6 @@ sup
     font-size: $font_size_120;
   }
 
-  .close-button:after,
   .close-button::after
   {
     content: "×";
@@ -364,6 +363,7 @@ sup
     font-size: $font_size_110;
     border-bottom: 6px solid $accentA-light;
     padding-bottom: 10px;
+    padding-right: 10px;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -383,7 +383,7 @@ sup
   }
 
   // Feedback form styles.
-  input,textarea,button
+  input, textarea, button
   {
     padding: 5px;
     width: 228px;
@@ -1380,7 +1380,6 @@ body { top: 0px !important; }
           font-family: $font_serif;
         }
 
-        h1.name > a:after,
         h1.name > a::after
         {
           content: " more...";
@@ -1390,14 +1389,12 @@ body { top: 0px !important; }
           color: rgba($black,.4);
         }
 
-        h1.name > a:hover:after,
         h1.name > a:hover::after
         {
           color: $black;
           border-right: 0;
           border-top: 0;
         }
-
 
         h2.agency
         {
@@ -1570,7 +1567,6 @@ body { top: 0px !important; }
       font-family: $font_serif;
     }
 
-    .button-close:after,
     .button-close::after
     {
       content: "×";
@@ -1856,8 +1852,7 @@ body { top: 0px !important; }
             margin-right: 4px;
           }
 
-          >.fax:after,
-          >.fax::after
+          > .fax::after
           {
             content: "FAX";
             font-size: 10px;
@@ -1923,7 +1918,6 @@ body { top: 0px !important; }
       line-height: normal;
     }
 
-    a:last-child:after,
     a:last-child::after
     {
       content: ">";
@@ -1931,7 +1925,6 @@ body { top: 0px !important; }
       color: rgba($black,.4);
     }
 
-    a:last-child:before,
     a:last-child::before
     {
       content: "<";
