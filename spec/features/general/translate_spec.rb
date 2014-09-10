@@ -1,22 +1,12 @@
 require 'rails_helper'
 
 feature 'page translation', :js do
-
-  # Force Capybara not to use 127.0.0.1 for cookie domain.
-  # From http://stackoverflow.com/
-  # questions/6536503/capybara-with-subdomains-default-host
-  def capybara_host(host)
-    default_url_options[:host] = host
-    Capybara.app_host = "http://#{host}"
-  end
-
   background do
     # use this with poltergeist
     # page.driver.remove_cookie('googtrans')
 
     # use this with webkit
     page.driver.browser.clear_cookies
-    capybara_host "#{ENV['DOMAIN_NAME']}:4000/"
   end
 
   context 'translation cookie is set to Spanish' do
@@ -30,7 +20,7 @@ feature 'page translation', :js do
       page.driver.browser.
         set_cookie('googtrans=/en/es; path=/; domain=.lvh.me')
 
-      visit('/')
+      visit("http://www.lvh.me:#{Capybara.server_port}/")
       within('#language-box') do
         all_links = all('a')
         expect(all_links).not_to include 'Español'
@@ -40,8 +30,8 @@ feature 'page translation', :js do
   end
 
   context 'homepage is translated' do
-    it 'displays a Spanish-language contents' do
-      visit('/')
+    it 'displays translated contents' do
+      visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
       expect(page.driver.cookies['googtrans']).to eq('/en/es')
@@ -53,10 +43,11 @@ feature 'page translation', :js do
     end
   end
 
-  context 'results page is translated' do
-    it 'displays a Spanish-language contents' do
-      visit('/')
+  context 'results page is translated', :vcr do
+    it 'displays translated contents' do
+      visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
+      delay
       find(:css, '#button-search').click
       delay # give Google Translate a chance to translate page
       expect(page).to have_content('Encontrar') # 'Encontrar' = 'Find'
@@ -64,8 +55,8 @@ feature 'page translation', :js do
   end
 
   context 'page is translated between languages' do
-    it 'displays a Spanish-, Tagalog-, and English-language contents' do
-      visit('/')
+    it 'displays translated content for each language' do
+      visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
       expect(page.driver.cookies['googtrans']).to eq('/en/es')
