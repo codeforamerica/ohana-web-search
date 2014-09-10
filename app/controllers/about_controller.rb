@@ -1,5 +1,4 @@
 class AboutController < ApplicationController
-  include GoogleTranslator
   respond_to :html, :json
 
   def index

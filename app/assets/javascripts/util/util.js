@@ -175,14 +175,15 @@ function () {
     return params;
   }
 
-  // Retrieve a cookie value by name.
-  // @param [String] the name of the cookie.
-  // @return [String] the cookie value.
-  function getCookie(name) {
-    var parts = document.cookie.split(name + '=');
-    if (parts.length === 2) return parts.pop().split(';').shift();
+  // Retrieve named query parameter.
+  // (from http://stackoverflow.com/questions/901115/
+  // how-can-i-get-query-string-values-in-javascript)
+  function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-
 
   return {
     isEventSupported:isEventSupported,
@@ -190,7 +191,6 @@ function () {
     getOffset:getOffset,
     getStyle:getStyle,
     queryString:queryString,
-    getQueryParams:getQueryParams,
-    getCookie:getCookie
+    getParameterByName:getParameterByName
   };
 });
