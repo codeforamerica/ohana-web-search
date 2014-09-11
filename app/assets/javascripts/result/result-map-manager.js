@@ -133,7 +133,7 @@ function (BitMask, markerManager, googleMaps) {
     ];
 
     var mapOptions = {
-      zoom: 15,
+      maxZoom: 16,
       scrollwheel: false,
       zoomControl: true,
       panControl: false,

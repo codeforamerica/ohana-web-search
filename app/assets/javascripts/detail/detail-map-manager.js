@@ -45,7 +45,7 @@ function (markerManager, googleMaps) {
       var latLng = new google.maps.LatLng(lat, lng);
 
       var mapOptions = {
-        zoom: 16,
+        maxZoom: 16,
         center: latLng,
         scrollwheel: false,
         zoomControl: true,
