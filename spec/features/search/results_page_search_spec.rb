@@ -103,6 +103,14 @@ feature 'searching from results page', :vcr do
     end
   end
 
+  context 'when clicking ZIP code link in results' do
+    it 'displays locations that are nearby to that ZIP code' do
+      search(keyword: 'Samaritan House')
+      first('#list-view li').click_link('94063')
+      expect(page).to have_link('Redwood City Corps')
+    end
+  end
+
   context 'when a search parameter has no value' do
     it 'is not included in the page title' do
       visit('/locations?location=94403&keyword=')

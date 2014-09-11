@@ -9,8 +9,8 @@ feature 'location details' do
       expect(page).to have_content('Mailing Address')
       expect(page).to have_content('Physical Address')
       expect(page).to have_content('2013 Avenue of the fellows')
-      expect(page).to have_content('90210')
-      expect(page).to have_content('05201')
+      expect(page).to have_link('90210')
+      expect(page).to have_link('05201')
     end
   end
 

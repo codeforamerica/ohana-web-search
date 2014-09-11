@@ -17,4 +17,4 @@
     = location.mail_address.state
 
   %span.zipcode{ itemprop: 'postalCode' }
-    = location.mail_address.zip
+    = link_to location.mail_address.zip, locations_path(location: location.mail_address.zip)
