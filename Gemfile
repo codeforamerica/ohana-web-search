@@ -77,7 +77,6 @@ end
 group :test do
   gem 'coveralls', require: false
   gem 'capybara', '>= 2.2.1'
-  gem 'json', '>= 1.8.1'
 
   # gem 'poltergeist'
   gem 'capybara-webkit'
