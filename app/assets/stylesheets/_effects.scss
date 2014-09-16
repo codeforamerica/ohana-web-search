@@ -1,21 +1,18 @@
 //=============================================================================
 // Visability effects.
-.hide
-{
+.hide {
   display: none !important;
   visibility: hidden;
 }
 
-.transparent
-{
+.transparent {
   @include opacity(0);
 }
 
 //=============================================================================
 // Animation effects.
 // Fading styles
-.fade-in
-{
+.fade-in {
   @include opacity(1);
 
   z-index:9999 !important;
@@ -24,8 +21,7 @@
   @include transition(opacity $animation-duration-base, z-index $animation-duration-base);
 }
 
-.fade-out
-{
+.fade-out {
   @include opacity(0);
 
   z-index:0 !important;
@@ -35,8 +31,7 @@
 }
 
 // delayed fading styles that trigger at a delay equal to 1/2 the duration of the fading styles
-.fade-in-delay
-{
+.fade-in-delay {
   @include opacity(1);
 
   z-index:9998 !important;
@@ -46,8 +41,7 @@
   @include transition-delay($animation-duration-fast);
 }
 
-.fade-out-delay
-{
+.fade-out-delay {
   @include opacity(0);
 
   z-index:-9998 !important;
@@ -57,34 +51,29 @@
   @include transition-delay($animation-duration-fast);
 }
 
-.flip
-{
+.flip {
   @include rotateY(180deg);
   @include transition(transform $animation-duration-base);
   @include backface-visibility( hidden );
 }
 
-.unflip
-{
+.unflip {
   @include rotateY(0deg);
   @include transition(transform $animation-duration-base);
   @include backface-visibility( hidden );
 }
 
-.blur
-{
+.blur {
   @include filter(blur(4px));
   @include transition(filter $animation-duration-base);
 }
 
-.unblur
-{
+.unblur {
   @include filter(blur(0px));
   @include transition(filter $animation-duration-base);
 }
 
-.slide-up
-{
+.slide-up {
   z-index:-1 !important;
   margin-top: -9999px !important;
   position:absolute !important;
@@ -94,8 +83,7 @@
   transition: margin-top $animation-duration-base, z-index $animation-duration-base;
 }
 
-.slide-down
-{
+.slide-down {
   z-index:-1 !important;
   margin-top: 0px !important;
   position:absolute !important;
@@ -110,29 +98,24 @@
 
 // Class to fix position a component so it stays on screen when scrolling.
 // Used in combination with the "layer-*" classes to determine the layering.
-.floating
-{
+.floating {
   position: fixed !important;
   left: 0;
   top: 0;
 }
 
-.layer-10
-{
+.layer-10 {
   z-index: $layer-10 !important;
 }
 
-.layer-9
-{
+.layer-9 {
   z-index: $layer-9 !important;
 }
 
-.layer-8
-{
+.layer-8 {
   z-index: $layer-8 !important;
 }
 
-.layer-7
-{
+.layer-7 {
   z-index: $layer-7 !important;
 }

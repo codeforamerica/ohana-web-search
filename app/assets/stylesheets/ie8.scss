@@ -4,62 +4,47 @@
 
 // NOTE: Depends on HTML5 Boilerplate lt-ie9 class added through Internet Explorer
 // conditional comments in the head of the page.
-html.lt-ie9
-{
+html.lt-ie9 {
   // Adjustments for popups in header.
-  #popups
-  {
-    .popup-container > article
-    {
+  #popups {
+    .popup-container > article {
       padding: 10px;
       @include box-sizing(border-box);
       border: 1px solid $black;
     }
 
-    .arrow
-    {
+    .arrow {
       display: none;
     }
 
-    .close-button:after
-    {
+    .close-button:after {
       color: $greyscale_midtone;
       content: "×";
     }
   }
 
   // Adjustments for alert box component.
-  .alert
-  {
+  .alert {
     border: 1px solid $black;
 
     // Since IE8 doesn't support rbga() notation, make alert links
     // lines thicker on roll-over.
-    a
-    {
+    a {
       color:$white;
       border-bottom:1px solid $white;
       text-decoration: none;
     }
 
-    a:hover
-    {
+    a:hover {
       color:$white;
       border-bottom:2px solid $white;
     }
   }
 
   // Adjustments location details
-  #detail-info
-  {
-    // The < and > around the "more"
-    // button on the description are not included
-    // because IE8 doesn't support :last-child
-    // .description a:last-child:after
-    // .description a:last-child:before
+  #detail-info {
 
-    .fax:after
-    {
+    .fax:after {
       content: "FAX";
       font-size: 10px;
       font-family: $font_san_serif;
@@ -68,16 +53,11 @@ html.lt-ie9
   }
 
   // Adjustments for search result list.
-  #list-view
-  {
-    .results-entry
-    {
-      > header
-      {
-        >hgroup
-        {
-          h1.name > a:after
-          {
+  #list-view {
+    .results-entry {
+      > header {
+        > hgroup {
+          h1.name > a:after {
             content: " more...";
             font-size: $font_size_90;
             font-family: $font_san_serif;
@@ -85,8 +65,7 @@ html.lt-ie9
             color: rgba($black,.4);
           }
 
-          h1.name > a:hover:after
-          {
+          h1.name > a:hover:after {
             color: $black;
             border-right: 0;
             border-top: 0;
@@ -97,21 +76,16 @@ html.lt-ie9
   }
 
   // Clearable search input fields.
-  .clearable
-  {
-    .button-clear:after
-    {
+  .clearable {
+    .button-clear:after {
       content: "×";
     }
   }
 
   // Search results map infobox.
-  #map-canvas
-  {
-    .infoBox
-    {
-      .button-close:after
-      {
+  #map-canvas {
+    .infoBox {
+      .button-close:after {
         content: "×";
       }
     }

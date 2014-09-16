@@ -79,80 +79,65 @@
 
 
      // header area of all pages
-    #content > header
-    {
+    #content > header {
       font-size:14px !important;
 
-      nav
-      {
+      nav {
         position:static !important;
       }
     }
 
-    .inside
-    {
+    .inside {
       // hide utility buttons
-      #content-header
-      {
-        nav
-        {
+      #content-header {
+        nav {
           display:none !important;
         }
       }
 
       // hide search sidebar when printing
-      #search-container
-      {
+      #search-container {
         display:none !important;
       }
 
-      #results-header > nav a
-      {
+      #results-header > nav a {
         display:none !important;
       }
 
-      #results-container
-      {
+      #results-container {
         margin-left:0 !important;
         border-left:0 !important;
         padding-top:0 !important;
 
-        #results-header
-        {
+        #results-header {
           display:none !important;
         }
       }
 
-      #detail-info
-      {
+      #detail-info {
         border:0 !important;
         margin:0;
 
-        > aside
-        {
+        > aside {
           float:none;
           width:100%;
           margin:0;
         }
 
         .contact-box,
-        .address-box
-        {
+        .address-box {
           float:left !important;
         }
 
-        .overview-box
-        {
+        .overview-box {
           clear:both;
         }
 
-        > section
-        {
+        > section {
           margin-right:0;
         }
 
-        .map-box
-        {
+        .map-box {
           page-break-before: always;
 
           div > section
@@ -161,8 +146,7 @@
           }
         }
 
-        .map
-        {
+        .map {
           margin:0;
           padding:0;
         }
@@ -173,12 +157,10 @@
         @include inline-block();
       }
 
-      #detail-info .metadata
-      {
+      #detail-info .metadata {
         padding-bottom:0;
 
-        .updated-at
-        {
+        .updated-at {
           float:right;
           margin:0;
           padding:0;
@@ -186,38 +168,31 @@
         }
       }
 
-      #content #app-footer
-      {
+      #content #app-footer {
         padding:0 !important;
         margin:0 !important;
 
-        p
-        {
+        p {
           padding:0;
           padding-right:20px;
         }
 
-        p span:last-child
-        {
+        p span:last-child {
           display:none;
         }
       }
 
-      #results-entries
-      {
-        li
-        {
+      #results-entries {
+        li {
           border:1px solid rgba($black,.4) !important;
 
           // needed for FF to display result list item links
-          a
-          {
+          a {
             display:block !important;
           }
         }
 
-        a:after
-        {
+        a:after {
           margin-left:20px !important;
           padding-bottom:10px !important;
           display:inline-block !important;
