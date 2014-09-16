@@ -8,18 +8,15 @@
 // Reset webkit added styles.
 @include reset-input-webkit();
 
-.input-search-small
-{
+.input-search-small {
   @include input-placeholder(rgba($white, 0.6), italic);
   position:relative;
 
-  input:focus
-  {
+  input:focus {
     outline: none;
   }
 
-  > input
-  {
+  > input {
     font-size: $font_size_105;
     margin-left: 0px;
     height: 45px;
@@ -38,8 +35,7 @@
     color: $white;
   }
 
-  > .button-icon
-  {
+  > .button-icon {
     cursor: pointer;
     background: none;
     border: none;
@@ -59,15 +55,12 @@
     top: 0;
     z-index: $layer-8;
 
-    >.fa
-    {
+    >.fa {
       color: $primary-darkest;
     }
 
-    &:hover
-    {
-      >.fa
-      {
+    &:hover {
+      > .fa {
         color: $primary-dark;
         // color: $button-hover-color;
       }
@@ -75,19 +68,16 @@
   }
 }
 
-.input-search-big
-{
+.input-search-big {
   @include input-placeholder(midtone($black,0.2), italic);
   position: relative;
   width: 440px;
 
-  input:focus
-  {
+  input:focus {
     outline: none;
   }
 
-  > input
-  {
+  > input {
     padding-left: 45px;
     width: 100%;
 
@@ -107,8 +97,7 @@
     color: $black;
   }
 
-  > .button-icon
-  {
+  > .button-icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -135,8 +124,7 @@
 
     cursor: pointer;
 
-    >span
-    {
+    > span {
       @include inline-block();
       color: $black; // IE fallback
       color: midtone($black, .5);
@@ -145,44 +133,36 @@
       color: $button-color;
     }
 
-    >.fa
-    {
+    >.fa {
       color: $button-fa-color;
     }
 
-    &:hover
-    {
+    &:hover {
       background: $button-hover-bg;
 
-      >span
-      {
+      >span {
         text-shadow: none;
         color: $button-hover-color;
       }
 
-      >.fa
-      {
+      >.fa {
         color: $button-fa-color;
       }
     }
   }
 }
 
-.input-search-filter
-{
+.input-search-filter {
   @include input-placeholder(rgba($white, 0.6), italic);
   position: relative;
 
-  > label
-  {
+  > label {
     font-size: $font_size_90;
     color: rgba($black, 0.5);
   }
 
-  > .filter-input-group
-  {
-    > .button-icon
-    {
+  > .filter-input-group {
+    > .button-icon {
       font-size: $font_size_110;
       position: absolute;
       z-index: $layer-8;
@@ -196,14 +176,12 @@
       text-align: center;
       cursor: pointer;
 
-      &:hover
-      {
+      &:hover {
         color: $search-button-hover-color;
       }
     }
 
-    > input
-    {
+    > input {
       width: 100%;
       height: 40px;
       padding-left: 35px;
@@ -220,22 +198,18 @@
       color: $white;
     }
 
-    > input:focus
-    {
+    > input:focus {
       outline: none;
     }
   }
 }
 
-.input-search-filter.input-search-filter-option
-{
-  > .filter-input-group > input
-  {
+.input-search-filter.input-search-filter-option {
+  > .filter-input-group > input {
     @include rounded-except(upper-right);
   }
 
-  .input-search-filter-option
-  {
+  .input-search-filter-option {
     font-size: $font_size_95;
     border: none;
     margin: 0;
@@ -248,38 +222,32 @@
     cursor: pointer;
     @include rounded-except(bottom);
 
-    > span
-    {
+    > span {
       color: $black; // IE fallback
       color: midtone($black, 0.5);
     }
 
-    > .fa
-    {
+    > .fa {
       color: $input-fa-color;
     }
 
-    &:hover
-    {
+    &:hover {
       background: $search-button-hover-background;
       border: 1px solid rgba($input-border-color,0.2);
       border-bottom: 1px solid rgba($white, 0.3);
 
-      .fa
-      {
+      .fa {
         color: $search-button-fa-hover-color;
       }
     }
 
     // Prevent hover state appearance when 'disabled' attribute is present.
-    &[disabled]
-    {
+    &[disabled] {
       background: rgba($white, 0.3);
       border: 1px solid rgba($white, 0);
       cursor: auto;
 
-      .fa
-      {
+      .fa {
         color: $input-fa-color;
       }
     }
@@ -288,19 +256,16 @@
 
 // Clearable input fields have a (x) that can be clicked for clearing the
 // field's content.
-.clearable
-{
+.clearable {
   position: relative;
 
-  &:hover
-  {
+  &:hover {
     .button-clear {
       color: rgba($black, .4);
     }
   }
 
-  .button-clear
-  {
+  .button-clear {
     position: absolute;
     right: 0px;
     top: 50%;
@@ -316,13 +281,11 @@
     background: transparent;
   }
 
-  .button-clear::after
-  {
+  .button-clear::after {
     content: "×";
   }
 
-  .button-clear:hover
-  {
+  .button-clear:hover {
     color: $black;
     cursor: pointer;
   }
