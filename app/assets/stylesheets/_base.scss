@@ -1768,39 +1768,6 @@ body { top: 0px !important; }
     margin-right: 400px;
   }
 
-  .description
-  {
-    a:last-child
-    {
-      @include inline-block();
-      // Overrides compass inline-block mixin setting - needed for correct font alignment.
-      vertical-align: baseline;
-      font-family: $font_san_serif;
-      margin-left: 5px;
-      line-height: normal;
-    }
-
-    a:last-child::after
-    {
-      content: ">";
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.4);
-    }
-
-    a:last-child::before
-    {
-      content: "<";
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.4);
-    }
-
-    a:last-child:hover
-    {
-      border-bottom: 1px solid $greyscale_midtone; // IE fallback
-      border-bottom: 1px solid rgba($black,.4);
-    }
-  }
-
   .overview-box
   {
     .description
@@ -1912,6 +1879,44 @@ body { top: 0px !important; }
     }
   }
 
+}
+
+/* ==========================================================================
+   State classes
+   ========================================================================== */
+// Classes that set a certain state of a component.
+
+// Character limited text will have a link with a more/less button to expand
+// and contract the amount of text shown.
+.character-limited
+{
+  a:last-child
+  {
+    @include inline-block();
+    // Overrides compass inline-block mixin setting - needed for correct font alignment.
+    vertical-align: baseline;
+    font-family: $font_san_serif;
+    margin-left: 5px;
+    line-height: normal;
+
+    span:first-child
+    {
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.4);
+    }
+
+    span:last-child
+    {
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black,.4);
+    }
+
+    &:hover
+    {
+      border-bottom: 1px solid $greyscale_midtone; // IE fallback
+      border-bottom: 1px solid rgba($black,.4);
+    }
+  }
 }
 
 
