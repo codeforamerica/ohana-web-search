@@ -211,7 +211,7 @@
               Last updated:
             %span
               = @location.updated_at.to_s(:full_date_and_time)
-            %div
+            %div.button-edit
               = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
                 %i{ class: 'fa fa-pencil' }
                 Edit

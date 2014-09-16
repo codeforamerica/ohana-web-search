@@ -4,199 +4,216 @@
    ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
+  * {
+      background: transparent !important;
+      color: #000 !important; /* Black prints faster: h5bp.com/s */
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+
+  // Show the href value of links.
+  #app-footer a[href]:after {
+      content: " (" attr(href) ")";
+      color: rgba($black, 0.6);
+      font-size: $font_size_90;
+  }
+
+  /*
+  abbr[title]:after {
+      content: " (" attr(title) ")";
+      color:$black_alpha60;
+      font-size: $font_size_90;
+  }
+  // Don't show links for images, or javascript/internal links
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+      content: "";
+  }
+  */
+
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+
+  thead {
+      display: table-header-group; /* h5bp.com/t */
+  }
+
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+
+  img {
+      max-width: 100% !important;
+  }
+
+  @page {
+      margin: 0.5cm;
+      // needed to prevent overlap with header and footer that browser adds
+      margin-top: 1cm;
+      margin-bottom: 2cm;
+  }
+
+  p,
+  h2,
+  h3 {
+      orphans: 3;
+      widows: 3;
+  }
+
+  h2,
+  h3 {
+      page-break-after: avoid;
+  }
+
+
+   // Header area of all pages.
+  #content > header {
+    font-size: 14px !important;
+  }
+
+  // Hide utility links (about, contribute, feedback).
+  #content-header nav {
+    display: none !important;
+  }
+
+  #logo a {
+    border-bottom: none !important;
+  }
+
+  #app-footer {
+    p {
+      padding: 0;
+      padding-right: 20px;
     }
 
-    a,
-    a:visited {
-        //text-decoration: underline;
-        border-bottom:1px solid $greyscale_light !important;
+    .get-this-app,
+    #google-translate-container,
+    .cfaflag {
+      display: none !important;
     }
+  }
 
-    // show links href values
-    #app-footer a[href]:after {
-        content: " (" attr(href) ")";
-        color: rgba($black, .6);
-        font-size: $font_size_90;
-    }
+  .inside {
 
-    /*
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-        color:$black_alpha60;
-        font-size: $font_size_90;
-    }
-    // Don't show links for images, or javascript/internal links
+    // Hide search result header.
+    #results-container {
+      margin-left:0 !important;
+      border-left:0 !important;
+      padding-top:0 !important;
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-    */
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-        // needed to prevent overlap with header and footer that browser adds
-        margin-top: 1cm;
-        margin-bottom: 2cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-
-
-     // header area of all pages
-    #content > header {
-      font-size:14px !important;
-
-      nav {
-        position:static !important;
+      .results-header {
+        display:none !important;
       }
     }
 
-    .inside {
-      // hide utility buttons
-      #content-header {
-        nav {
-          display:none !important;
+    // Hide search sidebar.
+    #search-container {
+      display:none !important;
+    }
+
+    #detail-info {
+      border:0 !important;
+      margin:0;
+
+      > header {
+        border-bottom: none !important;
+        padding: 0 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      > aside {
+        float: none;
+        width: 100%;
+        margin: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        > section > section {
+          display: block !important;
+          float: none !important;
+          h1 {
+            font-weight: bold;
+          }
+          * {
+            vertical-align: top;
+            font-size: 14px !important;
+            line-height: 14px !important;
+          }
         }
       }
 
-      // hide search sidebar when printing
-      #search-container {
-        display:none !important;
+      #contact-info {
+        padding-bottom: 0;
+        margin-bottom: 0;
       }
 
-      #results-header > nav a {
-        display:none !important;
+      // Hide the categories box.
+      #categories-box {
+        display: none !important;
       }
 
-      #results-container {
-        margin-left:0 !important;
-        border-left:0 !important;
-        padding-top:0 !important;
+      .contact-title {
+        color: rgba($black, 0.4) !important;
+      }
 
-        #results-header {
-          display:none !important;
+      .overview-box {
+        margin-right:0 !important;
+      }
+
+      .map-box {
+        page-break-before: always;
+
+        div > section
+        {
+          display:block !important;
         }
       }
 
-      #detail-info {
-        border:0 !important;
+      .map {
         margin:0;
-
-        > aside {
-          float:none;
-          width:100%;
-          margin:0;
-        }
-
-        .contact-box,
-        .address-box {
-          float:left !important;
-        }
-
-        .overview-box {
-          clear:both;
-        }
-
-        > section {
-          margin-right:0;
-        }
-
-        .map-box {
-          page-break-before: always;
-
-          div > section
-          {
-            display:block !important;
-          }
-        }
-
-        .map {
-          margin:0;
-          padding:0;
-        }
-      }
-
-      // stack content sections in rows
-      #detail-info > * > section * > section {
-        @include inline-block();
-      }
-
-      #detail-info .metadata {
-        padding-bottom:0;
-
-        .updated-at {
-          float:right;
-          margin:0;
-          padding:0;
-          padding-right:20px;
-        }
-      }
-
-      #content #app-footer {
-        padding:0 !important;
-        margin:0 !important;
-
-        p {
-          padding:0;
-          padding-right:20px;
-        }
-
-        p span:last-child {
-          display:none;
-        }
-      }
-
-      #results-entries {
-        li {
-          border:1px solid rgba($black,.4) !important;
-
-          // needed for FF to display result list item links
-          a {
-            display:block !important;
-          }
-        }
-
-        a:after {
-          margin-left:20px !important;
-          padding-bottom:10px !important;
-          display:inline-block !important;
-        }
+        padding:0;
       }
     }
+
+    // Stack content sections in rows.
+    #detail-info > * > section * > section {
+      @include inline-block();
+    }
+
+    #detail-info .metadata {
+
+      .updated-at {
+        float: right;
+        margin: 0;
+        padding: 0;
+        padding-right: 20px;
+      }
+
+      .button-edit {
+        display: none !important;
+      }
+    }
+
+    #results-entries {
+      li {
+        // needed for FF to display result list item links
+        a {
+          display: block !important;
+        }
+      }
+
+      a:after {
+        display: none !important;
+      }
+    }
+  }
 }
