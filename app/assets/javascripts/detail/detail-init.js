@@ -23,7 +23,7 @@ function (err) {
   // Initialize no map loaded state.
   require([
     'detail/no-detail-map-manager',
-    'detail/character-limiter',
+    'detail/character-limited/character-limiter',
     'search/header-manager'
   ],
   function (map,cl,header) {
