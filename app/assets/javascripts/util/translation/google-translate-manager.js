@@ -70,6 +70,9 @@ function (util, cookie, DropDownLayout) {
     // Activate hooks to manipulate Google Website Translator Gadget through
     // the URL 'translate' parameter.
     _layout.activate();
+
+    // Show the language links used to set the 'translate' parameter.
+    _activateLanguageLinks();
   }
 
   // @return [Object] Return the inline Google Website Translator Gadget
@@ -92,6 +95,15 @@ function (util, cookie, DropDownLayout) {
         cookie.create('googtrans', newCookieValue, true);
         window.location.reload();
       }
+    }
+  }
+
+  // Show any language links that appear on the page.
+  function _activateLanguageLinks() {
+    var links = document.querySelectorAll('.link-translate');
+    var numLinks = links.length;
+    while( numLinks > 0 ) {
+      links[--numLinks].classList.remove('hide');
     }
   }
 
