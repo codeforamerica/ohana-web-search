@@ -11,10 +11,10 @@ feature 'page translation', :js do
       # page.driver.set_cookie('googtrans','/en/es')
 
       # use this with webkit
-      page.driver.browser.
-        set_cookie('googtrans=/en/es; path=/; domain=lvh.me')
-      page.driver.browser.
-        set_cookie('googtrans=/en/es; path=/; domain=.lvh.me')
+      page.driver.
+        set_cookie('googtrans', '/en/es', path: '/', domain: 'lvh.me')
+      page.driver.
+        set_cookie('googtrans', '/en/es', path: '/', domain: '.lvh.me')
 
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       within('#language-box') do
@@ -30,7 +30,7 @@ feature 'page translation', :js do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
-      expect(page.driver.cookies['googtrans']).to eq('/en/es')
+      expect(page.driver.cookies['googtrans'].value).to eq('/en/es')
       within('#language-box') do
         all_links = all('a')
         expect(all_links).not_to include 'Español'
@@ -55,16 +55,16 @@ feature 'page translation', :js do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
-      expect(page.driver.cookies['googtrans']).to eq('/en/es')
+      expect(page.driver.cookies['googtrans'].value).to eq('/en/es')
       expect(page).to have_content('Necesito')
       find_link('Tagalog').click
       delay
-      expect(page.driver.cookies['googtrans']).to eq('/en/tl')
+      expect(page.driver.cookies['googtrans'].value).to eq('/en/tl')
       expect(page).to have_content('Kailangan ko')
       find_link('English').click
       expect(page).to have_content('I need')
       delay
-      expect(page.driver.cookies['googtrans']).to eq('/en/en')
+      expect(page.driver.cookies['googtrans'].value).to eq('/en/en')
     end
   end
 end
