@@ -3,8 +3,7 @@
    ========================================================================== */
 
 // alert messages
-.alert-container
-{
+.alert-container {
   width:100%;
   min-height:51px;
   font-family:$font_san_serif;
@@ -12,8 +11,7 @@
   text-align: center;
   pointer-events:none;
 
-  .alert
-  {
+  .alert {
     pointer-events:auto;
     margin:0 auto;
     padding-left:10px;
@@ -24,8 +22,7 @@
     @include border-radius($border_radius_base);
     @include single-box-shadow($black, 0px, 0px, $border_radius_base);
 
-    p
-    {
+    p {
       text-align:center;
       padding: 10px;
       font-weight:bold;
@@ -33,22 +30,19 @@
       @include inline-block();
     }
 
-    a
-    {
+    a {
       color:$white;
       border-bottom:1px solid rgba($white,.5);
       text-decoration: none;
     }
 
-    a:hover
-    {
+    a:hover {
       color:$white;
       border-bottom:1px solid $white;
     }
   }
 
-  .alert-close
-  {
+  .alert-close {
     color: lighten($black,50) !important; // IE Fallback
     color: rgba($white,.5) !important;
     border-bottom: none !important;
@@ -59,52 +53,44 @@
     @include inline-block();
   }
 
-  .alert-valid
-  {
+  .alert-valid {
     color: $black;
     background:saturate($accentA-base,1);
   }
 
-  .alert-error
-  {
+  .alert-error {
     color: $white;
     background:saturate($alert-bg,1);
   }
 
-  .alert-warning
-  {
+  .alert-warning {
     color: $black;
     background:saturate($alert-bg,1);
   }
 
-  .alert-info
-  {
+  .alert-info {
     color: $black;
     background:saturate($primary,1);
   }
 
-  .alert-close
-  {
+  .alert-close {
     color: rgba($black, .25) !important;
   }
 
-  .alert-close:hover
-  {
+  .alert-close:hover {
     color: rgba($black, .75) !important;
     cursor:pointer;
   }
 
 }
 
-.alert-container.floating
-{
+.alert-container.floating {
   position:fixed;
   z-index:10000;
   left:0;
   top:0;
 
-  .alert
-  {
+  .alert {
     @include rounded-except(top);
   }
 }

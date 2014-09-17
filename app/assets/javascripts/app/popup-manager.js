@@ -74,7 +74,6 @@ function (googleTranslate, util, feedback) {
   // @param popup Reference to the popup HTML to show.
   // @param trigger Reference to the link trigger HTML.
   function _show(popup, trigger) {
-    console.log(googleTranslate.isTranslated());
     if (!googleTranslate.isTranslated()) {
       _lastTrigger = trigger;
 

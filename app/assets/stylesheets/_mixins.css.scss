@@ -1,78 +1,62 @@
 // Mixins are custom functions that abbreviate generating CSS effects.
 // Type size mixin provides mapping from human-readable font sizing labeling
 // to base font size values.
-@mixin type-size($size)
-{
-  @if $size == "tiny"
-  {
+@mixin type-size($size) {
+  @if $size == "tiny" {
     @include adjust-font-size-to($font_size_80);
   }
-  @if $size == "small"
-  {
+  @if $size == "small" {
     @include adjust-font-size-to($font_size_90);
   }
-  @if $size == "base-small"
-  {
+  @if $size == "base-small" {
     @include adjust-font-size-to($font_size_95);
   }
-  @if $size == "baseline"
-  {
+  @if $size == "baseline" {
     @include adjust-font-size-to($font_size_100);
   }
-  @if $size == "base-medium"
-  {
+  @if $size == "base-medium" {
     @include adjust-font-size-to($font_size_105);
   }
-  @if $size == "medium"
-  {
+  @if $size == "medium" {
     @include adjust-font-size-to($font_size_110);
   }
-  @if $size == "large"
-  {
+  @if $size == "large" {
     @include adjust-font-size-to($font_size_120);
   }
-  @if $size == "xlarge"
-  {
+  @if $size == "xlarge" {
     @include adjust-font-size-to($font_size_130);
   }
 }
 
-@mixin input-placeholder($color, $font-style)
-{
-  input::input-placeholder
-  {
+@mixin input-placeholder($color, $font-style) {
+  input::input-placeholder {
     color: $color;
     font-style: $font-style;
   }
 
-  input::-webkit-input-placeholder
-  {
+  input::-webkit-input-placeholder {
     color: $color;
     font-style: $font-style;
   }
 
-  input:-moz-placeholder
-  {
+  input:-moz-placeholder {
     color: $color;
     font-style: $font-style;
   }
 
-  input::-moz-placeholder
-  {
+  input::-moz-placeholder {
     color: $color;
     font-style: $font-style;
   }
 
-  input:-ms-input-placeholder
-  {
+  input:-ms-input-placeholder {
     color: $color;
     font-style: $font-style;
   }
 }
 
 // Turns off proprietary default webkit styling of search input fields.
-@mixin reset-input-webkit()
-{
+@mixin reset-input-webkit() {
   // Turns off iOS input rounding.
   input[type=search]::-webkit-search-cancel-button,
   input[type=search]::-webkit-search-decoration,
@@ -93,42 +77,32 @@
 // component.
 // Unfortunately SCSS Compass mixins can't be used here because they don't
 // support the "!important" directive.
-@mixin rounded-except($corner)
-{
-  @if $corner == "none"
-  {
+@mixin rounded-except($corner) {
+  @if $corner == "none" {
     @include border-radius($border-radius-base);
   }
-  @if $corner == "left"
-  {
+  @if $corner == "left" {
     @include border-radius(0px $border-radius-base $border-radius-base 0px);
   }
-  @if $corner == "top"
-  {
+  @if $corner == "top" {
     @include border-radius(0px 0px $border-radius-base $border-radius-base);
   }
-  @if $corner == "right"
-  {
+  @if $corner == "right" {
     @include border-radius($border-radius-base 0px 0px $border-radius-base);
   }
-  @if $corner == "bottom"
-  {
+  @if $corner == "bottom" {
     @include border-radius($border-radius-base $border-radius-base 0px 0px);
   }
-  @if $corner == "upper-left"
-  {
+  @if $corner == "upper-left" {
     @include border-radius(0px $border-radius-base $border-radius-base $border-radius-base);
   }
-  @if $corner == "upper-right"
-  {
+  @if $corner == "upper-right" {
     @include border-radius($border-radius-base 0px $border-radius-base $border-radius-base);
   }
-  @if $corner == "lower-right"
-  {
+  @if $corner == "lower-right" {
     @include border-radius($border-radius-base $border-radius-base 0px $border-radius-base);
   }
-  @if $corner == "lower-left"
-  {
+  @if $corner == "lower-left" {
     @include border-radius($border-radius-base $border-radius-base $border-radius-base 0px);
   }
 }
