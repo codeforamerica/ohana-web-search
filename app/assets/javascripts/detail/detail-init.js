@@ -1,6 +1,6 @@
 require([
   'detail/detail-map-manager',
-  'detail/character-limiter',
+  'detail/character-limited/character-limiter',
   'detail/term-popup-manager',
   'search/header-manager'
 ],
@@ -25,7 +25,7 @@ function (err) {
   // Initialize no map loaded state.
   require([
     'detail/no-detail-map-manager',
-    'detail/character-limiter',
+    'detail/character-limited/character-limiter',
     'detail/term-popup-manager',
     'search/header-manager'
   ],

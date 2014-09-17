@@ -1,5 +1,4 @@
 class LocationsController < ApplicationController
-  include GoogleTranslator
   include CurrentLanguage
   include Cacheable
 

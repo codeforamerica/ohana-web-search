@@ -12,12 +12,10 @@
     and a
     #{link_to 'grant from the Knight Foundation', 'http://www.knightfoundation.org/grants/201447979/', target: '_blank'}.
 
-  %p
+  %p.get-this-app
     %i.fa.fa-bullhorn
     %a{ href: 'https://github.com/codeforamerica/ohana-web-search' } Get this app
     for your city or
     #{link_to 'view project details', 'http://ohanapi.org'}.
-
-  = requirejs_include_tag("routes/#{controller_name}/#{action_name}").gsub("/assets/routes/#{controller_name}/#{action_name}", "routes/#{controller_name}/#{action_name}").html_safe
 
   #google-translate-container

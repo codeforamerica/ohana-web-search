@@ -8,7 +8,6 @@ define(function () {
   function locate(pCallBack) {
     _callBack = pCallBack;
 
-    // Modernizr should pick this up, but just in case...
     var geolocator = navigator.geolocation;
     if (geolocator) {
       var geoOptions = {

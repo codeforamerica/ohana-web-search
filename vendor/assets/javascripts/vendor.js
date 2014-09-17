@@ -14,4 +14,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Modernizr custom build with all modern features of the app.
+// See modernizr.min file for custom-build URL to make adjustments.
+// Also includes html5shiv-printshiv, which enables use of HTML5 sectioning elements in
+// legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9,
+// Safari 4.x (and iPhone 3.x), and Firefox 3.x.
 //= require polyfills/modernizr.min

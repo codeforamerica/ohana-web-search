@@ -1,8 +1,10 @@
 // Manages behavior of the Google Website Translator Gadget.
 define([
+  'util/util',
+  'util/cookie',
   'util/translation/layout/DropDownLayout'
 ],
-function (DropDownLayout) {
+function (util, cookie, DropDownLayout) {
   'use strict';
 
   // The layout object in use.
@@ -26,7 +28,7 @@ function (DropDownLayout) {
   function init(layoutType) {
     _layoutType = layoutType;
 
-    _deleteTranslateCookies();
+    _writeTranslateCookies();
 
     _layout = DropDownLayout.create();
     _layout.init(GOOGLE_TRANSLATE_ELEMENT_ID);
@@ -45,6 +47,16 @@ function (DropDownLayout) {
     window.GoogleTranslate = GoogleTranslate;
   }
 
+  // Checks if the 'googtrans' cookie is set to English or not,
+  // indicating whether the page has been translated using the
+  // Google Website Translator Gadget.
+  // @return [Boolean] true if Google Translation has translated the page.
+  // Returns false if the page is not translated and is in English.
+  function isTranslated() {
+    var googtrans = cookie.read('googtrans');
+    return (googtrans && decodeURIComponent(googtrans) !== '/en/en')
+  }
+
   // Initialize the Google Website Translator Gadget.
   function _googleTranslateElementInit() {
     var gadgetOptions = {
@@ -58,6 +70,9 @@ function (DropDownLayout) {
     // Activate hooks to manipulate Google Website Translator Gadget through
     // the URL 'translate' parameter.
     _layout.activate();
+
+    // Show the language links used to set the 'translate' parameter.
+    _activateLanguageLinks();
   }
 
   // @return [Object] Return the inline Google Website Translator Gadget
@@ -69,22 +84,32 @@ function (DropDownLayout) {
       return google.translate.TranslateElement.InlineLayout.HORIZONTAL;
   }
 
-  // Removes the Google Website Translator cookies by setting their expiration
-  // date into the past.
-  function _deleteTranslateCookies() {
-    var cookies, cookie, eqPos, name;
-    cookies = document.cookie.split('; ');
-    for (var i = 0, len = cookies.length; i < len; i++) {
-      cookie = cookies[i];
-      eqPos = cookie.indexOf('=');
-      name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-      if (name === 'googtrans')
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+  // Overwrite/Create Google Website Translator Gadget cookies if the
+  // 'translate' URL parameter is present.
+  function _writeTranslateCookies() {
+    var translateRequested = util.getParameterByName('translate');
+    if (translateRequested) {
+      var newCookieValue = '/en/'+translateRequested;
+      var oldCookieValue = decodeURIComponent(cookie.read('googtrans'));
+      if(newCookieValue !== oldCookieValue) {
+        cookie.create('googtrans', newCookieValue, true);
+        window.location.reload();
+      }
+    }
+  }
+
+  // Show any language links that appear on the page.
+  function _activateLanguageLinks() {
+    var links = document.querySelectorAll('.link-translate');
+    var numLinks = links.length;
+    while( numLinks > 0 ) {
+      links[--numLinks].classList.remove('hide');
     }
   }
 
   return {
     init:init,
+    isTranslated:isTranslated,
     InlineLayout:InlineLayout
   };
 });
