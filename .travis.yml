@@ -1,7 +1,4 @@
 bundler_args: "--without development:production"
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
 install: bin/wad
 script: bundle exec rspec
 language: ruby

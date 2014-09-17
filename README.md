@@ -20,7 +20,7 @@ You can see a running version of the application at
 * Ruby version 2.1.2
 * Rails version 4.1.5
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Capybara, capybara-webkit
+* Testing Frameworks: RSpec, Capybara, Poltergeist
 
 ## Deploying to Heroku
 See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).

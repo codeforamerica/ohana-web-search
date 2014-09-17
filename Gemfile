@@ -77,9 +77,7 @@ end
 group :test do
   gem 'coveralls', require: false
   gem 'capybara', '>= 2.2.1'
-
-  # gem 'poltergeist'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'vcr', '>= 2.9.0'
   gem 'webmock', '>= 1.17.4'
   gem 'email_spec', '>= 1.5.0'
