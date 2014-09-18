@@ -47,7 +47,7 @@ feature 'page translation', :js do
   end
 
   context 'page is translated between languages' do
-    it 'displays translated content for each language' do
+    xit 'displays translated content for each language' do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
