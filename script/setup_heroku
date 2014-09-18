@@ -2,22 +2,19 @@
 
 set -e
 
-while getopts ":a:o:" opt; do
+while getopts ":a:" opt; do
   case $opt in
     a)
       APP_NAME=$OPTARG
       ;;
-    o)
-      OHANA_API_ENDPOINT=$OPTARG
-      ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
-      echo "Usage: setup_heroku -a your_app_name -o your_api_endpoint" >&2
+      echo "Usage: setup_heroku -a your_app_name" >&2
       exit 1
       ;;
     :)
       echo "Option -$OPTARG requires an argument" >&2
-      echo "Usage: setup_heroku -a your_app_name -o your_api_endpoint" >&2
+      echo "Usage: setup_heroku -a your_app_name" >&2
       exit 1
       ;;
   esac
@@ -29,23 +26,9 @@ if [ -z "$APP_NAME" ]; then
     exit 201
 fi
 
-# Guard clause for OHANA_API_ENDPOINT option
-if [ -z "$OHANA_API_ENDPOINT" ]; then
-    echo "Please provide an Ohana API endpoint using the -o option." >&2
-    exit 202
-fi
-
 # Heroku setup
 echo "Getting ready to set environment variables for $APP_NAME"
-
-echo "Setting CANONICAL_URL"
-heroku config:set CANONICAL_URL=$APP_NAME.herokuapp.com --app $APP_NAME
-
-echo "Setting DOMAIN_NAME"
-heroku config:set DOMAIN_NAME=$APP_NAME.herokuapp.com --app $APP_NAME
-
-echo "Setting OHANA_API_ENDPOINT"
-heroku config:set OHANA_API_ENDPOINT=$OHANA_API_ENDPOINT --app $APP_NAME
+figaro heroku:set -e production
 
 echo "Setting SECRET_TOKEN"
 token=$(python -c 'import uuid; print uuid.uuid4()')
