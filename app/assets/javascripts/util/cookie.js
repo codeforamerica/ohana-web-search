@@ -1,7 +1,9 @@
 // Cookie CRUD functions, from http://www.quirksmode.org/js/cookies.html
 // ERB needed to retrieve domain name that the cookie is saved under.
-define(
-function () {
+define([
+  'util/environmentVariables'
+],
+function (envVars) {
   'use strict';
 
   // @param name [String] The cookie's name.
@@ -19,11 +21,17 @@ function () {
 
     var setting = name + '=' + value + expires + '; path=/';
 
+    // Set the cookie without the domain parameter.
+    document.cookie = setting;
     // Sets the cookie under domain and subdomains
     // (if useDomain parameter is present).
-    document.cookie = setting;
-    if (useDomain)
-      document.cookie = setting + "; domain=.<%= ENV['DOMAIN_NAME'] %>";
+    if (useDomain) {
+      var domain = envVars.getValue('DOMAIN_NAME');
+      var domainSetting = setting + '; domain=' + domain;
+      var subdomainSetting = setting + '; domain=.' + domain;
+      document.cookie = domainSetting;
+      document.cookie = subdomainSetting;
+    }
   }
 
   // @param name [String] The cookie's name to read.
