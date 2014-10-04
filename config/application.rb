@@ -9,6 +9,11 @@ SETTINGS = YAML.load(File.read(File.expand_path('../settings.yml', __FILE__)))
 SETTINGS.merge! SETTINGS.fetch(Rails.env, {})
 SETTINGS.symbolize_keys!
 
+# Set the Etag to the first few characters of the latest commit's SHA1.
+# This allows the browser cache to be invalidated every time you
+# push a new commit to production.
+ENV['ETAG_VERSION_ID'] = `git log --pretty=format:%h -n1`.strip
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
