@@ -5,8 +5,9 @@
 // Form input styles.
 
 // Search.
-// Reset webkit added styles.
+// Reset browser-specific added styles.
 @include reset-input-webkit();
+@include reset-input-ie();
 
 .input-search-small {
   @include input-placeholder(rgba($white, 0.6), italic);

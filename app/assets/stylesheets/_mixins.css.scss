@@ -71,6 +71,17 @@
   }
 }
 
+// Turns off proprietary default IE10 styling of search input fields.
+@mixin reset-input-ie() {
+  // Turns off (x) that's added to inputs when the input has the
+  // clearable class added—meaning it already has a custom clear button.
+  .clearable {
+    input[type=search]::-ms-clear {
+      display: none;
+    }
+  }
+}
+
 // These are classes that apply rounding to one or more corners.
 // The "except" set will square off (non-round) the corners specified.
 // They are intended for UI components that positioned adjacent to another
