@@ -7,27 +7,15 @@ define([
 function (markerManager, googleMaps) {
   'use strict';
 
-  // The <div> element that the Google map loads into.
-  var _map;
-
-  // The location of the current location.
-  var _locationMarker;
-
-  // The details map div.
-  var _mapCanvas;
-
-  // The info window to pop up on click.
-  var _infoWindow;
-
   function init() {
     googleMaps.load(_renderMap);
   }
 
   function _renderMap() {
-    _mapCanvas = document.getElementById('detail-map-canvas');
+    var mapCanvas = document.getElementById('detail-map-canvas');
 
-    if (_mapCanvas) {
-      _infoWindow = new google.maps.InfoWindow();
+    if (mapCanvas) {
+      var infoWindow = new google.maps.InfoWindow();
       var titleElm = document.getElementById('detail-map-canvas-title');
       var latElm = document.getElementById('detail-map-canvas-lat');
       var lngElm = document.getElementById('detail-map-canvas-lng');
@@ -59,27 +47,26 @@ function (markerManager, googleMaps) {
         mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
-      _map = new google.maps.Map(document.getElementById('detail-map-canvas'),
-                                 mapOptions);
+      var map = new google.maps.Map(mapCanvas, mapOptions);
 
       var markerProxy = markerManager.create(markerManager.GENERIC);
       markerProxy.turnOn(markerProxy.LARGE_ICON);
 
       var locationOptions = {
-          map: _map,
+          map: map,
           title: title,
           position: latLng,
           icon: markerProxy.getIcon()
         };
-      _locationMarker = new google.maps.Marker(locationOptions);
+      var locationMarker = new google.maps.Marker(locationOptions);
 
-      google.maps.event.addListener(_locationMarker, 'click', function () {
-        _infoWindow.setContent(title);
-        _infoWindow.open(_map, _locationMarker);
+      google.maps.event.addListener(locationMarker, 'click', function () {
+        infoWindow.setContent(title);
+        infoWindow.open(map, locationMarker);
       });
 
-      _map.setZoom(16);
-      _map.setCenter(_locationMarker.getPosition());
+      map.setZoom(16);
+      map.setCenter(locationMarker.getPosition());
     } else {
       console.log('Warning: The detail map container was not found!');
     }
