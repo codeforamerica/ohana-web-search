@@ -48,7 +48,7 @@
                       %span{ itemprop: 'telephone' }
                         = format_phone(phone.number)
                       - if phone.extension.present?
-                        %sup.phone-extension
+                        %span.phone-extension
                           = phone.extension
                       - if phone.number_type
                         %sup.phone-type
@@ -95,7 +95,7 @@
                       %span{ itemprop: 'telephone' }
                         = format_phone(contact.phone)
                       - if contact.extension.present?
-                        %sup.phone-extension
+                        %span.phone-extension
                           = contact.extension
 
               - if contact.fax.present?
