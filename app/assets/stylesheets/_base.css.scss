@@ -81,6 +81,18 @@ textarea {
     resize: vertical;
 }
 
+// Align and size super/subscripted text.
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: 80%;
+}
+sub {
+  top: 0.4em;
+}
+
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
@@ -178,10 +190,6 @@ footer a:hover {
       color: $menubutton-popup-hover-color;
     }
   }
-}
-
-sup {
-    font-size: 80%;
 }
 
 .drop-down-container {
@@ -1458,7 +1466,7 @@ body {
 
       -ms-word-break: break-all;
       word-break: break-all;
-      // Non standard for webkit.
+      // Non-standard for webkit.
       word-break: break-word;
 
       @include border-radius(0px 0px 0px 10px);
@@ -1579,10 +1587,10 @@ body {
     .phone-type {
       font-size: $font_size_90;
       color: $greyscale_midtone;
+    }
 
-      // Set line height equal to the height of the adjacent text.
-      line-height: $font_size_100;
-      vertical-align: text-top;
+    .phone-extension {
+      font-size: $font_size_95;
     }
   }
 
