@@ -158,31 +158,17 @@ function () {
     }
   }
 
-  // Parse query string into object
-  // (from http://stackoverflow.com/questions/979975/
-  // how-to-get-the-value-from-url-parameter)
-  // @param [String] the query string parameter
-  // @return [Object] query string as object
-  function getQueryParams(qs) {
-    if (!qs) qs = document.location.search;
-    qs = qs.split('+').join(' ');
-
-    var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
-
-    while ( (tokens = re.exec(qs)) )
-      params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-
-    return params;
-  }
-
   // Retrieve named query parameter.
   // (from http://stackoverflow.com/questions/901115/
   // how-can-i-get-query-string-values-in-javascript)
   function getParameterByName(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
     results = regex.exec(location.search);
-    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    var returnVal = '';
+    if (results !== null)
+      returnVal = decodeURIComponent(results[1].replace(/\+/g, ' '));
+    return returnVal;
   }
 
   return {
