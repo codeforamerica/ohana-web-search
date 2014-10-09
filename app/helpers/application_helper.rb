@@ -29,8 +29,8 @@ module ApplicationHelper
   # assets/javascripts/util/environmentVariables.js
   def environment_variables
     raw({
-      DOMAIN_NAME: "#{ENV['DOMAIN_NAME']}",
-      GOOGLE_MAPS_API_KEY: "#{ENV['GOOGLE_MAPS_API_KEY']}"
+      DOMAIN_NAME: ENV['DOMAIN_NAME'],
+      GOOGLE_MAPS_API_KEY: ENV['GOOGLE_MAPS_API_KEY']
     }.to_json)
   end
 end
