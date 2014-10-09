@@ -33,5 +33,4 @@ module ApplicationHelper
       GOOGLE_MAPS_API_KEY: "#{ENV['GOOGLE_MAPS_API_KEY']}"
     }.to_json)
   end
-
 end
