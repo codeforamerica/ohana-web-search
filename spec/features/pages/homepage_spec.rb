@@ -11,7 +11,6 @@ describe 'Home page header elements' do
 
   it 'includes utility links' do
     expect(page).to have_content 'About'
-    expect(page).to have_content 'Contribute'
     expect(page).to have_content 'Feedback'
   end
 end
