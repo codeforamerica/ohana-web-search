@@ -4,14 +4,14 @@
     %h1
       Want to get in touch?
     %p
-      Submit comments to the development team:
+      = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank'
 
     #feedback-form
       %p#feedback-status.hide
         Submit feedback!
       %p
         %label{ for: 'comment' }
-          Comment:
+          = t('views.feedback.submit_comment_label')
         %textarea{ name: 'comment', id: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: ''}
       %p
         %label{ for: 'email' }
