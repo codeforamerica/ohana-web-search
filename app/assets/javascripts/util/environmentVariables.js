@@ -19,13 +19,18 @@ function () {
   }
 
   // @param key [String] The environment variable to look up.
-  // @return The value of the supplied environment variable.
+  // @return The value of the supplied environment variable, or undefined
+  // if the environment variable is not set.
   function getValue(key) {
     // Lazy initialize the environment variables with a default HTML ID.
     if (_envVars === null)
       init('environment-variables');
-
-    return _envVars[key];
+    var returnVal = _envVars[key];
+    // Set the return value to undefined if it's empty, so returned value is
+    // consistent with calls to environment variables that don't exist
+    // (it would be an empty string otherwise).
+    returnVal = returnVal === '' ? undefined : returnVal;
+    return returnVal;
   }
 
   return {

@@ -23,4 +23,15 @@ module ApplicationHelper
   def canonical(url)
     content_for(:canonical, tag(:link, rel: :canonical, href: url)) if url
   end
+
+  # This is the list of environment variables found in config/application.yml
+  # that we wish to pass to JavaScript and access through the interface in
+  # assets/javascripts/util/environmentVariables.js
+  def environment_variables
+    raw({
+      DOMAIN_NAME: "#{ENV['DOMAIN_NAME']}",
+      GOOGLE_MAPS_API_KEY: "#{ENV['GOOGLE_MAPS_API_KEY']}"
+    }.to_json)
+  end
+
 end

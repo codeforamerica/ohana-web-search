@@ -38,7 +38,7 @@ function (envVars) {
         window[_globalCallbackName] = _mapAPIsLoaded;
 
         // Set Google Maps API key, if it is set in config/application.yml.
-        var apiKeySet = envVars.getValue('GOOGLE_MAPS_API_TOKEN');
+        var apiKeySet = envVars.getValue('GOOGLE_MAPS_API_KEY');
         var apiKey = apiKeySet ? 'key=' + apiKeySet + '&' : '';
 
         // Load Google Maps APIs asynchronously.
