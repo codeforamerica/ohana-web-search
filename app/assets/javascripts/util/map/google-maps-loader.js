@@ -1,6 +1,8 @@
 // Used for asynchronously loading Google Maps APIs.
-define(
-function () {
+define([
+  'util/environmentVariables'
+],
+function (envVars) {
   'use strict';
 
   function load(callback) {
@@ -35,11 +37,15 @@ function () {
         _globalCallbackName = 'googlemaps'+(new Date()).getTime();
         window[_globalCallbackName] = _mapAPIsLoaded;
 
+        // Set Google Maps API key, if it is set in config/application.yml.
+        var apiKeySet = envVars.getValue('GOOGLE_MAPS_API_TOKEN');
+        var apiKey = apiKeySet ? 'key=' + apiKeySet + '&' : '';
+
         // Load Google Maps APIs asynchronously.
         var scriptElm = document.createElement('script');
         scriptElm.type = 'text/javascript';
         scriptElm.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
-            'callback=window.' + _globalCallbackName;
+            apiKey + 'callback=window.' + _globalCallbackName;
         document.body.appendChild(scriptElm);
       }
     }

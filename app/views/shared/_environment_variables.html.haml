@@ -1,2 +1,2 @@
 %script{id: 'environment-variables', type: 'application/json'}
-  = raw({ DOMAIN_NAME: "#{ENV['DOMAIN_NAME']}" }.to_json)
+  = raw({ DOMAIN_NAME: "#{ENV['DOMAIN_NAME']}", GOOGLE_MAPS_API_TOKEN: "#{ENV['GOOGLE_MAPS_API_TOKEN']}" }.to_json)
