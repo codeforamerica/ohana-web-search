@@ -84,18 +84,6 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-// Align and size super/subscripted text.
-sup,
-sub {
-  vertical-align: baseline;
-  position: relative;
-  top: -0.4em;
-  font-size: 80%;
-}
-sub {
-  top: 0.4em;
-}
-
 html,
 body {
   height: 100%;
@@ -116,8 +104,31 @@ h1 {
   font-weight: normal;
 }
 
+// Align and size super/subscripted text.
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: 80%;
+}
+sub {
+  top: 0.4em;
+}
+
+// Remove bullets from lists by default.
 ul {
   list-style-type: none;
+}
+
+// Prevent selection of font awesome icons.
+.fa {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #category-box a,
@@ -142,40 +153,12 @@ footer a:hover {
   border-bottom: 1px solid rgba($black, .4);
 }
 
-// Prevent selection of font awesome icons.
-.fa {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 #popups article:hover,
 #detail-info section:hover,
 .about article:hover,
 #app-footer:hover {
-  a
-  {
+  a {
     color: $primary-dark;
-  }
-}
-
-#content > header {
-  nav
-  {
-    a
-    {
-      //color: rgba($primary-darkest, 0.6);
-      color: $menubutton-popup-color;
-      text-decoration: none;
-    }
-
-    a:hover
-    {
-      color: $menubutton-popup-hover-color;
-    }
   }
 }
 
@@ -190,7 +173,7 @@ footer a:hover {
     overflow-x: hidden;
     background: $white;
     z-index: 9998;
-    @include single-box-shadow(darkest($primary), 0px, 2px, 10px);
+    @include single-box-shadow(darkest($primary), 0, 2px, 10px);
     @include box-sizing(border-box);
     padding: 5px;
 
@@ -236,7 +219,7 @@ footer a:hover {
     width: 300px;
     background: $popup-bg;
     overflow-y: auto;
-    @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px);
+    @include single-box-shadow( rgba($black, .4), 0, 0, 10px);
     @include border-radius(10px);
 
     > div:last-child {
@@ -261,12 +244,12 @@ footer a:hover {
 
   .popup-container > article::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 10px rgba($black, .2);
-    -webkit-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0 10px 10px 0;
   }
 
   .popup-container > article::-webkit-scrollbar-thumb {
     background: rgba($black, .2);
-    -webkit-border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0 10px 10px 0;
   }
 
   .arrow {
@@ -298,7 +281,7 @@ footer a:hover {
     color: rgba($black, .5);
     position: absolute;
     right: 10px;
-    top: 0px;
+    top: 0;
     font-size: $font_size_120;
   }
 
@@ -365,17 +348,17 @@ footer a:hover {
     cursor: default;
     border-color: $button-popup-disabled-bg;
   }
+}
 
-  #feedback-status {
-    border: 1px solid $alert-border-color;
-    color: $alert-color;
-    background: $alert-bg;
-    font-family: $font_san_serif;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    @include border-radius(5px);
-  }
+#feedback-status {
+  border: 1px solid $alert-border-color;
+  color: $alert-color;
+  background: $alert-bg;
+  font-family: $font_san_serif;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  @include border-radius(5px);
 }
 
 #popups article:hover #feedback-status {
@@ -391,16 +374,7 @@ footer a:hover {
 #content {
   background: $white;
 
-  #logo span {
-    color: $black; // IE fallback
-    font-size: $font_size_90;
-    margin-left: 5px;
-    position: relative;
-    top: -10px;
-    font-family: $font_san_serif;
-  }
-
-  // Logo/header area.
+  // Main page header and logo area.
   > header {
     position: relative;
     z-index: 9999;
@@ -411,13 +385,6 @@ footer a:hover {
     @include box-sizing(border-box);
 
     font-size: $font_size_100;
-
-    #logo a,
-    #logo a:hover {
-      text-decoration: none;
-      border-bottom: 0;
-      padding: 0;
-    }
 
     h1 {
         font-size: $font_size_110;
@@ -443,42 +410,70 @@ footer a:hover {
       padding-top: 11px;
       padding-bottom: 10px;
       padding-right: 15px;
-    }
 
-    nav li {
+      li {
         padding-right: 10px;
         @include inline-block();
+      }
+
+      a {
+        //color: rgba($primary-darkest, 0.6);
+        color: $menubutton-popup-color;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $menubutton-popup-hover-color;
+      }
     }
   }
+}
 
-  #app-footer {
+#logo {
+  span {
+    color: $black; // IE fallback
+    font-size: $font_size_90;
+    margin-left: 5px;
     position: relative;
-    text-align: center;
-    background: $white;
-    clear: both;
-    border-top: 2px solid $primary-dark;
-    padding-bottom: 20px;
+    top: -10px;
+    font-family: $font_san_serif;
+  }
 
-    > p,
-    > div {
-      padding: 20px;
-      padding-bottom: 0;
-      font-size: $font_size_95;
-      font-family: $font_san_serif;
-      color: $greyscale_midtone;
-    }
+  a,
+  a:hover {
+    text-decoration: none;
+    border-bottom: 0;
+    padding: 0;
+  }
+}
 
-    p span.cfaflag {
-      width: 30px;
-      height: 10px;
-      @include inline-block();
-      // The Code for America flag icon appears below.
-      background-image: url('data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
-      background-repeat: no-repeat;
-      padding-right: 10px;
-      position: relative;
-      top: -1px;
-    }
+#app-footer {
+  position: relative;
+  text-align: center;
+  background: $white;
+  clear: both;
+  border-top: 2px solid $primary-dark;
+  padding-bottom: 20px;
+
+  > p,
+  > div {
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: $font_size_95;
+    font-family: $font_san_serif;
+    color: $greyscale_midtone;
+  }
+
+  p span.cfaflag {
+    width: 30px;
+    height: 10px;
+    @include inline-block();
+    // The Code for America flag icon appears below.
+    background-image: url('data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    padding-right: 10px;
+    position: relative;
+    top: -1px;
   }
 }
 
@@ -588,7 +583,7 @@ footer a:hover {
   display: none !important;
 }
 body {
-  top: 0px !important;
+  top: 0 !important;
 }
 
 //=================================================================================
@@ -657,7 +652,7 @@ body {
 
     background-color: $white;
     width: 100%;
-    -webkit-box-shadow: 0 0px 0 #ccc, 0 0px #fff inset;
+    -webkit-box-shadow: 0 0 0 #ccc, 0 0 #fff inset;
     -webkit-appearance: none;
 
     > span {
@@ -670,7 +665,7 @@ body {
 }
 
 .home #search-box {
-  padding: 0px;
+  padding: 0;
 
   ul {
     text-align: left;
@@ -746,8 +741,8 @@ body {
 
   fieldset {
     padding: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 10px;
 
@@ -764,7 +759,7 @@ body {
   text-align: center;
 
   > section {
-    @include single-box-shadow( rgba($black, .1), 0px, 0px, 5px );
+    @include single-box-shadow( rgba($black, .1), 0, 0, 5px );
     @include inline-block();
     @include border-radius(4px);
     margin: 10px;
@@ -848,7 +843,7 @@ body {
   h1 {
     font-size: $font_size_110;
     letter-spacing: 1px;
-    margin: 0px;
+    margin: 0;
     padding-left: 20px;
     padding-top: 9px;
     padding-bottom: 6px;
@@ -945,7 +940,7 @@ body {
 .results-header.floating {
   -webkit-backface-visibility: hidden;
   width: 100%;
-  @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
+  @include single-box-shadow( rgba($black,.4), 0, 1px, 6px );
   border-bottom: 1px solid $primary-dark !important;
 }
 
@@ -1024,7 +1019,7 @@ body {
       }
 
       tr:last-child {
-        border-bottom: 0px;
+        border-bottom: 0;
       }
 
       th {
@@ -1093,7 +1088,7 @@ body {
     }
 
     > li:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
       border-bottom: 1px solid $greyscale_light; // IE fallback
       border-bottom: 1px solid rgba($black,.1);
     }
@@ -1108,12 +1103,12 @@ body {
       color: rgba($black,.6);
       cursor: pointer;
       padding-bottom: 2px;
-      border-bottom: 0px;
+      border-bottom: 0;
     }
 
     a:hover {
       color: $black;
-      border-bottom: 0px;
+      border-bottom: 0;
       text-decoration: underline;
     }
 
@@ -1159,7 +1154,7 @@ body {
       float: right;
 
       li {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         background: $white; // IE fallback
         background: rgba($white,.8);
         @include box-shadow(none);
@@ -1226,7 +1221,7 @@ body {
   .infoBox {
     background-color: $white;
     @include border-radius(0px 4px 4px 4px);
-    @include single-box-shadow(midtone($black,0.4), 0px, 0px, 5px);
+    @include single-box-shadow(midtone($black,0.4), 0, 0, 5px);
     border: 1px solid $primary-dark;
     padding: 3px 6px;
     opacity: 0.95;
@@ -1272,7 +1267,7 @@ body {
       color: $greyscale_midtone; // IE Fallback
       color: rgba($black, .5);
       position: absolute;
-      left: 0px;
+      left: 0;
       top: -10px;
       font-size: $font_size_120;
       font-family: $font_serif;
@@ -1321,7 +1316,7 @@ body {
     border-bottom: 1px solid midtone($black, .1);
     background: $primary-lightest; // IE fallback
     background: rgba($primary-lightest,.1);
-    @include border-radius(4px 4px 0px 0px);
+    @include border-radius(4px 4px 0 0);
 
     .kind {
       color: $primary-dark;
@@ -1330,7 +1325,7 @@ body {
 
     .icon {
       padding-left: 20px;
-      margin-left: 0px;
+      margin-left: 0;
     }
 
     a {
@@ -1339,12 +1334,12 @@ body {
       color: rgba($black,.6);
       cursor: pointer;
       padding-bottom: 2px;
-      border-bottom: 0px;
+      border-bottom: 0;
     }
 
     a:hover {
       color: $black;
-      border-bottom: 0px;
+      border-bottom: 0;
       text-decoration: underline;
     }
 
@@ -1378,7 +1373,7 @@ body {
     > h1 {
       @include type-size(small);
       color: $greyscale_midtone;
-      margin-top: 0px;
+      margin-top: 0;
       margin-bottom: 10px;
       padding: 5px;
       border-bottom: 1px solid $greyscale_light; // IE fallback
@@ -1397,7 +1392,7 @@ body {
       margin-right: 20px;
       color: $greyscale_dark;
       padding: 20px;
-      padding-top: 0px;
+      padding-top: 0;
       font-family: $font_san_serif;
 
       > h1 {
@@ -1440,10 +1435,10 @@ body {
     margin-left: 20px;
 
     > section {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2), 0px -1px 2px rgba($black,.2));
+      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2), 0 -1px 2px rgba($black,.2));
     }
     > section:first-child {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2));
+      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2));
     }
     > section {
       margin-bottom: 20px;
@@ -1456,12 +1451,12 @@ body {
       // Non-standard for webkit.
       word-break: break-word;
 
-      @include border-radius(0px 0px 0px 10px);
+      @include border-radius(0 0 0 10px);
 
       > section > h1 {
         font-size: $font_size_95;
         color: $greyscale_midtone;
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 10px;
         padding: 5px;
         border-bottom: 1px solid $greyscale_light; // IE fallback
@@ -1475,7 +1470,7 @@ body {
 
       > section > ul {
         padding: 35px;
-        padding-top: 0px;
+        padding-top: 0;
         padding-bottom: 20px;
 
         // Indentation for service category hierarchy.
@@ -1525,7 +1520,7 @@ body {
         }
       }
       > section > section > section:last-child {
-        padding-bottom: 0px;
+        padding-bottom: 0;
       }
     }
 
@@ -1565,7 +1560,7 @@ body {
       font-family: $font_san_serif;
       font-size: 24px;
       padding-top: 40px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
       position: relative;
     }
   }
@@ -1593,7 +1588,7 @@ body {
     .name {
       margin-top: 10px;
       margin-bottom: 10px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
       margin-left: 0;
       font-size: 24px;
       border-left: 20px solid $main-highlight;
