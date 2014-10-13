@@ -3,73 +3,89 @@
    ========================================================================== */
 
 @media print {
-  * {
-      background: transparent !important;
-      color: #000 !important; /* Black prints faster: h5bp.com/s */
-      box-shadow: none !important;
-      text-shadow: none !important;
+
+  /*
+  * HTML5 Boilerplate
+  */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
-  // Show the href value of links.
-  #app-footer a[href]:after {
-      content: " (" attr(href) ")";
-      color: rgba($black, 0.6);
-      font-size: $font_size_90;
+  a,
+  a:visited {
+    text-decoration: underline;
   }
 
   /*
-  abbr[title]:after {
-      content: " (" attr(title) ")";
-      color:$black_alpha60;
-      font-size: $font_size_90;
+  // Below are default HTML5 Boilerplate (H5bp) styles that aren't
+  // used in this app. Kept here for making syncing with H5bp easier.
+  a[href]:after {
+    content: " (" attr(href) ")";
   }
-  // Don't show links for images, or javascript/internal links
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-      content: "";
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  */
+
+  /*
+  * Don't show links that are fragment identifiers,
+  * or use the `javascript:` pseudo protocol
+  */
+  /*
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
   }
   */
 
   pre,
   blockquote {
-      border: 1px solid #999;
-      page-break-inside: avoid;
+    border: 1px solid #999;
+    page-break-inside: avoid;
   }
 
   thead {
-      display: table-header-group; /* h5bp.com/t */
+    display: table-header-group; /* h5bp.com/t */
   }
 
   tr,
   img {
-      page-break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   img {
-      max-width: 100% !important;
-  }
-
-  @page {
-      margin: 0.5cm;
-      // needed to prevent overlap with header and footer that browser adds
-      margin-top: 1cm;
-      margin-bottom: 2cm;
+    max-width: 100% !important;
   }
 
   p,
   h2,
   h3 {
-      orphans: 3;
-      widows: 3;
+    orphans: 3;
+    widows: 3;
   }
 
   h2,
   h3 {
-      page-break-after: avoid;
+    page-break-after: avoid;
   }
 
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+  // Show the href value of footer links.
+  #app-footer a[href]:after {
+      content: " (" attr(href) ")";
+      color: rgba($black, 0.6);
+      font-size: $font_size_90;
+  }
 
    // Header area of all pages.
   #content > header {
