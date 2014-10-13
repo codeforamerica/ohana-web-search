@@ -162,41 +162,6 @@ footer a:hover {
   }
 }
 
-.drop-down-container {
-  position: relative;
-
-  ul.drop-down {
-    position: absolute;
-    border: 1px solid $primary;
-    display: block;
-    overflow: scroll;
-    overflow-x: hidden;
-    background: $white;
-    z-index: 9998;
-    @include single-box-shadow(darkest($primary), 0, 2px, 10px);
-    @include box-sizing(border-box);
-    padding: 5px;
-
-    li {
-      display: block;
-      font-size: $font_size_95;
-      font-family: $font_san_serif;
-      padding: 5px;
-      @include box-sizing(border-box);
-      cursor: pointer;
-      color: $black;
-    }
-
-    li:hover {
-      background: $primary-lightest;
-    }
-
-    li.highlight {
-      background: $primary-lightest;
-    }
-  }
-}
-
 //=============================================================================
 // Popup styles.
 // Popups are the About/Feedback popups in the upper-right.
