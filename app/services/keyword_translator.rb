@@ -11,7 +11,7 @@ class KeywordTranslator
   end
 
   def api_key
-    ENV['GOOGLE_TRANSLATE_API_TOKEN']
+    ENV['GOOGLE_TRANSLATE_API_KEY']
   end
 
   def client
