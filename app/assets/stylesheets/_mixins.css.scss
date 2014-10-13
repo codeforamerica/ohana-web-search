@@ -1,6 +1,8 @@
 // Mixins are custom functions that abbreviate generating CSS rules.
+
 // Type size mixin provides mapping from human-readable font sizing labeling
 // to base font size values.
+// $size - The human readable font size value.
 @mixin type-size($size) {
   @if $size == "tiny" {
     @include adjust-font-size-to($font_size_80);
@@ -28,6 +30,10 @@
   }
 }
 
+// Styles the input placeholder text, including
+// necessary browser prefixes.
+// $color - Font color of the placeholder text.
+// $font-style - Font style of the placeholder text.
 @mixin input-placeholder($color, $font-style) {
   input::input-placeholder {
     color: $color;
@@ -82,12 +88,11 @@
   }
 }
 
-// These are classes that apply rounding to one or more corners.
+// This mixin applies rounding to one or more corners.
 // The "except" set will square off (non-round) the corners specified.
-// They are intended for UI components that positioned adjacent to another
+// They are intended for UI components that are positioned adjacent to another
 // component.
-// Unfortunately SCSS Compass mixins can't be used here because they don't
-// support the "!important" directive.
+// $corner - The corner or side to ignore rounding on.
 @mixin rounded-except($corner) {
   @if $corner == "none" {
     @include border-radius($border-radius-base);
