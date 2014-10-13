@@ -98,27 +98,6 @@
     color: $black;
     cursor: pointer;
   }
-
-  // General link styles.
-  .popup-container a {
-    text-decoration: none;
-    color: $greyscale_midtone; // IE fallback
-    color: rgba($black, .6);
-    cursor: pointer;
-    border-bottom: 1px solid $white;
-  }
-
-  .popup-container a:hover {
-    color: $primary-dark;
-    border-bottom: 1px solid $greyscale_midtone;
-    border-bottom: 1px solid rgba($black, .4);
-  }
-
-  article:hover {
-    a {
-      color: $primary-dark;
-    }
-  }
 }
 
 // Popup content styling.
@@ -193,3 +172,5 @@
     color: rgba($black, .6);
   }
 }
+
+@include site-link('.popup-container', $white);

@@ -131,33 +131,10 @@ ul {
   user-select: none;
 }
 
-#category-box a,
-#detail-info a,
-section.no-results .message a,
-footer a {
-  text-decoration: none;
-  color: $greyscale_midtone; // IE fallback
-  color: rgba($black, .6);
-  cursor: pointer;
-  border-bottom: 1px solid $white;
-}
-
-#category-box a:hover,
-#detail-info a:hover,
-section.no-results .message a:hover,
-footer a:hover {
-  color: $primary-dark;
-  border-bottom: 1px solid $greyscale_midtone;
-  border-bottom: 1px solid rgba($black, .4);
-}
-
-#detail-info section:hover,
-.about article:hover,
-#app-footer:hover {
-  a {
-    color: $primary-dark;
-  }
-}
+@include site-link('#category-box', $white);
+@include site-link('#detail-info', $white);
+@include site-link('.no-results', $white);
+@include site-link('#app-footer', $white);
 
 //=================================================================================
 // Content area is everything visible on the page.

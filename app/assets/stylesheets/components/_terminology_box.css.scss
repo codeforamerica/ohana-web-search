@@ -48,24 +48,6 @@
       padding-bottom: 10px;
     }
   }
-
-  a {
-    text-decoration: none;
-    color: $greyscale_midtone; // IE fallback
-    color: rgba($black, .6);
-    cursor: pointer;
-    border-bottom: 1px solid $white;
-  }
-
-  a:hover {
-    color: $primary-dark;
-    border-bottom: 1px solid $greyscale_midtone;
-    border-bottom: 1px solid rgba($black, .4);
-  }
 }
 
-.terminology-box:hover {
-  a {
-    color: $primary-dark;
-  }
-}
+@include site-link('.terminology-box', $greyscale_lightest);
