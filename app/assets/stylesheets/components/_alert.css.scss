@@ -20,7 +20,7 @@
     text-align:center;
     @include inline-block();
     @include border-radius($border_radius_base);
-    @include single-box-shadow($black, 0px, 0px, $border_radius_base);
+    @include single-box-shadow($black, 0, 0, $border_radius_base);
 
     p {
       text-align:center;
@@ -32,7 +32,7 @@
 
     a {
       color:$white;
-      border-bottom:1px solid rgba($white,.5);
+      border-bottom:1px solid rgba($white, .5);
       text-decoration: none;
     }
 
@@ -43,8 +43,8 @@
   }
 
   .alert-close {
-    color: lighten($black,50) !important; // IE Fallback
-    color: rgba($white,.5) !important;
+    color: lighten($black, 50) !important; // IE Fallback
+    color: rgba($white, .5) !important;
     border-bottom: none !important;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -55,22 +55,22 @@
 
   .alert-valid {
     color: $black;
-    background:saturate($accentA-base,1);
+    background:saturate($accentA-base, 1);
   }
 
   .alert-error {
     color: $white;
-    background:saturate($alert-bg,1);
+    background:saturate($alert-bg, 1);
   }
 
   .alert-warning {
     color: $black;
-    background:saturate($alert-bg,1);
+    background:saturate($alert-bg, 1);
   }
 
   .alert-info {
     color: $black;
-    background:saturate($primary,1);
+    background:saturate($primary, 1);
   }
 
   .alert-close {
@@ -85,10 +85,10 @@
 }
 
 .alert-container.floating {
-  position:fixed;
-  z-index:10000;
-  left:0;
-  top:0;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
 
   .alert {
     @include rounded-except(top);

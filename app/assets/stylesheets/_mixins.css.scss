@@ -98,28 +98,28 @@
     @include border-radius($border-radius-base);
   }
   @if $corner == "left" {
-    @include border-radius(0px $border-radius-base $border-radius-base 0px);
+    @include border-radius(0 $border-radius-base $border-radius-base 0);
   }
   @if $corner == "top" {
-    @include border-radius(0px 0px $border-radius-base $border-radius-base);
+    @include border-radius(0 0 $border-radius-base $border-radius-base);
   }
   @if $corner == "right" {
-    @include border-radius($border-radius-base 0px 0px $border-radius-base);
+    @include border-radius($border-radius-base 0 0 $border-radius-base);
   }
   @if $corner == "bottom" {
-    @include border-radius($border-radius-base $border-radius-base 0px 0px);
+    @include border-radius($border-radius-base $border-radius-base 0 0);
   }
   @if $corner == "upper-left" {
-    @include border-radius(0px $border-radius-base $border-radius-base $border-radius-base);
+    @include border-radius(0 $border-radius-base $border-radius-base $border-radius-base);
   }
   @if $corner == "upper-right" {
-    @include border-radius($border-radius-base 0px $border-radius-base $border-radius-base);
+    @include border-radius($border-radius-base 0 $border-radius-base $border-radius-base);
   }
   @if $corner == "lower-right" {
-    @include border-radius($border-radius-base $border-radius-base 0px $border-radius-base);
+    @include border-radius($border-radius-base $border-radius-base 0 $border-radius-base);
   }
   @if $corner == "lower-left" {
-    @include border-radius($border-radius-base $border-radius-base $border-radius-base 0px);
+    @include border-radius($border-radius-base $border-radius-base $border-radius-base 0);
   }
 }
 
