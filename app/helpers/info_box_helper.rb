@@ -41,21 +41,23 @@ module InfoBoxHelper
     info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
   end
 
+  # @param info_box [Hash] Infobox title, description, and link settings.
   # @return [HTML]
   # Returns an HTML description list with the info box's title,
   # description, and a "More info..." link to its URL if it has one defined.
   def render_html_for_generic_info_box(info_box)
-    content_tag :dl do
+    html = content_tag :dl do
       concat(content_tag :dt, info_box['title'])
       concat(content_tag :dd, info_box['description'])
-      if info_box['url'].present?
-        concat(content_tag(:p) do
-          link_to('More info...', info_box['url'], target: '_blank')
-        end)
-      end
     end
+    return unless info_box['url'].present?
+    html.concat(content_tag(:p) do
+      link_to('More info...', info_box['url'], target: '_blank')
+    end)
   end
 
+  # @param info_box_key [String] Key to look up infobox settings
+  #   in config/settings.yml.
   # @return [HTML]
   # If the info box has a "custom" key, render the partial that the
   # "custom" key points to. Otherwise, render the default description list
