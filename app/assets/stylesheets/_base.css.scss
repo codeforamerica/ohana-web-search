@@ -131,7 +131,8 @@ ul {
   user-select: none;
 }
 
-@include site-link('#category-box', $white);
+@include site-link('#general-services', $white);
+@include site-link('#emergency-services', $white);
 @include site-link('#detail-info', $white);
 @include site-link('.no-results', $white);
 @include site-link('#app-footer', $white);
@@ -727,6 +728,8 @@ body {
   // No results styling.
   section.no-results {
     font-family: $font_san_serif;
+    border-bottom: 1px solid $greyscale_midtone; // IE fallback
+    border-bottom: 1px solid rgba($black,.1);
 
     .message {
       margin: 80px auto;
