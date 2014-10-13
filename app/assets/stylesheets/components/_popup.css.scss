@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+//=============================================================================
+// Popup styles.
+// Popups are the About/Feedback popups in the upper-right.
+//
+#popups {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+
+  .popup-container {
+    pointer-events: auto;
+  }
+
+  .popup-container > article {
+    position: absolute;
+
+    width: 300px;
+    background: $popup-bg;
+    overflow-y: auto;
+    @include single-box-shadow( rgba($black, .4), 0, 0, 10px);
+    @include border-radius(10px);
+
+    > div:last-child {
+      padding: 20px;
+      height: 100%;
+      @include box-sizing(border-box);
+
+      // Adds footer horizontal rule
+      > footer {
+        border-top: 1px solid $greyscale_light; // IE fallback
+        border-top: 1px solid rgba($black, .1);
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .popup-container > article::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .popup-container > article::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba($black, .2);
+    -webkit-border-radius: 0 10px 10px 0;
+  }
+
+  .popup-container > article::-webkit-scrollbar-thumb {
+    background: rgba($black, .2);
+    -webkit-border-radius: 0 10px 10px 0;
+  }
+
+  .arrow {
+    width: 28px;
+    height: 15px;
+    left: 945px;
+    position: absolute;
+    top: 34px;
+    z-index: 9999;
+    overflow: hidden;
+
+    span {
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      width: 18px;
+      height: 18px;
+      @include rotate(-135deg);
+      border-bottom: 1px solid #CCCCCC;
+      border-right: 1px solid #CCCCCC;
+      background: none repeat scroll 0 0 #FFFFFF;
+      display: block;
+      @include single-box-shadow( rgba($black, .2), 1px, 1px, 1px);
+    }
+  }
+
+  .close-button {
+    color: $greyscale_midtone; // IE Fallback
+    color: rgba($black, .5);
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: $font_size_120;
+  }
+
+  .close-button::after {
+    content: "×";
+  }
+
+  .close-button:hover {
+    color: $black;
+    cursor: pointer;
+  }
+}
+
+// Popup content styling.
+.popup-container {
+  h1 {
+    font-weight: bold;
+    font-size: $font_size_110;
+    border-bottom: 6px solid $accentA-light;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  p {
+    font-family: $font_san_serif;
+    font-size: $font_size_100;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  footer > p {
+    font-size: $font_size_90;
+    font-family: $font_san_serif;
+  }
+
+  // Feedback form styles.
+  input,
+  textarea,
+  button {
+    padding: 5px;
+    width: 228px;
+    display: block;
+    border: 1px solid rgba($greyscale_dark, .4);
+    @include border-radius(3px);
+  }
+
+  button {
+    width: 100%;
+    background-color: $button-popup-bg;
+    color: $button-popup-color;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: $button-popup-hover-bg;
+    color: $button-popup-hover-color;
+  }
+
+  button[disabled] {
+    background-color: $button-popup-disabled-bg;
+    color: $button-popup-disabled-color;
+    cursor: default;
+    border-color: $button-popup-disabled-bg;
+  }
+}
+
+#feedback-status {
+  border: 1px solid $alert-border-color;
+  color: $alert-color;
+  background: $alert-bg;
+  font-family: $font_san_serif;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  @include border-radius(5px);
+}
+
+#popups article:hover #feedback-status {
+  a {
+    color: $greyscale_midtone; // IE fallback
+    color: rgba($black, .6);
+  }
+}
+
+@include site-link('.popup-container', $white);

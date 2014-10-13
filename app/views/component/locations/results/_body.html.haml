@@ -1,8 +1,8 @@
 = render 'component/locations/results/header'
 %section#results-entries
   - if info_box_key_corresponding_to_keyword.present?
-    %section#terminology
-      %div
+    %section#terminology-box-container
+      .terminology-box
         = render_info_box(info_box_key_corresponding_to_keyword)
 
   - if @search.locations.present?
