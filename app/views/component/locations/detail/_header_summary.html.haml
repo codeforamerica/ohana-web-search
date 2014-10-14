@@ -20,6 +20,11 @@
           %i{ class: 'fa fa-print' }
           Print
 
+      %span><
+        %a.button-utility.button-share-email{ href: mailto_url }
+          %i{ class: 'fa fa-share' }
+          Email
+
       - if location[:coordinates].present?
         %span><
           %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{address(location)}", target: '_blank' }
