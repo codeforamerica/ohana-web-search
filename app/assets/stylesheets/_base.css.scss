@@ -133,9 +133,12 @@ ul {
 
 @include site-link('#general-services', $white);
 @include site-link('#emergency-services', $white);
-@include site-link('#detail-info', $white);
+@include site-link('#detail-info header', rgba($primary-lightest, .1));
+@include site-link('#detail-info .metadata', $white);
+@include site-link('#contact-info', $white);
 @include site-link('.no-results', $white);
 @include site-link('#app-footer', $white);
+@include site-link('#list-view li', rgba($white, 0));
 
 //=================================================================================
 // Content area is everything visible on the page.
@@ -800,7 +803,7 @@ body {
 
     > li:hover {
       background: $primary-lightest; // IE fallback
-      background: rgba($primary-lightest,.5);
+      background: rgba($primary-lightest, .5);
       h1 {
         padding-bottom: 5px;
         a {
@@ -816,27 +819,12 @@ body {
     > li:last-child {
       margin-bottom: 0;
       border-bottom: 1px solid $greyscale_light; // IE fallback
-      border-bottom: 1px solid rgba($black,.1);
+      border-bottom: 1px solid rgba($black, .1);
     }
   }
 
   .results-entry {
     cursor: pointer;
-
-    a {
-      text-decoration: none;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.6);
-      cursor: pointer;
-      padding-bottom: 2px;
-      border-bottom: 0;
-    }
-
-    a:hover {
-      color: $black;
-      border-bottom: 0;
-      text-decoration: underline;
-    }
 
     > header {
       > hgroup {
@@ -1052,21 +1040,6 @@ body {
     .icon {
       padding-left: 20px;
       margin-left: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.6);
-      cursor: pointer;
-      padding-bottom: 2px;
-      border-bottom: 0;
-    }
-
-    a:hover {
-      color: $black;
-      border-bottom: 0;
-      text-decoration: underline;
     }
 
     > hgroup {
