@@ -37,7 +37,6 @@ function (alert, util, $) {
       _feedbackFormSend();
     else
       _incorrectEmailAddress();
-    return false;
   }
 
   function _onFeedbackFormInput() {
