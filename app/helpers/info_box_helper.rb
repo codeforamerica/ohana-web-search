@@ -50,7 +50,7 @@ module InfoBoxHelper
       concat(content_tag :dt, info_box['title'])
       concat(content_tag :dd, info_box['description'])
     end
-    return unless info_box['url'].present?
+    return html if info_box['url'].blank?
     html.concat(content_tag(:p) do
       link_to('More info...', info_box['url'], target: '_blank')
     end)
