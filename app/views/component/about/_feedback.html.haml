@@ -6,9 +6,7 @@
     %p
       = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank'
 
-    #feedback-form
-      %p#feedback-status.hide
-        Submit feedback!
+    %section#feedback-form
       %p
         %label{ for: 'comment' }
           = t('views.feedback.submit_comment_label')
