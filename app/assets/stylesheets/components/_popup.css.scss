@@ -119,6 +119,13 @@
     margin-right: 10px;
   }
 
+  // Only section in the popups currently is the feedback form.
+  section {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   footer > p {
     font-size: $font_size_90;
     font-family: $font_san_serif;
@@ -152,24 +159,6 @@
     color: $button-popup-disabled-color;
     cursor: default;
     border-color: $button-popup-disabled-bg;
-  }
-}
-
-#feedback-status {
-  border: 1px solid $alert-border-color;
-  color: $alert-color;
-  background: $alert-bg;
-  font-family: $font_san_serif;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  @include border-radius(5px);
-}
-
-#popups article:hover #feedback-status {
-  a {
-    color: $greyscale_midtone; // IE fallback
-    color: rgba($black, .6);
   }
 }
 
