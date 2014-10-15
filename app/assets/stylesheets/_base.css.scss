@@ -609,14 +609,14 @@ body {
   // back to search, directions, print
   .utility-links {
 
-    >span:first-child {
+    > span {
       border-left: 1px dotted $greyscale_light;
-    }
-
-    >span {
-      border-right: 1px dotted $greyscale_light;
       @include inline-block();
       vertical-align: baseline;
+    }
+
+    > span:last-child {
+      border-right: 1px dotted $greyscale_light;
     }
   }
 
