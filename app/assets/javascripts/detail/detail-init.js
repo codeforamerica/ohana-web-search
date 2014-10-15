@@ -1,14 +1,16 @@
 require([
   'detail/detail-map-manager',
   'detail/character-limited/character-limiter',
-  'search/header-manager'
+  'search/header-manager',
+  'detail/utility-links-manager'
 ],
-function (map, cl, header) {
+function (map, cl, header, utilityLinks) {
   'use strict';
 
   map.init();
   cl.init();
   header.init();
+  utilityLinks.init();
 
 },
 function (err) {
@@ -24,13 +26,15 @@ function (err) {
   require([
     'detail/no-detail-map-manager',
     'detail/character-limited/character-limiter',
-    'search/header-manager'
+    'search/header-manager',
+    'detail/utility-links-manager'
   ],
-  function (map,cl,header) {
+  function (map, cl, header, utilityLinks) {
 
     map.init();
     cl.init();
     header.init();
+    utilityLinks.init();
 
   });
 });
