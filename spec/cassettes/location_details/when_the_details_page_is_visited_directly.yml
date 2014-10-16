@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency
+    uri: http://ohana-api-test.herokuapp.com/api/locations/example-location
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,12 +18,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:28 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,25 +32,24 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
+      Etag:
+      - '"bb85b0c88eedeac81dad3555fcf05858"'
       X-Request-Id:
-      - 25db4324-64c8-4a01-9288-54ae2ab27b7e
+      - 5fcb8d61-ad3d-4b31-8816-b82eccd80d9a
       X-Runtime:
-      - '0.042002'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      Date:
-      - Sun, 03 Aug 2014 03:52:40 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - '0.199212'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":22,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"admin_emails":["foo@bar.com"],"coordinates":[-73.1968254,42.878036],"description":"[NOTE
-        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
-        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+      string: '{"id":22,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"admin_emails":["foo@bar.com"],"alternate_name":"The
+        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
+        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -58,35 +57,37 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"hours":"Monday-Friday,
-        8-5; Saturday, 10-6; Sunday 11-5","languages":["Chinese (Cantonese)","Chinese
-        (Taiwanese)","Filipino (Tagalog)","Russian","Spanish"],"latitude":42.878036,"longitude":-73.1968254,"name":"San
-        Maceo Agency","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"san-maceo-agency","transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-08-02T20:51:59.592-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/san-maceo-agency","address":{"id":21,"street":"2013
-        Avenue of the fellows, Suite 100","city":"Burlington","state":"VT","zip":"05201"},"contacts":[{"email":"suzanne@example.com","extension":"x1200","fax":"202-555-1212","id":29,"name":"Suzanne
-        Badenhoop","phone":"123-456-7890","title":"Board President"}],"faxes":[{"id":21,"number":"650
-        627-8244","department":null}],"mail_address":{"id":21,"attention":"Hella Fellas","street":"2013
-        Avenue of the fellows, Suite 100","city":"San Maceo","state":"VT","zip":"90210"},"phones":[{"id":21,"department":"Information","extension":null,"number":"650
-        372-6200","number_type":"TTY","vanity_number":null},{"id":22,"department":"Reservations","extension":null,"number":"650
-        372-6200","number_type":null,"vanity_number":null}],"services":[{"id":22,"audience":"Profit
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["info@example.com","referrals@example.com"],"hours":"Monday-Friday,
+        8-5; Saturday, 10-6; Sunday 11-5","languages":["Cantonese","Taiwanese","Tagalog","Russian","Spanish"],"latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","transportation":"SAMTRANS
+        stops within 1 block","updated_at":"2014-10-20T12:44:09.471-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"street_1":"2013
+        Avenue of the fellows","street_2":"Suite 100","city":"San Francisco","state":"CA","postal_code":"94103"},"contacts":[{"department":"Referrals","email":"suzanne@example.com","id":29,"name":"Suzanne
+        Badenhoop","title":"Board President","phones":[{"id":41,"department":"Referrals","extension":"1200","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":42,"department":"Referrals","extension":null,"number":"202-555-1212","number_type":"fax","vanity_number":null}]}],"mail_address":{"id":21,"attention":"The
+        Foodies","street_1":"2013 Avenue of the fellows","street_2":"Suite 100","city":"San
+        Francisco","state":"CA","postal_code":"90210"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
+        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
+        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}],"services":[{"id":22,"accepted_payments":["Cash","Credit
+        Card","Check"],"alternate_name":"Fotos para pasaportes","audience":"Profit
         and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
+        entities","description":"[NOTE THIS IS NOT A REAL SERVICE--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse platea
+        dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
         ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
         augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
         amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
         at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
         nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
         orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"name":"bazfoo","service_areas":["San Mateo County","Alameda County","Contra
-        Costa County","Marin County","San Francisco County","Santa Clara County"],"short_desc":null,"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.791-07:00","categories":[]},{"id":23,"audience":"Second
+        egestas.","eligibility":"None","email":"passports@example.org","fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Salud","Medicina"],"languages":["English","Spanish"],"name":"Passport
+        Photos","required_documents":["Government-issued identification"],"service_areas":["San
+        Mateo County","Alameda County"],"status":"active","website":"http://www.example.com","wait":"No
+        wait to 2 weeks","updated_at":"2014-10-20T12:44:09.460-07:00","categories":[]},{"id":23,"accepted_payments":[],"alternate_name":null,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
         IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
@@ -98,14 +99,18 @@ http_interactions:
         at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
         nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
         orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"name":"hasdfasf","service_areas":["San Mateo County","Alameda
-        County","Contra Costa County","Marin County","San Francisco County","Santa
-        Clara County"],"short_desc":null,"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-04-18T12:49:47.850-07:00","categories":[]}],"organization":{"id":8,"name":"SanMaceo
-        Example Agency.","slug":"sanmaceo-example-agency","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/sanmaceo-example-agency/locations"}}'
+        egestas.","eligibility":"None","email":null,"fees":"None, except for permits
+        and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Ruby on Rails/Postgres/Redis","testing"],"languages":[],"name":"Example
+        Service Name","required_documents":[],"service_areas":["San Mateo County","Alameda
+        County"],"status":null,"website":"http://www.example.com","wait":"No wait
+        to 2 weeks","updated_at":"2014-10-20T12:44:09.468-07:00","categories":[]}],"organization":{"id":8,"alternate_name":"Alternate
+        Agency Name","date_incorporated":"1970-01-01","description":"Sample organization
+        description. The Public Library inspires learning through innovative and visionary
+        programming and services—literacy programs, support for school success, access
+        to technology, safe, inviting spaces for youth and families, and gathering
+        places that connect the members of the community with a love of reading and
+        learning.","email":"info@example.org","name":"Example Agency","slug":"example-agency","website":"http://example.org","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"}}'
     http_version: 
-  recorded_at: Sun, 03 Aug 2014 03:52:40 GMT
+  recorded_at: Mon, 20 Oct 2014 21:37:28 GMT
 recorded_with: VCR 2.9.2

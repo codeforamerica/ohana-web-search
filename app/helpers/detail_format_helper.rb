@@ -9,14 +9,7 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Contact section in the details view
   def location_contact_fields
-    [:urls, :emails, :phones, :faxes]
-  end
-
-  # Formats address for use in map URLs, image title attributes, etc.
-  # @param location [Object] a JSON object
-  # @return [String] return comma separated address.
-  def address(location)
-    "#{location.address['street']}, #{location.address['city']}, #{location.address['state']} #{location.address['zip']}"
+    [:urls, :emails, :phones]
   end
 
   # Format phone number as (XXX) XXX-XXXX
@@ -32,6 +25,22 @@ module DetailFormatHelper
     end
   end
 
+  # Choose a font-awesome icon string for a particular phone type.
+  # @param type [String] The value for a location's phone_type field.
+  # @return [String] The font-awesome icon string.
+  def phone_icon_for(type)
+    return 'fa fa-phone-square' if type == 'voice' || type == 'hotline'
+    return 'fa fa-print' if type == 'fax'
+    return 'fa fa-tty' if type == 'tty'
+  end
+
+  # Choose either a fax or telephone schema.org-style microdata itemsprop type.
+  # @param type [String] The value for a location's phone_type field.
+  # @return [String] Microdata for fax or telephone numbers.
+  def phone_microdata_for(type)
+    type == 'fax' ? 'faxNumber' : 'telephone'
+  end
+
   # Strips http:// or https:// from URL
   # @param number [String] a url
   # @return [String] The url without http:// or https://
@@ -39,9 +48,45 @@ module DetailFormatHelper
     url.gsub(%r{^(https?:\/\/)}, '')
   end
 
-  # Adds <sup>XX</sup> around ordinals in string
-  # @param [String] string to parse for ordinals
-  # @return [String] HTML-safe string containing <sup> elements
+  # Generates HTML snippet for a contact's details (title and/or department).
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_details_for(contact)
+    if contact.title.present? && contact.department.present?
+      return contact_title_and_department_for(contact)
+    end
+    return contact_title_for(contact) if contact.title.present?
+    return contact_department_for(contact) if contact.department.present?
+  end
+
+  # Generates HTML snippet for a contact's title and department.
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_title_and_department_for(contact)
+    contact_title_for(contact) + ', ' + contact_department_for(contact)
+  end
+
+  # Generates HTML snippet for a contact's title.
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_title_for(contact)
+    content_tag :span, class: 'contact-title' do
+      contact.title
+    end
+  end
+
+  # Generates HTML snippet for a contact's details (title and/or department).
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_department_for(contact)
+    content_tag :span, class: 'contact-department' do
+      contact.department
+    end
+  end
+
+  # Adds <sup>XX</sup> around ordinals in string.
+  # @param string [String] to parse for ordinals.
+  # @return [String] HTML-safe string containing <sup> elements.
   #
   # The regex finds all occurrences of ordinal numbers, matching
   # only the "st", "nd", "rd", and "th" portion. The gsub method

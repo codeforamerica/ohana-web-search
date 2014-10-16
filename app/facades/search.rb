@@ -1,4 +1,5 @@
 class Search
+  include AddressFormatHelper
   attr_reader :locations
 
   def initialize(locations, response, params)
@@ -21,7 +22,7 @@ class Search
       name: location.name,
       org_name: location.organization.name,
       slug: location.slug,
-      street_address: location.address.street,
+      street_address: street_address_for(location.address),
       city: location.address.city
     }
   end

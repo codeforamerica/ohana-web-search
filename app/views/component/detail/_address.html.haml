@@ -1,11 +1,11 @@
 %span{ itemscope: '', itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
   - if lines == 2
     %span.street-address{ itemprop: 'streetAddress' }
-      = superscript_ordinals(location.address.street)
+      = superscript_ordinals(street_address_for(location.address))
     %br
   - else
     %span.street-address{ itemprop: 'streetAddress' }><
-      = superscript_ordinals(location.address.street)
+      = superscript_ordinals(street_address_for(location.address))
     = ','
 
   %span.city{ itemprop: 'addressLocality' }<
@@ -16,4 +16,4 @@
     = location.address.state
 
   %span.zipcode{ itemprop: 'postalCode' }
-    = location.address.zip
+    = location.address.postal_code

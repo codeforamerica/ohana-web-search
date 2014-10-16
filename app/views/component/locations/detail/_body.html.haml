@@ -6,6 +6,8 @@
     %hgroup
       %h1.name{ itemprop: 'name' }
         = superscript_ordinals(@location.name)
+        - if @location.alternate_name
+          = "(#{superscript_ordinals(@location.alternate_name)})"
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
           = link_to(locations_path(org_name: @location.organization.name)) do
@@ -17,7 +19,7 @@
     %section#contact-info
 
       - if (@location.fields & location_contact_fields).any?
-        %section.contact-box
+        %section.contact-box-general
           %h1 General Contact Info
           %section
 
@@ -42,42 +44,18 @@
             - if @location.phones.present?
               %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                 - @location.phones.each do |phone|
-                  %div
-                    %i{ class: 'fa fa-phone-square' }
-                    %span
-                      %span{ itemprop: 'telephone' }
-                        = format_phone(phone.number)
-                      - if phone.extension.present?
-                        %span.phone-extension
-                          = phone.extension
-                      - if phone.number_type
-                        %sup.phone-type
-                          = phone.number_type
-                      - if phone.department
-                        %p.phone-department{ itemprop: 'contactType' }
-                          = phone.department
-
-            - if @location.faxes.present?
-              %section.faxes
-                - @location.faxes.each do |fax|
-                  %div
-                    %i{ class: 'fa fa-print fax' }
-                    %span
-                      %span{ itemprop: 'faxNumber' }
-                        = format_phone(fax.number)
-                      - if fax.department
-                        %p.fax-department{ itemprop: 'contactType' }
-                          = fax.department
+                  = render 'component/detail/phone', phone: phone
 
       - if @location.contacts.present?
         - @location.contacts.each do |contact|
-          %section.contact-box
+          %section.contact-box-specific
             %h1 Specific Contact
             %section
               %section.contact-name
                 = contact.name
-              %section.contact-title
-                = contact.title
+              - if contact.title.present? || contact.department.present?
+                %section.contact-details
+                  = contact_details_for(contact)
 
               - if contact.email.present?
                 %section.emails{ itemprop: 'email' }
@@ -87,23 +65,10 @@
                       %span{ itemprop: 'email' }
                         = contact.email
 
-              - if contact.phone.present?
+              - if contact.phones.present?
                 %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
-                  %div
-                    %i{ class: 'fa fa-phone-square' }
-                    %span
-                      %span{ itemprop: 'telephone' }
-                        = format_phone(contact.phone)
-                      - if contact.extension.present?
-                        %span.phone-extension
-                          = contact.extension
-
-              - if contact.fax.present?
-                %section.faxes
-                  %div
-                    %i{ class: 'fa fa-print fax' }
-                    %span{ itemprop: 'faxNumber' }
-                      = format_phone(contact.fax)
+                  - contact.phones.each do |phone|
+                    = render 'component/detail/phone', phone: phone
 
       - if @location.address.present?
         %section.address-box
@@ -161,7 +126,7 @@
             %section#detail-map-view.map
               #detail-map-canvas
                 %span.hide#detail-map-canvas-title
-                  = address(@location)
+                  = full_address_for(@location.address)
                 %span.hide#detail-map-canvas-lat
                   = @location.latitude
                 %span.hide#detail-map-canvas-lng

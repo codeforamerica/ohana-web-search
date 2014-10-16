@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/locations/admin-test-location
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:49:44 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"3a53134129a43dad6cb85b6872f60105"'
+      X-Request-Id:
+      - d0d124c8-f8f2-4286-bc2d-fe6732a998a1
+      X-Runtime:
+      - '0.091817'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":21,"accessibility":["Elevator","Disabled Restroom"],"admin_emails":[],"alternate_name":null,"coordinates":[-122.2871612,37.5291938],"description":"This
+        is a description","emails":["eml@example.org"],"hours":"Monday-Friday 10am-5pm","languages":null,"latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
+        Test Location","short_desc":"This is a short description","slug":"admin-test-location","transportation":"SAMTRANS
+        stops within 1/2 mile.","updated_at":"2014-10-20T12:44:08.685-07:00","urls":["http://codeforamerica.org"],"url":"http://ohana-api-test.herokuapp.com/api/locations/admin-test-location","address":{"id":20,"street_1":"123
+        El Camino Real","street_2":null,"city":"Belmont","state":"CA","postal_code":"94002"},"contacts":[{"department":"Office
+        of Innovation","email":null,"id":28,"name":"Moncef","title":null,"phones":[]}],"mail_address":null,"phones":[{"id":39,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703555-ABCD"},{"id":40,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"services":[{"id":21,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
+        a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"how_to_apply":"By
+        phone during business hours.","keywords":[],"languages":[],"name":"Service
+        for Admin Test Location","required_documents":[],"service_areas":["San Mateo
+        County"],"status":null,"website":null,"wait":null,"updated_at":"2014-10-20T12:44:08.683-07:00","categories":[]}],"organization":{"id":7,"alternate_name":null,"date_incorporated":null,"description":"An
+        organization created for testing purposes.","email":null,"name":"Admin Test
+        Org","slug":"admin-test-org","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/admin-test-org","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/admin-test-org/locations"}}'
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 21:49:44 GMT
+recorded_with: VCR 2.9.2

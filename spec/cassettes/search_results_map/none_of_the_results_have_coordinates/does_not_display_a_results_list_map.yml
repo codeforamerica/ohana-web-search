@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,45 +18,40 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Connection:
-      - keep-alive
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - Cowboy
+      Connection:
+      - close
       Date:
-      - Wed, 23 Jul 2014 23:13:53 GMT
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Runtime:
-      - '0.167237'
-      X-Request-Id:
-      - 3bc8ec7d-47db-4016-8366-411c1760feec
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Current-Page:
-      - '1'
-      X-Total-Pages:
-      - '1'
-      X-Total-Count:
-      - '1'
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
+      - Mon, 20 Oct 2014 21:37:47 GMT
       Status:
       - 200 OK
-      Transfer-Encoding:
-      - chunked
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&org_name=Location+with+no+phone&page=0>;
+        rel="last"
+      X-Total-Count:
+      - '0'
       Content-Type:
       - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Request-Id:
+      - d76af089-7e47-49e9-9460-ae48fc7e777f
+      X-Runtime:
+      - '0.031588'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":20,"admin_emails":[],"coordinates":null,"description":"no phone","latitude":null,"longitude":null,"name":"Location
-        with no phone","short_desc":"no phone","slug":"location-with-no-phone","updated_at":"2014-07-15T12:59:51.308-07:00","urls":[],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone/services","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","address":null,"organization":{"id":6,"name":"Location
-        with no phone","slug":"location-with-no-phone","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/location-with-no-phone","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/location-with-no-phone/locations"},"phones":[]}]'
-    http_version:
-  recorded_at: Wed, 23 Jul 2014 23:13:53 GMT
+      string: "[]"
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 21:37:46 GMT
 recorded_with: VCR 2.9.2

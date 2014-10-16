@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,12 +18,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:27 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,41 +32,43 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
+      Etag:
+      - '"15a3ea49135bbdd2efc372b53260931d"'
       X-Request-Id:
-      - c95088c5-10d6-4007-86db-7486c7ae5717
+      - 590a0f30-7648-4870-a9fc-25c977f59de3
       X-Runtime:
-      - '0.416803'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      Date:
-      - Mon, 18 Aug 2014 18:54:42 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - '0.188842'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":19,"accessibility":["Elevator","Ramp","Wheelchair"],"admin_emails":[],"coordinates":[-122.2931236,37.5326941],"description":"Provides
+      string: '{"id":19,"accessibility":["Elevator","Ramp","Wheelchair"],"admin_emails":[],"alternate_name":null,"coordinates":[-122.2931236,37.5326941],"description":"Provides
         free medical and dental care to those in need. Offers basic medical care for
         adults.","emails":["smcmed@samaritanhouse.com"],"hours":"Monday-Friday, 9-12,
         1-4","languages":["Spanish"],"latitude":37.5326941,"longitude":-122.2931236,"name":"San
         Mateo Free Medical Clinic","short_desc":"Provides free medical and dental
         care to those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","transportation":"SAMTRANS
-        stops within 1 block.","updated_at":"2014-07-15T13:20:13.307-07:00","urls":["http://www.samaritanhouse.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"street":"19
-        West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"contacts":[{"email":null,"extension":null,"fax":null,"id":27,"name":"Sharon
-        Petersen","phone":null,"title":"Administrator"}],"faxes":[{"id":19,"number":"650
-        578-0440","department":null}],"mail_address":{"id":19,"attention":"San Mateo
-        Free Medical/Dental","street":"19 West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"phones":[{"id":19,"department":null,"extension":null,"number":"650
-        578-0400","number_type":null,"vanity_number":null}],"services":[{"id":19,"audience":null,"description":"Provides
+        stops within 1 block.","updated_at":"2014-10-20T12:44:07.679-07:00","urls":["http://www.samaritanhouse.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"street_1":"19
+        West 39th Avenue","street_2":null,"city":"San Mateo","state":"CA","postal_code":"94403"},"contacts":[{"department":null,"email":null,"id":27,"name":"Sharon
+        Petersen","title":"Administrator","phones":[]}],"mail_address":{"id":19,"attention":"San
+        Mateo Free Medical/Dental","street_1":"19 West 39th Avenue","street_2":null,"city":"San
+        Mateo","state":"CA","postal_code":"94403"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}],"services":[{"id":19,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"Provides
         free medical and dental care to those in need. Offers basic medical care for
-        adults.","eligibility":"Low-income person without access to health care","fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
+        adults.","eligibility":"Low-income person without access to health care","email":null,"fees":"None.","funding_sources":["Donations","Grants"],"how_to_apply":"Call
         for screening appointment (650-347-3648).","keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics"],"name":"San Mateo Free Medical Clinic","service_areas":["Belmont"],"short_desc":null,"urls":[],"wait":"Varies.","updated_at":"2014-07-15T13:20:13.302-07:00","categories":[]}],"organization":{"id":5,"name":"Samaritan
-        House","slug":"samaritan-house","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"}}'
+        Care","Community Clinics"],"languages":[],"name":"San Mateo Free Medical Clinic","required_documents":[],"service_areas":["Belmont","Burlingame"],"status":null,"website":null,"wait":"Varies.","updated_at":"2014-10-20T12:44:07.675-07:00","categories":[]}],"organization":{"id":5,"alternate_name":null,"date_incorporated":null,"description":"Since
+        1974, Samaritan House has been serving low-income families and individuals
+        in San Mateo County. Our services are designed to meet the immediate and basic
+        needs of our clients for food, clothing, shelter, health care, worker resources,
+        and counseling services.","email":null,"name":"Samaritan House","slug":"samaritan-house","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"}}'
     http_version: 
-  recorded_at: Mon, 18 Aug 2014 18:54:41 GMT
+  recorded_at: Mon, 20 Oct 2014 21:37:27 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?keyword=food
@@ -77,7 +79,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -85,12 +87,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:27 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -104,49 +106,38 @@ http_interactions:
         <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
       X-Total-Count:
       - '5'
-      X-Total-Pages:
-      - '5'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
+      Etag:
+      - '"3758f3989ae62a33da15e6d7ed608a41"'
       X-Request-Id:
-      - c99493f0-2487-4d94-bc69-3b388f9e0cfd
+      - 5ac8b6fe-2def-4131-9daa-98bb9b0db666
       X-Runtime:
-      - '0.044791'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      Date:
-      - Mon, 18 Aug 2014 18:54:42 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - '0.102560'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
-        multipurpose center offering a wide variety of recreational, education and
-        cultural activities. Lifelong learning courses cover topics such as music,
-        art, languages, etc., are hosted at this location. Little House offers a large
-        variety of classes including arts and crafts, jewelry, languages, current
-        events, lapidary, woodwork, painting, and fitness courses (yoga, strength
-        straining, tai chi). There are monthly art and cultural lectures, movie showings,
-        and a computer center. Recreation activities include mah jong, pinochle, ballroom
-        dancing, bridge, trips and tours. Partners with the Sequoia Adult Education
-        Program. The Alzheimer''s Cafe, open the third Tuesday of every month from
-        2:00 - 4:00 pm, is a place that brings together people liviing with dementia,
-        their families, and their caregivers. Free and no registration is needed.
-        The Little House Community Service Desk offers information and referrals regarding
-        social service issues, such as housing, food, transportation, health insurance
-        counseling, and estate planning. Massage, podiatry, and acupuncture are available
-        by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
-        according to selection.","latitude":37.4480204,"longitude":-122.1805905,"name":"Little
-        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2014-07-15T12:51:52.581-07:00","urls":["http://www.penvol.org/littlehouse"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/services","url":"http://ohana-api-test.herokuapp.com/api/locations/little-house","address":{"id":6,"street":"800
-        Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"organization":{"id":2,"name":"Peninsula
-        Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
-        326-2025","number_type":null,"vanity_number":null}]}]'
+      string: '[{"id":17,"admin_emails":[],"coordinates":[-122.4224905,37.6445898],"description":"Provides
+        emergency food, clothing and furniture vouchers to low-income families in
+        times of crisis. Administers Project REACH (Relief for Energy Assistance through
+        Community Help) funds to prevent energy shut-off through a one-time payment.
+        Offers a Saturday morning Homeless Feeding Program at 10:30, as well as Sunday
+        services and spiritual counseling. Provides Christmas toys and Back-to-School
+        clothes and supplies. Offers case management, advocacy and referrals to other
+        agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
+        Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
+        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","updated_at":"2014-10-20T12:44:06.196-07:00","urls":["http://www.tsagoldenstate.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"street_1":"409
+        South Spruce Avenue","street_2":null,"city":"South San Francisco","state":"CA","postal_code":"94080"},"organization":{"id":4,"alternate_name":null,"date_incorporated":null,"description":"The
+        Salvation Army operates 7,546 centers in communities across the United States.
+        These include food distribution, disaster relief, rehabilitation centers,
+        anti-human trafficking efforts, and a wealth of children''s programs.","email":null,"name":"Salvation
+        Army","slug":"salvation-army","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":32,"department":null,"extension":null,"number":"650
+        266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
+        266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
+        266-4594","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 18 Aug 2014 18:54:42 GMT
+  recorded_at: Mon, 20 Oct 2014 21:37:27 GMT
 recorded_with: VCR 2.9.2

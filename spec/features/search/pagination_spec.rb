@@ -17,7 +17,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when there is only one result' do
-    before { visit '/locations?keyword=maceo' }
+    before { visit '/locations?keyword=example' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
