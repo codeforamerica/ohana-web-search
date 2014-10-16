@@ -131,15 +131,6 @@ ul {
   user-select: none;
 }
 
-@include site-link('#general-services', $white);
-@include site-link('#emergency-services', $white);
-@include site-link('#detail-info header', rgba($white, 0));
-@include site-link('#detail-info .metadata', $white);
-@include site-link('#contact-info', $white);
-@include site-link('.no-results', $white);
-@include site-link('#app-footer', $white);
-@include site-link('#list-view li', rgba($white, 0));
-
 //=================================================================================
 // Content area is everything visible on the page.
 // This section sets up the header and footer, but not the main content area.
@@ -1094,7 +1085,7 @@ body {
     }
   }
 
-
+  // Location detail values that have bulleted lists (languages, homepage, service areas).
   ul {
     margin-bottom: 0;
     margin-left: 20px;
@@ -1102,8 +1093,7 @@ body {
     li {
       color: $main-list-mark-color; // IE fallback
       color: rgba($main-list-mark-color, .4);
-      span
-      {
+      > span {
         color: $black;
       }
     }
@@ -1323,8 +1313,17 @@ body {
       }
     }
   }
-
 }
+
+@include site-link('#general-services', $white);
+@include site-link('#emergency-services', $white);
+@include site-link('#detail-info header', rgba($white, 0));
+@include site-link('#detail-info .service', $white);
+@include site-link('#detail-info .metadata', $white);
+@include site-link('#contact-info', $white);
+@include site-link('.no-results', $white);
+@include site-link('#app-footer', $white);
+@include site-link('#list-view li', rgba($white, 0));
 
 /* ==========================================================================
    State classes
