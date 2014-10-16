@@ -5,8 +5,9 @@
 // Form input styles.
 
 // Search.
-// Reset webkit added styles.
+// Reset browser-specific added styles.
 @include reset-input-webkit();
+@include reset-input-ie();
 
 .input-search-small {
   @include input-placeholder(rgba($white, 0.6), italic);
@@ -18,7 +19,7 @@
 
   > input {
     font-size: $font_size_105;
-    margin-left: 0px;
+    margin-left: 0;
     height: 45px;
     padding: 3px;
     padding-left: 45px;
@@ -30,7 +31,7 @@
     border: none;
     background: none;
     border-bottom: 1px solid $primary-dark;
-    @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+    @include single-box-shadow(rgba($black, 0.1), 0, 1px, 6px, 1px, inset);
     @include box-sizing(border-box);
     color: $white;
   }
@@ -46,7 +47,7 @@
     vertical-align: baseline;
     font-family: $font_serif;
     font-size: $font_size_110;
-    line-height: 0px;
+    line-height: 0;
     height: 40px;
     min-width: 34px;
     border-collapse: collapse;
@@ -69,7 +70,7 @@
 }
 
 .input-search-big {
-  @include input-placeholder(midtone($black,0.2), italic);
+  @include input-placeholder(midtone($black, 0.2), italic);
   position: relative;
   width: 440px;
 
@@ -112,14 +113,14 @@
     @include box-sizing(border-box);
     @include rounded-except(left);
 
-    border: 1px solid rgba($input-border-color,0.4);
-    border-left: 1px solid rgba($input-border-color,0.2);
+    border: 1px solid rgba($input-border-color, 0.4);
+    border-left: 1px solid rgba($input-border-color, 0.2);
     background: $button-bg;
 
     font-size: $font_size_115;
     vertical-align: baseline;
     font-family: $font_serif;
-    line-height: 0px;
+    line-height: 0;
     letter-spacing: 1px;
 
     cursor: pointer;
@@ -187,10 +188,10 @@
       padding-left: 35px;
       padding-right: 25px;
       @include box-sizing(border-box);
-      @include single-box-shadow(rgba($black, 0.1), 0px, 1px, 6px, 1px, inset);
+      @include single-box-shadow(rgba($black, 0.1), 0, 1px, 6px, 1px, inset);
       @include rounded-except(none);
       border: none;
-      border-bottom: 1px solid rgba($white,0.7);
+      border-bottom: 1px solid rgba($white, 0.7);
       border-collapse: collapse;
       -webkit-appearance: none; // Remove rounding styling of input fields on iOS.
       font-size: $font_size_95;
@@ -233,7 +234,7 @@
 
     &:hover {
       background: $search-button-hover-background;
-      border: 1px solid rgba($input-border-color,0.2);
+      border: 1px solid rgba($input-border-color, 0.2);
       border-bottom: 1px solid rgba($white, 0.3);
 
       .fa {
@@ -267,7 +268,7 @@
 
   .button-clear {
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 50%;
     margin-top: -15px;
 

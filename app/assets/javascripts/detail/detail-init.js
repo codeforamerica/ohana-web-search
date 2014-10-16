@@ -1,16 +1,18 @@
 require([
   'detail/detail-map-manager',
   'detail/character-limited/character-limiter',
-  'detail/term-popup-manager',
-  'search/header-manager'
+  'search/header-manager',
+  'detail/utility-links-manager',
+  'detail/term-popup-manager'
 ],
-function (map, cl, tpm, header) {
+function (map, cl, header, utilityLinks, termPopups) {
   'use strict';
 
   map.init();
   cl.init();
-  tpm.init();
   header.init();
+  utilityLinks.init();
+  termPopups.init();
 
 },
 function (err) {
@@ -26,15 +28,17 @@ function (err) {
   require([
     'detail/no-detail-map-manager',
     'detail/character-limited/character-limiter',
-    'detail/term-popup-manager',
-    'search/header-manager'
+    'search/header-manager',
+    'detail/utility-links-manager',
+    'detail/term-popup-manager'
   ],
-  function (map, cl, tpm, header) {
+  function (map, cl, header, utilityLinks, termPopups) {
 
     map.init();
     cl.init();
-    tpm.init();
     header.init();
+    utilityLinks.init();
+    termPopups.init();
 
   });
 });

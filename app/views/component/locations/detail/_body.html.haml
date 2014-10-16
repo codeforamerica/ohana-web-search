@@ -4,8 +4,8 @@
 
   %header
     %section
-      %p.kind
-        = link_to @location.kind, locations_path(kind: @location.kind), title: "All locations of type #{@location.kind}", class: "kind icon #{@location.kind.parameterize}"
+      %p{ class: "kind icon #{@location.kind.parameterize}" }
+        = link_to @location.kind, locations_path(kind: @location.kind), title: "All locations of type #{@location.kind}"
     %hgroup
       %h1.name{ itemprop: 'name' }
         = superscript_ordinals(@location.name)
@@ -43,23 +43,22 @@
             - if @location[:phones].present?
               %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
                 - @location.phones.each do |phone|
-                  - if phone[:number].present?
-                    %div
-                      %i{ class: 'fa fa-phone-square' }
-                      %span
-                        %span{ itemprop: 'telephone' }
-                          = format_phone(phone.number)
-                        - if phone[:extension].present?
-                          %sup.phone-extension
-                            = phone.extension
-                        - if phone[:number_type]
-                          %sup.phone-type
-                            = phone.number_type
-                        - if phone[:department]
-                          %p.phone-department{ itemprop: 'contactType' }
-                            = phone.department
+                  %div
+                    %i{ class: 'fa fa-phone-square' }
+                    %span
+                      %span{ itemprop: 'telephone' }
+                        = format_phone(phone.number)
+                      - if phone.extension.present?
+                        %span.phone-extension
+                          = phone.extension
+                      - if phone.number_type
+                        %sup.phone-type
+                          = phone.number_type
+                      - if phone.department
+                        %p.phone-department{ itemprop: 'contactType' }
+                          = phone.department
 
-            - if @location[:faxes].present?
+            - if @location.faxes.present?
               %section.faxes
                 - @location.faxes.each do |fax|
                   %div
@@ -97,7 +96,7 @@
                       %span{ itemprop: 'telephone' }
                         = format_phone(contact.phone)
                       - if contact.extension.present?
-                        %sup.phone-extension
+                        %span.phone-extension
                           = contact.extension
 
               - if contact[:fax].present?

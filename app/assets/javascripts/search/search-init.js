@@ -1,6 +1,6 @@
 // Manages search initialization.
 require([
-  'search/search-filter-manager'
+  'search/filter/search-filter-manager'
 ],
 function (filter) {
   'use strict';

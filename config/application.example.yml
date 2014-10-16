@@ -62,11 +62,11 @@
 # If you choose to turn on rate limiting in your instance of Ohana API,
 # obtain an API Token for this app from the developer portal of the API.
 
-#############################
+##########################
 #
-# GOOGLE_TRANSLATE_API_TOKEN
+# GOOGLE_TRANSLATE_API_KEY
 #
-#############################
+##########################
 # If you would like your users to be able to type in search keywords
 # in the language of their choice, you will need to obtain an API token
 # from Google by signing up for a paid Google Translate API account.
@@ -116,6 +116,17 @@
 # Note that you must have a Universal Analytics property for tracking to work.
 # https://support.google.com/analytics/answer/4457764?hl=en
 
+#####################
+#
+# GOOGLE_MAPS_API_KEY
+#
+#####################
+# While not required, using a Google Maps API key enables you to monitor your
+# application's Maps API usage. If your usage exceeds Google's usage limits,
+# you must load the Maps API using an API key in order to purchase more quota.
+# Visit the following URL for more information and to setup an API key:
+# https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
 ######
 #
 # TZ
@@ -152,4 +163,4 @@ test:
   OHANA_API_ENDPOINT: http://smc-ohana-api-test.herokuapp.com/api
   OHANA_API_TOKEN: ~
   DOMAIN_NAME: lvh.me
-  GOOGLE_TRANSLATE_API_TOKEN: ~
+  GOOGLE_TRANSLATE_API_KEY: ~
