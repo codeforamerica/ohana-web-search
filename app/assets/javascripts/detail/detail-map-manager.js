@@ -32,6 +32,18 @@ function (markerManager, googleMaps) {
 
       var latLng = new google.maps.LatLng(lat, lng);
 
+      // Turns off Google Points-Of-Interest (POI) markers so the user
+      // doesn't click a POI and get an infowindow popped up.
+      var poiStyles =[
+        {
+          featureType: 'poi',
+          elementType: 'labels',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        }
+      ];
+
       var mapOptions = {
         maxZoom: 16,
         center: latLng,
@@ -45,7 +57,8 @@ function (markerManager, googleMaps) {
         },
 
         mapTypeControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: poiStyles
       };
       var map = new google.maps.Map(mapCanvas, mapOptions);
 
