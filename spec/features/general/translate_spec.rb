@@ -7,10 +7,6 @@ feature 'page translation', :js do
 
   context 'translation cookie is set to Spanish' do
     it 'displays Spanish-language contents' do
-      # use this with poltergeist
-      # page.driver.set_cookie('googtrans','/en/es')
-
-      # use this with webkit
       page.driver.
         set_cookie('googtrans', '/en/es', path: '/', domain: 'lvh.me')
       page.driver.
