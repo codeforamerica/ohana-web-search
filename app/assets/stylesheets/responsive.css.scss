@@ -32,7 +32,7 @@
           }
 
           &:hover {
-            background: shade($accentA-light,5);
+            background: shade($accentA-light, 5);
 
             > span {
               color: $button-small-color;
@@ -180,7 +180,7 @@
           width: 100%;
           @include box-sizing(border-box);
           display: block;
-          @include border-radius(0px);
+          @include border-radius(0);
           padding-right: 10px;
         }
 
@@ -238,7 +238,7 @@
       > header > nav {
         display: block;
         padding: 10px;
-        padding-top: 0px;
+        padding-top: 0;
       }
     }
 
@@ -312,7 +312,7 @@
         padding-left: 20px;
         width: 100%;
         border-bottom: 1px solid $greyscale_midtone; // IE fallback
-        border-bottom: 1px solid rgba($black,.1);
+        border-bottom: 1px solid rgba($black, .1);
       }
     }
 
@@ -324,9 +324,9 @@
     }
 
     #detail-info {
-      margin: 0px;
-      @include border-radius(0px);
-      @include single-box-shadow($white,0,0,0px);
+      margin: 0;
+      @include border-radius(0);
+      @include single-box-shadow($white, 0, 0, 0);
       -ms-word-break: break-all;
       word-break: break-all;
       // Non standard for webkit
@@ -337,7 +337,7 @@
         width: 100%;
 
         > section {
-          @include border-radius(0px);
+          @include border-radius(0);
         }
       }
 
@@ -362,12 +362,12 @@
 
     #list-view {
       li:last-child {
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }
     }
   }
 
-  #terminology {
+  .terminology-box {
     table {
       display: none;
     }

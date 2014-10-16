@@ -1,13 +1,13 @@
 // Manages behavior of feedback form.
 define([
+  'app/alert-manager',
   'util/util',
   'jquery'
 ],
-function (util, $) {
+function (alert, util, $) {
   'use strict';
 
   var _sendBtn;
-  var _feedbackStatus;
 
   var _commentInput;
   var _emailInput;
@@ -16,8 +16,6 @@ function (util, $) {
   {
     _sendBtn = document.getElementById('feedback-form-btn');
     _sendBtn.addEventListener('click', _sendBtnClicked, false);
-
-    _feedbackStatus = document.getElementById('feedback-status');
 
     _commentInput = document.querySelector('#feedback-box #comment');
     _emailInput = document.querySelector('#feedback-box #email');
@@ -30,12 +28,6 @@ function (util, $) {
     }
   }
 
-  // the form is being hidden, hide the feedback status
-  function hide() {
-    _feedbackStatus.classList.add('hide');
-    _updateFeedbackForm();
-  }
-
   function _sendBtnClicked(evt) {
     // Stop the form from submitting.
     evt.preventDefault();
@@ -45,7 +37,6 @@ function (util, $) {
       _feedbackFormSend();
     else
       _incorrectEmailAddress();
-    return false;
   }
 
   function _onFeedbackFormInput() {
@@ -99,17 +90,16 @@ function (util, $) {
 
   // on submitting success, clear out values and post success message.
   function _onSuccess() {
-    _feedbackStatus.innerHTML = 'Thanks for the feedback!';
-    _feedbackStatus.classList.remove('hide');
+    alert.show('Feedback Sent! Thank you!', alert.type.VALID);
     _commentInput.value = '';
     _updateFeedbackForm();
   }
 
   // on submitting error, clear out values and post failure message.
   function _onError() {
-    _feedbackStatus.innerHTML = 'Error sending feedback, please ' +
-                                '<a href="/">reload</a> and try again!';
-    _feedbackStatus.classList.remove('hide');
+    var message = 'Error sending feedback, please ' +
+                  '<a href="/">reload</a> and try again!';
+    alert.show(message, alert.type.ERROR);
     _commentInput.value = '';
     _emailInput.value = '';
     _updateFeedbackForm();
@@ -117,14 +107,13 @@ function (util, $) {
 
   // incorrect email address. Show error message.
   function _incorrectEmailAddress() {
-    _feedbackStatus.innerHTML = 'Your email address appears to be formatted ' +
-                                'incorrectly, please try again!';
-    _feedbackStatus.classList.remove('hide');
+    var message = 'Your email address appears to be formatted ' +
+                  'incorrectly, please try again!';
+    alert.show(message, alert.type.ERROR);
     _emailInput.value = '';
   }
 
   return {
-    init:init,
-    hide:hide
+    init:init
   };
 });

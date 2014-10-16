@@ -1,7 +1,9 @@
 // Cookie CRUD functions, from http://www.quirksmode.org/js/cookies.html
 // ERB needed to retrieve domain name that the cookie is saved under.
-define(
-function () {
+define([
+  'util/environmentVariables'
+],
+function (envVars) {
   'use strict';
 
   // @param name [String] The cookie's name.
@@ -9,31 +11,38 @@ function () {
   // @param useDomain [Boolean] Whether set under subdomains or not.
   // @param days [Number] Number of days till the cookie expires.
   // Can be negative.
- function create(name, value, useDomain, days) {
+  function create(name, value, useDomain, days) {
+    var expires = '';
     if (days) {
       var date = new Date();
       date.setTime(date.getTime() + (days*24*60*60*1000));
-      var expires = '; expires=' + date.toGMTString();
+      expires = '; expires=' + date.toGMTString();
     }
-    else var expires = '';
 
     var setting = name + '=' + value + expires + '; path=/';
 
-    // Sets the cookie under domain and subdomains (if useDomain parameter is present).
+    // Set the cookie without the domain parameter.
     document.cookie = setting;
-    if (useDomain)
-      document.cookie = setting + "; domain=.<%= ENV['DOMAIN_NAME'] %>";
+    // Sets the cookie under domain and subdomains
+    // (if useDomain parameter is present).
+    if (useDomain) {
+      var domain = envVars.getValue('DOMAIN_NAME');
+      var domainSetting = setting + '; domain=' + domain;
+      var subdomainSetting = setting + '; domain=.' + domain;
+      document.cookie = domainSetting;
+      document.cookie = subdomainSetting;
+    }
   }
 
   // @param name [String] The cookie's name to read.
   // @return [String] The named cookie's value, or null.
   function read(name) {
-    var nameEQ = name + "=";
+    var nameEQ = name + '=';
     var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
+    for(var i = 0; i < ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
   }

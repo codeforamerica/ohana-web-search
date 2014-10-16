@@ -1,16 +1,3 @@
-//= depend_on_asset 'markers/arts_marker_small.png'
-//= depend_on_asset 'markers/clinics_marker_small.png'
-//= depend_on_asset 'markers/education_marker_small.png'
-//= depend_on_asset 'markers/entertainment_marker_small.png'
-//= depend_on_asset 'markers/farmers_markets_marker_small.png'
-//= depend_on_asset 'markers/government_marker_small.png'
-//= depend_on_asset 'markers/human_services_marker_small.png'
-//= depend_on_asset 'markers/libraries_marker_small.png'
-//= depend_on_asset 'markers/museums_marker_small.png'
-//= depend_on_asset 'markers/parks_marker_small.png'
-//= depend_on_asset 'markers/sports_marker_small.png'
-//= depend_on_asset 'markers/other_marker_small.png'
-
 // Establish baseline for vertical rhythm
 @include establish-baseline();
 
@@ -26,22 +13,15 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-html,
-button,
-input,
-select,
-textarea {
+html {
     color: #222;
-}
-
-body {
     font-size: 1em;
     line-height: 1.4;
 }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
+ * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
@@ -69,10 +49,16 @@ hr {
 }
 
 /*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
  */
 
-img {
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
     vertical-align: middle;
 }
 
@@ -93,18 +79,6 @@ fieldset {
 textarea {
     resize: vertical;
 }
-
-/* ==========================================================================
-   Chrome Frame prompt
-   ========================================================================== */
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
 
 /* ==========================================================================
    Author's custom styles
@@ -130,30 +104,21 @@ h1 {
   font-weight: normal;
 }
 
+// Align and size super/subscripted text.
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: 80%;
+}
+sub {
+  top: 0.4em;
+}
+
+// Remove bullets from lists by default.
 ul {
   list-style-type: none;
-}
-
-#category-box a,
-#detail-info a,
-.popup-container a,
-section.no-results .message a,
-footer a {
-  text-decoration: none;
-  color: $greyscale_midtone; // IE fallback
-  color: rgba($black, .6);
-  cursor: pointer;
-  border-bottom: 1px solid $white;
-}
-
-#category-box a:hover,
-#detail-info a:hover,
-.popup-container a:hover,
-section.no-results .message a:hover,
-footer a:hover {
-  color: $primary-dark;
-  border-bottom: 1px solid $greyscale_midtone;
-  border-bottom: 1px solid rgba($black, .4);
 }
 
 // Prevent selection of font awesome icons.
@@ -166,322 +131,13 @@ footer a:hover {
   user-select: none;
 }
 
-#popups article:hover,
-#detail-info section:hover,
-.about article:hover,
-#app-footer:hover {
-  a {
-    color: $primary-dark;
-  }
-}
-
-#content > header {
-  nav {
-    a {
-      //color: rgba($primary-darkest, 0.6);
-      color: $menubutton-popup-color;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: $menubutton-popup-hover-color;
-    }
-  }
-}
-
-sup {
-    font-size: 80%;
-}
-
-.drop-down-container {
-  position: relative;
-
-  ul.drop-down {
-    position: absolute;
-    border: 1px solid $primary;
-    display: block;
-    overflow: scroll;
-    overflow-x: hidden;
-    background: $white;
-    z-index: 9998;
-    @include single-box-shadow(darkest($primary), 0px, 2px, 10px);
-    @include box-sizing(border-box);
-    padding: 5px;
-
-    li {
-      display: block;
-      font-size: $font_size_95;
-      font-family: $font_san_serif;
-      padding: 5px;
-      @include box-sizing(border-box);
-      cursor: pointer;
-      color: $black;
-    }
-
-    li:hover {
-      background: $primary-lightest;
-    }
-
-    li.highlight {
-      background: $primary-lightest;
-    }
-  }
-}
-
-//=============================================================================
-// Popup styles.
-// Popups are the About/Contribute/Feedback popups in the upper-right.
-//
-#popups {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  pointer-events: none;
-
-  .popup-container {
-    pointer-events: auto;
-  }
-
-  .popup-container > article {
-    position: absolute;
-
-    width: 300px;
-    background: $popup-bg;
-    overflow-y: auto;
-    @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px);
-    @include border-radius(10px);
-
-    > div:last-child {
-      padding: 20px;
-      height: 100%;
-      @include box-sizing(border-box);
-
-      // Adds footer horizontal rule
-      > footer {
-        border-top: 1px solid $greyscale_light; // IE fallback
-        border-top: 1px solid rgba($black, .1);
-        margin-top: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-    }
-  }
-
-  .popup-container > article::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  .popup-container > article::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 10px rgba($black, .2);
-    -webkit-border-radius: 0px 10px 10px 0px;
-  }
-
-  .popup-container > article::-webkit-scrollbar-thumb {
-    background: rgba($black, .2);
-    -webkit-border-radius: 0px 10px 10px 0px;
-  }
-
-  .arrow {
-    width: 28px;
-    height: 15px;
-    left: 945px;
-    position: absolute;
-    top: 34px;
-    z-index: 9999;
-    overflow: hidden;
-
-    span {
-      position: absolute;
-      top: 5px;
-      left: 4px;
-      width: 18px;
-      height: 18px;
-      @include rotate(-135deg);
-      border-bottom: 1px solid #CCCCCC;
-      border-right: 1px solid #CCCCCC;
-      background: none repeat scroll 0 0 #FFFFFF;
-      display: block;
-      @include single-box-shadow( rgba($black, .2), 1px, 1px, 1px);
-    }
-  }
-
-  .close-button {
-    color: $greyscale_midtone; // IE Fallback
-    color: rgba($black, .5);
-    position: absolute;
-    right: 10px;
-    top: 0px;
-    font-size: $font_size_120;
-  }
-
-  .close-button::after {
-    content: "×";
-  }
-
-  .close-button:hover {
-    color: $black;
-    cursor: pointer;
-  }
-}
-
-// Popup content styling.
-.popup-container {
-  h1 {
-    font-weight: bold;
-    font-size: $font_size_110;
-    border-bottom: 6px solid $accentA-light;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  p {
-    font-family: $font_san_serif;
-    font-size: $font_size_100;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  footer > p {
-    font-size: $font_size_90;
-    font-family: $font_san_serif;
-  }
-
-  // Feedback form styles.
-  input,
-  textarea,
-  button {
-    padding: 5px;
-    width: 228px;
-    display: block;
-    border: 1px solid rgba($greyscale_dark, .4);
-    @include border-radius(3px);
-  }
-
-  button {
-    width: 100%;
-    background-color: $button-popup-bg;
-    color: $button-popup-color;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: $button-popup-hover-bg;
-    color: $button-popup-hover-color;
-  }
-
-  button[disabled] {
-    background-color: $button-popup-disabled-bg;
-    color: $button-popup-disabled-color;
-    cursor: default;
-    border-color: $button-popup-disabled-bg;
-  }
-
-  #feedback-status {
-    border: 1px solid $alert-border-color;
-    color: $alert-color;
-    background: $alert-bg;
-    font-family: $font_san_serif;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    @include border-radius(5px);
-  }
-}
-
-#popups article:hover #feedback-status {
-  a {
-    color: $greyscale_midtone; // IE fallback
-    color: rgba($black, .6);
-  }
-}
-
-//=============================================================================
-// Popups for Farmers' Markets terms
-
-.term-popup-container {
-  position: relative;
-
-  .popup {
-    min-width: 150px;
-
-      @include border-radius(5px 5px 5px 0px);
-      background: $white;
-      border: 1px solid $greyscale_midtone; // IE fallback
-      border: 1px solid rgba($black, .4);
-      @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px );
-      color: $black;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: 9999;
-      cursor: default;
-      font-size: $font_size_90;
-      font-style: normal;
-
-    div {
-        padding: 10px;
-        margin: 0;
-    }
-
-    dl {
-      margin: 0;
-    }
-
-    dt {
-      font-weight: bold;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black, .4);
-    }
-
-    dd {
-      margin: 0;
-    }
-
-    .corner {
-        border-radius: 0px 10px 0px 0px;
-        width: 10px;
-        height: 10px;
-        padding: 0;
-        margin: 0;
-        background: $greyscale_midtone; // IE fallback
-        background: rgba($black, .4);
-        position: absolute;
-        left: 0;
-        bottom: 0;
-    }
-  }
-
-  .popup-term.active:hover {
-    cursor: pointer;
-    color: $primary-dark;
-    border-bottom: 1px solid $greyscale_midtone; // IE fallback
-    border-bottom: 1px solid rgba($black, .4);
-  }
-
-}
-
-//=============================================================================
-
 //=================================================================================
 // Content area is everything visible on the page.
 // This section sets up the header and footer, but not the main content area.
 #content {
   background: $white;
 
-  #logo span {
-    color: $black; // IE fallback
-    font-size: $font_size_90;
-    margin-left: 5px;
-    position: relative;
-    top: -10px;
-    font-family: $font_san_serif;
-  }
-
-  // Logo/header area.
+  // Main page header and logo area.
   > header {
     position: relative;
     z-index: 9999;
@@ -492,13 +148,6 @@ sup {
     @include box-sizing(border-box);
 
     font-size: $font_size_100;
-
-    #logo a,
-    #logo a:hover {
-      text-decoration: none;
-      border-bottom: 0;
-      padding: 0;
-    }
 
     h1 {
         font-size: $font_size_110;
@@ -524,46 +173,74 @@ sup {
       padding-top: 11px;
       padding-bottom: 10px;
       padding-right: 15px;
-    }
 
-    nav li {
+      li {
         padding-right: 10px;
         @include inline-block();
+      }
+
+      a {
+        //color: rgba($primary-darkest, 0.6);
+        color: $menubutton-popup-color;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $menubutton-popup-hover-color;
+      }
     }
   }
+}
 
-  #app-footer {
+#logo {
+  span {
+    color: $black; // IE fallback
+    font-size: $font_size_90;
+    margin-left: 5px;
     position: relative;
-    text-align: center;
-    background: $white;
-    clear: both;
-    border-top: 2px solid $primary-dark;
-    padding-bottom: 20px;
+    top: -10px;
+    font-family: $font_san_serif;
+  }
 
-    #hsa-logo a {
-      border-bottom: none;
-    }
+  a,
+  a:hover {
+    text-decoration: none;
+    border-bottom: 0;
+    padding: 0;
+  }
+}
 
-    > p,
-    > div {
-      padding: 20px;
-      padding-bottom: 0;
-      font-size: $font_size_95;
-      font-family: $font_san_serif;
-      color: $greyscale_midtone;
-    }
+#hsa-logo a {
+  border-bottom: none;
+}
 
-    p span.cfaflag {
-      width: 30px;
-      height: 10px;
-      @include inline-block();
-      // The Code for America flag icon appears below.
-      background-image: url('data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
-      background-repeat: no-repeat;
-      padding-right: 10px;
-      position: relative;
-      top: -1px;
-    }
+#app-footer {
+  position: relative;
+  text-align: center;
+  background: $white;
+  clear: both;
+  border-top: 2px solid $primary-dark;
+  padding-bottom: 20px;
+
+  > p,
+  > div {
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: $font_size_95;
+    font-family: $font_san_serif;
+    color: $greyscale_midtone;
+  }
+
+  p span.cfaflag {
+    width: 30px;
+    height: 10px;
+    @include inline-block();
+    // The Code for America flag icon appears below.
+    background-image: url('data: image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAYAAADGmhxQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowQTgwMTE3NDA3MjA2ODExODA4M0Y4NDQzQjY1NUU4QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGREU5NDQ3QUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGREU5NDQ3OUZFRjIxMUUyODdFMUExNEQxOEY5RTcwNiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3NzQxMjdENjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3NzQxMjdFNjNGMjExRTJCMUU5RTMwNzJEMjEwQzU4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Pb9MpAAAAHRJREFUeNq8lEsOwCAIRCGZS/aEHJPujIvyaQZlaaI8n4Pq7qKqUtQjXFlyrmUb0YAyAqB7ubAXSDDG8G7Pot4gwaYMSgSKbhaGDVb9Fii2hcqgXYL/NJjmYGiSO/bSDFagJw2Gr6eX/8HfWcfAlB6tV4ABAMgqJBh6/fGdAAAAAElFTkSuQmCC');
+    background-repeat: no-repeat;
+    padding-right: 10px;
+    position: relative;
+    top: -1px;
   }
 }
 
@@ -637,23 +314,6 @@ sup {
     color: $greyscale_dark;
     cursor: default;
   }
-
-  // This is the feedback form styling that appears on the /about route,
-  // which normally would be visited when clicking one of the popups in
-  // the upper-right of the site when JS is disabled.
-  // This style rule is very similar to the #feedback-status rule defined
-  // in the popups style section.
-  #feedback-status {
-    width: 218px;
-    border: 1px solid $alert-border-color;
-    color: $alert-color;
-    background: $alert-bg;
-    font-family: $font_san_serif;
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    @include border-radius(5px);
-  }
 }
 
 .inside .main {
@@ -673,7 +333,7 @@ sup {
   display: none !important;
 }
 body {
-  top: 0px !important;
+  top: 0 !important;
 }
 
 //=================================================================================
@@ -743,7 +403,7 @@ body {
 
     background-color: $white;
     width: 100%;
-    -webkit-box-shadow: 0 0px 0 #ccc, 0 0px #fff inset;
+    -webkit-box-shadow: 0 0 0 #ccc, 0 0 #fff inset;
     -webkit-appearance: none;
 
     > span {
@@ -755,9 +415,8 @@ body {
   }
 }
 
-.home #search-box
-{
-  padding: 0px;
+.home #search-box {
+  padding: 0;
 
   ul {
     text-align: left;
@@ -833,17 +492,18 @@ body {
 
   fieldset {
     padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-bottom: 0;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+    padding-top: 10px;
 
-  legend {
-    /* For some reason the legend is positioned inside the margin of its fieldset,
-    so this offset is necessary to give it the same appearance as a label placed as
-    the first element in the fieldset. */
-    position: relative;
-    top: 10px;
+    legend {
+      /* For some reason the legend is positioned inside the margin of its fieldset,
+      so this offset is necessary to give it the same appearance as a label placed as
+      the first element in the fieldset. */
+      position: relative;
+      top: 10px;
+    }
   }
 }
 
@@ -853,7 +513,7 @@ body {
   text-align: center;
 
   > section {
-    @include single-box-shadow( rgba($black, .1), 0px, 0px, 5px );
+    @include single-box-shadow(rgba($black, .1), 0, 0, 5px);
     @include inline-block();
     @include border-radius(4px);
     margin: 10px;
@@ -938,7 +598,7 @@ body {
   h1 {
     font-size: $font_size_110;
     letter-spacing: 1px;
-    margin: 0px;
+    margin: 0;
     padding-left: 20px;
     padding-top: 9px;
     padding-bottom: 6px;
@@ -948,15 +608,14 @@ body {
 
   // back to search, directions, print
   .utility-links {
-
-    > span:first-child {
-      border-left: 1px dotted $greyscale_light;
-    }
-
     > span {
-      border-right: 1px dotted $greyscale_light;
+      border-left: 1px dotted $greyscale_light;
       @include inline-block();
       vertical-align: baseline;
+    }
+
+    > span:last-child {
+      border-right: 1px dotted $greyscale_light;
     }
   }
 
@@ -979,6 +638,7 @@ body {
 
   .right-column {
     z-index: 9997;
+
     > * {
       @include inline-block();
     }
@@ -1035,7 +695,7 @@ body {
 .results-header.floating {
   -webkit-backface-visibility: hidden;
   width: 100%;
-  @include single-box-shadow( rgba($black,.4), 0px, 1px, 6px );
+  @include single-box-shadow( rgba($black,.4), 0, 1px, 6px );
   border-bottom: 1px solid $primary-dark !important;
 }
 
@@ -1054,6 +714,8 @@ body {
   // No results styling.
   section.no-results {
     font-family: $font_san_serif;
+    border-bottom: 1px solid $greyscale_midtone; // IE fallback
+    border-bottom: 1px solid rgba($black,.1);
 
     .message {
       margin: 80px auto;
@@ -1066,6 +728,7 @@ body {
         display: block;
         margin-bottom: 10px;
       }
+
       > em {
         font-color: $greyscale_midtone;
       }
@@ -1085,54 +748,9 @@ body {
 // Results - terminology infobox. Certain keywords display an informational box
 // above the search results. See app/helpers/info_box_helper.rb for more info.
 //
-#terminology {
+#terminology-box-container {
   border-bottom: 1px solid $greyscale_midtone; // IE fallback
-  border-bottom: 1px solid rgba($black,.1);
-
-  div {
-    background: $greyscale_lightest;
-    border: 2px solid $terminology-border;
-    padding: 30px;
-    margin: 20px;
-    @include border-radius(4px);
-    font-family: $font_san_serif;
-
-    >p {
-      padding-top: 10px;
-    }
-
-    dt {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    table {
-      margin-top: 30px;
-
-      tr {
-        border-bottom: 1px solid $greyscale_light;
-      }
-
-      tr:last-child {
-        border-bottom: 0px;
-      }
-
-      th {
-        font-weight: bold;
-        font-size: 18px;
-      }
-
-      th,
-      td {
-        padding: 10px;
-      }
-
-      p:first-child {
-        padding-bottom: 10px;
-      }
-
-    }
-  }
+  border-bottom: 1px solid rgba($black, .1);
 }
 
 //=================================================================================
@@ -1169,7 +787,7 @@ body {
 
     > li:hover {
       background: $primary-lightest; // IE fallback
-      background: rgba($primary-lightest,.5);
+      background: rgba($primary-lightest, .5);
       h1 {
         padding-bottom: 5px;
         a {
@@ -1183,29 +801,14 @@ body {
     }
 
     > li:last-child {
-      margin-bottom: 0px;
+      margin-bottom: 0;
       border-bottom: 1px solid $greyscale_light; // IE fallback
-      border-bottom: 1px solid rgba($black,.1);
+      border-bottom: 1px solid rgba($black, .1);
     }
   }
 
   .results-entry {
     cursor: pointer;
-
-    a {
-      text-decoration: none;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.6);
-      cursor: pointer;
-      padding-bottom: 2px;
-      border-bottom: 0px;
-    }
-
-    a:hover {
-      color: $black;
-      border-bottom: 0px;
-      text-decoration: underline;
-    }
 
     > header {
       > hgroup {
@@ -1249,7 +852,7 @@ body {
       float: right;
 
       li {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         background: $white; // IE fallback
         background: rgba($white,.8);
         @include box-shadow(none);
@@ -1276,10 +879,6 @@ body {
     .kind {
       color: $primary-dark;
       font-size: 14px;
-
-      a:hover {
-        text-decoration: underline;
-      }
     }
 
     .icon {
@@ -1287,18 +886,6 @@ body {
       padding-left: 20px;
       margin-left: 8px;
     }
-    .arts{ background: url("<%= asset_path('markers/arts_marker_small.png') %>") no-repeat; }
-    .clinics{ background: url("<%= asset_path('markers/clinics_marker_small.png') %>") no-repeat; }
-    .education{ background: url("<%= asset_path('markers/education_marker_small.png') %>") no-repeat; }
-    .entertainment{ background: url("<%= asset_path('markers/entertainment_marker_small.png') %>") no-repeat; }
-    .farmers-markets{ background: url("<%= asset_path('markers/farmers_markets_marker_small.png') %>") no-repeat; }
-    .government{ background: url("<%= asset_path('markers/government_marker_small.png') %>") no-repeat; }
-    .human-services{ background: url("<%= asset_path('markers/human_services_marker_small.png') %>") no-repeat; }
-    .libraries{ background: url("<%= asset_path('markers/libraries_marker_small.png') %>") no-repeat; }
-    .museums{ background: url("<%= asset_path('markers/museums_marker_small.png') %>") no-repeat; }
-    .parks{ background: url("<%= asset_path('markers/parks_marker_small.png') %>") no-repeat; }
-    .sports{ background: url("<%= asset_path('markers/sports_marker_small.png') %>") no-repeat; }
-    .other{ background: url("<%= asset_path('markers/other_marker_small.png') %>") no-repeat; }
 
     .address {
       @include type-size(baseline);
@@ -1329,7 +916,7 @@ body {
   .infoBox {
     background-color: $white;
     @include border-radius(0px 4px 4px 4px);
-    @include single-box-shadow(midtone($black,0.4), 0px, 0px, 5px);
+    @include single-box-shadow(midtone($black,0.4), 0, 0, 5px);
     border: 1px solid $primary-dark;
     padding: 3px 6px;
     opacity: 0.95;
@@ -1356,6 +943,7 @@ body {
       border-bottom: 1px solid $white;
       @include inline-block();
     }
+
     a:hover {
       color: $primary-dark;
       border-bottom: 1px solid $greyscale_midtone;
@@ -1375,7 +963,7 @@ body {
       color: $greyscale_midtone; // IE Fallback
       color: rgba($black, .5);
       position: absolute;
-      left: 0px;
+      left: 0;
       top: -10px;
       font-size: $font_size_120;
       font-family: $font_serif;
@@ -1425,7 +1013,7 @@ body {
     border-bottom: 1px solid midtone($black, .1);
     background: $primary-lightest; // IE fallback
     background: rgba($primary-lightest,.1);
-    @include border-radius(4px 4px 0px 0px);
+    @include border-radius(4px 4px 0 0);
 
     .kind {
       color: $primary-dark;
@@ -1435,35 +1023,7 @@ body {
     .icon {
       padding-top: 12px;
       padding-left: 20px;
-      margin-left: 0px;
-    }
-
-    .arts{ background: url("<%= asset_path('markers/arts_marker_small.png') %>") no-repeat; }
-    .clinics{ background: url("<%= asset_path('markers/clinics_marker_small.png') %>") no-repeat; }
-    .education{ background: url("<%= asset_path('markers/education_marker_small.png') %>") no-repeat; }
-    .entertainment{ background: url("<%= asset_path('markers/entertainment_marker_small.png') %>") no-repeat; }
-    .farmers-markets{ background: url("<%= asset_path('markers/farmers_markets_marker_small.png') %>") no-repeat; }
-    .government{ background: url("<%= asset_path('markers/government_marker_small.png') %>") no-repeat; }
-    .human-services{ background: url("<%= asset_path('markers/human_services_marker_small.png') %>") no-repeat; }
-    .libraries{ background: url("<%= asset_path('markers/libraries_marker_small.png') %>") no-repeat; }
-    .museums{ background: url("<%= asset_path('markers/museums_marker_small.png') %>") no-repeat; }
-    .parks{ background: url("<%= asset_path('markers/parks_marker_small.png') %>") no-repeat; }
-    .sports{ background: url("<%= asset_path('markers/sports_marker_small.png') %>") no-repeat; }
-    .other{ background: url("<%= asset_path('markers/other_marker_small.png') %>") no-repeat; }
-
-    a {
-      text-decoration: none;
-      color: $greyscale_midtone; // IE fallback
-      color: rgba($black,.6);
-      cursor: pointer;
-      padding-bottom: 2px;
-      border-bottom: 0px;
-    }
-
-    a:hover {
-      color: $black;
-      border-bottom: 0px;
-      text-decoration: underline;
+      margin-left: 0;
     }
 
     > hgroup {
@@ -1496,7 +1056,7 @@ body {
     > h1 {
       @include type-size(small);
       color: $greyscale_midtone;
-      margin-top: 0px;
+      margin-top: 0;
       margin-bottom: 10px;
       padding: 5px;
       border-bottom: 1px solid $greyscale_light; // IE fallback
@@ -1515,7 +1075,7 @@ body {
       margin-right: 20px;
       color: $greyscale_dark;
       padding: 20px;
-      padding-top: 0px;
+      padding-top: 0;
       font-family: $font_san_serif;
 
       > h1 {
@@ -1557,10 +1117,10 @@ body {
     margin-left: 20px;
 
     > section {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2), 0px -1px 2px rgba($black,.2));
+      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2), 0 -1px 2px rgba($black,.2));
     }
     > section:first-child {
-      @include box-shadow(0px 0px 1px $white, -1px 0px 2px rgba($black,.2), 0px 1px 2px rgba($black,.2));
+      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2));
     }
     > section {
       margin-bottom: 20px;
@@ -1570,15 +1130,15 @@ body {
 
       -ms-word-break: break-all;
       word-break: break-all;
-      // Non standard for webkit.
+      // Non-standard for webkit.
       word-break: break-word;
 
-      @include border-radius(0px 0px 0px 10px);
+      @include border-radius(0 0 0 10px);
 
       > section > h1 {
         font-size: $font_size_95;
         color: $greyscale_midtone;
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 10px;
         padding: 5px;
         border-bottom: 1px solid $greyscale_light; // IE fallback
@@ -1592,7 +1152,7 @@ body {
 
       > section > ul {
         padding: 35px;
-        padding-top: 0px;
+        padding-top: 0;
         padding-bottom: 20px;
 
         // Indentation for service category hierarchy.
@@ -1642,19 +1202,7 @@ body {
         }
       }
       > section > section > section:last-child {
-        padding-bottom: 0px;
-      }
-
-      .contact-name {
         padding-bottom: 0;
-      }
-
-      .contact-title,
-      .phone-department,
-      .fax-department {
-        font-size: $font_size_95;
-        line-height: $font_size_95;
-        color: $complementA;
       }
     }
 
@@ -1669,7 +1217,6 @@ body {
       line-height: $font_size_95;
       color: $complementA;
     }
-
   }
 
   // Adjust margin of main content to fit aside.
@@ -1704,7 +1251,7 @@ body {
 
     a:last-child:hover {
       border-bottom: 1px solid $greyscale_midtone; // IE fallback
-      border-bottom: 1px solid rgba($black,.4);
+      border-bottom: 1px solid rgba($black, .4);
     }
   }
 
@@ -1722,7 +1269,7 @@ body {
       font-family: $font_san_serif;
       font-size: 24px;
       padding-top: 40px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
       position: relative;
     }
   }
@@ -1731,10 +1278,10 @@ body {
     .phone-type {
       font-size: $font_size_90;
       color: $greyscale_midtone;
+    }
 
-      // Set line height equal to the height of the adjacent text.
-      line-height: $font_size_100;
-      vertical-align: text-top;
+    .phone-extension {
+      font-size: $font_size_95;
     }
   }
 
@@ -1749,7 +1296,7 @@ body {
     .name {
       margin-top: 10px;
       margin-bottom: 10px;
-      padding-bottom: 0px;
+      padding-bottom: 0;
       margin-left: 0;
       font-size: 24px;
       border-left: 20px solid $main-highlight;
@@ -1802,7 +1349,24 @@ body {
       }
     }
   }
+}
 
+@include site-link('#general-services', $white);
+@include site-link('#emergency-services', $white);
+@include site-link('#detail-info header', rgba($white, 0));
+@include site-link('#detail-info .service', $white);
+@include site-link('#detail-info .metadata', $white);
+@include site-link('#contact-info', $white);
+@include site-link('.no-results', $white);
+@include site-link('#app-footer', $white);
+@include site-link('#list-view li', rgba($white, 0));
+
+// Exclude certain links with the site links styles.
+#hsa-logo {
+  a:hover {
+    border-bottom: 1px solid $white; // IE fallback
+    border-bottom: 1px solid rgba($white, 0);
+  }
 }
 
 /* ==========================================================================
@@ -1844,26 +1408,7 @@ body {
    ========================================================================== */
 
 /*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
-
-.ir:before,.ir::before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-
-/*
- * Hide from both screenreaders and browsers: h5bp.com/u
+ * Hide visually and from screen readers: h5bp.com/u
  */
 
 .hidden {
@@ -1872,7 +1417,7 @@ body {
 }
 
 /*
- * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
  */
 
 .visuallyhidden {
@@ -1902,7 +1447,7 @@ body {
 }
 
 /*
- * Hide visually and from screenreaders, but maintain layout
+ * Hide visually and from screen readers, but maintain layout
  */
 
 .invisible {
@@ -1922,23 +1467,11 @@ body {
  */
 
 .clearfix:before,
-.clearfix::before,
-.clearfix:after,
-.clearfix::after {
+.clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.clearfix:after,
-.clearfix::after {
+.clearfix:after {
     clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
 }

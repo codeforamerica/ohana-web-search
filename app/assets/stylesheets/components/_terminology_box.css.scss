@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+//=================================================================================
+// Results - terminology infobox. Certain keywords display an informational box
+// above the search results. See app/helpers/info_box_helper.rb for more info.
+//
+.terminology-box {
+  background: $greyscale_lightest;
+  border: 2px solid $terminology-border;
+  padding: 30px;
+  margin: 20px;
+  @include border-radius(4px);
+  font-family: $font_san_serif;
+
+  > p {
+    padding-top: 10px;
+  }
+
+  dt {
+    font-weight: bold;
+    font-size: $font_size_105;
+  }
+
+  table {
+    margin-top: 30px;
+
+    tr {
+      border-bottom: 1px solid $greyscale_light;
+    }
+
+    tr:last-child {
+      border-bottom: 0;
+    }
+
+    th {
+      font-weight: bold;
+      font-size: $font_size_105;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    p:first-child {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+@include site-link('.terminology-box', $greyscale_lightest);

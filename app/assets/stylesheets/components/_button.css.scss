@@ -13,7 +13,7 @@
   @include box-sizing(border-box);
   padding: 4px 6px;
   cursor: pointer;
-  border: 1px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0, 0, 0, 0);
   color: $button-small-color;
 
   .fa {
@@ -33,7 +33,7 @@
 
 .button-small[disabled],
 .button-small[disabled]:hover {
-  border:1px solid rgba(0,0,0,0);
+  border:1px solid rgba(0, 0, 0, 0);
   background: none;
   color: lightest($black);
   cursor: default;
@@ -59,7 +59,7 @@ a.translate-active {
   padding: 4px 6px;
   cursor: pointer;
   @include type-size(baseline);
-  letter-spacing: 0px;
+  letter-spacing: 0;
   font-family: $font_san_serif;
   padding-left: 7px;
   padding-right: 7px;
@@ -76,7 +76,7 @@ a.translate-active {
 
 // IN USE?
 .button-medium:hover {
-  background: shade($accentA-light,5);
+  background: shade($accentA-light, 5);
   color: $button-hover-color;
 
   .fa {
@@ -88,16 +88,16 @@ a.translate-active {
 // Utility buttons appear in the floating header, which is above the search results and
 // the details page and is set in a fixed position when the page scrolls.
 .button-utility {
-  background:$button-utility-bg;
+  background: $button-utility-bg;
   text-decoration: none;
   @include inline-block();
   @include type-size(baseline);
   letter-spacing: 1px;
   color: $button-utility-color;
   @include box-sizing(border-box);
-  padding:10px;
-  margin:0px;
-  cursor:pointer;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
 
   .fa {
     color: $button-utility-fa-color;

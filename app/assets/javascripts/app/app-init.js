@@ -4,7 +4,7 @@
 // the about page.
 require([
   'util/translation/google-translate-manager',
-  'app/popup-manager',
+  'app/popup/popup-manager',
   'app/alert-manager'
 ],
 function (googleTranslate, popups, alert) {

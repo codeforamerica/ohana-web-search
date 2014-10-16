@@ -4,47 +4,47 @@
 
 // alert messages
 .alert-container {
-  width:100%;
-  min-height:51px;
-  font-family:$font_san_serif;
+  width: 100%;
+  min-height: 51px;
+  font-family: $font_san_serif;
   letter-spacing: 1px;
   text-align: center;
-  pointer-events:none;
+  pointer-events: none;
 
   .alert {
-    pointer-events:auto;
-    margin:0 auto;
-    padding-left:10px;
-    padding-right:10px;
-    position:relative;
-    text-align:center;
+    pointer-events: auto;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: center;
     @include inline-block();
     @include border-radius($border_radius_base);
-    @include single-box-shadow($black, 0px, 0px, $border_radius_base);
+    @include single-box-shadow($black, 0, 0, $border_radius_base);
 
     p {
-      text-align:center;
+      text-align: center;
       padding: 10px;
-      font-weight:bold;
+      font-weight: bold;
       font-family: $font_san_serif;
       @include inline-block();
     }
 
     a {
-      color:$white;
-      border-bottom:1px solid rgba($white,.5);
+      color: $white;
+      border-bottom:1px solid rgba($white, .5);
       text-decoration: none;
     }
 
     a:hover {
-      color:$white;
+      color: $white;
       border-bottom:1px solid $white;
     }
   }
 
   .alert-close {
-    color: lighten($black,50) !important; // IE Fallback
-    color: rgba($white,.5) !important;
+    color: lighten($black, 50) !important; // IE Fallback
+    color: rgba($white, .5) !important;
     border-bottom: none !important;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -55,22 +55,22 @@
 
   .alert-valid {
     color: $black;
-    background:saturate($accentA-base,1);
+    background: saturate($accentA-base, 1);
   }
 
   .alert-error {
     color: $white;
-    background:saturate($alert-bg,1);
+    background: saturate($alert-bg, 1);
   }
 
   .alert-warning {
     color: $black;
-    background:saturate($alert-bg,1);
+    background: saturate($alert-bg, 1);
   }
 
   .alert-info {
     color: $black;
-    background:saturate($primary,1);
+    background: saturate($primary, 1);
   }
 
   .alert-close {
@@ -79,16 +79,14 @@
 
   .alert-close:hover {
     color: rgba($black, .75) !important;
-    cursor:pointer;
+    cursor: pointer;
   }
-
 }
 
 .alert-container.floating {
-  position:fixed;
-  z-index:10000;
-  left:0;
-  top:0;
+  position: fixed;
+  left: 0;
+  top: 0;
 
   .alert {
     @include rounded-except(top);
