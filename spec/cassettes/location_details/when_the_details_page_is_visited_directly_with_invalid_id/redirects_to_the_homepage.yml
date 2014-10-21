@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,35 +18,33 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Cache-Control:
-      - no-cache
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Wed, 16 Jul 2014 08:17:00 GMT
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:38:11 GMT
       Status:
       - 404 Not Found
-      X-Content-Type-Options:
-      - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - efd50b3b-d629-4291-bc2a-9085470b4197
-      X-Runtime:
-      - '0.018841'
       X-Xss-Protection:
       - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 8360a79d-f9c1-4c4f-b3e9-0e093fdd9b2d
+      X-Runtime:
+      - '0.023712'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"status":404,"message":"The requested resource could not be found.","documentation_url":"http://ohana-api-test.herokuapp.com/docs"}'
+      string: '{"status":404,"message":"The requested resource could not be found.","documentation_url":"http://codeforamerica.github.io/ohana-api-docs/"}'
     http_version: 
-  recorded_at: Wed, 16 Jul 2014 08:17:00 GMT
+  recorded_at: Mon, 20 Oct 2014 21:38:10 GMT
 recorded_with: VCR 2.9.2

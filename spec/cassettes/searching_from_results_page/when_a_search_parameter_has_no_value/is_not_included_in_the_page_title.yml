@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,12 +18,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:35 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,28 +33,20 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=24>; rel="last",
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=22>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
-      - '24'
-      X-Total-Pages:
-      - '24'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
+      Etag:
+      - '"dcd67d1853c07cf4169ed6934a90f463"'
       X-Request-Id:
-      - ea45bbfe-d8be-4cc5-8911-89450a29e25f
+      - 77f18932-46c3-4de9-9449-1954acb90409
       X-Runtime:
-      - '0.025525'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      Date:
-      - Mon, 18 Aug 2014 16:56:29 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - '0.068273'
       Via:
       - 1.1 vegur
     body:
@@ -63,14 +55,14 @@ http_interactions:
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
-        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.        Provides
-        case management (including in-home assessments) and bilingual information
+        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
+        Provides case management (including in-home assessments) and bilingual information
         and referral about community services to persons age 60 or over on questions
         of housing, employment, household help, recreation and social activities,
         home delivered meals, health and counseling services and services to shut-ins.
         Health insurance and legal counseling is available by appointment. Lectures
         on a variety of health and fitness topics are held monthly in both English
-        and Spanish.  Provides a variety of physical fitness opportunities, including
+        and Spanish. Provides a variety of physical fitness opportunities, including
         a garden club, yoga, tai chi, soul line dance and aerobics classes geared
         toward older adults. Also provides free monthly blood pressure screenings,
         quarterly blood glucose monitoring and health screenings by a visiting nurse.
@@ -80,12 +72,15 @@ http_interactions:
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
         Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
         Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-05-09T20:49:18.836-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street":"2600
-        Middlefield Road","city":"Redwood City","state":"CA","zip":"94063"},"organization":{"id":1,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":null,"vanity_number":null}]}]'
+        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2014-10-20T12:43:51.348-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center/services","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street_1":"2600
+        Middlefield Road","street_2":null,"city":"Redwood City","state":"CA","postal_code":"94063"},"organization":{"id":1,"alternate_name":null,"date_incorporated":null,"description":"Peninsula
+        Family Service strengthens the community by providing children, families,
+        and older adults the support and tools to realize their full potential and
+        lead healthy, stable lives.","email":null,"name":"Peninsula Family Service","slug":"peninsula-family-service","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
+        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
+        701-0856","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 18 Aug 2014 16:56:28 GMT
+  recorded_at: Mon, 20 Oct 2014 21:37:34 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403
@@ -96,7 +91,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -104,12 +99,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:35 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -119,29 +114,21 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&page=6>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&page=7>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&page=2>;
         rel="next"
       X-Total-Count:
-      - '6'
-      X-Total-Pages:
-      - '6'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
+      - '7'
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
+      Etag:
+      - '"6934bcce994ed9dbfda9fc74f9b4e23c"'
       X-Request-Id:
-      - 965d9cb2-39e8-4ec7-9067-52417b5a8812
+      - a7345e25-d641-4ab8-8611-58d548922af6
       X-Runtime:
-      - '0.123966'
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      Date:
-      - Mon, 18 Aug 2014 16:56:29 GMT
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - '0.147581'
       Via:
       - 1.1 vegur
     body:
@@ -150,10 +137,14 @@ http_interactions:
         free medical and dental care to those in need. Offers basic medical care for
         adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
         Free Medical Clinic","short_desc":"Provides free medical and dental care to
-        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-07-15T13:20:13.307-07:00","urls":["http://www.samaritanhouse.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic/services","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"street":"19
-        West 39th Avenue","city":"San Mateo","state":"CA","zip":"94403"},"organization":{"id":5,"name":"Samaritan
-        House","slug":"samaritan-house","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":19,"department":null,"extension":null,"number":"650
-        578-0400","number_type":null,"vanity_number":null}]}]'
+        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-10-20T12:44:07.679-07:00","urls":["http://www.samaritanhouse.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic/services","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"street_1":"19
+        West 39th Avenue","street_2":null,"city":"San Mateo","state":"CA","postal_code":"94403"},"organization":{"id":5,"alternate_name":null,"date_incorporated":null,"description":"Since
+        1974, Samaritan House has been serving low-income families and individuals
+        in San Mateo County. Our services are designed to meet the immediate and basic
+        needs of our clients for food, clothing, shelter, health care, worker resources,
+        and counseling services.","email":null,"name":"Samaritan House","slug":"samaritan-house","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 18 Aug 2014 16:56:28 GMT
+  recorded_at: Mon, 20 Oct 2014 21:37:35 GMT
 recorded_with: VCR 2.9.2

@@ -6,7 +6,7 @@
     %br
 
   %span.street-address{ itemprop: 'streetAddress' }
-    = superscript_ordinals(location.mail_address.street)
+    = superscript_ordinals(street_address_for(location.mail_address))
   %br
 
   %span.city{ itemprop: 'addressLocality' }><
@@ -17,4 +17,4 @@
     = location.mail_address.state
 
   %span.zipcode{ itemprop: 'postalCode' }
-    = location.mail_address.zip
+    = location.mail_address.postal_code

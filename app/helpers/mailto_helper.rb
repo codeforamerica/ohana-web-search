@@ -9,7 +9,7 @@ module MailtoHelper
   def subject
     t(
       'views.share.email.subject',
-      location_name: @location.name,
+      location_name: full_name_for(@location),
       site_title: SETTINGS[:site_title]
     )
   end
@@ -18,8 +18,17 @@ module MailtoHelper
   def body
     t(
       'views.share.email.body',
-      location_name: @location.name,
+      location_name: full_name_for(@location),
       location_url: request.original_url
     )
+  end
+
+  # @return [String] The location's name + alternate name if it has one.
+  # @param location [Sawyer::Resource] Location Hash returned by API wrapper.
+  def full_name_for(location)
+    if location.alternate_name.present?
+      return "#{location.name} (#{location.alternate_name})"
+    end
+    location.name
   end
 end

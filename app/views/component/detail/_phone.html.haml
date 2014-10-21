@@ -1,0 +1,16 @@
+%div
+  %i{ class: phone_icon_for(phone.number_type) }
+  %span
+    %span{ itemprop: phone_microdata_for(phone.number_type) }
+      = format_phone(phone.number)
+    - if phone.extension.present?
+      %span.phone-extension
+        %span.delimiter
+          = SETTINGS[:phone_extension_delimiter]
+        %span.extension
+          = phone.extension
+    %sup.phone-type
+      = phone.number_type
+    - if phone.department
+      %p.phone-department{ itemprop: 'contactType' }
+        = phone.department

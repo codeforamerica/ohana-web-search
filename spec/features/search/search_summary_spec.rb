@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Search summary' do
 
   scenario 'when visiting search results page that has results', :vcr do
-    search_for_maceo
+    search_for_example
     # Expect only static and floating search results summary,
     # and expect that they're only in the results-header.
     expect(all('.search-summary', text: 'Displaying 1 result').count).to eq(2)

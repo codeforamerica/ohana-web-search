@@ -13,7 +13,7 @@ feature 'Site Pages' do
   end
 
   scenario 'when visiting results page directly', :vcr do
-    search_for_maceo
+    search_for_example
     looks_like_results
   end
 end

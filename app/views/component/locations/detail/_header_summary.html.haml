@@ -3,7 +3,7 @@
 
     .floating-content.hide
       %h1
-        = @location.name
+        = superscript_ordinals(full_name_for(@location))
 
   .right-column
 
@@ -27,7 +27,7 @@
 
       - if location[:coordinates].present?
         %span><
-          %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{address(location)}", target: '_blank' }
+          %a{ class: 'button-utility button-directions', href: "https://maps.google.com/maps?saddr=current+location&daddr=#{full_address_for(location.address)}", target: '_blank' }
             %i{ class: 'fa fa-external-link-square' }
             %span Directions
 

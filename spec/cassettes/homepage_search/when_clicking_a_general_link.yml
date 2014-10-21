@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,44 +18,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
+      Server:
+      - Cowboy
+      Connection:
+      - close
       Date:
-      - Wed, 16 Jul 2014 08:16:15 GMT
+      - Mon, 20 Oct 2014 21:37:27 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
         rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
         rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - f0c32872-7d28-4959-855a-465393c93ef6
-      X-Runtime:
-      - '0.040068'
       X-Total-Count:
       - '2'
-      X-Total-Pages:
-      - '2'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '1160'
-      Connection:
-      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"f7b692fedc1ed4805cfd760bcd428ea8"'
+      X-Request-Id:
+      - ab9597a6-4ea4-4e0c-acae-a0d9624f0c5d
+      X-Runtime:
+      - '0.101727'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
@@ -75,10 +69,13 @@ http_interactions:
         counseling, and estate planning. Massage, podiatry, and acupuncture are available
         by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
         according to selection.","latitude":37.4480204,"longitude":-122.1805905,"name":"Little
-        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2014-07-15T12:51:52.581-07:00","urls":["http://www.penvol.org/littlehouse"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/services","url":"http://ohana-api-test.herokuapp.com/api/locations/little-house","address":{"id":6,"street":"800
-        Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"organization":{"id":2,"name":"Peninsula
-        Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
-        326-2025","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Wed, 16 Jul 2014 08:16:15 GMT
+        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2014-10-20T12:43:58.696-07:00","urls":["http://www.penvol.org/littlehouse"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/services","url":"http://ohana-api-test.herokuapp.com/api/locations/little-house","address":{"id":6,"street_1":"800
+        Middle Avenue","street_2":null,"city":"Menlo Park","state":"CA","postal_code":"94025-9881"},"organization":{"id":2,"alternate_name":null,"date_incorporated":null,"description":"Peninsula
+        Volunteers, Inc. (PVI), is a visionary service organization that raises funds
+        to provide seniors with over $5 million annually in services designed to enhance
+        and enrich their lives.","email":null,"name":"Peninsula Volunteers","slug":"peninsula-volunteers","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":11,"department":null,"extension":null,"number":"650
+        326-2025","number_type":"voice","vanity_number":null},{"id":12,"department":null,"extension":null,"number":"650
+        326-9547","number_type":"fax","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 21:37:26 GMT
 recorded_with: VCR 2.9.2

@@ -3,9 +3,9 @@ require 'rails_helper'
 feature 'homepage search' do
 
   scenario 'with keyword that returns results', :vcr do
-    search_for_maceo
+    search_for_example
     looks_like_results
-    expect(find_field('keyword').value).to eq('maceo')
+    expect(find_field('keyword').value).to eq('example')
     expect(page).not_to have_content('1 result located!')
   end
 

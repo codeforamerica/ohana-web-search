@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,66 +18,57 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
+      Server:
+      - Cowboy
+      Connection:
+      - close
       Date:
-      - Wed, 16 Jul 2014 08:16:57 GMT
+      - Mon, 20 Oct 2014 21:38:16 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=5>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
-      Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.45
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Current-Page:
-      - '1'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - '2'
-      X-Powered-By:
-      - Phusion Passenger 4.0.45
-      X-Request-Id:
-      - 2877c3b5-09d3-48c1-a51a-29fc1851337d
-      X-Runtime:
-      - '0.031579'
       X-Total-Count:
       - '5'
-      X-Total-Pages:
-      - '5'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"3758f3989ae62a33da15e6d7ed608a41"'
+      X-Request-Id:
+      - d48e8093-2314-47b2-8013-4c321bd291f9
+      X-Runtime:
+      - '0.108509'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":6,"admin_emails":[],"coordinates":[-122.1805905,37.4480204],"description":"A
-        multipurpose center offering a wide variety of recreational, education and
-        cultural activities. Lifelong learning courses cover topics such as music,
-        art, languages, etc., are hosted at this location. Little House offers a large
-        variety of classes including arts and crafts, jewelry, languages, current
-        events, lapidary, woodwork, painting, and fitness courses (yoga, strength
-        straining, tai chi). There are monthly art and cultural lectures, movie showings,
-        and a computer center. Recreation activities include mah jong, pinochle, ballroom
-        dancing, bridge, trips and tours. Partners with the Sequoia Adult Education
-        Program. The Alzheimer''s Cafe, open the third Tuesday of every month from
-        2:00 - 4:00 pm, is a place that brings together people liviing with dementia,
-        their families, and their caregivers. Free and no registration is needed.
-        The Little House Community Service Desk offers information and referrals regarding
-        social service issues, such as housing, food, transportation, health insurance
-        counseling, and estate planning. Massage, podiatry, and acupuncture are available
-        by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
-        according to selection.","latitude":37.4480204,"longitude":-122.1805905,"name":"Little
-        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2014-07-15T12:51:52.581-07:00","urls":["http://www.penvol.org/littlehouse"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/contacts","faxes_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/faxes","services_url":"http://ohana-api-test.herokuapp.com/api/locations/little-house/services","url":"http://ohana-api-test.herokuapp.com/api/locations/little-house","address":{"id":6,"street":"800
-        Middle Avenue","city":"Menlo Park","state":"CA","zip":"94025-9881"},"organization":{"id":2,"name":"Peninsula
-        Volunteers","slug":"peninsula-volunteers","urls":[],"url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-volunteers/locations"},"phones":[{"id":6,"department":null,"extension":null,"number":"650
-        326-2025","number_type":null,"vanity_number":null}]}]'
-    http_version:
-  recorded_at: Wed, 16 Jul 2014 08:16:57 GMT
+      string: '[{"id":17,"admin_emails":[],"coordinates":[-122.4224905,37.6445898],"description":"Provides
+        emergency food, clothing and furniture vouchers to low-income families in
+        times of crisis. Administers Project REACH (Relief for Energy Assistance through
+        Community Help) funds to prevent energy shut-off through a one-time payment.
+        Offers a Saturday morning Homeless Feeding Program at 10:30, as well as Sunday
+        services and spiritual counseling. Provides Christmas toys and Back-to-School
+        clothes and supplies. Offers case management, advocacy and referrals to other
+        agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
+        Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
+        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","updated_at":"2014-10-20T12:44:06.196-07:00","urls":["http://www.tsagoldenstate.org"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps/services","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"street_1":"409
+        South Spruce Avenue","street_2":null,"city":"South San Francisco","state":"CA","postal_code":"94080"},"organization":{"id":4,"alternate_name":null,"date_incorporated":null,"description":"The
+        Salvation Army operates 7,546 centers in communities across the United States.
+        These include food distribution, disaster relief, rehabilitation centers,
+        anti-human trafficking efforts, and a wealth of children''s programs.","email":null,"name":"Salvation
+        Army","slug":"salvation-army","website":null,"url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":32,"department":null,"extension":null,"number":"650
+        266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
+        266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
+        266-4594","number_type":"fax","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 21:38:15 GMT
 recorded_with: VCR 2.9.2

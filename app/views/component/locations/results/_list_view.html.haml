@@ -10,26 +10,27 @@
             %hgroup
               %h1{ class: 'name' }
                 %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
-                  = superscript_ordinals(location.name)
+                  = superscript_ordinals(full_name_for(location))
+
               - if (location.organization.name) && (location.organization.name != location.name)
                 %h2.agency
                   = link_to(locations_path(org_name: location.organization.name)) do
                     %span
                       = superscript_ordinals(location.organization.name)
 
-          - if location[:phones].present?
+          - if location.phones.present?
             %ul.phones
               %li
                 %i{ class: 'fa fa-phone-square' }
                 %span{ itemprop: 'telephone' }
-                  = "#{format_phone(location.phones.first.number)}"
+                  = format_phone(location.phones.first.number)
 
-          - if location[:address].present?
+          - if location.address.present?
             %p.address
               = render 'component/detail/address', location: location, lines: 1
 
-          - if location[:short_desc].present?
+          - if location.short_desc.present?
             %p.short-desc
-              = location[:short_desc]
+              = location.short_desc
   %footer
     = paginate @search.results

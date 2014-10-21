@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.1
+      - Ohanakapa Ruby Gem 1.1.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -18,41 +18,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sat, 19 Jul 2014 22:07:20 GMT
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&page=0>; rel="last"
       Server:
-      - nginx/1.6.0 + Phusion Passenger 4.0.46
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Mon, 20 Oct 2014 21:37:23 GMT
       Status:
       - 200 OK
-      X-Content-Type-Options:
-      - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.46
-      X-Request-Id:
-      - 6533df43-d122-411b-816d-2761d79c1a58
-      X-Runtime:
-      - '0.032045'
-      X-Total-Count:
-      - '0'
-      X-Total-Pages:
-      - '0'
       X-Xss-Protection:
       - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&page=0>; rel="last"
+      X-Total-Count:
+      - '0'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      X-Request-Id:
+      - 8b982dd8-df98-435b-899c-cb1321909b94
+      X-Runtime:
+      - '0.031756'
+      Via:
+      - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
-    http_version:
-  recorded_at: Sat, 19 Jul 2014 22:07:19 GMT
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 21:37:23 GMT
 recorded_with: VCR 2.9.2

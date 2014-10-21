@@ -5,17 +5,17 @@ feature 'searching from results page', :vcr do
   before { visit('/locations') }
 
   context 'when search returns results' do
-    before { search(keyword: 'maceo') }
+    before { search(keyword: 'example') }
 
     it 'displays the name of the agency as a link' do
-      expect(page).to have_link('SanMaceo Example Agency')
+      expect(page).to have_link('Example Agency')
     end
 
     it 'displays the name of the location as a link' do
-      location_url = '/locations/sanmaceo-example-agency/' \
-                     'san-maceo-agency?keyword=maceo&' \
+      location_url = '/locations/example-agency/' \
+                     'example-location?keyword=example&' \
                      'location=&org_name=&utf8=%E2%9C%93'
-      expect(page).to have_link('San Maceo Agency', href: location_url)
+      expect(page).to have_link('Example Location', href: location_url)
     end
 
     it 'displays the location phone number' do
@@ -36,11 +36,11 @@ feature 'searching from results page', :vcr do
 
     it 'includes the results info in the page title' do
       expect(page).
-        to have_title 'Search results for: keyword: maceo | Ohana Web Search'
+        to have_title 'Search results for: keyword: example | Ohana Web Search'
     end
 
     it 'populates the keyword field with the search term' do
-      expect(find_field('keyword').value).to eq('maceo')
+      expect(find_field('keyword').value).to eq('example')
     end
   end
 
