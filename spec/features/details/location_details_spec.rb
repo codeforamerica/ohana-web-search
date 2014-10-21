@@ -25,9 +25,39 @@ feature 'location details' do
     end
   end
 
-  scenario 'when the details page is visited directly', :vcr do
-    visit_test_location
-    expect(page).to have_content('2013 Avenue of the fellows')
+  context 'when the details page is visited directly', :vcr do
+    it 'includes the location' do
+      visit_test_location
+      expect(page).to have_content('2013 Avenue of the fellows')
+    end
+
+    it 'includes the share via email link' do
+      visit_test_location
+
+      name = find('h1.name').text
+
+      expect(page).to have_link(
+        'Email',
+        href: "mailto:?Subject=#{subject_for(name)}&"\
+          "body=#{body_for(name, current_url)}"
+      )
+    end
+
+    def subject_for(name)
+      I18n.t(
+        'views.share.email.subject',
+        location_name: name,
+        site_title: SETTINGS[:site_title]
+      )
+    end
+
+    def body_for(name, url)
+      I18n.t(
+        'views.share.email.body',
+        location_name: name,
+        location_url: url
+      ).chop
+    end
   end
 
   context 'when the details page is visited directly with invalid id', :vcr do

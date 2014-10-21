@@ -99,6 +99,19 @@ en:
       previous: "<i class='fa fa-chevron-left'></i>"
       next: "<i class='fa fa-chevron-right'></i>"
       truncate: "&hellip;"
+    share:
+      email:
+        subject: "%{location_name} found on %{site_title}"
+        # Note that the code %0D%0A designates url-encoded line breaks
+        # that will appear as carriage returns in the email's body.
+        body: |
+          Hi,
+          %0D%0A%0D%0A
+          I'd like to share information about %{location_name} with you.
+          %0D%0A%0D%0A
+          For details about this service provider, please visit:
+          %0D%0A%0D%0A
+          %{location_url}.
     about:
       project_link: 'Visit project on GitHub'
       project_link_url: 'https://github.com/codeforamerica/Ohana-Web-Search'
