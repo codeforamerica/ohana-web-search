@@ -5,9 +5,8 @@
   %header
     %hgroup
       %h1.name{ itemprop: 'name' }
-        = superscript_ordinals(@location.name)
-        - if @location.alternate_name
-          = "(#{superscript_ordinals(@location.alternate_name)})"
+        = superscript_ordinals(full_name_for(@location))
+
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
           = link_to(locations_path(org_name: @location.organization.name)) do
