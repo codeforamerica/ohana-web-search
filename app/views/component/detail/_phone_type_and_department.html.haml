@@ -1,0 +1,6 @@
+-# This phone partial displays the phone type and department.
+%sup.phone-type
+  = phone.number_type
+- if phone.department
+  %p.phone-department{ itemprop: 'contactType' }
+    = phone.department

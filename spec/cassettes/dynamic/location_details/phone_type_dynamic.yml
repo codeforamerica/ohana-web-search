@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=example
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Sat, 01 Nov 2014 21:23:24 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Total-Count:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      Etag:
+      - '"f7131ab90e1f0afc373dbbd1cf619419"'
+      X-Request-Id:
+      - 176e09bf-2aa5-43f3-a1a4-93e09e756151
+      X-Runtime:
+      - '0.026687'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
+        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
+        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2014-10-29T10:46:13.596-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"contacts_url":"http://ohana-api-test.herokuapp.com/api/locations/example-location/contacts","services_url":"http://ohana-api-test.herokuapp.com/api/locations/example-location/services","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"street_1":"2013
+        Avenue of the fellows","street_2":"Suite 100","city":"San Francisco","state":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
+        Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
+        organization description. The Public Library inspires learning through innovative
+        and visionary programming and services—literacy programs, support for school
+        success, access to technology, safe, inviting spaces for youth and families,
+        and gathering places that connect the members of the community with a love
+        of reading and learning.","email":"info@example.org","funding_sources":["State","Donations","Grants"],"licenses":["State
+        Health Inspection License","State Board of Education License"],"name":"Example
+        Agency","slug":"example-agency","website":"http://example.org","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
+        372-6200","number_type":"<%= first_general_number_type %>","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"<%= second_general_number_type %>","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"<%= third_general_number_type %>","vanity_number":null},{"id":46,"department":"Rental
+        Assistance","extension":"202","number":"650 372-6200","number_type":"<%= fourth_general_number_type %>","vanity_number":null}]}]'
+    http_version:
+  recorded_at: Sat, 01 Nov 2014 21:23:24 GMT
+recorded_with: VCR 2.9.2

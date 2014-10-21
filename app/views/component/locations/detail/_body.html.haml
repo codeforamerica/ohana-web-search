@@ -41,9 +41,9 @@
                         = email
 
             - if @location.phones.present?
-              %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+              %section.phones
                 - @location.phones.each do |phone|
-                  = render 'component/detail/phone', phone: phone
+                  = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
       - if @location.contacts.present?
         - @location.contacts.each do |contact|
@@ -65,9 +65,9 @@
                         = contact.email
 
               - if contact.phones.present?
-                %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+                %section.phones
                   - contact.phones.each do |phone|
-                    = render 'component/detail/phone', phone: phone
+                    = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
       - if @location.address.present?
         %section.address-box
