@@ -22,6 +22,10 @@ feature 'searching from results page', :vcr do
       expect(page).to have_content('(650) 372-6200')
     end
 
+    it 'displays the location phone extension' do
+      expect(page).to have_content('x 123')
+    end
+
     it 'displays the location address' do
       expect(page).to have_content('2013 Avenue of the fellows')
     end
