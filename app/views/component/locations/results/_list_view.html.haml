@@ -24,6 +24,12 @@
                 %i{ class: 'fa fa-phone-square' }
                 %span{ itemprop: 'telephone' }
                   = format_phone(location.phones.first.number)
+                - if location.phones.first.extension.present?
+                  %span.phone-extension
+                    %span.delimiter
+                      = SETTINGS[:phone_extension_delimiter]
+                    %span.extension
+                      = location.phones.first.extension
 
           - if location.address.present?
             %p.address
