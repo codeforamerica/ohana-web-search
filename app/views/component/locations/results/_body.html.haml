@@ -9,6 +9,12 @@
         = render_info_box(info_box_key_corresponding_to_keyword)
 
   - if @search.locations.present?
+
+    - if params[:org_name].present?
+      %section#organization-detail-container
+        = render 'component/locations/results/organization_detail',
+          organization: @search.locations.first.organization
+
     = render 'component/locations/results/list_view'
   - else
     %section.no-results

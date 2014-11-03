@@ -739,7 +739,8 @@ body {
 // Results - terminology infobox. Certain keywords display an informational box
 // above the search results. See app/helpers/info_box_helper.rb for more info.
 //
-#terminology-box-container {
+#terminology-box-container,
+#organization-detail-container {
   border-bottom: 1px solid $greyscale_midtone; // IE fallback
   border-bottom: 1px solid rgba($black, .1);
 }
@@ -1155,7 +1156,7 @@ body {
 
       > section > section > section {
         display: table;
-        font-size: 18px;
+        font-size: $font_size_105;
         font-family: $font_san_serif;
         color: $black;
         padding-bottom: 20px;
@@ -1355,6 +1356,10 @@ body {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.row {
+  display: table-row;
+}
 
 /*
  * Hide visually and from screen readers: h5bp.com/u

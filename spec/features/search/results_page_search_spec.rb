@@ -103,6 +103,37 @@ feature 'searching from results page', :vcr do
     end
   end
 
+  context 'when organization detail box is shown' do
+    before { search(org_name: 'Example Agency') }
+    it 'displays organization name in detail box' do
+      expect(find('.organization-detail')).to have_content('Example Agency')
+    end
+
+    it 'displays organization alternative name' do
+      expect(find('.organization-detail')).to have_content('(Alternate Agency Name)')
+    end
+
+    it 'displays organization website address' do
+      expect(find('.organization-detail')).to have_content('example.org')
+    end
+
+    it 'displays organization email address' do
+      expect(find('.organization-detail')).to have_content('info@example.org')
+    end
+
+    it 'displays organization incorporation date' do
+      expect(find('.organization-detail')).to have_content('Incorporated 1970')
+    end
+
+    it 'displays organization accreditation list' do
+      expect(find('.organization-detail')).to have_content('BBB')
+    end
+
+    it 'displays organization licenses list' do
+      expect(find('.organization-detail')).to have_content('State Board')
+    end
+  end
+
   context 'when a search parameter has no value' do
     it 'is not included in the page title' do
       visit('/locations?location=94403&keyword=')
