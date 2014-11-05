@@ -1,0 +1,6 @@
+- if service.email.present?
+  %section.email
+    %i{ class: 'fa fa-envelope-square' }
+    %a{ href: "mailto:#{service.email}" }
+      %span{ itemprop: 'email' }
+        = service.email

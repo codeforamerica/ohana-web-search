@@ -1,0 +1,8 @@
+- if service.required_documents.present?
+  %section.required-documents
+    %h1= t('service_fields.required_documents')
+    %ul
+      - service.required_documents.sort.each do |f|
+        %li
+          %span
+            = f

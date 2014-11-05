@@ -154,15 +154,21 @@
         - @location.services.each do |service|
 
           %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
-            = render 'component/detail/service_name', service: service
+            %section.title-box
+              = render 'component/detail/service_status', service: service
+              = render 'component/detail/service_name', service: service
+            %section.web-addresses-box
+              = render 'component/detail/service_website', service: service
+              = render 'component/detail/service_email', service: service
             = render 'component/detail/service_description', service: service
-            = render 'component/detail/service_urls', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service
             = render 'component/detail/service_eligibility', service: service
             = render 'component/detail/service_how_to_apply', service: service
             = render 'component/detail/service_wait', service: service
-            = render 'component/detail/service_areas', service: service
+            = render 'component/detail/service_required_documents', service: service
+            = render 'component/detail/service_accepted_payments', service: service
+            = render 'component/detail/service_service_areas', service: service
 
   / Detail footer content.
   - if @location[:updated_at].present?
