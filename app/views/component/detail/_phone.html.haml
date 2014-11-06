@@ -1,16 +1,20 @@
-%div
-  %i{ class: phone_icon_for(phone.number_type) }
-  %span
-    %span{ itemprop: phone_microdata_for(phone.number_type) }
-      = format_phone(phone.number)
-    - if phone.extension.present?
-      %span.phone-extension
-        %span.delimiter
-          = SETTINGS[:phone_extension_delimiter]
-        %span.extension
-          = phone.extension
-    %sup.phone-type
-      = phone.number_type
-    - if phone.department
-      %p.phone-department{ itemprop: 'contactType' }
-        = phone.department
+-# The phone partial displays the phone icon, number and extension,
+-# as well as the phone type and department.
+-# e.g.
+-# [icon] (650) 403-4300 x 4385 voice
+-# If the `show_phone_type_and_department` local variable is set to true
+-# the partial will also include the phone type and phone department.
+- if phone.present?
+  %section.phone{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+    %i{ class: phone_icon_for(phone.number_type) }
+    %span
+      %span{ itemprop: phone_microdata_for(phone.number_type) }
+        = format_phone(phone.number)
+      - if phone.extension.present?
+        %span.phone-extension
+          %span.delimiter
+            = SETTINGS[:phone_extension_delimiter]
+          %span.extension
+            = phone.extension
+      - if show_phone_type_and_department == true
+        = render 'component/detail/phone_type_and_department', phone: phone

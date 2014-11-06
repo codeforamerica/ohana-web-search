@@ -839,6 +839,7 @@ body {
       }
     }
 
+    /*
     ul.category {
       float: right;
 
@@ -853,18 +854,10 @@ body {
         font-family: $font_san_serif;
       }
     }
+    */
 
-    ul.phones {
+    .content {
       margin-left: 20px;
-
-      .fa {
-        color: $main-highlight;
-      }
-
-      li {
-        @include inline-block();
-        margin-right: 10px;
-      }
     }
 
     .kind {
@@ -883,12 +876,10 @@ body {
 
     .address {
       @include type-size(baseline);
-      margin-left: 20px;
     }
 
     .short-desc {
       @include type-size(baseline);
-      margin-left: 20px;
       color: $main-highlight;
     }
   }
@@ -1160,15 +1151,18 @@ body {
         color: $black;
         padding-bottom: 20px;
 
-        > div > span {
+        > div > span,
+        > section > span {
           padding-bottom: 20px;
         }
 
-        > div:last-child > span {
+        > div:last-child > span,
+        > section:last-child > span {
           padding-bottom: 0;
         }
 
-        > div {
+        > div,
+        > section {
           display: table-row;
 
           > span {
@@ -1195,8 +1189,7 @@ body {
       padding-bottom: 0;
     }
 
-    .contact-details,
-    .phone-department {
+    .contact-details {
       font-size: $font_size_95;
       line-height: $font_size_95;
       color: $complementA;
@@ -1227,17 +1220,6 @@ body {
       padding-top: 40px;
       padding-bottom: 0;
       position: relative;
-    }
-  }
-
-  .phones {
-    .phone-type {
-      font-size: $font_size_90;
-      color: $greyscale_midtone;
-    }
-
-    .phone-extension {
-      font-size: $font_size_95;
     }
   }
 

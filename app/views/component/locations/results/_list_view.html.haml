@@ -17,20 +17,17 @@
                   = link_to(locations_path(org_name: location.organization.name)) do
                     %span
                       = superscript_ordinals(location.organization.name)
+          - if location.phones.present? || location.address.present? || location.short_desc.present?
+            %section.content
+              - if location.phones.present?
+                = render 'component/detail/phone', phone: first_voice_or_hotline_phone_for(location.phones), show_phone_type_and_department: false
 
-          - if location.phones.present?
-            %ul.phones
-              %li
-                %i{ class: 'fa fa-phone-square' }
-                %span{ itemprop: 'telephone' }
-                  = format_phone(location.phones.first.number)
+              - if location.address.present?
+                %p.address
+                  = render 'component/detail/address', location: location, lines: 1
 
-          - if location.address.present?
-            %p.address
-              = render 'component/detail/address', location: location, lines: 1
-
-          - if location.short_desc.present?
-            %p.short-desc
-              = location.short_desc
+              - if location.short_desc.present?
+                %p.short-desc
+                  = location.short_desc
   %footer
     = paginate @search.results
