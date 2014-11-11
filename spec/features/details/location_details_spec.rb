@@ -105,48 +105,6 @@ feature 'location details' do
     end
   end
 
-  context 'when service elements are present' do
-    before(:each) do
-      cassette = 'location_details/when_the_details_page_is_visited_directly'
-      VCR.use_cassette(cassette) do
-        visit_test_location
-      end
-    end
-
-    it 'includes eligibility info' do
-      expect(page).to have_content('None')
-    end
-
-    it 'includes audience info' do
-      expect(page).to have_content('Profit and nonprofit businesses')
-    end
-
-    it 'includes fees info' do
-      expect(page).to have_content('permits and photocopying')
-    end
-
-    it 'includes hours info' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
-    end
-
-    it 'includes how to apply info' do
-      expect(page).to have_content('Walk in or apply by phone or mail')
-    end
-
-    it 'includes wait estimate info' do
-      expect(page).to have_content('No wait to 2 weeks')
-    end
-
-    it 'includes service areas info' do
-      expect(page).to have_content('San Mateo County')
-    end
-
-    it 'includes updated time' do
-      expect(page).to have_content('Monday, 20 October 2014 at 12:44 PM PDT')
-    end
-
-  end
-
   context 'when location elements are present' do
     before(:each) do
       cassette = 'location_details/when_the_details_page_is_visited_directly'
@@ -163,7 +121,7 @@ feature 'location details' do
     end
 
     it 'includes description' do
-      expect(page).to have_content('Lorem ipsum')
+      expect(find('.overview-box .description')).to have_content('Lorem ipsum')
     end
 
     it 'includes transporation info' do
@@ -204,6 +162,10 @@ feature 'location details' do
 
     it 'sets the page title to the location name + site title' do
       expect(page).to have_title('Example Location | Ohana Web Search')
+    end
+
+    it 'includes updated time' do
+      expect(page).to have_content('Monday, 20 October 2014 at 12:44 PM PDT')
     end
   end
 

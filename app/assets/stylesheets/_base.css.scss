@@ -1233,7 +1233,18 @@ body {
   }
 
   .services-box {
-    .name {
+    .status {
+      font-size: $font_size_95;
+      color: $alert-error-base;
+    }
+    .website {
+      margin-right: 10px;
+    }
+    .website,
+    .email {
+      @include inline-block();
+    }
+    .title-box {
       margin-top: 10px;
       margin-bottom: 10px;
       padding-bottom: 0;
