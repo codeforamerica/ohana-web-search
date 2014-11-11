@@ -19,7 +19,7 @@ module InfoBoxHelper
   #    }
   # }
   #
-  # @return [Hash]
+  # @return [Hash] If key is present, otherwise returns nil.
   def info_box_hash
     SETTINGS.try(:[], :info_box_terms)
   end

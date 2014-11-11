@@ -79,4 +79,10 @@ module DetailFormatHelper
     string = html_escape(string).to_str
     string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, $&) }.html_safe
   end
+
+  # @param date [String] A date string, such as '1970-01-01'
+  # @return [String] The year of incorporation.
+  def incorporated_year_for(date)
+    Date.parse(date).strftime('%Y')
+  end
 end

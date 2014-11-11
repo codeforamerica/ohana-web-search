@@ -4,8 +4,8 @@
 
   %header
     %hgroup
-      %h1.name{ itemprop: 'name' }
-        = superscript_ordinals(full_name_for(@location))
+      %h1.name
+        = superscript_ordinals(full_name_content_for(@location))
 
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
@@ -35,7 +35,7 @@
               %section.emails{ itemprop: 'email' }
                 - @location.emails.each do |email|
                   %div
-                    %i{ class: 'fa fa-laptop' }
+                    %i{ class: 'fa fa-envelope-square' }
                     %a{ href: "mailto:#{email}" }
                       %span{ itemprop: 'email' }
                         = email
@@ -59,7 +59,7 @@
               - if contact.email.present?
                 %section.emails{ itemprop: 'email' }
                   %div
-                    %i{ class: 'fa fa-laptop' }
+                    %i{ class: 'fa fa-envelope-square' }
                     %a{ href: "mailto:#{contact.email}" }
                       %span{ itemprop: 'email' }
                         = contact.email

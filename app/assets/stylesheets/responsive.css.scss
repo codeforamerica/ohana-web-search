@@ -376,6 +376,18 @@
       display: none;
     }
   }
+
+  // Organizations details component, which shows details for
+  // an organization on the search results view.
+  // This override moves the metadata (incorporation date,
+  // accreditations, licenses) from the right-side
+  // to the bottom of the details on small screen sizes.
+  .organization-detail,
+  .organization-detail .row,
+  .organization-detail .content,
+  .organization-detail .metadata {
+    display: block;
+  }
 }
 
 // Mobile Landscape Size to Tablet Portrait (devices and browsers)
