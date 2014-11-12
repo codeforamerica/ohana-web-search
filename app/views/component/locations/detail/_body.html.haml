@@ -14,90 +14,71 @@
               = superscript_ordinals(@location.organization.name)
 
   / detail sidebar content
-  %aside
-    %section#contact-info
+  .location-sidebar-box
+    %aside.location-sidebar
 
       - if (@location.fields & location_contact_fields).any?
-        %section.contact-box-general
+        %section.contact-box-general.location-sidebar-section
           %h1 General Contact Info
-          %section
-
-            - if @location.urls.present?
-              %section.urls
-                - @location.urls.each do |url|
-                  %div
-                    %i{ class: 'fa fa-external-link-square' }
-                    %a{ href: url, target: '_blank' }
-                      %span{ itemprop: 'url' }
-                        = format_url(url)
-
-            - if @location.emails.present?
-              %section.emails{ itemprop: 'email' }
-                - @location.emails.each do |email|
-                  %div
-                    %i{ class: 'fa fa-envelope-square' }
-                    %a{ href: "mailto:#{email}" }
-                      %span{ itemprop: 'email' }
-                        = email
+          %section.location-sidebar-content
+            = render 'component/detail/website', website: @location.website
+            = render 'component/detail/email', email: @location.email
 
             - if @location.phones.present?
-              %section.phones
+              %section.phones.location-sidebar-content-group
                 - @location.phones.each do |phone|
                   = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
       - if @location.contacts.present?
         - @location.contacts.each do |contact|
-          %section.contact-box-specific
+          %section.contact-box-specific.location-sidebar-section
             %h1 Specific Contact
-            %section
-              %section.contact-name
-                = contact.name
-              - if contact.title.present? || contact.department.present?
-                %section.contact-details
-                  = contact_details_for(contact)
+            %section.location-sidebar-content
+              %section.contact-name-box.annotated-text-block
+                %section.contact-name
+                  = contact.name
+                - if contact.title.present? || contact.department.present?
+                  %section.contact-details.annotation
+                    = contact_details_for(contact)
 
-              - if contact.email.present?
-                %section.emails{ itemprop: 'email' }
-                  %div
-                    %i{ class: 'fa fa-envelope-square' }
-                    %a{ href: "mailto:#{contact.email}" }
-                      %span{ itemprop: 'email' }
-                        = contact.email
+              = render 'component/detail/email', email: contact.email
 
               - if contact.phones.present?
-                %section.phones
+                %section.phones.location-sidebar-content-group
                   - contact.phones.each do |phone|
                     = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
       - if @location.address.present?
-        %section.address-box
+        %section.address-box.location-sidebar-section
           %h1 Physical Address
-          %section
-            %section.address
-              %div
-                %i{ class: 'fa fa-map-marker' }
+          %section.location-sidebar-content
+            %section.address.icon-text-block
+              %i{ class: 'fa fa-map-marker' }
+              %span
                 = render 'component/detail/address', location: @location, lines: 2
 
       - if @location.mail_address.present?
-        %section.address-box
+        %section.address-box.location-sidebar-section
           %h1 Mailing Address
-          %section
-            %section.mail-address
-              %div
-                %i{ class: 'fa fa-envelope' }
+          %section.location-sidebar-content
+            %section.mail-address.icon-text-block
+              %i{ class: 'fa fa-envelope' }
+              %span
                 = render 'component/detail/mail_address', location: @location
 
     - if @categories.present?
-      %section#categories-box
-        %h1 Service Categories
-        %section.services{ itemscope: '', itemtype: 'http://schema.org/Service' }
-          %ul{ itemscope: '', itemtype: 'http://schema.org/serviceType' }
-            - @categories.each do |category|
-              %li{ class: "hierarchy-depth-#{category.depth}" }
-                %span{ itemprop: 'serviceType' }
-                  -# Category links are disabled till there's a corresponding filter that can be toggled!
-                    = link_to category.name, locations_path(request.query_parameters.merge(category: category.name))
-                  = category.name
+      %aside.location-sidebar
+        %section.location-sidebar-section.service-categories-box
+          %h1 Service Categories
+          %section.location-sidebar-content
+            %section.service-categories{ itemscope: '', itemtype: 'http://schema.org/Service' }
+              %ul{ itemscope: '', itemtype: 'http://schema.org/serviceType' }
+                - @categories.each do |category|
+                  %li{ class: "hierarchy-depth-#{category.depth}" }
+                    %span{ itemprop: 'serviceType' }
+                      -# Category links are disabled till there's a corresponding filter that can be toggled!
+                        = link_to category.name, locations_path(request.query_parameters.merge(category: category.name))
+                      = category.name
 
       /= render 'component/detail/service_keywords'
 
@@ -158,8 +139,8 @@
               = render 'component/detail/service_status', service: service
               = render 'component/detail/service_name', service: service
             %section.web-addresses-box
-              = render 'component/detail/service_website', service: service
-              = render 'component/detail/service_email', service: service
+              = render 'component/detail/website', website: service.website
+              = render 'component/detail/email', email: service.email
             = render 'component/detail/service_description', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service

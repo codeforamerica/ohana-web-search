@@ -1,11 +1,5 @@
-/* ==========================================================================
-   Component styles
-   ========================================================================== */
-
-//=================================================================================
-// Results - terminology infobox. Certain keywords display an informational box
-// above the search results. See app/helpers/info_box_helper.rb for more info.
-//
+// Results - organization details infobox.
+// On an organization name search results view, an informational box is displayed.
 .organization-detail {
   display: table;
   border-left: 20px solid $complementA;
@@ -19,7 +13,8 @@
     background: $white;
 
     > header {
-    padding: 20px;
+      padding: 10px;
+      padding-top: 20px;
       > hgroup {
         font-family: $font_serif;
 
@@ -36,19 +31,8 @@
       padding-left: 10px;
       padding-right: 10px;
 
-      > p {
-        margin-top: 5px;
-      }
-    }
-
-    .website,
-    .email {
-      font-size: $font_size_100;
-      font-family: $font_san_serif;
-      color: $black;
-
-      > .fa {
-        color: $main-highlight;
+      > section {
+        margin-top: 10px;
       }
     }
   }

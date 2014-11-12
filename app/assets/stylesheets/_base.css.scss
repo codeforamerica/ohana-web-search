@@ -1080,7 +1080,8 @@ body {
   }
 
   // Location detail values that have bulleted lists (languages, homepage, service areas).
-  ul {
+  .service-opt-box ul,
+  .services-box ul {
     margin-bottom: 0;
     margin-left: 20px;
     list-style-type: square;
@@ -1094,22 +1095,21 @@ body {
   }
 
   // Details view sidebar.
-  > aside {
+  > .location-sidebar-box {
     float: right;
     width: 400px;
-    z-index: 9998;
+    z-index: $layer-9;
     margin-left: 20px;
 
-    > section {
-      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2), 0 -1px 2px rgba($black,.2));
-    }
-    > section:first-child {
+    > .location-sidebar:first-child {
       @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2));
     }
-    > section {
+    > .location-sidebar {
       margin-bottom: 20px;
       border-left: 1px solid $white;
       border-bottom: 1px solid $white;
+      @include border-radius(0 0 0 10px);
+      @include box-shadow(0 0 1px $white, -1px 0 2px rgba($black,.2), 0 1px 2px rgba($black,.2), 0 -1px 2px rgba($black,.2));
       background: $white;
 
       -ms-word-break: break-all;
@@ -1117,83 +1117,57 @@ body {
       // Non-standard for webkit.
       word-break: break-word;
 
-      @include border-radius(0 0 0 10px);
+      .location-sidebar-section {
+        margin-bottom: 20px;
 
-      > section > h1 {
-        font-size: $font_size_95;
-        color: $greyscale_midtone;
-        margin-top: 0;
-        margin-bottom: 10px;
-        padding: 5px;
-        border-bottom: 1px solid $greyscale_light; // IE fallback
-        border-bottom: 1px solid rgba($black,.1);
-        letter-spacing: 1px;
-        font-family: $font_san_serif;
-        @include inline-block();
-        // Overrides compass inline-block mixin setting - needed for correct font alignment.
-        vertical-align: baseline;
+        h1 {
+          font-size: $font_size_95;
+          color: $greyscale_midtone;
+          margin-top: 0;
+          margin-bottom: 10px;
+          padding: 5px;
+          border-bottom: 1px solid $greyscale_light; // IE fallback
+          border-bottom: 1px solid rgba($black,.1);
+          letter-spacing: 1px;
+          font-family: $font_san_serif;
+          @include inline-block();
+          // Overrides compass inline-block mixin setting
+          // Needed for correct font alignment.
+          vertical-align: baseline;
+        }
+
+        .location-sidebar-content {
+          margin-left: 20px;
+
+          > section {
+            margin-bottom: 20px;
+          }
+
+          .location-sidebar-content-group {
+            > section {
+              margin-bottom: 20px;
+            }
+          }
+        }
       }
 
-      > section > ul {
-        padding: 35px;
-        padding-top: 0;
-        padding-bottom: 20px;
+      .service-categories > ul {
+        margin-bottom: 20px;
+        margin-left: 10px;
+        list-style-type: square;
+        li {
+          color: $main-list-mark-color; // IE fallback
+          color: rgba($main-list-mark-color, .4);
+          > span {
+            color: $black;
+          }
+        }
 
         // Indentation for service category hierarchy.
         .hierarchy-depth-1{ margin-left: 10px; }
         .hierarchy-depth-2{ margin-left: 20px; }
         .hierarchy-depth-3{ margin-left: 30px; }
       }
-
-      > section > section > section {
-        display: table;
-        font-size: $font_size_105;
-        font-family: $font_san_serif;
-        color: $black;
-        padding-bottom: 20px;
-
-        > div > span,
-        > section > span {
-          padding-bottom: 20px;
-        }
-
-        > div:last-child > span,
-        > section:last-child > span {
-          padding-bottom: 0;
-        }
-
-        > div,
-        > section {
-          display: table-row;
-
-          > span {
-            vertical-align: top;
-            display: table-cell;
-          }
-
-          > .fa {
-            width: 23px;
-            color: $main-highlight;
-            // NOTE this might need a new named variable?
-            // color: darkest($purple);
-            text-align: center;
-            margin-right: 4px;
-          }
-        }
-      }
-      > section > section > section:last-child {
-        padding-bottom: 0;
-      }
-    }
-
-    .contact-name {
-      padding-bottom: 0;
-    }
-
-    .contact-details {
-      font-size: $font_size_95;
-      line-height: $font_size_95;
-      color: $complementA;
     }
   }
 
@@ -1243,6 +1217,9 @@ body {
     .website,
     .email {
       @include inline-block();
+      // Overrides compass inline-block mixin setting
+      // Needed for correct font alignment.
+      vertical-align: baseline;
     }
     .title-box {
       margin-top: 10px;
@@ -1307,7 +1284,7 @@ body {
 @include site-link('#detail-info header', rgba($white, 0));
 @include site-link('#detail-info .service', $white);
 @include site-link('#detail-info .metadata', $white);
-@include site-link('#contact-info', $white);
+@include site-link('#detail-info .location-sidebar', $white);
 @include site-link('.no-results', $white);
 @include site-link('#app-footer', $white);
 @include site-link('#list-view li', rgba($white, 0));
@@ -1341,6 +1318,7 @@ body {
     &:hover {
       border-bottom: 1px solid $greyscale_midtone; // IE fallback
       border-bottom: 1px solid rgba($black,.4);
+      cursor: pointer;
     }
   }
 }

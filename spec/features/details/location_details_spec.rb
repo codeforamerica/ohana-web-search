@@ -18,7 +18,7 @@ feature 'location details' do
     it 'displays the same search results' do
       search_for_example
       visit_details
-      find_link('referrals@example.com')
+      find_link('suzanne@example.com')
       find_link('a', text: 'Back').click
       expect(page).to have_selector('#list-view')
       expect(page.find('.agency')).to have_link('Example Agency')
@@ -124,35 +124,35 @@ feature 'location details' do
       expect(find('.overview-box .description')).to have_content('Lorem ipsum')
     end
 
-    it 'includes transporation info' do
+    it 'includes transportation' do
       expect(page).to have_content('SAMTRANS stops within 1 block')
     end
 
-    it 'includes hours info' do
+    xit 'includes hours' do
       expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
     end
 
-    it 'includes languages info' do
+    it 'includes languages' do
       expect(page).to have_content('Cantonese')
     end
 
-    it 'includes accessibility info' do
+    it 'includes accessibility' do
       expect(page).to have_content('Disabled Parking')
     end
 
-    it 'includes email info' do
-      expect(page).to have_link('info@example.com')
+    it 'includes email' do
+      expect(page).to have_link('info@example.org')
     end
 
-    it 'includes URLs' do
-      expect(page).to have_link('www.smchealth.org')
+    it 'includes website' do
+      expect(page).to have_link('www.example.org')
     end
 
-    it 'includes Physical Address info' do
+    it 'includes Physical Address' do
       expect(page).to have_content('Avenue of the fellows')
     end
 
-    it 'includes Mailing Address info' do
+    it 'includes Mailing Address' do
       expect(page).to have_content('The Foodies')
     end
 
@@ -165,7 +165,7 @@ feature 'location details' do
     end
 
     it 'includes updated time' do
-      expect(page).to have_content('Monday, 20 October 2014 at 12:44 PM PDT')
+      expect(page).to have_content('Tuesday, 11 November 2014 at 12:04 PM PST')
     end
   end
 
@@ -185,7 +185,7 @@ feature 'location details' do
     end
 
     it 'includes contact title and department' do
-      within('#contact-info > section:nth-child(2)') do
+      within('.location-sidebar > section:nth-child(2)') do
         expect(page).to have_content('Board President, Referrals')
       end
     end
@@ -205,7 +205,7 @@ feature 'location details' do
 
   scenario 'when Contact only includes department', :vcr do
     visit('/locations/admin-test-org/admin-test-location')
-    within('#contact-info .contact-box-specific') do
+    within('.location-sidebar .contact-box-specific') do
       expect(page).to have_content('Office of Innovation')
       expect(page).to_not have_selector('contact-title')
     end
@@ -213,7 +213,7 @@ feature 'location details' do
 
   scenario 'when Contact only includes title', :vcr do
     visit('/locations/peninsula-family-service/fair-oaks-adult-activity-center')
-    within('#contact-info') do
+    within('.location-sidebar') do
       expect(page).to have_content('Director of Older Adult Services')
       expect(page).to_not have_selector('contact-department')
     end

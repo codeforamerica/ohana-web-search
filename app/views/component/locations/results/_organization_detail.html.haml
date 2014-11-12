@@ -8,19 +8,8 @@
       %section
         %p.description
           = organization.description
-
-        - if organization.website.present?
-          %p.website
-            %i{ class: 'fa fa-external-link-square' }
-            %a{ href: organization.website, target: '_blank' }
-              %span{ itemprop: 'url' }
-                = format_url(organization.website)
-        - if organization.email.present?
-          %p.email
-            %i{ class: 'fa fa-envelope-square' }
-            %a{ href: "mailto:#{organization.email}" }
-              %span{ itemprop: 'email' }
-                = organization.email
+        = render 'component/detail/website', website: organization.website
+        = render 'component/detail/email', email: organization.email
 
     - if organization.accreditations.present? || organization.licenses.present?
       %aside.metadata
