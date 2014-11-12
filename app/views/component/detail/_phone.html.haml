@@ -5,9 +5,9 @@
 -# If the `show_phone_type_and_department` local variable is set to true
 -# the partial will also include the phone type and phone department.
 - if phone.present?
-  %section.phone{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+  %section.phone.icon-text-block{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
     %i{ class: phone_icon_for(phone.number_type) }
-    %span
+    %span.annotated-text-block
       %span{ itemprop: phone_microdata_for(phone.number_type) }
         = format_phone(phone.number)
       - if phone.extension.present?

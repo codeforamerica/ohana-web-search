@@ -57,7 +57,7 @@ feature 'location service details' do
 
     it 'includes required documents' do
       element = '.services-box .required-documents'
-      expect(first(element)).to have_content('Government-issued identification')
+      expect(first(element)).to have_content('Government-issued picture identification')
     end
 
     it 'includes accepted payment methods' do
@@ -69,7 +69,7 @@ feature 'location service details' do
       expect(page).to have_content('San Mateo County')
     end
 
-    it 'includes hours info' do
+    xit 'includes hours info' do
       expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
     end
   end

@@ -146,7 +146,7 @@
         border-bottom: none !important;
       }
 
-      > aside {
+      > .location-sidebar-box {
         float: none;
         width: 100%;
         margin: 0;
@@ -166,17 +166,27 @@
         }
       }
 
-      #contact-info {
+      .location-sidebar {
         padding-bottom: 0;
         margin-bottom: 0;
       }
 
+      .location-sidebar-content > section,
+      .location-sidebar-content-group > section {
+        @include inline-block();
+        vertical-align: top;
+        margin-right: 10px;
+      }
+
       // Hide the categories box.
-      #categories-box {
+      .categories-box {
         display: none !important;
       }
 
-      .contact-title {
+      // Lighten annotations.
+      .annotation,
+      .contact-title,
+      .contact-department {
         color: rgba($black, 0.4) !important;
       }
 
