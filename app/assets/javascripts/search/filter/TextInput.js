@@ -1,6 +1,8 @@
 // Handles freeform text input search filters.
-define(
-function () {
+define([
+  'util/EventObserver'
+],
+function (eventObserver) {
   'use strict';
 
   function create(id) {
@@ -8,9 +10,11 @@ function () {
   }
 
   function TextInput(id) {
+    var _instance = this;
 
-    // The events this input broadcasts.
-    var _events = {};
+    // The events this instance broadcasts.
+    var _events = { CHANGE: 'change' };
+    eventObserver.attach(this);
 
     // The container HTML element for this text input.
     var _container = document.querySelector('#' + id + ' .clearable');
@@ -21,12 +25,6 @@ function () {
     // The actual text input to clear.
     var _input;
 
-    // @param event [String] The event name to listen for. Supports 'change'.
-    // @param callback [Function] The function called when the event has fired.
-    function addEventListener(event, callback) {
-      _events[event] = callback;
-    }
-
     function reset() {
       _buttonClear.classList.add('hide');
       _input.value = '';
@@ -35,6 +33,7 @@ function () {
     function _initClearButton() {
       // Retrieve first and only input element.
       // Throw an error if it isn't found.
+      if (!_container) _throwInitializationError();
       _input = _container.getElementsByTagName('input')[0];
       if (!_input) _throwInitializationError();
 
@@ -49,7 +48,7 @@ function () {
         evt.preventDefault();
         reset();
         _input.focus();
-        _broadcastEvent('change');
+        _instance.dispatchEvent(_events.CHANGE, {target:_instance});
       });
 
       _input.addEventListener('keyup', function (evt) {
@@ -58,7 +57,7 @@ function () {
 
       _input.addEventListener('change', function (evt) {
         _setClearButtonVisibility();
-        _broadcastEvent('change');
+        _instance.dispatchEvent(_events.CHANGE, {target:_instance});
       });
     }
 
@@ -71,13 +70,6 @@ function () {
         _buttonClear.classList.remove('hide');
     }
 
-    // @param evt [String] The type of event to broadcast.
-    // Supports 'change'.
-    function _broadcastEvent(evt) {
-      if (_events[evt])
-        _events[evt].call();
-    }
-
     function _throwInitializationError() {
       var message = 'A clearable Text Input with id "' +
                     id + '" was not initialized!';
@@ -85,13 +77,11 @@ function () {
     }
 
     // Initialize TextInput instance.
-    if (_container) _initClearButton();
-    else _throwInitializationError();
+    _initClearButton();
 
-    return {
-      reset:reset,
-      addEventListener:addEventListener
-    };
+    _instance.reset = reset;
+
+    return _instance;
   }
 
   return {
