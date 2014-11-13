@@ -12,46 +12,46 @@ feature 'location service details' do
 
     it 'includes name' do
       element = '.services-box .name'
-      expect(first(element)).to have_content('Passport Photos')
+      expect(all(element).last).to have_content('Passport Photos')
     end
 
     it 'includes alternate name' do
       element = '.services-box .alternate-name'
-      expect(first(element)).to have_content('(Fotos para pasaportes)')
+      expect(all(element).last).to have_content('(Fotos para pasaportes)')
     end
 
     it 'includes website' do
       element = '.services-box .website'
-      expect(first(element)).to have_content('www.example.com')
+      expect(all(element).last).to have_content('www.example.com')
     end
 
     it 'includes email' do
       element = '.services-box .email'
-      expect(first(element)).to have_content('passports@example.org')
+      expect(all(element).last).to have_content('passports@example.org')
     end
 
     it 'includes description' do
       element = '.services-box .description'
-      expect(first(element)).to have_content('Lorem ipsum')
+      expect(all(element).last).to have_content('Lorem ipsum')
     end
 
-    it 'includes fees info' do
+    it 'includes fees' do
       expect(page).to have_content('permits and photocopying')
     end
 
-    it 'includes audience info' do
+    it 'includes audience' do
       expect(page).to have_content('Profit and nonprofit businesses')
     end
 
-    it 'includes eligibility info' do
+    it 'includes eligibility' do
       expect(page).to have_content('None')
     end
 
-    it 'includes how to apply info' do
+    it 'includes how to apply' do
       expect(page).to have_content('Walk in or apply by phone or mail')
     end
 
-    it 'includes wait estimate info' do
+    it 'includes wait estimate' do
       expect(page).to have_content('No wait to 2 weeks')
     end
 
@@ -65,12 +65,18 @@ feature 'location service details' do
       expect(first(element)).to have_content('Credit Card')
     end
 
-    it 'includes service areas info' do
+    it 'includes service areas' do
       expect(page).to have_content('San Mateo County')
     end
 
-    xit 'includes hours info' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    it 'includes regular hour schedule' do
+      content = 'Monday: 8:00am - 12:00pm'
+      expect(find('.services-box .regular-schedules')).to have_content(content)
+    end
+
+    it 'includes holiday hour schedule' do
+      content = 'January 1: CLOSED'
+      expect(find('.services-box .holiday-schedules')).to have_content(content)
     end
   end
 

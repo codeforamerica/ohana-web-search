@@ -18,12 +18,12 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Server:
+      - Cowboy
       Connection:
-      - keep-alive
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
+      - close
+      Date:
+      - Thu, 20 Nov 2014 02:53:31 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,24 +32,22 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      Date:
-      - Thu, 16 Oct 2014 03:19:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
+      Etag:
+      - '"2b714f7ce831a68065ab06c25fbd19e1"'
       X-Request-Id:
-      - cae684bd-867c-4053-863f-9fd035882703
+      - e61fa93f-1711-484d-8c8a-9ade76889147
       X-Runtime:
-      - '0.034783'
-      X-Powered-By:
-      - Phusion Passenger 4.0.50
-      Server:
-      - nginx/1.6.1 + Phusion Passenger 4.0.50
+      - '0.068383'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":22,"accessibility":["Disabled Parking","Disabled Restroom","Wheelchair"],"admin_emails":["foo@bar.com"],"alternate_name":"The
-        Test Spot","coordinates":[-73.1968254,42.878036],"description":"[NOTE THIS
+      string: '{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
+        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
         IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
@@ -59,58 +57,63 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","emails":["info@example.com","referrals@example.com"],"hours":"Monday-Friday,
-        8-5; Saturday, 10-6; Sunday 11-5","languages":["Cantonese","Taiwanese","Tagalog","Russian","Spanish"],"latitude":42.878036,"longitude":-73.1968254,"name":"Example
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","transportation":"SAMTRANS
-        stops within 1 block","updated_at":"2014-10-15T14:37:04.270-07:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"street_1":"2013
-        Avenue of the fellows","street_2":"Suite 100","city":"Burlington","state":"VT","postal_code":"05201"},"contacts":[{"department":"Referrals","email":"suzanne@example.com","id":29,"name":"Suzanne
-        Badenhoop","title":"Board President","phones":[{"id":41,"department":"Referrals","extension":"1200","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":42,"department":"Referrals","extension":null,"number":"202-555-1212","number_type":"fax","vanity_number":null}]}],"mail_address":{"id":21,"attention":"Hella
-        Fellas","street_1":"2013 Avenue of the fellows","street_2":"Suite 100","city":"San
-        Maceo","state":"VT","postal_code":"90210"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2014-11-18T05:37:55.208-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"email":"info@example.org","languages":["Cantonese","Russian","Spanish","Tagalog","Taiwanese"],"transportation":"SAMTRANS
+        stops within 1 block","address":{"id":21,"street_1":"2013 Avenue of the fellows","street_2":"Suite
+        100","city":"San Francisco","state":"CA","postal_code":"94103"},"organization":{"id":8,"alternate_name":"Alternate
+        Agency Name","name":"<%= name %>","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
         372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
         627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
         372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
-        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}],"services":[{"id":22,"audience":"Profit
-        and nonprofit businesses, the public, military facilities, schools and government
-        entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS IS FOR
-        TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"name":"bazfoo","service_areas":["San Mateo County","Alameda County"],"short_desc":null,"urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-10-15T14:37:04.260-07:00","categories":[]},{"id":23,"audience":"Second
+        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}],"contacts":[{"department":"Referrals","email":"suzanne@example.com","id":29,"name":"Suzanne
+        Badenhoop","title":"Board President","phones":[{"id":41,"department":"Referrals","extension":"1200","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":42,"department":"Referrals","extension":null,"number":"202-555-1212","number_type":"fax","vanity_number":null}]}],"mail_address":{"id":21,"attention":"The
+        Foodies","street_1":"2013 Avenue of the fellows","street_2":"Suite 100","city":"San
+        Francisco","state":"CA","postal_code":"90210"},"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":2,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":4,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":5,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":6,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T18:00:00.000Z"},{"weekday":7,"opens_at":"2000-01-01T11:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null},{"closed":true,"start_date":"0001-06-01","end_date":"0001-09-01","opens_at":null,"closes_at":null},{"closed":false,"start_date":"0001-12-24","end_date":"0001-12-24","opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"}],"services":[{"id":23,"accepted_payments":[],"alternate_name":null,"audience":"Second
         service and nonprofit businesses, the public, military facilities, schools
         and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
-        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Praesent suscipit metus eu orci lobortis dictum. In hac habitasse
-        platea dictumst. Vivamus vulputate, neque ut sodales gravida, lorem nunc pharetra
-        ligula, ac cursus sem justo a sapien. Duis vitae vestibulum magna. Sed vel
-        augue in justo rhoncus viverra. Nam ac felis a purus lobortis porttitor sit
-        amet quis est. Suspendisse vulputate nisl quis nisi fermentum aliquet euismod
-        at augue. Sed ultricies, purus dapibus tristique dictum, tortor mauris porttitor
-        nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat. Duis porta iaculis
-        orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
-        egestas.","eligibility":"None","fees":"None, except for permits and photocopying.
-        Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/MongoDB/Redis","FIFA
-        World Cup"],"name":"hasdfasf","service_areas":["San Mateo County","Alameda
-        County"],"short_desc":null,"urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","updated_at":"2014-10-15T14:37:04.267-07:00","categories":[]}],"organization":{"id":8,"alternate_name":"Alternate
-        Agency Name","date_incorporated":"1970-01-01","description":"Sample organization
-        description. The Public Library inspires learning through innovative and visionary
-        programming and services—literacy programs, support for school success, access
-        to technology, safe, inviting spaces for youth and families, and gathering
-        places that connect the members of the community with a love of reading and
-        learning.","email":"info@example.org","name":"<%= name %>","slug":"example-agency","website":"http://example.org","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"}}'
+        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Offers, by appointment, WIC (Women,
+        Infants and Children) services, insurance enrollment, food stamps, CalWorks
+        assistance, tax preparation and notary services. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Praesent suscipit metus eu orci lobortis dictum.
+        In hac habitasse platea dictumst. Vivamus vulputate, neque ut sodales gravida,
+        lorem nunc pharetra ligula, ac cursus sem justo a sapien. Duis vitae vestibulum
+        magna. Sed vel augue in justo rhoncus viverra. Nam ac felis a purus lobortis
+        porttitor sit amet quis est. Suspendisse vulputate nisl quis nisi fermentum
+        aliquet euismod at augue. Sed ultricies, purus dapibus tristique dictum, tortor
+        mauris porttitor nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat.
+        Duis porta iaculis orci, eu euismod quam tristique in. Phasellus nec purus
+        sit amet sapien volutpat egestas.","eligibility":"None","email":null,"fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Ruby on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example
+        Service Name","required_documents":[],"service_areas":["San Mateo County","Alameda
+        County"],"status":"active","website":"http://www.example.com","wait_time":"No
+        wait to 2 weeks","updated_at":"2014-10-29T10:08:12.509-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]},{"id":22,"accepted_payments":["Cash","Check","Credit
+        Card"],"alternate_name":"Fotos para pasaportes","audience":"Profit and nonprofit
+        businesses, the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL SERVICE--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","email":"passports@example.org","fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
+        in or apply by phone or mail","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
+        Photos","required_documents":["Government-issued picture identification"],"service_areas":["Alameda
+        County","San Mateo County"],"status":"active","website":"http://www.example.com","wait_time":"No
+        wait to 2 weeks.","updated_at":"2014-11-18T05:37:55.204-08:00","categories":[{"id":65,"depth":0,"oe_id":"105","name":"Transit","parent_id":null},{"id":168,"depth":0,"oe_id":"108","name":"Care","parent_id":null},{"id":190,"depth":1,"oe_id":"108-05","name":"Navigating
+        the System","parent_id":168},{"id":191,"depth":2,"oe_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":190},{"id":274,"depth":0,"oe_id":"111","name":"Legal","parent_id":null},{"id":290,"depth":1,"oe_id":"111-05","name":"Translation
+        \u0026 Interpretation","parent_id":274}],"contacts":[{"department":"CalFresh
+        Applications","email":"john.smith@example.org","id":36,"name":"Joe Smith","title":"CalFresh
+        Specialist","phones":[{"id":52,"department":"CalFresh Applications","extension":"123","number":"703-555-1212","number_type":"voice","vanity_number":null}]}],"phones":[{"id":57,"department":"Passport
+        Photos","extension":"123","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":58,"department":"Passport
+        Photos Fax","extension":null,"number":"789-456-1230","number_type":"fax","vanity_number":null}],"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T12:00:00.000Z"},{"weekday":1,"opens_at":"2000-01-01T14:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T15:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null}]}]}'
     http_version:
-  recorded_at: Thu, 16 Oct 2014 03:19:11 GMT
+  recorded_at: Thu, 20 Nov 2014 02:53:31 GMT
 recorded_with: VCR 2.9.2
