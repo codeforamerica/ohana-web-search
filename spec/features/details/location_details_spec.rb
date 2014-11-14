@@ -148,6 +148,10 @@ feature 'location details' do
       expect(page).to have_link('www.example.org')
     end
 
+    it 'includes vanity number' do
+      expect(page).to have_content('222-555-INFO')
+    end
+
     it 'includes Physical Address' do
       expect(page).to have_content('Avenue of the fellows')
     end
