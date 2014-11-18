@@ -1,9 +1,9 @@
 // Used for creating a popup that appears when the designated link is clicked.
 define([
   'app/popup/DefaultPopup',
-  'app/feedback-form-manager'
+  'app/FeedbackForm'
 ],
-function (DefaultPopup, feedback) {
+function (DefaultPopup, FeedbackForm) {
   'use strict';
 
   // Create a FeedbackPopup instance. This instance extends the functionality
@@ -15,14 +15,21 @@ function (DefaultPopup, feedback) {
   }
 
   function FeedbackPopup() {
+    var _instance = this;
     // Override the init function of the DefaultPopup instance to initialize
     // the feedback form after the popup initializes.
     this.init = function(link) {
       var instance = FeedbackPopup.prototype.init(link, this);
-      feedback.init();
+      var feedbackForm = FeedbackForm.create(link.hash + ' .feedback-form');
+      feedbackForm.addEventListener('success', _feedbackFormSent);
       return instance;
     };
-    return this;
+
+    function _feedbackFormSent(evt) {
+      _instance.hide();
+    }
+
+    return _instance;
   }
 
   return {
