@@ -17,6 +17,18 @@
   .location-sidebar-box
     %aside.location-sidebar
 
+      - if @location.regular_schedules.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Regular Service Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_regular_schedule', schedules: @location.regular_schedules
+
+      - if @location.holiday_schedules.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Holiday Service Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_holiday_schedule', schedules: @location.holiday_schedules
+
       - if (@location.fields & location_contact_fields).any?
         %section.contact-box-general.location-sidebar-section
           %h1 General Contact Info
@@ -116,12 +128,6 @@
                   -# Hides map when JavaScript is disabled.
                   = '#detail-map-view {display:none;}'
 
-    - if @location[:hours].present?
-      %section.hours-box
-        %h1 Service Hours
-        %section
-          = render 'component/detail/location_hours', location: @location
-
     - if (@location.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
@@ -138,9 +144,23 @@
             %section.title-box
               = render 'component/detail/service_status', service: service
               = render 'component/detail/service_name', service: service
-            %section.web-addresses-box
-              = render 'component/detail/website', website: service.website
-              = render 'component/detail/email', email: service.email
+
+            - if service.regular_schedules.present?
+              %section.schedules-box
+                %h1 Regular Service Hours
+                %section
+                  = render 'component/detail/location_regular_schedule', schedules: service.regular_schedules
+
+            - if service.holiday_schedules.present?
+              %section.schedules-box
+                %h1 Holiday Service Hours
+                %section
+                  = render 'component/detail/location_holiday_schedule', schedules: service.holiday_schedules
+
+            - if service.website.present? && service.email.present?
+              %section.web-addresses-box
+                = render 'component/detail/website', website: service.website
+                = render 'component/detail/email', email: service.email
             = render 'component/detail/service_description', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service

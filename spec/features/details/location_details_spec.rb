@@ -128,8 +128,16 @@ feature 'location details' do
       expect(page).to have_content('SAMTRANS stops within 1 block')
     end
 
-    xit 'includes hours' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    it 'includes regular hour schedule' do
+      selector = '.location-sidebar .regular-schedules'
+      content = 'Monday - Friday: 8:00am - 5:00pm'
+      expect(find(selector)).to have_content(content)
+    end
+
+    it 'includes holiday hour schedule' do
+      selector = '.location-sidebar .holiday-schedules'
+      content = 'January 1: CLOSED'
+      expect(find(selector)).to have_content(content)
     end
 
     it 'includes languages' do
@@ -165,7 +173,7 @@ feature 'location details' do
     end
 
     it 'includes updated time' do
-      expect(page).to have_content('Tuesday, 11 November 2014 at 12:04 PM PST')
+      expect(page).to have_content('Tuesday, 18 November 2014 at 5:37 AM PST')
     end
   end
 
@@ -185,7 +193,7 @@ feature 'location details' do
     end
 
     it 'includes contact title and department' do
-      within('.location-sidebar > section:nth-child(2)') do
+      within('.location-sidebar .contact-details') do
         expect(page).to have_content('Board President, Referrals')
       end
     end
