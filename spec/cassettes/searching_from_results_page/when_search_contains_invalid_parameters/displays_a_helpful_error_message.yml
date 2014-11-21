@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 20 Nov 2014 02:15:04 GMT
+      - Fri, 21 Nov 2014 22:27:28 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,8 +33,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=22>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
+        rel="next"
       X-Total-Count:
       - '22'
       Content-Type:
@@ -44,9 +44,9 @@ http_interactions:
       Etag:
       - '"b034eecf2ad3d209180a702fb897b86b"'
       X-Request-Id:
-      - 7bdbd8aa-0a42-4d07-9c9c-7d71c3b64858
+      - 581fcd80-bf58-4d71-8623-4989f7ca976e
       X-Runtime:
-      - '0.021903'
+      - '0.035538'
       Via:
       - 1.1 vegur
     body:
@@ -81,10 +81,10 @@ http_interactions:
         780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
         701-0856","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 20 Nov 2014 02:15:04 GMT
+  recorded_at: Fri, 21 Nov 2014 22:27:28 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&radius=foo
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&location=94403&radius=foo
     body:
       encoding: US-ASCII
       string: ''
@@ -105,7 +105,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 20 Nov 2014 02:15:04 GMT
+      - Fri, 21 Nov 2014 22:27:29 GMT
       Status:
       - 400 Bad Request
       X-Frame-Options:
@@ -119,9 +119,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c4df4ba6-de41-45e9-a708-c3f1e3fab82d
+      - 7590c7d2-8fcd-4956-8f10-42f9b1aae5b0
       X-Runtime:
-      - '0.185650'
+      - '0.253903'
       Via:
       - 1.1 vegur
     body:
@@ -129,5 +129,5 @@ http_interactions:
       string: '{"status":400,"error":"Argument Error","description":"Radius must be
         a Float between 0.1 and 50."}'
     http_version: 
-  recorded_at: Thu, 20 Nov 2014 02:15:04 GMT
+  recorded_at: Fri, 21 Nov 2014 22:27:29 GMT
 recorded_with: VCR 2.9.2

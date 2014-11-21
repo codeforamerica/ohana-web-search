@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 20 Nov 2014 02:14:59 GMT
+      - Fri, 21 Nov 2014 22:27:28 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,8 +33,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=22>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
+        rel="next"
       X-Total-Count:
       - '22'
       Content-Type:
@@ -44,9 +44,9 @@ http_interactions:
       Etag:
       - '"b034eecf2ad3d209180a702fb897b86b"'
       X-Request-Id:
-      - 2ecd4158-f3e6-45d3-aae3-f3212a752d32
+      - deb27e44-b900-420b-8e18-c662c19917e5
       X-Runtime:
-      - '0.020917'
+      - '0.028855'
       Via:
       - 1.1 vegur
     body:
@@ -81,7 +81,7 @@ http_interactions:
         780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
         701-0856","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 20 Nov 2014 02:14:59 GMT
+  recorded_at: Fri, 21 Nov 2014 22:27:28 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=clinic&location=94403&org_name=samaritan&utf8=%E2%9C%93
@@ -105,7 +105,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 20 Nov 2014 02:14:59 GMT
+      - Fri, 21 Nov 2014 22:27:28 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -123,9 +123,9 @@ http_interactions:
       Etag:
       - '"ff9f479611f06f4dd63a15b46deded72"'
       X-Request-Id:
-      - 90cb4c6f-bc7a-4052-a3e4-a958713516f4
+      - 9460774c-5fce-44e0-961c-bfe0a404b6a2
       X-Runtime:
-      - '0.192364'
+      - '0.167392'
       Via:
       - 1.1 vegur
     body:
@@ -144,5 +144,5 @@ http_interactions:
         578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
         578-0440","number_type":"fax","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 20 Nov 2014 02:14:59 GMT
+  recorded_at: Fri, 21 Nov 2014 22:27:28 GMT
 recorded_with: VCR 2.9.2
