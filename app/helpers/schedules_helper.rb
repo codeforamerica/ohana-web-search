@@ -11,7 +11,7 @@ module SchedulesHelper
   # @return [HTML] Snippet of opening hours per weekday and date.
   def holiday_hours_for(schedules)
     schedules.map { |schedule| holiday_schedule_content_for(schedule) }.
-    join(' ').html_safe
+      join(' ').html_safe
   end
 
   private
