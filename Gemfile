@@ -79,7 +79,7 @@ group :test do
   gem 'capybara', '~> 2.4.1'
   gem 'poltergeist'
   gem 'vcr', '~> 2.9.0'
-  gem 'webmock', '~> 1.18.0'
+  gem 'webmock', '~> 1.20.0'
   gem 'email_spec', '~> 1.6.0'
   gem 'haml-lint'
 
