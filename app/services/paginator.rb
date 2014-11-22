@@ -12,8 +12,8 @@ class Paginator
 
   def results
     Kaminari.paginate_array([], total_count: total_count).
-            page(params[:page]).
-            per(params[:per_page])
+      page(params[:page]).
+      per(params[:per_page])
   end
 
   private
