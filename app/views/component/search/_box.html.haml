@@ -8,7 +8,7 @@
             = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.homepage_keyword_search')
 
             = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Search') do
-              %i{ class: 'fa fa-search' }
+              %i.fa.fa-search
               %span
                 = t('buttons.homepage_search')
         = hidden_field_tag 'location'

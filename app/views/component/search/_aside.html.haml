@@ -4,7 +4,7 @@
       %section#keyword-search-box
         .input-search-small.clearable
           = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Update search results') do
-            %i{ class: 'fa fa-search' }
+            %i.fa.fa-search
           = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.results_page_keyword_search')
 
       %section#search-options
@@ -14,9 +14,9 @@
       %ul#search-controls
         %li
           = button_tag(type: 'submit', name: nil, class: 'button-small') do
-            %i{ class: 'fa fa-refresh' }
+            %i.fa.fa-refresh
             = t('buttons.update_search_results')
         %li
           = button_tag(type: 'reset', name: nil, id: 'button-reset', class: 'button-small') do
-            %i{ class: 'fa fa-times-circle' }
+            %i.fa.fa-times-circle
             = t('buttons.clear_search_fields')

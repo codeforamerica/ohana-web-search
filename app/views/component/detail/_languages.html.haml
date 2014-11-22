@@ -1,5 +1,5 @@
-- if location[:languages].present?
-  %section{ class: 'languages' }
+- if location.languages.present?
+  %section.languages
     %h1= t('location_fields.languages')
     %ul
       - location.languages.sort.each do |lang|

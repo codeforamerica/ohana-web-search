@@ -1,9 +1,9 @@
 -# The email partial displays the email icon and address.
--# e.g.
--# [icon] admin@example.com
+  e.g. [icon] admin@example.com
+
 - if email.present?
   %section.email.icon-text-block
-    %i{ class: 'fa fa-envelope-square' }
+    %i.fa.fa-envelope-square
     %span
       %a{ href: "mailto:#{email}" }
         %span{ itemprop: 'email' }

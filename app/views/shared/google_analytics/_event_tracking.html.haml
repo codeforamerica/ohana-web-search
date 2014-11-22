@@ -1,5 +1,6 @@
 -# Universal Google Analytics (GA) script for the page footer.
--# This initializes tracking of clicked links and is the place
--# for anything else GA-related that depends on the DOM being loaded.
+  This initializes tracking of clicked links and is the place
+  for anything else GA-related that depends on the DOM being loaded.
+
 :javascript
   function _track(e){var t=e.currentTarget;var n=t.getAttribute("data-ga-category");var r=t.getAttribute("data-ga-label");window.ga("send","event",n,"click",r)}var linksToTrack=document.querySelectorAll(".links-to-track");var i=linksToTrack.length;while(i--){linksToTrack[i].addEventListener("click",_track)}
