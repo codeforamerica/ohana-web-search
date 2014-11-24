@@ -2,10 +2,10 @@
 define([
   'search/filter/TextInput',
   'util/geolocation/geolocate-action',
-  'app/alert-manager',
+  'app/alerts',
   'domReady!'
 ],
-function (TextInput, geo, alert) {
+function (TextInput, geo, alerts) {
   'use strict';
 
   // The search filters.

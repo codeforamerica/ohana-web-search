@@ -3,16 +3,16 @@
 // and search details pages. It is not called by
 // the about page.
 require([
-  'util/translation/google-translate-manager',
-  'app/popup/popup-manager',
-  'app/alert-manager'
+  'util/translation/google-translate',
+  'app/popup/popups',
+  'app/alerts'
 ],
-function (googleTranslate, popups, alert) {
+function (googleTranslate, popups, alerts) {
   'use strict';
 
   // If page is not translated, initialize the header popups.
   if (!googleTranslate.isTranslated())
     popups.init();
 
-  alert.init();
+  alerts.init();
 });

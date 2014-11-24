@@ -1,11 +1,11 @@
 // Manages geolocation action, which can be associated with a button.
 define([
   'util/geolocation/geolocator',
-  'app/alert-manager',
+  'app/alerts',
   'util/map/google-maps-loader',
   'domReady!'
 ],
-function (geo, alert, googleMaps) {
+function (geo, alerts, googleMaps) {
   'use strict';
 
 
@@ -51,7 +51,7 @@ function (geo, alert, googleMaps) {
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alert.show('Your location could not be determined!', alert.type.ERROR);
+        alerts.show('Your location could not be determined!', alerts.type.ERROR);
         _locateTargetReady();
       }
     };
@@ -69,7 +69,7 @@ function (geo, alert, googleMaps) {
         _locateAction(results[0].formatted_address);
       } else {
         //console.log("Geocoder failed due to: " + status);
-        alert.show('Your location could not be determined!', alert.type.ERROR);
+        alerts.show('Your location could not be determined!', alerts.type.ERROR);
         _locateTargetReady();
       }
     });

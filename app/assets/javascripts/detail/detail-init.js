@@ -1,8 +1,8 @@
 require([
-  'detail/detail-map-manager',
+  'detail/detail-map',
   'detail/character-limited/character-limiter',
-  'search/header-manager',
-  'detail/utility-links-manager'
+  'search/header',
+  'detail/utility-links'
 ],
 function (map, cl, header, utilityLinks) {
   'use strict';
@@ -24,10 +24,10 @@ function (err) {
 
   // Initialize no map loaded state.
   require([
-    'detail/no-detail-map-manager',
+    'detail/no-detail-map',
     'detail/character-limited/character-limiter',
-    'search/header-manager',
-    'detail/utility-links-manager'
+    'search/header',
+    'detail/utility-links'
   ],
   function (map, cl, header, utilityLinks) {
 
