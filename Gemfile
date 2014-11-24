@@ -71,8 +71,8 @@ group :development do
 
   gem 'spring'
   gem 'spring-commands-rspec'
-  # listen is required by spring to turn on event-based file system listening.
-  gem 'listen', '~> 1.0'
+  # Required by spring to turn on event-based file system listening.
+  gem 'spring-watcher-listen'
 end
 
 group :test do
