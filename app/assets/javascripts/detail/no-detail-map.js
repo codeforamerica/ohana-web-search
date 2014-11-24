@@ -1,8 +1,8 @@
 // Manages page appearance when Google Maps can't be loaded.
 define([
-  'app/alert-manager'
+  'app/alerts'
 ],
-function (alert) {
+function (alerts) {
   'use strict';
 
   function init() {
@@ -12,7 +12,7 @@ function (alert) {
 
     var message = 'Oops! Map failed to load. Try reloading the page or ' +
                   '<a href="/about/#feedback-box">send us a message</a>.';
-    alert.show(message);
+    alerts.show(message);
   }
 
   return {

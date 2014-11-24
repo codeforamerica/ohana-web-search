@@ -1,11 +1,11 @@
 // Manages search results view Google Map.
 define([
   'util/BitMask',
-  'util/map/marker-manager',
+  'util/map/markers',
   'util/map/google-maps-loader',
   'domReady!'
 ],
-function (BitMask, markerManager, googleMaps) {
+function (BitMask, markers, googleMaps) {
   'use strict';
 
   // The <div> element that the Google map loads into.
@@ -91,9 +91,9 @@ function (BitMask, markerManager, googleMaps) {
           'gmapsOMS',
           'gmapsInfobox'
         ],
-        function(OverlappingMarkerSpiderfier, InfoBox) {
+        function (OverlappingMarkerSpiderfier, InfoBox) {
             _renderMap(OverlappingMarkerSpiderfier, InfoBox);
-        });
+          });
         // ------------------------------------------------------------------
       }
       else {
@@ -347,7 +347,7 @@ function (BitMask, markerManager, googleMaps) {
       var myLatLng = new google.maps.LatLng(markerData.latitude,
                                             markerData.longitude);
 
-      var markerProxy = markerManager.create(markerManager.GENERIC);
+      var markerProxy = markers.create(markers.GENERIC);
       if (_atMaxSize)
         markerProxy.turnOn(markerProxy.LARGE_ICON);
       else

@@ -1,11 +1,11 @@
 // Manages behavior of feedback form.
 define([
-  'app/alert-manager',
+  'app/alerts',
   'util/util',
   'util/EventObserver',
   'jquery'
 ],
-function (alert, util, eventObserver, $) {
+function (alerts, util, eventObserver, $) {
   'use strict';
 
   function create(selector) {
@@ -107,7 +107,7 @@ function (alert, util, eventObserver, $) {
     // On successful submission of commment, clear out the input values,
     // display a success alert message, and broadcast a success event.
     function _onSuccess() {
-      alert.show('Feedback Sent! Thank you!', alert.type.VALID);
+      alerts.show('Feedback Sent! Thank you!', alerts.type.VALID);
       _commentInput.value = '';
       _updateFeedbackForm();
       _instance.dispatchEvent(_events.SUCCESS, {target:_instance});
@@ -118,7 +118,7 @@ function (alert, util, eventObserver, $) {
     function _onError() {
       var message = 'Error sending feedback, please ' +
                     '<a href="/">reload</a> and try again!';
-      alert.show(message, alert.type.ERROR);
+      alerts.show(message, alerts.type.ERROR);
       _commentInput.value = '';
       _emailInput.value = '';
       _updateFeedbackForm();
@@ -129,7 +129,7 @@ function (alert, util, eventObserver, $) {
     function _incorrectEmailAddress() {
       var message = 'Your email address appears to be formatted ' +
                     'incorrectly, please try again!';
-      alert.show(message, alert.type.ERROR);
+      alerts.show(message, alerts.type.ERROR);
       _emailInput.value = '';
     }
 
