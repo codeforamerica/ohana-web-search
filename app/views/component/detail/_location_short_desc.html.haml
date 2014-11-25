@@ -1,3 +1,4 @@
-%section{ class: 'short-desc' }
-  %span
-    = location.short_desc
+- if location.short_desc.present?
+  %section.short-desc
+    %span
+      = location.short_desc
