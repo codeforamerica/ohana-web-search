@@ -15,14 +15,12 @@
         %label{ for: 'email' }
           Email:
         %input.email{ name: 'email', type: 'email', placeholder: 'your email address (optional)', pattern: '/.+@.+\..+/i' }
-
       %p
         %button.button-feedback-send{ type: 'submit', disabled: 'disabled' }
           Send!
 
     %noscript
-      %style
-        -# Hides ajax-enabled feedback form when JavaScript is disabled.
-        = '#feedback-form { display: none; }'
-      = link_to 'Visit this form', 'http://ohanapi.org/#contribute', target: '_blank'
-      to submit comments.
+      -# Hides ajax-enabled feedback form when JavaScript is disabled.
+      :sass
+        #feedback-box .feedback-form
+          display: none

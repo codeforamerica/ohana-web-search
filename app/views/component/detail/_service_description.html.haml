@@ -1,5 +1,5 @@
-- if service[:description].present?
-  %section{ class: 'description' }
+- if service.description.present?
+  %section.description
     %h1= t('service_fields.description')
     %span.character-limited
       = service.description

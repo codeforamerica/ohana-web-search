@@ -65,7 +65,7 @@
           %h1 Physical Address
           %section.location-sidebar-content
             %section.address.icon-text-block
-              %i{ class: 'fa fa-map-marker' }
+              %i.fa.fa-map-marker
               %span
                 = render 'component/detail/address', location: @location, lines: 2
 
@@ -74,7 +74,7 @@
           %h1 Mailing Address
           %section.location-sidebar-content
             %section.mail-address.icon-text-block
-              %i{ class: 'fa fa-envelope' }
+              %i.fa.fa-envelope
               %span
                 = render 'component/detail/mail_address', location: @location
 
@@ -114,8 +114,8 @@
               %span
                 = @location.transportation
 
-          - if @location[:coordinates].present?
-            %section#detail-map-view.map
+          - if @location.coordinates.present?
+            %section.map#detail-map-view
               #detail-map-canvas
                 %span.hide#detail-map-canvas-title
                   = full_address_for(@location.address)
@@ -124,9 +124,10 @@
                 %span.hide#detail-map-canvas-lng
                   = @location.longitude
               %noscript
-                %style
-                  -# Hides map when JavaScript is disabled.
-                  = '#detail-map-view {display:none;}'
+                -# Hides map when JavaScript is disabled.
+                :sass
+                  #detail-map-view
+                    display: none
 
     - if (@location.fields & service_fields).any?
       %section.service-opt-box
@@ -135,7 +136,7 @@
           = render 'component/detail/languages', location: @location
           = render 'component/detail/accessibility', location: @location
 
-    - if @location[:services].present?
+    - if @location.services.present?
       %section.services-box
         %h1 Services
         - @location.services.each do |service|
@@ -172,7 +173,7 @@
             = render 'component/detail/service_service_areas', service: service
 
   / Detail footer content.
-  - if @location[:updated_at].present?
+  - if @location.updated_at.present?
 
     %footer
       %section.metadata
@@ -184,5 +185,5 @@
               = @location.updated_at.to_s(:full_date_and_time)
             .button-edit
               = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
-                %i{ class: 'fa fa-pencil' }
+                %i.fa.fa-pencil
                 Edit

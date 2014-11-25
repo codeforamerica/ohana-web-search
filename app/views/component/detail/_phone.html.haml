@@ -1,9 +1,9 @@
 -# The phone partial displays the phone icon, number and extension,
--# as well as the phone type and department.
--# e.g.
--# [icon] (650) 403-4300 x 4385 voice
--# If the `show_phone_type_and_department` local variable is set to true
--# the partial will also include the phone type and phone department.
+  as well as the phone type and department.
+  e.g. [icon] (650) 403-4300 x 4385 voice
+  If the `show_phone_type_and_department` local variable is set to true
+  the partial will also include the phone type and phone department.
+
 - if phone.present?
   %section.phone.icon-text-block{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
     %i{ class: phone_icon_for(phone.number_type) }

@@ -1,5 +1,5 @@
-- if service[:service_areas].present?
-  %section{ class: 'service-areas' }
+- if service.service_areas.present?
+  %section.service-areas
     %h1= t('service_fields.service_areas')
     %ul
       - service.service_areas.sort.each do |f|
