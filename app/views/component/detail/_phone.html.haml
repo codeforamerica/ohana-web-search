@@ -7,14 +7,19 @@
 - if phone.present?
   %section.phone.icon-text-block{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
     %i{ class: phone_icon_for(phone.number_type) }
-    %span.annotated-text-block
-      %span{ itemprop: phone_microdata_for(phone.number_type) }
-        = format_phone(phone.number)
-      - if phone.extension.present?
-        %span.phone-extension
-          %span.delimiter
-            = SETTINGS[:phone_extension_delimiter]
-          %span.extension
-            = phone.extension
-      - if show_phone_type_and_department == true
-        = render 'component/detail/phone_type_and_department', phone: phone
+    %span
+      - if phone.vanity_number.present?
+        %div
+          %span.vanity-number
+            = phone.vanity_number
+      %span.annotated-text-block
+        %span.number{ itemprop: phone_microdata_for(phone.number_type) }
+          = format_phone(phone.number)
+        - if phone.extension.present?
+          %span.phone-extension
+            %span.delimiter
+              = SETTINGS[:phone_extension_delimiter]
+            %span.extension
+              = phone.extension
+        - if show_phone_type_and_department == true
+          = render 'component/detail/phone_type_and_department', phone: phone
