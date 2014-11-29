@@ -30,7 +30,8 @@ install the following tools manually:
 
 Clone it on your computer and navigate to the project's directory:
 
-    git clone https://github.com/<your GitHub username>/ohana-web-search.git && cd ohana-web-search
+    git clone https://github.com/<your GitHub username>/ohana-web-search.git
+    cd ohana-web-search
 
 [fork]: http://help.github.com/fork-a-repo/
 
