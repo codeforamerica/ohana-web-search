@@ -13,9 +13,19 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.consider_all_requests_local = true
+
+  # Uncomment lines 22-28 below to test HTTP caching in development.
+  # Visit the Wiki for more details:
+  # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
+  #
+  # config.action_controller.perform_caching = true
   # config.cache_store = :dalli_store
+  # client = Dalli::Client.new
+  # config.action_dispatch.rack_cache = {
+  #   metastore: client,
+  #   entitystore: client
+  # }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -41,12 +51,6 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
-  # If the app is not using active_record/railtie (see application.rb),
-  # the setting below should be disabled.
-  #
-  # Raise an error on page load if there are pending migrations.
-  # config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
