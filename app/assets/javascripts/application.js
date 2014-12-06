@@ -69,13 +69,13 @@
 // app/assets/javascripts/routes/.
 //
 require([
-  'util/translation/google-translate-manager',
+  'util/translation/google-translate',
   'domReady!'
 ],
 function (googleTranslate) {
   'use strict';
 
-  // The Google translate manager handles loading of the
+  // The google-translate script handles loading of the
   // Google Website Translator Gadget at the bottom of the page's body.
   // The layout settings passed in as an argument to the initialization
   // method can be set to:

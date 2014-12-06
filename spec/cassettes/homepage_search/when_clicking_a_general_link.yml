@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:36 GMT
+      - Fri, 05 Dec 2014 21:05:19 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,40 +32,36 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"eed08327c61955488bf9bdb23aa16910"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=15&service_area=smc>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2&service_area=smc>;
         rel="next"
       X-Total-Count:
       - '15'
-      X-Total-Pages:
-      - '15'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"0b43fafc883176f85b11a879a3f5a490"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 78627928-46d8-4935-9ed5-a556f5839c46
+      - f89b87e6-d6e0-470c-b1dc-22f95a94dd12
       X-Runtime:
-      - '0.092945'
+      - '0.061641'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1503,"admin_emails":[],"coordinates":[-122.2674564,37.5209317],"description":"Offers
+      string: '[{"id":1503,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.2674564,37.5209317],"description":"Offers
         a toll-free number to report Medi-Cal changes, ask questions about health
         coverage and other services.","kind":"Human Services","latitude":37.5209317,"longitude":-122.2674564,"name":"Health
         Insurance TeleCenter","short_desc":"Offers a toll-free number to report Medi-Cal
-        changes, ask questions about health coverage and other services.","slug":"health-insurance-telecenter","slugs":["health-insurance-telecenter"],"updated_at":"2014-05-24T14:08:30.895-07:00","urls":["http://www.smchsa.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/health-insurance-telecenter/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/health-insurance-telecenter/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/health-insurance-telecenter/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/health-insurance-telecenter","address":{"id":1242,"street":"310
-        Harbor Boulevard, Building E","city":"Belmont","state":"CA","zip":"94002"},"organization":{"id":1310,"name":"San
-        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","_slugs":["san-mateo-county-human-services-agency"],"slugs":["san-mateo-county-human-services-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2102,"department":null,"extension":null,"number":"800
+        changes, ask questions about health coverage and other services.","slug":"health-insurance-telecenter","updated_at":"2014-11-30T19:05:14.567-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/health-insurance-telecenter","address":{"id":1242,"street":"310
+        Harbor Boulevard, Building E","street_1":"310 Harbor Boulevard, Building E","street_2":null,"city":"Belmont","state":"CA","state_province":"CA","postal_code":"94002","zip":"94002"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2102,"department":null,"extension":null,"number":"800
         223-8383","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:36 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:19 GMT
+recorded_with: VCR 2.9.3

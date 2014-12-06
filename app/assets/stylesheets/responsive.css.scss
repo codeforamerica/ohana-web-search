@@ -54,12 +54,14 @@
     }
 
     #detail-info {
-      > aside {
+      > .location-sidebar-box {
         float: none;
         margin-left: 0;
         width: 100%;
-        @include single-box-shadow(none);
         border: 0;
+        .location-sidebar {
+          @include border-radius(0);
+        }
       }
 
       .overview-box,
@@ -265,9 +267,13 @@
         display: none;
       }
 
-      .button-directions,
+      .button-share-email,
       .button-map-zoom {
         border-left: 1px dotted $greyscale_light;
+      }
+
+      .button-top {
+        border-right: 1px dotted $greyscale_light;
       }
 
       .pagination {
@@ -371,6 +377,18 @@
     table {
       display: none;
     }
+  }
+
+  // Organizations details component, which shows details for
+  // an organization on the search results view.
+  // This override moves the metadata (incorporation date,
+  // accreditations, licenses) from the right-side
+  // to the bottom of the details on small screen sizes.
+  .organization-detail,
+  .organization-detail .row,
+  .organization-detail .content,
+  .organization-detail .metadata {
+    display: block;
   }
 }
 

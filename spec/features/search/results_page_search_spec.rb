@@ -5,21 +5,26 @@ feature 'searching from results page', :vcr do
   before { visit('/locations') }
 
   context 'when search returns results' do
-    before { search(keyword: 'maceo') }
+    before { search(keyword: 'lorem') }
 
     it 'displays the name of the agency as a link' do
-      expect(page).to have_link('SanMaceo Example Agency')
+      expect(page).to have_link('Example Agency')
     end
 
     it 'displays the name of the location as a link' do
-      location_url = '/locations/sanmaceo-example-agency/' \
-                     'san-maceo-agency?keyword=maceo&' \
+      location_url = '/locations/example-agency/' \
+                     'example-location?keyword=lorem&' \
                      'location=&org_name=&utf8=%E2%9C%93'
-      expect(page).to have_link('San Maceo Agency', href: location_url)
+      expect(page).to have_link('Example Location', href: location_url)
     end
 
     it 'displays the location phone number' do
       expect(page).to have_content('(650) 372-6200')
+      expect(page).not_to have_content('(650) 372-6200 x 123 voice Information')
+    end
+
+    it 'displays the location phone extension' do
+      expect(page).to have_content('x 123')
     end
 
     it 'displays the location address' do
@@ -31,16 +36,16 @@ feature 'searching from results page', :vcr do
     end
 
     it 'displays the number of results' do
-      expect(page).to have_content('Displaying 1 result')
+      expect(page).to have_content('Displaying 1 - 1 of 2 results')
     end
 
     it 'includes the results info in the page title' do
       expect(page).
-        to have_title 'Search results for: keyword: maceo | SMC-Connect'
+        to have_title 'Search results for: keyword: lorem | SMC-Connect'
     end
 
     it 'populates the keyword field with the search term' do
-      expect(find_field('keyword').value).to eq('maceo')
+      expect(find_field('keyword').value).to eq('lorem')
     end
   end
 
@@ -107,6 +112,37 @@ feature 'searching from results page', :vcr do
     visit('/locations?keyword=soccer')
     page.first('a', text: 'Other').click
     expect(find('#list-view')).not_to have_content('Sports')
+  end
+
+  context 'when organization detail box is shown' do
+    before { search(org_name: 'Example Agency') }
+    it 'displays organization name in detail box' do
+      expect(find('.organization-detail')).to have_content('Example Agency')
+    end
+
+    it 'displays organization alternative name' do
+      expect(find('.organization-detail')).to have_content('(Alternate Agency Name)')
+    end
+
+    it 'displays organization website address' do
+      expect(find('.organization-detail')).to have_content('example.org')
+    end
+
+    it 'displays organization email address' do
+      expect(find('.organization-detail')).to have_content('info@example.org')
+    end
+
+    it 'displays organization incorporation date' do
+      expect(find('.organization-detail')).to have_content('Incorporated 1970')
+    end
+
+    it 'displays organization accreditation list' do
+      expect(find('.organization-detail')).to have_content('BBB')
+    end
+
+    it 'displays organization licenses list' do
+      expect(find('.organization-detail')).to have_content('State Board')
+    end
   end
 
   context 'when a search parameter has no value' do

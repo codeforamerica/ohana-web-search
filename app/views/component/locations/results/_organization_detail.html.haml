@@ -1,0 +1,35 @@
+%section.organization-detail{ itemscope: '', itemtype: 'http://schema.org/Organization' }
+  .row
+    %section.content
+      %header
+        %hgroup
+          %h1.name
+            = superscript_ordinals(full_name_content_for(organization))
+      %section
+        %p.description
+          = organization.description
+        = render 'component/detail/website', website: organization.website
+        = render 'component/detail/email', email: organization.email
+
+    - if organization.accreditations.present? || organization.licenses.present?
+      %aside.metadata
+        - if organization.date_incorporated
+
+          %section.date-incorporated
+            Incorporated #{incorporated_year_for(organization.date_incorporated)}
+        - if organization.accreditations.present?
+          %section.accreditations
+            %h1= t('organization_fields.accreditations')
+            %ul
+              - organization.accreditations.sort.each do |accreditation|
+                %li
+                  %span
+                    = accreditation
+        - if organization.licenses.present?
+          %section.licenses
+            %h1= t('organization_fields.licenses')
+            %ul
+              - organization.licenses.sort.each do |license|
+                %li
+                  %span
+                    = license

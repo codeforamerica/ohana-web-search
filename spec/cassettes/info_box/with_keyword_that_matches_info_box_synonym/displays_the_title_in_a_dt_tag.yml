@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:29 GMT
+      - Fri, 05 Dec 2014 21:05:20 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,32 +32,28 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"99c6607a00c93b83b6ee71a62a416353"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=3>; rel="last",
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=4>; rel="last",
         <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=2>; rel="next"
       X-Total-Count:
-      - '3'
-      X-Total-Pages:
-      - '3'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
+      - '4'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"d55d5291c5be6705bc50ac37ad5331d7"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - dd7aa5f9-9170-4823-93cb-dfff233ebf71
+      - b1d4a6a3-d253-4eeb-a0fd-3b8306d8f165
       X-Runtime:
-      - '0.022629'
+      - '0.028423'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1455,"admin_emails":[],"coordinates":[-122.3171637,37.5624546],"description":"Offers
+      string: '[{"id":1455,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.3171637,37.5624546],"description":"Offers
         nutrition education and supplemental foods to women who are pregnant, post-partum
         or breastfeeding, and children age 5 or under. Families may be low- or medium-income
         and working families may also qualify. There are six WIC clinic sites in the
@@ -71,11 +67,12 @@ http_interactions:
         and Children (WIC) Program.","kind":"Human Services","latitude":37.5624546,"longitude":-122.3171637,"name":"Family
         Health Services., Public Health Nutrition., Women, Infants and Children (WIC)
         Program","short_desc":"Offers nutrition education and supplemental foods to
-        low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","slugs":["family-health-services-public-health-nutrition-women-infants-and-children-wic-program"],"updated_at":"2014-05-24T14:08:24.716-07:00","urls":["http://www.smchealth.org/wic"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program","address":{"id":1195,"street":"477
-        9th Avenue, Suite 110","city":"San Mateo","state":"CA","zip":"94402"},"organization":{"id":1309,"name":"San
-        Mateo County Health System","slug":"san-mateo-county-health-system","_slugs":["san-mateo-county-health-system"],"slugs":["san-mateo-county-health-system"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2012,"department":null,"extension":null,"number":"650
+        low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","updated_at":"2014-11-30T19:05:13.334-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program","address":{"id":1195,"street":"477
+        9th Avenue, Suite 110","street_1":"477 9th Avenue, Suite 110","street_2":null,"city":"San
+        Mateo","state":"CA","state_province":"CA","postal_code":"94402","zip":"94402"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2012,"department":null,"extension":null,"number":"650
         573-2168","number_type":null,"vanity_number":null},{"id":2013,"department":"Breastfeeding
         Helpline","extension":null,"number":"800 205-0333","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:29 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:19 GMT
+recorded_with: VCR 2.9.3

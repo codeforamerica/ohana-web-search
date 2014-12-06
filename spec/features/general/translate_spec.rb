@@ -42,7 +42,7 @@ feature 'page translation', :js do
       delay
       find(:css, '#button-search').click
       delay # give Google Translate a chance to translate page
-      expect(page).to have_content('Encontrar') # 'Encontrar' = 'Find'
+      expect(page).to have_content('Encuentre') # 'Encuentre' = 'Find'
     end
   end
 

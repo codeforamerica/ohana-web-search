@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:17:45 GMT
+      - Fri, 05 Dec 2014 21:05:46 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,44 +32,40 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"a2e2ed6de444dbc07a28f1804e50050c"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
       X-Total-Count:
       - '343'
-      X-Total-Pages:
-      - '343'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 5a3ceeb6-7f8c-4fa5-a0a2-0d36871fd563
+      - 45481f7a-6d14-42e3-a4c9-40c284f5f6a1
       X-Runtime:
-      - '0.020158'
+      - '0.023832'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+      string: '[{"id":1371,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.138615,37.444609],"description":"A
         collection of 132,000 items including large print and foreign language books,
         magazines and newspapers, DVDs, audio and video cassettes, compact discs,
         paperbacks, talking books and telephone directories. Business as well as research
         reference is available. Also offers consumer information, photocopiers, bus
         schedules and the files of the Palo Alto Historical Association and Internet
         PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
-        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
-        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
-        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        Library","short_desc":null,"slug":"main-library","updated_at":"2014-11-30T19:05:11.640-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","street_1":"1213 Newell Road","street_2":null,"city":"Palo Alto","state":"CA","state_province":"CA","postal_code":"94303","zip":"94303"},"organization":{"id":1296,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Palo
+        Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:17:45 GMT
+  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=soccer
@@ -93,7 +89,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:17:46 GMT
+      - Fri, 05 Dec 2014 21:05:46 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -102,56 +98,53 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"6f567605d6254bca4b9c8102277cf232"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=soccer&page=3>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=soccer&page=2>;
         rel="next"
       X-Total-Count:
       - '3'
-      X-Total-Pages:
-      - '3'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"91cec380a4d60cf2f573b5e9570a7890"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 225cff22-65a0-42fb-8a1f-6679faa9a9b4
+      - 50df777b-c691-46cd-9124-2d86ba8aad5a
       X-Runtime:
-      - '0.115637'
+      - '0.041627'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1673,"admin_emails":[],"coordinates":[-122.4766884,37.730927],"description":"Offers
+      string: '[{"id":1673,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.4766884,37.730927],"description":"Offers
         licensed elementary school-age childcare at several sites, preschool, youth
         activities, residential camp, day camp and special interest activities including
         programming for children of single parents and family nights. Also offers
-        mentoring, counseling and tutoring services.   The Seniors Drop-In Center
-        provides information and referral, recreational and cultural activities, health
-        screening, blood pressure check-ups, adaptive exercise for stroke survivors,
-        travel program, annual tax preparation assistance, Christmas Day party and
-        companionship for single seniors, and hot lunch served weekdays at 11:45 am.
-        The Senior Program is at 3150 - 20th Avenue, San Francisco. The branch is
-        also a full facility fitness center with an approach to total wellness offering
-        aerobics, swimming, youth sports, stretching and toning, strength training,
-        basketball, martial arts, yoga, tai chi, water aerobics, pilates, dance, youth
-        dance and soccer. Childcare is available for parents while they workout.","kind":"Other","latitude":37.730927,"longitude":-122.4766884,"name":"Stonestown
+        mentoring, counseling and tutoring services. The Seniors Drop-In Center provides
+        information and referral, recreational and cultural activities, health screening,
+        blood pressure check-ups, adaptive exercise for stroke survivors, travel program,
+        annual tax preparation assistance, Christmas Day party and companionship for
+        single seniors, and hot lunch served weekdays at 11:45 am. The Senior Program
+        is at 3150 - 20th Avenue, San Francisco. The branch is also a full facility
+        fitness center with an approach to total wellness offering aerobics, swimming,
+        youth sports, stretching and toning, strength training, basketball, martial
+        arts, yoga, tai chi, water aerobics, pilates, dance, youth dance and soccer.
+        Childcare is available for parents while they workout.","kind":"Other","latitude":37.730927,"longitude":-122.4766884,"name":"Stonestown
         Family YMCA","short_desc":"Athletic/fitness programs for youth/adults, drop-in
-        senior center, meal site, day camp, after school care for children.","slug":"stonestown-family-ymca","slugs":["stonestown-family-ymca"],"updated_at":"2014-05-24T14:07:59.341-07:00","urls":["http://www.ymcasf.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca","address":{"id":1397,"street":"333
-        Eucalyptus Drive","city":"San Francisco","state":"CA","zip":"94132"},"organization":{"id":1341,"name":"YMCA
-        of San Francisco","slug":"ymca-of-san-francisco","_slugs":["ymca-of-san-francisco"],"slugs":["ymca-of-san-francisco"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco/locations"},"phones":[{"id":2449,"department":null,"extension":null,"number":"415
+        senior center, meal site, day camp, after school care for children.","slug":"stonestown-family-ymca","updated_at":"2014-11-30T19:05:17.883-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/stonestown-family-ymca","address":{"id":1397,"street":"333
+        Eucalyptus Drive","street_1":"333 Eucalyptus Drive","street_2":null,"city":"San
+        Francisco","state":"CA","state_province":"CA","postal_code":"94132","zip":"94132"},"organization":{"id":1341,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"YMCA
+        of San Francisco","website":null,"slug":"ymca-of-san-francisco","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco/locations"},"phones":[{"id":2449,"department":null,"extension":null,"number":"415
         242-7100","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:17:46 GMT
+  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&kind=Other
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&kind=Other
     body:
       encoding: US-ASCII
       string: ''
@@ -172,7 +165,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:17:47 GMT
+      - Fri, 05 Dec 2014 21:05:46 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -181,33 +174,28 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"2cf5b74c5ecab376c5f98438089a9a9b"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=46>;
-        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=2>;
-        rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?kind=Other&page=48>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?kind=Other&page=2>; rel="next"
       X-Total-Count:
-      - '46'
-      X-Total-Pages:
-      - '46'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
+      - '48'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"3791e46654238b883b59487eb975bec4"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 5c4118a1-9a1c-4a21-8ba7-aeca5e8bb04d
+      - fbd4f8b6-24ee-4120-9771-3a428e9351fd
       X-Runtime:
-      - '0.022572'
+      - '0.025187'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1373,"admin_emails":[],"coordinates":[-122.3263232,37.5639394],"description":"Provides
+      string: '[{"id":1373,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.3263232,37.5639394],"description":"Provides
         training and job placement to eligible people age 55 or over who meet certain
         income qualifications. An income of 125% of poverty level or less is required
         for subsidized employment and training. (No income requirements for job matchup
@@ -221,9 +209,9 @@ http_interactions:
         Services.","kind":"Other","latitude":37.5639394,"longitude":-122.3263232,"name":"Second
         Career Employment Program","short_desc":"Provides training and job placement
         to eligible persons age 55 or over. All persons age 55 or over have access
-        to information in the program''s job bank.","slug":"second-career-employment-program","slugs":["second-career-employment-program"],"updated_at":"2014-05-24T14:07:51.207-07:00","urls":["http://www.peninsulafamilyservice.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program","address":{"id":1113,"street":"24
-        Second Avenue","city":"San Mateo","state":"CA","zip":"94401"},"organization":{"id":1297,"name":"Peninsula
-        Family Service","slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","_slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"slugs":["peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731/locations"},"phones":[{"id":1851,"department":null,"extension":null,"number":"650
+        to information in the program''s job bank.","slug":"second-career-employment-program","updated_at":"2014-11-30T19:05:11.740-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/second-career-employment-program","address":{"id":1113,"street":"24
+        Second Avenue","street_1":"24 Second Avenue","street_2":null,"city":"San Mateo","state":"CA","state_province":"CA","postal_code":"94401","zip":"94401"},"organization":{"id":1297,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Family Service","website":null,"slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731/locations"},"phones":[{"id":1851,"department":null,"extension":null,"number":"650
         403-4300","number_type":null,"vanity_number":null},{"id":1852,"department":null,"extension":"4385","number":"650
         403-4300","number_type":null,"vanity_number":null},{"id":1853,"department":null,"extension":"4322
         (English)","number":"650 403-4300","number_type":null,"vanity_number":null},{"id":1854,"department":null,"extension":"4392
@@ -234,5 +222,5 @@ http_interactions:
         403-4300","number_type":null,"vanity_number":null},{"id":1859,"department":null,"extension":"4100","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:17:47 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
+recorded_with: VCR 2.9.3

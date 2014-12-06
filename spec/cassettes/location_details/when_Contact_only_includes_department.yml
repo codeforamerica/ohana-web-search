@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/admin-test-location
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 05 Dec 2014 21:05:37 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"4c635ab5a954293a25a943a98c72ef6a"'
+      Last-Modified:
+      - Fri, 05 Dec 2014 20:45:55 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 8bffb154-6579-4bdd-8868-1f416e1a5f8f
+      X-Runtime:
+      - '0.046990'
+      X-Rack-Cache:
+      - pass
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":1711,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.2871612,37.5291938],"description":"This
+        is a description","kind":"Other","latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
+        Test Location","short_desc":"This is a short description","slug":"admin-test-location","updated_at":"2014-12-05T12:45:55.816-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
+        Restroom"],"email":null,"emails":["eml@example.org"],"hours":"Monday-Friday
+        10am-5pm","languages":[],"transportation":"SAMTRANS stops within 1/2 mile.","urls":["http://codeforamerica.org"],"website":null,"address":{"id":1435,"street":"bozo","street_1":"123
+        El Camino Real","street_2":null,"city":"Belmont","state":"va","state_province":"CA","postal_code":"94002","zip":"12345"},"organization":{"id":1366,"alternate_name":null,"name":"Admin
+        Test Org","slug":"admin-test-org","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/admin-test-org"},"phones":[{"id":2530,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703-555-ABCD"},{"id":2541,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"contacts":[{"id":2055,"department":"Office
+        of Innovation","email":null,"name":"Moncef","title":null,"extension":null,"fax":"703-555-1234","phone":"703-555-1212","phones":[]}],"faxes":[{"id":1156,"number":"2025551212","department":"CalFresh"}],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[{"id":1693,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
+        a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"how_to_apply":"By
+        phone during business hours.","keywords":[],"languages":[],"name":"Service
+        for Admin Test Location","required_documents":[],"service_areas":["Belmont"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2014-12-05T09:54:06.736-08:00","urls":[],"wait":null,"categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:05:36 GMT
+recorded_with: VCR 2.9.3

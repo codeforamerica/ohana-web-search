@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:19 GMT
+      - Fri, 05 Dec 2014 21:05:59 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,34 +32,30 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"02e499dea2c994429b9847c8ae3898de"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=5&service_area=smc>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=2&service_area=smc>;
         rel="next"
       X-Total-Count:
       - '5'
-      X-Total-Pages:
-      - '5'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"19f5edefeb84bd7fb8f36bad19dd519b"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 7e0a4722-75fe-44d6-ab07-f36b84ec3e6f
+      - 693dad70-89e0-428c-a5dc-d54323b33591
       X-Runtime:
-      - '0.026250'
+      - '0.030906'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1499,"admin_emails":[],"coordinates":[-122.4741901,37.6896347],"description":"Offers
-        comprehensive employment services for job seekers and employers.   Employer
+      string: '[{"id":1499,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.4741901,37.6896347],"description":"Offers
+        comprehensive employment services for job seekers and employers. Employer
         services include screening and referral of job-ready workers, up to 50% reimbursement
         of wages for new employees during the on-the-job training period, and space
         and resources necessary for recruitment. Offers a job bank to persons age
@@ -74,10 +70,11 @@ http_interactions:
         supplements (CalFresh), and temporary financial assistance (CalWorks and General
         Assistance).","kind":"Human Services","latitude":37.6896347,"longitude":-122.4741901,"name":"Northern
         Region., PeninsulaWorks Daly City","short_desc":"Offers comprehensive employment
-        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","slugs":["northern-region-peninsulaworks-daly-city"],"updated_at":"2014-05-24T14:08:31.023-07:00","urls":["http://www.peninsulaworks.org"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"street":"271
-        - 92nd Street","city":"Daly City","state":"CA","zip":"94015"},"organization":{"id":1310,"name":"San
-        Mateo County Human Services Agency","slug":"san-mateo-county-human-services-agency","_slugs":["san-mateo-county-human-services-agency"],"slugs":["san-mateo-county-human-services-agency"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
+        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","updated_at":"2014-11-30T19:05:14.478-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"street":"271
+        - 92nd Street","street_1":"271 - 92nd Street","street_2":null,"city":"Daly
+        City","state":"CA","state_province":"CA","postal_code":"94015","zip":"94015"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
         301-8440","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:19 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:58 GMT
+recorded_with: VCR 2.9.3

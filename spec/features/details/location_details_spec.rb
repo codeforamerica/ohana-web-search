@@ -4,30 +4,60 @@ feature 'location details' do
 
   context 'when the details page is visited via search results', :vcr do
     it 'includes address elements' do
-      search_for_maceo
+      search_for_example
       visit_details
       expect(page).to have_content('Mailing Address')
       expect(page).to have_content('Physical Address')
       expect(page).to have_content('2013 Avenue of the fellows')
       expect(page).to have_content('90210')
-      expect(page).to have_content('05201')
+      expect(page).to have_content('94103')
     end
   end
 
   context 'when you return to the results page from details page', :js, :vcr do
     it 'displays the same search results' do
-      search_for_maceo
+      search_for_example
       visit_details
-      find_link('maceo@parker.com')
+      find_link('suzanne@example.com')
       find_link('a', text: 'Back').click
       expect(page).to have_selector('#list-view')
-      expect(page.find('.agency')).to have_link('SanMaceo Example Agency.')
+      expect(page.find('.agency')).to have_link('Example Agency')
     end
   end
 
-  scenario 'when the details page is visited directly', :vcr do
-    visit_test_location
-    expect(page).to have_content('2013 Avenue of the fellows')
+  context 'when the details page is visited directly', :vcr do
+    it 'includes the location' do
+      visit_test_location
+      expect(page).to have_content('2013 Avenue of the fellows')
+    end
+
+    it 'includes the share via email link' do
+      visit_test_location
+
+      name = find('h1.name').text
+
+      expect(page).to have_link(
+        'Email',
+        href: "mailto:?Subject=#{subject_for(name)}&"\
+          "body=#{body_for(name, current_url)}"
+      )
+    end
+
+    def subject_for(name)
+      I18n.t(
+        'views.share.email.subject',
+        location_name: name,
+        site_title: SETTINGS[:site_title]
+      )
+    end
+
+    def body_for(name, url)
+      I18n.t(
+        'views.share.email.body',
+        location_name: name,
+        location_url: url
+      ).chop
+    end
   end
 
   context 'when the details page is visited directly with invalid id', :vcr do
@@ -66,60 +96,13 @@ feature 'location details' do
       expect(page).to have_content('General Contact Info')
     end
 
-    it 'includes the department and phone type' do
-      expect(page).to have_content('(650) 372-6200 TTY Information')
+    it 'includes the phone number, type, and department' do
+      expect(page).to have_content('(650) 627-8244 fax Reservations')
     end
 
-    it 'includes the Fax number' do
-      expect(page).to have_content('(650) 627-8244')
+    it 'includes the phone number, extension, type, and department' do
+      expect(page).to have_content('(650) 372-6200 x 123 voice Information')
     end
-
-    it 'specifies TTY numbers' do
-      expect(page).to have_content('(650) 372-6200 TTY')
-    end
-
-  end
-
-  context 'when service elements are present' do
-    before(:each) do
-      cassette = 'location_details/when_the_details_page_is_visited_directly'
-      VCR.use_cassette(cassette) do
-        visit_test_location
-      end
-    end
-
-    it 'includes eligibility info' do
-      expect(page).to have_content('None')
-    end
-
-    it 'includes audience info' do
-      expect(page).to have_content('Profit and nonprofit businesses')
-    end
-
-    it 'includes fees info' do
-      expect(page).to have_content('permits and photocopying')
-    end
-
-    it 'includes hours info' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
-    end
-
-    it 'includes how to apply info' do
-      expect(page).to have_content('Walk in or apply by phone or mail')
-    end
-
-    it 'includes wait estimate info' do
-      expect(page).to have_content('No wait to 2 weeks')
-    end
-
-    it 'includes service areas info' do
-      expect(page).to have_content('San Mateo County')
-    end
-
-    it 'includes updated time' do
-      expect(page).to have_content('Friday, 15 August 2014 at 2:06 PM PDT')
-    end
-
   end
 
   context 'when location elements are present' do
@@ -138,39 +121,47 @@ feature 'location details' do
     end
 
     it 'includes description' do
-      expect(page).to have_content('Lorem ipsum')
+      expect(find('.overview-box .description')).to have_content('Lorem ipsum')
     end
 
-    it 'includes transporation info' do
+    it 'includes transportation' do
       expect(page).to have_content('SAMTRANS stops within 1 block')
     end
 
-    it 'includes hours info' do
-      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
+    it 'includes regular hour schedule' do
+      selector = '.location-sidebar .regular-schedules'
+      content = 'Monday - Friday: 8:00am - 5:00pm'
+      expect(find(selector)).to have_content(content)
     end
 
-    it 'includes languages info' do
-      expect(page).to have_content('Chinese (Cantonese)')
+    it 'includes holiday hour schedule' do
+      selector = '.location-sidebar .holiday-schedules'
+      content = 'January 1: CLOSED'
+      expect(find(selector)).to have_content(content)
     end
 
-    it 'includes accessibility info' do
+    it 'includes languages' do
+      expect(page).to have_content('Cantonese')
+    end
+
+    it 'includes accessibility' do
       expect(page).to have_content('Disabled Parking')
     end
 
-    it 'includes email info' do
-      expect(page).to have_link('sanmaceo@co.sanmaceo.ca.us')
+    it 'includes email' do
+      expect(page).to have_link('info@example.org')
     end
 
-    it 'includes URLs' do
-      expect(page).to have_link('www.smchealth.org')
+    it 'includes website' do
+      expect(page).to have_link('www.example.org')
     end
 
-    it 'includes Physical Address info' do
+    it 'includes Physical Address' do
       expect(page).to have_content('Avenue of the fellows')
     end
 
-    it 'includes Mailing Address info' do
-      expect(page).to have_content('Hella Fellas')
+    it 'includes Mailing Address' do
+      expect(page).to have_content('The Foodies')
     end
 
     xit 'includes keywords' do
@@ -178,11 +169,15 @@ feature 'location details' do
     end
 
     it 'sets the page title to the location name + site title' do
-      expect(page).to have_title('San Maceo Agency | SMC-Connect')
+      expect(page).to have_title('Example Location | SMC-Connect')
     end
 
     it 'includes a link to other locations of the same Kind' do
       expect(page).to have_link 'Other', href: locations_path(kind: 'Other')
+    end
+
+    it 'includes updated time' do
+      expect(page).to have_content('Friday, 5 December 2014 at 10:04 AM PST')
     end
   end
 
@@ -201,24 +196,38 @@ feature 'location details' do
       expect(page).to have_content('Suzanne Badenhoop')
     end
 
-    it 'includes contact title' do
-      expect(page).to have_content('Board President')
+    it 'includes contact title and department' do
+      within('.location-sidebar .contact-details') do
+        expect(page).to have_content('Board President, Referrals')
+      end
+    end
+
+    it 'includes contact phone number, type, and department' do
+      expect(page).to have_content('(202) 555-1212 fax Referrals')
+    end
+
+    it 'includes contact phone number, extension, type, and department' do
+      expect(page).to have_content('(123) 456-7890 x 1200 voice Referrals')
     end
 
     it 'includes contact email' do
-      expect(page).to have_content('suzanne@example.org')
+      expect(page).to have_content('suzanne@example.com')
     end
+  end
 
-    it 'includes contact phone' do
-      expect(page).to have_content('(123) 456-7890')
+  scenario 'when Contact only includes department', :vcr do
+    visit('/locations/admin-test-org/admin-test-location')
+    within('.location-sidebar .contact-box-specific') do
+      expect(page).to have_content('Office of Innovation')
+      expect(page).to_not have_selector('contact-title')
     end
+  end
 
-    it 'includes contact phone extension' do
-      expect(page).to have_content('x1200')
-    end
-
-    it 'includes contact fax' do
-      expect(page).to have_content('(202) 555-1212')
+  scenario 'when Contact only includes title', :vcr do
+    visit('/locations/san-pedro-valley-park')
+    within('.location-sidebar') do
+      expect(page).to have_content('Supervising Ranger')
+      expect(page).to_not have_selector('contact-department')
     end
   end
 
@@ -259,7 +268,7 @@ feature 'location details' do
     it 'points to the corresponding location in the admin site' do
       admin_site = 'http://admin.smc-connect.org'
       expect(page).
-        to have_link('Edit', href: "#{admin_site}/locations/san-maceo-agency")
+        to have_link('Edit', href: "#{admin_site}/locations/example-location")
     end
 
     it 'includes rel=nofollow' do

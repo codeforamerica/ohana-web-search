@@ -2,6 +2,8 @@
   #map-canvas
   = render 'component/search/map_data'
   %noscript
-    %style>
-      -# hides map when JS is disabled
-      = '#map-view {display:none !important;}'
+    -# Hide map when JavaScript is disabled.
+    :sass
+      #floating-results-header .static-content,
+      #map-view
+        display: none !important

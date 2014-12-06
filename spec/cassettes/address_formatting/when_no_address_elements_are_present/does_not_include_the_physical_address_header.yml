@@ -15,30 +15,47 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 200
+      message: OK
     headers:
       Server:
       - Cowboy
       Connection:
-      - keep-alive
+      - close
       Date:
-      - Thu, 28 Aug 2014 17:18:51 GMT
+      - Fri, 05 Dec 2014 21:05:35 GMT
       Status:
-      - 500 Internal Server Error
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"eb9c12f723f9a47c3894b8bdaa2f0765"'
+      Last-Modified:
+      - Fri, 05 Dec 2014 17:51:25 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '48'
+      Cache-Control:
+      - max-age=0, public
       X-Request-Id:
-      - 4fb97fed-7951-477c-b8c4-bbb67b737bfc
+      - 0fc77506-0862-4c20-abf2-2a4de1e72d3e
       X-Runtime:
-      - '0.010563'
+      - '0.038519'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"status":"500","error":"Internal Server Error"}'
+      string: '{"id":1712,"active":false,"admin_emails":[],"alternate_name":null,"coordinates":[],"description":"no
+        phone","kind":"Other","latitude":null,"longitude":null,"name":"Location with
+        no phone","short_desc":"no phone","slug":"location-with-no-phone","updated_at":"2014-12-05T09:51:25.445-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","accessibility":[],"email":null,"emails":[],"hours":null,"languages":[],"transportation":null,"urls":[],"website":null,"address":null,"organization":{"id":1367,"alternate_name":null,"name":"Testing
+        org","slug":"testing-org","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/testing-org"},"phones":[],"contacts":[],"faxes":[],"mail_address":{"id":1688,"attention":"","street":"puma","street_1":"puma","street_2":null,"city":"fairfax","state":"VA","state_province":"VA","postal_code":"22031","zip":"22031"},"regular_schedules":[],"holiday_schedules":[],"services":[{"id":1694,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"no
+        unrequired fields for this service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"how_to_apply":"Walk
+        in.","keywords":[],"languages":[],"name":"Service with blank fields","required_documents":[],"service_areas":[],"status":"defunct","website":null,"wait_time":null,"updated_at":"2014-12-05T09:51:25.429-08:00","urls":[],"wait":null,"categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:51 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:34 GMT
+recorded_with: VCR 2.9.3

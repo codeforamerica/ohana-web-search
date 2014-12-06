@@ -3,7 +3,7 @@ define([
   'search/filter/TextInput',
   'search/filter/CheckboxSubtractive',
   'util/geolocation/geolocate-action',
-  'app/alert-manager',
+  'app/alerts',
   'domReady!'
 ],
 function (TextInput, CheckboxSubtractive, geo, alert) {

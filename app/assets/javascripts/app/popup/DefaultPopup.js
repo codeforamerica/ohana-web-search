@@ -1,20 +1,25 @@
 // Used for creating a popup that appears when the designated link is clicked.
 define([
-  'util/util'
+  'util/util',
+  'util/EventObserver'
 ],
-function (util) {
+function (util, eventObserver) {
   'use strict';
 
   // Create a DefaultPopup instance.
   // @return [Object] The DefaultPopup instance.
-  function create(link) {
-    return new DefaultPopup().init(link);
+  function create() {
+    return new DefaultPopup();
   }
 
   function DefaultPopup() {
+    var _instance = this;
 
     // The events this instance broadcasts.
-    var _events = {};
+    var _events = {
+      SHOW: 'show',
+      HIDE: 'hide'
+    };
 
     // The trigger link to show/hide the popup.
     var _link;
@@ -37,15 +42,26 @@ function (util) {
     // Padding set on article > div inside the popup.
     var _popupPadding;
 
-    var instance = this;
-
     // Initialize the popup.
-    // @return [Object] The DefaultPopup instance.
-    function init(link) {
+    // @param link [String] An HTML anchor element
+    //   that contains the Popup ID as a hash.
+    // @param instance [Object] Optional reference to an instance.
+    //   If this DefaultPopup is extended by another popup the instance should
+    //   point to that descendant popup instead of this instance.
+    // @return [Object] The DefaultPopup instance,
+    //   or the instance passed into the init method.
+    function init(link, instance) {
+
+      if (instance) _instance = instance;
+      eventObserver.attach(_instance);
+
       _link = link;
       _popup = document.querySelector(_link.hash);
-
-      if (!_link || !_popup) _throwInitializationError();
+      if (!_link || !_popup) {
+        var message = 'Popup has not been properly initialized! ' +
+                      'Check HTML id and ensure init method has been called.';
+        throw new Error(message);
+      }
 
       _container = _popup.parentNode;
       _arrow = _container.children[0];
@@ -63,7 +79,10 @@ function (util) {
       _popupPadding = parseInt(padding, 10);
       _updatePopupContentWidth();
 
-      return instance;
+      _instance.show = show;
+      _instance.hide = hide;
+      _instance.toggle = toggle;
+      return _instance;
     }
 
     // Show the popup.
@@ -71,7 +90,7 @@ function (util) {
     function toggle() {
       if (_isShowing()) hide();
       else show();
-      return instance;
+      return _instance;
     }
 
     // Show the popup.
@@ -79,8 +98,8 @@ function (util) {
     function show() {
       _render();
       window.addEventListener('resize', _resizeHandler, true);
-      _broadcastEvent('show', {target:instance});
-      return instance;
+      _instance.dispatchEvent(_events.SHOW, {target:_instance});
+      return _instance;
     }
 
     // Hide the popup.
@@ -89,27 +108,9 @@ function (util) {
       if (_isShowing()) {
         _container.classList.add('hide');
         window.removeEventListener('resize', _resizeHandler, true);
-        _broadcastEvent('hide', {target:instance});
+        _instance.dispatchEvent(_events.HIDE, {target:_instance});
       }
-      return instance;
-    }
-
-    // @param event [String] The event name to listen for.
-    //   Supports 'show' and 'hide'.
-    // @param callback [Function] The function called when the event has fired.
-    // @return [Object] The DefaultPopup instance.
-    function addEventListener(event, callback) {
-      _events[event] = callback;
-      return instance;
-    }
-
-    // @param evt [String] The type of event to broadcast.
-    //   Supports 'show' and 'hide'.
-    // @param options [Object] The event object to pass to the event handler.
-    function _broadcastEvent(evt, options) {
-      options = options || {};
-      if (_events[evt])
-        _events[evt].call(_events[evt], options);
+      return _instance;
     }
 
     function _linkClickHandler(evt) {
@@ -178,23 +179,12 @@ function (util) {
     }
 
     // Handler for closing the popup.
-    function _closeClickedHandler(evt) {
+    function _closeClickedHandler() {
       hide();
     }
 
-    function _throwInitializationError() {
-      var message = 'A popup with id "' + _link.hash +
-                    '" was not initialized!';
-      throw new Error(message);
-    }
-
-    instance.init = init;
-    instance.show = show;
-    instance.hide = hide;
-    instance.toggle = toggle;
-    instance.addEventListener = addEventListener;
-
-    return instance;
+    _instance.init = init;
+    return _instance;
   }
 
   return {

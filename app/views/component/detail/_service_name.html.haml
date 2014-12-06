@@ -1,4 +1,6 @@
-- if service[:name].present?
-  %section{ class: 'name' }
-    %span
-      = service.name
+%section.name-box
+  %span.name
+    = service.name
+  - if service.alternate_name.present?
+    %span.alternate-name
+      (#{service.alternate_name})

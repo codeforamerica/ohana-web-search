@@ -13,14 +13,11 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
 
-  # Uncomment the section below to test HTTP caching in development.
-  # You'll need to install memcached if you don't already have it:
-  # brew install memcached
-  # Also make sure to set the following key in the development section of
-  # application.yml:
-  # ENABLE_CACHING: 'true'
+  # Uncomment lines 22-28 below to test HTTP caching in development.
+  # Visit the Wiki for more details:
+  # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
   #
   # config.action_controller.perform_caching = true
   # config.cache_store = :dalli_store

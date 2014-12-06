@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:11 GMT
+      - Fri, 05 Dec 2014 21:05:49 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,44 +32,40 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"a2e2ed6de444dbc07a28f1804e50050c"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
       X-Total-Count:
       - '343'
-      X-Total-Pages:
-      - '343'
-      X-Current-Page:
-      - '1'
-      X-Next-Page:
-      - '2'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"976f4ec63adb419df1a1ff1dc62ea9f4"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 6ae64471-263c-4b88-83f1-a5fb05410067
+      - 8dca7d17-6ec1-4ce3-b909-0ae3457c3294
       X-Runtime:
-      - '0.021844'
+      - '0.022232'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1371,"admin_emails":[],"coordinates":[-122.138615,37.444609],"description":"A
+      string: '[{"id":1371,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.138615,37.444609],"description":"A
         collection of 132,000 items including large print and foreign language books,
         magazines and newspapers, DVDs, audio and video cassettes, compact discs,
         paperbacks, talking books and telephone directories. Business as well as research
         reference is available. Also offers consumer information, photocopiers, bus
         schedules and the files of the Palo Alto Historical Association and Internet
         PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
-        Library","short_desc":null,"slug":"main-library","slugs":["main-library"],"updated_at":"2014-05-24T14:07:15.187-07:00","urls":["http://www.cityofpaloalto.org/library"],"contacts_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/contacts","faxes_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/faxes","services_url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library/services","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
-        Newell Road","city":"Palo Alto","state":"CA","zip":"94303"},"organization":{"id":1296,"name":"Palo
-        Alto City Library","slug":"palo-alto-city-library","_slugs":["palo-alto-city-library"],"slugs":["palo-alto-city-library"],"urls":[],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        Library","short_desc":null,"slug":"main-library","updated_at":"2014-11-30T19:05:11.640-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"street":"1213
+        Newell Road","street_1":"1213 Newell Road","street_2":null,"city":"Palo Alto","state":"CA","state_province":"CA","postal_code":"94303","zip":"94303"},"organization":{"id":1296,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Palo
+        Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:11 GMT
+  recorded_at: Fri, 05 Dec 2014 21:05:48 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=22031&org_name=&utf8=%E2%9C%93
@@ -93,7 +89,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:12 GMT
+      - Fri, 05 Dec 2014 21:05:49 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -102,28 +98,28 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"87bfbed89d4900d8d2ea6eb430049ced"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=22031&org_name=&page=0&utf8=%E2%9C%93>;
         rel="last"
       X-Total-Count:
       - '0'
-      X-Total-Pages:
-      - '0'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - d149c160-9f62-4c98-9eb8-8d53fb36799a
+      - 34067158-1892-4215-af82-937dad8d57d2
       X-Runtime:
-      - '0.013633'
+      - '0.021659'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:12 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:49 GMT
+recorded_with: VCR 2.9.3

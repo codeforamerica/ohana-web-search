@@ -6,23 +6,21 @@
     %p
       = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank'
 
-    %section#feedback-form
+    %section.feedback-form
       %p
         %label{ for: 'comment' }
           = t('views.feedback.submit_comment_label')
-        %textarea{ name: 'comment', id: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: ''}
+        %textarea.comment{ name: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: ''}
       %p
         %label{ for: 'email' }
           Email:
-        %input{ name: 'email', id: 'email', type: 'email', placeholder: 'your email address (optional)', pattern: '/.+@.+\..+/i' }
-
+        %input.email{ name: 'email', type: 'email', placeholder: 'your email address (optional)', pattern: '/.+@.+\..+/i' }
       %p
-        %button{ type: 'submit', id: 'feedback-form-btn', disabled: 'disabled' }
+        %button.button-feedback-send{ type: 'submit', disabled: 'disabled' }
           Send!
 
     %noscript
-      %style
-        -# Hides ajax-enabled feedback form when JavaScript is disabled.
-        = '#feedback-form { display: none; }'
-      = link_to 'Visit this form', 'http://ohanapi.org/#contribute', target: '_blank'
-      to submit comments.
+      -# Hides ajax-enabled feedback form when JavaScript is disabled.
+      :sass
+        #feedback-box .feedback-form
+          display: none

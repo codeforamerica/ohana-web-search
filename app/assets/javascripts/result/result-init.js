@@ -1,6 +1,6 @@
 require([
-  'result/result-map-manager',
-  'search/header-manager'
+  'result/result-map',
+  'search/header'
 ],
 function (map, header) {
   'use strict';
@@ -19,7 +19,7 @@ function (err) {
   console.log('RequireJS threw an Error:', failedId, err.requireType, err);
 
   // Initialize no map loaded state.
-  require(['result/no-result-map-manager', 'search/header-manager'],
+  require(['result/no-result-map', 'search/header'],
     function (map, header) {
 
     map.init();
