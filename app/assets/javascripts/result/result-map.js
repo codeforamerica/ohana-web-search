@@ -27,8 +27,8 @@ function (BitMask, markers, googleMaps) {
   var _markerBounds;
 
   // 'Constants' for map button text content.
-  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
-  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
+  var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map"; // jshint ignore:line
+  var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map"; // jshint ignore:line
 
   // The spiderfier layer for handling overlapping markers.
   // See https://github.com/jawj/OverlappingMarkerSpiderfier
@@ -196,7 +196,8 @@ function (BitMask, markers, googleMaps) {
     // cause the info box to move to the last unspiderfied marker when
     // clicking a regular marker in some cases.
     google.maps.event.addListener(_infoBox,
-                                  'position_changed', function(evt) {
+                                  'position_changed',
+                                  function(evt) { // jshint ignore:line
       this.close();
       _infoBoxState.turnOff(SHOW_INFOBOX);
     });
@@ -232,17 +233,17 @@ function (BitMask, markers, googleMaps) {
     _mapCanvas.removeEventListener('touchstart', _mapTouch, false);
   }
 
-  function _overInfoBoxHandler(evt) {
+  function _overInfoBoxHandler(evt) { // jshint ignore:line
     _infoBoxState.turnOn(OVER_INFOBOX);
     _updateInfoBoxState();
   }
 
-  function _leaveInfoBoxHandler(evt) {
+  function _leaveInfoBoxHandler(evt) { // jshint ignore:line
     _infoBoxState.turnOff(OVER_INFOBOX);
     _updateInfoBoxState();
   }
 
-  function _closeInfoBoxHandler(evt) {
+  function _closeInfoBoxHandler(evt) { // jshint ignore:line
     _turnOffInfoBoxStates();
     _updateInfoBoxState(0);
   }
@@ -370,12 +371,12 @@ function (BitMask, markers, googleMaps) {
       if (orgName !== markerData.name)
         agency = '<h2>' + orgName + '</h2>';
 
-      var content = "<div><div class='button-close'></div>" +
+      var content = "<div><div class='button-close'></div>" + // jshint ignore:line
                     '<h1>' + mainName + '</h1>' + agency +
                     '<p>' + markerData.street_address + ', ' +
-                    markerData.city + '</p>' + "<p><a href='/locations/" +
+                    markerData.city + '</p>' + "<p><a href='/locations/" + // jshint ignore:line
                     markerData.slug+(window.location.search) +
-                    "'>View more details…</a></p></div>";
+                    "'>View more details…</a></p></div>"; // jshint ignore:line
 
       _makeInfoBoxEvent(marker, content);
 
@@ -446,7 +447,9 @@ function (BitMask, markers, googleMaps) {
   function _makeInfoBoxEvent(marker, content) {
 
     // Change marker icon appearances when the markers spiderfy.
-    _spiderfier.addListener('spiderfy', function(spiderfied, unspiderfied) {
+    _spiderfier.addListener('spiderfy',
+                            function(spiderfied,
+                                     unspiderfied) { // jshint ignore:line
       _infoBoxState.turnOn(HAS_SPIDERFIED);
       var index = spiderfied.length - 1;
       while(index >= 0) {
@@ -455,7 +458,9 @@ function (BitMask, markers, googleMaps) {
     });
 
     // Change marker icon appearances when the markers unspiderfy.
-    _spiderfier.addListener('unspiderfy', function(spiderfied, unspiderfied) {
+    _spiderfier.addListener('unspiderfy',
+                            function(spiderfied,
+                                     unspiderfied) { // jshint ignore:line
       var index = spiderfied.length - 1;
       while(index >= 0) {
         _setIcon(spiderfied[index--], true);

@@ -64,7 +64,7 @@ function (util, cookie, DropDownLayout) {
       layout: _getGoogleLayout(),
       autoDisplay: false
     };
-    new google.translate.TranslateElement( gadgetOptions,
+    new google.translate.TranslateElement( gadgetOptions,  // jshint ignore:line
                                            GOOGLE_TRANSLATE_ELEMENT_ID );
 
     // Activate hooks to manipulate Google Website Translator Gadget through
