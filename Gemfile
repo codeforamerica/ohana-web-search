@@ -64,7 +64,7 @@ group :development do
   gem 'letter_opener', '~> 1.2.0'
 
   # For linting JS with `rake jshint`.
-  gem 'jshintrb'
+  gem 'jshint'
 
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'

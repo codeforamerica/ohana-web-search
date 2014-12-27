@@ -33,9 +33,10 @@ function () {
     function showLess() {
       _fulltext = _fulltext.trim();
       var c = _fulltext.substr(0, defaults.SHOW_CHAR);
-      var h = _fulltext.substr(defaults.SHOW_CHAR - 1, _fulltext.length - defaults.SHOW_CHAR);
+      var h = _fulltext.substr(defaults.SHOW_CHAR - 1,
+                               _fulltext.length - defaults.SHOW_CHAR);
 
-      // if truncated content is less than SOFT_LIMIT, remove truncation.
+      // If truncated content is less than SOFT_LIMIT, remove truncation.
       if (h.length < defaults.SOFT_LIMIT) {
         c += h;
         h = '';
@@ -45,7 +46,8 @@ function () {
         _showHideElm.innerHTML = defaults.MORE_TEXT;
 
         var html = c + '<span class="moreellipses">' +
-                  defaults.ELLIPSES_TEXT + '&nbsp;</span><span><span class="hide">' +
+                  defaults.ELLIPSES_TEXT +
+                  '&nbsp;</span><span><span class="hide">' +
                   h + '</span></span>';
 
         _elm.innerHTML = html;
