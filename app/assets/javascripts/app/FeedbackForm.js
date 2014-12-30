@@ -27,6 +27,8 @@ function (alerts, util, eventObserver, $) {
     var _commentInput;
     var _emailInput;
 
+    // @param selector [String] The HTML DOM selector for the feedback form.
+    // jshint validthis: true
     function init(selector) {
       var form = document.querySelector(selector);
       _sendBtn = form.querySelector('.button-feedback-send');
@@ -47,7 +49,7 @@ function (alerts, util, eventObserver, $) {
     function _sendBtnClicked(evt) {
       // Stop the form from submitting.
       evt.preventDefault();
-      var emailCheck = new RegExp('.+@.+\..+','i'); // jshint ignore:line
+      var emailCheck = new RegExp('.+@.+\..+','i');
       var match = emailCheck.exec(_emailInput.value);
       if (match || _emailInput.value === '')
         _feedbackFormSend();

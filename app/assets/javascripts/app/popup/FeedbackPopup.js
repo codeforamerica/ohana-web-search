@@ -25,7 +25,7 @@ function (DefaultPopup, FeedbackForm) {
       return instance;
     };
 
-    function _feedbackFormSent(evt) {
+    function _feedbackFormSent() {
       _instance.hide();
     }
 
