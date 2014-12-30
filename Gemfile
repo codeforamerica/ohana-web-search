@@ -56,7 +56,7 @@ end
 
 # dev and debugging tools
 group :development do
-  gem 'quiet_assets', '~> 1.0.3'
+  gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_19, :rbx]
 
