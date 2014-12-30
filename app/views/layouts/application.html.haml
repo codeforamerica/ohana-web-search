@@ -8,7 +8,7 @@
   %head
     = render 'shared/head'
 
-  %body{class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}"}
+  %body{ class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}" }
     %section#content
       = render 'shared/alert'
       = render 'shared/header'

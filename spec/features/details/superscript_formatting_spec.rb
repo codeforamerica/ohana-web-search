@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'superscript formatting' do
-
   scenario 'when the string is safe' do
     VCR.use_cassette(
       'dynamic/location_details/superscript_dynamic',
@@ -24,5 +23,4 @@ feature 'superscript formatting' do
         to have_content(script)
     end
   end
-
 end

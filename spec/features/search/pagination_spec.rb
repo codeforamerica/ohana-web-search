@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'results page pagination', :vcr do
-
   context 'when there are no results' do
     before { visit '/locations?keyword=asdfg' }
 

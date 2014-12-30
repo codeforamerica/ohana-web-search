@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'homepage search' do
-
   scenario 'with keyword that returns results', :vcr do
     search_for_example
     looks_like_results

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'searching from results page', :vcr do
-
   before { visit('/locations') }
 
   context 'when search returns results' do

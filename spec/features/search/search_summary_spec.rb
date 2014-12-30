@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'Search summary' do
-
   scenario 'when visiting search results page that has results', :vcr do
     search_for_example
     # Expect only static and floating search results summary,
@@ -20,5 +19,4 @@ feature 'Search summary' do
     expect(all('.results-header .search-summary', text: 'No results').count).
       to eq(2)
   end
-
 end

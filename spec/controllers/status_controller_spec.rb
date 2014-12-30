@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 describe StatusController do
-
   describe 'GET /.well-known/status' do
-
     context 'when everything is fine', :vcr do
       it 'returns success' do
         get 'check_status'

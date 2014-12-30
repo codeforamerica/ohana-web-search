@@ -21,7 +21,7 @@ gem 'uglifier'
 gem 'requirejs-rails', '~> 0.9.2'
 
 # For HAML HTML view templates.
-gem 'haml-rails', '~> 0.5.3'
+gem 'haml-rails'
 
 # SERVER
 
