@@ -175,8 +175,7 @@ function (BitMask, markers, googleMaps) {
     // Register events for map interactivity.
     google.maps.event.addListener(_map, 'idle', _mapIdle);
     google.maps.event.addListener(_map, 'click', _mapClick);
-    _mapSizeControl.addEventListener('click',
-                                     _mapSizeControlClicked, false);
+    _mapSizeControl.addEventListener('click', _mapSizeControlClicked, false);
 
     _mapCanvas.addEventListener('touchstart', _mapTouch, false);
 
@@ -184,20 +183,15 @@ function (BitMask, markers, googleMaps) {
     google.maps.event.addListener(_infoBox, 'domready', function() {
       var contentDiv = _mapCanvas.querySelector('.infoBox');
       var buttonClose = contentDiv.querySelector('.button-close');
-      contentDiv.addEventListener('mousemove',
-                                  _overInfoBoxHandler, false);
-      contentDiv.addEventListener('mouseleave',
-                                  _leaveInfoBoxHandler, false);
-      buttonClose.addEventListener('mousedown',
-                                   _closeInfoBoxHandler, false);
+      contentDiv.addEventListener('mousemove', _overInfoBoxHandler, false);
+      contentDiv.addEventListener('mouseleave', _leaveInfoBoxHandler, false);
+      buttonClose.addEventListener('mousedown', _closeInfoBoxHandler, false);
     });
 
     // Hack to close the info box when it moves. The spiderfier layer can
     // cause the info box to move to the last unspiderfied marker when
     // clicking a regular marker in some cases.
-    google.maps.event.addListener(_infoBox,
-                                  'position_changed',
-                                  function(evt) { // jshint ignore:line
+    google.maps.event.addListener(_infoBox, 'position_changed', function() {
       this.close();
       _infoBoxState.turnOff(SHOW_INFOBOX);
     });
@@ -233,17 +227,17 @@ function (BitMask, markers, googleMaps) {
     _mapCanvas.removeEventListener('touchstart', _mapTouch, false);
   }
 
-  function _overInfoBoxHandler(evt) { // jshint ignore:line
+  function _overInfoBoxHandler() {
     _infoBoxState.turnOn(OVER_INFOBOX);
     _updateInfoBoxState();
   }
 
-  function _leaveInfoBoxHandler(evt) { // jshint ignore:line
+  function _leaveInfoBoxHandler() {
     _infoBoxState.turnOff(OVER_INFOBOX);
     _updateInfoBoxState();
   }
 
-  function _closeInfoBoxHandler(evt) { // jshint ignore:line
+  function _closeInfoBoxHandler() {
     _turnOffInfoBoxStates();
     _updateInfoBoxState(0);
   }
