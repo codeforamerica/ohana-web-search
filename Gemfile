@@ -61,7 +61,7 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_19, :rbx]
 
   # For mocking emails for sending.
-  gem 'letter_opener', '~> 1.2.0'
+  gem 'letter_opener'
 
   # For linting JS with `rake jshint`.
   gem 'jshint'
