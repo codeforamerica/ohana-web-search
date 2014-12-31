@@ -1,18 +1,11 @@
-bundler_args: "--without development:production"
-install: bin/wad
-script: bundle exec rspec
 language: ruby
+bundler_args: "--without development:production"
+cache: bundler
+sudo: false
+script: bundle exec rspec
 rvm:
 - 2.1.5
 notifications:
-  campfire:
-    rooms:
-    - secure: |-
-        eEuzoYFXLPeIMt+zHGzZp6XCvbfxRDe8FA3kVwrNRB0zoOktPRZXD9O8ng2z
-        x2Yg8C7i1unstuW0bjPvwphpdxJOTFSxliw6P4Xk1Y9HnTYQqqUbDat/zL9c
-        AyjYezuRQgYFSBP2BgNZ2RL9RiLSyLQBWhcHGB0yBS6rsheKWbk=
-    on_success: never
-    on_failure: always
   webhooks: http://cfa-project-monitor.herokuapp.com/projects/67f80d53-afb0-4344-bd40-2644f55a4462/status
 env:
   global:
