@@ -1,7 +1,7 @@
 %div
   - if @location.key?(:payments) || @location.key?(:market_match)
     %section.payments-accepted
-      %i{ class: 'fa fa-money' }
+      %i.fa.fa-money
       %h1 Payment methods accepted:
       %ul
         - if @location[:payments].present?
@@ -25,7 +25,7 @@
                 Market Match
     - if @location.key?(:products)
       %section.products-sold
-        %i{ class: 'fa fa-shopping-cart' }
+        %i.fa.fa-shopping-cart
         %h1 Products sold:
         %ul
           - @location.products.sort.each do |product|

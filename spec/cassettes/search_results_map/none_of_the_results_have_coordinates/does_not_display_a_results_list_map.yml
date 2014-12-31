@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&org_name=Location%20with%20no%20phone
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&org_name=Location%20with%20no%20phone
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Thu, 28 Aug 2014 17:18:33 GMT
+      - Fri, 05 Dec 2014 21:06:04 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,28 +32,28 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"d08e01b8de5faff4aae47ecf72a8bc22"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&org_name=Location+with+no+phone&page=0>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?org_name=Location+with+no+phone&page=0>;
         rel="last"
       X-Total-Count:
       - '0'
-      X-Total-Pages:
-      - '0'
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - max-age=0, public
       X-Request-Id:
-      - 2d07dcaa-69cf-4d91-8b1d-9b45e3c8f6cd
+      - 86f30685-6f56-407d-b5c1-88597b6e7026
       X-Runtime:
-      - '0.080046'
+      - '0.128286'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Thu, 28 Aug 2014 17:18:33 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:06:03 GMT
+recorded_with: VCR 2.9.3

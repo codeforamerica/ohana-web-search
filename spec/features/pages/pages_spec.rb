@@ -9,11 +9,11 @@ feature 'Site Pages' do
     expect(page).to have_content 'Anselm Bradford'
     expect(page).to have_content 'Moncef Belyamani'
     expect(page).to have_content 'Sophia Parafina'
-    expect(page).to have_selector '#feedback-form-btn'
+    expect(page).to have_selector '#feedback-box .feedback-form'
   end
 
   scenario 'when visiting results page directly', :vcr do
-    search_for_maceo
+    search_for_example
     looks_like_results
   end
 end

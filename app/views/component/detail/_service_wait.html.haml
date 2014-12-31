@@ -1,5 +1,5 @@
-- if service[:wait].present?
-  %section{ class: 'wait' }
-    %h1= t('service_fields.wait')
+- if service.wait_time.present?
+  %section.wait-time
+    %h1= t('service_fields.wait_time')
     %span
-      = service.wait
+      = service.wait_time

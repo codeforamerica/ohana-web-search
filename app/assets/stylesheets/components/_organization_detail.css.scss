@@ -1,0 +1,66 @@
+// Results - organization details infobox.
+// On an organization name search results view, an informational box is displayed.
+.organization-detail {
+  display: table;
+  border-left: 20px solid $complementA;
+  font-family: $font_san_serif;
+  background: $primary-lightest;
+
+  .content {
+    display: table-cell;
+    padding: 20px;
+    padding-top: 0;
+    background: $white;
+
+    > header {
+      padding: 10px;
+      padding-top: 20px;
+      > hgroup {
+        font-family: $font_serif;
+
+        .name {
+          font-size: 24px;
+          letter-spacing: 1px;
+          display: inline;
+          font-family: $font_serif;
+        }
+      }
+    }
+
+    > section {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      > section {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .metadata {
+    display: table-cell;
+    min-width: 110px;
+    vertical-align: top;
+    font-size: $font_size_95;
+    font-family: $font_san_serif;
+    padding: 20px;
+
+    > section {
+      margin-bottom: 10px;
+      h1 {
+        font-weight: bold;
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+      margin-left: 20px;
+      list-style-type: square;
+      li {
+        color: $black;
+      }
+    }
+  }
+}
+
+@include site-link('.organization-detail', $greyscale_lightest);

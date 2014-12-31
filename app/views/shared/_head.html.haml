@@ -1,13 +1,13 @@
-%meta{charset: 'UTF-8'}
-%meta{content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}
+%meta{ charset: 'UTF-8' }
+%meta{ content: 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible' }
 %title= yield(:title)
-%meta{content: t('meta.description', location: t('branding.location')), name: 'description'}
-%meta{content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport'}
-%meta{name: 'google', value: 'notranslate'}
-%meta{content: 'en_US', 'http-equiv' => 'Content-Language'}
+%meta{ content: t('meta.description', location: t('branding.location')), name: 'description' }
+%meta{ content: 'width=device-width, initial-scale=1.0, user-scalable=0', name: 'viewport' }
+%meta{ name: 'google', value: 'notranslate' }
+%meta{ content: 'en_US', 'http-equiv' => 'Content-Language' }
 
 - if ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'].present?
-  %meta{content: ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'], name: 'google-translate-customization'}
+  %meta{ content: ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'], name: 'google-translate-customization' }
 
 = csrf_meta_tags
 
@@ -15,8 +15,7 @@
 = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700'
 = stylesheet_link_tag 'application', media: 'all'
 
--# Include scripts that fall outside of the requirejs modular system
--#(such as Modernizr).
+-# Include scripts from outside of RequireJS modular system (e.g. Modernizr).
 = javascript_include_tag 'vendor'
 
 -# Include Internet Explorer polyfills for legacy system compatibility.

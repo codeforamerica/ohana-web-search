@@ -1,10 +1,10 @@
 // Manages location detail view Google Map.
 define([
-  'util/map/marker-manager',
+  'util/map/markers',
   'util/map/google-maps-loader',
   'domReady!'
 ],
-function (markerManager, googleMaps) {
+function (markers, googleMaps) {
   'use strict';
 
   function init() {
@@ -65,7 +65,7 @@ function (markerManager, googleMaps) {
       };
       var map = new google.maps.Map(mapCanvas, mapOptions);
 
-      var markerProxy = markerManager.create(kind);
+      var markerProxy = markers.create(kind);
       markerProxy.turnOn(markerProxy.LARGE_ICON);
 
       var locationOptions = {

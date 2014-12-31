@@ -34,6 +34,17 @@ en:
     services_near_me: 'Services near me'
     update_search_results: 'Update search results'
 
+  date:
+    day_names:
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      - Sunday
+    closed: 'CLOSED'
+
   errors:
     api_down: >
       Sorry, we are experiencing issues with search. Please try again later.
@@ -75,6 +86,10 @@ en:
       two: 'Scrolling down and clicking one of the links.'
       browse_all: 'Browsing all locations.'
 
+  organization_fields:
+    accreditations: 'Accreditations:'
+    licenses: 'Licenses:'
+
   placeholders:
     address_search: 'address or ZIP code'
     agency_search: 'full or partial name...'
@@ -82,15 +97,24 @@ en:
     results_page_keyword_search: 'search for...'
 
   service_fields:
+    accepted_payments: 'Payment Methods Accepted:'
     audience: 'Audience:'
     description: 'Service Description:'
     eligibility: 'Eligibility:'
     fees: 'Fees:'
     how_to_apply: 'How to Apply:'
     keywords: 'Keyword Tags'
+    required_documents: 'Required Documents:'
     service_areas: 'Service Areas:'
+    status_defunct: 'This service is no longer operating!'
+    status_inactive: 'This service is not currently operating!'
     urls: 'Homepage:'
-    wait: 'Service Wait Estimate:'
+    wait_time: 'Service Wait Estimate:'
+
+  time:
+    formats:
+      schedules_hours: '%l:%M%P'
+      holiday_schedules_date: '%B %e'
 
   views:
     pagination:
@@ -99,6 +123,19 @@ en:
       previous: "<i class='fa fa-chevron-left'></i>"
       next: "<i class='fa fa-chevron-right'></i>"
       truncate: "&hellip;"
+    share:
+      email:
+        subject: "%{location_name} found on %{site_title}"
+        # Note that the code %0D%0A designates url-encoded line breaks
+        # that will appear as carriage returns in the email's body.
+        body: |
+          Hi,
+          %0D%0A%0D%0A
+          I'd like to share information about %{location_name} with you.
+          %0D%0A%0D%0A
+          For details about this service provider, please visit:
+          %0D%0A%0D%0A
+          %{location_url}.
     about:
       project_link: 'Visit project on GitHub'
       project_link_url: 'https://github.com/smcgov/SMC-Connect'

@@ -2,27 +2,7 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Contact section in the details view
   def location_contact_fields
-    [:urls, :emails, :phones, :faxes]
-  end
-
-  # Formats address for use in map URLs, image title attributes, etc.
-  # @param location [Object] a JSON object
-  # @return [String] return comma separated address.
-  def address(location)
-    "#{location.address['street']}, #{location.address['city']}, #{location.address['state']} #{location.address['zip']}"
-  end
-
-  # Format phone number as (XXX) XXX-XXXX
-  # @param number [String] a phone number
-  # @return [String] phone number formatted as (XXX) XXX-XXXX or
-  # returned without formatting if number is not 10 digits long
-  def format_phone(number)
-    result = number.gsub(/[^\d]/, '')
-    if result.length == 10
-      "(#{result[0..2]}) #{result[3..5]}-#{result[6..10]}"
-    else
-      number
-    end
+    [:website, :email, :phones]
   end
 
   # Strips http:// or https:// from URL
@@ -32,9 +12,45 @@ module DetailFormatHelper
     url.gsub(%r{^(https?:\/\/)}, '')
   end
 
-  # Adds <sup>XX</sup> around ordinals in string
-  # @param [String] string to parse for ordinals
-  # @return [String] HTML-safe string containing <sup> elements
+  # Generates HTML snippet for a contact's details (title and/or department).
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_details_for(contact)
+    if contact.title.present? && contact.department.present?
+      return contact_title_and_department_for(contact)
+    end
+    return contact_title_for(contact) if contact.title.present?
+    return contact_department_for(contact) if contact.department.present?
+  end
+
+  # Generates HTML snippet for a contact's title and department.
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_title_and_department_for(contact)
+    contact_title_for(contact) + ', ' + contact_department_for(contact)
+  end
+
+  # Generates HTML snippet for a contact's title.
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_title_for(contact)
+    content_tag :span, class: 'contact-title' do
+      contact.title
+    end
+  end
+
+  # Generates HTML snippet for a contact's details (title and/or department).
+  # @param contact [Hash] A contact's hash of details.
+  # @return [HTML] The formatted contact details snippet.
+  def contact_department_for(contact)
+    content_tag :span, class: 'contact-department' do
+      contact.department
+    end
+  end
+
+  # Adds <sup>XX</sup> around ordinals in string.
+  # @param string [String] to parse for ordinals.
+  # @return [String] HTML-safe string containing <sup> elements.
   #
   # The regex finds all occurrences of ordinal numbers, matching
   # only the "st", "nd", "rd", and "th" portion. The gsub method
@@ -55,5 +71,11 @@ module DetailFormatHelper
   def superscript_ordinals(string)
     string = html_escape(string).to_str
     string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, $&) }.html_safe
+  end
+
+  # @param date [String] A date string, such as '1970-01-01'
+  # @return [String] The year of incorporation.
+  def incorporated_year_for(date)
+    Date.parse(date).strftime('%Y')
   end
 end

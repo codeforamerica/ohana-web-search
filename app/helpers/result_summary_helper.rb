@@ -18,9 +18,9 @@ module ResultSummaryHelper
 
   def search_results_page_title
     search_terms = request.query_parameters.
-                          except(:utf8, :service_area).
-                          map { |k, v| "#{k}: #{v}" unless v.blank? }.
-                          compact.join(', ')
+                   except(:utf8, :service_area).
+                   map { |k, v| "#{k}: #{v}" unless v.blank? }.
+                   compact.join(', ')
     title = "Search results for: #{search_terms}"
     title.html_safe
   end

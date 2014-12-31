@@ -10,4 +10,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<GOOGLE_TRANSLATE>') do
     ENV['GOOGLE_TRANSLATE_API_KEY']
   end
+  config.before_record do |c|
+    c.response.body.force_encoding('UTF-8')
+  end
 end

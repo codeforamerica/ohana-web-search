@@ -1,11 +1,11 @@
 // Manages initialization of scripts for the About page.
 require([
-  'app/feedback-form-manager',
+  'app/FeedbackForm',
   'application'
 ],
-function (feedback) {
+function (FeedbackForm) {
   'use strict';
 
   // Initialize the feedback form.
-  feedback.init();
+  FeedbackForm.create('#feedback-box .feedback-form');
 });

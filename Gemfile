@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.3'
 gem 'rails', '~> 4.1.4'
 
 # FRONT END
@@ -60,8 +60,8 @@ end
 
 # dev and debugging tools
 group :development do
-  gem 'quiet_assets', '~> 1.0.2'
-  gem 'better_errors', '~> 1.1.0'
+  gem 'quiet_assets', '~> 1.0.3'
+  gem 'better_errors', '~> 2.0.0'
   gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_19, :rbx]
 
   # For mocking emails for sending.
@@ -75,7 +75,8 @@ group :development do
 
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'listen', '~> 1.0'
+  # Required by spring to turn on event-based file system listening.
+  gem 'spring-watcher-listen'
 end
 
 group :test do
@@ -83,7 +84,7 @@ group :test do
   gem 'capybara', '~> 2.4.1'
   gem 'poltergeist'
   gem 'vcr', '~> 2.9.0'
-  gem 'webmock', '~> 1.18.0'
+  gem 'webmock', '~> 1.20.0'
   gem 'email_spec', '~> 1.6.0'
   gem 'haml-lint'
 
@@ -92,5 +93,5 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.1'
 end

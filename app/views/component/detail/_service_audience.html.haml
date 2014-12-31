@@ -1,5 +1,5 @@
-- if service[:audience].present?
-  %section{ class: 'audience' }
+- if service.audience.present?
+  %section.audience
     %h1= t('service_fields.audience')
     %span
       = service.audience

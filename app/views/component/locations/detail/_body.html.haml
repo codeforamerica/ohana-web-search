@@ -7,8 +7,9 @@
       %p{ class: "kind icon #{@location.kind.parameterize}" }
         = link_to @location.kind, locations_path(kind: @location.kind), title: "All locations of type #{@location.kind}"
     %hgroup
-      %h1.name{ itemprop: 'name' }
-        = superscript_ordinals(@location.name)
+      %h1.name
+        = superscript_ordinals(full_name_content_for(@location))
+
       - if (@location.organization.name) && (@location.organization.name != @location.name)
         %h2.agency
           = link_to(locations_path(org_name: @location.organization.name)) do
@@ -16,125 +17,89 @@
               = superscript_ordinals(@location.organization.name)
 
   / detail sidebar content
-  %aside
-    %section#contact-info
+  .location-sidebar-box
+    %aside.location-sidebar
+
+      - if @location.hours.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Location Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_hours', location: @location
+
+      - if @location.regular_schedules.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Regular Location Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_regular_schedule', schedules: @location.regular_schedules
+
+      - if @location.holiday_schedules.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Holiday Location Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_holiday_schedule', schedules: @location.holiday_schedules
+
       - if (@location.fields & location_contact_fields).any?
-        %section.contact-box
+        %section.contact-box-general.location-sidebar-section
           %h1 General Contact Info
-          %section
-            - if @location[:urls].present?
-              %section.urls
-                - @location.urls.each do |url|
-                  %div
-                    %i{ class: 'fa fa-external-link-square' }
-                    %a{ href: url, target: '_blank' }
-                      %span{ itemprop: 'url' }
-                        = format_url(url)
+          %section.location-sidebar-content
+            = render 'component/detail/website', website: @location.website
+            = render 'component/detail/email', email: @location.email
 
-            - if @location[:emails].present?
-              %section.emails{ itemprop: 'email' }
-                - @location.emails.each do |email|
-                  %div
-                    %i{ class: 'fa fa-laptop' }
-                    %a{ href: "mailto:#{email}" }
-                      %span{ itemprop: 'email' }
-                        = email
-
-            - if @location[:phones].present?
-              %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
+            - if @location.phones.present?
+              %section.phones.location-sidebar-content-group
                 - @location.phones.each do |phone|
-                  %div
-                    %i{ class: 'fa fa-phone-square' }
-                    %span
-                      %span{ itemprop: 'telephone' }
-                        = format_phone(phone.number)
-                      - if phone.extension.present?
-                        %span.phone-extension
-                          = phone.extension
-                      - if phone.number_type
-                        %sup.phone-type
-                          = phone.number_type
-                      - if phone.department
-                        %p.phone-department{ itemprop: 'contactType' }
-                          = phone.department
-
-            - if @location.faxes.present?
-              %section.faxes
-                - @location.faxes.each do |fax|
-                  %div
-                    %i{ class: 'fa fa-print fax' }
-                    %span
-                      %span{ itemprop: 'faxNumber' }
-                        = format_phone(fax.number)
-                      - if fax[:department]
-                        %p.fax-department{ itemprop: 'contactType' }
-                          = fax.department
+                  = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
       - if @location[:contacts].present?
         - @location.contacts.each do |contact|
-          %section.contact-box
+          %section.contact-box-specific.location-sidebar-section
             %h1 Specific Contact
-            %section
-              %section.contact-name
-                = contact.name
-              %section.contact-title
-                = contact.title
+            %section.location-sidebar-content
+              %section.contact-name-box.annotated-text-block
+                %section.contact-name
+                  = contact.name
+                - if contact.title.present? || contact.department.present?
+                  %section.contact-details.annotation
+                    = contact_details_for(contact)
 
-              - if contact[:email].present?
-                %section.emails{ itemprop: 'email' }
-                  %div
-                    %i{ class: 'fa fa-laptop' }
-                    %a{ href: "mailto:#{contact.email}" }
-                      %span{ itemprop: 'email' }
-                        = contact.email
+              = render 'component/detail/email', email: contact.email
 
-              - if contact[:phone].present?
-                %section.phones{ itemscope: '', itemtype: 'http://schema.org/ContactPoint' }
-                  %div
-                    %i{ class: 'fa fa-phone-square' }
-                    %span
-                      %span{ itemprop: 'telephone' }
-                        = format_phone(contact.phone)
-                      - if contact.extension.present?
-                        %span.phone-extension
-                          = contact.extension
+              - if contact.phones.present?
+                %section.phones.location-sidebar-content-group
+                  - contact.phones.each do |phone|
+                    = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
-              - if contact[:fax].present?
-                %section.faxes
-                  %div
-                    %i{ class: 'fa fa-print fax' }
-                    %span{ itemprop: 'faxNumber' }
-                      = format_phone(contact.fax)
-
-      - if @location[:address].present?
-        %section.address-box
+      - if @location.address.present?
+        %section.address-box.location-sidebar-section
           %h1 Physical Address
-          %section
-            %section.address
-              %div
-                %i{ class: 'fa fa-map-marker' }
+          %section.location-sidebar-content
+            %section.address.icon-text-block
+              %i.fa.fa-map-marker
+              %span
                 = render 'component/detail/address', location: @location, lines: 2
 
-      - if @location[:mail_address].present?
-        %section.address-box
+      - if @location.mail_address.present?
+        %section.address-box.location-sidebar-section
           %h1 Mailing Address
-          %section
-            %section.mail-address
-              %div
-                %i{ class: 'fa fa-envelope' }
+          %section.location-sidebar-content
+            %section.mail-address.icon-text-block
+              %i.fa.fa-envelope
+              %span
                 = render 'component/detail/mail_address', location: @location
 
     - if @categories.present?
-      %section#categories-box
-        %h1 Service Categories
-        %section.services{ itemscope: '', itemtype: 'http://schema.org/Service' }
-          %ul{ itemscope: '', itemtype: 'http://schema.org/serviceType' }
-            - @categories.each do |category|
-              %li{ class: "hierarchy-depth-#{category.depth}" }
-                %span{ itemprop: 'serviceType' }
-                  -# Category links are disabled till there's a corresponding filter that can be toggled!
-                    = link_to category.name, locations_path(request.query_parameters.merge(category: category.name))
-                  = category.name
+      %aside.location-sidebar
+        %section.location-sidebar-section.service-categories-box
+          %h1 Service Categories
+          %section.location-sidebar-content
+            %section.service-categories{ itemscope: '', itemtype: 'http://schema.org/Service' }
+              %ul{ itemscope: '', itemtype: 'http://schema.org/serviceType' }
+                - @categories.each do |category|
+                  %li{ class: "hierarchy-depth-#{category.depth}" }
+                    %span{ itemprop: 'serviceType' }
+                      -# Category links are disabled till there's a corresponding filter that can be toggled!
+                        = link_to category.name, locations_path(request.query_parameters.merge(category: category.name))
+                      = category.name
 
   / Main detail content.
   %section
@@ -154,11 +119,11 @@
               %span
                 = @location.transportation
 
-          - if @location[:coordinates].present?
-            %section#detail-map-view.map
+          - if @location.coordinates.present?
+            %section.map#detail-map-view
               #detail-map-canvas
                 %span.hide#detail-map-canvas-title
-                  = address(@location)
+                  = full_address_for(@location.address)
                 %span.hide#detail-map-canvas-lat
                   = @location.latitude
                 %span.hide#detail-map-canvas-lng
@@ -166,15 +131,10 @@
                 %span.hide#detail-map-canvas-kind
                   = @location.kind
               %noscript
-                %style
-                  -# Hides map when JavaScript is disabled.
-                  = '#detail-map-view {display:none;}'
-
-    - if @location[:hours].present?
-      %section.hours-box
-        %h1 Service Hours
-        %section
-          = render 'component/detail/location_hours', location: @location
+                -# Hides map when JavaScript is disabled.
+                :sass
+                  #detail-map-view
+                    display: none
 
     - if @location[:languages].present? || @location[:accessibility].present?
       %section.service-opt-box
@@ -188,24 +148,44 @@
         %h1 Payment & Products
         = render 'component/detail/farmers_markets'
 
-    - if @location[:services].present?
+    - if @location.services.present?
       %section.services-box
         %h1 Services
         - @location.services.each do |service|
 
           %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
-            = render 'component/detail/service_name', service: service
+            %section.title-box
+              = render 'component/detail/service_status', service: service
+              = render 'component/detail/service_name', service: service
+
+            - if service.regular_schedules.present?
+              %section.schedules-box
+                %h1 Regular Service Hours
+                %section
+                  = render 'component/detail/location_regular_schedule', schedules: service.regular_schedules
+
+            - if service.holiday_schedules.present?
+              %section.schedules-box
+                %h1 Holiday Service Hours
+                %section
+                  = render 'component/detail/location_holiday_schedule', schedules: service.holiday_schedules
+
+            - if service.website.present? && service.email.present?
+              %section.web-addresses-box
+                = render 'component/detail/website', website: service.website
+                = render 'component/detail/email', email: service.email
             = render 'component/detail/service_description', service: service
-            = render 'component/detail/service_urls', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service
             = render 'component/detail/service_eligibility', service: service
             = render 'component/detail/service_how_to_apply', service: service
             = render 'component/detail/service_wait', service: service
-            = render 'component/detail/service_areas', service: service
+            = render 'component/detail/service_required_documents', service: service
+            = render 'component/detail/service_accepted_payments', service: service
+            = render 'component/detail/service_service_areas', service: service
 
   / Detail footer content.
-  - if @location[:updated_at].present?
+  - if @location.updated_at.present?
     %footer
       %section.metadata
         %section
@@ -216,5 +196,5 @@
               = @location.updated_at.to_s(:full_date_and_time)
             .button-edit
               = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
-                %i{ class: 'fa fa-pencil' }
+                %i.fa.fa-pencil
                 Edit

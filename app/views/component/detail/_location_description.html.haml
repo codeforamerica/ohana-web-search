@@ -1,5 +1,6 @@
-- if @location[:description].present?
-  %section{ class: 'description' }
-    %h1= "#{t('location_fields.description')}:"
+- if location.description.present?
+  %section.description
+    %h1
+      #{t('location_fields.description')}:
     %span.character-limited
       = location.description

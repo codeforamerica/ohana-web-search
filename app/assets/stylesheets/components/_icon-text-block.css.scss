@@ -1,0 +1,30 @@
+// Styles for a single snippet of text with an icon.
+// Used in the phone, email, and website styles, for example.
+//
+// The fancy line-height calculations are for handling differences
+// in Firefox and Chrome. If the font sizes are changed these may
+// need to be recalculated to avoid a 1px difference in vertical
+// positioning between the two browsers.
+.icon-text-block {
+  position: relative;
+  .fa {
+    position: absolute;
+    width: $font_size_110;
+    color: $main-highlight;
+    font-size: #{$font_size_105 + 2};
+    text-align: center;
+    @include box-sizing(border-box);
+    line-height: #{$font_size_105 + 3};
+  }
+
+  > span {
+    margin-left: #{$font_size_110 + 5};
+    font-size: $font_size_105;
+    font-family: $font_san_serif;
+    color: $black;
+    @include box-sizing(border-box);
+    line-height: #{$font_size_105 + 4};
+    @include inline-block();
+    vertical-align:top;
+  }
+}
