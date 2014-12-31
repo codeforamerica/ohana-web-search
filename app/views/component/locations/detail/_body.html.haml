@@ -19,13 +19,13 @@
 
       - if @location.regular_schedules.present?
         %section.schedules-box.location-sidebar-section
-          %h1 Regular Service Hours
+          %h1 Regular Hours
           %section.location-sidebar-content
             = render 'component/detail/location_regular_schedule', schedules: @location.regular_schedules
 
       - if @location.holiday_schedules.present?
         %section.schedules-box.location-sidebar-section
-          %h1 Holiday Service Hours
+          %h1 Holiday Hours
           %section.location-sidebar-content
             = render 'component/detail/location_holiday_schedule', schedules: @location.holiday_schedules
 
