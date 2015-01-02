@@ -15,10 +15,10 @@
 // about supported directives.
 //
 // Polyfills for CSS3 selectors in IE6-8
-//= require polyfills/selectivizr
+// = require polyfills/selectivizr
 //
 // Polyfills for commonly included missing methods.
-//= require polyfills/console
-//= require polyfills/trim
-//= require polyfills/remy/classList
-//= require polyfills/addEventListener
+// = require polyfills/console
+// = require polyfills/trim
+// = require polyfills/remy/classList
+// = require polyfills/addEventListener
