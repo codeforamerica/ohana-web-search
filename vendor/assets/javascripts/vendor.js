@@ -19,4 +19,4 @@
 // Also includes html5shiv-printshiv, which enables use of HTML5 sectioning elements in
 // legacy Internet Explorer and provides basic HTML5 styling for Internet Explorer 6-9,
 // Safari 4.x (and iPhone 3.x), and Firefox 3.x.
-//= require polyfills/modernizr.min
+// = require polyfills/modernizr.min
