@@ -170,10 +170,6 @@ feature 'location details' do
     it 'sets the page title to the location name + site title' do
       expect(page).to have_title('Example Location | Ohana Web Search')
     end
-
-    it 'includes updated time' do
-      expect(page).to have_content('Tuesday, 18 November 2014 at 5:37 AM PST')
-    end
   end
 
   context 'when Contact elements are present' do
@@ -241,7 +237,7 @@ feature 'location details' do
     end
 
     it 'includes rel=nofollow' do
-      within '.updated-at' do
+      within '.button-edit' do
         expect(find(:rel, 'nofollow')).to be_present
       end
     end
