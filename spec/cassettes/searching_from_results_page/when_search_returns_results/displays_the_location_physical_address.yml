@@ -1,0 +1,166 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 08 Jan 2015 01:51:21 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"6acba79e124f9847d9425967a12bc690"'
+      Link:
+      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
+        rel="next"
+      X-Total-Count:
+      - '22'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 3fe5e4c9-1a14-476e-9357-718e33b53d36
+      X-Runtime:
+      - '0.358086'
+      X-Rack-Cache:
+      - pass
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.213221,37.477227],"description":"A
+        walk-in center for older adults that provides social services, wellness, recreational,
+        educational and creative activities including arts and crafts, computer classes
+        and gardening classes. Coffee and healthy breakfasts are available daily.
+        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
+        Provides case management (including in-home assessments) and bilingual information
+        and referral about community services to persons age 60 or over on questions
+        of housing, employment, household help, recreation and social activities,
+        home delivered meals, health and counseling services and services to shut-ins.
+        Health insurance and legal counseling is available by appointment. Lectures
+        on a variety of health and fitness topics are held monthly in both English
+        and Spanish. Provides a variety of physical fitness opportunities, including
+        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
+        toward older adults. Also provides free monthly blood pressure screenings,
+        quarterly blood glucose monitoring and health screenings by a visiting nurse.
+        Offers a Brown Bag Program in which low-income seniors can receive a bag of
+        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
+        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
+        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
+        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
+        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","website":null,"updated_at":"2014-10-29T12:12:16.784-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"street_1":"2600
+        Middlefield Road","street_2":null,"city":"Redwood City","state":"CA","postal_code":"94063"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
+        Family Service strengthens the community by providing children, families,
+        and older adults the support and tools to realize their full potential and
+        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
+        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
+        701-0856","number_type":"fax","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 01:51:21 GMT
+- request:
+    method: get
+    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=example&location=&org_name=&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Thu, 08 Jan 2015 01:51:22 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"3c6f87ec830308e33882a41bc9dab396"'
+      X-Total-Count:
+      - '1'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 5b845462-1082-4bae-bbc8-a4fcfcf7bcd3
+      X-Runtime:
+      - '0.029770'
+      X-Rack-Cache:
+      - pass
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
+        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
+        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2015-01-07T09:26:16.238-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"street_1":"2013
+        Avenue of the fellows","street_2":"Suite 100","city":"San Francisco","state":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
+        Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
+        organization description. The Public Library inspires learning through innovative
+        and visionary programming and services—literacy programs, support for school
+        success, access to technology, safe, inviting spaces for youth and families,
+        and gathering places that connect the members of the community with a love
+        of reading and learning.","email":"info@example.org","funding_sources":["State","Donations","Grants"],"licenses":["State
+        Health Inspection License","State Board of Education License"],"name":"Example
+        Agency","website":"http://example.org","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
+        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
+        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 01:51:22 GMT
+recorded_with: VCR 2.9.3
