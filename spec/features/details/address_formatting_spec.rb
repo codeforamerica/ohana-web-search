@@ -21,12 +21,22 @@ feature 'address formatting' do
       end
     end
 
-    it 'includes the address header' do
-      expect(page).to have_content('Address')
+    it 'includes the physical address header' do
+      expect(page).to have_content('Physical Address')
     end
 
-    it 'includes the street address' do
-      expect(page).to have_content('2013 Avenue of the fellows')
+    it 'includes the physical address' do
+      address = '2013 Avenue of the fellows, Suite 100 San Francisco, CA 94103'
+      expect(page).to have_content(address)
+    end
+
+    it 'includes the mailing address header' do
+      expect(page).to have_content('Mailing Address')
+    end
+
+    it 'includes the mailing address' do
+      address = 'The Foodies 2013 Avenue of the fellows, Suite 100 San Francisco, CA 90210'
+      expect(page).to have_content(address)
     end
 
     it 'includes a Google Maps directions link to the address' do
