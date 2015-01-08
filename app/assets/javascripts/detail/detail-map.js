@@ -1,7 +1,7 @@
 // Manages location detail view Google Map.
 define([
   'util/map/markers',
-  'util/map/google-maps-loader',
+  'util/map/google/map-loader',
   'domReady!'
 ],
 function (markers, googleMaps) {

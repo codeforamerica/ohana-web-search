@@ -5,6 +5,8 @@ define([
 function (envVars) {
   'use strict';
 
+  // @param callback [Function]
+  //   A function to call when the maps scripts have loaded.
   function load(callback) {
     var gmaps = new GoogleMaps();
     gmaps.load(callback);
@@ -12,13 +14,13 @@ function (envVars) {
 
   function GoogleMaps() {
 
-    // The classlist object of the page's <html> element.
+    // Classlist object of the page's <html> element.
     var _htmlClassList;
 
-    // The external callback function to call when the maps scripts have loaded.
+    // External callback function to call when the maps scripts have loaded.
     var _callback;
 
-    // The global callback function name to call internally when the maps
+    // Global callback function name to call internally when the maps
     // scripts have loaded.
     var _globalCallbackName;
 

@@ -2,7 +2,7 @@
 define([
   'util/geolocation/geolocator',
   'app/alerts',
-  'util/map/google-maps-loader',
+  'util/map/google/map-loader',
   'domReady!'
 ],
 function (geo, alerts, googleMaps) {
