@@ -43,7 +43,8 @@ feature 'location service details' do
     end
 
     it 'includes eligibility' do
-      expect(page).to have_content('None')
+      element = '.services-box .eligibility'
+      expect(all(element).last).to have_content('None')
     end
 
     it 'includes how to apply' do
@@ -56,7 +57,7 @@ feature 'location service details' do
 
     it 'includes required documents' do
       element = '.services-box .required-documents'
-      expect(first(element)).to have_content('Government-issued picture identification')
+      expect(first(element)).to have_content('Government-issued picture')
     end
 
     it 'includes accepted payment methods' do
