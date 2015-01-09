@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:27:12 GMT
+      - Fri, 09 Jan 2015 17:55:21 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,16 +32,20 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"05fa792940e76fa8e3300955206aeb4a"'
+      Last-Modified:
+      - Wed, 07 Jan 2015 17:26:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"2b714f7ce831a68065ab06c25fbd19e1"'
       X-Request-Id:
-      - d266081e-ab12-4254-802a-818e9f97e9b9
+      - 8527fbc7-0146-46af-aa8e-c6943defab37
       X-Runtime:
-      - '0.086220'
+      - '0.825510'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
@@ -59,7 +63,7 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2014-11-18T05:37:55.208-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2015-01-07T09:26:16.238-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
         Parking","Disabled Restroom","Wheelchair"],"email":"info@example.org","languages":["Cantonese","Russian","Spanish","Tagalog","Taiwanese"],"transportation":"SAMTRANS
         stops within 1 block","address":{"id":21,"street_1":"2013 Avenue of the fellows","street_2":"Suite
         100","city":"San Francisco","state":"CA","postal_code":"94103"},"organization":{"id":8,"alternate_name":"Alternate
@@ -86,8 +90,9 @@ http_interactions:
         Duis porta iaculis orci, eu euismod quam tristique in. Phasellus nec purus
         sit amet sapien volutpat egestas.","eligibility":"None","email":null,"fees":"None,
         except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example
-        Service Name","required_documents":[],"service_areas":["San Mateo County","Alameda
+        in or apply by phone or mail","interpretation_services":null,"keywords":["Ruby
+        on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example Service
+        Name","required_documents":[],"service_areas":["San Mateo County","Alameda
         County"],"status":"active","website":"http://www.example.com","wait_time":"No
         wait to 2 weeks","updated_at":"2014-10-29T10:08:12.509-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]},{"id":22,"accepted_payments":["Cash","Check","Credit
         Card"],"alternate_name":"Fotos para pasaportes","audience":"Profit and nonprofit
@@ -103,17 +108,18 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","email":"passports@example.org","fees":"None,
         except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
+        in or apply by phone or mail","interpretation_services":"We offer 3-way interpretation
+        services over the phone via Propio Language Services (http://propio-ls.com).","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
         Photos","required_documents":["Government-issued picture identification"],"service_areas":["Alameda
         County","San Mateo County"],"status":"active","website":"http://www.example.com","wait_time":"No
-        wait to 2 weeks.","updated_at":"2014-11-18T05:37:55.204-08:00","categories":[{"id":65,"depth":0,"oe_id":"105","name":"Transit","parent_id":null},{"id":168,"depth":0,"oe_id":"108","name":"Care","parent_id":null},{"id":190,"depth":1,"oe_id":"108-05","name":"Navigating
-        the System","parent_id":168},{"id":191,"depth":2,"oe_id":"108-05-01","name":"Help
-        Fill out Forms","parent_id":190},{"id":274,"depth":0,"oe_id":"111","name":"Legal","parent_id":null},{"id":290,"depth":1,"oe_id":"111-05","name":"Translation
+        wait to 2 weeks.","updated_at":"2015-01-07T09:26:16.234-08:00","categories":[{"id":65,"depth":0,"taxonomy_id":"105","name":"Transit","parent_id":null},{"id":168,"depth":0,"taxonomy_id":"108","name":"Care","parent_id":null},{"id":190,"depth":1,"taxonomy_id":"108-05","name":"Navigating
+        the System","parent_id":168},{"id":191,"depth":2,"taxonomy_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":190},{"id":274,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":290,"depth":1,"taxonomy_id":"111-05","name":"Translation
         \u0026 Interpretation","parent_id":274}],"contacts":[{"department":"CalFresh
         Applications","email":"john.smith@example.org","id":36,"name":"Joe Smith","title":"CalFresh
         Specialist","phones":[{"id":52,"department":"CalFresh Applications","extension":"123","number":"703-555-1212","number_type":"voice","vanity_number":null}]}],"phones":[{"id":57,"department":"Passport
         Photos","extension":"123","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":58,"department":"Passport
         Photos Fax","extension":null,"number":"789-456-1230","number_type":"fax","vanity_number":null}],"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T12:00:00.000Z"},{"weekday":1,"opens_at":"2000-01-01T14:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T15:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null}]}]}'
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 22:27:12 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 09 Jan 2015 17:55:21 GMT
+recorded_with: VCR 2.9.3
