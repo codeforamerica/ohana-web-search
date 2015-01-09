@@ -47,6 +47,11 @@ feature 'location service details' do
       expect(all(element).last).to have_content('None')
     end
 
+    it 'includes interpretation services' do
+      element = '.services-box .interpretation-services'
+      expect(all(element).last).to have_content('3-way interpretation')
+    end
+
     it 'includes how to apply' do
       expect(page).to have_content('Walk in or apply by phone or mail')
     end
