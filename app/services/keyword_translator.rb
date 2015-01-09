@@ -45,7 +45,7 @@ class KeywordTranslator
   end
 
   def translated_keyword
-    return keyword if translations.nil?
+    return keyword if translations.blank?
     translations.first.translatedText
   end
 
