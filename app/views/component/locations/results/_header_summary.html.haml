@@ -1,4 +1,13 @@
 %div
+  .right-column
+    .floating-content.hide><
+      %span
+        %a.button-utility.button-top{ href: '#' }
+          %i.fa.fa-chevron-up
+          Top
+
+    = paginate @search.results
+
   .left-column
     %span.static-content><
       - if @search.map_data.size != 0
@@ -11,12 +20,3 @@
 
       %span.map-summary.static-content
         = map_summary if @search.map_data.size != 0
-
-  .right-column
-    .floating-content.hide><
-      %span
-        %a.button-utility.button-top{ href: '#' }
-          %i.fa.fa-chevron-up
-          Top
-
-    = paginate @search.results

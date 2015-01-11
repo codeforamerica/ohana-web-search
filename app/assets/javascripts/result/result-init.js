@@ -7,7 +7,6 @@ function (map, header) {
 
   map.init();
   header.init();
-
 },
 function (err) {
   'use strict';

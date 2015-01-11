@@ -593,8 +593,10 @@ body {
     padding-left: 20px;
     padding-top: 9px;
     padding-bottom: 6px;
+    padding-right: 20px;
     color: $black;
     font-family: $font_serif;
+    @include ellipsis();
   }
 
   // Print, Email, Directions, Back to search
@@ -619,16 +621,17 @@ body {
   }
 
   .left-column {
-    float: left;
-    z-index: 9998;
+    z-index: $layer-7;
+    text-align: left;
 
-    > * {
+    > .static-content, {
       @include inline-block();
     }
   }
 
   .right-column {
-    z-index: 9997;
+    float: right;
+    z-index: $layer-8;
 
     > * {
       @include inline-block();
@@ -640,6 +643,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 20px;
+    @include inline-block();
 
     > * {
       @include inline-block();
@@ -678,11 +682,6 @@ body {
   padding: 20px;
 }
 
-.results-header.persistent {
-  position: static;
-  visibility: hidden;
-}
-
 .results-header.floating {
   -webkit-backface-visibility: hidden;
   width: 100%;
@@ -692,6 +691,8 @@ body {
 
 #results-entries {
   min-height: 475px;
+  // Offset to accommodate the floating header height.
+  padding-top: 45px;
 
   > ul {
     padding: 0;
@@ -985,13 +986,15 @@ body {
 }
 
 //=================================================================================
-// Detail list screen
+// Location details view.
 #detail-info {
   background: $greyscale_lightest;
   color: $black;
   font-family: $font_san_serif;
+  // Offset to accommodate the floating header height.
+  padding-top: 45px;
 
-  // Section header
+  // Location header.
   > header {
     padding: 10px;
     border-bottom: 1px solid $greyscale_light; // IE fallback
@@ -1030,7 +1033,7 @@ body {
     }
   }
 
-  // Format detail sections.
+  // Individual location detail sections.
   > * > section {
 
     > section:only-of-type {
