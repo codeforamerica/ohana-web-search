@@ -29,6 +29,11 @@ feature 'location service details' do
       expect(all(element).last).to have_content('passports@example.org')
     end
 
+    it 'includes the phone number, extension, type, and department' do
+      element = '.services-box .phones'
+      expect(find(element)).to have_content('(123) 456-7890 x 123 voice Passport Photos')
+    end
+
     it 'includes description' do
       element = '.services-box .description'
       expect(all(element).last).to have_content('Lorem ipsum')
