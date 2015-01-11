@@ -49,37 +49,6 @@ a.translate-active {
   cursor:default;
 }
 
-
-.button-medium {
-  padding: 4px 6px;
-  cursor: pointer;
-  @include type-size(baseline);
-  letter-spacing: 0;
-  font-family: $font_san_serif;
-  padding-left: 7px;
-  padding-right: 7px;
-  background: $accentA-light;
-  border: 1px solid $primary-dark; // IE Fallback
-  border: 1px solid rgba($primary-dark, 0.4);
-  @include rounded-except(none);
-  color: light($black);
-
-  .fa {
-    color: $primary-darkest;
-  }
-}
-
-// IN USE?
-.button-medium:hover {
-  background: shade($accentA-light, 5);
-  color: $button-hover-color;
-
-  .fa {
-    color: $button-hover-color;
-  }
-}
-
-
 // Utility buttons appear in the floating header, which is above the search results and
 // the details page and is set in a fixed position when the page scrolls.
 .button-utility {
