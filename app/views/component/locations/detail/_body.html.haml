@@ -158,10 +158,16 @@
                 %section
                   = render 'component/detail/location_holiday_schedule', schedules: service.holiday_schedules
 
-            - if service.website.present? && service.email.present?
-              %section.web-addresses-box
-                = render 'component/detail/website', website: service.website
-                = render 'component/detail/email', email: service.email
+            - if service.website.present? || service.email.present? || service.phones.present?
+              %section.contact-box
+                - if service.website.present?
+                  = render 'component/detail/website', website: service.website
+                - if service.email.present?
+                  = render 'component/detail/email', email: service.email
+                - if service.phones.present?
+                  %section.phones
+                    - service.phones.each do |phone|
+                      = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
             = render 'component/detail/service_description', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service
