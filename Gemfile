@@ -6,10 +6,10 @@ gem 'rails', '~> 4.1.4'
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '~> 2.0.0'
+gem 'compass-rails', '~> 2.0.4'
 
 # Font-awesome icons.
 gem 'font-awesome-rails'
