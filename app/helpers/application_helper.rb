@@ -33,4 +33,12 @@ module ApplicationHelper
       GOOGLE_MAPS_API_KEY: ENV['GOOGLE_MAPS_API_KEY']
     }.to_json)
   end
+
+  # Adds an incrementing tab index so that tab indices can be added to
+  # different elements on the page and the tab order will following the
+  # rendering order.
+  @tabindex_value = 0
+  def self.tabindex
+    @tabindex_value += 1
+  end
 end
