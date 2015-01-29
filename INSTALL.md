@@ -35,13 +35,9 @@ Clone it on your computer and navigate to the project's directory:
 
 [fork]: http://help.github.com/fork-a-repo/
 
-### Install the dependencies:
+### Install the dependencies and set the default environment variables:
 
-    bundle
-
-### Configure environment variables
-Inside the `config` folder, you will find a file named `application.example.yml`.
-Copy its contents to a new file called `application.yml` in the same directory.
+    script/bootstrap
 
 ### Run the app
 Start the app locally on port 4000:
