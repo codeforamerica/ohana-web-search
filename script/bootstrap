@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+echo 'Installing dependencies...'
+bundle install
+
+echo 'setting default environment variables'
+cp config/application.example.yml config/application.yml
+
+echo 'All done!'

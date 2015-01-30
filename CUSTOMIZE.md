@@ -1,8 +1,9 @@
 # Customizing Ohana Web Search
 
+Make sure you've [installed](https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md) the app first.
+
 ## Environment variables
-Inside the `config` folder, you will find a file named `application.example.yml`.
-Copy its contents to a new file called `application.yml` in the same directory.
+Inside the `config` folder, you will find a file named `application.yml`.
 Read through the documentation to learn how you can customize the app to suit
 your needs.
 
