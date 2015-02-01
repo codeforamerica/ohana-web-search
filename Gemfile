@@ -27,7 +27,7 @@ gem 'haml-rails'
 
 gem 'unicorn'
 gem 'ohanakapa', '~> 1.1.1'
-gem 'faraday-http-cache', '~> 0.4.0'
+gem 'faraday-http-cache'
 
 # Caching
 gem 'rack-cache', '~> 1.2'
