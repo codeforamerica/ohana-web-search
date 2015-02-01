@@ -27,7 +27,7 @@
     border: none;
     background: none;
     border-bottom: 1px solid $primary-dark;
-    @include single-box-shadow(rgba($black, 0.1), 0, 1px, 6px, 1px, inset);
+    @include single-box-shadow(0, 1px, 6px, 1px, rgba($black, 0.1), inset);
     @include box-sizing(border-box);
     color: $white;
   }
@@ -184,7 +184,7 @@
       padding-left: 35px;
       padding-right: 25px;
       @include box-sizing(border-box);
-      @include single-box-shadow(rgba($black, 0.1), 0, 1px, 6px, 1px, inset);
+      @include single-box-shadow(0, 1px, 6px, 1px, rgba($black, 0.1), inset);
       @include rounded-except(none);
       border: none;
       border-bottom: 1px solid rgba($white, 0.7);
