@@ -505,7 +505,7 @@ body {
   text-align: center;
 
   > section {
-    @include single-box-shadow(rgba($black, .1), 0, 0, 5px);
+    @include single-box-shadow(0, 0, 5px, 0, rgba($black, .1));
     @include inline-block();
     @include border-radius(4px);
     margin: 10px;
@@ -685,7 +685,7 @@ body {
 .results-header.floating {
   -webkit-backface-visibility: hidden;
   width: 100%;
-  @include single-box-shadow( rgba($black,.4), 0, 1px, 6px );
+  @include single-box-shadow(0, 1px, 6px, 0, rgba($black, .4));
   border-bottom: 1px solid $primary-dark !important;
 }
 
@@ -903,7 +903,7 @@ body {
   .infoBox {
     background-color: $white;
     @include border-radius(0px 4px 4px 4px);
-    @include single-box-shadow(midtone($black,0.4), 0, 0, 5px);
+    @include single-box-shadow(0, 0, 5px, 0, midtone($black, 0.4));
     border: 1px solid $primary-dark;
     padding: 3px 6px;
     opacity: 0.95;

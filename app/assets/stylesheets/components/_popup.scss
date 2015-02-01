@@ -17,7 +17,7 @@
     width: 300px;
     background: $popup-bg;
     overflow-y: auto;
-    @include single-box-shadow( rgba($black, .4), 0, 0, 10px);
+    @include single-box-shadow(0, 0, 10px, 0, rgba($black, .4));
     @include border-radius(10px);
 
     > div:last-child {
@@ -70,7 +70,7 @@
       border-right: 1px solid #CCCCCC;
       background: none repeat scroll 0 0 #FFFFFF;
       display: block;
-      @include single-box-shadow( rgba($black, .2), 1px, 1px, 1px);
+      @include single-box-shadow(1px, 1px, 1px, 0, rgba($black, .2));
     }
   }
 
