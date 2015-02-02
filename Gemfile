@@ -24,8 +24,7 @@ gem 'requirejs-rails', '~> 0.9.2'
 gem 'haml-rails'
 
 # SERVER
-
-gem 'unicorn'
+gem 'puma'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'faraday-http-cache', '~> 0.4.0'
 
