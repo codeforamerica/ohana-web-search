@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'info box', :vcr do
-
   scenario "with keyword that doesn't match info box synonym" do
     visit('/locations?keyword=food')
     expect(page).not_to have_selector('#terminology-box-container')

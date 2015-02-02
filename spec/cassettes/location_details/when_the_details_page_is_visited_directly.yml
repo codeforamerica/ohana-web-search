@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:34 GMT
+      - Mon, 02 Feb 2015 04:50:46 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,19 +33,25 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"f72cbe2a8629c6455734a339c07cf6dd"'
+      - '"f8c210c8b7564dc2fa4b4fc42add8701"'
       Last-Modified:
-      - Fri, 05 Dec 2014 18:04:55 GMT
+      - Mon, 02 Feb 2015 04:49:59 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 49f6a5de-f73c-4d8d-9079-cc2e014c72a5
+      - 06c2d2bd-a9b0-4a71-a5d6-2d7f55e86939
       X-Runtime:
-      - '0.062420'
+      - '0.464817'
+      X-Content-Digest:
+      - 19b463ab6476bb1ca4fae42c9df14d698e5027a6
+      Content-Length:
+      - '9473'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -63,7 +69,7 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2014-12-05T10:04:55.918-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2015-02-01T20:49:59.311-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
         Parking","Disabled Restroom","Wheelchair"],"email":"info@example.org","emails":["sanmaceo@co.sanmaceo.ca.us","maceo@parker.com"],"hours":"Monday-Friday,
         8-5; Saturday, 10-6; Sunday 11-5","languages":["Cantonese","Russian","Spanish","Tagalog","Taiwanese"],"transportation":"SAMTRANS
         stops within 1 block","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"website":"http://www.example.org","address":{"id":1413,"street":"2013
@@ -91,13 +97,13 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","email":"passports@example.org","fees":"None,
         except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
+        in or apply by phone or mail","interpretation_services":"We offer 3-way interpretation
+        services over the phone via Propio Language Services (http://propio-ls.com).","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
         Photos","required_documents":["Government-issued picture identification"],"service_areas":["Alameda
         County","San Mateo County"],"status":"active","website":"http://www.example.com","wait_time":"No
-        wait to 2 weeks","updated_at":"2014-11-30T19:36:49.288-08:00","urls":["http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","categories":[{"id":71,"depth":0,"oe_id":"105","name":"Transit","parent_id":null},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null},{"id":220,"depth":1,"oe_id":"108-05","name":"Navigating
-        the System","parent_id":196},{"id":221,"depth":2,"oe_id":"108-05-01","name":"Help
-        Fill out Forms","parent_id":220},{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null},{"id":327,"depth":1,"oe_id":"111-05","name":"Translation
+        wait to 2 weeks","updated_at":"2015-02-01T20:49:59.302-08:00","categories":[{"id":71,"depth":0,"taxonomy_id":"105","name":"Transit","parent_id":null},{"id":196,"depth":0,"taxonomy_id":"108","name":"Care","parent_id":null},{"id":220,"depth":1,"taxonomy_id":"108-05","name":"Navigating
+        the System","parent_id":196},{"id":221,"depth":2,"taxonomy_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":220},{"id":311,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":327,"depth":1,"taxonomy_id":"111-05","name":"Translation
         \u0026 Interpretation","parent_id":311}],"contacts":[{"id":2057,"department":"CalFresh
         Applications","email":"john.smith@example.org","name":"Joe Smith","title":"CalFresh
         Specialist","extension":null,"fax":null,"phone":null,"phones":[{"id":2537,"department":"CalFresh
@@ -117,11 +123,11 @@ http_interactions:
         orci, eu euismod quam tristique in. Phasellus nec purus sit amet sapien volutpat
         egestas.","eligibility":"None","email":null,"fees":"None, except for permits
         and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"how_to_apply":"Walk
-        in or apply by phone or mail","keywords":["Ruby on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example
-        Service Name","required_documents":[],"service_areas":["Alameda County","San
-        Mateo County"],"status":"active","website":"http://www.example.com","wait_time":"No
-        wait to 2 weeks","updated_at":"2014-11-30T19:32:08.578-08:00","urls":["http://www.smchealth.org","http://www.example.com","http://www.example2.com"],"wait":"No
-        wait to 2 weeks","categories":[{"id":311,"depth":0,"oe_id":"111","name":"Legal","parent_id":null},{"id":324,"depth":1,"oe_id":"111-02","name":"Mediation","parent_id":311}],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+        in or apply by phone or mail","interpretation_services":null,"keywords":["Ruby
+        on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example Service
+        Name","required_documents":[],"service_areas":["Alameda County","San Mateo
+        County"],"status":"active","website":"http://www.example.com","wait_time":"No
+        wait to 2 weeks","updated_at":"2014-11-30T19:32:08.578-08:00","categories":[{"id":311,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":324,"depth":1,"taxonomy_id":"111-02","name":"Mediation","parent_id":311}],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:34 GMT
+  recorded_at: Mon, 02 Feb 2015 04:50:46 GMT
 recorded_with: VCR 2.9.3

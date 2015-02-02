@@ -3,10 +3,9 @@ define([
   'search/filter/TextInput',
   'search/filter/CheckboxSubtractive',
   'util/geolocation/geolocate-action',
-  'app/alerts',
   'domReady!'
 ],
-function (TextInput, CheckboxSubtractive, geo, alert) {
+function (TextInput, CheckboxSubtractive, geo) {
   'use strict';
 
   // The search filters.
@@ -42,7 +41,7 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
     // Hook reset button on the page and listen for a click event.
     var resetButton = document.getElementById('button-reset');
-    resetButton.addEventListener('click', _resetClicked,false);
+    resetButton.addEventListener('click', _resetClicked, false);
   }
 
   // The geolocation button was clicked in the location filter.

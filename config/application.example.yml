@@ -1,6 +1,3 @@
-# First, copy this file to a new one called "application.yml" in the same
-# config directory.
-
 # This file is used by the "figaro" gem to allow you to store and use
 # environment variables in the app without having to set them via the
 # command line each time you run the app in development.
@@ -67,11 +64,12 @@
 # GOOGLE_TRANSLATE_API_KEY
 #
 ##########################
-# If you would like your users to be able to type in search keywords
-# in the language of their choice, you will need to obtain an API token
-# from Google by signing up for a paid Google Translate API account.
-# Pricing details are here:
-# https://developers.google.com/translate/v2/pricing
+# If the page has been translated to a language other than English
+# and you would like your users to be able to type in search keywords
+# in that language, you will need to sign up for a paid
+# Google Translate API account that will allow the language detection feature.
+# For pricing details and getting started with obtaining your API key,
+# please visit: https://developers.google.com/translate/v2/pricing.
 # Once you obtain your API key, uncomment translation-related code in
 # app/controllers/locations_controller and enter your API key below to
 # test the translation in development.

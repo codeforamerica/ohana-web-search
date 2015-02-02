@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'searching from results page', :vcr do
-
   before { visit('/locations') }
 
   context 'when search returns results' do
@@ -27,8 +26,9 @@ feature 'searching from results page', :vcr do
       expect(page).to have_content('x 123')
     end
 
-    it 'displays the location address' do
-      expect(page).to have_content('2013 Avenue of the fellows')
+    it 'displays the location physical address' do
+      address = '2013 Avenue of the fellows, Suite 100, San Francisco, CA 94103'
+      expect(page).to have_content(address)
     end
 
     it 'displays the location short description' do

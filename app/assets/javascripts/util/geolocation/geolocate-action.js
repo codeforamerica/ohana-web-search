@@ -2,7 +2,7 @@
 define([
   'util/geolocation/geolocator',
   'app/alerts',
-  'util/map/google-maps-loader',
+  'util/map/google/map-loader',
   'domReady!'
 ],
 function (geo, alerts, googleMaps) {
@@ -17,6 +17,9 @@ function (geo, alerts, googleMaps) {
 
   // A callback function for when the location is determined.
   var _locateAction;
+
+  // 'Constant' used in error alert message.
+  var LOCATION_NOT_FOUND_ERROR_TEXT = 'Your location could not be determined!';
 
   function init(target, locateAction) {
     // If geolocation is supported, show geolocate button.
@@ -51,7 +54,7 @@ function (geo, alerts, googleMaps) {
       },
       error: function(error) { // jshint ignore:line
         //console.log("Geolocation failed due to: " + error.message);
-        alerts.show('Your location could not be determined!', alerts.type.ERROR);
+        alerts.show(LOCATION_NOT_FOUND_ERROR_TEXT, alerts.type.ERROR);
         _locateTargetReady();
       }
     };
@@ -69,7 +72,7 @@ function (geo, alerts, googleMaps) {
         _locateAction(results[0].formatted_address);
       } else {
         //console.log("Geocoder failed due to: " + status);
-        alerts.show('Your location could not be determined!', alerts.type.ERROR);
+        alerts.show(LOCATION_NOT_FOUND_ERROR_TEXT, alerts.type.ERROR);
         _locateTargetReady();
       }
     });

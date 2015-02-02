@@ -51,11 +51,11 @@ function (eventObserver) {
         _instance.dispatchEvent(_events.CHANGE, {target:_instance});
       });
 
-      _input.addEventListener('keyup', function (evt) {
+      _input.addEventListener('keyup', function () {
         _setClearButtonVisibility();
       });
 
-      _input.addEventListener('change', function (evt) {
+      _input.addEventListener('change', function () {
         _setClearButtonVisibility();
         _instance.dispatchEvent(_events.CHANGE, {target:_instance});
       });

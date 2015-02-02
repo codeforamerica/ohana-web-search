@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'phone number formatting' do
-
   scenario 'when separated by dash' do
     VCR.use_cassette('dynamic/location_details/phone_dynamic',
                      erb: { first_general_number: '703-555-1212' }) do

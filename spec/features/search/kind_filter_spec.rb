@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'kind filter', :vcr do
-
   context 'when visiting /locations' do
     it 'does not check any Kind checkboxes by default' do
       visit '/locations'

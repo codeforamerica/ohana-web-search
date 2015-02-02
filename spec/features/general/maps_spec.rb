@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'search results map' do
-
   context 'results have entries that have coordinates', :vcr do
     it 'displays a results list map' do
       visit('/locations/')
@@ -15,11 +14,9 @@ feature 'search results map' do
       expect(page).not_to have_selector('#map-view')
     end
   end
-
 end
 
 feature 'detail view map' do
-
   context 'location has coordinates', :vcr do
     it 'displays a map' do
       visit_test_location
@@ -33,5 +30,4 @@ feature 'detail view map' do
       expect(page).to_not have_selector('#detail-map-view')
     end
   end
-
 end

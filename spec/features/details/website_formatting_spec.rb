@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'url formatting' do
-
   scenario 'when contains https://' do
     VCR.use_cassette('dynamic/location_details/website_dynamic',
                      erb: { website: 'https://www.smctest.org' }) do

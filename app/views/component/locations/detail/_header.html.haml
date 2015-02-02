@@ -1,6 +1,2 @@
 %header.results-header#floating-results-header
   = render partial: 'component/locations/detail/header_summary', locals: { location: @location }
-
--# Persistent header duplicate needed to maintain layout when header floats.
-%header.results-header.persistent#persistent-results-header
-  = render partial: 'component/locations/detail/header_summary', locals: { location: @location }

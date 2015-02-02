@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'address formatting' do
-
   context 'when no address elements are present', :vcr do
     before(:each) { visit_location_with_no_address }
 
@@ -22,12 +21,12 @@ feature 'address formatting' do
       end
     end
 
-    it 'includes the address header' do
-      expect(page).to have_content('Address')
+    it 'includes the physical address header' do
+      expect(page).to have_content('Physical Address')
     end
 
-    it 'includes the street address' do
-      expect(page).to have_content('2013 Avenue of the fellows')
+    it 'includes the mailing address header' do
+      expect(page).to have_content('Mailing Address')
     end
 
     it 'includes a Google Maps directions link to the address' do
