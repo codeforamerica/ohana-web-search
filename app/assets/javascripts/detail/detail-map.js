@@ -11,6 +11,15 @@ function (markers, googleMaps) {
     googleMaps.load(_renderMap);
   }
 
+  // @param nodes [Array] List of DOM HTMLNodes.
+  function _removeDOMNodeList( nodes ) {
+    var node;
+    for ( var i = 0, len = nodes.length; i < len; i++ ) {
+      node = nodes[i];
+      node.parentNode.removeChild( node );
+    }
+  }
+
   function _renderMap() {
     var mapCanvas = document.getElementById('detail-map-canvas');
 
@@ -28,10 +37,7 @@ function (markers, googleMaps) {
       var kind = kindElm.innerHTML.trim();
 
       // Remove embedded values from the DOM.
-      titleElm.parentNode.removeChild(titleElm);
-      latElm.parentNode.removeChild(latElm);
-      lngElm.parentNode.removeChild(lngElm);
-      kindElm.parentNode.removeChild(kindElm);
+      _removeDOMNodeList( [titleElm, latElm, lngElm, kindElm] );
 
       var latLng = new google.maps.LatLng(lat, lng);
 
