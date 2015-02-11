@@ -40,13 +40,12 @@ define(function() {
 
   function _closeHandler(evt) {
     var popup = evt.target;
-    if (popup.attributes.href !== undefined &&
+    if (popup.attributes.href === undefined &&
       !popup.classList.contains('popup-term')) {
-      return;
+      _lastPopup.classList.add('hide');
+      document.removeEventListener('mousedown', _closeHandler, true);
+      _contentElm.removeEventListener('mousedown', _closeHandler, true);
     }
-    _lastPopup.classList.add('hide');
-    document.removeEventListener('mousedown', _closeHandler, true);
-    _contentElm.removeEventListener('mousedown', _closeHandler, true);
   }
 
   return {
