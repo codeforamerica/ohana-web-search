@@ -61,8 +61,10 @@ function (TextInput, CheckboxSubtractive, geo) {
   }
 
   function _showNotice() {
-    var notice = "<a id='update-results' style='cursor:pointer;'>" +
-                 "<i class='fa fa-refresh'></i> Update search results!" +
+    var notice = "<a id='update-results'" + // jshint ignore:line
+                 "style='cursor:pointer;'>" + // jshint ignore:line
+                 "<i class='fa fa-refresh'></i>" + // jshint ignore:line
+                 'Update search results!' +
                  '</a>';
     alert.show(notice, alert.type.INFO);
     var trigger = document.getElementById('update-results');
