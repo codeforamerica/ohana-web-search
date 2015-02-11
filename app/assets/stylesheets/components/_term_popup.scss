@@ -12,16 +12,16 @@
   .popup {
     min-width: 150px;
 
-      @include border-radius(5px 5px 5px 0px);
+      @include border-radius(5px 5px 5px 0);
       background: $white;
       border: 1px solid $greyscale_midtone; // IE fallback
       border: 1px solid rgba($black, .4);
-      @include single-box-shadow( rgba($black, .4), 0px, 0px, 10px );
+      @include single-box-shadow( 0, 0, 10px, 0, rgba( $black, 0.4 ) );
       color: $black;
       position: absolute;
-      top: 0px;
-      left: 0px;
-      z-index: 9999;
+      top: 0;
+      left: 0;
+      z-index: $layer-8;
       cursor: default;
       font-size: $font_size_90;
       font-style: normal;
@@ -46,7 +46,7 @@
     }
 
     .corner {
-        border-radius: 0px 10px 0px 0px;
+        border-radius: 0 10px 0 0;
         width: 10px;
         height: 10px;
         padding: 0;
