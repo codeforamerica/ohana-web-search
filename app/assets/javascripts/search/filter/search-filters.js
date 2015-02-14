@@ -3,9 +3,10 @@ define([
   'search/filter/TextInput',
   'search/filter/CheckboxSubtractive',
   'util/geolocation/geolocate-action',
+  'app/alerts',
   'domReady!'
 ],
-function (TextInput, CheckboxSubtractive, geo) {
+function (TextInput, CheckboxSubtractive, geo, alert) {
   'use strict';
 
   // The search filters.
