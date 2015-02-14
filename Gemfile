@@ -49,7 +49,7 @@ gem 'rack-rewrite', '~> 1.5.0'
 gem 'google-api-client', '~> 0.8.1'
 
 # App config and ENV variables for heroku.
-gem 'figaro', '~> 1.0.0'
+gem 'figaro', '~> 1.0'
 
 # Handles logic behind Pagination UI component.
 gem 'kaminari'
