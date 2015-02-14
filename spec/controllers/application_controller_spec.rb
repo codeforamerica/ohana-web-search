@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ApplicationController do
-
   shared_examples 'redirects and displays alert' do
     it 'redirects to root_path' do
       get :index

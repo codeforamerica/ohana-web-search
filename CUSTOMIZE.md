@@ -1,8 +1,9 @@
 # Customizing Ohana Web Search
 
+Make sure you've [installed](https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md) the app first.
+
 ## Environment variables
-Inside the `config` folder, you will find a file named `application.example.yml`.
-Copy its contents to a new file called `application.yml` in the same directory.
+Inside the `config` folder, you will find a file named `application.yml`.
 Read through the documentation to learn how you can customize the app to suit
 your needs.
 
@@ -36,8 +37,9 @@ The application uses Google Translate for free language translation of the site.
 
 - **Support for saving custom translations**. If you want to make edits to the Google provided translations of a live site you can add a `GOOGLE_TRANSLATE_CUSTOMIZATION_CODE` in `config/application.yml`. Follow the directions in that file for obtaining the proper code for your site.
 
-- **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, you can enable language detection by adding a `GOOGLE_TRANSLATE_API_KEY` in `config/application.yml`. Follow the directions in that file for obtaining an API key.
-**NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
+- **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, do the following:
+  1. Uncomment the Google Translate related lines in `app/controllers/locations_controller.rb`.
+  2. Add a `GOOGLE_TRANSLATE_API_KEY` in `config/application.yml`. Follow the directions in that file for obtaining an API key from Google. **NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
 
 - **Change the gadget layout**. If you want to change the Google Website Translator Gadget's layout, two of the layouts provided by Google are supported: InlineLayout.VERTICAL and InlineLayout.HORIZONTAL. One or the other
 can be set in `assets/javascripts/application.js`.

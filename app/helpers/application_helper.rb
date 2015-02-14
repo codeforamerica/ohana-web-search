@@ -33,4 +33,8 @@ module ApplicationHelper
       GOOGLE_MAPS_API_KEY: ENV['GOOGLE_MAPS_API_KEY']
     }.to_json)
   end
+
+  def cache_key_for(hash)
+    Digest::MD5.hexdigest(hash.to_s)
+  end
 end

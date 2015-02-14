@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'location details' do
-
   context 'when the details page is visited via search results', :vcr do
     it 'includes address elements' do
       search_for_example
@@ -156,12 +155,14 @@ feature 'location details' do
       expect(page).to have_link('www.example.org')
     end
 
-    it 'includes Physical Address' do
-      expect(page).to have_content('Avenue of the fellows')
+    it 'includes the physical address' do
+      address = '2013 Avenue of the fellows, Suite 100 San Francisco, CA 94103'
+      expect(page).to have_content(address)
     end
 
-    it 'includes Mailing Address' do
-      expect(page).to have_content('The Foodies')
+    it 'includes the mailing address' do
+      address = 'The Foodies 2013 Avenue of the fellows, Suite 100 San Francisco, CA 90210'
+      expect(page).to have_content(address)
     end
 
     xit 'includes keywords' do
@@ -174,10 +175,6 @@ feature 'location details' do
 
     it 'includes a link to other locations of the same Kind' do
       expect(page).to have_link 'Other', href: locations_path(kind: 'Other')
-    end
-
-    it 'includes updated time' do
-      expect(page).to have_content('Friday, 5 December 2014 at 10:04 AM PST')
     end
   end
 
@@ -272,7 +269,7 @@ feature 'location details' do
     end
 
     it 'includes rel=nofollow' do
-      within '.updated-at' do
+      within '.button-edit' do
         expect(find(:rel, 'nofollow')).to be_present
       end
     end

@@ -28,13 +28,13 @@
 
       - if @location.regular_schedules.present?
         %section.schedules-box.location-sidebar-section
-          %h1 Regular Location Hours
+          %h1 Regular Hours
           %section.location-sidebar-content
             = render 'component/detail/location_regular_schedule', schedules: @location.regular_schedules
 
       - if @location.holiday_schedules.present?
         %section.schedules-box.location-sidebar-section
-          %h1 Holiday Location Hours
+          %h1 Holiday Hours
           %section.location-sidebar-content
             = render 'component/detail/location_holiday_schedule', schedules: @location.holiday_schedules
 
@@ -170,15 +170,22 @@
                 %section
                   = render 'component/detail/location_holiday_schedule', schedules: service.holiday_schedules
 
-            - if service.website.present? && service.email.present?
-              %section.web-addresses-box
-                = render 'component/detail/website', website: service.website
-                = render 'component/detail/email', email: service.email
+            - if service.website.present? || service.email.present? || service.phones.present?
+              %section.contact-box
+                - if service.website.present?
+                  = render 'component/detail/website', website: service.website
+                - if service.email.present?
+                  = render 'component/detail/email', email: service.email
+                - if service.phones.present?
+                  %section.phones
+                    - service.phones.each do |phone|
+                      = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
             = render 'component/detail/service_description', service: service
             = render 'component/detail/service_fees', service: service
             = render 'component/detail/service_audience', service: service
             = render 'component/detail/service_eligibility', service: service
             = render 'component/detail/service_how_to_apply', service: service
+            = render 'component/detail/service_interpretation_services', service: service
             = render 'component/detail/service_wait', service: service
             = render 'component/detail/service_required_documents', service: service
             = render 'component/detail/service_accepted_payments', service: service
@@ -188,13 +195,7 @@
   - if @location.updated_at.present?
     %footer
       %section.metadata
-        %section
-          %section.updated-at
-            %h1
-              Last updated:
-            %span
-              = @location.updated_at.to_s(:full_date_and_time)
-            .button-edit
-              = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
-                %i.fa.fa-pencil
-                Edit
+        .button-edit
+          = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
+            %i.fa.fa-pencil
+            Edit

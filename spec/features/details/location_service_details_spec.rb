@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'location service details' do
-
   context 'when service elements are present' do
     before(:each) do
       cassette = 'location_details/when_the_details_page_is_visited_directly'
@@ -30,6 +29,11 @@ feature 'location service details' do
       expect(all(element).first).to have_content('passports@example.org')
     end
 
+    it 'includes the phone number, extension, type, and department' do
+      element = '.services-box .phones'
+      expect(find(element)).to have_content('(123) 456-7890 x 123 voice Passport Photos')
+    end
+
     it 'includes description' do
       element = '.services-box .description'
       expect(all(element).first).to have_content('Lorem ipsum')
@@ -44,7 +48,13 @@ feature 'location service details' do
     end
 
     it 'includes eligibility' do
-      expect(page).to have_content('None')
+      element = '.services-box .eligibility'
+      expect(all(element).last).to have_content('None')
+    end
+
+    it 'includes interpretation services' do
+      element = '.services-box .interpretation-services'
+      expect(all(element).last).to have_content('3-way interpretation')
     end
 
     it 'includes how to apply' do
@@ -57,7 +67,7 @@ feature 'location service details' do
 
     it 'includes required documents' do
       element = '.services-box .required-documents'
-      expect(first(element)).to have_content('Government-issued picture identification')
+      expect(first(element)).to have_content('Government-issued picture')
     end
 
     it 'includes accepted payment methods' do

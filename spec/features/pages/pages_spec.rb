@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'Site Pages' do
-
   scenario 'when visiting about page directly' do
     visit('/about')
     expect(page).to have_title 'About | SMC-Connect'

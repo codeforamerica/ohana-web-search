@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'results list' do
-
   scenario 'displays the first voice number when voice number is first' do
     VCR.use_cassette('dynamic/location_details/phone_type_dynamic',
                      erb: { first_general_number_type: 'voice',

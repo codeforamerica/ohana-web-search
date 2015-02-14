@@ -1,2 +1,2 @@
-%script{id: 'map-locations', type: 'application/json'}
+%script#map-locations-data{ type: 'application/json' }
   = raw(@search.map_data.to_json)

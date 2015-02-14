@@ -42,7 +42,7 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
 
     // Hook reset button on the page and listen for a click event.
     var resetButton = document.getElementById('button-reset');
-    resetButton.addEventListener('click', _resetClicked,false);
+    resetButton.addEventListener('click', _resetClicked, false);
   }
 
   // The geolocation button was clicked in the location filter.
@@ -62,8 +62,10 @@ function (TextInput, CheckboxSubtractive, geo, alert) {
   }
 
   function _showNotice() {
-    var notice = "<a id='update-results' style='cursor:pointer;'>" +
-                 "<i class='fa fa-refresh'></i> Update search results!" +
+    var notice = "<a id='update-results'" + // jshint ignore:line
+                 "style='cursor:pointer;'>" + // jshint ignore:line
+                 "<i class='fa fa-refresh'></i>" + // jshint ignore:line
+                 'Update search results!' +
                  '</a>';
     alert.show(notice, alert.type.INFO);
     var trigger = document.getElementById('update-results');

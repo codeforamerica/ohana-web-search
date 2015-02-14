@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'service area filter', :vcr do
-
   context 'when clicking a link from the homepage' do
     it 'automatically sets service_area=smc' do
       visit '/'

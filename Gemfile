@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.5'
 gem 'rails', '~> 4.1.4'
 
 # FRONT END
 
 # Use SCSS for stylesheets.
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '~> 2.0.0'
+gem 'compass-rails', '~> 2.0.4'
 
 # Font-awesome icons.
 gem 'font-awesome-rails'
@@ -21,7 +21,7 @@ gem 'uglifier'
 gem 'requirejs-rails', '~> 0.9.2'
 
 # For HAML HTML view templates.
-gem 'haml-rails', '~> 0.5.3'
+gem 'haml-rails'
 
 # SERVER
 
@@ -46,7 +46,7 @@ gem 'kgio'
 gem 'rack-rewrite', '~> 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '~> 0.7.1'
+gem 'google-api-client', '~> 0.8.1'
 
 # App config and ENV variables for heroku.
 gem 'figaro', '~> 1.0.0'
@@ -61,15 +61,15 @@ end
 
 # dev and debugging tools
 group :development do
-  gem 'quiet_assets', '~> 1.0.3'
-  gem 'better_errors', '~> 2.0.0'
+  gem 'quiet_assets'
+  gem 'better_errors'
   gem 'binding_of_caller', '~> 0.7.2', platforms: [:mri_19, :rbx]
 
   # For mocking emails for sending.
-  gem 'letter_opener', '~> 1.2.0'
+  gem 'letter_opener'
 
   # For linting JS with `rake jshint`.
-  gem 'jshintrb'
+  gem 'jshint'
 
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'

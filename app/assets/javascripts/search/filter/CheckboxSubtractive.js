@@ -32,7 +32,7 @@ function () {
       else _deactive();
     }
 
-    function _checkToggle(evt) {
+    function _checkToggle() {
       _checkToggles();
       _broadcastEvent('change');
     }
@@ -70,7 +70,7 @@ function () {
 
     return {
       addEventListener:addEventListener
-    }
+    };
 
   }
 

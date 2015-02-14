@@ -11,34 +11,45 @@ function (util) {
 
   function init() {
     _header = document.getElementById('floating-results-header');
-    if (_header) {
-      _offsetY = util.getOffset(_header).top;
-      var query = '#floating-results-header .floating-content';
-      _floatingContent = document.querySelectorAll(query);
+    if (!_header) throw new Error('Floating header DOM not found!');
+    _offsetY = _calculateOffset();
+    _floatingContent = _header.querySelectorAll('.floating-content');
 
-      _checkIfFloating();
+    _checkIfFloating();
 
-      // If the URL has a hash, offset the scrolling by the height of the
-      // floating header. Also offset scrolling if search container is
-      // above search results (it's not floated).
-      var scrollOffset;
-      if (window.location.hash) {
-        scrollOffset = _header.offsetHeight;
-        window.scrollTo(0, (window.scrollY - scrollOffset));
-      } else if ( (util.getStyle(document.getElementById('search-container'),
-                  'float') === 'none')
-                ) {
-        var header = document.getElementById('persistent-results-header');
-        scrollOffset = util.getOffset(header).top;
-        window.scrollTo(0, scrollOffset - 1);
-      }
-
-      window.addEventListener('scroll', _onScroll, false);
+    // If the URL has a hash, offset the scrolling by the height of the
+    // floating header. Also offset scrolling if search container is
+    // above search results (it's not floated).
+    var scrollOffset;
+    if (window.location.hash) {
+      scrollOffset = _header.offsetHeight;
+      window.scrollTo(0, (window.scrollY - scrollOffset));
+    } else if ( (util.getStyle(document.getElementById('search-container'),
+                'float') === 'none')
+              ) {
+      scrollOffset = _calculateOffset();
+      window.scrollTo(0, scrollOffset - 1);
     }
+
+    window.addEventListener('scroll', _onScroll, false);
+    window.addEventListener('resize', _resizeHandler, true);
+  }
+
+  function _resizeHandler() {
+    _offsetY = _calculateOffset();
   }
 
   function _onScroll() {
     _checkIfFloating();
+  }
+
+  function _calculateOffset() {
+    var isFloating = _header.classList.contains('floating');
+    _header.classList.remove('floating');
+    var offset = util.getOffset(_header).top;
+    if (isFloating)
+      _header.classList.add('floating');
+    return offset;
   }
 
   function _checkIfFloating() {

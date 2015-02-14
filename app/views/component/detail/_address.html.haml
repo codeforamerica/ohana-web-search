@@ -1,16 +1,13 @@
 %span{ itemscope: '', itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
+  %span.street-address{ itemprop: 'streetAddress' }><
+    = superscript_ordinals(street_address_for(location.address))
   - if lines == 2
-    %span.street-address{ itemprop: 'streetAddress' }
-      = superscript_ordinals(street_address_for(location.address))
     %br
   - else
-    %span.street-address{ itemprop: 'streetAddress' }><
-      = superscript_ordinals(street_address_for(location.address))
     ,
 
-  %span.city{ itemprop: 'addressLocality' }<
-    = location.address.city
-  ,
+  %span.city{ itemprop: 'addressLocality' }
+    #{location.address.city},
 
   %span.state{ itemprop: 'addressRegion' }>
     = location.address.state_province

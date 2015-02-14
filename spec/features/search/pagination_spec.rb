@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 feature 'results page pagination', :vcr do
-
   context 'when there are no results' do
     before { visit '/locations?keyword=asdfg' }
 
@@ -10,7 +9,7 @@ feature 'results page pagination', :vcr do
     end
 
     it 'displays an appropriate search summary' do
-      within('#persistent-results-header .search-summary') do
+      within('#floating-results-header .search-summary') do
         expect(page).to have_content('No results found')
       end
     end
@@ -24,7 +23,7 @@ feature 'results page pagination', :vcr do
     end
 
     it 'displays an appropriate search summary' do
-      within('#persistent-results-header .search-summary') do
+      within('#floating-results-header .search-summary') do
         expect(page).to have_content('Displaying 1 result')
       end
     end
@@ -42,7 +41,7 @@ feature 'results page pagination', :vcr do
     end
 
     it 'displays an appropriate search summary' do
-      within('#persistent-results-header .search-summary') do
+      within('#floating-results-header .search-summary') do
         expect(page).to have_content('Displaying all 5 results')
       end
     end
@@ -64,7 +63,7 @@ feature 'results page pagination', :vcr do
     end
 
     it 'displays an appropriate search summary' do
-      within('#persistent-results-header .search-summary') do
+      within('#floating-results-header .search-summary') do
         expect(page).to have_content('Displaying 1 - 1 of 92 results')
       end
     end

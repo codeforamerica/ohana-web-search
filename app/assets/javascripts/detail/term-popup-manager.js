@@ -1,22 +1,25 @@
-// manages behavior of popups
+// Manages behavior of terminology popups.
 define(function() {
   'use strict';
 
   // PRIVATE PROPERTIES
-  var popups; // array of popups on the page
-  var lastPopup; // the last popup to be shown
+  var _lastPopup; // the last popup to be shown
+  var _contentElm;
 
   // PUBLIC METHODS
-  function init()
-  {
-    popups = document.querySelectorAll('.term-popup-container');
+  function init() {
 
-    for (var p = 0; p < popups.length; p++)
-    {
-      var popup = popups[p].firstElementChild;
-      var term = popups[p].lastElementChild;
-      if ((/\S/.test(popup.textContent)))
-      {
+    // DOM reference to main content area of page.
+    _contentElm = document.getElementById('content');
+
+    // Array of popups on the page.
+    var popups = document.querySelectorAll( '.term-popup-container' );
+
+    var popup, term;
+    for ( var p = 0, len = popups.length; p < len; p++ ) {
+      popup = popups[p].firstElementChild;
+      term = popups[p].lastElementChild;
+      if ((/\S/.test(popup.textContent))) {
         term.addEventListener('mousedown', _popupHandler, false);
         term.classList.add('active');
       }
@@ -24,23 +27,24 @@ define(function() {
   }
 
   // PRIVATE METHODS
-  function _popupHandler(evt)
-  {
+  function _popupHandler(evt) {
     var thisPopup = (evt.target).parentElement.firstElementChild;
-    if (lastPopup && lastPopup !== thisPopup) lastPopup.classList.add('hide');
-    lastPopup = thisPopup;
-    lastPopup.classList.toggle('hide');
-    lastPopup.style.top = (lastPopup.offsetHeight * -1) + 'px';
-    document.getElementById('content').addEventListener('mousedown', _closeHandler, true);
+    if (_lastPopup && _lastPopup !== thisPopup) {
+      _lastPopup.classList.add('hide');
+    }
+    _lastPopup = thisPopup;
+    _lastPopup.classList.toggle('hide');
+    _lastPopup.style.top = (_lastPopup.offsetHeight * -1) + 'px';
+    _contentElm.addEventListener('mousedown', _closeHandler, true);
   }
 
-  function _closeHandler(evt)
-  {
-    if (evt.target.attributes['href'] === undefined && !evt.target.classList.contains('popup-term'))
-    {
-      lastPopup.classList.add('hide');
+  function _closeHandler(evt) {
+    var popup = evt.target;
+    if (popup.attributes.href === undefined &&
+      !popup.classList.contains('popup-term')) {
+      _lastPopup.classList.add('hide');
       document.removeEventListener('mousedown', _closeHandler, true);
-      document.getElementById('content').removeEventListener('mousedown', _closeHandler, true);
+      _contentElm.removeEventListener('mousedown', _closeHandler, true);
     }
   }
 

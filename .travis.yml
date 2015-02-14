@@ -1,15 +1,10 @@
-bundler_args: "--without development:production"
-install: bin/wad
-script: bundle exec rspec
 language: ruby
+bundler_args: "--without development:production"
+cache: bundler
+sudo: false
+script: bundle exec rspec
 rvm:
-- 2.1.3
-notifications:
-  campfire:
-    rooms:
-    - secure: b20Ulu9dgqeC4YrnCDadz1JudFha77wR6gAsMWqWg7HMK4aXuJjimr/ag/iLk0ouTZRAM26LIfGXzVu5ke/13q5xdVCgUnOZRdq8iysK1S0H7saZ2nV5oXvN9b5HfIZjpIoMIiBKvpsLDknf+fgqn2gGIM2fk72A8+XbHF6VVH4=
-    on_success: never
-    on_failure: always
+- 2.1.5
 deploy:
   provider: heroku
   app: ohana-staging
