@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&service_area=smc
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&service_area=smc
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:58 GMT
+      - Sat, 14 Feb 2015 20:29:15 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"1bd8b9406ab88aa2889f20f64cd4ca9f"'
+      - '"5cbbea67dc6761fb9b730eb12c7ae6a7"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=271&service_area=smc>;
-        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?page=2&service_area=smc>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=271&service_area=smc>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2&service_area=smc>;
         rel="next"
       X-Total-Count:
       - '271'
@@ -45,11 +45,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 539119ef-13bd-4295-be8e-4773e76f8ef6
+      - fd5907a4-766c-435b-934d-7c2fe468a0f1
       X-Runtime:
-      - '0.033580'
+      - '3.749468'
+      X-Content-Digest:
+      - f00d8a6f2ed2707a12831485864451496db65495
+      Content-Length:
+      - '2841'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -82,7 +88,7 @@ http_interactions:
         Family Service","website":null,"slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731/locations"},"phones":[{"id":1850,"department":null,"extension":null,"number":"650
         780-7525","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:57 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:15 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=&org_name=&utf8=%E2%9C%93
@@ -104,9 +110,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:58 GMT
+      - Sat, 14 Feb 2015 20:29:15 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -116,7 +122,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"a2e2ed6de444dbc07a28f1804e50050c"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=&page=343&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=&page=2&utf8=%E2%9C%93>;
@@ -128,11 +134,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 7b3c25bf-1007-4ad4-bfad-8bd89b1a202e
+      - a77e38d0-2861-4d35-8ff0-5907d6aaf3e0
       X-Runtime:
-      - '0.024068'
+      - '0.069664'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -149,7 +161,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:58 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:15 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=&org_name=&service_area=smc&utf8=%E2%9C%93
@@ -171,9 +183,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:58 GMT
+      - Sat, 14 Feb 2015 20:29:15 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -183,7 +195,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"1bd8b9406ab88aa2889f20f64cd4ca9f"'
+      - '"5cbbea67dc6761fb9b730eb12c7ae6a7"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=&page=271&service_area=smc&utf8=%E2%9C%93>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=&page=2&service_area=smc&utf8=%E2%9C%93>;
@@ -195,11 +207,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - e2bfce30-4d72-491b-93bd-811d5d85ea8d
+      - 334ccd55-9c42-4a22-8f70-2c798c98130d
       X-Runtime:
-      - '0.035040'
+      - '0.071955'
+      X-Content-Digest:
+      - f00d8a6f2ed2707a12831485864451496db65495
+      Content-Length:
+      - '2841'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -232,5 +250,5 @@ http_interactions:
         Family Service","website":null,"slug":"peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service-f8e82538-5878-414f-9ba9-6ded2c15d731/locations"},"phones":[{"id":1850,"department":null,"extension":null,"number":"650
         780-7525","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:58 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:15 GMT
 recorded_with: VCR 2.9.3

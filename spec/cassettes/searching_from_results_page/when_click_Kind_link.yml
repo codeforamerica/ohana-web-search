@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:46 GMT
+      - Sat, 14 Feb 2015 20:29:41 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"a2e2ed6de444dbc07a28f1804e50050c"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -44,11 +44,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 45481f7a-6d14-42e3-a4c9-40c284f5f6a1
+      - 43d83cc6-4fc0-4511-9503-343dca0150c4
       X-Runtime:
-      - '0.023832'
+      - '9.324349'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -65,7 +71,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:41 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=soccer
@@ -87,9 +93,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:46 GMT
+      - Sat, 14 Feb 2015 20:29:41 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -111,11 +117,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 50df777b-c691-46cd-9124-2d86ba8aad5a
+      - 98da3172-d084-4038-af83-1b2656e8cbbb
       X-Runtime:
-      - '0.041627'
+      - '0.061508'
+      X-Content-Digest:
+      - be086943ba273ef7020c32caa74fa17696e487fb
+      Content-Length:
+      - '2267'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -141,10 +153,10 @@ http_interactions:
         of San Francisco","website":null,"slug":"ymca-of-san-francisco","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/ymca-of-san-francisco/locations"},"phones":[{"id":2449,"department":null,"extension":null,"number":"415
         242-7100","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:41 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&kind=Other
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&kind=Other
     body:
       encoding: US-ASCII
       string: ''
@@ -163,9 +175,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:46 GMT
+      - Sat, 14 Feb 2015 20:29:41 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -175,10 +187,11 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"2cf5b74c5ecab376c5f98438089a9a9b"'
+      - '"e4176a831b059f43cec3fc0fc992f361"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?kind=Other&page=48>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?kind=Other&page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=48>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&kind=Other&page=2>;
+        rel="next"
       X-Total-Count:
       - '48'
       Content-Type:
@@ -186,11 +199,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - fbd4f8b6-24ee-4120-9771-3a428e9351fd
+      - 7b8ab4d0-30d9-4fe3-a62a-13e8fd9929e2
       X-Runtime:
-      - '0.025187'
+      - '0.054396'
+      X-Content-Digest:
+      - 36dd8a5c2cb95d9d3d88c544f01ca795b702771d
+      Content-Length:
+      - '3274'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -222,5 +241,5 @@ http_interactions:
         403-4300","number_type":null,"vanity_number":null},{"id":1859,"department":null,"extension":"4100","number":"650
         403-4300","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:46 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:41 GMT
 recorded_with: VCR 2.9.3

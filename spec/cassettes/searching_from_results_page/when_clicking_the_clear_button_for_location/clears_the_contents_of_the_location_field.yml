@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:49 GMT
+      - Sat, 14 Feb 2015 20:29:44 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"a2e2ed6de444dbc07a28f1804e50050c"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -44,11 +44,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - a5acba8b-b5f0-4994-99c0-bee5472b1459
+      - 43d83cc6-4fc0-4511-9503-343dca0150c4
       X-Runtime:
-      - '0.022063'
+      - '9.324349'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -65,7 +71,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:49 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:44 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&org_name=&utf8=%E2%9C%93
@@ -87,9 +93,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:50 GMT
+      - Sat, 14 Feb 2015 20:29:45 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -111,11 +117,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - b23c4d23-b78b-4297-8246-b803d3e85a94
+      - 54977dd5-790c-489d-8d3b-05d169a96e25
       X-Runtime:
-      - '0.034047'
+      - '0.053466'
+      X-Content-Digest:
+      - 5791aafdd8a1d8795d41a383cbd57760a7485503
+      Content-Length:
+      - '2166'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -139,5 +151,5 @@ http_interactions:
         Mateo City Public Library","website":null,"slug":"san-mateo-city-public-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library/locations"},"phones":[{"id":1922,"department":"24-hour
         recorded message","extension":null,"number":"650 522-7880","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:50 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:45 GMT
 recorded_with: VCR 2.9.3

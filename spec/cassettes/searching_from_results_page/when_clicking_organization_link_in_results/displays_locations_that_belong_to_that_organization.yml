@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:51 GMT
+      - Sat, 14 Feb 2015 20:29:43 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"a2e2ed6de444dbc07a28f1804e50050c"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -44,11 +44,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 39918b0e-ec78-4aed-af1b-8e60b29dffb2
+      - 43d83cc6-4fc0-4511-9503-343dca0150c4
       X-Runtime:
-      - '0.021881'
+      - '9.324349'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -65,7 +71,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:50 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:43 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=Samaritan%20House&location=&org_name=&utf8=%E2%9C%93
@@ -87,9 +93,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:51 GMT
+      - Sat, 14 Feb 2015 20:29:43 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -111,11 +117,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 565c9f17-5c15-46d6-abbd-1f9323305a95
+      - 28abb3d3-bb67-48eb-947d-c0925b63d832
       X-Runtime:
-      - '0.035649'
+      - '0.071597'
+      X-Content-Digest:
+      - fde484de9c602ba33c0d364c378a93e8c86c6793
+      Content-Length:
+      - '2404'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -143,10 +155,10 @@ http_interactions:
         House","website":null,"slug":"samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec/locations"},"phones":[{"id":1903,"department":null,"extension":null,"number":"650
         839-1447","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:50 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:43 GMT
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&org_name=Samaritan%20House
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&org_name=Samaritan%20House
     body:
       encoding: US-ASCII
       string: ''
@@ -165,9 +177,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:51 GMT
+      - Sat, 14 Feb 2015 20:29:43 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -179,8 +191,8 @@ http_interactions:
       Etag:
       - '"c7a2e42a2d108a69562d8175137837e7"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?org_name=Samaritan+House&page=2>;
-        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?org_name=Samaritan+House&page=2>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&org_name=Samaritan+House&page=2>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&org_name=Samaritan+House&page=2>;
         rel="next"
       X-Total-Count:
       - '2'
@@ -189,11 +201,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 5fb33c10-9990-4231-bfb3-0829fae039e8
+      - a2d40df3-800a-45a6-b78c-50e880edb494
       X-Runtime:
-      - '0.128220'
+      - '0.178787'
+      X-Content-Digest:
+      - fde484de9c602ba33c0d364c378a93e8c86c6793
+      Content-Length:
+      - '2404'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - miss, store
       Via:
       - 1.1 vegur
     body:
@@ -221,5 +239,5 @@ http_interactions:
         House","website":null,"slug":"samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/samaritan-house-57cf15eb-09cd-498e-a0e8-b2f154a07bec/locations"},"phones":[{"id":1903,"department":null,"extension":null,"number":"650
         839-1447","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:50 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:44 GMT
 recorded_with: VCR 2.9.3

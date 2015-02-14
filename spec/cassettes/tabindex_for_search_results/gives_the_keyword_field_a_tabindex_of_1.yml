@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Mon, 02 Feb 2015 02:50:06 GMT
+      - Sat, 14 Feb 2015 20:29:36 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"514e3ec4b7f0a82de279437236386b26"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -44,11 +44,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - e68e5a9e-9f86-4221-90b0-97112fbc6988
+      - 43d83cc6-4fc0-4511-9503-343dca0150c4
       X-Runtime:
-      - '0.033805'
+      - '9.324349'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -65,5 +71,5 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Mon, 02 Feb 2015 02:50:06 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:36 GMT
 recorded_with: VCR 2.9.3

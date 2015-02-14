@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:52 GMT
+      - Sat, 14 Feb 2015 20:29:55 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -33,10 +33,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"a2e2ed6de444dbc07a28f1804e50050c"'
+      - '"5512e432b83396d7b7aa3a4668f6dfae"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -44,11 +44,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 31af854a-eb45-4510-b6ba-9962e18e38d6
+      - 43d83cc6-4fc0-4511-9503-343dca0150c4
       X-Runtime:
-      - '0.021885'
+      - '9.324349'
+      X-Content-Digest:
+      - c65c56b962a54df8990ff342bc770ec58c4e5302
+      Content-Length:
+      - '1507'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -65,7 +71,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:52 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:55 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=&org_name=Example%20Agency&utf8=%E2%9C%93
@@ -87,9 +93,9 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
+      - keep-alive
       Date:
-      - Fri, 05 Dec 2014 21:05:53 GMT
+      - Sat, 14 Feb 2015 20:29:55 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -99,7 +105,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"024fa7c4c11a8486ea6a29353778a04e"'
+      - '"fd68fa9e4cd720aebd5af54669059c68"'
       X-Total-Count:
       - '1'
       Content-Type:
@@ -107,11 +113,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - 390dbd14-fc80-463c-a8f3-5dcc2c9b4c51
+      - 82ae68c6-307a-409e-a067-b5111087ec5e
       X-Runtime:
-      - '0.115811'
+      - '0.260800'
+      X-Content-Digest:
+      - 2230e02869fcf624dc9872534d3e9a17a50233a4
+      Content-Length:
+      - '2916'
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
       Via:
       - 1.1 vegur
     body:
@@ -129,7 +141,7 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2014-12-05T10:04:55.918-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":1413,"street":"2013
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2015-02-01T20:49:59.311-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":1413,"street":"2013
         Avenue of the fellows, Suite 100","street_1":"2013 Avenue of the fellows","street_2":"Suite
         100","city":"San Francisco","state":"VT","state_province":"CA","postal_code":"94103","zip":"05201"},"organization":{"id":1344,"accreditations":["BBB","State
         Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
@@ -145,5 +157,5 @@ http_interactions:
         372-6200","number_type":"hotline","vanity_number":null},{"id":2532,"department":"Rental
         Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:52 GMT
+  recorded_at: Sat, 14 Feb 2015 20:29:55 GMT
 recorded_with: VCR 2.9.3
