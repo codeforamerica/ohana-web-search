@@ -54,8 +54,17 @@ To test the pagination feature, you might find it handy to force a particular
 number of results per page by adding the `per_page` parameter to the end of the
 URL. For example: [http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5](http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5)
 
-## Map marker graphics
-The root `graphics` folder contains source files for images in the application. In this directory, you can find an Adobe Illustrator source file for the Google map marker graphics. With this file you can adjust the map marker appearance by making changes and exporting and overwriting the files in `/app/assets/images/markers`. The Google map appears on the search results and location details pages.
+## Custom graphics
+The root `graphics` folder contains source template files for images in the application. Using these templates you can edit and re-generate the major graphics of the application. These are provided in Adobe Illustrator and SVG formats.
+
+- **Application logo**.
+The `app_logo` file can be used to adjust the application logo in the upper-left of the site. Make changes and export and overwrite the file in `/app/assets/images/app_logo.png`.
+
+- **Map marker graphics**.
+The `map_icons_template` file can be used to adjust the map marker appearance by making changes and exporting and overwriting the files in `/app/assets/images/markers`. The Google map appears on the search results and location details pages.
+
+- **Touch icons**.
+The `touch_icons_template` file can be used to change the touch icon that shows up in mobile and tablet devices when the site is saved to the home screen. Adjust the appearance by making changes and exporting and overwriting the files in `/app/assets/images/touch_icons`.
 
 ## Adding JavaScript code
 Ohana Web Search doesn't use the default `application.js` manifest file for loading JavaScript files that may be
