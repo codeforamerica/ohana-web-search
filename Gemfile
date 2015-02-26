@@ -23,9 +23,6 @@ gem 'requirejs-rails', '~> 0.9.2'
 # For HAML HTML view templates.
 gem 'haml-rails'
 
-# SERVER
-
-gem 'foreman'
 gem 'puma'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'faraday-http-cache', '~> 0.4.0'
@@ -36,7 +33,6 @@ gem 'dalli', '~> 2.7.1'
 gem 'memcachier'
 
 # Analytics
-gem 'appsignal'
 gem 'newrelic_rpm', '>= 3.8.0.218'
 
 # Required for caching in production.
