@@ -2,7 +2,7 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields
-    [:audience, :service_areas, :how_to_apply, :fees,
+    [:audience, :service_areas, :application_process, :fees,
      :eligibility, :languages, :accessibility]
   end
 
