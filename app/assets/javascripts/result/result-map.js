@@ -13,6 +13,9 @@ function (markerDataLoader, googleMaps, plugins, mapRenderer, MapSizeControl) {
   // Whether the Google Map APIs and plugins have successfully loaded.
   var _mapStackReady = false;
 
+  //Whether the map is at its max size or not
+  var _atMaxSize;
+
   function init() {
     // Load map marker data from DOM.
     var markerData = markerDataLoader.loadData('#map-locations-data');
@@ -33,6 +36,16 @@ function (markerDataLoader, googleMaps, plugins, mapRenderer, MapSizeControl) {
     mapRenderer.renderMapStack();
     var mapSizeControl = MapSizeControl.create('#map-size-control');
     mapSizeControl.addEventListener('click', _mapSizeControlClicked);
+    _setMapSize();
+  }
+
+  function _setMapSize() {
+    if (typeof(sessionStorage) !== 'undefined' && sessionStorage.atMaxSize !== undefined) {
+      _atMaxSize = JSON.parse(sessionStorage.atMaxSize) || false;
+      if (_atMaxSize !== false) {
+        document.getElementById('map-size-control').click();
+      }
+    }
   }
 
   function _mapSizeControlClicked() {
