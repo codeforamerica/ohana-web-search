@@ -33,10 +33,20 @@ function (markerDataLoader, googleMaps, plugins, mapRenderer, MapSizeControl) {
     mapRenderer.renderMapStack();
     var mapSizeControl = MapSizeControl.create('#map-size-control');
     mapSizeControl.addEventListener('click', _mapSizeControlClicked);
+
+    if (typeof(sessionStorage) !== 'undefined') {
+      if (sessionStorage.atMaxSize !== undefined &&
+          JSON.parse(sessionStorage.atMaxSize) === true) {
+        mapSizeControl.click();
+      }
+    }
   }
 
   function _mapSizeControlClicked() {
     mapRenderer.toggleSize();
+    if (typeof(sessionStorage) !== 'undefined') {
+      sessionStorage.atMaxSize = JSON.stringify(mapRenderer.isAtMaxSize()) || false;
+    }
   }
 
   // Re-initializes the map in the DOM, if required APIs have been loaded.

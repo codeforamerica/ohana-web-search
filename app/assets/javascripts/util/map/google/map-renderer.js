@@ -55,6 +55,11 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
     _refresh();
   }
 
+  // @return [Boolean] Whether the map is at the maximum size or not.
+  function isAtMaxSize() {
+    return _atMaxSize;
+  }
+
   // @param OverlappingMarkerSpiderfier [Object] Marker spiderfier plugin.
   function _renderMarkers(OverlappingMarkerSpiderfier) {
     var spiderfierOptions = {
@@ -324,6 +329,7 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
   return {
     init:init,
     renderMapStack:renderMapStack,
-    toggleSize:toggleSize
+    toggleSize:toggleSize,
+    isAtMaxSize:isAtMaxSize
   };
 });

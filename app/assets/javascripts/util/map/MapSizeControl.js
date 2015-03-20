@@ -33,7 +33,7 @@ function (eventObserver) {
     function _init() {
       _buttonElm.innerHTML = SMALLER_MAP_TEXT;
       _buttonElm.removeAttribute('disabled');
-      _buttonElm.addEventListener('click', _buttonElmClicked, false);
+      _buttonElm.addEventListener(_events.CLICK, _buttonElmClicked, false);
     }
 
     // Map size control was clicked. This control toggles the large & small map.
@@ -41,9 +41,15 @@ function (eventObserver) {
       _atMaxSize = !_atMaxSize;
       _buttonElm.innerHTML = _atMaxSize ? LARGER_MAP_TEXT : SMALLER_MAP_TEXT;
       _instance.dispatchEvent(_events.CLICK, {target:_instance});
-      evt.preventDefault();
+      if (evt && evt.preventDefault) evt.preventDefault();
     }
 
+    // Programmatically simulate a click on the map size control button.
+    function click() {
+      _buttonElmClicked();
+    }
+
+    _instance.click = click;
     _init();
 
     return _instance;
