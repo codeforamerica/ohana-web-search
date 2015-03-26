@@ -8,7 +8,7 @@ describe FeedbackMailer do
         from:    'tester@mctester.com',
         agent: 'Mozilla/5.0'
       }
-      @email = FeedbackMailer.feedback_email(@params).deliver
+      @email = FeedbackMailer.feedback_email(@params).deliver_now
     end
 
     it 'is delivered to the default email address(es)' do
@@ -41,7 +41,7 @@ describe FeedbackMailer do
       @params = {
         message: 'no email address'
       }
-      @email = FeedbackMailer.feedback_email(@params).deliver
+      @email = FeedbackMailer.feedback_email(@params).deliver_now
     end
 
     it 'is delivered to the default email address(es)' do
