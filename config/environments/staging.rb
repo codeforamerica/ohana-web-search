@@ -17,7 +17,7 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/rack-cache-memcached-rails31
   # ------------------------------------------------------------------
 
-  config.serve_static_assets = true
+  config.serve_static_files = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
