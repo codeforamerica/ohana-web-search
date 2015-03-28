@@ -17,8 +17,8 @@ You can see a running version of the application at
 
 ## Stack Overview
 
-* Ruby version 2.1.5
-* Rails version 4.1.6
+* Ruby version 2.2.1
+* Rails version 4.1.8
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara, Poltergeist
 
