@@ -1,9 +1,7 @@
 class AboutController < ApplicationController
-  respond_to :html, :json
-
   def index
     # Send an email based on the contents of the feedback form when submitted.
-    FeedbackMailer.feedback_email(params).deliver if request.xhr?
+    FeedbackMailer.feedback_email(params).deliver_now if request.xhr?
 
     respond_to do |format|
       # JSON response is for the feedback form.
