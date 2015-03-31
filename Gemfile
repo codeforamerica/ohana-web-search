@@ -26,7 +26,7 @@ gem 'haml-rails'
 # SERVER
 gem 'puma'
 gem 'ohanakapa', '~> 1.1.1'
-gem 'faraday-http-cache', '~> 0.4.0'
+gem 'faraday-http-cache', '~> 1.0'
 
 # Caching
 gem 'rack-cache', '~> 1.2'
