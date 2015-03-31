@@ -36,5 +36,8 @@ module OhanaWebSearch
     # Note that Google Chrome Frame was retired in Jan. 2014, so this is only for legacy systems.
     # More info at http://blog.chromium.org/2013/06/retiring-chrome-frame.html
     config.action_dispatch.default_headers = { 'X-UA-Compatible' => 'IE=edge,chrome=1' }
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    # config.active_record.raise_in_transactional_callbacks = true
   end
 end
