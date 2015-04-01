@@ -32,12 +32,12 @@ Clone it on your computer and navigate to the project's directory:
 
 ### Install the dependencies and set the default environment variables:
 
-    script/bootstrap
+    bin/setup
 
 ### Run the app
 Start the app locally on port 4000:
 
-    rails s -p 4000
+    puma -p 4000
 
 SMC-Connect should now be running at [http://localhost:4000](http://localhost:4000)
 
