@@ -1,6 +1,9 @@
 # This file is used by the "figaro" gem to allow you to store and use
 # environment variables in the app without having to set them via the
-# command line each time you run the app in development.
+# command line each time you run the app in development. Another advantage
+# is that you can make changes in a production environment (such as Heroku)
+# by simply changing the value of the environment variable, as opposed to
+# making code changes and having to push them to apply the new setting.
 # Read more about figaro here: https://github.com/laserlemon/figaro
 
 # Note that changes to this file will require a server restart to take effect.
@@ -9,14 +12,32 @@
 # in the Unix shell. For example, setting:
 # OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
 # makes "https://ohana-api-demo.herokuapp.com/api" available as
-# ENV["OHANA_API_ENDPOINT"] in the app. See config/initializers/ohanapi.rb
+# ENV['OHANA_API_ENDPOINT'] in the app. See config/initializers/ohanapi.rb
 # for a usage example.
 
-# Set this to the URL for your instance of the Ohana API:
-# https://github.com/codeforamerica/ohana-api
-# This environment variable is required.
-OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
+# Below, you will find descriptions for each variable, followed by default
+# settings for the development, production, and test environments.
 
+####################################
+#
+# ENVIRONMENT VARIABLE DESCRIPTIONS
+#
+####################################
+
+##############################################
+#
+# CANONICAL_URL - REQUIRED FOR CUSTOM DOMAINS
+#
+##############################################
+# If you are using a custom domain name, set CANONICAL_URL to your preferred
+# domain name, such as 'example.org' or 'www.example.org'.
+# See config/environments/production.rb for more details.
+
+################################################
+#
+# DOMAIN_NAME - REQUIRED FOR GOOGLE TRANSLATION
+#
+################################################
 # This setting is used for the Google translation feature.
 # The "DOMAIN_NAME" environment variable should be set to your app's
 # domain name, without the "www" subdomain, unless you're using a Heroku
@@ -33,13 +54,39 @@ OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
 # Read more about lvh.me here:
 # http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme
 # Pow should work too if you prefer that: http://pow.cx/
-DOMAIN_NAME: lvh.me
 
+########################################
+#
+# ENABLE_HTTPS - REQUIRED IN PRODUCTION
+#
+########################################
+# When using the default Heroku domain setup (http://app-name.herokuapp.com),
+# you can take advantage of SSL for free. However, to use SSL with a custom
+# domain name, you'll need to do some work first, as explained in the Wiki:
+# http://git.io/vez1W
+
+################################
+#
+# OHANA_API_ENDPOINT - REQUIRED
+#
+################################
+# Set this to the URL for your instance of the Ohana API:
+# https://github.com/codeforamerica/ohana-api
+
+################################
+#
+# OHANA_API_TOKEN - OPTIONAL
+#
+################################
 # If you choose to turn on rate limiting in your instance of Ohana API,
 # obtain an API Token for this app from the developer portal of the API,
-# then replace "changeme" with the actual token below.
-# OHANA_API_TOKEN: changeme
+# then replace "changeme" with the actual token.
 
+######################################
+#
+# GOOGLE_TRANSLATE_API_KEY - OPTIONAL
+#
+######################################
 # If the page has been translated to a language other than English
 # and you would like your users to be able to type in search keywords
 # in that language, you will need to sign up for a paid
@@ -49,8 +96,12 @@ DOMAIN_NAME: lvh.me
 # Once you obtain your API key, uncomment translation-related code in
 # app/controllers/locations_controller and enter your API key below to
 # test the translation in development.
-# GOOGLE_TRANSLATE_API_KEY: Your_API_Key
 
+#################################################
+#
+# GOOGLE_TRANSLATE_CUSTOMIZATION_CODE - OPTIONAL
+#
+#################################################
 # To allow users to customize the translations on your site, include a
 # Google Translate Customization website code. This code is used to verify
 # ownership for the Google Website Translator so that custom translations are
@@ -61,38 +112,61 @@ DOMAIN_NAME: lvh.me
 # via the Google Website Translator Gadget Wizard at
 # https://translate.google.com/manager/website/
 # and clicking "Get Code" when prompted.
-# GOOGLE_TRANSLATE_CUSTOMIZATION_CODE: Your_Website_Code_from_Google
 
+#################################################
+#
+# GOOGLE_ANALYTICS_ID - OPTIONAL
+# GOOGLE_ANALYTICS_DOMAIN - OPTIONAL
+#
+#################################################
 # If you have a Google Analytics account you want to use to track visits
 # to this app, set your ID and domain name below.
 # An example ID is 'UA-40905632-1', and an example domain is 'smc-connect.org'.
 # Note that you must have a Universal Analytics property for tracking to work.
 # https://support.google.com/analytics/answer/4457764?hl=en
-# GOOGLE_ANALYTICS_ID:
-# GOOGLE_ANALYTICS_DOMAIN:
 
+#################################################
+#
+# GOOGLE_MAPS_API_KEY - OPTIONAL
+#
+#################################################
 # While not required, using a Google Maps API key enables you to monitor your
 # application's Maps API usage. If your usage exceeds Google's usage limits,
 # you must load the Maps API using an API key in order to purchase more quota.
 # Visit the following URL for more information and to setup an API key:
 # https://developers.google.com/maps/documentation/javascript/tutorial#api_key
-# GOOGLE_MAPS_API_KEY:
 
-# When you visit a location, for example,
-# http://ohana-web-search-demo.herokuapp.com/locations/salvation-army/sunnyvale-corps,
-# the 'Last updated' time that is displayed at the bottom right of the page is
-# set to UTC by default. If you would like to set it to a more appropriate
-# time zone where most of your visitors live, you can set the 'TZ' environment
-# variable to one of the accepted values:
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
-# For example, to set the time zone to Eastern Time, you would set the 'TZ'
-# value below to 'America/New_York'.
-# TZ:
+###########################
+#
+# SETTINGS FOR DEVELOPMENT
+#
+###########################
+development:
+  DOMAIN_NAME: lvh.me
+  # GOOGLE_MAPS_API_KEY:
+  # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
+  # GOOGLE_TRANSLATE_CUSTOMIZATION_CODE: Your_Website_Code_from_Google
+  OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
+  # OHANA_API_TOKEN: changeme
 
-# If you are using a custom domain name, set CANONICAL_URL to your preferred
-# domain name, such as 'example.org' or 'www.example.org'.
-# See config/environments/production.rb for more details.
-# CANONICAL_URL:
+###############################################################################
+#
+# SETTINGS FOR PRODUCTION.
+#
+# Run `figaro heroku:set -e production -a your_app_name` to set them on Heroku.
+#
+###############################################################################
+production:
+  # CANONICAL_URL:
+  DOMAIN_NAME: changeme
+  ENABLE_HTTPS: 'yes'
+  # GOOGLE_ANALYTICS_ID:
+  # GOOGLE_ANALYTICS_DOMAIN:
+  # GOOGLE_MAPS_API_KEY:
+  # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
+  # GOOGLE_TRANSLATE_CUSTOMIZATION_CODE: Your_Website_Code_from_Google
+  OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
+  # OHANA_API_TOKEN: changeme
 
 ###############################################################################
 #
