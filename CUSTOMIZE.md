@@ -12,7 +12,7 @@ If you're planning on deploying the app to Heroku, you can set all the required 
 ```
 $ script/setup_heroku -a your_app_name -o your_api_endpoint
 ```
-`your_api_endpoint` is the URL to your instance of Ohana API, such as `http://ohana-api-demo.herokuapp.com/api`. `your_app_name` is your Heroku app's name. Read the [script](https://github.com/codeforamerica/ohana-web-search/blob/master/script/setup_heroku) for more details about what it will install.
+`your_api_endpoint` is the URL to your instance of Ohana API, such as `https://ohana-api-demo.herokuapp.com/api`. `your_app_name` is your Heroku app's name. Read the [script](https://github.com/codeforamerica/ohana-web-search/blob/master/script/setup_heroku) for more details about what it will install.
 
 The script only sets required environment variables. To set optional environment variables on Heroku, such as `GOOGLE_ANALYTICS_ID`, you'll need to set them manually. Read through `application.example.yml` to learn about all the optional variables you can set, and read the Heroku documentation to learn how to [set Heroku configuration variables](https://devcenter.heroku.com/articles/config-vars).
 
@@ -52,7 +52,7 @@ To change the labels for the navigation buttons, visit the [pagination](https://
 
 To test the pagination feature, you might find it handy to force a particular
 number of results per page by adding the `per_page` parameter to the end of the
-URL. For example: [http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5](http://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5)
+URL. For example: [https://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5](https://ohana-web-search-demo.herokuapp.com/locations?utf8=%E2%9C%93&keyword=&location=&per_page=5)
 
 ## Custom graphics
 The root `graphics` folder contains source template files for images in the application. Using these templates you can edit and re-generate the major graphics of the application. These are provided in Adobe Illustrator and SVG formats.

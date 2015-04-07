@@ -13,7 +13,7 @@ We gladly welcome contributions. Below you will find instructions for installing
 
 ## Demo
 You can see a running version of the application at
-[http://ohana-web-search-demo.herokuapp.com/](http://ohana-web-search-demo.herokuapp.com/).
+[https://ohana-web-search-demo.herokuapp.com/](https://ohana-web-search-demo.herokuapp.com/).
 
 ## Stack Overview
 
