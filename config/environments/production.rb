@@ -46,7 +46,7 @@ Rails.application.configure do
     else
       canonical_url = ENV['CANONICAL_URL']
 
-      r301(/\/organizations(.*)/, '/locations$1')
+      r301(%r{/organizations(.*)}, '/locations$1')
       r301(/.*/, "http://#{canonical_url}$&",
            if: proc { |rack_env| rack_env['SERVER_NAME'] != canonical_url })
     end
