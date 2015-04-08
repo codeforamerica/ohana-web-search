@@ -3,7 +3,7 @@ class StatusController < ApplicationController
     response_hash = {}
     response_hash[:dependencies] = %w(Mandrill Memcachier)
     response_hash[:status] = everything_ok? ? 'OK' : 'NOT OK'
-    response_hash[:updated] = Time.now.to_i
+    response_hash[:updated] = Time.zone.now.to_i
 
     render json: response_hash
   end
