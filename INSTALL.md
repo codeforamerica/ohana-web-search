@@ -24,16 +24,10 @@ install the following tools manually:
 
 ## Install Ohana Web Search
 
-### Fork and clone
-
-[Fork this repository to your GitHub account][fork].
-
 Clone it on your computer and navigate to the project's directory:
 
-    git clone https://github.com/<your GitHub username>/ohana-web-search.git
+    git clone git@github.com:codeforamerica/ohana-web-search.git
     cd ohana-web-search
-
-[fork]: http://help.github.com/fork-a-repo/
 
 ### Install the dependencies and set the default environment variables:
 
