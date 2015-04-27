@@ -2,6 +2,25 @@
 
 Make sure you've [installed](https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md) the app first.
 
+## Prepare your repository
+
+Assuming you have cloned your initial repository from `codeforamerica/ohana-web-search`, rename the default [remote][remote] from `origin` to `codeforamerica`. The `codeforamerica` remote can be used to synchronize your local copy with upstream changes using `git merge codeforamerica/master` or `git rebase codeforamerica/master`.
+
+    git remote rename origin codeforamerica
+
+[Create a new repository][repo] where you will keep your customized version of `ohana-web-search`. This repository can be called anything you like, e.g. `mycity-ohana-web-search`. Make sure you do not add a `.gitignore`, `README`, or `LICENSE` file to the new repository during this step since you will be pushing the contents of the cloned `codeforamerica` repository there shortly.
+
+Add your newly created repository as the `origin` remote by following the on-screen instructions. The command will look something like this:
+
+    git remote add origin git@gitub.com:MYORG/MY-OHANA-WEB-REPO.git
+
+You can now push your clone of `ohana-web-search` to `origin`:
+
+    git push origin master
+
+[remote]: https://help.github.com/categories/managing-remotes/
+[repo]: https://help.github.com/articles/create-a-repo/
+
 ## Environment variables
 Inside the `config` folder, you will find a file named `application.yml`.
 Read through the documentation to learn how you can customize the app to suit
