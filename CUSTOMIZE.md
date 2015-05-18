@@ -54,8 +54,6 @@ The application uses Google Translate for free language translation of the site.
 
 - **Homepage language links**. The language translation links on the homepage can be added, removed, and edited in `config/settings.yml`.
 
-- **Support for saving custom translations**. If you want to make edits to the Google provided translations of a live site you can add a `GOOGLE_TRANSLATE_CUSTOMIZATION_CODE` in `config/application.yml`. Follow the directions in that file for obtaining the proper code for your site.
-
 - **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, do the following:
   1. Uncomment the Google Translate related lines in `app/controllers/locations_controller.rb`.
   2. Add a `GOOGLE_TRANSLATE_API_KEY` in `config/application.yml`. Follow the directions in that file for obtaining an API key from Google. **NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
