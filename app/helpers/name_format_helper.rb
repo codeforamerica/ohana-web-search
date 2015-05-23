@@ -12,8 +12,10 @@ module NameFormatHelper
   # @param location [Sawyer::Resource] Location Hash returned by API wrapper.
   # @return [String] The location's name wrapped in a span element.
   def name_content_for(location)
-    content_tag 'span', itemprop: 'name' do
-      location.name
+    content_tag 'span', itemprop: 'legalName' do
+      content_tag 'span', itemprop: 'name' do
+        location.name
+      end
     end
   end
 
