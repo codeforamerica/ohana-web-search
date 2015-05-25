@@ -2,7 +2,8 @@
 
 ## Install Prerequisites
 Before you can run SMC-Connect, you'll need to have the following software
-packages installed on your computer: Git, Ruby 2.1+, RVM, and PhantomJS.
+packages installed on your computer: Git, Ruby 2.2+, RVM, and PhantomJS.
+
 If you're on a Linux machine, you'll also need Node.js.
 
 If you already have all of the prerequisites installed, you can go straight
@@ -21,14 +22,10 @@ install the following tools manually:
 
 ## Install SMC-Connect
 
-### Fork and clone
-[Fork this repository to your GitHub account][fork].
+Clone the `smcgov/SMC-Connect` repository and navigate to the project's directory:
 
-Clone it on your computer and navigate to the project's directory:
-
-    git clone https://github.com/<your GitHub username>/smc-connect.git && cd smc-connect
-
-[fork]: http://help.github.com/fork-a-repo/
+    git clone git@github.com:smcgov/SMC-Connect.git
+    cd SMC-Connect
 
 ### Install the dependencies and set the default environment variables:
 

@@ -46,7 +46,7 @@ Rails.application.configure do
     else
       canonical_url = ENV['CANONICAL_URL']
 
-      r301(/\/organizations(.*)/, '/locations$1')
+      r301(%r{/organizations(.*)}, '/locations$1')
       r301(/.*/, "http://#{canonical_url}$&",
            if: proc { |rack_env| rack_env['SERVER_NAME'] != canonical_url })
     end
@@ -135,7 +135,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = (ENV['ENABLE_HTTPS'] == 'yes')
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.

@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
   end
 
   def path
-    referer, uri = request.env['HTTP_REFERER'], request.env['REQUEST_URI']
+    referer = request.env['HTTP_REFERER']
+    uri = request.env['REQUEST_URI']
     if referer.present? && referer != uri
       :back
     else
