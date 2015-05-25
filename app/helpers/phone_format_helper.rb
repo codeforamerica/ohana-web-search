@@ -34,7 +34,7 @@ module PhoneFormatHelper
   # @return [String] The first voice or hotline phone number
   #   or nil if none are found.
   def first_voice_or_hotline_phone_for(phones)
-    phones.select { |phone| voice_or_hotline?(phone) }.first
+    phones.find { |phone| voice_or_hotline?(phone) }
   end
 
   # Whether a phone is of the voice or hotline type.

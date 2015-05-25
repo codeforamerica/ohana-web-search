@@ -10,7 +10,7 @@ In San Mateo County, there are two apps powered by Ohana: [SMC-Connect](http://s
 
 ## Demo
 You can see a running version of the application at
-[http://smc-connect.org](http://smc-connect.org).
+[https://www.smc-connect.org](https://www.smc-connect.org).
 
 ## Stack Overview
 
