@@ -41,3 +41,8 @@ Start the app locally on port 4000:
 Ohana Web Search should now be running at [http://localhost:4000](http://localhost:4000)
 
 The `-p` option allows you to specify which port you want to run the server on. This is useful when running other apps at the same time.
+
+### Customize the app
+Once you have the app up and running, you will want to [customize](https://github.com/codeforamerica/ohana-web-search/blob/master/CUSTOMIZE.md) it to point
+to your own instance of [Ohana API](https://github.com/codeforamerica/ohana-api),
+add your own branding, and much more.

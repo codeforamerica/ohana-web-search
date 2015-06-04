@@ -24,7 +24,7 @@ You can now push your clone of `ohana-web-search` to `origin`:
 ## Environment variables
 Inside the `config` folder, you will find a file named `application.yml`.
 Read through the documentation to learn how you can customize the app to suit
-your needs.
+your needs, including pointing the app to your own instance of Ohana API.
 
 If you're planning on deploying the app to Heroku, you can set all the required environment variables in production by running the following command:
 
