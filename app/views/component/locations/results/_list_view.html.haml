@@ -9,7 +9,7 @@
           %header
             %hgroup
               %h1.name
-                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}", itemprop: 'name' }
+                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}" }
                   = superscript_ordinals(full_name_content_for(location))
 
               - if (location.organization.name) && (location.organization.name != location.name)
