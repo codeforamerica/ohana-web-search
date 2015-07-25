@@ -29,9 +29,6 @@
 -# For non-Retina iPhone, iPod Touch, and Android 2.1+ devices, 57x57px.
 = favicon_link_tag 'touch_icons/apple-touch-icon-precomposed.png', rel: 'apple-touch-icon-precomposed', type: 'image/png'
 
-- if ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'].present?
-  %meta{ content: ENV['GOOGLE_TRANSLATE_CUSTOMIZATION_CODE'], name: 'google-translate-customization' }
-
 = csrf_meta_tags
 
 = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700'
