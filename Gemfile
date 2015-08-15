@@ -10,7 +10,7 @@ gem 'actionmailer'
 gem 'sass-rails', '~> 5.0.1'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', github: 'Compass/compass-rails'
+gem 'compass-rails'
 
 # Font-awesome icons.
 gem 'font-awesome-rails'
