@@ -73,6 +73,11 @@ group :development do
   gem 'spring-commands-rspec'
   # Required by spring to turn on event-based file system listening.
   gem 'spring-watcher-listen'
+
+  # For profiling the app's performance and memory usage.
+  gem 'derailed'
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
 end
 
 group :test do
