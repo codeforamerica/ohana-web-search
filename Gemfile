@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.1'
-gem 'rails', '~> 4.2'
+ruby '2.2.2'
+gem 'railties', '~> 4.2'
+gem 'actionmailer'
 
 # FRONT END
 
@@ -9,7 +10,7 @@ gem 'rails', '~> 4.2'
 gem 'sass-rails', '~> 5.0.1'
 
 # Compass tools for use with SCSS.
-gem 'compass-rails', '~> 2.0.4'
+gem 'compass-rails'
 
 # Font-awesome icons.
 gem 'font-awesome-rails'
@@ -18,12 +19,12 @@ gem 'font-awesome-rails'
 gem 'uglifier'
 
 # For enabling requirejs-style AMD scripts in the asset pipeline.
-gem 'requirejs-rails'
+gem 'requirejs-rails', '= 0.9.5'
 
 # For HAML HTML view templates.
 gem 'haml-rails'
 
-gem 'puma'
+gem 'puma', '= 2.12.3'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'faraday-http-cache', '~> 1.0'
 
@@ -45,7 +46,7 @@ gem 'rack-rewrite', '~> 1.5.0'
 gem 'google-api-client', '~> 0.8.1'
 
 # App config and ENV variables for heroku.
-gem 'figaro', '~> 1.0'
+gem 'figaro'
 
 # Handles logic behind Pagination UI component.
 gem 'kaminari'
@@ -74,6 +75,11 @@ group :development do
   gem 'spring-commands-rspec'
   # Required by spring to turn on event-based file system listening.
   gem 'spring-watcher-listen'
+
+  # For profiling the app's performance and memory usage.
+  gem 'derailed'
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
 end
 
 group :test do
