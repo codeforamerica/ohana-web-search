@@ -21,11 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 05 Dec 2014 21:05:59 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -33,7 +29,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Etag:
-      - '"02e499dea2c994429b9847c8ae3898de"'
+      - '"0f68b1a3716f2d07acd3269f5bdba417"'
       Link:
       - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=5&service_area=smc>;
         rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=2&service_area=smc>;
@@ -45,11 +41,19 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - a56cd28b-faa9-432f-9796-fe8118285a1d
+      - a2bd8e9a-b102-4bec-9966-a6e4779f7d7b
       X-Runtime:
-      - '0.036517'
+      - '0.065329'
+      X-Content-Digest:
+      - db1f25a4944f3dddf66ad9c8bd5e67e12d51c786
+      Date:
+      - Sat, 15 Aug 2015 18:04:40 GMT
+      Age:
+      - '0'
       X-Rack-Cache:
-      - pass
+      - stale, valid, store
+      Content-Length:
+      - '2367'
       Via:
       - 1.1 vegur
     body:
@@ -70,11 +74,11 @@ http_interactions:
         supplements (CalFresh), and temporary financial assistance (CalWorks and General
         Assistance).","kind":"Human Services","latitude":37.6896347,"longitude":-122.4741901,"name":"Northern
         Region., PeninsulaWorks Daly City","short_desc":"Offers comprehensive employment
-        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","updated_at":"2014-11-30T19:05:14.478-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"street":"271
-        - 92nd Street","street_1":"271 - 92nd Street","street_2":null,"city":"Daly
-        City","state":"CA","state_province":"CA","postal_code":"94015","zip":"94015"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","updated_at":"2014-11-30T19:05:14.478-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"address_1":"271
+        - 92nd Street","address_2":null,"street_1":"271 - 92nd Street","street_2":null,"city":"Daly
+        City","state_province":"CA","postal_code":"94015"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
         Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
         301-8440","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Fri, 05 Dec 2014 21:05:58 GMT
+  recorded_at: Sat, 15 Aug 2015 18:04:41 GMT
 recorded_with: VCR 2.9.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -31,8 +31,8 @@ http_interactions:
       Etag:
       - '"c464f727ed8f9567e522a8adc6f024ef"'
       Link:
-      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=343>; rel="last",
-        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
       X-Total-Count:
       - '343'
       Content-Type:
@@ -40,13 +40,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, public
       X-Request-Id:
-      - fc616dfa-f0e8-4a0d-945e-3de6076c0422
+      - e3488257-b727-40fb-a971-0547b2f550b7
       X-Runtime:
-      - '0.088637'
+      - '3.222846'
       X-Content-Digest:
       - a315da6510efa7aac563b1f949dd53cda88db56a
       Date:
-      - Wed, 01 Apr 2015 02:29:16 GMT
+      - Sat, 15 Aug 2015 18:04:28 GMT
       Age:
       - '0'
       X-Rack-Cache:
@@ -70,7 +70,7 @@ http_interactions:
         Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
         329-2436","number_type":null,"vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 01 Apr 2015 02:29:17 GMT
+  recorded_at: Sat, 15 Aug 2015 18:04:28 GMT
 - request:
     method: get
     uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=lorem&location=&org_name=&utf8=%E2%9C%93
@@ -118,7 +118,7 @@ http_interactions:
       X-Content-Digest:
       - 4f856343f8120566308d2c5db40d64a2978c5dab
       Date:
-      - Wed, 01 Apr 2015 02:29:16 GMT
+      - Sat, 15 Aug 2015 18:04:28 GMT
       Age:
       - '0'
       X-Rack-Cache:
@@ -158,5 +158,5 @@ http_interactions:
         372-6200","number_type":"hotline","vanity_number":null},{"id":2532,"department":"Rental
         Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
     http_version: 
-  recorded_at: Wed, 01 Apr 2015 02:29:17 GMT
+  recorded_at: Sat, 15 Aug 2015 18:04:29 GMT
 recorded_with: VCR 2.9.3
