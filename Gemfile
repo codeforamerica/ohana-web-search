@@ -29,15 +29,10 @@ gem 'ohanakapa', '~> 1.1.1'
 gem 'faraday-http-cache', '~> 1.0'
 
 # Caching
-gem 'rack-cache', '~> 1.2'
-gem 'dalli', '~> 2.7.1'
-gem 'memcachier'
+gem 'redis-rack-cache', github: 'monfresh/redis-rack-cache', branch: 'readthis-compatibility'
 
 # Analytics
 gem 'newrelic_rpm', '>= 3.8.0.218'
-
-# Required for caching in production.
-gem 'kgio'
 
 # URL redirects.
 gem 'rack-rewrite', '~> 1.5.0'
