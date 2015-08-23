@@ -15,17 +15,24 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local = true
 
-  # Uncomment lines 22-28 below to test HTTP caching in development.
+  # Uncomment lines 22-35 below to test HTTP caching in development.
   # Visit the Wiki for more details:
   # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
   #
   # config.action_controller.perform_caching = true
-  # config.cache_store = :dalli_store
-  # client = Dalli::Client.new
-  # config.action_dispatch.rack_cache = {
-  #   metastore: client,
-  #   entitystore: client
+
+  # config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
+  #   expires_in: 2.weeks.to_i,
+  #   namespace: 'cache'
   # }
+
+  # config.action_dispatch.rack_cache = {
+  #   metastore: "#{ENV.fetch('REDISCLOUD_URL')}/0/metastore",
+  #   entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
+  #   use_native_ttl: true
+  # }
+
+  # config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
