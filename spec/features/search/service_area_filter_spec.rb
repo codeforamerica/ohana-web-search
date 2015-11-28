@@ -2,23 +2,23 @@ require 'rails_helper'
 
 describe 'service area filter', :vcr do
   context 'when clicking a link from the homepage' do
-    it 'automatically sets service_area=smc' do
+    it 'does not automatically set service_area=smc' do
       visit '/'
       click_link 'CalFresh'
-      expect(current_url).to include('service_area=smc')
+      expect(current_url).to_not include('service_area=smc')
     end
 
-    it 'checks the checkbox on the search results page' do
+    it 'does not check the service area checkbox on the search results page' do
       visit '/'
       click_link 'CalFresh'
-      expect(find('#service_area')).to be_checked
+      expect(find('#service_area')).to_not be_checked
     end
   end
 
   context 'when entering a search term from the homepage' do
-    it 'automatically sets service_area=smc' do
+    it 'does not automatically set service_area=smc' do
       search_from_home(keyword: 'food')
-      expect(current_url).to include('service_area=smc')
+      expect(current_url).to_not include('service_area=smc')
     end
   end
 

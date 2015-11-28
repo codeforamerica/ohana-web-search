@@ -64,7 +64,7 @@ module HomepageLinksHelper
   def link_to_keyword(keyword, link_text)
     link_to(
       link_text,
-      locations_path(keyword: keyword, service_area: 'smc'),
+      locations_path(keyword: keyword),
       'class' => 'links-to-track',
       'data-ga-category' => 'Home_Categories',
       'data-ga-label' => "#{link_text}"
