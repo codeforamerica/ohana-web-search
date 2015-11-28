@@ -65,9 +65,10 @@ Rails.application.configure do
 
   config.action_controller.perform_caching = true
 
-  config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
+  config.cache_store = :readthis_store, {
     expires_in: 2.weeks.to_i,
-    namespace: 'cache'
+    namespace: 'cache',
+    redis: { url: ENV.fetch('REDISCLOUD_URL'), driver: :hiredis }
   }
 
   config.action_dispatch.rack_cache = {

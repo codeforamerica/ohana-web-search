@@ -2,7 +2,7 @@ require 'capybara/poltergeist'
 
 Capybara.configure do |config|
   config.javascript_driver = :poltergeist
-  config.default_wait_time = 30
+  config.default_max_wait_time = 30
   config.always_include_port = true
 end
 
