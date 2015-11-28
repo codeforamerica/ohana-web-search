@@ -81,7 +81,7 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara', '~> 2.4'
   gem 'poltergeist'
-  gem 'vcr', '~> 3.0'
+  gem 'vcr', git: 'https://github.com/vcr/vcr.git'
   gem 'webmock', '~> 1.20'
   gem 'email_spec', '~> 1.6.0'
   gem 'haml-lint'
