@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 gem 'railties', '~> 4.2'
 gem 'actionmailer'
 
@@ -79,9 +79,9 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'capybara', '~> 2.4.1'
+  gem 'capybara', '~> 2.4'
   gem 'poltergeist'
-  gem 'vcr', '~> 2.9.0'
+  gem 'vcr', '~> 3.0'
   gem 'webmock', '~> 1.20'
   gem 'email_spec', '~> 1.6.0'
   gem 'haml-lint'
