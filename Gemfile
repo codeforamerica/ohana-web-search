@@ -82,7 +82,7 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  gem 'capybara', '~> 2.4.1'
+  gem 'capybara', '~> 2.4'
   gem 'poltergeist'
   gem 'vcr', '~> 2.9.0'
   gem 'webmock', '~> 1.20'
