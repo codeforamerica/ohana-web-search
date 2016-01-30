@@ -14,13 +14,21 @@ module ResultSummaryHelper
   def map_summary
     total_results = @search.locations.size
     total_map_markers = @search.map_data.size
-    if total_map_markers == total_results
-      summary = ''
-    else
-      summary = " <i class='fa fa-map-marker'></i> <em>"\
+    summary = if total_map_markers == total_results
+                ''
+              else
+                " <i class='fa fa-map-marker'></i> <em>"\
                 "<strong>#{total_map_markers}</strong>/#{total_results} "\
                 'located on map</em>'
-    end
+              end
     summary.html_safe
+  end
+
+  def location_link_for(location)
+    if location.organization.name == location.name
+      location_path([location.slug], request.query_parameters)
+    else
+      location_path([location.organization.slug, location.slug], request.query_parameters)
+    end
   end
 end

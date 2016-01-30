@@ -67,7 +67,7 @@ module HomepageLinksHelper
       locations_path(keyword: keyword),
       'class' => 'links-to-track',
       'data-ga-category' => 'Home_Categories',
-      'data-ga-label' => "#{link_text}"
+      'data-ga-label' => link_text
     )
   end
 end
