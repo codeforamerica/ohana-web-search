@@ -3,16 +3,16 @@
     - @search.locations.each do |location|
 
       %li
-        %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", title: "#{location.name}", name: "#{location.id}" }
+        %a{ href: location_link_for(location), title: location.name, name: location.id }
           &nbsp;
         %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
           %header
             %hgroup
               %h1.name
-                %a{ href: (location.organization.name == location.name) ? "#{location_path([location.slug], request.query_parameters)}" : "#{location_path([location.organization.slug, location.slug], request.query_parameters)}", name: "#{location.id}" }
+                %a{ href: location_link_for(location), name: location.id }
                   = superscript_ordinals(full_name_content_for(location))
 
-              - if (location.organization.name) && (location.organization.name != location.name)
+              - if location.organization.name && location.organization.name != location.name
                 %h2.agency
                   = link_to(locations_path(org_name: location.organization.name)) do
                     %span

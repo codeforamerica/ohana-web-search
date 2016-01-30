@@ -7,7 +7,7 @@
       %h1.name
         = superscript_ordinals(full_name_content_for(@location))
 
-      - if (@location.organization.name) && (@location.organization.name != @location.name)
+      - if @location.organization.name && @location.organization.name != @location.name
         %h2.agency
           = link_to(locations_path(org_name: @location.organization.name)) do
             %span
