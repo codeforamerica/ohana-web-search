@@ -46,6 +46,8 @@ gem 'figaro'
 # Handles logic behind Pagination UI component.
 gem 'kaminari'
 
+gem 'sprockets', '~> 2.12'
+
 group :production, :staging do
   # Enables serving assets in production and setting logger to standard out.
   gem 'rails_12factor'
@@ -81,10 +83,10 @@ group :test do
   gem 'coveralls', require: false
   gem 'capybara', '~> 2.4'
   gem 'poltergeist'
-  gem 'vcr', git: 'https://github.com/vcr/vcr.git'
+  gem 'vcr'
   gem 'webmock', '~> 1.20'
   gem 'email_spec', '~> 1.6.0'
-  gem 'haml-lint'
+  gem 'haml_lint', git: 'https://github.com/brigade/haml-lint.git'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
   gem 'rubocop'
