@@ -12,6 +12,7 @@ module AddressFormatHelper
   # @param address [Object] A JSON object containing address data.
   # @return [String] A comma separated full address.
   def full_address_for(address)
-    "#{street_address_for(address)}, #{address.city}, #{address.state_province} #{address.postal_code}"
+    "#{street_address_for(address)}, #{address.city}, #{address.state_province} " \
+    "#{address.postal_code}"
   end
 end

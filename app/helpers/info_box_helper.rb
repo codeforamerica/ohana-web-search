@@ -47,8 +47,8 @@ module InfoBoxHelper
   # description, and a "More info..." link to its URL if it has one defined.
   def render_html_for_generic_info_box(info_box)
     html = content_tag :dl do
-      concat(content_tag :dt, info_box['title'])
-      concat(content_tag :dd, info_box['description'])
+      concat(content_tag(:dt, info_box['title']))
+      concat(content_tag(:dd, info_box['description']))
     end
     return html if info_box['url'].blank?
     html.concat(content_tag(:p) do
