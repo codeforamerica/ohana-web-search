@@ -1,4 +1,4 @@
 - title search_results_page_title
 = render 'component/search/aside'
-%section#results-container{ class: ('result-map-showing' if @search.map_data.size != 0) }
+%section#results-container{ class: ('result-map-showing' unless @search.map_data.empty?) }
   = render 'component/locations/results/body'

@@ -1,6 +1,6 @@
 = render 'component/locations/results/header'
 %section#results-entries
-  - if @search.map_data.size != 0
+  - unless @search.map_data.empty?
     = render 'component/locations/results/map_view'
 
   - if info_box_key_corresponding_to_keyword.present?
