@@ -53,11 +53,11 @@ heroku config:set SECRET_TOKEN=$token --app $APP_NAME
 
 echo "Getting ready to install add-ons for $APP_NAME"
 
-echo "Installing Mandrill by MailChimp"
-heroku addons:add mandrill --app $APP_NAME
+echo "Installing SendGrid"
+heroku addons:create sendgrid:starter --app $APP_NAME
 
 echo "Installing Memcachier"
-heroku addons:add memcachier --app $APP_NAME
+heroku addons:create memcachier --app $APP_NAME
 
 echo "All done setting up env vars and add-ons."
 echo "Pushing code to Heroku now. This will take a few minutes..."

@@ -1,7 +1,7 @@
 class StatusController < ApplicationController
   def check_status
     response_hash = {}
-    response_hash[:dependencies] = %w(Mandrill Memcachier)
+    response_hash[:dependencies] = %w(SendGrid Memcachier)
     response_hash[:status] = everything_ok? ? 'OK' : 'NOT OK'
     response_hash[:updated] = Time.zone.now.to_i
 
