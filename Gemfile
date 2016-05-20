@@ -86,7 +86,7 @@ group :test do
   gem 'vcr'
   gem 'webmock', '~> 1.20'
   gem 'email_spec', '~> 1.6.0'
-  gem 'haml_lint', git: 'https://github.com/brigade/haml-lint.git'
+  gem 'haml_lint'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
   gem 'rubocop'

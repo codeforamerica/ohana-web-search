@@ -10,7 +10,7 @@
 
   .left-column
     %span.static-content><
-      - if @search.map_data.size != 0
+      - unless @search.map_data.empty?
         %a.button-utility.button-map-zoom#map-size-control{ href: '#', disabled: 'disabled' }
           %i.fa.fa-refresh.fa-spin
           Loading map...
@@ -19,4 +19,4 @@
         = page_entries_info @search.results, entry_name: 'result'
 
       %span.map-summary.static-content
-        = map_summary if @search.map_data.size != 0
+        = map_summary unless @search.map_data.empty?
