@@ -41,7 +41,7 @@ gem 'kgio'
 gem 'rack-rewrite', '~> 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '~> 0.8.1'
+gem 'google-api-client', '~> 0.8'
 
 # App config and ENV variables for heroku.
 gem 'figaro'
