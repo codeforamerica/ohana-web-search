@@ -91,7 +91,7 @@ group :test do
   gem 'poltergeist'
   gem 'vcr'
   gem 'webmock', '~> 2.1'
-  gem 'email_spec', '~> 1.6.0'
+  gem 'email_spec'
   gem 'haml_lint'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
