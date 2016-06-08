@@ -41,7 +41,7 @@ gem 'kgio'
 gem 'rack-rewrite', '~> 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '~> 0.8.1'
+gem 'google-api-client', '~> 0.8'
 
 # App config and ENV variables for heroku.
 gem 'figaro'
@@ -90,8 +90,8 @@ group :test do
   gem 'capybara', '~> 2.4'
   gem 'poltergeist'
   gem 'vcr'
-  gem 'webmock', '~> 1.20'
-  gem 'email_spec', '~> 1.6.0'
+  gem 'webmock', '~> 2.1'
+  gem 'email_spec'
   gem 'haml_lint'
 
   # Ruby static code analyzer, based on the community Ruby style guide.
