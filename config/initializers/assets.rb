@@ -17,4 +17,5 @@ Rails.application.config.assets.precompile += %w(
   routes/locations/show.js
   vendor.js
   ie8.js
-  ie9.js)
+  ie9.js
+)

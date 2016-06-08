@@ -8,7 +8,8 @@ end
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(
-    app, js_errors: false, phantomjs_options: ['--ignore-ssl-errors=yes'])
+    app, js_errors: false, phantomjs_options: ['--ignore-ssl-errors=yes']
+  )
 end
 
 Capybara.add_selector(:rel) do
