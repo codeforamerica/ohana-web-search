@@ -27,8 +27,8 @@ function (eventObserver) {
     var _atMaxSize = false;
 
     // 'Constants' for map button text content.
-    var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map"; // jshint ignore:line
-    var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map"; // jshint ignore:line
+    var LARGER_MAP_TEXT = "<i class='fa fa-minus-square'></i> Smaller map";
+    var SMALLER_MAP_TEXT = "<i class='fa fa-plus-square'></i> Larger map";
 
     function _init() {
       _buttonElm.innerHTML = SMALLER_MAP_TEXT;

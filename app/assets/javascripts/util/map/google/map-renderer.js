@@ -114,12 +114,12 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
     if (orgName !== markerData.name)
       agency = '<h2>' + orgName + '</h2>';
 
-    var content = "<div><div class='button-close'></div>" + // jshint ignore:line
+    var content = "<div><div class='button-close'></div>" +
                   '<h1>' + mainName + '</h1>' + agency +
                   '<p>' + markerData.street_address + ', ' +
-                  markerData.city + '</p>' + "<p><a href='/locations/" + // jshint ignore:line
+                  markerData.city + '</p>' + "<p><a href='/locations/" +
                   markerData.slug+(window.location.search) +
-                  "'>View more details…</a></p></div>"; // jshint ignore:line
+                  "'>View more details…</a></p></div>";
 
     _registerMarkerEvents(marker, content, spiderfier);
 
@@ -228,7 +228,7 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
     // Change marker icon appearances when the markers spiderfy.
     spiderfier.addListener('spiderfy',
                             function(spiderfied,
-                                     unspiderfied) { // jshint ignore:line
+                                     unspiderfied) {
       infoBoxManager.turnOn(infoBoxManager.STATE.HAS_SPIDERFIED);
       var index = spiderfied.length - 1;
       while (index >= 0) {
@@ -239,7 +239,7 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
     // Change marker icon appearances when the markers unspiderfy.
     spiderfier.addListener('unspiderfy',
                             function(spiderfied,
-                                     unspiderfied) { // jshint ignore:line
+                                     unspiderfied) {
       var index = spiderfied.length - 1;
       while (index >= 0) {
         _setIcon(spiderfied[index--], true);

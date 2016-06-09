@@ -65,9 +65,6 @@ group :development do
   # For mocking emails for sending.
   gem 'letter_opener'
 
-  # For linting JS with `rake jshint`.
-  gem 'jshint'
-
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'
 

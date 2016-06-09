@@ -69,9 +69,6 @@ pass.
 style checkers. If your specs fail and/or style offenses are reported, return
 to **step 7**.
 
-9. _(If applicable)_ **Clean up JavaScript code:** Run `rake jshint` to check
-JavaScript code quality.
-
 10. **Commit changes:** Add, commit, and push your changes.
 
 11. **Pull request:** [Submit a pull request][pr] to send your changes to this
