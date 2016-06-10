@@ -22,7 +22,6 @@ function () {
     // @param evt [String] The event name to listen for.
     // @param callback [Function] The function called when the event has fired.
     function addEventListener(evt, callback) {
-      // jshint validthis: true
       if (_events.hasOwnProperty(evt))
         _events[evt].push(callback);
       else
@@ -36,7 +35,6 @@ function () {
     // @param evt [String] The event name to remove.
     // @param callback [Function] The function attached to the event.
     function removeEventListener(evt, callback) {
-      // jshint validthis: true
       if (!_events.hasOwnProperty(evt))
         return;
 
@@ -51,7 +49,6 @@ function () {
     // @param evt [String] The type of event to broadcast.
     // @param options [Object] The event object to pass to the event handler.
     function dispatchEvent(evt, options) {
-      // jshint validthis: true
       if (!_events.hasOwnProperty(evt))
         return;
 

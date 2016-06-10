@@ -52,7 +52,7 @@ function (geo, alerts, googleMaps) {
           _reverseGeocodeLocation(latitude, longitude);
         });
       },
-      error: function(error) { // jshint ignore:line
+      error: function(error) {
         //console.log("Geolocation failed due to: " + error.message);
         alerts.show(LOCATION_NOT_FOUND_ERROR_TEXT, alerts.type.ERROR);
         _locateTargetReady();
