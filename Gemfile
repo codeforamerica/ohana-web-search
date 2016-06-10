@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 gem 'railties', '~> 4.2'
 gem 'actionmailer'
 
@@ -38,7 +38,7 @@ gem 'newrelic_rpm', '>= 3.8.0.218'
 gem 'rack-rewrite', '~> 1.5.0'
 
 # For Google translation API.
-gem 'google-api-client', '~> 0.8.1'
+gem 'google-api-client', '~> 0.8.6'
 
 # App config and ENV variables for heroku.
 gem 'figaro'
@@ -62,9 +62,6 @@ group :development do
   # For mocking emails for sending.
   gem 'letter_opener'
 
-  # For linting JS with `rake jshint`.
-  gem 'jshint'
-
   # For code documentation, run `yard --help` for list of commands.
   gem 'yard'
 
@@ -77,6 +74,9 @@ group :development do
   gem 'derailed'
   gem 'rack-mini-profiler'
   gem 'flamegraph'
+  gem 'stackprof'
+
+  gem 'bummr'
 end
 
 group :test do
@@ -84,8 +84,8 @@ group :test do
   gem 'capybara', '~> 2.4'
   gem 'poltergeist'
   gem 'vcr'
-  gem 'webmock', '~> 1.20'
-  gem 'email_spec', '~> 1.6.0'
+  gem 'webmock', '~> 2.1'
+  gem 'email_spec'
   gem 'haml_lint'
 
   # Ruby static code analyzer, based on the community Ruby style guide.

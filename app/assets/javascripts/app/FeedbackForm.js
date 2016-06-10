@@ -28,7 +28,6 @@ function (alerts, util, eventObserver, $) {
     var _emailInput;
 
     // @param selector [String] The HTML DOM selector for the feedback form.
-    // jshint validthis: true
     function init(selector) {
       var form = document.querySelector(selector);
       _sendBtn = form.querySelector('.button-feedback-send');

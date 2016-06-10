@@ -5,7 +5,8 @@ module LanguageLinksHelper
 
     link_to_unless(
       @current_lang == code,
-      language, "?translate=#{code}", lang: code, class: no_translate_class) do |language_text|
+      language, "?translate=#{code}", lang: code, class: no_translate_class
+    ) do |language_text|
       content_tag(:a, language_text, lang: code, class: translate_active_class)
     end
   end

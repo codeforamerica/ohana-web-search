@@ -63,7 +63,8 @@ module SchedulesHelper
     content_tag :section do
       "#{date_range_for(schedule.start_date, schedule.end_date)}: "\
       "#{holiday_hours(
-        schedule.closed, schedule.opens_at, schedule.closes_at)}".html_safe
+        schedule.closed, schedule.opens_at, schedule.closes_at
+      )}".html_safe
     end
   end
 

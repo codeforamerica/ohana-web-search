@@ -1,0 +1,31 @@
+{
+  'extends': 'airbnb',
+  'parser': 'babel-eslint',
+  'env': {
+    'browser': true,
+    'commonjs': true,
+    'es6': true,
+    'mocha': true
+  },
+  'globals': {
+    '$': true,
+    '__DEV__': true,
+    'assert': true,
+    'chai': true,
+    'sinon': true,
+    'expect': true,
+    'fixture': true
+  },
+  'rules': {
+    'func-names': 0,
+    'space-before-function-paren': 0,
+    'prefer-arrow-callback': 0
+  },
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'sourceType': 'module',
+    'ecmaFeatures': {
+      'jsx': true
+    }
+  }
+}
