@@ -1,55 +1,43 @@
-require 'google/api_client'
+require 'google/apis/translate_v2'
 
 class KeywordTranslator
-  attr_reader :keyword, :current_language, :target, :format
+  attr_reader :keyword, :current_language, :target
 
-  def initialize(keyword, current_language, target, format)
+  def initialize(keyword, current_language, target)
     @keyword = keyword
     @current_language = current_language
     @target = target
-    @format = format
   end
+
+  def translated_keyword
+    return keyword if api_key.nil? || current_language == target || translations.blank?
+
+    translations.first.translated_text
+  end
+
+  def original_keyword
+    keyword
+  end
+
+  private
 
   def api_key
     ENV['GOOGLE_TRANSLATE_API_KEY']
   end
 
   def client
-    return if api_key.nil? || current_language == target
-    Google::APIClient.new(key: api_key, authorization: nil)
-  end
-
-  def translate_api
-    client.discovered_api('translate', 'v2') if client.present?
-  end
-
-  def params
-    {
-      format: format,
-      source: current_language,
-      target: target,
-      q:      keyword
-    }
+    @client ||= begin
+      translate_service = Google::Apis::TranslateV2::TranslateService.new
+      translate_service.key = api_key
+      translate_service
+    end
   end
 
   def result
-    return if client.nil?
-    client.execute(
-      api_method: translate_api.translations.list,
-      parameters: params
-    )
+    client.list_translations(keyword, target, format: 'text', source: current_language)
   end
 
   def translations
-    result.data.translations if result.present?
-  end
-
-  def translated_keyword
-    return keyword if translations.blank?
-    translations.first.translatedText
-  end
-
-  def original_keyword
-    keyword
+    result.translations if result.present?
   end
 end

@@ -4,10 +4,9 @@ class LocationsController < ApplicationController
 
   def index
     # To enable Google Translation of keywords,
-    # uncomment lines 9-11 and 19, and see documentation for
+    # uncomment lines 9-10 and 18, and see documentation for
     # GOOGLE_TRANSLATE_API_KEY in config/application.example.yml.
-    # translator = KeywordTranslator.new(
-    #   params[:keyword], current_language, 'en', 'text')
+    # translator = KeywordTranslator.new(params[:keyword], current_language, 'en')
     # params[:keyword] = translator.translated_keyword
 
     locations = Location.search(params)
