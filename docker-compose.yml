@@ -1,0 +1,8 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/ohana-web-search
+    ports:
+      - "3000:3000"
