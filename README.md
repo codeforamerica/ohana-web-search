@@ -4,7 +4,7 @@
 
 [SMC-Connect](http://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California.
 
-The app is powered by the [Ohana API](http://ohanapi.org) platform which was developed by [Code for America's 2013 San Mateo County, CA,](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team: [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford).
+The app is powered by the [Ohana API](https://github.com/codeforamerica/ohana-api) platform which was developed by [Code for America's 2013 San Mateo County, CA,](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team: [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford).
 
 In San Mateo County, there are two apps powered by Ohana: [SMC-Connect](http://smc-connect.org) and the [San Mateo County API](https://github.com/smcgov/ohana-api-smc) (that feeds the data to SMC-Connect). The API also comes with a built-in admin interface that allows organization members to update their own data. The updates are reflected in real-time on SMC-Connect.
 
