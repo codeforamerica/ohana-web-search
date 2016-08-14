@@ -1,0 +1,8 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/SMC-Connect
+    ports:
+      - "3000:3000"
