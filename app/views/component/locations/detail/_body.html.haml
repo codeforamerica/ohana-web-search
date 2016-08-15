@@ -88,8 +88,6 @@
                 - @categories.each do |category|
                   %li{ class: "hierarchy-depth-#{category.depth}" }
                     %span{ itemprop: 'serviceType' }
-                      -# Category links are disabled till there's a corresponding filter that can be toggled!
-                        = link_to category.name, locations_path(request.query_parameters.merge(category: category.name))
                       = category.name
 
       /= render 'component/detail/service_keywords'
