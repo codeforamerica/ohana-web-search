@@ -5,12 +5,12 @@ module ResultSummaryHelper
     search_terms = request.query_parameters.except(:utf8).
                    map { |k, v| "#{k}: #{v}" unless v.blank? }.
                    compact.join(', ')
-    title = "Search results for: #{search_terms}"
-    title.html_safe
+    "Search results for: #{search_terms}"
   end
 
   # Formats map result summary text
   # @return [String] Result summary string for display on search results view.
+  # rubocop:disable Rails/OutputSafety
   def map_summary
     total_results = @search.locations.size
     total_map_markers = @search.map_data.size
@@ -19,10 +19,11 @@ module ResultSummaryHelper
               else
                 " <i class='fa fa-map-marker'></i> <em>"\
                 "<strong>#{total_map_markers}</strong>/#{total_results} "\
-                'located on map</em>'
+                "located on map</em>"
               end
     summary.html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   def location_link_for(location)
     if location.organization.name == location.name

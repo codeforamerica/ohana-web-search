@@ -75,10 +75,12 @@ module DetailFormatHelper
   # safe string, we can declare this new string to be html_safe, since the
   # only html we are not escaping are the <sup> tags, and what's in between
   # the tags is controlled by us.
+  # rubocop:disable Rails/OutputSafety
   def superscript_ordinals(string)
     string = html_escape(string).to_str
     string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, $&) }.html_safe
   end
+  # rubocop:enable Rails/OutputSafety
 
   # @param date [String] A date string, such as '1970-01-01'
   # @return [String] The year of incorporation.
