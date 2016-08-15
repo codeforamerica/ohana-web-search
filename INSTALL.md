@@ -1,31 +1,57 @@
 # Running SMC-Connect on your computer
 
-## Install Prerequisites
-Before you can run SMC-Connect, you'll need to have the following software
-packages installed on your computer: Git, Ruby 2.2+, RVM, and PhantomJS.
+## Clone the repo to your local machine
 
+    git clone git@github.com:smcgov/SMC-Connect.git && cd SMC-Connect
+
+## Docker Setup (recommended, especially for Windows users)
+
+1. Download, install, and launch [Docker]
+
+1. Copy the sample configuration files:
+
+        $ bin/setup --docker
+
+1. Build/download the container images:
+
+        $ docker-compose build
+
+1. Start the app:
+
+        $ docker-compose up
+
+Once the docker images are up and running, the app will be accessible at
+[http://localhost:3000](http://localhost:3000).
+
+More useful Docker commands:
+
+* Stop this running container: `docker-compose stop`
+* Stop and delete the containers: `docker-compose down`
+* Open a shell in the web container: `docker-compose run --rm web bash`
+
+[Docker]: https://docs.docker.com/engine/installation/
+
+
+## Local Setup
+
+Before you can run SMC-Connect, you'll need to have the following software
+packages installed on your computer: Git, Ruby 2.3+, RVM, and PhantomJS.
 If you're on a Linux machine, you'll also need Node.js.
 
-If you already have all of the prerequisites installed, you can go straight
-to the [Installation](#install-smc-connect). Otherwise, you'll need to
-install the following tools manually:
+If you already have all of the prerequisites installed, you can skip to the
+next step. Otherwise, there are two ways you can install the tools:
 
-- [Build tools][build-tools]
-- [Ruby with RVM][ruby]
-- [PhantomJS][phantomjs] (only used for running the tests)
-- [Node.js][node] (Linux only)
+- If you're on a Mac, the easiest way to install all the tools is to use
+@monfresh's [laptop] script.
 
-[build-tools]: https://github.com/codeforamerica/howto/blob/master/Build-Tools.md
-[ruby]: https://github.com/codeforamerica/howto/blob/master/Ruby.md
+- Install everything manually: [Build tools], [Ruby with RVM], [phantomjs], and
+[Node.js][node] (Linux only).
+
+[laptop]: https://github.com/monfresh/laptop
+[Build tools]: https://github.com/codeforamerica/howto/blob/master/Build-Tools.md
+[Ruby with RVM]: https://github.com/codeforamerica/howto/blob/master/Ruby.md
 [phantomjs]: https://github.com/jonleighton/poltergeist#installing-phantomjs
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
-
-## Install SMC-Connect
-
-Clone the `smcgov/SMC-Connect` repository and navigate to the project's directory:
-
-    git clone git@github.com:smcgov/SMC-Connect.git
-    cd SMC-Connect
 
 ### Install the dependencies and set the default environment variables:
 
@@ -38,4 +64,4 @@ Start the app locally on port 4000:
 
 SMC-Connect should now be running at [http://localhost:4000](http://localhost:4000)
 
-The `-p` option allows you to specify which port you want to run the server on. This is useful when running other servers at the same time.
+The `-p` option allows you to specify which port you want to run the server on. This is useful when running other apps at the same time.

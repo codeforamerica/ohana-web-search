@@ -5,6 +5,4 @@
       - location.languages.sort.each do |lang|
         %li
           %span
-            -# Disables languages link till there's a corresponding filter that can be toggled!
-              = link_to lang, locations_path(request.query_parameters.merge(language: lang))
             = lang
