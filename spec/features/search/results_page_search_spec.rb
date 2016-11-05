@@ -155,22 +155,6 @@ feature 'searching from results page', :vcr do
     end
   end
 
-  context 'when clicking the reset button' do
-    xit 'clears out all the search input fields', :js do
-      search(keyword: 'clinic', location: '94403', org_name: 'samaritan')
-      find_by_id('button-reset').click
-
-      using_wait_time 5 do
-        expect(find_field('keyword').value).to eq ''
-        expect(find_field('location').value).to eq ''
-        expect(find_field('org_name').value).to eq ''
-      end
-
-      find('#button-search').click
-      expect(page).to have_content('Fair Oaks Adult Activity Center')
-    end
-  end
-
   context 'when search contains invalid parameters' do
     it 'displays a helpful error message' do
       visit '/locations?location=94403&radius=foo'
