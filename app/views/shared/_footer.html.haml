@@ -1,18 +1,19 @@
 %footer#app-footer
+  %p#hsa-logo
+    = link_to 'http://hsa.smcgov.org/', target: '_blank' do
+      = image_tag('smc_hsa_logotype.png', size: '200x38', alt: 'San Mateo County Human Services Agency')
   %p
     A
-    %a{ href: 'http://codeforamerica.org', target: '_blank' } Code for America
+    = link_to 'Code for America', 'http://codeforamerica.org', target: '_blank'
     project
     %span.cfaflag
     developed in partnership with the
-    %a{ href: 'http://www.co.sanmateo.ca.us/portal/site/humanservices', target: '_blank' } San Mateo County Human Services Agency
+    = link_to 'San Mateo County Human Services Agency', 'http://hsa.smcgov.org/', target: '_blank'
     and a
     #{link_to 'grant from the Knight Foundation', 'http://www.knightfoundation.org/grants/201447979/', target: '_blank'}.
 
   %p.get-this-app
     %i.fa.fa-bullhorn
     %a{ href: 'https://github.com/codeforamerica/ohana-web-search' } Get this app
-    for your city or
-    #{link_to 'view project details', 'http://ohanapi.org'}.
-
+    for your city.
   #google-translate-container

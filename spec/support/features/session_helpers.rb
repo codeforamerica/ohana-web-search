@@ -19,7 +19,7 @@ module Features
 
     # Perform a search that returns 1 result.
     def search_for_example
-      visit('/locations?keyword=example')
+      visit('/locations?keyword=example%20location')
     end
 
     # Visit details page.
@@ -39,7 +39,7 @@ module Features
 
     # Perform a search that returns no results.
     def search_for_no_results
-      visit('/locations?keyword=asdfdsggfdg')
+      visit('locations?keyword=asdfdsggfdg')
     end
 
     # Navigation helpers.

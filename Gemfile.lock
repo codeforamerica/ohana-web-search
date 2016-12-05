@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/monfresh/redis-rack-cache.git
+  revision: 55998494f9ea585e95bc84faca5314137f5c7f5c
+  branch: readthis-compatibility
+  specs:
+    redis-rack-cache (1.2.2)
+      hiredis
+      rack-cache
+      readthis
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,6 +86,7 @@ GEM
       compass (~> 1.0.0)
       sass-rails (< 5.1)
       sprockets (< 4.0)
+    connection_pool (2.2.0)
     coveralls (0.8.16)
       json (>= 1.8, < 3)
       simplecov (~> 0.12.0)
@@ -84,7 +95,6 @@ GEM
       tins (>= 1.6.0, < 2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
-    dalli (2.7.6)
     debug_inspector (0.0.2)
     derailed (0.1.0)
       derailed_benchmarks
@@ -153,6 +163,7 @@ GEM
     hashdiff (0.3.0)
     heapy (0.1.2)
     hike (1.2.3)
+    hiredis (0.6.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -168,7 +179,6 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.10.0)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.4.1)
@@ -185,7 +195,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    memcachier (0.0.2)
     memoist (0.15.0)
     memory_profiler (0.9.6)
     mime-types (3.1)
@@ -195,6 +204,7 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    newrelic_rpm (3.14.0.305)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     ohanakapa (1.1.2)
@@ -241,6 +251,10 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    readthis (1.0.0)
+      connection_pool (~> 2.1)
+      redis (~> 3.0)
+    redis (3.2.2)
     reek (4.5.2)
       codeclimate-engine-rb (~> 0.4.0)
       parser (~> 2.3.1, >= 2.3.1.2)
@@ -357,7 +371,6 @@ DEPENDENCIES
   capybara (~> 2.4)
   compass-rails
   coveralls
-  dalli (~> 2.7.1)
   derailed
   email_spec
   faraday-http-cache (~> 1.0)
@@ -368,18 +381,17 @@ DEPENDENCIES
   haml-rails
   haml_lint
   kaminari
-  kgio
   letter_opener
-  memcachier
+  newrelic_rpm (>= 3.8.0.218)
   ohanakapa (~> 1.1.1)
   poltergeist
   puma
   quiet_assets
-  rack-cache (~> 1.2)
   rack-mini-profiler
   rack-rewrite (~> 1.5.0)
   rails_12factor
   railties (~> 4.2)
+  redis-rack-cache!
   reek
   requirejs-rails (= 0.9.5)
   rspec-rails (~> 3.1)

@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=CalFresh
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"604e8871b637dc49f8d5332893696975"'
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=6>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=CalFresh&page=2>;
+        rel="next"
+      X-Total-Count:
+      - '6'
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - 2d67bf6c-2cab-4c10-8664-395379dec7ef
+      X-Runtime:
+      - '0.095624'
+      X-Content-Digest:
+      - db1f25a4944f3dddf66ad9c8bd5e67e12d51c786
+      Date:
+      - Sat, 28 Nov 2015 05:29:36 GMT
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '2367'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '[{"id":1499,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.4741901,37.6896347],"description":"Offers
+        comprehensive employment services for job seekers and employers. Employer
+        services include screening and referral of job-ready workers, up to 50% reimbursement
+        of wages for new employees during the on-the-job training period, and space
+        and resources necessary for recruitment. Offers a job bank to persons age
+        16 or over. Offers information on job openings, company profiles and training
+        information in government, nonprofit agencies, corporations and private industry.
+        Offers access to the Internet and the use of computers, phones and fax machines.
+        Also offers information and referral services to other community resources
+        as needed by clients. Accepts applications for public assistance programs:
+        CalWorks, CalFresh, General Assistance and Medi-Cal. Determines eligibility
+        of needy individuals and families seeking public assistance benefits. Serves
+        low-income clients in need of health insurance (Medi-Cal), nutritional food
+        supplements (CalFresh), and temporary financial assistance (CalWorks and General
+        Assistance).","kind":"Human Services","latitude":37.6896347,"longitude":-122.4741901,"name":"Northern
+        Region., PeninsulaWorks Daly City","short_desc":"Offers comprehensive employment
+        services for job seekers and employers.","slug":"northern-region-peninsulaworks-daly-city","updated_at":"2014-11-30T19:05:14.478-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/northern-region-peninsulaworks-daly-city","address":{"id":1238,"address_1":"271
+        - 92nd Street","address_2":null,"street_1":"271 - 92nd Street","street_2":null,"city":"Daly
+        City","state_province":"CA","postal_code":"94015"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
+        301-8440","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Sat, 28 Nov 2015 05:29:36 GMT
+recorded_with: VCR 2.9.3

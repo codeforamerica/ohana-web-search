@@ -7,6 +7,9 @@
           &nbsp;
         %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
           %header
+            %section
+              %p{ class: "kind icon #{location.kind.parameterize}" }
+                = link_to location.kind, locations_path(kind: location.kind), title: "All locations of type #{location.kind}"
             %hgroup
               %h1.name
                 %a{ href: location_link_for(location), name: location.id }

@@ -170,7 +170,11 @@ feature 'location details' do
     end
 
     it 'sets the page title to the location name + site title' do
-      expect(page).to have_title('Example Location | Ohana Web Search')
+      expect(page).to have_title('Example Location | SMC-Connect')
+    end
+
+    it 'includes a link to other locations of the same Kind' do
+      expect(page).to have_link 'Other', href: locations_path(kind: 'Other')
     end
   end
 
@@ -217,10 +221,36 @@ feature 'location details' do
   end
 
   scenario 'when Contact only includes title', :vcr do
-    visit('/locations/peninsula-family-service/fair-oaks-adult-activity-center')
+    visit('/locations/san-pedro-valley-park')
     within('.location-sidebar') do
-      expect(page).to have_content('Director of Older Adult Services')
+      expect(page).to have_content('Supervising Ranger')
       expect(page).to_not have_selector('contact-department')
+    end
+  end
+
+  context 'when farmers market with market match' do
+    before(:each) do
+      cassette = 'location_details/when_market_details_page_is_visited_directly'
+      VCR.use_cassette(cassette) do
+        visit('/locations/san-mateo-farmers-market')
+      end
+    end
+
+    it 'includes Market Match' do
+      expect(page).to have_content('Market Match')
+    end
+
+    it 'includes payment info' do
+      expect(page).to have_content('Payment methods accepted:')
+    end
+
+    it 'includes info about payment types' do
+      expect(page).to have_content('Credit')
+    end
+
+    it 'includes products info' do
+      expect(page).to have_content('Products sold:')
+      expect(page).to have_content('Baked Goods')
     end
   end
 
@@ -233,7 +263,7 @@ feature 'location details' do
     end
 
     it 'points to the corresponding location in the admin site' do
-      admin_site = 'http://ohana-api-demo.herokuapp.com/admin'
+      admin_site = 'http://admin.smc-connect.org'
       expect(page).
         to have_link('Edit', href: "#{admin_site}/locations/example-location")
     end

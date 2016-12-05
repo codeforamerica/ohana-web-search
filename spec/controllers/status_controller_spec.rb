@@ -21,8 +21,8 @@ describe StatusController do
 
       it 'returns API failure error' do
         stub_request(:get,
-                     'http://ohana-api-test.herokuapp.com/api/locations/' \
-                     'san-mateo-free-medical-clinic').
+                     'http://smc-ohana-api-test.herokuapp.com/api/locations/' \
+                     'redwood-city-free-medical-clinic').
           with(headers: { 'Accept' => 'application/vnd.ohanapi-v1+json',
                           'Accept-Encoding' =>
                           'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -30,8 +30,8 @@ describe StatusController do
           to_return(status: 200, body: '', headers: {})
 
         stub_request(:get,
-                     'http://ohana-api-test.herokuapp.com/api/' \
-                     'search?keyword=food').
+                     'http://smc-ohana-api-test.herokuapp.com/api/' \
+                     'search?keyword=ymca&kind=Human%20Services&service_area=smc').
           with(headers: { 'Accept' => 'application/vnd.ohanapi-v1+json',
                           'Accept-Encoding' =>
                           'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',

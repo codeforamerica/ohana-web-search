@@ -11,22 +11,22 @@ feature 'location service details' do
 
     it 'includes name' do
       element = '.services-box .name'
-      expect(all(element).last).to have_content('Passport Photos')
+      expect(all(element).first).to have_content('Passport Photos')
     end
 
     it 'includes alternate name' do
       element = '.services-box .alternate-name'
-      expect(all(element).last).to have_content('(Fotos para pasaportes)')
+      expect(all(element).first).to have_content('(Fotos para pasaportes)')
     end
 
     it 'includes website' do
       element = '.services-box .website'
-      expect(all(element).last).to have_content('www.example.com')
+      expect(all(element).first).to have_content('www.example.com')
     end
 
     it 'includes email' do
       element = '.services-box .email'
-      expect(all(element).last).to have_content('passports@example.org')
+      expect(all(element).first).to have_content('passports@example.org')
     end
 
     it 'includes the phone number, extension, type, and department' do
@@ -36,7 +36,7 @@ feature 'location service details' do
 
     it 'includes description' do
       element = '.services-box .description'
-      expect(all(element).last).to have_content('Lorem ipsum')
+      expect(all(element).first).to have_content('Lorem ipsum')
     end
 
     it 'includes fees' do
@@ -77,6 +77,10 @@ feature 'location service details' do
 
     it 'includes service areas' do
       expect(page).to have_content('San Mateo County')
+    end
+
+    it 'includes hours info' do
+      expect(page).to have_content('Monday-Friday, 8-5; Saturday, 10-6;')
     end
 
     it 'includes regular hour schedule' do

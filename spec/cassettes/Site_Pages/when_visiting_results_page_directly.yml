@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=example
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=example%20location
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:26:32 GMT
+      - Fri, 05 Dec 2014 21:06:04 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,37 +32,40 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"8db7a46738992970e1ecab380feff5c1"'
       X-Total-Count:
       - '1'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"eec7a30d4c53a134d05183c59f58a309"'
       X-Request-Id:
-      - e319971a-0bc2-4e96-9630-0ac798a15119
+      - fa7a5adb-59ee-42e6-a7de-a2e73258b68f
       X-Runtime:
-      - '0.524164'
+      - '0.035998'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
-        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+      string: '[{"id":1689,"active":true,"admin_emails":[],"alternate_name":"The Test
+        Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS IS
+        NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP] Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit metus
+        eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
         Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2014-11-18T05:37:55.208-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"address_1":"2013
-        Avenue of the fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2014-12-05T10:04:55.918-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":1413,"street":"2013
+        Avenue of the fellows, Suite 100","street_1":"2013 Avenue of the fellows","street_2":"Suite
+        100","city":"San Francisco","state":"VT","state_province":"CA","postal_code":"94103","zip":"05201"},"organization":{"id":1344,"accreditations":["BBB","State
         Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
         organization description. The Public Library inspires learning through innovative
         and visionary programming and services—literacy programs, support for school
@@ -70,11 +73,11 @@ http_interactions:
         and gathering places that connect the members of the community with a love
         of reading and learning.","email":"info@example.org","funding_sources":["State","Donations","Grants"],"licenses":["State
         Health Inspection License","State Board of Education License"],"name":"Example
-        Agency","website":"http://example.org","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
-        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
-        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
-        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
+        Agency","website":"http://example.org","slug":"example-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":2465,"department":"Information","extension":"123","number":"650
+        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":2466,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"fax","vanity_number":null},{"id":2531,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"hotline","vanity_number":null},{"id":2532,"department":"Rental
         Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:32 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:06:03 GMT
+recorded_with: VCR 2.9.3

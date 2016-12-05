@@ -28,14 +28,16 @@ function (markers, googleMaps) {
       var titleElm = document.getElementById('detail-map-canvas-title');
       var latElm = document.getElementById('detail-map-canvas-lat');
       var lngElm = document.getElementById('detail-map-canvas-lng');
+      var kindElm = document.getElementById('detail-map-canvas-kind');
 
       // Retrieve marker data from embedded HTML values.
       var title = titleElm.innerHTML.trim();
       var lat = latElm.innerHTML.trim();
       var lng = lngElm.innerHTML.trim();
+      var kind = kindElm.innerHTML.trim();
 
       // Remove embedded values from the DOM.
-      _removeDOMNodeList( [titleElm, latElm, lngElm] );
+      _removeDOMNodeList( [titleElm, latElm, lngElm, kindElm] );
 
       var latLng = new google.maps.LatLng(lat, lng);
 
@@ -69,7 +71,7 @@ function (markers, googleMaps) {
       };
       var map = new google.maps.Map(mapCanvas, mapOptions);
 
-      var markerProxy = markers.create(markers.GENERIC);
+      var markerProxy = markers.create(kind);
       markerProxy.turnOn(markerProxy.LARGE_ICON);
 
       var locationOptions = {

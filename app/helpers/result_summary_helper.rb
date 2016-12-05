@@ -1,13 +1,6 @@
 module ResultSummaryHelper
   extend ActionView::Helpers::TextHelper
 
-  def search_results_page_title
-    search_terms = request.query_parameters.except(:utf8).
-                   map { |k, v| "#{k}: #{v}" unless v.blank? }.
-                   compact.join(', ')
-    "Search results for: #{search_terms}"
-  end
-
   # Formats map result summary text
   # @return [String] Result summary string for display on search results view.
   # rubocop:disable Rails/OutputSafety
@@ -24,6 +17,14 @@ module ResultSummaryHelper
     summary.html_safe
   end
   # rubocop:enable Rails/OutputSafety
+
+  def search_results_page_title
+    search_terms = request.query_parameters.
+                   except(:utf8, :service_area).
+                   map { |k, v| "#{k}: #{v}" unless v.blank? }.
+                   compact.join(', ')
+    "Search results for: #{search_terms}"
+  end
 
   def location_link_for(location)
     if location.organization.name == location.name

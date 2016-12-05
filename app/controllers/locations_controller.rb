@@ -21,12 +21,19 @@ class LocationsController < ApplicationController
   end
 
   def show
-    id = params[:id].split('/').last
-    @location = Location.get(id)
+    @location = Location.get(location_id)
 
-    # @keywords = @location.services.map { |s| s[:keywords] }.flatten.compact.uniq
-    @categories = @location.services.map { |s| s[:categories] }.flatten.compact.uniq
+    if @location[:services].present?
+      @categories = @location.services.map { |s| s[:categories] }.
+                    flatten.compact.uniq
+    end
 
     cache_page(@location.updated_at) if @location.present?
+  end
+
+  private
+
+  def location_id
+    params[:id].split('/').last
   end
 end

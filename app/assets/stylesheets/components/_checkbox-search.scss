@@ -1,0 +1,16 @@
+.input-search-filter
+{
+  > legend
+  {
+    font-size: $font_size_90;
+    color: rgba($black, 0.5);
+  }
+
+  @include toggle-container();
+
+  &.inverted
+  {
+    @include toggle-container('inverted');
+  }
+}
+

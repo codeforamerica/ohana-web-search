@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=snap
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=zoo
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:26:37 GMT
+      - Fri, 05 Dec 2014 21:05:20 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,25 +32,27 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"e9a08afedec861fff647170656df464c"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=snap&page=0>; rel="last"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=zoo&page=0>; rel="last"
       X-Total-Count:
       - '0'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
       X-Request-Id:
-      - 799d188b-aa27-4b71-8ade-88e52a8eea77
+      - ca8b4361-5471-4fac-b6bb-47d67fb1d010
       X-Runtime:
-      - '0.011019'
+      - '0.015291'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 22:26:37 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:05:19 GMT
+recorded_with: VCR 2.9.3

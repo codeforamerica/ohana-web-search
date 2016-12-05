@@ -6,7 +6,7 @@ describe 'Home page header elements' do
   end
 
   it 'includes correct title' do
-    expect(page).to have_title 'Ohana Web Search'
+    expect(page).to have_title 'SMC-Connect'
   end
 
   it 'includes utility links' do
@@ -54,10 +54,16 @@ describe 'Home page footer elements' do
     visit '/'
   end
 
-  it 'includes a link to ohanapi.org' do
+  it 'includes a link to SMCHSA' do
     within('#app-footer') do
-      expect(find_link('view project details')[:href]).
-        to eq('http://ohanapi.org')
+      expect(find_link('San Mateo County Human Services Agency', match: :first)[:href]).
+        to eq('http://hsa.smcgov.org/')
+    end
+  end
+
+  it 'includes the SMCHSA logo' do
+    within('#app-footer') do
+      expect(page).to have_xpath('//img[@src="/assets/smc_hsa_logotype.png"]')
     end
   end
 

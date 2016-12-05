@@ -16,7 +16,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when there is only one result' do
-    before { visit '/locations?keyword=example' }
+    before { visit '/locations?keyword=example%20location' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
@@ -30,7 +30,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when there is only one page of results but more than 1 result' do
-    before { visit '/locations?keyword=youth&per_page=5' }
+    before { visit '/locations?keyword=yoga&per_page=5' }
 
     it 'does not include pagination' do
       expect(page).not_to have_selector('.pagination')
@@ -42,7 +42,7 @@ feature 'results page pagination', :vcr do
 
     it 'displays an appropriate search summary' do
       within('#floating-results-header .search-summary') do
-        expect(page).to have_content('Displaying all 3 results')
+        expect(page).to have_content('Displaying all 5 results')
       end
     end
   end
@@ -64,7 +64,7 @@ feature 'results page pagination', :vcr do
 
     it 'displays an appropriate search summary' do
       within('#floating-results-header .search-summary') do
-        expect(page).to have_content('Displaying 1 - 1 of 3 results')
+        expect(page).to have_content('Displaying 1 - 1 of 92 results')
       end
     end
   end
@@ -93,7 +93,7 @@ feature 'results page pagination', :vcr do
   end
 
   context 'when on last page of results' do
-    before { visit '/locations?keyword=youth&page=3' }
+    before { visit '/locations?keyword=yoga&page=5' }
 
     it 'does not include a link to the next page' do
       expect(page).not_to have_selector('.next')

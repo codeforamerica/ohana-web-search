@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:26:36 GMT
+      - Fri, 05 Dec 2014 21:05:20 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,49 +32,47 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"99c6607a00c93b83b6ee71a62a416353"'
+      Link:
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=4>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=wic&page=2>; rel="next"
       X-Total-Count:
-      - '1'
+      - '4'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"eec7a30d4c53a134d05183c59f58a309"'
       X-Request-Id:
-      - eee62e7f-c374-42a3-bc3f-b04a09c451a0
+      - cb41685f-2987-47ad-bf5f-593c683f585f
       X-Runtime:
-      - '0.035622'
+      - '0.028757'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
-        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
-        metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
-        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
-        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
-        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
-        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
-        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
-        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
-        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2014-11-18T05:37:55.208-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"address_1":"2013
-        Avenue of the fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
-        Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
-        organization description. The Public Library inspires learning through innovative
-        and visionary programming and services—literacy programs, support for school
-        success, access to technology, safe, inviting spaces for youth and families,
-        and gathering places that connect the members of the community with a love
-        of reading and learning.","email":"info@example.org","funding_sources":["State","Donations","Grants"],"licenses":["State
-        Health Inspection License","State Board of Education License"],"name":"Example
-        Agency","website":"http://example.org","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
-        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
-        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
-        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
-        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:36 GMT
-recorded_with: VCR 2.9.2
+      string: '[{"id":1455,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.3171637,37.5624546],"description":"Offers
+        nutrition education and supplemental foods to women who are pregnant, post-partum
+        or breastfeeding, and children age 5 or under. Families may be low- or medium-income
+        and working families may also qualify. There are six WIC clinic sites in the
+        county (South San Francisco, East Palo Alto, Redwood City, Daly City, San
+        Mateo and Half Moon Bay). Supplemental food is made available through issuance
+        of coupons redeemable at most grocery stores for certain food items selected
+        to provide essential nutrients. Participation does not affect eligibility
+        for food stamps or other public assistance programs. Also assists in finding
+        health care and other community services. Formerly known as San Mateo County
+        Health Department, Public Health Division. Nutrition Programs. Women, Infants
+        and Children (WIC) Program.","kind":"Human Services","latitude":37.5624546,"longitude":-122.3171637,"name":"Family
+        Health Services., Public Health Nutrition., Women, Infants and Children (WIC)
+        Program","short_desc":"Offers nutrition education and supplemental foods to
+        low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","updated_at":"2014-11-30T19:05:13.334-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program","address":{"id":1195,"street":"477
+        9th Avenue, Suite 110","street_1":"477 9th Avenue, Suite 110","street_2":null,"city":"San
+        Mateo","state":"CA","state_province":"CA","postal_code":"94402","zip":"94402"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2012,"department":null,"extension":null,"number":"650
+        573-2168","number_type":null,"vanity_number":null},{"id":2013,"department":"Breastfeeding
+        Helpline","extension":null,"number":"800 205-0333","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:05:20 GMT
+recorded_with: VCR 2.9.3

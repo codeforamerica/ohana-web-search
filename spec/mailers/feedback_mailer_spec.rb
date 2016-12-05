@@ -12,12 +12,19 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(ohanapi@codeforamerica.org)
+      recipients = %w(ohanapi@codeforamerica.org
+                      echan@co.sanmateo.ca.us
+                      everducci@co.sanmateo.ca.us)
+
       expect(@email).to deliver_to(recipients)
     end
 
     it 'contains the correct message in the mail body' do
       expect(@email).to have_body_text(/testing/)
+    end
+
+    it 'has the correct subject' do
+      expect(@email).to have_subject("[SMC-Connect Feedback] #{@params[:from]}")
     end
 
     it 'includes the user agent in the mail body' do
@@ -26,11 +33,6 @@ describe FeedbackMailer do
 
     it 'includes the referer in the mail body' do
       expect(@email).to have_body_text(/URL: lvh\.me/)
-    end
-
-    it 'has the correct subject' do
-      expect(@email).
-        to have_subject("[Ohana Web Search Feedback] #{@params[:from]}")
     end
   end
 
@@ -43,7 +45,9 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(ohanapi@codeforamerica.org)
+      recipients = %w(ohanapi@codeforamerica.org
+                      echan@co.sanmateo.ca.us
+                      everducci@co.sanmateo.ca.us)
       expect(@email).to deliver_to(recipients)
     end
 
@@ -57,7 +61,7 @@ describe FeedbackMailer do
 
     it 'includes anonymous@none.com in the subject' do
       expect(@email).
-        to have_subject('[Ohana Web Search Feedback] anonymous@none.com')
+        to have_subject('[SMC-Connect Feedback] anonymous@none.com')
     end
 
     it 'sets the from field to anonymous@none.com' do

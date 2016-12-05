@@ -10,9 +10,9 @@
 
 # Each entry sets a local environment variable and overrides ENV variables
 # in the Unix shell. For example, setting:
-# OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
-# makes "https://ohana-api-demo.herokuapp.com/api" available as
-# ENV['OHANA_API_ENDPOINT'] in the app. See config/initializers/ohanapi.rb
+# OHANA_API_ENDPOINT: http://api.smc-connect.org
+# makes "http://api.smc-connect.org" available as
+# ENV["OHANA_API_ENDPOINT"] in the app. See config/initializers/ohanapi.rb
 # for a usage example.
 
 # Below, you will find descriptions for each variable, followed by default
@@ -97,6 +97,14 @@
 # app/controllers/locations_controller and enter your API key below to
 # test the translation in development.
 
+########################################
+#
+# SECRET_TOKEN - REQUIRED IN PRODUCTION
+#
+########################################
+# Required in production and to precompile assets locally.
+# Set it to a random value by running `rake secret` from the command line.
+
 #################################################
 #
 # GOOGLE_ANALYTICS_ID - OPTIONAL
@@ -129,7 +137,7 @@ development:
   DOMAIN_NAME: lvh.me
   # GOOGLE_MAPS_API_KEY:
   # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
-  OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
+  OHANA_API_ENDPOINT: http://api.smc-connect.org
   # OHANA_API_TOKEN: changeme
 
 ###############################################################################
@@ -140,15 +148,17 @@ development:
 #
 ###############################################################################
 production:
-  # CANONICAL_URL:
-  DOMAIN_NAME: changeme
+  CANONICAL_URL: www.smc-connect.org
+  DOMAIN_NAME: smc-connect.org
   ENABLE_HTTPS: 'yes'
   # GOOGLE_ANALYTICS_ID:
   # GOOGLE_ANALYTICS_DOMAIN:
   # GOOGLE_MAPS_API_KEY:
   # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
-  OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
+  OHANA_API_ENDPOINT: http://api.smc-connect.org
   # OHANA_API_TOKEN: changeme
+  SECRET_TOKEN: changeme
+  TZ: America/Los_Angeles
 
 ###############################################################################
 #
@@ -157,7 +167,7 @@ production:
 ###############################################################################
 
 test:
-  OHANA_API_ENDPOINT: http://ohana-api-test.herokuapp.com/api
+  OHANA_API_ENDPOINT: http://smc-ohana-api-test.herokuapp.com/api
   OHANA_API_TOKEN: ~
   DOMAIN_NAME: lvh.me
   GOOGLE_TRANSLATE_API_KEY: ~

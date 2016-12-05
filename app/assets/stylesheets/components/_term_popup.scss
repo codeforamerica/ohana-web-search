@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Component styles
+   ========================================================================== */
+
+//=============================================================================
+// Term popup styles.
+// Term popups are for Farmers' Markets terms, etc.
+//
+.term-popup-container {
+  position: relative;
+
+  .popup {
+    min-width: 150px;
+
+      @include border-radius(5px 5px 5px 0);
+      background: $white;
+      border: 1px solid $greyscale_midtone; // IE fallback
+      border: 1px solid rgba($black, .4);
+      @include single-box-shadow( 0, 0, 10px, 0, rgba( $black, 0.4 ) );
+      color: $black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: $layer-8;
+      cursor: default;
+      font-size: $font_size_90;
+      font-style: normal;
+
+    div {
+        padding: 10px;
+        margin: 0;
+    }
+
+    dl {
+      margin: 0;
+    }
+
+    dt {
+      font-weight: bold;
+      color: $greyscale_midtone; // IE fallback
+      color: rgba($black, .4);
+    }
+
+    dd {
+      margin: 0;
+    }
+
+    .corner {
+        border-radius: 0 10px 0 0;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        margin: 0;
+        background: $greyscale_midtone; // IE fallback
+        background: rgba($black, .4);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+  }
+
+  .popup-term.active:hover {
+    cursor: pointer;
+    color: $primary-dark;
+    border-bottom: 1px solid $greyscale_midtone; // IE fallback
+    border-bottom: 1px solid rgba($black, .4);
+  }
+}

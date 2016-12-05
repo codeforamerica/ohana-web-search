@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=asdfg
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=asdfg
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:28:00 GMT
+      - Fri, 05 Dec 2014 21:06:02 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,25 +32,28 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"cd50b341a9b8730649ca0bd98ec16e4f"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&page=0>; rel="last"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=asdfg&page=0>;
+        rel="last"
       X-Total-Count:
       - '0'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
       X-Request-Id:
-      - 29214ce3-e341-4249-8ee0-02fdeb04bf8a
+      - e900327f-395b-4134-8fe7-720c6c9b4cc8
       X-Runtime:
-      - '0.010907'
+      - '0.014492'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 22:28:00 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Fri, 05 Dec 2014 21:06:02 GMT
+recorded_with: VCR 2.9.3

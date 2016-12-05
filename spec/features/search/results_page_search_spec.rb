@@ -4,7 +4,7 @@ feature 'searching from results page', :vcr do
   before { visit('/locations') }
 
   context 'when search returns results' do
-    before { search(keyword: 'example') }
+    before { search(keyword: 'lorem') }
 
     it 'displays the name of the agency as a link' do
       expect(page).to have_link('Example Agency')
@@ -12,7 +12,7 @@ feature 'searching from results page', :vcr do
 
     it 'displays the name of the location as a link' do
       location_url = '/locations/example-agency/' \
-                     'example-location?keyword=example&' \
+                     'example-location?keyword=lorem&' \
                      'location=&org_name=&utf8=%E2%9C%93'
       expect(page).to have_link('Example Location', href: location_url)
     end
@@ -36,16 +36,16 @@ feature 'searching from results page', :vcr do
     end
 
     it 'displays the number of results' do
-      expect(page).to have_content('Displaying 1 result')
+      expect(page).to have_content('Displaying 1 - 1 of 2 results')
     end
 
     it 'includes the results info in the page title' do
       expect(page).
-        to have_title 'Search results for: keyword: example | Ohana Web Search'
+        to have_title 'Search results for: keyword: lorem | SMC-Connect'
     end
 
     it 'populates the keyword field with the search term' do
-      expect(find_field('keyword').value).to eq('example')
+      expect(find_field('keyword').value).to eq('lorem')
     end
   end
 
@@ -72,7 +72,7 @@ feature 'searching from results page', :vcr do
 
   it 'allows searching for a location' do
     search(location: '94403')
-    expect(page).to have_content('San Mateo Free Medical Clinic')
+    expect(page).to have_content('Hillsdale Community Library')
   end
 
   it 'allows searching for an agency name' do
@@ -87,7 +87,7 @@ feature 'searching from results page', :vcr do
 
   it 'allows searching for both keyword and agency name' do
     search(keyword: 'clinic', org_name: 'samaritan')
-    expect(page).to have_link('San Mateo Free Medical Clinic')
+    expect(page).to have_link('Redwood City Free Medical Clinic')
   end
 
   it 'allows searching for both location and agency name' do
@@ -106,6 +106,12 @@ feature 'searching from results page', :vcr do
       first('#list-view li').click_link('Samaritan House')
       expect(page).to have_link('Redwood City Free Medical Clinic')
     end
+  end
+
+  scenario 'when click Kind link' do
+    visit('/locations?keyword=soccer')
+    page.first('a', text: 'Other').click
+    expect(find('#list-view')).not_to have_content('Sports')
   end
 
   context 'when organization detail box is shown' do
@@ -143,7 +149,7 @@ feature 'searching from results page', :vcr do
     it 'is not included in the page title' do
       visit('/locations?location=94403&keyword=')
       expect(page).
-        to have_title('Search results for: location: 94403 | Ohana Web Search')
+        to have_title('Search results for: location: 94403 | SMC-Connect')
     end
   end
 
@@ -151,7 +157,7 @@ feature 'searching from results page', :vcr do
     it 'they are all included in the page title' do
       visit('/locations?location=94403&keyword=foo')
       expect(page).
-        to have_title('location: 94403, keyword: foo | Ohana Web Search')
+        to have_title('location: 94403, keyword: foo | SMC-Connect')
     end
   end
 

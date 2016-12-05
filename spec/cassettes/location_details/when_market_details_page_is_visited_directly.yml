@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo-farmers-market
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.1.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - close
+      Date:
+      - Fri, 05 Dec 2014 21:05:37 GMT
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - '"d4ae109943366787a8ab42b81c80d34c"'
+      Last-Modified:
+      - Mon, 01 Dec 2014 03:05:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - max-age=0, public
+      X-Request-Id:
+      - eda137cb-e026-4bfb-bf96-37cdda9ce816
+      X-Runtime:
+      - '0.026106'
+      X-Rack-Cache:
+      - pass
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":1708,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.335123,37.5350511],"description":null,"kind":"Farmers''
+        Markets","latitude":37.5350511,"longitude":-122.335123,"name":"San Mateo Farmers''
+        Market","short_desc":null,"slug":"san-mateo-farmers-market","updated_at":"2014-11-30T19:05:18.469-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/san-mateo-farmers-market","accessibility":[],"email":null,"emails":[],"hours":"January
+        - December Saturday 9:00 AM to 1:00 PM","languages":[],"market_match":true,"payments":["Credit","WIC","SFMNP","SNAP"],"products":["Baked
+        Goods","Cheese","Crafts","Flowers","Eggs","Seafood","Herbs","Vegetables","Honey","Jams","Meat","Nursery","Nuts","Plants","Poultry","Prepared
+        Food","Soap","Wine"],"transportation":null,"urls":["http://www.pcfma.com/sanmateo"],"website":null,"address":{"id":1432,"street":"1700
+        West Hillsdale Boulevard","street_1":"1700 West Hillsdale Boulevard","street_2":null,"city":"San
+        Mateo","state":"CA","state_province":"CA","postal_code":"94401","zip":"94401"},"organization":{"id":1363,"alternate_name":null,"name":"San
+        Mateo Farmers'' Market","slug":"san-mateo-farmers-market","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-farmers-market"},"phones":[],"contacts":[],"faxes":[],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[]}'
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:05:36 GMT
+recorded_with: VCR 2.9.3

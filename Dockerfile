@@ -13,14 +13,14 @@ RUN mkdir /usr/local/phantomjs \
 
 RUN ln -s ../phantomjs/bin/phantomjs /usr/local/bin/
 
-WORKDIR /ohana-web-search
+WORKDIR /SMC-Connect
 
-COPY Gemfile /ohana-web-search
-COPY Gemfile.lock /ohana-web-search
+COPY Gemfile /SMC-Connect
+COPY Gemfile.lock /SMC-Connect
 
 RUN bundle install
 
-COPY . /ohana-web-search
+COPY . /SMC-Connect
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]

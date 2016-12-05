@@ -15,10 +15,11 @@ class StatusController < ApplicationController
   end
 
   def fetch_location_okay?
-    Ohanakapa.location('san-mateo-free-medical-clinic').present?
+    Ohanakapa.location('redwood-city-free-medical-clinic').present?
   end
 
   def search_okay?
-    Ohanakapa.search('search', keyword: 'food').present?
+    Ohanakapa.search('search', keyword: 'ymca', kind: 'Human Services',
+                               service_area: 'smc').present?
   end
 end

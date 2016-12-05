@@ -36,11 +36,6 @@ may be necessary to reproduce the bug, including:
 For developers, a bug report should ideally include a pull request with
 failing specs.
 
-### Tackle a Hack Request
-Some issues in particular we'd be happy if contributors like yourself were
-interested in fixing. Browse the issues [labelled `hack request`][hack_request]
-and see if there's something there that you could fix.
-
 ### Updating the Code? Open a Pull Request
 To submit a code change to the project for review by the team:
 
@@ -78,14 +73,13 @@ _*If you use Sublime Text, please make sure to set your tab indentation to 2
 spaces. We also highly recommend you use the [TrailingSpaces][trailing_spaces]
 plugin and set it to [Trim On Save][trim_on_save]._
 
-[install_instructions]: https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md
-[open_prs]: https://github.com/codeforamerica/ohana-web-search/pulls?q=is%3Aopen+is%3Apr
-[hack_request]: https://github.com/codeforamerica/ohana-web-search/labels/hack%20request
+[install_instructions]: https://github.com/smcgov/SMC-Connect/blob/master/INSTALL.md
+[open_prs]: https://github.com/smcgov/SMC-Connect/pulls?q=is%3Aopen+is%3Apr
 [donate]: http://codeforamerica.org/support-us/
-[issue_tracker]: https://github.com/codeforamerica/ohana-web-search/issues
-[issue_search]: https://github.com/codeforamerica/ohana-web-search/search?ref=cmdform&type=Issues
-[new_issue]: https://github.com/codeforamerica/ohana-web-search/issues/new
-[prerequisites]: https://github.com/codeforamerica/ohana-web-search/blob/master/INSTALL.md#install-prerequisites
+[issue_tracker]: https://github.com/smcgov/SMC-Connect/issues
+[issue_search]: https://github.com/smcgov/SMC-Connect/search?ref=cmdform&type=Issues
+[prerequisites]: https://github.com/smcgov/SMC-Connect/blob/master/INSTALL.md#install-prerequisites
+[new_issue]: https://github.com/smcgov/SMC-Connect/issues/new
 [fork]: http://help.github.com/fork-a-repo/
 [branch]: https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
 [style_guide]: https://github.com/bbatsov/ruby-style-guide

@@ -2,15 +2,17 @@ require([
   'detail/detail-map',
   'detail/character-limited/character-limiter',
   'search/header',
-  'detail/utility-links'
+  'detail/utility-links',
+  'detail/term-popup-manager'
 ],
-function (map, cl, header, utilityLinks) {
+function (map, cl, header, utilityLinks, termPopups) {
   'use strict';
 
   map.init();
   cl.init();
   header.init();
   utilityLinks.init();
+  termPopups.init();
 
 },
 function (err) {
@@ -27,14 +29,16 @@ function (err) {
     'detail/no-detail-map',
     'detail/character-limited/character-limiter',
     'search/header',
-    'detail/utility-links'
+    'detail/utility-links',
+    'detail/term-popup-manager'
   ],
-  function (map, cl, header, utilityLinks) {
+  function (map, cl, header, utilityLinks, termPopups) {
 
     map.init();
     cl.init();
     header.init();
     utilityLinks.init();
+    termPopups.init();
 
   });
 });

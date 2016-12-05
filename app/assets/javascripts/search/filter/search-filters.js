@@ -1,16 +1,20 @@
 // Handles search filter functionality.
 define([
   'search/filter/TextInput',
+  'search/filter/CheckboxSubtractive',
   'util/geolocation/geolocate-action',
+  'app/alerts',
   'domReady!'
 ],
-function (TextInput, geo) {
+function (TextInput, CheckboxSubtractive, geo, alert) {
   'use strict';
 
   // The search filters.
   var _keyword;
   var _location;
   var _agency;
+  var _kind;
+  var _serviceArea;
 
   // The form to submit.
   var _searchForm;
@@ -25,6 +29,13 @@ function (TextInput, geo) {
     _keyword = TextInput.create('keyword-search-box');
     _location = TextInput.create('location-options');
     _agency = TextInput.create('org-name-options');
+
+    // Set up checkbox filters
+    _kind = CheckboxSubtractive.create('kind-options');
+    _kind.addEventListener('change', _showNotice);
+
+    _serviceArea = CheckboxSubtractive.create('service-area-options');
+    _serviceArea.addEventListener('change', _showNotice);
 
     // Capture form submission.
     _searchForm = document.getElementById('form-search');
@@ -48,6 +59,17 @@ function (TextInput, geo) {
 
     evt.preventDefault();
     evt.target.blur();
+  }
+
+  function _showNotice() {
+    var notice = "<a id='update-results'" + // jshint ignore:line
+                 "style='cursor:pointer;'>" + // jshint ignore:line
+                 "<i class='fa fa-refresh'></i>" + // jshint ignore:line
+                 'Update search results!' +
+                 '</a>';
+    alert.show(notice, alert.type.INFO);
+    var trigger = document.getElementById('update-results');
+    trigger.onclick = function(){ _searchForm.submit(); };
   }
 
   return {

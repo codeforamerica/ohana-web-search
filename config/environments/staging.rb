@@ -25,19 +25,18 @@ Rails.application.configure do
 
   config.action_controller.perform_caching = true
 
-  config.cache_store = :dalli_store
-  client = Dalli::Client.new((ENV['MEMCACHIER_SERVERS'] || '').split(','),
-                             username: ENV['MEMCACHIER_USERNAME'],
-                             password: ENV['MEMCACHIER_PASSWORD'],
-                             failover: true,
-                             socket_timeout: 1.5,
-                             socket_failure_delay: 0.2,
-                             value_max_bytes: 10_485_760)
-  config.action_dispatch.rack_cache = {
-    metastore:   client,
-    entitystore: client
+  config.cache_store = :readthis_store, {
+    expires_in: 2.weeks.to_i,
+    namespace: 'cache',
+    redis: { url: ENV.fetch('REDISCLOUD_URL'), driver: :hiredis }
   }
-  config.static_cache_control = 'public, max-age=2592000'
+
+  config.action_dispatch.rack_cache = {
+    metastore: "#{ENV.fetch('REDISCLOUD_URL')}/0/metastore",
+    entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
+    use_native_ttl: true
+  }
+  config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
   # --------------------------------------------------------------------------
 
   # --------------------------------------------------------------------------

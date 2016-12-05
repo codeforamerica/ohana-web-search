@@ -5,9 +5,13 @@ sudo: false
 script: bundle exec rspec
 rvm:
 - 2.3.1
-notifications:
-  webhooks: http://cfa-project-monitor.herokuapp.com/projects/67f80d53-afb0-4344-bd40-2644f55a4462/status
+deploy:
+  provider: heroku
+  app: ohana-staging
+  strategy: git
+  api_key:
+    secure: aChobDF6Mbja08bZbo2AOj6/nF0BVoHVcnfmYwRMnIqq4s/3tXQy5B/eefkR1KgTiTpBym6Bp9d52ovQON1JW7J0nc2pHsQcggrcgsf5MWrYSxeqdvDGaOAQ993cBCBlhfTyaGYlHq/yQO6MTEZHQY+6oppLvV9DQstvJEYXqBw=
 env:
   global:
-  - OHANA_API_ENDPOINT=http://ohana-api-test.herokuapp.com/api
+  - OHANA_API_ENDPOINT=http://smc-ohana-api-test.herokuapp.com/api
   - DOMAIN_NAME=lvh.me

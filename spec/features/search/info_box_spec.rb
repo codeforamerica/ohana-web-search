@@ -37,7 +37,8 @@ feature 'info box', :vcr do
 
   context 'when info box does not have an url' do
     it 'does not display the More info link' do
-      visit('/locations?keyword=snap')
+      visit('/locations?keyword=zoo')
+      expect(page).to have_content('Bees and birds and flowers')
       expect(page).not_to have_link('More info...')
     end
   end

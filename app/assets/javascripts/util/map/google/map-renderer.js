@@ -91,7 +91,7 @@ function (markers, markerDataLoader, plugins, MapDOM, infoBoxManager) {
     var myLatLng = new google.maps.LatLng(markerData.latitude,
                                           markerData.longitude);
 
-    var markerProxy = markers.create(markers.GENERIC);
+    var markerProxy = markers.create(markerData.kind);
     if (atMaxSize)
       markerProxy.turnOn(markerProxy.LARGE_ICON);
     else

@@ -17,6 +17,7 @@ class Search
 
   def hash_for(location)
     {
+      kind: location.kind,
       latitude: location.latitude,
       longitude: location.longitude,
       name: location.name,

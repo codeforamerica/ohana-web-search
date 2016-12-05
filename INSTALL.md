@@ -1,10 +1,8 @@
-
-# Running Ohana Web Search on your computer
+# Running SMC-Connect on your computer
 
 ## Clone the repo to your local machine
 
-    git clone git@github.com:codeforamerica/ohana-web-search.git && cd ohana-web-search
-
+    git clone git@github.com:smcgov/SMC-Connect.git && cd SMC-Connect
 
 ## Docker Setup (recommended, especially for Windows users)
 
@@ -36,7 +34,7 @@ More useful Docker commands:
 
 ## Local Setup
 
-Before you can run Ohana Web Search, you'll need to have the following software
+Before you can run SMC-Connect, you'll need to have the following software
 packages installed on your computer: Git, Ruby 2.3+, RVM, and PhantomJS.
 If you're on a Linux machine, you'll also need Node.js.
 
@@ -64,11 +62,6 @@ Start the app locally on port 4000:
 
     puma -p 4000
 
-Ohana Web Search should now be running at [http://localhost:4000](http://localhost:4000)
+SMC-Connect should now be running at [http://localhost:4000](http://localhost:4000)
 
 The `-p` option allows you to specify which port you want to run the server on. This is useful when running other apps at the same time.
-
-## Customize the app
-Once you have the app up and running, you will want to [customize](https://github.com/codeforamerica/ohana-web-search/blob/master/CUSTOMIZE.md) it to point
-to your own instance of [Ohana API](https://github.com/codeforamerica/ohana-api),
-add your own branding, and much more.

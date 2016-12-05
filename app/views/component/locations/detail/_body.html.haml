@@ -3,6 +3,9 @@
 %section#detail-info{ itemscope: '', itemtype: 'http://schema.org/Organization' }
 
   %header
+    %section
+      %p{ class: "kind icon #{@location.kind.parameterize}" }
+        = link_to @location.kind, locations_path(kind: @location.kind), title: "All locations of type #{@location.kind}"
     %hgroup
       %h1.name
         = superscript_ordinals(full_name_content_for(@location))
@@ -16,6 +19,12 @@
   / detail sidebar content
   .location-sidebar-box
     %aside.location-sidebar
+
+      - if @location.hours.present?
+        %section.schedules-box.location-sidebar-section
+          %h1 Location Hours
+          %section.location-sidebar-content
+            = render 'component/detail/location_hours', location: @location
 
       - if @location.regular_schedules.present?
         %section.schedules-box.location-sidebar-section
@@ -41,7 +50,7 @@
                 - @location.phones.each do |phone|
                   = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
-      - if @location.contacts.present?
+      - if @location[:contacts].present?
         - @location.contacts.each do |contact|
           %section.contact-box-specific.location-sidebar-section
             %h1 Specific Contact
@@ -90,22 +99,18 @@
                     %span{ itemprop: 'serviceType' }
                       = category.name
 
-      /= render 'component/detail/service_keywords'
-
   / Main detail content.
   %section
-
     %section.overview-box
       %section
         = render 'component/detail/location_short_desc', location: @location
         = render 'component/detail/location_description', location: @location
 
-    - if @location.coordinates.present? || @location.transportation.present?
+    - if @location[:coordinates].present? || @location[:transportation].present?
       %section.map-box
         %h1 Location
 
         %div
-
           - if @location[:transportation].present?
             %section.transportation-availability
               %h1 Public Transit:
@@ -121,18 +126,25 @@
                   = @location.latitude
                 %span.hide#detail-map-canvas-lng
                   = @location.longitude
+                %span.hide#detail-map-canvas-kind
+                  = @location.kind
               %noscript
                 -# Hides map when JavaScript is disabled.
                 :sass
                   #detail-map-view
                     display: none
 
-    - if (@location.fields & service_fields).any?
+    - if @location[:languages].present? || @location[:accessibility].present?
       %section.service-opt-box
         %h1 Service Options
         %section
           = render 'component/detail/languages', location: @location
           = render 'component/detail/accessibility', location: @location
+
+    - if @location.kind == "Farmers' Markets"
+      %section.payment-box
+        %h1 Payment & Products
+        = render 'component/detail/farmers_markets'
 
     - if @location.services.present?
       %section.services-box
@@ -179,7 +191,6 @@
 
   / Detail footer content.
   - if @location.updated_at.present?
-
     %footer
       %section.metadata
         .button-edit

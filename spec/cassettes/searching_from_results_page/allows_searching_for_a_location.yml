@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -21,70 +21,59 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:27 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"c464f727ed8f9567e522a8adc6f024ef"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
-        rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
       X-Total-Count:
-      - '22'
+      - '343'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"b034eecf2ad3d209180a702fb897b86b"'
       X-Request-Id:
-      - 9733407a-c53b-4a5e-a134-8db78b37ee34
+      - e3488257-b727-40fb-a971-0547b2f550b7
       X-Runtime:
-      - '0.030775'
+      - '3.222846'
+      X-Content-Digest:
+      - a315da6510efa7aac563b1f949dd53cda88db56a
+      Date:
+      - Sat, 15 Aug 2015 18:04:23 GMT
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '1500'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.213221,37.477227],"description":"A
-        walk-in center for older adults that provides social services, wellness, recreational,
-        educational and creative activities including arts and crafts, computer classes
-        and gardening classes. Coffee and healthy breakfasts are available daily.
-        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
-        Provides case management (including in-home assessments) and bilingual information
-        and referral about community services to persons age 60 or over on questions
-        of housing, employment, household help, recreation and social activities,
-        home delivered meals, health and counseling services and services to shut-ins.
-        Health insurance and legal counseling is available by appointment. Lectures
-        on a variety of health and fitness topics are held monthly in both English
-        and Spanish. Provides a variety of physical fitness opportunities, including
-        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
-        toward older adults. Also provides free monthly blood pressure screenings,
-        quarterly blood glucose monitoring and health screenings by a visiting nurse.
-        Offers a Brown Bag Program in which low-income seniors can receive a bag of
-        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
-        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
-        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","website":null,"updated_at":"2014-10-29T12:12:16.784-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"address_1":"2600
-        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
-        Family Service strengthens the community by providing children, families,
-        and older adults the support and tools to realize their full potential and
-        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
-        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
-        701-0856","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:27 GMT
+      string: '[{"id":1371,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","updated_at":"2014-11-30T19:05:11.640-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"address_1":"1213
+        Newell Road","address_2":null,"street_1":"1213 Newell Road","street_2":null,"city":"Palo
+        Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1296,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Palo
+        Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Sat, 15 Aug 2015 18:04:23 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&org_name=&utf8=%E2%9C%93
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=94403&org_name=&utf8=%E2%9C%93
     body:
       encoding: US-ASCII
       string: ''
@@ -103,50 +92,61 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:28 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"cf780f26968d2fa37f3f3a0341ff5e09"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=7&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=2&utf8=%E2%9C%93>;
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=100&utf8=%E2%9C%93>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=&location=94403&org_name=&page=2&utf8=%E2%9C%93>;
         rel="next"
       X-Total-Count:
-      - '7'
+      - '100'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"ff9f479611f06f4dd63a15b46deded72"'
       X-Request-Id:
-      - 99ba46b7-8c86-4e81-835b-c1db15704ec4
+      - 22debc5d-dd69-4131-9149-afb0355e1414
       X-Runtime:
-      - '0.228484'
+      - '0.059288'
+      X-Content-Digest:
+      - 0be61c8527c31c014dcf012e68de29688477b579
+      Date:
+      - Sat, 15 Aug 2015 18:04:23 GMT
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '2154'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":19,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.2931236,37.5326941],"description":"Provides
-        free medical and dental care to those in need. Offers basic medical care for
-        adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
-        Free Medical Clinic","short_desc":"Provides free medical and dental care to
-        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2014-11-08T22:10:18.338-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"address_1":"19
-        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":5,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Since
-        1974, Samaritan House has been serving low-income families and individuals
-        in San Mateo County. Our services are designed to meet the immediate and basic
-        needs of our clients for food, clothing, shelter, health care, worker resources,
-        and counseling services.","email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
-        House","website":null,"slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
-        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
-        578-0440","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:28 GMT
-recorded_with: VCR 2.9.2
+      string: '[{"id":1407,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.3048749,37.5336608],"description":"Provides
+        general reading materials and reference services to adults, teenagers and
+        children. Loans cassette tapes (chidlren''s only), CDs and large print materials.
+        Also offers programs for adults and school-age children, a summer reading
+        program for children and weekly preschool and PJ story hours. Services to
+        homebound persons can be arranged through this library. Has copies of agendas
+        and minutes of the San Mateo City Council, San Mateo City Planning Commission,
+        County Board of Supervisors, County Board of Education, local environmental
+        impact reports and other government documents relevant to the city and county
+        of San Mateo. This library participates in the Peninsula Library System and
+        offers access to its computerized catalog and other shared on-line databases.
+        Also has 12 Internet accessible computers and free wireless.","kind":"Libraries","latitude":37.5336608,"longitude":-122.3048749,"name":"Hillsdale
+        Community Library","short_desc":"Provides general reading materials and reference
+        services to adults, teenagers and children.","slug":"hillsdale-community-library","updated_at":"2014-11-30T19:05:12.449-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/hillsdale-community-library","address":{"id":1147,"address_1":"205
+        West Hillsdale Blvd.","address_2":null,"street_1":"205 West Hillsdale Blvd.","street_2":null,"city":"San
+        Mateo","state_province":"CA","postal_code":"94403-4217"},"organization":{"id":1303,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo City Public Library","website":null,"slug":"san-mateo-city-public-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-city-public-library/locations"},"phones":[{"id":1922,"department":"24-hour
+        recorded message","extension":null,"number":"650 522-7880","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Sat, 15 Aug 2015 18:04:23 GMT
+recorded_with: VCR 2.9.3

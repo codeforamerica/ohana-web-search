@@ -63,6 +63,7 @@ module InfoBoxHelper
   # "custom" key points to. Otherwise, render the default description list
   # template defined in the method above.
   def render_info_box(info_box_key)
+    return if info_box_key == 'wiccash' || info_box_key == 'credit'
     info_box = info_box_hash[info_box_key]
 
     if info_box['custom'].present?

@@ -4,7 +4,7 @@ set -e
 
 echo 'Running rspec test suite...'
 spring rspec
-echo '\nRunning rubocop Ruby linter...'
-rubocop -R
 echo '\nRunning haml-lint Haml linter...'
 haml-lint app/views/
+echo '\nRunning rubocop Ruby linter...'
+rubocop -R

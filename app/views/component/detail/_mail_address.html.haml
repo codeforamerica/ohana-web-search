@@ -1,6 +1,6 @@
 %span{ itemtype: 'http://schema.org/PostalAddress', itemprop: 'address' }
 
-  - if location.mail_address.attention.present?
+  - if location.mail_address[:attention].present?
     %span.attention
       = location.mail_address.attention
     %br

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=food
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=food
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:26:35 GMT
+      - Fri, 05 Dec 2014 21:05:20 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,43 +32,40 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"a51bd898edece30a92b56007310162e3"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=6>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=food&page=33>;
+        rel="last", <http://smc-ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>;
+        rel="next"
       X-Total-Count:
-      - '6'
+      - '33'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"e00046113deda83329571a3167f96715"'
       X-Request-Id:
-      - 106f492a-8df7-426d-b1dd-8d77d42d4b3e
+      - 6b2c7b7e-53b7-4ca3-a625-aa4f634a5d64
       X-Runtime:
-      - '0.033763'
+      - '0.059514'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":17,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.4224905,37.6445898],"description":"Provides
-        emergency food, clothing and furniture vouchers to low-income families in
-        times of crisis. Administers Project REACH (Relief for Energy Assistance through
-        Community Help) funds to prevent energy shut-off through a one-time payment.
-        Offers a Saturday morning Homeless Feeding Program at 10:30, as well as Sunday
-        services and spiritual counseling. Provides Christmas toys and Back-to-School
-        clothes and supplies. Offers case management, advocacy and referrals to other
-        agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
-        Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
-        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2014-10-29T10:08:12.131-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
-        South Spruce Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
-        Salvation Army operates 7,546 centers in communities across the United States.
-        These include food distribution, disaster relief, rehabilitation centers,
-        anti-human trafficking efforts, and a wealth of children''s programs.","email":null,"funding_sources":[],"licenses":[],"name":"Salvation
-        Army","website":null,"slug":"salvation-army","url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":32,"department":null,"extension":null,"number":"650
-        266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
-        266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
-        266-4594","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:35 GMT
-recorded_with: VCR 2.9.2
+      string: '[{"id":1713,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.2141324,37.4773738],"description":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","kind":"Human
+        Services","latitude":37.4773738,"longitude":-122.2141324,"name":"Redwood City
+        Office","short_desc":"Provides social services eligibility determination and
+        assistance for Health Coverage, CalFresh, CalWORKs and General Assistance
+        and Children and Family Services.","slug":"redwood-city-office-2500-middlefield-rd","updated_at":"2014-11-30T19:05:18.534-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/redwood-city-office-2500-middlefield-rd","address":{"id":1436,"street":"2500
+        Middlefield Rd.","street_1":"2500 Middlefield Rd.","street_2":null,"city":"Redwood
+        City","state":"CA","state_province":"CA","postal_code":"94063","zip":"94063"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2470,"department":"Economic
+        Self-Sufficiency","extension":null,"number":"800-223-8383","number_type":null,"vanity_number":null},{"id":2471,"department":"Children
+        and Family Services","extension":null,"number":"650-802-7922","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:05:19 GMT
+recorded_with: VCR 2.9.3

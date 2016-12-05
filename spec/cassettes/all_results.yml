@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -21,65 +21,54 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:56 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"c464f727ed8f9567e522a8adc6f024ef"'
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
-        rel="next"
+      - <http://smc-ohana-api-test.herokuapp.com/api/search?page=343>; rel="last",
+        <http://smc-ohana-api-test.herokuapp.com/api/search?page=2>; rel="next"
       X-Total-Count:
-      - '22'
+      - '343'
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"b034eecf2ad3d209180a702fb897b86b"'
       X-Request-Id:
-      - 70c1a94f-30eb-4415-b142-9e009a440204
+      - e3488257-b727-40fb-a971-0547b2f550b7
       X-Runtime:
-      - '0.024128'
+      - '3.222846'
+      X-Content-Digest:
+      - a315da6510efa7aac563b1f949dd53cda88db56a
+      Date:
+      - Sat, 15 Aug 2015 18:04:35 GMT
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '1500'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.213221,37.477227],"description":"A
-        walk-in center for older adults that provides social services, wellness, recreational,
-        educational and creative activities including arts and crafts, computer classes
-        and gardening classes. Coffee and healthy breakfasts are available daily.
-        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
-        Provides case management (including in-home assessments) and bilingual information
-        and referral about community services to persons age 60 or over on questions
-        of housing, employment, household help, recreation and social activities,
-        home delivered meals, health and counseling services and services to shut-ins.
-        Health insurance and legal counseling is available by appointment. Lectures
-        on a variety of health and fitness topics are held monthly in both English
-        and Spanish. Provides a variety of physical fitness opportunities, including
-        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
-        toward older adults. Also provides free monthly blood pressure screenings,
-        quarterly blood glucose monitoring and health screenings by a visiting nurse.
-        Offers a Brown Bag Program in which low-income seniors can receive a bag of
-        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
-        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
-        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","website":null,"updated_at":"2014-10-29T12:12:16.784-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"address_1":"2600
-        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
-        Family Service strengthens the community by providing children, families,
-        and older adults the support and tools to realize their full potential and
-        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
-        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
-        701-0856","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:56 GMT
-recorded_with: VCR 2.9.2
+      string: '[{"id":1371,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.138615,37.444609],"description":"A
+        collection of 132,000 items including large print and foreign language books,
+        magazines and newspapers, DVDs, audio and video cassettes, compact discs,
+        paperbacks, talking books and telephone directories. Business as well as research
+        reference is available. Also offers consumer information, photocopiers, bus
+        schedules and the files of the Palo Alto Historical Association and Internet
+        PCs.","kind":"Libraries","latitude":37.444609,"longitude":-122.138615,"name":"Main
+        Library","short_desc":null,"slug":"main-library","updated_at":"2014-11-30T19:05:11.640-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/main-library","address":{"id":1111,"address_1":"1213
+        Newell Road","address_2":null,"street_1":"1213 Newell Road","street_2":null,"city":"Palo
+        Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1296,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Palo
+        Alto City Library","website":null,"slug":"palo-alto-city-library","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/palo-alto-city-library/locations"},"phones":[{"id":1849,"department":null,"extension":null,"number":"650
+        329-2436","number_type":null,"vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Sat, 15 Aug 2015 18:04:35 GMT
+recorded_with: VCR 2.9.3

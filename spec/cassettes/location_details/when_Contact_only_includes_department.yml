@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/admin-test-location
+    uri: http://smc-ohana-api-test.herokuapp.com/api/locations/admin-test-location
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Fri, 21 Nov 2014 22:27:11 GMT
+      - Fri, 05 Dec 2014 21:05:37 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -32,31 +32,35 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - '"4c635ab5a954293a25a943a98c72ef6a"'
+      Last-Modified:
+      - Fri, 05 Dec 2014 20:45:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"7db1fd7c9e600b98c142b7d4396470f7"'
       X-Request-Id:
-      - e0d177c0-dac4-4ab2-957a-7d7feb56be28
+      - 8bffb154-6579-4bdd-8868-1f416e1a5f8f
       X-Runtime:
-      - '0.188555'
+      - '0.046990'
+      X-Rack-Cache:
+      - pass
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":21,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.2871612,37.5291938],"description":"This
-        is a description","latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
-        Test Location","short_desc":"This is a short description","slug":"admin-test-location","website":null,"updated_at":"2014-11-15T09:10:34.211-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
-        Restroom"],"email":null,"languages":[],"transportation":"SAMTRANS stops within
-        1/2 mile.","address":{"id":20,"address_1":"123 El Camino Real","address_2":null,"city":"Belmont","state_province":"CA","postal_code":"94002"},"organization":{"id":7,"alternate_name":null,"name":"Admin
-        Test Org","slug":"admin-test-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/admin-test-org"},"phones":[{"id":39,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703-555-ABCD"},{"id":40,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"contacts":[{"department":"Office
-        of Innovation","email":null,"id":28,"name":"Moncef","title":null,"phones":[]}],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[{"id":21,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
-        a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"application_process":"By
+      string: '{"id":1711,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.2871612,37.5291938],"description":"This
+        is a description","kind":"Other","latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
+        Test Location","short_desc":"This is a short description","slug":"admin-test-location","updated_at":"2014-12-05T12:45:55.816-08:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
+        Restroom"],"email":null,"emails":["eml@example.org"],"hours":"Monday-Friday
+        10am-5pm","languages":[],"transportation":"SAMTRANS stops within 1/2 mile.","urls":["http://codeforamerica.org"],"website":null,"address":{"id":1435,"street":"bozo","street_1":"123
+        El Camino Real","street_2":null,"city":"Belmont","state":"va","state_province":"CA","postal_code":"94002","zip":"12345"},"organization":{"id":1366,"alternate_name":null,"name":"Admin
+        Test Org","slug":"admin-test-org","url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/admin-test-org"},"phones":[{"id":2530,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703-555-ABCD"},{"id":2541,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"contacts":[{"id":2055,"department":"Office
+        of Innovation","email":null,"name":"Moncef","title":null,"extension":null,"fax":"703-555-1234","phone":"703-555-1212","phones":[]}],"faxes":[{"id":1156,"number":"2025551212","department":"CalFresh"}],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[{"id":1693,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
+        a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"how_to_apply":"By
         phone during business hours.","keywords":[],"languages":[],"name":"Service
-        for Admin Test Location","required_documents":[],"service_areas":["San Mateo
-        County"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2014-10-29T10:08:12.381-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:11 GMT
-recorded_with: VCR 2.9.2
+        for Admin Test Location","required_documents":[],"service_areas":["Belmont"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2014-12-05T09:54:06.736-08:00","urls":[],"wait":null,"categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+    http_version: 
+  recorded_at: Fri, 05 Dec 2014 21:05:36 GMT
+recorded_with: VCR 2.9.3
