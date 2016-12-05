@@ -13,6 +13,15 @@ AllCops:
   TargetRubyVersion: 2.3
   UseCache: true
 
+Metrics/BlockLength:
+  CountComments: false  # count full line comments?
+  Enabled: true
+  Max: 25
+  Exclude:
+    - 'config/environments/production.rb'
+    - 'config/environments/staging.rb'
+    - 'spec/**/*.rb'
+
 Metrics/ClassLength:
   Description: Avoid classes longer than 100 lines of code.
   Enabled: true
