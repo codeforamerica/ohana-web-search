@@ -313,7 +313,7 @@ ul {
 }
 
 .inside .main {
-  background-color: $primary-lightest;
+  background-color: $primary;
 }
 
 //=================================================================================
@@ -366,7 +366,7 @@ body {
 //=================================================================================
 // Search options.
 .home #search-container {
-//  background-image: url('');
+  background-color: $primary;
 //  background-size: cover;
 //  position: relative;
 
@@ -375,22 +375,29 @@ body {
   }
 }
 
+// Search results page.
 .inside #search-container {
+//  color: $white;
   float: left;
   vertical-align: top;
   width: 240px;
   background-color: $primary;
   //border-right: 2px solid $primary;
 
+  input {
+    background-color: #ffffff;
+    color: $black;
+  }    
+
   select {
     font-size: $font_size_95;
     margin: 0;
-    color: $white;
+//    color: $white;
     border: 2px solid $primary-dark;
     padding: 10px;
     margin-top: 10px;
 //    letter-spacing: 1px;
-    @include border-radius(4px);
+//    @include border-radius(4px);
     background-color: $white;
     width: 100%;
     -webkit-box-shadow: 0 0 0 #ccc, 0 0 #fff inset;
@@ -434,56 +441,6 @@ body {
 
   .input-search-big {
     @include inline-block();
-  }
-}
-
-.inside #search-box {
-  text-align: left;
-  margin-bottom: 20px;
-
-  section {
-    text-align: left;
-  }
-
-}
-
-.inside #keyword-search-box {
-  background: $primary;
-}
-
-#search-controls {
-  margin: 10px;
-}
-
-#geolocate-box {
-  position: absolute;
-  right: 0;
-}
-
-.inside #geolocate-box {
-  right: 10px;
-  top: 9px;
-  // Fixed max-height and overflow adjustment needed to
-  // handle a 1-pixel layout difference between Chrome and Firefox.
-  @include box-sizing(border-box);
-  max-height: 23px;
-  overflow: hidden;
-}
-
-#search-options {
-  font-family: $font_san_serif;
-
-  fieldset {
-    padding: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-top: 10px;
-
-    legend {
-      color: $search-accent-color;
-      font-size: 14px;
-    }
   }
 }
 
@@ -544,29 +501,84 @@ body {
 }
 
 
+// SEARCH RESULTS ------------------------------------------------
+
+// Entire left column input area
+.inside #search-box {
+  text-align: left;
+  margin-bottom: 0px;
+
+  section {
+    text-align: left;
+  }
+
+}
+
+.inside #keyword-search-box {
+  background: $primary;
+  padding: 10px;
+}
+
+// "Update search results", "Clear search fields"
+#search-controls {
+  margin: 10px;
+}
+
+#geolocate-box {
+  display: none;
+//  position: absolute;
+  right: 0;
+}
+
+.inside #geolocate-box {
+//  right: 10px;
+//  top: 9px;
+  // Fixed max-height and overflow adjustment needed to
+  // handle a 1-pixel layout difference between Chrome and Firefox.
+  @include box-sizing(border-box);
+  max-height: 23px;
+  overflow: hidden;
+}
+
+#search-options {
+  font-family: $font_san_serif;
+
+  fieldset {
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 10px;
+
+    legend {
+      color: $search-accent-color;
+      font-size: 14px;
+    }
+  }
+}
+
 //=================================================================================
 // Search results container.
 // Displays search results in inside page.
 #results-container {
   background: $white;
-  border-left: 1px solid $main-border-color;
-  min-height: 100%;
   margin-left: 240px;
-  position: absolute;
+  position: relative;
   vertical-align: top;
   z-index: 9998;
 }
 
 .results-header {
+  color: $white;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 9999;
   min-height: 45px;
   font-family: $font_san_serif;
-  background: $greyscale_lightest;
-  border-bottom: 1px solid greyscale_light; // IE fallback
-  border-bottom: 1px solid midtone($black, .1);
+  background: $primary;
+//  border-bottom: 1px solid greyscale_light; // IE fallback
+//  border-bottom: 1px solid midtone($black, .1);
   width: 100%;
   text-align: right;
   @include box-sizing(border-box);
@@ -987,7 +999,7 @@ body {
     border-bottom: 1px solid midtone($black, .1);
     background: $primary-lightest; // IE fallback
     background: rgba($primary-lightest,.1);
-    @include border-radius(4px 4px 0 0);
+//    @include border-radius(4px 4px 0 0);
 
     .kind {
       color: $primary-dark;
@@ -1059,7 +1071,7 @@ body {
         background: $main-header-bg;
         padding-left: 5px;
         padding-right: 5px;
-        @include border-radius(5px);
+//        @include border-radius(5px);
         @include inline-block();
         // Overrides compass inline-block mixin setting - needed for correct font alignment.
         vertical-align: baseline;
@@ -1178,7 +1190,7 @@ body {
     .short-desc {
       color: $main-highlight;
       //background: $accentA-light;
-      @include border-radius(5px);
+//      @include border-radius(5px);
       text-align: center;
       font-family: $font_san_serif;
       font-size: 24px;
@@ -1252,7 +1264,7 @@ body {
       margin-top: 20px;
       font-size: $font_size_95;
       background: $alert-bg;
-      @include border-radius(5px);
+//      @include border-radius(5px);
       @include inline-block();
       color: $white;
       vertical-align: middle;
