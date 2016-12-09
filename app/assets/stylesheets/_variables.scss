@@ -5,37 +5,39 @@
 //=================================================================================
 
 // COLOR PALETTE
+// See US federal standards at: https://standards.usa.gov/colors/
 
 // Greyscale.
-$black: rgb(0,0,0);
+$black: #212121; // "base"
 
-$greyscale_dark: rgb(87,87,87);
-$greyscale_midtone: rgb(128,128,128);
-$greyscale_light: rgb(171,171,171);
-$greyscale_lightest: rgb(252,252,252);
+$greyscale_dark: #323a45; // "gray-dark"
+$greyscale_midtone: #5b616b; // "gray"
+$greyscale_light: #aeb0b5; //  "gray-light"
+$greyscale_lighter: #d6d7d9; // "gray-lighter"
+$greyscale_lightest: #f1f1f1; // "gray-lightest"
 
 $white: rgb(255,255,255);
 
 // Primary.
-$primary: rgb(137,209,226);
+$primary: #0071bc; // "primary"
 $primary-dark: shade($primary, 25);
 $primary-darkest: shade($primary, 50);
 $primary-light: tint($primary, 25);
 $primary-lightest: tint($primary, 50);
 
 // Accents.
-$accentA-base: rgb(209,249,148);
+$accentA-base: #fdb81e; // "gold", was rgb(209,249,148);
 $accentA-light: tint($accentA-base, 25);
 $accentA-dark: shade($accentA-base, 50);
-$accentB: rgb(255,200,56);
+$accentB: #2e8540; // "green"  rgb(255,200,56);
 
 // Complements.
-$complement-base: rgb(242,144,191);
+$complement-base: #02bfe7; // "primary-alt", was rgb(242,144,191);
 $complementA: shade($complement-base, 50);
 $complementB: tint($complement-base, 50);
 
 // Notification colors.
-$alert-error-base: rgb(255,10,50);
+$alert-error-base: #e31c3d; // "secondary"
 
 
 // SEMANTIC COLOR VARIABLES
@@ -119,7 +121,7 @@ $button-hover-bg:             shade($accentA-light,5);
 $button-disabled-color:       $greyscale_light;
 $button-disabled-bg:          tint($greyscale_light, 60);
 
-$button-small-color:         tint($black, 25);
+$button-small-color:         $white; //tint($black, 25);
 $button-small-fa-color:      $primary-darkest;
 $button-small-hover-color:   $complementA;
 $button-small-bg:            none;
@@ -225,8 +227,8 @@ $layer-8: 8000;
 $layer-7: 7000;
 
 // Fonts
-$font_serif: 'Libre Baskerville', serif;
-$font_san_serif: 'Quattrocento Sans', sans-serif;
+$font_serif: 'Roboto Slab', serif;
+$font_san_serif: 'Roboto', sans-serif;
 
 // Font sizes. Relative numbered names (-80,-90,-100,-110...) are used
 // instead of labels (small, medium, large) to allow easy insertion
