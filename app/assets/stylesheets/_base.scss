@@ -385,11 +385,11 @@ body {
   select {
     font-size: $font_size_95;
     margin: 0;
-    color: $black;
+    color: $white;
     border: 2px solid $primary-dark;
     padding: 10px;
     margin-top: 10px;
-    letter-spacing: 1px;
+//    letter-spacing: 1px;
     @include border-radius(4px);
     background-color: $white;
     width: 100%;
@@ -489,7 +489,7 @@ body {
 
 // "Government Assistance", "Children, Teens, & Families"
 #category-box {
-  background: $greyscale_lightest;
+//  background: $greyscale_lightest;
   padding: 20px;
   text-align: center;
 
@@ -526,7 +526,7 @@ body {
 // "Emergency", "Reporting"
 #emergency-services {
 //  border: 1px solid $list-search-important-border !important;
-  background: $white;
+//  background: $greyscale_lightest;
   z-index: 9997;
 
   > ul {
@@ -548,12 +548,13 @@ body {
 // Search results container.
 // Displays search results in inside page.
 #results-container {
-  position: relative;
-  z-index: 9998;
-  vertical-align: top;
-  margin-left: 240px;
-  border-left: 2px solid $main-border-color;
   background: $white;
+  border-left: 1px solid $main-border-color;
+  min-height: 100%;
+  margin-left: 240px;
+  position: absolute;
+  vertical-align: top;
+  z-index: 9998;
 }
 
 .results-header {
@@ -794,7 +795,7 @@ body {
 
         h1.name {
           font-size: 24px;
-          letter-spacing: 1px;
+//          letter-spacing: 1px;
           display: inline;
           font-family: $font_serif;
         }
@@ -1006,7 +1007,7 @@ body {
       // name
       h1 {
         @include type-size(large);
-        letter-spacing: 1px;
+//        letter-spacing: 1px;
         color: $black;
       }
 
@@ -1033,7 +1034,7 @@ body {
       padding: 5px;
       border-bottom: 1px solid $greyscale_light; // IE fallback
       border-bottom: 1px solid rgba($black, .1);
-      letter-spacing: 1px;
+//      letter-spacing: 1px;
       font-family: $font_san_serif;
       @include inline-block();
       // Overrides compass inline-block mixin setting - needed for correct font alignment.
@@ -1116,7 +1117,7 @@ body {
           padding: 5px;
           border-bottom: 1px solid $greyscale_light; // IE fallback
           border-bottom: 1px solid rgba($black,.1);
-          letter-spacing: 1px;
+//          letter-spacing: 1px;
           font-family: $font_san_serif;
           @include inline-block();
           // Overrides compass inline-block mixin setting
