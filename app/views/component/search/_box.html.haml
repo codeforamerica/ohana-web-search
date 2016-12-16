@@ -7,7 +7,7 @@
           .input-search-big
             = search_field_tag :keyword, params[:keyword], placeholder: t('placeholders.homepage_keyword_search'), tabindex: 1
 
-            = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: '', tabindex: 2) do
+            = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Search', tabindex: 2) do
               %i.fa.fa-search
               %span
                 = t('buttons.homepage_search')

@@ -11,6 +11,12 @@ class LocationsController < ApplicationController
 
     locations = Location.search(params)
 
+    # Lowercase ORG NAMES (then use CSS to Title Case)
+    locations.each do |l|
+        l.organization.name.downcase!
+    end
+        
+      
     @search = Search.new(locations, Ohanakapa.last_response, params)
 
     # Populate the keyword search field with the original term

@@ -569,14 +569,14 @@ body {
 }
 
 .results-header {
-  color: $white;
+  color: $black;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 9999;
   min-height: 45px;
   font-family: $font_san_serif;
-  background: $primary;
+  background: $greyscale_lightest;
 //  border-bottom: 1px solid greyscale_light; // IE fallback
 //  border-bottom: 1px solid midtone($black, .1);
   width: 100%;
@@ -744,15 +744,12 @@ body {
 }
 
 //=================================================================================
-// Results - list view
+// Search Results - list view
 #list-view {
   font-family: $font_san_serif;
   > ul {
     > li {
       position: relative;
-      background: $white;
-      border-top: 1px solid $greyscale_light; // IE fallback
-      border-top: 1px solid rgba($black,.1);
       background: $greyscale_lightest;
 
       > a {
@@ -765,35 +762,26 @@ body {
       }
 
       .results-entry {
-        padding: 10px;
-        padding-bottom: 20px;
-        padding-top: 20px;
+        padding: 1.5em 2em;
 
         a {
           z-index: 9998;
         }
       }
     }
-
-    > li:hover {
-      background: $primary-lightest; // IE fallback
-      background: rgba($primary-lightest, .5);
-      h1 {
-        padding-bottom: 5px;
-        a {
-          color: $black;
-        }
-      }
-    }
-
-    > li:first-child {
-      border-top: 0;
+      
+    > li:nth-child(odd) {
+         background: $white; 
     }
 
     > li:last-child {
+      border-bottom: 1px solid;
       margin-bottom: 0;
-      border-bottom: 1px solid $greyscale_light; // IE fallback
-      border-bottom: 1px solid rgba($black, .1);
+    }
+      
+    > li:hover {
+      background: $primary-lightest; // IE fallback
+      background: rgba($primary-lightest, .5);
     }
   }
 
@@ -801,67 +789,24 @@ body {
     cursor: pointer;
 
     > header {
-      > hgroup {
-        font-family: $font_serif;
-        padding: 10px;
-
-        h1.name {
-          font-size: 24px;
-//          letter-spacing: 1px;
-          display: inline;
-          font-family: $font_serif;
-        }
-
-        h1.name > a::after {
-          content: " more...";
-          font-size: $font_size_90;
-          font-family: $font_san_serif;
-          color: $greyscale_midtone; // IE fallback
-          color: rgba($black,.4);
-        }
-
-        h1.name > a:hover::after {
+        
+// Name of org in search results
+        h1.agency > a {
+          font-size: 1.25em;
           color: $black;
-          border-right: 0;
-          border-top: 0;
-        }
-
-        h2.agency {
-          font-size: 14px;
-          color: $greyscale_dark;
           font-family: $font_serif;
-
-          span {
-            margin-top: 5px;
-          }
+          font-weight: 700;
+          text-transform: capitalize;
         }
-      }
-    }
+    }   
 
-    /*
-    ul.category {
-      float: right;
-
-      li {
-        margin-bottom: 0;
-        background: $white; // IE fallback
-        background: rgba($white,.8);
-        @include box-shadow(none);
-        @include border-radius(4px);
-        padding: 5px;
-        @include inline-block();
-        font-family: $font_san_serif;
-      }
-    }
-    */
-
+// Phone #, address, etc.
     .content {
-      margin-left: 20px;
     }
 
     .kind {
       color: $primary-dark;
-      font-size: 14px;
+//      font-size: 14px;
 
       a:hover {
         text-decoration: underline;
@@ -869,8 +814,8 @@ body {
     }
 
     .icon {
-      padding-left: 20px;
-      margin-left: 8px;
+//      padding-left: 20px;
+//      margin-left: 8px;
     }
 
     .address {
