@@ -54,13 +54,6 @@ describe 'Home page footer elements' do
     visit '/'
   end
 
-  it 'includes a link to ohanapi.org' do
-    within('#app-footer') do
-      expect(find_link('view project details')[:href]).
-        to eq('http://ohanapi.org')
-    end
-  end
-
   it 'includes a link to codeforamerica.org' do
     within('#app-footer') do
       expect(find_link('Code for America')[:href]).
