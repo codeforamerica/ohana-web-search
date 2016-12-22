@@ -2,6 +2,7 @@
   %section#search-box
     = form_tag('/locations', method: :get, id: 'form-search') do
       %section#keyword-search-box
+        %h2 Search for
         .input-search-small.clearable
           = button_tag(type: 'submit', name: nil, id: 'button-search', class: 'button-icon', title: 'Update search results') do
             %i.fa.fa-search
@@ -9,7 +10,7 @@
 
       %section#search-options
         = render 'component/search/location'
-        = render 'component/search/agency'
+        / = render 'component/search/agency'
 
       %ul#search-controls
         %li

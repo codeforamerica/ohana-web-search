@@ -7,16 +7,10 @@
           &nbsp;
         %section.results-entry{ itemscope: '', itemtype: 'http://schema.org/Organization' }
           %header
-            %hgroup
-              %h1.name
-                %a{ href: location_link_for(location), name: location.id }
-                  = superscript_ordinals(full_name_content_for(location))
-
-              - if location.organization.name && location.organization.name != location.name
-                %h2.agency
-                  = link_to(locations_path(org_name: location.organization.name)) do
-                    %span
-                      = superscript_ordinals(location.organization.name)
+              
+            %h1.agency
+              = link_to(locations_path(org_name: location.organization.name)) do
+                = location.organization.name
           - if location.phones.present? || location.address.present? || location.short_desc.present?
             %section.content
               - if location.phones.present?
