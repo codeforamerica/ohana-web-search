@@ -2,6 +2,7 @@ language: ruby
 bundler_args: "--without development:production"
 cache: bundler
 sudo: false
+before_install: gem update --system
 script: bundle exec rspec
 rvm:
 - 2.3.3
