@@ -45,7 +45,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4'
+  gem 'capybara'
   gem 'coveralls', require: false
   gem 'email_spec'
   gem 'haml_lint'
