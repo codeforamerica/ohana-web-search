@@ -1,6 +1,7 @@
 %section#map-view
   #map-canvas
-  = render 'component/search/map_data'
+    %script#map-locations-data{ type: 'application/json' }
+    = raw(search.map_data.to_json)
   %noscript
     -# Hide map when JavaScript is disabled.
     :sass
