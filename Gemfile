@@ -47,7 +47,8 @@ gem 'google-api-client', '~> 0.9'
 gem 'figaro'
 
 # Handles logic behind Pagination UI component.
-gem 'kaminari'
+gem 'kaminari-actionview'
+gem 'kaminari-core'
 
 gem 'sprockets', '~> 2.12'
 
