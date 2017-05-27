@@ -233,9 +233,8 @@ feature 'location details' do
     end
 
     it 'points to the corresponding location in the admin site' do
-      admin_site = 'http://ohana-api-demo.herokuapp.com/admin'
       expect(page).
-        to have_link('Edit', href: "#{admin_site}/locations/example-location")
+        to have_link('Edit', href: "#{SETTINGS[:admin_site]}/locations/example-location")
     end
 
     it 'includes rel=nofollow' do
