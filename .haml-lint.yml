@@ -1,3 +1,10 @@
 linters:
   LineLength:
     max: 351
+
+  ViewLength:
+    enabled: true
+    max: 100
+    exclude:
+      - app/views/component/info_box/_example_custom_template.html.haml
+      - app/views/component/locations/detail/_body.html.haml

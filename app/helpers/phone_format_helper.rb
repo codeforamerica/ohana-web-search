@@ -16,7 +16,7 @@ module PhoneFormatHelper
   # @param type [String] The value for a location's phone_type field.
   # @return [String] The font-awesome icon string.
   def phone_icon_for(type)
-    return 'fa fa-phone-square' if type == 'voice' || type == 'hotline'
+    return 'fa fa-phone-square' if %w[voice hotline].include?(type)
     return 'fa fa-print' if type == 'fax'
     return 'fa fa-tty' if type == 'tty'
     return 'fa fa-mobile' if type == 'sms'

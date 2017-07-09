@@ -1,48 +1,48 @@
-= render 'component/locations/detail/header'
+= render 'component/locations/detail/header', location: location
 
 %section#detail-info{ itemscope: '', itemtype: 'http://schema.org/Organization' }
 
   %header
     %hgroup
       %h1.name
-        = superscript_ordinals(full_name_content_for(@location))
+        = superscript_ordinals(full_name_content_for(location))
 
-      - if @location.organization.name && @location.organization.name != @location.name
+      - if location.organization.name && location.organization.name != location.name
         %h2.agency
-          = link_to(locations_path(org_name: @location.organization.name)) do
+          = link_to(locations_path(org_name: location.organization.name)) do
             %span
-              = superscript_ordinals(@location.organization.name)
+              = superscript_ordinals(location.organization.name)
 
   / detail sidebar content
   .location-sidebar-box
     %aside.location-sidebar
 
-      - if @location.regular_schedules.present?
+      - if location.regular_schedules.present?
         %section.schedules-box.location-sidebar-section
           %h1 Regular Hours
           %section.location-sidebar-content
-            = render 'component/detail/location_regular_schedule', schedules: @location.regular_schedules
+            = render 'component/detail/location_regular_schedule', schedules: location.regular_schedules
 
-      - if @location.holiday_schedules.present?
+      - if location.holiday_schedules.present?
         %section.schedules-box.location-sidebar-section
           %h1 Holiday Hours
           %section.location-sidebar-content
-            = render 'component/detail/location_holiday_schedule', schedules: @location.holiday_schedules
+            = render 'component/detail/location_holiday_schedule', schedules: location.holiday_schedules
 
-      - if (@location.fields & location_contact_fields).any?
+      - if (location.fields & location_contact_fields).any?
         %section.contact-box-general.location-sidebar-section
           %h1 General Contact Info
           %section.location-sidebar-content
-            = render 'component/detail/website', website: @location.website
-            = render 'component/detail/email', email: @location.email
+            = render 'component/detail/website', website: location.website
+            = render 'component/detail/email', email: location.email
 
-            - if @location.phones.present?
+            - if location.phones.present?
               %section.phones.location-sidebar-content-group
-                - @location.phones.each do |phone|
+                - location.phones.each do |phone|
                   = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
-      - if @location.contacts.present?
-        - @location.contacts.each do |contact|
+      - if location.contacts.present?
+        - location.contacts.each do |contact|
           %section.contact-box-specific.location-sidebar-section
             %h1 Specific Contact
             %section.location-sidebar-content
@@ -60,23 +60,23 @@
                   - contact.phones.each do |phone|
                     = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
-      - if @location.address.present?
+      - if location.address.present?
         %section.address-box.location-sidebar-section
           %h1 Physical Address
           %section.location-sidebar-content
             %section.address.icon-text-block
               %i.fa.fa-map-marker
               %span
-                = render 'component/detail/address', location: @location, lines: 2
+                = render 'component/detail/address', location: location, lines: 2
 
-      - if @location.mail_address.present?
+      - if location.mail_address.present?
         %section.address-box.location-sidebar-section
           %h1 Mailing Address
           %section.location-sidebar-content
             %section.mail-address.icon-text-block
               %i.fa.fa-envelope
               %span
-                = render 'component/detail/mail_address', location: @location
+                = render 'component/detail/mail_address', location: location
 
     - if @categories.present?
       %aside.location-sidebar
@@ -97,47 +97,47 @@
 
     %section.overview-box
       %section
-        = render 'component/detail/location_short_desc', location: @location
-        = render 'component/detail/location_description', location: @location
+        = render 'component/detail/location_short_desc', location: location
+        = render 'component/detail/location_description', location: location
 
-    - if @location.coordinates.present? || @location.transportation.present?
+    - if location.coordinates.present? || location.transportation.present?
       %section.map-box
         %h1 Location
 
         %div
 
-          - if @location[:transportation].present?
+          - if location[:transportation].present?
             %section.transportation-availability
               %h1 Public Transit:
               %span
-                = @location.transportation
+                = location.transportation
 
-          - if @location.coordinates.present?
+          - if location.coordinates.present?
             %section.map#detail-map-view
               #detail-map-canvas
                 %span.hide#detail-map-canvas-title
-                  = full_address_for(@location.address)
+                  = full_address_for(location.address)
                 %span.hide#detail-map-canvas-lat
-                  = @location.latitude
+                  = location.latitude
                 %span.hide#detail-map-canvas-lng
-                  = @location.longitude
+                  = location.longitude
               %noscript
                 -# Hides map when JavaScript is disabled.
                 :sass
                   #detail-map-view
                     display: none
 
-    - if (@location.fields & service_fields).any?
+    - if (location.fields & service_fields).any?
       %section.service-opt-box
         %h1 Service Options
         %section
-          = render 'component/detail/languages', location: @location
-          = render 'component/detail/accessibility', location: @location
+          = render 'component/detail/languages', location: location
+          = render 'component/detail/accessibility', location: location
 
-    - if @location.services.present?
+    - if location.services.present?
       %section.services-box
         %h1 Services
-        - @location.services.each do |service|
+        - location.services.each do |service|
 
           %section.service{ itemscope: '', itemtype: 'http://schema.org/Service' }
             %section.title-box
@@ -178,11 +178,11 @@
             = render 'component/detail/service_service_areas', service: service
 
   / Detail footer content.
-  - if @location.updated_at.present?
+  - if location.updated_at.present?
 
     %footer
       %section.metadata
         .button-edit
-          = link_to "#{SETTINGS[:admin_site]}/locations/#{@location.slug}", rel: 'nofollow' do
+          = link_to "#{SETTINGS[:admin_site]}/locations/#{location.slug}", rel: 'nofollow' do
             %i.fa.fa-pencil
             Edit

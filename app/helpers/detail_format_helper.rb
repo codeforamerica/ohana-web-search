@@ -2,14 +2,14 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Service Overview section in the details view
   def service_fields
-    [:audience, :service_areas, :application_process, :fees,
-     :eligibility, :languages, :accessibility]
+    %i[audience service_areas application_process fees
+       eligibility languages accessibility]
   end
 
   # List of fields that determine whether or not to show the
   # Contact section in the details view
   def location_contact_fields
-    [:urls, :emails, :phones]
+    %i[urls emails phones]
   end
 
   # Strips http:// or https:// from URL

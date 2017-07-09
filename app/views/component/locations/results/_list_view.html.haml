@@ -1,6 +1,6 @@
 %section#list-view
   %ul
-    - @search.locations.each do |location|
+    - search.locations.each do |location|
 
       %li
         %a{ href: location_link_for(location), title: location.name, name: location.id }
@@ -30,4 +30,4 @@
                 %p.short-desc
                   = location.short_desc
   %footer
-    = paginate @search.results
+    = paginate search.results
