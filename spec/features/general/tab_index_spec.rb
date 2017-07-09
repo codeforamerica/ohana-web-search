@@ -12,7 +12,7 @@ feature 'tabindex for homepage elements' do
   end
 
   it 'only has one tabindex of 1 and 2' do
-    expect(all('*[tabindex]').map { |t| t[:tabindex] }).to eq %w(1 2)
+    expect(all('*[tabindex]').map { |t| t[:tabindex] }).to eq %w[1 2]
   end
 end
 
@@ -32,6 +32,6 @@ feature 'tabindex for search results', :vcr do
   end
 
   it 'only has one tabindex of 1, 2, and 3' do
-    expect(all('*[tabindex]').map { |t| t[:tabindex] }).to eq %w(1 2 3)
+    expect(all('*[tabindex]').map { |t| t[:tabindex] }).to eq %w[1 2 3]
   end
 end

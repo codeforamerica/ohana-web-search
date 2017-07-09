@@ -3,7 +3,7 @@ module ResultSummaryHelper
 
   def search_results_page_title
     search_terms = request.query_parameters.except(:utf8).
-                   map { |k, v| "#{k}: #{v}" unless v.blank? }.
+                   map { |k, v| "#{k}: #{v}" if v.present? }.
                    compact.join(', ')
     "Search results for: #{search_terms}"
   end
