@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.3.3'
-gem 'actionmailer'
+gem 'actionmailer', '~> 4.2.9'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
 gem 'faraday-http-cache', '~> 1.0'
