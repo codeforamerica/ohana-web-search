@@ -55,7 +55,7 @@ feature 'location details' do
         'views.share.email.body',
         location_name: name,
         location_url: url
-      ).chop
+      )
     end
   end
 
