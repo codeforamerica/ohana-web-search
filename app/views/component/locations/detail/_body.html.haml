@@ -50,7 +50,7 @@
                 - location.phones.each do |phone|
                   = render 'component/detail/phone', phone: phone, show_phone_type_and_department: true
 
-      - if location[:contacts].present?
+      - if location.contacts.present?
         - location.contacts.each do |contact|
           %section.contact-box-specific.location-sidebar-section
             %h1 Specific Contact
@@ -106,12 +106,12 @@
         = render 'component/detail/location_short_desc', location: location
         = render 'component/detail/location_description', location: location
 
-    - if location[:coordinates].present? || location[:transportation].present?
+    - if location.coordinates.present? || location.transportation.present?
       %section.map-box
         %h1 Location
 
         %div
-          - if location[:transportation].present?
+          - if location.transportation.present?
             %section.transportation-availability
               %h1 Public Transit:
               %span

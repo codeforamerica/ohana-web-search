@@ -2,7 +2,7 @@ module DetailFormatHelper
   # List of fields that determine whether or not to show the
   # Contact section in the details view
   def location_contact_fields
-    %i(website email phones)
+    %i[website email phones]
   end
 
   # Strips http:// or https:// from URL
