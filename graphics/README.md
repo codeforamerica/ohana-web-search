@@ -1,4 +1,4 @@
-#Graphic Assets
+# Graphic Assets
 
 This directory contains source files for graphics used in the project.
 

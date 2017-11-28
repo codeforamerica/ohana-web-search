@@ -5,7 +5,7 @@ require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'sprockets/railtie'
 
-SETTINGS ||= YAML.safe_load(File.read(File.expand_path('../settings.yml', __FILE__)))
+SETTINGS = YAML.safe_load(File.read(File.expand_path('../settings.yml', __FILE__)))
 SETTINGS.merge! SETTINGS.fetch(Rails.env, {})
 SETTINGS.symbolize_keys!
 

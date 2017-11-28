@@ -26,7 +26,7 @@ describe StatusController do
           with(headers: { 'Accept' => 'application/vnd.ohanapi-v1+json',
                           'Accept-Encoding' =>
                           'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                          'User-Agent' => 'Ohanakapa Ruby Gem 1.1.2' }).
+                          'User-Agent' => 'Ohanakapa Ruby Gem 1.1.3' }).
           to_return(status: 200, body: '', headers: {})
 
         stub_request(:get,
@@ -35,7 +35,7 @@ describe StatusController do
           with(headers: { 'Accept' => 'application/vnd.ohanapi-v1+json',
                           'Accept-Encoding' =>
                           'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                          'User-Agent' => 'Ohanakapa Ruby Gem 1.1.2' }).
+                          'User-Agent' => 'Ohanakapa Ruby Gem 1.1.3' }).
           to_return(status: 200, body: '', headers: {})
 
         get 'check_status'

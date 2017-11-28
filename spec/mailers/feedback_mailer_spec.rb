@@ -12,10 +12,9 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(ohanapi@codeforamerica.org
+      recipients = %w[ohanapi@codeforamerica.org
                       echan@co.sanmateo.ca.us
-                      everducci@co.sanmateo.ca.us)
-
+                      everducci@co.sanmateo.ca.us]
       expect(@email).to deliver_to(recipients)
     end
 
@@ -45,9 +44,9 @@ describe FeedbackMailer do
     end
 
     it 'is delivered to the default email address(es)' do
-      recipients = %w(ohanapi@codeforamerica.org
+      recipients = %w[ohanapi@codeforamerica.org
                       echan@co.sanmateo.ca.us
-                      everducci@co.sanmateo.ca.us)
+                      everducci@co.sanmateo.ca.us]
       expect(@email).to deliver_to(recipients)
     end
 
