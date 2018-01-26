@@ -45,11 +45,11 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'coveralls', require: false
   gem 'email_spec'
   gem 'haml_lint'
   gem 'poltergeist'
   gem 'rubocop'
+  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock', '~> 2.1'
 end

@@ -1,0 +1,69 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the Ruby version you desire here
+      - image: circleci/ruby:2.3.3-node-browsers
+        environment:
+          RAILS_ENV: test
+          CC_TEST_REPORTER_ID: 710013d07b72a132b08947be1b89a606f45e5ff0fb21c1ca519fe612bd93605e
+          COVERAGE: true
+          OHANA_API_ENDPOINT: http://smc-ohana-api-test.herokuapp.com/api
+          DOMAIN_NAME: lvh.me
+
+    working_directory: ~/smc-connect
+
+    steps:
+      - checkout
+
+      - restore-cache:
+          key: smc-connect-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install dependencies
+          command: |
+            gem install bundler
+            bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
+      - run:
+          name: Install phantomjs
+          command: |
+            sudo curl --output /tmp/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+            sudo chmod ugo+x /tmp/phantomjs
+            sudo ln -sf /tmp/phantomjs /usr/local/bin/phantomjs
+      - run:
+          name: Install Code Climate Test Reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      # Store bundle cache
+      - save-cache:
+          key: smc-connect-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Run Tests
+          command: |
+            mkdir /tmp/test-results
+            ./cc-test-reporter before-build
+
+            bundle exec rspec --format progress
+            bundle exec haml-lint app/views
+
+      - run:
+          name: Upload Test Results to Code Climate
+          command: |
+            ./cc-test-reporter format-coverage -t simplecov $CIRCLE_ARTIFACTS/coverage/.resultset.json
+            ./cc-test-reporter upload-coverage
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

@@ -1,6 +1,6 @@
 #SMC-Connect
 
-[![Build Status](https://travis-ci.org/smcgov/SMC-Connect.png?branch=master)](https://travis-ci.org/smcgov/SMC-Connect) [![Coverage Status](https://coveralls.io/repos/smcgov/SMC-Connect/badge.png?branch=master)](https://coveralls.io/r/smcgov/SMC-Connect) [![Dependency Status](https://gemnasium.com/smcgov/SMC-Connect.png)](https://gemnasium.com/smcgov/SMC-Connect) [![Code Climate](https://codeclimate.com/github/smcgov/SMC-Connect.png)](https://codeclimate.com/github/smcgov/SMC-Connect)
+[![CircleCI](https://circleci.com/gh/smcgov/SMC-Connect/tree/master.svg?style=svg)](https://circleci.com/gh/smcgov/ohana-api-smc/tree/master) [![Dependency Status](https://gemnasium.com/smcgov/SMC-Connect.png)](https://gemnasium.com/smcgov/SMC-Connect) [![Maintainability](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/maintainability)](https://codeclimate.com/github/smcgov/SMC-Connect/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/test_coverage)](https://codeclimate.com/github/smcgov/SMC-Connect/test_coverage)
 
 [SMC-Connect](http://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California.
 
