@@ -1,12 +1,11 @@
 require 'google/apis/translate_v2'
 
 class KeywordTranslator
-  attr_reader :keyword, :current_language, :target
-
-  def initialize(keyword, current_language, target)
+  def initialize(keyword, current_language, target, service = client)
     @keyword = keyword
     @current_language = current_language
     @target = target
+    @service = service
   end
 
   def translated_keyword
@@ -21,6 +20,8 @@ class KeywordTranslator
 
   private
 
+  attr_reader :keyword, :current_language, :target, :service
+
   def api_key
     ENV['GOOGLE_TRANSLATE_API_KEY']
   end
@@ -34,7 +35,7 @@ class KeywordTranslator
   end
 
   def result
-    client.list_translations(keyword, target, format: 'text', source: current_language)
+    service.list_translations(keyword, target, format: 'text', source: current_language)
   end
 
   def translations
