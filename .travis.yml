@@ -1,8 +1,10 @@
 language: ruby
-bundler_args: "--without development:production"
+bundler_args: "--without development:production:staging"
 cache: bundler
 sudo: false
-before_install: gem update --system
+before_install:
+  - gem update --system
+  - yarn install
 script: bundle exec rspec
 rvm:
 - 2.3.3
