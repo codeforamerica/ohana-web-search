@@ -1,6 +1,14 @@
 FROM ruby:2.3.3
 
-RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install apt-transport-https
+RUN mkdir /usr/local/node \
+    && curl -L https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz | tar Jx -C /usr/local/node --strip-components=1
+RUN ln -s ../node/bin/node /usr/local/bin/
+
+ADD https://dl.yarnpkg.com/debian/pubkey.gpg /tmp/yarn-pubkey.gpg
+RUN apt-key add /tmp/yarn-pubkey.gpg && rm /tmp/yarn-pubkey.gpg
+RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && apt-get install -y --no-install-recommends yarn
 
 # PhantomJS is required for running tests
 ENV PHANTOMJS_SHA256 86dd9a4bf4aee45f1a84c9f61cf1947c1d6dce9b9e8d2a907105da7852460d2f
@@ -17,8 +25,10 @@ WORKDIR /ohana-web-search
 
 COPY Gemfile /ohana-web-search
 COPY Gemfile.lock /ohana-web-search
+COPY package.json /ohana-web-search
 
-RUN bundle install
+RUN gem install bundler --conservative
+RUN bundle check || bundle install --jobs 20 --retry 5 --without production staging
 
 COPY . /ohana-web-search
 

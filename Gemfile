@@ -18,10 +18,10 @@ gem 'puma'
 gem 'rack-cache', '~> 1.2'
 gem 'rack-rewrite', '~> 1.5.0'
 gem 'railties', '~> 4.2'
-gem 'requirejs-rails', '= 0.9.5'
 gem 'sass-rails', '~> 5.0.1'
 gem 'sprockets', '~> 2.12'
 gem 'uglifier'
+gem 'webpacker', '~> 3.2'
 
 group :production, :staging do
   # Enables serving assets in production and setting logger to standard out.
