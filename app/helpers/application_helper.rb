@@ -30,8 +30,7 @@ module ApplicationHelper
   # rubocop:disable Rails/OutputSafety
   def environment_variables
     raw({
-      DOMAIN_NAME: ENV['DOMAIN_NAME'],
-      GOOGLE_MAPS_API_KEY: ENV['GOOGLE_MAPS_API_KEY']
+      DOMAIN_NAME: ENV['DOMAIN_NAME']
     }.to_json)
   end
   # rubocop:enable Rails/OutputSafety
