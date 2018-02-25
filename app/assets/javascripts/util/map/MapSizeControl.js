@@ -39,6 +39,9 @@ function (eventObserver) {
     // Map size control was clicked. This control toggles the large & small map.
     function _buttonElmClicked(evt) {
       _atMaxSize = !_atMaxSize;
+      if (typeof(sessionStorage) !== 'undefined') {
+        sessionStorage.atMaxSize = JSON.stringify(_atMaxSize) || false;
+      }
       _buttonElm.innerHTML = _atMaxSize ? LARGER_MAP_TEXT : SMALLER_MAP_TEXT;
       _instance.dispatchEvent(_events.CLICK, {target:_instance});
       evt.preventDefault();
