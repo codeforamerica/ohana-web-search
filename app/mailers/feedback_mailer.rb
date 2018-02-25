@@ -6,7 +6,7 @@ class FeedbackMailer < ActionMailer::Base
   # @param params [Hash] Email attributes (from, message, user agent)
   def feedback_email(params = {})
     @message    = params[:message] || '[no message entered]'
-    from        = params[:from].blank? ? 'anonymous@none.com' : params[:from]
+    from        = params[:from].presence || 'anonymous@none.com'
     @user_agent = params[:agent] || '[no user agent recorded]'
 
     mail(from: from, subject: "[#{SETTINGS[:site_title]} Feedback] #{from}")

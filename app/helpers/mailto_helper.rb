@@ -26,9 +26,7 @@ module MailtoHelper
   # @param location [Sawyer::Resource] Location Hash returned by API wrapper.
   # @return [String] The location's name + alternate name if it has one.
   def full_name_for(location)
-    if location.alternate_name.present?
-      return "#{location.name} (#{location.alternate_name})"
-    end
+    return "#{location.name} (#{location.alternate_name})" if location.alternate_name.present?
     location.name
   end
 end
