@@ -3,7 +3,7 @@
     ["env", {
       "modules": false,
       "targets": {
-        "browsers": "> 1%",
+        "browsers": ["> 1%", "last 2 versions"],
         "uglify": true
       },
       "useBuiltIns": true
@@ -12,7 +12,6 @@
 
   "plugins": [
     "syntax-dynamic-import",
-    "transform-object-rest-spread",
     ["transform-class-properties", { "spec": true }]
   ]
 }

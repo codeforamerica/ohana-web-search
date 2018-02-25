@@ -21,6 +21,5 @@
     = render 'shared/environment_variables'
 
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"
-    = javascript_include_tag 'google-maps/oms.min'
     = javascript_pack_tag 'application'
     = javascript_pack_tag "#{controller_name}-#{action_name}"

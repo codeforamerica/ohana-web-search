@@ -1,6 +1,5 @@
-define(
-function () {
-  'use strict';
+
+  
 
   // Detects whether a particular event is supported.
   // (from http://stackoverflow.com/questions/2877393/
@@ -171,7 +170,7 @@ function () {
     return returnVal;
   }
 
-  return {
+  export default {
     isEventSupported:isEventSupported,
     getWindowRect:getWindowRect,
     getOffset:getOffset,
@@ -179,4 +178,4 @@ function () {
     queryString:queryString,
     getParameterByName:getParameterByName
   };
-});
+

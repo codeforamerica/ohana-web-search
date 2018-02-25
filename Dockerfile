@@ -1,10 +1,12 @@
 FROM ruby:2.3.3
 
 RUN apt-get update && apt-get install apt-transport-https
-RUN mkdir /usr/local/node \
-    && curl -L https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz | tar Jx -C /usr/local/node --strip-components=1
-RUN ln -s ../node/bin/node /usr/local/bin/
 
+# Install Node.js
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update && apt-get install -y nodejs
+
+# Install yarn
 ADD https://dl.yarnpkg.com/debian/pubkey.gpg /tmp/yarn-pubkey.gpg
 RUN apt-key add /tmp/yarn-pubkey.gpg && rm /tmp/yarn-pubkey.gpg
 RUN echo 'deb https://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
@@ -28,7 +30,7 @@ COPY Gemfile.lock /ohana-web-search
 COPY package.json /ohana-web-search
 
 RUN gem install bundler --conservative
-RUN bundle check || bundle install --jobs 20 --retry 5 --without production staging
+RUN bundle check || bundle install --jobs 20 --retry 5
 
 COPY . /ohana-web-search
 

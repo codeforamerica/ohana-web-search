@@ -11,7 +11,6 @@ Rails.application.config.assets.version = '1.0'
 #
 # Include Internet Explorer polyfills.
 Rails.application.config.assets.precompile += %w[
-  google-maps/oms.min.js
   vendor.js
   ie8.js
   ie9.js
