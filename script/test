@@ -3,7 +3,7 @@
 set -e
 
 echo 'Running rspec test suite...'
-spring rspec
+bundle exec rspec
 echo '\nRunning rubocop Ruby linter...'
 rubocop -R
 echo '\nRunning haml-lint Haml linter...'

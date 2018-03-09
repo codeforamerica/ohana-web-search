@@ -15,12 +15,17 @@ Dir.chdir APP_ROOT do
   end
 
   if ARGV.shift == '--docker' then
+    system 'docker-compose build'
+    system 'docker-compose run --rm web yarn install'
+    system 'docker-compose up'
     exit
   end
 
   puts '== Installing dependencies =='
+  system 'which yarn || brew install yarn'
   system 'gem install bundler --conservative'
   system 'bundle check || bundle install'
+  system 'yarn install'
 
   puts "\n== Removing old logs and tempfiles =="
   system 'rm -f log/*'

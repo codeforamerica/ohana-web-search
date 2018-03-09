@@ -1,4 +1,3 @@
-
 # Running Ohana Web Search on your computer
 
 ## Clone the repo to your local machine
@@ -10,17 +9,9 @@
 
 1. Download, install, and launch [Docker]
 
-1. Copy the sample configuration files:
+1. Configure the docker image and run the app:
 
-        $ bin/setup --docker
-
-1. Build/download the container images:
-
-        $ docker-compose build
-
-1. Start the app:
-
-        $ docker-compose up
+   `$ bin/setup --docker`
 
 Once the docker images are up and running, the app will be accessible at
 [http://localhost:3000](http://localhost:3000).
@@ -37,8 +28,13 @@ More useful Docker commands:
 ## Local Setup
 
 Before you can run Ohana Web Search, you'll need to have the following software
-packages installed on your computer: Git, Ruby 2.3+, RVM, and PhantomJS.
-If you're on a Linux machine, you'll also need Node.js.
+packages installed on your computer:
+- Git
+- Ruby 2.3+
+- RVM (or other Ruby version manager)
+- PhantomJS
+- Yarn 0.25.2+
+- Node.js 6.0.0+
 
 If you already have all of the prerequisites installed, you can skip to the
 next step. Otherwise, there are two ways you can install the tools:
@@ -60,9 +56,13 @@ next step. Otherwise, there are two ways you can install the tools:
     bin/setup
 
 ### Run the app
-Start the app locally on port 4000:
+In one terminal window or tab, run the webpack dev server:
 
-    puma -p 4000
+    ./bin/webpack-dev-server
+
+In another terminal window or tab, start the app locally on port 4000:
+
+    bundle exec puma -p 4000
 
 Ohana Web Search should now be running at [http://localhost:4000](http://localhost:4000)
 
