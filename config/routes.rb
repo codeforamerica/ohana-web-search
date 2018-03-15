@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :locations, only: [:index]
   get 'locations/*id/' => 'locations#show', as: 'location'
   get '/about' => 'about#index'
-  post '/feedback' => 'about#index'
+  post '/feedback' => 'feedback#create'
   get '.well-known/status' => 'status#check_status'
 end
