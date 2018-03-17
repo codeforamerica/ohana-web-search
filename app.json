@@ -1,0 +1,99 @@
+{
+  "name": "ohana-web-search-demo",
+  "scripts": {
+  },
+  "env": {
+    "API_KEY": {
+      "required": true
+    },
+    "CANONICAL_URL": {
+      "required": true
+    },
+    "DOMAIN_NAME": {
+      "required": true
+    },
+    "ENABLE_CACHING": {
+      "required": true
+    },
+    "ENABLE_HTTPS": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS_DOMAIN": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS_ID": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_RED_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "LATEST_COMMIT_HASH": {
+      "required": true
+    },
+    "MEMCACHIER_PASSWORD": {
+      "required": true
+    },
+    "MEMCACHIER_SERVERS": {
+      "required": true
+    },
+    "MEMCACHIER_USERNAME": {
+      "required": true
+    },
+    "NEW_RELIC_APP_NAME": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    },
+    "OHANA_API_ENDPOINT": {
+      "required": true
+    },
+    "PATH": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "SECRET_TOKEN": {
+      "required": true
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    },
+    "TZ": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "logentries",
+    "newrelic",
+    "memcachier",
+    "heroku-postgresql",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
