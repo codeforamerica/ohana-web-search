@@ -2,7 +2,6 @@
 import alerts from 'app/alerts';
 import util from 'app/util/util';
 import eventObserver from 'app/util/EventObserver';
-import $ from 'jquery';
 
 function create(selector) {
   return new FeedbackForm().init(selector);
@@ -23,110 +22,112 @@ function FeedbackForm() {
   var _commentInput;
   var _emailInput;
 
-  // @param selector [String] The HTML DOM selector for the feedback form.
-  function init(selector) {
-    var form = document.querySelector(selector);
-    _sendBtn = form.querySelector('.button-feedback-send');
-    _sendBtn.addEventListener('click', _sendBtnClicked, false);
-
-    _commentInput = form.querySelector('.comment');
-    _emailInput = form.querySelector('.email');
-
-    if (util.isEventSupported('input')) {
-      _commentInput.addEventListener('input', _onFeedbackFormInput);
-      _emailInput.addEventListener('input', _onFeedbackFormInput);
-    } else {
-      _sendBtn.disabled = '';
-    }
-    return this;
-  }
-
-  function _sendBtnClicked(evt) {
-    // Stop the form from submitting.
-    evt.preventDefault();
-    var emailCheck = new RegExp('.+@.+\..+','i');
-    var match = emailCheck.exec(_emailInput.value);
-    if (match || _emailInput.value === '')
-      _feedbackFormSend();
-    else
-      _incorrectEmailAddress();
-  }
-
-  function _onFeedbackFormInput() {
-    _updateFeedbackForm();
-  }
-
-  function _isFeedbackFormMessagePresent() {
-    var message = _commentInput.value;
+  function isFeedbackFormMessagePresent() {
+    let message = _commentInput.value;
     message = message.trim();
 
     if (util.isEventSupported('input')) {
       return message.length > 0;
-    } else {
-      return true;
     }
+
+    return true;
   }
 
-  function _updateFeedbackForm() {
-    if (_isFeedbackFormMessagePresent()) {
+  function updateFeedbackForm() {
+    if (isFeedbackFormMessagePresent()) {
       _sendBtn.disabled = false;
     } else {
       _sendBtn.disabled = true;
     }
   }
 
-  function _feedbackFormSend() {
-    var agent = '\nUser agent: ' + navigator.userAgent;
-
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-    var transmission = {
-      message: _commentInput.value,
-      from: _emailInput.value,
-      agent: agent
-    };
-
-    $.ajax({
-        headers: {
-          'X-CSRF-Token': csrfToken
-        },
-        url             : '/feedback',
-        type            : 'POST',
-        dataType        : 'json',
-        data            : JSON.stringify(transmission),
-        contentType     : 'application/json',
-        success         : _onSuccess,
-        error           : _onError
-      });
-  }
-
   // On successful submission of commment, clear out the input values,
   // display a success alert message, and broadcast a success event.
-  function _onSuccess() {
+  function onSuccess() {
     alerts.show('Feedback Sent! Thank you!', alerts.type.VALID);
     _commentInput.value = '';
-    _updateFeedbackForm();
-    _instance.dispatchEvent(_events.SUCCESS, {target:_instance});
+    updateFeedbackForm();
+    _instance.dispatchEvent(_events.SUCCESS, { target: _instance });
   }
 
   // On unsuccessful submission of commment, clear out the input values
   // and display a failure alert message.
-  function _onError() {
-    var message = 'Error sending feedback, please ' +
-                  '<a href="/">reload</a> and try again!';
+  function onError() {
+    const message = 'Error sending feedback, please ' +
+                    '<a href="/">reload</a> and try again!';
     alerts.show(message, alerts.type.ERROR);
     _commentInput.value = '';
     _emailInput.value = '';
-    _updateFeedbackForm();
-    _instance.dispatchEvent(_events.ERROR, {target:_instance});
+    updateFeedbackForm();
+    _instance.dispatchEvent(_events.ERROR, { target: _instance });
+  }
+
+  function feedbackFormSend() {
+    const agent = navigator.userAgent;
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    const transmission = {
+      message: _commentInput.value,
+      from: _emailInput.value,
+      agent,
+    };
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/feedback');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        onSuccess();
+      } else {
+        onError();
+      }
+    };
+    xhr.send(JSON.stringify(transmission));
   }
 
   // Incorrect email address. Show error message.
-  function _incorrectEmailAddress() {
-    var message = 'Your email address appears to be formatted ' +
+  function incorrectEmailAddress() {
+    const message = 'Your email address appears to be formatted ' +
                   'incorrectly, please try again!';
     alerts.show(message, alerts.type.ERROR);
     _emailInput.value = '';
+  }
+
+  function sendBtnClicked(evt) {
+    // Stop the form from submitting.
+    const emailCheck = new RegExp(/.+@.+\..+/, 'i');
+    const match = emailCheck.exec(_emailInput.value);
+    evt.preventDefault();
+    if (match || _emailInput.value === '') {
+      feedbackFormSend();
+    } else {
+      incorrectEmailAddress();
+    }
+  }
+
+  function onFeedbackFormInput() {
+    updateFeedbackForm();
+  }
+
+  // @param selector [String] The HTML DOM selector for the feedback form.
+  function init(selector) {
+    const form = document.querySelector(selector);
+    _sendBtn = form.querySelector('.button-feedback-send');
+    _sendBtn.disabled = true;
+    _sendBtn.addEventListener('click', sendBtnClicked, false);
+
+    _commentInput = form.querySelector('.comment');
+    _emailInput = form.querySelector('.email');
+
+    if (util.isEventSupported('input')) {
+      _commentInput.addEventListener('input', onFeedbackFormInput);
+      _emailInput.addEventListener('input', onFeedbackFormInput);
+    } else {
+      _sendBtn.disabled = '';
+    }
+    return this;
   }
 
   _instance.init = init;
