@@ -18,6 +18,7 @@ gem 'railties', '~> 4.2'
 gem 'redis-rack-cache', git: 'https://github.com/monfresh/redis-rack-cache.git', branch: 'readthis-compatibility'
 gem 'requirejs-rails', '= 0.9.5'
 gem 'sass-rails', '~> 5.0.1'
+gem 'skylight'
 gem 'sprockets', '~> 2.12'
 gem 'uglifier'
 
