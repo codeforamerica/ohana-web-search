@@ -1,6 +1,7 @@
 #SMC-Connect
 
 [![CircleCI](https://circleci.com/gh/smcgov/SMC-Connect/tree/master.svg?style=svg)](https://circleci.com/gh/smcgov/ohana-api-smc/tree/master) [![Dependency Status](https://gemnasium.com/smcgov/SMC-Connect.png)](https://gemnasium.com/smcgov/SMC-Connect) [![Maintainability](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/maintainability)](https://codeclimate.com/github/smcgov/SMC-Connect/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/test_coverage)](https://codeclimate.com/github/smcgov/SMC-Connect/test_coverage)
+[![View performance data on Skylight](https://badges.skylight.io/status/OsRyw4RiuAcN.svg)](https://oss.skylight.io/app/applications/OsRyw4RiuAcN)
 
 [SMC-Connect](http://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California.
 
