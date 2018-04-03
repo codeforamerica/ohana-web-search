@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.3.3'
-gem 'actionmailer', '~> 4.2.9'
+gem 'actionmailer', '~> 5.1.6'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
 gem 'faraday-http-cache', '~> 2.0'
@@ -17,9 +17,9 @@ gem 'ohanakapa', '~> 1.1.1'
 gem 'puma'
 gem 'rack-cache', '~> 1.2'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 4.2'
+gem 'railties', '~> 5.1.6'
 gem 'sass-rails', '~> 5.0.1'
-gem 'sprockets', '~> 2.12'
+gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
 gem 'webpacker', '~> 3.2'
 
@@ -31,12 +31,11 @@ end
 # dev and debugging tools
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', '~> 0.7.2', platforms: %i[mri_19 rbx]
+  gem 'binding_of_caller', platforms: %i[mri_19 rbx]
   gem 'bummr'
   gem 'derailed'
   gem 'flamegraph'
   gem 'letter_opener'
-  gem 'quiet_assets'
   gem 'rack-mini-profiler'
   gem 'reek'
   gem 'spring'
@@ -52,6 +51,7 @@ group :test do
   gem 'email_spec'
   gem 'haml_lint'
   gem 'poltergeist'
+  gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'vcr'
   gem 'webmock', '~> 2.1'
