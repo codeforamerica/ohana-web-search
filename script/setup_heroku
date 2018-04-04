@@ -59,6 +59,9 @@ heroku addons:create sendgrid:starter --app $APP_NAME
 echo "Installing Memcachier"
 heroku addons:create memcachier --app $APP_NAME
 
+echo "Adding NodeJS buildback for compatibility with webpacker"
+heroku buildpacks:add heroku/nodejs -i 1 --app $APP_NAME
+
 echo "All done setting up env vars and add-ons."
 echo "Pushing code to Heroku now. This will take a few minutes..."
 git push heroku master
