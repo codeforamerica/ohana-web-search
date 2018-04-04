@@ -24,9 +24,6 @@
     "GOOGLE_ANALYTICS_ID": {
       "required": true
     },
-    "HEROKU_POSTGRESQL_RED_URL": {
-      "required": true
-    },
     "LANG": {
       "required": true
     },
@@ -40,15 +37,6 @@
       "required": true
     },
     "MEMCACHIER_USERNAME": {
-      "required": true
-    },
-    "NEW_RELIC_APP_NAME": {
-      "required": true
-    },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
-    "NEW_RELIC_LOG": {
       "required": true
     },
     "OHANA_API_ENDPOINT": {
@@ -83,13 +71,13 @@
     }
   },
   "addons": [
-    "logentries",
-    "newrelic",
     "memcachier",
-    "heroku-postgresql",
     "sendgrid"
   ],
   "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
     {
       "url": "heroku/ruby"
     }
