@@ -12,10 +12,6 @@ Rails.application.config.assets.version = '1.2'
 #
 # Include Internet Explorer polyfills.
 Rails.application.config.assets.precompile += %w[
-  routes/home/index.js
-  routes/about/index.js
-  routes/locations/index.js
-  routes/locations/show.js
   vendor.js
   ie8.js
   ie9.js

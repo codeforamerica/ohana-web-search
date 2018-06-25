@@ -21,13 +21,30 @@ jobs:
       - checkout
 
       - restore-cache:
-          key: smc-connect-{{ checksum "Gemfile.lock" }}
-
+          keys: 
+            - v1-smc-connect-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install dependencies
           command: |
             gem install bundler
             bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
+      - save-cache:
+          key: v1-smc-connect-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore-cache:
+          keys:
+            - v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
+            - v1-smc-connect-yarn-
+      - run:
+          name: Install Yarn
+          command: yarn install --cache-folder ~/.cache/yarn
+      - save-cache:
+          key: v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
       - run:
           name: Install phantomjs
           command: |
@@ -39,12 +56,6 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
-      # Store bundle cache
-      - save-cache:
-          key: smc-connect-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
 
       - run:
           name: Run Tests

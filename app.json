@@ -1,0 +1,76 @@
+{
+  "name": "ohana-web-search-demo",
+  "scripts": {
+  },
+  "env": {
+    "CANONICAL_URL": {
+      "required": true
+    },
+    "DOMAIN_NAME": {
+      "required": true
+    },
+    "ENABLE_CACHING": {
+      "required": true
+    },
+    "ENABLE_HTTPS": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS_DOMAIN": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS_ID": {
+      "required": true
+    },
+    "LATEST_COMMIT_HASH": {
+      "required": true
+    },
+    "OHANA_API_ENDPOINT": {
+      "required": true
+    },
+    "PATH": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "READTHIS_DRIVER": {
+      "required": true
+    },
+    "REDISCLOUD_URL": {
+      "required": true
+    },
+    "SECRET_TOKEN": {
+      "required": true
+    },
+    "SENDGRID_PASSWORD": {
+      "required": true
+    },
+    "SENDGRID_USERNAME": {
+      "required": true
+    },
+    "TZ": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    "rediscloud",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

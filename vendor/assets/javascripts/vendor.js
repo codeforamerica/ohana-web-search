@@ -1,4 +1,3 @@
-// This is used for including scripts that fall outside of the requirejs pipeline.
 // This is a manifest file that'll be compiled into vendor.js, which will include all the files
 // listed below. The files listed will be loaded before the main application script.
 //
