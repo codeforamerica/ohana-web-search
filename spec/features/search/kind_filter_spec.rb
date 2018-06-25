@@ -22,10 +22,10 @@ describe 'kind filter', :vcr do
 
   context 'when checking a single Kind checkbox' do
     it 'restricts results to those with a matching Kind' do
-        visit '/locations'
-        check 'kind-arts'
-        find('#button-search').click
-        expect(current_url).to include('kind[]=Arts')
+      visit '/locations'
+      check 'kind-arts'
+      find('#button-search').click
+      expect(current_url).to include('kind[]=Arts')
     end
   end
 
