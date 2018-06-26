@@ -7,20 +7,18 @@
       = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank'
 
     %section.feedback-form
-      %p
-        %label{ for: 'comment' }
-          = t('views.feedback.submit_comment_label')
-        %textarea.comment{ name: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: '' }
-      %p
-        %label{ for: 'email' }
-          Email:
-        %input.email{ name: 'email', type: 'email', placeholder: 'your email address (optional)', pattern: '/.+@.+\..+/i' }
-      %p
-        %button.button-feedback-send{ type: 'submit', disabled: 'disabled' }
-          Send!
-
-    %noscript
-      -# Hides ajax-enabled feedback form when JavaScript is disabled.
-      :sass
-        #feedback-box .feedback-form
-          display: none
+      = form_tag('/feedback', method: :post) do
+        %p
+          = label_tag 'message', t('views.feedback.submit_comment_label')
+          = text_area_tag('message',
+                          nil,
+                          placeholder: 'enter your comment, question, etc.',
+                          rows: '4',
+                          required: 'true',
+                          class: 'comment')
+        %p
+          = label_tag 'from', 'Email:'
+          = email_field_tag 'from', nil, placeholder: 'your email address (optional)', class: 'email'
+          = hidden_field_tag 'agent', user_agent
+        %p
+          = button_tag 'Send!', class: 'button-feedback-send'

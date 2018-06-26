@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.3.3-node-browsers
+      - image: circleci/ruby:2.4.4-node-browsers
         environment:
           RAILS_ENV: test
           CC_TEST_REPORTER_ID: 710013d07b72a132b08947be1b89a606f45e5ff0fb21c1ca519fe612bd93605e
@@ -21,13 +21,30 @@ jobs:
       - checkout
 
       - restore-cache:
-          key: smc-connect-{{ checksum "Gemfile.lock" }}
-
+          keys: 
+            - v1-smc-connect-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install dependencies
           command: |
             gem install bundler
             bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
+      - save-cache:
+          key: v1-smc-connect-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - restore-cache:
+          keys:
+            - v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
+            - v1-smc-connect-yarn-
+      - run:
+          name: Install Yarn
+          command: yarn install --cache-folder ~/.cache/yarn
+      - save-cache:
+          key: v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
       - run:
           name: Install phantomjs
           command: |
@@ -39,12 +56,6 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
-      # Store bundle cache
-      - save-cache:
-          key: smc-connect-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
 
       - run:
           name: Run Tests

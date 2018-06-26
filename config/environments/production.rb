@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+  config.webpacker.check_yarn_integrity = false
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Thanks to the "rack-rewrite" gem, the code in lines 38-53 will redirect all
@@ -57,7 +60,7 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/rack-cache-memcached-rails31
   # ------------------------------------------------------------------
 
-  config.serve_static_files = true
+  config.public_file_server.enabled = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.

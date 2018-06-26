@@ -1,5 +1,5 @@
 {
-  'extends': 'airbnb',
+  'extends': 'airbnb-base',
   'parser': 'babel-eslint',
   'env': {
     'browser': true,
@@ -17,15 +17,16 @@
     'fixture': true
   },
   'rules': {
+    'jsx-a11y/img-has-alt': 'off',
     'func-names': 0,
     'space-before-function-paren': 0,
-    'prefer-arrow-callback': 0
+    'prefer-arrow-callback': 0,
+    'import/prefer-default-export': 'off',
+    'import/extensions': ['off', 'never'],
+    'no-param-reassign': ['off', 'never'],
   },
   'parserOptions': {
     'ecmaVersion': 6,
-    'sourceType': 'module',
-    'ecmaFeatures': {
-      'jsx': true
-    }
+    'sourceType': 'module'
   }
 }

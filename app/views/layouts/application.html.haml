@@ -11,7 +11,7 @@
   %body{ class: "#{controller_name == 'home' ? '' : 'inside '}#{controller_name} #{action_name}" }
     %section#content
       = render 'shared/alert'
-      = render 'shared/header'
+      = render 'shared/header', user_agent: @user_agent
       %main.main= yield
       = render 'shared/footer'
 
@@ -20,4 +20,6 @@
 
     = render 'shared/environment_variables'
 
-    = requirejs_include_tag("routes/#{controller_name}/#{action_name}")
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}"
+    = javascript_pack_tag 'application'
+    = javascript_pack_tag "#{controller_name}-#{action_name}"
