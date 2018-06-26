@@ -8,7 +8,7 @@ Rails.application.configure do
   # should set on your staging server. If you're deploying on Heroku, read this
   # article to learn how to set environment (also called config) variables:
   # https://devcenter.heroku.com/articles/config-vars
-  config.middleware.use '::Rack::Auth::Basic' do |u, p|
+  config.middleware.use ::Rack::Auth::Basic do |u, p|
     [u, p] == [ENV['STAGING_USER'], ENV['STAGING_PASSWORD']]
   end
 
