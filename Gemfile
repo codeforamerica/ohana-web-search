@@ -46,7 +46,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4'
+  gem 'capybara'
   gem 'coveralls', require: false
   gem 'email_spec'
   gem 'haml_lint'
@@ -54,7 +54,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'vcr'
-  gem 'webmock', '~> 2.1'
+  gem 'webmock'
 end
 
 group :development, :test do

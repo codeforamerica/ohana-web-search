@@ -1,0 +1,29 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false
+  UncommunicativeVariableName:
+    exclude:
+      - SchedulesHelper#regular_hours_for
+  UtilityFunction:
+    exclude:
+      - AddressFormatHelper
+      - ApplicationHelper
+      - DetailFormatHelper
+      - HomepageLinksHelper
+      - InfoBoxHelper
+      - KeywordTranslator#api_key
+      - MailtoHelper
+      - PaginationHelper
+      - PhoneFormatHelper
+      - StatusController#fetch_location_okay?
+      - StatusController#search_okay?
+directories:
+  'spec':
+    DuplicateMethodCall:
+      exclude:
+        - looks_like_no_results
+        - looks_like_results
+    UtilityFunction:
+      enabled: false
+exclude_paths:
+  - node_modules
