@@ -54,7 +54,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'vcr'
-  gem 'webmock', '~> 2.1'
+  gem 'webmock'
 end
 
 group :development, :test do
