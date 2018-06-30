@@ -111,14 +111,13 @@
 
 #################################################
 #
-# GOOGLE_MAPS_API_KEY - OPTIONAL
+# GOOGLE_MAPS_API_KEY - REQUIRED
 #
 #################################################
-# While not required, using a Google Maps API key enables you to monitor your
-# application's Maps API usage. If your usage exceeds Google's usage limits,
-# you must load the Maps API using an API key in order to purchase more quota.
-# Visit the following URL for more information and to setup an API key:
-# https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+# A Google Maps API key is now required as of June 11, 2018, as well as enabling
+# billing in your Google Cloud Platform account. New pricing goes into effect on
+# July 16, 2018. For more details, visit:
+# https://cloud.google.com/maps-platform/pricing/sheet/
 
 ###########################
 #
@@ -145,7 +144,7 @@ production:
   ENABLE_HTTPS: 'yes'
   # GOOGLE_ANALYTICS_ID:
   # GOOGLE_ANALYTICS_DOMAIN:
-  # GOOGLE_MAPS_API_KEY:
+  GOOGLE_MAPS_API_KEY: changeme
   # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
   OHANA_API_ENDPOINT: https://ohana-api-demo.herokuapp.com/api
   # OHANA_API_TOKEN: changeme
