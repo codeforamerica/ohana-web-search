@@ -18,6 +18,9 @@ Rails.application.configure do
   # ------------------------------------------------------------------
 
   config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, s-maxage=2592000, maxage=86400'
+  }
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -36,7 +39,6 @@ Rails.application.configure do
     entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
     use_native_ttl: true
   }
-  config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
   # --------------------------------------------------------------------------
 
   # --------------------------------------------------------------------------
