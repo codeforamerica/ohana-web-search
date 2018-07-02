@@ -61,6 +61,9 @@ Rails.application.configure do
   # ------------------------------------------------------------------
 
   config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, s-maxage=2592000, maxage=86400'
+  }
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
@@ -79,7 +82,7 @@ Rails.application.configure do
     entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
     use_native_ttl: true
   }
-  config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
+
   # --------------------------------------------------------------------------
 
   # --------------------------------------------------------------------------
@@ -147,9 +150,6 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
-  # Use a different logger for distributed setups.
-  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
@@ -162,4 +162,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  logger = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
 end
