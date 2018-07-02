@@ -63,7 +63,8 @@ describe 'Home page footer elements' do
 
   it 'includes the SMCHSA logo' do
     within('#app-footer') do
-      expect(page).to have_xpath('//img[@src="/assets/smc_hsa_logotype.png"]')
+      all_images = page.all(:xpath, '//img[@src]')
+      expect(all_images[1][:src]).to match(/smc_hsa_logotype/)
     end
   end
 

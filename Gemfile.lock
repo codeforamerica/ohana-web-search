@@ -82,7 +82,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    compass-rails (3.0.2)
+    compass-rails (3.1.0)
       compass (~> 1.0.0)
       sass-rails (< 5.1)
       sprockets (< 4.0)
@@ -120,7 +120,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (2.0.0)
       faraday (~> 0.8)
-    ffi (1.9.18)
+    ffi (1.9.25)
     figaro (1.1.1)
       thor (~> 0.14)
     flamegraph (0.9.5)
@@ -179,6 +179,7 @@ GEM
       actionview
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kwalify (0.7.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
@@ -254,15 +255,16 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (12.3.1)
-    rb-fsevent (0.9.8)
-    rb-inotify (0.9.8)
-      ffi (>= 0.5.0)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
     readthis (2.1.0)
       connection_pool (~> 2.1)
       redis (>= 3.0, < 5.0)
     redis (4.0.1)
-    reek (4.8.2)
+    reek (5.0.0)
       codeclimate-engine-rb (~> 0.4.0)
+      kwalify (~> 0.7.0)
       parser (>= 2.5.0.0, < 2.6)
       rainbow (>= 2.0, < 4.0)
     representable (3.0.4)
@@ -335,10 +337,10 @@ GEM
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (2.3.3)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      sprockets (>= 2.8, < 4.0)
+    sprockets-rails (3.2.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
     stackprof (0.2.11)
     sysexits (1.2.0)
     temple (0.8.0)
@@ -348,7 +350,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
-    uglifier (4.1.12)
+    uglifier (4.1.13)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
     vcr (4.0.0)
@@ -421,7 +423,7 @@ DEPENDENCIES
   yard
 
 RUBY VERSION
-   ruby 2.4.4p296
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.2

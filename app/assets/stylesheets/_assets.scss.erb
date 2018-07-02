@@ -1,19 +1,30 @@
-// Styles that use images from the asset pipeline.
+//= depend_on_asset 'markers/arts_marker_small.png'
+//= depend_on_asset 'markers/clinics_marker_small.png'
+//= depend_on_asset 'markers/education_marker_small.png'
+//= depend_on_asset 'markers/entertainment_marker_small.png'
+//= depend_on_asset 'markers/farmers_markets_marker_small.png'
+//= depend_on_asset 'markers/government_marker_small.png'
+//= depend_on_asset 'markers/human_services_marker_small.png'
+//= depend_on_asset 'markers/libraries_marker_small.png'
+//= depend_on_asset 'markers/museums_marker_small.png'
+//= depend_on_asset 'markers/parks_marker_small.png'
+//= depend_on_asset 'markers/sports_marker_small.png'
+//= depend_on_asset 'markers/other_marker_small.png'
 
-<% helpers = ActionController::Base.helpers %>
+// Styles that use images from the asset pipeline.
 
 #list-view,
 #detail-info {
-  .arts{ background: url("<%= helpers.asset_path('markers/arts_marker_small.png') %>") no-repeat; }
-  .clinics{ background: url("<%= helpers.asset_path('markers/clinics_marker_small.png') %>") no-repeat; }
-  .education{ background: url("<%= helpers.asset_path('markers/education_marker_small.png') %>") no-repeat; }
-  .entertainment{ background: url("<%= helpers.asset_path('markers/entertainment_marker_small.png') %>") no-repeat; }
-  .farmers-markets{ background: url("<%= helpers.asset_path('markers/farmers_markets_marker_small.png') %>") no-repeat; }
-  .government{ background: url("<%= helpers.asset_path('markers/government_marker_small.png') %>") no-repeat; }
-  .human-services{ background: url("<%= helpers.asset_path('markers/human_services_marker_small.png') %>") no-repeat; }
-  .libraries{ background: url("<%= helpers.asset_path('markers/libraries_marker_small.png') %>") no-repeat; }
-  .museums{ background: url("<%= helpers.asset_path('markers/museums_marker_small.png') %>") no-repeat; }
-  .parks{ background: url("<%= helpers.asset_path('markers/parks_marker_small.png') %>") no-repeat; }
-  .sports{ background: url("<%= helpers.asset_path('markers/sports_marker_small.png') %>") no-repeat; }
-  .other{ background: url("<%= helpers.asset_path('markers/other_marker_small.png') %>") no-repeat; }
+  .arts{ background: url("<%= asset_path('markers/arts_marker_small.png') %>") no-repeat; }
+  .clinics{ background: url("<%= asset_path('markers/clinics_marker_small.png') %>") no-repeat; }
+  .education{ background: url("<%= asset_path('markers/education_marker_small.png') %>") no-repeat; }
+  .entertainment{ background: url("<%= asset_path('markers/entertainment_marker_small.png') %>") no-repeat; }
+  .farmers-markets{ background: url("<%= asset_path('markers/farmers_markets_marker_small.png') %>") no-repeat; }
+  .government{ background: url("<%= asset_path('markers/government_marker_small.png') %>") no-repeat; }
+  .human-services{ background: url("<%= asset_path('markers/human_services_marker_small.png') %>") no-repeat; }
+  .libraries{ background: url("<%= asset_path('markers/libraries_marker_small.png') %>") no-repeat; }
+  .museums{ background: url("<%= asset_path('markers/museums_marker_small.png') %>") no-repeat; }
+  .parks{ background: url("<%= asset_path('markers/parks_marker_small.png') %>") no-repeat; }
+  .sports{ background: url("<%= asset_path('markers/sports_marker_small.png') %>") no-repeat; }
+  .other{ background: url("<%= asset_path('markers/other_marker_small.png') %>") no-repeat; }
 }
