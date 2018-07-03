@@ -23,11 +23,6 @@ gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
 gem 'webpacker', '~> 3.2'
 
-group :production, :staging do
-  # Enables serving assets in production and setting logger to standard out.
-  gem 'rails_12factor'
-end
-
 # dev and debugging tools
 group :development do
   gem 'better_errors'
