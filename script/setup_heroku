@@ -47,6 +47,12 @@ heroku config:set DOMAIN_NAME=$APP_NAME.herokuapp.com --app $APP_NAME
 echo "Setting OHANA_API_ENDPOINT"
 heroku config:set OHANA_API_ENDPOINT=$OHANA_API_ENDPOINT --app $APP_NAME
 
+echo "Setting RAILS_LOG_TO_STDOUT to true"
+heroku config:set RAILS_LOG_TO_STDOUT=true --app $APP_NAME
+
+echo "Setting RAILS_SERVE_STATIC_FILES to true"
+heroku config:set RAILS_SERVE_STATIC_FILES=true --app $APP_NAME
+
 echo "Setting SECRET_TOKEN"
 token=$(python -c 'import uuid; print uuid.uuid4()')
 heroku config:set SECRET_TOKEN=$token --app $APP_NAME
