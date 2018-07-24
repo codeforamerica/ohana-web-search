@@ -42,12 +42,12 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'coveralls', require: false
   gem 'email_spec'
   gem 'haml_lint'
   gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rubocop'
+  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end
