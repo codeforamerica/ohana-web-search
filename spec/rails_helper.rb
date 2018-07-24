@@ -1,15 +1,4 @@
-ENV['RAILS_ENV'] ||= 'test'
 ENV['TZ'] = 'America/Los_Angeles'
-
-if ENV['TRAVIS']
-  require 'coveralls'
-  Coveralls.wear!('rails')
-
-  SimpleCov.start do
-    add_filter '.bundle'
-    add_filter 'spec'
-  end
-end
 
 require 'spec_helper'
 require File.expand_path('../config/environment', __dir__)

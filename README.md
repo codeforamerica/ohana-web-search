@@ -1,6 +1,6 @@
 # Ohana Web Search
 
-[![Build Status](https://travis-ci.org/codeforamerica/ohana-web-search.png?branch=master)](https://travis-ci.org/codeforamerica/ohana-web-search) [![Coverage Status](https://coveralls.io/repos/codeforamerica/ohana-web-search/badge.png?branch=master)](https://coveralls.io/r/codeforamerica/ohana-web-search?branch=master) [![Dependency Status](https://gemnasium.com/codeforamerica/ohana-web-search.png)](https://gemnasium.com/codeforamerica/ohana-web-search) [![Code Climate](https://codeclimate.com/github/codeforamerica/ohana-web-search.png)](https://codeclimate.com/github/codeforamerica/ohana-web-search)
+[![CircleCI](https://circleci.com/gh/codeforamerica/ohana-web-search.svg?style=svg)](https://circleci.com/gh/codeforamerica/ohana-web-search) [![Test Coverage](https://api.codeclimate.com/v1/badges/c58dc90a578ae804273a/test_coverage)](https://codeclimate.com/github/codeforamerica/ohana-web-search/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/c58dc90a578ae804273a/maintainability)](https://codeclimate.com/github/codeforamerica/ohana-web-search/maintainability)
 
 Ohana Web Search is the web-based search portion of the Ohana project. It requires connecting to your own instance of [Ohana API](https://github.com/codeforamerica/ohana-api), which will provide the data to Ohana Web Search.
 
