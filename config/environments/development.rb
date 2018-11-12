@@ -9,38 +9,42 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  # Eager load code on boot. This eager loads most of Rails and
-  # your application in memory, allowing both thread web servers
-  # and those relying on copy on write to perform better.
-  # Rake tasks automatically ignore this option for performance.
+  # Do not eager load code on boot.
   config.eager_load = false
 
-  # Show full error reports and disable caching.
+  # Show full error reports.
   config.consider_all_requests_local = true
 
-  # Uncomment lines 22-35 below to test HTTP caching in development.
+  # Enable/disable caching. By default caching is disabled.
+  # Run rails dev:cache to toggle caching.
   # Visit the Wiki for more details:
   # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
   #
-  # config.action_controller.perform_caching = true
+  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+    config.action_controller.perform_caching = true
+    config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
+      expires_in: 2.weeks.to_i,
+      namespace: 'cache'
+    }
+    config.action_dispatch.rack_cache = {
+      metastore: "#{ENV.fetch('REDISCLOUD_URL')}/0/metastore",
+      entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
+      use_native_ttl: true
+    }
+    config.public_file_server.headers = {
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+    }
+  else
+    config.action_controller.perform_caching = false
+    config.cache_store = :null_store
+  end
 
-  # config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
-  #   expires_in: 2.weeks.to_i,
-  #   namespace: 'cache'
-  # }
-
-  # config.action_dispatch.rack_cache = {
-  #   metastore: "#{ENV.fetch('REDISCLOUD_URL')}/0/metastore",
-  #   entitystore: "#{ENV.fetch('REDISCLOUD_URL')}/0/entitystore",
-  #   use_native_ttl: true
-  # }
-
-  # config.static_cache_control = 'public, s-maxage=2592000, maxage=86400'
-
+  # ## ActionMailer Config
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  # ## ActionMailer Config
+  config.action_mailer.perform_caching = false
+
   # config.action_mailer.default_url_options = { :host => 'localhost:8080' }
   # config.action_mailer.delivery_method = :smtp
 
@@ -67,17 +71,15 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  # config.assets.digest = true
-
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
+  # Suppress logger output for asset requests.
+   config.assets.quiet = true
 
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = true
+
+  # Use an evented file watcher to asynchronously detect changes in source code,
+  # routes, locales, etc. This feature depends on the listen gem.
+  config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Uncomment this if you want to precompile assets locally.
   # http://guides.rubyonrails.org/asset_pipeline.html#local-precompilation

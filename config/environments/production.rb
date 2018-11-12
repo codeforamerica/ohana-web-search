@@ -90,11 +90,13 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/sendgrid
   # ----------------------------------------------
 
+  config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: ENV['CANONICAL_URL'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default charset: 'utf-8'
 
@@ -122,7 +124,7 @@ Rails.application.configure do
   config.consider_all_requests_local = false
 
   # Compress JavaScripts and CSS.
-  config.assets.js_compressor  = :uglifier
+  config.assets.js_compressor = :uglifier
   # NOTE: If the sass-rails gem is included it will automatically
   # be used for CSS compression if no css_compressor is specified.
   config.assets.css_compressor = :sass

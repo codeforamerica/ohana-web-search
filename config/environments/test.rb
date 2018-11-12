@@ -12,7 +12,7 @@ Rails.application.configure do
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
 
-  # Configure static file server for tests with Cache-Control for performance.
+  # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
 
@@ -41,5 +41,6 @@ Rails.application.configure do
   config.action_view.raise_on_missing_translations = true
 
   # ActionMailer Config
+  config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'example.com' }
 end
