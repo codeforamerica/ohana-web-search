@@ -1,6 +1,7 @@
 module SearchHelper
   def only_smc_areas?
     return true if params[:service_area] == 'smc'
+
     false
   end
 
@@ -14,6 +15,7 @@ module SearchHelper
 
   def kind_selected?(kind)
     return false if params[:kind].blank?
+
     params[:kind].include?(kind)
   end
 
@@ -23,6 +25,7 @@ module SearchHelper
 
   def section_class_for(params)
     return 'toggle-container active' if params.present?
+
     'toggle-container'
   end
 end

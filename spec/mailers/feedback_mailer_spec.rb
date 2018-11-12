@@ -5,7 +5,7 @@ describe FeedbackMailer do
     before(:all) do
       @params = {
         message: 'testing',
-        from:    'tester@mctester.com',
+        from: 'tester@mctester.com',
         agent: 'Mozilla/5.0'
       }
       @email = FeedbackMailer.feedback_email(@params).deliver_now

@@ -1,6 +1,7 @@
 module AlertHelper
   def alert_tag(flash)
     return alert_content_for('error', nil) unless flash
+
     safe_join(
       flash.map { |type, message| alert_content_for(type, message) }
     )
