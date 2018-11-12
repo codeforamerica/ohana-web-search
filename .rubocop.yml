@@ -5,13 +5,11 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/disabled.yml
 
 AllCops:
-  Include:
-    - '**/Gemfile'
-    - '**/Rakefile'
   Exclude:
     - 'bin/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion: 2.4
+  TargetRailsVersion: 5.2
+  TargetRubyVersion: 2.5
   UseCache: true
 
 Metrics/BlockLength:
@@ -19,6 +17,7 @@ Metrics/BlockLength:
   Enabled: true
   Max: 25
   Exclude:
+    - 'config/environments/development.rb'
     - 'config/environments/production.rb'
     - 'config/environments/staging.rb'
     - 'spec/**/*.rb'

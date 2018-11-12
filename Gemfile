@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.5.1'
-gem 'actionmailer', '~> 5.1.6'
+gem 'actionmailer', '~> 5.2'
 gem 'compass-rails'
 gem 'faraday-http-cache', '~> 2.0'
 gem 'figaro'
@@ -13,7 +13,7 @@ gem 'kaminari-core'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'puma'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 5.1.6'
+gem 'railties', '~> 5.2'
 gem 'redis-rack-cache', git: 'https://github.com/monfresh/redis-rack-cache.git', branch: 'readthis-compatibility'
 gem 'sass-rails', '~> 5.0.1'
 gem 'skylight'
@@ -29,7 +29,7 @@ group :development do
   gem 'derailed'
   gem 'flamegraph'
   gem 'letter_opener'
-  gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler', require: false
   gem 'reek'
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -47,7 +47,7 @@ group :test do
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'vcr'
-  gem 'webmock', '~> 2.1'
+  gem 'webmock', '~> 3.4'
 end
 
 group :development, :test do
