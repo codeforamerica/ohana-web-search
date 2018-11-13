@@ -31,7 +31,7 @@ function init(layoutType) {
 
   // Add Google Translate script call by appending script element.
   var scriptElm = document.createElement('script');
-  var scriptUrl = '//translate.google.com/translate_a/element.js?cb=';
+  var scriptUrl = 'https://translate.google.com/translate_a/element.js?cb=';
   var scriptCallback = 'GoogleTranslate.googleTranslateElementInit';
   scriptElm.setAttribute('src', scriptUrl+scriptCallback);
   document.body.appendChild(scriptElm);
