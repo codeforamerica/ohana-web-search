@@ -7,10 +7,15 @@
 Rails.application.config.content_security_policy do |policy|
   policy.default_src :self, :https
   policy.font_src :self, :https, :data
-  policy.img_src :self, 'translate.google.com', :https, :data
+  policy.img_src :self, 'translate.google.com', 'www.google-analytics.com', :https, :data
   policy.object_src :none
   policy.script_src(
-    :self, 'maps.googleapis.com', 'translate.google.com', 'translate.googleapis.com', :https
+    :self,
+    'maps.googleapis.com',
+    'translate.google.com',
+    'translate.googleapis.com',
+    'www.google-analytics.com',
+    :https
   )
   policy.style_src :self, :unsafe_inline, '*.googleapis.com', :https
 
