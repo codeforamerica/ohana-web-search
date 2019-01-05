@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.5.3-node-browsers
         environment:
           RAILS_ENV: test
           CC_TEST_REPORTER_ID: 1a0c6277580235d0768e23f4e81f082abafe346d54856873e59c40dd127db7ae
@@ -39,7 +39,7 @@ jobs:
             - v1-ohana-web-search-yarn-
       - run:
           name: Install Yarn
-          command: yarn install --cache-folder ~/.cache/yarn
+          command: yarn install --ignore-engines --cache-folder ~/.cache/yarn
       - save-cache:
           key: v1-ohana-web-search-yarn-{{ checksum "yarn.lock" }}
           paths:

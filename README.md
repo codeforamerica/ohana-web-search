@@ -17,7 +17,7 @@ You can see a running version of the application at
 
 ## Stack Overview
 
-* Ruby version 2.5.1
+* Ruby version 2.5.3
 * Rails version 5.1.6
 * Node.js 6.0.0+, but less than 9.0
 * Yarn 0.25.2+
