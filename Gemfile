@@ -25,7 +25,7 @@ gem 'webpacker', '~> 3.2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', platforms: %i[mri_19 rbx]
-  gem 'bummr'
+  gem 'bummr', git: 'https://github.com/lpender/bummr.git'
   gem 'derailed'
   gem 'flamegraph'
   gem 'letter_opener'
