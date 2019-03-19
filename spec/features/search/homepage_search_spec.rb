@@ -17,6 +17,6 @@ feature 'homepage search' do
   scenario 'when clicking a general link', :vcr do
     visit('/')
     click_link('Health Insurance')
-    expect(page).to have_content('Little House')
+    expect(page).to have_content('Fair Oaks Adult Activity Center')
   end
 end

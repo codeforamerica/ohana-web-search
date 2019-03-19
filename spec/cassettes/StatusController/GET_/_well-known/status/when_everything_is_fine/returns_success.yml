@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,27 +21,33 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:26:35 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"1be7aa06e07b5dbea773b900a7254bc5"
+      Last-Modified:
+      - Sun, 17 Mar 2019 17:23:14 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:24 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"c6194167abfa0435ca4710b738fca39d"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 462cea6c-c021-4996-bea6-ddb532c7fcc7
+      - faae7e13-5cd5-4df5-9733-0b55f7e4090a
       X-Runtime:
-      - '0.222937'
+      - '0.066470'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -50,7 +56,7 @@ http_interactions:
         free medical and dental care to those in need. Offers basic medical care for
         adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
         Free Medical Clinic","short_desc":"Provides free medical and dental care to
-        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2014-11-08T22:10:18.338-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","accessibility":["Elevator","Ramp","Wheelchair"],"email":null,"languages":["Spanish"],"transportation":"SAMTRANS
+        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2019-03-17T10:23:14.173-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","accessibility":["Elevator","Ramp","Wheelchair"],"email":null,"languages":["Spanish"],"transportation":"SAMTRANS
         stops within 1 block.","address":{"id":19,"address_1":"19 West 39th Avenue","address_2":null,"city":"San
         Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":5,"alternate_name":null,"name":"Samaritan
         House","slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
@@ -63,11 +69,11 @@ http_interactions:
         adults. Assists people with problems or questions relating to Medi-Cal, Healthy
         Families, Healthy Kids, and Medicare.","eligibility":"Low-income person without
         access to health care","email":null,"fees":"None.","funding_sources":["Donations","Grants"],"application_process":"Call
-        for screening appointment (650-347-3648).","keywords":["HEALTH SERVICES","Outpatient
-        Care","Community Clinics","Medicare"],"languages":[],"name":"San Mateo Free
-        Medical Clinic","required_documents":[],"service_areas":["Belmont","Burlingame"],"status":"active","website":null,"wait_time":"Varies.","updated_at":"2014-10-29T10:08:12.260-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:35 GMT
+        for screening appointment (650-347-3648).","interpretation_services":null,"keywords":["HEALTH
+        SERVICES","Outpatient Care","Community Clinics","Medicare"],"languages":[],"name":"San
+        Mateo Free Medical Clinic","required_documents":[],"service_areas":["Belmont","Burlingame"],"status":"active","website":null,"wait_time":"Varies.","updated_at":"2014-10-29T10:08:12.260-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:24 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?keyword=food
@@ -78,7 +84,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -89,17 +95,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:26:35 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"7bbf15257e3b841b872792ee76c0ad20"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=6>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
@@ -107,14 +111,20 @@ http_interactions:
       - '6'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:24 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"e00046113deda83329571a3167f96715"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - eb7e4d98-c415-4d45-88cc-eccac2ed785b
+      - 4b62376d-ef3c-4270-8a87-e71a583719a0
       X-Runtime:
-      - '0.049690'
+      - '0.042352'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -128,7 +138,7 @@ http_interactions:
         clothes and supplies. Offers case management, advocacy and referrals to other
         agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
         Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
-        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2014-10-29T10:08:12.131-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
+        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2019-03-17T10:23:14.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
         South Spruce Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
         Salvation Army operates 7,546 centers in communities across the United States.
         These include food distribution, disaster relief, rehabilitation centers,
@@ -137,6 +147,6 @@ http_interactions:
         266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
         266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
         266-4594","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:35 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:24 GMT
+recorded_with: VCR 4.0.0

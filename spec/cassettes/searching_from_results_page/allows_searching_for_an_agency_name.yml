@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,17 +21,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:27 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"9e06feabcd2a405660824627cbd7b904"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
         rel="next"
@@ -41,47 +39,33 @@ http_interactions:
       - application/json; charset=utf-8
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"b034eecf2ad3d209180a702fb897b86b"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - e0439cea-70b0-4100-a878-55a814b2b6c9
+      - 9dffc21f-8101-4bd2-b28f-2a93f28fa0cb
       X-Runtime:
-      - '0.025206'
+      - '0.228839'
+      X-Content-Digest:
+      - e98ccdd286c40ad0e365d3852e5cbff9d1952d8e
+      Date:
+      - Tue, 19 Mar 2019 14:31:29 GMT
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - stale, valid, store
+      Content-Length:
+      - '811'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.213221,37.477227],"description":"A
-        walk-in center for older adults that provides social services, wellness, recreational,
-        educational and creative activities including arts and crafts, computer classes
-        and gardening classes. Coffee and healthy breakfasts are available daily.
-        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
-        Provides case management (including in-home assessments) and bilingual information
-        and referral about community services to persons age 60 or over on questions
-        of housing, employment, household help, recreation and social activities,
-        home delivered meals, health and counseling services and services to shut-ins.
-        Health insurance and legal counseling is available by appointment. Lectures
-        on a variety of health and fitness topics are held monthly in both English
-        and Spanish. Provides a variety of physical fitness opportunities, including
-        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
-        toward older adults. Also provides free monthly blood pressure screenings,
-        quarterly blood glucose monitoring and health screenings by a visiting nurse.
-        Offers a Brown Bag Program in which low-income seniors can receive a bag of
-        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
-        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
-        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","website":null,"updated_at":"2014-10-29T12:12:16.784-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"address_1":"2600
-        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
-        Family Service strengthens the community by providing children, families,
-        and older adults the support and tools to realize their full potential and
-        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
-        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
-        701-0856","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:27 GMT
+      string: '[{"id":20,"active":false,"admin_emails":[],"alternate_name":null,"coordinates":[],"description":"no
+        phone","latitude":null,"longitude":null,"name":"Location with no phone","short_desc":"no
+        phone","slug":"location-with-no-phone","website":null,"updated_at":"2019-03-17T10:23:14.207-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","address":null,"organization":{"id":6,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"An
+        organization created for testing purposes.","email":null,"funding_sources":[],"licenses":[],"name":"Fake
+        Org","website":null,"slug":"fake-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org/locations"},"phones":[]}]'
+    http_version: 
+  recorded_at: Tue, 19 Mar 2019 14:31:29 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=&location=&org_name=samaritan&utf8=%E2%9C%93
@@ -92,7 +76,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -103,53 +87,58 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:27 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"b441a88e2102cfbbf1fd1f132f4761db"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=samaritan&page=2&utf8=%E2%9C%93>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&location=&org_name=samaritan&page=2&utf8=%E2%9C%93>;
+      - <http://ohana-api-test.herokuapp.com/api/search?keyword=&org_name=samaritan&page=2>;
+        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=&org_name=samaritan&page=2>;
         rel="next"
       X-Total-Count:
       - '2'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Tue, 19 Mar 2019 14:31:29 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"12cda817897b40b7646d33475cda35e6"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 55a29e85-0c1f-4073-a822-d92e54a9ef17
+      - 72d65103-eec8-41b5-9e8e-1c8c74f097c7
       X-Runtime:
-      - '0.040686'
+      - '0.211994'
+      X-Content-Digest:
+      - 4b11e1658669ee15d6d28a5b028611f854233dcc
+      Age:
+      - '0'
+      X-Rack-Cache:
+      - miss, store
+      Content-Length:
+      - '1651'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":18,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.2067982,37.468614],"description":"Provides
-        free medical care to those in need. Offers basic medical exams for adults
-        and tuberculosis screening. Assists the individual to access other services
-        in the community. By appointment only, Project Smile provides a free dental
-        exam, dental cleaning and oral hygiene instruction for children, age 3-12,
-        of Samaritan House clients.","latitude":37.468614,"longitude":-122.2067982,"name":"Redwood
-        City Free Medical Clinic","short_desc":"Provides free medical care to those
-        in need.","slug":"redwood-city-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2014-11-09T12:53:31.210-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/redwood-city-free-medical-clinic","address":{"id":18,"address_1":"114
-        Fifth Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":5,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Since
+      string: '[{"id":19,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.2931236,37.5326941],"description":"Provides
+        free medical and dental care to those in need. Offers basic medical care for
+        adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
+        Free Medical Clinic","short_desc":"Provides free medical and dental care to
+        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2019-03-17T10:23:14.173-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"address_1":"19
+        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":5,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Since
         1974, Samaritan House has been serving low-income families and individuals
         in San Mateo County. Our services are designed to meet the immediate and basic
         needs of our clients for food, clothing, shelter, health care, worker resources,
         and counseling services.","email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
-        House","website":null,"slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":35,"department":null,"extension":null,"number":"650
-        839-1447","number_type":"voice","vanity_number":null},{"id":36,"department":null,"extension":null,"number":"650
-        839-1457","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:27 GMT
-recorded_with: VCR 2.9.2
+        House","website":null,"slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}]}]'
+    http_version: 
+  recorded_at: Tue, 19 Mar 2019 14:31:29 GMT
+recorded_with: VCR 4.0.0

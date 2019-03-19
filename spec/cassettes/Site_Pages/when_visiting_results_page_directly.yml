@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,29 +21,33 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:26:32 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"b668cf01cd153787c6acb8fd03b38695"
       X-Total-Count:
       - '1'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:16 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"eec7a30d4c53a134d05183c59f58a309"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - e319971a-0bc2-4e96-9630-0ac798a15119
+      - ef7c4fb9-182d-48e1-9159-c5c079744752
       X-Runtime:
-      - '0.524164'
+      - '0.024678'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -61,7 +65,7 @@ http_interactions:
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2014-11-18T05:37:55.208-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"address_1":"2013
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2019-03-17T10:23:14.257-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"address_1":"2013
         Avenue of the fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
         Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
         organization description. The Public Library inspires learning through innovative
@@ -75,6 +79,6 @@ http_interactions:
         627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
         372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
         Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:32 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:16 GMT
+recorded_with: VCR 4.0.0

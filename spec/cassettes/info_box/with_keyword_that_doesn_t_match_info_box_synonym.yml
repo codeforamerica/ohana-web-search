@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,17 +21,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:26:35 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"7bbf15257e3b841b872792ee76c0ad20"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=6>; rel="last",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
@@ -39,14 +37,20 @@ http_interactions:
       - '6'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:30 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"e00046113deda83329571a3167f96715"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 106f492a-8df7-426d-b1dd-8d77d42d4b3e
+      - 21453957-26a0-4e7b-a8e6-2cd1ef8be943
       X-Runtime:
-      - '0.033763'
+      - '0.033244'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -60,7 +64,7 @@ http_interactions:
         clothes and supplies. Offers case management, advocacy and referrals to other
         agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
         Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
-        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2014-10-29T10:08:12.131-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
+        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2019-03-17T10:23:14.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
         South Spruce Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
         Salvation Army operates 7,546 centers in communities across the United States.
         These include food distribution, disaster relief, rehabilitation centers,
@@ -69,6 +73,6 @@ http_interactions:
         266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
         266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
         266-4594","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:26:35 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:30 GMT
+recorded_with: VCR 4.0.0

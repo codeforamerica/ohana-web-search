@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,17 +21,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:54 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"1b2c33df66f49a76d507c6ae07151cd2"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?org_name=Location+with+no+phone&page=0>;
         rel="last"
@@ -39,19 +37,25 @@ http_interactions:
       - '0'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:24 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - e57e19ce-0df2-4bac-b1b9-f6e039f32259
+      - 93bc3f88-2b1e-4eab-96b2-d61d1151308a
       X-Runtime:
-      - '0.012126'
+      - '0.029947'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 22:27:54 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Sun, 17 Mar 2019 17:39:24 GMT
+recorded_with: VCR 4.0.0

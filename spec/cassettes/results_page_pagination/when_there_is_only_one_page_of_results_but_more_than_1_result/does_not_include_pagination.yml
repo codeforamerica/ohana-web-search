@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,29 +21,33 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:58 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"0f86b5d9b2b2a64f5a0d5bec74709e49"
       X-Total-Count:
       - '3'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:19 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d7a7898fff5d060ce5639156b115205f"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 1fc92ea7-cc20-4fe7-a013-8678f83d3547
+      - b4273c05-904b-4e78-b36c-4dc7cede5c80
       X-Runtime:
-      - '0.024942'
+      - '0.049833'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -60,7 +64,7 @@ http_interactions:
         fundraising board that helps to support and to fund Redwood City''s Project
         Read. Call for more information about each service.","latitude":37.4838423,"longitude":-122.2273954,"name":"Project
         Read","short_desc":"Offers an intergenerational literacy program for adults
-        and youth seeking to improver literacy skills.","slug":"project-read","website":null,"updated_at":"2014-11-09T22:33:46.119-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"address_1":"1044
+        and youth seeking to improver literacy skills.","slug":"project-read","website":null,"updated_at":"2019-03-17T10:23:13.951-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"address_1":"1044
         Middlefield Road","address_2":"2nd Floor","city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":3,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
         Redwood City Public Library inspires learning through innovative and visionary
         programming and services—literacy programs, support for school success, access
@@ -75,7 +79,7 @@ http_interactions:
         offer tutoring, music and troops. Information on related resources is available.
         Also provides rental assistance when funds are available.","latitude":37.3569004,"longitude":-122.0600024,"name":"Sunnyvale
         Corps","short_desc":"Provides emergency assistance to persons in immediate
-        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","website":null,"updated_at":"2014-10-29T10:08:12.057-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"address_1":"1161
+        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","website":null,"updated_at":"2019-03-17T10:23:14.073-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"address_1":"1161
         South Bernardo","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94087"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
         Salvation Army operates 7,546 centers in communities across the United States.
         These include food distribution, disaster relief, rehabilitation centers,
@@ -97,7 +101,7 @@ http_interactions:
         County, Family Visitation Center.","latitude":37.5639843,"longitude":-122.3257992,"name":"Family
         Visitation Center","short_desc":"Provides supervised visitation services and
         a neutral site for parents in extremely hostile divorces to carry out supervised
-        exchanges of children.","slug":"family-visitation-center","website":null,"updated_at":"2014-10-29T10:08:11.224-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"address_1":"24
+        exchanges of children.","slug":"family-visitation-center","website":null,"updated_at":"2019-03-17T10:23:13.729-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"address_1":"24
         Second Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
         Family Service strengthens the community by providing children, families,
         and older adults the support and tools to realize their full potential and
@@ -105,6 +109,6 @@ http_interactions:
         Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":7,"department":null,"extension":"4500","number":"650
         403-4300","number_type":"voice","vanity_number":null},{"id":8,"department":null,"extension":null,"number":"650
         403-4303","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:58 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:19 GMT
+recorded_with: VCR 4.0.0

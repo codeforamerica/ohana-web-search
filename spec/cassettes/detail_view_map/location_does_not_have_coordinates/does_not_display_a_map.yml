@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,38 +21,45 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:56 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"b11b6add83dd5f1a4f11320495e00261"
+      Last-Modified:
+      - Sun, 17 Mar 2019 17:23:14 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:21 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d27a5b5614422e39a8cbbaacc0b25129"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 7edea44f-e17b-4acb-9d87-b1b8c74c2267
+      - a2e52b2f-6a91-499b-80c6-213ac4adcbe9
       X-Runtime:
-      - '0.036449'
+      - '0.074189'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"id":20,"active":false,"admin_emails":[],"alternate_name":null,"coordinates":[],"description":"no
         phone","latitude":null,"longitude":null,"name":"Location with no phone","short_desc":"no
-        phone","slug":"location-with-no-phone","website":null,"updated_at":"2014-10-29T10:08:12.311-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","accessibility":[],"email":null,"languages":null,"transportation":null,"address":null,"organization":{"id":6,"alternate_name":null,"name":"Fake
+        phone","slug":"location-with-no-phone","website":null,"updated_at":"2019-03-17T10:23:14.207-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","accessibility":[],"email":null,"languages":null,"transportation":null,"address":null,"organization":{"id":6,"alternate_name":null,"name":"Fake
         Org","slug":"fake-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org"},"phones":[],"contacts":[],"mail_address":{"id":20,"attention":null,"address_1":"123
         Main Street","address_2":null,"city":"Fairfax","state_province":"VA","postal_code":"22031"},"regular_schedules":[],"holiday_schedules":[],"services":[{"id":20,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"no
         unrequired fields for this service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"application_process":"Walk
-        in.","keywords":[],"languages":[],"name":"Service with blank fields","required_documents":[],"service_areas":[],"status":"defunct","website":null,"wait_time":null,"updated_at":"2014-10-29T10:08:12.309-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:56 GMT
-recorded_with: VCR 2.9.2
+        in.","interpretation_services":null,"keywords":[],"languages":[],"name":"Service
+        with blank fields","required_documents":[],"service_areas":[],"status":"defunct","website":null,"wait_time":null,"updated_at":"2014-10-29T10:08:12.309-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:21 GMT
+recorded_with: VCR 4.0.0

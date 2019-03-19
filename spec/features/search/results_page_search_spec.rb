@@ -104,7 +104,7 @@ feature 'searching from results page', :vcr do
     it 'displays locations that belong to that organization' do
       search(keyword: 'Samaritan House')
       first('#list-view li').click_link('Samaritan House')
-      expect(page).to have_link('Redwood City Free Medical Clinic')
+      expect(page).to have_link('San Mateo Free Medical Clinic')
     end
   end
 

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,17 +21,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:26:34 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"cb9588d75630d3f02e9e174c52d155bb"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfdsggfdg&page=0>;
         rel="last"
@@ -39,19 +37,25 @@ http_interactions:
       - '0'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:38:45 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"d751713988987e9331980363e24189ce"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 3e106526-7a74-4d4f-ad85-e8dbd1ef1f48
+      - 0e6b8fac-e166-41c8-be7c-f62f5a100369
       X-Runtime:
-      - '0.021092'
+      - '0.018452'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Fri, 21 Nov 2014 22:26:34 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Sun, 17 Mar 2019 17:38:45 GMT
+recorded_with: VCR 4.0.0

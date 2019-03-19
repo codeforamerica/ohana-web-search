@@ -1,5 +1,4 @@
-require File.expand_path('boot', __dir__)
-
+require_relative 'boot'
 # Pick the frameworks you want:
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
@@ -15,6 +14,7 @@ Bundler.require(*Rails.groups)
 
 module OhanaWebSearch
   class Application < Rails::Application
+    config.load_defaults 5.1
     # Don't generate RSpec tests for views and helpers.
     config.generators do |g|
       g.test_framework :rspec
