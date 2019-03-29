@@ -27,6 +27,7 @@ module MailtoHelper
   # @return [String] The location's name + alternate name if it has one.
   def full_name_for(location)
     return "#{location.name} (#{location.alternate_name})" if location.alternate_name.present?
+
     location.name
   end
 end

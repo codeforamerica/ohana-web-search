@@ -37,7 +37,7 @@ Rails.application.configure do
                              socket_failure_delay: 0.2,
                              value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
-    metastore:   client,
+    metastore: client,
     entitystore: client
   }
   # --------------------------------------------------------------------------
@@ -56,11 +56,11 @@ Rails.application.configure do
   config.action_mailer.default charset: 'utf-8'
 
   config.action_mailer.smtp_settings = {
-    port:           '587',
-    address:        'smtp.sendgrid.net',
-    user_name:      ENV['SENDGRID_USERNAME'],
-    password:       ENV['SENDGRID_PASSWORD'],
-    domain:         'heroku.com',
+    port: '587',
+    address: 'smtp.sendgrid.net',
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'heroku.com',
     authentication: :plain,
     enable_starttls_auto: true
   }

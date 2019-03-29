@@ -7,6 +7,7 @@ module NameFormatHelper
     if location.alternate_name.present?
       return "#{name_content_for(location)} (#{alternate_name_content_for(location)})".html_safe
     end
+
     name_content_for(location)
   end
   # rubocop:enable Rails/OutputSafety

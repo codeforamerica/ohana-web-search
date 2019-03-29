@@ -80,7 +80,7 @@ Rails.application.configure do
                              socket_failure_delay: 0.2,
                              value_max_bytes: 10_485_760)
   config.action_dispatch.rack_cache = {
-    metastore:   client,
+    metastore: client,
     entitystore: client
   }
   # --------------------------------------------------------------------------

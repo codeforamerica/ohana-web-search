@@ -11,6 +11,7 @@ class Search
   def map_data
     @locations.map do |location|
       next if location.coordinates.blank?
+
       hash_for(location)
     end.compact
   end
