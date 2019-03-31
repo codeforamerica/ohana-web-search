@@ -21,7 +21,7 @@ gem 'railties', '~> 5.2'
 gem 'sass-rails', '~> 5.0.1'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
-gem 'webpacker', '~> 3.2'
+gem 'webpacker', '~> 4.0'
 
 # dev and debugging tools
 group :development do
