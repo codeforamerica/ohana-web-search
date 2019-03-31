@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,42 +21,48 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:27:11 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"723024ebdb5bdd4a231c51c2b3c3e8ec"
+      Last-Modified:
+      - Sun, 17 Mar 2019 17:23:14 GMT
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:25 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"7db1fd7c9e600b98c142b7d4396470f7"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - e0d177c0-dac4-4ab2-957a-7d7feb56be28
+      - 1894eeac-973d-4b3f-b653-beb96dd1c254
       X-Runtime:
-      - '0.188555'
+      - '0.062850'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"id":21,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.2871612,37.5291938],"description":"This
         is a description","latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
-        Test Location","short_desc":"This is a short description","slug":"admin-test-location","website":null,"updated_at":"2014-11-15T09:10:34.211-08:00","url":"http://ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
+        Test Location","short_desc":"This is a short description","slug":"admin-test-location","website":null,"updated_at":"2019-03-17T10:23:14.228-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
         Restroom"],"email":null,"languages":[],"transportation":"SAMTRANS stops within
         1/2 mile.","address":{"id":20,"address_1":"123 El Camino Real","address_2":null,"city":"Belmont","state_province":"CA","postal_code":"94002"},"organization":{"id":7,"alternate_name":null,"name":"Admin
         Test Org","slug":"admin-test-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/admin-test-org"},"phones":[{"id":39,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703-555-ABCD"},{"id":40,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"contacts":[{"department":"Office
         of Innovation","email":null,"id":28,"name":"Moncef","title":null,"phones":[]}],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[{"id":21,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
         a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"application_process":"By
-        phone during business hours.","keywords":[],"languages":[],"name":"Service
+        phone during business hours.","interpretation_services":null,"keywords":[],"languages":[],"name":"Service
         for Admin Test Location","required_documents":[],"service_areas":["San Mateo
         County"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2014-10-29T10:08:12.381-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:27:11 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:25 GMT
+recorded_with: VCR 4.0.0

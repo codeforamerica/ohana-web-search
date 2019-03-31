@@ -4,6 +4,7 @@ module AddressFormatHelper
   # @return [String] A comma separated street address.
   def street_address_for(address)
     return address.address_1 if address.address_2.blank?
+
     "#{address.address_1}, #{address.address_2}"
   end
 

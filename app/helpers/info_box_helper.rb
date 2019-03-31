@@ -38,6 +38,7 @@ module InfoBoxHelper
   def info_box_key_corresponding_to_keyword
     keyword = params[:keyword].try(:downcase)
     return unless synonyms.include?(keyword)
+
     info_box_hash.find { |_, hash| hash['synonyms'].include? keyword }.first
   end
 
@@ -51,6 +52,7 @@ module InfoBoxHelper
       concat(content_tag(:dd, info_box['description']))
     end
     return html if info_box['url'].blank?
+
     html.concat(content_tag(:p) do
       link_to('More info...', info_box['url'], target: '_blank')
     end)

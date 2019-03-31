@@ -41,6 +41,7 @@ module SchedulesHelper
   def weekday_range_for(start_day, end_day)
     content_tag :span, class: 'weekdays' do
       return weekday_content_for(start_day) if start_day == end_day
+
       "#{weekday_content_for(start_day)} - "\
       "#{weekday_content_for(end_day)}".html_safe
     end
@@ -102,6 +103,7 @@ module SchedulesHelper
   # @return [HTML] Weekday name wrapped in a span element.
   def date_range_for(start_date, end_date)
     return date_content_for(start_date) if start_date == end_date
+
     "#{date_content_for(start_date)} - "\
     "#{date_content_for(end_date)}"
   end

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/vnd.ohanapi-v1+json
       User-Agent:
-      - Ohanakapa Ruby Gem 1.1.2
+      - Ohanakapa Ruby Gem 1.1.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -21,17 +21,15 @@ http_interactions:
       Server:
       - Cowboy
       Connection:
-      - close
-      Date:
-      - Fri, 21 Nov 2014 22:28:00 GMT
-      Status:
-      - 200 OK
+      - keep-alive
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      Etag:
+      - W/"9673b1a429609db5498c636ad3eb138c"
       Link:
       - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
         <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="prev"
@@ -39,14 +37,20 @@ http_interactions:
       - '3'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Sun, 17 Mar 2019 17:39:18 GMT
       Cache-Control:
       - max-age=0, public
-      Etag:
-      - '"bdbabffc9a19d4bbbd8876c748112849"'
+      Vary:
+      - Origin
       X-Request-Id:
-      - 752a856c-d0f9-4495-a2d5-84797c6425b9
+      - 8bc6069d-7ac8-4e71-b0b9-aeba9d9a2a99
       X-Runtime:
-      - '0.023333'
+      - '0.029115'
+      X-Rack-Cache:
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -66,7 +70,7 @@ http_interactions:
         County, Family Visitation Center.","latitude":37.5639843,"longitude":-122.3257992,"name":"Family
         Visitation Center","short_desc":"Provides supervised visitation services and
         a neutral site for parents in extremely hostile divorces to carry out supervised
-        exchanges of children.","slug":"family-visitation-center","website":null,"updated_at":"2014-10-29T10:08:11.224-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"address_1":"24
+        exchanges of children.","slug":"family-visitation-center","website":null,"updated_at":"2019-03-17T10:23:13.729-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"address_1":"24
         Second Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
         Family Service strengthens the community by providing children, families,
         and older adults the support and tools to realize their full potential and
@@ -74,6 +78,6 @@ http_interactions:
         Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":7,"department":null,"extension":"4500","number":"650
         403-4300","number_type":"voice","vanity_number":null},{"id":8,"department":null,"extension":null,"number":"650
         403-4303","number_type":"fax","vanity_number":null}]}]'
-    http_version:
-  recorded_at: Fri, 21 Nov 2014 22:28:00 GMT
-recorded_with: VCR 2.9.2
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 17:39:18 GMT
+recorded_with: VCR 4.0.0
