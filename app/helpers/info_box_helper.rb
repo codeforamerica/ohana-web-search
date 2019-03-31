@@ -54,7 +54,7 @@ module InfoBoxHelper
     return html if info_box['url'].blank?
 
     html.concat(content_tag(:p) do
-      link_to('More info...', info_box['url'], target: '_blank')
+      link_to('More info...', info_box['url'], target: '_blank', rel: 'noopener')
     end)
   end
 
