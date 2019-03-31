@@ -72,7 +72,7 @@ feature 'results page pagination', :vcr do
   context 'when past first page of results but not last page' do
     before(:each) do
       visit '/locations?keyword=youth'
-      go_to_page(2)
+      go_to_page('2')
     end
 
     it 'does not include a link to the first page' do
