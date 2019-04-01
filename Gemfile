@@ -19,13 +19,13 @@ gem 'sass-rails', '~> 5.0.1'
 gem 'skylight'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
-gem 'webpacker', '~> 3.2'
+gem 'webpacker', '~> 4.0'
 
 # dev and debugging tools
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', platforms: %i[mri_19 rbx]
-  gem 'bummr', git: 'https://github.com/lpender/bummr.git'
+  gem 'bummr'
   gem 'derailed'
   gem 'flamegraph'
   gem 'letter_opener'
