@@ -37,24 +37,20 @@ http_interactions:
       - '22'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Mon, 27 May 2019 21:19:51 GMT
       Cache-Control:
       - max-age=0, public
       Vary:
       - Origin
       X-Request-Id:
-      - 9dffc21f-8101-4bd2-b28f-2a93f28fa0cb
+      - abe2aa71-d84e-4408-8361-be98440f760f
       X-Runtime:
-      - '0.228839'
-      X-Content-Digest:
-      - e98ccdd286c40ad0e365d3852e5cbff9d1952d8e
-      Date:
-      - Mon, 18 Mar 2019 02:46:40 GMT
-      Age:
-      - '0'
+      - '0.018876'
       X-Rack-Cache:
-      - stale, valid, store
-      Content-Length:
-      - '811'
+      - pass
+      Transfer-Encoding:
+      - chunked
       Via:
       - 1.1 vegur
     body:
@@ -65,7 +61,7 @@ http_interactions:
         organization created for testing purposes.","email":null,"funding_sources":[],"licenses":[],"name":"Fake
         Org","website":null,"slug":"fake-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org/locations"},"phones":[]}]'
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 02:46:40 GMT
+  recorded_at: Mon, 27 May 2019 21:19:51 GMT
 - request:
     method: get
     uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&location=94403&radius=foo
@@ -101,13 +97,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 1f1ac184-6479-491a-a5c9-786b84d9004c
+      - ebc0b4fb-cfff-465d-9f76-832a27a7a73d
       X-Runtime:
-      - '0.005322'
+      - '0.022726'
       Date:
-      - Mon, 18 Mar 2019 02:46:40 GMT
+      - Mon, 27 May 2019 21:19:52 GMT
       X-Rack-Cache:
-      - miss
+      - pass
       Transfer-Encoding:
       - chunked
       Via:
@@ -117,5 +113,5 @@ http_interactions:
       string: '{"status":400,"error":"Argument Error","description":"Radius must be
         a Float between 0.1 and 50."}'
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 02:46:40 GMT
+  recorded_at: Mon, 27 May 2019 21:19:52 GMT
 recorded_with: VCR 4.0.0
