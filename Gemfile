@@ -42,11 +42,11 @@ group :test do
   gem 'capybara'
   gem 'email_spec'
   gem 'haml_lint'
-  gem 'poltergeist'
   gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'simplecov', require: false
   gem 'vcr'
+  gem 'webdrivers'
   gem 'webmock', '~> 3.4'
 end
 

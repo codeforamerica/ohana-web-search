@@ -31,7 +31,6 @@ packages installed on your computer:
 - Git
 - Ruby 2.3+
 - RVM (or other Ruby version manager)
-- PhantomJS
 - Yarn 0.25.2+
 - Node.js 6.0.0+
 
@@ -41,13 +40,12 @@ next step. Otherwise, there are two ways you can install the tools:
 - If you're on a Mac, the easiest way to install all the tools is to use
 @monfresh's [laptop] script.
 
-- Install everything manually: [Build tools], [Ruby with RVM], [phantomjs], and
+- Install everything manually: [Build tools], [Ruby with RVM], and
 [Node.js][node] (Linux only).
 
 [laptop]: https://github.com/monfresh/laptop
 [Build tools]: https://github.com/codeforamerica/howto/blob/master/Build-Tools.md
 [Ruby with RVM]: https://github.com/codeforamerica/howto/blob/master/Ruby.md
-[phantomjs]: https://github.com/jonleighton/poltergeist#installing-phantomjs
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
 
 ### Install the dependencies and set the default environment variables:
