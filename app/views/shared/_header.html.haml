@@ -9,8 +9,8 @@
         %a.popup-trigger.popup-default#about-btn{ href: '/about#about-box' }
           About
       %li
-        %a.popup-trigger.popup-feedback#feedback-btn{ href: '/about#feedback-box', target: '_self' }
-          Feedback
+        = link_to 'Feedback', '/about#feedback-box', target: '_self'
+
   .clearfix
 
 -# Hide popups on /about because they are redundant to the content on that page.

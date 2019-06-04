@@ -7,18 +7,20 @@ class ApplicationController < ActionController::Base
     rescue_from Ohanakapa::NotFound, with: :render_not_found
   end
 
+  add_flash_types :error
+
   private
 
   def render_api_down
-    redirect_to root_path, alert: t('errors.api_down')
+    redirect_to root_path, error: t('errors.api_down')
   end
 
   def render_bad_search
-    redirect_to path, alert: t('errors.bad_search')
+    redirect_to path, error: t('errors.bad_search')
   end
 
   def render_not_found
-    redirect_to path, alert: t('errors.not_found')
+    redirect_to path, error: t('errors.not_found')
   end
 
   def path

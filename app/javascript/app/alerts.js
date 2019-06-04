@@ -24,9 +24,6 @@ function init() {
   _content = _alertContainer.querySelector('.alert-message');
   _closeBtn = _alertContainer.querySelector('.alert-close');
   _closeBtn.addEventListener('click', _closeBtnClicked, false);
-
-  // Set default type to an error alert.
-  _alert.classList.add('alert-error');
 }
 
 // @param aType [Number] The type of alert.
