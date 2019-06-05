@@ -9,7 +9,7 @@ describe ApplicationController do
 
     it 'displays a helpful message to the user' do
       get :index
-      expect(flash[:alert]).
+      expect(flash[:error]).
         to include('Sorry, we are experiencing issues with search.')
     end
   end

@@ -20,5 +20,6 @@
           = label_tag 'from', 'Email:'
           = email_field_tag 'from', nil, placeholder: 'your email address (optional)', class: 'email'
           = hidden_field_tag 'agent', user_agent
+          = recaptcha_tags nonce: true
         %p
           = button_tag 'Send!', class: 'button-feedback-send'
