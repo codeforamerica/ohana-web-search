@@ -37,7 +37,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen'
   gem 'stackprof'
-  gem 'yard'
+  gem 'yard', '>= 0.9.20'
 end
 
 group :test do
