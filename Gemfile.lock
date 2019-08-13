@@ -46,7 +46,7 @@ GEM
     bummr (0.5.0)
       rainbow
       thor
-    capybara (3.21.0)
+    capybara (3.28.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -56,7 +56,7 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    chunky_png (1.3.10)
+    chunky_png (1.3.11)
     codeclimate-engine-rb (0.4.1)
       virtus (~> 1.0)
     coderay (1.1.2)
@@ -112,12 +112,12 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (2.0.0)
       faraday (~> 0.8)
-    ffi (1.9.25)
+    ffi (1.11.1)
     figaro (1.1.1)
       thor (~> 0.14)
     flamegraph (0.9.5)
-    font-awesome-rails (4.7.0.4)
-      railties (>= 3.2, < 6.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     get_process_mem (0.2.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -139,12 +139,12 @@ GEM
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
-    haml-rails (1.0.0)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
+    haml-rails (2.0.1)
+      actionpack (>= 5.1)
+      activesupport (>= 5.1)
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
-      railties (>= 4.0.1)
+      railties (>= 5.1)
     haml_lint (0.28.0)
       haml (>= 4.0, < 5.1)
       rainbow
@@ -192,12 +192,12 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
-    mini_mime (1.0.1)
+    mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     ohanakapa (1.1.3)
       sawyer (~> 0.8)
@@ -206,7 +206,7 @@ GEM
     parser (2.6.2.0)
       ast (~> 2.4.0)
     psych (3.1.0)
-    public_suffix (3.1.0)
+    public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
     rack-cache (1.9.0)
@@ -225,7 +225,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     railties (5.2.3)
       actionpack (= 5.2.3)
@@ -234,28 +234,28 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
-    rb-inotify (0.9.10)
-      ffi (>= 0.5.0, < 2)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
     reek (5.3.2)
       codeclimate-engine-rb (~> 0.4.0)
       kwalify (~> 0.7.0)
       parser (>= 2.5.0.0, < 2.7, != 2.5.1.1)
       psych (~> 3.1.0)
       rainbow (>= 2.0, < 4.0)
-    regexp_parser (1.5.1)
+    regexp_parser (1.6.0)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
     retriable (3.1.2)
-    rspec-core (3.8.0)
+    rspec-core (3.8.2)
       rspec-support (~> 3.8.0)
-    rspec-expectations (3.8.2)
+    rspec-expectations (3.8.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-mocks (3.8.0)
+    rspec-mocks (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-rails (3.8.2)
@@ -266,7 +266,7 @@ GEM
       rspec-expectations (~> 3.8.0)
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
-    rspec-support (3.8.0)
+    rspec-support (3.8.2)
     rubocop (0.66.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -277,8 +277,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.6)
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
-    ruby_parser (3.9.0)
-      sexp_processor (~> 4.1)
+    ruby_parser (3.13.1)
+      sexp_processor (~> 4.9)
     rubyzip (1.2.3)
     safe_yaml (1.0.4)
     sass (3.4.25)
@@ -294,7 +294,7 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
-    sexp_processor (4.9.0)
+    sexp_processor (4.12.1)
     signet (0.11.0)
       addressable (~> 2.3)
       faraday (~> 0.9)
@@ -321,10 +321,10 @@ GEM
       sprockets (>= 3.0.0)
     stackprof (0.2.12)
     sysexits (1.2.0)
-    temple (0.8.0)
+    temple (0.8.1)
     thor (0.20.3)
     thread_safe (0.3.6)
-    tilt (2.0.8)
+    tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
@@ -337,15 +337,15 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    webdrivers (3.9.4)
+    webdrivers (4.1.2)
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
-      selenium-webdriver (~> 3.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     webmock (3.5.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    webpacker (4.0.2)
+    webpacker (4.0.7)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -357,23 +357,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer (~> 5.2)
+  actionmailer (~> 5.2, >= 5.2.3)
   better_errors
   binding_of_caller
   bummr
-  capybara
-  compass-rails
+  capybara (>= 3.21.0)
+  compass-rails (>= 3.1.0)
   dalli (~> 2.7.1)
   derailed
   email_spec
   faraday-http-cache (~> 2.0)
   figaro
   flamegraph
-  font-awesome-rails
+  font-awesome-rails (>= 4.7.0.4)
   google-api-client (~> 0.9)
-  haml-rails
+  haml-rails (>= 1.0.0)
   haml_lint
-  kaminari-actionview
+  kaminari-actionview (>= 1.1.1)
   kaminari-core
   kgio
   letter_opener
@@ -383,12 +383,12 @@ DEPENDENCIES
   rack-cache (~> 1.2)
   rack-mini-profiler
   rack-rewrite (~> 1.5.0)
-  rails-controller-testing
-  railties (~> 5.2)
+  rails-controller-testing (>= 1.0.4)
+  railties (~> 5.2, >= 5.2.3)
   reek
-  rspec-rails (~> 3.1)
+  rspec-rails (~> 3.8, >= 3.8.2)
   rubocop
-  sass-rails (~> 5.0.1)
+  sass-rails (~> 5.0.7)
   simplecov
   spring
   spring-commands-rspec
@@ -397,9 +397,9 @@ DEPENDENCIES
   stackprof
   uglifier
   vcr
-  webdrivers
+  webdrivers (>= 3.9.4)
   webmock
-  webpacker (~> 4.0)
+  webpacker (~> 4.0, >= 4.0.2)
   yard
 
 RUBY VERSION
