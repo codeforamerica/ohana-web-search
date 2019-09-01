@@ -29,8 +29,16 @@ class LocationMailtoUrl
   end
 
   def location_full_name
-    return "#{location.name} (#{location.alternate_name})" if location.alternate_name.present?
+    return "#{location_name} (#{alternate_name})" if alternate_name.present?
 
+    location_name
+  end
+
+  def location_name
     location.name
+  end
+
+  def alternate_name
+    location.alternate_name
   end
 end
