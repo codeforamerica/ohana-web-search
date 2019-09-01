@@ -3,4 +3,4 @@
     %ul
       - SETTINGS[:language_links].each do |language_plus_code|
         %li
-          = language_link_tag language_plus_code
+          = LanguageLinkTag.new(language_plus_code, current_lang, self).call

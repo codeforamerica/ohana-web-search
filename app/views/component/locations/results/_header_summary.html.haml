@@ -19,4 +19,4 @@
         = page_entries_info search.results, entry_name: 'result'
 
       %span.map-summary.static-content
-        = map_summary unless search.map_data.empty?
+        = MapSummary.new(search).call
