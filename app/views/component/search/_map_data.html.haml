@@ -1,2 +1,4 @@
 %script#map-locations-data{ type: 'application/json' }
+  -# rubocop:disable Rails/OutputSafety
   = raw(search.map_data.to_json)
+  -# rubocop:enable Rails/OutputSafety

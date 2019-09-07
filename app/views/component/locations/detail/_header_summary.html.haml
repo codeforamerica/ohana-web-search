@@ -11,7 +11,7 @@
           %i.fa.fa-print
           Print
       %span><
-        %a.button-utility.button-share-email{ href: mailto_url }
+        %a.button-utility.button-share-email{ href: LocationMailtoUrl.new(location, request.original_url).call }
           %i.fa.fa-share
           Email
       - if location.coordinates.present?
