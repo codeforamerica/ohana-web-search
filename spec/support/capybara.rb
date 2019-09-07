@@ -6,15 +6,17 @@ Capybara.configure do |config|
 end
 
 Capybara.register_driver :headless_chrome do |app|
-  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: { args: %w[headless disable-gpu] }
-  )
+  browser_options = Selenium::WebDriver::Chrome::Options.new
+  browser_options.args << '--headless'
+  browser_options.args << '--disable-gpu'
 
   Capybara::Selenium::Driver.new app,
                                  browser: :chrome,
-                                 desired_capabilities: capabilities
+                                 options: browser_options
 end
+
 Capybara.javascript_driver = :headless_chrome
+Capybara.default_driver = :rack_test
 
 Capybara.add_selector(:rel) do
   xpath { |rel| ".//a[@rel='#{rel}']" }
