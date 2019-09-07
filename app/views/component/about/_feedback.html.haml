@@ -4,7 +4,7 @@
     %h1
       Want to get in touch?
     %p
-      = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank'
+      = link_to t('views.feedback.issue_link'), t('views.feedback.issue_link_url'), target: '_blank', rel: 'noopener'
 
     %section.feedback-form
       = form_tag('/feedback', method: :post) do
