@@ -48,7 +48,7 @@ group :test do
   gem 'rubocop-rails'
   gem 'simplecov', require: false
   gem 'vcr'
-  gem 'webdrivers'
+  gem 'webdrivers', '>= 4.1.2'
   gem 'webmock', '~> 3.4'
 end
 
