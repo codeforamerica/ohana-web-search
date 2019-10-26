@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.3'
+ruby '2.5.7'
 gem 'actionmailer', '~> 5.2'
 gem 'compass-rails'
 gem 'faraday-http-cache', '~> 2.0'
