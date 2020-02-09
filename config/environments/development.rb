@@ -19,7 +19,7 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   # Visit the Wiki for more details:
   # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.cache_store = :dalli_store
     client = Dalli::Client.new
