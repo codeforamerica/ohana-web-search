@@ -1,6 +1,4 @@
-class FeedbackMailer < ActionMailer::Base
-  default to: SETTINGS.try(:[], :feedback_email).try(:[], 'to')
-
+class FeedbackMailer < ApplicationMailer
   # Prepares email based on contents of feedback form.
   # See app/views/feedback_mailer/feedback_email.html.haml for the email body.
   # @param params [Hash] Email attributes (from, message, user agent)

@@ -20,7 +20,7 @@ Rails.application.configure do
   # Visit the Wiki for more details:
   # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
   #
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
       expires_in: 2.weeks.to_i,
