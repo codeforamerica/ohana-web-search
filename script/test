@@ -4,7 +4,5 @@ set -e
 
 echo 'Running rspec test suite...'
 bundle exec rspec
-echo '\nRunning rubocop Ruby linter...'
-bundle exec rubocop
-echo '\nRunning haml-lint Haml linter...'
-bundle exec haml-lint app/views/
+
+source script/lint
