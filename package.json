@@ -9,7 +9,8 @@
     "@rails/webpacker": "^4.2.2",
     "core-js": "^2.0.0",
     "google-maps-infobox": "^2.0.0",
-    "rails-erb-loader": "^5.2.1"
+    "rails-erb-loader": "^5.2.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -19,6 +20,9 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "lint": "eslint"
-  }
+    "lint": "eslint",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
