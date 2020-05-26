@@ -18,8 +18,6 @@
     - if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present?
       = render 'shared/google_analytics/event_tracking'
 
-    = render 'shared/environment_variables'
-
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}", nonce: true
     = javascript_pack_tag 'application'
     = javascript_pack_tag "#{controller_name}-#{action_name}"
