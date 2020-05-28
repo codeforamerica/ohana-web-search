@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'page translation', :js do
   context 'homepage is translated' do
-    it 'displays translated contents' do
+    xit 'displays translated contents' do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
@@ -15,7 +15,7 @@ feature 'page translation', :js do
   end
 
   context 'results page is translated', :vcr do
-    it 'displays translated contents' do
+    xit 'displays translated contents' do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
@@ -26,7 +26,7 @@ feature 'page translation', :js do
   end
 
   context 'page is translated between languages' do
-    it 'displays translated content for each language' do
+    xit 'displays translated content for each language' do
       visit("http://www.lvh.me:#{Capybara.server_port}/")
       find_link('Español').click
       delay
