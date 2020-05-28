@@ -24,17 +24,6 @@ module ApplicationHelper
     content_for(:canonical, tag(:link, rel: :canonical, href: url)) if url
   end
 
-  # This is the list of environment variables found in config/application.yml
-  # that we wish to pass to JavaScript and access through the interface in
-  # assets/javascripts/util/environmentVariables.js
-  # rubocop:disable Rails/OutputSafety
-  def environment_variables
-    raw({
-      DOMAIN_NAME: ENV['DOMAIN_NAME']
-    }.to_json)
-  end
-  # rubocop:enable Rails/OutputSafety
-
   def cache_key_for(hash)
     Digest::MD5.hexdigest(hash.to_s)
   end
