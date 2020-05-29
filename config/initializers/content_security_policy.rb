@@ -9,9 +9,9 @@ Rails.application.config.content_security_policy do |policy|
   policy.font_src :self, :https, :data
   policy.img_src(
     :self,
-    'translate.google.com',
     'www.google-analytics.com',
     'www.google.com',
+    'www.gstatic.com',
     :https,
     :data
   )
@@ -19,8 +19,6 @@ Rails.application.config.content_security_policy do |policy|
   policy.script_src(
     :self,
     'maps.googleapis.com',
-    'translate.google.com',
-    'translate.googleapis.com',
     'www.google-analytics.com',
     'www.google.com',
     'www.gstatic.com',
@@ -29,7 +27,7 @@ Rails.application.config.content_security_policy do |policy|
   policy.style_src(
     :self,
     :unsafe_inline,
-    '*.googleapis.com',
+    'maps.googleapis.com',
     'www.google.com',
     'www.gstatic.com',
     :https
