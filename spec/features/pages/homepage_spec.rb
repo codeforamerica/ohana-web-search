@@ -20,10 +20,6 @@ describe 'Home page content elements' do
     visit '/'
   end
 
-  it 'includes english language status' do
-    expect(find('#language-box')).to have_content('English')
-  end
-
   it 'displays headers for the general links' do
     within('#general-services') do
       expect(page).to have_content 'Government Assistance'

@@ -16,7 +16,7 @@ $ script/setup_heroku -a your_app_name -o your_api_endpoint
 
 The script only sets required environment variables. To set optional environment variables on Heroku, such as `GOOGLE_ANALYTICS_ID`, you'll need to set them manually. Read through `application.example.yml` to learn about all the optional variables you can set, and read the Heroku documentation to learn how to [set Heroku configuration variables](https://devcenter.heroku.com/articles/config-vars).
 
-By default, the script assumes you will be using a `*.herokuapp.com` domain name. If you will be using a custom domain name, you will need to set the `CANONICAL_URL` and `DOMAIN_NAME` variables manually. Read `application.example.yml` for more details about those variables.
+By default, the script assumes you will be using a `*.herokuapp.com` domain name. If you will be using a custom domain name, you will need to set the `CANONICAL_URL` variable manually. Read `application.example.yml` for more details.
 
 ## Website settings
 Inside the `config` folder, you will find a file called `settings.yml`.
@@ -29,18 +29,6 @@ Inside the `config/locales` folder, you will find a file called `en.yml`.
 In that file, you can customize much of the user-facing text on the website.
 Most of the text should be ready to go, but there is one specific setting
 you should customize: the [location](https://github.com/smcgov/SMC-Connect/blob/master/config/locales/en.yml#L28) value under `branding`.
-
-## Language Translation Services
-The application uses Google Translate for free language translation of the site. The Google Website Translator Gadget appears in the footer of the site and provides free translation of the site into dozens of languages. By default, six major language translation links are provided (in their native script) on the upper-right of the homepage. A number of aspects related to translation can be customized:
-
-- **Homepage language links**. The language translation links on the homepage can be added, removed, and edited in `config/settings.yml`.
-
-- **Support for non-English keyword searches**. If you want your users to be able to enter a keyword search in a language other than English, do the following:
-  1. Uncomment the Google Translate related lines in `app/controllers/locations_controller.rb`.
-  2. Add a `GOOGLE_TRANSLATE_API_KEY` in `config/application.yml`. Follow the directions in that file for obtaining an API key from Google. **NOTE: GOOGLE CHARGES FOR THIS FEATURE.**
-
-- **Change the gadget layout**. If you want to change the Google Website Translator Gadget's layout, two of the layouts provided by Google are supported: InlineLayout.VERTICAL and InlineLayout.HORIZONTAL. One or the other
-can be set in `assets/javascripts/application.js`.
 
 ## Pagination
 The pagination of search results is handled by the [Kaminari](https://github.com/amatsuda/kaminari) gem.

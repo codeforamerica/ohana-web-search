@@ -1,6 +1,0 @@
-- if SETTINGS[:language_links].present?
-  %section#language-box
-    %ul
-      - SETTINGS[:language_links].each do |language_plus_code|
-        %li
-          = LanguageLinkTag.new(language_plus_code, current_lang, self).call

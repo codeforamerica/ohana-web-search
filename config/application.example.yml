@@ -33,28 +33,6 @@
 # domain name, such as 'example.org' or 'www.example.org'.
 # See config/environments/production.rb for more details.
 
-################################################
-#
-# DOMAIN_NAME - REQUIRED FOR GOOGLE TRANSLATION
-#
-################################################
-# This setting is used for the Google translation feature.
-# The "DOMAIN_NAME" environment variable should be set to your app's
-# domain name, without the "www" subdomain, unless you're using a Heroku
-# domain, in which case you should set it to your full Heroku domain name,
-# such as "ohana-web-search-demo.herokuapp.com".
-# If you have a custom domain name, like "www.smc-connect.org", that
-# means setting it to "smc-connect.org".
-#
-# In development, it should only be set to a 2-level domain name,
-# like "lvh.me", or "myapp.dev" if you're using Pow.
-# Translation won't work with "localhost", so please open the site
-# locally via http://lvh.me:{port number}
-#
-# Read more about lvh.me here:
-# http://matthewhutchinson.net/2011/1/10/configuring-subdomains-in-development-with-lvhme
-# Pow should work too if you prefer that: http://pow.cx/
-
 ########################################
 #
 # ENABLE_HTTPS - REQUIRED IN PRODUCTION
@@ -81,21 +59,6 @@
 # If you choose to turn on rate limiting in your instance of Ohana API,
 # obtain an API Token for this app from the developer portal of the API,
 # then replace "changeme" with the actual token.
-
-######################################
-#
-# GOOGLE_TRANSLATE_API_KEY - OPTIONAL
-#
-######################################
-# If the page has been translated to a language other than English
-# and you would like your users to be able to type in search keywords
-# in that language, you will need to sign up for a paid
-# Google Translate API account that will allow the language detection feature.
-# For pricing details and getting started with obtaining your API key,
-# please visit: https://cloud.google.com/translate/v2/pricing.
-# Once you obtain your API key, uncomment translation-related code in
-# app/controllers/locations_controller and enter your API key below to
-# test the translation in development.
 
 ########################################
 #
@@ -134,9 +97,8 @@
 #
 ###########################
 development:
-  DOMAIN_NAME: lvh.me
+  CANONICAL_URL: lvh.me
   # GOOGLE_MAPS_API_KEY:
-  # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
   OHANA_API_ENDPOINT: http://api.smc-connect.org
   # OHANA_API_TOKEN: changeme
 
@@ -149,12 +111,10 @@ development:
 ###############################################################################
 production:
   CANONICAL_URL: www.smc-connect.org
-  DOMAIN_NAME: smc-connect.org
   ENABLE_HTTPS: 'yes'
   # GOOGLE_ANALYTICS_ID:
   # GOOGLE_ANALYTICS_DOMAIN:
   # GOOGLE_MAPS_API_KEY:
-  # GOOGLE_TRANSLATE_API_KEY: Your_API_Key
   OHANA_API_ENDPOINT: http://api.smc-connect.org
   # OHANA_API_TOKEN: changeme
   SECRET_TOKEN: changeme
@@ -169,5 +129,4 @@ production:
 test:
   OHANA_API_ENDPOINT: http://smc-ohana-api-test.herokuapp.com/api
   OHANA_API_TOKEN: ~
-  DOMAIN_NAME: lvh.me
-  GOOGLE_TRANSLATE_API_KEY: ~
+  CANONICAL_URL: lvh.me
