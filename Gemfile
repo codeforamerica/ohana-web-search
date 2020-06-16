@@ -1,37 +1,37 @@
 source 'https://rubygems.org'
 
 ruby '2.6.6'
-gem 'actionmailer', '~> 5.2'
-gem 'compass-rails'
+gem 'actionmailer', '~> 5.2', '>= 5.2.4.2'
+gem 'compass-rails', '>= 4.0.0'
 gem 'dalli', '~> 2.7.1'
 gem 'faraday-http-cache', '~> 2.0'
 gem 'figaro'
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '>= 4.7.0.5'
 gem 'google-api-client', '~> 0.9'
-gem 'haml-rails'
+gem 'haml-rails', '>= 2.0.1'
 gem 'kaminari-actionview'
 gem 'kaminari-core'
 gem 'kgio'
 gem 'memcachier'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'puma'
-gem 'rack-cache', '~> 1.2'
+gem 'rack-cache', '~> 1.11', '>= 1.11.1'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 5.2'
-gem 'sass-rails', '~> 5.0.1'
-gem 'sprockets', '~> 3.7.1'
+gem 'railties', '~> 5.2', '>= 5.2.4.2'
+gem 'sass-rails', '~> 5.0.8'
+gem 'sprockets', '~> 3.7.2'
 gem 'uglifier'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 4.2', '>= 4.2.2'
 
 # dev and debugging tools
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.7.1'
   gem 'binding_of_caller', platforms: %i[mri_19 rbx]
   gem 'bummr'
-  gem 'derailed'
+  gem 'derailed', '>= 0.1.0'
   gem 'flamegraph'
   gem 'letter_opener'
-  gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler', '>= 2.0.2'
   gem 'reek'
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -41,12 +41,12 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '>= 3.32.2'
   gem 'email_spec'
   gem 'haml_lint'
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', '>= 1.0.4'
   gem 'rubocop'
-  gem 'rubocop-rails'
+  gem 'rubocop-rails', '>= 2.5.2'
   gem 'simplecov', require: false
   gem 'vcr'
   gem 'webdrivers', '>= 4.1.2'
@@ -54,5 +54,5 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
 end
