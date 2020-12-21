@@ -16,7 +16,7 @@ module DetailFormatHelper
   # @param number [String] a url
   # @return [String] The url without http:// or https://
   def format_url(url)
-    url.gsub(%r{^(https?:\/\/)}, '')
+    url.gsub(%r{^(https?://)}, '')
   end
 
   # Generates HTML snippet for a contact's details (title and/or department).
@@ -33,9 +33,11 @@ module DetailFormatHelper
   # Generates HTML snippet for a contact's title and department.
   # @param contact [Hash] A contact's hash of details.
   # @return [HTML] The formatted contact details snippet.
+  # rubocop:disable Style/StringConcatenation
   def contact_title_and_department_for(contact)
     contact_title_for(contact) + ', ' + contact_department_for(contact)
   end
+  # rubocop:enable Style/StringConcatenation
 
   # Generates HTML snippet for a contact's title.
   # @param contact [Hash] A contact's hash of details.
@@ -78,7 +80,7 @@ module DetailFormatHelper
   # rubocop:disable Rails/OutputSafety
   def superscript_ordinals(string)
     string = html_escape(string).to_str
-    string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, $&) }.html_safe
+    string.gsub(/(?<=[0-9])(?:st|nd|rd|th)/) { content_tag(:sup, Regexp.last_match(0)) }.html_safe
   end
   # rubocop:enable Rails/OutputSafety
 

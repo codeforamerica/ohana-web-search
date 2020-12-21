@@ -5,10 +5,7 @@
     %p
       = t('branding.description', location: t('branding.location'))
 
-    %p
-      This project is part of the development of the
-      = link_to('Ohana API', 'https://github.com/codeforamerica/ohana-api', target: '_blank', rel: 'noopener') + ','
-      an open source database of community services.
+    %p== This project is part of the development of the #{link_to 'Ohana API', 'https://github.com/codeforamerica/ohana-api', target: '_blank', rel: 'noopener'}, an open source database of community services.
 
     %p
       = link_to t('views.about.project_link'), t('views.about.project_link_url'), target: '_blank', rel: 'noopener'
