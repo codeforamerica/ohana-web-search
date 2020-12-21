@@ -9,8 +9,9 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
   UseCache: true
+  NewCops: enable
 
 Metrics/BlockLength:
   CountComments: false  # count full line comments?
@@ -241,3 +242,6 @@ Style/TrailingCommaInHashLiteral:
 
 Rails/FilePath:
   EnforcedStyle: 'slashes'
+
+Naming/VariableNumber:
+  Enabled: false

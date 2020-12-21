@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
     @location = Location.get(id)
 
     # @keywords = @location.services.map { |s| s[:keywords] }.flatten.compact.uniq
-    @categories = @location.services.map { |s| s[:categories] }.flatten.compact.uniq
+    @categories = @location.services.pluck(:categories).flatten.compact.uniq
 
     cache_page(@location.updated_at) if @location.present?
   end

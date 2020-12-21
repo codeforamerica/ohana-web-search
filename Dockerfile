@@ -1,9 +1,9 @@
-FROM ruby:2.6.6
+FROM ruby:2.7.2
 
 RUN apt-get update && apt-get install apt-transport-https
 
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get update && apt-get install -y nodejs
 
 # Install yarn

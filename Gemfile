@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.6'
+ruby '2.7.2'
 gem 'actionmailer', '~> 5.2'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
@@ -9,8 +9,8 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'google-api-client', '~> 0.9'
 gem 'haml-rails'
-gem 'kaminari-actionview'
-gem 'kaminari-core'
+gem 'kaminari-actionview', '= 1.1.1'
+gem 'kaminari-core', '= 1.1.1'
 gem 'kgio'
 gem 'memcachier'
 gem 'ohanakapa', '~> 1.1.1'
@@ -21,7 +21,7 @@ gem 'railties', '~> 5.2'
 gem 'sass-rails', '~> 5.0.1'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.2'
 
 # dev and debugging tools
 group :development do
@@ -47,7 +47,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rubocop'
   gem 'rubocop-rails'
-  gem 'simplecov', require: false
+  gem 'simplecov', '= 0.17.1', require: false
   gem 'vcr'
   gem 'webdrivers', '>= 4.1.2'
   gem 'webmock'
