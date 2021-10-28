@@ -32,7 +32,7 @@ packages installed on your computer:
 - Ruby 2.3+
 - RVM (or other Ruby version manager)
 - Yarn 0.25.2+
-- Node.js 6.0.0+
+- Node.js 16.x
 
 If you already have all of the prerequisites installed, you can skip to the
 next step. Otherwise, there are two ways you can install the tools:

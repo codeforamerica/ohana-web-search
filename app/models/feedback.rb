@@ -9,9 +9,7 @@ class Feedback
     return false unless recaptcha
     return false if message.blank?
 
-    if email.present?
-      return false unless email.match?(/[^\s]@[^\s]/)
-    end
+    return false if email.present? && !email.match?(/[^\s]@[^\s]/)
 
     true
   end

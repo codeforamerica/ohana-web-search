@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.7'
+ruby '2.7.4'
 gem 'actionmailer', '~> 5.2'
 gem 'compass-rails'
 gem 'faraday-http-cache', '~> 2.0'
@@ -20,7 +20,7 @@ gem 'sass-rails', '~> 5.0.1'
 gem 'skylight'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.2'
 
 # dev and debugging tools
 group :development do
