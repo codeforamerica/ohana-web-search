@@ -9,8 +9,9 @@ AllCops:
   Exclude:
     - 'bin/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.7
   UseCache: true
+  NewCops: enable
 
 Metrics/BlockLength:
   CountComments: false  # count full line comments?
@@ -250,3 +251,9 @@ Lint/RaiseException:
 
 Lint/StructNewOverride:
   Enabled: true
+
+Naming/VariableNumber:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Enabled: false
