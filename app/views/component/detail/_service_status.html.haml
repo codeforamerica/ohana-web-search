@@ -2,7 +2,8 @@
   %section.status
     %i.fa.fa-warning
     %span
-      - if service.status == 'defunct'
+      - case service.status
+      - when 'defunct'
         = t('service_fields.status_defunct')
-      - elsif service.status == 'inactive'
+      - when 'inactive'
         = t('service_fields.status_inactive')

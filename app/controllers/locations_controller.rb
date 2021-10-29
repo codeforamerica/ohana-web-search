@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
     @location = Location.get(location_id)
 
     if @location[:services].present?
-      @categories = @location.services.map { |s| s[:categories] }.
+      @categories = @location.services.pluck(:categories).
                     flatten.compact.uniq
     end
 

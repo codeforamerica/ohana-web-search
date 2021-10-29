@@ -1,13 +1,13 @@
 #SMC-Connect
 
-[![CircleCI](https://circleci.com/gh/smcgov/SMC-Connect/tree/master.svg?style=svg)](https://circleci.com/gh/smcgov/SMC-Connect/tree/master) [![Dependency Status](https://gemnasium.com/smcgov/SMC-Connect.png)](https://gemnasium.com/smcgov/SMC-Connect) [![Maintainability](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/maintainability)](https://codeclimate.com/github/smcgov/SMC-Connect/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/test_coverage)](https://codeclimate.com/github/smcgov/SMC-Connect/test_coverage)
+[![CircleCI](https://circleci.com/gh/smcgov/SMC-Connect/tree/master.svg?style=svg)](https://circleci.com/gh/smcgov/SMC-Connect/tree/master) [![Maintainability](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/maintainability)](https://codeclimate.com/github/smcgov/SMC-Connect/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/c83da1660a5df77aa361/test_coverage)](https://codeclimate.com/github/smcgov/SMC-Connect/test_coverage)
 [![View performance data on Skylight](https://badges.skylight.io/status/OsRyw4RiuAcN.svg)](https://oss.skylight.io/app/applications/OsRyw4RiuAcN)
 
-[SMC-Connect](http://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California.
+[SMC-Connect](https://www.smc-connect.org) is a Ruby on Rails app that makes it easy to find human services, farmers' markets, and other community organizations in San Mateo County, California.
 
-The app is powered by the [Ohana API](https://github.com/codeforamerica/ohana-api) platform which was developed by [Code for America's 2013 San Mateo County, CA,](http://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team: [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford).
+The app is powered by the [Ohana API](https://github.com/codeforamerica/ohana-api) platform which was developed by [Code for America's 2013 San Mateo County, CA,](https://codeforamerica.org/2013-partners/san-mateo-county/) fellowship team: [@monfresh](https://github.com/monfresh), [@spara](https://github.com/spara), and [@anselmbradford](https://github.com/anselmbradford).
 
-In San Mateo County, there are two apps powered by Ohana: [SMC-Connect](http://smc-connect.org) and the [San Mateo County API](https://github.com/smcgov/ohana-api-smc) (that feeds the data to SMC-Connect). The API also comes with a built-in admin interface that allows organization members to update their own data. The updates are reflected in real-time on SMC-Connect.
+In San Mateo County, there are two apps powered by Ohana: [SMC-Connect](https://www.smc-connect.org) and the [San Mateo County API](https://github.com/smcgov/ohana-api-smc) (that feeds the data to SMC-Connect). The API also comes with a built-in admin interface that allows organization members to update their own data. The updates are reflected in real-time on SMC-Connect.
 
 ## Demo
 You can see a running version of the application at
@@ -15,9 +15,9 @@ You can see a running version of the application at
 
 ## Stack Overview
 
-* Ruby version 2.5.7
+* Ruby version 2.7.4
 * Rails version 5.2.1
-* Node.js 8.x
+* Node.js 16.x
 * Yarn 1.x
 * Template Engines: ERB and HAML
 * Testing Frameworks: RSpec, Capybara, Poltergeist

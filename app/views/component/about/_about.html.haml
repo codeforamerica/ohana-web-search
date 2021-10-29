@@ -7,10 +7,12 @@
 
     %p
       This project is built using
+      -# rubocop:disable Style/StringConcatenation
       = link_to('Ohana API', 'https://github.com/codeforamerica/ohana-api', target: '_blank', rel: 'noopener') + ','
       an open source app for community services. We are also part of the
       = link_to('Benetech Service Net pilot', 'https://benetech.org/service-net-begins-pilot/') + ','
       a collaboration project on services data in the Bay Area.
+      -# rubocop:enable Style/StringConcatenation
 
     %p
       = link_to t('views.about.project_link'), t('views.about.project_link_url'), target: '_blank', rel: 'noopener'
