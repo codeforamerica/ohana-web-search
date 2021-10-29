@@ -14,6 +14,6 @@ module AddressFormatHelper
   # @return [String] A comma separated full address.
   def full_address_for(address)
     "#{street_address_for(address)}, #{address.city}, #{address.state_province} " \
-    "#{address.postal_code}"
+      "#{address.postal_code}"
   end
 end
