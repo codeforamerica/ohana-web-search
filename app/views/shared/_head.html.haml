@@ -34,15 +34,6 @@
 = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700'
 = stylesheet_link_tag 'application', media: 'all'
 
--# Include third-party scripts.
-= javascript_include_tag 'vendor'
-
--# Include Internet Explorer polyfills for legacy system compatibility.
-/[if lte IE 8]
-  = javascript_include_tag 'ie8'
-/[if IE 9]
-  = javascript_include_tag 'ie9'
-
 /[if lte IE 9]
   :javascript
     // Hack to handle suppression of JS errors in IE.
