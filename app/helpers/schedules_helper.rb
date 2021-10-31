@@ -105,7 +105,7 @@ module SchedulesHelper
     return date_content_for(start_date) if start_date == end_date
 
     "#{date_content_for(start_date)} - "\
-    "#{date_content_for(end_date)}"
+      "#{date_content_for(end_date)}"
   end
 
   # @param day [Date] A datestamp.

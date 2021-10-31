@@ -41,11 +41,11 @@ Rails.application.configure do
   config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
     if ENV['CANONICAL_URL'].blank?
       raise 'The CANONICAL_URL environment variable is not set on your' \
-      ' production server. It should be set to your app\'s domain name,' \
-      ' without the protocol. For example: www.smc-connect.org, or' \
-      ' flying-tiger.herokuapp.com. If you\'re using Heroku, you can set it' \
-      ' like this: "heroku config:set CANONICAL_URL=your_domain_name". See' \
-      ' config/environments/production.rb in the source code for more details.'
+            ' production server. It should be set to your app\'s domain name,' \
+            ' without the protocol. For example: www.smc-connect.org, or' \
+            ' flying-tiger.herokuapp.com. If you\'re using Heroku, you can set it' \
+            ' like this: "heroku config:set CANONICAL_URL=your_domain_name". See' \
+            ' config/environments/production.rb in the source code for more details.'
     else
       canonical_url = ENV['CANONICAL_URL']
 
