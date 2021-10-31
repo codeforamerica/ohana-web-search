@@ -22,6 +22,7 @@ Rails.application.config.content_security_policy do |policy|
     'www.google-analytics.com',
     'www.google.com',
     'www.gstatic.com',
+    'plausible.io',
     :https
   )
   policy.style_src(

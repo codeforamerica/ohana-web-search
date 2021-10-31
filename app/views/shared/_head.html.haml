@@ -50,6 +50,8 @@
     // but this allows the page to continue loading.
     window.onerror = function (){ return true; };
 
+= javascript_include_tag 'https://plausible.io/js/plausible.js', defer: true, 'data-domain': 'smc-connect.org'
 - if Rails.env.production? && ENV['GOOGLE_ANALYTICS_ID'].present?
   = render 'shared/google_analytics/page_tracking'
+
 = yield :canonical
