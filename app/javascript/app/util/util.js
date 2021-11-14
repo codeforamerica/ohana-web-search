@@ -115,63 +115,9 @@ function getStyle(el, styleProp) {
   }
 }
 
-// Insert parameters in the URL.
-// @param params [Object] (optional)
-// @return [String] the appended URL query string
-function queryString(params) {
-  if (params) {
-    var url = document.location.search.substr(1).split('&');
-    var urlobj = {};
-    var param,key,val;
-
-    for (var p = 0, len = url.length; p < len; p++) {
-      param = url[p].split('=');
-      key = param[0];
-      val = param[1];
-      urlobj[key] = val;
-    }
-
-    for (key in params) {
-      if (params.hasOwnProperty(key))
-        urlobj[key] = params[key];
-    }
-
-    var str = '';
-    val = '';
-    for (var k in urlobj) {
-      if (k !== '' && urlobj[k] !== '') {
-        val = window.escape(window.unescape(k)) + '=' +
-              window.escape(window.unescape(urlobj[k]));
-        str += val + '&';
-      }
-    }
-
-    str = '?' + str.substring(0, str.length - 1);
-
-    return str;
-  } else {
-    return document.location.search;
-  }
-}
-
-// Retrieve named query parameter.
-// (from http://stackoverflow.com/questions/901115/
-// how-can-i-get-query-string-values-in-javascript)
-function getParameterByName(name) {
-  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
-  results = regex.exec(location.search);
-  var returnVal = '';
-  if (results !== null)
-    returnVal = decodeURIComponent(results[1].replace(/\+/g, ' '));
-  return returnVal;
-}
-
 export default {
   isEventSupported:isEventSupported,
   getWindowRect:getWindowRect,
   getOffset:getOffset,
   getStyle:getStyle,
-  queryString:queryString,
-  getParameterByName:getParameterByName
 };
