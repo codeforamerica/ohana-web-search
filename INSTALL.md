@@ -38,12 +38,12 @@ If you already have all of the prerequisites installed, you can skip to the
 next step. Otherwise, there are two ways you can install the tools:
 
 - If you're on a Mac, the easiest way to install all the tools is to use
-@monfresh's [laptop] script.
+Moncef's [Ruby on Mac] script.
 
 - Install everything manually: [Build tools], [Ruby with RVM], and
 [Node.js][node] (Linux only).
 
-[laptop]: https://github.com/monfresh/laptop
+[Ruby on Mac]: https://rubyonmac.dev
 [Build tools]: https://github.com/codeforamerica/howto/blob/master/Build-Tools.md
 [Ruby with RVM]: https://github.com/codeforamerica/howto/blob/master/Ruby.md
 [node]: https://github.com/codeforamerica/howto/blob/master/Node.js.md
