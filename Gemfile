@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.7.4'
+ruby '~> 2.7.5'
 gem 'actionmailer', '~> 5.2'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
