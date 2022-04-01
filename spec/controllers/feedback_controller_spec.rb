@@ -14,7 +14,6 @@ describe FeedbackController do
       post :create, params: feedback_params
 
       expect(response).to redirect_to root_url
-      expect(flash[:notice]).to eq 'Feedback Sent! Thank you!'
       params = ActionController::Parameters.new(feedback_params)
       expect(FeedbackMailer).
         to have_received(:feedback_email).with(params.permit(:agent, :from, :message))

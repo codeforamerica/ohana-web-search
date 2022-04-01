@@ -1,7 +1,7 @@
 class FeedbackController < ApplicationController
   def create
     FeedbackMailer.feedback_email(feedback_params).deliver_now
-    redirect_to root_url, notice: 'Feedback Sent! Thank you!'
+    redirect_to root_url
   end
 
   private
