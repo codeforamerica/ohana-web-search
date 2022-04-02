@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.7.5'
-gem 'actionmailer', '~> 5.2'
+gem 'actionmailer', '~> 6.0.4'
 gem 'compass-rails'
 gem 'faraday', '~> 0.8'
 gem 'faraday-http-cache', '~> 2.0'
@@ -13,7 +13,7 @@ gem 'kaminari-core', '=1.1.1'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'puma'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 5.2'
+gem 'railties', '~> 6.0.4'
 gem 'recaptcha'
 gem 'redis-rack-cache', git: 'https://github.com/monfresh/redis-rack-cache.git', branch: 'readthis-compatibility'
 gem 'sass-rails', '~> 5.0.1'
@@ -52,5 +52,5 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 5.1'
 end

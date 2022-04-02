@@ -22,6 +22,7 @@ Rails.application.configure do
   #
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
+    config.action_controller.enable_fragment_cache_logging = true
     config.cache_store = :readthis_store, ENV.fetch('REDISCLOUD_URL'), {
       expires_in: 2.weeks.to_i,
       namespace: 'cache'
