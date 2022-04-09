@@ -23,13 +23,13 @@
 #
 # This change is not backwards compatible with earlier Rails versions.
 # It's best enabled when your entire app is migrated and stable on 6.1.
-# Rails.application.config.action_dispatch.cookies_same_site_protection = :lax
+Rails.application.config.action_dispatch.cookies_same_site_protection = :lax
 
 # Generate CSRF tokens that are encoded in URL-safe Base64.
 #
 # This change is not backwards compatible with earlier Rails versions.
 # It's best enabled when your entire app is migrated and stable on 6.1.
-# Rails.application.config.action_controller.urlsafe_csrf_tokens = true
+Rails.application.config.action_controller.urlsafe_csrf_tokens = true
 
 # Specify whether `ActiveSupport::TimeZone.utc_to_local` returns a time with an
 # UTC offset or a UTC time.
@@ -37,7 +37,7 @@
 
 # Change the default HTTP status code to `308` when redirecting non-GET/HEAD
 # requests to HTTPS in `ActionDispatch::SSL` middleware.
-# Rails.application.config.action_dispatch.ssl_default_redirect_status = 308
+Rails.application.config.action_dispatch.ssl_default_redirect_status = 308
 
 # Use new connection handling API. For most applications this won't have any
 # effect. For applications using multiple databases, this new API provides
@@ -64,4 +64,4 @@
 
 # Generate a `Link` header that gives a hint to modern browsers about
 # preloading assets when using `javascript_include_tag` and `stylesheet_link_tag`.
-# Rails.application.config.action_view.preload_links_header = true
+Rails.application.config.action_view.preload_links_header = true
