@@ -30,13 +30,6 @@ module OhanaWebSearch
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # Tell Internet Explorer to use compatibility mode.
-    # 'edge' mode tells Internet Explorer to display content in the highest mode available.
-    # 'chrome' mode is for when Internet Explorer has the Google Chrome Frame plug-in installed.
-    # Note that Google Chrome Frame was retired in Jan. 2014, so this is only for legacy systems.
-    # More info at http://blog.chromium.org/2013/06/retiring-chrome-frame.html
-    config.action_dispatch.default_headers = { 'X-UA-Compatible' => 'IE=edge,chrome=1' }
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
   end
