@@ -29,7 +29,7 @@ FileUtils.chdir APP_ROOT do
   system 'which yarn || brew install yarn'
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
-  system('bin/yarn')
+  system! 'bin/yarn'
 
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
