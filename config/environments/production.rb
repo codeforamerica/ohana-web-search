@@ -5,7 +5,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Thanks to the "rack-rewrite" gem, the code in lines 38-53 will redirect all
-  # URLs that don't come from the domain specified in the canonica_url variable
+  # URLs that don't come from the domain specified in the canonical_url variable
   # to the canonical URL equivalent. Full URLs are preserved
   # (i.e. including path and parameters).
   #
@@ -150,7 +150,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  # config.log_tags = [ :subdomain, :uuid ]
+  config.log_tags = [:request_id]
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'

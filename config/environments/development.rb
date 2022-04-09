@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
-  config.webpacker.check_yarn_integrity = true
+  # config.webpacker.check_yarn_integrity = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -21,11 +21,15 @@ Rails.application.configure do
   # https://github.com/codeforamerica/ohana-web-search/wiki/Improving-performance-with-caching
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
-    config.cache_store = :dalli_store
+    config.cache_store = :mem_cache_store
+    config.action_controller.enable_fragment_cache_logging = true
     client = Dalli::Client.new
     config.action_dispatch.rack_cache = {
       metastore: client,
       entitystore: client
+    }
+    config.public_file_server.headers = {
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false

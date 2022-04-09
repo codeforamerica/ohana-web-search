@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '~> 2.7.5'
-gem 'actionmailer', '~> 5.2'
+gem 'actionmailer', '~> 6.0.4'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
 gem 'faraday', '~> 0.8'
@@ -18,7 +18,7 @@ gem 'ohanakapa', '~> 1.1.1'
 gem 'puma', '~> 5.6.4'
 gem 'rack-cache', '~> 1.2'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 5.2'
+gem 'railties', '~> 6.0.4'
 gem 'sass-rails', '~> 5.0.1'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
@@ -55,5 +55,5 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 5.1'
 end
