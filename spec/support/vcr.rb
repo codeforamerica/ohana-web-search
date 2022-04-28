@@ -8,7 +8,7 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data('<GOOGLE_TRANSLATE>') do
-    ENV['GOOGLE_TRANSLATE_API_KEY']
+    ENV.fetch('GOOGLE_TRANSLATE_API_KEY', nil)
   end
   config.before_record do |c|
     c.response.body.force_encoding('UTF-8')

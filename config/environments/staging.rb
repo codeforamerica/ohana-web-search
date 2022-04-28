@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb
@@ -11,7 +11,7 @@ Rails.application.configure do
   # article to learn how to set environment (also called config) variables:
   # https://devcenter.heroku.com/articles/config-vars
   config.middleware.use ::Rack::Auth::Basic do |u, p|
-    [u, p] == [ENV['STAGING_USER'], ENV['STAGING_PASSWORD']]
+    [u, p] == [ENV.fetch('STAGING_USER', nil), ENV.fetch('STAGING_PASSWORD', nil)]
   end
 
   # --------------------------------------------------------------------------
@@ -48,7 +48,7 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/sendgrid
   # ----------------------------------------------
 
-  config.action_mailer.default_url_options = { host: ENV['CANONICAL_URL'] }
+  config.action_mailer.default_url_options = { host: ENV.fetch('CANONICAL_URL', nil) }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
@@ -59,8 +59,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     port: '587',
     address: 'smtp.sendgrid.net',
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: ENV.fetch('SENDGRID_USERNAME', nil),
+    password: ENV.fetch('SENDGRID_PASSWORD', nil),
     domain: 'heroku.com',
     authentication: :plain,
     enable_starttls_auto: true

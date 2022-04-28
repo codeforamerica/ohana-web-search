@@ -2,7 +2,7 @@ class FeedbackController < ApplicationController
   def create
     if result.valid?
       FeedbackMailer.feedback_email(feedback_params).deliver_now
-      redirect_to root_url, notice: 'Feedback Sent! Thank you!'
+      redirect_to root_url, notice: t('views.feedback.confirmation')
     else
       redirect_to about_url(anchor: 'feedback-box'), error: result.error
     end
