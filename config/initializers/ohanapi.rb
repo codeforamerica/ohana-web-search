@@ -7,8 +7,8 @@ stack = Faraday::RackBuilder.new do |builder|
 end
 
 Ohanakapa.configure do |config|
-  config.api_token = ENV['OHANA_API_TOKEN'] if ENV['OHANA_API_TOKEN'].present?
-  config.api_endpoint = ENV['OHANA_API_ENDPOINT']
+  config.api_token = ENV.fetch('OHANA_API_TOKEN', nil) if ENV['OHANA_API_TOKEN'].present?
+  config.api_endpoint = ENV.fetch('OHANA_API_ENDPOINT', nil)
 
   config.middleware = stack
 end
