@@ -9,7 +9,7 @@ Rails.application.configure do
   # article to learn how to set environment (also called config) variables:
   # https://devcenter.heroku.com/articles/config-vars
   config.middleware.use '::Rack::Auth::Basic' do |u, p|
-    [u, p] == [ENV['STAGING_USER'], ENV['STAGING_PASSWORD']]
+    [u, p] == [ENV.fetch('STAGING_USER', nil), ENV.fetch('STAGING_PASSWORD', nil)]
   end
 
   # --------------------------------------------------------------------------
@@ -17,7 +17,7 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/rack-cache-memcached-rails31
   # ------------------------------------------------------------------
 
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'] == 'true'
+  config.public_file_server.enabled = ENV.fetch('RAILS_SERVE_STATIC_FILES', nil) == 'true'
   config.public_file_server.headers = {
     'Cache-Control' => 'public, max-age=2592000'
   }
@@ -29,9 +29,9 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   config.cache_store = :dalli_store
-  client = Dalli::Client.new((ENV['MEMCACHIER_SERVERS'] || '').split(','),
-                             username: ENV['MEMCACHIER_USERNAME'],
-                             password: ENV['MEMCACHIER_PASSWORD'],
+  client = Dalli::Client.new((ENV.fetch('MEMCACHIER_SERVERS', nil) || '').split(','),
+                             username: ENV.fetch('MEMCACHIER_USERNAME', nil),
+                             password: ENV.fetch('MEMCACHIER_PASSWORD', nil),
                              failover: true,
                              socket_timeout: 1.5,
                              socket_failure_delay: 0.2,
@@ -47,7 +47,7 @@ Rails.application.configure do
   # https://devcenter.heroku.com/articles/sendgrid
   # ----------------------------------------------
 
-  config.action_mailer.default_url_options = { host: ENV['CANONICAL_URL'] }
+  config.action_mailer.default_url_options = { host: ENV.fetch('CANONICAL_URL', nil) }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
 
@@ -58,8 +58,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     port: '587',
     address: 'smtp.sendgrid.net',
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: ENV.fetch('SENDGRID_USERNAME', nil),
+    password: ENV.fetch('SENDGRID_PASSWORD', nil),
     domain: 'heroku.com',
     authentication: :plain,
     enable_starttls_auto: true
@@ -119,7 +119,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  if ENV['RAILS_LOG_TO_STDOUT'] == 'true'
+  if ENV.fetch('RAILS_LOG_TO_STDOUT', nil) == 'true'
     logger = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
