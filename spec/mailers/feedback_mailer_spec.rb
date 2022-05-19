@@ -21,7 +21,7 @@ describe FeedbackMailer do
     end
 
     it 'has the correct subject' do
-      expect(@email).to have_subject("[SMC-Connect Feedback] #{@params[:from]}")
+      expect(@email).to have_subject("[SMC-Connect Feedback]")
     end
 
     it 'includes the user agent in the mail body' do
@@ -54,13 +54,13 @@ describe FeedbackMailer do
       expect(@email).to have_body_text(/no user agent/)
     end
 
-    it 'includes anonymous@none.com in the subject' do
+    it 'specifies that the submitter did not enter an email address' do
       expect(@email).
-        to have_subject('[SMC-Connect Feedback] anonymous@none.com')
+        to have_body_text(/Submitter: \[no email entered\]/)
     end
 
-    it 'sets the from field to anonymous@none.com' do
-      expect(@email).to deliver_from('anonymous@none.com')
+    it 'sets the from field to mtcastro@smcgov.org' do
+      expect(@email).to deliver_from('mtcastro@smcgov.org')
     end
   end
 end
