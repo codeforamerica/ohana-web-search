@@ -31,7 +31,7 @@ jobs:
           command: |
             gem install bundler
             bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
-      - save-cache:
+      - save_cache:
           key: v1-smc-connect-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Install Yarn
           command: yarn install --ignore-engines --cache-folder ~/.cache/yarn
-      - save-cache:
+      - save_cache:
           key: v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
