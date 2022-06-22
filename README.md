@@ -15,8 +15,8 @@ You can see a running version of the application at
 
 ## Stack Overview
 
-* Ruby version 2.7.5
-* Rails version 5.2.1
+* Ruby version 2.7.6
+* Rails version 6.1.5.1
 * Node.js 16.x
 * Yarn 1.x
 * Template Engines: ERB and HAML
