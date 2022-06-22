@@ -2,12 +2,14 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.3.0
 jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.7.5-node-browsers
+      - image: cimg/ruby:2.7-browsers
         environment:
           RAILS_ENV: test
           CC_TEST_REPORTER_ID: 710013d07b72a132b08947be1b89a606f45e5ff0fb21c1ca519fe612bd93605e
@@ -18,9 +20,11 @@ jobs:
     working_directory: ~/smc-connect
 
     steps:
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
 
-      - restore-cache:
+      - restore_cache:
           keys:
             - v1-smc-connect-{{ checksum "Gemfile.lock" }}
       - run:
@@ -28,19 +32,19 @@ jobs:
           command: |
             gem install bundler
             bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
-      - save-cache:
+      - save_cache:
           key: v1-smc-connect-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
-      - restore-cache:
+      - restore_cache:
           keys:
             - v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
             - v1-smc-connect-yarn-
       - run:
           name: Install Yarn
           command: yarn install --ignore-engines --cache-folder ~/.cache/yarn
-      - save-cache:
+      - save_cache:
           key: v1-smc-connect-yarn-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn

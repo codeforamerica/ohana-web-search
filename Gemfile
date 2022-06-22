@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.7.5'
+ruby '2.7.6'
 gem 'actionmailer', '~> 6.1.5'
 gem 'compass-rails'
 gem 'faraday', '~> 0.8'
