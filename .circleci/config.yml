@@ -2,8 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
+version: 2.1
 orbs:
-  browser-tools: circleci/browser-tools@1.1
+  browser-tools: circleci/browser-tools@1.3.0
 jobs:
   build:
     docker:
@@ -19,7 +20,7 @@ jobs:
     working_directory: ~/smc-connect
 
     steps:
-      - browser-tools/install-browser-tools
+      - browser-tools/install-chromedriver
       - checkout
 
       - restore-cache:
