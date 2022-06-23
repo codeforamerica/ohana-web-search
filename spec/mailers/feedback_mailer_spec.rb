@@ -21,7 +21,7 @@ describe FeedbackMailer do
     end
 
     it 'has the correct subject' do
-      expect(@email).to have_subject("[SMC-Connect Feedback]")
+      expect(@email).to have_subject('[SMC-Connect Feedback]')
     end
 
     it 'includes the user agent in the mail body' do
