@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations
     body:
       encoding: US-ASCII
       string: ''
@@ -28,43 +28,369 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"9e06feabcd2a405660824627cbd7b904"
+      - W/"05fd1194a4355ce6e13292992206a722"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?page=22>; rel="last", <http://ohana-api-test.herokuapp.com/api/search?page=2>;
+      - <https://api-staging.smc-connect.org/search?page=60>; rel="last", <https://api-staging.smc-connect.org/search?page=2>;
         rel="next"
       X-Total-Count:
-      - '22'
+      - '1799'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:19:58 GMT
+      - Wed, 08 Mar 2023 04:34:48 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 6695a428-1c7a-4b72-9223-e6c19056ff41
+      - 7f456606-ec93-4fce-a522-46800a358614
       X-Runtime:
-      - '0.019766'
-      X-Rack-Cache:
-      - pass
+      - '0.054560'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":20,"active":false,"admin_emails":[],"alternate_name":null,"coordinates":[],"description":"no
-        phone","latitude":null,"longitude":null,"name":"Location with no phone","short_desc":"no
-        phone","slug":"location-with-no-phone","website":null,"updated_at":"2019-03-17T10:23:14.207-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/location-with-no-phone","address":null,"organization":{"id":6,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"An
-        organization created for testing purposes.","email":null,"funding_sources":[],"licenses":[],"name":"Fake
-        Org","website":null,"slug":"fake-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/fake-org/locations"},"phones":[]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:19:58 GMT
+      string: '[{"id":4,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.332764,37.513351],"description":"The
+        coroner is required by law to investigate accidental, traumatic and certain
+        other types of deaths. In these cases, the office takes charge of the body,
+        determines the cause of death and establishes the identity of the dead person
+        if necessary. Accepts and considers requests for cremation for indigent county
+        residents.","kind":"Government","latitude":37.513351,"longitude":-122.332764,"name":"San
+        Mateo County Coroner","short_desc":"Investigates certain types of deaths,
+        handles requests for county burials for people without funds.","slug":"san-mateo-county-coroner","updated_at":"2014-11-25T17:21:54.977-08:00","website":"http://www.co.sanmateo.ca.us","url":"https://api-staging.smc-connect.org/locations/san-mateo-county-coroner","address":{"id":4,"address_1":"50
+        Tower Road","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Coroner","website":null,"slug":"san-mateo-county-coroner","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-coroner","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-coroner/locations"},"phones":[{"id":5,"department":"24
+        hours daily","extension":null,"number":"650 312-5562","number_type":"voice","vanity_number":null},{"id":2489,"department":null,"extension":null,"number":"650
+        571-6258","number_type":"fax","vanity_number":null}]},{"id":1596,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2220981,37.4935958],"description":"IVSN’s
+        Maple Street Shelter provides emergency and transitional housing for 75 single
+        men and women. For access to Maple Street Shelter, individuals must be referred
+        by one of IVSN''s partner referral agency. Visit IVSN''s website for a list
+        of referral agencies: http://www.ivsn.org/get-help/san-mateo-county/","kind":"Human
+        Services","latitude":37.4935958,"longitude":-122.2220981,"name":"IVSN''s Maple
+        Street Shelter","short_desc":"A year-round 24-hour emergency and transitional
+        shelter for homeless single men and women in San Mateo County.","slug":"ivsn-s-maple-street-shelter","updated_at":"2015-12-02T10:00:27.589-08:00","website":"http://www.ivsn.org","url":"https://api-staging.smc-connect.org/locations/ivsn-s-maple-street-shelter","address":{"id":1332,"address_1":"1580
+        A Maple Street","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":595,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"InnVision
+        Shelter Network","website":null,"slug":"innvision-shelter-network","url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network","locations_url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network/locations"},"phones":[{"id":2289,"department":null,"extension":null,"number":"650
+        364-1150","number_type":"voice","vanity_number":null}]},{"id":1833,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.1717101,37.4476457],"description":"Menlo
+        College is a small, private, non-profit Silicon Valley school that focuses
+        on business education with a strong liberal arts emphasis.","kind":"Education","latitude":37.4476457,"longitude":-122.1717101,"name":"Menlo
+        College","short_desc":"Menlo College is a small, private, non-profit Silicon
+        Valley school that focuses on business education with a strong liberal arts
+        emphasis.","slug":"menlo-college","updated_at":"2017-07-03T14:32:35.588-07:00","website":"https://menlo.edu","url":"https://api-staging.smc-connect.org/locations/menlo-college","address":{"id":1559,"address_1":"100
+        El Camino Real","address_2":null,"city":"Atherton","state_province":"CA","postal_code":"94027"},"organization":{"id":1385,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Menlo
+        College is a small, private, non-profit Silicon Valley school that focuses
+        on business education with a strong liberal arts emphasis.","email":null,"funding_sources":[],"licenses":[],"name":"Menlo
+        College","website":"https://menlo.edu","slug":"menlo-college","url":"https://api-staging.smc-connect.org/organizations/menlo-college","locations_url":"https://api-staging.smc-connect.org/organizations/menlo-college/locations"},"phones":[{"id":3690,"department":null,"extension":null,"number":"800-556-3656","number_type":"voice","vanity_number":"800-55-MENLO"}]},{"id":1629,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.230319,37.493448],"description":"Offers
+        a variety of adult outpatient treatment services. Provides the First Offender
+        program for persons arrested driving under the influence. Length of the program
+        is determined by the blood alcohol concentration at the time of the arrest.
+        Also, provides outpatient services for alcohol and drug treatment. Serves
+        clients with referrals from probation and parole (Prop 36, DEJ, Drug Diversion),
+        as well as self-referred clients. Offers a certified 52-week adult domestic
+        intervention program. Also, offers a 16-week anger management program. Referrals
+        can be court-mandated or self-referred. All programs are licensed through
+        the State of California and monitored both by the State of California and
+        the County of San Mateo. Formerly known as Youth and Family Enrichment Services
+        (YFES).","kind":"Human Services","latitude":37.493448,"longitude":-122.230319,"name":"Archway","short_desc":"Offers
+        counseling and support for children from chemically dependent families, and
+        First Offender, Drug Diversion and Domestic Non-Violence programs.","slug":"archway","updated_at":"2014-11-25T17:22:21.917-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/archway","address":{"id":1360,"address_1":"609
+        Price Avenue, Suite 201","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2355,"department":null,"extension":null,"number":"650
+        366-8433","number_type":"voice","vanity_number":null},{"id":3533,"department":null,"extension":null,"number":"650
+        366-8455","number_type":"fax","vanity_number":null}]},{"id":1650,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.16023,37.466287],"description":"Offers
+        evaluation for and follow-up of psychotropic medication, limited individual
+        therapy and group psychotherapy, crisis intervention and case management.
+        A multi-disciplinary team evaluates patients for services and refers to non-VA
+        services when appropriate. VA services to which veterans may be referred include
+        day treatment, post traumatic stress disorder (PTSD), drug and alcohol programs
+        and inpatient psychiatry programs. Veterans may call directly but referral
+        from an agency is preferred. When openings are limited, preference is given
+        to veterans whose illnesses are service-connected.","kind":"Clinics","latitude":37.466287,"longitude":-122.16023,"name":"Veterans
+        Affairs Palo Alto Health Care System., Menlo Park Division., Mental Health
+        Clinic","short_desc":"Primary provider of psychiatric and mental health services
+        for veterans.","slug":"veterans-affairs-palo-alto-health-care-system-menlo-park-division-mental-health-clinic","updated_at":"2014-11-25T17:22:22.092-08:00","website":"http://www.paloalto.va.gov","url":"https://api-staging.smc-connect.org/locations/veterans-affairs-palo-alto-health-care-system-menlo-park-division-mental-health-clinic","address":{"id":1375,"address_1":"795
+        Willow Road","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":1337,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"United
+        States Government","website":null,"slug":"united-states-government","url":"https://api-staging.smc-connect.org/organizations/united-states-government","locations_url":"https://api-staging.smc-connect.org/organizations/united-states-government/locations"},"phones":[{"id":2410,"department":null,"extension":"22175","number":"650
+        493-5000","number_type":"voice","vanity_number":null},{"id":2411,"department":null,"extension":"22234","number":"650
+        493-5000","number_type":"voice","vanity_number":null},{"id":2412,"department":null,"extension":null,"number":"866
+        717-1978","number_type":"voice","vanity_number":null},{"id":2413,"department":null,"extension":"22305","number":"650
+        493-5000","number_type":"voice","vanity_number":null},{"id":3541,"department":null,"extension":null,"number":"650
+        617-2710","number_type":"fax","vanity_number":null}]},{"id":1339,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.133737,37.479854],"description":"IVSN’s
+        Veterans Hoptel provides 1-3 nights of shelter, along with case management
+        and transportation, to low-income Veterans from out-of-town coming to receive
+        medical care and/or assessment from the local Veterans hospital.","kind":"Human
+        Services","latitude":37.479854,"longitude":-122.133737,"name":"IVSN''s Veterans
+        Hoptel","short_desc":"Provides services to Veterans receiving medical care
+        at the local Veterans hospital.","slug":"ivsn-s-veterans-hoptel","updated_at":"2014-11-25T18:36:56.753-08:00","website":"http://www.ivsn.org","url":"https://api-staging.smc-connect.org/locations/ivsn-s-veterans-hoptel","address":{"id":1079,"address_1":"2800
+        Illinois Street","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":595,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"InnVision
+        Shelter Network","website":null,"slug":"innvision-shelter-network","url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network","locations_url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network/locations"},"phones":[{"id":1784,"department":null,"extension":null,"number":"650-364-1150","number_type":"voice","vanity_number":null}]},{"id":1822,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4164616,37.6552161],"description":"Residential
+        and day treatment for severely behaviorally and emotionally disturbed children
+        ages 6-25.","kind":"Human Services","latitude":37.6552161,"longitude":-122.4164616,"name":"Kinship
+        Support Services Program","short_desc":null,"slug":"kinship-support-services-program","updated_at":"2017-07-03T11:44:48.941-07:00","website":null,"url":"https://api-staging.smc-connect.org/locations/kinship-support-services-program","address":{"id":1549,"address_1":"170
+        Spruce Ave, Ste. #200","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":338,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Edgewood
+        Center for Children and Families","website":null,"slug":"edgewood-center-for-children-and-families","url":"https://api-staging.smc-connect.org/organizations/edgewood-center-for-children-and-families","locations_url":"https://api-staging.smc-connect.org/organizations/edgewood-center-for-children-and-families/locations"},"phones":[{"id":3676,"department":null,"extension":null,"number":"650-832-6722","number_type":"voice","vanity_number":null}]},{"id":351,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4095396,37.7718328],"description":"Promotes
+        the safe and effective use of alternatives to incarceration.","kind":"Human
+        Services","latitude":37.7718328,"longitude":-122.4095396,"name":"Center on
+        Juvenile and Criminal Justice (CJCJ)","short_desc":"Promotes the safe and
+        effective use of alternatives to incarceration.","slug":"center-on-juvenile-and-criminal-justice-cjcj","updated_at":"2014-11-25T17:22:00.640-08:00","website":"http://cjcj.org","url":"https://api-staging.smc-connect.org/locations/center-on-juvenile-and-criminal-justice-cjcj","address":{"id":295,"address_1":"440
+        Ninth Street","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":351,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Center
+        on Juvenile and Criminal Justice (CJCJ)","website":null,"slug":"center-on-juvenile-and-criminal-justice-cjcj","url":"https://api-staging.smc-connect.org/organizations/center-on-juvenile-and-criminal-justice-cjcj","locations_url":"https://api-staging.smc-connect.org/organizations/center-on-juvenile-and-criminal-justice-cjcj/locations"},"phones":[{"id":468,"department":null,"extension":null,"number":"415
+        621-5661","number_type":"voice","vanity_number":null},{"id":2713,"department":null,"extension":null,"number":"415
+        621-5466","number_type":"fax","vanity_number":null}]},{"id":787,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.398463,37.60567899999999],"description":"Retirement
+        housing for individuals age 50 or over and capable of self care. Facilities
+        include apartments with dishwasher, disposal and refrigerator, carpet and
+        outdoor deck for some apartments. A laundry room, lounge area, garage and
+        social activities are available.","kind":"Human Services","latitude":37.60567899999999,"longitude":-122.398463,"name":"Broadway
+        Manor","short_desc":"An apartment complex for persons age 50 or over.","slug":"broadway-manor","updated_at":"2014-11-25T17:22:06.652-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/broadway-manor","address":{"id":644,"address_1":"1051
+        Broadway","address_2":null,"city":"Millbrae","state_province":"CA","postal_code":"94030"},"organization":{"id":787,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Broadway
+        Manor","website":null,"slug":"broadway-manor","url":"https://api-staging.smc-connect.org/organizations/broadway-manor","locations_url":"https://api-staging.smc-connect.org/organizations/broadway-manor/locations"},"phones":[{"id":1054,"department":null,"extension":null,"number":"650
+        697-1848","number_type":"voice","vanity_number":null},{"id":2982,"department":null,"extension":null,"number":"650
+        697-4636","number_type":"fax","vanity_number":null}]},{"id":1390,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2931271,37.5326926],"description":"Provides
+        free primary and specialty medical and dental services to uninsured, low-income
+        residents. Who is Treated? Patients of our clinics are the working poor. They
+        tend to earn just enough income to be ineligible for Medi-Cal coverage, yet
+        do not receive health insurance through their employers and cannot afford
+        to pay for “out-of-pocket” health insurance. Often these residents are forced
+        to seek treatment at local emergency rooms and become saddled with medical
+        bills that they are unable to pay. Samaritan House’s Free Medical Clinics
+        fill this gap in healthcare access for the uninsured and save emergency room
+        resources for emergencies. Professional Medical \u0026 Dental Volunteers Thanks
+        to its innovative volunteer-based model of service, Samaritan House’s clinics
+        are able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.5326926,"longitude":-122.2931271,"name":"San
+        Mateo Free Medical Clinic","short_desc":"Provides free medical and dental
+        care to those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-11-25T17:22:17.654-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-free-medical-clinic","address":{"id":1130,"address_1":"19
+        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":1904,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":3365,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}]},{"id":1046,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.119603,37.44994],"description":"A
+        California state certified outpatient substance abuse program providing assessment,
+        education, treatment, family therapy and recovery treatment for youth age
+        12-18.","kind":"Human Services","latitude":37.44994,"longitude":-122.119603,"name":"Adolescent
+        Substance Abuse Treatment Program","short_desc":"Outpatient substance abuse
+        treatment for youth age 12-18.","slug":"adolescent-substance-abuse-treatment-program","updated_at":"2014-11-25T17:22:10.681-08:00","website":"http://www.acs-teens.org","url":"https://api-staging.smc-connect.org/locations/adolescent-substance-abuse-treatment-program","address":{"id":835,"address_1":"1717
+        Embarcadero Road, Suite 4000","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":578,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Adolescent
+        Counseling Services","website":null,"slug":"adolescent-counseling-services","url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services","locations_url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services/locations"},"phones":[{"id":1359,"department":"Main
+        Office","extension":null,"number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1360,"department":"Office
+        Manager","extension":"200","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1361,"department":"Adolescent
+        Substance Abuse Treatment Program","extension":"104","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1362,"department":"After-School
+        Counseling Program","extension":"104","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":3147,"department":null,"extension":null,"number":"650
+        329-9630","number_type":"fax","vanity_number":null}]},{"id":1441,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2309704,37.4881077],"description":"Provides
+        counseling and support to victims of domestic violence. Assists prosecuting
+        attorneys with contacting domestic violence victims. Interviews clients and
+        evaluates the problems presented. Offers resource and referral assistance.
+        Interprets the rules, regulations and policies of the District Attorney''s
+        Office to clients. Another office is located in the Northern Court Building,
+        1050 Mission Road, South San Francisco, 94080.","kind":"Other","latitude":37.4881077,"longitude":-122.2309704,"name":"Domestic
+        Violence Victim Advocate","short_desc":"Assists victims of domestic violence.","slug":"domestic-violence-victim-advocate","updated_at":"2014-11-25T17:15:43.582-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/domestic-violence-victim-advocate","address":{"id":1181,"address_1":"400
+        County Center, 4th Floor","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":171,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County District Attorney","website":null,"slug":"san-mateo-county-district-attorney","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-district-attorney","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-district-attorney/locations"},"phones":[{"id":1970,"department":"Redwood
+        City","extension":null,"number":"650 599-7330","number_type":"voice","vanity_number":null},{"id":1971,"department":"South
+        San Francisco","extension":null,"number":"650 877-5797","number_type":"voice","vanity_number":null}]},{"id":9,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3196377,37.5906292],"description":"Offers
+        environmental education through exhibits and wildlife habitats. The wildlife
+        habitats feature live animals (100) native to the Bay Area. All animals -
+        bobcats, raccoons, river otters, ring-tail cat, badger, snakes, reptiles and
+        birds - are in naturalistic habits and are unreleasable. The museum also has
+        science-based exhibits, educational classes, children''s activities, volunteer-docent
+        training programs, wildlife shows and animal talks. Formerly known as Coyote
+        Point Museum for Environmental Education.","kind":"Museums","latitude":37.5906292,"longitude":-122.3196377,"name":"CuriOdyssey","short_desc":null,"slug":"curiodyssey","updated_at":"2014-11-25T17:21:55.024-08:00","website":"http://www.curiodyssey.org","url":"https://api-staging.smc-connect.org/locations/curiodyssey","address":{"id":9,"address_1":"1651
+        Coyote Point Drive","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401-1097"},"organization":{"id":9,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"CuriOdyssey","website":null,"slug":"curiodyssey","url":"https://api-staging.smc-connect.org/organizations/curiodyssey","locations_url":"https://api-staging.smc-connect.org/organizations/curiodyssey/locations"},"phones":[{"id":14,"department":null,"extension":null,"number":"650
+        342-7755","number_type":"voice","vanity_number":null},{"id":2493,"department":null,"extension":null,"number":"650
+        342-7853","number_type":"fax","vanity_number":null}]},{"id":864,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4298169,37.6457651],"description":"Retirement
+        residence for seniors age 60 or over, disabled persons, and low-income persons.
+        The complex contains 75 units.","kind":"Human Services","latitude":37.6457651,"longitude":-122.4298169,"name":"Alida
+        Manor","short_desc":"75-unit retirement residence for seniors, disabled and
+        low-income persons.","slug":"alida-manor","updated_at":"2014-11-25T17:15:23.964-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/alida-manor","address":{"id":693,"address_1":"416
+        Alida Way","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":864,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Alida
+        Manor","website":null,"slug":"alida-manor","url":"https://api-staging.smc-connect.org/organizations/alida-manor","locations_url":"https://api-staging.smc-connect.org/organizations/alida-manor/locations"},"phones":[{"id":1146,"department":null,"extension":null,"number":"650
+        873-6029","number_type":"voice","vanity_number":null}]},{"id":1823,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2090422,37.4778954],"description":"The
+        Multicultural Institute (MI) is a 501(c)3 nonprofit founded in 1991. Our mission
+        is to be a stepping stone that helps society transition immigrants from poverty
+        and isolation to prosperity and participation.","kind":"Human Services","latitude":37.4778954,"longitude":-122.2090422,"name":"Multicultural
+        Institute","short_desc":"Mentoring for academic success program for 3rd to
+        5th graders.","slug":"multicultural-institute","updated_at":"2017-07-03T11:50:27.500-07:00","website":null,"url":"https://api-staging.smc-connect.org/locations/multicultural-institute","address":{"id":1550,"address_1":"533
+        Warrington Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1169,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Multicultural
+        Institute","website":null,"slug":"multicultural-institute","url":"https://api-staging.smc-connect.org/organizations/multicultural-institute","locations_url":"https://api-staging.smc-connect.org/organizations/multicultural-institute/locations"},"phones":[{"id":3677,"department":null,"extension":null,"number":"650-339-2794","number_type":"voice","vanity_number":null}]},{"id":1653,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8740501,36.5964368],"description":"Information
+        over the phone regarding current forecasts up to seven days in advance across
+        the United States, outlook to 90 days. Functional questions on weather, climatology
+        (e.g., vacation information) will be answered. A few pamphlets on hurricanes,
+        etc. No technical information available.","kind":"Government","latitude":36.5964368,"longitude":-121.8740501,"name":"Department
+        of Commerce., National Oceanic and Atmospheric Administration (NOAA)., National
+        Weather Service (NWS)","short_desc":null,"slug":"department-of-commerce-national-oceanic-and-atmospheric-administration-noaa-national-weather-service-nws","updated_at":"2014-11-25T17:15:54.489-08:00","website":"http://weather.gov/sanfranciso","url":"https://api-staging.smc-connect.org/locations/department-of-commerce-national-oceanic-and-atmospheric-administration-noaa-national-weather-service-nws","address":{"id":1378,"address_1":"21
+        Grace Hopper Avenue, Stop 5","address_2":null,"city":"Monterey","state_province":"CA","postal_code":"93943-5505"},"organization":{"id":1337,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"United
+        States Government","website":null,"slug":"united-states-government","url":"https://api-staging.smc-connect.org/organizations/united-states-government","locations_url":"https://api-staging.smc-connect.org/organizations/united-states-government/locations"},"phones":[{"id":2417,"department":"24
+        hours daily","extension":null,"number":"831 656-1725","number_type":"voice","vanity_number":null}]},{"id":1231,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.942057,37.37948],"description":"Provides
+        a community-based behavioral treatment and supported employment training and
+        placement program for developmentally disabled adults. Also provides a day
+        program of training in various skills such as behavior management, supported
+        employment and adult development. Another office is located at 124 Blossom
+        Hill Road, San Jose. Corporate South office is located at 3555 Torrance Blvd.,
+        Torrance, CA 90503 (310-944-3303), FAX (310-944-3304).","kind":"Human Services","latitude":37.37948,"longitude":-121.942057,"name":"Employ
+        America","short_desc":"Provides a community based supported employment, training
+        and placement program for developmentally disabled adults.","slug":"employ-america","updated_at":"2014-11-25T17:22:14.120-08:00","website":"http://www.socialvocationalservices.org","url":"https://api-staging.smc-connect.org/locations/employ-america","address":{"id":988,"address_1":"471
+        Gianni Street","address_2":null,"city":"Santa Clara","state_province":"CA","postal_code":"95054"},"organization":{"id":295,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Social
+        Vocational Services","website":null,"slug":"social-vocational-services","url":"https://api-staging.smc-connect.org/organizations/social-vocational-services","locations_url":"https://api-staging.smc-connect.org/organizations/social-vocational-services/locations"},"phones":[{"id":1617,"department":"Santa
+        Clara","extension":null,"number":"408 727-3370","number_type":"voice","vanity_number":null},{"id":1618,"department":"Blossom
+        Hill Road","extension":null,"number":"408 574-3950","number_type":"voice","vanity_number":null},{"id":3267,"department":null,"extension":null,"number":"408
+        727-3593","number_type":"fax","vanity_number":null},{"id":3268,"department":null,"extension":null,"number":"408
+        574-3954","number_type":"fax","vanity_number":null}]},{"id":1433,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.43267,37.464756],"description":"Offers
+        a support service for full-time students who need additional services to successfully
+        pursue their educational and vocational goals. Services include priority registration,
+        counseling, book service, transportation, tutoring, application fee waivers
+        and peer advising.","kind":"Human Services","latitude":37.464756,"longitude":-122.43267,"name":"College
+        of San Mateo (CSM)., Coastside","short_desc":"Offers support to current and
+        potential multicultural students.","slug":"college-of-san-mateo-csm-coastside","updated_at":"2014-12-04T11:12:08.380-08:00","website":"http://collegeofsanmateo.edu","url":"https://api-staging.smc-connect.org/locations/college-of-san-mateo-csm-coastside","address":{"id":1173,"address_1":"225
+        Cabrillo Highway S.","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94019"},"organization":{"id":1306,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Community College District (SMCCCD)","website":null,"slug":"san-mateo-county-community-college-district-smcccd","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-community-college-district-smcccd","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-community-college-district-smcccd/locations"},"phones":[{"id":1961,"department":null,"extension":null,"number":"650
+        726-6444","number_type":"voice","vanity_number":null},{"id":3391,"department":null,"extension":null,"number":"650
+        726-6443","number_type":"fax","vanity_number":null}]},{"id":1288,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4085058,37.6633777],"description":"Offers
+        social, educational, vocational and character development activities to boys
+        and girls age 6-18. Program activities include physical education, social
+        education, athletic teams, table games, arts and crafts, special interest
+        group clubs, special events, day camps and summer camp. Tutoring is also available.
+        Early-hour and extended-hour programs are available during summer months and
+        school vacations for an extra fee.","kind":"Human Services","latitude":37.6633777,"longitude":-122.4085058,"name":"Boys
+        and Girls Club Paradise Valley","short_desc":"Promotes the social, educational,
+        vocational and character development of boys and girls age 6-18. Activities
+        include games and recreation, a summer camp and trips.","slug":"boys-and-girls-club-paradise-valley","updated_at":"2014-12-04T11:17:19.976-08:00","website":"http://www.theclubs.org","url":"https://api-staging.smc-connect.org/locations/boys-and-girls-club-paradise-valley","address":{"id":1030,"address_1":"291
+        Hillside Blvd.","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1271,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Boys
+        and Girls Club of North San Mateo County","website":null,"slug":"boys-and-girls-club-of-north-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-north-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-north-san-mateo-county/locations"},"phones":[{"id":1702,"department":null,"extension":null,"number":"650
+        583-2348","number_type":"voice","vanity_number":null}]},{"id":1044,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.200978,37.738467],"description":"Provides
+        no-fee adoption and foster care supportive family services. Prepares, trains
+        and performs home studies for children waiting in the state foster care system.
+        Also has a complete Fostercare program.","kind":"Human Services","latitude":37.738467,"longitude":-122.200978,"name":"Adopt
+        a Special Kid., Adoption/Foster Care","short_desc":"Licensed adoption agency
+        for children with special needs, siblings and older children.","slug":"adopt-a-special-kid-adoption-foster-care","updated_at":"2014-11-25T17:22:10.658-08:00","website":"http://www.aask.org","url":"https://api-staging.smc-connect.org/locations/adopt-a-special-kid-adoption-foster-care","address":{"id":833,"address_1":"8201
+        Edgewater Drive, Suite 103","address_2":null,"city":"Oakland","state_province":"CA","postal_code":"94621"},"organization":{"id":1044,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"AASK
+        America","website":null,"slug":"aask-america","url":"https://api-staging.smc-connect.org/organizations/aask-america","locations_url":"https://api-staging.smc-connect.org/organizations/aask-america/locations"},"phones":[{"id":1356,"department":null,"extension":"12","number":"510
+        553-1748","number_type":"voice","vanity_number":null},{"id":3146,"department":null,"extension":null,"number":"510
+        553-1747","number_type":"fax","vanity_number":null}]},{"id":29,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2371832,37.4708135],"description":"Provides
+        all forms of recreational services for the citizens of Redwood City and provides
+        maintenance of city parks and recreational facilities. The programmed activities
+        include municipal sports and recreational swimming, community leisure services
+        including day camps, after-school programs at schools and special interest
+        classes including teen activities, arts and crafts, dance and many others.
+        The Little Learners Preschool Program provides supervised recreation activities
+        for children age 3-5. Activities include arts and crafts, outdoor play and
+        games. Programs run approximately ten weeks and the children participate two
+        hours a day, twice or three times a week. Programs are available for disabled
+        persons and senior citizens. Five recreational buildings are available for
+        rental for weddings, parties and organizational meetings.","kind":"Government","latitude":37.4708135,"longitude":-122.2371832,"name":"Redwood
+        City Parks, Recreation and Community Services Department","short_desc":"Provides
+        recreational services and maintenance of city parks and recreational facilities.","slug":"redwood-city-parks-recreation-and-community-services-department","updated_at":"2014-11-25T17:21:55.631-08:00","website":"http://www.redwoodcity.org","url":"https://api-staging.smc-connect.org/locations/redwood-city-parks-recreation-and-community-services-department","address":{"id":28,"address_1":"1400
+        Roosevelt Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94061-1499"},"organization":{"id":29,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Redwood
+        City Parks, Recreation and Community Services Department","website":null,"slug":"redwood-city-parks-recreation-and-community-services-department","url":"https://api-staging.smc-connect.org/organizations/redwood-city-parks-recreation-and-community-services-department","locations_url":"https://api-staging.smc-connect.org/organizations/redwood-city-parks-recreation-and-community-services-department/locations"},"phones":[{"id":44,"department":null,"extension":null,"number":"650
+        780-7250","number_type":"voice","vanity_number":null},{"id":2508,"department":null,"extension":null,"number":"650
+        368-5087","number_type":"fax","vanity_number":null}]},{"id":1654,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"Provides
+        primary care to homebound veterans. Interdisciplinary team approach, composed
+        of a physician, nurse practitioner, social worker, dietitian, psychologist
+        and occupational therapist, works with the individual and his/her caregiver
+        to provide primary medical care and other services in the home to veterans
+        who are convalescing or have acute chronic or terminal illness. Services include
+        case management, skilled nursing care, rehabilitation, palliative care, emergency
+        and long-term planning, individual and family counseling, health education,
+        nutrition and diet consultation, evaluation for adaptive equipment and home
+        safety, referrals to VA and community resources.","kind":"Human Services","latitude":null,"longitude":null,"name":"Veterans
+        Affairs Palo Alto Health Care System., Home Based Primary Care (HBPC)","short_desc":"Provides
+        medical and social services to homebound veterans.","slug":"veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc","updated_at":"2014-11-25T17:22:22.178-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/veterans-affairs-palo-alto-health-care-system-home-based-primary-care-hbpc","address":null,"organization":{"id":1337,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"United
+        States Government","website":null,"slug":"united-states-government","url":"https://api-staging.smc-connect.org/organizations/united-states-government","locations_url":"https://api-staging.smc-connect.org/organizations/united-states-government/locations"},"phones":[{"id":2418,"department":null,"extension":null,"number":"650
+        849-0102","number_type":"voice","vanity_number":null},{"id":3544,"department":null,"extension":null,"number":"650
+        849-0103","number_type":"fax","vanity_number":null}]},{"id":687,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.174863,37.451574],"description":"The
+        principal technical society serving the artificial intelligence community.
+        The association was founded to encourage basic knowledge of what constitutes
+        intelligent thought and behavior and how it can be expressed in computers.
+        Membership is open to anyone with an interest in the field. Formerly known
+        as American Association for Artificial Intelligence (AAAI).","kind":"Other","latitude":37.451574,"longitude":-122.174863,"name":"Association
+        for the Advancement of Artificial Intelligence (AAAI)","short_desc":"A technical
+        society serving the artificial intelligence community.","slug":"association-for-the-advancement-of-artificial-intelligence-aaai","updated_at":"2014-11-25T17:22:05.957-08:00","website":"http://www.aaai.org","url":"https://api-staging.smc-connect.org/locations/association-for-the-advancement-of-artificial-intelligence-aaai","address":{"id":576,"address_1":"445
+        Burgess Drive, Suite 100","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":687,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Association
+        for the Advancement of Artificial Intelligence (AAAI)","website":null,"slug":"association-for-the-advancement-of-artificial-intelligence-aaai","url":"https://api-staging.smc-connect.org/organizations/association-for-the-advancement-of-artificial-intelligence-aaai","locations_url":"https://api-staging.smc-connect.org/organizations/association-for-the-advancement-of-artificial-intelligence-aaai/locations"},"phones":[{"id":931,"department":null,"extension":null,"number":"650
+        328-3123","number_type":"voice","vanity_number":null},{"id":2932,"department":null,"extension":null,"number":"650
+        321-4457","number_type":"fax","vanity_number":null}]},{"id":1193,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8784757,37.339285],"description":"Provides
+        a 24-hour residential treatment program for persons who are suffering from
+        dependency on PCP, heroin, alcohol, amphetamines, cocaine, barbituates or
+        other mind-altering, health-impairing substances.","kind":"Human Services","latitude":37.339285,"longitude":-121.8784757,"name":"Pathway
+        House","short_desc":"Provides a 24-hour residential treatment program for
+        persons who are suffering from drug or alcohol dependency.","slug":"pathway-house","updated_at":"2014-12-04T11:19:23.103-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/pathway-house","address":{"id":953,"address_1":"102
+        South 11th Street","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95112"},"organization":{"id":585,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pathway
+        Society","website":null,"slug":"pathway-society","url":"https://api-staging.smc-connect.org/organizations/pathway-society","locations_url":"https://api-staging.smc-connect.org/organizations/pathway-society/locations"},"phones":[{"id":1564,"department":"24
+        hours daily","extension":null,"number":"408 998-5191","number_type":"voice","vanity_number":null},{"id":1565,"department":"Administration","extension":null,"number":"408
+        244-1834","number_type":"voice","vanity_number":null},{"id":3235,"department":null,"extension":null,"number":"408
+        287-1930","number_type":"fax","vanity_number":null}]},{"id":849,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"A
+        12-step recovery group for workaholics. Call for information on meetings in
+        the area.","kind":"Human Services","latitude":null,"longitude":null,"name":"Workaholics
+        Anonymous","short_desc":"A 12-step recovery group for workaholics.","slug":"workaholics-anonymous","updated_at":"2014-11-25T17:15:23.460-08:00","website":"http://www.workaholics-anonymous.org","url":"https://api-staging.smc-connect.org/locations/workaholics-anonymous","address":null,"organization":{"id":849,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Workaholics
+        Anonymous","website":null,"slug":"workaholics-anonymous","url":"https://api-staging.smc-connect.org/organizations/workaholics-anonymous","locations_url":"https://api-staging.smc-connect.org/organizations/workaholics-anonymous/locations"},"phones":[{"id":1126,"department":"Voicemail
+        24 hours daily","extension":null,"number":"510 273-9253","number_type":"voice","vanity_number":null}]},{"id":1824,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.1327257,37.4658583],"description":"Provides
+        academic support (KidSmart for grades 1-5) spiritual mentoring, and life skills
+        to youth in elementary, middle school and high school.","kind":"Human Services","latitude":37.4658583,"longitude":-122.1327257,"name":"Bayshore
+        Christian Ministries","short_desc":null,"slug":"bayshore-christian-ministries","updated_at":"2017-07-03T11:55:34.190-07:00","website":"http://www.bayshore.org/","url":"https://api-staging.smc-connect.org/locations/bayshore-christian-ministries","address":{"id":1551,"address_1":"1001
+        Beech Street","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1383,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Provides
+        academic support (KidSmart for grades 1-5) spiritual mentoring, and life skills
+        to youth in elementary, middle school and high school","email":null,"funding_sources":[],"licenses":[],"name":"Bayshore
+        Christian Ministries","website":"http://www.bayshore.org/","slug":"bayshore-christian-ministries","url":"https://api-staging.smc-connect.org/organizations/bayshore-christian-ministries","locations_url":"https://api-staging.smc-connect.org/organizations/bayshore-christian-ministries/locations"},"phones":[{"id":3679,"department":null,"extension":null,"number":"650-327-9941","number_type":"voice","vanity_number":null}]},{"id":1204,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.239977,37.4724376],"description":"ARAP
+        (Accessible Recreation Activities Program) is a city-run program that provides
+        recreational programming to teens and adults with mental, physical, emotional
+        and/or developmental disabilities. Activities include dances, classes and
+        special events.","kind":"Other","latitude":37.4724376,"longitude":-122.239977,"name":"Accessible
+        Recreation Activities Program","short_desc":"Offers activity programs such
+        as trips, movies, swimming and social events for persons with physical limitations
+        or developmental disabilities.","slug":"accessible-recreation-activities-program","updated_at":"2014-11-25T17:22:13.395-08:00","website":"http://www.redwoodcity.org","url":"https://api-staging.smc-connect.org/locations/accessible-recreation-activities-program","address":{"id":962,"address_1":"1455
+        Madison Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94061"},"organization":{"id":29,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Redwood
+        City Parks, Recreation and Community Services Department","website":null,"slug":"redwood-city-parks-recreation-and-community-services-department","url":"https://api-staging.smc-connect.org/organizations/redwood-city-parks-recreation-and-community-services-department","locations_url":"https://api-staging.smc-connect.org/organizations/redwood-city-parks-recreation-and-community-services-department/locations"},"phones":[{"id":1579,"department":null,"extension":null,"number":"650
+        780-7313","number_type":"voice","vanity_number":null},{"id":3244,"department":null,"extension":null,"number":"650
+        364-5399","number_type":"fax","vanity_number":null}]},{"id":1290,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.217107,37.4824744],"description":"Provides
+        academic, life skills and physical education programs and activities for boys
+        and girls age 6-18. Homework assistance and tutoring are available. Program
+        professionals can also refer youth to medical, educational and other community
+        professionals. Brochures are available to describe in detail what is offered
+        and important dates. They can be obtained at the front desk inside the clubhouse.
+        The club is located at 1109 Hilton Street, Redwood City. School year: Monday,
+        Tuesday, Wednesday, Friday, 2:30-6:30; Thursday, 1:30-6:30. Summer: Monday-Friday,
+        7-6. Teens: Monday-Thursday, 2:30-8; Friday, 2:30-10.","kind":"Human Services","latitude":37.4824744,"longitude":-122.217107,"name":"Mervin
+        G. Morris Branch","short_desc":"Provides academic, life skills and physical
+        education programs and activities for children and teens age 6-18.","slug":"mervin-g-morris-branch","updated_at":"2014-11-25T17:22:14.899-08:00","website":"http://www.bgcp.org","url":"https://api-staging.smc-connect.org/locations/mervin-g-morris-branch","address":{"id":1032,"address_1":"1109
+        Hilton Street","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1272,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Boys
+        and Girls Club of the Peninsula","website":null,"slug":"boys-and-girls-club-of-the-peninsula","url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula","locations_url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula/locations"},"phones":[{"id":1704,"department":null,"extension":null,"number":"650
+        587-9370","number_type":"voice","vanity_number":null},{"id":3296,"department":null,"extension":null,"number":"650
+        364-1618","number_type":"fax","vanity_number":null}]},{"id":647,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.7741434,36.9626569],"description":"A
+        work ethic program with a dual mission: the employment and development of
+        young people and the conservation and enhancement of the state''s natural
+        resources. To carry out the mission, the CCC has established seven residential
+        centers throughout the state, as well as more than 30 non-residential satellite
+        locations.","kind":"Human Services","latitude":36.9626569,"longitude":-121.7741434,"name":"California
+        Conservation Corps (CCC)","short_desc":"A work ethic program to train and
+        develop young people and to conserve and enhance natural resources.","slug":"california-conservation-corps-ccc-757-green-valley-road","updated_at":"2014-11-25T17:22:05.772-08:00","website":"http://ccc.ca.gov","url":"https://api-staging.smc-connect.org/locations/california-conservation-corps-ccc-757-green-valley-road","address":{"id":547,"address_1":"757
+        Green Valley Road","address_2":null,"city":"Watsonville","state_province":"CA","postal_code":"95076"},"organization":{"id":77,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"California
+        Conservation Corps (CCC)","website":null,"slug":"california-conservation-corps-ccc","url":"https://api-staging.smc-connect.org/organizations/california-conservation-corps-ccc","locations_url":"https://api-staging.smc-connect.org/organizations/california-conservation-corps-ccc/locations"},"phones":[{"id":882,"department":null,"extension":"208","number":"831
+        768-0150","number_type":"voice","vanity_number":null},{"id":883,"department":null,"extension":null,"number":"800-952-5627","number_type":"voice","vanity_number":"800-952-JOBS"},{"id":2917,"department":null,"extension":null,"number":"877
+        568-8939","number_type":"fax","vanity_number":null}]},{"id":876,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.0987921,37.4223213],"description":"Graduated
+        choir levels for singers age 4 through high school. Rehearsals are held in
+        Los Altos. Membership is non-competitive with auditions or evaluations in
+        Januray, June and August.","kind":"Other","latitude":37.4223213,"longitude":-122.0987921,"name":"Cantabile
+        Youth Singers","short_desc":"A chorus for singers in first grade through high
+        school.","slug":"cantabile-youth-singers-953-industrial-avenue-suite-122","updated_at":"2014-11-25T17:22:08.272-08:00","website":"http://www.cantabile.org","url":"https://api-staging.smc-connect.org/locations/cantabile-youth-singers-953-industrial-avenue-suite-122","address":{"id":704,"address_1":"953
+        Industrial Avenue, Suite 122","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":734,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Cantabile
+        Youth Singers","website":null,"slug":"cantabile-youth-singers","url":"https://api-staging.smc-connect.org/organizations/cantabile-youth-singers","locations_url":"https://api-staging.smc-connect.org/organizations/cantabile-youth-singers/locations"},"phones":[{"id":1160,"department":null,"extension":null,"number":"650
+        424-1410","number_type":"voice","vanity_number":null},{"id":3037,"department":null,"extension":null,"number":"650
+        424-1430","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:34:48 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=clinic&location=&org_name=
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=clinic&location=&org_name=
     body:
       encoding: US-ASCII
       string: ''
@@ -90,47 +416,629 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"40e52b15be63d1dd4056099d987ec2c8"
+      - W/"42a640e9652c09e2dbff125274f89b24"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=clinic&org_name=&page=2>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=clinic&org_name=&page=2>;
+      - <https://api-staging.smc-connect.org/search?keyword=clinic&org_name=&page=4>;
+        rel="last", <https://api-staging.smc-connect.org/search?keyword=clinic&org_name=&page=2>;
         rel="next"
       X-Total-Count:
-      - '2'
+      - '108'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:19:59 GMT
+      - Wed, 08 Mar 2023 04:34:49 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - e3829614-4852-4fad-8236-4be72d26755b
+      - 5871c6df-d4ba-4b33-ab04-656fdd5fe220
       X-Runtime:
-      - '0.025268'
-      X-Rack-Cache:
-      - pass
+      - '0.059660'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":19,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.2931236,37.5326941],"description":"Provides
-        free medical and dental care to those in need. Offers basic medical care for
-        adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
-        Free Medical Clinic","short_desc":"Provides free medical and dental care to
-        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2019-03-17T10:23:14.173-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","address":{"id":19,"address_1":"19
-        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":5,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Since
-        1974, Samaritan House has been serving low-income families and individuals
-        in San Mateo County. Our services are designed to meet the immediate and basic
-        needs of our clients for food, clothing, shelter, health care, worker resources,
-        and counseling services.","email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
-        House","website":null,"slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house/locations"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
-        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
-        578-0440","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:19:59 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":1622,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.180129,37.4343609],"description":"Assists
+        persons needing medical care to determine the appropriate clinic and set up
+        an appointment. Many clinics require referral from another doctor. These include
+        (but are not limited to) allergy, cardiology, chest, gastrointestinal, genetic
+        counseling, neurology, oncology, orthopedic, sleep disorders and diagnostic.
+        Persons not having a personal physician can be examined in the general medical
+        clinic and are directed to a specialty clinic if appropriate. Specialty clinics
+        include dermatology, eye, internal medicine and psychiatric outpatient, among
+        others.","kind":"Human Services","latitude":37.4343609,"longitude":-122.180129,"name":"Stanford
+        Hospital and Clinics., Clinic Information","short_desc":"Assists persons needing
+        medical care to determine the appropriate clinic and set up an appointment.","slug":"stanford-hospital-and-clinics-clinic-information","updated_at":"2014-11-25T17:22:21.824-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/stanford-hospital-and-clinics-clinic-information","address":{"id":1355,"address_1":"300
+        Pasteur Drive","address_2":null,"city":"Stanford","state_province":"CA","postal_code":"94305"},"organization":{"id":1334,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Stanford
+        University Medical Center","website":null,"slug":"stanford-university-medical-center","url":"https://api-staging.smc-connect.org/organizations/stanford-university-medical-center","locations_url":"https://api-staging.smc-connect.org/organizations/stanford-university-medical-center/locations"},"phones":[{"id":2335,"department":"24
+        hours daily","extension":null,"number":"800 756-9000","number_type":"voice","vanity_number":null},{"id":2336,"department":null,"extension":null,"number":"650-497-8000","number_type":"voice","vanity_number":null},{"id":2337,"department":null,"extension":null,"number":"800
+        756-9000","number_type":"voice","vanity_number":null},{"id":2338,"department":null,"extension":null,"number":"650
+        497-8000","number_type":"voice","vanity_number":null},{"id":2339,"department":"Advice
+        Nurse","extension":null,"number":"650 497-8820","number_type":"voice","vanity_number":null},{"id":2340,"department":"Referral
+        Center","extension":null,"number":"800 756-9000","number_type":"voice","vanity_number":null},{"id":2341,"department":null,"extension":null,"number":"650-326-4976","number_type":"tty","vanity_number":null},{"id":3530,"department":null,"extension":null,"number":"650
+        320-9443","number_type":"fax","vanity_number":null}]},{"id":512,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.16023,37.466287],"description":"An
+        acute care clinic serving adult patients who lack medical insurance. Provides
+        basic primary health care, free medication, referrals, health screenings and
+        physicals. The clinic is staffed by volunteers and open every Sunday from
+        10 am to 2 pm at the Veterans Affairs Palo Alto Health Care System in Menlo
+        Park, 795 Willow Road. The clinic is designed to provide services to low-income,
+        uninsured and homeless people in Palo Alto and surrounding areas. Specialty
+        services, including cardiology, dermatology and opthalmology, are offered
+        approximately once per month on a referral basis. The clinic is first-come,
+        first-served basis until capacity is reached, so patients are encouraged to
+        arrive early.","kind":"Human Services","latitude":37.466287,"longitude":-122.16023,"name":"Arbor
+        Free Clinic","short_desc":"Offers free health care, referrals and medication
+        to low-income and homeless people in the mid-Peninsula area.","slug":"arbor-free-clinic","updated_at":"2014-11-25T17:15:14.584-08:00","website":"http://arbor.stanford.edu","url":"https://api-staging.smc-connect.org/locations/arbor-free-clinic","address":{"id":425,"address_1":"795
+        Willow Road","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":512,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Arbor
+        Free Clinic","website":null,"slug":"arbor-free-clinic","url":"https://api-staging.smc-connect.org/organizations/arbor-free-clinic","locations_url":"https://api-staging.smc-connect.org/organizations/arbor-free-clinic/locations"},"phones":[{"id":670,"department":null,"extension":"22222","number":"650
+        493-5000","number_type":"voice","vanity_number":null},{"id":671,"department":"Voicemail","extension":null,"number":"650
+        724-1332","number_type":"voice","vanity_number":null}]},{"id":1479,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"The
+        Mobile Clinic provides public health and preventive health services such as
+        blood pressure and blood sugar checks; and health counseling and referrals.
+        The clinic also provides, at a minimal cost, adult and pediatric immunizations,
+        TB testing, treatment for minor illness/injury and initial primary care intervention.
+        The Mobile Clinic has sites in South San Francisco, San Bruno, San Mateo and
+        Redwood City. To find out when the clinic is scheduled for a particular area,
+        call 650-573-2786 or go to the Public Health Web site to see the schedule.","kind":"Human
+        Services","latitude":null,"longitude":null,"name":"Community Health., Mobile
+        Clinic","short_desc":"Brings health care to the more remote areas and underserved
+        populations in the county.","slug":"community-health-mobile-clinic","updated_at":"2014-11-25T17:22:19.075-08:00","website":"http://smchealth.org","url":"https://api-staging.smc-connect.org/locations/community-health-mobile-clinic","address":null,"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2060,"department":null,"extension":null,"number":"650
+        573-2786","number_type":"voice","vanity_number":null},{"id":3430,"department":null,"extension":null,"number":"650
+        573-3712","number_type":"fax","vanity_number":null}]},{"id":1472,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4740805,37.6911172],"description":"Offers
+        general family medical services for San Mateo County residents including non-emergency
+        urgent care. Located in the Mike Nevin Health Center Building at 380 - 90th
+        Street, Daly City. Services include well baby clinic, immunization, HIV testing
+        and counseling, AIDS clinic, adult primary care, senior care services, tuberculosis
+        clinic, and nutrition and family planning services. Podiatry clinic is also
+        provided. Women, Infants and Children Program (WIC) and mental health services
+        are also located at this site. Dental services, including both prevention
+        and treatment, are available for children age 18 or under Monday through Friday,
+        8:30 to 5. Adult dental care is provided on an emergency basis only. Formerly
+        known as the North County Community Health Center.","kind":"Human Services","latitude":37.6911172,"longitude":-122.4740805,"name":"San
+        Mateo Medical Center., Daly City Clinic","short_desc":"Outpatient clinic offering
+        general family medical services in the northern part of the county.","slug":"san-mateo-medical-center-daly-city-clinic","updated_at":"2014-11-25T17:22:18.788-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/san-mateo-medical-center-daly-city-clinic","address":{"id":1212,"address_1":"380
+        - 90th Street","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2050,"department":null,"extension":null,"number":"650
+        301-8600","number_type":"voice","vanity_number":null},{"id":3422,"department":null,"extension":null,"number":"650
+        301-8626","number_type":"fax","vanity_number":null}]},{"id":1390,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2931271,37.5326926],"description":"Provides
+        free primary and specialty medical and dental services to uninsured, low-income
+        residents. Who is Treated? Patients of our clinics are the working poor. They
+        tend to earn just enough income to be ineligible for Medi-Cal coverage, yet
+        do not receive health insurance through their employers and cannot afford
+        to pay for “out-of-pocket” health insurance. Often these residents are forced
+        to seek treatment at local emergency rooms and become saddled with medical
+        bills that they are unable to pay. Samaritan House’s Free Medical Clinics
+        fill this gap in healthcare access for the uninsured and save emergency room
+        resources for emergencies. Professional Medical \u0026 Dental Volunteers Thanks
+        to its innovative volunteer-based model of service, Samaritan House’s clinics
+        are able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.5326926,"longitude":-122.2931271,"name":"San
+        Mateo Free Medical Clinic","short_desc":"Provides free medical and dental
+        care to those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-11-25T17:22:17.654-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-free-medical-clinic","address":{"id":1130,"address_1":"19
+        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":1904,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":3365,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}]},{"id":1389,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.207057,37.468678],"description":"Primary
+        and specialty medical and dental services to uninsured, low-income residents.
+        Who is Treated? Patients of our clinics are the working poor. They tend to
+        earn just enough income to be ineligible for Medi-Cal coverage, yet do not
+        receive health insurance through their employers and cannot afford to pay
+        for “out-of-pocket” health insurance. Often these residents are forced to
+        seek treatment at local emergency rooms and become saddled with medical bills
+        that they are unable to pay. Samaritan House’s Free Medical Clinics fill this
+        gap in healthcare access for the uninsured and save emergency room resources
+        for emergencies. Professional Medical \u0026 Dental Volunteers Thanks to its
+        innovative volunteer-based model of service, Samaritan House’s clinics are
+        able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.468678,"longitude":-122.207057,"name":"Redwood
+        City Free Medical Clinic","short_desc":"Provides free medical care to those
+        in need.","slug":"redwood-city-free-medical-clinic","updated_at":"2014-11-25T17:22:17.626-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/redwood-city-free-medical-clinic","address":{"id":1129,"address_1":"114
+        Fifth Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":1903,"department":null,"extension":null,"number":"650
+        839-1447","number_type":"voice","vanity_number":null},{"id":3364,"department":null,"extension":null,"number":"650
+        839-1457","number_type":"fax","vanity_number":null}]},{"id":529,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.0324001,37.39781139999999],"description":"The
+        Institute''s Movement Disorder Clinic provides comprehensive neurological
+        and neurosurgical evaluations, and ongoing treatment for persons with Parkinson''s
+        disease (PD) and other movement disorders. Physical and speech therapy is
+        available on site. Referrals are given for occupational therapy, psychological
+        services and a variety of social services as appropriate. The Institute also
+        carries out extensive clinical and basic research programs to identify the
+        cause of Parkinson''s disease and ways to prevent its progression.","kind":"Human
+        Services","latitude":37.39781139999999,"longitude":-122.0324001,"name":"Parkinson''s
+        Institute and Clinical Center","short_desc":"Provides comprehensive evaluation,
+        treatment and therapy for patients with Parkinson''s disease.","slug":"parkinson-s-institute-and-clinical-center","updated_at":"2014-11-25T17:22:03.273-08:00","website":"http://www.thepi.org","url":"https://api-staging.smc-connect.org/locations/parkinson-s-institute-and-clinical-center","address":{"id":441,"address_1":"675
+        Almanor Avenue","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94085"},"organization":{"id":529,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Parkinson''s
+        Institute and Clinical Center","website":null,"slug":"parkinson-s-institute-and-clinical-center","url":"https://api-staging.smc-connect.org/organizations/parkinson-s-institute-and-clinical-center","locations_url":"https://api-staging.smc-connect.org/organizations/parkinson-s-institute-and-clinical-center/locations"},"phones":[{"id":689,"department":null,"extension":null,"number":"408
+        734-2800","number_type":"voice","vanity_number":null},{"id":690,"department":null,"extension":null,"number":"800
+        786-2958","number_type":"voice","vanity_number":null},{"id":2821,"department":null,"extension":null,"number":"408
+        734-9208","number_type":"fax","vanity_number":null}]},{"id":1186,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1021407,37.3956294],"description":"Provides
+        psychological testing and evaluation, individual, adult, adolescent and child
+        therapy as well as couple and group therapy. Also offers a sexual and gender
+        indentities clinic, shyness clinic, and resources for stress. Provides neuropsychological
+        and psychological testing and evaluation. Services are provided by advanced
+        graduate students who are under the supervision of licensed psychologists.","kind":"Human
+        Services","latitude":37.3956294,"longitude":-122.1021407,"name":"Gronowski
+        Psychology Clinic","short_desc":"Provides psychological testing and evaluation,
+        individual, adult, adolescent and child therapy as well as couple and group
+        therapy.","slug":"gronowski-psychology-clinic","updated_at":"2014-11-25T17:22:12.795-08:00","website":"http://www.mentalhealthclinic.org","url":"https://api-staging.smc-connect.org/locations/gronowski-psychology-clinic","address":{"id":946,"address_1":"5150
+        El Camino Real, Suite C-22","address_2":null,"city":"Los Altos","state_province":"CA","postal_code":"94022"},"organization":{"id":1186,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pacific
+        Graduate School of Psychology","website":null,"slug":"pacific-graduate-school-of-psychology","url":"https://api-staging.smc-connect.org/organizations/pacific-graduate-school-of-psychology","locations_url":"https://api-staging.smc-connect.org/organizations/pacific-graduate-school-of-psychology/locations"},"phones":[{"id":1556,"department":null,"extension":null,"number":"650
+        961-9300","number_type":"voice","vanity_number":null},{"id":3230,"department":null,"extension":null,"number":"650
+        961-9310","number_type":"fax","vanity_number":null}]},{"id":172,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.180129,37.4343609],"description":"Offers
+        a range of services from basic primary care to the most specialized tertiary
+        services on an ambulatory, outpatient basis and an inpatient basis. Community
+        as well as faculty physicians are on the medical staff. All patients must
+        be admitted by a member of the medical staff. The emergency room is open 24
+        hours a day. An emergency services helicopter, Life Flight, provides regional
+        emergency air transportation. Spanish interpreters are available 24 hours
+        a day. Other languages are provided through the AT\u0026T Language Line. Other
+        support services for patients include patient representation, social services
+        work, chaplaincy, arts at bedside, massage therapy and a music program. The
+        Health Library (described separately) provides health and disease information
+        free of charge. Formerly known as Stanford University Medical Center, Stanford
+        Hospitals and Clinics.","kind":"Human Services","latitude":37.4343609,"longitude":-122.180129,"name":"Stanford
+        Hospital and Clinics","short_desc":"Administers the various hospitals and
+        programs that comprise the Stanford Hospital and Clinics.","slug":"stanford-hospital-and-clinics","updated_at":"2014-11-25T17:15:06.273-08:00","website":"http://www.stanfordhospital.com","url":"https://api-staging.smc-connect.org/locations/stanford-hospital-and-clinics","address":{"id":164,"address_1":"300
+        Pasteur Drive","address_2":null,"city":"Stanford","state_province":"CA","postal_code":"94305"},"organization":{"id":172,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Stanford
+        Hospital and Clinics","website":null,"slug":"stanford-hospital-and-clinics","url":"https://api-staging.smc-connect.org/organizations/stanford-hospital-and-clinics","locations_url":"https://api-staging.smc-connect.org/organizations/stanford-hospital-and-clinics/locations"},"phones":[{"id":221,"department":"Hospital","extension":null,"number":"650
+        723-4000","number_type":"voice","vanity_number":null}]},{"id":372,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4484992,37.7699787],"description":"Provides
+        general medical treatment for a variety of medical problems including AIDS,
+        sexually transmitted diseases, hepatitis, anemia and upper respiratory problems.
+        Wellness services and case management services are also provided. Social services
+        and referrals to other medical services are given when appropriate. A separate
+        clinic for substance abuse problems as well as acupuncture, chiropractic,
+        primary care and women''s health is located at 1735 Mission Street, San Francisco
+        94103 (Telephone: 415-746-1940; Fax: 415-746-1941).","kind":"Human Services","latitude":37.7699787,"longitude":-122.4484992,"name":"Haight
+        Ashbury Free Medical Clinic","short_desc":"Free health screening and medical
+        treatment.","slug":"haight-ashbury-free-medical-clinic","updated_at":"2014-11-25T17:22:00.900-08:00","website":"http://www.hafci.org","url":"https://api-staging.smc-connect.org/locations/haight-ashbury-free-medical-clinic","address":{"id":315,"address_1":"558
+        Clayton","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94117"},"organization":{"id":372,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Haight
+        Ashbury Free Medical Clinic","website":null,"slug":"haight-ashbury-free-medical-clinic","url":"https://api-staging.smc-connect.org/organizations/haight-ashbury-free-medical-clinic","locations_url":"https://api-staging.smc-connect.org/organizations/haight-ashbury-free-medical-clinic/locations"},"phones":[{"id":499,"department":null,"extension":null,"number":"415
+        746-1950","number_type":"voice","vanity_number":null},{"id":2728,"department":null,"extension":null,"number":"415
+        431-9909","number_type":"fax","vanity_number":null}]},{"id":78,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1774341,37.4355353],"description":"The
+        clinic is composed of two primary care groups. Stanford Family Medicine physicians
+        specialize in health care for the entire family, while Stanford Internal Medicine
+        treats adults age 18 or over. Laboratory and x-ray facilities are offered
+        on site.","kind":"Human Services","latitude":37.4355353,"longitude":-122.1774341,"name":"Stanford
+        University Clinic","short_desc":"Provides a full range of medical care for
+        all ages.","slug":"stanford-university-clinic","updated_at":"2014-11-25T17:15:03.878-08:00","website":"http://stanfordhealthcare.org/search-results.clinics.html","url":"https://api-staging.smc-connect.org/locations/stanford-university-clinic","address":{"id":75,"address_1":"900
+        Blake Wilbur Drive","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94304"},"organization":{"id":78,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Stanford
+        University Clinic","website":null,"slug":"stanford-university-clinic","url":"https://api-staging.smc-connect.org/organizations/stanford-university-clinic","locations_url":"https://api-staging.smc-connect.org/organizations/stanford-university-clinic/locations"},"phones":[{"id":103,"department":"Stanford
+        Family Medicine","extension":null,"number":"650 723-6963","number_type":"voice","vanity_number":null},{"id":104,"department":"Stanford
+        Internal Medicine","extension":null,"number":"650 723-6028","number_type":"voice","vanity_number":null}]},{"id":1206,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4327869,37.46478750000001],"description":"Urgent
+        care health services for uninsured Coastside resident. The clinic is open
+        every Wednesday, 5-7 pm, and clients are seen on a first-come, first-served
+        basis. Services include treatment of basic illness, infections, minor injuries
+        and sprains, rashes, sore throats and fever by licensed physicians and nurses.
+        Some medications are provided free of charge.","kind":"Human Services","latitude":37.46478750000001,"longitude":-122.4327869,"name":"Coastside
+        Clinic","short_desc":"Free medical care for uninsured Coastside residents.","slug":"coastside-clinic","updated_at":"2016-09-22T10:59:11.296-07:00","website":"http://www.rotacarebayarea.org","url":"https://api-staging.smc-connect.org/locations/coastside-clinic","address":{"id":964,"address_1":"225
+        South Cabrillo Highway, Suite 100-A","address_2":null,"city":"Half Moon Bay","state_province":"CA","postal_code":"94019"},"organization":{"id":1206,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Rotacare
+        Bay Area, Inc","website":null,"slug":"rotacare-bay-area-inc-c9fac365-a9a9-4aa4-882b-e39fa819e48b","url":"https://api-staging.smc-connect.org/organizations/rotacare-bay-area-inc-c9fac365-a9a9-4aa4-882b-e39fa819e48b","locations_url":"https://api-staging.smc-connect.org/organizations/rotacare-bay-area-inc-c9fac365-a9a9-4aa4-882b-e39fa819e48b/locations"},"phones":[{"id":1582,"department":"24-hour
+        recorded message","extension":null,"number":"650 573-3774","number_type":"voice","vanity_number":null}]},{"id":1478,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1675528,37.4783966],"description":"Community
+        health clinic for residents of the southern part of the county. Offers family
+        practice, mental health counseling and case management, diabetes education
+        and family planning.","kind":"Human Services","latitude":37.4783966,"longitude":-122.1675528,"name":"San
+        Mateo Medical Center., Belle Haven Community Health Clinic","short_desc":"Offers
+        family practice, mental health counseling and case management, diabetes education
+        and family planning in south county.","slug":"san-mateo-medical-center-belle-haven-community-health-clinic","updated_at":"2014-11-25T17:22:19.042-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/san-mateo-medical-center-belle-haven-community-health-clinic","address":{"id":1218,"address_1":"100
+        Terminal Avenue","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2059,"department":null,"extension":null,"number":"650
+        321-0980","number_type":"voice","vanity_number":null},{"id":3429,"department":null,"extension":null,"number":"650
+        321-0988","number_type":"fax","vanity_number":null}]},{"id":1619,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2086579,37.5021585],"description":"Provides
+        evaluation and treatment of sleep disorders A specialized clinic for the evaluation
+        and treatment of sleep disorders in adults and children. Disorders evaluated
+        include insomnia, sleep apnea, narcolepsy, sleep walking, night terrors and
+        other unusual behaviors at night. Persons may call directly for information
+        about the referral procedure or to receive a brochure about the clinic. Otherwise,
+        clinic staff will contact the person after receiving the doctor''s referral
+        letter and will set up an appointment for initial consultation. There is usually
+        a two week wait for this appointment. Previously known as Stanford Health
+        Services. Sleep Disorders Clinic.","kind":"Human Services","latitude":37.5021585,"longitude":-122.2086579,"name":"Sleep
+        Medicine Center","short_desc":null,"slug":"sleep-medicine-center","updated_at":"2014-11-25T17:22:21.778-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/sleep-medicine-center","address":{"id":1352,"address_1":"450
+        Broadway Street, Pavilion B, Second Floor","address_2":null,"city":"Redwood
+        City","state_province":"CA","postal_code":"94063"},"organization":{"id":172,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Stanford
+        Hospital and Clinics","website":null,"slug":"stanford-hospital-and-clinics","url":"https://api-staging.smc-connect.org/organizations/stanford-hospital-and-clinics","locations_url":"https://api-staging.smc-connect.org/organizations/stanford-hospital-and-clinics/locations"},"phones":[{"id":2326,"department":null,"extension":null,"number":"650
+        723-6601","number_type":"voice","vanity_number":null},{"id":3528,"department":null,"extension":null,"number":"650
+        721-3448","number_type":"fax","vanity_number":null}]},{"id":1471,"active":true,"admin_emails":null,"alternate_name":"Edison
+        Clinic ","coordinates":[-122.300521,37.5314276],"description":"Works to prevent
+        HIV infection in the community at large and cares for individuals and families
+        affected by HIV/AIDS. Services are delivered throughout San Mateo County from
+        sites in Daly City, East Palo Alto, Menlo Park and San Mateo as well as via
+        a mobile van. Also coordinates HIV testing at sites throughout the county
+        and through the mobile van. Maintains a full-service HIV specialty clinic
+        offering medical services, assistance with obtaining benefits and other services,
+        psychiatric services, substance abuse counseling. Dental services are provided
+        to clients on a referral basis by an HIV dental specialist. Comprehensive
+        social services, including support groups, are available as well as housing
+        assistance and groceries by referral. Administers ADAP (AIDS Drug Assistance
+        Program) to assist with medication expenses. Provides a full range of on-site
+        services such as social services, case management, health education and other
+        services for HIV/AIDS patients in the county. Partner Services assists clients
+        in notifying, anonymously if desired, sex and/or needle-sharing partners of
+        potential exposure to HIV or another STD. Provides support and counseling
+        to clients who wish to inform partners themselves, as well as confidential
+        testing and information for referred partners. (650-573-3401) The drop-in
+        STD clinic provides screening and treatment, prevention education and counseling
+        of sexually transmitted diseases at low-cost. No appointment necessary. Clients
+        are seen on a first-come, first-served basis. The STD Clinic is located in
+        the Edison Clinic and is open Tuesday and Thursday evenings from 4-7 pm. (650-573-2385).","kind":"Human
+        Services","latitude":37.5314276,"longitude":-122.300521,"name":"Community
+        Health., AIDS Program Prevention","short_desc":"Provides educational services,
+        outreach, clinical services and a drop-in center for persons with AIDS and
+        HIV.","slug":"community-health-aids-program-prevention","updated_at":"2017-07-05T10:51:23.865-07:00","website":"http://www.smchealth.org","url":"https://api-staging.smc-connect.org/locations/community-health-aids-program-prevention","address":{"id":1211,"address_1":"225
+        - 37th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2047,"department":"HIV
+        Testing","extension":null,"number":"650 619-9125","number_type":"voice","vanity_number":null},{"id":2048,"department":"Clinic
+        Services","extension":null,"number":"650 573-2385","number_type":"voice","vanity_number":null},{"id":2049,"department":"Administration","extension":null,"number":"650
+        573-2031","number_type":"voice","vanity_number":null},{"id":3421,"department":null,"extension":null,"number":"650
+        573-2875","number_type":"fax","vanity_number":null}]},{"id":1335,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1270182,37.360936],"description":"Senior
+        dental hygiene students perform the following procedures under professional
+        supervision: oral prophylaxis (cleaning), disease control instruction, fluoride
+        applications and dental x-rays. Sealants are also performed. Can treat adults
+        as well as children age 4 or over. Children age 4-16 must be accompanied by
+        parent or guardian on first visit. Patients who want dental x-rays only should
+        contact their dentist for authorization and a prescription for the type of
+        x-rays to be taken. All groups are treated including AIDS/HIV patients, homeless
+        and disabled. Clinic times vary from quarter to quarter.","kind":"Human Services","latitude":37.360936,"longitude":-122.1270182,"name":"Foothill
+        College., Dental Hygiene Clinic","short_desc":"Provides dental services for
+        low-income people.","slug":"foothill-college-dental-hygiene-clinic","updated_at":"2014-12-04T11:10:51.150-08:00","website":"http://www.foothill.fhda.edu/bio/programs/dentalh","url":"https://api-staging.smc-connect.org/locations/foothill-college-dental-hygiene-clinic","address":{"id":1075,"address_1":"12345
+        El Monte Road, Room 5312","address_2":null,"city":"Los Altos Hills","state_province":"CA","postal_code":"94022"},"organization":{"id":1288,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Foothill-De
+        Anza Community College District","website":null,"slug":"foothill-de-anza-community-college-district","url":"https://api-staging.smc-connect.org/organizations/foothill-de-anza-community-college-district","locations_url":"https://api-staging.smc-connect.org/organizations/foothill-de-anza-community-college-district/locations"},"phones":[{"id":1778,"department":null,"extension":null,"number":"650
+        949-7335","number_type":"voice","vanity_number":null},{"id":3322,"department":null,"extension":null,"number":"650
+        947-9788","number_type":"fax","vanity_number":null}]},{"id":498,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2882215,37.5308994],"description":"Samaritan
+        House is a core service center offering bilingual community workers who provide
+        case management, emergency services, information and referral, assistance
+        in filling out forms and help with interpretation and translation needs (Spanish).
+        Services include: -First and last month rental assistance and initial security
+        deposits for those who meet the financial criteria -Adult education classes,
+        including budgeting, financial literacy classes, English as a Second Language
+        (ESL), and Diabetes classes (English and Spanish) -Vouchers for groceries
+        and kids clothing/shoes The Samaritan House Kitchen serves a hot, nutritious
+        meal Monday through Friday evenings, 4:30-6:00 pm, at the Masonic Hall, located
+        at 100 North Ellsworth Avenue (at Tilton Avenue corner) in San Mateo. This
+        program is intended to assist families or individuals in San Mateo County
+        who are experiencing financial difficulties. \"To-go\" food boxes are available,
+        and there is a mobile meals program for house-bound and elderly individuals.
+        Samaritan House Free Clinics offer primary and specialty health care, including
+        check-ups, prescriptions and referrals. Service (by appointment only) is available
+        weekdays; some evening appointments may also be available. Safe Harbor Shelter
+        is a 90-bed facility serving male and female San Mateo County adults (over
+        18). Safe Harbor offers meals, hygiene kits, comprehensive case management,
+        nightly support groups and other services. The Worker Resource Center (650-344-1651)
+        provides a link for employers and day laborers with construction, painting,
+        hauling, moving and gardening skills. The Center is located at 400 East Fifth
+        Avenue, San Mateo, and is open Monday-Friday, 7 am-2 pm; Saturday, 7 am-1
+        pm; and Sunday, 7 am-12 noon. Samaritan House is part of the core network
+        of community-service agencies in San Mateo County.","kind":"Human Services","latitude":37.5308994,"longitude":-122.2882215,"name":"Samaritan
+        House","short_desc":"A core social service agency assisting the communities
+        of central San Mateo County.","slug":"samaritan-house","updated_at":"2017-07-24T11:54:06.167-07:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/samaritan-house","address":{"id":415,"address_1":"4031
+        Pacific Blvd.","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":648,"department":"Client
+        Services","extension":null,"number":"650 347-3648","number_type":"voice","vanity_number":null},{"id":2799,"department":"Client
+        Services","extension":null,"number":"650 347-6066","number_type":"fax","vanity_number":null},{"id":2800,"department":"Administrative
+        Offices","extension":null,"number":"650 341-0526","number_type":"fax","vanity_number":null}]},{"id":1201,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.3785319,37.25627739999999],"description":"Puente
+        de la Costa Sur (Puente) is the only community resource center for the South
+        Coast of San Mateo County. Puente advocates for our communities and leverages
+        resources that foster economic prosperity and security, and promote individual
+        and community health and wellness. We support local leaders and work together
+        to create solutions for the challenges facing our diverse population. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, youth leadership development
+        and employment, and community engagement and action. Puente also works with
+        farmers, ranchers, and nursery owners to promote a sustainable agricultural
+        economy on the south coast of northern California. Permanent programs include:
+        a mobile pantry; a Second Harvest Food Bank distribution site; children''s
+        story times; and La Sala Community Living Room. Also offers a program to address
+        maternal depression. Also offers ESL classes, individual tutoring in ESL,
+        GED and citizenship classes. Periodically offers an Adult Literacy Program
+        for Spanish speakers in which students learn to read and write in Spanish
+        or complete their elementary, middle and high school within the Mexican education
+        system. Call for specific days and times for each of these programs. Also
+        offers, by appointment, WIC (Women, Infants and Children) services, insurance
+        enrollment, food stamps, CalWorks assistance, tax preparation and notary services.
+        Deposit and rental assistance subject to availability of funds. The site is
+        part of the core network of community service agencies of San Mateo County.","kind":"Human
+        Services","latitude":37.25627739999999,"longitude":-122.3785319,"name":"Puente","short_desc":"Provides
+        a single point of entry for men, women and children to have access to safety
+        net services, health and wellness services, leadership development, and community
+        engagement and action.","slug":"puente","updated_at":"2016-01-04T16:04:23.091-08:00","website":"http://www.mypuente.org","url":"https://api-staging.smc-connect.org/locations/puente","address":{"id":959,"address_1":"620
+        North Street","address_2":null,"city":"Pescadero","state_province":"CA","postal_code":"94060"},"organization":{"id":1201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Puente
+        de la Costa Sur","website":null,"slug":"puente-de-la-costa-sur","url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur","locations_url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur/locations"},"phones":[{"id":1575,"department":null,"extension":null,"number":"650
+        879-1691","number_type":"voice","vanity_number":null},{"id":3240,"department":null,"extension":null,"number":"650
+        879-0973","number_type":"fax","vanity_number":null}]},{"id":1453,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3208839,37.5454495],"description":"Provides
+        information and referral to medical and dental providers for check-ups and
+        follow-up care for Medi-Cal eligible persons age 20 or under. Persons age
+        18 or under from low-income families are also eligible for health examinations.
+        Assistance with scheduling appointments and transportation is provided. Check-ups
+        are available through private physicians, hospital outpatient clinics, community
+        clinics and public health clinics. The multidisciplinary staff collaborates
+        with a number of agencies to coordinate and enhance health services on behalf
+        of children. Outreach and advocacy are provided in such areas as childhood
+        lead poisoning prevention, immunization, asthma and the dental and nutritional
+        needs of children.","kind":"Human Services","latitude":37.5454495,"longitude":-122.3208839,"name":"Family
+        Health Services., Child Health Services., Child Health and Disability Prevention
+        Program (CHDP)","short_desc":"Provides referral to medical and dental providers
+        for Medi-Cal eligible children and adolescents.","slug":"family-health-services-child-health-services-child-health-and-disability-prevention-program-chdp","updated_at":"2014-11-25T17:22:18.529-08:00","website":"http://www.smchealth.org","url":"https://api-staging.smc-connect.org/locations/family-health-services-child-health-services-child-health-and-disability-prevention-program-chdp","address":{"id":1193,"address_1":"2000
+        Alameda de las Pulgas, Suite 200","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2009,"department":null,"extension":null,"number":"650
+        573-2877","number_type":"voice","vanity_number":null},{"id":3408,"department":null,"extension":null,"number":"650
+        573-2859","number_type":"fax","vanity_number":null}]},{"id":941,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.414601,37.76238499999999],"description":"Works
+        to decrease tuberculosis morbidity through training, technical assistance,
+        demonstration projects and enhanced program activities. One of four Regional
+        Tuberculosis Training and Medical Consultation Centers (RTMCC) funded by the
+        Division of Tuberculosis Elimination, Centers for Disease Control and Prevention.
+        The three other RTMCC sites are located in Newark, NJ; San Antonio, TX; and
+        Gainesville, FL. Offers training to medical and social service providers on
+        a variety of clinical and non-clinical topics, distance learning opportunities
+        and a \"Warmline\" for clinical consultation on medically difficult to manage
+        patients. The San Francisco Center is a collaborative effort among the San
+        Francisco Department of Public Health, the UCSF Division of Pulmonary and
+        Critical Care Medicine, and the Tuberculosis Control Branch, California State
+        Department of Health Services.","kind":"Human Services","latitude":37.76238499999999,"longitude":-122.414601,"name":"Francis
+        J. Curry National Tuberculosis Center","short_desc":"One of four centers in
+        the country working to decrease TB cases.","slug":"francis-j-curry-national-tuberculosis-center","updated_at":"2014-11-25T17:22:09.349-08:00","website":"http://www.nationaltbcenter.edu","url":"https://api-staging.smc-connect.org/locations/francis-j-curry-national-tuberculosis-center","address":{"id":755,"address_1":"3180
+        - 18th Street, Suite 101","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94110-2028"},"organization":{"id":941,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Francis
+        J. Curry National Tuberculosis Center","website":null,"slug":"francis-j-curry-national-tuberculosis-center","url":"https://api-staging.smc-connect.org/organizations/francis-j-curry-national-tuberculosis-center","locations_url":"https://api-staging.smc-connect.org/organizations/francis-j-curry-national-tuberculosis-center/locations"},"phones":[{"id":1239,"department":null,"extension":null,"number":"415
+        502-4600","number_type":"voice","vanity_number":null},{"id":3082,"department":null,"extension":null,"number":"415
+        502-4620","number_type":"fax","vanity_number":null}]},{"id":540,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.64077,37.117236],"description":"Provides
+        prevention, intervention, treatment, residential and housing services to the
+        communities of south Santa Clara County and San Benito County. Family and
+        Children Services provides individual, group, family and multi-family therapy
+        to children and families. Target populations include child abuse victims and
+        their families, at-risk youth, children experiencing trauma and juvenile probation
+        youth. School-based, clinic-based and community-based services are provided.
+        Psychiatric assessments and medication services are provided when necessary.
+        Parent education programs are provided to self-referred and court-referred
+        parents. The thirty-hour programs emphasize positive parenting, limit-setting,
+        effective discipline, parent-child communication and nutrition issues. Individual
+        and group support is available for participants. Individual workshops are
+        also available to community agencies, schools and churches. Rape Crisis provides
+        24-hour crisis intervention and advocacy services to victims of sexual assault,
+        their families and significant others. Trained volunteer advocates provide
+        essential services to the sexual assault survivor, including accompaniment
+        to the hospital, medical visits and through all legal and law enforcement
+        proceedings. Assault awareness programs are available to local schools, churches,
+        business and community groups. In-service trainings are provided to law enforcement,
+        legal and medical professions. Child Assault Prevention Program (CAP) and
+        Teen Assault Awareness (TAP) are prevention programs which teach children
+        and young people to recognize and deal effectively with potentially dangerous
+        or abusive situations. Workshops are offered to preschool, elementary, junior
+        and senior high school students, teachers and parents. Other programs directed
+        toward children include mental health counseling for elementary school-age
+        children to raise their self-esteem, learn effective communication skills
+        and enhance family relationships. Provides consultation with school administrators,
+        teachers and parents. The education program offers peer counseling and personal
+        development courses to junior and senior high school students to improve communication,
+        decision making and problem solving skills. Parent education and family relationship
+        classes are available to high school students. Specialized programs are also
+        offered to young parents and/or pregnant teenagers. Independent Living Skills
+        Program provides services to adolescents in group and foster homes with skills
+        needed for self-determined adult living. Services include career exploration,
+        vocation interest and aptitude assessment, educational plans, housing, daily
+        living skills and employment options. Low-cost transitional housing is available
+        for youth who are emancipating into independent living. Older Adult Services
+        provides in-home case management and mental health services for seniors experiencing
+        difficulty in daily functioning or who are having difficulty maintaining their
+        independent living situation from Morgan Hill, Gilroy, San Martin and south
+        San Jose. Supportive Housing Program provides low-cost housing, property management,
+        and maintenance for eligible seriously mentally ill adults. Transitional and
+        permanent supportive housing rental units are available in south county and
+        west San Jose for eligible clients. Family Advocate Program provides home-based
+        support, parenting and mentoring services to at-risk parents of newborns and
+        young children. The program provides long-term (one year or more) partnerships
+        between families and volunteer family. Advocates to build a strong foundation
+        for healthy families. Provides low-cost counseling for individuals, couples
+        and families who do not have Medi-Cal or private insurance and who do not
+        meet the medical necessity criteria for other clinical programs. Fees are
+        $25 per session or $10 per group. Juvenile Justice Programs provide case management,
+        crisis intervention, counseling and family support for youth involved in the
+        juvenile justice system. Domestic Violence Services provide a wide range of
+        services for battered women and their children including confidential shelter
+        stays, counseling, legal advocacy, emergency assistance and support groups.","kind":"Human
+        Services","latitude":37.117236,"longitude":-121.64077,"name":"Community Solutions
+        for Children, Families and Individuals, Inc.","short_desc":"Provides individual,
+        group, family, marriage counseling, 24-hour rape crisis child assault prevention
+        and in-home case management for seniors.","slug":"community-solutions-for-children-families-and-individuals-inc","updated_at":"2014-12-04T11:19:24.276-08:00","website":"http://www.communitysolutions.org","url":"https://api-staging.smc-connect.org/locations/community-solutions-for-children-families-and-individuals-inc","address":{"id":451,"address_1":"16264
+        Church Street, Suite 103","address_2":null,"city":"Morgan Hill","state_province":"CA","postal_code":"95037"},"organization":{"id":540,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Community
+        Solutions for Children, Families and Individuals, Inc.","website":null,"slug":"community-solutions-for-children-families-and-individuals-inc","url":"https://api-staging.smc-connect.org/organizations/community-solutions-for-children-families-and-individuals-inc","locations_url":"https://api-staging.smc-connect.org/organizations/community-solutions-for-children-families-and-individuals-inc/locations"},"phones":[{"id":709,"department":"Domestic
+        Violence and Sexual Assault Crisis Line 24 hours daily","extension":null,"number":"877
+        363-7238","number_type":"voice","vanity_number":null},{"id":710,"department":null,"extension":null,"number":"408
+        842-7138","number_type":"voice","vanity_number":null},{"id":711,"department":"Morgan
+        Hill","extension":null,"number":"408 779-2113","number_type":"voice","vanity_number":null},{"id":712,"department":"San
+        Jose","extension":null,"number":"408 225-9163","number_type":"voice","vanity_number":null},{"id":2833,"department":"Gilroy
+        and Morgan Hill","extension":null,"number":"408 778-9672","number_type":"fax","vanity_number":null},{"id":2834,"department":"San
+        Jose","extension":null,"number":"408 225-9243","number_type":"fax","vanity_number":null}]},{"id":1161,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4020736,37.7907516],"description":"Provides
+        information, advocacy, counseling and legal services on employment-related
+        issues to low-income individuals. Access to services is provided through Workers''
+        Rights Clinics which address the full range of employment issues including
+        unpaid wages, workplace discrimination, harassment, wrongful termination,
+        disability rights in the workplace, workplace injuries, unemployment compensation,
+        and family/medical leave. Clinics are located in San Francisco, Berkeley,
+        East San Jose, Fresno, and Orange County.","kind":"Human Services","latitude":37.7907516,"longitude":-122.4020736,"name":"Employment
+        Law Center","short_desc":"Legal representation for low-income persons with
+        employment problems.","slug":"employment-law-center","updated_at":"2014-12-04T11:17:20.943-08:00","website":"http://www.las-elc.org","url":"https://api-staging.smc-connect.org/locations/employment-law-center","address":{"id":927,"address_1":"180
+        Montgomery Street","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94104"},"organization":{"id":1161,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Legal
+        Aid Society of San Francisco","website":null,"slug":"legal-aid-society-of-san-francisco","url":"https://api-staging.smc-connect.org/organizations/legal-aid-society-of-san-francisco","locations_url":"https://api-staging.smc-connect.org/organizations/legal-aid-society-of-san-francisco/locations"},"phones":[{"id":1521,"department":null,"extension":null,"number":"415
+        864-8848","number_type":"voice","vanity_number":null},{"id":1522,"department":null,"extension":null,"number":"415
+        864-8208","number_type":"voice","vanity_number":null},{"id":3217,"department":null,"extension":null,"number":"415
+        864-8199","number_type":"fax","vanity_number":null}]},{"id":58,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.261743,37.50403],"description":"Dedicated
+        to enriching the lives of individuals and families by transforming challenges
+        into opportunities. Core values are reflected in the commitment to building
+        skills and enhancing strengths by collaborating with youth, adult and family
+        units as a whole to effect positive change. Provides a comprehensive array
+        of free or low-cost bilingual social services to residents of San Mateo County.
+        StarVista is also committed to an asset-based approach to youth development.
+        Many of the strongest youth programs are structured on the model of helping
+        youth develop assets that will make them well-adjusted, active participants
+        in their communities. Programs include a 24-hour crisis, alcohol and drug
+        support hotline, and parent resources warmline; services for homeless and
+        runaway youth; substance abuse assessment and treatment (outpatient and day
+        treatment); residential services; diversion counseling; services for children
+        age 5 or under who have witnessed family violence (Healthy Homes Program);
+        parenting education and school-based counseling on public and private elementary,
+        middle and high school campuses; family/child/adult therapy in a clinic setting.","kind":"Human
+        Services","latitude":37.50403,"longitude":-122.261743,"name":"StarVista","short_desc":"A
+        family and community-focused program that works with children, youth, adults,
+        and families.","slug":"starvista","updated_at":"2014-12-04T11:10:50.495-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/starvista","address":{"id":55,"address_1":"610
+        Elm Street, Suite 212","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":80,"department":null,"extension":null,"number":"650
+        591-9623","number_type":"voice","vanity_number":null}]},{"id":1252,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.449641,38.551933],"description":"Provides
+        a continuum of services for Alzheimer''s patients and their families. Emphasis
+        is placed on a comprehensive diagnostic evaluation by a team composed of a
+        neurologist, neuropsychologist, nurse and clinical social worker. Care planning
+        is discussed in detail. Patients are seen for the initial assessment at the
+        Center. Follow-up at periodic intervals may be made by telephone or office
+        visit. Each patient is reassessed annually, or more frequently as indicated.
+        Patients continue to see private physicians for primary care. Patients may
+        be referred by family, agency, or private physician. Selected patients and
+        their families may be invited to participate in research studies aimed at
+        improving the diagnosis of dementia and finding the cause of the disease.
+        Participation in research efforts is not required to obtain services. A support
+        group for family members and caregivers of persons with Alzheimer''s disease
+        or related problems is offered twice a month. Call for schedule and location.
+        Clinics are located in Martinez (150 Muir Road, Suite 127A) and Sacramento.","kind":"Human
+        Services","latitude":38.551933,"longitude":-121.449641,"name":"Alzheimer''s
+        Disease Center","short_desc":"Assessment, treatment, research, support groups
+        for Alzheimer''s patients and families.","slug":"alzheimer-s-disease-center","updated_at":"2014-11-25T17:22:14.433-08:00","website":"http://alzheimer.ucdavis.edu","url":"https://api-staging.smc-connect.org/locations/alzheimer-s-disease-center","address":{"id":1004,"address_1":"4860
+        Y Street, Suite 3900","address_2":null,"city":"Sacramento","state_province":"CA","postal_code":"95817"},"organization":{"id":1252,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"University
+        of California, Davis","website":null,"slug":"university-of-california-davis","url":"https://api-staging.smc-connect.org/organizations/university-of-california-davis","locations_url":"https://api-staging.smc-connect.org/organizations/university-of-california-davis/locations"},"phones":[{"id":1654,"department":null,"extension":null,"number":"916
+        734-5496","number_type":"voice","vanity_number":null},{"id":3280,"department":null,"extension":null,"number":"916
+        703-5290","number_type":"fax","vanity_number":null}]},{"id":816,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2352764,37.4829988],"description":"Provides
+        medical services to youth, age 12-22. Services include primary medical care,
+        clinics for immunization, pregnancy testing and TB and HIV testing, health
+        education, reproductive health care and information, and health screenings
+        for physicals. The clinic also provides free confidential services (reproductive
+        health care) for youth. The center is staffed by San Mateo Medical Center.
+        Formerly known as Redwood City Youth Health Center.","kind":"Human Services","latitude":37.4829988,"longitude":-122.2352764,"name":"Sequoia
+        Teen Wellness Center","short_desc":"Medical and counseling services for youth
+        age 12-21.","slug":"sequoia-teen-wellness-center","updated_at":"2014-11-25T17:22:07.292-08:00","website":"http://www.co.sanmateo.ca.us/sequoiaTWC","url":"https://api-staging.smc-connect.org/locations/sequoia-teen-wellness-center","address":{"id":664,"address_1":"200
+        James Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94062"},"organization":{"id":816,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Sequoia
+        Teen Wellness Center","website":null,"slug":"sequoia-teen-wellness-center","url":"https://api-staging.smc-connect.org/organizations/sequoia-teen-wellness-center","locations_url":"https://api-staging.smc-connect.org/organizations/sequoia-teen-wellness-center/locations"},"phones":[{"id":1085,"department":null,"extension":null,"number":"650
+        366-2927","number_type":"voice","vanity_number":null},{"id":3001,"department":null,"extension":null,"number":"650
+        366-0183","number_type":"fax","vanity_number":null}]},{"id":776,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8965265,37.3444606],"description":"Provides
+        high quality civil legal representation, including eviction defense, to indigent
+        residents of Santa Clara County through the use of volunteers. Through the
+        Consumer Law Project, legal services are made available to consumers. The
+        Debtors'' Rights Clinics provide legal advice to those who may be having debt
+        problems. The Family Law Project''s attorneys handle divorces, child custody
+        and other family law matters. The Paternity Clinic represents men against
+        whom the District Attorney has brought a paternity action. The Project, through
+        its Disaster Effort, coordinates the legal response after major disasters
+        in Santa Clara County, and through its Lawyers in the Library Program, provides
+        advise to the general public.","kind":"Human Services","latitude":37.3444606,"longitude":-121.8965265,"name":"Pro
+        Bono Project Silicon Valley","short_desc":"Provides free legal services to
+        low-income people.","slug":"pro-bono-project-silicon-valley","updated_at":"2014-11-25T17:22:06.512-08:00","website":"http://www.probonoproject.org","url":"https://api-staging.smc-connect.org/locations/pro-bono-project-silicon-valley","address":{"id":637,"address_1":"480
+        North 1st Street, Suite 219","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95112"},"organization":{"id":776,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pro
+        Bono Project Silicon Valley","website":null,"slug":"pro-bono-project-silicon-valley","url":"https://api-staging.smc-connect.org/organizations/pro-bono-project-silicon-valley","locations_url":"https://api-staging.smc-connect.org/organizations/pro-bono-project-silicon-valley/locations"},"phones":[{"id":1040,"department":null,"extension":null,"number":"408
+        998-5298","number_type":"voice","vanity_number":null},{"id":2976,"department":null,"extension":null,"number":"408
+        971-9672","number_type":"fax","vanity_number":null}]},{"id":416,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4303825,37.7284948],"description":"The
+        Jewish Home of San Francisco is a nonprofit licensed nursing facility with
+        clinical and allied health personnel. The Jewish Home provides seniors with
+        a variety of healthcare programs and services. Admission to the Jewish Home
+        is not limited by religious or cultural affiliation. Specialized care units
+        constitute short-term and rehabilitation services for post-hospital and rehabilitation
+        care; an acute geriatric psychiatry hospital for both the general community
+        and residents; Alzheimer''s and related disorders care services. Specialized
+        clinics encompass audiology, gynecology, podiatry, cardiology, neurology,
+        dental, ophthalmology, radiology, dermatology, optometry, urology, nephrology,
+        edema, and cerumen management. Additional on-site centers and programs include
+        a rehabilitation center for personalized physical, occupational and speech
+        therapies. Center for Research on Aging focused on discovering new treatments,
+        especially for the frail elderly; complementary and alternative medical services
+        spanning acupuncture, Chinese medicine, massage, and Healing Touch; licensed
+        on-site pharmacy; recreational program of daily activities, evening entertainment
+        and special outings, theater shows and art education; creative expression
+        through residential art and ceramics programs, writing and performing; and
+        end-of-life/hospice volunteer program that provides trained spiritual care
+        partners to resident and clients.","kind":"Human Services","latitude":37.7284948,"longitude":-122.4303825,"name":"Jewish
+        Home","short_desc":"Long-term skilled nursing facility for Jewish seniors.","slug":"jewish-home","updated_at":"2014-11-25T17:22:01.260-08:00","website":"http://www.jhsf.org","url":"https://api-staging.smc-connect.org/locations/jewish-home","address":{"id":348,"address_1":"302
+        Silver Avenue","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94112"},"organization":{"id":416,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Jewish
+        Home","website":null,"slug":"jewish-home","url":"https://api-staging.smc-connect.org/organizations/jewish-home","locations_url":"https://api-staging.smc-connect.org/organizations/jewish-home/locations"},"phones":[{"id":552,"department":null,"extension":null,"number":"415
+        334-2500","number_type":"voice","vanity_number":null},{"id":2751,"department":null,"extension":null,"number":"415
+        334-4375","number_type":"fax","vanity_number":null}]},{"id":1460,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3006094,37.5314294],"description":"Administers
+        the AIDS Program, Community Health Services, and Disease Prevention and Control
+        (all described separately). Provides preventive health services in the areas
+        of TB, HIV/AIDS and STD testing, chronic disease prevention, communicable
+        disease control, and public health nutrition. Programs in Family Health include
+        Public Health and Injury Prevention, Prenatal to Three Initiative, vital statistics,
+        public health education, maternal and child health (Family Planning, Child
+        Health Clinics, Child Health and Disability Prevention Program), public health
+        nursing and California Children Services (diagnosis, treatment and therapy).
+        A mobile clinic delivers health care to the more remote areas of the county.
+        Also, oversees Emergency Medical Services (ambulance first response, EMT and
+        Paramedic certification and registration), Environmental Health (Environmental
+        regulation over consumer protection and hazardous materials/waste), University
+        of Californa Conservative Extension, and Agriculture Commissioner Sealer of
+        Weights and Measures.","kind":"Human Services","latitude":37.5314294,"longitude":-122.3006094,"name":"Community
+        Health., Administration","short_desc":"Administers the programs of the Public
+        Health Division.","slug":"community-health-administration","updated_at":"2014-11-25T17:15:44.811-08:00","website":"http://www.smchealth.org","url":"https://api-staging.smc-connect.org/locations/community-health-administration","address":{"id":1200,"address_1":"225
+        - 37th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2030,"department":null,"extension":null,"number":"650
+        573-2757","number_type":"voice","vanity_number":null}]},{"id":108,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1417705,37.4270181],"description":"Provides
+        essential primary healthcare services from its three clinics to low-income,
+        un- or underserved and uninsured people, irrespective of their cultural or
+        ethnic backgrounds and ability to pay. Low-income families and individuals
+        who live and work in the northern part of Santa Clara County and the southern-most
+        part of San Mateo County and face financial, language, and transportation
+        barriers. Services provided include general medical care, gynecology, comprehensive
+        perinatal care, pediatrics, well child care, immunizations, TB testing, comprehensive
+        prenatal services, family planning, STS testing and treatment, and chronic
+        disease case management. Child Health and Disability Prevention (CHDP) provides
+        well child screenings and immunizations. Prenatal classes in newborn care,
+        labor and delivery, parenting, and family planning are available in Spanish
+        and English. Provides a health care safety net and a medical home for the
+        uninsured in our community. The multi-lingual/multi-cultural staff has the
+        capacity to deal with more complex health problems,chronic illnesses and participation
+        in mandated managed care programs. Referral services have also been institutionalized
+        by MayView. Services are provided at the following locations: MayView Community
+        Health Center - PA, 270 Grant Avenue, Palo Alto, 94306. Phone: 650-327-8717.
+        MayView Community Health Center - MV, 100 Moffett Blvd., Suite 101, Mountain
+        View, 94043. Phone: 650-965-3323 MayView Community Health Center-CNC, 785
+        Morse Avenue, Sunnyvale, 94085. Phone: 408-746-0455.","kind":"Human Services","latitude":37.4270181,"longitude":-122.1417705,"name":"MayView
+        Community Health Center","short_desc":"General nonemergency medical clinic
+        including family planning services.","slug":"mayview-community-health-center","updated_at":"2014-12-04T11:17:20.288-08:00","website":"http://www.mayview.org","url":"https://api-staging.smc-connect.org/locations/mayview-community-health-center","address":{"id":103,"address_1":"270
+        Grant Avenue","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94306"},"organization":{"id":108,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"MayView
+        Community Health Center","website":null,"slug":"mayview-community-health-center","url":"https://api-staging.smc-connect.org/organizations/mayview-community-health-center","locations_url":"https://api-staging.smc-connect.org/organizations/mayview-community-health-center/locations"},"phones":[{"id":139,"department":"Palo
+        Alto clinic","extension":null,"number":"650 327-8717","number_type":"voice","vanity_number":null},{"id":140,"department":"Mountain
+        View clinic","extension":null,"number":"650 965-3323","number_type":"voice","vanity_number":null},{"id":141,"department":"Sunnyvale
+        clinic","extension":null,"number":"408 746-0455","number_type":"voice","vanity_number":null},{"id":142,"department":"Business
+        office","extension":null,"number":"650 327-1223","number_type":"voice","vanity_number":null},{"id":2565,"department":null,"extension":null,"number":"650
+        327-8572","number_type":"fax","vanity_number":null}]},{"id":1074,"active":true,"admin_emails":["jcesario@baylegal.org","ppandey@baylegal.org","acruz@baylegal.org"],"alternate_name":"","coordinates":[-122.2323611,37.48355859999999],"description":"Bay
+        Area Legal Aid''s San Mateo County Office provides free legal assistance to
+        low-income domestic violence survivors in San Mateo County in the areas of
+        family law, immigration law, housing law, and economic justice law. Client''s
+        gross income must be less than 200% of the federal poverty level. Call for
+        a free screening and referral. Domestic Violence Restraining Order (DVRO)
+        Clinic provides free assistance to anyone needing to apply for a domestic
+        violence restraining orders regardless of income, sexual orientation, gender,
+        gender expression, age, race, religion disability, language, country of citizenship,
+        or immigrant documentation status. Legal Advice Line provides free telephone
+        legal advice and counsel to low-income individuals in the priority areas of
+        housing, family law, domestic violence, public benefits and health access.","kind":"Human
+        Services","latitude":37.48355859999999,"longitude":-122.2323611,"name":"Bay
+        Area Legal Aid","short_desc":"Free comprehensive legal services for low-income
+        domestic violence survivors.","slug":"bay-area-legal-aid","updated_at":"2018-02-15T19:57:45.953-08:00","website":"http://www.baylegal.org","url":"https://api-staging.smc-connect.org/locations/bay-area-legal-aid","address":{"id":856,"address_1":"1048
+        El Camino Real, Suite A","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1074,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Bay
+        Area Legal Aid","website":null,"slug":"bay-area-legal-aid","url":"https://api-staging.smc-connect.org/organizations/bay-area-legal-aid","locations_url":"https://api-staging.smc-connect.org/organizations/bay-area-legal-aid/locations"},"phones":[{"id":1394,"department":"Legal
+        Advice Line","extension":null,"number":"650 472-2666","number_type":"voice","vanity_number":null},{"id":1395,"department":"Local
+        Office","extension":null,"number":"650 358-0745","number_type":"voice","vanity_number":null},{"id":3158,"department":null,"extension":null,"number":"650
+        358-0751","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:34:49 GMT
+recorded_with: VCR 6.1.0

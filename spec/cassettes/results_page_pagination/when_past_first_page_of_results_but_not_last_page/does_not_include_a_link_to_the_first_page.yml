@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=youth
     body:
       encoding: US-ASCII
       string: ''
@@ -28,34 +28,552 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"48d06d4ca1978b6f2add7beb0fb0e45a"
+      - W/"e51f2d938ec9a494fd7901616daad05a"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="next"
+      - <https://api-staging.smc-connect.org/search?keyword=youth&page=11>; rel="last",
+        <https://api-staging.smc-connect.org/search?keyword=youth&page=2>; rel="next"
       X-Total-Count:
-      - '3'
+      - '328'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:07 GMT
+      - Wed, 08 Mar 2023 04:56:43 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 57aa76a9-8615-45dd-84c0-69b2dd1afa02
+      - b7c5467c-2482-46dd-955e-c96613befc4f
       X-Runtime:
-      - '0.025265'
-      X-Rack-Cache:
-      - pass
+      - '0.085046'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":12,"active":true,"admin_emails":["ohana@gmail.com"],"alternate_name":"","coordinates":[-122.2273954,37.4838423],"description":"Offers
+      string: '[{"id":1637,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3178265,37.5632111],"description":"Promotes,
+        champions and sustains the youth asset development model in San Mateo County.
+        YDI joins and assists communities in their efforts to build the strengths
+        and leadership capacities of youth to be partners in creating a healthy San
+        Mateo County. Provides staff for the San Mateo County Youth Commission to
+        promote youth development within county government. YDI''s Youth Asset Teams
+        provide trainings to help create a common language in the community around
+        youth development and the assets model framework. Trainings and technical
+        assistance are also provided. Provides on-site support for youth development
+        projects at Sequoia High School in Redwood City and Menlo-Atherton High School
+        in Atherton.","kind":"Human Services","latitude":37.5632111,"longitude":-122.3178265,"name":"Youth
+        Development Initiative (YDI)","short_desc":"Promotes, champions and sustains
+        the youth asset development model in San Mateo County.","slug":"youth-development-initiative-ydi","updated_at":"2014-11-25T17:22:22.066-08:00","website":"http://www.star-vista.org/whatwedo_services/counseling/youth/youthdevelopmentinitiative.html","url":"https://api-staging.smc-connect.org/locations/youth-development-initiative-ydi","address":{"id":1365,"address_1":"800
+        S. Claremont Ave., Suite 108","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2365,"department":null,"extension":"20","number":"650
+        401-8617","number_type":"voice","vanity_number":null},{"id":3538,"department":null,"extension":null,"number":"650
+        401-7755","number_type":"fax","vanity_number":null}]},{"id":1474,"active":true,"admin_emails":["c_cchristenson@smcgov.org"],"alternate_name":"Daly
+        City Youth Health Center","coordinates":[-122.4713055,37.6906207],"description":"Provides
+        low/no-cost primary medical care, mental health counseling services and support
+        groups, health education, and other wellness and youth development services
+        including a health education leadership training. Services are provided to
+        youth/young adults ages 12-24 living in Northern San Mateo County. Core services
+        include: primary medical care; individual, family and group counseling for
+        concerns such as depression, suicidality, truancy, family issues, sexuality,
+        substance abuse, eating disorders, and anger management; Outreach, individual
+        and classroom health education, peer health education through Project PLAY
+        (Peer Leadership Alternatives for Youth); Elements for Success (Elements):
+        a school-to-career transition program focused on developing academic, leadership,
+        and vocational skills for students ages 16-24 who have barriers to successful
+        high school/GED completion and employment.","kind":"Human Services","latitude":37.6906207,"longitude":-122.4713055,"name":"San
+        Mateo Medical Center., Daly City Youth Health Center","short_desc":"Provides
+        low/no-cost primary medical care, mental health counseling services and support
+        groups, health education, and other wellness and youth development services
+        including a health education leadership training. Services are provided to
+        youth/young adults ages 12-24 living in Northern San Mateo County.","slug":"san-mateo-medical-center-daly-city-youth-health-center","updated_at":"2018-02-15T19:57:46.426-08:00","website":"http://www.dalycityyouth.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-medical-center-daly-city-youth-health-center","address":{"id":1214,"address_1":"2780
+        Junipero Serra Blvd.","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015-1634"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2052,"department":null,"extension":null,"number":"650
+        985-7000","number_type":"voice","vanity_number":null},{"id":3424,"department":"Administration
+        and Mental Health","extension":null,"number":"650 985-7019","number_type":"fax","vanity_number":null},{"id":3425,"department":"Clinic","extension":null,"number":"650
+        985-7012","number_type":"fax","vanity_number":null}]},{"id":174,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2222092,37.4867949],"description":"The
+        Mentoring Services program matches at-risk youth ages 8-17 with adult volunteers
+        recruited from the community for the purpose of forming one-to-one relationships.
+        Each adult mentor makes a one-year commitment to spend a minimum of three
+        hours per week with the youth. In preparation for the matching, adults attend
+        an information session and mentor training concentrating on an overview of
+        the program and working with youth. Adult volunteers also receive support
+        through weekly contacts with a trained program coordinator. Life skills training
+        and support groups are also available. Children voluntarily enter the program
+        and may be referred by the Probation Department, social workers, schools or
+        other youth professionals. Comprehensive year-round activities for Junior
+        and Senior Friends include recreational, educational, community service and
+        cultural experiences at little or no cost. Volunteers are informed of special
+        program news and events through a monthly newsletter and an annual report
+        is distributed to interested community members. The Mentoring Institute provides
+        mentoring technical assistance to other agencies.","kind":"Human Services","latitude":37.4867949,"longitude":-122.2222092,"name":"Friends
+        for Youth","short_desc":"Matches troubled teens age 10-17 with adult volunteers
+        recruited from the community for the purpose of forming one-to-one relationships.
+        Training is given to adult volunteers.","slug":"friends-for-youth","updated_at":"2014-11-25T17:21:58.072-08:00","website":"http://www.friendsforyouth.org","url":"https://api-staging.smc-connect.org/locations/friends-for-youth","address":{"id":166,"address_1":"1741
+        Broadway","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":174,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Friends
+        for Youth","website":null,"slug":"friends-for-youth","url":"https://api-staging.smc-connect.org/organizations/friends-for-youth","locations_url":"https://api-staging.smc-connect.org/organizations/friends-for-youth/locations"},"phones":[{"id":224,"department":"General
+        Information","extension":null,"number":"650 368-4444","number_type":"voice","vanity_number":null},{"id":225,"department":"Mentoring
+        Institute","extension":null,"number":"650 559-0200","number_type":"voice","vanity_number":null},{"id":226,"department":"Mentoring
+        Services","extension":null,"number":"650 482-2864","number_type":"voice","vanity_number":null},{"id":2613,"department":null,"extension":null,"number":"650
+        368-4475","number_type":"fax","vanity_number":null}]},{"id":323,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4001274,37.7923367],"description":"The
+        Youth Law Center is a nonprofit public interest law program that works to
+        protect the rights, health and lives of disadvantaged children and families.
+        The work of the Youth Law Center focuses on reform of the law in juvenile
+        justice and child welfare. The Center''s overall purposes are to protect children
+        from abuse (focusing upon those in out-of-home placement), and to ensure that
+        they receive the treatment and services to which they are legally entitled.
+        Staff attorneys work through technical assistance, public education, legislative
+        advocacy and litigation when necessary. They also work with other legal service
+        organizations, social service personnel, law enforcement personnel, judges,
+        and private attorneys representing youth and children; assist states with
+        legislative advocacy; prepare manuals and training materials for lawyers and
+        youth advocates; and respond to requests for assistance from state and local
+        officials, community groups, parents and attorneys.","kind":"Human Services","latitude":37.7923367,"longitude":-122.4001274,"name":"Youth
+        Law Center","short_desc":"Legal education, counsel and representation in reform
+        of the law regarding the rights of minors.","slug":"youth-law-center","updated_at":"2014-11-25T17:22:00.223-08:00","website":"http://www.ylc.org","url":"https://api-staging.smc-connect.org/locations/youth-law-center","address":{"id":272,"address_1":"200
+        Pine Street, Suite 300","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94104"},"organization":{"id":323,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Youth
+        Law Center","website":null,"slug":"youth-law-center","url":"https://api-staging.smc-connect.org/organizations/youth-law-center","locations_url":"https://api-staging.smc-connect.org/organizations/youth-law-center/locations"},"phones":[{"id":428,"department":null,"extension":null,"number":"415
+        543-3379","number_type":"voice","vanity_number":null},{"id":2694,"department":null,"extension":null,"number":"415
+        956-9022","number_type":"fax","vanity_number":null}]},{"id":1083,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"A
+        24-hour crisis line providing crisis intervention counseling, youth-to-parent
+        message service, phone connections to service providers and families, and
+        information and referral to youth in crisis and their families. Also known
+        as the California Runaway Hotline. Formerly known as California Child, Youth
+        and Family Coalition.","kind":"Human Services","latitude":null,"longitude":null,"name":"California
+        Youth Crisis Line","short_desc":"Statewide, toll-free confidential telephone
+        linkage to resources for runaway children or for any youth considering running
+        away.","slug":"california-youth-crisis-line","updated_at":"2014-11-25T17:22:11.229-08:00","website":"http://www.youthcrisisline.org","url":"https://api-staging.smc-connect.org/locations/california-youth-crisis-line","address":null,"organization":{"id":1083,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"California
+        Coalition for Youth","website":null,"slug":"california-coalition-for-youth","url":"https://api-staging.smc-connect.org/organizations/california-coalition-for-youth","locations_url":"https://api-staging.smc-connect.org/organizations/california-coalition-for-youth/locations"},"phones":[{"id":1406,"department":"Youth
+        Crisis Line 24 hours daily","extension":null,"number":"800 843-5200","number_type":"voice","vanity_number":null},{"id":1407,"department":"CCY
+        Office","extension":null,"number":"916 340-0505","number_type":"voice","vanity_number":null},{"id":3165,"department":null,"extension":null,"number":"916
+        340-0510","number_type":"fax","vanity_number":null}]},{"id":898,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.402844,37.791402],"description":"Offers
+        training for service providers in the area of adolescent health and youth
+        development. Also offers health workshops for youth on such topics as self
+        esteem, sexuality, safer sex, substance use and harm reduction, and anti-homophobia.
+        Also offers training and technical assistance for peer educator groups. Extended
+        youth development training also available.","kind":"Human Services","latitude":37.791402,"longitude":-122.402844,"name":"Health
+        Initiatives for Youth (Hi-Fy)","short_desc":"Offers training programs in health
+        for service providers and health workshops for youth.","slug":"health-initiatives-for-youth-hi-fy","updated_at":"2014-11-25T17:22:08.664-08:00","website":"http://www.youtube.com/hifymedia","url":"https://api-staging.smc-connect.org/locations/health-initiatives-for-youth-hi-fy","address":{"id":723,"address_1":"235
+        Montgomery Street, Suite 430","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94104"},"organization":{"id":898,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Health
+        Initiatives for Youth (Hi-Fy)","website":null,"slug":"health-initiatives-for-youth-hi-fy","url":"https://api-staging.smc-connect.org/organizations/health-initiatives-for-youth-hi-fy","locations_url":"https://api-staging.smc-connect.org/organizations/health-initiatives-for-youth-hi-fy/locations"},"phones":[{"id":1193,"department":null,"extension":null,"number":"415
+        274-1970","number_type":"voice","vanity_number":null},{"id":3056,"department":null,"extension":null,"number":"415
+        274-1976","number_type":"fax","vanity_number":null}]},{"id":727,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3952408,37.7878913],"description":"Builds
+        communities where young people and their adult allies come together to create
+        positive social change. As a community-based institute, the Youth Leadership
+        Institute (YLI) develops and delivers community programs and professional,
+        innovative training to young people, adult allies, and the systems that impact
+        them. YLI''s multi-faceted approach to youth development is rooted in its
+        community-based programs, and its training model pulls directly from the experiences
+        of these programs and grounds it in current youth development research, theory
+        and practices.","kind":"Human Services","latitude":37.7878913,"longitude":-122.3952408,"name":"Youth
+        Leadership Institute","short_desc":"A peer program designed to prevent alcohol,
+        tobacco and other drug use among high school students.","slug":"youth-leadership-institute","updated_at":"2014-11-25T17:22:06.206-08:00","website":"http://www.yli.org","url":"https://api-staging.smc-connect.org/locations/youth-leadership-institute","address":{"id":608,"address_1":"246
+        - 1st Street, Suite 400","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94105"},"organization":{"id":727,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Youth
+        Leadership Institute","website":null,"slug":"youth-leadership-institute","url":"https://api-staging.smc-connect.org/organizations/youth-leadership-institute","locations_url":"https://api-staging.smc-connect.org/organizations/youth-leadership-institute/locations"},"phones":[{"id":979,"department":null,"extension":null,"number":"415
+        836-9160","number_type":"voice","vanity_number":null},{"id":2953,"department":null,"extension":null,"number":"415
+        836-0071","number_type":"fax","vanity_number":null}]},{"id":1628,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2086579,37.5021585],"description":"An
+        up to thirty-day temporary housing and counseling service for youth, age 10-17,
+        who are experiencing family problems or have run away from home. The co-ed
+        residential program is licensed for up to six youths, and provides a neutral
+        place for parents and youth to come together to work out problems. Services
+        include short-term crisis intervention; a 24-hour Emergency Overnight shelter
+        for youth age 10-17; family, individual and group counseling; and a 24-hour
+        crisis/support phone line. After returning home, youth and family are offered
+        additional counseling sessions. The program is voluntary and the youth are
+        expected to comply with house rules and participate in services offered. A
+        youth and his or her parent or guardian must consent to placement. The program
+        does not accept youth who are chemically addicted or severely emotionally
+        ill. Formerly known as Youth and Family Enrichment Services (YFES).","kind":"Human
+        Services","latitude":37.5021585,"longitude":-122.2086579,"name":"Your House
+        South","short_desc":"Temporary housing and counseling center for youth experiencing
+        family problems or who have run away from home.","slug":"your-house-south","updated_at":"2016-01-28T18:31:39.023-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/your-house-south","address":{"id":1528,"address_1":"Confidential","address_2":null,"city":"Redwood
+        City","state_province":"CA","postal_code":"94063"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2354,"department":"24
+        hours daily","extension":null,"number":"650 367-9687","number_type":"voice","vanity_number":null},{"id":3532,"department":null,"extension":null,"number":"650
+        367-6828","number_type":"fax","vanity_number":null}]},{"id":1473,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3222348,37.5449282],"description":"Provides
+        continuity of care to seriously emotionally disturbed minors in the least
+        restrictive, most appropriate environment in an effort to prevent out-of-home
+        placement. If out-of-home placement is necessary, the primary goal becomes
+        to return the child to the family and local community as soon as possible.
+        Provides consultation and assistance to the San Mateo County Psychiatric Emergency
+        Services (PES) for youngsters in crisis, and facilitates their admission to
+        acute inpatient psychiatric care when hospitalization is deemed necessary.
+        Provides follow-up services to youth and their families evaluated at PES,
+        and offers ongoing treatment through local programs. Evaluates children who
+        are wards and dependents upon admission to psychiatric hospitals. Provides
+        liaison services between the hospital and the Human Services Agency and Juvenile
+        Probation. Provides Mental Health Youth Case Management services to eligible
+        clients of the Human Services Agency and Juvenile Probation as well as youth/adult
+        transitional case management services to young adults receiving county mental
+        health services. Dual diagnosis services assist with the needs of youth who
+        are diagnosed with both mental health and substance abuse problems. Services
+        include assessment, case management, crisis intervention, referral to appropriate
+        community resources and assistance with placement.","kind":"Human Services","latitude":37.5449282,"longitude":-122.3222348,"name":"Behavioral
+        Health and Recovery Services., Youth Case Management Team","short_desc":"Provides
+        continuity of care to seriously emotionally disturbed children and adolescents
+        in an effort to keep them in the community.","slug":"behavioral-health-and-recovery-services-youth-case-management-team","updated_at":"2014-11-25T17:22:18.823-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/behavioral-health-and-recovery-services-youth-case-management-team","address":{"id":1213,"address_1":"1950
+        Alameda de las Pulgas","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2051,"department":null,"extension":null,"number":"650
+        573-3504","number_type":"voice","vanity_number":null},{"id":3423,"department":null,"extension":null,"number":"650
+        349-0476","number_type":"fax","vanity_number":null}]},{"id":433,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.9417092,37.3537332],"description":"The
+        Family and Individual Therapy Center provides individual, couple, family and
+        group counseling for all age groups. Short- and long-term counseling, crisis
+        intervention and parent intervention are provided. The center also conducts
+        low-cost professional seminars for counselors, students and paraprofessionals
+        to improve their knowledge of current issues and techniques in family therapy.
+        School outreach counseling is offered at secondary schools in Santa Clara
+        Unified School District. Counseling services address such problems as suicide
+        ideation, substance abuse, poor school performance, child abuse, family problems
+        and sexuality issues. Prevention and education programs teach adolescents
+        about AIDS. The Runaway and Homeless Youth Shelter offers short-term housing
+        for runaway and homeless youth, minor delinquents or substance abusers, and
+        other troubled youth who could benefit from short-term separation from parents
+        while they work out their problems. Individual, group and family counseling
+        is provided to assist with family reunification and to change inappropriate
+        and destructive behavior of youth. Quetzal House, a residential program for
+        adolescent girls, in partnership with the Children''s Shelter of Santa Clara
+        County, provides specific services to adolescent girls who are dependents
+        of the court and who exhibit chronic runaway behavior. The purpose of this
+        partnership is to change destructive behaviors in order to enable participants
+        to successfully re-enter the county foster care system. Homeless youth services
+        include street outreach counseling, drug abuse counseling, assistance with
+        long-term housing, job placement, educational services and family reunification.
+        The goal of the services is to renew family ties when possible and to stabilize
+        the lives of homeless youth to avoid victimization from street life and involvement
+        in criminal activities. Drop-in center located at 693 South 2nd Street, San
+        Jose. Independent living skills training is provided to older adolescents
+        in foster care and to homeless youth needing additional skills to become productive,
+        independent adults. Groups focus on teaching skills to youth such as locating
+        employment and permanent housing, developing personal budgets and using community
+        resources. The Transitional Housing Program for Homeless Youth provides comprehensive
+        services for older youth (age 16-22) as well as homeless young parents and
+        their infants. The program offers long-term shelter (up to 18 months) in subsidized
+        shared housing and apartments while youth learn the skills necessary to live
+        on their own. Teen parents are taught parenting skills in addition to living
+        skills so that they can support themselves and their children and avoid becoming
+        dependent on welfare. Program staff continue to provide follow-up care after
+        youth leave the program to help youth make the successful transition to self-sufficiency.
+        Project Safe Place in San Jose provides children age 8-17 with a safe place
+        to go for help. Businesses, schools and community centers display the Safe
+        Place logo, and children are taught that they can seek help from these locations.
+        An employee is trained to call Bill Wilson Center which will dispatch a volunteer
+        within 15 minutes. Centre for Living with Dying (described separately) provides
+        grief counseling and support to those individuals experiencing a loss or death
+        (traumatic or life threatening illness). Training is also provided to First
+        Responders and schools to prepre them for disasters, crisis, and traumatic
+        deaths. Transition Age Youth Mental Health Services provides immediate and
+        follow-up care to transition age youth age 16-24 experiencing a mental health
+        crisis. Our 24-hour phone line is available to respond to crisis calls, provide
+        referrals and other emergency assistance: (408) 850-6140. Foster Care services
+        provide stable, caring, temporary homes for children of all ages in the social
+        services system. These children have been removed from their birth families
+        because of child abuse or severe neglect and are impacted by trauma, grief
+        and loss. The primary goal is to prepare the child for permanency, which means
+        either their return to appropriate, stable birth family members, placement
+        into an adoptive famly, or adoption by the foster family. Adoption program
+        prepares families to parent children with special needs from the child welfare
+        system. The program''s goal is permanency for the child. The placement coordinator
+        works closely with county social workers and approved families to ensure the
+        child''s needs will be met by a famly that is willing and capable of parenting
+        the child. Services provided include in-depth home studies, and assist the
+        child and family to form a lasting connection. Additionally, private home
+        study services are available to the community for private adoptions on a fee
+        basis.","kind":"Human Services","latitude":37.3537332,"longitude":-121.9417092,"name":"Bill
+        Wilson Center","short_desc":"Affordable counseling and support for families,
+        couples and groups in dealing with problems of daily life, and shelter and
+        crisis counseling for youth.","slug":"bill-wilson-center","updated_at":"2014-12-04T11:19:24.204-08:00","website":"http://www.billwilsoncenter.org","url":"https://api-staging.smc-connect.org/locations/bill-wilson-center","address":{"id":364,"address_1":"3490
+        The Alameda","address_2":null,"city":"Santa Clara","state_province":"CA","postal_code":"95050"},"organization":{"id":433,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Bill
+        Wilson Center","website":null,"slug":"bill-wilson-center","url":"https://api-staging.smc-connect.org/organizations/bill-wilson-center","locations_url":"https://api-staging.smc-connect.org/organizations/bill-wilson-center/locations"},"phones":[{"id":575,"department":null,"extension":null,"number":"408
+        243-0222","number_type":"voice","vanity_number":null},{"id":2763,"department":null,"extension":null,"number":"408
+        246-5752","number_type":"fax","vanity_number":null}]},{"id":1158,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4443777,37.7747426],"description":"Provides
+        coed emergency housing, crisis intervention and case management to runaway
+        or homeless youth age 12-17. Meals and showers are provided to shelter residents.
+        People must be out of the shelter during the day. Shelter staff work with
+        the youth to establish their next steps, such as family reunification, foster
+        care placement or independent living referrals. Also provides referrals to
+        substance abuse programs and educational information about AIDS.","kind":"Human
+        Services","latitude":37.7747426,"longitude":-122.4443777,"name":"Diamond Youth
+        Shelter","short_desc":"Emergency shelter, crisis intervention and case management
+        for runaway youth age 12-17.","slug":"diamond-youth-shelter","updated_at":"2014-11-25T17:22:12.331-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/diamond-youth-shelter","address":{"id":924,"address_1":"536
+        Central","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94117"},"organization":{"id":320,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Larkin
+        Street Youth Services","website":null,"slug":"larkin-street-youth-services","url":"https://api-staging.smc-connect.org/organizations/larkin-street-youth-services","locations_url":"https://api-staging.smc-connect.org/organizations/larkin-street-youth-services/locations"},"phones":[{"id":1517,"department":null,"extension":null,"number":"415
+        567-1020","number_type":"voice","vanity_number":null},{"id":1518,"department":"24
+        hours daily","extension":null,"number":"800 669-6146","number_type":"voice","vanity_number":null},{"id":3214,"department":null,"extension":null,"number":"415
+        749-5951","number_type":"fax","vanity_number":null}]},{"id":320,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4191082,37.7879416],"description":"Offers
+        a continuum of services designed to help homeless and runaway youth find permanent
+        alternatives to street life. Services include street outreach, a drop-in center
+        that includes three meals a day, counseling, support groups and recreation,
+        case management, and two emergency shelters. The agency also offers longer
+        term, transitional housing. In addition, a medical clinic provides primary
+        care as well as anonymous HIV testing and counseling. Also provides education
+        and employment services. Formerly known as Larkin Street Youth Center.","kind":"Human
+        Services","latitude":37.7879416,"longitude":-122.4191082,"name":"Larkin Street
+        Youth Services","short_desc":"Multipurpose center for runaway, homeless and
+        street youth that provides emergency services including shelter, counseling,
+        medical treatment and an on-site school.","slug":"larkin-street-youth-services","updated_at":"2014-11-25T17:22:00.149-08:00","website":"http://www.larkinstreetyouth.org","url":"https://api-staging.smc-connect.org/locations/larkin-street-youth-services","address":{"id":269,"address_1":"1138
+        Sutter Street","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94109"},"organization":{"id":320,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Larkin
+        Street Youth Services","website":null,"slug":"larkin-street-youth-services","url":"https://api-staging.smc-connect.org/organizations/larkin-street-youth-services","locations_url":"https://api-staging.smc-connect.org/organizations/larkin-street-youth-services/locations"},"phones":[{"id":425,"department":"Hotline","extension":null,"number":"800
+        447-8223","number_type":"hotline","vanity_number":null},{"id":2691,"department":null,"extension":null,"number":"415
+        749-3838","number_type":"fax","vanity_number":null}]},{"id":58,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.261743,37.50403],"description":"Dedicated
+        to enriching the lives of individuals and families by transforming challenges
+        into opportunities. Core values are reflected in the commitment to building
+        skills and enhancing strengths by collaborating with youth, adult and family
+        units as a whole to effect positive change. Provides a comprehensive array
+        of free or low-cost bilingual social services to residents of San Mateo County.
+        StarVista is also committed to an asset-based approach to youth development.
+        Many of the strongest youth programs are structured on the model of helping
+        youth develop assets that will make them well-adjusted, active participants
+        in their communities. Programs include a 24-hour crisis, alcohol and drug
+        support hotline, and parent resources warmline; services for homeless and
+        runaway youth; substance abuse assessment and treatment (outpatient and day
+        treatment); residential services; diversion counseling; services for children
+        age 5 or under who have witnessed family violence (Healthy Homes Program);
+        parenting education and school-based counseling on public and private elementary,
+        middle and high school campuses; family/child/adult therapy in a clinic setting.","kind":"Human
+        Services","latitude":37.50403,"longitude":-122.261743,"name":"StarVista","short_desc":"A
+        family and community-focused program that works with children, youth, adults,
+        and families.","slug":"starvista","updated_at":"2014-12-04T11:10:50.495-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/starvista","address":{"id":55,"address_1":"610
+        Elm Street, Suite 212","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":80,"department":null,"extension":null,"number":"650
+        591-9623","number_type":"voice","vanity_number":null}]},{"id":1027,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.9142256,37.42757],"description":"Works
+        to prevent juvenile crime and incarceration through legal education, mentoring
+        and leadership training. The Legal Education program teaches at-risk youth
+        about the laws and consequences of crime. The Mentoring program matches at-risk
+        youth with positive role models. Adult role model meets once a week. The Leadership
+        Training program offers graduates of FLY''s law and mentoring programs the
+        opportunity to design and develop community service activities. Participants
+        receive case management assistance to set and achieve academic and vocational
+        goals.","kind":"Human Services","latitude":37.42757,"longitude":-121.9142256,"name":"Fresh
+        Lifelines for Youth (FLY)","short_desc":"Works to prevent juvenile crime and
+        incarceration through legal education, mentoring and leadership training.","slug":"fresh-lifelines-for-youth-fly","updated_at":"2014-12-04T11:17:20.889-08:00","website":"http://www.flyprogram.org","url":"https://api-staging.smc-connect.org/locations/fresh-lifelines-for-youth-fly","address":{"id":820,"address_1":"568
+        Valley Way","address_2":null,"city":"Milpitas","state_province":"CA","postal_code":"95035"},"organization":{"id":1027,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Fresh
+        Lifelines for Youth (FLY)","website":null,"slug":"fresh-lifelines-for-youth-fly","url":"https://api-staging.smc-connect.org/organizations/fresh-lifelines-for-youth-fly","locations_url":"https://api-staging.smc-connect.org/organizations/fresh-lifelines-for-youth-fly/locations"},"phones":[{"id":1339,"department":null,"extension":null,"number":"408
+        263-2630","number_type":"voice","vanity_number":null},{"id":3135,"department":null,"extension":null,"number":"408
+        263-2631","number_type":"fax","vanity_number":null}]},{"id":1464,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3366814,37.5119815],"description":"Provides
+        the Juvenile Probation Department, including a Boys'' Camp and Girl''s Camp
+        and the Juvenile Court, with: 1) diagnostic evaluation; 2) program consultation
+        and collaborative case planning; 3) brief therapy and crisis intervention
+        for juvenile court wards and their families while wards are detained in Juvenile
+        Hall; 4) medication management for youth taking psychotropic medication and;
+        5) brief family therapy services and gender responsive/trauma-based treatment.
+        Information and referral services are available to adolescents and their families
+        needing more than routine probation. Also provides therapeutic or case management
+        services to juvenile court wards at high risk for out-of-home placement, and
+        upon their return home from group home treatment. Consults with staff of Juvenile
+        Justice Diversion Programs (Youth Service Bureaus), therapeutic day schools,
+        Regional Mental Health Centers and other community-based organizations. Staff
+        of public and private agencies working with juvenile offenders or their families
+        may call for consultation or referrals. Formerly known as San Mateo County
+        Health Department. Behavioral Health and Recovery Services. Mental Health
+        Services Division. Hillcrest Unit.","kind":"Human Services","latitude":37.5119815,"longitude":-122.3366814,"name":"Behavioral
+        Health and Recovery Services., Youth Services Center Unit","short_desc":"Provides
+        diagnosis, consultation and brief crisis intervention to juveniles in the
+        care of the Probation Department.","slug":"behavioral-health-and-recovery-services-youth-services-center-unit","updated_at":"2014-11-25T17:22:18.629-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/behavioral-health-and-recovery-services-youth-services-center-unit","address":{"id":1204,"address_1":"222
+        Paul Scannell Drive","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2036,"department":null,"extension":null,"number":"650
+        312-5322","number_type":"voice","vanity_number":null},{"id":3415,"department":null,"extension":null,"number":"650
+        312-5305","number_type":"fax","vanity_number":null}]},{"id":1633,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"A
+        transitional living program for homeless teenagers in San Mateo County. Youth
+        can stay in the program for up to 18 months. Support services assist youth
+        with schools and jobs while teaching them independent living skills. Youth
+        are provided with individual and group therapy, and case management to move
+        towards their goals and successfully transition to independence. Aftercare
+        services are available when residents leave the program.","kind":"Human Services","latitude":null,"longitude":null,"name":"Daybreak","short_desc":"A
+        shelter for homeless teenagers, age 16-21, in San Mateo County.","slug":"daybreak","updated_at":"2014-11-25T17:22:21.995-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/daybreak","address":null,"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2360,"department":null,"extension":null,"number":"650
+        364-4633","number_type":"voice","vanity_number":null},{"id":3535,"department":null,"extension":null,"number":"650
+        369-4584","number_type":"fax","vanity_number":null}]},{"id":1277,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3852471,37.5929726],"description":"Assists
+        in the community when a disaster (home or apartment fire, earthquake, public
+        transportation accident, explosion, etc.) involves one or more families. Provides
+        food, clothing, shelter and medical supplies to disaster victims as needed.
+        Also offers ongoing disaster training classes and is involved in disaster
+        planning and preparedness. Offers classes in safety and survival in an earthquake
+        for the home and workplace. Provides disaster welfare inquiry service for
+        large disasters. Provides services to military personnel and their families
+        in the community and at military installations. Services include reporting
+        and communications services due to family emergencies, counseling in personal
+        and family problems, information and referral services and financial assistance
+        for emergency needs. Can assist with International Tracing Services to locate
+        close relatives separated by the Holocaust. Can reply to or send Red Cross
+        messages to prisoners of war or other displaced persons when no other communication
+        is possible. Counseling and information and referral services regarding international
+        issues are also provided. The Language Bank is staffed by volunteers who provide
+        translation for non-English speaking persons. Provides assistance to persons
+        in need and professionals working with non-English speaking clients in both
+        emergency and non-emergency situations. Phone for more information about the
+        languages which can be interpreted or to volunteer interpreting knowledge.
+        Nursing and Health services include training classes, information on AIDS,
+        Emergency First Aid Stations, and information and referral for nurse assistant
+        training and certification. Provides blood pressure screening on request.
+        Safety services include classes for individuals and instructors in first aid,
+        CPR (cardio-pulmonary resuscitation), and AED (automatic external defibrillator)
+        training as well as demonstrations and exhibits, and video, DVD and other
+        equipment rental. Training is available for the California Child Care, CPR,
+        first aid and preventative health safety requirements. Coordinates water safety
+        and lifesaving classes throughout the county. Offers swimming lesson information.
+        Will provide emergency first-aid stations for special events such as walk-a-thons
+        and cycle races on a cost-recovery basis. Youth Services include safety and
+        disaster preparedness classes for public and private schools and other youth
+        groups in the community. Offers leadership training for youth through the
+        Youth Engaged in Service Team (YES) and the leadership development center.
+        A Speakers'' Bureau provides short talks and video or slides on Health and
+        Safety, Disaster, International, Youth, Community Preparedness and other topics
+        or services for community groups.","kind":"Human Services","latitude":37.5929726,"longitude":-122.3852471,"name":"Bay
+        Area Chapter., San Mateo County Office","short_desc":"Emergency relief for
+        victims of disasters, services to military personnel, health and safety training
+        for the public.","slug":"bay-area-chapter-san-mateo-county-office","updated_at":"2014-12-04T11:17:22.823-08:00","website":"http://www.redcrossbayarea.org","url":"https://api-staging.smc-connect.org/locations/bay-area-chapter-san-mateo-county-office","address":{"id":1022,"address_1":"1710
+        Trousdale Drive","address_2":null,"city":"Burlingame","state_province":"CA","postal_code":"94010"},"organization":{"id":1267,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"American
+        Red Cross","website":null,"slug":"american-red-cross","url":"https://api-staging.smc-connect.org/organizations/american-red-cross","locations_url":"https://api-staging.smc-connect.org/organizations/american-red-cross/locations"},"phones":[{"id":1687,"department":null,"extension":null,"number":"650
+        259-1750","number_type":"voice","vanity_number":null},{"id":1688,"department":"Youth
+        Engaged in Service (YES)","extension":null,"number":"650 259-1767","number_type":"voice","vanity_number":null},{"id":3290,"department":null,"extension":null,"number":"650
+        259-1758","number_type":"fax","vanity_number":null}]},{"id":578,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2251628,37.4969033],"description":"Adolescent
+        Counseling Services (ACS) exists to support the wellbeing of all teens, tweens,
+        and young adults in Santa Clara and San Mateo Counties. ACS” network of skilled
+        family therapists and professionally-led support groups are resources that
+        youth and their families can rely on time and again for help with life’s challenges,
+        be they big or small. Founded in 1975, ACS currently implements four core
+        programs in Santa Clara and San Mateo County communities: the On-Campus Counseling
+        Program, providing bilingual on-site individual and family counseling, crisis
+        intervention, mental health education, and support at no cost to students/families
+        attending nine middle and high schools; the Adolescent Substance Abuse Treatment
+        Program, a State-certified outpatient facility providing treatment to teens
+        and families struggling with drug and/or alcohol abuse, as well as community
+        prevention education; the Community Counseling Program, providing outpatient
+        mental health assessment, treatment and education for teens and their families
+        in the general community and at local Boys and Girls Clubs of the Peninsula;
+        and Outlet, serving Bay Area Lesbian, Gay, Bisexual, Transgender, Queer, and
+        Questioning (LGBTQQ) teens and supportive allies with support group counseling,
+        leadership training, and education in both Spanish and English. ACS provides
+        Silicon Valley youth with direct and timely access to – often life-saving
+        – professional mental health services, support, and treatment. Over the past
+        40 years, the agency has served hundreds of thousands of children and their
+        family members, primarily exceeding all measurable objectives. Youth in our
+        programs ended their use of drugs and alcohol, increased their grades, decreased
+        their feelings of stress, depression and isolation, and increased their psycho-social
+        functioning.","kind":"Human Services","latitude":37.4969033,"longitude":-122.2251628,"name":"Adolescent
+        Counseling Services","short_desc":"Provides on-campus counseling, information
+        and referral for youth and their families.","slug":"adolescent-counseling-services","updated_at":"2016-12-12T15:56:06.699-08:00","website":"http://www.acs-teens.org","url":"https://api-staging.smc-connect.org/locations/adolescent-counseling-services","address":{"id":485,"address_1":"643
+        Bair Island Road, Suite 301","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":578,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Adolescent
+        Counseling Services","website":null,"slug":"adolescent-counseling-services","url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services","locations_url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services/locations"},"phones":[{"id":783,"department":"Main
+        Office","extension":null,"number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":2866,"department":null,"extension":null,"number":"650
+        424-9853","number_type":"fax","vanity_number":null}]},{"id":1154,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.146449,37.475949],"description":"Provides
+        job training to economically disadvantaged, unemployed or underemployed adults
+        and independent youth residing in San Mateo, Santa Clara, San Francisco or
+        Alameda counties. Programs include training in office occupations, clerical
+        skills, computers and word processing. Training in electronics, certified
+        nurse assistant, acute care nurse, home health aide, culinary arts, building
+        trades and solar installation. Participants receive employment success and
+        self-directed job search classes. A tutorial program offers classes for applicants
+        who are illiterate or low academic achievers as well as an English as a Second
+        Language (ESL) class. A Child Development Center is available for children
+        of trainees as well as to residents of the community who meet similar requirements
+        as center trainees. Mentor volunteers are needed for both adult and youth
+        programs. Serves as a site for PeninsulaWorks, offering comprehensive employer
+        services for job seekers and employers in the community. Additional supportive
+        services includes a Single Stop site, where individuals can apply for CalFresh
+        and Medi-Cal, and also receive free financial and legal counseling as well
+        as tax help. Also, serves as a satellite center for Canada College. Formerly
+        known as Opportunities Industrialization Center West (OICW).","kind":"Human
+        Services","latitude":37.475949,"longitude":-122.146449,"name":"Job Training
+        and Placement Program","short_desc":"Provides job training to economically
+        disadvantaged, unemployed or underemployed adults and youth in San Mateo,
+        Santa Clara, San Francisco and Alameda counties.","slug":"job-training-and-placement-program","updated_at":"2014-11-25T17:22:12.200-08:00","website":"http://www.jobtrainworks.org","url":"https://api-staging.smc-connect.org/locations/job-training-and-placement-program","address":{"id":920,"address_1":"1200
+        O''Brien Drive","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":1154,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"JobTrain","website":null,"slug":"jobtrain","url":"https://api-staging.smc-connect.org/organizations/jobtrain","locations_url":"https://api-staging.smc-connect.org/organizations/jobtrain/locations"},"phones":[{"id":1513,"department":null,"extension":null,"number":"650
+        330-6429","number_type":"voice","vanity_number":null},{"id":3211,"department":null,"extension":null,"number":"650
+        330-6401","number_type":"fax","vanity_number":null}]},{"id":1018,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4183175,37.6499204],"description":"Works
+        to help youth incarcerated or on probation through the arts and education.
+        Incarcerated youth work with professional Bay Area theater artists in a two-week
+        playwriting workshop to create and develop a play. Upon completion the plays
+        are read aloud by professional actors in front of family members, probation
+        and correctional staff, teachers and mental health professionals. Provides
+        weekly after-school study hall sessions to youth in detention facilities through
+        A Dream and A Plan for Tomorrow (ADAPT). Participants are paired with tutors
+        and mentors for the duration of the incarceration. Sessions focus on attaining
+        a high school diploma or GED, and helping participants set goals and develop
+        plans to achieve academic and vocational goals. Provides community service
+        referrals for post-release programming (based on goals created while detained).
+        A case manager assists with base job training, academic tutoring and educational
+        programs. Each One Reach One offers an HIV/AIDS and pregnancy prevention program
+        to incarcerated youth, as well as a girl''s life skills program in girl''s
+        facilities.","kind":"Human Services","latitude":37.6499204,"longitude":-122.4183175,"name":"Each
+        One Reach One","short_desc":"Works with youth incarcerated or on probation
+        to avoid the adult criminal justice system.","slug":"each-one-reach-one","updated_at":"2014-11-25T17:22:10.280-08:00","website":"http://www.eoro.org","url":"https://api-staging.smc-connect.org/locations/each-one-reach-one","address":{"id":811,"address_1":"146
+        S. Spruce Street","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1018,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Each
+        One Reach One","website":null,"slug":"each-one-reach-one","url":"https://api-staging.smc-connect.org/organizations/each-one-reach-one","locations_url":"https://api-staging.smc-connect.org/organizations/each-one-reach-one/locations"},"phones":[{"id":1330,"department":null,"extension":null,"number":"650
+        225-9030","number_type":"voice","vanity_number":null},{"id":3128,"department":null,"extension":null,"number":"650
+        225-9033","number_type":"fax","vanity_number":null}]},{"id":540,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.64077,37.117236],"description":"Provides
+        prevention, intervention, treatment, residential and housing services to the
+        communities of south Santa Clara County and San Benito County. Family and
+        Children Services provides individual, group, family and multi-family therapy
+        to children and families. Target populations include child abuse victims and
+        their families, at-risk youth, children experiencing trauma and juvenile probation
+        youth. School-based, clinic-based and community-based services are provided.
+        Psychiatric assessments and medication services are provided when necessary.
+        Parent education programs are provided to self-referred and court-referred
+        parents. The thirty-hour programs emphasize positive parenting, limit-setting,
+        effective discipline, parent-child communication and nutrition issues. Individual
+        and group support is available for participants. Individual workshops are
+        also available to community agencies, schools and churches. Rape Crisis provides
+        24-hour crisis intervention and advocacy services to victims of sexual assault,
+        their families and significant others. Trained volunteer advocates provide
+        essential services to the sexual assault survivor, including accompaniment
+        to the hospital, medical visits and through all legal and law enforcement
+        proceedings. Assault awareness programs are available to local schools, churches,
+        business and community groups. In-service trainings are provided to law enforcement,
+        legal and medical professions. Child Assault Prevention Program (CAP) and
+        Teen Assault Awareness (TAP) are prevention programs which teach children
+        and young people to recognize and deal effectively with potentially dangerous
+        or abusive situations. Workshops are offered to preschool, elementary, junior
+        and senior high school students, teachers and parents. Other programs directed
+        toward children include mental health counseling for elementary school-age
+        children to raise their self-esteem, learn effective communication skills
+        and enhance family relationships. Provides consultation with school administrators,
+        teachers and parents. The education program offers peer counseling and personal
+        development courses to junior and senior high school students to improve communication,
+        decision making and problem solving skills. Parent education and family relationship
+        classes are available to high school students. Specialized programs are also
+        offered to young parents and/or pregnant teenagers. Independent Living Skills
+        Program provides services to adolescents in group and foster homes with skills
+        needed for self-determined adult living. Services include career exploration,
+        vocation interest and aptitude assessment, educational plans, housing, daily
+        living skills and employment options. Low-cost transitional housing is available
+        for youth who are emancipating into independent living. Older Adult Services
+        provides in-home case management and mental health services for seniors experiencing
+        difficulty in daily functioning or who are having difficulty maintaining their
+        independent living situation from Morgan Hill, Gilroy, San Martin and south
+        San Jose. Supportive Housing Program provides low-cost housing, property management,
+        and maintenance for eligible seriously mentally ill adults. Transitional and
+        permanent supportive housing rental units are available in south county and
+        west San Jose for eligible clients. Family Advocate Program provides home-based
+        support, parenting and mentoring services to at-risk parents of newborns and
+        young children. The program provides long-term (one year or more) partnerships
+        between families and volunteer family. Advocates to build a strong foundation
+        for healthy families. Provides low-cost counseling for individuals, couples
+        and families who do not have Medi-Cal or private insurance and who do not
+        meet the medical necessity criteria for other clinical programs. Fees are
+        $25 per session or $10 per group. Juvenile Justice Programs provide case management,
+        crisis intervention, counseling and family support for youth involved in the
+        juvenile justice system. Domestic Violence Services provide a wide range of
+        services for battered women and their children including confidential shelter
+        stays, counseling, legal advocacy, emergency assistance and support groups.","kind":"Human
+        Services","latitude":37.117236,"longitude":-121.64077,"name":"Community Solutions
+        for Children, Families and Individuals, Inc.","short_desc":"Provides individual,
+        group, family, marriage counseling, 24-hour rape crisis child assault prevention
+        and in-home case management for seniors.","slug":"community-solutions-for-children-families-and-individuals-inc","updated_at":"2014-12-04T11:19:24.276-08:00","website":"http://www.communitysolutions.org","url":"https://api-staging.smc-connect.org/locations/community-solutions-for-children-families-and-individuals-inc","address":{"id":451,"address_1":"16264
+        Church Street, Suite 103","address_2":null,"city":"Morgan Hill","state_province":"CA","postal_code":"95037"},"organization":{"id":540,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Community
+        Solutions for Children, Families and Individuals, Inc.","website":null,"slug":"community-solutions-for-children-families-and-individuals-inc","url":"https://api-staging.smc-connect.org/organizations/community-solutions-for-children-families-and-individuals-inc","locations_url":"https://api-staging.smc-connect.org/organizations/community-solutions-for-children-families-and-individuals-inc/locations"},"phones":[{"id":709,"department":"Domestic
+        Violence and Sexual Assault Crisis Line 24 hours daily","extension":null,"number":"877
+        363-7238","number_type":"voice","vanity_number":null},{"id":710,"department":null,"extension":null,"number":"408
+        842-7138","number_type":"voice","vanity_number":null},{"id":711,"department":"Morgan
+        Hill","extension":null,"number":"408 779-2113","number_type":"voice","vanity_number":null},{"id":712,"department":"San
+        Jose","extension":null,"number":"408 225-9163","number_type":"voice","vanity_number":null},{"id":2833,"department":"Gilroy
+        and Morgan Hill","extension":null,"number":"408 778-9672","number_type":"fax","vanity_number":null},{"id":2834,"department":"San
+        Jose","extension":null,"number":"408 225-9243","number_type":"fax","vanity_number":null}]},{"id":1383,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.227542,37.4839129],"description":"Offers
         an intergenerational literacy program for youth and English-speaking adults
         seeking to improver literacy skills. Adult services include: adult one-to-one
         tutoring to improve basic skills in reading, writing and critical thinking;
@@ -65,23 +583,193 @@ http_interactions:
         in Partnership (FIP); Teen-to-Elementary Student Tutoring, Kids in Partnership
         (KIP); and computer-aided literacy. Redwood City Friends of Literacy is a
         fundraising board that helps to support and to fund Redwood City''s Project
-        Read. Call for more information about each service.","latitude":37.4838423,"longitude":-122.2273954,"name":"Project
+        Read. Call for more information about each service.","kind":"Human Services","latitude":37.4839129,"longitude":-122.227542,"name":"Project
         Read","short_desc":"Offers an intergenerational literacy program for adults
-        and youth seeking to improver literacy skills.","slug":"project-read","website":null,"updated_at":"2019-03-17T10:23:13.951-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/project-read","address":{"id":12,"address_1":"1044
-        Middlefield Road","address_2":"2nd Floor","city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":3,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
-        Redwood City Public Library inspires learning through innovative and visionary
-        programming and services—literacy programs, support for school success, access
-        to technology, safe, inviting spaces for youth and families, and gathering
-        places that connect the members of the community with a love of reading and
-        learning.","email":null,"funding_sources":[],"licenses":[],"name":"Redwood
-        City Public Library","website":null,"slug":"redwood-city-public-library","url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/redwood-city-public-library/locations"},"phones":[{"id":23,"department":null,"extension":null,"number":"650
-        780-7077","number_type":"voice","vanity_number":null},{"id":24,"department":null,"extension":null,"number":"650
-        780-7004","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:07 GMT
+        and youth seeking to improver literacy skills.","slug":"project-read-1044-middlefield-road-2nd-floor","updated_at":"2014-11-25T17:22:17.224-08:00","website":"http://www.projectreadredwoodcity.org","url":"https://api-staging.smc-connect.org/locations/project-read-1044-middlefield-road-2nd-floor","address":{"id":1123,"address_1":"1044
+        Middlefield Road, 2nd Floor","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1299,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Redwood
+        City Public Library","website":null,"slug":"redwood-city-public-library","url":"https://api-staging.smc-connect.org/organizations/redwood-city-public-library","locations_url":"https://api-staging.smc-connect.org/organizations/redwood-city-public-library/locations"},"phones":[{"id":1896,"department":null,"extension":null,"number":"650
+        780-7077","number_type":"voice","vanity_number":null},{"id":3358,"department":null,"extension":null,"number":"650
+        780-7004","number_type":"fax","vanity_number":null}]},{"id":592,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.839467,37.302824],"description":"The
+        San Jose Conservation Corps \u0026 Charter School incorporated in 1987 with
+        a mission to help the neediest young women and men in Silicon Valley. Former
+        high school dropouts, gang-involved youth, probationers and parolees, impoverished
+        and unemployable high-risk youth get a second chance to change their lives.
+        Offers an alternative academic education and paid job skills training along
+        with life skills lessons, SJCC\u0026CS empowers youth to become responsible,
+        productive, and caring community citizens. Earn a high school diploma and
+        work in careers such as landscape, waste management, and construction work
+        (all trades including energy efficiency and weatherization). During the last
+        24-years, SJCC\u0026CS has opened opportunities for 18,500 young women and
+        men.","kind":"Human Services","latitude":37.302824,"longitude":-121.839467,"name":"San
+        Jose Conservation Corps","short_desc":"Youth development program providing
+        work experience, vocational skills and educational skills to young men and
+        women age 18-23.","slug":"san-jose-conservation-corps","updated_at":"2014-11-25T17:22:04.958-08:00","website":"http://www.sjcccharterschool.org","url":"https://api-staging.smc-connect.org/locations/san-jose-conservation-corps","address":{"id":499,"address_1":"2650-A
+        Senter Road","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95111"},"organization":{"id":592,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Jose Conservation Corps","website":null,"slug":"san-jose-conservation-corps","url":"https://api-staging.smc-connect.org/organizations/san-jose-conservation-corps","locations_url":"https://api-staging.smc-connect.org/organizations/san-jose-conservation-corps/locations"},"phones":[{"id":800,"department":null,"extension":null,"number":"408
+        283-7171","number_type":"voice","vanity_number":null},{"id":2878,"department":null,"extension":null,"number":"408
+        288-6521","number_type":"fax","vanity_number":null}]},{"id":1201,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.3785319,37.25627739999999],"description":"Puente
+        de la Costa Sur (Puente) is the only community resource center for the South
+        Coast of San Mateo County. Puente advocates for our communities and leverages
+        resources that foster economic prosperity and security, and promote individual
+        and community health and wellness. We support local leaders and work together
+        to create solutions for the challenges facing our diverse population. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, youth leadership development
+        and employment, and community engagement and action. Puente also works with
+        farmers, ranchers, and nursery owners to promote a sustainable agricultural
+        economy on the south coast of northern California. Permanent programs include:
+        a mobile pantry; a Second Harvest Food Bank distribution site; children''s
+        story times; and La Sala Community Living Room. Also offers a program to address
+        maternal depression. Also offers ESL classes, individual tutoring in ESL,
+        GED and citizenship classes. Periodically offers an Adult Literacy Program
+        for Spanish speakers in which students learn to read and write in Spanish
+        or complete their elementary, middle and high school within the Mexican education
+        system. Call for specific days and times for each of these programs. Also
+        offers, by appointment, WIC (Women, Infants and Children) services, insurance
+        enrollment, food stamps, CalWorks assistance, tax preparation and notary services.
+        Deposit and rental assistance subject to availability of funds. The site is
+        part of the core network of community service agencies of San Mateo County.","kind":"Human
+        Services","latitude":37.25627739999999,"longitude":-122.3785319,"name":"Puente","short_desc":"Provides
+        a single point of entry for men, women and children to have access to safety
+        net services, health and wellness services, leadership development, and community
+        engagement and action.","slug":"puente","updated_at":"2016-01-04T16:04:23.091-08:00","website":"http://www.mypuente.org","url":"https://api-staging.smc-connect.org/locations/puente","address":{"id":959,"address_1":"620
+        North Street","address_2":null,"city":"Pescadero","state_province":"CA","postal_code":"94060"},"organization":{"id":1201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Puente
+        de la Costa Sur","website":null,"slug":"puente-de-la-costa-sur","url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur","locations_url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur/locations"},"phones":[{"id":1575,"department":null,"extension":null,"number":"650
+        879-1691","number_type":"voice","vanity_number":null},{"id":3240,"department":null,"extension":null,"number":"650
+        879-0973","number_type":"fax","vanity_number":null}]},{"id":1634,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.46678,37.666654],"description":"Offers
+        a drug and alcohol recovery program for youth designed to empower them to
+        take responsibility for their own recovery. This program is open to all teenagers
+        in the area, and teens may self refer. Offers a structured outpatient treatment
+        program that addresses the needs of youth through intake assessment, individual
+        treatment planning, counseling, socialization activities and relapse prevention.
+        Offers a parent support group. An additional office is located at 609 Price
+        Avenue in Redwood City (650-366-8436 x316). Formerly known as Youth and Family
+        Enrichment Services (YFES).","kind":"Human Services","latitude":37.666654,"longitude":-122.46678,"name":"Insights
+        - Daly City, Department of Health and Recovery Services","short_desc":"Offers
+        substance abuse counseling to youth.","slug":"insights-daly-city-department-of-health-and-recovery-services","updated_at":"2014-11-25T17:22:22.005-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/insights-daly-city-department-of-health-and-recovery-services","address":{"id":1363,"address_1":"333
+        Gellert Blvd., Suite 206","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2361,"department":null,"extension":null,"number":"650
+        366-8436","number_type":"voice","vanity_number":null},{"id":3536,"department":null,"extension":null,"number":"650
+        755-1754","number_type":"fax","vanity_number":null}]},{"id":816,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2352764,37.4829988],"description":"Provides
+        medical services to youth, age 12-22. Services include primary medical care,
+        clinics for immunization, pregnancy testing and TB and HIV testing, health
+        education, reproductive health care and information, and health screenings
+        for physicals. The clinic also provides free confidential services (reproductive
+        health care) for youth. The center is staffed by San Mateo Medical Center.
+        Formerly known as Redwood City Youth Health Center.","kind":"Human Services","latitude":37.4829988,"longitude":-122.2352764,"name":"Sequoia
+        Teen Wellness Center","short_desc":"Medical and counseling services for youth
+        age 12-21.","slug":"sequoia-teen-wellness-center","updated_at":"2014-11-25T17:22:07.292-08:00","website":"http://www.co.sanmateo.ca.us/sequoiaTWC","url":"https://api-staging.smc-connect.org/locations/sequoia-teen-wellness-center","address":{"id":664,"address_1":"200
+        James Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94062"},"organization":{"id":816,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Sequoia
+        Teen Wellness Center","website":null,"slug":"sequoia-teen-wellness-center","url":"https://api-staging.smc-connect.org/organizations/sequoia-teen-wellness-center","locations_url":"https://api-staging.smc-connect.org/organizations/sequoia-teen-wellness-center/locations"},"phones":[{"id":1085,"department":null,"extension":null,"number":"650
+        366-2927","number_type":"voice","vanity_number":null},{"id":3001,"department":null,"extension":null,"number":"650
+        366-0183","number_type":"fax","vanity_number":null}]},{"id":1124,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1451088,37.4275061],"description":"Offers
+        comprehensive, professional, and affordable counseling, education, and prevention
+        services in San Mateo and Santa Clara counties. In addition to offices in
+        Palo Alto and San Jose, the agency has dozens of community-based service locations
+        through its collaborations with schools, childcare centers, government agencies,
+        and other nonprofits. Programs and services include: Counseling Services:
+        Individual and family counseling to assist with short- and long-term needs,
+        including depression, stress, anxiety, grief, loss, relationships, parenting,
+        and substance use. Psychiatric care and medication monitoring available for
+        sliding scale (no insurance) clients. Services in Palo Alto and San Jose.
+        Family Violence \u0026 Abuse Prevention: Positive Solutions Program provides
+        group services, including Domestic Violence Offender Treatment (52 weeks),
+        Child Abuse Treatment (52 weeks), Parenting Without Violence (16 weeks), and
+        Anger Management/Conflict Accountability (16 weeks). Most groups meet in San
+        Jose; some groups meet in Palo Alto. Call for current schedule. Substance
+        Abuse Treatment (Santa Clara Co. only): Individual and group outpatient treatment
+        for adults. Part of the Santa Clara County network of care. Groups meet in
+        Palo Alto and San Jose Deaf \u0026 Hard-of-Hearing Program (Santa Clara Co.
+        only): Specialized counseling and family support services for children and
+        adults who are Deaf or Hard-of-Hearing (Deaf/HOH) and their families. Extensive
+        assistance for families with a young child who is Deaf/HOH. LGBTQ Youth Space
+        Program (Santa Clara Co. only): Specialized counseling, leadership development,
+        support groups, and drop-in center services for youth and young adults who
+        are lesbian, gay, bisexual, transgender, or questioning (LGBTQ). Independent
+        Living Program (Santa Clara Co. only) {u2013} Intensive case management, life
+        skills education, and support for youth and young adults who are transitioning
+        out of the foster care system. Formerly known as Family Service Mid-Peninsula.
+        Merged with Adult and Child Guidance Center.","kind":"Human Services","latitude":37.4275061,"longitude":-122.1451088,"name":"Palo
+        Alto Office","short_desc":"Offers counseling and support services to families
+        and children, including specialized services for targeted populations.","slug":"palo-alto-office-375-cambridge-avenue","updated_at":"2014-12-04T11:19:24.054-08:00","website":"http://www.fcservices.org","url":"https://api-staging.smc-connect.org/locations/palo-alto-office-375-cambridge-avenue","address":{"id":895,"address_1":"375
+        Cambridge Avenue","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94306"},"organization":{"id":1124,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Family
+        and Children Services","website":null,"slug":"family-and-children-services","url":"https://api-staging.smc-connect.org/organizations/family-and-children-services","locations_url":"https://api-staging.smc-connect.org/organizations/family-and-children-services/locations"},"phones":[{"id":1470,"department":"Palo
+        Alto","extension":null,"number":"650 326-6576","number_type":"voice","vanity_number":null},{"id":1471,"department":"San
+        Jose","extension":null,"number":"408 292-9353","number_type":"voice","vanity_number":null},{"id":1472,"department":null,"extension":null,"number":"408
+        795-1022","number_type":"tty","vanity_number":null},{"id":3193,"department":"Palo
+        Alto","extension":null,"number":"650 326-1340","number_type":"fax","vanity_number":null},{"id":3194,"department":"San
+        Jose","extension":null,"number":"408 287-3104","number_type":"fax","vanity_number":null}]},{"id":20,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4009318,37.786981],"description":"Matches
+        youth age 6-18 with carefully screened and trained adult mentors, and provides
+        ongoing supervision to ensure youth, families, and volunteers enjoy their
+        mentoring experiences. Mentor may meet with youth in the community Volunteers
+        are asked to commit to the program for at least a year. In March 2006 BBBS
+        of the East Bay, of San Francisco and the Peninsula, and of Santa Clara County
+        merged to form Big Brothers Big Sisters of the Bay Area.","kind":"Human Services","latitude":37.786981,"longitude":-122.4009318,"name":"Big
+        Brothers-Big Sisters of the Bay Area","short_desc":"Links volunteer adult
+        mentors with boys and girls age 6-18, primarily from single parent families.","slug":"big-brothers-big-sisters-of-the-bay-area","updated_at":"2014-12-04T11:17:20.261-08:00","website":"http://www.bbbsba.org","url":"https://api-staging.smc-connect.org/locations/big-brothers-big-sisters-of-the-bay-area","address":{"id":20,"address_1":"649
+        Mission Street, 5th Floor","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94105"},"organization":{"id":20,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Big
+        Brothers-Big Sisters of the Bay Area","website":null,"slug":"big-brothers-big-sisters-of-the-bay-area","url":"https://api-staging.smc-connect.org/organizations/big-brothers-big-sisters-of-the-bay-area","locations_url":"https://api-staging.smc-connect.org/organizations/big-brothers-big-sisters-of-the-bay-area/locations"},"phones":[{"id":27,"department":"Administrative
+        Office","extension":null,"number":"415 503-4050","number_type":"voice","vanity_number":null}]},{"id":1687,"active":true,"admin_emails":[],"alternate_name":"Youth
+        Service Bureau of San Mateo","coordinates":[-122.3021838,37.5591284],"description":"The
+        Youth Service Bureau in San Mateo offers outpatient mental health counseling
+        to youth, families, and couples addressing parenting and co-parenting issues.
+        We help people address a variety of issues including emotional and behavioral
+        problems, anger management, adolescent behavior, sexual identity, abuse and
+        neglect, drugs and alcohol, parenting, school and social problems. Other focused
+        programs include: Juvenile Justice Diversion, First STOP adolescent drug \u0026
+        alcohol groups, Girls United, case management and group counseling. Also run
+        all school-based programs in the San Mateo Union High School and San Mateo
+        Foster City school districts, including on-campus counseling, School Safety
+        Advocates, Guided Studies, and Alternatives to Suspension.","kind":"Human
+        Services","latitude":37.5591284,"longitude":-122.3021838,"name":"San Mateo","short_desc":"Counseling
+        program offering services to youth, families, and couples who are having emotional
+        and behavior challenges.","slug":"san-mateo","updated_at":"2018-02-15T19:57:47.027-08:00","website":"http://youthservicebureaus.org","url":"https://api-staging.smc-connect.org/locations/san-mateo","address":{"id":1411,"address_1":"1670
+        South Amphlett Blvd","address_2":"Suite 115","city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":1343,"accreditations":[],"alternate_name":"Pacifica
+        Youth Service Bureau, Youth Service Bureau of South San Francisco, Youth Service
+        Bureau of San Mateo","date_incorporated":null,"description":"The YSB’s mission
+        is to support and nurture families in developing connected, productive, and
+        healthy youth who can navigate the future and contribute to their communities.
+        Established in 1969 to provide diversion services for first-time youth offenders,
+        we now offer outpatient mental health services in our three clinics (Youth
+        Service Bureaus) and school-based counseling and support in over 50 schools
+        throughout San Mateo County. We are partners with the San Mateo County of
+        Education, eight school districts, five police departments, and County Departments
+        of Behavioral Health and Recovery Services, Human Services, and Juvenile Probation.
+        We specialize in counseling for youth and families, nurturing safe school
+        environments, delivering prevention programs for at-risk youth, and parent
+        support. Our programs help individuals and families cope with life challenges,
+        such as traumatic experiences, depression, school related issues, high-risk
+        adolescent behaviors, and mental illness. The YSBs became a part of the YMCA
+        Association of San Francisco 20 year ago and operate fiscally under their
+        nonprofit tax ID status.","email":"ysbinfo@ymcasf.org","funding_sources":[],"licenses":[],"name":"Youth
+        Service Bureaus of the YMCA","website":null,"slug":"youth-service-bureaus-of-the-ymca","url":"https://api-staging.smc-connect.org/organizations/youth-service-bureaus-of-the-ymca","locations_url":"https://api-staging.smc-connect.org/organizations/youth-service-bureaus-of-the-ymca/locations"},"phones":[{"id":2463,"department":null,"extension":null,"number":"650
+        349-7969","number_type":"voice","vanity_number":null},{"id":3570,"department":null,"extension":null,"number":"650
+        349-1103","number_type":"fax","vanity_number":null}]},{"id":573,"active":true,"admin_emails":["bhayes@novaworks.org"],"alternate_name":"","coordinates":[-122.0382092,37.3724622],"description":"Vocational
+        Training Program provides vocational classroom and career advising. Job placement
+        assistance is provided at the end of training. Dislocated Workers Program
+        offers career advising, assessment and vocational training and employment
+        readiness workshops to laid-off workers. Low-Income Program offers career
+        advising, assessment and vocational training to low-income individuals. CONNECT
+        Job Seeker Center offers services such as job search coaching, resume and
+        interviewing assistance and current labor market information. Resources include
+        PCs linked to the Internet. Provides an extensive career resource library
+        offering assessment, employment, training and educational materials. NOVA
+        Youth Employment Office provides employment readiness workshops, career advising
+        and job referrals for teens and youth age 16-21. Job listings can be accessed
+        via Internet at www.youthatwork.org.","kind":"Human Services","latitude":37.3724622,"longitude":-122.0382092,"name":"NOVA
+        Workforce Board","short_desc":"Provides vocational training, counseling, support
+        services, job referrals and placement for youth, unemployed, laid-off workers
+        and seniors.","slug":"nova-workforce-board","updated_at":"2018-02-15T19:57:45.290-08:00","website":"http://novaworks.org","url":"https://api-staging.smc-connect.org/locations/nova-workforce-board","address":{"id":481,"address_1":"505
+        West Olive Avenue, #550","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94086"},"organization":{"id":573,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"NOVA
+        Workforce Board","website":null,"slug":"nova-workforce-board","url":"https://api-staging.smc-connect.org/organizations/nova-workforce-board","locations_url":"https://api-staging.smc-connect.org/organizations/nova-workforce-board/locations"},"phones":[{"id":773,"department":null,"extension":null,"number":"408
+        730-7232","number_type":"voice","vanity_number":null},{"id":774,"department":"CONNECT!
+        Job Seeker Center","extension":null,"number":"408 774-2365","number_type":"voice","vanity_number":null},{"id":775,"department":"Youth
+        Employment Office","extension":null,"number":"408 730-7640","number_type":"voice","vanity_number":null},{"id":776,"department":null,"extension":null,"number":"408
+        730-7501","number_type":"tty","vanity_number":null},{"id":2863,"department":null,"extension":null,"number":"408
+        730-7643","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:56:43 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=2
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=youth&page=2
     body:
       encoding: US-ASCII
       string: ''
@@ -107,49 +795,612 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"e05da4d730dbef3795a5a52bf0883d51"
+      - W/"f7d820169d1458cd6d33b6e7eeb68bba"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="prev",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=3>; rel="next"
+      - <https://api-staging.smc-connect.org/search?keyword=youth&page=1>; rel="first",
+        <https://api-staging.smc-connect.org/search?keyword=youth&page=1>; rel="prev",
+        <https://api-staging.smc-connect.org/search?keyword=youth&page=11>; rel="last",
+        <https://api-staging.smc-connect.org/search?keyword=youth&page=3>; rel="next"
       X-Total-Count:
-      - '3'
+      - '328'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:07 GMT
+      - Wed, 08 Mar 2023 04:56:43 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - f250e1a6-7fe0-4607-93e9-6fbcbdb8443a
+      - 9c50b538-5bad-465d-9da6-51009bcafe03
       X-Runtime:
-      - '0.026449'
-      X-Rack-Cache:
-      - pass
+      - '0.058642'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":16,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.0600024,37.3569004],"description":"Provides
+      string: '[{"id":1627,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.230319,37.493448],"description":"Offers
+        a structured drug and alcohol recovery program for youth. This program is
+        open to all teenagers in the area and teens may self refer. Includes individual,
+        family and group counseling, anger management for adolescents, and a parent/teen
+        support group. Case management is offered throughout program participation.
+        Additional offices are located at 333 Gellert Blvd., Suite 206 in Daly City.","kind":"Human
+        Services","latitude":37.493448,"longitude":-122.230319,"name":"Insights","short_desc":"Offers
+        a structured 22-week drug and alcohol recovery program for youth.","slug":"insights","updated_at":"2014-11-25T17:22:21.857-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/insights","address":{"id":1359,"address_1":"609
+        Price Avenue, Suite 101","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2353,"department":null,"extension":null,"number":"650
+        366-8436","number_type":"voice","vanity_number":null},{"id":3531,"department":null,"extension":null,"number":"650
+        366-0220","number_type":"fax","vanity_number":null}]},{"id":1526,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1307218,37.4612436],"description":"Offers
+        an alternative educational program, one of three in the county, for youth
+        age 14-18, who are referred by the San Mateo County Probation Department,
+        school district or SARB (School Attendance Review Board). Program participants
+        are youths who have been expelled from school or are not attending school,
+        or are making little or no progress toward obtaining a high school diploma.
+        An individually planned program is designed for each pupil, including standards-based
+        instruction, vocational exploration, goal setting, job searching and development
+        of vocational and social skills. Staff include bilingual (English/Spanish)
+        speakers.","kind":"Human Services","latitude":37.4612436,"longitude":-122.1307218,"name":"Student
+        Services Division., Community School-South","short_desc":"Offers an alternative
+        educational program for youth age 14-18 who are not attending school or who
+        are experiencing difficulty in school.","slug":"student-services-division-community-school-south","updated_at":"2014-11-25T17:22:20.160-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/student-services-division-community-school-south","address":{"id":1265,"address_1":"2031
+        Pulgase Avenue","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1312,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Office of Education","website":null,"slug":"san-mateo-county-office-of-education","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-office-of-education","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-office-of-education/locations"},"phones":[{"id":2129,"department":null,"extension":null,"number":"650
+        599-1517","number_type":"voice","vanity_number":null},{"id":3465,"department":null,"extension":null,"number":"650
+        326-3657","number_type":"fax","vanity_number":null}]},{"id":922,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2336113,37.4840557],"description":"Provides
+        education to youth and adults to help reduce teen pregnancy, STDs and HIV
+        in San Mateo County. Programs include: Teen Talk, an 8-10 hour comprehensive
+        sexuality education program provided to public middle and high schools throughout
+        San Mateo County; Plain Talk for Parents, a two-part workshop designed to
+        give parents the tools they need when talking to youth about changes during
+        puberty, dating and relationships, teen pregnancy, STD/HIV and other issues
+        related to teen sexuality (offered in English and Spanish); Teen Parent Panel
+        that trains panels of pregnant and parenting teens to share experiences with
+        their peers (included in the Teen Talk series). Local schools or agencies
+        may request the Teen Parent Panel free of charge and teacher trainings that
+        provide teachers and community workers with the tools they need to teach comprehensive
+        sexuality education in their schools or community. Formerly known as Teenage
+        Pregnancy Prevention Coalition of San Mateo County.","kind":"Human Services","latitude":37.4840557,"longitude":-122.2336113,"name":"Teen
+        Talk Sexuality Education","short_desc":"A partnership of educators, community
+        residents, and health and human service providers organized to address teenage
+        pregnancy in the county.","slug":"teen-talk-sexuality-education","updated_at":"2014-11-25T17:22:09.112-08:00","website":"http://www.teentalkca.org","url":"https://api-staging.smc-connect.org/locations/teen-talk-sexuality-education","address":{"id":744,"address_1":"120
+        James Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94062"},"organization":{"id":922,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Teen
+        Talk Sexuality Education","website":null,"slug":"teen-talk-sexuality-education","url":"https://api-staging.smc-connect.org/organizations/teen-talk-sexuality-education","locations_url":"https://api-staging.smc-connect.org/organizations/teen-talk-sexuality-education/locations"},"phones":[{"id":1218,"department":null,"extension":null,"number":"650
+        367-1937","number_type":"voice","vanity_number":null},{"id":3072,"department":null,"extension":null,"number":"650
+        367-4940","number_type":"fax","vanity_number":null}]},{"id":829,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.9258234,37.3900997],"description":"Provides
+        culturally proficient mental health services to African youth, their families,
+        and adults. Case management services are provided in the home and are available
+        on a 24-hour basis. Refers clients to community resources to support academic
+        success and allows clients to remain at home with their family. The African
+        American Life Skills Group provides skills to succeed in school and in the
+        community from an African centered perspective. African culture is utilized
+        to empower youth and build a sense of community. The African Adult Program
+        provides 24-hour culturally proficient mental health services for the seriously
+        mentally ill. Services include case management, medications, treatment and
+        crisis intervention.","kind":"Human Services","latitude":37.3900997,"longitude":-121.9258234,"name":"Ujima
+        Adult and Family Services","short_desc":"Provides culturally proficient mental
+        health services to African youth and adults.","slug":"ujima-adult-and-family-services","updated_at":"2014-11-25T17:22:07.468-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/ujima-adult-and-family-services","address":{"id":672,"address_1":"2681
+        Zanker Road, Suite B","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95134"},"organization":{"id":829,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Ujima
+        Adult and Family Services","website":null,"slug":"ujima-adult-and-family-services","url":"https://api-staging.smc-connect.org/organizations/ujima-adult-and-family-services","locations_url":"https://api-staging.smc-connect.org/organizations/ujima-adult-and-family-services/locations"},"phones":[{"id":1104,"department":null,"extension":null,"number":"408
+        928-1700","number_type":"voice","vanity_number":null},{"id":3009,"department":null,"extension":null,"number":"408
+        928-1701","number_type":"fax","vanity_number":null}]},{"id":525,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.778202,37.233412],"description":"Counseling
+        Program provides outpatient counseling to disadvantaged persons and families.
+        Low-cost and mid-cost programs are available. Residential Program provides
+        residential treatment to disadvantaged chemically dependent and emotionally
+        disturbed youth (age 13-18) in need of out-of-home placement. Foster Care
+        Program provides foster care to abused, neglected and/or emotionally disturbed
+        children and youth (age 1-18) in need of out-of-home placement. Also performs
+        licensing of foster families.","kind":"Human Services","latitude":37.233412,"longitude":-121.778202,"name":"Advent
+        Group Ministries","short_desc":"Provides counseling to disadvantaged persons,
+        residential treatment to chemically dependent and emotionally disturbed youth
+        and foster care to children and youth.","slug":"advent-group-ministries","updated_at":"2014-11-25T17:22:03.067-08:00","website":"http://www.adventgm.com","url":"https://api-staging.smc-connect.org/locations/advent-group-ministries","address":{"id":437,"address_1":"90
+        Great Oak Blvd., Suite 108","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95119"},"organization":{"id":525,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Advent
+        Group Ministries","website":null,"slug":"advent-group-ministries","url":"https://api-staging.smc-connect.org/organizations/advent-group-ministries","locations_url":"https://api-staging.smc-connect.org/organizations/advent-group-ministries/locations"},"phones":[{"id":685,"department":null,"extension":null,"number":"408
+        281-0708","number_type":"voice","vanity_number":null},{"id":2817,"department":null,"extension":null,"number":"408
+        281-2658","number_type":"fax","vanity_number":null}]},{"id":394,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2511053,37.808891],"description":"The
+        center''s mission is to preserve and promote the integrity and culture of
+        American Indian youth and their families. AICRC is a licensed foster family
+        agency providing Indian Child Welfare Act advocacy and certifying culturally
+        supportive foster homes in ten Bay Area counties for temporary placement of
+        American Indian children. The Indian Education Center offers mentoring, tutoring,
+        cultural arts classes and youth advocacy. Social services include an adolescent
+        pregnancy prevention program, a child neglect/abuse treatment program, and
+        resource and referral services.","kind":"Human Services","latitude":37.808891,"longitude":-122.2511053,"name":"American
+        Indian Child Resource Center","short_desc":"Social services for abused or
+        neglected American Indian children including tutoring and educational services.","slug":"american-indian-child-resource-center","updated_at":"2014-11-25T17:22:01.057-08:00","website":"http://www.aicrc.org","url":"https://api-staging.smc-connect.org/locations/american-indian-child-resource-center","address":{"id":332,"address_1":"522
+        Grand Avenue","address_2":null,"city":"Oakland","state_province":"CA","postal_code":"94610"},"organization":{"id":394,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"American
+        Indian Child Resource Center","website":null,"slug":"american-indian-child-resource-center","url":"https://api-staging.smc-connect.org/organizations/american-indian-child-resource-center","locations_url":"https://api-staging.smc-connect.org/organizations/american-indian-child-resource-center/locations"},"phones":[{"id":527,"department":null,"extension":null,"number":"510
+        208-1870","number_type":"voice","vanity_number":null},{"id":2741,"department":null,"extension":null,"number":"510
+        208-1886","number_type":"fax","vanity_number":null}]},{"id":1615,"active":true,"admin_emails":null,"alternate_name":"SVdP
+        ","coordinates":[-122.32496,37.5683804],"description":"Assists families and
+        individuals with emergencies such as shelter, food, clothing, furniture, transportation
+        and medicine through 34 small working groups called conferences. St. Vincent
+        de Paul members visit the home to assess needs and offer service. Also supports
+        those in recovery programs. Three Homeless Help Centers (described separately)
+        provide weekday lunches, continental breakfasts, clothing vouchers, laundry,
+        toiletries, identification and transportation assistance to individuals without
+        a permanent address. The North County Homeless Help Center and Cafe St. Vincent
+        are located at 344 Grand Avenue, South San Francisco (650-589-9039), open
+        Monday through Saturday, 10 am-12 noon. The Redwood City Homeless Help Center
+        is housed in the Fair Oaks Community Center, 2600 Middlefield Road (650-780-7500),
+        and is open 1-2 pm weekdays. The San Mateo site is at 50 North B Street and
+        is open 10 am-12 noon Monday through Friday (650-343-9251). A meal is also
+        served on Monday at 5 pm, at St. Francis Church, 420 Bay Road, East Palo Alto.
+        Peninsula Family Resource Center (PFRC) arranges home visits for persons in
+        need of rental and utilities assistance (homelessness prevention), food, clothes,
+        furniture and other material needs. Call 650-343-4403 Monday-Friday, 10-12
+        and 1-4, to make arrangements. Also coordinates summer camp scholarships for
+        youth and holiday assistance programs. Restorative Justice Ministry is a full-time
+        jail ministry program that provides spiritual guidance, religious services,
+        tutoring, support and assistance to those incarcerated in the San Mateo County
+        jail facilities and to their families. Jail/prison after care program provides
+        post-release support. Contact the SVdP Jail Chaplain at 650-366-9847. Catherine''s
+        Center is a supportive residential program for ten women at a time who were
+        previously incarcerated. Five thrift stores are located in San Mateo County:
+        Daly City at 6256 Mission Street (650-992-9271); Redwood City at 2406 El Camino
+        Real (650-366-6367); San Bruno at 1600 El Camino Real (650-588-5767); San
+        Mateo at 40 North B Street (650-347-5101); South San Francisco at 344 Grand
+        Avenue (650-589-8445). Donations can be made at store locations or call 650
+        871-6844 for donation or computer re-cycling pick-up. For vehicle donations
+        call 800-937-7837.","kind":"Human Services","latitude":37.5683804,"longitude":-122.32496,"name":"Society
+        of St. Vincent de Paul County Wide Services","short_desc":"Coordinates the
+        Society''s county-wide emergency services and provides homeless services to
+        persons in the central county area.","slug":"society-of-st-vincent-de-paul-county-wide-services","updated_at":"2017-07-24T11:03:13.078-07:00","website":"http://svdpsm.org","url":"https://api-staging.smc-connect.org/locations/society-of-st-vincent-de-paul-county-wide-services","address":{"id":1348,"address_1":"50
+        North B Street","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":1237,"accreditations":["Guidestar
+        Platinum Rated Charity","Charity Navigator Four-Star Rated Charity"],"alternate_name":"SVdP","date_incorporated":null,"description":"In
+        the spirit of love and justice, the Society of St. Vincent de Paul of San
+        Mateo County (SVdP) provides person-to-person services of time, talent and
+        resources to help our neighbors in need. SVdP respects the dignity of every
+        person. We provide Safety-Net services for families and individuals in our
+        community who are often suffering, forgotten and deprived — the working poor,
+        the homeless, the incarcerated, and all people living on the margins. We also
+        seek systemic change solutions to move people out of poverty.","email":"info@svdpsm.org","funding_sources":["Donations","Fundraising","Grants"],"licenses":[],"name":"Society
+        of St. Vincent de Paul of San Mateo County","website":"http://svdpsm.org","slug":"society-of-st-vincent-de-paul-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county/locations"},"phones":[{"id":2322,"department":"Emergency
+        Helpline","extension":null,"number":"650 343-4403","number_type":"voice","vanity_number":null},{"id":3526,"department":null,"extension":null,"number":"650
+        343-9495","number_type":"fax","vanity_number":null},{"id":3709,"department":null,"extension":null,"number":"650-343-9251","number_type":"voice","vanity_number":null}]},{"id":532,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.081773,37.387869],"description":"Provides
+        a multifaceted program to address most of the difficulties and stresses encountered
+        by children, adolescents and families that impacts their emotional well-being.
+        Programs include individual, couple and family counseling to help with problems
+        including depression, anxiety, parenting issues, divorce and grief. Also offers
+        play therapy, substance abuse prevention and intervention, parenting classes,
+        teen diversion day treatment program for substance abuse, conflict resolution,
+        First 5 Program for children birth to age five. Latina women''s group, outreach
+        and counseling to gay, lesbian, transgender and questioning youth, and case
+        management and other services to youth in the Restorative Justice Program
+        of the county Juvenile Probation Department. Parent education classes available
+        in positive discipline for all ages. The Parent Project is an intensive class
+        for parents with acting-out teens and Functional Family Therapy is a new program
+        available to families with major issues.","kind":"Human Services","latitude":37.387869,"longitude":-122.081773,"name":"Community
+        Health Awareness Council (CHAC)","short_desc":"Provides counseling, crisis
+        intervention, awareness classes, support groups and teen diversion programs
+        for children and adolescents with substance abuse problems.","slug":"community-health-awareness-council-chac","updated_at":"2014-12-04T11:10:51.048-08:00","website":"http://www.chacmv.org","url":"https://api-staging.smc-connect.org/locations/community-health-awareness-council-chac","address":{"id":444,"address_1":"711
+        Church Street","address_2":null,"city":"Mountain View","state_province":"CA","postal_code":"94041"},"organization":{"id":532,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Community
+        Health Awareness Council (CHAC)","website":null,"slug":"community-health-awareness-council-chac","url":"https://api-staging.smc-connect.org/organizations/community-health-awareness-council-chac","locations_url":"https://api-staging.smc-connect.org/organizations/community-health-awareness-council-chac/locations"},"phones":[{"id":695,"department":null,"extension":null,"number":"650
+        965-2020","number_type":"voice","vanity_number":null},{"id":2824,"department":null,"extension":null,"number":"650
+        965-7286","number_type":"fax","vanity_number":null}]},{"id":1629,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.230319,37.493448],"description":"Offers
+        a variety of adult outpatient treatment services. Provides the First Offender
+        program for persons arrested driving under the influence. Length of the program
+        is determined by the blood alcohol concentration at the time of the arrest.
+        Also, provides outpatient services for alcohol and drug treatment. Serves
+        clients with referrals from probation and parole (Prop 36, DEJ, Drug Diversion),
+        as well as self-referred clients. Offers a certified 52-week adult domestic
+        intervention program. Also, offers a 16-week anger management program. Referrals
+        can be court-mandated or self-referred. All programs are licensed through
+        the State of California and monitored both by the State of California and
+        the County of San Mateo. Formerly known as Youth and Family Enrichment Services
+        (YFES).","kind":"Human Services","latitude":37.493448,"longitude":-122.230319,"name":"Archway","short_desc":"Offers
+        counseling and support for children from chemically dependent families, and
+        First Offender, Drug Diversion and Domestic Non-Violence programs.","slug":"archway","updated_at":"2014-11-25T17:22:21.917-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/archway","address":{"id":1360,"address_1":"609
+        Price Avenue, Suite 201","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2355,"department":null,"extension":null,"number":"650
+        366-8433","number_type":"voice","vanity_number":null},{"id":3533,"department":null,"extension":null,"number":"650
+        366-8455","number_type":"fax","vanity_number":null}]},{"id":894,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8913793,37.3375085],"description":"An
+        AmeriCorps program that engages youth age 17-24 for a year of full-time community
+        service, leadership development and civic engagement. Volunteers primarily
+        work with children as tutors, mentors, role models and coordinators of activity
+        before, during and after school. Corps members also serve as volunteer recruiters
+        engaging community residents, corporate employees, parents, and particularly
+        children and youth to do community service.","kind":"Human Services","latitude":37.3375085,"longitude":-121.8913793,"name":"City
+        Year San Jose/Silicon Valley","short_desc":"An AmeriCorps program that offers
+        youth age 17-24 a year of full-time community service, leadership development
+        and civic engagement.","slug":"city-year-san-jose-silicon-valley","updated_at":"2014-11-25T17:22:08.607-08:00","website":"http://www.cityyear.org","url":"https://api-staging.smc-connect.org/locations/city-year-san-jose-silicon-valley","address":{"id":720,"address_1":"90
+        North First Street","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95113"},"organization":{"id":894,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"City
+        Year San Jose/Silicon Valley","website":null,"slug":"city-year-san-jose-silicon-valley","url":"https://api-staging.smc-connect.org/organizations/city-year-san-jose-silicon-valley","locations_url":"https://api-staging.smc-connect.org/organizations/city-year-san-jose-silicon-valley/locations"},"phones":[{"id":1188,"department":null,"extension":null,"number":"408
+        907-6500","number_type":"voice","vanity_number":null},{"id":3053,"department":null,"extension":null,"number":"408
+        907-6556","number_type":"fax","vanity_number":null}]},{"id":580,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.922091,37.380604],"description":"Works
+        to eliminate prejudice and discrimination because of race, religion, national
+        origin, cultural background, sex, age, sexual orientation or physical disability
+        through education, investigation of complaints and mediation. Promotes harmonious
+        intergroup relations among all cultures and nationalities. Issues of concern
+        are homelessness, hate crimes, prejudice reduction and employment/housing
+        discrimination. - Dispute Resolution Program provides mediation and conciliation
+        to meet the individual and diverse needs of those affected locally by national
+        and global events. - Immigration Resources and Integration Services (IRIS)
+        provides information on citizenship for all Santa Clara County residents.
+        - Network for a Hate Free Community provides a vehicle for reporting hate
+        violence, obtaining services of a prejudice reduction workshop facilitator,
+        data on Santa Clara County hate violence and networking opportunities for
+        creating strategies that will promote a hate-free community. - Youth Advisory
+        Task Force provides an opportunity for youth, age 14-21, to develop leadership
+        and civic involvement skills and experience. The Human Relations Commission
+        and the Commission on the Status of Women serve as advisory bodies to the
+        Santa Clara County Board of Supervisors.","kind":"Human Services","latitude":37.380604,"longitude":-121.922091,"name":"Santa
+        Clara County Office of Human Relations","short_desc":"Complaint investigation
+        and mediation on issues related to prejudice and discrimination.","slug":"santa-clara-county-office-of-human-relations","updated_at":"2014-11-25T17:22:04.714-08:00","website":"http://sccgov.org/portal/site/ohr","url":"https://api-staging.smc-connect.org/locations/santa-clara-county-office-of-human-relations","address":{"id":487,"address_1":"2310
+        North First Street, Suite 104","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95131"},"organization":{"id":580,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Santa
+        Clara County Office of Human Relations","website":null,"slug":"santa-clara-county-office-of-human-relations","url":"https://api-staging.smc-connect.org/organizations/santa-clara-county-office-of-human-relations","locations_url":"https://api-staging.smc-connect.org/organizations/santa-clara-county-office-of-human-relations/locations"},"phones":[{"id":785,"department":null,"extension":null,"number":"408
+        792-2300","number_type":"voice","vanity_number":null},{"id":2868,"department":null,"extension":null,"number":"408
+        297-2463","number_type":"fax","vanity_number":null}]},{"id":538,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.866393,37.34804],"description":"Adult
+        and Family Counseling Service Program provides low-cost, culturally sensitive
+        outpatient therapy to individuals, couples and families, adults, adolescents
+        and children to assist them in developing healthier lifestyles by resolving
+        personal and family conflicts. Offers aftercare services for those who require
+        longer term counseling. Provides 24-hour crisis intervention for adolescents.
+        Counselors are available 24 hours a day to work closely with parents, schools,
+        police, the Probation Department and the County Social Services Department
+        to defuse crisis situations and support youth in making healthy decisions.
+        Emergency short-term shelter placement for adolescents is available as space
+        permits. The Parent Enrichment Program is an educational curriculum designed
+        to include the entire family with the goal of strengthening family living
+        skills. Course topics include child development and behavior, communication
+        skills, discipline, self-esteem, sibling issues, child abuse and substance
+        abuse prevention. Also offers a Latino-based parent education and family strengthening
+        program. Courses are offered through schools, churches and other community
+        agencies and are available to parents of children and youth of all ages.","kind":"Human
+        Services","latitude":37.34804,"longitude":-121.866393,"name":"Alum Rock Counseling
+        Center, Inc.","short_desc":"Provides 24-hour crisis intervention for adolescents,
+        counseling and family wellness training.","slug":"alum-rock-counseling-center-inc","updated_at":"2014-11-25T17:22:03.596-08:00","website":"http://www.alumrockcc.org","url":"https://api-staging.smc-connect.org/locations/alum-rock-counseling-center-inc","address":{"id":449,"address_1":"1245
+        East Santa Clara Street","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95116-2339"},"organization":{"id":538,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Alum
+        Rock Counseling Center, Inc.","website":null,"slug":"alum-rock-counseling-center-inc","url":"https://api-staging.smc-connect.org/organizations/alum-rock-counseling-center-inc","locations_url":"https://api-staging.smc-connect.org/organizations/alum-rock-counseling-center-inc/locations"},"phones":[{"id":706,"department":null,"extension":null,"number":"408
+        294-0500","number_type":"voice","vanity_number":null},{"id":707,"department":"Crisis
+        Line 24 hours daily","extension":null,"number":"408 294-0579","number_type":"voice","vanity_number":null},{"id":2831,"department":null,"extension":null,"number":"408
+        294-2450","number_type":"fax","vanity_number":null}]},{"id":357,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.9648672,37.563147],"description":"Residential
+        and day school program for visually impaired youth age 5-21 Provides a comprehensive
+        residential and day school educational program for visually handicapped children
+        and youth, age 5-21, who do not have a local service. Offers a vocational
+        preparation and living skills program for older students.","kind":"Human Services","latitude":37.563147,"longitude":-121.9648672,"name":"California
+        School for the Blind","short_desc":null,"slug":"california-school-for-the-blind","updated_at":"2014-11-25T17:22:00.726-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/california-school-for-the-blind","address":{"id":301,"address_1":"500
+        Walnut Avenue","address_2":null,"city":"Fremont","state_province":"CA","postal_code":"94536"},"organization":{"id":357,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"California
+        School for the Blind","website":null,"slug":"california-school-for-the-blind","url":"https://api-staging.smc-connect.org/organizations/california-school-for-the-blind","locations_url":"https://api-staging.smc-connect.org/organizations/california-school-for-the-blind/locations"},"phones":[{"id":479,"department":null,"extension":null,"number":"510
+        794-3800","number_type":"voice","vanity_number":null},{"id":2717,"department":null,"extension":null,"number":"510
+        794-3813","number_type":"fax","vanity_number":null}]},{"id":1632,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"Provides
+        information about alcohol and drug recovery programs and referrals to community
+        services. Offers support for persons dealing with their own alcohol and drug
+        issues or for those whose lives have been affected by alcohol and drug abuse.
+        All services provided over the phone. Formerly known as Youth and Family Enrichment
+        Services (YFES).","kind":"Human Services","latitude":null,"longitude":null,"name":"Alcohol
+        and Drug Helpline","short_desc":"A 24-hour hotline offering information on
+        alcohol and drug treatment services.","slug":"alcohol-and-drug-helpline","updated_at":"2014-11-25T17:15:53.941-08:00","website":"http://www.star-vista.org/what_we_do/alcohol_drugs/","url":"https://api-staging.smc-connect.org/locations/alcohol-and-drug-helpline","address":null,"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2358,"department":"Hotline
+        24 hours daily","extension":null,"number":"650 573-3950","number_type":"hotline","vanity_number":null},{"id":2359,"department":"Office","extension":null,"number":"650
+        595-8165","number_type":"voice","vanity_number":null}]},{"id":110,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3149573,37.5804513],"description":"Provides
+        youth with homework assistance, computer education, and classes in drug, alcohol
+        and sex prevention. Also offers cultural arts and crafts as well as cooking.
+        Members participate in organized gym/sports activities and supervised recreation.
+        The club works in coordination with local schools, local school district and
+        other social service agencies. Club locations are at 200 North Quebec Street
+        and at DeLue Boys and Girls Club, 450 Martin Street, Daly City 94014 (9 am-6
+        pm).","kind":"Human Services","latitude":37.5804513,"longitude":-122.3149573,"name":"Mid-Peninsula
+        Boys and Girls Club","short_desc":"Provides athletic facilities and organized
+        social events for children and teenagers.","slug":"mid-peninsula-boys-and-girls-club","updated_at":"2014-12-04T11:17:20.364-08:00","website":"http://midpenbgc.org","url":"https://api-staging.smc-connect.org/locations/mid-peninsula-boys-and-girls-club","address":{"id":104,"address_1":"200
+        North Quebec Street","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":110,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Mid-Peninsula
+        Boys and Girls Club","website":null,"slug":"mid-peninsula-boys-and-girls-club","url":"https://api-staging.smc-connect.org/organizations/mid-peninsula-boys-and-girls-club","locations_url":"https://api-staging.smc-connect.org/organizations/mid-peninsula-boys-and-girls-club/locations"},"phones":[{"id":144,"department":"San
+        Mateo Club House","extension":null,"number":"650 347-9891","number_type":"voice","vanity_number":null},{"id":145,"department":"DeLue
+        Clubhouse at Bayshore Community Center","extension":null,"number":"650 991-5757","number_type":"voice","vanity_number":null},{"id":2567,"department":null,"extension":null,"number":"650
+        347-9896","number_type":"fax","vanity_number":null}]},{"id":1289,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.165895,37.476018],"description":"Provides
+        academic, life skills and physical education programs and activities for boys
+        and girls age 6-18. Homework assistance and tutoring are available. Program
+        professionals can also refer youth to medical, educational and other community
+        professionals. The facility is located at 401 Pierce Road, Menlo Park, and
+        was formerly known as the Herbert Hoover Branch.","kind":"Human Services","latitude":37.476018,"longitude":-122.165895,"name":"McNeil
+        Family Clubhouse","short_desc":"Provides academic, life skills and physical
+        education programs and activities for children and teens age 6-18.","slug":"mcneil-family-clubhouse","updated_at":"2014-12-04T11:17:21.319-08:00","website":"http://www.bgcp.org","url":"https://api-staging.smc-connect.org/locations/mcneil-family-clubhouse","address":{"id":1031,"address_1":"401
+        Pierce Road","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":1272,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Boys
+        and Girls Club of the Peninsula","website":null,"slug":"boys-and-girls-club-of-the-peninsula","url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula","locations_url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula/locations"},"phones":[{"id":1703,"department":null,"extension":null,"number":"650
+        646-6070","number_type":"voice","vanity_number":null},{"id":3295,"department":null,"extension":null,"number":"650
+        322-6251","number_type":"fax","vanity_number":null}]},{"id":1467,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2847713,37.5436595],"description":"Provides
+        day treatment within the context of the school day for youth age 13 to 18
+        who are having emotional or behavioral problems that interfere with their
+        ability to attend or function in mainstream public schools. Mental health
+        counselors work with school staff to provide a supportive, therapeutic learning
+        environment. Both individual and group instruction are provided by a certified
+        special education teacher. Daily group activities include occupational therapy,
+        outings in the community, recreational activities, community meetings and
+        group therapy, with weekly individual counseling. Psychiatric services are
+        available. Regular family contact with the program is required. The programs
+        are located as follows: Baden Therapeutic Day School (South San Francisco
+        Unified School District), 825 Southwood Drive #5, South San Francisco 94080
+        (650-877-8795). Carlmont Therapeutic Day School (Sequoia Union High School
+        District), 1400 Alameda de las Pulgas, Belmont 94002 (650-369-1411). Hilltop
+        Therapeutic Day School (Sequoia Union High School District), Woodside High
+        School, 199 Churchill Avenue, Woodside, 94062 (650-364-8186). Serramonte Therapeutic
+        Day School (Jefferson Union High School District) 699 Serramonte Blvd. #100,
+        Daly City (650-994-4395). Skyview Therapeutic Day School (San Mateo Union
+        High School District), 300 Piedmont Avenue, Room 306, San Bruno 94066 (650-583-8928).","kind":"Human
+        Services","latitude":37.5436595,"longitude":-122.2847713,"name":"Behavioral
+        Health and Recovery Services., Therapeutic Day Schools","short_desc":"Provides
+        day treatment during the school day for youth who are having emotional or
+        behavioral problems that interfere with their ability to function in school.","slug":"behavioral-health-and-recovery-services-therapeutic-day-schools","updated_at":"2014-12-04T11:10:51.175-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/behavioral-health-and-recovery-services-therapeutic-day-schools","address":{"id":1207,"address_1":"3080
+        La Selva","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2042,"department":null,"extension":null,"number":"650
+        573-2942","number_type":"voice","vanity_number":null},{"id":3418,"department":null,"extension":null,"number":"650
+        349-0476","number_type":"fax","vanity_number":null}]},{"id":1290,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.217107,37.4824744],"description":"Provides
+        academic, life skills and physical education programs and activities for boys
+        and girls age 6-18. Homework assistance and tutoring are available. Program
+        professionals can also refer youth to medical, educational and other community
+        professionals. Brochures are available to describe in detail what is offered
+        and important dates. They can be obtained at the front desk inside the clubhouse.
+        The club is located at 1109 Hilton Street, Redwood City. School year: Monday,
+        Tuesday, Wednesday, Friday, 2:30-6:30; Thursday, 1:30-6:30. Summer: Monday-Friday,
+        7-6. Teens: Monday-Thursday, 2:30-8; Friday, 2:30-10.","kind":"Human Services","latitude":37.4824744,"longitude":-122.217107,"name":"Mervin
+        G. Morris Branch","short_desc":"Provides academic, life skills and physical
+        education programs and activities for children and teens age 6-18.","slug":"mervin-g-morris-branch","updated_at":"2014-11-25T17:22:14.899-08:00","website":"http://www.bgcp.org","url":"https://api-staging.smc-connect.org/locations/mervin-g-morris-branch","address":{"id":1032,"address_1":"1109
+        Hilton Street","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1272,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Boys
+        and Girls Club of the Peninsula","website":null,"slug":"boys-and-girls-club-of-the-peninsula","url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula","locations_url":"https://api-staging.smc-connect.org/organizations/boys-and-girls-club-of-the-peninsula/locations"},"phones":[{"id":1704,"department":null,"extension":null,"number":"650
+        587-9370","number_type":"voice","vanity_number":null},{"id":3296,"department":null,"extension":null,"number":"650
+        364-1618","number_type":"fax","vanity_number":null}]},{"id":1046,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.119603,37.44994],"description":"A
+        California state certified outpatient substance abuse program providing assessment,
+        education, treatment, family therapy and recovery treatment for youth age
+        12-18.","kind":"Human Services","latitude":37.44994,"longitude":-122.119603,"name":"Adolescent
+        Substance Abuse Treatment Program","short_desc":"Outpatient substance abuse
+        treatment for youth age 12-18.","slug":"adolescent-substance-abuse-treatment-program","updated_at":"2014-11-25T17:22:10.681-08:00","website":"http://www.acs-teens.org","url":"https://api-staging.smc-connect.org/locations/adolescent-substance-abuse-treatment-program","address":{"id":835,"address_1":"1717
+        Embarcadero Road, Suite 4000","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":578,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Adolescent
+        Counseling Services","website":null,"slug":"adolescent-counseling-services","url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services","locations_url":"https://api-staging.smc-connect.org/organizations/adolescent-counseling-services/locations"},"phones":[{"id":1359,"department":"Main
+        Office","extension":null,"number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1360,"department":"Office
+        Manager","extension":"200","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1361,"department":"Adolescent
+        Substance Abuse Treatment Program","extension":"104","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":1362,"department":"After-School
+        Counseling Program","extension":"104","number":"650 424-0852","number_type":"voice","vanity_number":null},{"id":3147,"department":null,"extension":null,"number":"650
+        329-9630","number_type":"fax","vanity_number":null}]},{"id":572,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.5689924,37.0135344],"description":"Provides
+        accredited behavioral healthcare and risk prevention services to children
+        age birth-18. Children with severe emotional, mental, or behavioral problems
+        receive care and mental health treatment through the Residential Program.
+        For children at risk of removal from the home, Wraparound services support
+        the whole family. Permanency Services consist of adoption and foster care,
+        as well as Links 2 Permanency that identifies relatives and others with whom
+        youth will have connections that last a lifetime. Therapeutic Behavioral Services
+        (TBS) provides intensive interventions for children whose challenging behaviors
+        put them at risk of losing their placements and assists children in making
+        a transition from residential care to living in the community. Non-Public
+        School provides a quality education experience for special-needs children,
+        supporting positive educational growth in a therapeutic setting. RCS'' community
+        mental health center provides office-based, school-based, and in-home outpatient
+        therapy for referred children. Risk prevention and education services are
+        provided to 2,300 children and their parents, in 11 Gilroy schools.","kind":"Human
+        Services","latitude":37.0135344,"longitude":-121.5689924,"name":"Rebekah Children''s
+        Services","short_desc":"Provides a residential treatment program for children
+        and adolescents with behavioral or emotional problems and a therapeutic foster
+        care program for abused children.","slug":"rebekah-children-s-services","updated_at":"2014-11-25T17:22:04.382-08:00","website":"http://www.rcskids.org","url":"https://api-staging.smc-connect.org/locations/rebekah-children-s-services","address":{"id":480,"address_1":"290
+        IOOF Avenue","address_2":null,"city":"Gilroy","state_province":"CA","postal_code":"95020"},"organization":{"id":572,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Rebekah
+        Children''s Services","website":null,"slug":"rebekah-children-s-services","url":"https://api-staging.smc-connect.org/organizations/rebekah-children-s-services","locations_url":"https://api-staging.smc-connect.org/organizations/rebekah-children-s-services/locations"},"phones":[{"id":772,"department":null,"extension":null,"number":"408
+        846-2100","number_type":"voice","vanity_number":null},{"id":2862,"department":null,"extension":null,"number":"408
+        846-4847","number_type":"fax","vanity_number":null}]},{"id":1630,"active":true,"admin_emails":["sarah.burdge@star-vista.org"],"alternate_name":"","coordinates":[-122.2624266,37.5036682],"description":"Services
+        include individual, child, adult, family and couples counseling by appointment
+        during weekday business hours (9 am to 8 pm). Formerly known as Youth and
+        Family Enrichment Services (YFES).","kind":"Human Services","latitude":37.5036682,"longitude":-122.2624266,"name":"Counseling
+        Center","short_desc":"Provides crisis counseling, outreach and community education.","slug":"counseling-center","updated_at":"2018-02-15T19:57:46.971-08:00","website":"http://www.star-vista.org","url":"https://api-staging.smc-connect.org/locations/counseling-center","address":{"id":1361,"address_1":"610
+        Elm Street, Suite 212","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070"},"organization":{"id":58,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"StarVista","website":null,"slug":"starvista","url":"https://api-staging.smc-connect.org/organizations/starvista","locations_url":"https://api-staging.smc-connect.org/organizations/starvista/locations"},"phones":[{"id":2356,"department":null,"extension":null,"number":"650-830-1765","number_type":"voice","vanity_number":null}]},{"id":812,"active":true,"admin_emails":["gbarragan@freeatlast.org"],"alternate_name":"","coordinates":[-122.1358683,37.4716005],"description":"Offers
+        a continuum of community-based services in English and Spanish for adults
+        and youth that includes prevention and intervention services, structured treatment,
+        transitional housing and long-term success. The Neighborhood Recovery Center
+        is visited by an average of 50-75 people a day, and offers assessment and
+        referral and daily 12-step meetings groups. Bilingual outreach teams provide
+        prevention and risk reduction education, and collaborate with the San Mateo
+        County Health Services Mobile Clinic and the AIDS Program to recruit people
+        for HIV/STD/TB testing. First Offenders DUI program involves three months
+        of weekly groups and education classes. Outpatient and Residential Programs
+        offer six- to nine-month intensive bilingual (English/Spanish) outpatient
+        and residential treatment services based on a social model of 12-step recovery.
+        The residential programs accommodate 18 men and 16 women and children. Child
+        care and developmental services are available to the children of women living
+        in Malaika House. Treatment programs incorporate family reunification, parenting
+        and life skills classes, conflict resolution and employment readiness training.
+        Outpatient programs are free. Residential fees are based on income. Transitional
+        Housing provides individuals in recovery with shared, low-cost housing for
+        up to 18 months. Free at Last manages seven transitional houses for men, women
+        and women with children. On-going support services focus on relapse prevention
+        for alumni. Events and activities are regularly scheduled to provide positive
+        socializing for alumni and families.","kind":"Human Services","latitude":37.4716005,"longitude":-122.1358683,"name":"Free
+        at Last","short_desc":"A continuum of community-based services for adults
+        and youth that includes prevention and intervention services, structured treatment,
+        transitional housing and long-term success.","slug":"free-at-last","updated_at":"2018-02-15T19:57:45.449-08:00","website":"http://www.freeatlast.org","url":"https://api-staging.smc-connect.org/locations/free-at-last","address":{"id":661,"address_1":"1796
+        Bay Road","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":812,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Free
+        at Last","website":null,"slug":"free-at-last","url":"https://api-staging.smc-connect.org/organizations/free-at-last","locations_url":"https://api-staging.smc-connect.org/organizations/free-at-last/locations"},"phones":[{"id":1081,"department":null,"extension":null,"number":"650
+        462-6999","number_type":"voice","vanity_number":null},{"id":3000,"department":null,"extension":null,"number":"650
+        462-1055","number_type":"fax","vanity_number":null}]},{"id":417,"active":true,"admin_emails":["cgarcia@pcrcweb.org"],"alternate_name":"","coordinates":[-122.3038032,37.5588719],"description":"Serves
+        San Mateo County with mediation, facilitation, training services, empowering
+        youth Initiatives, engaging community engagement and training services. Offers
+        mediation for disputes including neighbor, landlord/tenant, family, workplace,
+        business/consumer, and homeowner association. Please call 650-345-PCRC (7272)
+        for skilled volunteers help disputants communicate and reach agreement. Facilitation
+        services available for meeting management, process planning and group problem
+        solving. Community engagement programs promote civic participation, parent
+        involvement in schools, and collaboration with community partners to prevent
+        gang violence and support wellness initiatives. Trains pre-K through high
+        school students, teachers, administrators and parents in conflict management,
+        peer mediation, anger management, empathy and respectful language, anti-bullying
+        and gang/violence prevention. Also provides customized training in conflict
+        resolution, facilitation, communication skills and workplace effectiveness.","kind":"Human
+        Services","latitude":37.5588719,"longitude":-122.3038032,"name":"Peninsula
+        Conflict Resolution Center (PCRC)","short_desc":"Offers mediation services
+        for landlord/tenant and neighbor/neighbor disputes and training for community
+        organizations. (650) 345-PCRC (7272)","slug":"peninsula-conflict-resolution-center-pcrc","updated_at":"2018-02-15T19:57:45.236-08:00","website":"http://www.pcrcweb.org","url":"https://api-staging.smc-connect.org/locations/peninsula-conflict-resolution-center-pcrc","address":{"id":349,"address_1":"1660
+        South Amphlett Blvd., Suite 219","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":417,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"PCRC
+        is a communication and dispute resolution organization focusing on empowering
+        youth, strengthening families, and engaging communities through training,
+        facilitation and mediation (neighbor/neighbor, landlord/tenant, consumer/business,
+        workplace, homeowner association, family, complex/multi-party).","email":"info@pcrcweb.org","funding_sources":["City","County","Donations","Fees","Foundation","Fundraising","Grants","State"],"licenses":[],"name":"Peninsula
+        Conflict Resolution Center (PCRC)","website":"http://www.pcrcweb.org/","slug":"peninsula-conflict-resolution-center-pcrc","url":"https://api-staging.smc-connect.org/organizations/peninsula-conflict-resolution-center-pcrc","locations_url":"https://api-staging.smc-connect.org/organizations/peninsula-conflict-resolution-center-pcrc/locations"},"phones":[{"id":553,"department":null,"extension":null,"number":"650
+        513-0330","number_type":"voice","vanity_number":"650 346-PCRC"},{"id":2752,"department":null,"extension":null,"number":"650
+        513-0335","number_type":"fax","vanity_number":null}]},{"id":61,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.1449674,37.4242609],"description":"Vista
+        Center for the Blind and Visually Impaired is the premier one-stop resource
+        provider for vision loss and rehabilitation. For more than 75 years, Vista
+        Center has offered a range of comprehensive services to empower clients to
+        embrace life to the fullest through evaluation, counseling, education and
+        training. Services offered:  Safe and Healthy Living program assesses client
+        needs and develops a plan of action for teaching skills that enable independence.
+         Low Vision Services conducts evaluations resulting in recommendations to
+        enhance remaining vision with devices, services and support.  Technology
+        Program that leads the way in bringing tech to those with visual impairments
+         Children \u0026 Youth Services provides young clients with tools, strategies
+        and confidence to build the future they dream of and that is possible.  Community
+        Services is a resource for, and an educator in, the communities it serves
+        through outreach, corporate in-services, public transit counseling. The center
+        has a health research library affiliated with the Stanford Health Library
+        for accessing medical information, and information on vision loss and a store
+        with vision aids and products for purchase. A volunteer program and a mentoring
+        program help to provide ongoing support to clients. Another office is located
+        at 3315 Mission Drive, Suite B, Santa Cruz 95065 (Phone: 831-458-9766; Fax:
+        831-426-6233). Vista Center is formerly known as the Peninsula Center for
+        the Blind and Visually Impaired.","kind":"Human Services","latitude":37.4242609,"longitude":-122.1449674,"name":"Vista
+        Center for the Blind and Visually Impaired","short_desc":"Provides services
+        to individuals and families affected by vision loss or impairment.","slug":"vista-center-for-the-blind-and-visually-impaired","updated_at":"2018-02-15T19:57:44.938-08:00","website":"http://www.vistacenter.org","url":"https://api-staging.smc-connect.org/locations/vista-center-for-the-blind-and-visually-impaired","address":{"id":58,"address_1":"2500
+        El Camino Real, Suite 100","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94306"},"organization":{"id":61,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Vista
+        Center for the Blind and Visually Impaired is the premier one-stop resource
+        provider for vision loss and rehabilitation. For more than 75 years, Vista
+        Center has offered a range of comprehensive services to empower clients to
+        embrace life to the fullest through evaluation, counseling, education and
+        training. Services offered:  Safe and Healthy Living program assesses client
+        needs and develops a plan of action for teaching skills that enable independence.
+         Low Vision Services conducts evaluations resulting in recommendations to
+        enhance remaining vision with devices, services and support.  Technology
+        Program that leads the way in bringing tech to those with visual impairments
+         Children \u0026 Youth Services provides young clients with tools, strategies
+        and confidence to build the future they dream of and that is possible.  Community
+        Services is a resource for, and an educator in, the communities it serves
+        through outreach, corporate in-services, public transit counseling. The center
+        has a health research library which is an affiliate of the Stanford Health
+        Library for accessing medical information, and information on vision loss
+        and a store with vision aids and products for purchase. A volunteer program
+        and a mentoring program help to provide ongoing support to clients. Another
+        office is located at 3315 Mission Drive, Santa Cruz 95065 (Phone: 831-458-9766;
+        Fax: 831-426-6233). Formerly known as the Peninsula Center for the Blind and
+        Visually Impaired.","email":"info@vistacenter.org","funding_sources":["Donations","Fundraising","Grants"],"licenses":[],"name":"Vista
+        Center for the Blind and Visually Impaired","website":"http://www.vistacenter.org","slug":"vista-center-for-the-blind-and-visually-impaired","url":"https://api-staging.smc-connect.org/organizations/vista-center-for-the-blind-and-visually-impaired","locations_url":"https://api-staging.smc-connect.org/organizations/vista-center-for-the-blind-and-visually-impaired/locations"},"phones":[{"id":83,"department":null,"extension":null,"number":"650
+        858-0202","number_type":"voice","vanity_number":null},{"id":84,"department":null,"extension":null,"number":"800
+        660-2009","number_type":"voice","vanity_number":null},{"id":2528,"department":null,"extension":null,"number":"650
+        858-0214","number_type":"fax","vanity_number":null}]},{"id":13,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.4922502,37.6499429],"description":"Provides
+        psychological counseling with a special focus on alcohol and other drug-related
+        problems. Provides outpatient individual, family, couple and group therapy.
+        Special programs for people age 17 or under include play therapy for preschool
+        and elementary school-age children. Youth age 12 or over can be seen without
+        parental permission. Offers additional support groups including a probation-referred
+        group for persons as a condition of their probation and children and preteen
+        support groups. Pyramid''s First Offender Program is a court-ordered 15-week
+        program for persons convicted, for the first time, of driving under the influence
+        of alcohol. Pyramid''s Multiple Offender Drinking Driver program is an 18-month
+        intensive counseling and education program for persons convicted twice or
+        more of driving while under the influence of alcohol and who elect, with court
+        approval, to enter the program. Also offers a Drug Diversion Program, Drug
+        Court Program and Domestic Violence Program. The First Offender, Multiple
+        Offender and Domestic Violence programs are offered in Spanish. The Senior
+        Program assists older persons with problems of stress, grief and medication
+        abuse. Pyramid Alternatives also has offices in San Bruno at 1590 El Camino
+        Real, in South San Francisco at 1050 El Camino Real, and in Half Moon Bay
+        at Shoreline Station. Adolescent Anger Management and Substance Abuse Program
+        with individual, group and family counseling also available.","kind":"Human
+        Services","latitude":37.6499429,"longitude":-122.4922502,"name":"Pyramid Alternatives,
+        Inc","short_desc":"General counseling for individuals, couples and groups;
+        support groups; and court-ordered counseling for various violations.","slug":"pyramid-alternatives-inc","updated_at":"2018-02-15T19:57:44.815-08:00","website":"http://www.pyramidalternatives.org","url":"https://api-staging.smc-connect.org/locations/pyramid-alternatives-inc","address":{"id":13,"address_1":"480
+        Manor Plaza","address_2":null,"city":"Pacifica","state_province":"CA","postal_code":"94044"},"organization":{"id":13,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pyramid
+        Alternatives, Inc","website":null,"slug":"pyramid-alternatives-inc","url":"https://api-staging.smc-connect.org/organizations/pyramid-alternatives-inc","locations_url":"https://api-staging.smc-connect.org/organizations/pyramid-alternatives-inc/locations"},"phones":[{"id":18,"department":null,"extension":null,"number":"650
+        355-8787","number_type":"voice","vanity_number":null},{"id":2497,"department":null,"extension":null,"number":"650
+        355-8780","number_type":"fax","vanity_number":null}]},{"id":1387,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.060102,37.356967],"description":"Provides
         emergency assistance including food and clothing for persons in immediate
         need. Provides PG\u0026E assistance through REACH program. Youth programs
         offer tutoring, music and troops. Information on related resources is available.
-        Also provides rental assistance when funds are available.","latitude":37.3569004,"longitude":-122.0600024,"name":"Sunnyvale
+        Also provides rental assistance when funds are available.","kind":"Human Services","latitude":37.356967,"longitude":-122.060102,"name":"Sunnyvale
         Corps","short_desc":"Provides emergency assistance to persons in immediate
-        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","website":null,"updated_at":"2019-03-17T10:23:14.073-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/sunnyvale-corps","address":{"id":16,"address_1":"1161
-        South Bernardo","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94087"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
-        Salvation Army operates 7,546 centers in communities across the United States.
-        These include food distribution, disaster relief, rehabilitation centers,
-        anti-human trafficking efforts, and a wealth of children''s programs.","email":null,"funding_sources":[],"licenses":[],"name":"Salvation
-        Army","website":null,"slug":"salvation-army","url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":30,"department":null,"extension":null,"number":"408
-        720-0420","number_type":"voice","vanity_number":null},{"id":31,"department":null,"extension":null,"number":"408
-        720-8075","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:07 GMT
-recorded_with: VCR 4.0.0
+        need and offers after school activities and summer day camp program.","slug":"sunnyvale-corps","updated_at":"2017-07-24T11:08:49.455-07:00","website":null,"url":"https://api-staging.smc-connect.org/locations/sunnyvale-corps","address":{"id":1127,"address_1":"1161
+        South Bernardo","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94087"},"organization":{"id":1300,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Social
+        Service, Disaster Relief, Utility Bill Assistance, and some offices have rental
+        assistance or motel vouchers. We also have a backpack program and holiday
+        programs (Easter,Thanksgiving and Christmas)","email":null,"funding_sources":[],"licenses":[],"name":"Salvation
+        Army","website":null,"slug":"salvation-army","url":"https://api-staging.smc-connect.org/organizations/salvation-army","locations_url":"https://api-staging.smc-connect.org/organizations/salvation-army/locations"},"phones":[{"id":1901,"department":null,"extension":null,"number":"408
+        720-0420","number_type":"voice","vanity_number":null},{"id":3361,"department":null,"extension":null,"number":"408
+        720-8075","number_type":"fax","vanity_number":null}]},{"id":60,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1308438,37.4709707],"description":"Distributes
+        food, clothing, furniture and household essentials including furniture to
+        needy families who live or work in southern San Mateo or northern Santa Clara
+        county. An annual Christmas party for children with special needs is held,
+        Thanksgiving and Christmas distribution, back-to-school clothes and school
+        supplies. Provides information and referral and advocacy services to clients,
+        and offers a women''s and children''s support group. TAP (Technology Access
+        Point) Center offers free access to the internet for children and youth to
+        work on resumes, academics and homework. Also, holistic health care, acupuncture
+        and massage therapy is offered on site by Dyanne Ladine.","kind":"Human Services","latitude":37.4709707,"longitude":-122.1308438,"name":"Ecumenical
+        Hunger Program","short_desc":"Distributes food, clothing, furniture and household
+        essentials to needy families in East Palo Alto, Menlo Park and Palo Alto.","slug":"ecumenical-hunger-program","updated_at":"2017-07-24T10:59:07.549-07:00","website":"http://www.ehpcares.org","url":"https://api-staging.smc-connect.org/locations/ecumenical-hunger-program","address":{"id":57,"address_1":"2411
+        Pulgas Avenue","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":60,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Ecumenical
+        Hunger Program","website":null,"slug":"ecumenical-hunger-program","url":"https://api-staging.smc-connect.org/organizations/ecumenical-hunger-program","locations_url":"https://api-staging.smc-connect.org/organizations/ecumenical-hunger-program/locations"},"phones":[{"id":82,"department":null,"extension":null,"number":"650
+        323-7781","number_type":"voice","vanity_number":null},{"id":2527,"department":null,"extension":null,"number":"650
+        833-0371","number_type":"fax","vanity_number":null}]},{"id":1546,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3366814,37.5119815],"description":"Provides
+        court and probation services to minors and their families who come under the
+        provisions of the juvenile court law. Investigation and supervision services
+        include placement planning under court jurisdiction in matters of delinquency.
+        Juvenile Hall provides temporary care and custody of delinquent boys and girls
+        pending court disposition. The Community Care Program provides a court-ordered,
+        non-custody, community work service each Saturday and Sunday on a year-round
+        basis. Juvenile Traffic Court handles violations committed by youths age 17
+        or under. Delinquency prevention services are also offered to the community
+        from this office. Camp Glenwood offers 24-hour care, education, counseling
+        and recreation for boys, age 12-18, who need a correctional rehabilitative
+        treatment program on a 90-day to six-month basis. Kemp Camp offers 24-hour
+        care, education, counseling and recreation for girls, age 13-17, who need
+        a correctional rehabilitative treatment program on a 90-day to six-month basis.
+        Kemp Camp is part of the G.I.R.L.S. Program (Gaining Independence and Reclaiming
+        Lives Successfully). The GIRLS Program involves three stages: an individualized,
+        residential program (Kemp Camp); an intensive community supervision phase
+        as girls transition to home; and a step-down period of Probation services
+        with fewer contacts.","kind":"Human Services","latitude":37.5119815,"longitude":-122.3366814,"name":"Institution
+        Services","short_desc":"Provides court and probation services to minors and
+        their families who come under the provisions of the juvenile court law.","slug":"institution-services","updated_at":"2014-11-25T17:22:20.399-08:00","website":"http://www.co.sanameto.ca.us","url":"https://api-staging.smc-connect.org/locations/institution-services","address":{"id":1282,"address_1":"222
+        Paul Scannell Drive","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":1314,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Probation Department","website":null,"slug":"san-mateo-county-probation-department","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-probation-department","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-probation-department/locations"},"phones":[{"id":2200,"department":"24
+        hours daily","extension":null,"number":"650 312-5327","number_type":"voice","vanity_number":null},{"id":2201,"department":"Camp
+        Glenwood","extension":null,"number":"650 363-4373","number_type":"voice","vanity_number":null},{"id":3481,"department":null,"extension":null,"number":"650
+        312-5354","number_type":"fax","vanity_number":null},{"id":3482,"department":null,"extension":null,"number":"650
+        747-0160","number_type":"fax","vanity_number":null}]},{"id":1450,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.474099,37.69170829999999],"description":"Provides
+        medication evaluation, medication and case management therapy. The Youth Team
+        provides mental health services for children and adolescents age 18 or under
+        who have emotional or behavioral problems. Services include outreach, including
+        counseling at local schools, and individual, family and group therapy. A young
+        person or parent may phone or referral may be initiated by another agency.","kind":"Human
+        Services","latitude":37.69170829999999,"longitude":-122.474099,"name":"Behavioral
+        Health and Recovery Services., North County Mental Health Center","short_desc":"Evaluates
+        and treats adults and children with severe mental illness in the north part
+        of the county.","slug":"behavioral-health-and-recovery-services-north-county-mental-health-center","updated_at":"2014-11-25T17:22:18.485-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/behavioral-health-and-recovery-services-north-county-mental-health-center","address":{"id":1190,"address_1":"375
+        - 89th Street","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2000,"department":null,"extension":null,"number":"650
+        301-8650","number_type":"voice","vanity_number":null},{"id":2001,"department":"Psychiatric
+        Emergency Services","extension":null,"number":"650 573-2662","number_type":"voice","vanity_number":null},{"id":2002,"department":null,"extension":null,"number":"650
+        301-8628","number_type":"tty","vanity_number":null},{"id":3406,"department":null,"extension":null,"number":"650
+        301-8639","number_type":"fax","vanity_number":null}]},{"id":1447,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.234189,37.4889719],"description":"Outpatient
+        Services include evaluation, psychiatric medications, psychoeducation, case
+        management and support for the seriously mentally ill and their families.
+        Also offers crisis intervention for adults who are in crisis or have serious
+        emotional problems. When indicated and appropriate, referrals are made to
+        other mental health providers. Provides mental health services for youth age
+        17 or under in the central and south parts of the county. Services include
+        outreach, including counseling at local schools, and individual, group and
+        family therapy. A young person or parent may phone or referral may be initiated
+        by another agency.","kind":"Human Services","latitude":37.4889719,"longitude":-122.234189,"name":"Behavioral
+        Health and Recovery Services., South County Mental Health Center","short_desc":"Evaluates
+        persons with mental health problems and provides crisis intervention services
+        and educational outreach in the south county area.","slug":"behavioral-health-and-recovery-services-south-county-mental-health-center","updated_at":"2014-11-25T17:22:18.417-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/behavioral-health-and-recovery-services-south-county-mental-health-center","address":{"id":1187,"address_1":"802
+        Brewster Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":1984,"department":null,"extension":null,"number":"650
+        363-4030","number_type":"voice","vanity_number":null},{"id":1985,"department":"Access
+        Team","extension":null,"number":"800 686-0101","number_type":"voice","vanity_number":null},{"id":1986,"department":"Psychiatric
+        Emergency Services","extension":null,"number":"650 573-2662","number_type":"voice","vanity_number":null},{"id":1987,"department":"Access","extension":null,"number":"800
+        686-0101","number_type":"voice","vanity_number":null},{"id":1988,"department":null,"extension":null,"number":"650
+        363-4111","number_type":"voice","vanity_number":null},{"id":1989,"department":null,"extension":null,"number":"650
+        301-8628","number_type":"tty","vanity_number":null},{"id":3403,"department":null,"extension":null,"number":"650
+        364-6927","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:56:43 GMT
+recorded_with: VCR 6.1.0

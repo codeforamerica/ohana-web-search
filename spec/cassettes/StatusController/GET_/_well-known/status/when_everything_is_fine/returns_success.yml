@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic
+    uri: https://api-staging.smc-connect.org/locations/san-mateo-free-medical-clinic
     body:
       encoding: US-ASCII
       string: ''
@@ -28,55 +28,78 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"1be7aa06e07b5dbea773b900a7254bc5"
+      - W/"e0e82903b4f9d206d7aa694a09ae0e74"
       Last-Modified:
-      - Sun, 17 Mar 2019 17:23:14 GMT
+      - Wed, 26 Nov 2014 01:22:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:11 GMT
+      - Wed, 08 Mar 2023 04:18:36 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - c766265b-399c-4c12-bcb2-a3d21a57fcd0
+      - 8b285b0c-340b-4d21-aa7c-f84c72c30a1a
       X-Runtime:
-      - '0.050627'
-      X-Rack-Cache:
-      - pass
+      - '0.034149'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":19,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.2931236,37.5326941],"description":"Provides
-        free medical and dental care to those in need. Offers basic medical care for
-        adults.","latitude":37.5326941,"longitude":-122.2931236,"name":"San Mateo
-        Free Medical Clinic","short_desc":"Provides free medical and dental care to
-        those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","website":"http://www.samaritanhouse.com","updated_at":"2019-03-17T10:23:14.173-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/san-mateo-free-medical-clinic","accessibility":["Elevator","Ramp","Wheelchair"],"email":null,"languages":["Spanish"],"transportation":"SAMTRANS
-        stops within 1 block.","address":{"id":19,"address_1":"19 West 39th Avenue","address_2":null,"city":"San
-        Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":5,"alternate_name":null,"name":"Samaritan
-        House","slug":"samaritan-house","url":"http://ohana-api-test.herokuapp.com/api/organizations/samaritan-house"},"phones":[{"id":37,"department":null,"extension":null,"number":"650
-        578-0400","number_type":"voice","vanity_number":null},{"id":38,"department":null,"extension":null,"number":"650
-        578-0440","number_type":"fax","vanity_number":null}],"contacts":[{"department":null,"email":null,"id":27,"name":"Sharon
-        Petersen","title":"Administrator","phones":[]}],"mail_address":{"id":19,"attention":"San
+      string: '{"id":1390,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2931271,37.5326926],"description":"Provides
+        free primary and specialty medical and dental services to uninsured, low-income
+        residents. Who is Treated? Patients of our clinics are the working poor. They
+        tend to earn just enough income to be ineligible for Medi-Cal coverage, yet
+        do not receive health insurance through their employers and cannot afford
+        to pay for “out-of-pocket” health insurance. Often these residents are forced
+        to seek treatment at local emergency rooms and become saddled with medical
+        bills that they are unable to pay. Samaritan House’s Free Medical Clinics
+        fill this gap in healthcare access for the uninsured and save emergency room
+        resources for emergencies. Professional Medical \u0026 Dental Volunteers Thanks
+        to its innovative volunteer-based model of service, Samaritan House’s clinics
+        are able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.5326926,"longitude":-122.2931271,"name":"San
+        Mateo Free Medical Clinic","short_desc":"Provides free medical and dental
+        care to those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-11-25T17:22:17.654-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-free-medical-clinic","accessibility":["Elevator","Ramp","Wheelchair"],"email":"info@samaritanhousesanmateo.org","hours":"Monday-Friday,
+        9-12, 1-4","languages":["Spanish"],"transportation":"SAMTRANS stops within
+        1 block.","address":{"id":1130,"address_1":"19 West 39th Avenue","address_2":null,"city":"San
+        Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":498,"alternate_name":null,"name":"Samaritan
+        House","slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house"},"phones":[{"id":1904,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":3365,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}],"contacts":[{"id":1621,"department":null,"email":null,"name":"Sharon
+        Petersen","title":"Operations Director","phones":[]}],"mail_address":{"id":1387,"attention":"San
         Mateo Free Medical/Dental","address_1":"19 West 39th Avenue","address_2":null,"city":"San
-        Mateo","state_province":"CA","postal_code":"94403"},"regular_schedules":[],"holiday_schedules":[],"services":[{"id":19,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"Provides
-        free medical and dental care to those in need. Offers basic medical care for
-        adults. Assists people with problems or questions relating to Medi-Cal, Healthy
-        Families, Healthy Kids, and Medicare.","eligibility":"Low-income person without
-        access to health care","email":null,"fees":"None.","funding_sources":["Donations","Grants"],"application_process":"Call
-        for screening appointment (650-347-3648).","interpretation_services":null,"keywords":["HEALTH
-        SERVICES","Outpatient Care","Community Clinics","Medicare"],"languages":[],"name":"San
-        Mateo Free Medical Clinic","required_documents":[],"service_areas":["Belmont","Burlingame"],"status":"active","website":null,"wait_time":"Varies.","updated_at":"2014-10-29T10:08:12.260-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:11 GMT
+        Mateo","state_province":"CA","postal_code":"94403"},"regular_schedules":[],"holiday_schedules":[],"services":[{"id":1390,"accepted_payments":[],"alternate_name":null,"application_process":"Call
+        for screening appointment (650-347-3648).","audience":null,"description":null,"eligibility":"Low-income
+        person without access to health care","email":null,"fees":"None.","funding_sources":["Donations","Grants"],"interpretation_services":null,"keywords":["HEALTH
+        SERVICES","Outpatient Care","Community Clinics"],"languages":[],"name":null,"required_documents":[],"service_areas":["Belmont","Burlingame","Foster
+        City","Millbrae","San Carlos","San Mateo"],"status":"active","website":null,"wait_time":"Varies.","updated_at":"2014-05-24T14:07:51.930-07:00","categories":[{"id":78,"depth":0,"taxonomy_id":"106","name":"Health","parent_id":null},{"id":86,"depth":1,"taxonomy_id":"106-02","name":"Dental
+        Care","parent_id":78},{"id":92,"depth":1,"taxonomy_id":"106-04","name":"Health
+        Education","parent_id":78},{"id":109,"depth":1,"taxonomy_id":"106-06","name":"Medical
+        Care","parent_id":78},{"id":113,"depth":2,"taxonomy_id":"106-06-04","name":"Checkup
+        \u0026 Test","parent_id":109},{"id":119,"depth":3,"taxonomy_id":"106-06-04-06","name":"Vision
+        Tests","parent_id":113},{"id":121,"depth":2,"taxonomy_id":"106-06-06","name":"Personal
+        Hygiene","parent_id":109},{"id":122,"depth":2,"taxonomy_id":"106-06-07","name":"Prevent
+        \u0026 Treat","parent_id":109}],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+  recorded_at: Wed, 08 Mar 2023 04:18:36 GMT
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?keyword=food
+    uri: https://api-staging.smc-connect.org/search?keyword=food
     body:
       encoding: US-ASCII
       string: ''
@@ -102,51 +125,577 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"7bbf15257e3b841b872792ee76c0ad20"
+      - W/"754a243e98de78ffa1c1b88a162541bc"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=6>; rel="last",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=food&page=2>; rel="next"
+      - <https://api-staging.smc-connect.org/search?keyword=food&page=6>; rel="last",
+        <https://api-staging.smc-connect.org/search?keyword=food&page=2>; rel="next"
       X-Total-Count:
-      - '6'
+      - '173'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:11 GMT
+      - Wed, 08 Mar 2023 04:18:37 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 3059f21a-3298-45a4-be3c-4e838c7edbb1
+      - 62be9e82-522c-46aa-a63d-47cf4eba5ab7
       X-Runtime:
-      - '0.021413'
-      X-Rack-Cache:
-      - pass
+      - '0.063579'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":17,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.4224905,37.6445898],"description":"Provides
-        emergency food, clothing and furniture vouchers to low-income families in
-        times of crisis. Administers Project REACH (Relief for Energy Assistance through
-        Community Help) funds to prevent energy shut-off through a one-time payment.
-        Offers a Saturday morning Homeless Feeding Program at 10:30, as well as Sunday
-        services and spiritual counseling. Provides Christmas toys and Back-to-School
-        clothes and supplies. Offers case management, advocacy and referrals to other
-        agencies.","latitude":37.6445898,"longitude":-122.4224905,"name":"South San
-        Francisco Citadel Corps","short_desc":"Provides emergency food and clothing
-        and furniture vouchers to low-income families in times of crisis.","slug":"south-san-francisco-citadel-corps","website":null,"updated_at":"2019-03-17T10:23:14.099-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/south-san-francisco-citadel-corps","address":{"id":17,"address_1":"409
-        South Spruce Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":4,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"The
-        Salvation Army operates 7,546 centers in communities across the United States.
-        These include food distribution, disaster relief, rehabilitation centers,
-        anti-human trafficking efforts, and a wealth of children''s programs.","email":null,"funding_sources":[],"licenses":[],"name":"Salvation
-        Army","website":null,"slug":"salvation-army","url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/salvation-army/locations"},"phones":[{"id":32,"department":null,"extension":null,"number":"650
-        266-4591","number_type":"voice","vanity_number":null},{"id":33,"department":null,"extension":null,"number":"650
-        266-2594","number_type":"fax","vanity_number":null},{"id":34,"department":null,"extension":null,"number":"650
-        266-4594","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:11 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":1611,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4198725,37.657129],"description":"A
+        drop-in multipurpose center open to any senior 50 or over, but primarily serving
+        those in South San Francisco. Social, recreational, educational and special
+        activities include bingo, bridge, billiards, knitting and crafts, cooking
+        demonstrations, casino trips, sightseeing opportunities and dining outings.
+        The Alzheimer''s Support Group and blood pressure screenings are scheduled
+        on a regular basis. Tax assistance is available from Februrary to April. HICAP
+        (Health Insurance Counseling and Advocacy Program, the Medicare Counseling
+        Program) is available by appointment. Exercise, American Line Dancing, and
+        ESL (English as a Second Language) are offered at this site by the Parks and
+        Recreation Department and Adult Education. Senior social dancing, bead stringing/knotting
+        class, yoga classes, Coping with Change support group, Tai Chi, the 55 Alive
+        Safety Driving Courses (registration at Magnolia Center), knitting for beginnners,
+        and stretching and flexibility are all offered under the umbrella of Senior
+        Services and the Parks and Recreation Department at the Municipal Services
+        Building at 33 Arroyo Drive, South San Francisco. There is a yearly health
+        fair in March and a holiday boutique in November.","kind":"Human Services","latitude":37.657129,"longitude":-122.4198725,"name":"Magnolia
+        Center","short_desc":"A multipurpose senior citizens'' center.","slug":"magnolia-center","updated_at":"2017-07-21T16:35:57.263-07:00","website":"http://www.ssf.net","url":"https://api-staging.smc-connect.org/locations/magnolia-center","address":{"id":1344,"address_1":"601
+        Grand Avenue, 3rd Floor","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1330,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"South
+        San Francisco Senior Services","website":null,"slug":"south-san-francisco-senior-services","url":"https://api-staging.smc-connect.org/organizations/south-san-francisco-senior-services","locations_url":"https://api-staging.smc-connect.org/organizations/south-san-francisco-senior-services/locations"},"phones":[{"id":2316,"department":null,"extension":null,"number":"650
+        829-3820","number_type":"voice","vanity_number":null}]},{"id":1213,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3245192,37.5731768],"description":"A
+        recreation and community service center for the north central San Mateo area,
+        operated by the City of San Mateo. Offers activities and classes for persons
+        of all ages, from preschool up. Sports, games, dance, fitness and arts and
+        crafts classes are offered. Holds special events each holiday season and summer
+        day camps for children. Has an indoor gym, swimming pool and multipurpose
+        activity rooms. As a Senior Nutrition Program Site, provides a hot, nutritious
+        chef-prepared lunch, Tuesday and Thursday, 12 noon to 1 pm for persons age
+        60 or over and spouse of any age. Space is limited; call 522-7498 to make
+        reservations. $3 suggested donation.","kind":"Human Services","latitude":37.5731768,"longitude":-122.3245192,"name":"Martin
+        Luther King Center","short_desc":"A community service center offering recreational
+        activities and classes to residents of the city of San Mateo.","slug":"martin-luther-king-center-725-monte-diablo-avenue","updated_at":"2017-07-21T16:33:59.219-07:00","website":"http://www.cityofsanmateo.org","url":"https://api-staging.smc-connect.org/locations/martin-luther-king-center-725-monte-diablo-avenue","address":{"id":971,"address_1":"725
+        Monte Diablo Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":84,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo City Parks and Recreation Department","website":null,"slug":"san-mateo-city-parks-and-recreation-department","url":"https://api-staging.smc-connect.org/organizations/san-mateo-city-parks-and-recreation-department","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-city-parks-and-recreation-department/locations"},"phones":[{"id":1589,"department":null,"extension":null,"number":"650
+        522-7470","number_type":"voice","vanity_number":null}]},{"id":201,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2635718,37.5043137],"description":"A
+        multipurpose adult community offering social and recreational activities,
+        arts, special interest and exercise classes, bingo, a computer lab, movies
+        and gift shop. Staff is available to provide information about community services
+        and answers questions about housing, employment, household help, recreation
+        and social activities, financial assistance, health and counseling services,
+        services to shut-ins, home delivered meals, household repairs and more. Also
+        maintains information about special discounts for seniors, and keeps up-to-date
+        information and appropriate forms for the state tax refund programs of Homeowner''s
+        Assistance, Rent Assistance and Property Tax Postponement for seniors. Keeps
+        a file of available housing and persons looking for housing. On Mondays, lunch
+        is served at a minimal cost. Bi-monthly newsletter covers information and
+        activities at the center and surrounding communities. Some health screenings
+        are available by appointment. The center is a HICAP (Health Insurance Counseling
+        and Advocacy Program) site for health insurance counseling. Caring Cupboard
+        offers a free bag of groceries twice a month to San Carlos residents who are
+        50 or older and whose total monthly income is less than $1805 (single) or
+        $2428 (couple). Formerly known as the San Carlos Senior Center.","kind":"Human
+        Services","latitude":37.5043137,"longitude":-122.2635718,"name":"San Carlos
+        Adult Community Center","short_desc":"A multipurpose senior center.","slug":"san-carlos-adult-community-center","updated_at":"2017-07-21T16:31:41.132-07:00","website":"http://www.cityofsancarlos.org/acc","url":"https://api-staging.smc-connect.org/locations/san-carlos-adult-community-center","address":{"id":188,"address_1":"601
+        Chestnut Street","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070-3085"},"organization":{"id":201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Carlos Adult Community Center","website":null,"slug":"san-carlos-adult-community-center","url":"https://api-staging.smc-connect.org/organizations/san-carlos-adult-community-center","locations_url":"https://api-staging.smc-connect.org/organizations/san-carlos-adult-community-center/locations"},"phones":[{"id":262,"department":null,"extension":null,"number":"650
+        802-4384","number_type":"voice","vanity_number":null}]},{"id":165,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4198236,37.61370369999999],"description":"A
+        recreational and social program for persons age 50 or over (and spouse of
+        any age). Activities include dancing on Monday-Thursday from 10:30 am-12 noon,
+        bingo on Monday, Wednesday and Friday from 1-3 pm and exercise and academic
+        classes. Art and craft programs are offered throughout the week. Computer
+        instruction is available. The center is open Sundays from 12 to 4 pm for special
+        drop-in programs. A hot lunch is served Monday-Friday at 12 noon. A calendar
+        of events is available. The center offers information and referral to available
+        community resources to persons age 50 or over and their families. An appointment
+        can be made with an appropriate agency for a caller and transportation may
+        be located if needed. Assistance is available for questions related to activities,
+        financial assistance, health and counseling services, services to shut-ins,
+        home delivered meals and more. Health insurance counseling is available by
+        appointment.","kind":"Human Services","latitude":37.61370369999999,"longitude":-122.4198236,"name":"San
+        Bruno Senior Center","short_desc":"A multipurpose senior center serving the
+        San Bruno area.","slug":"san-bruno-senior-center","updated_at":"2017-07-21T16:30:44.601-07:00","website":"http://www.sanbruno.ca.gov","url":"https://api-staging.smc-connect.org/locations/san-bruno-senior-center","address":{"id":157,"address_1":"1555
+        Crystal Springs Road","address_2":null,"city":"San Bruno","state_province":"CA","postal_code":"94066"},"organization":{"id":165,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Bruno Senior Center","website":null,"slug":"san-bruno-senior-center","url":"https://api-staging.smc-connect.org/organizations/san-bruno-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/san-bruno-senior-center/locations"},"phones":[{"id":213,"department":null,"extension":null,"number":"650
+        616-7150","number_type":"voice","vanity_number":null},{"id":2608,"department":null,"extension":null,"number":"650
+        589-8219","number_type":"fax","vanity_number":null}]},{"id":202,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.239977,37.4724376],"description":"A
+        comprehensive senior facility that is dedicated to the health and well being
+        of older adults by enhancing body, mind and spirit. Provides programs focused
+        on nutrition, social services support, preventative health and fitness, and
+        educational and recreation classes. Works in partnership with older adults
+        to decrease isolation, preserve dignity and protect the quality of life of
+        elders in the community. The center provides service for 12,000 visitors a
+        month. The classes and programs are designed for persons age 50 or over. Employs
+        the services of over 250 volunteers.","kind":"Human Services","latitude":37.4724376,"longitude":-122.239977,"name":"Redwood
+        City Veterans Memorial Senior Center","short_desc":"A comprehensive senior
+        facility offering programs and classes.","slug":"redwood-city-veterans-memorial-senior-center","updated_at":"2017-07-21T16:28:52.202-07:00","website":"http://www.redwoodcity.org/parks/cc","url":"https://api-staging.smc-connect.org/locations/redwood-city-veterans-memorial-senior-center","address":{"id":189,"address_1":"1455
+        Madison Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94061-1549"},"organization":{"id":202,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Redwood
+        City Veterans Memorial Senior Center","website":null,"slug":"redwood-city-veterans-memorial-senior-center","url":"https://api-staging.smc-connect.org/organizations/redwood-city-veterans-memorial-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/redwood-city-veterans-memorial-senior-center/locations"},"phones":[{"id":263,"department":null,"extension":null,"number":"650
+        780-7270","number_type":"voice","vanity_number":null},{"id":264,"department":"Senior
+        Services","extension":null,"number":"650 780-7274","number_type":"voice","vanity_number":null},{"id":265,"department":"Lunchline","extension":null,"number":"650
+        780-7259","number_type":"voice","vanity_number":null},{"id":2630,"department":null,"extension":null,"number":"650
+        366-5276","number_type":"fax","vanity_number":null}]},{"id":177,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1423642,37.4656305],"description":"A
+        multipurpose senior center that offers a variety of activities and assistance
+        to seniors. Staff provide information about resources in such areas as housing,
+        employment, household help, recreation, financial assistance, health services
+        and in-home help. Health education and screenings are provided at the center.
+        A noon meal is served Monday through Friday and a brown bag program is also
+        offered. Transportation is available to take seniors to doctor appointments
+        and on essential errands.","kind":"Human Services","latitude":37.4656305,"longitude":-122.1423642,"name":"East
+        Palo Alto Senior Center","short_desc":"A senior center offering a wide variety
+        of activities, classes and assistance.","slug":"east-palo-alto-senior-center","updated_at":"2017-07-05T16:15:12.965-07:00","website":null,"url":"https://api-staging.smc-connect.org/locations/east-palo-alto-senior-center","address":{"id":169,"address_1":"560
+        Bell Street","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":177,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"East
+        Palo Alto Senior Center","website":null,"slug":"east-palo-alto-senior-center","url":"https://api-staging.smc-connect.org/organizations/east-palo-alto-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/east-palo-alto-senior-center/locations"},"phones":[{"id":229,"department":null,"extension":null,"number":"650
+        329-5900","number_type":"voice","vanity_number":null}]},{"id":278,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3426668,37.5820478],"description":"Provides
+        free coffee and dessert on Tuesdays, 12-3 pm. Seniors bring a bag lunch and
+        play bingo.","kind":"Human Services","latitude":37.5820478,"longitude":-122.3426668,"name":"Burlingame
+        Senior Nutrition Program","short_desc":null,"slug":"burlingame-senior-nutrition-program","updated_at":"2014-11-25T17:21:59.411-08:00","website":"http://www.burlingame.org","url":"https://api-staging.smc-connect.org/locations/burlingame-senior-nutrition-program","address":{"id":237,"address_1":"850
+        Burlingame Avenue","address_2":null,"city":"Burlingame","state_province":"CA","postal_code":"94010"},"organization":{"id":278,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Burlingame
+        Senior Nutrition Program","website":null,"slug":"burlingame-senior-nutrition-program","url":"https://api-staging.smc-connect.org/organizations/burlingame-senior-nutrition-program","locations_url":"https://api-staging.smc-connect.org/organizations/burlingame-senior-nutrition-program/locations"},"phones":[{"id":367,"department":null,"extension":null,"number":"650
+        558-7300","number_type":"voice","vanity_number":null},{"id":2664,"department":null,"extension":null,"number":"650
+        696-7216","number_type":"fax","vanity_number":null}]},{"id":565,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8845402,37.3176033],"description":"Provides
+        hot meals on Tuesday and Wednesday, 4-5 pm.","kind":"Human Services","latitude":37.3176033,"longitude":-121.8845402,"name":"Martha''s
+        Kitchen","short_desc":"Provides hot meals on Tuesday and Wednesday, 4-5 pm.","slug":"martha-s-kitchen","updated_at":"2014-11-25T17:15:17.067-08:00","website":"http://www.marthas-kitchen.org","url":"https://api-staging.smc-connect.org/locations/martha-s-kitchen","address":{"id":473,"address_1":"311
+        Willow Street","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95110"},"organization":{"id":565,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Martha''s
+        Kitchen","website":null,"slug":"martha-s-kitchen","url":"https://api-staging.smc-connect.org/organizations/martha-s-kitchen","locations_url":"https://api-staging.smc-connect.org/organizations/martha-s-kitchen/locations"},"phones":[{"id":762,"department":null,"extension":null,"number":"408
+        293-6111","number_type":"voice","vanity_number":null}]},{"id":1372,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2131702,37.4773149],"description":"A
+        walk-in center for older adults that provides social services, wellness, recreational,
+        educational and creative activities including arts and crafts, computer classes
+        and gardening classes. Coffee and healthy breakfasts are available daily.
+        A hot lunch is served Tuesday-Friday for persons age 60 or over and spouse.
+        Provides case management (including in-home assessments) and bilingual information
+        and referral about community services to persons age 60 or over on questions
+        of housing, employment, household help, recreation and social activities,
+        home delivered meals, health and counseling services and services to shut-ins.
+        Health insurance and legal counseling is available by appointment. Lectures
+        on a variety of health and fitness topics are held monthly in both English
+        and Spanish. Provides a variety of physical fitness opportunities, including
+        a garden club, yoga, tai chi, soul line dance and aerobics classes geared
+        toward older adults. Also provides free monthly blood pressure screenings,
+        quarterly blood glucose monitoring and health screenings by a visiting nurse.
+        Offers a Brown Bag Program in which low-income seniors can receive a bag of
+        groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
+        Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
+        Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","kind":"Human
+        Services","latitude":37.4773149,"longitude":-122.2131702,"name":"Fair Oaks
+        Adult Activity Center","short_desc":"A multipurpose senior citizens'' center
+        serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2017-07-21T16:27:19.221-07:00","website":"http://www.peninsulafamilyservice.org","url":"https://api-staging.smc-connect.org/locations/fair-oaks-adult-activity-center","address":{"id":1112,"address_1":"2600
+        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":19,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Family Service","website":null,"slug":"peninsula-family-service","url":"https://api-staging.smc-connect.org/organizations/peninsula-family-service","locations_url":"https://api-staging.smc-connect.org/organizations/peninsula-family-service/locations"},"phones":[{"id":1850,"department":null,"extension":null,"number":"650
+        780-7525","number_type":"voice","vanity_number":null},{"id":3347,"department":null,"extension":null,"number":"650
+        701-0856","number_type":"fax","vanity_number":null}]},{"id":80,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4321558,37.4646641],"description":"A
+        multipurpose senior activity center for seniors age 60 or over. Activities
+        include craft classes, card and game groups, and exercise groups. Provides
+        a hot, nutritious, mid-day meal, five days a week. Seniors may drop in between
+        10 and 2 to participate in activities of their choice. Publishes a monthly
+        calendar of all its programs, which may include film presentations, speakers
+        and regular programs such as Social Security and Senior Advocates. Transportation
+        is available for those persons age 60 or over who could not otherwise get
+        to the center. Provides information about community services to persons age
+        55 or over who speak English, Spanish or Portuguese, and their families. Staff
+        can make an appointment with an appropriate agency for a caller and help locate
+        transportation if needed. This kind of assistance is available for questions
+        related to housing, employment, household help, recreation and social activities,
+        financial assistance, health and counseling services, services to the homebound,
+        home delivered meals, household repairs and more. Also maintains information
+        about special discounts for seniors, and keeps up-to-date information and
+        appropriate forms for the state tax refund programs of Rent Assistance, Homeowners
+        Assistance and Property Tax Postponement Programs for seniors. Keeps a file
+        of housing available and of persons looking for housing. Health insurance
+        counseling available by appointment.","kind":"Human Services","latitude":37.4646641,"longitude":-122.4321558,"name":"Senior
+        Coastsiders","short_desc":"A multipurpose senior citizens'' center.","slug":"senior-coastsiders","updated_at":"2017-07-21T16:22:54.164-07:00","website":"http://www.seniorcoastsiders.org","url":"https://api-staging.smc-connect.org/locations/senior-coastsiders","address":{"id":77,"address_1":"535
+        Kelly Avenue","address_2":null,"city":"Half Moon Bay","state_province":"CA","postal_code":"94019"},"organization":{"id":80,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Senior
+        Coastsiders","website":null,"slug":"senior-coastsiders","url":"https://api-staging.smc-connect.org/organizations/senior-coastsiders","locations_url":"https://api-staging.smc-connect.org/organizations/senior-coastsiders/locations"},"phones":[{"id":106,"department":null,"extension":null,"number":"650
+        726-9056","number_type":"voice","vanity_number":null},{"id":2540,"department":null,"extension":null,"number":"650
+        726-2911","number_type":"fax","vanity_number":null}]},{"id":184,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.484674,37.7049509],"description":"A
+        multipurpose center for adults age 50 or over, located in Westlake Park, offering
+        a wide variety of activities, information and wellness services. Offers speakers
+        on subjects of interest, classes in crafts, languages, living trusts and estate
+        planning, exercise, bridge, dance, computers, cooking and other subjects.
+        Some evening and weekend classes are also available. Direct services include
+        home-delivered meals, health insurance counseling and health screenings. Serves
+        a hot lunch Monday through Friday for a $3.50 suggested donation. The deli
+        is open Monday through Friday.","kind":"Human Services","latitude":37.7049509,"longitude":-122.484674,"name":"Doelger
+        Senior Center","short_desc":"A multipurpose senior citizens'' center.","slug":"doelger-senior-center","updated_at":"2017-07-21T16:14:47.784-07:00","website":"http://www.doelgercenter.com","url":"https://api-staging.smc-connect.org/locations/doelger-senior-center","address":{"id":176,"address_1":"101
+        Lake Merced Blvd.","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":184,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Doelger
+        Senior Center","website":null,"slug":"doelger-senior-center","url":"https://api-staging.smc-connect.org/organizations/doelger-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/doelger-senior-center/locations"},"phones":[{"id":239,"department":null,"extension":null,"number":"650
+        991-8012","number_type":"voice","vanity_number":null},{"id":240,"department":"HART","extension":null,"number":"650
+        991-5558","number_type":"voice","vanity_number":null},{"id":2618,"department":null,"extension":null,"number":"650
+        746-8360","number_type":"fax","vanity_number":null}]},{"id":1618,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.32496,37.5683804],"description":"Offers
+        homeless or low-income persons clean clothing, toiletries, mail, telephone,
+        laundry service, DMV identification and transportation help (bus fare, gasoline,
+        etc.) Assists with work-related needs such as uniforms, work boots, union
+        dues and job referrals. Provides emergency medical assistance, substance abuse
+        center fees, and referrals to mental health and other resources. Distributes
+        vouchers to county shelters or sleeping bags when shelters are full. A free
+        bag lunch and continental breakfast are served to homeless persons on weekdays,
+        10 am to 12 noon. .","kind":"Human Services","latitude":37.5683804,"longitude":-122.32496,"name":"St.
+        Vincent de Paul County Wide Services, San Mateo Homeless Help Center","short_desc":"Food,
+        clothing and other services for homeless persons.","slug":"st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","updated_at":"2017-07-03T10:41:17.238-07:00","website":"http://svdpsm.org","url":"https://api-staging.smc-connect.org/locations/st-vincent-de-paul-county-wide-services-san-mateo-homeless-help-center","address":{"id":1351,"address_1":"50
+        North B Street","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":1237,"accreditations":["Guidestar
+        Platinum Rated Charity","Charity Navigator Four-Star Rated Charity"],"alternate_name":"SVdP","date_incorporated":null,"description":"In
+        the spirit of love and justice, the Society of St. Vincent de Paul of San
+        Mateo County (SVdP) provides person-to-person services of time, talent and
+        resources to help our neighbors in need. SVdP respects the dignity of every
+        person. We provide Safety-Net services for families and individuals in our
+        community who are often suffering, forgotten and deprived — the working poor,
+        the homeless, the incarcerated, and all people living on the margins. We also
+        seek systemic change solutions to move people out of poverty.","email":"info@svdpsm.org","funding_sources":["Donations","Fundraising","Grants"],"licenses":[],"name":"Society
+        of St. Vincent de Paul of San Mateo County","website":"http://svdpsm.org","slug":"society-of-st-vincent-de-paul-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county/locations"},"phones":[{"id":2325,"department":null,"extension":null,"number":"650-343-9251","number_type":"voice","vanity_number":null}]},{"id":249,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2447737,37.4961327],"description":"Food
+        Connection provides information and referral to persons in need of food assistance
+        (800-984-3663). Staff can assist with CalFresh/food stamp applications. The
+        Family Harvest Program distributes food to low-income families with dependent
+        children at 17 sites in San Mateo County and 31 sites in Santa Clara County.
+        Operation Brown Bag distributes a bag of groceries every week to low-income
+        seniors at 23 sites in San Mateo County and 55 in Santa Clara County. Delivery
+        is available to homebound seniors subject to volunteer availability. Produce
+        Mobile provides fresh produce to families or individuals once a month at 21
+        sites in San Mateo County and 27 sites in Santa Clara County. The Partners
+        in Need Program gives low-income volunteers the opportunity to help at the
+        Food Bank in exchange for food. Produce Mobile, Brown Bag and Family Harvest
+        members can also volunteer to assist with distribution. Day and evening volunteer
+        shifts are available by appointment. Other programs include the Community
+        Nutrition Program, which offers workshops in health, nutrition, food safety
+        and smart shopping. A San Jose facility serves the South Bay from Mountain
+        View to Gilroy.","kind":"Human Services","latitude":37.4961327,"longitude":-122.2447737,"name":"Second
+        Harvest Food Bank of Santa Clara and San Mateo Counties","short_desc":"Collects
+        nonmarketable food and distributes it to nonprofit agencies that provide food
+        to needy persons or families at no cost, provides food boxes to eligible needy
+        persons.","slug":"second-harvest-food-bank-of-santa-clara-and-san-mateo-counties","updated_at":"2017-07-03T15:44:32.692-07:00","website":"http://www.shfb.org","url":"https://api-staging.smc-connect.org/locations/second-harvest-food-bank-of-santa-clara-and-san-mateo-counties","address":{"id":228,"address_1":"1051
+        Bing Street","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070-5320"},"organization":{"id":249,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Second
+        Harvest Food Bank of Santa Clara and San Mateo Counties","website":null,"slug":"second-harvest-food-bank-of-santa-clara-and-san-mateo-counties","url":"https://api-staging.smc-connect.org/organizations/second-harvest-food-bank-of-santa-clara-and-san-mateo-counties","locations_url":"https://api-staging.smc-connect.org/organizations/second-harvest-food-bank-of-santa-clara-and-san-mateo-counties/locations"},"phones":[{"id":329,"department":null,"extension":null,"number":"650
+        610-0800","number_type":"voice","vanity_number":null},{"id":2659,"department":null,"extension":null,"number":"650
+        610-0808","number_type":"fax","vanity_number":null},{"id":3702,"department":null,"extension":null,"number":"800-984-3663","number_type":"hotline","vanity_number":null}]},{"id":595,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1721273,37.4839938],"description":"InnVision
+        Shelter Network (IVSN) is the leading provider of shelter/housing and supportive
+        services across Silicon Valley and the San Francisco Peninsula. IVSN operates
+        18 sites from San Jose to Daly City, providing emergency, transitional, and
+        permanent supportive housing, along with an extensive array of supportive
+        resources to help clients secure a place to call home. IVSN serves thousands
+        of homeless clients annually through its “Beyond the Bed” services—a proven
+        model that delivers a 90% success rate in returning program graduates to permanent
+        housing and self-sufficiency. Through community support—including financial
+        contributions, in-kind donations, and volunteerism—IVSN empowers those in
+        our community struggling with poverty and homelessness to gain valuable skills
+        that lead to long term self-sufficiency.","kind":"Human Services","latitude":37.4839938,"longitude":-122.1721273,"name":"InnVision
+        Shelter Network","short_desc":"InnVision Shelter Network (IVSN) is dedicated
+        to helping homeless families and individuals across Silicon Valley and the
+        San Francisco Peninsula return to permanent housing and self-sufficiency.","slug":"innvision-shelter-network","updated_at":"2017-07-24T15:12:13.607-07:00","website":"http://ivsn.org","url":"https://api-staging.smc-connect.org/locations/innvision-shelter-network","address":{"id":501,"address_1":"181
+        Constitution Drive","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":595,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"InnVision
+        Shelter Network","website":null,"slug":"innvision-shelter-network","url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network","locations_url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network/locations"},"phones":[{"id":803,"department":null,"extension":null,"number":"650
+        685-5880","number_type":"voice","vanity_number":null},{"id":2881,"department":null,"extension":null,"number":"650
+        685-5881","number_type":"fax","vanity_number":null}]},{"id":1616,"active":true,"admin_emails":null,"alternate_name":"SVdP''s
+        Redwood City Homeless Help Center","coordinates":[-122.2131702,37.4773149],"description":"Located
+        at the Fair Oaks Community Center in Redwood City. Weekly grocery bags, clothing
+        vouchers to a St. Vincent de Paul outlet store, haircuts, shower vouchers,
+        laundry vouchers, sleeping bags, DMV vouchers are available. Bus tokens are
+        also available for those who can show doctor''s orders for visits or to pick
+        up drug prescriptions.","kind":"Human Services","latitude":37.4773149,"longitude":-122.2131702,"name":"Society
+        of St. Vincent de Paul , Redwood City Homeless Help Center","short_desc":"Food,
+        clothing and other services for homeless persons.","slug":"society-of-st-vincent-de-paul-redwood-city-homeless-help-center","updated_at":"2017-02-21T15:57:35.319-08:00","website":"http://svdpsm.org","url":"https://api-staging.smc-connect.org/locations/society-of-st-vincent-de-paul-redwood-city-homeless-help-center","address":{"id":1349,"address_1":"2600
+        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1237,"accreditations":["Guidestar
+        Platinum Rated Charity","Charity Navigator Four-Star Rated Charity"],"alternate_name":"SVdP","date_incorporated":null,"description":"In
+        the spirit of love and justice, the Society of St. Vincent de Paul of San
+        Mateo County (SVdP) provides person-to-person services of time, talent and
+        resources to help our neighbors in need. SVdP respects the dignity of every
+        person. We provide Safety-Net services for families and individuals in our
+        community who are often suffering, forgotten and deprived — the working poor,
+        the homeless, the incarcerated, and all people living on the margins. We also
+        seek systemic change solutions to move people out of poverty.","email":"info@svdpsm.org","funding_sources":["Donations","Fundraising","Grants"],"licenses":[],"name":"Society
+        of St. Vincent de Paul of San Mateo County","website":"http://svdpsm.org","slug":"society-of-st-vincent-de-paul-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county/locations"},"phones":[{"id":2323,"department":null,"extension":null,"number":"650
+        780-7500","number_type":"voice","vanity_number":null},{"id":3527,"department":null,"extension":null,"number":"650
+        298-8184","number_type":"fax","vanity_number":null}]},{"id":1339,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.133737,37.479854],"description":"IVSN’s
+        Veterans Hoptel provides 1-3 nights of shelter, along with case management
+        and transportation, to low-income Veterans from out-of-town coming to receive
+        medical care and/or assessment from the local Veterans hospital.","kind":"Human
+        Services","latitude":37.479854,"longitude":-122.133737,"name":"IVSN''s Veterans
+        Hoptel","short_desc":"Provides services to Veterans receiving medical care
+        at the local Veterans hospital.","slug":"ivsn-s-veterans-hoptel","updated_at":"2014-11-25T18:36:56.753-08:00","website":"http://www.ivsn.org","url":"https://api-staging.smc-connect.org/locations/ivsn-s-veterans-hoptel","address":{"id":1079,"address_1":"2800
+        Illinois Street","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":595,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"InnVision
+        Shelter Network","website":null,"slug":"innvision-shelter-network","url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network","locations_url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network/locations"},"phones":[{"id":1784,"department":null,"extension":null,"number":"650-364-1150","number_type":"voice","vanity_number":null}]},{"id":1338,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.15882,37.4468801],"description":"Offers
+        canned goods, fresh produce, dairy products and bread to low-income residents
+        of Palo Alto, East Palo Alto, and Menlo Park.","kind":"Human Services","latitude":37.4468801,"longitude":-122.15882,"name":"IVSN''s
+        Food Closet","short_desc":"Offers canned goods, fresh produce, dairy products
+        and bread to low-income residents of Palo Alto, East Palo Alto, and Menlo
+        Park.","slug":"ivsn-s-food-closet","updated_at":"2014-11-25T17:15:38.700-08:00","website":"http://www.ivsn.org","url":"https://api-staging.smc-connect.org/locations/ivsn-s-food-closet","address":{"id":1078,"address_1":"425
+        Hamilton Avenue","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94301"},"organization":{"id":595,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"InnVision
+        Shelter Network","website":null,"slug":"innvision-shelter-network","url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network","locations_url":"https://api-staging.smc-connect.org/organizations/innvision-shelter-network/locations"},"phones":[{"id":1783,"department":null,"extension":null,"number":"650
+        325-3663","number_type":"voice","vanity_number":null}]},{"id":461,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4518892,37.6614838],"description":"Distributes
+        food and fresh produce to those in need on the first Saturday morning of the
+        month, 8 am-9:30 am. A lottery system is used to determine the order of service;
+        numbers are distributed at 7:30 am. Volunteers welcome for distribution on
+        Friday morning (9-11 am) set-up. Those volunteering can receive food a day
+        early and/or without waiting in line. Formerly known as Grace Covenant Church
+        Food Pantry Program.","kind":"Human Services","latitude":37.6614838,"longitude":-122.4518892,"name":"Grace
+        Covenant Church Abundant Harvest Food Pantry","short_desc":"Distributes bags
+        of food to those in need twice a month and hosts a monthly luncheon for seniors.","slug":"grace-covenant-church-abundant-harvest-food-pantry","updated_at":"2014-11-25T17:15:13.188-08:00","website":"http://www.gracecovssf.org","url":"https://api-staging.smc-connect.org/locations/grace-covenant-church-abundant-harvest-food-pantry","address":{"id":382,"address_1":"740
+        Del Monte Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":461,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Grace
+        Covenant Church Abundant Harvest Food Pantry","website":null,"slug":"grace-covenant-church-abundant-harvest-food-pantry","url":"https://api-staging.smc-connect.org/organizations/grace-covenant-church-abundant-harvest-food-pantry","locations_url":"https://api-staging.smc-connect.org/organizations/grace-covenant-church-abundant-harvest-food-pantry/locations"},"phones":[{"id":602,"department":null,"extension":null,"number":"650
+        589-6797","number_type":"voice","vanity_number":null}]},{"id":444,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4620053,37.7065506],"description":"Administers
+        a food program that distributes food boxes as needed in northern San Mateo
+        County. Serves a hot meal every Monday, Tuesday and Thursday evening, 5-6
+        pm. All are welcome. Formerly known as Daly City Emergency Food Pantry.","kind":"Human
+        Services","latitude":37.7065506,"longitude":-122.4620053,"name":"North Peninsula
+        Food Pantry and Dining Center of Daly City","short_desc":"Administers an emergency
+        food program.","slug":"north-peninsula-food-pantry-and-dining-center-of-daly-city","updated_at":"2017-07-24T11:32:56.444-07:00","website":"http://www.fooddc.org","url":"https://api-staging.smc-connect.org/locations/north-peninsula-food-pantry-and-dining-center-of-daly-city","address":{"id":369,"address_1":"31
+        Bepler Street","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94014"},"organization":{"id":444,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"North
+        Peninsula Food Pantry and Dining Center of Daly City","website":null,"slug":"north-peninsula-food-pantry-and-dining-center-of-daly-city","url":"https://api-staging.smc-connect.org/organizations/north-peninsula-food-pantry-and-dining-center-of-daly-city","locations_url":"https://api-staging.smc-connect.org/organizations/north-peninsula-food-pantry-and-dining-center-of-daly-city/locations"},"phones":[{"id":583,"department":null,"extension":null,"number":"650
+        994-5150","number_type":"voice","vanity_number":null},{"id":2767,"department":null,"extension":null,"number":"650
+        994-6024","number_type":"fax","vanity_number":null}]},{"id":1043,"active":true,"admin_emails":["ageipe@smcgov.org"],"alternate_name":"","coordinates":[-122.267653,37.5180269],"description":"Service
+        Connect is an award winning multi-disciplinary service model that provides
+        wrap-around services for the AB 109 and moderate to high-risk re-entry populations.
+        Following a comprehensive needs assessment, all clients have access to a \"safety-net
+        bundle\" comprised of short-term housing, clothing and transportation vouchers,
+        phone cards and food. Under a collaborative model between Probation, HSA,
+        Health and non-profit partners, clients are then connected to public assistance
+        benefits, mental health and substance abuse services, peer-mentoring services,
+        Moral Reconation Therapy programming, and family engagement support. Clients
+        are also placed in rapid employment opportunities through the county''s workcenter
+        and receive employment services such as soft skills development and resume
+        building, while gaining marketable job skills.","kind":"Human Services","latitude":37.5180269,"longitude":-122.267653,"name":"Human
+        Services Agency, Service Connect","short_desc":"Provides social services to
+        help stabilize clients who have just been released from jail.","slug":"human-services-agency-service-connect","updated_at":"2018-02-15T19:57:45.743-08:00","website":"http://hsa.smcgov.org/service-connect","url":"https://api-staging.smc-connect.org/locations/human-services-agency-service-connect","address":{"id":832,"address_1":"550
+        Quarry Road","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070"},"organization":{"id":1043,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Service
+        Connect","website":null,"slug":"service-connect","url":"https://api-staging.smc-connect.org/organizations/service-connect","locations_url":"https://api-staging.smc-connect.org/organizations/service-connect/locations"},"phones":[{"id":1355,"department":null,"extension":null,"number":"650
+        508-6745","number_type":"voice","vanity_number":null}]},{"id":1237,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4226693,37.76155730000001],"description":"The
+        Riley Center operates Rosalie House, a 24-bed emergency shelter providing
+        food, counseling and advocacy for women victims of domestic violence and their
+        children. Maximum stay is 12 weeks. Case management, support groups and counseling
+        are available after the shelter stay. Has a public office for drop-in counseling,
+        follow-up services, community education and a volunteer program. Also operates
+        Brennan House, a 28-bed transitional housing program for formerly battered
+        women and their children. Services include counseling, support groups, parenting
+        classes, job/education workshops and a children''s program. Maximum stay is
+        18 months.","kind":"Human Services","latitude":37.76155730000001,"longitude":-122.4226693,"name":"San
+        Francisco District Council., Riley Center","short_desc":"Safehouse and transitional
+        housing for women victims of domestic violence.","slug":"san-francisco-district-council-riley-center","updated_at":"2017-02-21T15:56:07.814-08:00","website":"http://www.rileycenter.org","url":"https://api-staging.smc-connect.org/locations/san-francisco-district-council-riley-center","address":{"id":991,"address_1":"3543
+        - 18th Street, 3rd Floor","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94110"},"organization":{"id":1237,"accreditations":["Guidestar
+        Platinum Rated Charity","Charity Navigator Four-Star Rated Charity"],"alternate_name":"SVdP","date_incorporated":null,"description":"In
+        the spirit of love and justice, the Society of St. Vincent de Paul of San
+        Mateo County (SVdP) provides person-to-person services of time, talent and
+        resources to help our neighbors in need. SVdP respects the dignity of every
+        person. We provide Safety-Net services for families and individuals in our
+        community who are often suffering, forgotten and deprived — the working poor,
+        the homeless, the incarcerated, and all people living on the margins. We also
+        seek systemic change solutions to move people out of poverty.","email":"info@svdpsm.org","funding_sources":["Donations","Fundraising","Grants"],"licenses":[],"name":"Society
+        of St. Vincent de Paul of San Mateo County","website":"http://svdpsm.org","slug":"society-of-st-vincent-de-paul-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/society-of-st-vincent-de-paul-of-san-mateo-county/locations"},"phones":[{"id":1625,"department":"Crisis
+        Line","extension":null,"number":"415 255-0165","number_type":"voice","vanity_number":null},{"id":3271,"department":null,"extension":null,"number":"415
+        552-0337","number_type":"fax","vanity_number":null}]},{"id":41,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.229184,37.487321],"description":"Provides
+        a variety of services to inmates of the county jail including coordination
+        of all religious services in the jails, as well as outreach services for inmate
+        families. Provides pre-release counseling services and a request/message program
+        for inmates, Alcoholics Anonymous and Narcotics Anonymous groups and various
+        educational and motivational groups. Provides defendants in jury trials with
+        appropriate clothes to wear to court. Services offered for persons released
+        from jail include crisis counseling and emergency assistance with housing,
+        employment, food, clothing and transportation. Hope House for Women is a residential
+        facility for women leaving women''s correctional institutions who wish to
+        receive treatment for alcohol and drug dependency. Also offers transitional
+        housing. Hope House for Men is a clean and sober shared living facility and
+        structured program for men released from jail. (both described separately).","kind":"Human
+        Services","latitude":37.487321,"longitude":-122.229184,"name":"Service League
+        of San Mateo County","short_desc":"Provides a variety of services to inmates
+        of the county jail, persons released from jail and their families.","slug":"service-league-of-san-mateo-county","updated_at":"2014-12-04T11:17:19.947-08:00","website":"http://www.serviceleague.org","url":"https://api-staging.smc-connect.org/locations/service-league-of-san-mateo-county","address":{"id":40,"address_1":"727
+        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":41,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Service
+        League of San Mateo County","website":null,"slug":"service-league-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/service-league-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/service-league-of-san-mateo-county/locations"},"phones":[{"id":59,"department":null,"extension":null,"number":"650
+        364-4664","number_type":"voice","vanity_number":null},{"id":2517,"department":null,"extension":null,"number":"650
+        365-6817","number_type":"fax","vanity_number":null}]},{"id":1322,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8853004,37.3364862],"description":"Social
+        workers, case management services and community outreach provide multilingual
+        needs assessment, planning, information and referral and outreach to frail
+        and homebound older adults. Also provides a social adjustment program for
+        Asian older adults and life enrichment peer group programs for all older adults.
+        Provides a nutritionally balanced noon meal to persons age 60 or over, Monday
+        through Friday. The menu reflects multi-cultural food choices. Meal prepared
+        daily on site. The Daybreak Program provides care management, respite, escorted
+        transportation and elder care consultation to help frail or homebound older
+        adults and their caregivers. Daybreak also runs an adult day support center
+        in Sunnyvale and San Jose. Offers referral to daily English as a Second Language
+        (ESL) classes, citizenship, pre-citizenship and tutoring programs to improve
+        English language acquisition. Offers referral to mental health services for
+        Vietnamese and other older adults and families. A nurse-managed health clinic
+        provides treatment for common illnesses. The Wellness Program monitors clients''
+        vital signs including blood pressure, and offers body conditioning and exercise
+        classes such as Tai Chi. API Dementia Network provides care advocates who
+        offer care management and support groups for non-English speaking Vietnamese
+        and Chinese (Mandarin) Alzheimer''s disease patients, caregivers, and family
+        members. Vietnamese Senior Refugee Assistance for persons age 60 or over provides
+        adaptation, socialization and peer group activities in addition to case management
+        and meditation.","kind":"Human Services","latitude":37.3364862,"longitude":-121.8853004,"name":"John
+        XXIII Multiservice Center","short_desc":"Provides a noon meal and recreation
+        and social activities for seniors.","slug":"john-xxiii-multiservice-center","updated_at":"2014-12-04T11:08:55.224-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/john-xxiii-multiservice-center","address":{"id":1063,"address_1":"195
+        East San Fernando Street","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95112"},"organization":{"id":1283,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Catholic
+        Charities of Santa Clara County","website":null,"slug":"catholic-charities-of-santa-clara-county","url":"https://api-staging.smc-connect.org/organizations/catholic-charities-of-santa-clara-county","locations_url":"https://api-staging.smc-connect.org/organizations/catholic-charities-of-santa-clara-county/locations"},"phones":[{"id":1758,"department":null,"extension":null,"number":"408
+        282-8600","number_type":"voice","vanity_number":null},{"id":3312,"department":null,"extension":null,"number":"408
+        280-1026","number_type":"fax","vanity_number":null}]},{"id":1343,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4375073,37.7848366],"description":"Provides
+        counseling, case management, information and referral, support groups, financial
+        assistance and advocacy for Jewish individuals with HIV/AIDS, chronic illness
+        or disability, their family and loved ones. \"Chicken Souper\" meals are prepared
+        and delivered twice a month by local congregations. Offers support and assistance
+        to out-of-town families. Volunteers provide practical support for clients.
+        Provides referrals to rabbis for pastoral counseling and spiritual support.
+        Offers a meal delivery program for low-income, physically disabled clients
+        living in San Francisco (regardless of religion) weekly which provides food
+        for seven days. Call 415-449-3824 for more information. Other offices offering
+        disability services are located at 200 Channing Avenue, Palo Alto, 94301 and
+        2001 Windward Way, San Mateo 94404.","kind":"Human Services","latitude":37.7848366,"longitude":-122.4375073,"name":"AIDS,
+        Chronic Illness and Disabilities Program","short_desc":"Counseling, support,
+        case management, crisis intervention and financial assistance for Jewish persons
+        with HIV/AIDS, family and loved ones.","slug":"aids-chronic-illness-and-disabilities-program","updated_at":"2014-11-25T17:22:16.318-08:00","website":"http://www.jfcs.org","url":"https://api-staging.smc-connect.org/locations/aids-chronic-illness-and-disabilities-program","address":{"id":1083,"address_1":"2150
+        Post Street","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94115"},"organization":{"id":1290,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Jewish
+        Family and Children''s Services","website":null,"slug":"jewish-family-and-children-s-services","url":"https://api-staging.smc-connect.org/organizations/jewish-family-and-children-s-services","locations_url":"https://api-staging.smc-connect.org/organizations/jewish-family-and-children-s-services/locations"},"phones":[{"id":1794,"department":null,"extension":null,"number":"415
+        449-1224","number_type":"voice","vanity_number":null},{"id":1795,"department":null,"extension":null,"number":"415
+        345-1927","number_type":"tty","vanity_number":null},{"id":3328,"department":null,"extension":null,"number":"415
+        449-1253","number_type":"fax","vanity_number":null}]},{"id":561,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.914281,37.301772],"description":"Provides
+        primary health care. Also provides services in substance abuse, mental health
+        counseling, health education, nutrition, WIC and general dentistry. Provides
+        outreach and advocacy services to locate and assist the American Indian community
+        in obtaining medical assistance and social services. Also provides general
+        dentistry for children and adults; cleaning and fluoride treatments; non-surgical
+        periodontal treatments; x-rays; fillings; root canals; crowns and oral surgery;
+        dentures and emergency treatment. The Women, Infants and Children Supplemental
+        Food Program (WIC) provides special supplemental foods for low-income women,
+        infants and children with special nutritional needs. Nutrition education and
+        counseling are provided in addition to monthly food vouchers.","kind":"Human
+        Services","latitude":37.301772,"longitude":-121.914281,"name":"Indian Health
+        Center of Santa Clara Valley, Inc.","short_desc":"Provides primary health
+        care. Also provides services in substance abuse, mental health counseling,
+        nutrition, WIC, health education and general dentistry.","slug":"indian-health-center-of-santa-clara-valley-inc","updated_at":"2014-11-25T17:22:04.199-08:00","website":"http://www.indianhealthcenter.org","url":"https://api-staging.smc-connect.org/locations/indian-health-center-of-santa-clara-valley-inc","address":{"id":469,"address_1":"1333
+        Meridian Avenue","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95125"},"organization":{"id":561,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Indian
+        Health Center of Santa Clara Valley, Inc.","website":null,"slug":"indian-health-center-of-santa-clara-valley-inc","url":"https://api-staging.smc-connect.org/organizations/indian-health-center-of-santa-clara-valley-inc","locations_url":"https://api-staging.smc-connect.org/organizations/indian-health-center-of-santa-clara-valley-inc/locations"},"phones":[{"id":754,"department":"Administration","extension":"374","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":755,"department":"Medical","extension":"250","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":756,"department":"Dental","extension":"230","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":757,"department":"WIC","extension":"210","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":758,"department":"Community
+        Health Services","extension":"266","number":"408 445-3400","number_type":"voice","vanity_number":null},{"id":2854,"department":null,"extension":null,"number":"408
+        448-1727","number_type":"fax","vanity_number":null}]},{"id":204,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4194009,37.7712479],"description":"Adult
+        and Teen Crisis Hotlines: two toll-free lines provide 24-hour crisis counseling,
+        information and referrals to callers statewide. Drop-In Counseling Center
+        provides victims and survivors with crisis and on-going counseling; suppport
+        groups; emergency food and clothing; and resource advocacy and referrals.
+        Emergency Shelter proram provides up to 8 weeks of safe housing and supportive
+        services for women and children fleeing violence, with 24-hour intake capacity.
+        Domestic Violence Response Team provides victims with crisis intervention
+        and support through advocates who work on-site with the San Francisco Police
+        Department. Teen Program provides multi-site, adolescent-specific crisis intervention,
+        counseling, support groups, education and outreach, and advocacy to teens
+        who have experienced or are at risk of domestic and dating violence. Safe
+        Havens Project provides specialized assistance to domestic violence victims
+        in developing and implementing shared custody arrangements with their batterers.
+        Safe Housing Project works on-site at housing sites throughout San Francisco
+        to empower residents to create communities that foster ad demand violence-free
+        lives. The Mary Elizabeth Inn and Verona Hotel Case Management Program offers
+        housing stability, community-building and emotional support services to residents
+        of these two transitional/permanent housing sites. Community Education and
+        Outreach Program offers outreach, presentations, and workshops in the community
+        on domestic violence, healthy relationships, agency services, and other topics.
+        La Casa de las Madres accepts donations of clothing and toiletries for women,
+        infants and children, including professional work clothing. Donated itmes
+        are given to participants in all programs.","kind":"Human Services","latitude":37.7712479,"longitude":-122.4194009,"name":"La
+        Casa de las Madres","short_desc":"Refuge for women and their children who
+        are being physically or emotionally abused.","slug":"la-casa-de-las-madres","updated_at":"2014-11-25T17:21:58.727-08:00","website":"http://lacasa.org","url":"https://api-staging.smc-connect.org/locations/la-casa-de-las-madres","address":{"id":190,"address_1":"1663
+        Mission Street, Suite 225","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":204,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"La
+        Casa de las Madres","website":null,"slug":"la-casa-de-las-madres","url":"https://api-staging.smc-connect.org/organizations/la-casa-de-las-madres","locations_url":"https://api-staging.smc-connect.org/organizations/la-casa-de-las-madres/locations"},"phones":[{"id":267,"department":"Adult
+        Crisis Line 24 hours daily","extension":null,"number":"877-503-1850","number_type":"voice","vanity_number":null},{"id":268,"department":"Teen
+        Crisis Line (24 hours daily","extension":null,"number":"877-923-0700","number_type":"voice","vanity_number":null},{"id":269,"department":"Counseling
+        and Support Services","extension":null,"number":"415 503-0500","number_type":"voice","vanity_number":null},{"id":2632,"department":null,"extension":null,"number":"415
+        503-0301","number_type":"fax","vanity_number":null}]},{"id":24,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.208183,37.4822243],"description":"Provides
+        direct services for adults with mental illnesses and/or people with HIV/AIDS
+        including housing, food, social programs and advocacy. Advocates for the improvement
+        of mental health services and the development of new programs to meet identified
+        needs. Spring Street Shelter is a 15-bed facility for emergency and short-term
+        housing for mentally disabled clients who require immediate shelter but do
+        not require care and supervision. Acceptance is on a night-by-night basis
+        and maximum stay is 45 days. Staff will collaborate with other private and
+        public services to assist clients to find permanent housing and other needed
+        services. Referrals are accepted from county mental health agencies, the Probation
+        Department and core service centers. A Transitional Housing Program serves
+        seven clients in single rooms and 60 additional clients are served in single
+        rooms of permanent housing. Friendship Centers throughout San Mateo County
+        offer social and recreational activities for adults with mental illness. Activities
+        include living skills classes, day trips, games and luncheons. Attendance
+        is on a drop-in basis. Monthly Friendship Center calendars are available by
+        calling 650-368-3345, ext. 102 or visiting the agency Web site at www.mhasmc.org
+        The Housing and Client Assistance Program provides short-term assistance to
+        low-income persons with HIV/AIDS in obtaining and maintaining permanent housing.
+        Financial assistance is provided in the form of partial rent payments to landlords
+        and mortgage lenders. Depending on financial need, the program may also help
+        pay utility bills, WELL Program enrollment fees, temporary co-payments for
+        prescribed medication and temporary shelter in a motel. Case managers can
+        refer participants for other services including medical care, social work
+        services, drug and alcohol treatment, food and transportation. Support and
+        Advocacy for Young Adults in Transition (SAYAT) provides case management to
+        assist young adults with disabilities who do not qualify for county mental
+        health services or other case management services. Belmont Apartments offer
+        affordable and supportive housing for 24 homeless adults with mental illness
+        (many of whom are dually or triply diagnosed). CHRIS (Community Housing Rehabilitation
+        Independent Skills) Program strengthens the living skills of persons with
+        mental illness. Occupational therapists and interns provide assessments, training,
+        and specific interventions, and physical adaptations to allow these adults
+        to participate in the community at the highest level of independence possible.","kind":"Human
+        Services","latitude":37.4822243,"longitude":-122.208183,"name":"Mental Health
+        Association of San Mateo County","short_desc":"Provides direct services for
+        adults with mental illnesses that include housing, food, social programs,
+        advocacy and networking.","slug":"mental-health-association-of-san-mateo-county","updated_at":"2014-11-25T17:21:55.503-08:00","website":"http://www.mhasmc.org","url":"https://api-staging.smc-connect.org/locations/mental-health-association-of-san-mateo-county","address":{"id":24,"address_1":"2686
+        Spring Street","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063-3522"},"organization":{"id":24,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Mental
+        Health Association of San Mateo County","website":null,"slug":"mental-health-association-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/mental-health-association-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/mental-health-association-of-san-mateo-county/locations"},"phones":[{"id":35,"department":null,"extension":null,"number":"650
+        368-3345","number_type":"voice","vanity_number":null},{"id":36,"department":"Spring
+        Street Shelter","extension":null,"number":"650 365-5772","number_type":"voice","vanity_number":null},{"id":37,"department":"HIV/AIDS
+        Housing and Client Assistance","extension":null,"number":"650 368-9989","number_type":"voice","vanity_number":null},{"id":2503,"department":null,"extension":null,"number":"650
+        368-2534","number_type":"fax","vanity_number":null},{"id":2504,"department":null,"extension":null,"number":"650
+        368-9017","number_type":"fax","vanity_number":null}]},{"id":1200,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1331759,37.4723483],"description":"The
+        Warming Shelter''s doors were opened in late Fall 2009, meeting the needs
+        of our most disadvantaged. We offer food, overnight shelter, dental care,
+        health services, and transportation. As an extension of the services, Project
+        WeHOPE collaborates with San Mateo County to identify and provide services
+        to this community''s homeless.","kind":"Human Services","latitude":37.4723483,"longitude":-122.1331759,"name":"Warming
+        Shelter in East Palo Alto","short_desc":null,"slug":"warming-shelter-in-east-palo-alto","updated_at":"2014-11-25T17:15:33.210-08:00","website":"http://www.projectwehope.org","url":"https://api-staging.smc-connect.org/locations/warming-shelter-in-east-palo-alto","address":{"id":958,"address_1":"1854
+        Bay Road","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1200,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Project
+        WeHOPE","website":null,"slug":"project-wehope","url":"https://api-staging.smc-connect.org/organizations/project-wehope","locations_url":"https://api-staging.smc-connect.org/organizations/project-wehope/locations"},"phones":[{"id":1573,"department":"Warming
+        Shelter","extension":null,"number":"650-462-1131","number_type":"voice","vanity_number":null},{"id":1574,"department":"General
+        Information","extension":null,"number":"650-330-8000","number_type":"voice","vanity_number":null}]},{"id":1045,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.950963,37.285214],"description":"Provides
+        spiritual, practical and emotional support, crisis intervention services,
+        pastoral care and related referral services for persons with AIDS/HIV, and
+        their caregivers and families. Provides emergency assistance with food, medical
+        supplies and clothing, and can possibly provide limited help with rent, utilities
+        and transportation. A 24-hour line is available for anyone with questions
+        about AIDS. Provides information about and referral to other resources.","kind":"Human
+        Services","latitude":37.285214,"longitude":-121.950963,"name":"Necessities
+        and More, Inc.","short_desc":"Provides spiritual, practical and emotional
+        support, crisis intervention services and pastoral care for persons with AIDS/HIV,
+        their families and caregivers.","slug":"necessities-and-more-inc","updated_at":"2014-11-25T17:15:28.350-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/necessities-and-more-inc","address":{"id":834,"address_1":"65
+        West Rincon Avenue","address_2":null,"city":"Campbell","state_province":"CA","postal_code":"95008"},"organization":{"id":1045,"accreditations":[],"alternate_name":null,"date_incorporated":"1970-02-01","description":"testing","email":null,"funding_sources":[],"licenses":[],"name":"AIDS
+        Interfaith Resources Network","website":null,"slug":"aids-interfaith-resources-network","url":"https://api-staging.smc-connect.org/organizations/aids-interfaith-resources-network","locations_url":"https://api-staging.smc-connect.org/organizations/aids-interfaith-resources-network/locations"},"phones":[{"id":1357,"department":"Emergency
+        contact 24 hours daily","extension":null,"number":"408 249-0725","number_type":"voice","vanity_number":null},{"id":1358,"department":null,"extension":null,"number":"408
+        378-4445","number_type":"voice","vanity_number":null}]},{"id":435,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"A
+        12-step self-help support group that facilitates recovery from compulsive
+        overeating. Not a diet or calorie-counting club. There are no official food
+        plans. Instead, emphasis is on group support in dealing with the feelings
+        behind the symptom of compulsive overeating. Recovery is threefold: physical,
+        emotional and spiritual, and is aided by study of the 12 steps. Some meetings
+        have special focuses such as anorexics and bulimics, over 100 pound weight
+        loss, gay, young people, women, etc., but all meetings are open to everyone.
+        In many cases, a 30-minute newcomers'' group preceeds the regular meeting.
+        Publishes a bimonthly Mid-Peninsula Intergroup Newsletter. Phone for a list
+        of members, phone numbers and meeting locations. Meeting lists are available
+        at most meetings.","kind":"Human Services","latitude":null,"longitude":null,"name":"Overeaters
+        Anonymous of the Mid-Peninsula","short_desc":"Self-help 12-step program for
+        persons who wish to stop eating compulsively.","slug":"overeaters-anonymous-of-the-mid-peninsula","updated_at":"2014-11-25T17:15:12.851-08:00","website":"http://www.oabayarea.org","url":"https://api-staging.smc-connect.org/locations/overeaters-anonymous-of-the-mid-peninsula","address":null,"organization":{"id":435,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Overeaters
+        Anonymous of the Mid-Peninsula","website":null,"slug":"overeaters-anonymous-of-the-mid-peninsula","url":"https://api-staging.smc-connect.org/organizations/overeaters-anonymous-of-the-mid-peninsula","locations_url":"https://api-staging.smc-connect.org/organizations/overeaters-anonymous-of-the-mid-peninsula/locations"},"phones":[{"id":577,"department":"24-hour
+        recorded message","extension":null,"number":"650 375-0724","number_type":"voice","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:18:37 GMT
+recorded_with: VCR 6.1.0

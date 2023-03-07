@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=snap
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=snap
     body:
       encoding: US-ASCII
       string: ''
@@ -28,33 +28,60 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"1a62a7f7948ca59838acb815222a3d0c"
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=snap&page=0>; rel="last"
+      - W/"1de376b0fb0fdcbdc6acec45f300a64f"
       X-Total-Count:
-      - '0'
+      - '2'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:10 GMT
+      - Wed, 08 Mar 2023 04:18:27 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 27b0064f-b680-4947-81de-71b0ef14a29e
+      - 33ac12d9-5837-4eb8-887b-027978a19dfc
       X-Runtime:
-      - '0.033701'
-      X-Rack-Cache:
-      - pass
+      - '0.017353'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:10 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":1497,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.421524,37.644686],"description":"This
+        regional HSA office offers social services eligibility determination and assistance
+        for: Health Coverage (Medi-Cal), Food Assistance (CalFresh), Financial Assistance
+        (CalWORKs) and General Assistance, and Children and Family Services. Child
+        welfare services such as family maintenance, family reunification and long-term
+        placement programs are available at this office.","kind":"Human Services","latitude":37.644686,"longitude":-122.421524,"name":"Northern
+        Region., Human Services Agency, South San Francisco Office","short_desc":"Provides
+        social services eligibility determination and assistance for Health Coverage,
+        CalFresh, CalWORKs and General Assistance and Children and Family Services.","slug":"northern-region-human-services-agency-south-san-francisco-office","updated_at":"2017-11-30T06:22:57.299-08:00","website":"http://www.smchsa.org","url":"https://api-staging.smc-connect.org/locations/northern-region-human-services-agency-south-san-francisco-office","address":{"id":1236,"address_1":"1487
+        Huntington Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-human-services-agency","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2091,"department":null,"extension":null,"number":"650
+        877-5608","number_type":"voice","vanity_number":null},{"id":3442,"department":null,"extension":null,"number":"650
+        877-5606","number_type":"fax","vanity_number":null}]},{"id":1499,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4738042,37.6894381],"description":"This
+        regional HSA office offers social services eligibility determination and assistance
+        for: Health Coverage (Medi-Cal), Food Assistance (CalFresh), Financial Assistance
+        (CalWORKs) and General Assistance, and Employment Services. This location
+        also offers a Job Information Center to help clients find jobs and with employment
+        services.","kind":"Human Services","latitude":37.6894381,"longitude":-122.4738042,"name":"Northern
+        Region., Human Services Agency, Daly City Office","short_desc":"Provides social
+        services eligibility determination and assistance for Health Coverage, CalFresh,
+        CalWORKs and General Assistance and Employment Services.","slug":"northern-region-human-services-agency-daly-city-office","updated_at":"2017-11-30T06:22:56.591-08:00","website":"http://www.smchsa.org","url":"https://api-staging.smc-connect.org/locations/northern-region-human-services-agency-daly-city-office","address":{"id":1238,"address_1":"271
+        - 92nd Street","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":1310,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Human Services Agency","website":null,"slug":"san-mateo-county-human-services-agency","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-human-services-agency","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-human-services-agency/locations"},"phones":[{"id":2093,"department":null,"extension":null,"number":"650
+        301-8440","number_type":"voice","vanity_number":null},{"id":3444,"department":null,"extension":null,"number":"650
+        301-8455","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:18:27 GMT
+recorded_with: VCR 6.1.0

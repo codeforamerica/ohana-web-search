@@ -21,12 +21,12 @@ describe StatusController do
 
       it 'returns API failure error' do
         stub_request(:get,
-                     'http://ohana-api-test.herokuapp.com/api/locations/' \
+                     'https://api-staging.smc-connect.org/locations/' \
                      'san-mateo-free-medical-clinic').
           to_return(status: 200, body: '', headers: {})
 
         stub_request(:get,
-                     'http://ohana-api-test.herokuapp.com/api/' \
+                     'https://api-staging.smc-connect.org/' \
                      'search?keyword=food').
           to_return(status: 200, body: '', headers: {})
 

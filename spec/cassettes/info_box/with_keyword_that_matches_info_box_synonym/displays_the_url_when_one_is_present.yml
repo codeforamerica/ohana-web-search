@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=wic
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=wic
     body:
       encoding: US-ASCII
       string: ''
@@ -28,33 +28,176 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"76cd022c6e077b39f64857449673619a"
+      - W/"3e47fe5abef0112519f87d6ec9647969"
       X-Total-Count:
-      - '1'
+      - '8'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:10 GMT
+      - Wed, 08 Mar 2023 04:29:54 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - f210577b-3af2-4fa1-9404-b84638c43694
+      - b7ce3f94-a0f2-4a98-b3b7-5c79bca7c34e
       X-Runtime:
-      - '0.021286'
-      X-Rack-Cache:
-      - pass
+      - '0.029928'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
+      string: '[{"id":1455,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3171637,37.5624546],"description":"Offers
+        nutrition education and supplemental foods to women who are pregnant, post-partum
+        or breastfeeding, and children age 5 or under. Families may be low- or medium-income
+        and working families may also qualify. There are six WIC clinic sites in the
+        county (South San Francisco, East Palo Alto, Redwood City, Daly City, San
+        Mateo and Half Moon Bay). Supplemental food is made available through issuance
+        of coupons redeemable at most grocery stores for certain food items selected
+        to provide essential nutrients. Participation does not affect eligibility
+        for food stamps or other public assistance programs. Also assists in finding
+        health care and other community services. Formerly known as San Mateo County
+        Health Department, Public Health Division. Nutrition Programs. Women, Infants
+        and Children (WIC) Program.","kind":"Human Services","latitude":37.5624546,"longitude":-122.3171637,"name":"Family
+        Health Services., Public Health Nutrition., Women, Infants and Children (WIC)
+        Program","short_desc":"Offers nutrition education and supplemental foods to
+        low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","updated_at":"2017-07-24T13:22:38.740-07:00","website":"http://www.smchealth.org/wic","url":"https://api-staging.smc-connect.org/locations/family-health-services-public-health-nutrition-women-infants-and-children-wic-program","address":{"id":1195,"address_1":"477
+        9th Avenue, Suite 110","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2012,"department":null,"extension":null,"number":"650
+        573-2168","number_type":"voice","vanity_number":null},{"id":2013,"department":"Breastfeeding
+        Helpline","extension":null,"number":"800 205-0333","number_type":"voice","vanity_number":null}]},{"id":561,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.914281,37.301772],"description":"Provides
+        primary health care. Also provides services in substance abuse, mental health
+        counseling, health education, nutrition, WIC and general dentistry. Provides
+        outreach and advocacy services to locate and assist the American Indian community
+        in obtaining medical assistance and social services. Also provides general
+        dentistry for children and adults; cleaning and fluoride treatments; non-surgical
+        periodontal treatments; x-rays; fillings; root canals; crowns and oral surgery;
+        dentures and emergency treatment. The Women, Infants and Children Supplemental
+        Food Program (WIC) provides special supplemental foods for low-income women,
+        infants and children with special nutritional needs. Nutrition education and
+        counseling are provided in addition to monthly food vouchers.","kind":"Human
+        Services","latitude":37.301772,"longitude":-121.914281,"name":"Indian Health
+        Center of Santa Clara Valley, Inc.","short_desc":"Provides primary health
+        care. Also provides services in substance abuse, mental health counseling,
+        nutrition, WIC, health education and general dentistry.","slug":"indian-health-center-of-santa-clara-valley-inc","updated_at":"2014-11-25T17:22:04.199-08:00","website":"http://www.indianhealthcenter.org","url":"https://api-staging.smc-connect.org/locations/indian-health-center-of-santa-clara-valley-inc","address":{"id":469,"address_1":"1333
+        Meridian Avenue","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95125"},"organization":{"id":561,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Indian
+        Health Center of Santa Clara Valley, Inc.","website":null,"slug":"indian-health-center-of-santa-clara-valley-inc","url":"https://api-staging.smc-connect.org/organizations/indian-health-center-of-santa-clara-valley-inc","locations_url":"https://api-staging.smc-connect.org/organizations/indian-health-center-of-santa-clara-valley-inc/locations"},"phones":[{"id":754,"department":"Administration","extension":"374","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":755,"department":"Medical","extension":"250","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":756,"department":"Dental","extension":"230","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":757,"department":"WIC","extension":"210","number":"408
+        445-3400","number_type":"voice","vanity_number":null},{"id":758,"department":"Community
+        Health Services","extension":"266","number":"408 445-3400","number_type":"voice","vanity_number":null},{"id":2854,"department":null,"extension":null,"number":"408
+        448-1727","number_type":"fax","vanity_number":null}]},{"id":1201,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.3785319,37.25627739999999],"description":"Puente
+        de la Costa Sur (Puente) is the only community resource center for the South
+        Coast of San Mateo County. Puente advocates for our communities and leverages
+        resources that foster economic prosperity and security, and promote individual
+        and community health and wellness. We support local leaders and work together
+        to create solutions for the challenges facing our diverse population. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, youth leadership development
+        and employment, and community engagement and action. Puente also works with
+        farmers, ranchers, and nursery owners to promote a sustainable agricultural
+        economy on the south coast of northern California. Permanent programs include:
+        a mobile pantry; a Second Harvest Food Bank distribution site; children''s
+        story times; and La Sala Community Living Room. Also offers a program to address
+        maternal depression. Also offers ESL classes, individual tutoring in ESL,
+        GED and citizenship classes. Periodically offers an Adult Literacy Program
+        for Spanish speakers in which students learn to read and write in Spanish
+        or complete their elementary, middle and high school within the Mexican education
+        system. Call for specific days and times for each of these programs. Also
+        offers, by appointment, WIC (Women, Infants and Children) services, insurance
+        enrollment, food stamps, CalWorks assistance, tax preparation and notary services.
+        Deposit and rental assistance subject to availability of funds. The site is
+        part of the core network of community service agencies of San Mateo County.","kind":"Human
+        Services","latitude":37.25627739999999,"longitude":-122.3785319,"name":"Puente","short_desc":"Provides
+        a single point of entry for men, women and children to have access to safety
+        net services, health and wellness services, leadership development, and community
+        engagement and action.","slug":"puente","updated_at":"2016-01-04T16:04:23.091-08:00","website":"http://www.mypuente.org","url":"https://api-staging.smc-connect.org/locations/puente","address":{"id":959,"address_1":"620
+        North Street","address_2":null,"city":"Pescadero","state_province":"CA","postal_code":"94060"},"organization":{"id":1201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Puente
+        de la Costa Sur","website":null,"slug":"puente-de-la-costa-sur","url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur","locations_url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur/locations"},"phones":[{"id":1575,"department":null,"extension":null,"number":"650
+        879-1691","number_type":"voice","vanity_number":null},{"id":3240,"department":null,"extension":null,"number":"650
+        879-0973","number_type":"fax","vanity_number":null}]},{"id":544,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-121.8780525,37.3256075],"description":"A
+        full-service clinic offering mental health services, prenatal and well baby
+        care, care for frail seniors and counseling. The In-home Psychogeriatric Program
+        provides counseling and case management services to homebound seniors experiencing
+        emotional stress. Emphasis is on Spanish-speaking seniors. The Women, Infants
+        and Children (WIC) Program provides supplemental food vouchers for at-risk
+        women and infants. Health education courses include pre- and post-natal care,
+        nutrition and health, pregnant teen child abuse prevention, women and infant
+        care, maternal and child health and tobacco prevention. Provides individual,
+        family and group counseling. Also offers counseling to the victims of physical,
+        sexual or emotional abuse and their families.","kind":"Human Services","latitude":37.3256075,"longitude":-121.8780525,"name":"Gardner
+        Family Care Corporation, Inc.","short_desc":"Mental health services, prenatal
+        and perinatal services, care for frail seniors and counseling.","slug":"gardner-family-care-corporation-inc","updated_at":"2014-12-04T11:19:22.821-08:00","website":"http://www.gardnerhealth.org","url":"https://api-staging.smc-connect.org/locations/gardner-family-care-corporation-inc","address":{"id":455,"address_1":"160
+        East Virginia Street, Suite 100","address_2":null,"city":"San Jose","state_province":"CA","postal_code":"95112"},"organization":{"id":544,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Gardner
+        Family Care Corporation, Inc.","website":null,"slug":"gardner-family-care-corporation-inc","url":"https://api-staging.smc-connect.org/organizations/gardner-family-care-corporation-inc","locations_url":"https://api-staging.smc-connect.org/organizations/gardner-family-care-corporation-inc/locations"},"phones":[{"id":720,"department":null,"extension":null,"number":"408
+        938-2172","number_type":"voice","vanity_number":null},{"id":721,"department":"Centro
+        De Bienestar","extension":null,"number":"408 287-6200","number_type":"voice","vanity_number":null},{"id":722,"department":"Proyecto
+        Primavera","extension":null,"number":"408 977-1591","number_type":"voice","vanity_number":null},{"id":723,"department":"Virginia
+        Street WIC","extension":null,"number":"408 294-1323","number_type":"voice","vanity_number":null},{"id":724,"department":"CompreCare
+        WIC","extension":null,"number":"408 254-5197","number_type":"voice","vanity_number":null},{"id":2838,"department":null,"extension":null,"number":"408
+        998-0950","number_type":"fax","vanity_number":null}]},{"id":1472,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4740805,37.6911172],"description":"Offers
+        general family medical services for San Mateo County residents including non-emergency
+        urgent care. Located in the Mike Nevin Health Center Building at 380 - 90th
+        Street, Daly City. Services include well baby clinic, immunization, HIV testing
+        and counseling, AIDS clinic, adult primary care, senior care services, tuberculosis
+        clinic, and nutrition and family planning services. Podiatry clinic is also
+        provided. Women, Infants and Children Program (WIC) and mental health services
+        are also located at this site. Dental services, including both prevention
+        and treatment, are available for children age 18 or under Monday through Friday,
+        8:30 to 5. Adult dental care is provided on an emergency basis only. Formerly
+        known as the North County Community Health Center.","kind":"Human Services","latitude":37.6911172,"longitude":-122.4740805,"name":"San
+        Mateo Medical Center., Daly City Clinic","short_desc":"Outpatient clinic offering
+        general family medical services in the northern part of the county.","slug":"san-mateo-medical-center-daly-city-clinic","updated_at":"2014-11-25T17:22:18.788-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/san-mateo-medical-center-daly-city-clinic","address":{"id":1212,"address_1":"380
+        - 90th Street","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2050,"department":null,"extension":null,"number":"650
+        301-8600","number_type":"voice","vanity_number":null},{"id":3422,"department":null,"extension":null,"number":"650
+        301-8626","number_type":"fax","vanity_number":null}]},{"id":1902,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.1324905,37.4729298],"description":"Fresh
+        Checks program has enabled East Palo Alto residents increased access to healthy,
+        local, affordable produce. The program incentivizes participants to spend
+        their food stamps and other federal benefits on healthy produce at the East
+        Palo Alto Community Farmers'' Market. Anyone with a qualifying income (equivalent
+        to the federal income standards for food stamps) can sign up for Fresh Checks.
+        Once registered, we’ll match up to $20 each month for every dollar a Fresh
+        Checks participant spends at the market. Participants can receive their match
+        benefits using any form of payment–cash, food stamps, or WIC or Senior farmers
+        market checks. With the Fresh Checks match, qualifying individuals are able
+        to take home $40 of fresh fruits and vegetables at the market by spending
+        only $20. What a deal. Local, organic, and seasonal produce from nearby farmers.
+        East Palo Alto Community Farmers'' Market is on Wednesdays, 12:00 pm-3:00
+        pm during the months May - October.","kind":"Human Services","latitude":37.4729298,"longitude":-122.1324905,"name":"East
+        Palo Alto Community Farmers'' Market and Fresh Checks","short_desc":"Fresh
+        Checks program has enabled East Palo Alto residents increased access to healthy,
+        local, affordable produce. The program incentivizes participants to spend
+        their food stamps and other federal benefits on healthy produce at the East
+        Palo Alto Community Farmers'' Market.","slug":"east-palo-alto-community-farmers-market-and-fresh-checks","updated_at":"2017-07-24T16:04:26.302-07:00","website":"http://www.collectiveroots.org/","url":"https://api-staging.smc-connect.org/locations/east-palo-alto-community-farmers-market-and-fresh-checks","address":{"id":1604,"address_1":"1885
+        Bay Road","address_2":null,"city":"East Palo Alto","state_province":"CA","postal_code":"94303"},"organization":{"id":1433,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Collective
+        Roots","email":null,"funding_sources":[],"licenses":[],"name":"Collective
+        Roots","website":null,"slug":"collective-roots","url":"https://api-staging.smc-connect.org/organizations/collective-roots","locations_url":"https://api-staging.smc-connect.org/organizations/collective-roots/locations"},"phones":[{"id":3777,"department":null,"extension":null,"number":"650-324-2769","number_type":"voice","vanity_number":null}]},{"id":1484,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.415633,37.656645],"description":"Offers
+        adult primary care and pediatric care, immunizations, HIV testing and counseling,
+        family planning and mental health services. Also provides nutrition counseling,
+        WIC services (Women, Infants and Children Program) and optometry and podiatry
+        services.","kind":"Clinics","latitude":37.656645,"longitude":-122.415633,"name":"San
+        Mateo Medical Center., South San Francisco Clinic","short_desc":"Offers adult
+        and pediatric care.","slug":"san-mateo-medical-center-south-san-francisco-clinic","updated_at":"2014-11-25T17:22:19.209-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/san-mateo-medical-center-south-san-francisco-clinic","address":{"id":1223,"address_1":"306
+        Spruce Avenue","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1309,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County Health System","website":null,"slug":"san-mateo-county-health-system","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-health-system/locations"},"phones":[{"id":2067,"department":"Adults","extension":null,"number":"650
+        877-7070","number_type":"voice","vanity_number":null},{"id":2068,"department":"Pediatrics","extension":null,"number":"650
+        877-7027","number_type":"voice","vanity_number":null},{"id":3435,"department":null,"extension":null,"number":"650
+        616-0015","number_type":"fax","vanity_number":null}]},{"id":1909,"active":true,"admin_emails":[],"alternate_name":"The
         Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
+        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
@@ -63,22 +206,21 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
         Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2019-03-17T10:23:14.257-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","address":{"id":21,"address_1":"2013
-        Avenue of the fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":8,"accreditations":["BBB","State
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2023-01-18T17:54:11.414-08:00","website":"http://www.example.org","url":"https://api-staging.smc-connect.org/locations/example-location","address":{"id":1613,"address_1":"2013
+        Avenue of the fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":1437,"accreditations":["BBB","State
         Board of Education"],"alternate_name":"Alternate Agency Name","date_incorporated":"1970-01-01","description":"Sample
         organization description. The Public Library inspires learning through innovative
         and visionary programming and services—literacy programs, support for school
         success, access to technology, safe, inviting spaces for youth and families,
         and gathering places that connect the members of the community with a love
-        of reading and learning.","email":"info@example.org","funding_sources":["State","Donations","Grants"],"licenses":["State
+        of reading and learning.","email":"info@example.org","funding_sources":["Donations","Grants","State"],"licenses":["State
         Health Inspection License","State Board of Education License"],"name":"Example
-        Agency","website":"http://example.org","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency/locations"},"phones":[{"id":43,"department":"Information","extension":"123","number":"650
-        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
-        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
-        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
+        Agency","website":"http://example.org","slug":"example-agency","url":"https://api-staging.smc-connect.org/organizations/example-agency","locations_url":"https://api-staging.smc-connect.org/organizations/example-agency/locations"},"phones":[{"id":3787,"department":"Information","extension":"123","number":"650
+        372-6200","number_type":"voice","vanity_number":"222-555-INFO"},{"id":3788,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"fax","vanity_number":null},{"id":3789,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"hotline","vanity_number":null},{"id":3790,"department":"Rental
         Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:10 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 08 Mar 2023 04:29:54 GMT
+recorded_with: VCR 6.1.0

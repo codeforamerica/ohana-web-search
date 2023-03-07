@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=youth&page=3
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=yoga&page=11
     body:
       encoding: US-ASCII
       string: ''
@@ -28,56 +28,40 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"9673b1a429609db5498c636ad3eb138c"
+      - W/"33807b56e7c5bce5728502b43000aaa6"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=1>; rel="first",
-        <http://ohana-api-test.herokuapp.com/api/search?keyword=youth&page=2>; rel="prev"
+      - <https://api-staging.smc-connect.org/search?keyword=yoga&page=1>; rel="first",
+        <https://api-staging.smc-connect.org/search?keyword=yoga&page=1>; rel="prev",
+        <https://api-staging.smc-connect.org/search?keyword=yoga&page=1>; rel="last"
       X-Total-Count:
-      - '3'
+      - '11'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:05 GMT
+      - Wed, 08 Mar 2023 04:56:46 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 349c1a59-772c-4d1f-a13c-85c4a7c85d6f
+      - 6243e96b-0f7c-425f-924e-50f5990bf5a2
       X-Runtime:
-      - '0.022245'
-      X-Rack-Cache:
-      - pass
+      - '0.012910'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":4,"active":true,"admin_emails":[],"alternate_name":null,"coordinates":[-122.3257992,37.5639843],"description":"Provides
-        supervised visitation services and a neutral site for parents to carry out
-        supervised exchanges of children in a safe manner. Therapeutic visitation
-        and other counseling services available. Kids in the Middle is an education
-        class for separating or divorcing parents. The goal is to enable parents to
-        focus on their children''s needs while the family is going through separation,
-        divorce or other transition. The class explores the psychological aspects
-        of divorce and its impact on children, builds effective communication techniques
-        and points out areas in which outside help may be indicated. The fee is $50
-        for working parents, $15 for unemployed people. Classes are scheduled on Saturdays
-        and Sundays and held at various sites throughout the county. Call 650-403-4300
-        ext. 4500 to register. Formerly known as Family Service Agency of San Mateo
-        County, Family Visitation Center.","latitude":37.5639843,"longitude":-122.3257992,"name":"Family
-        Visitation Center","short_desc":"Provides supervised visitation services and
-        a neutral site for parents in extremely hostile divorces to carry out supervised
-        exchanges of children.","slug":"family-visitation-center","website":null,"updated_at":"2019-03-17T10:23:13.729-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/family-visitation-center","address":{"id":4,"address_1":"24
-        Second Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
-        Family Service strengthens the community by providing children, families,
-        and older adults the support and tools to realize their full potential and
-        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
-        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":7,"department":null,"extension":"4500","number":"650
-        403-4300","number_type":"voice","vanity_number":null},{"id":8,"department":null,"extension":null,"number":"650
-        403-4303","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:05 GMT
-recorded_with: VCR 4.0.0
+      string: "[]"
+  recorded_at: Wed, 08 Mar 2023 04:56:46 GMT
+recorded_with: VCR 6.1.0

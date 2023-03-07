@@ -4,7 +4,7 @@ feature 'location details' do
   context 'when the details page is visited via search results', :vcr do
     it 'includes address elements' do
       search_for_example
-      visit_details
+      click_link 'Example Location'
       expect(page).to have_content('Mailing Address')
       expect(page).to have_content('Physical Address')
       expect(page).to have_content('2013 Avenue of the fellows')
@@ -16,7 +16,7 @@ feature 'location details' do
   context 'when you return to the results page from details page', :js, :vcr do
     it 'displays the same search results' do
       search_for_example
-      visit_details
+      click_link 'Example Location'
       find_link('suzanne@example.com')
       find_link('a', text: 'Back').click
       expect(page).to have_selector('#list-view')
@@ -217,9 +217,9 @@ feature 'location details' do
   end
 
   scenario 'when Contact only includes title', :vcr do
-    visit('/locations/peninsula-family-service/fair-oaks-adult-activity-center')
+    visit('/locations/san-pedro-valley-park')
     within('.location-sidebar') do
-      expect(page).to have_content('Director of Older Adult Services')
+      expect(page).to have_content('Supervising Ranger')
       expect(page).to_not have_selector('contact-department')
     end
   end

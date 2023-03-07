@@ -19,7 +19,7 @@ module Features
 
     # Perform a search that returns 1 result.
     def search_for_example
-      visit('/locations?keyword=example')
+      visit('/locations?keyword=alpha%20app')
     end
 
     # Visit details page.
@@ -50,7 +50,7 @@ module Features
     def looks_like_results
       expect(page).to have_content('Example Agency')
       expect(page).to have_content('1 result')
-      expect(page).to have_title 'Search results for: keyword: example'
+      expect(page).to have_title 'Search results for: keyword: alpha app'
     end
 
     def looks_like_no_results

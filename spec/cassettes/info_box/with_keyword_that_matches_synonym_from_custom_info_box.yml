@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=health%20care%20reform&location=
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=health%20care%20reform&location=
     body:
       encoding: US-ASCII
       string: ''
@@ -28,34 +28,55 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"6fa32b944d3f1575a8e662a67ca238df"
-      Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=health+care+reform&page=0>;
-        rel="last"
+      - W/"077c08c53e069a088dde82bb1615c514"
       X-Total-Count:
-      - '0'
+      - '1'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:10 GMT
+      - Wed, 08 Mar 2023 04:18:27 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - df8b4841-ac45-40b3-a316-d1548969d59a
+      - b85032b6-54bd-4c21-92d0-4ebcf474a5cd
       X-Runtime:
-      - '0.016248'
-      X-Rack-Cache:
-      - pass
+      - '0.018393'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: "[]"
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:10 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"id":323,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4001274,37.7923367],"description":"The
+        Youth Law Center is a nonprofit public interest law program that works to
+        protect the rights, health and lives of disadvantaged children and families.
+        The work of the Youth Law Center focuses on reform of the law in juvenile
+        justice and child welfare. The Center''s overall purposes are to protect children
+        from abuse (focusing upon those in out-of-home placement), and to ensure that
+        they receive the treatment and services to which they are legally entitled.
+        Staff attorneys work through technical assistance, public education, legislative
+        advocacy and litigation when necessary. They also work with other legal service
+        organizations, social service personnel, law enforcement personnel, judges,
+        and private attorneys representing youth and children; assist states with
+        legislative advocacy; prepare manuals and training materials for lawyers and
+        youth advocates; and respond to requests for assistance from state and local
+        officials, community groups, parents and attorneys.","kind":"Human Services","latitude":37.7923367,"longitude":-122.4001274,"name":"Youth
+        Law Center","short_desc":"Legal education, counsel and representation in reform
+        of the law regarding the rights of minors.","slug":"youth-law-center","updated_at":"2014-11-25T17:22:00.223-08:00","website":"http://www.ylc.org","url":"https://api-staging.smc-connect.org/locations/youth-law-center","address":{"id":272,"address_1":"200
+        Pine Street, Suite 300","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94104"},"organization":{"id":323,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Youth
+        Law Center","website":null,"slug":"youth-law-center","url":"https://api-staging.smc-connect.org/organizations/youth-law-center","locations_url":"https://api-staging.smc-connect.org/organizations/youth-law-center/locations"},"phones":[{"id":428,"department":null,"extension":null,"number":"415
+        543-3379","number_type":"voice","vanity_number":null},{"id":2694,"department":null,"extension":null,"number":"415
+        956-9022","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:18:27 GMT
+recorded_with: VCR 6.1.0
