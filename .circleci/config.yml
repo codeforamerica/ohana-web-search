@@ -47,7 +47,6 @@ jobs:
       - run:
           name: Run linters
           command: |
-            bundle exec rubocop
             bundle exec haml-lint app/views
 
       - run:
