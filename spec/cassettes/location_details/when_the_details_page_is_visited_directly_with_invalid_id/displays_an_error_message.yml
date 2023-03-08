@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/foobar
+    uri: https://api-staging.smc-connect.org/locations/foobar
     body:
       encoding: US-ASCII
       string: ''
@@ -20,6 +20,8 @@ http_interactions:
     headers:
       Server:
       - Cowboy
+      Date:
+      - Wed, 08 Mar 2023 04:57:02 GMT
       Connection:
       - keep-alive
       X-Frame-Options:
@@ -28,6 +30,12 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
       Vary:
@@ -35,13 +43,11 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - aea3cd70-9e8d-417f-bce6-bcab5887555b
+      - 8517792e-37cc-478a-85b1-160feaea43ea
       X-Runtime:
-      - '0.007736'
-      Date:
-      - Mon, 27 May 2019 21:20:13 GMT
-      X-Rack-Cache:
-      - pass
+      - '0.008463'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
@@ -49,6 +55,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"status":404,"message":"The requested resource could not be found.","documentation_url":"http://codeforamerica.github.io/ohana-api-docs/"}'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:13 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 08 Mar 2023 04:57:02 GMT
+recorded_with: VCR 6.1.0

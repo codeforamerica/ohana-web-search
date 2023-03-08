@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=Health%20Insurance
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=Health%20Insurance
     body:
       encoding: US-ASCII
       string: ''
@@ -28,35 +28,271 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"3b48b1740a2e5476845bcb2a9d304b6b"
+      - W/"8d47af5ace41d5abff9502032aef01cd"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
-        rel="last", <http://ohana-api-test.herokuapp.com/api/search?keyword=Health+Insurance&page=2>;
+      - <https://api-staging.smc-connect.org/search?keyword=Health+Insurance&page=2>;
+        rel="last", <https://api-staging.smc-connect.org/search?keyword=Health+Insurance&page=2>;
         rel="next"
       X-Total-Count:
-      - '2'
+      - '48'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:09 GMT
+      - Wed, 08 Mar 2023 04:56:46 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - 831c9502-e6e1-4363-bc38-964a8589bf55
+      - 805ff508-5727-4a9f-9f38-9bb3043976bc
       X-Runtime:
-      - '0.024997'
-      X-Rack-Cache:
-      - pass
+      - '0.066037'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '[{"id":1,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.213221,37.477227],"description":"A
+      string: '[{"id":1599,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.3178101,37.5632958],"description":"A
+        full service office that processes claims for all Social Security programs.
+        Social Security benefits are based on the worker''s wages and may be paid
+        to the worker or the worker''s dependents or survivors. People in need of
+        cash aid who are age 65 or over, or who are blind or disabled including blind
+        and disabled children, may apply for Supplemental Security Income (SSI). SSI
+        recipients automatically qualify for Medi-Cal. Medicare is the federal health
+        insurance program for people age 65 or over and those who are disabled or
+        have chronic kidney disease. It is best to check first the Web site for information
+        about qualifications and the necessary documentation which must be submitted.
+        Interim emergency financial assistance may be obtained from the San Mateo
+        County Human Services Agency. Applications for homebound persons can be handled
+        by phone or mail. Original and duplicate Social Security cards are issued
+        here. To request a speaker on Social Security, SSI or Medicare contact the
+        office.","kind":"Human Services","latitude":37.5632958,"longitude":-122.3178101,"name":"Central
+        San Mateo County District Office","short_desc":"Administers the Social Security
+        program for the mid-county area.","slug":"central-san-mateo-county-district-office","updated_at":"2017-06-29T14:32:26.822-07:00","website":"http://www.socialsecurity.gov","url":"https://api-staging.smc-connect.org/locations/central-san-mateo-county-district-office","address":{"id":1335,"address_1":"800
+        South Claremont Street, Suite 101","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402-1451"},"organization":{"id":1327,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Social
+        Security Administration (SSA)","website":null,"slug":"social-security-administration-ssa","url":"https://api-staging.smc-connect.org/organizations/social-security-administration-ssa","locations_url":"https://api-staging.smc-connect.org/organizations/social-security-administration-ssa/locations"},"phones":[{"id":2300,"department":null,"extension":null,"number":"800
+        772-1213","number_type":"voice","vanity_number":null},{"id":2301,"department":null,"extension":null,"number":"8003250778","number_type":"tty","vanity_number":null},{"id":3518,"department":null,"extension":null,"number":"650
+        579-7046","number_type":"fax","vanity_number":null}]},{"id":1201,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.3785319,37.25627739999999],"description":"Puente
+        de la Costa Sur (Puente) is the only community resource center for the South
+        Coast of San Mateo County. Puente advocates for our communities and leverages
+        resources that foster economic prosperity and security, and promote individual
+        and community health and wellness. We support local leaders and work together
+        to create solutions for the challenges facing our diverse population. Puente
+        provides a single point of entry for men, women and children to have access
+        to safety net services, health and wellness services, youth leadership development
+        and employment, and community engagement and action. Puente also works with
+        farmers, ranchers, and nursery owners to promote a sustainable agricultural
+        economy on the south coast of northern California. Permanent programs include:
+        a mobile pantry; a Second Harvest Food Bank distribution site; children''s
+        story times; and La Sala Community Living Room. Also offers a program to address
+        maternal depression. Also offers ESL classes, individual tutoring in ESL,
+        GED and citizenship classes. Periodically offers an Adult Literacy Program
+        for Spanish speakers in which students learn to read and write in Spanish
+        or complete their elementary, middle and high school within the Mexican education
+        system. Call for specific days and times for each of these programs. Also
+        offers, by appointment, WIC (Women, Infants and Children) services, insurance
+        enrollment, food stamps, CalWorks assistance, tax preparation and notary services.
+        Deposit and rental assistance subject to availability of funds. The site is
+        part of the core network of community service agencies of San Mateo County.","kind":"Human
+        Services","latitude":37.25627739999999,"longitude":-122.3785319,"name":"Puente","short_desc":"Provides
+        a single point of entry for men, women and children to have access to safety
+        net services, health and wellness services, leadership development, and community
+        engagement and action.","slug":"puente","updated_at":"2016-01-04T16:04:23.091-08:00","website":"http://www.mypuente.org","url":"https://api-staging.smc-connect.org/locations/puente","address":{"id":959,"address_1":"620
+        North Street","address_2":null,"city":"Pescadero","state_province":"CA","postal_code":"94060"},"organization":{"id":1201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Puente
+        de la Costa Sur","website":null,"slug":"puente-de-la-costa-sur","url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur","locations_url":"https://api-staging.smc-connect.org/organizations/puente-de-la-costa-sur/locations"},"phones":[{"id":1575,"department":null,"extension":null,"number":"650
+        879-1691","number_type":"voice","vanity_number":null},{"id":3240,"department":null,"extension":null,"number":"650
+        879-0973","number_type":"fax","vanity_number":null}]},{"id":1215,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.230148,37.488701],"description":"Assists
+        parents with issues and questions relating to the establishment of child support.
+        The department establishes paternity, medical support orders, child support
+        orders, and oversees the enforcement of these orders. Persons who have a child
+        support and/or medical support order, or want to establish one, can apply
+        for services. Parents who receive public assistance, including Medi-Cal, will
+        automatically be referred to the San Mateo County Department of Child Support
+        Services (SMC/DCSS) by the County of San Mateo Human Services Agency. If paternity
+        (fatherhood) has not yet been established, the SMC/DCSS will take the necessary
+        steps to establish paternity. (Paternity must be established before child
+        and medical support can be ordered by the court.) If a court order for child
+        support does not already exist, and the noncustodial parent is located, one
+        will be sought by the SMC/DCSS and established by the court based on both
+        parents'' ability to pay support, the amount of time the child spends with
+        each parent, and the financial needs of the child. The SMC/DCSS will also
+        request that the court require the noncustodial parent to provide health insurance
+        if it is available at a reasonable cost. The SMC/DCSS will take steps to enforce
+        court orders for child support and medical support. Enforcement action will
+        be taken by the SMC/DCSS if the noncustodial parent does not pay or pays less
+        than the amount ordered, or if the noncustodial parent does not provide health
+        insurance for the child as ordered by the court. The SMC/DCSS will determine
+        what type of enforcement actions is to be taken, consistent with state and
+        federal regulations. Support payments are accepted online at the Web site:
+        www.casdu.com. If paying by check or money order, mail payment to CA SDU,
+        P.O. Box 989067, West Sacramento, CA 95798-9067.","kind":"Human Services","latitude":37.488701,"longitude":-122.230148,"name":"Department
+        of Child Support Services (DCSS)","short_desc":"Handles problems and questions
+        about the collection of child support from a non-custodial parent.","slug":"department-of-child-support-services-dcss","updated_at":"2015-11-06T15:57:08.467-08:00","website":"http://dcss.smcgov.org/","url":"https://api-staging.smc-connect.org/locations/department-of-child-support-services-dcss","address":{"id":973,"address_1":"555
+        County Center, 2nd Floor","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1215,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County","website":null,"slug":"san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county/locations"},"phones":[{"id":1591,"department":null,"extension":null,"number":"866
+        901-3212","number_type":"voice","vanity_number":null},{"id":1592,"department":null,"extension":null,"number":"866
+        223-9529","number_type":"tty","vanity_number":null},{"id":3253,"department":null,"extension":null,"number":"650
+        365-3982","number_type":"fax","vanity_number":null}]},{"id":1187,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.491878,37.635091],"description":"Provides
+        crisis intervention services and emergency material assistance, preliminary
+        casework and counseling, and comprehensive information and referral. Emergency
+        assistance includes providing gift certificates for food and an emergency
+        food pantry stocked by Second Harvest Food Bank and food donated by the community.
+        Assists with enrollment in CalFresh, California''s food stamps program. Limited
+        funds are available to eligible families who need help with first and last
+        month rental deposits and delinquent rent. Confidential crisis intervention
+        services are provided in the areas of financial, emotional and family violence
+        situations. Assists with low-cost health insurance for children. Offers Earn
+        It, Keep It, Save It, a free tax preparation service from February to April
+        15. Funds are available to eligible low-income people to maintain or restore
+        energy services when a 48-hour or 15-day shut-off notice has been received
+        by PG\u0026E. La Raza Centro Legal is available by appointment to provide
+        legal representation to low-income Spanish-speaking residents in the areas
+        of employment, housing and immigration law (call 415-575-3500 for an appointment).
+        The site is part of the core network of community service agencies of San
+        Mateo County.","kind":"Human Services","latitude":37.635091,"longitude":-122.491878,"name":"A
+        project of the Tides Center","short_desc":"A community center offering a wide
+        variety of services to local residents.","slug":"a-project-of-the-tides-center","updated_at":"2014-11-25T17:22:12.826-08:00","website":"http://www.pacresourcecenter.org","url":"https://api-staging.smc-connect.org/locations/a-project-of-the-tides-center","address":{"id":947,"address_1":"1809
+        Palmetto Avenue","address_2":null,"city":"Pacifica","state_province":"CA","postal_code":"94044"},"organization":{"id":1187,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Core
+        Service Agency serving Pacifica.","email":null,"funding_sources":[],"licenses":[],"name":"Pacifica
+        Resource Center","website":"https://www.paresourcecenter.org","slug":"pacifica-resource-center","url":"https://api-staging.smc-connect.org/organizations/pacifica-resource-center","locations_url":"https://api-staging.smc-connect.org/organizations/pacifica-resource-center/locations"},"phones":[{"id":1557,"department":null,"extension":null,"number":"650
+        738-7470","number_type":"voice","vanity_number":null},{"id":3231,"department":null,"extension":null,"number":"650
+        359-2053","number_type":"fax","vanity_number":null}]},{"id":201,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2635718,37.5043137],"description":"A
+        multipurpose adult community offering social and recreational activities,
+        arts, special interest and exercise classes, bingo, a computer lab, movies
+        and gift shop. Staff is available to provide information about community services
+        and answers questions about housing, employment, household help, recreation
+        and social activities, financial assistance, health and counseling services,
+        services to shut-ins, home delivered meals, household repairs and more. Also
+        maintains information about special discounts for seniors, and keeps up-to-date
+        information and appropriate forms for the state tax refund programs of Homeowner''s
+        Assistance, Rent Assistance and Property Tax Postponement for seniors. Keeps
+        a file of available housing and persons looking for housing. On Mondays, lunch
+        is served at a minimal cost. Bi-monthly newsletter covers information and
+        activities at the center and surrounding communities. Some health screenings
+        are available by appointment. The center is a HICAP (Health Insurance Counseling
+        and Advocacy Program) site for health insurance counseling. Caring Cupboard
+        offers a free bag of groceries twice a month to San Carlos residents who are
+        50 or older and whose total monthly income is less than $1805 (single) or
+        $2428 (couple). Formerly known as the San Carlos Senior Center.","kind":"Human
+        Services","latitude":37.5043137,"longitude":-122.2635718,"name":"San Carlos
+        Adult Community Center","short_desc":"A multipurpose senior center.","slug":"san-carlos-adult-community-center","updated_at":"2017-07-21T16:31:41.132-07:00","website":"http://www.cityofsancarlos.org/acc","url":"https://api-staging.smc-connect.org/locations/san-carlos-adult-community-center","address":{"id":188,"address_1":"601
+        Chestnut Street","address_2":null,"city":"San Carlos","state_province":"CA","postal_code":"94070-3085"},"organization":{"id":201,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Carlos Adult Community Center","website":null,"slug":"san-carlos-adult-community-center","url":"https://api-staging.smc-connect.org/organizations/san-carlos-adult-community-center","locations_url":"https://api-staging.smc-connect.org/organizations/san-carlos-adult-community-center/locations"},"phones":[{"id":262,"department":null,"extension":null,"number":"650
+        802-4384","number_type":"voice","vanity_number":null}]},{"id":1390,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2931271,37.5326926],"description":"Provides
+        free primary and specialty medical and dental services to uninsured, low-income
+        residents. Who is Treated? Patients of our clinics are the working poor. They
+        tend to earn just enough income to be ineligible for Medi-Cal coverage, yet
+        do not receive health insurance through their employers and cannot afford
+        to pay for “out-of-pocket” health insurance. Often these residents are forced
+        to seek treatment at local emergency rooms and become saddled with medical
+        bills that they are unable to pay. Samaritan House’s Free Medical Clinics
+        fill this gap in healthcare access for the uninsured and save emergency room
+        resources for emergencies. Professional Medical \u0026 Dental Volunteers Thanks
+        to its innovative volunteer-based model of service, Samaritan House’s clinics
+        are able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.5326926,"longitude":-122.2931271,"name":"San
+        Mateo Free Medical Clinic","short_desc":"Provides free medical and dental
+        care to those in need. Offers basic medical care for adults.","slug":"san-mateo-free-medical-clinic","updated_at":"2014-11-25T17:22:17.654-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-free-medical-clinic","address":{"id":1130,"address_1":"19
+        West 39th Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":1904,"department":null,"extension":null,"number":"650
+        578-0400","number_type":"voice","vanity_number":null},{"id":3365,"department":null,"extension":null,"number":"650
+        578-0440","number_type":"fax","vanity_number":null}]},{"id":1389,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.207057,37.468678],"description":"Primary
+        and specialty medical and dental services to uninsured, low-income residents.
+        Who is Treated? Patients of our clinics are the working poor. They tend to
+        earn just enough income to be ineligible for Medi-Cal coverage, yet do not
+        receive health insurance through their employers and cannot afford to pay
+        for “out-of-pocket” health insurance. Often these residents are forced to
+        seek treatment at local emergency rooms and become saddled with medical bills
+        that they are unable to pay. Samaritan House’s Free Medical Clinics fill this
+        gap in healthcare access for the uninsured and save emergency room resources
+        for emergencies. Professional Medical \u0026 Dental Volunteers Thanks to its
+        innovative volunteer-based model of service, Samaritan House’s clinics are
+        able to treat such a large number of patients with a very small paid staff.
+        Almost all of the medical and dental doctors and assistants are volunteering
+        their time free of charge. These individuals, either retired or currently
+        practicing medicine and dentistry, want to serve their community in their
+        limited spare time.","kind":"Human Services","latitude":37.468678,"longitude":-122.207057,"name":"Redwood
+        City Free Medical Clinic","short_desc":"Provides free medical care to those
+        in need.","slug":"redwood-city-free-medical-clinic","updated_at":"2014-11-25T17:22:17.626-08:00","website":"http://www.samaritanhousesanmateo.org","url":"https://api-staging.smc-connect.org/locations/redwood-city-free-medical-clinic","address":{"id":1129,"address_1":"114
+        Fifth Avenue","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":498,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Samaritan
+        House","website":null,"slug":"samaritan-house","url":"https://api-staging.smc-connect.org/organizations/samaritan-house","locations_url":"https://api-staging.smc-connect.org/organizations/samaritan-house/locations"},"phones":[{"id":1903,"department":null,"extension":null,"number":"650
+        839-1447","number_type":"voice","vanity_number":null},{"id":3364,"department":null,"extension":null,"number":"650
+        839-1457","number_type":"fax","vanity_number":null}]},{"id":641,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1622948,37.4463169],"description":"Provides
+        a wide array of services to seniors and caregivers. The services and activities
+        include case management and information on, and referral to, other community
+        services. The center has a van service and provides information on transportation
+        options available to seniors. The center also offers housing counseling for
+        seniors, tax counseling, health insurance counseling, health screening, legal
+        assistance, counseling and support groups for adult caregivers. It provides
+        extensive recreational, educational and social programs including classes
+        (ranging from the Computer Learning Center for Macs and PCs to aerobic exercise
+        to foreign languages, writing, watercolor painting), lectures, health education
+        programs and local group trips. The Avenidas Handyman Service provides painting
+        and fix-it services, including carpentry, plumbing and electrical work, to
+        senior homeowners. Rates are discounted 50% to 95% from commercial rates.
+        The Avenidas Rose Kleiner Senior Day Health Program is a medically-licensed
+        day care program for less independent older adults. Seniors who are suffering
+        from cognitive or physical impairments participate in structured activities
+        under the supervision of a team of nurses, social workers, therapists and
+        recreation aides. The Program also includes transportation in a lift-equipped
+        van, a nutritious lunch and support groups for participants'' caregivers.
+        Services are available in Spanish and individuals may participate from two
+        to five days per week. The Program is Medi-Cal approved. The program is located
+        at 270 Escuela Avenue, Mountain View. Provides the directory \"Where to Live
+        - A Guide for Senior Adults in San Mateo and Santa Clara Counties.\" The directory
+        is designed to assist senior adults, their families and friends, and agencies
+        that work with older persons, to locate and evaluate appropriate housing and
+        living arrangements. Also offers information on alternatives to moving, rental
+        housing at prevailing market rates, below market rental housing, life care
+        contract homes, residential care homes and nursing homes. Contact Avenidas
+        to purchase a copy.","kind":"Human Services","latitude":37.4463169,"longitude":-122.1622948,"name":"Avenidas","short_desc":"Provides
+        a wide array of services to seniors and caregivers.","slug":"avenidas","updated_at":"2014-11-25T17:22:05.633-08:00","website":"http://www.avenidas.org","url":"https://api-staging.smc-connect.org/locations/avenidas","address":{"id":542,"address_1":"450
+        Bryant Street","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94301"},"organization":{"id":641,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Avenidas","website":null,"slug":"avenidas","url":"https://api-staging.smc-connect.org/organizations/avenidas","locations_url":"https://api-staging.smc-connect.org/organizations/avenidas/locations"},"phones":[{"id":871,"department":"Avenidas","extension":null,"number":"650
+        289-5400","number_type":"voice","vanity_number":null},{"id":872,"department":"Avenidas
+        Rose Kleiner Senior Day Health Center","extension":null,"number":"650 289-5499","number_type":"voice","vanity_number":null},{"id":2911,"department":null,"extension":null,"number":"650
+        326-3048","number_type":"fax","vanity_number":null}]},{"id":184,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.484674,37.7049509],"description":"A
+        multipurpose center for adults age 50 or over, located in Westlake Park, offering
+        a wide variety of activities, information and wellness services. Offers speakers
+        on subjects of interest, classes in crafts, languages, living trusts and estate
+        planning, exercise, bridge, dance, computers, cooking and other subjects.
+        Some evening and weekend classes are also available. Direct services include
+        home-delivered meals, health insurance counseling and health screenings. Serves
+        a hot lunch Monday through Friday for a $3.50 suggested donation. The deli
+        is open Monday through Friday.","kind":"Human Services","latitude":37.7049509,"longitude":-122.484674,"name":"Doelger
+        Senior Center","short_desc":"A multipurpose senior citizens'' center.","slug":"doelger-senior-center","updated_at":"2017-07-21T16:14:47.784-07:00","website":"http://www.doelgercenter.com","url":"https://api-staging.smc-connect.org/locations/doelger-senior-center","address":{"id":176,"address_1":"101
+        Lake Merced Blvd.","address_2":null,"city":"Daly City","state_province":"CA","postal_code":"94015"},"organization":{"id":184,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Doelger
+        Senior Center","website":null,"slug":"doelger-senior-center","url":"https://api-staging.smc-connect.org/organizations/doelger-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/doelger-senior-center/locations"},"phones":[{"id":239,"department":null,"extension":null,"number":"650
+        991-8012","number_type":"voice","vanity_number":null},{"id":240,"department":"HART","extension":null,"number":"650
+        991-5558","number_type":"voice","vanity_number":null},{"id":2618,"department":null,"extension":null,"number":"650
+        746-8360","number_type":"fax","vanity_number":null}]},{"id":213,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4010465,37.6000499],"description":"A
+        drop-in center for adults age 50 or over providing social and recreational
+        activities including exercise, oil painting, clubs, trips, arts and crafts,
+        computer lab and classes, and a craft/boutique store. Staff provide information
+        about community services to persons age 55 or over and their families. Assistance
+        is available for questions related to housing, employment, household help,
+        recreation and social activities, financial assistance, health and counseling
+        services, services to shut-ins and more. Health insurance counseling is available
+        by appointment. Facilitates Shopping Assistance for Seniors who are Homebound
+        (SASH) program through volunteers.","kind":"Human Services","latitude":37.6000499,"longitude":-122.4010465,"name":"Millbrae
+        Senior Center","short_desc":"A multipurpose senior center for residents of
+        Burlingame, Millbrae, San Bruno and San Mateo.","slug":"millbrae-senior-center","updated_at":"2014-11-25T17:21:58.974-08:00","website":"http://www.ci.millbrae.ca.us","url":"https://api-staging.smc-connect.org/locations/millbrae-senior-center","address":{"id":197,"address_1":"477
+        Lincoln Circle","address_2":null,"city":"Millbrae","state_province":"CA","postal_code":"94030"},"organization":{"id":213,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Millbrae
+        Senior Center","website":null,"slug":"millbrae-senior-center","url":"https://api-staging.smc-connect.org/organizations/millbrae-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/millbrae-senior-center/locations"},"phones":[{"id":283,"department":null,"extension":null,"number":"650
+        259-2370","number_type":"voice","vanity_number":null},{"id":2640,"department":null,"extension":null,"number":"650
+        259-2477","number_type":"fax","vanity_number":null}]},{"id":1372,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2131702,37.4773149],"description":"A
         walk-in center for older adults that provides social services, wellness, recreational,
         educational and creative activities including arts and crafts, computer classes
         and gardening classes. Coffee and healthy breakfasts are available daily.
@@ -75,16 +311,447 @@ http_interactions:
         groceries each week for a membership fee of $10 a year. Offers Spanish lessons.
         Formerly known as Peninsula Family Service, Fair Oaks Intergenerational Center.
         Formerly known as the Fair Oaks Senior Center. Formerly known as Family Service
-        Agency of San Mateo County, Fair Oaks Intergenerational Center.","latitude":37.477227,"longitude":-122.213221,"name":"Fair
-        Oaks Adult Activity Center","short_desc":"A multipurpose senior citizens''
-        center serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","website":null,"updated_at":"2019-03-17T10:23:13.545-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/fair-oaks-adult-activity-center","address":{"id":1,"address_1":"2600
-        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":1,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Peninsula
-        Family Service strengthens the community by providing children, families,
-        and older adults the support and tools to realize their full potential and
-        lead healthy, stable lives.","email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
-        Family Service","website":null,"slug":"peninsula-family-service","url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service","locations_url":"http://ohana-api-test.herokuapp.com/api/organizations/peninsula-family-service/locations"},"phones":[{"id":1,"department":null,"extension":null,"number":"650
-        780-7525","number_type":"voice","vanity_number":null},{"id":2,"department":null,"extension":null,"number":"650
-        701-0856","number_type":"fax","vanity_number":null}]}]'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:09 GMT
-recorded_with: VCR 4.0.0
+        Agency of San Mateo County, Fair Oaks Intergenerational Center.","kind":"Human
+        Services","latitude":37.4773149,"longitude":-122.2131702,"name":"Fair Oaks
+        Adult Activity Center","short_desc":"A multipurpose senior citizens'' center
+        serving the Redwood City area.","slug":"fair-oaks-adult-activity-center","updated_at":"2017-07-21T16:27:19.221-07:00","website":"http://www.peninsulafamilyservice.org","url":"https://api-staging.smc-connect.org/locations/fair-oaks-adult-activity-center","address":{"id":1112,"address_1":"2600
+        Middlefield Road","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":19,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Family Service","website":null,"slug":"peninsula-family-service","url":"https://api-staging.smc-connect.org/organizations/peninsula-family-service","locations_url":"https://api-staging.smc-connect.org/organizations/peninsula-family-service/locations"},"phones":[{"id":1850,"department":null,"extension":null,"number":"650
+        780-7525","number_type":"voice","vanity_number":null},{"id":3347,"department":null,"extension":null,"number":"650
+        701-0856","number_type":"fax","vanity_number":null}]},{"id":165,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4198236,37.61370369999999],"description":"A
+        recreational and social program for persons age 50 or over (and spouse of
+        any age). Activities include dancing on Monday-Thursday from 10:30 am-12 noon,
+        bingo on Monday, Wednesday and Friday from 1-3 pm and exercise and academic
+        classes. Art and craft programs are offered throughout the week. Computer
+        instruction is available. The center is open Sundays from 12 to 4 pm for special
+        drop-in programs. A hot lunch is served Monday-Friday at 12 noon. A calendar
+        of events is available. The center offers information and referral to available
+        community resources to persons age 50 or over and their families. An appointment
+        can be made with an appropriate agency for a caller and transportation may
+        be located if needed. Assistance is available for questions related to activities,
+        financial assistance, health and counseling services, services to shut-ins,
+        home delivered meals and more. Health insurance counseling is available by
+        appointment.","kind":"Human Services","latitude":37.61370369999999,"longitude":-122.4198236,"name":"San
+        Bruno Senior Center","short_desc":"A multipurpose senior center serving the
+        San Bruno area.","slug":"san-bruno-senior-center","updated_at":"2017-07-21T16:30:44.601-07:00","website":"http://www.sanbruno.ca.gov","url":"https://api-staging.smc-connect.org/locations/san-bruno-senior-center","address":{"id":157,"address_1":"1555
+        Crystal Springs Road","address_2":null,"city":"San Bruno","state_province":"CA","postal_code":"94066"},"organization":{"id":165,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Bruno Senior Center","website":null,"slug":"san-bruno-senior-center","url":"https://api-staging.smc-connect.org/organizations/san-bruno-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/san-bruno-senior-center/locations"},"phones":[{"id":213,"department":null,"extension":null,"number":"650
+        616-7150","number_type":"voice","vanity_number":null},{"id":2608,"department":null,"extension":null,"number":"650
+        589-8219","number_type":"fax","vanity_number":null}]},{"id":15,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4991919,37.5987994],"description":"A
+        multipurpose senior center offering a variety of recreation and education
+        programs such as physical fitness, crafts, support groups, bridge, ceramics
+        and yoga. Publishes a newsletter of activities and information of interest
+        to seniors in Pacifica. Staff provide information about community services
+        to persons age 60 or over and their families. Appointments can be made with
+        appropriate agencies and transportation can be located if needed. Assistance
+        is available for questions related to housing, employment, household help
+        and repairs, recreation and social activities, financial assistance, health
+        and counseling services, services to the homebound, home delivered meals and
+        more. Maintains information about special discounts for seniors. Tax assistance
+        is offered by AARP. Keeps a file of housing available. Health insurance counseling
+        is available by appointment. Serves a hot meal at noon five days a week for
+        persons age 60 or over. Arranges to deliver meals to the homes of residents
+        unable to prepare their own food and who have no one to cook for them (call
+        650-738-7350). Other services offered regularly include podiatry service,
+        and nutrition and health lectures. Volunteer participation is needed in the
+        areas of delivering Meals on Wheels, teaching, staffing the gift shop, food
+        services, reception and in the SASH (Shopping Assistance for Seniors who are
+        Homebound) program. Free movies shown every Friday. SIA members 60 or over
+        can make an appointment on the first and third Monday of each month for a
+        $10 haircut.","kind":"Human Services","latitude":37.5987994,"longitude":-122.4991919,"name":"Pacifica
+        Senior Services","short_desc":"A multipurpose senior citizens'' center.","slug":"pacifica-senior-services","updated_at":"2017-07-21T16:26:41.451-07:00","website":"http://www.cityofpacifica.org/depts/senior_services/","url":"https://api-staging.smc-connect.org/locations/pacifica-senior-services","address":{"id":15,"address_1":"540
+        Crespi Drive","address_2":null,"city":"Pacifica","state_province":"CA","postal_code":"94044"},"organization":{"id":15,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pacifica
+        Senior Services","website":null,"slug":"pacifica-senior-services","url":"https://api-staging.smc-connect.org/organizations/pacifica-senior-services","locations_url":"https://api-staging.smc-connect.org/organizations/pacifica-senior-services/locations"},"phones":[{"id":20,"department":null,"extension":null,"number":"650
+        738-7384","number_type":"voice","vanity_number":null},{"id":2499,"department":null,"extension":null,"number":"650
+        738-0564","number_type":"fax","vanity_number":null}]},{"id":511,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3134481,37.5400639],"description":"A
+        multipurpose facility serving older adults in the San Mateo area. Offers social
+        activities such as special events, movies and bingo. Also offers classes in
+        computers, drawing, history and other subjects, lectures on subjects of interest
+        and health screenings. Lunch (chef-prepared) is served Monday, Wednesday and
+        Friday at 12 noon. The fee is $5.50 by reservation, $6.50 without reservation.
+        The center also offers information about and referral to other community resources,
+        Health Insurance Counseling and Advocacy Program (HICAP) and De Latino a Latino,
+        a club for Spanish-speaking seniors. SASH (Shopping Assistance for Seniors
+        who are Homebound) is coordinated out of the San Mateo Senior Center for the
+        cities of San Mateo and Burlingame.","kind":"Human Services","latitude":37.5400639,"longitude":-122.3134481,"name":"San
+        Mateo City Senior Center","short_desc":"A multipurpose senior center serving
+        the San Mateo area.","slug":"san-mateo-city-senior-center","updated_at":"2017-07-21T16:33:09.209-07:00","website":"http://www.cityofsanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-mateo-city-senior-center","address":{"id":424,"address_1":"2645
+        Alameda de las Pulgas","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94403-2620"},"organization":{"id":511,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo City Senior Center","website":null,"slug":"san-mateo-city-senior-center","url":"https://api-staging.smc-connect.org/organizations/san-mateo-city-senior-center","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-city-senior-center/locations"},"phones":[{"id":669,"department":null,"extension":null,"number":"650
+        522-7490","number_type":"voice","vanity_number":null},{"id":2808,"department":null,"extension":null,"number":"650
+        522-7491","number_type":"fax","vanity_number":null}]},{"id":1611,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4198725,37.657129],"description":"A
+        drop-in multipurpose center open to any senior 50 or over, but primarily serving
+        those in South San Francisco. Social, recreational, educational and special
+        activities include bingo, bridge, billiards, knitting and crafts, cooking
+        demonstrations, casino trips, sightseeing opportunities and dining outings.
+        The Alzheimer''s Support Group and blood pressure screenings are scheduled
+        on a regular basis. Tax assistance is available from Februrary to April. HICAP
+        (Health Insurance Counseling and Advocacy Program, the Medicare Counseling
+        Program) is available by appointment. Exercise, American Line Dancing, and
+        ESL (English as a Second Language) are offered at this site by the Parks and
+        Recreation Department and Adult Education. Senior social dancing, bead stringing/knotting
+        class, yoga classes, Coping with Change support group, Tai Chi, the 55 Alive
+        Safety Driving Courses (registration at Magnolia Center), knitting for beginnners,
+        and stretching and flexibility are all offered under the umbrella of Senior
+        Services and the Parks and Recreation Department at the Municipal Services
+        Building at 33 Arroyo Drive, South San Francisco. There is a yearly health
+        fair in March and a holiday boutique in November.","kind":"Human Services","latitude":37.657129,"longitude":-122.4198725,"name":"Magnolia
+        Center","short_desc":"A multipurpose senior citizens'' center.","slug":"magnolia-center","updated_at":"2017-07-21T16:35:57.263-07:00","website":"http://www.ssf.net","url":"https://api-staging.smc-connect.org/locations/magnolia-center","address":{"id":1344,"address_1":"601
+        Grand Avenue, 3rd Floor","address_2":null,"city":"South San Francisco","state_province":"CA","postal_code":"94080"},"organization":{"id":1330,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"South
+        San Francisco Senior Services","website":null,"slug":"south-san-francisco-senior-services","url":"https://api-staging.smc-connect.org/organizations/south-san-francisco-senior-services","locations_url":"https://api-staging.smc-connect.org/organizations/south-san-francisco-senior-services/locations"},"phones":[{"id":2316,"department":null,"extension":null,"number":"650
+        829-3820","number_type":"voice","vanity_number":null}]},{"id":1377,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.1805905,37.4480204],"description":"A
+        multipurpose center offering a wide variety of recreational, education and
+        cultural activities. Lifelong learning courses cover topics such as music,
+        art, languages, etc., are hosted at this location. Little House offers a large
+        variety of classes including arts and crafts, jewelry, languages, current
+        events, lapidary, woodwork, painting, and fitness courses (yoga, strength
+        straining, tai chi). There are monthly art and cultural lectures, movie showings,
+        and a computer center. Recreation activities include mah jong, pinochle, ballroom
+        dancing, bridge, trips and tours. Partners with the Sequoia Adult Education
+        Program. The Alzheimer''s Cafe, open the third Tuesday of every month from
+        2:00 - 4:00 pm, is a place that brings together people liviing with dementia,
+        their families, and their caregivers. Free and no registration is needed.
+        The Little House Community Service Desk offers information and referrals regarding
+        social service issues, such as housing, food, transportation, health insurance
+        counseling, and estate planning. Massage, podiatry, and acupuncture are available
+        by appointment. Lunch is served Monday-Friday, 11:30 am-1:00 pm. Prices vary
+        according to selection.","kind":"Human Services","latitude":37.4480204,"longitude":-122.1805905,"name":"Little
+        House","short_desc":"A multipurpose senior citizens'' center.","slug":"little-house","updated_at":"2017-07-21T16:24:18.526-07:00","website":"http://www.penvol.org/littlehouse","url":"https://api-staging.smc-connect.org/locations/little-house","address":{"id":1117,"address_1":"800
+        Middle Avenue","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025-9881"},"organization":{"id":1298,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Volunteers","website":null,"slug":"peninsula-volunteers","url":"https://api-staging.smc-connect.org/organizations/peninsula-volunteers","locations_url":"https://api-staging.smc-connect.org/organizations/peninsula-volunteers/locations"},"phones":[{"id":1887,"department":null,"extension":null,"number":"650
+        326-2025","number_type":"voice","vanity_number":null},{"id":1888,"department":"Peninsula
+        Volunteers","extension":null,"number":"650 326-0665","number_type":"voice","vanity_number":null},{"id":3352,"department":null,"extension":null,"number":"650
+        326-9547","number_type":"fax","vanity_number":null}]},{"id":80,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4321558,37.4646641],"description":"A
+        multipurpose senior activity center for seniors age 60 or over. Activities
+        include craft classes, card and game groups, and exercise groups. Provides
+        a hot, nutritious, mid-day meal, five days a week. Seniors may drop in between
+        10 and 2 to participate in activities of their choice. Publishes a monthly
+        calendar of all its programs, which may include film presentations, speakers
+        and regular programs such as Social Security and Senior Advocates. Transportation
+        is available for those persons age 60 or over who could not otherwise get
+        to the center. Provides information about community services to persons age
+        55 or over who speak English, Spanish or Portuguese, and their families. Staff
+        can make an appointment with an appropriate agency for a caller and help locate
+        transportation if needed. This kind of assistance is available for questions
+        related to housing, employment, household help, recreation and social activities,
+        financial assistance, health and counseling services, services to the homebound,
+        home delivered meals, household repairs and more. Also maintains information
+        about special discounts for seniors, and keeps up-to-date information and
+        appropriate forms for the state tax refund programs of Rent Assistance, Homeowners
+        Assistance and Property Tax Postponement Programs for seniors. Keeps a file
+        of housing available and of persons looking for housing. Health insurance
+        counseling available by appointment.","kind":"Human Services","latitude":37.4646641,"longitude":-122.4321558,"name":"Senior
+        Coastsiders","short_desc":"A multipurpose senior citizens'' center.","slug":"senior-coastsiders","updated_at":"2017-07-21T16:22:54.164-07:00","website":"http://www.seniorcoastsiders.org","url":"https://api-staging.smc-connect.org/locations/senior-coastsiders","address":{"id":77,"address_1":"535
+        Kelly Avenue","address_2":null,"city":"Half Moon Bay","state_province":"CA","postal_code":"94019"},"organization":{"id":80,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Senior
+        Coastsiders","website":null,"slug":"senior-coastsiders","url":"https://api-staging.smc-connect.org/organizations/senior-coastsiders","locations_url":"https://api-staging.smc-connect.org/organizations/senior-coastsiders/locations"},"phones":[{"id":106,"department":null,"extension":null,"number":"650
+        726-9056","number_type":"voice","vanity_number":null},{"id":2540,"department":null,"extension":null,"number":"650
+        726-2911","number_type":"fax","vanity_number":null}]},{"id":1326,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.4030729,37.61268889999999],"description":"Offers
+        a variety of services to disabled and frail elderly persons living in the
+        north part of the county and on the Coastside, including benefits counseling
+        and support groups. Another office is located in San Mateo (described separately).
+        Counseling is available for individuals, families and couples as well as peer
+        counseling groups. Independent Living Skills provides evaluation, training,
+        consultation and equipment assistance. Personal Assistance Program assists
+        with recruitment and placement of attendants/respite workers, offers mediation
+        and training in employer skills and responsibilities. Client Assistance Program
+        informs and advises clients of available vocational rehabilitation services
+        and assists clients with any program funded under the Federal Rehabilitation
+        Act. The Housing Accessibility Modification (HAM) Program provides low-cost
+        modifications for people with disabilities including the frail elderly. The
+        goal is to eliminate barriers and adapt environments enabling residents to
+        be as mobile, safe and independent as possible within their homes. Modifications
+        include the installation of grab bars, wooden banisters, handrails, adaptive
+        bathroom and kitchen fixtures, interior and exterior non-skid surfaces and
+        door bell and emergency alert systems for hearing-impaired persons. These
+        services are also offered to caregivers in the family. Financial Benefits
+        Counseling provides information and advocacy regarding government benefits
+        programs, e.g., Social Security, State Disability Insurance, Medi-Cal, General
+        Assistance, Food Stamps, In-Home Support Services. Shopping Assistance for
+        Someone who is Homebound (SASH) matches a volunteer shopper with an individual
+        who is able to cook but needs a shopping service because of mobility limitations.
+        Once a week a volunteer shopper will shop for and deliver the groceries which
+        are paid for at time of delivery. Staff also provide community outreach and
+        education, information and referral and advocacy in the areas of housing,
+        transportation, financial benefits, accessibility and employment. Consultation
+        in the implementation of the Americans with Disabilities Act is available.
+        Volunteers are welcome in many areas, especially the Volunteers in Money Management
+        Program, to visit with clients and assist them with bill payment, health insurance
+        claims and other financial matters, and in Shopping Assistance for Someone
+        who is Homebound. Formerly known as Center for Independence of the Disabled,
+        Inc. (CID). Another office is located in San Mateo (described separately).","kind":"Human
+        Services","latitude":37.61268889999999,"longitude":-122.4030729,"name":"San
+        Bruno Branch Office","short_desc":"Provides a variety of services to enable
+        disabled and frail elderly persons to lead independent lives.","slug":"san-bruno-branch-office-1590-el-camino-real-suite-c","updated_at":"2016-02-19T14:37:49.270-08:00","website":"http://www.cidsanmateo.org","url":"https://api-staging.smc-connect.org/locations/san-bruno-branch-office-1590-el-camino-real-suite-c","address":{"id":1067,"address_1":"1590
+        El Camino Real, Suite C","address_2":null,"city":"San Bruno","state_province":"CA","postal_code":"94066"},"organization":{"id":1284,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Center
+        for Independence of Individuals with Disabilities","website":null,"slug":"center-for-independence-of-individuals-with-disabilities","url":"https://api-staging.smc-connect.org/organizations/center-for-independence-of-individuals-with-disabilities","locations_url":"https://api-staging.smc-connect.org/organizations/center-for-independence-of-individuals-with-disabilities/locations"},"phones":[{"id":1765,"department":null,"extension":null,"number":"650
+        645-1780","number_type":"voice","vanity_number":null},{"id":1766,"department":"San
+        Bruno","extension":null,"number":"650 589-8994","number_type":"voice","vanity_number":null},{"id":1767,"department":null,"extension":null,"number":"650
+        589-8994","number_type":"voice","vanity_number":null},{"id":1768,"department":null,"extension":null,"number":"650
+        522-9313","number_type":"tty","vanity_number":null},{"id":3317,"department":null,"extension":null,"number":"650
+        589-8995","number_type":"fax","vanity_number":null}]},{"id":512,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.16023,37.466287],"description":"An
+        acute care clinic serving adult patients who lack medical insurance. Provides
+        basic primary health care, free medication, referrals, health screenings and
+        physicals. The clinic is staffed by volunteers and open every Sunday from
+        10 am to 2 pm at the Veterans Affairs Palo Alto Health Care System in Menlo
+        Park, 795 Willow Road. The clinic is designed to provide services to low-income,
+        uninsured and homeless people in Palo Alto and surrounding areas. Specialty
+        services, including cardiology, dermatology and opthalmology, are offered
+        approximately once per month on a referral basis. The clinic is first-come,
+        first-served basis until capacity is reached, so patients are encouraged to
+        arrive early.","kind":"Human Services","latitude":37.466287,"longitude":-122.16023,"name":"Arbor
+        Free Clinic","short_desc":"Offers free health care, referrals and medication
+        to low-income and homeless people in the mid-Peninsula area.","slug":"arbor-free-clinic","updated_at":"2014-11-25T17:15:14.584-08:00","website":"http://arbor.stanford.edu","url":"https://api-staging.smc-connect.org/locations/arbor-free-clinic","address":{"id":425,"address_1":"795
+        Willow Road","address_2":null,"city":"Menlo Park","state_province":"CA","postal_code":"94025"},"organization":{"id":512,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Arbor
+        Free Clinic","website":null,"slug":"arbor-free-clinic","url":"https://api-staging.smc-connect.org/organizations/arbor-free-clinic","locations_url":"https://api-staging.smc-connect.org/organizations/arbor-free-clinic/locations"},"phones":[{"id":670,"department":null,"extension":"22222","number":"650
+        493-5000","number_type":"voice","vanity_number":null},{"id":671,"department":"Voicemail","extension":null,"number":"650
+        724-1332","number_type":"voice","vanity_number":null}]},{"id":924,"active":true,"admin_emails":[],"alternate_name":"","coordinates":[-122.3030675,37.5581227],"description":"Nonprofit
+        Medicare counseling program offers free, unbiased and confidential counseling
+        to current and prospective Medicare beneficiaries. Assists with Medicare billing,
+        appeals and questions about prescription drugs, supplemental and long-term
+        care insurance. State-registered counselors meet with clients at various sites
+        in the county, or home visits can be arranged in the case of homebound seniors.","kind":"Human
+        Services","latitude":37.5581227,"longitude":-122.3030675,"name":"Health Insurance
+        Counseling and Advocacy Program of San Mateo County (HICAP)","short_desc":"Provides
+        health insurance counseling for Medicare recipients.","slug":"health-insurance-counseling-and-advocacy-program-of-san-mateo-county-hicap","updated_at":"2018-02-15T19:57:45.507-08:00","website":"http://www.selfhelpelderly.org/services/hicap/san_mateo/index.php","url":"https://api-staging.smc-connect.org/locations/health-insurance-counseling-and-advocacy-program-of-san-mateo-county-hicap","address":{"id":745,"address_1":"1710
+        South Amphlett Blvd., Suite 100","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94402"},"organization":{"id":924,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Health
+        Insurance Counseling and Advocacy Program of San Mateo County (HICAP)","website":null,"slug":"health-insurance-counseling-and-advocacy-program-of-san-mateo-county-hicap","url":"https://api-staging.smc-connect.org/organizations/health-insurance-counseling-and-advocacy-program-of-san-mateo-county-hicap","locations_url":"https://api-staging.smc-connect.org/organizations/health-insurance-counseling-and-advocacy-program-of-san-mateo-county-hicap/locations"},"phones":[{"id":1220,"department":null,"extension":null,"number":"650-627-9350","number_type":"voice","vanity_number":null},{"id":3073,"department":null,"extension":null,"number":"650
+        627-9359","number_type":"fax","vanity_number":null}]},{"id":1012,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4190941,37.7814649],"description":"Represents
+        the interests of people with psychiatric or physical impairments before the
+        Social Security Administration and other agencies. Maintains two staff attorneys.
+        Also provides training, public seminars, videos and CDs to inform the general
+        public about issues confronting people with disabilities. Consultations on
+        reasonable accommodations and Social Security Work Incentives available. For
+        more information please visit www.pwdf.org.","kind":"Human Services","latitude":37.7814649,"longitude":-122.4190941,"name":"People
+        With Disabilities Foundation","short_desc":null,"slug":"people-with-disabilities-foundation","updated_at":"2014-11-25T17:22:10.118-08:00","website":"http://www.pwdf.org","url":"https://api-staging.smc-connect.org/locations/people-with-disabilities-foundation","address":{"id":805,"address_1":"507
+        Polk Street, Suite 430","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94102"},"organization":{"id":1012,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"People
+        With Disabilities Foundation","website":null,"slug":"people-with-disabilities-foundation","url":"https://api-staging.smc-connect.org/organizations/people-with-disabilities-foundation","locations_url":"https://api-staging.smc-connect.org/organizations/people-with-disabilities-foundation/locations"},"phones":[{"id":1318,"department":null,"extension":null,"number":"415
+        931-3070","number_type":"voice","vanity_number":null},{"id":3123,"department":null,"extension":null,"number":"415
+        931-2828","number_type":"fax","vanity_number":null}]},{"id":786,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.327954,37.566106],"description":"A
+        continuing care retirement community with one- and two-bedroom condominiums
+        available for purchase. Membership and a leasehold condominium interest covers
+        leisure activities, fine dining, housekeeping and laundry service, swimming
+        pool, spa and fitness programs. An on-site assisted living wing with nurses
+        around the clock and a health and wellness program provides members with security
+        and peace of mind. Monthly fee includes Medicare insurance and long-term care
+        insurance for those who qualify medically.","kind":"Human Services","latitude":37.566106,"longitude":-122.327954,"name":"Peninsula
+        Regent","short_desc":"A life care retirement complex.","slug":"peninsula-regent","updated_at":"2014-11-25T17:22:06.613-08:00","website":"http://peninsularegent.com","url":"https://api-staging.smc-connect.org/locations/peninsula-regent","address":{"id":643,"address_1":"1
+        Baldwin Avenue","address_2":null,"city":"San Mateo","state_province":"CA","postal_code":"94401"},"organization":{"id":786,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Peninsula
+        Regent","website":null,"slug":"peninsula-regent","url":"https://api-staging.smc-connect.org/organizations/peninsula-regent","locations_url":"https://api-staging.smc-connect.org/organizations/peninsula-regent/locations"},"phones":[{"id":1053,"department":"24
+        hours daily","extension":null,"number":"650 579-5500","number_type":"voice","vanity_number":null},{"id":2981,"department":null,"extension":null,"number":"650
+        579-0446","number_type":"fax","vanity_number":null}]},{"id":1169,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.3067491,37.8081609],"description":"Aids
+        contractors and homeowners in finding Spanish-speaking day laborers through
+        a phone reservation system. Day workers are available seven days per week
+        at rates between $12-$15 per hour. Program is not involved in the hiring nor
+        the payment of workers; neither does it verify work eligibility or provide
+        worker compensation insurance. Also, helps Spanish-speaking day workers with
+        job placement, referrals and on-site health screening and treatment (in collaboration
+        with San Mateo County health agencies).","kind":"Human Services","latitude":37.8081609,"longitude":-122.3067491,"name":"Day
+        Worker Program., North Fair Oaks","short_desc":"Aids contractors and homeowners
+        in finding day laborers through a phone reservation system.","slug":"day-worker-program-north-fair-oaks","updated_at":"2014-11-25T17:22:12.528-08:00","website":"http://www.mionline.org","url":"https://api-staging.smc-connect.org/locations/day-worker-program-north-fair-oaks","address":{"id":933,"address_1":"1920
+        Seventh Street","address_2":null,"city":"Berkeley","state_province":"CA","postal_code":"94710"},"organization":{"id":1169,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Multicultural
+        Institute","website":null,"slug":"multicultural-institute","url":"https://api-staging.smc-connect.org/organizations/multicultural-institute","locations_url":"https://api-staging.smc-connect.org/organizations/multicultural-institute/locations"},"phones":[{"id":1533,"department":null,"extension":null,"number":"650
+        339-2794","number_type":"voice","vanity_number":null},{"id":1534,"department":null,"extension":null,"number":"510
+        848-4075","number_type":"voice","vanity_number":null},{"id":3222,"department":null,"extension":null,"number":"510
+        848-4095","number_type":"fax","vanity_number":null}]},{"id":2,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.2584729,37.5210911],"description":"Provides
+        legal advice and counsel on civil matters to low income individuals, families
+        and groups. Legal Aid’s mission is to help disadvantaged and vulnerable persons
+        improve their lives through equal access to justice. Legal Aid provides individual
+        representation, community education, systemic advocacy and strategic collaborative
+        approaches to address legal issues and resolve problems in important areas
+        of basic need including health, housing, income and freedom from violence.
+        Legal Aid is an integral part of San Mateo County’s safety net and has a history
+        of successfully collaborating with community agencies, local governments,
+        health care providers and pro bono attorneys to provide coordinated services
+        to low-income residents. The Clients'' Rights Advocate and the Kids in Crisis
+        (KIC) Project help persons with disabilities with problems related to the
+        Americans with Disabilities Act, transit and para-transit, the Golden Gate
+        Regional Center, the San Mateo County Mental Health Division, Social Security
+        Administration, the Regional Center and California Children Services. The
+        Health Consumer Center assists people with problems or questions relating
+        to Medi-Cal, Healthy Families, Healthy Kids, Medicare, Well, and some private
+        insurance. The Teen Parent Project staff works with teen parents on such problems
+        as paternity, domestic violence, benefits and support. The Home Savers provides
+        advice and representation to individuals at risk of eviction. The Family Advocacy
+        Program (FAP), a collaboration with Lucille Packard Children''s Hospital,
+        helps pediatric patients with issues affecting their health. The Seniors Advocates
+        Program provides legal assistance for the elderly concerning elder abuse and
+        consumer issues. Advance Health Directive Clinics are also held several times
+        a year. Staff can visit homebound people.","kind":"Human Services","latitude":37.5210911,"longitude":-122.2584729,"name":"Legal
+        Aid Society of San Mateo County","short_desc":"Legal advice and counsel on
+        civil matters for individuals, families and groups whose incomes are below
+        an established level.","slug":"legal-aid-society-of-san-mateo-county","updated_at":"2014-12-04T11:17:20.041-08:00","website":"http://www.legalaidsmc.org","url":"https://api-staging.smc-connect.org/locations/legal-aid-society-of-san-mateo-county","address":{"id":2,"address_1":"330
+        Twin Dolphin Drive, Suite 123","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94065"},"organization":{"id":2,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Legal
+        Aid Society of San Mateo County","website":null,"slug":"legal-aid-society-of-san-mateo-county","url":"https://api-staging.smc-connect.org/organizations/legal-aid-society-of-san-mateo-county","locations_url":"https://api-staging.smc-connect.org/organizations/legal-aid-society-of-san-mateo-county/locations"},"phones":[{"id":3,"department":null,"extension":null,"number":"650.558.0915","number_type":"voice","vanity_number":null},{"id":2487,"department":null,"extension":null,"number":"650
+        517-8973","number_type":"fax","vanity_number":null}]},{"id":1621,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.175049,37.436357],"description":"Operates
+        the comprehensive 264-bed Lucile Packard Children''s Hospital at Stanford
+        providing pediatric medical and surgical services. The hospital provides cardiology
+        and heart transplantation services, hematology/oncology/bone marrow transplantation,
+        liver and kidney transplantation, general pediatric surgery and neonatology.
+        Outpatient clinics include primary care, adolescent medicine, bone marrow
+        transplant, cardiology, community pediatric after-hours, dermatology, diabetes,
+        eating disorders, endocrinology, gastroenterology, genetics, hematology, hemophilia,
+        infant development, infectious disease, liver transplant, neurology, oncology,
+        ophthalmology, orthopedics, plastic surgery, psychiatry, respiratory medicine,
+        rheumatology, spina bifida, surgery, and urology. The Mommy Van is a special
+        mobile medical unit providing women''s health care in East Palo Alto. Medical
+        services are free of charge and available to women who do not have any type
+        of medical insurance. Provides prenatal services, pregnancy testing, breast
+        exams and referral for mammograms, pap smears, contraception, checking for
+        diabetes and high blood pressure, and pre- and post-natal information. The
+        Mommy Van is also located at two Samaritan House locations: 401 North Humboldt
+        Street, San Mateo (Mondays, 9-3) and 114 5th Avenue, Redwood City (Wednesdays,
+        9-3). Call 650-839-1447. Other services include social services, interpreters,
+        chaplaincy, recreation therapy, physical and occupational therapy, nutrition,
+        pharmacy, radiology, laboratory, rehabilitation engineering and community
+        outreach services. The Parent Information and Referral Center (PIRC) provides
+        information on child healthcare. Pediatric nurses are available to answer
+        questions about a variety of children''s health, growth and development, safety
+        and behavior issues. They can also help choose a physician who meets the special
+        needs of the child as well as provide information about resources for children
+        in a community. Translation services are available through the AT\u0026T Language
+        Line. Call 650-498-KIDS or 800-690-2282. The Teen Health Resource Line offers
+        reliable, accessible and confidential health recommendations. Adolescents
+        with questions about relationships, HIV/AIDS, eating disorders or other health
+        issues are invited to call 888-711-TEEN. The Adolescent Health Van offers
+        comprehensive health services for uninsured and homeless youth, 12 to 21 years
+        of age. Physicians, nurse practitioners, social workers, nutritionists and
+        nurses from Lucile Packard Children''s Hospital staff the Health Van. Services
+        include immunizations, physicals, pregnancy tests, pelvic exams, sick care,
+        HIV counseling and testing, family planning and health education. All services
+        and medications are provided at no charge to the patients. Visits are on a
+        first-come, first-serve basis. The location of the Health Van may change without
+        advance notice. The locations are 2801 Mission Street in San Francisco (1st
+        Tuesday of each month, from 2-7), the Tenderloin Playground at 570 Ellis Street
+        in San Francisco (2nd Tuesday of each month, from 2-7), Peninsula High School
+        at 300 Piedmont Avenue in San Bruno (3rd Tuesday of each month, from 9-2),
+        Phoenix High School at 1950 Mission Street in San Francisco (4th Tuesday of
+        each month, from 9-2) and Alta Vista High School at Bryant Street and Turman
+        in Mountain View (1st Thursday of each month, from 9-2). Call 888-711-TEEN
+        (8336).","kind":"Human Services","latitude":37.436357,"longitude":-122.175049,"name":"Lucile
+        Packard Children''s Hospital","short_desc":"Operates a 214-bed inpatient hospital
+        for children.","slug":"lucile-packard-children-s-hospital","updated_at":"2014-11-25T17:15:53.157-08:00","website":"http://www.lpch.org","url":"https://api-staging.smc-connect.org/locations/lucile-packard-children-s-hospital","address":{"id":1354,"address_1":"725
+        Welch Road","address_2":null,"city":"Palo Alto","state_province":"CA","postal_code":"94304"},"organization":{"id":1334,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Stanford
+        University Medical Center","website":null,"slug":"stanford-university-medical-center","url":"https://api-staging.smc-connect.org/organizations/stanford-university-medical-center","locations_url":"https://api-staging.smc-connect.org/organizations/stanford-university-medical-center/locations"},"phones":[{"id":2328,"department":"24
+        hours daily","extension":null,"number":"800 756-9000","number_type":"voice","vanity_number":null},{"id":2329,"department":null,"extension":null,"number":"650-497-8000","number_type":"voice","vanity_number":null},{"id":2330,"department":null,"extension":null,"number":"800
+        756-9000","number_type":"voice","vanity_number":null},{"id":2331,"department":null,"extension":null,"number":"650
+        497-8000","number_type":"voice","vanity_number":null},{"id":2332,"department":"Advice
+        Nurse","extension":null,"number":"650 497-8820","number_type":"voice","vanity_number":null},{"id":2333,"department":"Referral
+        Center","extension":null,"number":"800 756-9000","number_type":"voice","vanity_number":null},{"id":2334,"department":null,"extension":null,"number":"650-326-4976","number_type":"tty","vanity_number":null}]},{"id":1440,"active":true,"admin_emails":null,"alternate_name":"","coordinates":[-122.2308181,37.4882258],"description":"Victim
+        Services assists victims of violent crimes and/or family members of victims
+        of violent crime who have suffered bodily injury, the threat of injury and/or
+        emotional trauma as a result of a violent crime. The crime report is used
+        to verify that a crime occurred, as well as to establish eligibility for benefits.
+        Victim Advocates provide crisis intervention, emergency assistance, and/or
+        resource and referral assistance. The advocates assist victims with the process
+        of filing a claim for state compensation through the California Victim Compensation
+        Program (CalVCP) for medical, mental health or burial expenses, resulting
+        from a violent crime that is not covered by any other source of reimbursement,
+        such as medical, vehicle or homeowners insurance. If applicable and eligible,
+        a victim and/or family members of the victim can also file a CalVCP claim
+        for compensation for income or support loss. CalVCP does not compensate monetary,
+        or property loss or damage, or pain and suffering. The main Victim Services
+        office is located in the Hall of Justice, 400 County Center, DA’s Office,
+        3rd Floor in Redwood City. There is also a satellite office located in the
+        Northern Court Building, 1050 Mission Road, DA’s Office in South San Francisco.","kind":"Human
+        Services","latitude":37.4882258,"longitude":-122.2308181,"name":"Victim Services","short_desc":"Assists
+        victims of violent crimes and/or family members of victims of violent crimes.","slug":"victim-services","updated_at":"2015-11-30T09:34:14.735-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/victim-services","address":{"id":1180,"address_1":"400
+        County Center","address_2":null,"city":"Redwood City","state_province":"CA","postal_code":"94063"},"organization":{"id":171,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"San
+        Mateo County District Attorney","website":null,"slug":"san-mateo-county-district-attorney","url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-district-attorney","locations_url":"https://api-staging.smc-connect.org/organizations/san-mateo-county-district-attorney/locations"},"phones":[{"id":1968,"department":"Redwood
+        City''s Office","extension":null,"number":"650 599-7479","number_type":"voice","vanity_number":null},{"id":1969,"department":"South
+        San Francisco''s Office","extension":null,"number":"650 599-7479","number_type":"voice","vanity_number":null},{"id":3397,"department":"Redwood
+        City","extension":null,"number":"650 839-1734","number_type":"fax","vanity_number":null},{"id":3398,"department":"South
+        San Francisco","extension":null,"number":"650 877-7001","number_type":"fax","vanity_number":null}]},{"id":101,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.037911,37.392713],"description":"Pathways
+        is a state-licensed, Medicare-certified home health agency providing skilled,
+        intermittent home health and hospice services at home. An individualized health
+        care plan is developed under physician direction for every patient, with consideration
+        to both health and personal needs. Services are available seven days a week.
+        Nurses are on-call 24 hours a day for consultation. The home care team consists
+        of nurses, home health aides, medical social workers and physical, occupational
+        and speech therapists. The patient, family and attending physician are considered
+        members of the home care team. Specialized programs include home infusion/IV.
+        Pathways Hospice provides end-of-life care in a private residence, skilled
+        nursing faciility or residential care facility to residents of San Francisco,
+        San Mateo, Santa Clara, Alameda and western Contra Costa counties. Pathways
+        Home Health provides short-term home health care to residents of San Mateo
+        and Santa Clara counties. Pathways Private Duty provides care management services
+        and non-medical attendant care to assist older adults and the chronically
+        ill with healthcare needs, personal care and daily activities on a short-term
+        or long-term basis. Caregivers are screened, bonded, insured and covered for
+        Worker''s Compnesation. Provided in Alameda County, Contra Costa County, San
+        Francisco County, San Mateo County, and Santa Clara County.","kind":"Human
+        Services","latitude":37.392713,"longitude":-122.037911,"name":"Pathways Home
+        Health, Hospice, and Private Duty","short_desc":"Provides health care services
+        at home for people needing extended medical care from 4 to 24 hours a day.","slug":"pathways-home-health-hospice-and-private-duty","updated_at":"2014-11-25T17:21:56.815-08:00","website":"http://www.pathwayshealth.org","url":"https://api-staging.smc-connect.org/locations/pathways-home-health-hospice-and-private-duty","address":{"id":96,"address_1":"585
+        North Mary Avenue","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94085"},"organization":{"id":101,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Pathways
+        Home Health, Hospice, and Private Duty","website":null,"slug":"pathways-home-health-hospice-and-private-duty","url":"https://api-staging.smc-connect.org/organizations/pathways-home-health-hospice-and-private-duty","locations_url":"https://api-staging.smc-connect.org/organizations/pathways-home-health-hospice-and-private-duty/locations"},"phones":[{"id":131,"department":null,"extension":null,"number":"888
+        755-7855","number_type":"voice","vanity_number":null},{"id":132,"department":null,"extension":null,"number":"888
+        600-2273","number_type":"voice","vanity_number":null},{"id":2559,"department":null,"extension":null,"number":"408
+        730-8722","number_type":"fax","vanity_number":null}]},{"id":782,"active":true,"admin_emails":["pdweb@pathwayshealth.org"],"alternate_name":"","coordinates":[-122.0378606,37.3926666],"description":"A
+        nonprofit, community-based provider of (1) In-home caregivers, providing personal
+        care, private-duty care, companion care and attendant care and more (2) Geriatric
+        care manager: geriatric specialist social workers providing comprehensive
+        care needs assessments, care plan creation and implementation/oversight, medical
+        services advocacy and more Caregivers are available on a 3- to 24-hour basis,
+        seven days a week, short-term or long-term. Caregivers include nurse aides,
+        most of whom have state certified training. Employees are bonded, screened
+        and insured. Geriatric care managers are available on a scheduled basis as
+        well as on an emergency basis when needed, subject to availabilty. Pathways
+        Private Duty is part of a family of home care services affiliated with El
+        Camino Hospital and Sequoia Hospital Dignity Health. The goal is to provide
+        comprehensive, high quality services while making access to services easy
+        for patients and families as well as physicians and others coordinating their
+        care. Also known as Pathways Continuous Care.","kind":"Human Services","latitude":37.3926666,"longitude":-122.0378606,"name":"Pathways
+        Private Duty","short_desc":"Provides (1) in-home private-duty nursing and
+        attendant care,and (2) geriatric care management services, provided by geriatric
+        specialist professional social workers.","slug":"pathways-private-duty","updated_at":"2018-02-15T19:57:45.416-08:00","website":"https://www.pathwaysprivateduty.org","url":"https://api-staging.smc-connect.org/locations/pathways-private-duty","address":{"id":641,"address_1":"585
+        North Mary Avenue Avenue","address_2":null,"city":"Sunnyvale","state_province":"CA","postal_code":"94085"},"organization":{"id":782,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":"Pathways
+        Private Duty provides two related services: (1) In-home caregiver servics,
+        and (2) geriatric care management services. In-Home Caregivers: There comes
+        a time in almost every person’s life when they can’t perform everyday tasks
+        on their own. Some of those tasks may be very important for health and safety
+        reasons. That’s when in-home caregivers can make the difference between the
+        person’s being able to continuing to live at home instead of having to move
+        to an assisted living facility or nursing home. Geriatric Care Managers: Geriatric
+        Care Management is a discipline that includes: - Assessing the care needs
+        of the client. - Planning for the provision of services that address those
+        care needs. - Supervising the delivery of those service and assessing their
+        effectiveness. Families with the wisdom and foresight to seek the assistance
+        of a Geriatric Care Manager can reap the benefits of doing so for the rest
+        of their seniors’ lives. Even in cases where crises arise in seniors’ lives
+        without advance are Management planning in place, the help of a Geriatric
+        Care Manager can help mitigate the crises and improve the possibilities for
+        improved quality of life for those seniors Pathways Private Duty is part of
+        Pathways Home Health, Hospice and Private Duty, which is a local family of
+        health services provided at home, founded by a group of Stanford physicians
+        and community members in 1977; we are non-profit. Pathways has been affiliated
+        with El Camino Hospital and Sequoia Hospital/Dignity Health system since 1986.","email":null,"funding_sources":[],"licenses":["California
+        licensed Home Care Organization"],"name":"Pathways Private Duty","website":"https://pathwaysprivateduty.org","slug":"pathways-private-duty","url":"https://api-staging.smc-connect.org/organizations/pathways-private-duty","locations_url":"https://api-staging.smc-connect.org/organizations/pathways-private-duty/locations"},"phones":[{"id":1046,"department":"Office","extension":null,"number":"408
+        730-1500","number_type":"voice","vanity_number":null},{"id":1047,"department":"Toll-Free
+        - 24 hours a day","extension":null,"number":"888 600-2273","number_type":"voice","vanity_number":null},{"id":1048,"department":"Peninsula
+        / San Mateo County","extension":null,"number":"650 949-9650","number_type":"voice","vanity_number":null},{"id":1049,"department":"East
+        Bay","extension":null,"number":"510 893-2273","number_type":"voice","vanity_number":null},{"id":2979,"department":null,"extension":null,"number":"408
+        730-1515","number_type":"fax","vanity_number":null}]},{"id":47,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[],"description":"A
+        volunteer group composed of individuals from churches in the local community
+        that provides transportation to and from medical appointments for persons
+        who are unable to drive themselves or use public transportation and do not
+        have a family member available to drive them. Volunteers are insured by FISH
+        at no personal cost. Telephone volunteers work out of their own home and drivers
+        use their own vehicles.","kind":"Human Services","latitude":null,"longitude":null,"name":"FISH
+        - San Carlos, Belmont, Redwood City","short_desc":"A volunteer group that
+        provides transportation to and from medical appointments, also emergency food
+        when requested by a social worker.","slug":"fish-san-carlos-belmont-redwood-city","updated_at":"2014-11-25T17:15:02.914-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/fish-san-carlos-belmont-redwood-city","address":null,"organization":{"id":47,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"FISH
+        - San Carlos, Belmont, Redwood City","website":null,"slug":"fish-san-carlos-belmont-redwood-city","url":"https://api-staging.smc-connect.org/organizations/fish-san-carlos-belmont-redwood-city","locations_url":"https://api-staging.smc-connect.org/organizations/fish-san-carlos-belmont-redwood-city/locations"},"phones":[{"id":67,"department":null,"extension":null,"number":"650
+        593-1288","number_type":"voice","vanity_number":null}]},{"id":1042,"active":true,"admin_emails":null,"alternate_name":null,"coordinates":[-122.4511155,37.8008231],"description":"Offers
+        free vision exam for school-aged children (5-18) with no vision insurance
+        and no Medi-Cal. Child sees a neighborhood optometrist (within 10 miles of
+        home) for exam and glasses. First pair of glasses is free; second pair is
+        $35. Students are referred to the program by a school nurse, doctor or social
+        worker.","kind":"Human Services","latitude":37.8008231,"longitude":-122.4511155,"name":"Children''s
+        Vision First","short_desc":"Offers free yearly vision exam for school-aged
+        children (5-18) with no vision insurance and no Medi-Cal.","slug":"children-s-vision-first","updated_at":"2014-11-25T17:22:10.637-08:00","website":"http://www.childrensvisionfirst.org","url":"https://api-staging.smc-connect.org/locations/children-s-vision-first","address":{"id":831,"address_1":"1007
+        General Kennedy Avenue, Suite 210","address_2":null,"city":"San Francisco","state_province":"CA","postal_code":"94129"},"organization":{"id":1042,"accreditations":[],"alternate_name":null,"date_incorporated":null,"description":null,"email":null,"funding_sources":[],"licenses":[],"name":"Children''s
+        Vision First","website":null,"slug":"children-s-vision-first","url":"https://api-staging.smc-connect.org/organizations/children-s-vision-first","locations_url":"https://api-staging.smc-connect.org/organizations/children-s-vision-first/locations"},"phones":[{"id":1354,"department":null,"extension":null,"number":"415
+        561-7794","number_type":"voice","vanity_number":null},{"id":3145,"department":null,"extension":null,"number":"415
+        409-0587","number_type":"fax","vanity_number":null}]}]'
+  recorded_at: Wed, 08 Mar 2023 04:56:46 GMT
+recorded_with: VCR 6.1.0

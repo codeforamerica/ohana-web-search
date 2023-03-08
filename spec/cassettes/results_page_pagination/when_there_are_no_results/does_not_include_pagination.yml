@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/search?action=index&controller=locations&keyword=asdfg
+    uri: https://api-staging.smc-connect.org/search?action=index&controller=locations&keyword=asdfg
     body:
       encoding: US-ASCII
       string: ''
@@ -28,26 +28,32 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"f31ef309603cdf8035922fc04e70f81b"
+      - W/"ffeaf6a9451f5a8862e9067becf8c9ae"
       Link:
-      - <http://ohana-api-test.herokuapp.com/api/search?keyword=asdfg&page=0>; rel="last"
+      - <https://api-staging.smc-connect.org/search?keyword=asdfg&page=0>; rel="last"
       X-Total-Count:
       - '0'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:05 GMT
+      - Wed, 08 Mar 2023 04:56:42 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - b204c53f-3751-4ba3-b8f3-48c5a89f0ca7
+      - 7c883c20-6e75-4be2-b064-c41a983d3037
       X-Runtime:
-      - '0.014676'
-      X-Rack-Cache:
-      - pass
+      - '0.011523'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
@@ -55,6 +61,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "[]"
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:05 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Wed, 08 Mar 2023 04:56:42 GMT
+recorded_with: VCR 6.1.0

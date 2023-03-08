@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/admin-test-location
+    uri: https://api-staging.smc-connect.org/locations/admin-test-location
     body:
       encoding: US-ASCII
       string: ''
@@ -28,41 +28,44 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"723024ebdb5bdd4a231c51c2b3c3e8ec"
+      - W/"c97cbc8f371077868901f4f765be3026"
       Last-Modified:
-      - Sun, 17 Mar 2019 17:23:14 GMT
+      - Thu, 19 Jan 2023 01:45:31 GMT
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:19 GMT
+      - Wed, 08 Mar 2023 04:29:38 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=300, public
       Vary:
       - Origin
       X-Request-Id:
-      - fb350f93-4040-473f-9fe0-932e538ee63d
+      - 5abb9c43-8e26-4b17-8724-c6f689da6d9e
       X-Runtime:
-      - '0.046129'
-      X-Rack-Cache:
-      - pass
+      - '0.031620'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":21,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.2871612,37.5291938],"description":"This
-        is a description","latitude":37.5291938,"longitude":-122.2871612,"name":"Admin
-        Test Location","short_desc":"This is a short description","slug":"admin-test-location","website":null,"updated_at":"2019-03-17T10:23:14.228-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/admin-test-location","accessibility":["Elevator","Disabled
-        Restroom"],"email":null,"languages":[],"transportation":"SAMTRANS stops within
-        1/2 mile.","address":{"id":20,"address_1":"123 El Camino Real","address_2":null,"city":"Belmont","state_province":"CA","postal_code":"94002"},"organization":{"id":7,"alternate_name":null,"name":"Admin
-        Test Org","slug":"admin-test-org","url":"http://ohana-api-test.herokuapp.com/api/organizations/admin-test-org"},"phones":[{"id":39,"department":"CalFresh","extension":"1223","number":"7035551212","number_type":"voice","vanity_number":"703-555-ABCD"},{"id":40,"department":"CalFresh","extension":null,"number":"2025551212","number_type":"fax","vanity_number":null}],"contacts":[{"department":"Office
-        of Innovation","email":null,"id":28,"name":"Moncef","title":null,"phones":[]}],"mail_address":null,"regular_schedules":[],"holiday_schedules":[],"services":[{"id":21,"accepted_payments":[],"alternate_name":null,"audience":null,"description":"just
-        a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"application_process":"By
-        phone during business hours.","interpretation_services":null,"keywords":[],"languages":[],"name":"Service
-        for Admin Test Location","required_documents":[],"service_areas":["San Mateo
-        County"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2014-10-29T10:08:12.381-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
-    http_version: 
-  recorded_at: Mon, 27 May 2019 21:20:19 GMT
-recorded_with: VCR 4.0.0
+      string: '{"id":1910,"active":false,"admin_emails":[],"alternate_name":"","coordinates":[-122.28691,37.5291941],"description":"This
+        is a description","kind":"Other","latitude":37.5291941,"longitude":-122.28691,"name":"Admin
+        Test Location","short_desc":"This is a short description","slug":"admin-test-location","updated_at":"2023-01-18T17:45:31.601-08:00","website":null,"url":"https://api-staging.smc-connect.org/locations/admin-test-location","accessibility":["Elevator","Disabled
+        Restroom"],"email":null,"hours":"Monday-Friday 10am-5pm","languages":[],"transportation":null,"address":{"id":1614,"address_1":"123
+        El Camino Real","address_2":null,"city":"Belmont","state_province":"CA","postal_code":"94002"},"organization":{"id":1438,"alternate_name":null,"name":"Admin
+        Test Org","slug":"admin-test-org","url":"https://api-staging.smc-connect.org/organizations/admin-test-org"},"phones":[],"contacts":[{"id":2055,"department":"Office
+        of Innovation","email":null,"name":"Moncef","title":null,"phones":[]}],"mail_address":null,"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":2,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":4,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":5,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"}],"holiday_schedules":[],"services":[{"id":1872,"accepted_payments":[],"alternate_name":null,"application_process":"By
+        phone during business hours.","audience":null,"description":"just a test service","eligibility":null,"email":null,"fees":null,"funding_sources":[],"interpretation_services":null,"keywords":[],"languages":[],"name":"Service
+        for Admin Test Locatio","required_documents":[],"service_areas":["Belmont"],"status":"inactive","website":null,"wait_time":null,"updated_at":"2023-01-18T17:45:31.599-08:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]}]}'
+  recorded_at: Wed, 08 Mar 2023 04:29:38 GMT
+recorded_with: VCR 6.1.0

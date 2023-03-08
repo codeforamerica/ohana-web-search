@@ -1,4 +1,9 @@
-cache_store = ActiveSupport::Cache.lookup_store(:dalli_store)
+cache_store =
+  if Rails.env.test?
+    Rails.cache
+  else
+    ActiveSupport::Cache.lookup_store(:dalli_store)
+  end
 
 stack = Faraday::RackBuilder.new do |builder|
   builder.use Faraday::HttpCache, store: cache_store, serializer: Marshal

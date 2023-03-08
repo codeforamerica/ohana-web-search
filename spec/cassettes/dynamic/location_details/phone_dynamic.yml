@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ohana-api-test.herokuapp.com/api/locations/example-location
+    uri: https://api-staging.smc-connect.org/locations/example-location
     body:
       encoding: US-ASCII
       string: ''
@@ -28,34 +28,65 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
       Etag:
-      - W/"d59dcdc1ddfe1f9930e25f10125063d2"
+      - W/"85319fc670cab7c8106e079647bfd46e"
       Last-Modified:
-      - Sun, 17 Mar 2019 17:23:14 GMT
+      - Thu, 19 Jan 2023 01:54:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 May 2019 21:20:08 GMT
+      - Fri, 20 Jan 2023 02:19:41 GMT
       Cache-Control:
-      - max-age=0, public
+      - max-age=60, public
       Vary:
       - Origin
       X-Request-Id:
-      - 80dd5b51-7db3-4108-86d5-34f5e2b269b5
+      - 259d6807-2bec-4aeb-800d-2b8bcbd7542b
       X-Runtime:
-      - '0.094563'
-      X-Rack-Cache:
-      - pass
+      - '0.036591'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"id":22,"active":true,"admin_emails":["foo@bar.com"],"alternate_name":"The
-        Test Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS
-        IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+      string: '{"id":1909,"active":true,"admin_emails":[],"alternate_name":"The Test
+        Spot","coordinates":[-122.4099154,37.7726402],"description":"[NOTE THIS IS
+        NOT A REAL ORGANIZATION--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP] Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit metus
+        eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
+        neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
+        a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
+        Nam ac felis a purus lobortis porttitor sit amet quis est. Suspendisse vulputate
+        nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
+        tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
+        Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","kind":"Other","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
+        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
+        PURPOSES OF THIS ALPHA APP]","slug":"example-location","updated_at":"2023-01-18T17:54:11.414-08:00","website":"http://www.example.org","url":"https://api-staging.smc-connect.org/locations/example-location","accessibility":["Disabled
+        Parking","Disabled Restroom","Wheelchair"],"email":"info@example.org","hours":"Monday-Friday,
+        8-5; Saturday, 10-6; Sunday 11-5","languages":["Cantonese","Russian","Spanish","Tagalog","Taiwanese"],"transportation":"SAMTRANS
+        stops within 1 block","address":{"id":1613,"address_1":"2013 Avenue of the
+        fellows","address_2":"Suite 100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":1437,"alternate_name":"Alternate
+        Agency Name","name":"Example Agency","slug":"example-agency","url":"https://api-staging.smc-connect.org/organizations/example-agency"},"phones":[{"id":3787,"department":"Information","extension":"123","number":"<%= first_general_number %>","number_type":"voice","vanity_number":"222-555-INFO"},{"id":3788,"department":"Reservations","extension":null,"number":"650
+        627-8244","number_type":"fax","vanity_number":null},{"id":3789,"department":"Hotline","extension":null,"number":"800
+        372-6200","number_type":"hotline","vanity_number":null},{"id":3790,"department":"Rental
+        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}],"contacts":[{"id":2054,"department":"Referrals","email":"suzanne@example.com","name":"Suzanne
+        Badenhoop","title":"Board President","phones":[{"id":3791,"department":"Referrals","extension":"1200","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":3792,"department":"Referrals","extension":null,"number":"202-555-1212","number_type":"fax","vanity_number":null}]}],"mail_address":{"id":1707,"attention":"The
+        Foodies","address_1":"2013 Avenue of the fellows","address_2":"Suite 100","city":"San
+        Francisco","state_province":"CA","postal_code":"90210"},"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":2,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":4,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":5,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":6,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T18:00:00.000Z"},{"weekday":7,"opens_at":"2000-01-01T11:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null},{"closed":true,"start_date":"0001-06-01","end_date":"0001-09-01","opens_at":null,"closes_at":null},{"closed":false,"start_date":"0001-12-24","end_date":"0001-12-24","opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"}],"services":[{"id":1869,"accepted_payments":[],"alternate_name":null,"application_process":"Walk
+        in or apply by phone or mail","audience":"Second service and nonprofit businesses,
+        the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -63,43 +94,17 @@ http_interactions:
         nisl quis nisi fermentum aliquet euismod at augue. Sed ultricies, purus dapibus
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
-        in. Phasellus nec purus sit amet sapien volutpat egestas.","latitude":37.7726402,"longitude":-122.4099154,"name":"Example
-        Location","short_desc":"[NOTE THIS IS NOT A REAL ENTRY--THIS IS FOR TESTING
-        PURPOSES OF THIS ALPHA APP]","slug":"example-location","website":"http://www.example.org","updated_at":"2019-03-17T10:23:14.257-07:00","url":"http://ohana-api-test.herokuapp.com/api/locations/example-location","accessibility":["Disabled
-        Parking","Disabled Restroom","Wheelchair"],"email":"info@example.org","languages":["Cantonese","Russian","Spanish","Tagalog","Taiwanese"],"transportation":"SAMTRANS
-        stops within 1 block","address":{"id":21,"address_1":"2013 Avenue of the fellows","address_2":"Suite
-        100","city":"San Francisco","state_province":"CA","postal_code":"94103"},"organization":{"id":8,"alternate_name":"Alternate
-        Agency Name","name":"Example Agency","slug":"example-agency","url":"http://ohana-api-test.herokuapp.com/api/organizations/example-agency"},"phones":[{"id":43,"department":"Information","extension":"123","number":"<%= first_general_number %>","number_type":"voice","vanity_number":"222-555-INFO"},{"id":44,"department":"Reservations","extension":null,"number":"650
-        627-8244","number_type":"fax","vanity_number":null},{"id":45,"department":"Hotline","extension":null,"number":"800
-        372-6200","number_type":"hotline","vanity_number":null},{"id":46,"department":"Rental
-        Assistance","extension":"202","number":"650 372-6200","number_type":"tty","vanity_number":null}],"contacts":[{"department":"Referrals","email":"suzanne@example.com","id":29,"name":"Suzanne
-        Badenhoop","title":"Board President","phones":[{"id":41,"department":"Referrals","extension":"1200","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":42,"department":"Referrals","extension":null,"number":"202-555-1212","number_type":"fax","vanity_number":null},{"id":60,"department":null,"extension":null,"number":"650-555-1212","number_type":"sms","vanity_number":null}]}],"mail_address":{"id":21,"attention":"The
-        Foodies","address_1":"2013 Avenue of the fellows","address_2":"Suite 100","city":"San
-        Francisco","state_province":"CA","postal_code":"90210"},"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":2,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":4,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":5,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"},{"weekday":6,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T18:00:00.000Z"},{"weekday":7,"opens_at":"2000-01-01T11:00:00.000Z","closes_at":"2000-01-01T17:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null},{"closed":true,"start_date":"0001-06-01","end_date":"0001-09-01","opens_at":null,"closes_at":null},{"closed":false,"start_date":"0001-12-24","end_date":"0001-12-24","opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"}],"services":[{"id":23,"accepted_payments":[],"alternate_name":null,"audience":"Second
-        service and nonprofit businesses, the public, military facilities, schools
-        and government entities","description":"[NOTE THIS IS NOT A REAL ORGANIZATION--THIS
-        IS FOR TESTTING PURPOSES OF THIS ALPHA APP] Offers, by appointment, WIC (Women,
-        Infants and Children) services, insurance enrollment, food stamps, CalWorks
-        assistance, tax preparation and notary services. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit. Praesent suscipit metus eu orci lobortis dictum.
-        In hac habitasse platea dictumst. Vivamus vulputate, neque ut sodales gravida,
-        lorem nunc pharetra ligula, ac cursus sem justo a sapien. Duis vitae vestibulum
-        magna. Sed vel augue in justo rhoncus viverra. Nam ac felis a purus lobortis
-        porttitor sit amet quis est. Suspendisse vulputate nisl quis nisi fermentum
-        aliquet euismod at augue. Sed ultricies, purus dapibus tristique dictum, tortor
-        mauris porttitor nulla, at porta nisl sem sed dolor. Proin ac hendrerit erat.
-        Duis porta iaculis orci, eu euismod quam tristique in. Phasellus nec purus
-        sit amet sapien volutpat egestas.","eligibility":"None","email":null,"fees":"None,
-        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"application_process":"Walk
-        in or apply by phone or mail","interpretation_services":null,"keywords":["Ruby
+        in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","email":null,"fees":"None,
+        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"interpretation_services":null,"keywords":["Ruby
         on Rails/Postgres/Redis","testing","wic"],"languages":[],"name":"Example Service
-        Name","required_documents":[],"service_areas":["San Mateo County","Alameda
+        Name","required_documents":[],"service_areas":["Alameda County","San Mateo
         County"],"status":"active","website":"http://www.example.com","wait_time":"No
-        wait to 2 weeks","updated_at":"2014-10-29T10:08:12.509-07:00","categories":[],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]},{"id":22,"accepted_payments":["Cash","Check","Credit
-        Card"],"alternate_name":"Fotos para pasaportes","audience":"Profit and nonprofit
-        businesses, the public, military facilities, schools and government entities","description":"[NOTE
-        THIS IS NOT A REAL SERVICE--THIS IS FOR TESTING PURPOSES OF THIS ALPHA APP]
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
+        wait to 2 weeks","updated_at":"2023-01-06T13:04:58.840-08:00","categories":[{"id":311,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":324,"depth":1,"taxonomy_id":"111-02","name":"Mediation","parent_id":311}],"contacts":[],"phones":[],"regular_schedules":[],"holiday_schedules":[]},{"id":1870,"accepted_payments":["Cash","Check","Credit
+        Card"],"alternate_name":"Fotos para pasaportes","application_process":"Walk
+        in or apply by phone or mail","audience":"Profit and nonprofit businesses,
+        the public, military facilities, schools and government entities","description":"[NOTE
+        THIS IS NOT A REAL ORGANIZATION--THIS IS FOR TESTTING PURPOSES OF THIS ALPHA
+        APP] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit
         metus eu orci lobortis dictum. In hac habitasse platea dictumst. Vivamus vulputate,
         neque ut sodales gravida, lorem nunc pharetra ligula, ac cursus sem justo
         a sapien. Duis vitae vestibulum magna. Sed vel augue in justo rhoncus viverra.
@@ -108,20 +113,18 @@ http_interactions:
         tristique dictum, tortor mauris porttitor nulla, at porta nisl sem sed dolor.
         Proin ac hendrerit erat. Duis porta iaculis orci, eu euismod quam tristique
         in. Phasellus nec purus sit amet sapien volutpat egestas.","eligibility":"None","email":"passports@example.org","fees":"None,
-        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"application_process":"Walk
-        in or apply by phone or mail","interpretation_services":"We offer 3-way interpretation
-        services over the phone via Propio Language Services (http://propio-ls.com).","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
+        except for permits and photocopying. Cash, checks and credit cards accepted","funding_sources":["City","County","Federal","State"],"interpretation_services":"We
+        offer 3-way interpretation services over the phone via Propio Language Services
+        (http://propio-ls.com).","keywords":["Salud","Medicina"],"languages":["Spanish"],"name":"Passport
         Photos","required_documents":["Government-issued picture identification"],"service_areas":["Alameda
         County","San Mateo County"],"status":"active","website":"http://www.example.com","wait_time":"No
-        wait to 2 weeks.","updated_at":"2015-01-09T12:45:35.070-08:00","categories":[{"id":65,"depth":0,"taxonomy_id":"105","name":"Transit","parent_id":null},{"id":168,"depth":0,"taxonomy_id":"108","name":"Care","parent_id":null},{"id":190,"depth":1,"taxonomy_id":"108-05","name":"Navigating
-        the System","parent_id":168},{"id":191,"depth":2,"taxonomy_id":"108-05-01","name":"Help
-        Fill out Forms","parent_id":190},{"id":274,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":290,"depth":1,"taxonomy_id":"111-05","name":"Translation
-        \u0026 Interpretation","parent_id":274}],"contacts":[{"department":"CalFresh
-        Applications","email":"john.smith@example.org","id":36,"name":"Joe Smith","title":"CalFresh
-        Specialist","phones":[{"id":52,"department":"CalFresh Applications","extension":"123","number":"703-555-1212","number_type":"voice","vanity_number":null}]}],"phones":[{"id":57,"department":"Passport
-        Photos","extension":"123","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":58,"department":"Passport
-        Photos Fax","extension":null,"number":"789-456-1230","number_type":"fax","vanity_number":null},{"id":59,"department":"Passport
-        Help via SMS","extension":null,"number":"650-222-5555","number_type":"sms","vanity_number":null}],"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T12:00:00.000Z"},{"weekday":1,"opens_at":"2000-01-01T14:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T15:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null}]}]}'
-    http_version:
-  recorded_at: Mon, 27 May 2019 21:20:08 GMT
-recorded_with: VCR 4.0.0
+        wait to 2 weeks","updated_at":"2023-01-18T17:54:11.411-08:00","categories":[{"id":71,"depth":0,"taxonomy_id":"105","name":"Transit","parent_id":null},{"id":196,"depth":0,"taxonomy_id":"108","name":"Care","parent_id":null},{"id":220,"depth":1,"taxonomy_id":"108-05","name":"Navigating
+        the System","parent_id":196},{"id":221,"depth":2,"taxonomy_id":"108-05-01","name":"Help
+        Fill out Forms","parent_id":220},{"id":311,"depth":0,"taxonomy_id":"111","name":"Legal","parent_id":null},{"id":327,"depth":1,"taxonomy_id":"111-05","name":"Translation
+        \u0026 Interpretation","parent_id":311}],"contacts":[{"id":2056,"department":"CalFresh
+        Applications","email":"john.smith@example.org","name":"Joe Smith","title":"CalFresh
+        Specialist","phones":[{"id":3793,"department":"CalFresh Applications","extension":"123","number":"703-555-1212","number_type":"voice","vanity_number":null}]}],"phones":[{"id":3794,"department":"Passport
+        Photos","extension":"123","number":"123-456-7890","number_type":"voice","vanity_number":null},{"id":3795,"department":"Passport
+        Photos Fax","extension":null,"number":"789-456-1230","number_type":"fax","vanity_number":null}],"regular_schedules":[{"weekday":1,"opens_at":"2000-01-01T08:00:00.000Z","closes_at":"2000-01-01T12:00:00.000Z"},{"weekday":1,"opens_at":"2000-01-01T14:00:00.000Z","closes_at":"2000-01-01T16:00:00.000Z"},{"weekday":3,"opens_at":"2000-01-01T10:00:00.000Z","closes_at":"2000-01-01T15:00:00.000Z"}],"holiday_schedules":[{"closed":true,"start_date":"0001-01-01","end_date":"0001-01-01","opens_at":null,"closes_at":null}]}]}'
+  recorded_at: Fri, 20 Jan 2023 02:19:41 GMT
+recorded_with: VCR 6.1.0
