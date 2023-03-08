@@ -46,6 +46,7 @@ group :test do
   gem 'email_spec'
   gem 'haml_lint'
   gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter', require: false
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'simplecov', '= 0.17.1', require: false
