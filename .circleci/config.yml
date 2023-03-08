@@ -2,12 +2,18 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@2.0.0
+  browser-tools: circleci/browser-tools@1.4.1
+  node: circleci/node@5.1.0
+
 jobs:
   build:
     docker:
       # Specify the Ruby version you desire here
-      - image: circleci/ruby:2.7.5-node-browsers
+      - image: cimg/ruby:2.7.7-browsers
         environment:
           RAILS_ENV: test
           CC_TEST_REPORTER_ID: 1a0c6277580235d0768e23f4e81f082abafe346d54856873e59c40dd127db7ae
@@ -18,46 +24,29 @@ jobs:
     working_directory: ~/ohana-web-search
 
     steps:
+      - node/install:
+          install-yarn: true
+          node-version: '16.19.0'
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - checkout
-
-      - restore-cache:
-          keys:
-            - v1-ohana-web-search-{{ checksum "Gemfile.lock" }}
-      - run:
-          name: Install dependencies
-          command: |
-            gem install bundler
-            bundle install --deployment --jobs=4 --retry=3 --without development production --path vendor/bundle
-      - save-cache:
-          key: v1-ohana-web-search-bundle-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-
-      - restore-cache:
-          keys:
-            - v1-ohana-web-search-yarn-{{ checksum "yarn.lock" }}
-            - v1-ohana-web-search-yarn-
-      - run:
-          name: Install Yarn
-          command: yarn install --ignore-engines --cache-folder ~/.cache/yarn
-      - save-cache:
-          key: v1-ohana-web-search-yarn-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+      - ruby/install-deps
+      - node/install-packages:
+          pkg-manager: yarn
 
       - run:
           name: Install Code Climate Test Reporter
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-0.7.0-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
-      - run:
-          name: Run Tests
-          command: |
-            mkdir /tmp/test-results
             ./cc-test-reporter before-build
 
-            bundle exec rspec --format progress
+      - ruby/rspec-test:
+          include: spec/**/*_spec.rb
+
+      - run:
+          name: Run linters
+          command: |
             bundle exec haml-lint app/views
 
       - run:
@@ -66,9 +55,3 @@ jobs:
             ./cc-test-reporter format-coverage -t simplecov $CIRCLE_ARTIFACTS/coverage/.resultset.json
             ./cc-test-reporter upload-coverage
 
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results

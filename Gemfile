@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.7.5'
+ruby File.read('.ruby-version').strip
+
 gem 'actionmailer', '~> 6.1'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
@@ -45,6 +46,7 @@ group :test do
   gem 'email_spec'
   gem 'haml_lint'
   gem 'rails-controller-testing'
+  gem 'rspec_junit_formatter', require: false
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'simplecov', '= 0.17.1', require: false

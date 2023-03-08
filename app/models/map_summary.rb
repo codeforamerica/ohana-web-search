@@ -9,8 +9,8 @@ class MapSummary
 
     return '' if total_map_markers == total_results
 
-    " <i class='fa fa-map-marker'></i> <em>"\
-    "<strong>#{total_map_markers}</strong>/#{total_results} "\
+    " <i class='fa fa-map-marker'></i> <em>" \
+    "<strong>#{total_map_markers}</strong>/#{total_results} " \
     "located on map</em>".html_safe
   end
   # rubocop:enable Rails/OutputSafety

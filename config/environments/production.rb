@@ -42,12 +42,12 @@ Rails.application.configure do
   # when you're done testing.
   config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
     if ENV['CANONICAL_URL'].blank?
-      raise 'The CANONICAL_URL environment variable is not set on your' \
-            ' production server. It should be set to your app\'s domain name,' \
-            ' without the protocol. For example: www.smc-connect.org, or' \
-            ' flying-tiger.herokuapp.com. If you\'re using Heroku, you can set it' \
-            ' like this: "heroku config:set CANONICAL_URL=your_domain_name". See' \
-            ' config/environments/production.rb in the source code for more details.'
+      raise 'The CANONICAL_URL environment variable is not set on your ' \
+            'production server. It should be set to your app\'s domain name, ' \
+            'without the protocol. For example: www.smc-connect.org, or ' \
+            'flying-tiger.herokuapp.com. If you\'re using Heroku, you can set it ' \
+            'like this: "heroku config:set CANONICAL_URL=your_domain_name". See ' \
+            'config/environments/production.rb in the source code for more details.'
     else
       canonical_url = ENV.fetch('CANONICAL_URL', nil)
 
@@ -171,7 +171,7 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation_warnings = []
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = Logger::Formatter.new
   if ENV.fetch('RAILS_LOG_TO_STDOUT', nil) == 'true'
     logger = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter

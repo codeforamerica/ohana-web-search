@@ -37,7 +37,7 @@ feature 'location details' do
 
       expect(page).to have_link(
         'Email',
-        href: "mailto:?Subject=#{subject_for(name)}&"\
+        href: "mailto:?Subject=#{subject_for(name)}&" \
               "body=#{body_for(name, current_url)}"
       )
     end
