@@ -17,12 +17,12 @@ You can see a running version of the application at
 
 ## Stack Overview
 
-* Ruby version 2.7.5
-* Rails version 5.2.6
+* Ruby version 2.7.7
+* Rails version 6.1.6
 * Node.js 16.x
 * Yarn 1.x
 * Template Engines: ERB and HAML
-* Testing Frameworks: RSpec, Capybara, Poltergeist
+* Testing Frameworks: RSpec, Capybara
 
 ## Deploying to Heroku
 See the [Wiki](https://github.com/codeforamerica/ohana-web-search/wiki/How-to-deploy-Ohana-Web-Search-to-your-Heroku-account).

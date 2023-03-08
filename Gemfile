@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.7.5'
+ruby File.read('.ruby-version').strip
+
 gem 'actionmailer', '~> 6.1'
 gem 'compass-rails'
 gem 'dalli', '~> 2.7.1'
