@@ -21,7 +21,7 @@ module ApplicationHelper
   #
   # More info: https://support.google.com/webmasters/answer/139066
   def canonical(url)
-    content_for(:canonical, tag(:link, rel: :canonical, href: url)) if url
+    content_for(:canonical, tag.link(rel: :canonical, href: url)) if url
   end
 
   def cache_key_for(hash)

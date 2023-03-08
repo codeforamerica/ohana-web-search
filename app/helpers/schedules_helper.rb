@@ -31,7 +31,7 @@ module SchedulesHelper
   # rubocop:disable Rails/OutputSafety
   def regular_schedule_content_for(start_day, end_day, open_time, close_time)
     content_tag :section do
-      "#{weekday_range_for(start_day, end_day)}: "\
+      "#{weekday_range_for(start_day, end_day)}: " \
       "#{time_range_for(open_time, close_time)}".html_safe
     end
   end
@@ -42,7 +42,7 @@ module SchedulesHelper
     content_tag :span, class: 'weekdays' do
       return weekday_content_for(start_day) if start_day == end_day
 
-      "#{weekday_content_for(start_day)} - "\
+      "#{weekday_content_for(start_day)} - " \
       "#{weekday_content_for(end_day)}".html_safe
     end
   end
@@ -67,7 +67,7 @@ module SchedulesHelper
   # rubocop:disable Rails/OutputSafety
   def holiday_schedule_content_for(schedule)
     content_tag :section do
-      "#{date_range_for(schedule.start_date, schedule.end_date)}: "\
+      "#{date_range_for(schedule.start_date, schedule.end_date)}: " \
       "#{holiday_hours(
         schedule.closed, schedule.opens_at, schedule.closes_at
       )}".html_safe
@@ -104,7 +104,7 @@ module SchedulesHelper
   def date_range_for(start_date, end_date)
     return date_content_for(start_date) if start_date == end_date
 
-    "#{date_content_for(start_date)} - "\
+    "#{date_content_for(start_date)} - " \
       "#{date_content_for(end_date)}"
   end
 
@@ -125,7 +125,7 @@ module SchedulesHelper
   # rubocop:disable Rails/OutputSafety
   def time_range_for(open_time, close_time)
     content_tag :span, class: 'opening-hours' do
-      "#{hour_content_for(open_time, 'opens-at')} - "\
+      "#{hour_content_for(open_time, 'opens-at')} - " \
       "#{hour_content_for(close_time, 'closes-at')}".html_safe
     end
   end
