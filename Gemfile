@@ -4,7 +4,7 @@ ruby File.read('.ruby-version').strip
 
 gem 'actionmailer', '~> 6.1'
 gem 'compass-rails'
-gem 'dalli', '~> 2.7.1'
+gem 'dalli', '~> 3.2.3'
 gem 'faraday', '~> 0.8'
 gem 'faraday-http-cache', '~> 2.0'
 gem 'figaro'
